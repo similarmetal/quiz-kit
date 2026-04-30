@@ -3,7 +3,7 @@
 **4択 (MCQ) × Spaced Repetition (SRS)** で資格学習を回すための、フレームワーク非依存のローカル Web アプリ。
 学習科学（Active Recall + Spaced Repetition + Concept Map ベース MCQ）に基づいて設計。
 
-🔗 **デモ**: https://similarmetal.github.io/similarmetal-quiz-kit/
+🔗 **デモ**: https://similarmetal.github.io/quiz-kit/
 
 ## 特徴
 
@@ -22,8 +22,8 @@
 ### B. ローカルで動かす
 
 ```bash
-git clone https://github.com/similarmetal/similarmetal-quiz-kit.git
-cd similarmetal-quiz-kit/03-quiz-app
+git clone https://github.com/similarmetal/quiz-kit.git
+cd quiz-kit/03-quiz-app
 python3 -m http.server 8000
 # ブラウザで http://localhost:8000 を開く
 ```
@@ -49,7 +49,7 @@ python3 -m http.server 8000
 ## ディレクトリ構成
 
 ```
-similarmetal-quiz-kit/
+quiz-kit/
 ├── README.md
 ├── LICENSE
 ├── SECURITY.md
