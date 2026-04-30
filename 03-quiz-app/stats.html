@@ -41,18 +41,18 @@
     <div class="card">
       <h3 style="margin-top:0;">Export</h3>
       <p style="font-size: 14px;">学習データをJSONファイルとしてダウンロード。</p>
-      <button class="btn secondary" onclick="QuizApp.exportData()" style="margin-top: 12px;">Export JSON</button>
+      <button class="btn secondary" id="btn-export" style="margin-top: 12px;">Export JSON</button>
     </div>
     <div class="card">
       <h3 style="margin-top:0;">Import</h3>
       <p style="font-size: 14px;">バックアップしたデータを復元。</p>
-      <input type="file" id="import-file" accept=".json" style="display:none;" onchange="QuizApp.importData(this)">
-      <button class="btn secondary" onclick="document.getElementById('import-file').click()" style="margin-top: 12px;">Import JSON</button>
+      <input type="file" id="import-file" accept=".json" style="display:none;">
+      <button class="btn secondary" id="btn-import" style="margin-top: 12px;">Import JSON</button>
     </div>
     <div class="card">
       <h3 style="margin-top:0;">Reset</h3>
       <p style="font-size: 14px;">全データを削除（戻せません）。</p>
-      <button class="btn ghost" onclick="QuizApp.resetData()" style="margin-top: 12px;">Reset All</button>
+      <button class="btn ghost" id="btn-reset" style="margin-top: 12px;">Reset All</button>
     </div>
   </div>
 </div>
@@ -60,10 +60,5 @@
 <footer class="footer">Similarmetal Quiz Kit · Active Recall + SRS</footer>
 
 <script src="app.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    QuizApp.renderStats();
-  });
-</script>
 </body>
 </html>

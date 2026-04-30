@@ -451,7 +451,7 @@ const QuizApp = (() => {
     }
     currentSession.answered += 1;
 
-    // Render quality rating buttons
+    // Render quality rating buttons (CSP-safe: addEventListener で onclick を回避)
     const actionsEl = document.getElementById('quiz-actions');
     actionsEl.innerHTML = `
       <div style="width:100%;">
@@ -459,13 +459,16 @@ const QuizApp = (() => {
           ${isCorrect ? '✓ 正解' : '✗ 不正解'} - 自己評価を選んでください
         </p>
         <div class="quality-rating">
-          <div class="quality-btn q-0" onclick="QuizApp.recordAnswer(0)">忘れていた</div>
-          <div class="quality-btn q-1" onclick="QuizApp.recordAnswer(1)">なんとか</div>
-          <div class="quality-btn q-2" onclick="QuizApp.recordAnswer(2)">普通に正解</div>
-          <div class="quality-btn q-3" onclick="QuizApp.recordAnswer(3)">楽勝</div>
+          <div class="quality-btn q-0" data-q="0">忘れていた</div>
+          <div class="quality-btn q-1" data-q="1">なんとか</div>
+          <div class="quality-btn q-2" data-q="2">普通に正解</div>
+          <div class="quality-btn q-3" data-q="3">楽勝</div>
         </div>
       </div>
     `;
+    actionsEl.querySelectorAll('.quality-btn').forEach(btn => {
+      btn.addEventListener('click', () => recordAnswer(Number(btn.dataset.q)));
+    });
   }
 
   function recordAnswer(quality) {
@@ -716,3 +719,30 @@ const QuizApp = (() => {
     updateSRS
   };
 })();
+
+// ===== Auto-bootstrap =====
+// CSP (script-src 'self') 配下では inline script / inline onclick が使えないため、
+// 各ページの DOM ID で自動ディスパッチし、ボタンも addEventListener で接続する。
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('exam-list')) {
+    QuizApp.renderHome();
+  } else if (document.getElementById('quiz-container')) {
+    QuizApp.renderQuiz();
+  } else if (document.getElementById('stats-container')) {
+    QuizApp.renderStats();
+  }
+
+  // stats.html の操作ボタン (CSP 配下では onclick 属性が動かないため明示接続)
+  const btnExport = document.getElementById('btn-export');
+  if (btnExport) btnExport.addEventListener('click', QuizApp.exportData);
+
+  const btnImport = document.getElementById('btn-import');
+  const importFile = document.getElementById('import-file');
+  if (btnImport && importFile) {
+    btnImport.addEventListener('click', () => importFile.click());
+    importFile.addEventListener('change', (e) => QuizApp.importData(e.target));
+  }
+
+  const btnReset = document.getElementById('btn-reset');
+  if (btnReset) btnReset.addEventListener('click', QuizApp.resetData);
+});
