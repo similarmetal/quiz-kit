@@ -1,0 +1,49 @@
+# =========================================================================
+# Public repo に含めないファイル
+# 公開リポジトリには 03-quiz-app/ (アプリ) と root の README/LICENSE/SECURITY
+# だけを置き、設計ドキュメント・運用スクリプト等はローカル保守用とする。
+# =========================================================================
+
+# --- 個人情報・運用ログ ---
+CLAUDE.local.md
+QA.md
+integration-report.txt
+.claude/
+
+# --- 学習進捗のローカルデータ (Export/Import 用) ---
+03-quiz-app/data/progress-export.json
+03-quiz-app/data/progress-backup.json
+
+# --- 設計ドキュメント (公開リポジトリには出さない) ---
+00-design/
+01-syllabus/
+02-prompts/
+04-sample-questions/
+05-claude-md/
+
+# --- 運用ドキュメント / スクリプト ---
+docs/
+scripts/
+
+# --- Claude Code / 内部運用ファイル ---
+CLAUDE.md
+PROGRESS.md
+cc-prompts.md
+
+# --- 内部 CI / Issue / PR テンプレート (運用と密結合のため除外) ---
+.github/workflows/ci.yml
+.github/ISSUE_TEMPLATE/
+.github/PULL_REQUEST_TEMPLATE.md
+
+# --- Python (scripts/ で使用、いずれにせよ除外) ---
+__pycache__/
+*.pyc
+.venv/
+
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

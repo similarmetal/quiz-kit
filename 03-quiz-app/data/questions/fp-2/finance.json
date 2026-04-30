@@ -1,0 +1,2643 @@
+{
+  "exam_code": "fp-2",
+  "exam_name": "FP技能検定2級",
+  "version": "2026.04",
+  "total_questions": 35,
+  "domains": [
+    {
+      "id": "finance",
+      "name": "金融資産運用",
+      "weight_percent": 17,
+      "question_count": 35
+    }
+  ],
+  "questions": [
+    {
+      "id": "fp-2-finance-001",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "経済指標",
+      "subtopic": "GDP",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "国内総生産(GDP)に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "GDPは内閣府が四半期ごとに公表する一定期間内の付加価値の合計",
+          "is_correct": true,
+          "explanation": "正解。内閣府が四半期ごとにQE(速報・改定値)として公表。一国内で生産された財・サービスの付加価値の合計。"
+        },
+        {
+          "id": "B",
+          "text": "GDPは日本銀行が毎月公表する経済指標である",
+          "is_correct": false,
+          "explanation": "公表元は内閣府。"
+        },
+        {
+          "id": "C",
+          "text": "実質GDPは物価変動を調整しない指標である",
+          "is_correct": false,
+          "explanation": "実質GDPは物価変動の影響を除去した指標。物価調整しないのは名目GDP。"
+        },
+        {
+          "id": "D",
+          "text": "GDPはストック量を示す指標である",
+          "is_correct": false,
+          "explanation": "GDPはフロー指標(一定期間の生産量)。ストック量を示す代表は国富。"
+        }
+      ],
+      "explanation": "GDP: 内閣府が四半期ごと(QE)に公表、フロー指標。名目GDP=市場価格ベース、実質GDP=物価変動調整後。経済成長率は実質GDPで判断するのが一般的。FP2級頻出の経済指標。",
+      "references": [
+        {
+          "title": "国民経済計算（内閣府）",
+          "url": "https://www.esri.cao.go.jp/jp/sna/menu.html"
+        }
+      ],
+      "tags": [
+        "GDP",
+        "経済指標",
+        "内閣府"
+      ],
+      "common_mistakes": [
+        "公表元を日銀と誤解",
+        "実質と名目の違いが曖昧"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-002",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "日銀短観",
+      "subtopic": "業況判断DI",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "日銀短観(全国企業短期経済観測調査)に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "業況判断DIは、業況が「良い」と回答した企業の割合から「悪い」と回答した企業の割合を差し引いた数値",
+          "is_correct": true,
+          "explanation": "正解。DI(Diffusion Index)は『良い』%−『悪い』%。3か月ごとに公表され、景気判断の重要指標。"
+        },
+        {
+          "id": "B",
+          "text": "短観は内閣府が毎月公表する",
+          "is_correct": false,
+          "explanation": "公表元は日本銀行で、年4回(3・6・9・12月)。"
+        },
+        {
+          "id": "C",
+          "text": "業況判断DIの値は0〜100の範囲をとる",
+          "is_correct": false,
+          "explanation": "−100〜+100の範囲をとる。"
+        },
+        {
+          "id": "D",
+          "text": "短観の対象は上場企業のみである",
+          "is_correct": false,
+          "explanation": "上場・非上場含む全国の民間企業約1万社が対象。"
+        }
+      ],
+      "explanation": "日銀短観: 日本銀行が四半期ごとに公表。業況判断DI=『良い』%−『悪い』%(範囲−100〜+100)。値がマイナスなら景気悪化感、プラスなら好景気感を表す。市場参加者が注目する重要指標。",
+      "references": [
+        {
+          "title": "全国企業短期経済観測調査（日本銀行）",
+          "url": "https://www.boj.or.jp/statistics/tk/index.htm"
+        }
+      ],
+      "tags": [
+        "日銀短観",
+        "DI",
+        "景気指標"
+      ],
+      "common_mistakes": [
+        "公表元を内閣府と誤解",
+        "DIの計算式を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-003",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "物価指数",
+      "subtopic": "CPI・企業物価",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "物価指数に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "消費者物価指数(CPI)は総務省が毎月公表し、家計が購入する財・サービスの価格動向を示す",
+          "is_correct": true,
+          "explanation": "正解。CPIは総務省統計局が毎月公表、家計の消費財・サービス価格の総合指数。"
+        },
+        {
+          "id": "B",
+          "text": "企業物価指数(CGPI)は内閣府が公表する",
+          "is_correct": false,
+          "explanation": "企業物価指数は日本銀行が公表する。"
+        },
+        {
+          "id": "C",
+          "text": "コアCPIは生鮮食品を含む総合指数である",
+          "is_correct": false,
+          "explanation": "コアCPIは生鮮食品を除いた指数。さらにエネルギーも除いた『コアコアCPI』もある。"
+        },
+        {
+          "id": "D",
+          "text": "CPIは消費税の影響を完全に除去している",
+          "is_correct": false,
+          "explanation": "CPIは消費税込みの価格で算出されるため、消費税率変更の影響を受ける。"
+        }
+      ],
+      "explanation": "物価指数: ①CPI(消費者物価指数)=総務省・毎月、②CGPI(企業物価指数)=日銀・毎月、③GDPデフレーター=内閣府。コアCPI(生鮮食品除く)、コアコアCPI(生鮮食品+エネルギー除く)などの区分も重要。日銀の金融政策判断材料。",
+      "references": [
+        {
+          "title": "消費者物価指数（総務省統計局）",
+          "url": "https://www.stat.go.jp/data/cpi/"
+        }
+      ],
+      "tags": [
+        "CPI",
+        "企業物価指数",
+        "コアCPI"
+      ],
+      "common_mistakes": [
+        "コアCPIの定義を誤る",
+        "公表元を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-004",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "金融政策",
+      "subtopic": "公開市場操作",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "日本銀行が市中の資金量を増やしたい(金融緩和)場合に行う公開市場操作として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "買いオペレーション(国債を購入し市場に資金を供給する)",
+          "is_correct": true,
+          "explanation": "正解。日銀が国債等を金融機関から買うと、その対価として市場に資金が供給される(金融緩和)。"
+        },
+        {
+          "id": "B",
+          "text": "売りオペレーション(国債を売却して資金を吸収する)",
+          "is_correct": false,
+          "explanation": "売りオペは市場から資金を吸収する金融引き締め。"
+        },
+        {
+          "id": "C",
+          "text": "預金準備率を引き上げる",
+          "is_correct": false,
+          "explanation": "引き上げは金融引き締めとなる。"
+        },
+        {
+          "id": "D",
+          "text": "日銀貸出金利を引き上げる",
+          "is_correct": false,
+          "explanation": "引き上げは金融引き締め。"
+        }
+      ],
+      "explanation": "金融政策: ①買いオペ(資金供給=緩和)、②売りオペ(資金吸収=引き締め)、③準備率引き下げ=緩和、④政策金利引き下げ=緩和。日銀の量的緩和や指値オペなどもこの公開市場操作の応用。FP2級の経済セクション頻出。",
+      "references": [
+        {
+          "title": "金融政策の運営（日本銀行）",
+          "url": "https://www.boj.or.jp/mopo/index.htm"
+        }
+      ],
+      "tags": [
+        "金融政策",
+        "公開市場操作",
+        "金融緩和"
+      ],
+      "common_mistakes": [
+        "買いオペと売りオペの効果を逆に覚える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-005",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "預貯金",
+      "subtopic": "金融商品の特性",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "預貯金商品に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ゆうちょ銀行の貯金には預入限度額(通常貯金1,300万円・定期性貯金1,300万円)がある",
+          "is_correct": true,
+          "explanation": "正解。ゆうちょ銀行は通常貯金1,300万円・定期性貯金1,300万円(計2,600万円)の預入限度額がある。"
+        },
+        {
+          "id": "B",
+          "text": "スーパー定期は預入後1か月経過すれば任意の利率変更ができる",
+          "is_correct": false,
+          "explanation": "スーパー定期は固定金利で預入時の利率が満期まで適用される。"
+        },
+        {
+          "id": "C",
+          "text": "大口定期預金は預入金額の最低単位が100万円である",
+          "is_correct": false,
+          "explanation": "大口定期は1,000万円以上が預入単位。"
+        },
+        {
+          "id": "D",
+          "text": "貯蓄預金は給与振込・公共料金引落の決済口座として利用できる",
+          "is_correct": false,
+          "explanation": "貯蓄預金は決済口座として利用できない。"
+        }
+      ],
+      "explanation": "預貯金商品: ①ゆうちょ預入限度額(通常+定期で計2,600万円)、②スーパー定期=固定金利、③大口定期=1,000万円以上、④貯蓄預金=決済不可、⑤MRF=証券口座の現金的運用。FP2級は商品の制度的特徴を問う。",
+      "references": [
+        {
+          "title": "預入限度額（ゆうちょ銀行）",
+          "url": "https://www.jp-bank.japanpost.jp/"
+        }
+      ],
+      "tags": [
+        "預貯金",
+        "ゆうちょ銀行",
+        "大口定期"
+      ],
+      "common_mistakes": [
+        "大口定期の最低単位を誤る",
+        "貯蓄預金で決済できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-006",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "債券利回り",
+      "subtopic": "最終利回り計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "表面利率1.0%、残存期間4年、購入価格98円(額面100円当たり)で購入した利付債券の最終利回りはおよそいくらか(小数点第3位四捨五入)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.53%",
+          "is_correct": true,
+          "explanation": "正解。最終利回り=(表面利率+(額面−買付価格)/残存年数)/買付価格×100=(1.0+(100−98)/4)/98×100=(1.0+0.5)/98×100≒1.53%。"
+        },
+        {
+          "id": "B",
+          "text": "1.02%",
+          "is_correct": false,
+          "explanation": "表面利率を買付価格で割っただけの直接利回り(1.0/98×100)。最終利回りには償還差益が含まれる。"
+        },
+        {
+          "id": "C",
+          "text": "2.04%",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        },
+        {
+          "id": "D",
+          "text": "0.50%",
+          "is_correct": false,
+          "explanation": "償還差益のみで表面利率を考慮していない。"
+        }
+      ],
+      "explanation": "最終利回り(複利の近似式) = (クーポン+(額面−買付価格)/残存年数)÷買付価格×100。直接利回り=クーポン÷買付価格×100。FP2級では計算式を覚えて適用できることが重要。応募者利回りや所有期間利回りも同様の構造で計算。",
+      "references": [
+        {
+          "title": "債券の利回り（日本証券業協会）",
+          "url": "https://www.jsda.or.jp/"
+        }
+      ],
+      "tags": [
+        "債券",
+        "最終利回り",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "直接利回りと混同",
+        "残存年数で割り忘れ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-007",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "債券価格と金利",
+      "subtopic": "金利感応度",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "市場金利が上昇した場合の債券価格への影響として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "既発行債券の価格は下落し、残存期間が長い債券ほど価格下落幅が大きい傾向がある",
+          "is_correct": true,
+          "explanation": "正解。市場金利上昇→既発債は相対的に魅力低下→価格下落。残存期間が長い(デュレーションが大きい)ほど影響が大きい。"
+        },
+        {
+          "id": "B",
+          "text": "既発行債券の価格は上昇する",
+          "is_correct": false,
+          "explanation": "金利と債券価格は逆の関係。"
+        },
+        {
+          "id": "C",
+          "text": "残存期間が短い債券ほど価格下落幅が大きい",
+          "is_correct": false,
+          "explanation": "残存期間が長いほど影響が大きい(デュレーションの概念)。"
+        },
+        {
+          "id": "D",
+          "text": "債券価格は変化しない",
+          "is_correct": false,
+          "explanation": "市場では即座に価格に反映される。"
+        }
+      ],
+      "explanation": "債券価格と金利の関係(逆相関): 金利上昇→価格下落、金利低下→価格上昇。デュレーション(平均回収期間)が大きいほど価格変動が大きい。FP実務では金利上昇局面の債券リスクを顧客に説明する場面で重要。",
+      "references": [
+        {
+          "title": "債券のリスク（日本証券業協会）",
+          "url": "https://www.jsda.or.jp/"
+        }
+      ],
+      "tags": [
+        "債券価格",
+        "金利リスク",
+        "デュレーション"
+      ],
+      "common_mistakes": [
+        "金利上昇=債券価格上昇と誤解",
+        "残存期間と価格感応度の関係を逆と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-008",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "債券格付",
+      "subtopic": "投資適格",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "債券の格付に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S&PおよびFitchの格付でBBB以上、Moody'sでBaa以上を投資適格と呼ぶ",
+          "is_correct": true,
+          "explanation": "正解。BBB(Baa)以上が投資適格。BB(Ba)以下は投機的等級(ジャンク債)。"
+        },
+        {
+          "id": "B",
+          "text": "AAAは最低格付の投資不適格を示す",
+          "is_correct": false,
+          "explanation": "AAAは最高格付。"
+        },
+        {
+          "id": "C",
+          "text": "格付は発行体の財務状況のみで決まり、業界要因は考慮されない",
+          "is_correct": false,
+          "explanation": "業界・経済環境・経営など多面的要因で評価される。"
+        },
+        {
+          "id": "D",
+          "text": "格付が高いほど利回りが高くなる傾向がある",
+          "is_correct": false,
+          "explanation": "格付が高い=信用リスクが低い=利回りは低い傾向。"
+        }
+      ],
+      "explanation": "格付(信用リスクの評価): AAA・AA・A・BBB(投資適格)/BB・B・CCC・CC・C・D(投機的等級)。投資適格と投機的の境界はBBB/BB(Moody'sはBaa/Ba)。格付が低い→デフォルトリスク高→利回り高(リスクプレミアム)。",
+      "references": [
+        {
+          "title": "債券の格付（日本格付研究所）",
+          "url": "https://www.jcr.co.jp/"
+        }
+      ],
+      "tags": [
+        "格付",
+        "投資適格",
+        "信用リスク"
+      ],
+      "common_mistakes": [
+        "格付と利回りの関係を誤る",
+        "投資適格の境界を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-009",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "個人向け国債",
+      "subtopic": "商品性",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "個人向け国債(変動10年)に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "発行から1年経過すれば中途換金でき、最低保証利率0.05%(年率)・直前2回の利子相当額の差引で換金される",
+          "is_correct": true,
+          "explanation": "正解。1年経過後に中途換金可能。差引額は直前2回分の利子(税引前)×0.79685。最低保証利率0.05%。"
+        },
+        {
+          "id": "B",
+          "text": "発行後すぐに中途換金できる",
+          "is_correct": false,
+          "explanation": "発行から1年経過するまで原則中途換金不可。"
+        },
+        {
+          "id": "C",
+          "text": "適用利率は基準金利の50%で、最低保証は無い",
+          "is_correct": false,
+          "explanation": "変動10年は基準金利×0.66、最低保証0.05%。"
+        },
+        {
+          "id": "D",
+          "text": "個人向け国債は機関投資家にも販売される",
+          "is_correct": false,
+          "explanation": "個人のみ購入可能。"
+        }
+      ],
+      "explanation": "個人向け国債: 変動10年(基準金利×0.66)・固定5年(基準金利−0.05%)・固定3年(基準金利−0.03%)。最低保証0.05%。発行から1年経過後に中途換金可能(直前2回分の利子相当額減算)。FP実務での安全資産候補として頻出。",
+      "references": [
+        {
+          "title": "個人向け国債（財務省）",
+          "url": "https://www.mof.go.jp/jgbs/individual/kojinmuke/"
+        }
+      ],
+      "tags": [
+        "個人向け国債",
+        "中途換金",
+        "最低保証"
+      ],
+      "common_mistakes": [
+        "中途換金が即可能と誤解",
+        "最低保証の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-010",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "株式投資指標",
+      "subtopic": "PER・PBR",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある銘柄の株価2,400円、1株当たり当期純利益(EPS)200円、1株当たり純資産(BPS)1,600円である。この銘柄のPERとPBRの組み合わせとして最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "PER=12倍、PBR=1.5倍",
+          "is_correct": true,
+          "explanation": "正解。PER=株価/EPS=2,400/200=12倍。PBR=株価/BPS=2,400/1,600=1.5倍。"
+        },
+        {
+          "id": "B",
+          "text": "PER=8倍、PBR=2倍",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        },
+        {
+          "id": "C",
+          "text": "PER=15倍、PBR=1.0倍",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        },
+        {
+          "id": "D",
+          "text": "PER=12倍、PBR=0.75倍",
+          "is_correct": false,
+          "explanation": "PBRの計算が逆。"
+        }
+      ],
+      "explanation": "PER(株価収益率)=株価÷EPS、PBR(株価純資産倍率)=株価÷BPS。PER低=割安、PBR<1=解散価値割れ等の意味。配当利回り=配当/株価、ROE=純利益/自己資本も頻出。FP2級では計算と意味の両方を問う。",
+      "references": [
+        {
+          "title": "株式投資指標（日本証券業協会）",
+          "url": "https://www.jsda.or.jp/"
+        }
+      ],
+      "tags": [
+        "PER",
+        "PBR",
+        "株式投資指標",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "EPSとBPSを取り違える",
+        "計算式を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-011",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "配当利回り",
+      "subtopic": "計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "easy",
+      "stem": "株価4,000円、年間1株当たり配当金120円のとき、配当利回り(税引前)はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.0%",
+          "is_correct": true,
+          "explanation": "正解。配当利回り=年間配当金÷株価×100=120÷4,000×100=3.0%。"
+        },
+        {
+          "id": "B",
+          "text": "0.3%",
+          "is_correct": false,
+          "explanation": "桁誤り。"
+        },
+        {
+          "id": "C",
+          "text": "33.3%",
+          "is_correct": false,
+          "explanation": "分子分母を逆にした誤り。"
+        },
+        {
+          "id": "D",
+          "text": "3.3%",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        }
+      ],
+      "explanation": "配当利回り=年間配当金÷株価×100。配当性向=配当金÷純利益×100は別概念。FP実務では税引後配当利回り=配当利回り×(1−20.315%)も併せて押さえる。",
+      "references": [
+        {
+          "title": "配当利回り（日本証券業協会）",
+          "url": "https://www.jsda.or.jp/"
+        }
+      ],
+      "tags": [
+        "配当利回り",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "配当性向と混同",
+        "桁の誤り"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-012",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "ROE",
+      "subtopic": "経営指標",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "自己資本利益率(ROE)に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ROE=当期純利益÷自己資本×100で、株主資本に対する収益性を示す",
+          "is_correct": true,
+          "explanation": "正解。ROEは株主資本効率の指標。日本企業では8%が目安と言われ、海外投資家も重視。"
+        },
+        {
+          "id": "B",
+          "text": "ROE=営業利益÷総資産×100で算出される",
+          "is_correct": false,
+          "explanation": "それはROA(総資産利益率)の概念に近い。"
+        },
+        {
+          "id": "C",
+          "text": "ROEは負債比率と無関係である",
+          "is_correct": false,
+          "explanation": "デュポン分解により、財務レバレッジ(負債活用)もROEを高める要因の一つ。"
+        },
+        {
+          "id": "D",
+          "text": "ROEが高いほど投資効率が悪い企業である",
+          "is_correct": false,
+          "explanation": "逆。ROEが高い=株主資本を効率的に活用している。"
+        }
+      ],
+      "explanation": "ROE=純利益÷自己資本×100。ROEのデュポン分解=売上高純利益率×総資産回転率×財務レバレッジ。日本企業も海外投資家圧力で改善が進む。FP2級では計算式と意味の理解、ROAとの違いが問われる。",
+      "references": [
+        {
+          "title": "ROE（株主資本利益率）",
+          "url": "https://www.jsda.or.jp/"
+        }
+      ],
+      "tags": [
+        "ROE",
+        "経営指標",
+        "株主資本"
+      ],
+      "common_mistakes": [
+        "ROAと混同",
+        "計算式を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-013",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "株価指数",
+      "subtopic": "TOPIX・日経平均",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "日経平均株価とTOPIXに関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "日経平均は225銘柄の株価を修正合計した株価平均型、TOPIXはプライム市場全銘柄を時価総額加重で算出する指数",
+          "is_correct": true,
+          "explanation": "正解。日経平均=225銘柄・株価平均型、TOPIX=東証プライム全銘柄(2022年4月再編後)・時価総額加重型。"
+        },
+        {
+          "id": "B",
+          "text": "両者とも時価総額加重型である",
+          "is_correct": false,
+          "explanation": "日経平均は株価平均型。"
+        },
+        {
+          "id": "C",
+          "text": "日経平均はプライム市場全銘柄が対象である",
+          "is_correct": false,
+          "explanation": "日経平均は225銘柄。"
+        },
+        {
+          "id": "D",
+          "text": "TOPIXは東証グロース市場の銘柄も含む",
+          "is_correct": false,
+          "explanation": "現在のTOPIXはプライム市場銘柄が中心(段階的見直し中)。"
+        }
+      ],
+      "explanation": "日経平均(株価平均型・225銘柄)は値嵩株の影響を受けやすい。TOPIX(時価総額加重型・プライム全銘柄)は時価総額大の銘柄影響が大きい。市場再編(2022年4月プライム/スタンダード/グロース)後の指数構成の変化はFP頻出。",
+      "references": [
+        {
+          "title": "TOPIX（JPX）",
+          "url": "https://www.jpx.co.jp/markets/indices/topix/"
+        }
+      ],
+      "tags": [
+        "日経平均",
+        "TOPIX",
+        "株価指数"
+      ],
+      "common_mistakes": [
+        "両指数の算出方式を取り違える",
+        "対象銘柄数を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-014",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "投資信託",
+      "subtopic": "コスト構造",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "投資信託のコストに関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "信託報酬は保有期間中に継続的に発生し、純資産総額から日々控除される",
+          "is_correct": true,
+          "explanation": "正解。信託報酬は委託会社・販売会社・受託会社で按分され、純資産総額から日々控除される。基準価額には控除後の値が反映される。"
+        },
+        {
+          "id": "B",
+          "text": "ノーロード型は信託報酬が無料の投資信託である",
+          "is_correct": false,
+          "explanation": "ノーロード=購入時手数料が無料。信託報酬は別途発生する。"
+        },
+        {
+          "id": "C",
+          "text": "信託財産留保額はすべての投資信託で必ず徴収される",
+          "is_correct": false,
+          "explanation": "信託財産留保額は商品により設定されない場合もある。"
+        },
+        {
+          "id": "D",
+          "text": "解約時には信託報酬が一括で徴収される",
+          "is_correct": false,
+          "explanation": "信託報酬は保有期間中に日々控除される。"
+        }
+      ],
+      "explanation": "投資信託のコスト: ①購入時手数料(ノーロードは無料)、②信託報酬(運用管理費用・日々控除)、③信託財産留保額(解約時控除・あるなしあり)。長期投資ほど信託報酬の差が累積で大きく効くため、FP実務でインデックスファンド等の低コスト商品を推奨する根拠。",
+      "references": [
+        {
+          "title": "投資信託の費用（投資信託協会）",
+          "url": "https://www.toushin.or.jp/"
+        }
+      ],
+      "tags": [
+        "投資信託",
+        "信託報酬",
+        "コスト"
+      ],
+      "common_mistakes": [
+        "ノーロード=信託報酬無料と誤解",
+        "信託財産留保額が必須と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-015",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "投資信託の分類",
+      "subtopic": "追加型・単位型",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "投資信託の分類に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "追加型(オープン型)は運用開始後も追加購入できるが、単位型(ユニット型)は当初募集期間以降の追加購入はできない",
+          "is_correct": true,
+          "explanation": "正解。追加型は運用中いつでも購入可、単位型は当初募集期間のみ。"
+        },
+        {
+          "id": "B",
+          "text": "公社債投資信託は株式を組み入れることができる",
+          "is_correct": false,
+          "explanation": "公社債投資信託は株式を一切組み入れない(MMF・MRF等)。少しでも株式を組み入れれば株式投資信託に分類される。"
+        },
+        {
+          "id": "C",
+          "text": "ETF(上場投資信託)は基準価額で1日1回取引される",
+          "is_correct": false,
+          "explanation": "ETFは取引所で株式と同様にリアルタイム売買可能。"
+        },
+        {
+          "id": "D",
+          "text": "MRFは株式投資信託に分類される",
+          "is_correct": false,
+          "explanation": "MRFは公社債投資信託で、証券口座の現金的運用に使われる。"
+        }
+      ],
+      "explanation": "投信分類: ①追加型/単位型、②契約型/会社型、③株式投資信託/公社債投資信託、④契約型ファンド/ETF/REIT。MMF・MRFは公社債投資信託。ETFは時価で取引所売買、REITは不動産投資信託。FP2級は分類の基準を問う。",
+      "references": [
+        {
+          "title": "投資信託の分類（投資信託協会）",
+          "url": "https://www.toushin.or.jp/"
+        }
+      ],
+      "tags": [
+        "投資信託",
+        "追加型",
+        "単位型",
+        "ETF"
+      ],
+      "common_mistakes": [
+        "公社債投信に少し株式が入ると誤解",
+        "ETFを基準価額売買と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-016",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "分配金",
+      "subtopic": "普通分配金・特別分配金",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "投資信託の分配金に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "個別元本を上回る部分から支払われる分配金が普通分配金で課税対象、個別元本を下回る部分は元本払戻金(特別分配金)で非課税",
+          "is_correct": true,
+          "explanation": "正解。普通分配金=運用益から支払われ20.315%課税。元本払戻金=元本の払戻しで非課税(個別元本を引き下げる)。"
+        },
+        {
+          "id": "B",
+          "text": "全ての分配金は20.315%の源泉徴収対象である",
+          "is_correct": false,
+          "explanation": "元本払戻金(特別分配金)は非課税。"
+        },
+        {
+          "id": "C",
+          "text": "分配金は基準価額に上乗せされて支払われる",
+          "is_correct": false,
+          "explanation": "分配金が支払われると基準価額は分配金分だけ下がる。"
+        },
+        {
+          "id": "D",
+          "text": "高い分配金は高い運用パフォーマンスを意味する",
+          "is_correct": false,
+          "explanation": "高分配=好パフォーマンスとは限らない。元本を取り崩す『たこ足配当』のリスクがある。"
+        }
+      ],
+      "explanation": "投信分配金: ①普通分配金(運用益から)=課税、②元本払戻金/特別分配金(個別元本下回る部分)=非課税(元本減額)。分配後は基準価額が分配金分だけ下がる。FP実務では『毎月分配型=高利回り』の誤解を解くことが重要。",
+      "references": [
+        {
+          "title": "投信の分配金（投資信託協会）",
+          "url": "https://www.toushin.or.jp/"
+        }
+      ],
+      "tags": [
+        "分配金",
+        "普通分配金",
+        "元本払戻金",
+        "個別元本"
+      ],
+      "common_mistakes": [
+        "特別分配金も課税と誤解",
+        "分配金=パフォーマンスと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-017",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "外貨建商品",
+      "subtopic": "為替リスクと利回り",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "1ドル=130円のときに10,000ドルの外貨預金(年利4%・1年満期)を作成し、満期時の為替レートが1ドル=125円になった。元本を含む円換算の運用結果として最も近いものはどれか(税金・手数料は考慮しない)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "円換算で約13,000,000円から1,300,000円の円高損失と520,000円の利息で約11,920,000円",
+          "is_correct": false,
+          "explanation": "考え方は近いが計算が誤り。"
+        },
+        {
+          "id": "B",
+          "text": "円換算約1,300,000円(元本)+利息400ドル(満期時)、満期円換算=10,400ドル×125円=1,300,000円となり利息分が為替差損で相殺",
+          "is_correct": true,
+          "explanation": "正解。預入時:10,000$×130=1,300,000円。満期:10,400$×125=1,300,000円。利息と為替差損が相殺。"
+        },
+        {
+          "id": "C",
+          "text": "円換算で必ず利息分(4%)の利益が出る",
+          "is_correct": false,
+          "explanation": "外貨預金は為替変動リスクがあり、円高時には円換算で元本割れもあり得る。"
+        },
+        {
+          "id": "D",
+          "text": "為替が円高になっても円換算で必ず元本割れしない",
+          "is_correct": false,
+          "explanation": "大幅な円高では元本割れし得る。"
+        }
+      ],
+      "explanation": "外貨預金の円換算結果は『元本×(1+外貨金利)×満期時為替/預入時為替』。本問では10,000×1.04×125/130×130=10,400×125=1,300,000円(=預入時と同額)。為替リスクで利息が消えることを実感する典型問題。FP実務では税引・TTM/TTBスプレッドも加味。",
+      "references": [
+        {
+          "title": "外貨預金のリスク（金融庁）",
+          "url": "https://www.fsa.go.jp/"
+        }
+      ],
+      "tags": [
+        "外貨預金",
+        "為替リスク",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "為替変動を無視",
+        "預入時・満期時のレートを取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-018",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "TTS・TTB",
+      "subtopic": "為替手数料",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "外貨預金の為替レートに関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "顧客が円を外貨に交換するときはTTS、外貨を円に交換するときはTTBが適用される",
+          "is_correct": true,
+          "explanation": "正解。TTS(売相場)は銀行が外貨を売る=顧客が外貨を買う、TTB(買相場)は銀行が外貨を買う=顧客が外貨を売る(=円受取)レート。"
+        },
+        {
+          "id": "B",
+          "text": "TTSとTTBは同一のレートである",
+          "is_correct": false,
+          "explanation": "TTM(仲値)を中心に銀行のスプレッド(手数料)が加減算される。"
+        },
+        {
+          "id": "C",
+          "text": "円→外貨の交換時はTTBが適用される",
+          "is_correct": false,
+          "explanation": "TTSが適用される。"
+        },
+        {
+          "id": "D",
+          "text": "TTMは顧客取引で適用される",
+          "is_correct": false,
+          "explanation": "TTMは仲値で、実際の顧客取引はTTS/TTBが適用される。"
+        }
+      ],
+      "explanation": "為替レート: TTM(仲値)±スプレッド。TTS(顧客が外貨買う/銀行が売る)=TTM+スプレッド、TTB(顧客が外貨売る/銀行が買う)=TTM−スプレッド。米ドル円のスプレッドは1円程度。FP実務で外貨運用のコスト感を顧客に説明する基礎。",
+      "references": [
+        {
+          "title": "為替レートの種類（全銀協）",
+          "url": "https://www.zenginkyo.or.jp/"
+        }
+      ],
+      "tags": [
+        "TTS",
+        "TTB",
+        "TTM",
+        "為替"
+      ],
+      "common_mistakes": [
+        "TTSとTTBの方向を取り違える",
+        "スプレッドの存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-019",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "ポートフォリオ",
+      "subtopic": "期待収益率",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "投資資金1,000万円のうち、X資産に60%(期待収益率5%)、Y資産に40%(期待収益率2%)を配分するポートフォリオの期待収益率はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.8%",
+          "is_correct": true,
+          "explanation": "正解。0.6×5%+0.4×2%=3.0%+0.8%=3.8%。"
+        },
+        {
+          "id": "B",
+          "text": "3.5%",
+          "is_correct": false,
+          "explanation": "単純平均(5+2)/2=3.5%は、配分比率を考慮しない誤り。"
+        },
+        {
+          "id": "C",
+          "text": "7.0%",
+          "is_correct": false,
+          "explanation": "単純合計の誤り。"
+        },
+        {
+          "id": "D",
+          "text": "5.0%",
+          "is_correct": false,
+          "explanation": "X資産のみの収益率。"
+        }
+      ],
+      "explanation": "ポートフォリオ期待収益率=Σ(各資産の構成比×期待収益率)。本問:0.6×5+0.4×2=3.8%。リスク(標準偏差)は構成比だけでなく相関係数にも依存する点が異なる。",
+      "references": [
+        {
+          "title": "ポートフォリオ理論（日本証券業協会）",
+          "url": "https://www.jsda.or.jp/"
+        }
+      ],
+      "tags": [
+        "ポートフォリオ",
+        "期待収益率",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "単純平均で計算する",
+        "重み付けを忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-020",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "相関係数",
+      "subtopic": "リスク低減効果",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "2資産ポートフォリオにおいて、両資産の相関係数の値とリスク低減効果に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "相関係数が−1のときに最大の分散効果(リスク低減)が得られ、+1のときは分散効果がない",
+          "is_correct": true,
+          "explanation": "正解。相関係数−1=完全に逆方向に動く=損益が打ち消し合いリスク最小化。+1=同じ方向=分散効果なし。"
+        },
+        {
+          "id": "B",
+          "text": "相関係数が+1のとき最大の分散効果が得られる",
+          "is_correct": false,
+          "explanation": "+1では分散効果は発生しない。"
+        },
+        {
+          "id": "C",
+          "text": "相関係数が0のときリスクはゼロになる",
+          "is_correct": false,
+          "explanation": "相関係数0は無相関で、ある程度のリスク低減効果はあるがリスクゼロにはならない。"
+        },
+        {
+          "id": "D",
+          "text": "相関係数の値は−2から+2の範囲をとる",
+          "is_correct": false,
+          "explanation": "相関係数は−1〜+1の範囲。"
+        }
+      ],
+      "explanation": "相関係数(−1〜+1)とリスク分散効果: −1=完全逆相関(分散最大)、0=無相関、+1=完全正相関(分散効果なし)。実際の運用では低相関の資産を組み合わせる『分散投資』が基本原則。FP2級頻出のポートフォリオ理論。",
+      "references": [
+        {
+          "title": "ポートフォリオ理論（日本証券業協会）",
+          "url": "https://www.jsda.or.jp/"
+        }
+      ],
+      "tags": [
+        "相関係数",
+        "分散投資",
+        "ポートフォリオ"
+      ],
+      "common_mistakes": [
+        "+1で分散最大と誤解",
+        "相関係数の範囲を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-021",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "シャープレシオ",
+      "subtopic": "リスク調整後リターン",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "あるファンドの実績収益率10%、安全資産利子率2%、収益率の標準偏差4%のとき、シャープレシオはいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0",
+          "is_correct": true,
+          "explanation": "正解。シャープレシオ=(ファンド収益率−安全資産利子率)/標準偏差=(10−2)/4=2.0。"
+        },
+        {
+          "id": "B",
+          "text": "2.5",
+          "is_correct": false,
+          "explanation": "計算誤り(10/4等)。"
+        },
+        {
+          "id": "C",
+          "text": "0.8",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        },
+        {
+          "id": "D",
+          "text": "1.2",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        }
+      ],
+      "explanation": "シャープレシオ=超過収益率(=実績収益率−無リスク利子率)÷標準偏差。値が大きいほどリスク1単位あたりの超過収益が大きく、効率的な運用といえる。FP実務でファンド比較に使う代表指標。",
+      "references": [
+        {
+          "title": "シャープレシオ",
+          "url": "https://www.toushin.or.jp/"
+        }
+      ],
+      "tags": [
+        "シャープレシオ",
+        "リスク調整後リターン",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "分子に超過収益率ではなく単純収益率を使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-022",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "標準偏差",
+      "subtopic": "リスク指標",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "投資成果における標準偏差の意味として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "収益率のばらつき(リスク)を示し、値が大きいほど収益率の変動幅が大きい",
+          "is_correct": true,
+          "explanation": "正解。標準偏差=収益率の変動性(リスク)。期待収益率±1σの範囲に約68%、±2σに約95%が収まる(正規分布)。"
+        },
+        {
+          "id": "B",
+          "text": "収益率の平均値を示す",
+          "is_correct": false,
+          "explanation": "それは期待収益率(平均)。"
+        },
+        {
+          "id": "C",
+          "text": "標準偏差が小さいほど大きなリスクを意味する",
+          "is_correct": false,
+          "explanation": "逆。小さい=リスク小。"
+        },
+        {
+          "id": "D",
+          "text": "標準偏差は債券のみで定義される指標である",
+          "is_correct": false,
+          "explanation": "債券・株式・投信問わず収益率がある資産すべてで定義される。"
+        }
+      ],
+      "explanation": "標準偏差=リスク指標。期待収益率を平均、標準偏差を散らばりとする分布で運用成果を表現。±1σ範囲に約68%、±2σに約95%。FP2級ではボラティリティ概念とともに頻出。",
+      "references": [
+        {
+          "title": "リスクとリターン（投資信託協会）",
+          "url": "https://www.toushin.or.jp/"
+        }
+      ],
+      "tags": [
+        "標準偏差",
+        "リスク",
+        "ボラティリティ"
+      ],
+      "common_mistakes": [
+        "平均値と混同",
+        "リスクの方向を逆と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-023",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "デリバティブ",
+      "subtopic": "オプション取引",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オプション取引に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "コールオプションの買い手は、原資産価格が上昇するほど利益が増加する権利を持つ",
+          "is_correct": true,
+          "explanation": "正解。コール買いは原資産を権利行使価格で買う権利。原資産価格上昇で利益増、損失はプレミアムに限定。"
+        },
+        {
+          "id": "B",
+          "text": "プットオプションの買い手は原資産価格上昇で利益を得る",
+          "is_correct": false,
+          "explanation": "プット買いは下落で利益。原資産を権利行使価格で売る権利。"
+        },
+        {
+          "id": "C",
+          "text": "オプションの売り手の損失はプレミアム受取額に限定される",
+          "is_correct": false,
+          "explanation": "売り手の損失は理論上無限大(コール売り)または大きい(プット売り)。利益がプレミアム受取に限定される。"
+        },
+        {
+          "id": "D",
+          "text": "アメリカン型オプションは満期日のみ権利行使できる",
+          "is_correct": false,
+          "explanation": "アメリカン型は満期日までいつでも、ヨーロピアン型は満期日のみ。"
+        }
+      ],
+      "explanation": "オプション: コール=買う権利、プット=売る権利。買い手は損失=プレミアム限定、利益=理論上無限大(コール)/限定(プット)。売り手は利益=プレミアム限定、損失=無限大(コール売り)。FP2級ではコール/プット買い/売りの損益図を理解。",
+      "references": [
+        {
+          "title": "オプション取引（日本取引所グループ）",
+          "url": "https://www.jpx.co.jp/derivatives/products/"
+        }
+      ],
+      "tags": [
+        "オプション",
+        "デリバティブ",
+        "コール",
+        "プット"
+      ],
+      "common_mistakes": [
+        "コール/プットの方向を取り違える",
+        "売り手の損失を限定と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-024",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "預金保険制度",
+      "subtopic": "保護対象",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "預金保険制度に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "決済用預金(無利息・要求払・決済機能)は預入金額の全額が保護される",
+          "is_correct": true,
+          "explanation": "正解。決済用預金は全額保護(永久措置)。一般預金等は元本1,000万円+利息までの保護。"
+        },
+        {
+          "id": "B",
+          "text": "外貨預金は預金保険の対象である",
+          "is_correct": false,
+          "explanation": "外貨預金は預金保険の対象外。"
+        },
+        {
+          "id": "C",
+          "text": "1金融機関あたり元本1,000万円までの保護で、利息は保護対象外",
+          "is_correct": false,
+          "explanation": "元本1,000万円+その利息まで保護。"
+        },
+        {
+          "id": "D",
+          "text": "農協の貯金は預金保険の対象である",
+          "is_correct": false,
+          "explanation": "農協・労金等は別の保護制度(農水産業協同組合貯金保険等)。"
+        }
+      ],
+      "explanation": "預金保険制度: ①決済用預金=全額保護、②一般預金等=元本1,000万円+利息保護、③外貨預金・譲渡性預金等=対象外。農協・労金は別制度。FP実務でペイオフの基本知識として必須。",
+      "references": [
+        {
+          "title": "預金保険機構",
+          "url": "https://www.dic.go.jp/"
+        }
+      ],
+      "tags": [
+        "預金保険",
+        "ペイオフ",
+        "決済用預金"
+      ],
+      "common_mistakes": [
+        "外貨預金が対象と誤解",
+        "利息は保護対象外と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-025",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "投資者保護基金",
+      "subtopic": "証券会社破綻",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "日本投資者保護基金に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "証券会社の破綻時、顧客資産が分別管理されていなかった場合に1顧客あたり1,000万円までを補償する",
+          "is_correct": true,
+          "explanation": "正解。投資者保護基金は分別管理義務違反等で顧客資産が返還されない場合、1顧客1,000万円まで補償。"
+        },
+        {
+          "id": "B",
+          "text": "投資信託の運用損失も補償対象である",
+          "is_correct": false,
+          "explanation": "運用損失(価格変動による損失)は補償対象外。"
+        },
+        {
+          "id": "C",
+          "text": "1顧客あたり1億円まで補償される",
+          "is_correct": false,
+          "explanation": "1,000万円が上限。"
+        },
+        {
+          "id": "D",
+          "text": "外貨建債券は補償対象外である",
+          "is_correct": false,
+          "explanation": "金融商品取引業者の取扱う外貨建商品も補償対象になり得る。"
+        }
+      ],
+      "explanation": "投資者保護基金: 証券会社破綻+分別管理違反の場合、1顧客1,000万円まで補償。価格変動による運用損失は補償しない。預金保険(銀行破綻時)とは別制度。FP2級では金額・対象が問われる。",
+      "references": [
+        {
+          "title": "日本投資者保護基金",
+          "url": "https://jipf.or.jp/"
+        }
+      ],
+      "tags": [
+        "投資者保護基金",
+        "証券会社",
+        "分別管理"
+      ],
+      "common_mistakes": [
+        "運用損失も補償と誤解",
+        "金額上限を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-026",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "金融サービス提供法",
+      "subtopic": "重要事項説明義務",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "金融サービスの提供及び利用環境の整備等に関する法律(金融サービス提供法)に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "金融商品販売業者は重要事項の説明義務を負い、これを怠って顧客に損害を与えた場合は損害賠償責任を負う",
+          "is_correct": true,
+          "explanation": "正解。説明義務違反による損害は元本欠損額が損害推定される。元の金融商品販売法から名称変更され金融サービス仲介業の創設も行われた。"
+        },
+        {
+          "id": "B",
+          "text": "金融サービス提供法は消費者契約法と全く同一の法律である",
+          "is_correct": false,
+          "explanation": "別法。両者が併用される場合もある。"
+        },
+        {
+          "id": "C",
+          "text": "プロ投資家(特定投資家)に対しては重要事項説明義務が常に課される",
+          "is_correct": false,
+          "explanation": "プロ投資家への説明義務は緩和されている(金融商品取引法上の特定投資家制度)。"
+        },
+        {
+          "id": "D",
+          "text": "預貯金取引には適用されない",
+          "is_correct": false,
+          "explanation": "預貯金も金融サービス提供法の対象。"
+        }
+      ],
+      "explanation": "金融サービス提供法(旧金融商品販売法): ①重要事項説明義務、②断定的判断の提供禁止、③違反時の損害賠償責任(元本欠損額の推定)、④金融サービス仲介業の創設(2021年施行)。FP実務で投資勧誘の法的枠組として重要。",
+      "references": [
+        {
+          "title": "金融サービス提供法（金融庁）",
+          "url": "https://www.fsa.go.jp/"
+        }
+      ],
+      "tags": [
+        "金融サービス提供法",
+        "重要事項説明",
+        "損害賠償"
+      ],
+      "common_mistakes": [
+        "消費者契約法と同じと誤解",
+        "プロにも常に説明義務と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-027",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "新NISA",
+      "subtopic": "制度概要",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "2024年1月から始まった新NISA制度に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "つみたて投資枠(年120万円)と成長投資枠(年240万円)の併用が可能で、生涯投資枠は1,800万円(うち成長枠は1,200万円)",
+          "is_correct": true,
+          "explanation": "正解。年最大360万円、生涯1,800万円(成長投資枠は1,200万円が上限)。非課税保有期間は無期限。"
+        },
+        {
+          "id": "B",
+          "text": "つみたて投資枠と成長投資枠は併用できない",
+          "is_correct": false,
+          "explanation": "新NISAでは併用可能(旧制度と異なる重要点)。"
+        },
+        {
+          "id": "C",
+          "text": "非課税保有期間は5年で延長できない",
+          "is_correct": false,
+          "explanation": "新NISAは非課税保有期間が無期限。"
+        },
+        {
+          "id": "D",
+          "text": "成長投資枠の年間上限額は120万円である",
+          "is_correct": false,
+          "explanation": "成長投資枠は年240万円。"
+        }
+      ],
+      "explanation": "新NISA(2024年〜): ①つみたて枠120万円+成長枠240万円=年360万円、②生涯枠1,800万円(成長枠1,200万円まで)、③非課税期間無期限、④売却分の枠復活。FP実務でも資産形成提案の中核。",
+      "references": [
+        {
+          "title": "新しいNISA（金融庁）",
+          "url": "https://www.fsa.go.jp/policy/nisa2/index.html"
+        }
+      ],
+      "tags": [
+        "NISA",
+        "つみたて投資枠",
+        "成長投資枠"
+      ],
+      "common_mistakes": [
+        "旧NISAと混同",
+        "枠の額・併用可否を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-028",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "上場株式の課税",
+      "subtopic": "申告分離・譲渡損失",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "上場株式の譲渡所得・配当所得の課税に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "特定口座(源泉徴収あり)を選択すれば原則として確定申告は不要だが、譲渡損失の繰越控除を利用したい場合は確定申告が必要",
+          "is_correct": true,
+          "explanation": "正解。源泉徴収口座は申告不要だが、譲渡損失の3年間繰越控除を利用するには確定申告が必要。"
+        },
+        {
+          "id": "B",
+          "text": "上場株式の譲渡損失は事業所得・給与所得とも自由に損益通算できる",
+          "is_correct": false,
+          "explanation": "譲渡損失は申告分離課税の上場株式等内での通算と、申告分離課税の配当所得との通算のみ可能。給与所得とは通算不可。"
+        },
+        {
+          "id": "C",
+          "text": "配当所得は総合課税のみで申告分離課税の選択はできない",
+          "is_correct": false,
+          "explanation": "上場株式の配当は総合課税・申告分離課税・申告不要の3択。"
+        },
+        {
+          "id": "D",
+          "text": "譲渡損失の繰越控除期間は5年である",
+          "is_correct": false,
+          "explanation": "繰越控除期間は3年。"
+        }
+      ],
+      "explanation": "上場株式課税: 譲渡所得20.315%(申告分離)、配当所得は総合/申告分離/申告不要の選択。譲渡損失と申告分離選択の上場株式配当は損益通算可能、3年繰越控除は確定申告要。FP2級頻出の応用問題。",
+      "references": [
+        {
+          "title": "上場株式等の譲渡損失（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1474.htm"
+        }
+      ],
+      "tags": [
+        "上場株式",
+        "譲渡損失",
+        "繰越控除",
+        "特定口座"
+      ],
+      "common_mistakes": [
+        "損益通算範囲を誤る",
+        "繰越期間を5年と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-029",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "ドルコスト平均法",
+      "subtopic": "投資手法",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ドルコスト平均法に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "毎回一定金額を投資することで、価格が高いときに少なく・低いときに多く購入することになり、平均購入単価を平準化する効果がある",
+          "is_correct": true,
+          "explanation": "正解。一定額購入で高値少量・安値多量の自然調整が働き、平均購入単価を抑える効果がある。"
+        },
+        {
+          "id": "B",
+          "text": "毎回一定数量を購入する手法である",
+          "is_correct": false,
+          "explanation": "それは定量購入法(ドルコスト平均法ではない)。"
+        },
+        {
+          "id": "C",
+          "text": "相場下落時に必ず利益が出ることが保証される",
+          "is_correct": false,
+          "explanation": "下落のみ続けば最終的に損失する。万能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "ドルコスト平均法を使うと売却時の価格に関係なく必ず元本が戻る",
+          "is_correct": false,
+          "explanation": "売却時の価格次第で元本割れもあり得る。"
+        }
+      ],
+      "explanation": "ドルコスト平均法(定額購入法): 毎回一定額購入することで価格が高いとき少量・安いとき多量を自動購入。長期積立投資で平均購入単価を抑える効果がある。万能ではないが、新NISAつみたて枠と相性が良い。",
+      "references": [
+        {
+          "title": "積立投資（金融庁）",
+          "url": "https://www.fsa.go.jp/"
+        }
+      ],
+      "tags": [
+        "ドルコスト平均法",
+        "積立投資",
+        "平均購入単価"
+      ],
+      "common_mistakes": [
+        "損失なしと誤解",
+        "定量購入法と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-030",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "金融商品取引法",
+      "subtopic": "適合性の原則",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "金融商品取引法における適合性の原則に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "顧客の知識・経験・財産・投資目的に照らして不適当な勧誘を行ってはならないとする原則",
+          "is_correct": true,
+          "explanation": "正解。適合性の原則は金融商品取引法第40条で規定。FP実務では顧客カードや意向確認書面が運用の基礎となる。"
+        },
+        {
+          "id": "B",
+          "text": "顧客が要望すれば、知識・経験等にかかわらずどんなリスク商品でも販売できる",
+          "is_correct": false,
+          "explanation": "適合性の原則に違反する勧誘は顧客要望があっても認められない。"
+        },
+        {
+          "id": "C",
+          "text": "金融サービス提供法のみで規定される原則である",
+          "is_correct": false,
+          "explanation": "金融商品取引法で規定されている。"
+        },
+        {
+          "id": "D",
+          "text": "個人顧客のみが保護対象で、法人顧客は対象外",
+          "is_correct": false,
+          "explanation": "個人・法人とも対象。プロ投資家(特定投資家)に対しては緩和適用。"
+        }
+      ],
+      "explanation": "適合性の原則: 知識・経験・財産・目的に照らした不適当な勧誘を禁止。顧客カード作成・意向把握・重要事項説明と一連で運用される。違反は行政処分・損害賠償リスク。FP実務の基礎中の基礎。",
+      "references": [
+        {
+          "title": "金融商品取引法（金融庁）",
+          "url": "https://www.fsa.go.jp/"
+        }
+      ],
+      "tags": [
+        "適合性の原則",
+        "金融商品取引法",
+        "投資勧誘"
+      ],
+      "common_mistakes": [
+        "顧客要望優先と誤解",
+        "個人だけ対象と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-031",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "債券のリスク",
+      "subtopic": "信用リスクと流動性リスク",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "債券に関するリスクの組み合わせとして、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "信用リスク=発行体の財務悪化等で元本利息支払いが滞るリスク、価格変動リスク=金利変動による価格変動",
+          "is_correct": true,
+          "explanation": "正解。信用リスク(発行体起因)、価格変動リスク(金利起因)、流動性リスク(売却困難)、為替リスク(外貨建)など多面的。"
+        },
+        {
+          "id": "B",
+          "text": "信用リスク=金利が変動するリスク",
+          "is_correct": false,
+          "explanation": "それは価格変動リスク(金利リスク)。"
+        },
+        {
+          "id": "C",
+          "text": "デフォルトリスクと価格変動リスクは同義である",
+          "is_correct": false,
+          "explanation": "デフォルトリスク=信用リスクで、価格変動リスクとは別概念。"
+        },
+        {
+          "id": "D",
+          "text": "信用リスクと格付には関係がない",
+          "is_correct": false,
+          "explanation": "格付は信用リスクの代表的な評価指標。"
+        }
+      ],
+      "explanation": "債券のリスク: ①信用リスク(=デフォルトリスク・発行体起因・格付で評価)、②価格変動リスク(金利リスク)、③流動性リスク、④為替リスク(外貨建)、⑤期限前償還リスク。FP2級では多面的に問われる。",
+      "references": [
+        {
+          "title": "債券のリスク（日本証券業協会）",
+          "url": "https://www.jsda.or.jp/"
+        }
+      ],
+      "tags": [
+        "債券",
+        "信用リスク",
+        "価格変動リスク"
+      ],
+      "common_mistakes": [
+        "各リスクの定義を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-032",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "株式信用取引",
+      "subtopic": "制度信用と一般信用",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "株式の信用取引に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "制度信用取引の返済期限は最長6か月で、品貸料(逆日歩)が発生することがある",
+          "is_correct": true,
+          "explanation": "正解。制度信用は最長6か月、銘柄・金利が取引所規則で定められる。逆日歩は売り需要超過時に発生。"
+        },
+        {
+          "id": "B",
+          "text": "信用取引では委託保証金が不要である",
+          "is_correct": false,
+          "explanation": "委託保証金率(法定30%以上)が必要。"
+        },
+        {
+          "id": "C",
+          "text": "一般信用取引は取引所が定めた銘柄に限定される",
+          "is_correct": false,
+          "explanation": "一般信用は証券会社が定める銘柄(取引所規則ではない)。制度信用が取引所規則。"
+        },
+        {
+          "id": "D",
+          "text": "信用買い(融資)の利益は最大で投資元本までである",
+          "is_correct": false,
+          "explanation": "信用取引はレバレッジ効果で元本を超える利益・損失が発生し得る。"
+        }
+      ],
+      "explanation": "信用取引: 制度信用(取引所規則・最長6か月・逆日歩あり) vs 一般信用(証券会社規則・期限自由)。委託保証金率30%以上、追証(維持率割れ)、レバレッジ効果(元本超過の損益)。FP実務では一般顧客への推奨は慎重に。",
+      "references": [
+        {
+          "title": "信用取引（日本取引所グループ）",
+          "url": "https://www.jpx.co.jp/"
+        }
+      ],
+      "tags": [
+        "信用取引",
+        "制度信用",
+        "逆日歩"
+      ],
+      "common_mistakes": [
+        "保証金不要と誤解",
+        "制度と一般の主体を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-033",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "リスク許容度",
+      "subtopic": "顧客分析",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "medium",
+      "stem": "X社代表(30代・独身・年収1,500万円・現預金3,000万円・借入なし・投資経験10年・余裕資金1,000万円を運用したい)に対するFPアドバイスとして、最もリスク許容度に適合する提案はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "新NISA成長投資枠を活用した先進国株式インデックスファンドを中心に、特定口座でREITや個別株も組み入れた成長重視のポートフォリオ",
+          "is_correct": true,
+          "explanation": "正解。若年・独身・高所得・余裕資金という属性は高リスク許容度。インデックス中心+成長アセットでの分散が最適。"
+        },
+        {
+          "id": "B",
+          "text": "個人向け国債変動10年に余裕資金の100%を配分する保守的な提案",
+          "is_correct": false,
+          "explanation": "若年・高所得の方への提案として保守的すぎる(機会損失大)。"
+        },
+        {
+          "id": "C",
+          "text": "全資産を仮想通貨に集中投資する高リスク戦略",
+          "is_correct": false,
+          "explanation": "余裕資金以外も含めた集中投資は適合性の原則に反する。"
+        },
+        {
+          "id": "D",
+          "text": "毎月分配型の高分配ファンドのみを推奨",
+          "is_correct": false,
+          "explanation": "分配金=パフォーマンスではなく、若年層にはタコ足配当のリスクで不適。"
+        }
+      ],
+      "explanation": "リスク許容度の判定要素: ①年齢、②家族構成、③収入、④資産、⑤負債、⑥投資経験、⑦投資目的、⑧投資期間。本問は高リスク許容度ケースなので、コアサテライト戦略でインデックス中心+成長アセットが合理的。",
+      "references": [
+        {
+          "title": "資産運用シミュレーション（金融庁）",
+          "url": "https://www.fsa.go.jp/policy/nisa2/"
+        }
+      ],
+      "tags": [
+        "リスク許容度",
+        "ポートフォリオ",
+        "適合性"
+      ],
+      "common_mistakes": [
+        "保守的すぎる提案を最適と誤解",
+        "属性無視の高リスク提案"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-034",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "iDeCo",
+      "subtopic": "拠出限度額",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "X社の代表(30代・法人代表・厚生年金加入)が、iDeCoを最大限活用したい。FPとしての税効果を含めた最適提案として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "厚生年金加入(企業年金なし)の代表者は月額2.3万円(年27.6万円)を上限にiDeCo拠出でき、全額が小規模企業共済等掛金控除の対象となる",
+          "is_correct": true,
+          "explanation": "正解。第2号被保険者(企業年金なし)は月2.3万円・年27.6万円が上限。全額所得控除で所得税・住民税の軽減効果が大きい。2024年12月以降の制度改正点も含む。"
+        },
+        {
+          "id": "B",
+          "text": "法人代表は第1号被保険者扱いとなり月6.8万円まで拠出可能",
+          "is_correct": false,
+          "explanation": "法人代表で厚生年金加入なら第2号被保険者。"
+        },
+        {
+          "id": "C",
+          "text": "iDeCo拠出は確定拠出企業型同時加入はできない",
+          "is_correct": false,
+          "explanation": "2022年改正で原則併用可能(マッチング拠出選択時の制限あり)。"
+        },
+        {
+          "id": "D",
+          "text": "iDeCoの所得控除は社会保険料控除として処理される",
+          "is_correct": false,
+          "explanation": "iDeCo拠出は小規模企業共済等掛金控除。社会保険料控除ではない。"
+        }
+      ],
+      "explanation": "iDeCo拠出限度: 第1号6.8万円/月、第2号(企業年金なし)2.3万円/月、第2号(DC加入)2万円/月、第2号(DBあり)1.2万円/月、第3号2.3万円/月。全額が小規模企業共済等掛金控除。法人代表+小規模企業共済併用で更に節税可。",
+      "references": [
+        {
+          "title": "iDeCo公式（国民年金基金連合会）",
+          "url": "https://www.ideco-koushiki.jp/"
+        }
+      ],
+      "tags": [
+        "iDeCo",
+        "小規模企業共済等掛金控除",
+        "節税"
+      ],
+      "common_mistakes": [
+        "第1号と第2号を取り違える",
+        "社会保険料控除と誤分類"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-finance-035",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "finance",
+        "name": "金融資産運用",
+        "weight_percent": 17
+      },
+      "topic": "金投資",
+      "subtopic": "金地金・金ETF",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "金(ゴールド)投資に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "純金積立は毎月一定額をドルコスト平均法的に積み立て、保管料が発生し、売却益は譲渡所得(50万円特別控除あり、5年超で長期譲渡所得=1/2課税)となる",
+          "is_correct": true,
+          "explanation": "正解。純金積立=積立投資×現物資産。譲渡所得課税(短期=保有5年以下、長期=5年超で1/2課税)、特別控除50万円。金ETFは申告分離20.315%で課税方式が異なる。"
+        },
+        {
+          "id": "B",
+          "text": "金地金売却益は雑所得として総合課税される",
+          "is_correct": false,
+          "explanation": "業として行っていなければ譲渡所得。"
+        },
+        {
+          "id": "C",
+          "text": "金ETFと金地金は税制上同じ扱いを受ける",
+          "is_correct": false,
+          "explanation": "金ETFは申告分離20.315%、金地金は総合課税の譲渡所得で異なる。"
+        },
+        {
+          "id": "D",
+          "text": "純金積立では分配金が定期的に支払われる",
+          "is_correct": false,
+          "explanation": "金そのものは利息・配当を生まない。"
+        }
+      ],
+      "explanation": "金投資の課税: ①金地金(現物)=譲渡所得・総合課税(50万円特別控除・5年超で1/2課税)、②金ETF=申告分離20.315%、③金鉱株=上場株式と同様。インフレヘッジ・分散投資資産として位置づけられるが、利息・配当は生まない点に注意。",
+      "references": [
+        {
+          "title": "金地金等の売却（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3105.htm"
+        }
+      ],
+      "tags": [
+        "金投資",
+        "純金積立",
+        "譲渡所得"
+      ],
+      "common_mistakes": [
+        "金地金とETFの課税を同一と誤解",
+        "雑所得と誤分類"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

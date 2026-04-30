@@ -1,0 +1,2639 @@
+{
+  "exam_code": "fp-2",
+  "exam_name": "FP技能検定2級",
+  "version": "2026.04",
+  "total_questions": 35,
+  "domains": [
+    {
+      "id": "tax",
+      "name": "タックスプランニング",
+      "weight_percent": 17,
+      "question_count": 35
+    }
+  ],
+  "questions": [
+    {
+      "id": "fp-2-tax-001",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "所得税の体系",
+      "subtopic": "10種類の所得",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "所得税法における10種類の所得区分の組み合わせとして、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "利子・配当・不動産・事業・給与・退職・山林・譲渡・一時・雑",
+          "is_correct": true,
+          "explanation": "正解。所得税は10種類の所得に区分。それぞれ計算方法・課税方式が異なる。"
+        },
+        {
+          "id": "B",
+          "text": "給与・賞与・事業・不動産・配当・利子・譲渡・退職・山林・一時",
+          "is_correct": false,
+          "explanation": "賞与は独立した所得区分ではなく給与所得に含まれる。雑所得が抜けている。"
+        },
+        {
+          "id": "C",
+          "text": "給与・事業・不動産・利子・配当・退職・譲渡・贈与・相続・雑",
+          "is_correct": false,
+          "explanation": "贈与・相続は所得税の対象外(贈与税・相続税)。"
+        },
+        {
+          "id": "D",
+          "text": "給与・配当・利子・事業・不動産・退職・一時・雑・特定・分離",
+          "is_correct": false,
+          "explanation": "特定所得・分離所得は所得区分ではなく課税方式の話。"
+        }
+      ],
+      "explanation": "所得税の10種類の所得: 利子・配当・不動産・事業・給与・退職・山林・譲渡・一時・雑。各所得の計算方法・所得控除の取り扱い・損益通算可否が異なる。FP2級の体系理解の出発点。",
+      "references": [
+        {
+          "title": "所得の区分（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1300.htm"
+        }
+      ],
+      "tags": [
+        "所得税",
+        "10種類の所得"
+      ],
+      "common_mistakes": [
+        "賞与を独立所得と誤解",
+        "贈与を所得税対象と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-002",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "総合課税と分離課税",
+      "subtopic": "課税方式",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "所得税の課税方式に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "上場株式の譲渡所得は申告分離課税が原則で、税率は20.315%(所得税15.315%+住民税5%)",
+          "is_correct": true,
+          "explanation": "正解。上場株式譲渡は申告分離課税で20.315%(復興特別所得税0.315%含む)。"
+        },
+        {
+          "id": "B",
+          "text": "退職所得は総合課税である",
+          "is_correct": false,
+          "explanation": "退職所得は分離課税。"
+        },
+        {
+          "id": "C",
+          "text": "給与所得は分離課税である",
+          "is_correct": false,
+          "explanation": "給与所得は総合課税。年末調整で完結する場合が多い。"
+        },
+        {
+          "id": "D",
+          "text": "利子所得は総合課税が原則である",
+          "is_correct": false,
+          "explanation": "預貯金利子は源泉分離課税(20.315%)が原則。"
+        }
+      ],
+      "explanation": "課税方式: ①総合課税(給与・事業・不動産等を合算し累進課税)、②申告分離課税(上場株式譲渡・先物等)、③源泉分離課税(預貯金利子等)、④源泉徴収+選択(配当)。税率も方式により異なる。",
+      "references": [
+        {
+          "title": "所得税のあらまし（国税庁）",
+          "url": "https://www.nta.go.jp/"
+        }
+      ],
+      "tags": [
+        "総合課税",
+        "分離課税",
+        "課税方式"
+      ],
+      "common_mistakes": [
+        "退職所得を総合課税と誤解",
+        "利子所得を総合課税と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-003",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "給与所得控除",
+      "subtopic": "計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "年収600万円の会社員Aさんの給与所得の金額として、最も適切なものはどれか(2025年分)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "436万円",
+          "is_correct": true,
+          "explanation": "正解。給与所得控除=600万×20%+44万円=164万円。給与所得=600−164=436万円。"
+        },
+        {
+          "id": "B",
+          "text": "490万円",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        },
+        {
+          "id": "C",
+          "text": "455万円",
+          "is_correct": false,
+          "explanation": "控除額の計算が誤り。"
+        },
+        {
+          "id": "D",
+          "text": "402万円",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        }
+      ],
+      "explanation": "給与所得控除(2025年): 162.5万以下=55万、〜180万=収入×40%−10万、〜360万=収入×30%+8万、〜660万=収入×20%+44万、〜850万=収入×10%+110万、850万超=195万(上限)。本問: 600×20%+44=164万、600−164=436万。",
+      "references": [
+        {
+          "title": "給与所得控除（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm"
+        }
+      ],
+      "tags": [
+        "給与所得",
+        "給与所得控除",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "速算表の階層を間違える",
+        "上限額を誤適用"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-004",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "退職所得控除",
+      "subtopic": "計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "勤続年数28年(端数切上で29年とはしない)で退職金2,500万円を受け取ったAさんの退職所得の金額はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "230万円",
+          "is_correct": false,
+          "explanation": "計算誤り。退職所得控除1,360万円・1/2課税の処理ともに正しく行えば570万円となる。"
+        },
+        {
+          "id": "B",
+          "text": "570万円",
+          "is_correct": true,
+          "explanation": "正解。退職所得控除=800万+70万×(28−20)=1,360万円。退職所得=(2,500−1,360)×1/2=570万円。"
+        },
+        {
+          "id": "C",
+          "text": "1,140万円",
+          "is_correct": false,
+          "explanation": "1/2を乗じていない誤り。"
+        },
+        {
+          "id": "D",
+          "text": "1,200万円",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        }
+      ],
+      "explanation": "退職所得控除: 勤続20年以下=40万×勤続年数(最低80万)、20年超=800万+70万×(勤続年数−20年)。勤続年数は1年未満切上。退職所得=(退職金−控除額)×1/2。本問: 800+70×8=1,360万、(2500−1360)×0.5=570万円。Bが正解。",
+      "references": [
+        {
+          "title": "退職所得（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1420.htm"
+        }
+      ],
+      "tags": [
+        "退職所得",
+        "退職所得控除",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "1/2の処理を忘れる",
+        "20年超の計算式を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.25
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-005",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "損益通算",
+      "subtopic": "対象所得",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "所得税における損益通算に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "損益通算が可能な所得は不動産所得・事業所得・山林所得・譲渡所得の4種類だが、不動産所得の損失のうち土地取得借入金利子は除外される",
+          "is_correct": true,
+          "explanation": "正解。『不・事・山・譲』の4区分で生じた損失のみ通算可能。ただし不動産所得の土地借入金利子部分は除外、株式譲渡損失は通算範囲限定。"
+        },
+        {
+          "id": "B",
+          "text": "雑所得の損失は他の所得と損益通算できる",
+          "is_correct": false,
+          "explanation": "雑所得の損失は他所得と通算不可(雑所得内で同一種目間のみ)。"
+        },
+        {
+          "id": "C",
+          "text": "ゴルフ会員権の譲渡損失は他の所得と損益通算できる",
+          "is_correct": false,
+          "explanation": "生活に通常必要でない資産の譲渡損失は通算不可。ゴルフ会員権は2014年4月以降この扱い。"
+        },
+        {
+          "id": "D",
+          "text": "上場株式の譲渡損失と給与所得は自由に損益通算できる",
+          "is_correct": false,
+          "explanation": "上場株式譲渡損失は申告分離の上場株式等内・申告分離選択した上場株式配当との通算のみ。"
+        }
+      ],
+      "explanation": "損益通算可能な所得: 『富士山上(不・事・山・譲)』の4種類。例外: ①不動産所得の土地借入金利子、②生活に通常必要でない資産の譲渡損失、③株式・FX等の譲渡損失(別枠)、④雑所得は通算不可。FP2級頻出の引っ掛け論点。",
+      "references": [
+        {
+          "title": "損益通算（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2250.htm"
+        }
+      ],
+      "tags": [
+        "損益通算",
+        "不動産所得",
+        "譲渡損失"
+      ],
+      "common_mistakes": [
+        "雑所得も通算可能と誤解",
+        "ゴルフ会員権も通算可と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-006",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "基礎控除",
+      "subtopic": "所得制限",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "所得税の基礎控除に関する次の記述のうち、最も適切なものはどれか(2025年分)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "合計所得金額2,400万円以下は48万円、2,500万円超は0円となる段階的な控除",
+          "is_correct": true,
+          "explanation": "正解。〜2,400万=48万、〜2,450万=32万、〜2,500万=16万、2,500万超=0。"
+        },
+        {
+          "id": "B",
+          "text": "合計所得金額にかかわらず一律38万円",
+          "is_correct": false,
+          "explanation": "2020年分以降、48万円ベースで所得制限あり。"
+        },
+        {
+          "id": "C",
+          "text": "合計所得金額3,000万円超は基礎控除なし",
+          "is_correct": false,
+          "explanation": "2,500万円超で0。"
+        },
+        {
+          "id": "D",
+          "text": "基礎控除は非居住者にも適用される",
+          "is_correct": false,
+          "explanation": "原則、居住者のみ。非居住者でも一部適用ケースはある。"
+        }
+      ],
+      "explanation": "基礎控除(2025年): 〜2,400万=48万、〜2,450万=32万、〜2,500万=16万、2,500万超=0。住民税の基礎控除は43万円(段階あり)。FP2級でも頻出の暗記項目。",
+      "references": [
+        {
+          "title": "基礎控除（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm"
+        }
+      ],
+      "tags": [
+        "基礎控除",
+        "所得控除"
+      ],
+      "common_mistakes": [
+        "旧38万円で覚えている",
+        "所得制限を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-007",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "配偶者控除",
+      "subtopic": "適用要件",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "配偶者控除に関する次の記述のうち、最も適切なものはどれか(2025年分)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "納税者本人の合計所得金額が900万円以下の場合の控除額は最大38万円(70歳以上は48万円)で、本人合計所得1,000万円超は適用不可",
+          "is_correct": true,
+          "explanation": "正解。本人所得900万円以下=満額、900〜1,000万=逓減、1,000万円超=ゼロ。配偶者の合計所得は48万円以下が要件。"
+        },
+        {
+          "id": "B",
+          "text": "配偶者の年収が103万円超でも配偶者控除を適用できる",
+          "is_correct": false,
+          "explanation": "配偶者の合計所得48万円以下(=給与のみなら103万円以下)が必要。"
+        },
+        {
+          "id": "C",
+          "text": "配偶者控除と配偶者特別控除は併用できる",
+          "is_correct": false,
+          "explanation": "両者は重複適用不可(配偶者の所得段階で振り分け)。"
+        },
+        {
+          "id": "D",
+          "text": "配偶者の所得額にかかわらず一律で適用される",
+          "is_correct": false,
+          "explanation": "配偶者の所得要件あり。"
+        }
+      ],
+      "explanation": "配偶者控除: 配偶者所得48万円以下、本人合計所得1,000万円以下が要件。控除額は本人所得段階(900/950/1,000万円閾値)で逓減。配偶者所得48万円超〜133万円以下は配偶者特別控除に切替。FP2級頻出。",
+      "references": [
+        {
+          "title": "配偶者控除（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1191.htm"
+        }
+      ],
+      "tags": [
+        "配偶者控除",
+        "配偶者特別控除",
+        "所得制限"
+      ],
+      "common_mistakes": [
+        "本人の所得制限を知らない",
+        "配偶者特別控除と併用できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-008",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "扶養控除",
+      "subtopic": "区分別控除額",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "扶養控除に関する次の記述のうち、最も適切なものはどれか(2025年分・所得税)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "特定扶養親族(19歳以上23歳未満)の控除額は63万円",
+          "is_correct": true,
+          "explanation": "正解。一般38万、特定63万、老人扶養親族58万(同居老親71万)。"
+        },
+        {
+          "id": "B",
+          "text": "16歳未満の子は扶養控除の対象である",
+          "is_correct": false,
+          "explanation": "16歳未満は扶養控除対象外(児童手当との重複調整)。"
+        },
+        {
+          "id": "C",
+          "text": "老人扶養親族(70歳以上)の控除額は48万円である",
+          "is_correct": false,
+          "explanation": "別居なら58万円、同居老親なら71万円。"
+        },
+        {
+          "id": "D",
+          "text": "特定扶養親族は16〜18歳の子が対象である",
+          "is_correct": false,
+          "explanation": "特定扶養は19歳以上23歳未満。16〜18歳は一般扶養親族(38万)。"
+        }
+      ],
+      "explanation": "扶養控除: ①一般扶養親族(16〜18・23歳〜69歳)=38万、②特定扶養親族(19〜22歳)=63万、③老人扶養親族(70歳〜)=58万・同居老親71万、④16歳未満=対象外。FP2級では区分と金額の組合せを問う。",
+      "references": [
+        {
+          "title": "扶養控除（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm"
+        }
+      ],
+      "tags": [
+        "扶養控除",
+        "特定扶養親族",
+        "老人扶養親族"
+      ],
+      "common_mistakes": [
+        "16歳未満も対象と誤解",
+        "特定扶養の年齢を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-009",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "医療費控除",
+      "subtopic": "計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "総所得金額500万円のAさん(給与所得者)が当年中に医療費50万円(保険給付10万円控除後の自己負担実額)を支払った。医療費控除の金額はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "40万円",
+          "is_correct": true,
+          "explanation": "正解。医療費控除=実費負担額−10万円(または所得の5%のいずれか少ない方)。500万×5%=25万>10万なので10万円を控除。50−10=40万円。"
+        },
+        {
+          "id": "B",
+          "text": "50万円",
+          "is_correct": false,
+          "explanation": "10万円のスタートラインを引き忘れている。"
+        },
+        {
+          "id": "C",
+          "text": "25万円",
+          "is_correct": false,
+          "explanation": "所得の5%を引いてしまっている誤り。"
+        },
+        {
+          "id": "D",
+          "text": "30万円",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        }
+      ],
+      "explanation": "医療費控除=実際支払額(保険給付控除後)−min(10万円, 所得×5%)。総所得200万円以下のみ5%が10万を下回り、それ以外は10万円控除。上限200万円。セルフメディケーション税制(特定一般用医薬品)とは選択適用。",
+      "references": [
+        {
+          "title": "医療費控除（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm"
+        }
+      ],
+      "tags": [
+        "医療費控除",
+        "所得控除",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "10万円のスタートを忘れる",
+        "総所得の5%との比較を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-010",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "社会保険料控除",
+      "subtopic": "対象範囲",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "社会保険料控除に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "本人または生計を一にする配偶者・親族の社会保険料を本人が支払った場合、その全額が控除対象",
+          "is_correct": true,
+          "explanation": "正解。本人分はもちろん、家族の社会保険料を本人が払った場合も全額控除可。FP実務では配偶者の国民年金保険料等を世帯主が払う最適化が頻出。"
+        },
+        {
+          "id": "B",
+          "text": "控除額は支払額の50%が限度である",
+          "is_correct": false,
+          "explanation": "全額控除可で限度額はない。"
+        },
+        {
+          "id": "C",
+          "text": "国民年金基金の掛金は社会保険料控除の対象外である",
+          "is_correct": false,
+          "explanation": "国民年金基金は社会保険料控除対象。"
+        },
+        {
+          "id": "D",
+          "text": "iDeCoの掛金は社会保険料控除の対象である",
+          "is_correct": false,
+          "explanation": "iDeCoは小規模企業共済等掛金控除。社会保険料控除ではない。"
+        }
+      ],
+      "explanation": "社会保険料控除: 健康保険・厚生年金・国民年金・国民健康保険・介護保険・国民年金基金等を本人または家族分を本人が支払った場合に全額控除。iDeCoは別区分の小規模企業共済等掛金控除。家計管理の節税ポイント。",
+      "references": [
+        {
+          "title": "社会保険料控除（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1130.htm"
+        }
+      ],
+      "tags": [
+        "社会保険料控除",
+        "国民年金基金",
+        "節税"
+      ],
+      "common_mistakes": [
+        "iDeCoを社会保険料控除と誤認"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-011",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "小規模企業共済等掛金控除",
+      "subtopic": "対象掛金",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "小規模企業共済等掛金控除の対象となる掛金として、最も適切な組み合わせはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "小規模企業共済掛金、確定拠出年金(企業型・個人型iDeCo)の本人拠出分、心身障害者扶養共済掛金",
+          "is_correct": true,
+          "explanation": "正解。3種類すべてが対象。それぞれ全額控除可で節税効果が大きい。"
+        },
+        {
+          "id": "B",
+          "text": "国民年金保険料、健康保険料も含む",
+          "is_correct": false,
+          "explanation": "それらは社会保険料控除。"
+        },
+        {
+          "id": "C",
+          "text": "個人年金保険料も対象である",
+          "is_correct": false,
+          "explanation": "個人年金保険料は生命保険料控除(個人年金保険料区分)。"
+        },
+        {
+          "id": "D",
+          "text": "対象は小規模企業共済掛金のみである",
+          "is_correct": false,
+          "explanation": "iDeCo・心身障害者扶養共済も含まれる。"
+        }
+      ],
+      "explanation": "小規模企業共済等掛金控除の対象: ①小規模企業共済(中小機構)、②確定拠出年金(企業型マッチング・iDeCo)、③心身障害者扶養共済。FP実務では小規模企業共済(月7万・年84万)+iDeCoのダブル節税は経営者の鉄板提案。",
+      "references": [
+        {
+          "title": "小規模企業共済等掛金控除（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm"
+        }
+      ],
+      "tags": [
+        "小規模企業共済",
+        "iDeCo",
+        "所得控除"
+      ],
+      "common_mistakes": [
+        "国民年金保険料も含むと誤解",
+        "個人年金保険料を含むと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-012",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "ふるさと納税",
+      "subtopic": "ワンストップ特例",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ふるさと納税のワンストップ特例制度に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "確定申告不要な給与所得者で、寄附先が5自治体以内の場合に利用可能。住民税のみから全額控除される",
+          "is_correct": true,
+          "explanation": "正解。要件: ①確定申告不要な給与所得者、②寄附先5自治体以内、③各自治体に申請書提出。所得税分相当も住民税から控除される。"
+        },
+        {
+          "id": "B",
+          "text": "寄附先が10自治体までならワンストップ特例が利用可能",
+          "is_correct": false,
+          "explanation": "5自治体以内が要件。"
+        },
+        {
+          "id": "C",
+          "text": "ワンストップ特例利用時は所得税・住民税の両方から控除される",
+          "is_correct": false,
+          "explanation": "住民税からのみ控除される(所得税分相当も住民税で控除)。"
+        },
+        {
+          "id": "D",
+          "text": "確定申告した場合もワンストップ特例は併用できる",
+          "is_correct": false,
+          "explanation": "確定申告した場合はワンストップ特例の効果は無効となる(全寄附を確定申告で再申告必要)。"
+        }
+      ],
+      "explanation": "ふるさと納税: 控除額=(寄附額−2,000円)が所得税(寄附金控除)+住民税(基本+特例分)から控除。ワンストップ特例(5自治体以内・確定申告不要)は住民税から一括控除。FP2級頻出かつ実務で必須の知識。",
+      "references": [
+        {
+          "title": "ふるさと納税（総務省）",
+          "url": "https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/about/"
+        }
+      ],
+      "tags": [
+        "ふるさと納税",
+        "ワンストップ特例",
+        "寄附金控除"
+      ],
+      "common_mistakes": [
+        "6自治体以上でも利用可と誤解",
+        "確定申告と併用可と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-013",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "住宅ローン控除",
+      "subtopic": "適用要件",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "2025年に新築住宅(認定長期優良住宅)を取得し入居した会社員Aさんの住宅ローン控除に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "借入金年末残高(限度額あり)×0.7%が最大13年間控除され、初年度は確定申告が必要(2年目以降は年末調整可)",
+          "is_correct": true,
+          "explanation": "正解。新築・買取再販の認定住宅等は限度額の高い枠が13年適用。初年度のみ確定申告必要。"
+        },
+        {
+          "id": "B",
+          "text": "控除率は1.0%である",
+          "is_correct": false,
+          "explanation": "2022年以降取得は0.7%(旧制度は1.0%)。"
+        },
+        {
+          "id": "C",
+          "text": "床面積40m²以上であれば所得制限なく適用できる",
+          "is_correct": false,
+          "explanation": "合計所得金額2,000万円以下が要件(40m²以上50m²未満は1,000万円以下)。"
+        },
+        {
+          "id": "D",
+          "text": "毎年確定申告が必要である",
+          "is_correct": false,
+          "explanation": "給与所得者は2年目以降、年末調整で控除可。"
+        }
+      ],
+      "explanation": "住宅ローン控除(2022年以降): 控除率0.7%×ローン残高。認定住宅は借入限度額が高く控除期間13年(新築・買取再販)。要件は床面積50m²以上(40〜50m²は所得1,000万以下)、合計所得2,000万以下、借入期間10年以上等。",
+      "references": [
+        {
+          "title": "住宅ローン控除（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1213.htm"
+        }
+      ],
+      "tags": [
+        "住宅ローン控除",
+        "認定長期優良住宅",
+        "年末調整"
+      ],
+      "common_mistakes": [
+        "控除率を1%のままと誤解",
+        "毎年確定申告と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-014",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "確定申告",
+      "subtopic": "申告義務",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "確定申告が必要な給与所得者の例として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "給与所得・退職所得以外に20万円超の所得がある",
+          "is_correct": true,
+          "explanation": "正解。給与1か所収入で給与外所得20万円超は申告必要。副業・不動産・株式譲渡(特定口座源泉あり以外)等が該当。"
+        },
+        {
+          "id": "B",
+          "text": "年末調整済みで給与収入500万円のみのサラリーマン",
+          "is_correct": false,
+          "explanation": "申告不要。"
+        },
+        {
+          "id": "C",
+          "text": "ふるさと納税を3自治体に行った給与所得者",
+          "is_correct": false,
+          "explanation": "ワンストップ特例で申告不要。"
+        },
+        {
+          "id": "D",
+          "text": "給与収入1,500万円の会社員で他に所得がない",
+          "is_correct": false,
+          "explanation": "2,000万円超で申告必要。1,500万円は不要。"
+        }
+      ],
+      "explanation": "給与所得者で確定申告が必要なケース: ①給与年収2,000万超、②給与1か所+他所得20万円超、③給与2か所以上+従たる給与20万円超、④医療費控除等で還付申告したい。FP2級では境界の20万・2,000万が頻出。",
+      "references": [
+        {
+          "title": "確定申告が必要な方（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/shinkoku/tebiki/2024/01/1_06.htm"
+        }
+      ],
+      "tags": [
+        "確定申告",
+        "給与所得者",
+        "20万円ルール"
+      ],
+      "common_mistakes": [
+        "給与1,500万円で申告必要と誤解",
+        "ワンストップ特例で確定申告必要と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-015",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "青色申告",
+      "subtopic": "特典",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "個人事業主の青色申告に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "事業所得・不動産所得・山林所得のある者は青色申告の承認申請をすることができ、複式簿記+e-Tax等の要件で最大65万円の青色申告特別控除が適用される",
+          "is_correct": true,
+          "explanation": "正解。青色申告特別控除は条件により65万・55万・10万円。複式簿記+貸借対照表+電子申告(またはe-Tax/電子帳簿保存)で65万円。"
+        },
+        {
+          "id": "B",
+          "text": "雑所得のみの個人も青色申告できる",
+          "is_correct": false,
+          "explanation": "雑所得のみは青色申告対象外。事業・不動産・山林のいずれかが必要。"
+        },
+        {
+          "id": "C",
+          "text": "青色申告特別控除は単式簿記でも65万円適用される",
+          "is_correct": false,
+          "explanation": "単式簿記は10万円控除。65万円は複式簿記+e-Tax(または電子帳簿保存)が要件。"
+        },
+        {
+          "id": "D",
+          "text": "青色専従者給与は税務署への届出なしに損金算入できる",
+          "is_correct": false,
+          "explanation": "事前届出が必要。"
+        }
+      ],
+      "explanation": "青色申告の特典: ①青色申告特別控除(最大65万)、②青色専従者給与(届出制で全額必要経費)、③純損失の3年繰越控除、④少額減価償却資産の即時償却等。事前承認申請が必要(原則3/15まで)。FP実務では個人事業主の節税の柱。",
+      "references": [
+        {
+          "title": "青色申告制度（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2070.htm"
+        }
+      ],
+      "tags": [
+        "青色申告",
+        "青色申告特別控除",
+        "青色専従者給与"
+      ],
+      "common_mistakes": [
+        "雑所得でも青色申告できると誤解",
+        "単式簿記で65万と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-016",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "源泉徴収",
+      "subtopic": "年末調整",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "給与所得者の年末調整で適用できない所得控除として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "医療費控除",
+          "is_correct": true,
+          "explanation": "正解。医療費控除・寄附金控除・雑損控除は年末調整不可で確定申告が必要。"
+        },
+        {
+          "id": "B",
+          "text": "扶養控除",
+          "is_correct": false,
+          "explanation": "年末調整可。"
+        },
+        {
+          "id": "C",
+          "text": "生命保険料控除",
+          "is_correct": false,
+          "explanation": "年末調整可。"
+        },
+        {
+          "id": "D",
+          "text": "社会保険料控除",
+          "is_correct": false,
+          "explanation": "年末調整可。"
+        }
+      ],
+      "explanation": "年末調整で適用不可の控除: ①医療費控除、②寄附金控除(ふるさと納税ワンストップは別)、③雑損控除、④初年度の住宅ローン控除。これらは確定申告で適用。FP実務で年末調整と確定申告の使い分けは必修。",
+      "references": [
+        {
+          "title": "年末調整（国税庁）",
+          "url": "https://www.nta.go.jp/users/gensen/nencho/index.htm"
+        }
+      ],
+      "tags": [
+        "年末調整",
+        "医療費控除",
+        "確定申告"
+      ],
+      "common_mistakes": [
+        "医療費控除を年末調整可と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-017",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "住民税",
+      "subtopic": "個人住民税の仕組み",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "個人住民税(所得割)に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "前年所得を基に翌年6月から翌々年5月にかけて課税される。標準税率は道府県民税4%+市町村民税6%=10%",
+          "is_correct": true,
+          "explanation": "正解。住民税は前年所得課税(賦課課税方式)、標準税率10%(府県4%+市町村6%)。所得税が現年所得課税なのと違い、退職時の翌年負担が発生。"
+        },
+        {
+          "id": "B",
+          "text": "所得税と同様、現年所得を基に課税される",
+          "is_correct": false,
+          "explanation": "住民税は前年所得課税。"
+        },
+        {
+          "id": "C",
+          "text": "標準税率は所得に応じた累進課税である",
+          "is_correct": false,
+          "explanation": "住民税所得割の標準税率は10%の比例税率(累進ではない)。所得税が累進。"
+        },
+        {
+          "id": "D",
+          "text": "住民税の基礎控除額は所得税と同じ48万円である",
+          "is_correct": false,
+          "explanation": "住民税の基礎控除は43万円(所得税より5万円低い)。"
+        }
+      ],
+      "explanation": "住民税: 前年所得課税、所得割10%(標準・比例税率)+均等割(数千円)。基礎控除等は所得税より低い(基礎43万・配偶者控除33万等)。退職翌年の住民税が無収入時に重くのしかかる『住民税後遺症』に注意。",
+      "references": [
+        {
+          "title": "個人住民税（総務省）",
+          "url": "https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/individual-inhabitant-tax.html"
+        }
+      ],
+      "tags": [
+        "住民税",
+        "前年所得課税",
+        "10%比例税率"
+      ],
+      "common_mistakes": [
+        "現年所得課税と誤解",
+        "累進税率と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-018",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "法人税",
+      "subtopic": "税率と中小法人特例",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "中小法人(資本金1億円以下・年所得800万円超)の法人税率に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "年800万円以下の所得部分は軽減税率15%、超過分は23.2%が適用される",
+          "is_correct": true,
+          "explanation": "正解。中小法人(資本金1億円以下等)は800万円以下=15%軽減、超過部分23.2%。大法人は一律23.2%。"
+        },
+        {
+          "id": "B",
+          "text": "中小法人の法人税率は一律23.2%である",
+          "is_correct": false,
+          "explanation": "800万以下部分は軽減税率15%適用。"
+        },
+        {
+          "id": "C",
+          "text": "中小法人の法人税率は一律10%である",
+          "is_correct": false,
+          "explanation": "10%という単一税率は存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "資本金10億円以下の法人はすべて中小法人扱いとなる",
+          "is_correct": false,
+          "explanation": "資本金1億円以下が中小法人の境界。10億円は大法人扱い。"
+        }
+      ],
+      "explanation": "法人税率: 大法人(資本金1億円超)=23.2%、中小法人=年800万以下15%+800万超23.2%。実効税率は地方法人税・住民税・事業税を含めて約30%。中小企業者等の少額減価償却資産の損金算入特例(30万円未満)も中小法人特例。",
+      "references": [
+        {
+          "title": "法人税率（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5759.htm"
+        }
+      ],
+      "tags": [
+        "法人税",
+        "中小法人",
+        "軽減税率"
+      ],
+      "common_mistakes": [
+        "軽減税率の存在を知らない",
+        "境界となる資本金額を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-019",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "役員報酬",
+      "subtopic": "定期同額給与",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "X社(3月決算法人)の役員報酬の損金算入に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "定期同額給与は事業年度開始から3か月以内に決定し、その後の事業年度内は原則同額で支給する必要がある",
+          "is_correct": true,
+          "explanation": "正解。定期同額給与は期首3か月以内に株主総会等で決定し、以後は同額継続が要件。期中の自由な変更は損金不算入リスク。"
+        },
+        {
+          "id": "B",
+          "text": "役員報酬は毎月任意に増減できる",
+          "is_correct": false,
+          "explanation": "毎月の任意変更は定期同額の要件を満たさず損金不算入の可能性。"
+        },
+        {
+          "id": "C",
+          "text": "事前確定届出給与は届出不要で支給できる",
+          "is_correct": false,
+          "explanation": "事前に税務署への届出が必要(株主総会決議から1か月以内等)。"
+        },
+        {
+          "id": "D",
+          "text": "役員賞与はすべて損金算入できる",
+          "is_correct": false,
+          "explanation": "原則損金不算入(定期同額給与・事前確定届出給与・利益連動給与のいずれかに該当しない場合)。"
+        }
+      ],
+      "explanation": "役員給与の損金算入: ①定期同額給与(期首3か月以内決定・以後同額)、②事前確定届出給与(届出制)、③利益連動給与(同族会社以外)。CLAUDE.mdに沿ってX社経営の中核論点。期中変更には経営状況著しい悪化等の正当事由が必要。",
+      "references": [
+        {
+          "title": "役員給与（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5202.htm"
+        }
+      ],
+      "tags": [
+        "役員報酬",
+        "定期同額給与",
+        "事前確定届出給与",
+        "X社"
+      ],
+      "common_mistakes": [
+        "期中変更が自由と誤解",
+        "事前確定給与が届出不要と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-020",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "減価償却",
+      "subtopic": "中小企業特例",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "中小企業者等が事業用に取得した減価償却資産に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "30万円未満の少額減価償却資産は、年間合計300万円までを限度に取得時に全額損金算入できる(中小企業者等の少額減価償却資産特例)",
+          "is_correct": true,
+          "explanation": "正解。資本金1億円以下等の中小企業者等は、30万円未満の資産を年300万円までその事業年度の損金算入できる(措置法特例)。"
+        },
+        {
+          "id": "B",
+          "text": "10万円未満の資産は法定耐用年数で減価償却する必要がある",
+          "is_correct": false,
+          "explanation": "10万円未満は少額減価償却資産として一時に損金算入(消耗品費)。"
+        },
+        {
+          "id": "C",
+          "text": "30万円未満の資産はすべての法人が即時償却できる",
+          "is_correct": false,
+          "explanation": "中小企業者等のみの特例。大法人は対象外。"
+        },
+        {
+          "id": "D",
+          "text": "20万円未満の一括償却資産は5年で均等償却する",
+          "is_correct": false,
+          "explanation": "3年で均等償却(月数按分なし)。"
+        }
+      ],
+      "explanation": "減価償却の選択肢: ①10万円未満=即時損金、②20万円未満=一括償却資産(3年均等)、③30万円未満=中小企業者等の少額減価償却資産特例(年300万限度・即時損金)、④それ以上=通常の減価償却。FP実務での節税基本知識。",
+      "references": [
+        {
+          "title": "中小企業者等の少額減価償却資産（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5408.htm"
+        }
+      ],
+      "tags": [
+        "減価償却",
+        "少額減価償却資産",
+        "中小企業特例"
+      ],
+      "common_mistakes": [
+        "10万円未満の取扱いを誤る",
+        "全法人で適用可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-021",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "交際費",
+      "subtopic": "中小法人の損金算入",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "資本金1億円以下の中小法人の交際費等の損金算入に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "年800万円までの定額控除限度額か、接待飲食費の50%損金算入かを選択できる",
+          "is_correct": true,
+          "explanation": "正解。中小法人は『定額控除800万』と『飲食費50%』の選択制。通常は定額控除のほうが有利。"
+        },
+        {
+          "id": "B",
+          "text": "中小法人の交際費は全額損金算入可能",
+          "is_correct": false,
+          "explanation": "全額損金は不可。年800万円まで等の制限がある。"
+        },
+        {
+          "id": "C",
+          "text": "1人5,000円以下の飲食費も交際費として課税される",
+          "is_correct": false,
+          "explanation": "1人5,000円以下の飲食費(従業員等を含まない取引先等との飲食)は交際費から除外される。"
+        },
+        {
+          "id": "D",
+          "text": "交際費はすべて損金不算入である",
+          "is_correct": false,
+          "explanation": "中小法人は800万円まで損金算入可。"
+        }
+      ],
+      "explanation": "交際費の損金算入(中小法人): ①定額控除限度額800万円、または②接待飲食費の50%、いずれか有利な方を選択。さらに『1人5,000円以下の飲食費』は交際費から除外(税務上は会議費等)。FP実務でも経費計上の重要論点。",
+      "references": [
+        {
+          "title": "交際費等の損金不算入（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5265.htm"
+        }
+      ],
+      "tags": [
+        "交際費",
+        "中小法人",
+        "5,000円基準"
+      ],
+      "common_mistakes": [
+        "全額損金可と誤解",
+        "5,000円ルールを知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-022",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "受取配当金",
+      "subtopic": "益金不算入",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "法人が受け取る配当金の益金不算入に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "完全子法人(100%保有)からの配当は全額益金不算入、関連法人(1/3超)も全額(負債利子控除あり)、その他5%超は50%、5%以下は20%が益金不算入",
+          "is_correct": true,
+          "explanation": "正解。持株比率に応じて益金不算入割合が異なる(完全子法人/関連法人/その他/非支配)。"
+        },
+        {
+          "id": "B",
+          "text": "配当金はすべて益金算入される",
+          "is_correct": false,
+          "explanation": "二重課税排除のため一定割合益金不算入。"
+        },
+        {
+          "id": "C",
+          "text": "完全子法人からの配当は50%益金不算入である",
+          "is_correct": false,
+          "explanation": "完全子法人配当は全額(100%)益金不算入。"
+        },
+        {
+          "id": "D",
+          "text": "外国法人からの配当も同様に益金不算入となる",
+          "is_correct": false,
+          "explanation": "外国子会社配当の益金不算入は別制度(95%相当額不算入等)で要件が異なる。"
+        }
+      ],
+      "explanation": "受取配当等の益金不算入(法人税): ①完全子法人(100%保有)=100%、②関連法人株式(1/3超〜100%未満)=100%(負債利子控除あり)、③その他株式(5%超1/3以下)=50%、④非支配目的(5%以下)=20%。法人間配当の二重課税排除の仕組み。",
+      "references": [
+        {
+          "title": "受取配当等の益金不算入（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5250.htm"
+        }
+      ],
+      "tags": [
+        "受取配当金",
+        "益金不算入",
+        "持株比率"
+      ],
+      "common_mistakes": [
+        "全額益金算入と誤解",
+        "持株比率と不算入割合を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-023",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "消費税",
+      "subtopic": "課税事業者",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "消費税の課税事業者の判定に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "基準期間(個人は前々年・法人は前々事業年度)の課税売上高が1,000万円超の場合、課税事業者となる",
+          "is_correct": true,
+          "explanation": "正解。基準期間の課税売上高が1,000万超で当期は課税事業者。基準期間が無い新設法人は資本金1,000万以上等で課税事業者となる。"
+        },
+        {
+          "id": "B",
+          "text": "前年の課税売上高が1,000万円超の場合に課税事業者となる",
+          "is_correct": false,
+          "explanation": "基準期間=2期前の判定。前年は『特定期間』要件で別途判定(課税売上または給与額1,000万超)。"
+        },
+        {
+          "id": "C",
+          "text": "課税売上高にかかわらず、設立後すべての事業者が課税事業者である",
+          "is_correct": false,
+          "explanation": "1,000万円以下は原則免税事業者(インボイス登録時を除く)。"
+        },
+        {
+          "id": "D",
+          "text": "個人事業主は売上高にかかわらず常に免税事業者である",
+          "is_correct": false,
+          "explanation": "個人も売上1,000万超で課税事業者。"
+        }
+      ],
+      "explanation": "消費税課税事業者判定: ①基準期間(2期前)の課税売上1,000万円超→課税、②基準期間なし新設法人で資本金1,000万以上→課税、③特定期間(前期上半期)1,000万超→課税。免税事業者でもインボイス発行登録すれば課税事業者となる。",
+      "references": [
+        {
+          "title": "課税事業者の判定（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6501.htm"
+        }
+      ],
+      "tags": [
+        "消費税",
+        "課税事業者",
+        "基準期間"
+      ],
+      "common_mistakes": [
+        "基準期間と前年を混同",
+        "新設法人の特例を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-024",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "インボイス制度",
+      "subtopic": "適格請求書",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "2023年10月開始のインボイス制度(適格請求書等保存方式)に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "課税事業者は適格請求書発行事業者の登録を受けることでインボイスを発行でき、インボイスを保存していれば仕入税額控除を適用できる",
+          "is_correct": true,
+          "explanation": "正解。インボイス発行には登録(税務署)が必要で、買手側はインボイス保存により仕入税額控除可能。免税事業者からの仕入は経過措置あり(2029年9月末まで段階的縮小)。"
+        },
+        {
+          "id": "B",
+          "text": "免税事業者でもインボイスを発行できる",
+          "is_correct": false,
+          "explanation": "適格請求書発行事業者登録は課税事業者のみ可能(登録すれば免税事業者→課税事業者となる)。"
+        },
+        {
+          "id": "C",
+          "text": "インボイスがなくても仕入税額控除は無制限で適用可能である",
+          "is_correct": false,
+          "explanation": "原則インボイス保存が要件。経過措置(免税事業者からは80%・50%等)はあるが恒久ではない。"
+        },
+        {
+          "id": "D",
+          "text": "免税事業者からの仕入は2024年から完全に控除不可となった",
+          "is_correct": false,
+          "explanation": "経過措置で2026.9まで80%、2026.10〜2029.9まで50%控除可能。"
+        }
+      ],
+      "explanation": "インボイス制度: 適格請求書発行事業者(登録番号取得)からの請求書のみで仕入税額控除可。免税事業者は登録不可(課税事業者選択で登録可)。経過措置(80%→50%→0%段階削減)。FP実務でも個人事業主・中小企業に大きな影響。",
+      "references": [
+        {
+          "title": "インボイス制度（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice.htm"
+        }
+      ],
+      "tags": [
+        "インボイス制度",
+        "適格請求書",
+        "仕入税額控除"
+      ],
+      "common_mistakes": [
+        "免税事業者がインボイス発行可と誤解",
+        "経過措置を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-025",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "簡易課税",
+      "subtopic": "みなし仕入率",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "消費税の簡易課税制度に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "基準期間の課税売上高5,000万円以下の事業者が事前届出により選択でき、業種別のみなし仕入率で仕入税額控除を計算する",
+          "is_correct": true,
+          "explanation": "正解。事前届出+基準期間5,000万円以下が要件。第1種(卸売)90%、第2種(小売)80%、第3種(製造業等)70%、第4種(その他)60%、第5種(サービス)50%、第6種(不動産)40%。"
+        },
+        {
+          "id": "B",
+          "text": "事前届出なしで自動適用される",
+          "is_correct": false,
+          "explanation": "適用には消費税簡易課税制度選択届出書を事前に提出する必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "課税売上高1億円以下なら簡易課税を選択できる",
+          "is_correct": false,
+          "explanation": "5,000万円以下が要件。"
+        },
+        {
+          "id": "D",
+          "text": "簡易課税は2年で自由に本則課税に変更できる",
+          "is_correct": false,
+          "explanation": "原則2年は継続適用が必要(2年縛り)。"
+        }
+      ],
+      "explanation": "簡易課税制度: 売上高に業種別みなし仕入率を乗じて仕入税額を計算。事前届出+基準期間5,000万円以下要件。2年継続義務。インボイス制度下でもみなし仕入率が使えるため、仕入が少ないSaaS等のサービス業者には有利な選択肢。",
+      "references": [
+        {
+          "title": "簡易課税制度（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6505.htm"
+        }
+      ],
+      "tags": [
+        "簡易課税",
+        "みなし仕入率",
+        "消費税"
+      ],
+      "common_mistakes": [
+        "事前届出不要と誤解",
+        "売上高基準を1億と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-026",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "事業所得",
+      "subtopic": "必要経費",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "事業所得の必要経費として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "事業の用に供した固定資産の減価償却費",
+          "is_correct": true,
+          "explanation": "正解。事業用減価償却資産の償却費は必要経費の典型例。"
+        },
+        {
+          "id": "B",
+          "text": "事業主本人の所得税の支払額",
+          "is_correct": false,
+          "explanation": "所得税は租税公課の中でも必要経費にならない(事業税は必要経費)。"
+        },
+        {
+          "id": "C",
+          "text": "事業主自身の給与",
+          "is_correct": false,
+          "explanation": "個人事業主の事業主自身への給与は経費にできない(法人成りの大きな違い)。"
+        },
+        {
+          "id": "D",
+          "text": "事業主の生活費",
+          "is_correct": false,
+          "explanation": "私的支出は必要経費とならない。事業との関連性が必要。"
+        }
+      ],
+      "explanation": "事業所得の必要経費: 売上原価、減価償却費、給与・賃借料・水道光熱費(事業按分)等。NG項目: ①事業主自身への給与、②所得税・住民税本税、③私的生活費、④罰金・科料(事業税は経費可)。事業主の家事按分の正確性が重要。",
+      "references": [
+        {
+          "title": "必要経費（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2210.htm"
+        }
+      ],
+      "tags": [
+        "事業所得",
+        "必要経費",
+        "減価償却費"
+      ],
+      "common_mistakes": [
+        "所得税を経費と誤解",
+        "事業主自身への給与を経費と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-027",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "不動産所得",
+      "subtopic": "事業的規模",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "不動産所得の事業的規模(5棟10室基準)に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "貸間・アパート等は10室以上、独立家屋は5棟以上を概ねの基準とし、事業的規模なら青色申告特別控除65万円や青色専従者給与の適用可能性が広がる",
+          "is_correct": true,
+          "explanation": "正解。事業的規模であれば青色申告特別控除65万、専従者給与控除、回収不能の貸倒損失全額控除等の特典がある。"
+        },
+        {
+          "id": "B",
+          "text": "1室でも貸付があれば事業的規模となる",
+          "is_correct": false,
+          "explanation": "5棟10室基準を満たすか実質的に事業として行われている必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "事業的規模であっても青色申告は不可",
+          "is_correct": false,
+          "explanation": "不動産所得も青色申告対象。"
+        },
+        {
+          "id": "D",
+          "text": "事業的規模でなければ青色申告特別控除は適用されない",
+          "is_correct": false,
+          "explanation": "事業的規模でなくても10万円控除は適用可能(65万は事業的規模が要件)。"
+        }
+      ],
+      "explanation": "不動産所得: 5棟10室基準で事業的規模を判定。事業的規模の特典→青色申告特別控除65万・青色専従者給与・貸倒損失全額。事業的規模未満でも青色申告10万円控除は可能。FP実務で不動産投資の規模拡大判断に重要。",
+      "references": [
+        {
+          "title": "不動産所得（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1370.htm"
+        }
+      ],
+      "tags": [
+        "不動産所得",
+        "事業的規模",
+        "5棟10室"
+      ],
+      "common_mistakes": [
+        "1室でも事業的規模と誤解",
+        "青色申告10万も適用不可と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-028",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "減価償却",
+      "subtopic": "中古資産の簡便法",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "X社が法人で築28年の木造アパート(法定耐用年数22年)を取得した場合の減価償却の耐用年数として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "法定耐用年数を全て経過しているため、22年×20%=4年(端数切捨)で償却できる",
+          "is_correct": true,
+          "explanation": "正解。法定耐用年数を経過した中古資産は『法定耐用年数×20%』。22×0.2=4.4→4年(端数切捨)。木造築22年超は4年で短期償却可能。"
+        },
+        {
+          "id": "B",
+          "text": "新築と同じ22年で償却する必要がある",
+          "is_correct": false,
+          "explanation": "中古資産は簡便法で短縮可能。"
+        },
+        {
+          "id": "C",
+          "text": "5年均等償却が義務付けられる",
+          "is_correct": false,
+          "explanation": "5年均等は別の規定。中古資産簡便法は耐用年数×20%。"
+        },
+        {
+          "id": "D",
+          "text": "土地と建物を区分せず一括償却する",
+          "is_correct": false,
+          "explanation": "土地は減価償却不可、建物は耐用年数で償却が原則。区分必要。"
+        }
+      ],
+      "explanation": "中古減価償却資産の簡便法耐用年数: ①全部経過=法定×20%、②一部経過=法定−経過年数+経過年数×20%。木造耐用22年(法定)を経過した築28年中古→22×20%=4年。CLAUDE.mdに沿う重要論点で、不動産投資の節税スキームの基礎。",
+      "references": [
+        {
+          "title": "中古資産の耐用年数（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5404.htm"
+        }
+      ],
+      "tags": [
+        "減価償却",
+        "中古資産",
+        "簡便法",
+        "X社"
+      ],
+      "common_mistakes": [
+        "新築と同じ年数で償却",
+        "5年均等と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-029",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "雑所得",
+      "subtopic": "公的年金",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "65歳以上で年金収入250万円・他の所得が2,000万円以下のAさんの公的年金等控除後の雑所得の金額として、最も適切なものはどれか(2025年分)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "140万円",
+          "is_correct": true,
+          "explanation": "正解。65歳以上・他所得1,000万円以下は330万円以下=110万円控除。250−110=140万円。"
+        },
+        {
+          "id": "B",
+          "text": "150万円",
+          "is_correct": false,
+          "explanation": "控除額の計算誤り。"
+        },
+        {
+          "id": "C",
+          "text": "250万円",
+          "is_correct": false,
+          "explanation": "公的年金等控除を引いていない。"
+        },
+        {
+          "id": "D",
+          "text": "60万円",
+          "is_correct": false,
+          "explanation": "65歳未満の控除額(60万円)で計算した誤り。"
+        }
+      ],
+      "explanation": "公的年金等控除(65歳以上・他所得1,000万円以下): 〜330万=110万、〜410万=収入×25%+27.5万、〜770万=収入×15%+68.5万、〜1,000万=収入×5%+145.5万、1,000万超=195.5万。65歳未満は控除額が低い(最低60万)。",
+      "references": [
+        {
+          "title": "公的年金等の課税（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1600.htm"
+        }
+      ],
+      "tags": [
+        "雑所得",
+        "公的年金等控除",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "65歳未満の控除額を適用",
+        "他所得段階での区分を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-030",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "所得税の税率",
+      "subtopic": "速算表",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "課税所得金額500万円のAさんの所得税額(復興特別所得税を含まない)はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "57.25万円",
+          "is_correct": true,
+          "explanation": "正解。速算表より500万×20%−42.75万=100−42.75=57.25万円。"
+        },
+        {
+          "id": "B",
+          "text": "100万円",
+          "is_correct": false,
+          "explanation": "速算表の控除額を引いていない。"
+        },
+        {
+          "id": "C",
+          "text": "50万円",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        },
+        {
+          "id": "D",
+          "text": "115万円",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        }
+      ],
+      "explanation": "所得税速算表(2025): 〜195万=5%、〜330万=10%−9.75万、〜695万=20%−42.75万、〜900万=23%−63.6万、〜1,800万=33%−153.6万、〜4,000万=40%−279.6万、4,000万超=45%−479.6万。さらに復興特別所得税2.1%上乗せ。FP2級頻出。",
+      "references": [
+        {
+          "title": "所得税の税率（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm"
+        }
+      ],
+      "tags": [
+        "所得税",
+        "速算表",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "速算表の控除額を忘れる",
+        "税率の階層を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-031",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "復興特別所得税",
+      "subtopic": "計算",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "復興特別所得税の税率として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "基準所得税額×2.1%",
+          "is_correct": true,
+          "explanation": "正解。基準所得税額(算出された所得税額)に2.1%を乗じて加算する。2037年まで継続予定。"
+        },
+        {
+          "id": "B",
+          "text": "課税所得金額×2.1%",
+          "is_correct": false,
+          "explanation": "課税所得ではなく『基準所得税額(算出税額)』×2.1%。"
+        },
+        {
+          "id": "C",
+          "text": "基準所得税額×3.0%",
+          "is_correct": false,
+          "explanation": "税率は2.1%。"
+        },
+        {
+          "id": "D",
+          "text": "総所得金額×1.0%",
+          "is_correct": false,
+          "explanation": "計算ベースも税率も誤り。"
+        }
+      ],
+      "explanation": "復興特別所得税: 2013〜2037年(25年間)、基準所得税額×2.1%を所得税と同時に納付。源泉徴収税率にも反映(20.42%、20.315%等)。基準所得税額=税額控除前の所得税額から外国税額控除等を差し引いた額が一般的。",
+      "references": [
+        {
+          "title": "復興特別所得税（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shotoku/fukko/index.htm"
+        }
+      ],
+      "tags": [
+        "復興特別所得税",
+        "2.1%"
+      ],
+      "common_mistakes": [
+        "課税所得に乗じると誤解",
+        "税率を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-032",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "確定申告期限",
+      "subtopic": "申告納付",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "個人の所得税の確定申告期限と納付期限の組み合わせとして、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "申告:翌年2月16日〜3月15日、納付:3月15日まで(振替納税は4月)",
+          "is_correct": true,
+          "explanation": "正解。原則3/15まで申告・納付。振替納税利用時は4月中旬の振替日が納付日。"
+        },
+        {
+          "id": "B",
+          "text": "申告:5月31日まで",
+          "is_correct": false,
+          "explanation": "それは法人税(3月決算法人)等の期限。"
+        },
+        {
+          "id": "C",
+          "text": "申告:翌年1月31日まで",
+          "is_correct": false,
+          "explanation": "別の期限。"
+        },
+        {
+          "id": "D",
+          "text": "申告期限と納付期限はない",
+          "is_correct": false,
+          "explanation": "期限は厳格に定められている。"
+        }
+      ],
+      "explanation": "個人所得税の確定申告: 翌年2/16〜3/15。納付期限も3/15(申告と同日)。振替納税申請者は4月中旬まで猶予。延納(1/2以上を3/15・残りを5/31)も可能。期限後申告には無申告加算税・延滞税等。",
+      "references": [
+        {
+          "title": "確定申告期限（国税庁）",
+          "url": "https://www.nta.go.jp/"
+        }
+      ],
+      "tags": [
+        "確定申告",
+        "申告期限",
+        "納付期限"
+      ],
+      "common_mistakes": [
+        "法人税期限と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-033",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "事業税",
+      "subtopic": "個人事業税",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "個人事業税に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "事業所得・不動産所得から事業主控除290万円を差し引いた所得に税率3〜5%を乗じて課税される",
+          "is_correct": true,
+          "explanation": "正解。法定業種に対し290万円の事業主控除後に3〜5%。文筆業・芸術家等は法定業種外で課税対象外。"
+        },
+        {
+          "id": "B",
+          "text": "事業主控除はなく所得全額に課税される",
+          "is_correct": false,
+          "explanation": "290万円の事業主控除がある。"
+        },
+        {
+          "id": "C",
+          "text": "全ての職業に課税される",
+          "is_correct": false,
+          "explanation": "法定業種(70業種)のみに課税。文筆業・画家等は対象外。"
+        },
+        {
+          "id": "D",
+          "text": "個人事業税は所得税の必要経費にならない",
+          "is_correct": false,
+          "explanation": "個人事業税は事業所得・不動産所得の必要経費に算入できる。"
+        }
+      ],
+      "explanation": "個人事業税: 都道府県税、法定70業種に対し3〜5%。事業主控除290万円(年290万円以下なら課税ゼロ)。文筆業・芸術家・通訳・翻訳家等は法定業種外。所得税では必要経費算入可。FP実務で個人と法人の比較に重要。",
+      "references": [
+        {
+          "title": "個人事業税",
+          "url": "https://www.tax.metro.tokyo.lg.jp/kazei/kojin_jigyo.html"
+        }
+      ],
+      "tags": [
+        "個人事業税",
+        "事業主控除",
+        "法定業種"
+      ],
+      "common_mistakes": [
+        "事業主控除を知らない",
+        "全業種課税と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-034",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "法人と個人の比較",
+      "subtopic": "M&A税務",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "X社代表が、保有する非上場株式(B社株式)をM&Aで売却することを検討している。個人売主の場合と法人売主の場合の課税の違いとして、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "個人は譲渡益に申告分離課税20.315%(復興税込)、法人は通常の法人税率(実効税率約30%)で課税される",
+          "is_correct": true,
+          "explanation": "正解。個人売主は譲渡所得・申告分離20.315%、法人売主は通常の法人所得として法人税(地方税合算で実効約30%)。M&A戦略で売主の主体選択は重要。"
+        },
+        {
+          "id": "B",
+          "text": "個人・法人とも同じ税率で課税される",
+          "is_correct": false,
+          "explanation": "課税方式と税率が異なる。"
+        },
+        {
+          "id": "C",
+          "text": "個人の株式譲渡益は累進課税される",
+          "is_correct": false,
+          "explanation": "上場・非上場問わず申告分離課税で20.315%(株式譲渡所得)。"
+        },
+        {
+          "id": "D",
+          "text": "個人売主の場合は非課税である",
+          "is_correct": false,
+          "explanation": "譲渡益には20.315%課税される。"
+        }
+      ],
+      "explanation": "M&A売却益課税: ①個人売主=申告分離20.315%(株式譲渡所得)、②法人売主=法人税実効税率約30%。CLAUDE.mdに沿うX社の中核論点。法人売主は損益通算・繰越欠損金活用可、個人売主は税率有利。EBITDAマルチプルでの売却対価設計と税務戦略は連動。",
+      "references": [
+        {
+          "title": "株式等譲渡益課税（国税庁）",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1463.htm"
+        }
+      ],
+      "tags": [
+        "M&A",
+        "株式譲渡益",
+        "個人と法人",
+        "X社"
+      ],
+      "common_mistakes": [
+        "個人も累進課税と誤解",
+        "個人非課税と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-tax-035",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tax",
+        "name": "タックスプランニング",
+        "weight_percent": 17
+      },
+      "topic": "所得分散",
+      "subtopic": "個人法人の最適化",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "X社代表(個人事業所得2,000万円相当の事業)が、税務最適化のため法人成りを検討している。FPアドバイスとして、最も合理的なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "事業を法人化し、役員報酬を給与所得控除を活用できる水準に設定、残余利益を法人留保しつつ小規模企業共済+iDeCoで個人の節税枠を最大化",
+          "is_correct": true,
+          "explanation": "正解。法人税率(実効30%)<個人累進(最高55%)を活用。給与所得控除でさらに節税、共済・iDeCoで所得控除を積み上げる。法人成りの典型的最適化スキーム。"
+        },
+        {
+          "id": "B",
+          "text": "個人事業のままで全額をそのまま所得計上する",
+          "is_correct": false,
+          "explanation": "高所得時は累進課税で不利。法人成りで実効税率を下げる選択肢がある。"
+        },
+        {
+          "id": "C",
+          "text": "法人化したら全利益を役員賞与として個人に支給",
+          "is_correct": false,
+          "explanation": "役員賞与は原則損金不算入で逆効果。"
+        },
+        {
+          "id": "D",
+          "text": "法人化し、家族を全員無給で従業員にする",
+          "is_correct": false,
+          "explanation": "適切な労働対価としての給与設計+専従者控除/役員報酬の活用が合理的。無給で家族労働は労働法上の問題もある。"
+        }
+      ],
+      "explanation": "法人成りの税務メリット: ①法人税実効税率<個人累進(高所得帯)、②給与所得控除の活用、③家族への所得分散、④小規模企業共済+iDeCo+生命保険等の節税ツール拡大、⑤退職金制度。デメリットは社会保険負担・運営コスト。CLAUDE.mdに沿うX社核心論点。",
+      "references": [
+        {
+          "title": "法人成りの税務（中小企業庁）",
+          "url": "https://www.chusho.meti.go.jp/"
+        }
+      ],
+      "tags": [
+        "法人成り",
+        "所得分散",
+        "節税",
+        "X社"
+      ],
+      "common_mistakes": [
+        "役員賞与で損金にできると誤解",
+        "家族労働の対価設計を軽視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-fp2-gen",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

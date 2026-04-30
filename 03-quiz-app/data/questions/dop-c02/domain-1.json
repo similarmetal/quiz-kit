@@ -1,0 +1,871 @@
+{
+  "exam_code": "dop-c02",
+  "exam_name": "AWS Certified DevOps Engineer – Professional",
+  "version": "2026.04",
+  "total_questions": 30,
+  "domains": [
+    {
+      "id": "domain-1",
+      "name": "SDLC Automation",
+      "weight_percent": 22,
+      "question_count": 30
+    }
+  ],
+  "questions": [
+    {
+      "id": "dop-c02-domain1-001",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodePipeline",
+      "subtopic": "Pipeline structure",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "AWS CodePipeline のパイプラインは複数の Stage で構成される。各 Stage 内で並列または直列に実行できる単位は次のうちどれか？",
+      "options": [
+        {"id": "A", "text": "Task", "is_correct": false, "explanation": "Task は Step Functions の構成要素であり、CodePipeline の構造単位ではない。"},
+        {"id": "B", "text": "Action", "is_correct": true, "explanation": "正解。CodePipeline の Stage は Action から構成され、Action は runOrder により直列・並列を制御できる。"},
+        {"id": "C", "text": "Job", "is_correct": false, "explanation": "Job は CodeBuild や GitHub Actions の用語。CodePipeline では Action が正しい用語。"},
+        {"id": "D", "text": "Step", "is_correct": false, "explanation": "Step は Step Functions や CloudFormation の用語であり、CodePipeline の構造単位ではない。"}
+      ],
+      "explanation": "CodePipeline の構造は Pipeline > Stage > Action の三層。Action には Source, Build, Test, Deploy, Approval, Invoke の6カテゴリがあり、runOrder 値で同じ Stage 内の実行順序を制御する。同一 runOrder の Action は並列実行される。",
+      "references": [
+        {"title": "CodePipeline concepts", "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html"}
+      ],
+      "tags": ["codepipeline", "pipeline-structure", "fundamentals"],
+      "common_mistakes": [
+        "Task や Step などの他サービス用語と混同する",
+        "Stage 内で順序制御ができないと誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-002",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeBuild",
+      "subtopic": "buildspec phases",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "CodeBuild の buildspec.yml には複数のフェーズがある。次のうち、build フェーズが失敗してもコマンドが実行されるフェーズはどれか？",
+      "options": [
+        {"id": "A", "text": "install", "is_correct": false, "explanation": "install フェーズは build より前に実行されるため、build 失敗の影響は受けないが「失敗しても実行される」という性質ではなく単に先行実行されるだけ。"},
+        {"id": "B", "text": "pre_build", "is_correct": false, "explanation": "pre_build フェーズも build より前なので失敗の影響を受けないだけで、post_build のような特別な仕様はない。"},
+        {"id": "C", "text": "post_build", "is_correct": true, "explanation": "正解。post_build は build フェーズが失敗してもデフォルトで実行される。クリーンアップやログ送信に使う設計。"},
+        {"id": "D", "text": "finally", "is_correct": false, "explanation": "buildspec.yml には finally というフェーズは存在しない。各フェーズに finally サブセクションはあるが、これはトップレベルフェーズ名ではない。"}
+      ],
+      "explanation": "buildspec のフェーズは install → pre_build → build → post_build の順に実行される。post_build は build 失敗時もデフォルトで実行されるため、ECR への push 失敗時のログ送信や成果物の整理に使える。各フェーズには on-failure 属性 (ABORT/CONTINUE) と finally サブセクションを定義可能。",
+      "references": [
+        {"title": "CodeBuild buildspec reference", "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html"}
+      ],
+      "tags": ["codebuild", "buildspec", "phases", "fundamentals"],
+      "common_mistakes": [
+        "post_build は build 失敗時に実行されないと誤解する",
+        "finally というトップレベルフェーズが存在すると思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-003",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeDeploy",
+      "subtopic": "Deployment types",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "CodeDeploy の EC2/On-Premises コンピュートプラットフォームでサポートされているデプロイタイプは次のうちどれか？",
+      "options": [
+        {"id": "A", "text": "In-place デプロイのみ", "is_correct": false, "explanation": "EC2/On-Premises では In-place に加え Blue/Green もサポートされる。"},
+        {"id": "B", "text": "Blue/Green デプロイのみ", "is_correct": false, "explanation": "EC2/On-Premises は Blue/Green も使えるが、In-place もサポートされている。Blue/Green のみ可能なのは Lambda と ECS。"},
+        {"id": "C", "text": "In-place デプロイと Blue/Green デプロイ", "is_correct": true, "explanation": "正解。EC2/On-Premises は両方をサポート。Lambda と ECS は Blue/Green (linear/canary/all-at-once) のみサポート。"},
+        {"id": "D", "text": "Rolling デプロイと Canary デプロイ", "is_correct": false, "explanation": "Rolling は CodeDeploy のデプロイタイプ名としては存在しない (Elastic Beanstalk の用語)。Canary はトラフィックシフト方式の名称であり、デプロイタイプではない。"}
+      ],
+      "explanation": "CodeDeploy のデプロイタイプはコンピュートプラットフォームで決まる。EC2/On-Premises: In-place または Blue/Green。Lambda: Canary/Linear/AllAtOnce のトラフィックシフト (実体は Blue/Green)。ECS: Blue/Green (Canary/Linear/AllAtOnce)。",
+      "references": [
+        {"title": "CodeDeploy deployment types", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html#welcome-deployment-overview"}
+      ],
+      "tags": ["codedeploy", "deployment-types", "ec2", "blue-green", "in-place"],
+      "common_mistakes": [
+        "Rolling と In-place を混同する",
+        "Lambda でも In-place が使えると誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-004",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodePipeline",
+      "subtopic": "Manual approval",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "ある SaaS 企業の DevOps チームは、本番環境へのデプロイ前にプロダクトマネージャーの承認を必須にしたい。CodePipeline で最も簡潔に実現する方法は？",
+      "options": [
+        {"id": "A", "text": "Lambda Invoke Action でプロダクトマネージャーにメールを送り、Lambda が完了するまで待機させる", "is_correct": false, "explanation": "Lambda の Invoke Action はカスタム処理に使えるが、人間の承認待ちの組み込み機能がない。Manual Approval Action を使うのが標準。"},
+        {"id": "B", "text": "本番デプロイ Stage の前に Manual Approval Action を配置し、SNS トピックでプロダクトマネージャーに通知する", "is_correct": true, "explanation": "正解。CodePipeline は Manual Approval Action を標準提供しており、SNS 通知により承認者にレビュー依頼を送れる。これが AWS 推奨パターン。"},
+        {"id": "C", "text": "EventBridge ルールで Step Functions を起動し、人間の承認を待つステートマシンを構築する", "is_correct": false, "explanation": "Step Functions の callback パターンで実装可能だが、CodePipeline 標準機能で済むので過剰実装。"},
+        {"id": "D", "text": "Pipeline 実行を一時停止し、AWS Support 経由でリリース承認を依頼する", "is_correct": false, "explanation": "AWS Support はリリース承認に使うサービスではない。Manual Approval Action が正解。"}
+      ],
+      "explanation": "Manual Approval Action は CodePipeline の Approval カテゴリに属する標準 Action。SNS トピックを指定すると、承認待ち状態になった際にメール等で通知される。承認には codepipeline:PutApprovalResult IAM 権限が必要。承認は最大7日間待機可能で、それを超えるとパイプラインは失敗する。",
+      "references": [
+        {"title": "Manage approval actions in CodePipeline", "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/approvals.html"}
+      ],
+      "tags": ["codepipeline", "manual-approval", "sns", "saas", "release-management"],
+      "common_mistakes": [
+        "Lambda や Step Functions で自作してしまう",
+        "Manual Approval の最大待機時間 (7日) を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-005",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeBuild",
+      "subtopic": "Caching strategies",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある FinTech スタートアップの CodeBuild プロジェクトでは、Node.js プロジェクトの npm install に毎回3分かかっている。ビルド時間を短縮するために最も効果的な方法は？",
+      "options": [
+        {"id": "A", "text": "CodeBuild のコンピュートタイプを BUILD_GENERAL1_LARGE に変更する", "is_correct": false, "explanation": "コンピュートタイプを上げると並列処理は速くなるが、npm install のネットワーク取得は CPU バウンドではないため効果は限定的。費用も増える。"},
+        {"id": "B", "text": "buildspec の cache.paths に node_modules を指定し、cache.type に LOCAL_CUSTOM_CACHE を有効にする", "is_correct": true, "explanation": "正解。Local cache (LOCAL_CUSTOM_CACHE) または S3 cache に node_modules を保存することで、次回ビルドで再利用でき大幅に時間短縮。"},
+        {"id": "C", "text": "CodeBuild プロジェクトを VPC エンドポイント経由で実行する", "is_correct": false, "explanation": "VPC エンドポイントはネットワーク経路の問題を解決するもので、依存パッケージの取得時間自体は短縮されない。"},
+        {"id": "D", "text": "CloudFront を npm レジストリの前段に配置する", "is_correct": false, "explanation": "CloudFront は静的コンテンツ配信用で、npm レジストリのキャッシュには使わない。CodeArtifact の方が適切。"}
+      ],
+      "explanation": "CodeBuild のキャッシングには Local cache (DOCKER_LAYER_CACHE / SOURCE_CACHE / CUSTOM_CACHE) と S3 cache がある。Custom cache では cache.paths で node_modules や ~/.m2/repository などを指定し、ビルド間で再利用できる。Local cache は同じ AZ の同じビルドエージェントが再利用される場合に高速だが永続性は保証されない。S3 cache は永続的で複数 AZ・リージョンで共有可能。",
+      "references": [
+        {"title": "Build caching in AWS CodeBuild", "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/build-caching.html"}
+      ],
+      "tags": ["codebuild", "caching", "performance", "fintech", "nodejs"],
+      "common_mistakes": [
+        "コンピュートタイプを上げれば全部速くなると思い込む",
+        "Local cache と S3 cache の永続性の違いを理解していない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-006",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeDeploy",
+      "subtopic": "Lifecycle hooks",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "EC2 上で稼働する SaaS アプリケーションを CodeDeploy の In-place デプロイで更新している。ヘルスチェックは appspec.yml のどのライフサイクルフックで実装すべきか？",
+      "options": [
+        {"id": "A", "text": "BeforeInstall", "is_correct": false, "explanation": "BeforeInstall はインストール前の準備（古いファイルのバックアップなど）に使う。アプリ稼働後のヘルスチェックには適さない。"},
+        {"id": "B", "text": "AfterInstall", "is_correct": false, "explanation": "AfterInstall はファイル展開後の設定変更（パーミッション設定など）に使う。サービス起動前なのでヘルスチェックは不可。"},
+        {"id": "C", "text": "ApplicationStart", "is_correct": false, "explanation": "ApplicationStart はサービス起動コマンドを実行するフェーズ。起動直後にヘルスチェックを行うのは早すぎる場合があり、専用の検証フックを使うべき。"},
+        {"id": "D", "text": "ValidateService", "is_correct": true, "explanation": "正解。ValidateService はサービス起動後の検証用で、ヘルスチェック (curl で /health エンドポイントなど) を実装する標準的な場所。"}
+      ],
+      "explanation": "CodeDeploy EC2/On-Premises の lifecycle event 順序: ApplicationStop → DownloadBundle → BeforeInstall → Install → AfterInstall → ApplicationStart → ValidateService。ValidateService は最後の検証フェーズで、ここで失敗すると In-place ではロールバック (再デプロイ) が走る。Blue/Green ではトラフィックシフト前に追加で BeforeBlockTraffic / AfterBlockTraffic / BeforeAllowTraffic / AfterAllowTraffic がある。",
+      "references": [
+        {"title": "AppSpec 'hooks' section for an EC2/On-Premises deployment", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html"}
+      ],
+      "tags": ["codedeploy", "lifecycle-hooks", "validateservice", "appspec"],
+      "common_mistakes": [
+        "ApplicationStart 内でヘルスチェックを行ってしまう",
+        "Blue/Green の追加フック (BeforeAllowTraffic 等) を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-007",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeArtifact",
+      "subtopic": "Upstream repositories",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある製造業の社内 DevOps チームが CodeArtifact を導入し、Maven Central や npm public registry のパッケージを社内ドメインからプロキシしたい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "Lambda 関数で定期的にパブリックレジストリをスキャンし、CodeArtifact リポジトリにアップロードする", "is_correct": false, "explanation": "技術的に可能だが、CodeArtifact には標準で upstream/external connection 機能があり、自作する必要はない。"},
+        {"id": "B", "text": "CodeArtifact リポジトリに external connection (public:maven-central, public:npmjs) を設定する", "is_correct": true, "explanation": "正解。external connection を設定すると、要求されたパッケージを CodeArtifact がオンデマンドで public からフェッチしキャッシュする。"},
+        {"id": "C", "text": "S3 バケットに Maven/npm パッケージをミラーし、開発者にバケットを参照させる", "is_correct": false, "explanation": "S3 は依存解決ができないため、Maven/npm クライアントが直接使える形式にならない。CodeArtifact が適切。"},
+        {"id": "D", "text": "VPC エンドポイントで Maven Central を内部からアクセスできるようにする", "is_correct": false, "explanation": "VPC エンドポイントは AWS サービス用 (Interface または Gateway) で、外部 (Maven Central) には使えない。"}
+      ],
+      "explanation": "CodeArtifact の external connection は public registry (Maven Central, npmjs, PyPI, NuGet, RubyGems, Gradle Plugin Portal など) への接続。一度フェッチしたパッケージはキャッシュされ、社内利用がインデックスから消える「left-pad 事件」型のリスクを回避できる。upstream repositories と組み合わせて多段プロキシも構成可能。",
+      "references": [
+        {"title": "Connect CodeArtifact repository to a public repository", "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/external-connection.html"}
+      ],
+      "tags": ["codeartifact", "external-connection", "package-management", "supply-chain", "manufacturing"],
+      "common_mistakes": [
+        "Lambda 自作で再発明する",
+        "VPC エンドポイントが外部レジストリに使えると誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-008",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "GitHub Actions",
+      "subtopic": "OIDC integration",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業のセキュリティチームは、GitHub Actions ワークフローから AWS にデプロイする際、IAM アクセスキーを GitHub Secrets に保存することをコンプライアンス上禁止している。長期クレデンシャルを排除する最も適切な方法は？",
+      "options": [
+        {"id": "A", "text": "AWS Secrets Manager にアクセスキーを保存し、ワークフローから取得して使う", "is_correct": false, "explanation": "依然として静的なアクセスキーが残るため、根本解決にならない。Secrets Manager の認証自体に IAM 認証が必要なジレンマも残る。"},
+        {"id": "B", "text": "GitHub の OIDC プロバイダを IAM で IdP として登録し、Trust Policy で sub クレームを検証する IAM Role に AssumeRoleWithWebIdentity させる", "is_correct": true, "explanation": "正解。GitHub Actions OIDC により短命の STS クレデンシャルを発行できる。Trust Policy で repo, branch, environment を sub クレームで限定すべき。"},
+        {"id": "C", "text": "EC2 に Self-hosted runner を置き、EC2 インスタンスプロファイル経由で AWS にアクセスする", "is_correct": false, "explanation": "可能ではあるが、Self-hosted runner の運用コスト・セキュリティ管理が必要。OIDC が GitHub-hosted runner で使えるならそちらが推奨。"},
+        {"id": "D", "text": "GitHub Personal Access Token を Secrets Manager に保存し、Lambda で AWS クレデンシャルに変換する", "is_correct": false, "explanation": "GitHub の PAT は GitHub API 用で、AWS クレデンシャルには変換できない。意味のない構成。"}
+      ],
+      "explanation": "GitHub Actions OIDC は token.actions.githubusercontent.com を IdP として IAM に登録することで実現。aud は通常 sts.amazonaws.com、sub は repo:OWNER/REPO:ref:refs/heads/BRANCH のような形式。Trust Policy で StringLike を使い特定リポジトリ・ブランチに限定することで、他リポジトリからの悪用を防げる。短命のクレデンシャル(デフォルト1時間)が発行され、長期キーのローテーション運用が不要。",
+      "references": [
+        {"title": "About security hardening with OpenID Connect", "url": "https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect"},
+        {"title": "Configure AWS Credentials GitHub Action", "url": "https://github.com/aws-actions/configure-aws-credentials"}
+      ],
+      "tags": ["github-actions", "oidc", "iam", "security", "fintech", "credentials"],
+      "common_mistakes": [
+        "Secrets Manager にアクセスキーを保存することで解決と誤解する",
+        "Trust Policy の sub クレームに repo を限定し忘れ、他リポジトリから AssumeRole 可能にしてしまう"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-009",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "Lambda Deployment",
+      "subtopic": "Versioning and aliases",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある SaaS 企業の Lambda 関数を Canary デプロイで段階的に切り替えたい。次のうち、CodeDeploy を Lambda と組み合わせて使う際に必須となる Lambda の機能は？",
+      "options": [
+        {"id": "A", "text": "Provisioned Concurrency", "is_correct": false, "explanation": "Provisioned Concurrency はコールドスタート対策で、デプロイ戦略とは独立。必須ではない。"},
+        {"id": "B", "text": "Function Versions と Aliases", "is_correct": true, "explanation": "正解。CodeDeploy は Alias の routing config を操作してトラフィックを2つの Version 間で重み付け配分する。Version と Alias なしには Canary は実現できない。"},
+        {"id": "C", "text": "Lambda Layers", "is_correct": false, "explanation": "Layers は依存パッケージの共有用で、デプロイ戦略とは無関係。"},
+        {"id": "D", "text": "Lambda Function URLs", "is_correct": false, "explanation": "Function URLs は HTTP エンドポイント機能で、デプロイ戦略とは無関係。"}
+      ],
+      "explanation": "Lambda の Canary/Linear デプロイは、Alias の routing config (additionalVersionWeights) で2つの Version へトラフィックを分配することで実現される。CodeDeploy は AppSpec で Lambda 関数名・現Version・新Version・Alias を指定し、自動で Alias の重み付けを更新する。Canary10Percent5Minutes (10% を5分配信後、残り90%) や Linear10PercentEvery1Minute などのプリセットがある。",
+      "references": [
+        {"title": "Deploy a Lambda function using CodeDeploy", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorial-lambda-sam.html"},
+        {"title": "Lambda function aliases", "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html"}
+      ],
+      "tags": ["lambda", "canary", "alias", "version", "codedeploy", "saas"],
+      "common_mistakes": [
+        "$LATEST のままで Canary できると思い込む",
+        "Provisioned Concurrency が Canary に必要と誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-010",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodePipeline",
+      "subtopic": "Cross-account deployment",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある SaaS 企業は、開発・ステージング・本番を AWS Organizations 上の別アカウントに分離している。共通の DevOps アカウントから CodePipeline で各環境へデプロイしたい。アーティファクトを安全に共有する最適な構成は？",
+      "options": [
+        {"id": "A", "text": "DevOps アカウントの S3 アーティファクトバケットをパブリックにし、各アカウントから直接ダウンロードさせる", "is_correct": false, "explanation": "S3 バケットのパブリック公開はコンプライアンス違反かつ情報漏洩リスクが高い。絶対に避けるべき。"},
+        {"id": "B", "text": "DevOps アカウントの S3 バケットに Bucket Policy で各環境アカウントの IAM Role を許可、KMS CMK にも各アカウントの Role を Grant し、各環境アカウントの CodeDeploy Role を CodePipeline から AssumeRole する", "is_correct": true, "explanation": "正解。クロスアカウントは S3 と KMS 両方の権限委譲、+ CodePipeline からの AssumeRole が必須。これが標準パターン。"},
+        {"id": "C", "text": "各環境アカウントに独立した CodePipeline を構築し、Git の Webhook で連動させる", "is_correct": false, "explanation": "可能だが運用負荷が高く、DevOps アカウントから一元管理する元の要件を満たさない。"},
+        {"id": "D", "text": "AWS Organizations の SCP で全アカウントに同じ S3 アクセス権を付与する", "is_correct": false, "explanation": "SCP は許可ではなくガードレール (拒否境界) で、IAM Role がない以上アクセス権を付与できない。"}
+      ],
+      "explanation": "クロスアカウント CodePipeline の3要素: (1) アーティファクト S3 バケット Policy で対象アカウントを許可、(2) S3 暗号化に使う KMS Customer Managed Key の Key Policy で対象アカウントに kms:Decrypt を許可、(3) CodePipeline から各環境アカウントの Cross-Account Role を AssumeRole。デフォルトの aws/s3 KMS キーはクロスアカウントで使えないため Customer Managed Key 必須。",
+      "references": [
+        {"title": "Create a pipeline that uses resources from another AWS account", "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create-cross-account.html"}
+      ],
+      "tags": ["codepipeline", "cross-account", "organizations", "kms", "s3", "saas"],
+      "common_mistakes": [
+        "デフォルト KMS キー (aws/s3) で動くと思い込む",
+        "S3 Bucket Policy だけで十分と誤解する (KMS が必須)"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-011",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "ECS Deployment",
+      "subtopic": "Blue/Green with CodeDeploy",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業の ECS Fargate サービスを Blue/Green デプロイで切り替える。CodeDeploy が ECS で Blue/Green を実現するために必要な前提条件として正しいものは？",
+      "options": [
+        {"id": "A", "text": "ECS サービスの desired count を 0 にしてから新タスク定義をデプロイする", "is_correct": false, "explanation": "Blue/Green の目的は無停止切替であり、desired count を 0 にすると停止する。誤った操作。"},
+        {"id": "B", "text": "Application Load Balancer に2つの Target Group (Blue/Green) と Production/Test の2リスナーを構成し、ECS サービスの DeploymentController を CODE_DEPLOY に設定する", "is_correct": true, "explanation": "正解。ECS Blue/Green は ALB の2 Target Group 切替で実現。DeploymentController.type=CODE_DEPLOY が必須。"},
+        {"id": "C", "text": "Network Load Balancer の前段に Route 53 を置き、加重ルーティングで段階移行する", "is_correct": false, "explanation": "Route 53 加重ルーティングは粗粒度のトラフィック分割で、ECS Blue/Green の Test リスナー機能や CodeDeploy のロールバック自動化が使えない。"},
+        {"id": "D", "text": "ECS タスク定義に DesiredStatus を Blue と Green の2つ書く", "is_correct": false, "explanation": "ECS タスク定義に DesiredStatus というフィールドは存在しない。架空の概念。"}
+      ],
+      "explanation": "ECS Blue/Green の必須要素: (1) ALB または NLB と2つの Target Group、(2) Production リスナー (本番トラフィック) と Test リスナー (検証用、任意)、(3) ECS サービスの deploymentController.type=CODE_DEPLOY、(4) CodeDeploy アプリケーション (compute platform=ECS) とデプロイメントグループ。AppSpec でタスク定義 ARN とコンテナ名・ポートを指定し、CodeDeploy が Target Group 切替を自動化する。",
+      "references": [
+        {"title": "Tutorial: Deploy an Amazon ECS service with a CodeDeploy blue/green deployment", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorial-ecs-deployment.html"}
+      ],
+      "tags": ["ecs", "blue-green", "codedeploy", "alb", "fintech", "fargate"],
+      "common_mistakes": [
+        "ECS のローリング更新 (DeploymentController=ECS) と CodeDeploy Blue/Green を混同する",
+        "Target Group が1つで Blue/Green できると誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-012",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeBuild",
+      "subtopic": "Private VPC builds",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業企業の CodeBuild プロジェクトで、プライベートな RDS for PostgreSQL に対する DB マイグレーションを実行したい。RDS はパブリックアクセス無効。CodeBuild からアクセスする最適な構成は？",
+      "options": [
+        {"id": "A", "text": "RDS のパブリックアクセスを一時的に有効にし、CodeBuild 完了後に無効化する", "is_correct": false, "explanation": "セキュリティリスクが高く、運用ミスで戻し忘れの可能性がある。VPC 構成にすべき。"},
+        {"id": "B", "text": "CodeBuild プロジェクトの VPC 設定で RDS と同じ VPC・プライベートサブネットを指定し、Security Group で RDS への 5432 を許可する", "is_correct": true, "explanation": "正解。CodeBuild は VPC 内で実行できる。プライベートサブネットと適切な Security Group 設定で安全に RDS にアクセス可能。"},
+        {"id": "C", "text": "Site-to-Site VPN を構築し、CodeBuild から VPN 経由で RDS に接続する", "is_correct": false, "explanation": "CodeBuild は AWS マネージドで Site-to-Site VPN は不要。VPC 直接設定が標準。"},
+        {"id": "D", "text": "EC2 踏み台サーバを経由して SSH トンネルを張り、CodeBuild から接続する", "is_correct": false, "explanation": "CodeBuild に VPC 設定があるため踏み台不要。アンチパターン。"}
+      ],
+      "explanation": "CodeBuild の VPC 設定機能を使うと、ビルドコンテナが指定した VPC のプライベートサブネットに ENI を作成して起動する。これにより RDS, ElastiCache, EFS など VPC 内リソースに直接アクセス可能。注意点: NAT Gateway がないとインターネット (CodeArtifact public registry や ECR public 等) にアクセスできない。VPC エンドポイント (S3, ECR, CodeBuild, Logs) を併用するとコスト効率が良い。",
+      "references": [
+        {"title": "Use AWS CodeBuild with Amazon Virtual Private Cloud", "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/vpc-support.html"}
+      ],
+      "tags": ["codebuild", "vpc", "rds", "private-subnet", "manufacturing"],
+      "common_mistakes": [
+        "CodeBuild は VPC 内実行できないと誤解する",
+        "VPC 設定後に NAT Gateway なしでもインターネット出られると思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-013",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeDeploy",
+      "subtopic": "Auto Scaling integration",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業が CodeDeploy In-place デプロイを Auto Scaling Group に対して実行している。デプロイ中に新しいインスタンスがスケールアウトで追加された場合の挙動として正しいものは？",
+      "options": [
+        {"id": "A", "text": "新インスタンスは古いリビジョンで起動するため、デプロイ後に手動で再デプロイが必要", "is_correct": false, "explanation": "CodeDeploy は Auto Scaling グループにフックを設定しており、新インスタンスにも自動的に最新リビジョンをデプロイする。"},
+        {"id": "B", "text": "新インスタンスは自動的に最新のリビジョンでデプロイされる (Auto Scaling lifecycle hook 経由)", "is_correct": true, "explanation": "正解。CodeDeploy は ASG への関連付け時に lifecycle hook (codedeploy:HookFinishingStateMachine) を作成し、launching の新インスタンスに最新リビジョンを自動展開する。"},
+        {"id": "C", "text": "新インスタンスは Auto Scaling で停止され、デプロイ完了後に再起動される", "is_correct": false, "explanation": "そのような動作はしない。新インスタンスは正常にサービスインする。"},
+        {"id": "D", "text": "デプロイは即座に失敗してロールバックする", "is_correct": false, "explanation": "ASG のスケールイベントでデプロイが失敗することはない。"}
+      ],
+      "explanation": "CodeDeploy が ASG に関連付けられると、AutoScaling lifecycle hook (Pending:Wait) が自動作成される。スケールアウトで新インスタンスが起動する際、lifecycle hook により InService 状態にする前に CodeDeploy が最新リビジョンを展開する。注意: ASG のヘルスチェック猶予期間 (HealthCheckGracePeriod) はデプロイ時間より長く設定する必要がある。短いと CodeDeploy 完了前にヘルスチェック失敗で ASG がインスタンスを終了する。",
+      "references": [
+        {"title": "Integrating CodeDeploy with Amazon EC2 Auto Scaling", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html"}
+      ],
+      "tags": ["codedeploy", "auto-scaling", "lifecycle-hook", "in-place", "saas"],
+      "common_mistakes": [
+        "ASG スケールアウト時に古いリビジョンが起動すると誤解する",
+        "ヘルスチェック猶予期間とデプロイ時間の関係を考慮しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-014",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodePipeline",
+      "subtopic": "Multi-region deployment",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業がアプリケーションを us-east-1, ap-northeast-1, eu-west-1 の3リージョンに展開している。1つの CodePipeline からマルチリージョンデプロイを実装したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "リージョンごとに独立したパイプラインを作り、SNS と Lambda で連携させる", "is_correct": false, "explanation": "可能だが、CodePipeline の Cross-Region Action 機能を使うほうが標準的でメンテナンス容易。"},
+        {"id": "B", "text": "CodePipeline に Cross-Region Action を設定し、各リージョンに ArtifactStore (S3 + KMS) を準備する", "is_correct": true, "explanation": "正解。CodePipeline は Action ごとに異なるリージョンを指定でき、各リージョンに ArtifactStore を構成すれば自動でレプリケーションする。"},
+        {"id": "C", "text": "EventBridge ルールで他リージョンのパイプラインをトリガーする", "is_correct": false, "explanation": "EventBridge クロスリージョンは可能だが、パイプライン構造を1つの定義にまとめる Cross-Region Action より複雑になる。"},
+        {"id": "D", "text": "S3 Cross-Region Replication でアーティファクトを各リージョンにコピーし、CloudFormation StackSets でデプロイする", "is_correct": false, "explanation": "StackSets は CFN リソース展開に有用だが、デプロイ全体のオーケストレーションは CodePipeline の方が適切。"}
+      ],
+      "explanation": "CodePipeline の Cross-Region Action は Action 定義に Region パラメータを指定するだけで他リージョンの CodeBuild, CodeDeploy, CloudFormation 等を呼び出せる。pipeline 定義 (artifactStores) に各リージョンの S3 バケットと KMS キーを宣言する必要がある。CodePipeline はパイプライン本体のリージョンからアーティファクトを対象リージョンへ自動レプリケーションする。",
+      "references": [
+        {"title": "Add a cross-Region action in CodePipeline", "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-create-cross-region.html"}
+      ],
+      "tags": ["codepipeline", "multi-region", "cross-region-action", "artifactstores", "saas"],
+      "common_mistakes": [
+        "リージョンごとに独立パイプラインが必須と思い込む",
+        "ArtifactStore (複数形) の必要性を見落とす"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-015",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeBuild",
+      "subtopic": "Build batch and parallel testing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある FinTech のテストスイートは40分かかる E2E テストを含み、ボトルネックになっている。CodeBuild のテスト並列化を最も簡潔に実現する方法は？(複数選択)",
+      "options": [
+        {"id": "A", "text": "Batch build の build-list 戦略で複数ビルドを並列実行し、テストを分割する", "is_correct": true, "explanation": "正解。Batch build は複数の独立したビルドを並列起動でき、テストシャーディングに最適。"},
+        {"id": "B", "text": "CodeBuild の reports 機能でテスト結果を可視化し、失敗箇所を特定して修正する", "is_correct": false, "explanation": "可視化はデバッグに有用だが、テスト実行時間そのものは短縮できない。"},
+        {"id": "C", "text": "Batch build の build-matrix 戦略で環境変数の組み合わせ別にビルドを並列化する", "is_correct": true, "explanation": "正解。build-matrix は環境変数の直積で複数ビルドを生成。多環境テスト・複数Node.js バージョン等に有用。"},
+        {"id": "D", "text": "CodeBuild の Compute タイプを 2X_LARGE に変更する", "is_correct": false, "explanation": "並列化の代替にはなるが、テストフレームワーク自体が並列実行をサポートしないと効果が限定的。Batch build による分割が直接的解決。"},
+        {"id": "E", "text": "テストを Step Functions の Parallel state に分解し、各 Branch で異なる CodeBuild プロジェクトを呼ぶ", "is_correct": false, "explanation": "可能だが Batch build より複雑で、CodeBuild 標準機能で済む。"}
+      ],
+      "explanation": "CodeBuild Batch Build には3戦略: (1) build-list - 環境変数を変えた複数ビルドを並列、(2) build-matrix - 変数の直積で並列、(3) build-graph - 依存関係付きの DAG。テストシャーディング (jest --shard, pytest-split 等) と組み合わせると、40分のテストが10分以下に短縮可能。料金は並列分のビルド時間が課金対象。",
+      "references": [
+        {"title": "AWS CodeBuild batch builds", "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/batch-build.html"}
+      ],
+      "tags": ["codebuild", "batch-build", "test-parallelization", "fintech", "mrq"],
+      "common_mistakes": [
+        "Compute タイプ増強だけで解決すると思い込む",
+        "Batch build の3戦略を区別できない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-016",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodePipeline",
+      "subtopic": "Source actions",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある SaaS 企業は CodeCommit から GitHub Enterprise Cloud への移行を計画している。CodePipeline の Source Action を変更する際の最適な GitHub 統合方法は？",
+      "options": [
+        {"id": "A", "text": "GitHub の Personal Access Token を Secrets Manager に保存し、Source Action に PAT を渡す", "is_correct": false, "explanation": "古い GitHub Source v1 アクション方式。CodeStar Connection (現行 CodeConnections) のほうが推奨されている。"},
+        {"id": "B", "text": "AWS CodeConnections (旧 CodeStar Connections) で GitHub への接続を作成し、Source Action でその ARN を参照する", "is_correct": true, "explanation": "正解。CodeConnections は OAuth ベースで PAT 不要、Webhook 自動構成、複数パイプラインで共有可能。AWS 推奨方式。"},
+        {"id": "C", "text": "GitHub Webhook で S3 にコードを zip プッシュし、S3 を Source とする", "is_correct": false, "explanation": "可能だがセットアップが複雑。CodeConnections のほうが標準。"},
+        {"id": "D", "text": "AWS Identity Center (旧 SSO) で GitHub と IDP 連携する", "is_correct": false, "explanation": "Identity Center はユーザログイン用で、CI/CD のソース取得とは別概念。"}
+      ],
+      "explanation": "CodeConnections (GA時に CodeStar Connections から改名) は GitHub, GitHub Enterprise Cloud, GitHub Enterprise Server, GitLab, GitLab Self-Managed, Bitbucket Cloud との安全な接続を提供。OAuth 認証で PAT 不要、AWS 側で接続管理、CodePipeline・CodeBuild・CodeDeploy で共有可能。CodeCommit はサービス更新が停滞しており、新規利用は GitHub などへの移行が推奨。",
+      "references": [
+        {"title": "AWS CodeConnections", "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html"}
+      ],
+      "tags": ["codepipeline", "codeconnections", "github", "migration", "saas"],
+      "common_mistakes": [
+        "PAT 方式が現行ベストプラクティスと思い込む",
+        "CodeConnections と Identity Center の役割を混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-017",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "ECR",
+      "subtopic": "Image scanning",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業の DevOps チームは、CodePipeline で ECR にプッシュされた Docker イメージのうち、Critical 脆弱性が含まれるものは本番デプロイをブロックしたい。最適な実装は？",
+      "options": [
+        {"id": "A", "text": "ECR の Basic Scanning を有効化し、CodeBuild で aws ecr describe-image-scan-findings を呼び出して Critical 検出時に exit 1 する", "is_correct": false, "explanation": "Basic Scanning はプッシュ時1回のみで、Inspector のような継続スキャンはなく、CVE データベースの更新も限定的。Enhanced Scanning が推奨。"},
+        {"id": "B", "text": "ECR Enhanced Scanning (Inspector) を有効化し、EventBridge で Inspector finding イベントを受け、Critical 検出時に CodePipeline の StopPipelineExecution を呼ぶ Lambda を実装する", "is_correct": true, "explanation": "正解。Enhanced Scanning は Inspector による継続スキャンで、新規 CVE が公開されると既存イメージも再評価される。EventBridge で findings をリアルタイム制御可能。"},
+        {"id": "C", "text": "Trivy を CodeBuild の buildspec で実行し、結果に関わらず ECR にプッシュする", "is_correct": false, "explanation": "結果に関わらずプッシュは脆弱イメージが本番に到達するリスクがある。"},
+        {"id": "D", "text": "Lambda で全 ECR リポジトリを毎日スキャンし、結果を Slack に送る", "is_correct": false, "explanation": "通知のみではブロックできない。パイプラインへの統合がない。"}
+      ],
+      "explanation": "ECR Enhanced Scanning は Amazon Inspector V2 によるレイヤー単位の継続的脆弱性スキャン。Basic Scanning はプッシュ時/手動のみだが、Enhanced はプッシュ後30日 (継続) または ライフサイクル全体でスキャンし、新 CVE 公開時に自動再評価する。EventBridge で finding イベントを処理し、CodePipeline の Lambda Action や StopPipelineExecution と組み合わせると Critical/High をブロック可能。",
+      "references": [
+        {"title": "Image scanning in Amazon ECR", "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html"},
+        {"title": "Amazon Inspector ECR scan", "url": "https://docs.aws.amazon.com/inspector/latest/user/scanning-ecr.html"}
+      ],
+      "tags": ["ecr", "inspector", "vulnerability-scanning", "codepipeline", "fintech", "security"],
+      "common_mistakes": [
+        "Basic Scanning と Enhanced Scanning の差を理解しない",
+        "通知だけでブロックしていると誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-018",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "Lambda Deployment",
+      "subtopic": "Pre/post traffic hooks",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業の Lambda 関数を CodeDeploy Canary デプロイで段階移行する。新バージョンへトラフィックを流す前に統合テスト、流した後にスモークテストを自動実行したい。最適な実装は？",
+      "options": [
+        {"id": "A", "text": "AppSpec の Hooks セクションに BeforeAllowTraffic と AfterAllowTraffic を定義し、それぞれ別の Lambda 関数を呼び出す", "is_correct": true, "explanation": "正解。Lambda 用 AppSpec の Hooks は BeforeAllowTraffic (トラフィック移行前) と AfterAllowTraffic (移行後) で、検証用 Lambda を呼び出す標準的な設計。"},
+        {"id": "B", "text": "CodePipeline の Manual Approval を Lambda Deploy の前後に挿入する", "is_correct": false, "explanation": "Manual Approval は人間の承認用で自動テストではない。要件 (自動実行) を満たさない。"},
+        {"id": "C", "text": "EventBridge ルールで CodeDeploy のステート変更を監視し、Step Functions でテストを実行する", "is_correct": false, "explanation": "可能だが AppSpec Hooks のほうが直接的でシンプル。Step Functions では CodeDeploy のロールバック制御が不便。"},
+        {"id": "D", "text": "CodeBuild プロジェクトを別途用意し、CodePipeline の Test Stage で Lambda の新バージョンを invoke する", "is_correct": false, "explanation": "デプロイ完了後の Stage では既に全トラフィックが新バージョンに流れており、Canary 中の検証ができない。"}
+      ],
+      "explanation": "Lambda 用 CodeDeploy AppSpec の Hooks: BeforeAllowTraffic は Alias の重み付け変更前に実行され、ここで失敗するとデプロイがロールバックされる (旧バージョンのまま)。AfterAllowTraffic は重み付け変更後の検証用。各 Hook には IAM Role と Lambda 関数 ARN を指定し、Lambda は CodeDeploy に PutLifecycleEventHookExecutionStatus で結果を返す必要がある。",
+      "references": [
+        {"title": "AppSpec 'hooks' section for an AWS Lambda deployment", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda"}
+      ],
+      "tags": ["lambda", "codedeploy", "canary", "appspec", "hooks", "saas"],
+      "common_mistakes": [
+        "Lambda の Hook で PutLifecycleEventHookExecutionStatus を呼び忘れる",
+        "BeforeAllowTraffic 失敗時の挙動 (ロールバック) を理解しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-019",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "EKS Deployment",
+      "subtopic": "GitOps with Flux/ArgoCD",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "ある製造業企業の EKS クラスタ群 (10クラスタ) に対してマルチクラスタ GitOps を実装したい。デプロイ宣言は Git に一元管理し、各クラスタ側がプル型で同期する方式を取る。最適な選択肢は？(複数選択)",
+      "options": [
+        {"id": "A", "text": "Argo CD を Hub クラスタにインストールし、各 EKS をターゲットとして登録する", "is_correct": true, "explanation": "正解。Argo CD はマルチクラスタ管理 (App-of-Apps, ApplicationSet) に強く、Hub-and-Spoke モデルが標準。"},
+        {"id": "B", "text": "Flux v2 を各クラスタにインストールし、共通の Git リポジトリの cluster-specific フォルダを Kustomize で参照させる", "is_correct": true, "explanation": "正解。Flux はクラスタ自身が Git をプルする分散型。フォルダ構造で per-cluster 設定を管理する典型パターン。"},
+        {"id": "C", "text": "Jenkins から各クラスタに kubectl apply で push する", "is_correct": false, "explanation": "Push 型かつ宣言的 GitOps ではない。要件 (プル型 GitOps) を満たさない。"},
+        {"id": "D", "text": "AWS Systems Manager Run Command で各クラスタのワーカーノードに helm install させる", "is_correct": false, "explanation": "ノード単位の操作で K8s リソース管理として不適切。GitOps ではない。"},
+        {"id": "E", "text": "CodePipeline の各 Stage で kubectl を実行する CodeBuild を 10個並べる", "is_correct": false, "explanation": "プル型 GitOps ではなく Push 型。クラスタ数増加に対するスケーラビリティもない。"}
+      ],
+      "explanation": "GitOps の2大OSSは Argo CD (Hub-Spoke型、UI 強力、ApplicationSet で多クラスタ管理) と Flux (クラスタ常駐型、軽量、Kustomize/Helm ネイティブ)。AWS では EKS Add-on として Flux/Argo CD のサポートはないが、Helm でインストール可能。エンタープライズ向け選択肢として Amazon EKS Add-ons の AWS Distro for Argo CD や、CodeCommit + CodePipeline + Lambda での自作も理論上可能だが、OSS GitOps ツールが事実上標準。",
+      "references": [
+        {"title": "GitOps with Argo CD on Amazon EKS", "url": "https://aws.amazon.com/blogs/containers/gitops-model-for-provisioning-and-bootstrapping-amazon-eks-clusters-using-crossplane-and-argo-cd/"},
+        {"title": "Multi-cluster GitOps using Flux v2", "url": "https://fluxcd.io/flux/installation/"}
+      ],
+      "tags": ["eks", "gitops", "argo-cd", "flux", "multi-cluster", "manufacturing", "mrq"],
+      "common_mistakes": [
+        "Push 型と Pull 型 GitOps の違いを理解しない",
+        "CodePipeline ベース push を GitOps と混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-020",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeDeploy",
+      "subtopic": "Deployment configurations",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある FinTech 企業の本番ワークロードは100台の EC2 で稼働している。デプロイ中に少なくとも90%の容量を維持しつつ、できるだけ速く全体を更新したい。CodeDeploy のどのデプロイ設定が最適か？",
+      "options": [
+        {"id": "A", "text": "CodeDeployDefault.AllAtOnce", "is_correct": false, "explanation": "全台同時デプロイで容量0%になりうるため、要件 (90%以上維持) を満たさない。"},
+        {"id": "B", "text": "CodeDeployDefault.HalfAtATime", "is_correct": false, "explanation": "50%ずつデプロイで最低容量50%。90%以上の要件を満たさない。"},
+        {"id": "C", "text": "CodeDeployDefault.OneAtATime", "is_correct": false, "explanation": "1台ずつなので99%維持できるが、100バッチ必要で時間がかかる。90%維持の最大化なので10台同時のほうが速い。"},
+        {"id": "D", "text": "カスタムデプロイ設定で MinimumHealthyHosts を 90% に設定する", "is_correct": true, "explanation": "正解。Custom deployment config で MinimumHealthyHosts=90% を設定すれば、CodeDeploy は最大10台同時に更新でき、要件を満たす。"}
+      ],
+      "explanation": "CodeDeploy のデプロイ設定は MinimumHealthyHosts (HEALTHY なホストの最小数または比率) で制御。組み込み設定: AllAtOnce (0台維持), HalfAtATime (50%), OneAtATime (FLEET_PERCENT=99 相当)。カスタム設定で任意の値を設定可能。type=FLEET_PERCENT なら比率指定、type=HOST_COUNT なら台数指定。本番では FLEET_PERCENT のほうが ASG スケール変動に追従しやすい。",
+      "references": [
+        {"title": "Working with deployment configurations in CodeDeploy", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html"}
+      ],
+      "tags": ["codedeploy", "deployment-configuration", "minimum-healthy-hosts", "fintech"],
+      "common_mistakes": [
+        "OneAtATime が常に最も安全と思い込み速度を犠牲にする",
+        "カスタム deployment config の存在を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-021",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodePipeline",
+      "subtopic": "Pipeline failure analysis",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業で、CodePipeline の Build Stage が突然失敗し始めた。CodeBuild ログには 'Unable to download cache' とあり、過去24時間で複数のプロジェクトで同様の失敗が散発している。最も疑うべき根本原因は？",
+      "options": [
+        {"id": "A", "text": "CodeBuild のサービスロールに s3:GetObject 権限が突然失われた", "is_correct": false, "explanation": "サービスロールが「突然失われる」のは稀。複数プロジェクトで同時発生なら共通要因 (サービス障害や Quota) を疑うべき。"},
+        {"id": "B", "text": "S3 cache バケットのライフサイクルポリシーで cache オブジェクトが削除された、または KMS キーへのアクセス問題が発生している", "is_correct": true, "explanation": "正解。S3 ライフサイクルでキャッシュが消えた、KMS Grant 失効、バケット名変更などが現実的な原因。複数プロジェクトに影響することと整合する。"},
+        {"id": "C", "text": "GitHub への OAuth トークンが期限切れになった", "is_correct": false, "explanation": "GitHub トークンの問題なら Source Stage 失敗。Build Stage の cache エラーとは無関係。"},
+        {"id": "D", "text": "CodeBuild サービスがダウンしている", "is_correct": false, "explanation": "サービスダウンならビルド全体が失敗するはずで、cache だけ失敗というシナリオには合わない。AWS サービスダウンは Health Dashboard で確認可能。"}
+      ],
+      "explanation": "「Unable to download cache」は典型的に S3 cache バケット側の問題。診断順序: (1) cache バケットの存在・ライフサイクル設定確認、(2) CodeBuild サービスロールの s3:GetObject 権限と KMS キー権限、(3) cache key (project name) の変更有無、(4) リージョンミスマッチ。Local cache の場合はビルドエージェントの再利用が起きていない可能性 (新規 AZ・新規ホスト)。",
+      "references": [
+        {"title": "AWS CodeBuild troubleshooting", "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/troubleshooting.html"}
+      ],
+      "tags": ["codebuild", "troubleshooting", "cache", "s3", "saas"],
+      "common_mistakes": [
+        "症状と無関係なサービス (GitHub トークン等) を疑う",
+        "ライフサイクルポリシーの影響を考慮しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-022",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeDeploy",
+      "subtopic": "Rollback strategy",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業で、CodeDeploy Blue/Green デプロイ完了直後はテストが通ったが、トラフィック切替から30分後に CloudWatch Alarm で 5xx エラー率上昇を検知した。最適な自動ロールバック戦略は？",
+      "options": [
+        {"id": "A", "text": "CodeDeploy デプロイメントグループの Automatic rollback で 'Roll back when alarm thresholds are met' を有効化し、本番アラームを指定する", "is_correct": true, "explanation": "正解。CodeDeploy はデプロイ実行中の CloudWatch Alarm を監視し、ALARM 状態になると自動でトラフィックを Blue へ戻す。Termination wait time の間有効。"},
+        {"id": "B", "text": "Lambda で5分ごとに 5xx 率を確認し、閾値超過時に CodeDeploy StopDeployment を呼ぶ", "is_correct": false, "explanation": "デプロイ完了後は StopDeployment では戻せない。Automatic rollback (Blue/Green の termination wait time 内なら有効) が標準。"},
+        {"id": "C", "text": "Route 53 の Failover ルーティングで Blue/Green を切り替える", "is_correct": false, "explanation": "Route 53 は ALB Target Group 切替より粒度が粗く、CodeDeploy の Blue/Green 設計と二重管理になる。"},
+        {"id": "D", "text": "Blue 環境を削除せずに保持し、ALB のリスナー設定で手動戻しできるようにする", "is_correct": false, "explanation": "手動操作前提では「自動ロールバック」要件を満たさない。"}
+      ],
+      "explanation": "CodeDeploy Blue/Green の Automatic rollback は2種類: (1) デプロイ中の失敗時 (Lifecycle Hook 失敗等)、(2) CloudWatch Alarm 連動。デプロイメントグループに Alarm を関連付け、デプロイ実行中 + termination wait time (デフォルト1時間、最大2日) の間に ALARM になると自動で旧 Blue にトラフィックを戻す。Termination wait time 経過後は Blue が削除されロールバック不可、新規デプロイが必要。",
+      "references": [
+        {"title": "Roll back or stop a deployment", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployments-rollback-and-redeploy.html"},
+        {"title": "Configure advanced options for a deployment group", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups-configure-advanced-options.html"}
+      ],
+      "tags": ["codedeploy", "blue-green", "rollback", "cloudwatch-alarm", "saas"],
+      "common_mistakes": [
+        "Termination wait time を理解せず、いつでもロールバック可能と誤解する",
+        "StopDeployment と Rollback を混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-023",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "Test Automation",
+      "subtopic": "Integration testing",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある FinTech 企業の API のリグレッション率が高く、本番障害の45%がリリース直後に発生。テスト戦略を強化したい。現在は単体テスト中心。次のうち最も投資対効果の高い改善案は？(複数選択)",
+      "options": [
+        {"id": "A", "text": "CodePipeline の Test Stage に契約テスト (Pact など Consumer-Driven Contract) を追加する", "is_correct": true, "explanation": "正解。マイクロサービス間 API の breaking change を CI で検出可能。FinTech のような複雑連携環境でリグレッション削減効果が高い。"},
+        {"id": "B", "text": "ステージング環境で Synthetics (CloudWatch Synthetics Canary) による合成監視テストを実装する", "is_correct": true, "explanation": "正解。Synthetics Canary はユーザフロー全体の継続検証。デプロイ後の即時検知に有効で、Canary は CodePipeline の Test Stage にも組み込める。"},
+        {"id": "C", "text": "本番リリース後に1時間の Beta タイムウィンドウを設け、人間が手動で全画面を確認する", "is_correct": false, "explanation": "手作業でスケールせず、再現性も低い。自動化された契約テスト + Synthetics のほうが効果的。"},
+        {"id": "D", "text": "単体テストカバレッジを 60% から 95% に上げる", "is_correct": false, "explanation": "単体テストはリグレッション (特に統合点での) を防ぎにくい。45%の障害が API 連携起因なら契約テスト・E2E のほうが ROI が高い。"},
+        {"id": "E", "text": "本番デプロイ前に AWS Fault Injection Service で本番に直接カオステストを実行する", "is_correct": false, "explanation": "本番直接のカオステストはリグレッション防止が目的ではない。レジリエンス検証。本問の文脈では不適切。"}
+      ],
+      "explanation": "テストピラミッド: Unit (多) > Integration > E2E (少) が古典的だが、マイクロサービス時代は契約テスト (Pact, Spring Cloud Contract) が中間層として重要。Consumer-Driven Contract により Provider 側の変更が Consumer を壊すことを CI で検出。CloudWatch Synthetics Canary は Puppeteer/Selenium で UI/API を周期実行し、ヘルスのリアルタイム検知。両者の組み合わせで本番障害を大幅削減できる。",
+      "references": [
+        {"title": "Synthetic monitoring with CloudWatch Synthetics", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html"},
+        {"title": "Pact - Consumer Driven Contract Testing", "url": "https://docs.pact.io/"}
+      ],
+      "tags": ["test-automation", "contract-testing", "synthetics", "fintech", "regression", "mrq"],
+      "common_mistakes": [
+        "単体テストカバレッジ向上だけで全部解決すると思い込む",
+        "契約テストと統合テストを混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-024",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodePipeline",
+      "subtopic": "Variable passing between actions",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業の CodePipeline で、CodeBuild Stage が生成したビルド ID (例: build-abc123) を後続の CloudFormation Deploy Action のパラメータに渡したい。最も適切な実装は？",
+      "options": [
+        {"id": "A", "text": "Parameter Store に書き込み、後続 Action から読み出す", "is_correct": false, "explanation": "可能だが、Parameter Store への書き込み権限と並列実行時の競合リスクがある。Pipeline 変数のほうが直接的。"},
+        {"id": "B", "text": "CodeBuild の buildspec の env/exported-variables にビルド ID を宣言し、CodePipeline の variables namespace 経由で後続 Action に #{BuildAction.BUILD_ID} のように参照する", "is_correct": true, "explanation": "正解。CodePipeline は exported variables 機能で Action 間の値渡しを標準サポート。namespace を指定して #{Namespace.VarName} で参照可能。"},
+        {"id": "C", "text": "S3 にメタデータ JSON を書き出し、後続 Action でダウンロードして読む", "is_correct": false, "explanation": "アーティファクト経由は可能だが、変数1つの受け渡しには過剰。exported variables で十分。"},
+        {"id": "D", "text": "DynamoDB テーブルに書き込み、Lambda で読み出して CloudFormation を呼ぶ", "is_correct": false, "explanation": "外部ストア + Lambda は不要な複雑性。CodePipeline 標準機能で解決可能。"}
+      ],
+      "explanation": "CodePipeline のソース・ビルド Action は variables を出力できる: ソース (CommitId, BranchName 等)、CodeBuild (buildspec の exported-variables)、Lambda (PutJobSuccessResult の outputVariables)。後続 Action では #{ActionName.VarName} 構文で参照。CloudFormation Action の ParameterOverrides に渡すことでスタックパラメータに動的値を設定可能。",
+      "references": [
+        {"title": "Variables in CodePipeline", "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-variables.html"}
+      ],
+      "tags": ["codepipeline", "variables", "exported-variables", "cloudformation", "saas"],
+      "common_mistakes": [
+        "Parameter Store/S3 経由で受け渡す自作実装をする",
+        "exported variables の namespace 設定を忘れる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-025",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeBuild",
+      "subtopic": "Secret management",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある FinTech の DevOps チームが CodeBuild ビルド中に外部 API キーを必要としている。次のうち、シークレット管理として推奨される方法は？(複数選択)",
+      "options": [
+        {"id": "A", "text": "buildspec の env.parameter-store でキーの SSM Parameter 名を参照する", "is_correct": true, "explanation": "正解。SecureString 形式の Parameter Store の値を環境変数に注入できる。CodeBuild が起動時に取得し、CloudWatch Logs に値が出ない。"},
+        {"id": "B", "text": "buildspec の env.secrets-manager で Secrets Manager の ARN とキーを参照する", "is_correct": true, "explanation": "正解。Secrets Manager のシークレットを環境変数に注入。ローテーションサポートが必要なら Secrets Manager のほうが優位。"},
+        {"id": "C", "text": "プロジェクト設定の plain-text 環境変数に直接書き込む", "is_correct": false, "explanation": "プロジェクト設定の plain-text は IAM 権限がある人なら誰でも閲覧可能。シークレットには絶対使わない。"},
+        {"id": "D", "text": "Dockerfile の ENV 命令にシークレットを書き、ECR にプッシュする", "is_correct": false, "explanation": "イメージレイヤーに永続的に残り、ECR の権限を持つ全員に漏洩するアンチパターン。"},
+        {"id": "E", "text": "buildspec の commands で aws secretsmanager get-secret-value をシェル実行し、変数に代入する", "is_correct": false, "explanation": "可能だが env.secrets-manager のほうが宣言的・標準的。set -x やエラー時にログに出るリスクもある。"}
+      ],
+      "explanation": "CodeBuild のシークレット管理: env.parameter-store は SSM Parameter Store の SecureString を取得、env.secrets-manager は Secrets Manager の値を取得。両者ともビルド開始時に環境変数として注入され、ログにマスクされて出力される。Secrets Manager は自動ローテーション (RDS, Redshift など) と JSON 構造の値、Parameter Store は無料層が大きく階層構造が便利。サービスロールに ssm:GetParameters または secretsmanager:GetSecretValue 権限が必要。",
+      "references": [
+        {"title": "Build environment in CodeBuild", "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref.html"}
+      ],
+      "tags": ["codebuild", "secrets-manager", "parameter-store", "fintech", "security", "mrq"],
+      "common_mistakes": [
+        "plain-text 環境変数にシークレットを書く",
+        "Dockerfile に直接埋め込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-026",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "Pipeline Architecture",
+      "subtopic": "Trunk-based vs GitFlow",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある製造業企業の DevOps チームが、月1回の大型リリース (GitFlow) からデイリーリリースに移行したい。現在は develop ブランチへのマージ後 QA 環境にデプロイし、月末に release ブランチへマージしている。CI/CD の改善方針として最も適切なのは？",
+      "options": [
+        {"id": "A", "text": "GitFlow を維持しつつ、release ブランチを毎日作成して自動デプロイする", "is_correct": false, "explanation": "GitFlow の本質的な複雑性 (long-lived branches, merge conflict) は残ったまま。トランクベースに移行すべき。"},
+        {"id": "B", "text": "Trunk-based development に移行し、Feature flag (LaunchDarkly, AWS AppConfig 等) で未完成機能を隠しながら main にマージ、main プッシュごとに本番デプロイする", "is_correct": true, "explanation": "正解。Trunk-based + Feature Flag は DORA メトリクスでも高頻度デプロイの王道。AWS AppConfig は Lambda Extension 経由で動的フラグ提供。"},
+        {"id": "C", "text": "Pull Request を廃止して直接 main にプッシュさせ、デプロイ速度を最大化する", "is_correct": false, "explanation": "PR レビューはコード品質維持に必須。デプロイ頻度向上と品質は両立可能。"},
+        {"id": "D", "text": "develop ブランチを廃止し、feature ブランチから直接 master へ毎日リリースする", "is_correct": false, "explanation": "ブランチ命名は本質ではない。長寿命 feature ブランチがあると依然として merge hell に陥る。Feature flag が必要。"}
+      ],
+      "explanation": "Trunk-based development: 全員が main (trunk) で頻繁にコミット、feature branches は短命 (1-2日)。未完成機能は Feature Flag (LaunchDarkly, AWS AppConfig, Split.io) で本番リリースしつつユーザには非表示。これにより Continuous Delivery と段階的ロールアウト (1% → 10% → 100%) が両立。AWS AppConfig は SSM Parameter Store と統合され、Lambda Extension または SDK で取得可能。",
+      "references": [
+        {"title": "AWS AppConfig", "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html"},
+        {"title": "Trunk-based development", "url": "https://trunkbaseddevelopment.com/"}
+      ],
+      "tags": ["trunk-based", "feature-flag", "appconfig", "manufacturing", "dora-metrics"],
+      "common_mistakes": [
+        "ブランチ戦略の名前を変えるだけで解決すると思い込む",
+        "Feature flag なしで頻繁デプロイしようとする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-027",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "CodeDeploy",
+      "subtopic": "Lambda traffic shifting",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業の Lambda 関数を Canary10Percent30Minutes でデプロイ中、20分経過時点で BeforeAllowTraffic は成功済みだが、CloudWatch Alarm 'NewVersionErrorRate' が ALARM になった。CodeDeploy の挙動として正しいものは？",
+      "options": [
+        {"id": "A", "text": "残り10分待ってから判定するため、何も起きない", "is_correct": false, "explanation": "Alarm 連動の自動ロールバックは Alarm 状態に遷移した瞬間に発動するため、待機しない。"},
+        {"id": "B", "text": "Alias の重み付けを元に戻し (旧 Version 100%)、デプロイをロールバック扱いにする", "is_correct": true, "explanation": "正解。デプロイメントグループに Alarm が紐付いていれば、Canary 中の ALARM 検知で即座にロールバック。Alias の routing config を旧 Version 100% に戻す。"},
+        {"id": "C", "text": "AfterAllowTraffic フックを実行してからロールバックする", "is_correct": false, "explanation": "AfterAllowTraffic は全トラフィック移行後のフック。Canary 中のロールバックでは実行されない。"},
+        {"id": "D", "text": "Lambda 関数の予約並行性を 0 にする", "is_correct": false, "explanation": "そのような自動操作は CodeDeploy の機能として存在しない。"}
+      ],
+      "explanation": "Lambda Canary デプロイの段階: (1) BeforeAllowTraffic Hook 実行、(2) Alias 重み付け変更で Canary % を新Version に流す、(3) Canary 期間 (例: 30分) 待機、(4) 残りトラフィックを新Versionへシフト、(5) AfterAllowTraffic Hook 実行。Canary 中に Alarm が ALARM になると、CodeDeploy は即座に Alias 重み付けを 100% 旧Version に戻し、デプロイを Failed (Rollback) としてマーク。新規呼び出しは旧Versionへルーティングされる。",
+      "references": [
+        {"title": "Implementing safe AWS Lambda deployments with CodeDeploy", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html#deployment-configuration-lambda"}
+      ],
+      "tags": ["codedeploy", "lambda", "canary", "rollback", "alarm", "saas"],
+      "common_mistakes": [
+        "Canary 期間中は Alarm が無視されると誤解する",
+        "ロールバック時に AfterAllowTraffic が実行されると思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-028",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "Artifact Management",
+      "subtopic": "Immutable artifacts",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある FinTech 企業の監査チームが、本番環境にデプロイされたバイナリと CI でビルドされたバイナリの一致を保証する仕組みを要求している。次の方針のうち、最も評価が高いのはどれか？",
+      "options": [
+        {"id": "A", "text": "本番ホストでも CI と同じビルドコマンドを再実行することで一致を保証する", "is_correct": false, "explanation": "Build twice anti-pattern。タイムスタンプ・依存バージョンが異なる可能性があり、再現性は保証されない。Build once, deploy many が原則。"},
+        {"id": "B", "text": "CI ビルド時に成果物のハッシュ (SHA256) を計算して S3 オブジェクトメタデータに保存し、デプロイ時に検証する。さらに ECR の場合は image digest 固定で参照する", "is_correct": true, "explanation": "正解。Immutable artifact の典型実装。SHA256 で改竄検知、image digest (sha256:...) でタグ書換による別イメージ実行を防止。SLSA レベル達成にも寄与。"},
+        {"id": "C", "text": "Git のタグから自動的に最新の依存パッケージを取得して再ビルドする", "is_correct": false, "explanation": "依存の上流変更で結果が変わる。再現性なし。"},
+        {"id": "D", "text": "デプロイ後に CodeBuild で同じソースを再ビルドし、本番のバイナリと比較する", "is_correct": false, "explanation": "再ビルドの非決定性 (タイムスタンプ・コンパイラオプション・依存解決) で常に差分が出る。検証として機能しない。"}
+      ],
+      "explanation": "サプライチェーンセキュリティの基本原則: (1) Build once, deploy many、(2) Immutable artifacts (改変不可)、(3) Cryptographic verification (SHA256 ハッシュ・署名)、(4) Provenance tracking (どの commit から生成されたか)。ECR では tag は mutable だが image digest は immutable なので、本番デプロイは digest 参照を推奨。SLSA (Supply-chain Levels for Software Artifacts) フレームワークもこれを基準とする。AWS Signer / Sigstore で署名追加も可能。",
+      "references": [
+        {"title": "ECR image scanning and immutable tags", "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html"},
+        {"title": "SLSA framework", "url": "https://slsa.dev/"}
+      ],
+      "tags": ["artifact-management", "immutable", "supply-chain", "ecr", "fintech", "audit", "slsa"],
+      "common_mistakes": [
+        "本番でも再ビルドすれば良いと考える",
+        "ECR の tag が mutable であることを認識しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-029",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "Deployment Strategy",
+      "subtopic": "Blue/Green vs Canary tradeoffs",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業のリードエンジニアが、Lambda ベースの決済処理関数のデプロイ戦略を選択しようとしている。要件: (1) リスク最小化、(2) ロールバック時間1分以内、(3) 新Version の本番トラフィック検証は最低30分必要、(4) Lambda 関数なので Blue/Green 環境並列はコスト無料。最適な戦略は？",
+      "options": [
+        {"id": "A", "text": "AllAtOnce デプロイ (即座に100%切替)", "is_correct": false, "explanation": "リスク最小化の要件に反する。問題があっても全ユーザに影響。"},
+        {"id": "B", "text": "Linear10PercentEvery1Minute (10分かけて段階的に切替)", "is_correct": false, "explanation": "30分の検証時間が取れない。10分で全切替完了してしまう。"},
+        {"id": "C", "text": "Canary10Percent30Minutes (10%を30分流し、その後残り90%)", "is_correct": true, "explanation": "正解。30分間の本番検証時間を確保し、リスクは10%トラフィックに限定。Alarm 連動で1分以内のロールバック可能。"},
+        {"id": "D", "text": "本番アカウントを2セット用意し、Route 53 加重ルーティングで段階移行", "is_correct": false, "explanation": "Lambda の場合 Alias で同等のことが追加コストなしで実現可能。冗長な構成。"}
+      ],
+      "explanation": "Lambda の組込デプロイ設定: AllAtOnce (即時)、Linear10PercentEvery1/2/3/10Minutes (10/20/30/100分)、Canary10Percent5/10/15/30Minutes (5/10/15/30分後に残り90%切替)。要件マトリクス分析: 検証時間30分 → Canary30Minutes 系列が必須、リスク最小化 → 10% Canary、Lambda 並列コスト無料 → Blue/Green 同等で安全。Linear は段階的に増えるが30分で全ロールアウトされず最大検証時間が短い。",
+      "references": [
+        {"title": "Lambda deployment configurations", "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html#deployment-configuration-lambda"}
+      ],
+      "tags": ["deployment-strategy", "lambda", "canary", "evaluation", "saas"],
+      "common_mistakes": [
+        "Linear と Canary の違いを理解しない (Linear は段階増加、Canary は2フェーズ)",
+        "Lambda Alias の Blue/Green が追加コスト無料という特徴を見落とす"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dop-c02-domain1-030",
+      "version": "1.0",
+      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "SDLC Automation", "weight_percent": 22},
+      "topic": "Pipeline Design",
+      "subtopic": "End-to-end pipeline architecture",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "ある FinTech 企業 (架空: NagoyaPay 株式会社) の DevOps リードが、新規マイクロサービス向けの CI/CD パイプライン全体設計を任された。要件: (1) GitHub からトリガー、(2) PR 作成時にテスト+セキュリティスキャン、(3) main マージで Dev/Staging 自動デプロイ、(4) Prod は手動承認後 Canary、(5) アーティファクトは immutable、(6) クロスアカウント (Dev/Stg/Prod 別)、(7) 監査ログ7年保存。全要件を最も簡潔に満たすアーキテクチャは？",
+      "options": [
+        {"id": "A", "text": "GitHub Actions でテスト・スキャン → ECR (immutable tag) push → CodePipeline (CodeConnections) で Dev→Stg→Prod へクロスアカウント Blue/Green デプロイ、CloudTrail を S3 (Object Lock + Glacier) で7年保管", "is_correct": true, "explanation": "正解。各要件を最適なツールでカバー: GitHub Actions=PR テスト、CodePipeline=承認/デプロイオーケストレーション、ECR immutable tag=改竄防止、CloudTrail+S3 Object Lock=改竄不可監査ログ、CodeConnections=GitHub 連携、Cross-Account=KMS+Bucket Policy。"},
+        {"id": "B", "text": "全て GitHub Actions で完結させる (Dev/Stg/Prod デプロイも Actions、承認も GitHub Environment、監査も GitHub Audit Log)", "is_correct": false, "explanation": "GitHub Audit Log は7年保管設定が標準では不可、クロスアカウント IAM 制御が GitHub 側で煩雑、AWS 側監査要件 (CloudTrail) を満たさない可能性が高い。"},
+        {"id": "C", "text": "Jenkins クラスタを EC2 に構築し、すべてのデプロイ・承認を Jenkins Pipeline で管理する", "is_correct": false, "explanation": "運用負荷が高く、Jenkins クラスタ自体の HA・パッチ管理が必要。AWS マネージドサービスを使うべき。"},
+        {"id": "D", "text": "CodePipeline のみで GitHub trigger・テスト・デプロイすべてを行い、CodeBuild で全テストを実行", "is_correct": false, "explanation": "PR レベルのテストには CodePipeline は使えない (PR 開いた時点では main へのマージなし)。GitHub Actions で PR テストするのが標準。"}
+      ],
+      "explanation": "理想的なエンタープライズ CI/CD: (1) PR フェーズ - GitHub Actions で高速 feedback (テスト・lint・SAST・SBOM 生成・ECR Inspector スキャン)、(2) main マージ後 - CodePipeline で承認とクロスアカウントデプロイ、(3) アーティファクト - ECR immutable tag + image digest 参照、(4) 監査 - CloudTrail multi-account + S3 Object Lock (Compliance mode) で改竄不可な7年保管、(5) クロスアカウント - DevOps アカウントから Dev/Stg/Prod の IAM Role を AssumeRole + KMS CMK 共有。CodePipeline と GitHub Actions は補完関係で使い分けるのがエンタープライズベストプラクティス。",
+      "references": [
+        {"title": "CI/CD on AWS reference architecture", "url": "https://aws.amazon.com/architecture/devops/"},
+        {"title": "S3 Object Lock for compliance retention", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"},
+        {"title": "CodeConnections with GitHub", "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-create-github.html"}
+      ],
+      "tags": ["pipeline-design", "end-to-end", "fintech", "cross-account", "audit", "compliance", "create"],
+      "common_mistakes": [
+        "GitHub Actions と CodePipeline をどちらか1つに偏らせる",
+        "監査ログの改竄不可性 (Object Lock) を考慮しない",
+        "PR 段階のテストを CodePipeline でやろうとする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

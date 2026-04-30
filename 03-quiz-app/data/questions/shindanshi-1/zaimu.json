@@ -1,0 +1,2337 @@
+{
+  "exam_code": "shindanshi-1",
+  "exam_name": "中小企業診断士 1次試験",
+  "version": "2026.04",
+  "total_questions": 30,
+  "domains": [
+    {
+      "id": "zaimu",
+      "name": "財務・会計",
+      "weight_percent": 15,
+      "question_count": 30
+    }
+  ],
+  "questions": [
+    {
+      "id": "shindanshi-1-zaimu-001",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "簿記原理",
+      "subtopic": "貸借対照表の構造",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "貸借対照表（B/S）における基本等式として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "資産 = 負債 - 純資産",
+          "is_correct": false,
+          "explanation": "符号が誤り。負債と純資産は両方とも資産の調達源泉なので加算する。"
+        },
+        {
+          "id": "B",
+          "text": "資産 = 負債 + 純資産",
+          "is_correct": true,
+          "explanation": "正解。資産（運用形態）= 負債（他人資本）+ 純資産（自己資本）が会計の基本等式。"
+        },
+        {
+          "id": "C",
+          "text": "純資産 = 資産 + 負債",
+          "is_correct": false,
+          "explanation": "純資産は資産から負債を差し引いた残余。加算ではない。"
+        },
+        {
+          "id": "D",
+          "text": "負債 = 資産 + 純資産",
+          "is_correct": false,
+          "explanation": "等式の左右を取り違えている。負債は資産の一部の調達源泉に過ぎない。"
+        }
+      ],
+      "explanation": "貸借対照表は左側（借方）に資産、右側（貸方）に負債と純資産を記載する。資産=負債+純資産という等式が常に成立し、これを「貸借平均の原理」と呼ぶ。負債は他人資本、純資産は自己資本に対応する。",
+      "references": [
+        {
+          "title": "企業会計原則 第三 貸借対照表原則",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "簿記",
+        "貸借対照表",
+        "会計等式",
+        "基礎",
+        "B/S"
+      ],
+      "common_mistakes": [
+        "純資産=資産+負債と記憶してしまう",
+        "符号を逆に覚える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-002",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "簿記原理",
+      "subtopic": "勘定科目の分類",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "次の勘定科目のうち、貸借対照表の「流動負債」に分類されるものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "長期借入金",
+          "is_correct": false,
+          "explanation": "返済期限が決算日翌日から1年超の借入金は固定負債に分類される。"
+        },
+        {
+          "id": "B",
+          "text": "支払手形",
+          "is_correct": true,
+          "explanation": "正解。営業取引から生じる支払手形は通常1年以内に決済されるため流動負債。"
+        },
+        {
+          "id": "C",
+          "text": "退職給付引当金",
+          "is_correct": false,
+          "explanation": "従業員の退職時に支払う性質のため、原則として固定負債に分類。"
+        },
+        {
+          "id": "D",
+          "text": "繰延税金負債（長期）",
+          "is_correct": false,
+          "explanation": "1年超で解消する一時差異に対応するため固定負債。"
+        }
+      ],
+      "explanation": "流動負債は1年以内に支払期限が到来する負債（買掛金・支払手形・短期借入金・未払金等）、固定負債は1年超のもの（社債・長期借入金・退職給付引当金等）。これを「ワン・イヤー・ルール」と呼ぶ。営業循環基準も併用される。",
+      "references": [
+        {
+          "title": "企業会計原則注解 注16（流動・固定の分類）",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "簿記",
+        "勘定科目",
+        "流動負債",
+        "ワンイヤールール",
+        "B/S"
+      ],
+      "common_mistakes": [
+        "長期借入金を流動負債と勘違い",
+        "退職給付引当金の分類を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-003",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "財務諸表",
+      "subtopic": "損益計算書の段階利益",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "損益計算書の段階利益のうち、企業の本業の収益力を示すものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "売上総利益",
+          "is_correct": false,
+          "explanation": "売上総利益（粗利）は販売費及び一般管理費を控除する前の段階。本業の収益力には販管費控除が必要。"
+        },
+        {
+          "id": "B",
+          "text": "営業利益",
+          "is_correct": true,
+          "explanation": "正解。営業利益=売上総利益-販管費。本業（営業活動）から得られる利益を表す。"
+        },
+        {
+          "id": "C",
+          "text": "経常利益",
+          "is_correct": false,
+          "explanation": "営業外収益・費用を加味した利益。財務活動も含むため本業のみではない。"
+        },
+        {
+          "id": "D",
+          "text": "当期純利益",
+          "is_correct": false,
+          "explanation": "特別損益・税金を控除後の最終利益で、本業以外の要素も含む。"
+        }
+      ],
+      "explanation": "P/Lには5段階の利益がある：(1)売上総利益（粗利）、(2)営業利益（本業の収益力）、(3)経常利益（経常的な活動全体）、(4)税引前当期純利益、(5)当期純利益。本業の収益力分析には営業利益と売上高営業利益率を用いる。",
+      "references": [
+        {
+          "title": "企業会計原則 第二 損益計算書原則",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "損益計算書",
+        "営業利益",
+        "段階利益",
+        "P/L",
+        "収益性"
+      ],
+      "common_mistakes": [
+        "経常利益を本業の利益と誤解",
+        "売上総利益と営業利益の違いを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-004",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "簿記原理",
+      "subtopic": "減価償却（定率法）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方の製造業A社が取得原価1,000万円の機械を定率法（償却率0.250）で減価償却している。第2期末の減価償却累計額として最も近い金額はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "250万円",
+          "is_correct": false,
+          "explanation": "これは第1期のみの減価償却費。累計額ではない。"
+        },
+        {
+          "id": "B",
+          "text": "437.5万円",
+          "is_correct": true,
+          "explanation": "正解。第1期：1000×0.25=250。第2期：(1000-250)×0.25=187.5。累計250+187.5=437.5万円。"
+        },
+        {
+          "id": "C",
+          "text": "500万円",
+          "is_correct": false,
+          "explanation": "定額法（耐用年数4年）の累計額。定率法では未償却残高に償却率を乗じるため計算が異なる。"
+        },
+        {
+          "id": "D",
+          "text": "562.5万円",
+          "is_correct": false,
+          "explanation": "計算ミス。第2期の償却費の基礎は第1期末の未償却残高（750万円）。"
+        }
+      ],
+      "explanation": "定率法は未償却残高（取得原価-減価償却累計額）に一定の償却率を乗じる方法。初期に多く償却され、後年は少なくなる。第1期償却費=1,000×0.25=250、第2期償却費=750×0.25=187.5。累計=437.5万円。製造業の機械装置に多く採用される。",
+      "references": [
+        {
+          "title": "法人税法施行令 第48条の2（減価償却資産の償却の方法）",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "減価償却",
+        "定率法",
+        "簿記",
+        "製造業",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "定額法と定率法を混同",
+        "未償却残高ではなく取得原価に償却率を毎期掛ける誤り",
+        "1期分のみで累計と勘違い"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-005",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "簿記原理",
+      "subtopic": "棚卸資産評価（先入先出法）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "B社の商品Xに関する以下のデータから、先入先出法（FIFO）による期末棚卸高はいくらか。\n期首在庫：10個 @100円\n4月仕入：20個 @120円\n8月仕入：30個 @150円\n期末在庫数量：25個",
+      "options": [
+        {
+          "id": "A",
+          "text": "2,500円",
+          "is_correct": false,
+          "explanation": "期首単価のみで計算した誤り。FIFOでは期末は新しい仕入分が残る前提。"
+        },
+        {
+          "id": "B",
+          "text": "3,000円",
+          "is_correct": false,
+          "explanation": "中間単価を一律適用しており、FIFO計算ではない。"
+        },
+        {
+          "id": "C",
+          "text": "3,750円",
+          "is_correct": true,
+          "explanation": "正解。FIFOでは古いものから払出。期末在庫25個＝直近仕入の8月分25個 @150円=3,750円。"
+        },
+        {
+          "id": "D",
+          "text": "4,500円",
+          "is_correct": false,
+          "explanation": "30個全て@150円で計算しており、期末数量を超過している。"
+        }
+      ],
+      "explanation": "先入先出法（FIFO）は「先に仕入れたものから先に販売される」と仮定する評価法。インフレ局面では期末在庫が高めに評価され、売上原価が低めになるため利益が大きく出る。期末25個は直近の8月仕入30個の一部として25個×150円=3,750円。",
+      "references": [
+        {
+          "title": "企業会計基準第9号 棚卸資産の評価に関する会計基準",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "棚卸資産",
+        "FIFO",
+        "先入先出法",
+        "計算問題",
+        "簿記"
+      ],
+      "common_mistakes": [
+        "後入先出法（LIFO）と混同",
+        "期首在庫の単価で期末を評価",
+        "総平均法と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-006",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "財務諸表",
+      "subtopic": "株主資本等変動計算書（S/S）",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "株主資本等変動計算書（S/S）の役割として最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "一定期間の収益と費用を集計し当期純利益を算出する",
+          "is_correct": false,
+          "explanation": "これは損益計算書（P/L）の役割。"
+        },
+        {
+          "id": "B",
+          "text": "一定時点の財政状態を表す",
+          "is_correct": false,
+          "explanation": "これは貸借対照表（B/S）の役割。"
+        },
+        {
+          "id": "C",
+          "text": "純資産（株主資本等）の期中変動を株主構成要素別に明らかにする",
+          "is_correct": true,
+          "explanation": "正解。S/Sは資本金・資本剰余金・利益剰余金・自己株式等の変動内訳を示す。"
+        },
+        {
+          "id": "D",
+          "text": "営業・投資・財務の3区分でキャッシュ増減を示す",
+          "is_correct": false,
+          "explanation": "これはキャッシュ・フロー計算書（C/F）の役割。"
+        }
+      ],
+      "explanation": "株主資本等変動計算書（Statements of Shareholders' equity, S/S）は、純資産の期首から期末への変動内訳を示す財務諸表。配当・新株発行・自己株式取得・当期純利益の振替などが記載される。会社法・金商法で作成義務があり、財務四表の一つ。",
+      "references": [
+        {
+          "title": "企業会計基準第6号 株主資本等変動計算書に関する会計基準",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "財務諸表",
+        "S/S",
+        "株主資本等変動計算書",
+        "純資産",
+        "会社法"
+      ],
+      "common_mistakes": [
+        "S/SとC/Fを混同",
+        "純資産の動きを示す表だと知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-007",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "簿記原理",
+      "subtopic": "引当金の計上要件",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "引当金の計上要件として、企業会計原則注解18が示していないものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "将来の特定の費用または損失であること",
+          "is_correct": false,
+          "explanation": "計上要件の1つ。"
+        },
+        {
+          "id": "B",
+          "text": "発生原因が当期以前にあること",
+          "is_correct": false,
+          "explanation": "計上要件の1つ。"
+        },
+        {
+          "id": "C",
+          "text": "発生の可能性が高いこと",
+          "is_correct": false,
+          "explanation": "計上要件の1つ。"
+        },
+        {
+          "id": "D",
+          "text": "監査人の事前承認を得ていること",
+          "is_correct": true,
+          "explanation": "正解（誤った要件）。監査人の事前承認は引当金計上の要件ではない。会計基準が定める客観的要件で判定する。"
+        }
+      ],
+      "explanation": "引当金の4要件（注解18）：(1)将来の特定の費用・損失であること、(2)発生が当期以前の事象に起因すること、(3)発生の可能性が高いこと、(4)金額を合理的に見積もれること。これら全てを満たす場合に引当金として負債計上する。",
+      "references": [
+        {
+          "title": "企業会計原則注解 注18（引当金）",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "引当金",
+        "企業会計原則",
+        "簿記",
+        "計上要件",
+        "B/S"
+      ],
+      "common_mistakes": [
+        "監査人承認を計上要件と勘違い",
+        "「金額を合理的に見積れる」要件を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-008",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "財務諸表",
+      "subtopic": "資本剰余金と利益剰余金",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "純資産の部に関する説明のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "資本準備金は利益剰余金の一部である",
+          "is_correct": false,
+          "explanation": "資本準備金は資本剰余金の中に含まれる。利益剰余金とは別区分。"
+        },
+        {
+          "id": "B",
+          "text": "利益準備金は資本取引から生じる",
+          "is_correct": false,
+          "explanation": "利益準備金は配当時に積み立てる利益性の準備金で、損益取引から生じる。"
+        },
+        {
+          "id": "C",
+          "text": "資本剰余金は資本取引、利益剰余金は損益取引から生じ、両者は混同してはならない",
+          "is_correct": true,
+          "explanation": "正解。資本取引と損益取引の区分原則（資本剰余金と利益剰余金の混同禁止）。"
+        },
+        {
+          "id": "D",
+          "text": "自己株式は純資産の部にプラス計上する",
+          "is_correct": false,
+          "explanation": "自己株式は純資産の部から控除（マイナス）する。"
+        }
+      ],
+      "explanation": "純資産の部の重要原則は「資本取引・損益取引区分の原則」。資本剰余金（資本準備金・その他資本剰余金）は新株発行差金など資本取引から、利益剰余金（利益準備金・任意積立金・繰越利益剰余金）は損益取引から生じる。両者を混同すると配当可能利益が歪む。",
+      "references": [
+        {
+          "title": "企業会計原則 一般原則3 資本取引・損益取引区分の原則",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "純資産",
+        "資本剰余金",
+        "利益剰余金",
+        "資本取引",
+        "簿記"
+      ],
+      "common_mistakes": [
+        "資本準備金と利益準備金を混同",
+        "自己株式の表示方法を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-009",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "連結会計",
+      "subtopic": "支配の判定基準",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "親会社が子会社を連結の範囲に含めるか判定する際の基本原則として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "持株比率50%超のみで判定する（持株基準）",
+          "is_correct": false,
+          "explanation": "現行基準は持株基準ではなく支配力基準。役員派遣・契約による支配も考慮される。"
+        },
+        {
+          "id": "B",
+          "text": "実質的な支配力の有無で判定する（支配力基準）",
+          "is_correct": true,
+          "explanation": "正解。連結基準は持株比率に加え、議決権・役員派遣・契約等を総合勘案する支配力基準を採用。"
+        },
+        {
+          "id": "C",
+          "text": "親会社の自由意思で連結対象を選択できる",
+          "is_correct": false,
+          "explanation": "恣意的な選択は認められず、客観的要件で判定する。"
+        },
+        {
+          "id": "D",
+          "text": "資本金規模で判定する",
+          "is_correct": false,
+          "explanation": "資本金は判定基準ではない。"
+        }
+      ],
+      "explanation": "連結財務諸表における子会社の判定基準は「支配力基準」。具体的には(1)議決権の過半数所有、(2)40%超50%以下でも実質支配（役員派遣・契約・資金提供等）がある場合、(3)緊密な者・同意者と合計で過半数となる場合、なども含める。",
+      "references": [
+        {
+          "title": "企業会計基準第22号 連結財務諸表に関する会計基準",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "連結会計",
+        "支配力基準",
+        "子会社",
+        "連結範囲",
+        "親会社"
+      ],
+      "common_mistakes": [
+        "持株50%超のみで判定すると思い込む",
+        "支配力基準の概念を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-010",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "連結会計",
+      "subtopic": "のれん",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "C社（SaaS企業）がD社株式100%を1,000百万円で取得した。取得日のD社純資産時価評価額は700百万円であった。日本基準（J-GAAP）における会計処理として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "差額300百万円を「のれん」として無形固定資産計上し、20年以内の効果及ぶ期間で規則的償却",
+          "is_correct": true,
+          "explanation": "正解。J-GAAPでは取得原価-時価純資産=のれんを計上し、20年以内で規則的償却（IFRSは非償却・減損のみ）。"
+        },
+        {
+          "id": "B",
+          "text": "差額300百万円は「のれん」として計上し、減損テストのみで償却しない",
+          "is_correct": false,
+          "explanation": "それはIFRS（国際会計基準）の処理。J-GAAPは規則的償却を行う。"
+        },
+        {
+          "id": "C",
+          "text": "差額300百万円は「負ののれん」として営業外収益で一括計上",
+          "is_correct": false,
+          "explanation": "差額がプラス（取得原価＞時価純資産）なので「のれん」。負ののれんは逆ケース。"
+        },
+        {
+          "id": "D",
+          "text": "差額300百万円は資本剰余金として処理",
+          "is_correct": false,
+          "explanation": "のれんは資産（または負ののれんは特別利益）として処理し、資本剰余金にはしない。"
+        }
+      ],
+      "explanation": "のれん（goodwill）は企業結合の取得原価が被取得企業の識別可能純資産時価を上回る差額。J-GAAPでは20年以内の効果が及ぶ期間で規則的償却+減損テスト。IFRSでは規則的償却せず減損のみ。SaaS企業など無形価値が大きいM&Aで重要論点。",
+      "references": [
+        {
+          "title": "企業会計基準第21号 企業結合に関する会計基準",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "のれん",
+        "M&A",
+        "連結会計",
+        "SaaS",
+        "企業結合"
+      ],
+      "common_mistakes": [
+        "J-GAAPとIFRSの処理を混同",
+        "負ののれんの定義を誤る",
+        "のれんを資本剰余金と勘違い"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-011",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "税効果会計",
+      "subtopic": "繰延税金資産の計上",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "税効果会計に関する説明のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "将来減算一時差異からは繰延税金負債が発生する",
+          "is_correct": false,
+          "explanation": "将来減算一時差異は将来の課税所得を減らす差異で、繰延税金「資産」が発生する。"
+        },
+        {
+          "id": "B",
+          "text": "将来加算一時差異からは繰延税金資産が発生する",
+          "is_correct": false,
+          "explanation": "将来加算一時差異は将来の課税所得を増やすため、繰延税金「負債」が発生する。"
+        },
+        {
+          "id": "C",
+          "text": "繰延税金資産は回収可能性を検討し、実現可能性が低い部分は計上しない",
+          "is_correct": true,
+          "explanation": "正解。将来の課税所得や繰戻還付で回収できる範囲のみ計上。回収可能性のレビューが必須。"
+        },
+        {
+          "id": "D",
+          "text": "永久差異も税効果会計の対象である",
+          "is_correct": false,
+          "explanation": "永久差異（交際費損金不算入等）は将来も解消しないため税効果会計の対象外。一時差異のみ対象。"
+        }
+      ],
+      "explanation": "税効果会計は会計上の利益と税務上の課税所得の差異を調整する手続。一時差異（将来解消する差異）が対象で永久差異は対象外。将来減算一時差異→繰延税金資産、将来加算一時差異→繰延税金負債。繰延税金資産は回収可能性の慎重な検討が必要（企業区分1〜5）。",
+      "references": [
+        {
+          "title": "企業会計基準第28号 税効果会計に係る会計基準の適用指針",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "税効果会計",
+        "繰延税金資産",
+        "一時差異",
+        "回収可能性",
+        "財務諸表"
+      ],
+      "common_mistakes": [
+        "将来減算/将来加算と資産/負債の対応を逆に覚える",
+        "永久差異も対象と誤解",
+        "回収可能性検討を不要と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-012",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "財務分析",
+      "subtopic": "ROA・ROE",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "教育系SaaS企業E社の以下の財務データから、ROE（自己資本利益率）として最も近いものはどれか。\n総資産：1,000百万円、自己資本：400百万円、当期純利益：60百万円",
+      "options": [
+        {
+          "id": "A",
+          "text": "6.0%",
+          "is_correct": false,
+          "explanation": "これはROA（総資産利益率）= 60/1000=6%。ROEとは分母が異なる。"
+        },
+        {
+          "id": "B",
+          "text": "10.0%",
+          "is_correct": false,
+          "explanation": "計算に該当しない数値。"
+        },
+        {
+          "id": "C",
+          "text": "15.0%",
+          "is_correct": true,
+          "explanation": "正解。ROE = 当期純利益 ÷ 自己資本 = 60 ÷ 400 = 15%。株主資本の収益性を示す。"
+        },
+        {
+          "id": "D",
+          "text": "60.0%",
+          "is_correct": false,
+          "explanation": "桁を1つ間違えている。利益÷自己資本×100で正しく計算する。"
+        }
+      ],
+      "explanation": "ROE（Return on Equity, 自己資本利益率）= 当期純利益 ÷ 自己資本。株主資本の収益性指標で、株主が最重視する。デュポン分解：ROE = 売上高純利益率 × 総資産回転率 × 財務レバレッジ。一般に8%以上が良好、15%は高水準。",
+      "references": [
+        {
+          "title": "中小企業庁 中小企業の経営指標",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "財務分析",
+        "ROE",
+        "自己資本利益率",
+        "計算問題",
+        "収益性"
+      ],
+      "common_mistakes": [
+        "ROAとROEを混同（分母を総資産にする）",
+        "%換算を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-013",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "財務分析",
+      "subtopic": "デュポン分解",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "F社のROEが10%、G社のROEも10%で同じだが、デュポン分解の結果、F社は売上高純利益率5%・総資産回転率1回・財務レバレッジ2倍、G社は売上高純利益率2%・総資産回転率2.5回・財務レバレッジ2倍であった。両社の特性として最も適切な解釈はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "F社は薄利多売型、G社は高付加価値型のビジネス",
+          "is_correct": false,
+          "explanation": "逆。F社は純利益率が高く回転率が低い→高付加価値型。G社は純利益率低く回転率高い→薄利多売型。"
+        },
+        {
+          "id": "B",
+          "text": "F社は高付加価値型、G社は薄利多売型のビジネス",
+          "is_correct": true,
+          "explanation": "正解。純利益率が高く回転率低いF社は高単価・差別化型。低利益率高回転のG社は薄利多売型。"
+        },
+        {
+          "id": "C",
+          "text": "両社のリスクプロファイルは大きく異なる",
+          "is_correct": false,
+          "explanation": "財務レバレッジが両社2倍で同じため、財務リスクは類似。ビジネスモデル差が論点。"
+        },
+        {
+          "id": "D",
+          "text": "G社のほうが純粋に経営効率が高い",
+          "is_correct": false,
+          "explanation": "ROE自体は同じ10%。経営効率の優劣は単純比較できない。"
+        }
+      ],
+      "explanation": "デュポン分解：ROE = 売上高純利益率 × 総資産回転率 × 財務レバレッジ。同じROEでも各要素の組合せでビジネスの特性が異なる。高利益率×低回転=ブランド・差別化型（高付加価値）、低利益率×高回転=効率・大量販売型（薄利多売）。経営戦略立案に有用。",
+      "references": [
+        {
+          "title": "DuPont Analysis - ROE分解の理論",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "デュポン分解",
+        "ROE",
+        "財務分析",
+        "ビジネスモデル",
+        "L4-Analyze"
+      ],
+      "common_mistakes": [
+        "高付加価値型と薄利多売型の判別を逆にする",
+        "デュポン分解の3要素を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-014",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "財務分析",
+      "subtopic": "流動比率と当座比率",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FinTech企業H社の財務データ：流動資産400（うち棚卸資産120、現預金200、売掛金80）、流動負債200。当座比率（quick ratio）はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "100%",
+          "is_correct": false,
+          "explanation": "流動負債のみ等しい場合の数値。当座資産でないと一致しない。"
+        },
+        {
+          "id": "B",
+          "text": "140%",
+          "is_correct": true,
+          "explanation": "正解。当座資産=現預金200+売掛金80=280。当座比率=280÷200=140%。棚卸資産は除外。"
+        },
+        {
+          "id": "C",
+          "text": "200%",
+          "is_correct": false,
+          "explanation": "これは流動比率（流動資産400÷流動負債200=200%）。"
+        },
+        {
+          "id": "D",
+          "text": "60%",
+          "is_correct": false,
+          "explanation": "棚卸資産120÷流動負債200の値で、計算ロジックが誤り。"
+        }
+      ],
+      "explanation": "短期支払能力（安全性）指標：流動比率=流動資産÷流動負債（200%以上が理想）、当座比率=当座資産（現預金・売掛金・有価証券）÷流動負債（100%以上が望ましい）。当座比率は棚卸資産を除き、より厳格な短期支払能力を測る指標。",
+      "references": [
+        {
+          "title": "中小企業庁 経営指標 安全性分析",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "財務分析",
+        "当座比率",
+        "流動比率",
+        "安全性",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "棚卸資産を当座資産に含めてしまう",
+        "流動比率と当座比率を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-015",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "財務分析",
+      "subtopic": "自己資本比率と固定比率",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "医療機関I社のB/Sは、固定資産600、流動資産400、固定負債300、流動負債100、自己資本600。固定長期適合率として最も近いものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "60%",
+          "is_correct": false,
+          "explanation": "これは自己資本比率（600÷1000=60%）。設問は固定長期適合率。"
+        },
+        {
+          "id": "B",
+          "text": "67%",
+          "is_correct": true,
+          "explanation": "正解。固定長期適合率=固定資産÷(自己資本+固定負債)=600÷(600+300)=66.7%。100%以下が安全。"
+        },
+        {
+          "id": "C",
+          "text": "100%",
+          "is_correct": false,
+          "explanation": "固定資産が自己資本のみで賄われる場合の固定比率の値。"
+        },
+        {
+          "id": "D",
+          "text": "150%",
+          "is_correct": false,
+          "explanation": "計算ロジック誤り。分子・分母が逆。"
+        }
+      ],
+      "explanation": "長期安全性指標：(1)固定比率=固定資産÷自己資本（100%以下が理想）、(2)固定長期適合率=固定資産÷(自己資本+固定負債)（100%以下なら長期資金で固定資産を賄えている）。中小企業や設備投資の多い業種では固定長期適合率を重視。100%超は短期資金で長期投資を賄っており危険。",
+      "references": [
+        {
+          "title": "中小企業庁 経営指標 長期安全性分析",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "財務分析",
+        "固定長期適合率",
+        "固定比率",
+        "安全性",
+        "医療"
+      ],
+      "common_mistakes": [
+        "固定比率と固定長期適合率を混同",
+        "分母を自己資本のみにしてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-016",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "財務分析",
+      "subtopic": "総資産回転率の解釈",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "業種比較において、一般に総資産回転率が高い傾向のある業種の組合せとして最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "スーパーマーケット業 / 食品卸売業",
+          "is_correct": true,
+          "explanation": "正解。低マージン・高回転のビジネスで、在庫を素早く回転させ売上を作る。"
+        },
+        {
+          "id": "B",
+          "text": "電力業 / 鉄道業",
+          "is_correct": false,
+          "explanation": "巨額設備投資のため総資産が大きく、回転率は低いのが特徴。"
+        },
+        {
+          "id": "C",
+          "text": "医薬品製造業 / 高級ブランド業",
+          "is_correct": false,
+          "explanation": "高マージン・低回転型。在庫保有期間が長く回転率は低め。"
+        },
+        {
+          "id": "D",
+          "text": "不動産業 / リース業",
+          "is_correct": false,
+          "explanation": "巨額の固定資産・棚卸資産を持つため回転率は低い。"
+        }
+      ],
+      "explanation": "総資産回転率=売上÷総資産。業種特性で大きく異なる：高回転=小売・卸売（薄利多売）、低回転=電力・鉄道・不動産（巨額設備）。同業他社比較が分析の基本。デュポン分解では「効率性」を表す要素。",
+      "references": [
+        {
+          "title": "中小企業庁 業種別経営指標",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "財務分析",
+        "総資産回転率",
+        "業種比較",
+        "効率性",
+        "L4-Analyze"
+      ],
+      "common_mistakes": [
+        "高マージン業種が高回転と勘違い",
+        "業種特性を無視して一律基準で評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-017",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "キャッシュフロー計算書",
+      "subtopic": "営業CFの間接法",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "間接法による営業活動キャッシュフローを算出する際の調整として、誤っているものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "減価償却費はプラス調整する",
+          "is_correct": false,
+          "explanation": "正しい。非資金費用なので利益に加算する。"
+        },
+        {
+          "id": "B",
+          "text": "売上債権の増加はプラス調整する",
+          "is_correct": true,
+          "explanation": "正解（誤った調整）。売上債権が増加するとキャッシュは減少。マイナス調整が正しい。"
+        },
+        {
+          "id": "C",
+          "text": "棚卸資産の増加はマイナス調整する",
+          "is_correct": false,
+          "explanation": "正しい。在庫購入によるキャッシュ流出を反映。"
+        },
+        {
+          "id": "D",
+          "text": "仕入債務の増加はプラス調整する",
+          "is_correct": false,
+          "explanation": "正しい。買掛金増加は支払いの繰延でキャッシュ温存。"
+        }
+      ],
+      "explanation": "間接法では税引前当期純利益から開始し、(1)非資金費用の加算（減価償却費・引当金繰入）、(2)資産負債の増減調整（売上債権・棚卸資産の増加はマイナス、仕入債務の増加はプラス）、(3)営業外損益の除外を行う。資産増加=キャッシュ減少、負債増加=キャッシュ増加が原則。",
+      "references": [
+        {
+          "title": "企業会計基準第10号 連結キャッシュ・フロー計算書等の作成基準",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "キャッシュフロー",
+        "間接法",
+        "営業CF",
+        "C/F",
+        "財務諸表"
+      ],
+      "common_mistakes": [
+        "売上債権増加と仕入債務増加で符号を逆にする",
+        "減価償却費の調整方向を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-018",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "キャッシュフロー計算書",
+      "subtopic": "3区分の組合せ分析",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある中小企業の3年間のCFパターン：営業CF（+）、投資CF（-）、財務CF（+）。最も適切な解釈はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "事業から稼ぎつつ、投資のため借入や増資もして積極的に成長を図る成長期型",
+          "is_correct": true,
+          "explanation": "正解。営業CFで稼ぎ、不足分を借入等で調達し設備・M&A等に投資。典型的な成長期パターン。"
+        },
+        {
+          "id": "B",
+          "text": "本業が赤字で借入で凌いでいる衰退期型",
+          "is_correct": false,
+          "explanation": "営業CFがプラスなので本業は健全。誤り。"
+        },
+        {
+          "id": "C",
+          "text": "成熟期で借入返済中の安定型",
+          "is_correct": false,
+          "explanation": "成熟期型なら財務CFはマイナス（借入返済・配当）になることが多い。"
+        },
+        {
+          "id": "D",
+          "text": "リストラ中で資産売却している再建期型",
+          "is_correct": false,
+          "explanation": "再建期は投資CFがプラス（資産売却）になる傾向。"
+        }
+      ],
+      "explanation": "C/Fの3区分の符号パターンで企業ライフサイクルが読める：成長期（営業+/投資-/財務+）、成熟・安定期（営業+/投資-/財務-）、衰退期（営業-/投資+/財務+または-）、再建期（営業-or+/投資+/財務状況による）。営業CFがマイナスかどうかが本業の健全性の最重要シグナル。",
+      "references": [
+        {
+          "title": "企業会計基準第10号 キャッシュ・フロー計算書",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "キャッシュフロー",
+        "C/F",
+        "ライフサイクル",
+        "3区分",
+        "L4-Analyze"
+      ],
+      "common_mistakes": [
+        "営業CFのプラスを見落とす",
+        "成長期と衰退期のパターンを混同",
+        "財務CFの符号の意味を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-019",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "原価計算",
+      "subtopic": "個別原価計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "受注生産型の機械メーカーが採用する原価計算方式として最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "総合原価計算",
+          "is_correct": false,
+          "explanation": "総合原価計算は同種大量生産（飲料・化学品等）に向く。受注生産には不向き。"
+        },
+        {
+          "id": "B",
+          "text": "個別原価計算",
+          "is_correct": true,
+          "explanation": "正解。受注ごとに製造指図書を発行し、指図書別に原価を集計するのに適している。"
+        },
+        {
+          "id": "C",
+          "text": "標準原価計算",
+          "is_correct": false,
+          "explanation": "標準原価計算は原価管理手法であり、個別/総合と次元が異なる。両方と組合せ可能。"
+        },
+        {
+          "id": "D",
+          "text": "直接原価計算",
+          "is_correct": false,
+          "explanation": "直接原価計算は固定費を製品原価に含めず、CVP分析に有用。生産形態とは独立した分類。"
+        }
+      ],
+      "explanation": "原価計算は2軸で分類：(1)生産形態別=個別原価計算（受注生産・建設業・造船業）vs総合原価計算（連続大量生産・食品・化学）、(2)目的別=実際/標準原価計算、全部/直接原価計算。受注生産型は指図書ごとに製造指示するため個別原価計算が合致。",
+      "references": [
+        {
+          "title": "原価計算基準",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "原価計算",
+        "個別原価計算",
+        "総合原価計算",
+        "受注生産",
+        "製造業"
+      ],
+      "common_mistakes": [
+        "個別/総合と実際/標準の分類軸を混同",
+        "受注生産で総合原価計算を選択"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-020",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "原価計算",
+      "subtopic": "標準原価差異分析",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "東海地方の製造業J社は標準原価計算を採用。直接材料費の標準は1個あたり2kg×@500円。当月生産100個に対し実際は210kg×@520円。直接材料費総差異と価格差異の組合せとして正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "総差異 -9,200円(不利)、価格差異 -4,200円(不利)",
+          "is_correct": true,
+          "explanation": "正解。標準=100×2×500=100,000。実際=210×520=109,200。総差異=100,000-109,200=-9,200(不利)。価格差異=(500-520)×210=-4,200(不利)。数量差異=(200-210)×500=-5,000(不利)。"
+        },
+        {
+          "id": "B",
+          "text": "総差異 +9,200円(有利)、価格差異 +4,200円(有利)",
+          "is_correct": false,
+          "explanation": "符号が逆。実際が標準を超えているため不利差異。"
+        },
+        {
+          "id": "C",
+          "text": "総差異 -5,000円(不利)、価格差異 -4,200円(不利)",
+          "is_correct": false,
+          "explanation": "総差異の計算が誤り。総差異は価格差異と数量差異の合計。"
+        },
+        {
+          "id": "D",
+          "text": "総差異 -9,200円(不利)、価格差異 -5,000円(不利)",
+          "is_correct": false,
+          "explanation": "価格差異と数量差異の値を入れ替えている。価格差異=単価差×実際数量。"
+        }
+      ],
+      "explanation": "標準原価差異分析：総差異=標準原価-実際原価。直接材料費は価格差異=（標準単価-実際単価）×実際消費量、数量差異=（標準消費量-実際消費量）×標準単価に分解。本問では価格差異-4,200、数量差異-5,000で合計-9,200の不利差異。原価管理に活用される。",
+      "references": [
+        {
+          "title": "原価計算基準 第六章 標準原価計算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "原価計算",
+        "標準原価",
+        "差異分析",
+        "価格差異",
+        "数量差異"
+      ],
+      "common_mistakes": [
+        "価格差異と数量差異の計算式を逆にする",
+        "実際/標準どちらを基準に掛けるか間違える",
+        "有利/不利の符号判定を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-021",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "原価計算",
+      "subtopic": "直接原価計算",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "直接原価計算と全部原価計算の比較として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "全部原価計算では固定製造費が在庫に配賦され、在庫増加時に利益が大きく出やすい",
+          "is_correct": true,
+          "explanation": "正解。全部原価計算では期末在庫に固定製造費が含まれ、当期費用化が遅れる。在庫が増えると利益が膨らむ。"
+        },
+        {
+          "id": "B",
+          "text": "直接原価計算は財務会計（外部報告）で正規に認められている",
+          "is_correct": false,
+          "explanation": "外部報告では全部原価計算が原則。直接原価計算は内部管理用。"
+        },
+        {
+          "id": "C",
+          "text": "両者は売上高、変動費、固定費が同額なら必ず利益も同額になる",
+          "is_correct": false,
+          "explanation": "在庫変動がある場合、固定製造費の処理差で利益が異なる。"
+        },
+        {
+          "id": "D",
+          "text": "直接原価計算ではCVP分析がしにくい",
+          "is_correct": false,
+          "explanation": "逆。直接原価計算は変動費・固定費に区分するためCVP分析と相性が良い。"
+        }
+      ],
+      "explanation": "直接原価計算は変動費のみを製品原価とし、固定製造費は期間費用として全額当期費用化。CVP分析・利益計画に有用。全部原価計算は固定製造費も在庫配賦するため在庫増減で利益が変動する。外部報告は全部原価計算が原則、内部管理は直接原価計算が便利。",
+      "references": [
+        {
+          "title": "原価計算基準 第三章 製品原価計算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "原価計算",
+        "直接原価計算",
+        "全部原価計算",
+        "CVP",
+        "管理会計"
+      ],
+      "common_mistakes": [
+        "直接原価計算が外部報告で認められると誤解",
+        "全部原価計算で在庫増加時の利益増加メカニズムを理解できない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-022",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "CVP分析",
+      "subtopic": "損益分岐点売上高",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "K社のデータ：販売単価1,000円、変動費率60%、固定費400万円。損益分岐点売上高はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "400万円",
+          "is_correct": false,
+          "explanation": "固定費そのままの値で、限界利益率による調整がない。"
+        },
+        {
+          "id": "B",
+          "text": "667万円",
+          "is_correct": false,
+          "explanation": "計算誤り。分母を変動費率としている。"
+        },
+        {
+          "id": "C",
+          "text": "1,000万円",
+          "is_correct": true,
+          "explanation": "正解。BEP売上高=固定費÷限界利益率=400÷(1-0.6)=400÷0.4=1,000万円。"
+        },
+        {
+          "id": "D",
+          "text": "1,500万円",
+          "is_correct": false,
+          "explanation": "計算ロジックが合わない。限界利益率0.4で除する。"
+        }
+      ],
+      "explanation": "損益分岐点（Break-Even Point, BEP）売上高=固定費÷限界利益率。限界利益率=1-変動費率=1-0.6=0.4。BEP=400÷0.4=1,000万円。この売上高で利益ゼロ、超えれば黒字。安全余裕率や経営レバレッジとセットで覚える。",
+      "references": [
+        {
+          "title": "中小企業庁 経営指標 CVP分析",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "CVP分析",
+        "損益分岐点",
+        "BEP",
+        "限界利益率",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "限界利益率と変動費率を混同して計算",
+        "固定費をそのままBEPとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-023",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "CVP分析",
+      "subtopic": "目標利益達成売上高",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "L社の固定費200万円、限界利益率50%。目標利益300万円を達成するために必要な売上高はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "400万円",
+          "is_correct": false,
+          "explanation": "BEP売上高（200÷0.5）。これでは利益0で目標達成しない。"
+        },
+        {
+          "id": "B",
+          "text": "600万円",
+          "is_correct": false,
+          "explanation": "計算ミス。300÷0.5=600では固定費考慮なし。"
+        },
+        {
+          "id": "C",
+          "text": "1,000万円",
+          "is_correct": true,
+          "explanation": "正解。必要売上=（固定費+目標利益）÷限界利益率=（200+300）÷0.5=1,000万円。"
+        },
+        {
+          "id": "D",
+          "text": "1,200万円",
+          "is_correct": false,
+          "explanation": "計算誤り。限界利益率0.5で除する。"
+        }
+      ],
+      "explanation": "目標利益達成売上高 = （固定費 + 目標利益）÷ 限界利益率。BEPの拡張公式。本問では(200+300)÷0.5=1,000万円。経営計画策定で利益目標から逆算する際に使う基本ツール。",
+      "references": [
+        {
+          "title": "管理会計 利益計画",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "CVP分析",
+        "目標利益",
+        "売上高",
+        "限界利益率",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "固定費を計算式から抜かす",
+        "目標利益のみを限界利益率で除する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-024",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "CVP分析",
+      "subtopic": "経営レバレッジと安全余裕率",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "M社（製造業、固定費比率高い）とN社（流通業、固定費比率低い）が同売上高・同利益。景気変動局面における両社のリスク評価として最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "両社のリスクは同じ。利益が同じだから",
+          "is_correct": false,
+          "explanation": "経営レバレッジが異なるため、売上変動に対する利益感応度は大きく違う。"
+        },
+        {
+          "id": "B",
+          "text": "M社はレバレッジが高く、売上の変動に対する利益感応度が大きい。好況期には大きな利益、不況期には急速な利益悪化リスクがある",
+          "is_correct": true,
+          "explanation": "正解。固定費比率高い=経営レバレッジ高い=利益のボラティリティが大きい。リスクと機会が両立。"
+        },
+        {
+          "id": "C",
+          "text": "N社は固定費比率が低いがリスクが高い",
+          "is_correct": false,
+          "explanation": "固定費比率低い=経営レバレッジ低い=安定的。リスクは相対的に低い。"
+        },
+        {
+          "id": "D",
+          "text": "経営レバレッジは収益性のみを示し、リスクとは無関係",
+          "is_correct": false,
+          "explanation": "経営レバレッジは利益のボラティリティを示し、ビジネスリスクの重要指標。"
+        }
+      ],
+      "explanation": "経営レバレッジ係数=限界利益÷営業利益。固定費比率が高いほどレバレッジが高く、売上変動に対する利益変動率が大きい。製造業（設備投資大）は高レバレッジ、流通業は低レバレッジが一般的。安全余裕率=（実際売上-BEP売上）÷実際売上で景気耐性を測る。",
+      "references": [
+        {
+          "title": "管理会計 CVP分析と経営レバレッジ",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "CVP分析",
+        "経営レバレッジ",
+        "安全余裕率",
+        "リスク",
+        "L5-Evaluate"
+      ],
+      "common_mistakes": [
+        "売上同じ・利益同じならリスク同じと誤判断",
+        "経営レバレッジを単なる収益性指標と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-025",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "投資意思決定",
+      "subtopic": "NPV（正味現在価値）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "投資額1,000万円、毎年のキャッシュフロー400万円が3年継続する設備投資案を割引率10%で評価する。NPVに最も近い金額はどれか。（10%・3年の年金現価係数=2.487）",
+      "options": [
+        {
+          "id": "A",
+          "text": "-5万円（不採算）",
+          "is_correct": true,
+          "explanation": "正解。NPV=400×2.487-1,000=994.8-1,000=-5.2万円。マイナスなので不採算。"
+        },
+        {
+          "id": "B",
+          "text": "+200万円（採算性高い）",
+          "is_correct": false,
+          "explanation": "計算誤り。年金現価係数を正しく適用する。"
+        },
+        {
+          "id": "C",
+          "text": "+995万円",
+          "is_correct": false,
+          "explanation": "投資額の控除を忘れている。これはCFの現在価値合計のみ。"
+        },
+        {
+          "id": "D",
+          "text": "+400万円",
+          "is_correct": false,
+          "explanation": "1年分のCFそのまま。割引も投資額控除もしていない。"
+        }
+      ],
+      "explanation": "NPV（Net Present Value, 正味現在価値）=Σ（将来CF÷(1+r)^t）-初期投資。毎年定額CFは年金現価係数を活用：400×2.487=994.8。これから初期投資1,000を引き-5.2万円。NPV>0なら採算、<0なら不採算と判定する投資判断の基本指標。",
+      "references": [
+        {
+          "title": "ファイナンス入門 NPV法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "投資意思決定",
+        "NPV",
+        "DCF",
+        "現在価値",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "初期投資の控除を忘れる",
+        "年金現価係数と現価係数を混同",
+        "符号判定を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-026",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "投資意思決定",
+      "subtopic": "IRRと回収期間法",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "投資判断手法の比較として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "回収期間法は貨幣の時間価値を考慮しているため理論的に最も優れている",
+          "is_correct": false,
+          "explanation": "回収期間法は時間価値を考慮しない単純法。理論的にはNPVが最良。"
+        },
+        {
+          "id": "B",
+          "text": "IRR法はNPV法と常に同じ採否結論になる",
+          "is_correct": false,
+          "explanation": "投資規模が異なる排他的案件比較や複数IRRが存在する場合、結論が異なることがある。NPV優位。"
+        },
+        {
+          "id": "C",
+          "text": "NPV法は資本コストを割引率として用い、貨幣の時間価値を反映する理論的に最も優れた手法",
+          "is_correct": true,
+          "explanation": "正解。NPVは時間価値を考慮し、企業価値増分を直接金額で示す。理論的に最良。"
+        },
+        {
+          "id": "D",
+          "text": "IRR法は割引率（資本コスト）の事前設定が不要で、計算も簡単",
+          "is_correct": false,
+          "explanation": "IRRは試行錯誤で求める計算が複雑。資本コストとの比較も必要。"
+        }
+      ],
+      "explanation": "投資判断手法：(1)NPV法=理論的に最良、企業価値増分を金額で示す、(2)IRR法=投資の利回り、資本コストと比較、複数解問題あり、(3)回収期間法=投資回収までの期間、時間価値考慮なしだが理解しやすい、(4)収益性指数(PI)。NPVとIRRは原則一致するが排他的案件選択でNPV優位。",
+      "references": [
+        {
+          "title": "コーポレートファイナンス 投資意思決定",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "投資意思決定",
+        "NPV",
+        "IRR",
+        "回収期間法",
+        "L4-Analyze"
+      ],
+      "common_mistakes": [
+        "回収期間法を理論的に最良と誤認",
+        "NPVとIRRが常に一致と思い込む",
+        "IRR計算の複雑さを過小評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-027",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "ファイナンス",
+      "subtopic": "WACC（加重平均資本コスト）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "O社の資本構成：負債600（税引前負債コスト5%）、株主資本400（株主資本コスト10%）。実効税率30%。WACCに最も近いものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "5.0%",
+          "is_correct": false,
+          "explanation": "負債コスト（税引前）のみ。株主資本コストや加重平均が反映されていない。"
+        },
+        {
+          "id": "B",
+          "text": "6.1%",
+          "is_correct": true,
+          "explanation": "正解。WACC=(600/1000)×5%×(1-0.3)+(400/1000)×10%=0.6×3.5%+0.4×10%=2.1+4.0=6.1%。"
+        },
+        {
+          "id": "C",
+          "text": "7.0%",
+          "is_correct": false,
+          "explanation": "税効果を反映していない、または加重比率を誤っている。"
+        },
+        {
+          "id": "D",
+          "text": "10.0%",
+          "is_correct": false,
+          "explanation": "株主資本コストそのまま。負債側を考慮していない。"
+        }
+      ],
+      "explanation": "WACC（Weighted Average Cost of Capital）= (D/V)×rd×(1-T) + (E/V)×re。負債利息は税控除可（タックスシールド）なので税引後コストを使う。本問：0.6×5%×0.7+0.4×10%=2.1%+4%=6.1%。投資判断・企業評価のハードルレートとして使用。",
+      "references": [
+        {
+          "title": "コーポレートファイナンス WACC",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "ファイナンス",
+        "WACC",
+        "資本コスト",
+        "タックスシールド",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "税効果（1-T）を負債コストに掛け忘れる",
+        "加重平均のウエイトを誤る",
+        "負債と株主資本の合計でなく総資産で割る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-028",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "ファイナンス",
+      "subtopic": "MM理論",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "モディリアーニ＆ミラー（MM）の資本構成理論に関する説明として最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "完全市場（税金・倒産コストなし）の前提下では、企業価値は資本構成に依存しない（無関連命題）",
+          "is_correct": true,
+          "explanation": "正解。MM第1命題：完全市場では負債/自己資本比率を変えても企業価値は変わらない。"
+        },
+        {
+          "id": "B",
+          "text": "MM理論によれば負債を増やすほど常に企業価値は上昇する",
+          "is_correct": false,
+          "explanation": "完全市場前提では無関連、税効果考慮では負債のメリットあり、しかし倒産コスト考慮の修正MMでは最適レバレッジが存在。「常に上昇」は誤り。"
+        },
+        {
+          "id": "C",
+          "text": "MM理論は中小企業ファイナンスに適用が限定される",
+          "is_correct": false,
+          "explanation": "理論のスコープは資本構成全般。中小企業限定ではない。"
+        },
+        {
+          "id": "D",
+          "text": "税効果を考慮しても完全に無関連命題は成立する",
+          "is_correct": false,
+          "explanation": "税効果考慮（修正MM）では負債のタックスシールドにより負債活用が有利となる。"
+        }
+      ],
+      "explanation": "MM理論（1958年）：完全市場前提では資本構成は企業価値に無関連（第1命題）。1963年の修正版では法人税考慮し、負債のタックスシールド分だけ企業価値増（V_L=V_U+T×D）。実務ではこれに倒産コストやエージェンシーコストを加味し、最適資本構成（トレードオフ理論）が議論される。",
+      "references": [
+        {
+          "title": "Modigliani & Miller (1958, 1963) - The Cost of Capital",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "ファイナンス",
+        "MM理論",
+        "資本構成",
+        "タックスシールド",
+        "L5-Evaluate"
+      ],
+      "common_mistakes": [
+        "完全市場前提を見落とす",
+        "「負債を増やすほど企業価値増」と単純化",
+        "修正MMと原始MMを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-029",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "ファイナンス",
+      "subtopic": "CAPM（資本資産価格モデル）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "リスクフリーレート2%、市場リスクプレミアム6%、対象株式のベータ値1.5。CAPMによる期待収益率はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "8.0%",
+          "is_correct": false,
+          "explanation": "ベータ1の場合の値。ベータ1.5を反映していない。"
+        },
+        {
+          "id": "B",
+          "text": "9.5%",
+          "is_correct": false,
+          "explanation": "計算ミス。リスクフリーレートとプレミアム×ベータの加算が必要。"
+        },
+        {
+          "id": "C",
+          "text": "11.0%",
+          "is_correct": true,
+          "explanation": "正解。E(r)=Rf+β×（Rm-Rf）=2%+1.5×6%=2%+9%=11%。"
+        },
+        {
+          "id": "D",
+          "text": "12.0%",
+          "is_correct": false,
+          "explanation": "計算誤り。リスクフリーレートを正しく加算する。"
+        }
+      ],
+      "explanation": "CAPM（Capital Asset Pricing Model）：E(r)=Rf+β×（Rm-Rf）。Rf=リスクフリーレート、β=システマティックリスク、（Rm-Rf）=市場リスクプレミアム。ベータ＞1は市場より変動が大きい銘柄、＜1は安定銘柄。WACC計算の株主資本コスト推定や投資判断のハードルレート設定に使用。",
+      "references": [
+        {
+          "title": "Sharpe (1964) - CAPM",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "ファイナンス",
+        "CAPM",
+        "ベータ",
+        "期待収益率",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "リスクフリーレートを式から抜かす",
+        "ベータをリスクプレミアムに掛けず単純加算"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "shindanshi-1-zaimu-030",
+      "version": "1.0",
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "zaimu",
+        "name": "財務・会計",
+        "weight_percent": 15
+      },
+      "topic": "ファイナンス",
+      "subtopic": "ポートフォリオ理論と分散投資",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "ある投資家が一人法人で運用ポートフォリオを構築する際、相関係数の異なる2銘柄を組み合わせる効果を最大化する設計指針として最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "相関係数が+1に近い2銘柄を組み合わせ、両者が同方向に動く銘柄でリターンを増幅させる",
+          "is_correct": false,
+          "explanation": "相関+1ではリスク低減効果がない。同方向動きは集中リスクを高める。"
+        },
+        {
+          "id": "B",
+          "text": "相関係数がマイナスまたはゼロに近い銘柄を組み合わせることで、ポートフォリオ全体の標準偏差を個別銘柄の加重平均より低減できる",
+          "is_correct": true,
+          "explanation": "正解。相関<1なら分散効果が働き、リスクが個別銘柄の加重平均より小さくなる。マルコビッツの基本原理。"
+        },
+        {
+          "id": "C",
+          "text": "個別銘柄のリスクが高ければ高いほど、組合せ効果は減少する",
+          "is_correct": false,
+          "explanation": "組合せ効果は相関係数の関数であり、個別リスク水準そのものではない。"
+        },
+        {
+          "id": "D",
+          "text": "1銘柄に集中投資するほうがシャープレシオは常に高くなる",
+          "is_correct": false,
+          "explanation": "分散投資は同じリターンでもリスクを下げ、シャープレシオを向上させる。集中投資は理論的に劣後。"
+        }
+      ],
+      "explanation": "マルコビッツのポートフォリオ理論：相関係数<1の銘柄組合せでアンシステマティックリスク（個別銘柄リスク）が分散される。相関-1なら理論上リスクをゼロに近づけられる。残るのはシステマティックリスク（市場全体リスク、CAPMのβで測定）。一人法人や個人の長期運用でも分散投資の基本原則は同じ。",
+      "references": [
+        {
+          "title": "Markowitz (1952) - Portfolio Selection",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "ファイナンス",
+        "ポートフォリオ",
+        "分散投資",
+        "相関係数",
+        "L6-Create"
+      ],
+      "common_mistakes": [
+        "相関+1で分散効果があると誤解",
+        "システマティックリスクとアンシステマティックリスクを混同",
+        "集中投資を最適と判断"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}

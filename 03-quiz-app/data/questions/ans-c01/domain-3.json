@@ -1,0 +1,641 @@
+{
+  "exam_code": "ans-c01",
+  "exam_name": "AWS Certified Advanced Networking – Specialty",
+  "version": "2026.04",
+  "total_questions": 25,
+  "domains": [
+    {
+      "id": "domain-3",
+      "name": "Network Management and Operation",
+      "weight_percent": 20,
+      "question_count": 25
+    }
+  ],
+  "questions": [
+    {
+      "id": "ans-c01-domain3-001",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "VPC Flow Logs",
+      "subtopic": "Destinations",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "VPC Flow Logs の出力先として AWS が公式にサポートするのはどれか。",
+      "options": [
+        {"id": "A", "text": "CloudWatch Logs、S3、Kinesis Data Firehose", "is_correct": true, "explanation": "正解。これら3つが公式にサポートされる出力先。"},
+        {"id": "B", "text": "DynamoDB のみ", "is_correct": false, "explanation": "DynamoDB は Flow Logs の直接出力先ではない。"},
+        {"id": "C", "text": "RDS のみ", "is_correct": false, "explanation": "RDS は Flow Logs の直接出力先ではない。"},
+        {"id": "D", "text": "EBS ボリュームへ直接", "is_correct": false, "explanation": "EBS は出力先として利用できない。"}
+      ],
+      "explanation": "VPC Flow Logs は CloudWatch Logs、S3、Kinesis Data Firehose の3つに直接出力できる。S3 はコスト効率と長期保管、CloudWatch Logs はリアルタイムアラート、Firehose は他の SaaS（Splunk 等）への配信に使い分ける。",
+      "references": [
+        {"title": "VPC Flow Logs", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"}
+      ],
+      "tags": ["vpc-flow-logs", "cloudwatch", "s3", "firehose"],
+      "common_mistakes": ["DynamoDB / RDS が出力先と誤解", "Firehose が含まれないと誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-002",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Reachability Analyzer",
+      "subtopic": "Purpose",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "VPC Reachability Analyzer の主な目的として正しいのはどれか。",
+      "options": [
+        {"id": "A", "text": "送信元と送信先の間でパケットが到達可能か論理経路を解析する", "is_correct": true, "explanation": "正解。実トラフィックを送らずに経路設定（SG、NACL、RT、IGW 等）を評価する。"},
+        {"id": "B", "text": "実際のネットワーク帯域を測定する", "is_correct": false, "explanation": "帯域測定機能はない。設定の論理解析のみ。"},
+        {"id": "C", "text": "DNS 解決をテストする", "is_correct": false, "explanation": "DNS は対象外。L3/L4 のリーチャビリティを評価する。"},
+        {"id": "D", "text": "アプリケーション層の認証を検証する", "is_correct": false, "explanation": "認証検証ではない。"}
+      ],
+      "explanation": "Reachability Analyzer は VPC 内の2点間（EC2 / ENI / IGW 等）の到達可能性を実トラフィックなしで解析するツール。設定（SG、NACL、ルートテーブル、TGW 設定）を辿って結果を可視化する。トラブル発生時の原因切り分けに有効。",
+      "references": [
+        {"title": "VPC Reachability Analyzer", "url": "https://docs.aws.amazon.com/vpc/latest/reachability/what-is-reachability-analyzer.html"}
+      ],
+      "tags": ["reachability-analyzer", "troubleshooting", "vpc"],
+      "common_mistakes": ["帯域測定ツールと誤解", "DNS テストツールと誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-003",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Network Access Analyzer",
+      "subtopic": "Purpose",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Network Access Analyzer と Reachability Analyzer の違いとして最も正確なのはどれか。",
+      "options": [
+        {"id": "A", "text": "Reachability は2点間の到達可能性、Access Analyzer はネットワーク全体で意図しないアクセス経路を発見する", "is_correct": true, "explanation": "正解。前者はピンポイント診断、後者は組織全体のリスク発見ツール。"},
+        {"id": "B", "text": "両者は同じ機能の別名", "is_correct": false, "explanation": "別物。役割が異なる。"},
+        {"id": "C", "text": "Network Access Analyzer は TGW 限定", "is_correct": false, "explanation": "VPC 全般を対象とする。TGW 限定ではない。"},
+        {"id": "D", "text": "Reachability Analyzer は Multi-Account 限定", "is_correct": false, "explanation": "限定ではないが Multi-Account では Network Access Analyzer のほうが向く。"}
+      ],
+      "explanation": "Network Access Analyzer は「Network Access Scope」を定義し（例: インターネットから DB への経路は禁止）、組織全体で違反する経路があれば発見する。一方 Reachability Analyzer は2点を指定して到達可能か検証する。Access Analyzer は予防的・継続監視に向き、Reachability は事後の切り分けに使う。",
+      "references": [
+        {"title": "What is Network Access Analyzer?", "url": "https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/what-is-network-access-analyzer.html"}
+      ],
+      "tags": ["network-access-analyzer", "reachability-analyzer", "compliance"],
+      "common_mistakes": ["両者を同じ機能と誤解", "対象範囲を取り違える"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-004",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Traffic Mirroring",
+      "subtopic": "Use cases",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "VPC Traffic Mirroring が最も適しているユースケースはどれか。",
+      "options": [
+        {"id": "A", "text": "EC2 のネットワークトラフィックをコピーし、IDS/IPS や監視アプライアンスに送って深層解析する", "is_correct": true, "explanation": "正解。Traffic Mirroring は ENI レベルのパケットを複製して別 ENI へ送る Layer 4 監視手法。"},
+        {"id": "B", "text": "S3 へのアップロード帯域を測定する", "is_correct": false, "explanation": "帯域測定機能ではない。パケット複製。"},
+        {"id": "C", "text": "DNS クエリのみを記録する", "is_correct": false, "explanation": "それは Resolver Query Logs の役割。"},
+        {"id": "D", "text": "BGP 経路をモニタする", "is_correct": false, "explanation": "BGP は対象外。L7 アプリケーション/L4 パケット監視向け。"}
+      ],
+      "explanation": "VPC Traffic Mirroring は EC2 の ENI を通過するパケットをコピーして、別 ENI（IDS/IPS や Suricata 等）に送る機能。フィルタとセッション設定でコピー対象を絞れる。深層パケット解析、コンプライアンス監査、不正検出に使う。",
+      "references": [
+        {"title": "What is Traffic Mirroring?", "url": "https://docs.aws.amazon.com/vpc/latest/mirroring/what-is-traffic-mirroring.html"}
+      ],
+      "tags": ["traffic-mirroring", "ids", "ips", "monitoring"],
+      "common_mistakes": ["Flow Logs と混同", "S3 監視に使えると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-005",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "CloudWatch Internet Monitor",
+      "subtopic": "Purpose",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Amazon CloudWatch Internet Monitor の主な目的として最も正確なのはどれか。",
+      "options": [
+        {"id": "A", "text": "ユーザのインターネット経由のアプリケーション体感性能（レイテンシ、可用性）をモニタし、ISP・地理単位で問題を特定する", "is_correct": true, "explanation": "正解。AWS バックボーンの外（インターネット経路）のパフォーマンスを可視化する。"},
+        {"id": "B", "text": "VPC 内部のレイテンシをモニタする", "is_correct": false, "explanation": "VPC 内部は CloudWatch Network Monitor などの別機能。"},
+        {"id": "C", "text": "Direct Connect の物理ポート障害を検知する", "is_correct": false, "explanation": "DX の物理障害は別の CW メトリクス。"},
+        {"id": "D", "text": "DNS のレコード変更を検知する", "is_correct": false, "explanation": "DNS の話ではない。"}
+      ],
+      "explanation": "CloudWatch Internet Monitor はエンドユーザの位置（地理 / ISP）からアプリケーション (CloudFront、ALB、EC2 等) への体感パフォーマンスを継続モニタする。インターネットの揺らぎや特定 ISP での障害を可視化し、インシデント時の原因切り分けに有用。",
+      "references": [
+        {"title": "Internet Monitor", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Internet-Monitor.html"}
+      ],
+      "tags": ["internet-monitor", "cloudwatch", "performance", "isp"],
+      "common_mistakes": ["VPC 内部モニタと誤解", "DX 物理障害検知ツールと誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-006",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Network Manager",
+      "subtopic": "Global view",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "AWS Network Manager の役割として最も正確なのはどれか。",
+      "options": [
+        {"id": "A", "text": "Transit Gateway や Cloud WAN、Direct Connect、VPN を一元的に可視化・モニタリングするコンソール", "is_correct": true, "explanation": "正解。グローバルビューでハイブリッド接続を集中管理する。"},
+        {"id": "B", "text": "EC2 インスタンスの起動を管理する", "is_correct": false, "explanation": "EC2 管理は対象外。ネットワーク特化。"},
+        {"id": "C", "text": "AWS WAF のルールを管理する", "is_correct": false, "explanation": "WAF 管理は Firewall Manager の役割。"},
+        {"id": "D", "text": "S3 の構成を管理する", "is_correct": false, "explanation": "S3 管理は別。"}
+      ],
+      "explanation": "AWS Network Manager は TGW / Cloud WAN / DX / VPN 等のネットワークリソースをグローバルビューで可視化・監視する。トポロジ図、イベント、メトリクス、コンプライアンス状態を一画面で確認できる。マルチアカウント・マルチリージョン環境のオブザバビリティ基盤。",
+      "references": [
+        {"title": "AWS Network Manager", "url": "https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html"}
+      ],
+      "tags": ["network-manager", "global-view", "transit-gateway", "monitoring"],
+      "common_mistakes": ["Firewall Manager と混同", "EC2 管理ツールと誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-007",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Flow Logs",
+      "subtopic": "Custom format",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "VPC Flow Logs のカスタムフォーマットで取得できる情報のうち、デフォルトフォーマットには含まれず追加で得られるものはどれか。",
+      "options": [
+        {"id": "A", "text": "pkt-srcaddr、pkt-dstaddr、tcp-flags、traffic-path、flow-direction など", "is_correct": true, "explanation": "正解。これらはカスタムフォーマット指定で初めて取得できる拡張フィールド。"},
+        {"id": "B", "text": "送信元 IP と宛先 IP", "is_correct": false, "explanation": "デフォルトでも srcaddr/dstaddr は含まれる。"},
+        {"id": "C", "text": "プロトコル番号", "is_correct": false, "explanation": "デフォルトに含まれる。"},
+        {"id": "D", "text": "アカウント ID", "is_correct": false, "explanation": "デフォルトに含まれる。"}
+      ],
+      "explanation": "デフォルトフォーマットは srcaddr, dstaddr, srcport, dstport, protocol, packets, bytes, action 等の基本セット。カスタムフォーマットでは pkt-srcaddr (NAT 前 IP)、tcp-flags、traffic-path（TGW/IGW 等の経由）、flow-direction、az-id 等を追加できる。",
+      "references": [
+        {"title": "Flow log records", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html"}
+      ],
+      "tags": ["flow-logs", "custom-format", "tcp-flags", "pkt-srcaddr"],
+      "common_mistakes": ["デフォルトとカスタムを混同", "tcp-flags がデフォルトに含まれると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-008",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Reachability Analyzer",
+      "subtopic": "Cross-account",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "B2B SaaS 企業が、複数アカウントの TGW を含む大規模環境で「アカウント A の EC2 から アカウント C の RDS へ到達可能か」を確認したい。最適なアプローチは？",
+      "options": [
+        {"id": "A", "text": "Reachability Analyzer で AWS Organizations 委任管理者を設定し、マルチアカウント解析を行う", "is_correct": true, "explanation": "正解。Reachability Analyzer は委任管理者で組織横断の解析が可能。"},
+        {"id": "B", "text": "各アカウントで個別に解析し結果を手動で結合する", "is_correct": false, "explanation": "アカウント境界跨ぐ経路は単一アカウント解析では完結しない。委任管理者構成が正解。"},
+        {"id": "C", "text": "VPC Flow Logs を全アカウントで集約し SQL で分析する", "is_correct": false, "explanation": "実トラフィックがないと記録されない。事前検証には不向き。"},
+        {"id": "D", "text": "Network Manager で経路を見るだけで判定する", "is_correct": false, "explanation": "Network Manager はトポロジ可視化で、SG/NACL を考慮した到達性検証ではない。"}
+      ],
+      "explanation": "Reachability Analyzer は AWS Organizations の委任管理者を有効化することで、組織内の複数アカウントを跨いだ経路解析が可能。TGW やピアリング経由のクロスアカウント経路でも SG / NACL / RT を統合的に評価できる。大規模環境での標準ツール。",
+      "references": [
+        {"title": "Cross-account analyses", "url": "https://docs.aws.amazon.com/vpc/latest/reachability/cross-account-analyses.html"}
+      ],
+      "tags": ["reachability-analyzer", "cross-account", "organizations"],
+      "common_mistakes": ["単一アカウント実行で済ますと誤解", "Flow Logs で代替できると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-009",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Flow Logs",
+      "subtopic": "Athena analysis",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FinTech 企業が VPC Flow Logs を S3 に出力し、過去90日分から「特定 IP からのリクエスト件数」をクエリしたい。最も低コストで効果的な手段は？",
+      "options": [
+        {"id": "A", "text": "Parquet 形式で Flow Logs を出力し、Athena で SQL クエリする", "is_correct": true, "explanation": "正解。Parquet はカラムナで Athena スキャン量を激減させる。データレイク標準。"},
+        {"id": "B", "text": "CloudWatch Logs Insights でクエリする", "is_correct": false, "explanation": "Logs Insights は便利だが大量データには高コスト。S3+Athena が経済的。"},
+        {"id": "C", "text": "EC2 でスクリプトを書きログを線形スキャンする", "is_correct": false, "explanation": "実装コストとスキャン時間が長い。Athena 1択。"},
+        {"id": "D", "text": "S3 Select で text 形式の Flow Logs を直接クエリする", "is_correct": false, "explanation": "Plain text Flow Logs は S3 Select で扱えるが Athena + Parquet のほうが速くて安い。"}
+      ],
+      "explanation": "Flow Logs を S3 へ出力する際 Parquet 形式を選択すると、Athena でカラムナスキャンが効きスキャン量・コストが大幅減。Glue Data Catalog にスキーマ登録し、過去90日のログを SQL で分析する。CloudWatch Logs Insights は短期・小規模向け。",
+      "references": [
+        {"title": "Flow logs in Parquet format", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html#flow-logs-s3-path"}
+      ],
+      "tags": ["flow-logs", "athena", "parquet", "s3", "cost-optimization"],
+      "common_mistakes": ["Logs Insights を全シナリオで最良と誤解", "テキスト形式を選んで非効率にしてしまう"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-010",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Traffic Mirroring",
+      "subtopic": "Filters and sessions",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "教育 SaaS が VPC Traffic Mirroring を使い、特定 EC2 からの 443/TCP のみキャプチャしたい。設定として正しいのはどれか。",
+      "options": [
+        {"id": "A", "text": "Mirror Filter で `accept` ルール (TCP, dst port 443)、Mirror Session でソース ENI とターゲット (NLB/ENI) を指定", "is_correct": true, "explanation": "正解。Filter で対象トラフィックを絞り、Session で送信元と送信先を結び付ける標準手順。"},
+        {"id": "B", "text": "Flow Logs で 443/TCP のみフィルタする", "is_correct": false, "explanation": "Flow Logs はメタデータのみでパケットコピーではない。Mirroring とは別。"},
+        {"id": "C", "text": "セキュリティグループで 443 のみ許可する", "is_correct": false, "explanation": "アクセス制御であってトラフィックコピーではない。"},
+        {"id": "D", "text": "VPC エンドポイント経由にすればパケットコピーになる", "is_correct": false, "explanation": "VPCエンドポイントとパケットコピーは無関係。"}
+      ],
+      "explanation": "Traffic Mirroring は Mirror Filter（プロトコル / ポート / CIDR / accept-reject）と Mirror Session（ソース ENI、ターゲット、フィルタ参照、VNI）の組合せで構成。ターゲットは ENI、NLB、Gateway Load Balancer に指定可能。アプライアンスは Suricata / Zeek / Wireshark 互換でパケット解析する。",
+      "references": [
+        {"title": "Traffic mirror sessions", "url": "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-sessions.html"}
+      ],
+      "tags": ["traffic-mirroring", "filter", "session", "https"],
+      "common_mistakes": ["Flow Logs と Mirroring を混同", "SG でコピーされると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-011",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Internet Monitor",
+      "subtopic": "Health events",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "海外（東南アジア）からアクセスする教育 SaaS で、ある日突然レイテンシが急上昇する苦情が来た。原因分析に最適な AWS サービスは？",
+      "options": [
+        {"id": "A", "text": "CloudWatch Internet Monitor の Health Events と Traffic Insights を確認", "is_correct": true, "explanation": "正解。Internet Monitor は ISP / 地域単位のインターネット品質劣化を Health Event として通知する。"},
+        {"id": "B", "text": "VPC Flow Logs で送信元 IP を見る", "is_correct": false, "explanation": "Flow Logs は VPC 境界の話で、ユーザ→AWS のインターネット経路品質は分からない。"},
+        {"id": "C", "text": "Reachability Analyzer で経路を確認する", "is_correct": false, "explanation": "Reachability は AWS 内設定の話。インターネット側の品質は対象外。"},
+        {"id": "D", "text": "Direct Connect のメトリクスを確認", "is_correct": false, "explanation": "DX を使っていないユーザのインターネット経路には無関係。"}
+      ],
+      "explanation": "Internet Monitor は AWS のグローバルインターネット計測網からエンドユーザの体感品質を捉え、ISP・国・市区単位の劣化を Health Event として通知する。Traffic Insights では `ASN+Region` の組合せでパフォーマンス傾向を分析でき、CloudFront / Global Accelerator への切替提案も自動表示。",
+      "references": [
+        {"title": "Internet Monitor health events", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-health-events.html"}
+      ],
+      "tags": ["internet-monitor", "health-events", "isp", "global"],
+      "common_mistakes": ["Flow Logs でユーザ体感が分かると誤解", "Reachability Analyzer がインターネットを対象にすると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-012",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "TGW Network Manager",
+      "subtopic": "Events and alarms",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Transit Gateway のリソース変更（attachment 追加・削除等）をリアルタイムに検知し Slack へ通知したい。最も簡潔な構成は？",
+      "options": [
+        {"id": "A", "text": "Network Manager の Events を EventBridge へ流し、SNS → Lambda → Slack Webhook で通知", "is_correct": true, "explanation": "正解。Network Manager は EventBridge 連携が標準。Slack 配信もこれで完結。"},
+        {"id": "B", "text": "CloudTrail を 5 分おきにポーリングするスクリプト", "is_correct": false, "explanation": "ポーリングはリアルタイムでなく非効率。EventBridge イベントベースが正解。"},
+        {"id": "C", "text": "VPC Flow Logs を監視する", "is_correct": false, "explanation": "Flow Logs は通信ログでリソース構成変更は捕捉しない。"},
+        {"id": "D", "text": "AWS Config の通知のみで十分", "is_correct": false, "explanation": "Config もリソース変更は検知できるが、TGW 特化のイベントは Network Manager のほうが詳細。"}
+      ],
+      "explanation": "Network Manager は TGW・Cloud WAN・Direct Connect の運用イベント（attachment 状態変更、BGP セッション up/down 等）を EventBridge へパブリッシュする。これに反応して SNS / Lambda 経由で Slack に通知すれば、ChatOps 的な運用が成立する。",
+      "references": [
+        {"title": "Monitoring Network Manager with EventBridge", "url": "https://docs.aws.amazon.com/network-manager/latest/tgwnm/monitoring-events.html"}
+      ],
+      "tags": ["network-manager", "eventbridge", "slack", "chatops"],
+      "common_mistakes": ["CloudTrail ポーリングを設計してしまう", "Flow Logs で構成変更が分かると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-013",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Automation",
+      "subtopic": "CloudFormation StackSets",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AWS Organizations 配下のすべてのアカウントに「VPC Flow Logs を S3 に出力する」設定を強制したい。最も適切な実装は？",
+      "options": [
+        {"id": "A", "text": "CloudFormation StackSets を Service-Managed permissions で全 OU にデプロイする", "is_correct": true, "explanation": "正解。StackSets で組織横断のデプロイと自動メンテナンスを行う。新規アカウントにも自動適用。"},
+        {"id": "B", "text": "各アカウントに手動でテンプレートをデプロイする", "is_correct": false, "explanation": "スケールしない。ヒューマンエラーとドリフトの温床。"},
+        {"id": "C", "text": "Lambda で全アカウントを巡回しコマンドを実行する", "is_correct": false, "explanation": "可能だが冪等性とエラーハンドリングを自前で書く必要があり、StackSets が最適。"},
+        {"id": "D", "text": "AWS Config Conformance Pack のみで強制可能", "is_correct": false, "explanation": "Config Pack は評価・是正用途。Flow Logs リソース作成自体は CFN/StackSets が標準。"}
+      ],
+      "explanation": "CloudFormation StackSets を Service-Managed permissions で利用すると、AWS Organizations と連携して全アカウント・全リージョンへの一括デプロイが可能。Auto Deployment を有効化すれば新規アカウントが追加された瞬間に自動適用される。VPC Flow Logs のような共通基盤の実装に最適。",
+      "references": [
+        {"title": "AWS CloudFormation StackSets", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"}
+      ],
+      "tags": ["cloudformation", "stacksets", "organizations", "flow-logs", "automation"],
+      "common_mistakes": ["手動デプロイで足りると誤解", "Config だけでリソース作成できると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-014",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Troubleshooting",
+      "subtopic": "Connection failure",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Lambda（VPC 内）から RDS に接続できない症状がある。Reachability Analyzer の結果は「reachable」と表示される。次に確認すべき点として最も適切なのはどれか。",
+      "options": [
+        {"id": "A", "text": "Lambda の VPC コンフィグの ENI 数、サブネット容量、SG ルール、RDS の認証 (IAM/SSL) など、L7 / 認証層を確認する", "is_correct": true, "explanation": "正解。Reachability Analyzer は L3/L4 の到達性を保証するだけ。L7 の DB 認証や ENI 不足が残る可能性。"},
+        {"id": "B", "text": "BGP 経路を確認する", "is_correct": false, "explanation": "VPC 内通信に BGP は関係ない。"},
+        {"id": "C", "text": "DX のポートメトリクスを確認", "is_correct": false, "explanation": "DX 経由でないなら無関係。"},
+        {"id": "D", "text": "Reachability Analyzer の解析結果を再実行", "is_correct": false, "explanation": "既に reachable と出ている。L4 より上の層を見るべき。"}
+      ],
+      "explanation": "Reachability Analyzer は L3/L4 経路（SG, NACL, RT, IGW, TGW）の到達性のみを評価する。アプリケーション層の問題（DB 認証、SSL/TLS、Lambda の ENI 枯渇、サブネット IP 枯渇、Connection 数上限）は対象外。Reachability OK でも疎通不可の場合は L7 / 容量を疑う。",
+      "references": [
+        {"title": "Troubleshooting Lambda VPC connectivity", "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html"}
+      ],
+      "tags": ["troubleshooting", "lambda", "rds", "reachability-analyzer", "layer7"],
+      "common_mistakes": ["Reachability OK = 全 OK と誤解", "BGP を疑ってしまう"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-015",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Troubleshooting",
+      "subtopic": "BGP session down",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Direct Connect の Private VIF で BGP セッションが突然 Idle 状態になった。CloudWatch メトリクスで `ConnectionState=down` になっている。最初に確認すべき点として最も適切なのはどれか。",
+      "options": [
+        {"id": "A", "text": "オンプレ側ルータの BGP 設定（AS 番号、ピア IP、認証鍵）と物理リンク状態を確認する", "is_correct": true, "explanation": "正解。BGP Idle は通常ピア未到達か設定ミス。物理層 → 設定層の順で切り分け。"},
+        {"id": "B", "text": "VPC のセキュリティグループを確認", "is_correct": false, "explanation": "BGP セッションは DX のレイヤーで SG とは無関係。"},
+        {"id": "C", "text": "Lambda 関数のログ", "is_correct": false, "explanation": "DX 障害と Lambda は無関係。"},
+        {"id": "D", "text": "Route 53 のヘルスチェック", "is_correct": false, "explanation": "DNS と BGP は別レイヤー。"}
+      ],
+      "explanation": "BGP Idle 状態の原因切り分けは下層から順に：(1) 物理リンク (Light/loss-of-signal)、(2) BGP ピア IP の到達性、(3) AS 番号 / MD5 鍵 / Hold timer などの設定一致、(4) ルータ ACL によるブロック。CloudWatch + Network Manager で AWS 側の状態は確認できるが、オンプレ側の設定確認が必須。",
+      "references": [
+        {"title": "Troubleshooting Direct Connect", "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Troubleshooting.html"}
+      ],
+      "tags": ["direct-connect", "bgp", "troubleshooting", "idle-state"],
+      "common_mistakes": ["SG を疑ってしまう", "DNS が原因と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-016",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Network Access Analyzer",
+      "subtopic": "Custom scopes",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "金融機関がコンプライアンス要件として「インターネットから直接 RDS に到達する経路があってはならない」を継続検証したい。最適な実装は？",
+      "options": [
+        {"id": "A", "text": "Network Access Analyzer のカスタム Network Access Scope（source: Internet, destination: RDS resource type）を作成し、定期実行＋Findings 監視", "is_correct": true, "explanation": "正解。Access Scope で禁止経路を宣言し、違反する経路があれば Findings として通知。"},
+        {"id": "B", "text": "Reachability Analyzer で全ペアを総当たりで検証", "is_correct": false, "explanation": "Reachability は2点指定が必要。総当たりは現実的でない。Access Analyzer の Scope が正解。"},
+        {"id": "C", "text": "VPC Flow Logs を SQL でクエリ", "is_correct": false, "explanation": "実トラフィックがないと検出しない。事前防止には不向き。"},
+        {"id": "D", "text": "AWS Config ルールで RDS の暗号化を有効化", "is_correct": false, "explanation": "暗号化と経路リーチャビリティは別問題。"}
+      ],
+      "explanation": "Network Access Analyzer の Custom Network Access Scope は「ソース→デスティネーション」を意図ベースで宣言する。例えば「ソース=インターネット、デスティネーション=RDSResourceType」と書くと、その経路が存在する設定を全て発見する。Findings は EventBridge → Slack 通知や自動是正に繋げられる。",
+      "references": [
+        {"title": "Network Access Scopes", "url": "https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/scopes-narratives.html"}
+      ],
+      "tags": ["network-access-analyzer", "compliance", "scope", "rds"],
+      "common_mistakes": ["Reachability で全ペア検証しようとする", "Flow Logs で予防的検出ができると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-017",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Flow Logs",
+      "subtopic": "TGW Flow Logs",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Transit Gateway 経由のクロス VPC 通信を詳細に解析したいが、各 VPC の Flow Logs だけでは見えない情報がある。最も適切な対応は？",
+      "options": [
+        {"id": "A", "text": "TGW Flow Logs を有効化し、attachment 単位の通信を可視化する", "is_correct": true, "explanation": "正解。TGW Flow Logs は attachment ID、ペアの VPC ID、TGW を経由したパケットのメタデータを記録する。"},
+        {"id": "B", "text": "VPC Flow Logs を全 VPC で再有効化する", "is_correct": false, "explanation": "VPC Flow Logs だけでは TGW 経由かどうかや attachment 情報は欠ける。TGW Flow Logs が必要。"},
+        {"id": "C", "text": "CloudTrail で API 呼び出しを追跡", "is_correct": false, "explanation": "CloudTrail は管理イベントの話。データプレーンのフローではない。"},
+        {"id": "D", "text": "Traffic Mirroring で TGW にミラーする", "is_correct": false, "explanation": "TGW はミラーリングのソースにできない。EC2 ENI が対象。"}
+      ],
+      "explanation": "TGW Flow Logs は attachment レベルの通信メタデータ（送受信 attachment ID、TGW ID、リソースタイプ）を記録する。VPC Flow Logs と組み合わせると、エンドツーエンドの経路（VPC A → TGW → VPC B）が解析できる。VPC Flow Logs だけでは attachment 情報が欠けるので、複雑なハブ構成では TGW Flow Logs が必須。",
+      "references": [
+        {"title": "Transit Gateway Flow Logs", "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html"}
+      ],
+      "tags": ["transit-gateway", "flow-logs", "tgw-flow-logs", "monitoring"],
+      "common_mistakes": ["VPC Flow Logs で十分と誤解", "Traffic Mirroring を TGW で使えると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-018",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "DNS troubleshooting",
+      "subtopic": "Resolver query logging",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "VPC 内のアプリが特定のドメインだけ解決できない症状を分析したい。最適な手段は？",
+      "options": [
+        {"id": "A", "text": "Route 53 Resolver Query Logging を有効化し、CloudWatch Logs / S3 にクエリを出力して問い合わせとレスポンス内容を解析", "is_correct": true, "explanation": "正解。VPC レベルのすべての DNS クエリをロギングできる。返答コードや応答時間で原因を特定可能。"},
+        {"id": "B", "text": "VPC Flow Logs で UDP 53 を見る", "is_correct": false, "explanation": "Flow Logs はメタデータのみで、応答内容（NXDOMAIN 等）は見えない。Query Logs が正解。"},
+        {"id": "C", "text": "Reachability Analyzer で DNS 経路を解析", "is_correct": false, "explanation": "Reachability は L3/L4。DNS 解決の中身は対象外。"},
+        {"id": "D", "text": "Macie でクエリ内容を検査", "is_correct": false, "explanation": "Macie は S3 機密データ検出。DNS とは無関係。"}
+      ],
+      "explanation": "Route 53 Resolver Query Logging は VPC 単位でクエリと応答（NOERROR / NXDOMAIN / SERVFAIL 等）を CloudWatch Logs / S3 / Firehose に記録する。特定ドメインの解決失敗パターンや高頻度クエリの分析、DNS Firewall ルールとの組合せでセキュリティ監査も可能。",
+      "references": [
+        {"title": "Resolver query logging", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs.html"}
+      ],
+      "tags": ["route53-resolver", "query-logging", "dns", "troubleshooting"],
+      "common_mistakes": ["Flow Logs で応答内容が見えると誤解", "Reachability Analyzer に DNS が含まれると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-019",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Automation",
+      "subtopic": "CDK patterns",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "CDK で多リージョン VPC を IaC 化する際、Construct を再利用しつつ「リージョンごとに異なる CIDR」「共通の SG ルール」を表現する最適な方法は？",
+      "options": [
+        {"id": "A", "text": "VPC を生成する Construct クラスを作り、CIDR をプロパティ、SG はメソッド定義で共通化。app.ts でリージョン別に Stack をインスタンス化", "is_correct": true, "explanation": "正解。CDK の Construct パターンと Multi-stack で再利用と差分化を両立。"},
+        {"id": "B", "text": "リージョンごとに完全に別の CDK プロジェクトを作る", "is_correct": false, "explanation": "重複コードが大量に発生。再利用設計に反する。"},
+        {"id": "C", "text": "CloudFormation StackSets を CDK 抜きで使う", "is_correct": false, "explanation": "StackSets は素晴らしいが「CDK で IaC 化」という条件と乖離。"},
+        {"id": "D", "text": "Terraform を使う", "is_correct": false, "explanation": "問題は CDK での実装方法。"}
+      ],
+      "explanation": "CDK の理想形は (1) 共通リソースをカプセル化した Construct クラス、(2) 環境差分は props で注入、(3) `cdk.Stack` をリージョン別にインスタンス化、(4) シェアロジックはメソッドや Aspect で共通化、というパターン。`cdk.Tags` や `Aspects` でガバナンスポリシーも横断適用できる。",
+      "references": [
+        {"title": "CDK Constructs", "url": "https://docs.aws.amazon.com/cdk/v2/guide/constructs.html"}
+      ],
+      "tags": ["cdk", "iac", "construct", "multi-region", "automation"],
+      "common_mistakes": ["完全コピペで Region 別プロジェクトを作る", "CDK の Construct 再利用を活かさない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-020",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Internet Monitor",
+      "subtopic": "Mitigation suggestions",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Internet Monitor が「日本のユーザのレイテンシが20%増加」を検出した。Traffic Insights が「CloudFront 利用で改善可能」と示唆した。次に取るべきアクションとして最も適切なのは？",
+      "options": [
+        {"id": "A", "text": "ALB の前段に CloudFront ディストリビューションを構成し、エッジロケーションでオフロードする", "is_correct": true, "explanation": "正解。Internet Monitor の示唆通り、最寄りエッジで応答することでインターネット経由のホップを削減。"},
+        {"id": "B", "text": "Direct Connect を導入する", "is_correct": false, "explanation": "DX は B2B 向け。コンシューマユーザのインターネット体感改善には CDN/Global Accelerator が有効。"},
+        {"id": "C", "text": "Lambda@Edge を使えば即座に解決", "is_correct": false, "explanation": "Lambda@Edge は CloudFront 上で動く。前段に CloudFront を入れる前提。"},
+        {"id": "D", "text": "VPC を別リージョンに作り直す", "is_correct": false, "explanation": "コストと工数が大きい。CloudFront のほうが軽量。"}
+      ],
+      "explanation": "Internet Monitor は問題検知だけでなく、CloudFront / Global Accelerator の利用による改善余地も推定する。アプリ側でユーザの近くに presence を持つ最も簡潔な方法が CloudFront 配信。Global Accelerator は静的 IP / TCP/UDP / 非 HTTP ワークロードに有効。",
+      "references": [
+        {"title": "Internet Monitor traffic insights", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-traffic-insights.html"}
+      ],
+      "tags": ["internet-monitor", "cloudfront", "performance", "global-accelerator"],
+      "common_mistakes": ["Direct Connect で B2C ユーザを救おうとする", "VPC 移行という大手術を選ぶ"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-021",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Monitoring patterns",
+      "subtopic": "TGW BGP metrics",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "本番 Site-to-Site VPN の片肺障害を即座に検知し、運用チームをページしたい。最適な構成は？",
+      "options": [
+        {"id": "A", "text": "TGW VPN attachment の `TunnelState` メトリクスを CloudWatch Alarm にし、SNS → PagerDuty に連動", "is_correct": true, "explanation": "正解。TunnelState は up/down を秒単位で示す。Alarm + SNS で即時ページが標準。"},
+        {"id": "B", "text": "毎分 CloudTrail を polling して状態確認", "is_correct": false, "explanation": "polling は遅延と非効率。Alarm 駆動が最適。"},
+        {"id": "C", "text": "VPC Flow Logs を分析", "is_correct": false, "explanation": "VPN トンネル状態は Flow Logs では分からない。"},
+        {"id": "D", "text": "EC2 のメトリクスを見る", "is_correct": false, "explanation": "EC2 メトリクスは VPN トンネル状態とは無関係。"}
+      ],
+      "explanation": "Site-to-Site VPN は2本のトンネルがあり、`TunnelState`（0=down, 1=up）と `TunnelDataIn/Out` をパブリッシュする。TunnelState が10分連続で 0 を CloudWatch Alarm でトリガし、SNS → PagerDuty / Opsgenie に連動するパターンが本番運用の定石。Network Manager とも連携可能。",
+      "references": [
+        {"title": "Monitoring Site-to-Site VPN", "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/monitoring-overview-vpn.html"}
+      ],
+      "tags": ["site-to-site-vpn", "cloudwatch", "alarm", "pagerduty", "monitoring"],
+      "common_mistakes": ["polling 設計してしまう", "Flow Logs で VPN 状態が分かると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-022",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Cost optimization",
+      "subtopic": "NAT GW vs VPCE",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ECS タスクが S3 へ大量にアップロードしている。NAT Gateway 経由のため転送料金が高騰している。最も効果的な対策はどれか。",
+      "options": [
+        {"id": "A", "text": "S3 Gateway VPC Endpoint を作成し、ルートテーブルで S3 トラフィックを VPCE 経由にする", "is_correct": true, "explanation": "正解。Gateway VPCE は無料で NAT GW を介さないため転送料金が大幅削減。"},
+        {"id": "B", "text": "NAT GW を増やして負荷分散する", "is_correct": false, "explanation": "コスト悪化。VPCE で根本解決すべき。"},
+        {"id": "C", "text": "S3 のリージョンを変える", "is_correct": false, "explanation": "他リージョンだとさらに高くなる可能性。"},
+        {"id": "D", "text": "S3 への通信を Lambda 経由にする", "is_correct": false, "explanation": "Lambda が NAT GW 経由なら根本解決にならない。"}
+      ],
+      "explanation": "プライベートサブネット → NAT GW → S3 の通信は NAT GW 処理量とデータ転送料金が嵩む。S3 Gateway VPC Endpoint を入れると、S3 へのトラフィックは NAT GW を経由せず直接 AWS バックボーンへ抜けるため、料金とパフォーマンスが大幅改善。Endpoint 自体は無料。",
+      "references": [
+        {"title": "S3 Gateway endpoints", "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html"}
+      ],
+      "tags": ["cost-optimization", "nat-gateway", "vpc-endpoint", "s3"],
+      "common_mistakes": ["NAT GW を増設して悪化させる", "Lambda 経由にしても NAT GW は使われている"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-023",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Compliance monitoring",
+      "subtopic": "Conformance Pack",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "PCI DSS 準拠を維持するため、すべての VPC で Flow Logs が有効、Default SG が利用されていない、IGW がない (private 環境)、を継続検証したい。最適な手段は？",
+      "options": [
+        {"id": "A", "text": "AWS Config Conformance Pack（PCI DSS 用）を Organizations 全体にデプロイし、違反を Security Hub で集約", "is_correct": true, "explanation": "正解。Conformance Pack は規制別のルールセットを一括デプロイし、Security Hub で findings 集約が標準。"},
+        {"id": "B", "text": "Lambda で全 VPC をスキャンする自前スクリプトを書く", "is_correct": false, "explanation": "Conformance Pack で同じことができ、メンテナンスもAWSが行う。再発明。"},
+        {"id": "C", "text": "VPC Flow Logs だけ有効化すれば PCI DSS 準拠", "is_correct": false, "explanation": "PCI DSS は多項目の要件があり、Flow Logs のみでは不足。"},
+        {"id": "D", "text": "Trusted Advisor のみで継続検証", "is_correct": false, "explanation": "Trusted Advisor は補助的。PCI DSS 全体カバーは Config Conformance Pack。"}
+      ],
+      "explanation": "AWS Config Conformance Pack は PCI DSS / HIPAA / NIST 等の規制に対応したルールセットを YAML テンプレで提供し、Organizations 全体に一括展開できる。違反が出れば Security Hub で集約され、自動是正 (SSM Automation) と組み合わせるのが本番ベストプラクティス。",
+      "references": [
+        {"title": "AWS Config Conformance Packs", "url": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html"}
+      ],
+      "tags": ["compliance", "config", "conformance-pack", "pci-dss", "security-hub"],
+      "common_mistakes": ["Lambda 自作で代替しようとする", "Flow Logs だけで PCI DSS と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-024",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Capacity planning",
+      "subtopic": "NAT GW limits",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "本番環境で NAT Gateway を経由するアウトバウンド通信の `ErrorPortAllocation` メトリクスが急増している。最適な対処は？",
+      "options": [
+        {"id": "A", "text": "同一 AZ に複数の NAT GW を配置し、サブネットごとに別 NAT GW を使うようにルーティングを分割する（または複数 EIP を割り当てる）", "is_correct": true, "explanation": "正解。NAT GW は単一 EIP あたり約 55,000 同時接続/宛先ペアの上限。複数 NAT GW か複数 EIP で水平拡張する。"},
+        {"id": "B", "text": "NAT GW のメモリを増やす", "is_correct": false, "explanation": "NAT GW はマネージドでメモリ概念がない。"},
+        {"id": "C", "text": "全トラフィックを Internet Gateway 直結に変更", "is_correct": false, "explanation": "プライベートサブネットに IGW 直結は不可能（パブリック IP がないと外に出られない）。"},
+        {"id": "D", "text": "Security Group のルール数を減らす", "is_correct": false, "explanation": "ポート枯渇とは無関係。"}
+      ],
+      "explanation": "NAT GW の `ErrorPortAllocation` はソースポート枯渇を示す。1 EIP あたり同時接続は約 55,000/宛先 IP+ポート。同一宛先 (例: 単一API) への大量並列接続では枯渇しやすい。対処は (1) 複数 NAT GW + ルート分割、(2) 複数 EIP の割り当て (現在は 1 NAT GW につき最大 8 個)、(3) アプリ側の接続プールチューニング。",
+      "references": [
+        {"title": "NAT Gateway port allocation errors", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-troubleshooting.html#nat-gateway-troubleshooting-port-allocation"}
+      ],
+      "tags": ["nat-gateway", "port-allocation", "capacity-planning", "scaling"],
+      "common_mistakes": ["NAT GW にメモリ概念があると誤解", "IGW 直結で代替できると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ans-c01-domain3-025",
+      "version": "1.0",
+      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Network Management and Operation", "weight_percent": 20},
+      "topic": "Observability platform",
+      "subtopic": "End-to-end design",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "東海地方 製造 X 社で、AWS Organizations 配下 60 アカウントの「ネットワーク観測基盤」を一から構築する。要件: 全 VPC Flow Logs 集約、TGW Flow Logs、リソース変更検知、コンプライアンス継続検証、ユーザ体感パフォーマンス、可視化ダッシュボード、Slack 通知。最適なアーキテクチャは？",
+      "options": [
+        {"id": "A", "text": "(1) Flow Logs/TGW Flow Logs を共通ログアカウントの S3 へ集約 (Parquet)、(2) Athena + QuickSight で可視化、(3) Network Access Analyzer + Config Conformance Pack で継続検証、(4) Network Manager + Internet Monitor + EventBridge → Slack 通知、(5) StackSets で全アカウントへ自動展開", "is_correct": true, "explanation": "正解。要件全てを満たす総合設計。AWS の各種マネージド機能を有機的に組み合わせる。"},
+        {"id": "B", "text": "全 EC2 に CloudWatch Agent をインストールし、自前で監視", "is_correct": false, "explanation": "ネットワーク観測の本質はメタデータと経路。Agent では不足。要件未充足多数。"},
+        {"id": "C", "text": "Splunk のみを導入し全ログを送る", "is_correct": false, "explanation": "Splunk 単独では Reachability や Access Analyzer 同等の解析はできない。AWS ネイティブ機能との組合せが効率的。"},
+        {"id": "D", "text": "アカウント毎に独立して観測基盤を作る", "is_correct": false, "explanation": "60 アカウント分散運用は実務破綻。集約アカウント方式が標準。"}
+      ],
+      "explanation": "L6 総合設計問題。AWS が提供する観測ツールを機能別に組み合わせる：(1) ログ層 = Flow Logs + TGW Flow Logs を S3 に Parquet 集約、(2) 分析層 = Athena/QuickSight でアドホック分析と可視化、(3) 予防層 = Network Access Analyzer Scope + Config Conformance Pack で継続検証、(4) 運用層 = Network Manager / Internet Monitor / EventBridge → Slack で alarm、(5) 配布層 = StackSets で多アカウントへ展開。これらを組み合わせるのが AWS Well-Architected Operational Excellence。",
+      "references": [
+        {"title": "AWS Well-Architected Operational Excellence", "url": "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html"}
+      ],
+      "tags": ["observability", "design", "multi-account", "well-architected", "monitoring"],
+      "common_mistakes": ["EC2 Agent ベースで設計してしまう", "アカウント毎に独立基盤を作る"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

@@ -1,0 +1,766 @@
+{
+  "exam_code": "shindanshi-1",
+  "exam_name": "中小企業診断士 1次試験",
+  "version": "2026.04",
+  "total_questions": 30,
+  "domains": [
+    {
+      "id": "keizai",
+      "name": "経済学・経済政策",
+      "weight_percent": 14,
+      "question_count": 30
+    }
+  ],
+  "questions": [
+    {
+      "id": "shindanshi-1-keizai-001",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "需要・供給",
+      "subtopic": "需要曲線のシフト要因",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "ある正常財について、消費者の所得が上昇したときに起こる需要曲線の変化として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "需要曲線が右方にシフトする", "is_correct": true, "explanation": "正解。正常財（上級財）は所得増加に伴い需要が増えるため、各価格水準での需要量が増加し、需要曲線は右方シフトする。"},
+        {"id": "B", "text": "需要曲線が左方にシフトする", "is_correct": false, "explanation": "左方シフトは下級財（劣等財）で起こる現象。正常財では逆。"},
+        {"id": "C", "text": "需要曲線上を右下方向に移動する", "is_correct": false, "explanation": "曲線上の移動は価格変化による需要量の変化であり、所得変化はシフト要因。混同しないこと。"},
+        {"id": "D", "text": "需要曲線の傾きが急になる", "is_correct": false, "explanation": "傾きの変化は弾力性の変化を意味し、所得変化の直接的な効果ではない。"}
+      ],
+      "explanation": "需要曲線のシフト要因（所得、選好、関連財価格、人口、期待）と、曲線上の移動要因（自財価格）を区別することは需給分析の基本。正常財では所得増→需要増→右方シフト、下級財では所得増→需要減→左方シフトとなる。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "demand-curve", "normal-goods", "shift"],
+      "common_mistakes": ["シフトと曲線上の移動を混同", "下級財との区別を誤る"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-002",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "価格弾力性",
+      "subtopic": "需要の価格弾力性の計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製品の価格が500円から600円に上昇したとき、需要量が1000個から800個に減少した。中点法による需要の価格弾力性として最も近いものはどれか。",
+      "options": [
+        {"id": "A", "text": "約0.55", "is_correct": false, "explanation": "始点法（500円基準）で計算した値に近く、中点法ではない。"},
+        {"id": "B", "text": "約1.22", "is_correct": true, "explanation": "正解。中点法では (ΔQ/平均Q)/(ΔP/平均P) = (-200/900)/(100/550) ≈ -1.22、絶対値で約1.22。"},
+        {"id": "C", "text": "約2.00", "is_correct": false, "explanation": "計算ミス。需要量の変化率を価格の変化率で割る方向を逆にしたか、絶対値の計算を誤っている。"},
+        {"id": "D", "text": "約0.83", "is_correct": false, "explanation": "中点法での価格変化率と数量変化率を逆にした場合の値に近い。"}
+      ],
+      "explanation": "中点法（弧弾力性）は始点と終点の平均を分母に使うことで、上昇方向と下降方向で同じ値になる。式は |ΔQ/((Q1+Q2)/2)| ÷ |ΔP/((P1+P2)/2)|。本問は (200/900) ÷ (100/550) ≈ 0.222/0.182 ≈ 1.22。1より大きいので弾力的需要。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "elasticity", "midpoint-method", "calculation"],
+      "common_mistakes": ["始点法と中点法の混同", "分子分母を逆に計算"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-003",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "効用と消費者均衡",
+      "subtopic": "限界効用均等の法則",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方のある製造業の社員が、ランチに弁当（X財）と飲料（Y財）を消費する。X財の価格は500円、Y財の価格は150円である。消費者均衡が成立しているとき、X財とY財の限界効用比 MUx/MUy として正しいものはどれか。",
+      "options": [
+        {"id": "A", "text": "1/1（同じ）", "is_correct": false, "explanation": "価格が異なる以上、限界効用比は1にならない。価格比に等しくなる。"},
+        {"id": "B", "text": "10/3", "is_correct": true, "explanation": "正解。消費者均衡条件は MUx/MUy = Px/Py = 500/150 = 10/3。"},
+        {"id": "C", "text": "3/10", "is_correct": false, "explanation": "分子と分母を逆にしている。X財の方が高価なのでX財の限界効用が大きい。"},
+        {"id": "D", "text": "150/500", "is_correct": false, "explanation": "Py/Px に等しいが、消費者均衡で限界効用比が等しくなるのは Px/Py。"}
+      ],
+      "explanation": "消費者均衡は加重限界効用均等の法則 MUx/Px = MUy/Py で成立する。これを変形すると MUx/MUy = Px/Py。本問では 500/150 = 10/3。直感的には、高価な財ほど追加1単位から得る限界効用が大きい状態でないと均衡にならない。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "utility", "consumer-equilibrium", "marginal-utility"],
+      "common_mistakes": ["限界効用比と価格比の対応を逆に覚える", "加重限界効用と限界効用の混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-004",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "無差別曲線",
+      "subtopic": "限界代替率",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "標準的な無差別曲線（原点に対し凸）について、限界代替率（MRS）に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "MRSは無差別曲線上のどの点でも一定である", "is_correct": false, "explanation": "MRSが一定なら無差別曲線は直線（完全代替財）になる。標準的な凸曲線では一定でない。"},
+        {"id": "B", "text": "X財の消費を増やすにつれてMRSは逓減する", "is_correct": true, "explanation": "正解。これは「限界代替率逓減の法則」で、原点に対して凸の形状の数学的表現である。"},
+        {"id": "C", "text": "MRSは2財の価格比と常に等しい", "is_correct": false, "explanation": "MRS=価格比となるのは消費者均衡点のみ。曲線上の他の点では一致しない。"},
+        {"id": "D", "text": "MRSは無差別曲線の傾きの絶対値の逆数である", "is_correct": false, "explanation": "MRSは傾きの絶対値そのもの（dY/dX の絶対値）。逆数ではない。"}
+      ],
+      "explanation": "限界代替率（MRS）はY財をX財1単位と交換するために犠牲にしてもよいY財の量。無差別曲線の傾きの絶対値に等しい。原点に対して凸の標準形では、X財が増えるほどそのありがたみが減りMRSは逓減する。これが標準的な選好の基本性質。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "indifference-curve", "MRS", "convexity"],
+      "common_mistakes": ["MRS逓減と限界効用逓減を混同", "MRS=価格比をどこでも成立と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-005",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "費用関数",
+      "subtopic": "限界費用と平均費用の関係",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "短期費用曲線において、限界費用（MC）曲線と平均費用（AC）曲線の関係に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "MCがACを上回る領域では、ACは増加する", "is_correct": true, "explanation": "正解。MC>ACのとき次の1単位生産が全体平均を引き上げるため、ACは上昇する。"},
+        {"id": "B", "text": "MCはACの最高点で必ずACと交わる", "is_correct": false, "explanation": "MCはACの最低点でACと交わる。最高点ではない。"},
+        {"id": "C", "text": "MCがACを下回る領域では、ACは増加する", "is_correct": false, "explanation": "MC<ACのときACは減少する。記述は逆。"},
+        {"id": "D", "text": "MCとACは常に平行である", "is_correct": false, "explanation": "MCはU字型、ACもU字型だが両者は交差する関係であり、平行ではない。"}
+      ],
+      "explanation": "MC（限界費用）が AC（平均費用）より高ければ、追加生産が平均を押し上げてACは上昇する。逆にMC<ACならACは下降する。よってMCはACの最低点で交差する。これは「限界と平均」の一般原則で、平均点と限界点の関係を理解する基本概念。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "cost-function", "marginal-cost", "average-cost"],
+      "common_mistakes": ["MCとACが最高点で交差すると誤解", "限界と平均の大小関係を逆に記憶"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-006",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "完全競争市場",
+      "subtopic": "利潤最大化条件",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "easy",
+      "stem": "完全競争市場における短期の利潤最大化条件として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "P = MC", "is_correct": true, "explanation": "正解。完全競争では企業はプライステイカーで P = MR となり、利潤最大化条件 MR = MC は P = MC となる。"},
+        {"id": "B", "text": "P = AC", "is_correct": false, "explanation": "P = AC は損益分岐点（利潤ゼロ）の条件で、利潤最大化条件ではない。"},
+        {"id": "C", "text": "MR = AC", "is_correct": false, "explanation": "利潤最大化は限界収入と限界費用の一致 MR=MC。ACは平均概念で限界条件にはならない。"},
+        {"id": "D", "text": "P = AVC", "is_correct": false, "explanation": "P = AVC は操業停止点（生産継続の最低条件）で、利潤最大化とは異なる概念。"}
+      ],
+      "explanation": "利潤最大化の一般条件は MR = MC。完全競争市場では個別企業はプライステイカーで価格を所与とするため P = MR となり、結果として P = MC が利潤最大化条件となる。P=AC は損益分岐、P=AVC は操業停止点で、混同しないこと。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "perfect-competition", "profit-maximization"],
+      "common_mistakes": ["損益分岐点と利潤最大化条件を混同", "操業停止点との区別ができない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-007",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "独占市場",
+      "subtopic": "独占企業の価格設定",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "教育サービスを提供する独占企業が利潤最大化を行う場合の価格設定に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "独占企業は P = MC で価格を設定する", "is_correct": false, "explanation": "P=MCは完全競争市場の条件。独占企業は P>MC で価格を設定し、これが厚生損失（死荷重）を生む。"},
+        {"id": "B", "text": "独占企業は MR = MC を満たす生産量を選び、需要曲線上でその生産量に対応する価格を設定する", "is_correct": true, "explanation": "正解。利潤最大化は MR=MC で生産量決定、その生産量を需要曲線に当てはめて市場価格を読み取る。"},
+        {"id": "C", "text": "独占企業は需要の価格弾力性が1の点で価格を設定すると利潤最大化される", "is_correct": false, "explanation": "弾力性=1ではMR=0なので、MC>0なら利潤最大化点ではない。利潤最大化は弾力性>1の領域で行う。"},
+        {"id": "D", "text": "独占企業は MR 曲線上で価格を設定する", "is_correct": false, "explanation": "MR曲線は生産量決定に使うが、消費者が支払う価格は需要曲線上で決まる。"}
+      ],
+      "explanation": "独占の利潤最大化は2段階：(1)MR=MCで利潤最大化生産量Q*を決定 (2)Q*を需要曲線に投影して価格P*を読み取る。MR曲線は需要曲線の下方にあるためP>MR=MC、つまりP>MCとなり、社会的最適より価格が高く生産量が少ない。これが独占の死荷重の根源。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "monopoly", "profit-maximization", "deadweight-loss"],
+      "common_mistakes": ["MR曲線上で価格を読み取ろうとする", "弾力性1の点で利潤最大化と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-008",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "ゲーム理論",
+      "subtopic": "ナッシュ均衡と囚人のジレンマ",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "あるSaaS企業A社とB社が広告投資を行うかを同時に選択する。両社が広告しない場合の利得は(8,8)、両社が広告する場合は(5,5)、A社のみ広告する場合は(10,3)、B社のみの場合は(3,10)である。この状況のナッシュ均衡として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "両社とも広告しない（8,8）", "is_correct": false, "explanation": "(8,8)は社会的最適だが、各社にとって相手が広告しないなら自社が広告する方が良いため、ナッシュ均衡ではない。"},
+        {"id": "B", "text": "両社とも広告する（5,5）", "is_correct": true, "explanation": "正解。各社にとって相手の戦略を所与としたとき、広告するのが支配戦略。両社が広告する状態が唯一のナッシュ均衡。典型的な囚人のジレンマ。"},
+        {"id": "C", "text": "A社のみ広告（10,3）", "is_correct": false, "explanation": "B社にとって自社も広告した方が利得が大きい（3→5）ため、B社が戦略を変更したく、ナッシュ均衡ではない。"},
+        {"id": "D", "text": "ナッシュ均衡は存在しない", "is_correct": false, "explanation": "支配戦略均衡（広告,広告）が存在する。混合戦略を考えるまでもなく純粋戦略の均衡がある。"}
+      ],
+      "explanation": "ナッシュ均衡は「他者の戦略を所与として自身が最適」な戦略の組合せ。本問は囚人のジレンマ型で、各社にとって広告する方が支配戦略（相手が広告しなくても10>8、相手が広告しても5>3）。両社協調すれば(8,8)が実現するが個別合理性が集合的非合理性を生む典型例。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "game-theory", "nash-equilibrium", "prisoners-dilemma", "saas"],
+      "common_mistakes": ["パレート最適とナッシュ均衡を混同", "支配戦略の確認手順を踏まない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-009",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "寡占市場",
+      "subtopic": "クールノー競争",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "クールノー競争モデルに関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "企業は価格を戦略変数として選択する", "is_correct": false, "explanation": "価格を戦略変数とするのはベルトラン競争。クールノーは数量競争。"},
+        {"id": "B", "text": "企業は数量を戦略変数として同時に決定し、相手の数量を所与として最適反応する", "is_correct": true, "explanation": "正解。クールノー競争は数量を戦略変数として同時決定し、反応関数の交点でナッシュ均衡が成立する。"},
+        {"id": "C", "text": "先導企業が先に数量を決定し、追随企業がそれを観察してから決定する", "is_correct": false, "explanation": "これはシュタッケルベルク競争の説明。クールノーは同時手番。"},
+        {"id": "D", "text": "クールノー均衡は完全競争均衡と一致する", "is_correct": false, "explanation": "クールノー均衡の生産量は完全競争より少なく、独占より多い。完全競争とは一致しない。"}
+      ],
+      "explanation": "寡占の代表的モデル：クールノー（数量同時決定）、ベルトラン（価格同時決定）、シュタッケルベルク（数量逐次決定）。クールノー均衡では各企業が相手の生産量を所与として自社最適生産量を選び、それが相互整合する点で均衡。価格は完全競争＞クールノー＞独占の中間水準。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "oligopoly", "cournot", "stackelberg", "bertrand"],
+      "common_mistakes": ["クールノーとベルトランを混同", "シュタッケルベルクとの違いを区別できない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-010",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "外部性",
+      "subtopic": "ピグー税とコース定理",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "東海地方の製造業が排出する大気汚染という負の外部性が存在する場合の対処策に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "ピグー税は外部費用と等しい税を課して限界私的費用を限界社会的費用に一致させる", "is_correct": true, "explanation": "正解。負の外部性に対する標準的な処方箋で、外部費用相当の税により私的最適と社会的最適を一致させる。"},
+        {"id": "B", "text": "コース定理によれば、政府介入なしには外部性問題は決して解決しない", "is_correct": false, "explanation": "コース定理は逆に「取引費用ゼロ・所有権明確なら当事者間交渉で効率的解決」と主張する。記述は誤り。"},
+        {"id": "C", "text": "負の外部性が存在する市場では、社会的最適より生産量が過少になる", "is_correct": false, "explanation": "負の外部性では限界私的費用＜限界社会的費用となるため、市場均衡は社会的最適より生産量が過大になる。"},
+        {"id": "D", "text": "排出権取引制度はピグー税より常に効率が低い", "is_correct": false, "explanation": "排出権取引は数量規制を市場メカニズムで実現し、不確実性下では税より効率的な場合もある。常に劣るわけではない。"}
+      ],
+      "explanation": "負の外部性は限界私的費用＜限界社会的費用を生み、市場は社会的最適より過剰生産する。対処策は(1)ピグー税で外部費用を内部化、(2)コース的交渉で当事者解決、(3)排出権取引で数量制御。それぞれ前提条件と効率性が異なる。試験では外部性の方向（過剰／過少）と対処策の対応を確実に押さえる。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "externality", "pigouvian-tax", "coase-theorem"],
+      "common_mistakes": ["過剰／過少の方向を逆に覚える", "コース定理を政府介入肯定派と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-011",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "公共財",
+      "subtopic": "公共財の特性",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "純粋公共財に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "競合性と排除性の両方を持つ", "is_correct": false, "explanation": "それは私的財の特性。公共財は両方とも持たない。"},
+        {"id": "B", "text": "非競合性と非排除性の両方を持ち、フリーライダー問題が発生する", "is_correct": true, "explanation": "正解。誰でも消費でき、追加消費者がいても他者の消費が減らないため、対価を払わない者を排除できずフリーライドが起こる。"},
+        {"id": "C", "text": "競合性はあるが排除性がない（共有資源）", "is_correct": false, "explanation": "それは共有資源（コモンプール財）の特性で、コモンズの悲劇を生む。純粋公共財ではない。"},
+        {"id": "D", "text": "非競合性はあるが排除性がある（クラブ財）", "is_correct": false, "explanation": "それはクラブ財の特性。会員制サービス等が該当し、純粋公共財とは異なる。"}
+      ],
+      "explanation": "財は「競合性」と「排除性」の組合せで4分類される：私的財（両方あり）、公共財（両方なし）、共有資源（競合のみ）、クラブ財（排除のみ）。公共財は市場では過少供給されるため政府供給の根拠となる。代表例は国防、灯台、地上波放送。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "public-goods", "free-rider", "market-failure"],
+      "common_mistakes": ["共有資源と公共財を混同", "クラブ財の概念を知らない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-012",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "供給曲線",
+      "subtopic": "供給の価格弾力性",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "短期と長期で比較したとき、一般に供給の価格弾力性に関して正しい記述はどれか。",
+      "options": [
+        {"id": "A", "text": "短期の方が長期より弾力的である", "is_correct": false, "explanation": "短期は資本設備が固定的なので調整余地が小さく、長期より非弾力的になる。"},
+        {"id": "B", "text": "長期の方が短期より弾力的である", "is_correct": true, "explanation": "正解。長期では設備投資・参入退出が可能で、価格変化に対し供給量を大きく調整できるため弾力的。"},
+        {"id": "C", "text": "短期と長期で弾力性は変わらない", "is_correct": false, "explanation": "時間軸により調整可能性が異なるため弾力性は変化する。経済学の基本前提。"},
+        {"id": "D", "text": "弾力性は需要側の現象であり、供給には適用されない", "is_correct": false, "explanation": "供給の価格弾力性も需要と同様に定義される基本概念。"}
+      ],
+      "explanation": "価格弾力性は変化への調整可能性に依存し、時間が経つほど代替手段や生産能力調整が可能になる。需要側でも供給側でも、長期の方が弾力的になるのが一般原則。短期は固定投入要素（資本）に縛られ、長期はすべて可変。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "supply", "elasticity", "short-run", "long-run"],
+      "common_mistakes": ["短期と長期の弾力性関係を逆に覚える"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-013",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "国民所得",
+      "subtopic": "GDPとGNPの違い",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "GDP（国内総生産）とGNP（国民総生産）の違いに関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "GDPは生産者の国籍基準、GNPは生産地基準で計算される", "is_correct": false, "explanation": "逆。GDPが地理的概念（国内基準）、GNPが国民概念（国籍基準）。"},
+        {"id": "B", "text": "GDPは一国の領域内で生み出された付加価値、GNPは一国の国民が生み出した付加価値の合計である", "is_correct": true, "explanation": "正解。GDPは属地主義（領域基準）、GNPは属人主義（国籍基準）。両者の差は海外からの純所得。"},
+        {"id": "C", "text": "両者は同じ概念で名称が異なるだけである", "is_correct": false, "explanation": "概念が異なる。海外からの純所得受取の有無により値も異なる。"},
+        {"id": "D", "text": "GDPは名目値、GNPは実質値という違いである", "is_correct": false, "explanation": "名目／実質の区別は物価調整の有無であり、GDPとGNPの違いとは別の軸の概念。"}
+      ],
+      "explanation": "GDP=領域内付加価値合計、GNP（=GNI、国民総所得）=GDP+海外からの純所得受取。日本では1993年SNA以降GDPが中心指標。海外進出企業の利益は日本のGNPに含まれるがGDPには含まれない。経常収支の理解にも直結する基本概念。",
+      "references": [
+        {"title": "内閣府 国民経済計算", "url": "https://www.esri.cao.go.jp/jp/sna/menu.html"}
+      ],
+      "tags": ["macroeconomics", "GDP", "GNP", "national-income"],
+      "common_mistakes": ["属地主義と属人主義を逆に覚える", "名目／実質との混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-014",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "GDP三面等価",
+      "subtopic": "GDPの計算手法",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "GDPに含まれないものとして最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "中古車の市場での売買額", "is_correct": true, "explanation": "正解。中古品取引は新たな付加価値を生まないためGDPに含まれない。ただし仲介手数料はサービス価値として含まれる。"},
+        {"id": "B", "text": "農家の自家消費分の農産物（帰属計算）", "is_correct": false, "explanation": "市場取引はないが帰属計算でGDPに含まれる。"},
+        {"id": "C", "text": "持ち家の帰属家賃", "is_correct": false, "explanation": "持ち家を借りていると仮定した家賃相当額が帰属家賃として算入される。"},
+        {"id": "D", "text": "公務員の給与", "is_correct": false, "explanation": "政府サービスは生産コストで評価されGDPに算入される。"}
+      ],
+      "explanation": "GDPはその年に新たに生み出された付加価値の合計。中古品取引、株式売買、土地取引、相続などの単なる資産移転は除外される。逆に、市場取引でなくても帰属計算（持ち家の帰属家賃、自家消費農産物）は含まれる。試験頻出の論点。",
+      "references": [
+        {"title": "内閣府 国民経済計算", "url": "https://www.esri.cao.go.jp/jp/sna/menu.html"}
+      ],
+      "tags": ["macroeconomics", "GDP", "imputation", "national-accounts"],
+      "common_mistakes": ["帰属計算の概念を知らない", "中古品取引を含めてしまう"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-015",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "IS-LM分析",
+      "subtopic": "IS曲線のシフト",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "政府が公共投資を増加させたとき、IS-LMモデルにおいて起こる変化として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "IS曲線が右方シフトし、利子率と国民所得がともに増加する", "is_correct": true, "explanation": "正解。公共投資増は財市場で総需要を増やしIS右シフト→新均衡では利子率上昇・所得増加。"},
+        {"id": "B", "text": "LM曲線が右方シフトし、利子率が低下する", "is_correct": false, "explanation": "LMシフトを起こすのは金融政策（マネーサプライ変化）。財政政策はISをシフトさせる。"},
+        {"id": "C", "text": "IS曲線が左方シフトし、所得が減少する", "is_correct": false, "explanation": "公共投資増は需要を増やすので右方シフト。左方シフトは支出減少時。"},
+        {"id": "D", "text": "両曲線とも変化せず、利子率と所得は不変", "is_correct": false, "explanation": "公共投資という外生的支出変化はISをシフトさせる。"}
+      ],
+      "explanation": "IS-LMの基本：財政政策→ISシフト、金融政策→LMシフト。公共投資増は乗数効果でIS右方シフト→均衡で所得Y増・利子率i上昇。利子率上昇は民間投資を抑制（クラウディングアウト）するため、純粋なケインズ的乗数より所得増は小さくなる。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "IS-LM", "fiscal-policy", "crowding-out"],
+      "common_mistakes": ["ISとLMのシフト要因を取り違える", "クラウディングアウトを忘れる"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-016",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "IS-LM分析",
+      "subtopic": "流動性の罠",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "流動性の罠（liquidity trap）が存在する経済における政策効果に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "金融政策は完全に効力を失い、財政政策のみ有効である", "is_correct": true, "explanation": "正解。LM曲線が水平のためマネー増は利子率を下げず投資喚起できない。一方で財政政策はクラウディングアウトなしで完全に効果を発揮する。"},
+        {"id": "B", "text": "財政政策は無効で、金融政策のみが有効である", "is_correct": false, "explanation": "逆。流動性の罠では財政政策が最強、金融政策は無効になる。"},
+        {"id": "C", "text": "両政策とも完全に無効化される", "is_correct": false, "explanation": "財政政策は依然有効。むしろクラウディングアウトがないため通常時より効果が大きい。"},
+        {"id": "D", "text": "流動性の罠ではIS曲線が水平になる", "is_correct": false, "explanation": "水平になるのはLM曲線（貨幣需要が無限弾力的）。ISではない。"}
+      ],
+      "explanation": "流動性の罠は利子率が極めて低く、貨幣需要が利子率に対して完全弾力的になる状態。LM曲線が水平となり、マネー供給増は利子率を動かせず実体経済に効果なし。逆に財政拡張はISを右シフトしても利子率が上昇しない（クラウディングアウト不在）ため所得増加が最大化。日本のゼロ金利時代の理論的背景。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "IS-LM", "liquidity-trap", "japan", "monetary-policy"],
+      "common_mistakes": ["どちらの曲線が水平になるか混乱", "財政・金融の効果を逆に覚える"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-017",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "AD-AS分析",
+      "subtopic": "総供給曲線の形状",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AD-ASモデルにおける長期総供給曲線（LRAS）に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "右上がりの曲線である", "is_correct": false, "explanation": "それは短期総供給曲線（SRAS）。長期では物価変化に対し産出が変化しない。"},
+        {"id": "B", "text": "完全雇用GDPの水準で垂直である", "is_correct": true, "explanation": "正解。長期では価格・賃金が完全に調整され、産出は完全雇用水準（自然産出量）に決まる。物価には依存しない。"},
+        {"id": "C", "text": "水平である", "is_correct": false, "explanation": "水平になるのは極端なケインズ的SRAS（不完全雇用下の有効需要不足）の解釈。長期ではない。"},
+        {"id": "D", "text": "右下がりの曲線である", "is_correct": false, "explanation": "右下がりはAD（総需要）曲線の一般形。供給側ではない。"}
+      ],
+      "explanation": "AD-ASでは時間軸で供給曲線の形状が異なる：超短期（水平）、短期SRAS（右上がり）、長期LRAS（垂直）。長期では名目変数が完全調整されるため物価変化は実質産出に影響せず、産出は完全雇用GDP（自然産出量）で決まる。これは古典派的二分法の表現。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "AD-AS", "long-run", "natural-output"],
+      "common_mistakes": ["LRASとSRASの形状を混同", "AD曲線と勘違い"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-018",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "フィリップス曲線",
+      "subtopic": "短期と長期のフィリップス曲線",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "フィリップス曲線に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "短期フィリップス曲線は失業率と物価上昇率の正の相関を示す", "is_correct": false, "explanation": "短期フィリップス曲線は負の相関（右下がり）。賃金フィリップスでも物価フィリップスでも同じ。"},
+        {"id": "B", "text": "長期フィリップス曲線は自然失業率の水準で垂直である", "is_correct": true, "explanation": "正解。フリードマンの自然失業率仮説：期待が調整されれば失業率は自然率に戻り、長期にはトレードオフが消失する。"},
+        {"id": "C", "text": "オイルショック期のスタグフレーションはフィリップス曲線理論を完全に証明した", "is_correct": false, "explanation": "逆に1970年代のスタグフレーションは単純なフィリップス曲線の限界を示し、自然失業率仮説の登場を促した。"},
+        {"id": "D", "text": "ルーカス批判によりフィリップス曲線は経済学から完全に否定された", "is_correct": false, "explanation": "ルーカス批判は政策無効命題と関連するが、フィリップス曲線そのものは期待付きフィリップス曲線として現代でも分析道具。"}
+      ],
+      "explanation": "オリジナルのフィリップス曲線は失業率と賃金（物価）上昇率の負の相関。短期では成立しうるが、フリードマン・フェルプスの自然失業率仮説によれば、期待インフレ率が調整されれば失業率は自然率に戻り、長期フィリップス曲線は垂直となる。スタグフレーションがこの理論を支持した。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "phillips-curve", "natural-rate", "stagflation"],
+      "common_mistakes": ["短期と長期の形状を混同", "ルーカス批判の意味を誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-019",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "経済成長理論",
+      "subtopic": "ソロー成長モデル",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ソロー成長モデルにおける定常状態（steady state）に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "定常状態では1人当たり資本ストックは増加し続ける", "is_correct": false, "explanation": "定常状態では1人当たり資本は一定。投資が減耗・人口成長で相殺される均衡点。"},
+        {"id": "B", "text": "定常状態では1人当たり産出量の成長率はゼロで、技術進歩がある場合は技術進歩率に等しくなる", "is_correct": true, "explanation": "正解。技術進歩なしでは定常状態で1人当たり成長ゼロ。技術進歩率gがあれば1人当たり産出は率gで成長する。"},
+        {"id": "C", "text": "貯蓄率が高いほど定常状態の1人当たり産出量の成長率は高くなる", "is_correct": false, "explanation": "貯蓄率上昇は定常状態の水準を上げるが、長期成長率には影響しない（貯蓄率による成長率効果は移行過程のみ）。"},
+        {"id": "D", "text": "ソローモデルでは技術進歩は内生的に決まる", "is_correct": false, "explanation": "ソローモデルでは技術進歩は外生。内生化したのはローマー以降の内生成長理論。"}
+      ],
+      "explanation": "ソローモデルでは資本蓄積に収穫逓減があるため、1人当たり資本は定常状態に収束。長期成長率は外生的な技術進歩率gで決まる（条件付き収束）。貯蓄率や人口成長率の変化は定常状態の水準を変えるが、長期成長率は変えない。これが内生成長理論への発展動機。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "growth", "solow-model", "steady-state"],
+      "common_mistakes": ["貯蓄率と長期成長率の関係を誤解", "技術進歩の外生性を忘れる"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-020",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "失業",
+      "subtopic": "失業の種類",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "景気変動とは独立に常に存在する失業として、「労働者の転職活動中の一時的失業」を表す概念として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "循環的失業", "is_correct": false, "explanation": "景気変動による失業で、需要不足型。本問の状況とは異なる。"},
+        {"id": "B", "text": "構造的失業", "is_correct": false, "explanation": "産業構造変化や技能ミスマッチによる失業。転職活動中の一時的失業とは別概念。"},
+        {"id": "C", "text": "摩擦的失業", "is_correct": true, "explanation": "正解。労働者の自発的な転職活動・情報探索期間中に生じる失業で、自然失業率の主要構成要素。"},
+        {"id": "D", "text": "季節的失業", "is_correct": false, "explanation": "農業・観光業など季節要因による失業。転職活動とは異なる。"}
+      ],
+      "explanation": "失業は4分類できる：(1)摩擦的（転職時の探索）(2)構造的（ミスマッチ）(3)循環的（景気不況）(4)季節的。摩擦的＋構造的＝自然失業率と捉えるのが標準的。マクロ政策で対処可能なのは主に循環的失業で、構造的失業は労働市場改革等の供給サイド政策が必要。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "unemployment", "frictional", "natural-rate"],
+      "common_mistakes": ["摩擦的と構造的の区別ができない", "循環的失業との混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-021",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "インフレ",
+      "subtopic": "インフレの種類",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "原油価格高騰によって発生したインフレーションを最もよく説明する概念はどれか。",
+      "options": [
+        {"id": "A", "text": "ディマンドプル・インフレーション", "is_correct": false, "explanation": "総需要拡大によるインフレで、好況下で起こる。原油高騰のような供給側ショックではない。"},
+        {"id": "B", "text": "コストプッシュ・インフレーション", "is_correct": true, "explanation": "正解。原材料価格や賃金上昇によりAS曲線が左方シフトして発生するインフレ。スタグフレーションを伴いやすい。"},
+        {"id": "C", "text": "ハイパーインフレーション", "is_correct": false, "explanation": "極めて高率（月50%以上）のインフレで、原因は通常通貨乱発。原油高騰でこの定義に該当することは稀。"},
+        {"id": "D", "text": "ディスインフレーション", "is_correct": false, "explanation": "ディスインフレはインフレ率の低下のこと。インフレ自体ではなく逆向きの現象。"}
+      ],
+      "explanation": "インフレは需要側要因（ディマンドプル）と供給側要因（コストプッシュ）に大別される。原油・原材料価格上昇はAS左シフト→物価上昇＋産出減少（スタグフレーション）を引き起こす。1970年代のオイルショックが典型例で、フィリップス曲線の単純解釈を覆した出来事。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "inflation", "cost-push", "stagflation"],
+      "common_mistakes": ["ディマンドプルとコストプッシュを取り違える", "ディスインフレとデフレを混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-022",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "乗数理論",
+      "subtopic": "投資乗数",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "閉鎖経済で限界消費性向が0.8、税率は無視できる場合、政府支出を10兆円増加させたときのGDP増加額として最も近いものはどれか。",
+      "options": [
+        {"id": "A", "text": "10兆円", "is_correct": false, "explanation": "それは波及効果を無視した直接効果のみ。乗数効果を含めれば増加はもっと大きい。"},
+        {"id": "B", "text": "20兆円", "is_correct": false, "explanation": "限界貯蓄性向0.5（MPC=0.5）の場合の値。本問のMPC=0.8とは合わない。"},
+        {"id": "C", "text": "50兆円", "is_correct": true, "explanation": "正解。乗数=1/(1-MPC)=1/0.2=5。10×5=50兆円が標準的乗数効果。"},
+        {"id": "D", "text": "80兆円", "is_correct": false, "explanation": "MPC=0.8をそのまま乗数として使った誤り。乗数公式は1/(1-MPC)。"}
+      ],
+      "explanation": "閉鎖経済・税率ゼロのケインズ型モデルでは政府支出乗数=1/(1-MPC)。MPC=0.8なら乗数=5。10兆円の政府支出増→ΔY=50兆円。MPCが大きいほど消費の波及効果が大きく乗数も大きい。実際は税・輸入漏れで乗数は小さくなる（修正乗数）。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "multiplier", "fiscal-policy", "calculation"],
+      "common_mistakes": ["MPCを直接乗数として使う", "1/MPSと1/MPCの混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-023",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "貨幣需要",
+      "subtopic": "ケインズの流動性選好",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ケインズの流動性選好説における貨幣需要の3動機として最も適切な組合せはどれか。",
+      "options": [
+        {"id": "A", "text": "取引動機、予備的動機、投機的動機", "is_correct": true, "explanation": "正解。これがケインズの3動機。取引動機・予備的動機は所得依存、投機的動機は利子率依存。"},
+        {"id": "B", "text": "取引動機、貯蓄動機、投資動機", "is_correct": false, "explanation": "貯蓄・投資動機は貨幣需要の分類ではない。標準分類とは異なる。"},
+        {"id": "C", "text": "予備的動機、消費動機、輸入動機", "is_correct": false, "explanation": "消費・輸入は貨幣需要分類ではなく支出側の概念。"},
+        {"id": "D", "text": "投機的動機、信用動機、安全動機", "is_correct": false, "explanation": "信用・安全動機はケインズの分類ではない。"}
+      ],
+      "explanation": "ケインズの流動性選好説：貨幣需要は(1)取引動機（日常取引のため）(2)予備的動機（不測の支出への備え）(3)投機的動機（債券価格変動の機会狙い）の3動機。前2者は所得Yの増加関数、投機的動機は利子率rの減少関数。これがLM曲線の理論的基礎。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "money-demand", "keynes", "liquidity-preference"],
+      "common_mistakes": ["3動機の名称を混同", "貯蓄動機と予備的動機を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-024",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "比較優位",
+      "subtopic": "リカードの比較優位論",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "A国とB国がそれぞれワイン1単位生産に必要な労働量と布1単位生産に必要な労働量が下表のとおりだとする。A国: ワイン3、布6。B国: ワイン10、布5。両国の特化と貿易に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "A国は両財ともB国より絶対優位なので、貿易の利益はない", "is_correct": false, "explanation": "絶対優位の有無に関わらず比較優位があれば貿易の利益が発生する。これがリカードの洞察。"},
+        {"id": "B", "text": "A国はワインに、B国は布に特化することで両国とも利益を得る", "is_correct": true, "explanation": "正解。A国の機会費用：ワイン1=布0.5、B国：ワイン1=布2。A国はワイン生産で比較優位、B国は布で比較優位。"},
+        {"id": "C", "text": "A国は布に、B国はワインに特化すべきである", "is_correct": false, "explanation": "比較優位の方向と逆。A国はワインを布に対して相対的に安く生産できる。"},
+        {"id": "D", "text": "B国は両財ともA国より生産性が低いので、自給自足が望ましい", "is_correct": false, "explanation": "絶対劣位でも比較優位があれば特化と貿易で双方が利益を得るのがリカード理論の核心。"}
+      ],
+      "explanation": "比較優位は機会費用で判定する。A国でワイン1単位の機会費用=布3/6=0.5。B国でワイン1単位の機会費用=布10/5=2。A国の方が機会費用が小さいのでワインに比較優位、B国は布に比較優位。各国が比較優位財に特化し交換すれば双方が利益を得る。これは現代の自由貿易論の基礎。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["international-economics", "comparative-advantage", "ricardo", "trade"],
+      "common_mistakes": ["絶対優位と比較優位を混同", "機会費用の計算ミス"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-025",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "為替レート",
+      "subtopic": "購買力平価説",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "絶対的購買力平価（PPP）説に基づき、米国でビッグマックが5ドル、日本で750円の場合の理論的な為替レートとして最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "1ドル＝100円", "is_correct": false, "explanation": "計算根拠が不明。750/5=150円が正しい。"},
+        {"id": "B", "text": "1ドル＝150円", "is_correct": true, "explanation": "正解。同一財1単位の価格比 750円÷5ドル=150円/ドル がPPPに基づく理論為替レート。"},
+        {"id": "C", "text": "1ドル＝250円", "is_correct": false, "explanation": "計算ミス。750/3=250なら正しいが、米国価格は5ドル。"},
+        {"id": "D", "text": "1ドル＝50円", "is_correct": false, "explanation": "ドル円を逆数で計算した誤り。PPPは自国通貨/外国通貨の価格比。"}
+      ],
+      "explanation": "絶対的購買力平価説（一物一価の法則の国際版）：同一財は世界どこでも同じ価格になるべき。理論為替レート=日本価格÷米国価格=750÷5=150円/ドル。実際の為替はPPPから乖離するが長期的には収束する傾向。エコノミストの「ビッグマック指数」はこの応用例。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["international-economics", "exchange-rate", "PPP", "big-mac-index"],
+      "common_mistakes": ["分子分母を逆に計算", "通貨の方向を取り違える"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-026",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "マンデル＝フレミングモデル",
+      "subtopic": "変動相場制での財政・金融政策",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "資本移動が完全自由・小国・変動相場制という前提のマンデル＝フレミングモデルにおいて、財政拡張政策の効果として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "国民所得が大きく増加する", "is_correct": false, "explanation": "変動相場・資本完全移動下では財政政策は無効。所得は増加しない。"},
+        {"id": "B", "text": "自国通貨高により純輸出が減少し、国民所得は変化しない", "is_correct": true, "explanation": "正解。財政拡張→利子率上昇→資本流入→自国通貨高→純輸出減でクラウドアウトされ、所得効果は完全に相殺される。"},
+        {"id": "C", "text": "通貨安が起こり、輸出主導で所得が増加する", "is_correct": false, "explanation": "財政拡張下では資本流入で通貨高になる。通貨安が起こるのは金融緩和の場合。"},
+        {"id": "D", "text": "金融政策のみが有効で、財政政策・金融政策とも所得を変化させる", "is_correct": false, "explanation": "前半は正しいが「財政政策とも所得を変化させる」が誤り。財政は無効。"}
+      ],
+      "explanation": "マンデル＝フレミング小国モデルでは、変動相場・資本完全移動下では財政政策が無効、金融政策が強力。財政拡張→r↑→資本流入→通貨高→NX減少（クラウドアウト）。逆に固定相場制では金融政策が無効、財政政策が強力という対照的結果。為替制度と政策効果の関係を理解する重要モデル。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["international-economics", "mundell-fleming", "exchange-rate", "fiscal-policy"],
+      "common_mistakes": ["変動相場と固定相場の効果を逆に覚える", "通貨高／安の方向を誤る"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-027",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "金融政策",
+      "subtopic": "公開市場操作",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "中央銀行が買いオペレーション（買いオペ）を実施したときに起こる効果として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "マネーストックが減少し、利子率が上昇する", "is_correct": false, "explanation": "それは売りオペの効果。買いオペは逆方向。"},
+        {"id": "B", "text": "マネーストックが増加し、利子率が低下する", "is_correct": true, "explanation": "正解。買いオペで中央銀行が国債等を購入し市中に資金供給。マネー増→r低下→投資・消費喚起の経路。"},
+        {"id": "C", "text": "マネーストックは変化せず、財政赤字が増加する", "is_correct": false, "explanation": "公開市場操作は金融政策で、マネー量を変化させる。財政赤字とは独立。"},
+        {"id": "D", "text": "為替レートが直接固定される", "is_correct": false, "explanation": "公開市場操作は内国通貨操作。直接的な為替固定は為替介入の役割。"}
+      ],
+      "explanation": "公開市場操作は中央銀行の主要金融調節手段。買いオペ（金融緩和）：中央銀行が国債を買う→市中に通貨供給→マネーストック増→利子率低下。売りオペ（金融引締）はその逆。日本銀行は2016年以降量的・質的緩和、マイナス金利、YCCなど多様な手段を組み合わせて運用。",
+      "references": [
+        {"title": "日本銀行 金融政策", "url": "https://www.boj.or.jp/mopo/index.htm"}
+      ],
+      "tags": ["macroeconomics", "monetary-policy", "open-market-operations", "boj"],
+      "common_mistakes": ["買いオペと売りオペの効果を取り違える", "金融政策と財政政策の混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-028",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "財政政策",
+      "subtopic": "ビルトインスタビライザー",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "medium",
+      "stem": "財政の自動安定化装置（ビルトインスタビライザー）に関する記述として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "累進課税制度や失業給付は、景気変動を裁量的政策なしに緩和する効果を持つ", "is_correct": true, "explanation": "正解。好況時には自動的に税収増・給付減で景気抑制、不況時は逆方向に作用。これがビルトインスタビライザー。"},
+        {"id": "B", "text": "ビルトインスタビライザーは政府の判断で発動される裁量的政策である", "is_correct": false, "explanation": "ビルトインは「自動的」が定義。裁量的政策（discretionary）とは対立概念。"},
+        {"id": "C", "text": "比例税の方が累進税よりビルトインスタビライザーとして強力に機能する", "is_correct": false, "explanation": "累進税の方が所得変化への税収反応が大きく、安定化効果は強い。"},
+        {"id": "D", "text": "ビルトインスタビライザーは長期成長率を高めるための制度である", "is_correct": false, "explanation": "短期的景気変動の緩和が目的で、長期成長率向上が直接目的ではない。"}
+      ],
+      "explanation": "ビルトインスタビライザーは(1)累進的所得税(2)失業保険給付などにより景気変動を自動緩和する仕組み。好況→自動増税・給付減→需要冷却、不況→自動減税・給付増→需要下支え。裁量的政策と異なりタイムラグがなく即座に作動する点が長所。マクロ安定化の重要装置。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "fiscal-policy", "automatic-stabilizer", "tax"],
+      "common_mistakes": ["裁量的政策と自動安定化を混同", "比例税との比較で誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-029",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "余剰分析",
+      "subtopic": "従量税の死荷重",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "東海地方の架空のSaaS企業が提供する月額サービス市場（完全競争）において、政府が従量税を課した。需要・供給ともに弾力性が高い場合の余剰分析として、最も適切な政策評価を考察した記述はどれか。",
+      "options": [
+        {"id": "A", "text": "弾力性が高い市場ほど従量税の税収は大きく、死荷重は小さい", "is_correct": false, "explanation": "弾力性が高いほど取引量の減少が大きく、税収は減少し死荷重は増大する。記述は逆。"},
+        {"id": "B", "text": "弾力性が高い市場では取引量が大きく減少し、死荷重（厚生損失）が大きい一方で税収は減少するため、課税対象として効率性の観点では不適切である", "is_correct": true, "explanation": "正解。需給とも弾力的→取引量大幅減→税収小・死荷重大。ラムゼールール（弾力性の小さい財に課税すべし）の根拠。"},
+        {"id": "C", "text": "従量税は消費者と生産者で常に等しく分担される", "is_correct": false, "explanation": "税の帰着は弾力性の比で決まる。等しくなるのは弾力性が等しい特殊ケース。"},
+        {"id": "D", "text": "完全競争市場では従量税による死荷重は発生しない", "is_correct": false, "explanation": "完全競争でも歪み課税は死荷重を生む。一括税のみ死荷重ゼロが可能。"}
+      ],
+      "explanation": "従量税は供給曲線を税額分だけ上方シフトさせ、均衡数量を減少・価格上昇を生じる。死荷重（厚生損失の三角形）面積は弾力性の積に比例して増加する。よって効率的な課税はラムゼールールにより弾力性の低い財（必需品など）への課税。ただしこれは公平性とトレードオフがある。SaaSのように代替が容易な財は弾力的で課税効率が悪い。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["microeconomics", "tax-incidence", "deadweight-loss", "ramsey-rule", "saas"],
+      "common_mistakes": ["弾力性と死荷重の関係を逆に理解", "税の帰着が常に折半と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "shindanshi-1-keizai-030",
+      "version": "1.0",
+      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
+      "domain": {"id": "keizai", "name": "経済学・経済政策", "weight_percent": 14},
+      "topic": "経済政策",
+      "subtopic": "ポリシーミックス",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある国で、経済安定化のため「景気を維持しつつ自国通貨高（為替増価）を実現したい」という政策目標が設定された。マンデル的なポリシーミックスとして最も適切な組合せはどれか。",
+      "options": [
+        {"id": "A", "text": "金融緩和＋財政拡張", "is_correct": false, "explanation": "両方拡張的→所得増だが利子率効果が相殺し為替方向は不明確で、通貨高目標は達成しにくい。"},
+        {"id": "B", "text": "金融引締＋財政拡張", "is_correct": true, "explanation": "正解。財政拡張で景気維持、金融引締で利子率上昇→資本流入→通貨高。両目標を同時達成可能なミックス。"},
+        {"id": "C", "text": "金融緩和＋財政引締", "is_correct": false, "explanation": "両方とも通貨安方向（金融緩和でr低下→資本流出、財政引締でも所得減）。通貨高目標と矛盾。"},
+        {"id": "D", "text": "金融引締＋財政引締", "is_correct": false, "explanation": "両方引締→景気後退。景気維持目標と矛盾。"}
+      ],
+      "explanation": "マンデル的ポリシーミックス：複数の政策目標があるとき、目標数と同数の独立な政策手段を組み合わせる。本問では「景気維持」と「通貨高」の2目標。財政拡張で景気維持、金融引締で利子差拡大→資本流入→通貨高、と各々が異なる目標に効果的に作用。これがティンバーゲンの定理（目標と手段の同数）の実装例。",
+      "references": [
+        {"title": "中小企業診断協会 1次試験案内", "url": "https://www.j-smeca.jp/contents/010_c_/shiken_annai.html"}
+      ],
+      "tags": ["macroeconomics", "policy-mix", "mundell", "tinbergen-rule", "exchange-rate"],
+      "common_mistakes": ["各政策の為替への効果方向を誤る", "目標の独立性を考慮しない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

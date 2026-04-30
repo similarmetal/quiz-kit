@@ -1,0 +1,642 @@
+{
+  "exam_code": "dbs-c01",
+  "exam_name": "AWS Certified Database – Specialty",
+  "version": "2026.04",
+  "total_questions": 25,
+  "domains": [
+    {
+      "id": "domain-4",
+      "name": "Monitoring and Troubleshooting",
+      "weight_percent": 18,
+      "question_count": 25
+    }
+  ],
+  "questions": [
+    {
+      "id": "dbs-c01-domain4-001",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "CloudWatch metrics",
+      "subtopic": "RDS basic metrics",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "RDS が CloudWatch にデフォルトで出力する基本メトリクスはどれか。",
+      "options": [
+        {"id": "A", "text": "CPUUtilization、DatabaseConnections、FreeStorageSpace、ReadIOPS、WriteIOPS など", "is_correct": true, "explanation": "正解。これらは RDS の標準 CloudWatch メトリクス (1 分粒度) で追加コストなし。"},
+        {"id": "B", "text": "CPU 使用率は出るがストレージや IOPS は出ない", "is_correct": false, "explanation": "ストレージ・IOPS も標準メトリクスに含まれる。"},
+        {"id": "C", "text": "OS レベルのプロセスごとの CPU 使用率", "is_correct": false, "explanation": "これは Enhanced Monitoring (有料) の領域。"},
+        {"id": "D", "text": "クエリ実行計画の解析", "is_correct": false, "explanation": "Performance Insights / スロークエリログの領域。"}
+      ],
+      "explanation": "RDS の標準メトリクスはハイパーバイザー視点で 1 分粒度。OS 内部の詳細は Enhanced Monitoring、SQL レベル詳細は Performance Insights、それぞれ用途を区別する。",
+      "references": [
+        {"title": "Monitoring metrics in an Amazon RDS instance", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MonitoringOverview.html"}
+      ],
+      "tags": ["cloudwatch", "rds", "metrics", "monitoring"],
+      "common_mistakes": ["Enhanced Monitoring と標準メトリクスを混同", "Performance Insights が CW メトリクスと同じと誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-002",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "DynamoDB metrics",
+      "subtopic": "Throttling",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "DynamoDB でテーブルへのリクエストがキャパシティを超えた場合に発生するイベントを示すメトリクスはどれか。",
+      "options": [
+        {"id": "A", "text": "ConsumedReadCapacityUnits", "is_correct": false, "explanation": "消費したキャパシティを示すメトリクス。スロットリング自体ではない。"},
+        {"id": "B", "text": "ThrottledRequests / ReadThrottleEvents / WriteThrottleEvents", "is_correct": true, "explanation": "正解。これらがスロットリング発生を示すメトリクス。"},
+        {"id": "C", "text": "SystemErrors", "is_correct": false, "explanation": "5xx 系エラーで、スロットリング (ProvisionedThroughputExceededException) とは別。"},
+        {"id": "D", "text": "ItemCount", "is_correct": false, "explanation": "テーブル内アイテム数で監視メトリクスではない。"}
+      ],
+      "explanation": "DynamoDB の主要メトリクスには Consumed/Provisioned Capacity、ThrottledRequests、ReadThrottleEvents、WriteThrottleEvents、SystemErrors、UserErrors、SuccessfulRequestLatency、ReturnedItemCount などがある。スロットリング監視は ThrottledRequests/Events を見る。",
+      "references": [
+        {"title": "DynamoDB CloudWatch metrics", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html"}
+      ],
+      "tags": ["dynamodb", "throttling", "cloudwatch"],
+      "common_mistakes": ["Consumed と Throttled を混同", "SystemErrors がスロットリングと誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-003",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Performance Insights",
+      "subtopic": "DB Load",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "RDS Performance Insights の中心的な指標 \"DB Load\" の意味として最も適切なのはどれか。",
+      "options": [
+        {"id": "A", "text": "DB の CPU 使用率", "is_correct": false, "explanation": "DB Load は CPU 使用率とは別概念。CPU 待機を含む全体のセッション活動。"},
+        {"id": "B", "text": "アクティブなセッションの平均数 (Average Active Sessions, AAS) で、待機イベント別に分解可能", "is_correct": true, "explanation": "正解。DB Load は AAS で、CPU・I/O・ロックなどの待機イベント単位で内訳が分かる。"},
+        {"id": "C", "text": "1 秒あたりのクエリ数 (QPS)", "is_correct": false, "explanation": "QPS はスループット指標で、DB Load とは別。"},
+        {"id": "D", "text": "ストレージ使用量", "is_correct": false, "explanation": "全く別の指標。"}
+      ],
+      "explanation": "Performance Insights の DB Load は AAS という概念で、CPU/IO/Lock/Network 等の待機イベント別、TopSQL 別、Wait/User/Host 別などで分析可能。性能問題の出発点として極めて有効。",
+      "references": [
+        {"title": "Performance Insights overview", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Overview.html"}
+      ],
+      "tags": ["performance-insights", "db-load", "monitoring"],
+      "common_mistakes": ["DB Load = CPU 使用率と誤解", "QPS と混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-004",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Enhanced Monitoring",
+      "subtopic": "Granularity",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "RDS Enhanced Monitoring と CloudWatch 標準メトリクスの最も重要な違いは？",
+      "options": [
+        {"id": "A", "text": "Enhanced は OS レベル (プロセスごと CPU・メモリ等) を秒単位で取得、CloudWatch 標準はハイパーバイザー視点で 1 分単位", "is_correct": true, "explanation": "正解。Enhanced Monitoring は OS 内部のプロセス情報を最短 1 秒で取得し、CloudWatch Logs 経由で配信される。"},
+        {"id": "B", "text": "Enhanced Monitoring は SQL レベル詳細を出す", "is_correct": false, "explanation": "それは Performance Insights の領域。"},
+        {"id": "C", "text": "Enhanced Monitoring は無料", "is_correct": false, "explanation": "CloudWatch Logs 配信に応じて課金される。"},
+        {"id": "D", "text": "両者は同じデータを別形式で表示しているだけ", "is_correct": false, "explanation": "観測視点 (ハイパーバイザー vs OS 内部) と粒度が異なる本質的に別データ。"}
+      ],
+      "explanation": "監視レイヤーは大別して (1) CloudWatch 標準: ハイパーバイザー視点・1分、(2) Enhanced Monitoring: OS 内部・最短1秒、(3) Performance Insights: DB エンジン視点・SQL/待機イベント。問題の階層に応じて使い分ける。",
+      "references": [
+        {"title": "Enhanced Monitoring", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html"}
+      ],
+      "tags": ["enhanced-monitoring", "cloudwatch", "rds"],
+      "common_mistakes": ["Enhanced Monitoring を SQL 詳細と誤解", "無料と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-005",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Slow query log",
+      "subtopic": "MySQL/PostgreSQL",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "RDS for MySQL でスロークエリログを CloudWatch Logs にエクスポートする手順として最も適切なのは？",
+      "options": [
+        {"id": "A", "text": "パラメータグループで slow_query_log = 1, long_query_time を設定し、DB インスタンスのログエクスポート設定で slowquery を有効化する", "is_correct": true, "explanation": "正解。MySQL のスロークエリログ機能を有効化し、RDS のログエクスポート機能で CloudWatch Logs に転送する。"},
+        {"id": "B", "text": "DB インスタンスに SSH してログファイルを取得", "is_correct": false, "explanation": "RDS は SSH を提供しない。"},
+        {"id": "C", "text": "Lambda + S3 で自作する", "is_correct": false, "explanation": "ネイティブ機能で十分。"},
+        {"id": "D", "text": "Performance Insights を有効化すれば slow query log は自動取得される", "is_correct": false, "explanation": "PI と slow query log は別経路。両方を組み合わせるのが標準。"}
+      ],
+      "explanation": "RDS は MySQL の slow_query_log・error log・general log・audit log を CloudWatch Logs にエクスポート可能。パラメータグループで有効化 → ログエクスポート設定で出力ログを選ぶ流れ。",
+      "references": [
+        {"title": "RDS MySQL database log files", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.LogFileSize.html"}
+      ],
+      "tags": ["mysql", "slow-query", "cloudwatch-logs"],
+      "common_mistakes": ["Performance Insights が slow query log を兼ねると誤解", "RDS で SSH できると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-006",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Aurora monitoring",
+      "subtopic": "Aurora-specific metrics",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL 固有の重要メトリクスとして最も適切な組み合わせは？",
+      "options": [
+        {"id": "A", "text": "AuroraReplicaLag、VolumeBytesUsed、BufferCacheHitRatio、CommitLatency", "is_correct": true, "explanation": "正解。これらは Aurora 固有のメトリクスで、レプリケーション遅延、ストレージ使用量、バッファキャッシュ効率、コミット遅延を示す。"},
+        {"id": "B", "text": "FreeStorageSpace のみ", "is_correct": false, "explanation": "Aurora ではストレージ自動拡張のため FreeStorageSpace の概念が標準 RDS と異なる (VolumeBytesUsed が代替)。"},
+        {"id": "C", "text": "EBSIOBalance%", "is_correct": false, "explanation": "EBS 関連のメトリクスは RDS for MySQL/PostgreSQL のもの。Aurora では使わない。"},
+        {"id": "D", "text": "DiskQueueDepth", "is_correct": false, "explanation": "RDS のメトリクスで、Aurora には存在しない。"}
+      ],
+      "explanation": "Aurora は内部アーキテクチャが RDS と異なるため、メトリクス体系も部分的に異なる。AuroraReplicaLag (リーダー遅延)、VolumeBytesUsed (ストレージ)、BufferCacheHitRatio (キャッシュ効率)、CommitLatency (書き込み速度) が代表的。",
+      "references": [
+        {"title": "Aurora CloudWatch metrics", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Monitoring.Metrics.html"}
+      ],
+      "tags": ["aurora", "metrics", "monitoring"],
+      "common_mistakes": ["RDS のメトリクスを Aurora に適用と誤解", "Aurora 固有メトリクスの存在を知らない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-007",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Database Activity Streams",
+      "subtopic": "Audit",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Aurora PostgreSQL で全ての DB アクティビティ (クエリ・接続・権限変更) をリアルタイム監査したい。最も適切な機能は？",
+      "options": [
+        {"id": "A", "text": "Database Activity Streams (DAS) を有効化し、Kinesis Data Streams 経由で SIEM に転送する", "is_correct": true, "explanation": "正解。DAS は DB のアクティビティをリアルタイムストリームとして Kinesis に出し、外部 SIEM に取り込みやすい監査ソリューション。"},
+        {"id": "B", "text": "CloudTrail でクエリ単位を記録する", "is_correct": false, "explanation": "CloudTrail は API コールの記録で、DB 内の SQL 単位までは記録しない。"},
+        {"id": "C", "text": "VPC Flow Logs", "is_correct": false, "explanation": "ネットワーク層のフロー記録で SQL 内容は分からない。"},
+        {"id": "D", "text": "Performance Insights", "is_correct": false, "explanation": "性能監視で監査用途ではない。"}
+      ],
+      "explanation": "Database Activity Streams は Aurora MySQL/PostgreSQL/RDS Oracle などで、DB クエリ・接続・権限変更をリアルタイムにキャプチャ。Kinesis 経由で SIEM (Splunk 等) に取り込み、SOX/PCI-DSS 等のコンプライアンス対応で活用。",
+      "references": [
+        {"title": "Database Activity Streams", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html"}
+      ],
+      "tags": ["das", "audit", "compliance", "kinesis"],
+      "common_mistakes": ["CloudTrail で SQL までキャプチャできると誤解", "Performance Insights を監査と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-008",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "DynamoDB Hot Partition",
+      "subtopic": "Detection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DynamoDB テーブルでスロットリングが発生するが、ConsumedCapacity 全体は Provisioned 容量以下。原因として最も妥当なのは？",
+      "options": [
+        {"id": "A", "text": "特定のパーティションキーへのアクセス集中 (Hot Partition) で、その パーティションのキャパシティを超えている", "is_correct": true, "explanation": "正解。DynamoDB は容量がパーティション間に均等分割される設計のため、特定キーに集中すると全体は余裕でも個別 Partition でスロットリングする (Hot Partition 問題)。"},
+        {"id": "B", "text": "Provisioned Capacity 設定が低すぎる", "is_correct": false, "explanation": "全体は余裕があると述べられているため不適。"},
+        {"id": "C", "text": "GSI のキャパシティ不足", "is_correct": false, "explanation": "GSI 不足は別のエラーで明示的に出る。本問のシナリオには不適。"},
+        {"id": "D", "text": "リージョン障害", "is_correct": false, "explanation": "リージョン障害なら全体的な可用性問題が出る。"}
+      ],
+      "explanation": "DynamoDB の Hot Partition は典型的問題で、CloudWatch Contributor Insights for DynamoDB で問題のキーを特定可能。対策はパーティションキー設計の見直し (ハッシュ付与など) または On-Demand への切替で物理パーティションへの均等化を AWS に任せる。",
+      "references": [
+        {"title": "Best practices for designing partition keys", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html"}
+      ],
+      "tags": ["dynamodb", "hot-partition", "throttling"],
+      "common_mistakes": ["全体容量だけを見て判断", "Contributor Insights の存在を知らない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-009",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Aurora Replica Lag",
+      "subtopic": "Troubleshooting",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL の AuroraReplicaLag メトリクスが平常 10ms から 5000ms に上昇。アプリのリーダー読み取りで古いデータが返る。最も妥当な原因と対処は？",
+      "options": [
+        {"id": "A", "text": "ライターが大量書き込み中でリーダーがバッファ無効化に追従できない。リーダーインスタンスのスペックアップ、または書き込み負荷の見直し", "is_correct": true, "explanation": "正解。Aurora のリーダーラグはバッファキャッシュ無効化が主因で、ライターインスタンスより小さいリーダーや CPU 不足のリーダーで顕著。"},
+        {"id": "B", "text": "ストレージ容量不足", "is_correct": false, "explanation": "Aurora は自動拡張で容量問題は通常起きない。"},
+        {"id": "C", "text": "バイナリログのレプリケーション設定エラー", "is_correct": false, "explanation": "Aurora はバイナリログレプリではなくストレージ層の共有。MySQL の従来レプリと混同。"},
+        {"id": "D", "text": "ネットワーク帯域不足", "is_correct": false, "explanation": "Aurora は同一クラスタ内同一 AZ のストレージ共有で、ネットワーク帯域不足は典型原因ではない。"}
+      ],
+      "explanation": "Aurora のレプリ遅延は MySQL バイナリログレプリとは仕組みが異なり、共有ストレージ + redo log + バッファ無効化メッセージング。ライターと同等以上のリーダーインスタンスを用いるのが推奨。",
+      "references": [
+        {"title": "Aurora Replicas", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html"}
+      ],
+      "tags": ["aurora", "replica-lag", "troubleshooting"],
+      "common_mistakes": ["MySQL のバイナリログレプリと Aurora を混同", "リーダーインスタンスを小さくして節約しようとする"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-010",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "RDS storage burst",
+      "subtopic": "Burst Balance",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS for MySQL (gp2 ストレージ) で突発的に I/O 性能が劣化する。BurstBalance メトリクスが 0% 近くまで下がっている。最も適切な対処は？",
+      "options": [
+        {"id": "A", "text": "ストレージタイプを gp3 または io1/io2 に変更し、必要 IOPS を保証する", "is_correct": true, "explanation": "正解。gp2 はバーストクレジットで一時的に高 IOPS を出すが枯渇すると基準値に戻る。gp3 は IOPS とサイズが分離されて扱いやすい。"},
+        {"id": "B", "text": "Aurora に変更", "is_correct": false, "explanation": "選択肢として有効だが、ストレージタイプ変更で済む場合は過剰。問題はストレージ性能。"},
+        {"id": "C", "text": "DB エンジンを再起動", "is_correct": false, "explanation": "再起動でクレジットは回復しない。"},
+        {"id": "D", "text": "BurstBalance アラームを無効化する", "is_correct": false, "explanation": "監視を消すだけで根本未解決。"}
+      ],
+      "explanation": "gp2 はサイズに比例した baseline IOPS で、超過分はクレジット消費する。クレジット枯渇で性能ガクッと低下する。gp3 は IOPS とスループットを直接指定可能で予測可能、io1/io2 はさらに高 IOPS が必要な場合に選ぶ。",
+      "references": [
+        {"title": "Amazon EBS storage types for Amazon RDS", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html"}
+      ],
+      "tags": ["rds", "storage", "burst-balance", "gp2", "gp3"],
+      "common_mistakes": ["BurstBalance の概念を知らない", "gp2 の baseline IOPS をサイズで決めるルールを知らない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-011",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Memory pressure",
+      "subtopic": "FreeableMemory",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS for PostgreSQL の FreeableMemory が継続的に低い (数百 MB)。Performance Insights では IO:DataFileRead 待機イベントが多い。最も妥当な原因と対処は？",
+      "options": [
+        {"id": "A", "text": "shared_buffers が不足し、ディスク I/O が増えている。インスタンスをメモリ大きいクラスにスケールアップする", "is_correct": true, "explanation": "正解。FreeableMemory が低く、IO:DataFileRead 待機が多いのは、バッファプール不足によりキャッシュミスが発生しディスク読み取りが増えている兆候。メモリ最適化インスタンスへのスケールアップが直接的解。"},
+        {"id": "B", "text": "ストレージを magnetic に変更", "is_correct": false, "explanation": "性能劣化を招く逆効果。"},
+        {"id": "C", "text": "Multi-AZ を解除する", "is_correct": false, "explanation": "可用性を損なう上にメモリ問題と無関係。"},
+        {"id": "D", "text": "バックアップを停止する", "is_correct": false, "explanation": "メモリ問題と関係なし、データ保護も損なう。"}
+      ],
+      "explanation": "メモリ不足の典型診断は (1) FreeableMemory 低下、(2) Performance Insights で IO:DataFileRead が支配的、(3) BufferCacheHitRatio 低下。対策はメモリ最適化 (R 系) インスタンスへのスケールアップ、shared_buffers の見直し、またはクエリチューニング。",
+      "references": [
+        {"title": "Tuning Aurora PostgreSQL with Performance Insights", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Tuning.html"}
+      ],
+      "tags": ["postgresql", "memory", "performance-insights"],
+      "common_mistakes": ["メモリ問題を CPU 問題と誤判断", "ディスク種別変更で改善すると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-012",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "DDoS protection",
+      "subtopic": "RDS exposure",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS for MySQL を不適切にパブリックサブネット + パブリックアクセス \"はい\" で公開していたところ、外部からの大量接続試行で性能影響が出た。最初に取るべき適切な対応は？",
+      "options": [
+        {"id": "A", "text": "セキュリティグループのインバウンドを許可された送信元のみに制限し、可能ならパブリックアクセスを無効化してプライベートサブネットに移行", "is_correct": true, "explanation": "正解。RDS を公開する設計自体が誤りで、まずネットワーク露出を絞ることが最優先。"},
+        {"id": "B", "text": "AWS Shield Advanced を購入する", "is_correct": false, "explanation": "Shield Advanced は ELB/CloudFront/Route 53 等を保護するが、RDS は対象外。"},
+        {"id": "C", "text": "WAF をRDS にアタッチする", "is_correct": false, "explanation": "WAF は L7 (HTTP/HTTPS) で RDS には直接アタッチできない。"},
+        {"id": "D", "text": "DB ユーザのパスワードを長くする", "is_correct": false, "explanation": "認証強化は良いが、L4 接続スパムは別問題。SG が先。"}
+      ],
+      "explanation": "RDS を直接公開するアンチパターンに対しては、まず Security Group + プライベートサブネット + Bastion / VPN / RDS Proxy 経由 などのネットワーク設計に戻すのが正解。Shield Advanced や WAF は RDS の直接保護対象ではない。",
+      "references": [
+        {"title": "Working with security groups for an Amazon RDS DB", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html"}
+      ],
+      "tags": ["rds", "network", "security", "ddos"],
+      "common_mistakes": ["Shield Advanced で RDS を保護できると誤解", "WAF を RDS にアタッチできると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-013",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "DynamoDB latency",
+      "subtopic": "DAX",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DynamoDB の読み取り平均レイテンシが 5-10ms あり、アプリで sub-millisecond を要求される。最も適切な改善策は？",
+      "options": [
+        {"id": "A", "text": "DynamoDB Accelerator (DAX) を導入し、ホットアイテムをキャッシュさせる", "is_correct": true, "explanation": "正解。DAX は DynamoDB 専用のインメモリキャッシュで、マイクロ秒レベルの読み取りを提供する。"},
+        {"id": "B", "text": "GSI を 10 個追加する", "is_correct": false, "explanation": "GSI は別のクエリパターンを高速化するが、読み取りレイテンシ自体は改善しない。"},
+        {"id": "C", "text": "Provisioned Capacity を 10 倍にする", "is_correct": false, "explanation": "スロットリングは解消するがレイテンシは下がらない。"},
+        {"id": "D", "text": "ElastiCache for Redis をアプリ側にキャッシュ", "is_correct": false, "explanation": "可能だが、DynamoDB API 互換のキャッシュは DAX が標準で運用負荷も低い。"}
+      ],
+      "explanation": "DAX は DynamoDB API 互換のインメモリキャッシュで、マイクロ秒レベルの読み取りを実現。Read-heavy ワークロードで効果的。Eventually consistent read のキャッシュが基本で、Strongly consistent はキャッシュ対象外。",
+      "references": [
+        {"title": "Amazon DynamoDB Accelerator (DAX)", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.html"}
+      ],
+      "tags": ["dynamodb", "dax", "latency"],
+      "common_mistakes": ["GSI で読み取り速度が上がると誤解", "DAX の存在を知らずに ElastiCache を選ぶ"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-014",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "RDS Event Notifications",
+      "subtopic": "Subscriptions",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS のフェイルオーバー・スナップショット失敗・メンテナンス通知を Slack に流したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "RDS Event Notifications で SNS トピックに通知し、SNS から Lambda + Chatbot で Slack に流す", "is_correct": true, "explanation": "正解。RDS は SNS 経由でイベント通知を提供し、AWS Chatbot で Slack に標準連携できる。"},
+        {"id": "B", "text": "CloudWatch Logs に出力し、毎分 Lambda で読む", "is_correct": false, "explanation": "イベント通知の専用機能 (RDS Event Notifications) があり、ポーリングは非効率。"},
+        {"id": "C", "text": "Slack の RDS インテグレーションを有効化する", "is_correct": false, "explanation": "そのような Slack 公式 RDS 連携は標準では存在しない。"},
+        {"id": "D", "text": "EventBridge にデフォルトで全 RDS イベントが流れる", "is_correct": false, "explanation": "RDS の通知は SNS 経由が基本 (一部は EventBridge 経由でも可)。RDS Event Subscriptions の基本は SNS。"}
+      ],
+      "explanation": "RDS Event Notifications はインスタンス・スナップショット・パラメータグループ・セキュリティグループ等のイベントを SNS に流す。Slack 通知は SNS → Chatbot のパターンが標準。",
+      "references": [
+        {"title": "Working with Amazon RDS event notification", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"}
+      ],
+      "tags": ["rds", "event-notification", "sns", "slack"],
+      "common_mistakes": ["イベント通知の存在を知らずポーリングを実装", "Slack 公式連携があると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-015",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Aurora Serverless v2 monitoring",
+      "subtopic": "ACU metrics",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora Serverless v2 が想定よりスケールアップせず、性能不足が発生している。最も妥当な原因切り分けの最初の指標は？",
+      "options": [
+        {"id": "A", "text": "ServerlessDatabaseCapacity (現在の ACU) と最大 ACU 設定値を確認する", "is_correct": true, "explanation": "正解。最大 ACU で頭打ちになっている可能性があり、まずは設定値と実測 ACU の関係を見る。"},
+        {"id": "B", "text": "ストレージタイプを変更する", "is_correct": false, "explanation": "Serverless v2 のスケーリング問題と関連薄い。"},
+        {"id": "C", "text": "Multi-AZ 構成にする", "is_correct": false, "explanation": "HA の話で性能問題と直結しない。"},
+        {"id": "D", "text": "Read Replica を増やす", "is_correct": false, "explanation": "書き込みが律速の場合は無効、読み取り律速なら有効だが原因切り分けが先。"}
+      ],
+      "explanation": "Aurora Serverless v2 のスケーリング上限は最大 ACU で決まる。CloudWatch の ServerlessDatabaseCapacity と最大設定の差を確認し、必要なら最大 ACU を引き上げる。CPU/Memory 不足の典型シグナルも合わせて見る。",
+      "references": [
+        {"title": "Aurora Serverless v2 monitoring", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.monitoring.html"}
+      ],
+      "tags": ["aurora", "serverless-v2", "monitoring", "acu"],
+      "common_mistakes": ["Serverless v2 が無限にスケールすると誤解", "ACU メトリクスの存在を知らない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-016",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Locking issues",
+      "subtopic": "Long-running transactions",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "RDS for PostgreSQL でアプリのレスポンスが時々ハングする。Performance Insights でトップ待機イベントが Lock:transactionid。最も妥当な根本原因は？",
+      "options": [
+        {"id": "A", "text": "長時間実行のトランザクションが行ロックを保持し続け、他セッションが待たされている", "is_correct": true, "explanation": "正解。Lock:transactionid は他トランザクションのコミット待ち。長時間実行 TX や未コミットの TX が原因。"},
+        {"id": "B", "text": "ストレージ I/O のボトルネック", "is_correct": false, "explanation": "I/O 問題は IO:DataFileRead 等の待機で示される。"},
+        {"id": "C", "text": "ネットワーク帯域不足", "is_correct": false, "explanation": "ロック待機ではなく ClientRead 等の待機イベントになる。"},
+        {"id": "D", "text": "メモリ不足", "is_correct": false, "explanation": "メモリ不足は別の待機イベントを示す。"}
+      ],
+      "explanation": "Performance Insights の Top Wait が Lock:transactionid なら排他ロック競合。アプリのトランザクション境界 (BEGIN/COMMIT 範囲) を見直す、長時間実行クエリを分割、SELECT FOR UPDATE の使い方を再考、などが対処。pg_stat_activity でブロッカーを特定可能。",
+      "references": [
+        {"title": "PostgreSQL wait events", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.UsingDashboard.AnalyzingWaits.html"}
+      ],
+      "tags": ["postgresql", "lock", "performance-insights"],
+      "common_mistakes": ["ロック競合を I/O 問題と誤判断", "アプリのトランザクション設計を見直さない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-017",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Aurora MySQL high CPU",
+      "subtopic": "Top SQL identification",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Aurora MySQL の CPU 使用率が 95% で警告。最も短時間で原因クエリを特定する手段は？",
+      "options": [
+        {"id": "A", "text": "Performance Insights で CPU 待機イベントの Top SQL を確認する", "is_correct": true, "explanation": "正解。Performance Insights は CPU を含む待機イベント別に Top SQL を即時に提示し、原因クエリを最速で特定できる。"},
+        {"id": "B", "text": "EC2 上で top コマンドを実行する", "is_correct": false, "explanation": "Aurora は SSH 不可、また Aurora は EC2 ではない。"},
+        {"id": "C", "text": "VPC Flow Logs を分析する", "is_correct": false, "explanation": "ネットワーク層の話で SQL 特定には使えない。"},
+        {"id": "D", "text": "CloudTrail で API 履歴を見る", "is_correct": false, "explanation": "API レベルで SQL は見えない。"}
+      ],
+      "explanation": "Performance Insights は DB Load を CPU/IO/Lock 等の待機別、Top SQL 別、Wait/User/Host 別に分解する強力な可視化ツール。CPU 100% の問題切り分けでは PI の Top SQL → SQL の実行計画分析 が最短ルート。",
+      "references": [
+        {"title": "Performance Insights Dashboard", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.UsingDashboard.html"}
+      ],
+      "tags": ["aurora", "performance-insights", "cpu"],
+      "common_mistakes": ["RDS で SSH/top が使えると誤解", "ログ分析で SQL を逆引きしようとする"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-018",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "DynamoDB capacity issues",
+      "subtopic": "GSI throttling",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "DynamoDB の本テーブルへの Write は問題ないが、特定 GSI への書き込みでスロットリングが発生。最も妥当な原因と対処は？",
+      "options": [
+        {"id": "A", "text": "GSI の Provisioned Write Capacity が不足。GSI 単位でキャパシティを増やすか、テーブルを On-Demand に切替える", "is_correct": true, "explanation": "正解。GSI は独自のキャパシティを持ち、本テーブルとは別管理。GSI 単位での見直しが必要。"},
+        {"id": "B", "text": "GSI を削除する", "is_correct": false, "explanation": "アプリのクエリ要件を破壊する可能性が高い。"},
+        {"id": "C", "text": "DAX を使う", "is_correct": false, "explanation": "DAX は読み取りキャッシュで書き込みスロットリングは解決しない。"},
+        {"id": "D", "text": "テーブルを再作成する", "is_correct": false, "explanation": "費用と時間が大きく根本解決ではない。"}
+      ],
+      "explanation": "GSI は独立したスループット (RCU/WCU) を持ち、本テーブル更新時に GSI の Write キャパシティも消費する。GSI のキー設計が悪いと Hot Partition も発生する。On-Demand 切替で物理パーティションへの均等化を AWS に任せる選択肢もある。",
+      "references": [
+        {"title": "DynamoDB Global Secondary Indexes", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html"}
+      ],
+      "tags": ["dynamodb", "gsi", "throttling"],
+      "common_mistakes": ["GSI が本テーブルとキャパシティ共有と誤解", "GSI のキー設計の重要性を軽視"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-019",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Latency troubleshooting",
+      "subtopic": "Application connection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "EC2 上のアプリから Aurora MySQL への単純クエリが平均 50ms かかる (DB 自体の実行時間は 1ms)。原因として最も妥当なのは？",
+      "options": [
+        {"id": "A", "text": "アプリと Aurora が別 AZ にあり、TLS ハンドシェイクや接続確立のオーバーヘッドが大きい。コネクションプール導入と同 AZ 配置で改善", "is_correct": true, "explanation": "正解。短いクエリで接続確立コストが支配的になるパターン。コネクションプール (HikariCP 等) または RDS Proxy で改善。"},
+        {"id": "B", "text": "Aurora 自体の問題", "is_correct": false, "explanation": "DB 実行時間 1ms と述べられているため Aurora 自体は問題なし。"},
+        {"id": "C", "text": "ストレージ I/O 不足", "is_correct": false, "explanation": "DB 実行時間が短いことから I/O 問題ではない。"},
+        {"id": "D", "text": "DDoS 攻撃", "is_correct": false, "explanation": "情報からそう判断する根拠がない。"}
+      ],
+      "explanation": "DB 内実行時間とアプリから見た時間の差は (1) ネットワーク往復遅延、(2) 接続確立コスト (TLS、認証)、(3) コネクションプール枯渇、(4) DNS 解決時間、などに切り分ける。RDS Proxy・コネクションプール・同 AZ 配置 で改善する。",
+      "references": [
+        {"title": "Best practices for working with Amazon Aurora MySQL", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.BestPractices.html"}
+      ],
+      "tags": ["latency", "connection", "aurora"],
+      "common_mistakes": ["DB 内時間とアプリ時間を混同", "毎回新規接続を確立する設計"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-020",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Aurora MySQL deadlock",
+      "subtopic": "Deadlock detection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Aurora MySQL でデッドロックが時折発生し、アプリで失敗する。原因究明と再発防止のために最も適切な手順は？",
+      "options": [
+        {"id": "A", "text": "innodb_print_all_deadlocks=1 を有効化し、エラーログから詳細を取得 → アプリのトランザクション順序を統一する", "is_correct": true, "explanation": "正解。InnoDB のデッドロックログを完全出力し、アプリのロック取得順を統一するのが定石。"},
+        {"id": "B", "text": "Multi-AZ を解除", "is_correct": false, "explanation": "デッドロックと無関係。"},
+        {"id": "C", "text": "DB ストレージサイズを倍にする", "is_correct": false, "explanation": "デッドロックの原因はロック競合で、ストレージとは関係なし。"},
+        {"id": "D", "text": "アプリでリトライしないよう変更", "is_correct": false, "explanation": "デッドロックは一時エラーなのでリトライは標準対処。リトライ廃止は逆効果。"}
+      ],
+      "explanation": "MySQL/Aurora のデッドロック対処は (1) innodb_print_all_deadlocks で全デッドロックをログ出力、(2) パターン分析、(3) アプリのロック取得順を統一、(4) インデックスを最適化 (不要な行ロック削減)、(5) アプリでリトライ実装 (一時エラー扱い)。",
+      "references": [
+        {"title": "InnoDB deadlock detection", "url": "https://dev.mysql.com/doc/refman/8.0/en/innodb-deadlock-detection.html"}
+      ],
+      "tags": ["aurora", "mysql", "deadlock"],
+      "common_mistakes": ["デッドロックをアプリ側でリトライしない", "ロック順序の統一を行わない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-021",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Audit logging",
+      "subtopic": "MariaDB audit plugin",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "RDS for MariaDB 10.x で SOX 監査要件として全 DML / DDL を記録する必要がある。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "Option Group で MARIADB_AUDIT_PLUGIN を有効化し、CloudWatch Logs にエクスポートする", "is_correct": true, "explanation": "正解。MariaDB Audit Plugin が標準オプションで提供され、CloudWatch Logs へ転送できる。"},
+        {"id": "B", "text": "general_log を有効化する", "is_correct": false, "explanation": "general_log は全 SQL を記録するが性能影響が大きく、監査用途では Audit Plugin が推奨。"},
+        {"id": "C", "text": "VPC Flow Logs で監査する", "is_correct": false, "explanation": "Flow Logs はネットワーク層で SQL は見えない。"},
+        {"id": "D", "text": "CloudTrail で SQL を記録", "is_correct": false, "explanation": "CloudTrail は API レベルで SQL は記録しない。"}
+      ],
+      "explanation": "MariaDB Audit Plugin は接続・クエリ・テーブルアクセス・権限変更を記録する。Option Group で有効化し CloudWatch Logs エクスポートを組み合わせるのが標準。Aurora MySQL では類似の Advanced Auditing が提供される。",
+      "references": [
+        {"title": "MariaDB Audit Plugin support", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MySQL.Options.AuditPlugin.html"}
+      ],
+      "tags": ["mariadb", "audit", "compliance"],
+      "common_mistakes": ["general_log で代替できると誤解", "CloudTrail で SQL が記録されると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-022",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "DynamoDB capacity planning",
+      "subtopic": "On-Demand vs Provisioned",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "予測しにくいスパイクが時々発生する DynamoDB ワークロードで、スロットリングと過剰課金の両方を避けたい。最も妥当な戦略は？",
+      "options": [
+        {"id": "A", "text": "On-Demand モードに切り替える。または Provisioned + Auto Scaling で最小・最大を広めに設定し、Reserved Capacity でベース部分のコストを抑える", "is_correct": true, "explanation": "正解。スパイクが大きく予測困難なワークロードには On-Demand が向く。予測可能ベース + スパイクなら Provisioned + Auto Scaling + RC のハイブリッドも有効。"},
+        {"id": "B", "text": "常に最大ピークの Provisioned 容量で固定", "is_correct": false, "explanation": "アイドル時のコスト過大。"},
+        {"id": "C", "text": "On-Demand と Provisioned を交互に切り替えるスクリプトを作る", "is_correct": false, "explanation": "切替はテーブル単位で 1 日 1 回しかできず、現実的でない。"},
+        {"id": "D", "text": "DAX を入れる", "is_correct": false, "explanation": "DAX は読み取り専用キャッシュで書き込みスパイク対応にはならない。"}
+      ],
+      "explanation": "DynamoDB 課金モードの選択は (1) On-Demand: 予測不能・大きなスパイク、(2) Provisioned + Auto Scaling: 予測可能、(3) Reserved Capacity: 24/7 ベースロード。これらの組み合わせ戦略がコスト最適。",
+      "references": [
+        {"title": "DynamoDB read/write capacity mode", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html"}
+      ],
+      "tags": ["dynamodb", "capacity", "cost"],
+      "common_mistakes": ["On-Demand と Provisioned 切替の制約を知らない", "DAX を書き込み問題に適用と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-023",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Comprehensive monitoring",
+      "subtopic": "Tool selection",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "新規 Aurora MySQL の本番監視設計を評価する。観測可能性 (CPU/IO/SQL/監査) を網羅し、運用負荷を最小にしたい。最も総合的に妥当な構成は？",
+      "options": [
+        {"id": "A", "text": "CloudWatch 標準メトリクス + Enhanced Monitoring (1秒, OS) + Performance Insights (SQL/Wait) + Database Activity Streams (監査) + 重要メトリクスの CloudWatch Alarm + SNS 通知", "is_correct": true, "explanation": "正解。各層の観測手段を適切に組み合わせ、ネイティブ機能のみで完結。運用負荷も最小。"},
+        {"id": "B", "text": "CloudWatch 標準のみ", "is_correct": false, "explanation": "OS 内部や SQL レベルの問題切り分けができない。"},
+        {"id": "C", "text": "Datadog のみ (AWS ネイティブを使わない)", "is_correct": false, "explanation": "サードパーティ単独では Aurora 内部 (DB Load, Wait) の細粒度情報を取得しにくい。"},
+        {"id": "D", "text": "VPC Flow Logs + CloudTrail のみ", "is_correct": false, "explanation": "DB 内部状態の観測ができない。"}
+      ],
+      "explanation": "AWS のデータベース観測スタックは層が分かれており、ハイパーバイザー (CW 標準)、OS (Enhanced)、DB エンジン (PI)、監査 (DAS) の組み合わせで網羅する。サードパーティの Datadog 等は AWS ネイティブと併用が一般的。",
+      "references": [
+        {"title": "Monitoring Amazon Aurora", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/MonitoringOverview.html"}
+      ],
+      "tags": ["aurora", "monitoring", "observability"],
+      "common_mistakes": ["CloudWatch 標準だけで十分と誤解", "観測層の違いを意識しない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-024",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "Aurora connection storms",
+      "subtopic": "Diagnostic strategy",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "Aurora MySQL で DatabaseConnections メトリクスが急増し、新規接続が拒否される。原因仮説を 3 つ挙げ、その中で最初に検証すべきものを評価せよ。",
+      "options": [
+        {"id": "A", "text": "(1) アプリのコネクションリーク、(2) スパイク的トラフィック増、(3) max_connections 設定不足。最初に確認すべきは (1) のリーク (PI で long-running セッションを特定) → 構造的問題の発見が最優先", "is_correct": true, "explanation": "正解。コネクションリークは長期蓄積型で見過ごされやすく、Performance Insights のセッション一覧で長寿命セッションを最優先で発見すべき。"},
+        {"id": "B", "text": "max_connections を即座に倍にする (原因不明のまま)", "is_correct": false, "explanation": "根本原因 (リーク) を放置すれば再発し、メモリ消費だけ増える。"},
+        {"id": "C", "text": "Aurora を再起動する", "is_correct": false, "explanation": "一時的に接続がリセットされるが原因究明・再発防止にならない。"},
+        {"id": "D", "text": "Multi-AZ フェイルオーバーする", "is_correct": false, "explanation": "接続スパイクの問題を移すだけで解決にならない。"}
+      ],
+      "explanation": "接続急増問題は (1) アプリ側コネクションリーク (最も多い)、(2) スパイク負荷、(3) DB 側設定、を仮説立てし、PI で long-running session を分析するのが定石。RDS Proxy 導入で根本対策にもなる。",
+      "references": [
+        {"title": "Performance Insights for top SQL", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"}
+      ],
+      "tags": ["aurora", "connections", "leak", "diagnostics"],
+      "common_mistakes": ["原因究明前に max_connections を増やす", "再起動で誤魔化す"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain4-025",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-4", "name": "Monitoring and Troubleshooting", "weight_percent": 18},
+      "topic": "End-to-end observability design",
+      "subtopic": "Multi-DB platform",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "B2B SaaS が Aurora PostgreSQL、DynamoDB、ElastiCache for Redis を組み合わせて運用している。SLO (P99 < 200ms) を維持し、問題発生時に原因 DB を即座に切り分けたい。最も妥当な観測基盤を組み立てよ。",
+      "options": [
+        {"id": "A", "text": "X-Ray でアプリトレース、Aurora は PI + Enhanced Monitoring + DAS、DynamoDB は CW Contributor Insights + Throttling アラーム、Redis は CW + Engine Logs。CloudWatch Dashboards で統合表示、CloudWatch Alarm + SNS で SLO 違反アラート", "is_correct": true, "explanation": "正解。アプリ層 (X-Ray) と DB 層 (PI/CW) を組み合わせ、サービスごとに最適な観測ツールを選定。SLO 違反検知も自動化する完成度の高い設計。"},
+        {"id": "B", "text": "全部 CloudWatch 標準メトリクスのみ", "is_correct": false, "explanation": "アプリトレース・SQL 詳細・スロットリング詳細などが取れず、原因切り分けが遅い。"},
+        {"id": "C", "text": "Datadog 一本", "is_correct": false, "explanation": "サードパーティ単独だと AWS ネイティブの内部メトリクスにアクセスしづらい部分がある。"},
+        {"id": "D", "text": "CloudTrail のみ", "is_correct": false, "explanation": "CloudTrail は API 監査で性能監視には使えない。"}
+      ],
+      "explanation": "マルチ DB プラットフォームの観測は (1) アプリ層: X-Ray でリクエスト全体の分散トレース、(2) DB 層: 各 DB の最適ツール、(3) ダッシュボード集約: CloudWatch Dashboards、(4) 自動アラート: CW Alarm + SNS / Chatbot。SLO ドリブンで作り、原因 DB を即座に判定可能にする。",
+      "references": [
+        {"title": "AWS X-Ray", "url": "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"},
+        {"title": "Amazon CloudWatch Dashboards", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html"}
+      ],
+      "tags": ["observability", "x-ray", "multi-db", "slo"],
+      "common_mistakes": ["アプリ層トレースを欠かす", "サービスごとの最適メトリクスを使わない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

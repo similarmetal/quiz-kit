@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Similarmetal Quiz - Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="topnav"><div class="topnav-inner">
+<a class="topnav-brand" href="index.html">Quiz Kit</a>
+<div class="topnav-links">
+<a class="nav-link active" href="index.html">Home</a>
+<a class="nav-link" href="quiz.html">Quiz</a>
+<a class="nav-link" href="stats.html">Stats</a>
+</div></div></nav>
+
+<div class="container">
+  <section style="padding: 32px 0 48px; border-bottom: 1px solid var(--line); margin-bottom: 32px;">
+    <div class="eyebrow">Certification Study Kit</div>
+    <h1 class="page-title"><em>Active Recall</em><br>+ Spaced Repetition.</h1>
+    <div class="page-subtitle">学習科学に基づいた、4択 × SRS の<br>資格学習ダッシュボード。</div>
+    <p style="max-width: 720px;">問題を解いて、SRSアルゴリズムが最適なタイミングで復習を促す。Roediger &amp; Karpicke (2006) の研究で実証された通り、これが最も効率的な学習方法。カテゴリーから資格を選んで、今日の学習をスタート。</p>
+  </section>
+
+  <h2>I ─ Today</h2>
+  <div class="h2-sub">今日の学習。</div>
+  <div class="card-grid-3" id="today-stats">
+    <div class="metric-card">
+      <div class="metric-label">Due Today</div>
+      <div class="metric-value" id="due-count">0<span class="unit">問</span></div>
+      <div class="metric-desc">復習が必要な問題</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Streak</div>
+      <div class="metric-value" id="streak-count">0<span class="unit">日</span></div>
+      <div class="metric-desc">連続学習日数</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Total Solved</div>
+      <div class="metric-value" id="total-count">0<span class="unit">問</span></div>
+      <div class="metric-desc">累計解答数</div>
+    </div>
+  </div>
+
+  <h2>II ─ Categories</h2>
+  <div class="h2-sub">カテゴリーから資格を選ぶ。</div>
+  <div id="exam-list">
+    <div class="empty-state">
+      <div class="empty-state-icon">📚</div>
+      <p>カテゴリー / 問題データを読み込み中...</p>
+      <p style="font-size: 13px; margin-top: 8px;">表示されない場合は <code>data/categories.json</code> と <code>data/exams/</code> を確認してください。</p>
+    </div>
+  </div>
+
+  <h2>III ─ How it works</h2>
+  <div class="h2-sub">使い方。</div>
+  <div class="card-grid-2">
+    <div class="card">
+      <h3 style="margin-top: 0;">1. カテゴリーを選ぶ</h3>
+      <p style="font-size: 14px;">上のリストから、自分が学習したいカテゴリー（クラウド、会計、経営・法務、IT基礎 など）を選び、その中から取り組む試験を1つ選択。</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top: 0;">2. 4択問題を解く</h3>
+      <p style="font-size: 14px;">資格カードをクリックすると問題演習が開始。各問題には選択肢ごとの解説、よくある誤解、公式ドキュメントへの参照が付く。</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top: 0;">3. 自己評価で SRS が動く</h3>
+      <p style="font-size: 14px;">「忘れていた / なんとか / 普通に正解 / 楽勝」の自己評価で、SM-2 簡易版が次回の復習日を自動算出。間違えた問題は翌日に再登場、解けた問題は徐々に間隔を伸ばす。</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top: 0;">4. 毎日続ける</h3>
+      <p style="font-size: 14px;">1日30分・20問程度を目標に。Streak（連続学習日数）と Mastery（習熟度）が自動で記録される。学習データはブラウザのローカルストレージに保存され、第三者には送信されない。</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">Similarmetal Quiz Kit · Active Recall + SRS</footer>
+
+<script src="app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    QuizApp.renderHome();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1530 @@
+{
+  "exam_code": "boki-2",
+  "exam_name": "日商簿記2級",
+  "version": "2026.04",
+  "total_questions": 20,
+  "domains": [
+    {
+      "id": "kogyo-cvp",
+      "name": "工業簿記 - CVP分析",
+      "weight_percent": 7,
+      "question_count": 20
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki-2-kogyo-cvp-001",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "直接原価計算",
+      "subtopic": "変動費と固定費の区分",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "直接原価計算における原価の分類として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "製造原価を製品原価と期間原価に分類する",
+          "is_correct": false,
+          "explanation": "これは全部原価計算における基本分類ではなく、特に直接原価計算固有の分類とは言えない。"
+        },
+        {
+          "id": "B",
+          "text": "原価を変動費と固定費に分類し、変動費のみを製品原価とする",
+          "is_correct": true,
+          "explanation": "正解。直接原価計算では原価を操業度との関連で変動費と固定費に分類し、変動製造原価のみを製品原価、固定製造原価は期間原価として処理する。"
+        },
+        {
+          "id": "C",
+          "text": "原価を直接費と間接費に分類し、直接費のみを製品原価とする",
+          "is_correct": false,
+          "explanation": "「直接原価計算」という名称から誤解されやすいが、ここでの『直接』は変動費を意味し、直接費・間接費の区分とは無関係。"
+        },
+        {
+          "id": "D",
+          "text": "原価を製造原価と販売費及び一般管理費に分類する",
+          "is_correct": false,
+          "explanation": "これは伝統的な財務会計上の分類で、直接原価計算の特徴ではない。"
+        }
+      ],
+      "explanation": "直接原価計算（Direct Costing）は、原価を変動費と固定費に分解し、変動製造原価のみを製品原価とする計算手法。固定製造原価は発生した期の期間原価として全額費用処理する。これにより限界利益が把握でき、CVP分析の基礎となる。なお『直接』の語は『variable（変動）』の訳で、直接費・間接費の区分とは関係ない点が頻出論点。",
+      "references": [
+        {
+          "title": "簿記2級 工業簿記 直接原価計算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "直接原価計算",
+        "変動費",
+        "固定費",
+        "製品原価",
+        "期間原価"
+      ],
+      "common_mistakes": [
+        "『直接原価計算』を直接費だけの計算と誤解する",
+        "固定製造原価を製品原価に含めてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-002",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "限界利益",
+      "subtopic": "限界利益の定義",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "限界利益（貢献利益）の定義として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "売上高 − 売上原価",
+          "is_correct": false,
+          "explanation": "これは売上総利益（粗利）の定義。売上原価には固定費も含まれる場合があるため限界利益とは異なる。"
+        },
+        {
+          "id": "B",
+          "text": "売上高 − 変動費",
+          "is_correct": true,
+          "explanation": "正解。限界利益＝売上高−変動費。固定費の回収と利益の源泉となる金額を示す。"
+        },
+        {
+          "id": "C",
+          "text": "売上高 − 変動費 − 固定費",
+          "is_correct": false,
+          "explanation": "これは営業利益の定義。限界利益から固定費を控除した残りが営業利益。"
+        },
+        {
+          "id": "D",
+          "text": "売上高 − 製造原価",
+          "is_correct": false,
+          "explanation": "製造原価には固定製造原価も含まれるため、限界利益の定義としては不正確。"
+        }
+      ],
+      "explanation": "限界利益＝売上高−変動費。これが固定費を回収し、その後に営業利益となる『回収力』を示す。限界利益−固定費＝営業利益という関係式はCVP分析全体の出発点。限界利益と営業利益を混同しないよう注意。",
+      "references": [
+        {
+          "title": "簿記2級 限界利益とは",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "限界利益",
+        "貢献利益",
+        "変動費",
+        "CVP分析"
+      ],
+      "common_mistakes": [
+        "限界利益と営業利益を混同する",
+        "売上総利益と限界利益を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-003",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "限界利益率",
+      "subtopic": "限界利益率の算定",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "東海地方の製造業A社の当期データは、売上高 4,000,000円、変動費 2,400,000円、固定費 1,200,000円である。限界利益率はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "30%",
+          "is_correct": false,
+          "explanation": "営業利益率（4,000,000−2,400,000−1,200,000）÷4,000,000＝10%でもないが、固定費を引いた利益率を売上比で計算した誤りに近い。限界利益率ではない。"
+        },
+        {
+          "id": "B",
+          "text": "40%",
+          "is_correct": true,
+          "explanation": "正解。限界利益＝4,000,000−2,400,000＝1,600,000円。限界利益率＝1,600,000÷4,000,000＝40%。"
+        },
+        {
+          "id": "C",
+          "text": "60%",
+          "is_correct": false,
+          "explanation": "これは変動費率（2,400,000÷4,000,000＝60%）。変動費率と限界利益率を混同したパターン。"
+        },
+        {
+          "id": "D",
+          "text": "70%",
+          "is_correct": false,
+          "explanation": "（4,000,000−1,200,000）÷4,000,000＝70%。固定費を控除して計算した誤り。限界利益は変動費を引くもの。"
+        }
+      ],
+      "explanation": "限界利益率＝(売上高−変動費)÷売上高＝1−変動費率。本問では1,600,000÷4,000,000＝40%。変動費率60%と限界利益率40%は補完関係（合計100%）になる点を押さえると検算しやすい。",
+      "references": [
+        {
+          "title": "簿記2級 限界利益率の計算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "限界利益率",
+        "変動費率",
+        "CVP分析"
+      ],
+      "common_mistakes": [
+        "限界利益率と変動費率を混同する",
+        "固定費を変動費と一緒に控除してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-004",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "損益分岐点売上高",
+      "subtopic": "BEP金額の算定",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "SaaS企業B社のデータは、売上高 5,000,000円、変動費 3,000,000円、固定費 800,000円。損益分岐点売上高はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "1,333,333円",
+          "is_correct": false,
+          "explanation": "800,000÷60%＝1,333,333。変動費率を限界利益率と取り違えた典型誤り。"
+        },
+        {
+          "id": "B",
+          "text": "2,000,000円",
+          "is_correct": true,
+          "explanation": "正解。限界利益率＝(5,000,000−3,000,000)÷5,000,000＝40%。BEP売上高＝固定費÷限界利益率＝800,000÷0.4＝2,000,000円。"
+        },
+        {
+          "id": "C",
+          "text": "2,400,000円",
+          "is_correct": false,
+          "explanation": "(800,000+1,200,000)÷40%のような誤算で出てくる数値。固定費の額を取り違えている。"
+        },
+        {
+          "id": "D",
+          "text": "800,000円",
+          "is_correct": false,
+          "explanation": "固定費の額そのもの。BEPは固定費を限界利益率で割る必要がある。"
+        }
+      ],
+      "explanation": "損益分岐点（BEP）売上高＝固定費÷限界利益率。限界利益率は40%（＝1−変動費率60%）なので、800,000÷0.4＝2,000,000円。これは『限界利益＝固定費』となる売上高であり、ここまで売れば営業利益はゼロ。",
+      "references": [
+        {
+          "title": "簿記2級 損益分岐点売上高",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "損益分岐点",
+        "BEP",
+        "限界利益率",
+        "固定費"
+      ],
+      "common_mistakes": [
+        "限界利益率と変動費率を取り違える",
+        "固定費そのものをBEPと答える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-005",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "損益分岐点販売量",
+      "subtopic": "BEP個数の算定",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "FinTech企業C社の販売価格は1個 2,000円、変動費は1個 1,200円、固定費総額は400,000円である。損益分岐点販売量は何個か。",
+      "options": [
+        {
+          "id": "A",
+          "text": "200個",
+          "is_correct": false,
+          "explanation": "400,000÷2,000＝200個。販売価格で固定費を割った誤り。単位当たり限界利益で割る必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "333個",
+          "is_correct": false,
+          "explanation": "400,000÷1,200の概算（≒333個）。変動費単価で固定費を割った誤り。"
+        },
+        {
+          "id": "C",
+          "text": "500個",
+          "is_correct": true,
+          "explanation": "正解。単位当たり限界利益＝2,000−1,200＝800円。BEP数量＝400,000÷800＝500個。"
+        },
+        {
+          "id": "D",
+          "text": "800個",
+          "is_correct": false,
+          "explanation": "限界利益の数値（800円）をそのまま個数と取り違えた誤り。"
+        }
+      ],
+      "explanation": "BEP数量＝固定費÷単位当たり限界利益。本問は800円÷個の限界利益で固定費400,000円を回収するので500個。検算：500個×2,000円＝売上1,000,000、変動費500×1,200＝600,000、限界利益400,000＝固定費。",
+      "references": [
+        {
+          "title": "簿記2級 損益分岐点販売量",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "損益分岐点",
+        "BEP",
+        "販売量",
+        "単位当たり限界利益"
+      ],
+      "common_mistakes": [
+        "販売価格で固定費を割ってしまう",
+        "変動費単価で固定費を割ってしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-006",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "目標利益売上高",
+      "subtopic": "目標利益達成のための売上高",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "医療機器メーカーD社の固定費は1,500,000円、限界利益率は30%。目標営業利益を600,000円としたとき、達成に必要な売上高はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "5,000,000円",
+          "is_correct": false,
+          "explanation": "1,500,000÷30%＝5,000,000。これは目標利益ゼロ（BEP）の場合の売上高。目標利益が考慮されていない。"
+        },
+        {
+          "id": "B",
+          "text": "6,300,000円",
+          "is_correct": false,
+          "explanation": "(1,500,000+600,000)を1−30%＝70%で割った場合の誤計算。限界利益率と変動費率を取り違えた典型例。"
+        },
+        {
+          "id": "C",
+          "text": "7,000,000円",
+          "is_correct": true,
+          "explanation": "正解。必要売上高＝(固定費＋目標利益)÷限界利益率＝(1,500,000+600,000)÷0.3＝7,000,000円。"
+        },
+        {
+          "id": "D",
+          "text": "2,000,000円",
+          "is_correct": false,
+          "explanation": "目標利益600,000を限界利益率30%で割った値。固定費が考慮されていない。"
+        }
+      ],
+      "explanation": "目標営業利益達成売上高＝(固定費＋目標営業利益)÷限界利益率。固定費1,500,000＋目標利益600,000＝2,100,000円を限界利益率30%で割って7,000,000円。検算：売上高7,000,000×30%＝限界利益2,100,000、−固定費1,500,000＝営業利益600,000。",
+      "references": [
+        {
+          "title": "簿記2級 目標利益分析",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "目標利益",
+        "CVP分析",
+        "限界利益率"
+      ],
+      "common_mistakes": [
+        "固定費だけで割ってBEPの値を答える",
+        "目標利益と固定費の合計を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-007",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "目標利益販売量",
+      "subtopic": "税引後利益からの逆算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "教育SaaSのE社、販売価格1,500円/個、変動費900円/個、固定費720,000円。税引後目標利益 420,000円、実効税率 30%。目標達成に必要な販売量は何個か。",
+      "options": [
+        {
+          "id": "A",
+          "text": "1,900個",
+          "is_correct": false,
+          "explanation": "(720,000+420,000)÷600＝1,900個。税引後利益をそのまま税引前として計算した典型誤り。"
+        },
+        {
+          "id": "B",
+          "text": "2,200個",
+          "is_correct": true,
+          "explanation": "正解。税引前目標利益＝420,000÷(1−0.3)＝600,000円。必要販売量＝(720,000+600,000)÷600＝2,200個。"
+        },
+        {
+          "id": "C",
+          "text": "1,200個",
+          "is_correct": false,
+          "explanation": "BEP販売量(720,000÷600＝1,200個)。目標利益が考慮されていない。"
+        },
+        {
+          "id": "D",
+          "text": "2,500個",
+          "is_correct": false,
+          "explanation": "税引後利益を税率で『割らずに掛けた』(420,000×1.3＝546,000のような)誤算ベース。手順の誤り。"
+        }
+      ],
+      "explanation": "税引後利益が示されたら、まず税引前利益＝税引後利益÷(1−税率)で逆算する。本問は420,000÷0.7＝600,000円。続いて必要販売量＝(固定費＋税引前目標利益)÷単位当たり限界利益＝(720,000+600,000)÷600＝2,200個。税引後と税引前の取り違えはCVP頻出ミス。",
+      "references": [
+        {
+          "title": "簿記2級 税引後目標利益のCVP",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "目標利益",
+        "税引後利益",
+        "実効税率",
+        "販売量"
+      ],
+      "common_mistakes": [
+        "税引後利益をそのまま税引前として使う",
+        "税率を掛け算で処理してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-008",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "安全余裕率",
+      "subtopic": "安全余裕率の算定",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "F社の実際売上高は8,000,000円、損益分岐点売上高は6,000,000円である。安全余裕率はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "20%",
+          "is_correct": false,
+          "explanation": "(8,000,000−6,000,000)÷10,000,000のような誤分母を使った値。安全余裕率は実際売上高で割る。"
+        },
+        {
+          "id": "B",
+          "text": "25%",
+          "is_correct": true,
+          "explanation": "正解。安全余裕率＝(実際売上高−BEP売上高)÷実際売上高＝(8,000,000−6,000,000)÷8,000,000＝25%。"
+        },
+        {
+          "id": "C",
+          "text": "33.3%",
+          "is_correct": false,
+          "explanation": "(8,000,000−6,000,000)÷6,000,000＝33.3%。BEPで割ってしまう典型誤り。"
+        },
+        {
+          "id": "D",
+          "text": "75%",
+          "is_correct": false,
+          "explanation": "BEP比率(6,000,000÷8,000,000＝75%)。安全余裕率は1−BEP比率＝25%。"
+        }
+      ],
+      "explanation": "安全余裕率（M/S比率）＝(実際売上高−BEP売上高)÷実際売上高。経営の余裕度を示す指標で、売上が何%まで減っても赤字にならないかを表す。25%なら売上が25%減少するとBEPに到達する。BEP比率（＝BEP売上÷実際売上）と補完関係（合計100%）。",
+      "references": [
+        {
+          "title": "簿記2級 安全余裕率",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "安全余裕率",
+        "M/S比率",
+        "BEP比率",
+        "経営分析"
+      ],
+      "common_mistakes": [
+        "分母をBEP売上高にしてしまう",
+        "BEP比率と安全余裕率を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-009",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "経営レバレッジ係数",
+      "subtopic": "DOLの算定と分析",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "G社の売上高 10,000,000円、変動費 6,000,000円、固定費 3,000,000円。経営レバレッジ係数（DOL）はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.25",
+          "is_correct": false,
+          "explanation": "営業利益÷限界利益＝1,000,000÷4,000,000＝0.25。分子分母が逆。DOLは限界利益÷営業利益。"
+        },
+        {
+          "id": "B",
+          "text": "1.0",
+          "is_correct": false,
+          "explanation": "1だとレバレッジが全く効いていないことを示すが、固定費がある以上1より大きくなる。"
+        },
+        {
+          "id": "C",
+          "text": "4.0",
+          "is_correct": true,
+          "explanation": "正解。限界利益＝10,000,000−6,000,000＝4,000,000、営業利益＝4,000,000−3,000,000＝1,000,000。DOL＝4,000,000÷1,000,000＝4.0。"
+        },
+        {
+          "id": "D",
+          "text": "10.0",
+          "is_correct": false,
+          "explanation": "売上高÷営業利益＝10,000,000÷1,000,000＝10。DOLは限界利益÷営業利益で計算する。"
+        }
+      ],
+      "explanation": "経営レバレッジ係数(DOL)＝限界利益÷営業利益。固定費の比重が大きいほど値が大きくなり、売上変化に対する利益の感応度を示す。DOL=4は売上が1%変化すると営業利益が4%変化することを意味する。安全余裕率の逆数(1÷25%＝4)とも一致する点を覚えておくと検算に便利。",
+      "references": [
+        {
+          "title": "簿記2級 経営レバレッジ係数",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "経営レバレッジ係数",
+        "DOL",
+        "限界利益",
+        "営業利益"
+      ],
+      "common_mistakes": [
+        "分子分母を逆にする",
+        "売上高を分子にしてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-010",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "高低点法",
+      "subtopic": "変動費率の算定",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方の部品メーカーH社が高低点法で原価分解を行う。最高操業度3,000時間で総原価1,800,000円、最低操業度1,000時間で総原価1,000,000円。変動費率（時間当たり変動費）はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "200円/時間",
+          "is_correct": false,
+          "explanation": "1,000,000÷5,000のような誤計算ベース。差額を全体時間で割っているなど手順の誤り。"
+        },
+        {
+          "id": "B",
+          "text": "400円/時間",
+          "is_correct": true,
+          "explanation": "正解。差額(1,800,000−1,000,000)÷差額(3,000−1,000)＝800,000÷2,000＝400円/時間。"
+        },
+        {
+          "id": "C",
+          "text": "600円/時間",
+          "is_correct": false,
+          "explanation": "1,800,000÷3,000＝600円。最高点の総原価を時間で割った『平均原価』であり変動費率ではない。"
+        },
+        {
+          "id": "D",
+          "text": "800円/時間",
+          "is_correct": false,
+          "explanation": "差額800,000をそのまま単価扱いした誤り。差額時間2,000で割る必要がある。"
+        }
+      ],
+      "explanation": "高低点法は最高操業度と最低操業度の2点を結ぶ直線で原価を分解する手法。変動費率＝(最高総原価−最低総原価)÷(最高操業度−最低操業度)＝800,000÷2,000＝400円/時間。固定費＝1,800,000−400×3,000＝600,000円（最低点でも1,000,000−400×1,000＝600,000で一致）。",
+      "references": [
+        {
+          "title": "簿記2級 高低点法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "高低点法",
+        "原価分解",
+        "変動費率",
+        "固定費"
+      ],
+      "common_mistakes": [
+        "最高点の平均原価を変動費率と誤る",
+        "差額を操業度差で割らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-011",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "高低点法",
+      "subtopic": "固定費の算定",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "I社の高低点法による原価データは、最高操業度4,000時間で総原価2,400,000円、最低操業度2,000時間で総原価1,600,000円。月間固定費はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "400,000円",
+          "is_correct": false,
+          "explanation": "差額800,000円÷2＝400,000のような誤計算。固定費を求める手順を誤った値。"
+        },
+        {
+          "id": "B",
+          "text": "600,000円",
+          "is_correct": false,
+          "explanation": "1,600,000−400×2,000＝800,000ではなく600,000としており計算ミスの値。"
+        },
+        {
+          "id": "C",
+          "text": "800,000円",
+          "is_correct": true,
+          "explanation": "正解。変動費率＝(2,400,000−1,600,000)÷(4,000−2,000)＝400円/時間。固定費＝2,400,000−400×4,000＝800,000円。"
+        },
+        {
+          "id": "D",
+          "text": "1,600,000円",
+          "is_correct": false,
+          "explanation": "最低操業度の総原価そのもの。総原価＝変動費＋固定費なので、固定費単独ではない。"
+        }
+      ],
+      "explanation": "高低点法では、まず変動費率を求め、次にいずれかの点で固定費を逆算する。変動費率400円/時間×4,000時間＝1,600,000円が最高点での変動費。総原価2,400,000−変動費1,600,000＝固定費800,000円。最低点でも1,600,000−400×2,000＝800,000で一致する。",
+      "references": [
+        {
+          "title": "簿記2級 高低点法 固定費",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "高低点法",
+        "固定費",
+        "原価分解"
+      ],
+      "common_mistakes": [
+        "最低操業度の総原価をそのまま固定費とする",
+        "変動費を引かずに固定費とする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-012",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "全部原価計算と直接原価計算",
+      "subtopic": "営業利益の差異",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "J社、当期生産量1,000個、販売量800個、固定製造原価400,000円。期首在庫なし。全部原価計算と直接原価計算の営業利益の差はいくらか（全部原価計算が大きい場合は『+』）。",
+      "options": [
+        {
+          "id": "A",
+          "text": "全部 − 直接 ＝ ＋80,000円",
+          "is_correct": true,
+          "explanation": "正解。期末在庫＝1,000−800＝200個に固定製造原価が@400円(400,000÷1,000)で配賦され、80,000円が次期繰越。直接原価計算では全額期間費用化されるため、その分全部原価計算の利益が大きくなる。"
+        },
+        {
+          "id": "B",
+          "text": "全部 − 直接 ＝ −80,000円",
+          "is_correct": false,
+          "explanation": "符号が逆。在庫が増加する局面では全部原価計算の利益が直接原価計算より大きくなる。"
+        },
+        {
+          "id": "C",
+          "text": "全部 − 直接 ＝ ＋320,000円",
+          "is_correct": false,
+          "explanation": "販売量800個分の固定費(400×800)を差として計算した誤り。差は『在庫に含まれる』固定費。"
+        },
+        {
+          "id": "D",
+          "text": "差はゼロ（同額）",
+          "is_correct": false,
+          "explanation": "生産量と販売量が一致していれば差は出ないが、本問は在庫が200個増加するので差が生じる。"
+        }
+      ],
+      "explanation": "固定費調整：全部原価計算と直接原価計算の営業利益差＝期末在庫に含まれる固定製造原価−期首在庫に含まれる固定製造原価。本問は固定製造原価単価＝400,000÷1,000＝400円/個、期末200個×400円＝80,000円。在庫増加局面では全部＞直接、減少局面では全部＜直接。",
+      "references": [
+        {
+          "title": "簿記2級 固定費調整",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "全部原価計算",
+        "直接原価計算",
+        "固定費調整",
+        "営業利益差異"
+      ],
+      "common_mistakes": [
+        "差の方向（符号）を取り違える",
+        "販売量分の固定費を差にしてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-013",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "固定費調整",
+      "subtopic": "直接→全部の調整",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "K社の直接原価計算による営業利益は500,000円。期首製品在庫に含まれる固定製造原価60,000円、期末製品在庫に含まれる固定製造原価100,000円。全部原価計算による営業利益はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "440,000円",
+          "is_correct": false,
+          "explanation": "500,000−60,000の誤計算。期首と期末の処理を取り違えている。"
+        },
+        {
+          "id": "B",
+          "text": "460,000円",
+          "is_correct": false,
+          "explanation": "500,000−40,000＝460,000。差額の符号を逆にした誤り。"
+        },
+        {
+          "id": "C",
+          "text": "540,000円",
+          "is_correct": true,
+          "explanation": "正解。固定費調整：直接原価計算利益＋期末固定費−期首固定費＝500,000+100,000−60,000＝540,000円。"
+        },
+        {
+          "id": "D",
+          "text": "660,000円",
+          "is_correct": false,
+          "explanation": "500,000+60,000+100,000＝660,000。期首と期末を両方プラスにした誤り。"
+        }
+      ],
+      "explanation": "固定費調整の公式：全部原価計算営業利益＝直接原価計算営業利益＋期末在庫の固定製造原価−期首在庫の固定製造原価。在庫増加分(40,000円)だけ全部原価計算の利益が大きくなる。500,000+100,000−60,000＝540,000円。",
+      "references": [
+        {
+          "title": "簿記2級 固定費調整の公式",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "固定費調整",
+        "全部原価計算",
+        "直接原価計算"
+      ],
+      "common_mistakes": [
+        "期首と期末の符号を逆にする",
+        "両方加算してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-014",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "感度分析",
+      "subtopic": "販売価格変動の影響",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "L社の現状：販売価格1,000円、変動費600円、固定費500,000円、販売量2,000個。販売価格を10%値下げし販売量を20%増加させた場合の営業利益はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "100,000円",
+          "is_correct": false,
+          "explanation": "販売量増加分を反映せず(900−600)×2,000−500,000＝100,000としたケース。販売量変化を考慮していない。"
+        },
+        {
+          "id": "B",
+          "text": "220,000円",
+          "is_correct": true,
+          "explanation": "正解。新価格900円、変動費600円(変わらず)、新販売量2,400個。新限界利益＝(900−600)×2,400＝720,000円。営業利益＝720,000−500,000＝220,000円。"
+        },
+        {
+          "id": "C",
+          "text": "300,000円",
+          "is_correct": false,
+          "explanation": "現状の営業利益(1,000−600)×2,000−500,000＝300,000円。施策実施前の値であり、施策後の利益ではない。"
+        },
+        {
+          "id": "D",
+          "text": "460,000円",
+          "is_correct": false,
+          "explanation": "値下げ前後で限界利益単価が400円のままと誤算したパターン(400×2,400−500,000＝460,000)。値下げによる限界利益の減少を考慮していない。"
+        }
+      ],
+      "explanation": "感度分析では、価格・数量・原価の変化を順序立てて反映する。販売価格1,000×0.9＝900円、販売量2,000×1.2＝2,400個、変動費単価は変わらず600円。新限界利益＝(900−600)×2,400＝720,000円、営業利益＝720,000−500,000＝220,000円。",
+      "references": [
+        {
+          "title": "簿記2級 CVP感度分析",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "感度分析",
+        "CVP",
+        "価格戦略"
+      ],
+      "common_mistakes": [
+        "数量増加を限界利益単価の変化と取り違える",
+        "固定費を変動と誤認する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-015",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "セグメント別CVP",
+      "subtopic": "個別固定費と共通固定費",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "M社は製品αとβを製造。製品α：限界利益600,000円、個別固定費200,000円。製品β：限界利益400,000円、個別固定費150,000円。共通固定費300,000円。会社全体の営業利益はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "350,000円",
+          "is_correct": true,
+          "explanation": "正解。α貢献利益＝600,000−200,000＝400,000、β貢献利益＝400,000−150,000＝250,000、合計貢献利益650,000−共通固定費300,000＝営業利益350,000円。"
+        },
+        {
+          "id": "B",
+          "text": "650,000円",
+          "is_correct": false,
+          "explanation": "セグメント貢献利益の合計のみで共通固定費を引き忘れたケース。"
+        },
+        {
+          "id": "C",
+          "text": "500,000円",
+          "is_correct": false,
+          "explanation": "限界利益合計1,000,000から個別固定費合計350,000のみを引いた値。共通固定費が漏れている。"
+        },
+        {
+          "id": "D",
+          "text": "1,000,000円",
+          "is_correct": false,
+          "explanation": "限界利益の合計そのもの。固定費を全く引いていない。"
+        }
+      ],
+      "explanation": "セグメント別CVPでは『限界利益−個別固定費＝セグメント貢献利益』、『各セグメント貢献利益の合計−共通固定費＝会社全体営業利益』という二段階構造で考える。製品別の収益性は貢献利益で評価し、共通固定費は会社全体で吸収する点が要点。",
+      "references": [
+        {
+          "title": "簿記2級 セグメント別利益分析",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "セグメント別CVP",
+        "貢献利益",
+        "個別固定費",
+        "共通固定費"
+      ],
+      "common_mistakes": [
+        "共通固定費を引き忘れる",
+        "個別固定費と共通固定費の区別を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-016",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "損益分岐図表",
+      "subtopic": "図表の読み取りと評価",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "medium",
+      "stem": "損益分岐図表（縦軸：金額、横軸：売上高）に関する記述として最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "総原価線の傾きは固定費率を表す",
+          "is_correct": false,
+          "explanation": "総原価線(変動費＋固定費)の傾きは『変動費率』であり、固定費率というものは通常意味をなさない。"
+        },
+        {
+          "id": "B",
+          "text": "売上高線と総原価線の交点が損益分岐点である",
+          "is_correct": true,
+          "explanation": "正解。売上高＝総原価となる点が損益分岐点。交点より右が利益、左が損失領域。"
+        },
+        {
+          "id": "C",
+          "text": "固定費線は原点から右上がりに引かれる",
+          "is_correct": false,
+          "explanation": "固定費は売上高に関係なく一定なので水平線として描かれる。"
+        },
+        {
+          "id": "D",
+          "text": "BEPより右側では限界利益＜固定費となる",
+          "is_correct": false,
+          "explanation": "逆。BEPの定義は限界利益＝固定費の点。BEPの右側では限界利益＞固定費となり利益が出る。"
+        }
+      ],
+      "explanation": "損益分岐図表では、横軸に売上高（または販売量）、縦軸に金額をとる。固定費は水平線、変動費は原点からの右上がり直線、その合計が総原価線（傾き＝変動費率）。45度の売上高線と総原価線の交点がBEP。図の理解はCVPの直感を磨く上で重要。",
+      "references": [
+        {
+          "title": "簿記2級 損益分岐図表",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "損益分岐図表",
+        "BEP",
+        "視覚化"
+      ],
+      "common_mistakes": [
+        "固定費線を右上がりと誤認する",
+        "総原価線の傾きを固定費率と誤認する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-017",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "BEP変動分析",
+      "subtopic": "固定費削減の効果",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "N社の現状：販売価格1,000円、変動費600円、固定費800,000円。固定費を100,000円削減できた場合、損益分岐点販売量は何個減少するか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "100個減少",
+          "is_correct": false,
+          "explanation": "削減額100,000をそのまま個数換算する誤り。単位当たり限界利益で割る必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "167個減少",
+          "is_correct": false,
+          "explanation": "100,000÷600(変動費単価)＝167。変動費単価で割る誤り。割るのは限界利益単価。"
+        },
+        {
+          "id": "C",
+          "text": "250個減少",
+          "is_correct": true,
+          "explanation": "正解。単位当たり限界利益＝1,000−600＝400円。BEP変動＝固定費削減額÷限界利益単価＝100,000÷400＝250個減少。"
+        },
+        {
+          "id": "D",
+          "text": "1,750個",
+          "is_correct": false,
+          "explanation": "新BEP販売量(700,000÷400＝1,750個)そのもの。問われているのは『減少分』。"
+        }
+      ],
+      "explanation": "固定費削減によるBEP変動量＝固定費削減額÷単位当たり限界利益。本問では100,000÷400＝250個。検算：旧BEP＝800,000÷400＝2,000個、新BEP＝700,000÷400＝1,750個、差250個と一致。固定費の削減は限界利益単価分のレバレッジで効くと押さえる。",
+      "references": [
+        {
+          "title": "簿記2級 CVP感度分析 固定費",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "BEP",
+        "固定費削減",
+        "感度分析"
+      ],
+      "common_mistakes": [
+        "削減額をそのまま個数とする",
+        "変動費単価で割ってしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-018",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "BEP売上高方程式",
+      "subtopic": "限界利益率からの計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "O社の変動費率は55%、固定費2,250,000円、目標営業利益750,000円。目標達成に必要な売上高はいくらか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "5,000,000円",
+          "is_correct": false,
+          "explanation": "2,250,000÷45%＝5,000,000円。BEP売上高(目標利益ゼロの場合)であり、目標利益が考慮されていない。"
+        },
+        {
+          "id": "B",
+          "text": "5,454,545円",
+          "is_correct": false,
+          "explanation": "(2,250,000+750,000)÷55%＝5,454,545。変動費率を限界利益率と取り違えた典型誤り。"
+        },
+        {
+          "id": "C",
+          "text": "6,666,667円",
+          "is_correct": true,
+          "explanation": "正解。限界利益率＝1−55%＝45%。必要売上高＝(2,250,000+750,000)÷0.45＝6,666,667円。"
+        },
+        {
+          "id": "D",
+          "text": "3,000,000円",
+          "is_correct": false,
+          "explanation": "(2,250,000+750,000)＝3,000,000をそのまま売上高として答えた誤り。限界利益率で割る必要がある。"
+        }
+      ],
+      "explanation": "目標利益達成売上高＝(固定費＋目標利益)÷限界利益率。限界利益率は変動費率の補数(1−変動費率)。本問は1−0.55＝0.45。(2,250,000+750,000)÷0.45＝6,666,667円。検算：売上6,666,667×45%＝限界利益3,000,000−固定費2,250,000＝営業利益750,000。",
+      "references": [
+        {
+          "title": "簿記2級 目標利益売上高",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "目標利益",
+        "変動費率",
+        "限界利益率",
+        "売上高"
+      ],
+      "common_mistakes": [
+        "変動費率と限界利益率を取り違える",
+        "固定費だけを分子にしてBEPを答える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-019",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "経営判断",
+      "subtopic": "原価構造の比較評価",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "P社（自動化が進み固定費高・変動費率低）とQ社（労働集約型で固定費低・変動費率高）が同じ売上・同じ営業利益。次のうち最も適切な評価はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "P社の方が経営レバレッジ係数が大きく、好況期の利益拡大は速いが不況期のリスクも大きい",
+          "is_correct": true,
+          "explanation": "正解。固定費比重が高いP社はDOLが大きくなり、売上変化に対する営業利益の感応度が高い。好況時は急増、不況時は急減のハイリスク・ハイリターン。"
+        },
+        {
+          "id": "B",
+          "text": "Q社の方がDOLが大きく、売上変化に対する利益感応度が高い",
+          "is_correct": false,
+          "explanation": "DOLは固定費比重が大きい企業ほど大きくなる。Q社（変動費率高）は感応度が低い。"
+        },
+        {
+          "id": "C",
+          "text": "P社の方が安全余裕率が必ず高い",
+          "is_correct": false,
+          "explanation": "営業利益が同額でもBEP売上高は固定費高のP社の方が高くなる傾向があり、安全余裕率は逆に低くなりやすい。"
+        },
+        {
+          "id": "D",
+          "text": "両社のリスク特性は同一",
+          "is_correct": false,
+          "explanation": "原価構造が異なれば売上変動に対するリスク感応度は大きく異なる。"
+        }
+      ],
+      "explanation": "経営レバレッジ係数(DOL)＝限界利益÷営業利益。固定費比重が大きい企業ほど限界利益も大きくなりDOLが上がる。固定費型企業は売上が伸びると利益が急増するが、減ると急減する。原価構造の評価はM&Aや事業ポートフォリオ選択で重要。",
+      "references": [
+        {
+          "title": "簿記2級 原価構造とリスク",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "経営レバレッジ",
+        "原価構造",
+        "リスク評価",
+        "経営判断"
+      ],
+      "common_mistakes": [
+        "DOLの大小と固定費比重の関係を逆に覚える",
+        "営業利益が同じならリスクも同じと誤認する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "boki-2-kogyo-cvp-020",
+      "version": "1.0",
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-cvp",
+        "name": "工業簿記 - CVP分析",
+        "weight_percent": 7
+      },
+      "topic": "総合CVP設計",
+      "subtopic": "価格戦略と固定費投資",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "東海地方のSaaSスタートアップR社（販売価格5,000円/件、変動費1,500円/件、固定費 700,000円/月）が、月間目標営業利益 350,000円を3か月以内に達成したい。次のうち、最も合理的な単独施策はどれか（他条件は不変）。",
+      "options": [
+        {
+          "id": "A",
+          "text": "販売価格を10%値下げし、月間販売量を10%増やす",
+          "is_correct": false,
+          "explanation": "新価格4,500円、新限界利益単価3,000円。元の販売量を300件と仮定すると新限界利益3,000×330＝990,000、−固定費700,000＝290,000円。目標350,000に届かない。"
+        },
+        {
+          "id": "B",
+          "text": "固定費を月50,000円削減（外注解約）し、販売量は現状の280件のまま維持",
+          "is_correct": false,
+          "explanation": "新固定費650,000円、限界利益＝3,500×280＝980,000円、営業利益＝330,000円。目標350,000円にわずかに届かない。"
+        },
+        {
+          "id": "C",
+          "text": "固定費を月100,000円増やす広告投資で月間販売量を360件に押し上げる",
+          "is_correct": true,
+          "explanation": "正解。新限界利益＝3,500×360＝1,260,000、固定費800,000、営業利益＝460,000円。目標350,000を上回り、最も余裕を持って達成。CVPの構造（限界利益単価3,500円が固定費増100,000円を29件分の販売増で回収）から合理的。"
+        },
+        {
+          "id": "D",
+          "text": "変動費単価を100円値上げ（材料変更）して品質向上をアピールする",
+          "is_correct": false,
+          "explanation": "限界利益単価が3,400円に減少。販売量変化なしでは(3,400−3,500)×300＝−30,000円悪化し営業利益250,000円となり目標未達。"
+        }
+      ],
+      "explanation": "総合的なCVP判断では『限界利益単価×販売量−固定費＝営業利益』の構造で各施策の損益効果を比較する。Cの場合：固定費追加100,000円÷限界利益単価3,500円≒29件で回収、追加60件売れれば利益が3,500×60＝210,000円増。固定費増を上回る販売増が見込めるなら投資対効果が高い。CVP分析は経営者の意思決定（M&A、価格戦略、広告投資）の基礎ツール。",
+      "references": [
+        {
+          "title": "簿記2級 CVP分析と経営判断",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "CVP分析",
+        "経営判断",
+        "投資判断",
+        "限界利益"
+      ],
+      "common_mistakes": [
+        "値下げ＋数量増を常に有効と誤認する",
+        "固定費増を常に避けるべきと誤認する"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

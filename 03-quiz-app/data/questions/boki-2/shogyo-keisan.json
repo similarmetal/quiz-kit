@@ -1,0 +1,1176 @@
+{
+  "exam_code": "boki-2",
+  "exam_name": "日商簿記2級",
+  "version": "2026.04",
+  "total_questions": 40,
+  "domains": [
+    {
+      "id": "shogyo-keisan",
+      "name": "商業簿記 - 個別計算",
+      "weight_percent": 20,
+      "question_count": 40
+    }
+  ],
+  "questions": [
+    {
+      "id": "boki-2-keisan-001",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "のれんの定義",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "連結会計における「のれん」の計算式として正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "投資額 - 子会社純資産簿価", "is_correct": false, "explanation": "簿価ではなく時価評価後の純資産を用いる。また持分比率も考慮する必要がある。"},
+        {"id": "B", "text": "投資額 - (子会社純資産時価 × 親会社持分比率)", "is_correct": true, "explanation": "正解。子会社の資産・負債を時価評価し、親会社持分相当額を投資額から差し引いた残額がのれん。"},
+        {"id": "C", "text": "(投資額 - 子会社純資産時価) × 親会社持分比率", "is_correct": false, "explanation": "持分比率を全体に掛けるのは誤り。子会社純資産時価のみに持分比率を乗じる。"},
+        {"id": "D", "text": "子会社純資産時価 - 投資額", "is_correct": false, "explanation": "符号が逆。投資額が純資産持分を上回る場合に「のれん」となる。下回る場合は「負ののれん」。"}
+      ],
+      "explanation": "連結会計上ののれんは、親会社が子会社を支配獲得した際に投資した金額のうち、子会社の識別可能純資産時価のうち親会社持分相当額を超える部分。計算式は『投資額 - (子会社純資産時価 × 親会社持分比率)』。のれんは20年以内の効果が及ぶ期間で定額法等により償却する。",
+      "references": [
+        {"title": "企業会計基準第22号 連結財務諸表に関する会計基準", "url": ""}
+      ],
+      "tags": ["連結会計", "のれん", "公式", "基本概念"],
+      "common_mistakes": [
+        "簿価で計算してしまう",
+        "持分比率を全体に掛ける",
+        "符号を逆にする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-002",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "のれん計算",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "東海製造（P社）はSaaS子会社（S社）の発行済株式の70%を1,200,000円で取得し連結子会社とした。支配獲得日のS社の純資産簿価は1,000,000円、土地の時価評価により評価差額200,000円が判明した。「のれん」の金額として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "200,000円", "is_correct": false, "explanation": "1,200,000 - 1,000,000 で計算。評価差額と持分比率を考慮していない。"},
+        {"id": "B", "text": "0円（のれんなし）", "is_correct": false, "explanation": "1,200,000 - (1,000,000 + 200,000) = 0 で計算。持分比率70%を考慮していない。"},
+        {"id": "C", "text": "360,000円", "is_correct": true, "explanation": "正解。1,200,000 - (1,000,000 + 200,000) × 70% = 1,200,000 - 840,000 = 360,000円。"},
+        {"id": "D", "text": "500,000円", "is_correct": false, "explanation": "1,200,000 - 1,000,000 × 70% = 500,000 で計算。評価差額を考慮していない。"}
+      ],
+      "explanation": "のれん = 投資額 - (子会社純資産時価 × 親会社持分比率)。子会社純資産時価 = 簿価1,000,000 + 評価差額200,000 = 1,200,000円。これに70%を乗じて840,000円が親会社持分。投資額1,200,000円との差額360,000円がのれん。",
+      "references": [
+        {"title": "連結会計におけるのれんの算定", "url": ""}
+      ],
+      "tags": ["連結会計", "のれん", "持分比率", "評価差額", "M&A"],
+      "common_mistakes": [
+        "評価差額の処理を忘れる",
+        "持分比率を考慮しない",
+        "簿価で計算してしまう"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-003",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "のれんの償却",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "P社が支配獲得日に計上したのれんの金額は600,000円である。20年で定額法により償却する場合、当期ののれん償却額として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "60,000円", "is_correct": false, "explanation": "10年で割っている。会計基準上の最長償却期間は20年以内。"},
+        {"id": "B", "text": "30,000円", "is_correct": true, "explanation": "正解。600,000 ÷ 20年 = 30,000円。"},
+        {"id": "C", "text": "20,000円", "is_correct": false, "explanation": "30年で割っており、会計基準の上限を超えている。"},
+        {"id": "D", "text": "120,000円", "is_correct": false, "explanation": "5年で割っている。短期償却するには合理的根拠が必要。"}
+      ],
+      "explanation": "のれんは、その効果が及ぶ期間にわたって規則的に償却する。日本基準では20年を超えない範囲で定額法等により償却する。本問では600,000円を20年で除した30,000円が当期償却額となる。償却額は連結P/Lの販売費及び一般管理費に「のれん償却額」として計上。",
+      "references": [
+        {"title": "企業会計基準第21号 企業結合に関する会計基準", "url": ""}
+      ],
+      "tags": ["連結会計", "のれん", "償却", "定額法"],
+      "common_mistakes": [
+        "償却期間を間違える",
+        "減損と償却を混同する",
+        "IFRSの非償却ルールと混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-004",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "負ののれん",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "FinTech子会社（S社）の発行済株式の60%を800,000円で取得した。S社の純資産時価は1,500,000円であった。連結会計上の処理として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "のれん 100,000円を資産計上", "is_correct": false, "explanation": "投資額が純資産時価持分を下回るため、のれんではなく『負ののれん発生益』が生じる。"},
+        {"id": "B", "text": "のれん 700,000円を資産計上", "is_correct": false, "explanation": "投資額1,500,000円との差額として計算しているが、持分比率も方向も誤っている。"},
+        {"id": "C", "text": "負ののれん発生益 100,000円を当期の利益として計上", "is_correct": true, "explanation": "正解。1,500,000 × 60% = 900,000円が親会社持分。投資額800,000との差100,000が負ののれんで、発生時に一括して特別利益に計上。"},
+        {"id": "D", "text": "負ののれん 100,000円を負債として計上し20年で取崩す", "is_correct": false, "explanation": "現行基準では負ののれんは発生時に一括して『負ののれん発生益』として特別利益に計上する。負債計上は旧基準の処理。"}
+      ],
+      "explanation": "投資額 < 子会社純資産時価 × 持分比率 となる場合、差額は『負ののれん発生益』として発生年度に一括して特別利益に計上する。本問では持分相当額900,000円 > 投資額800,000円なので、差額100,000円が負ののれん発生益。2010年の会計基準改訂で20年取崩しから一括認識に変更された。",
+      "references": [
+        {"title": "企業会計基準第21号 企業結合に関する会計基準（負ののれん）", "url": ""}
+      ],
+      "tags": ["連結会計", "負ののれん", "特別利益", "M&A"],
+      "common_mistakes": [
+        "旧基準の取崩処理と混同する",
+        "のれんと符号を間違える",
+        "持分比率を考慮しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-005",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "減損会計",
+      "subtopic": "減損損失の計算",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "東海地方の製造拠点の機械装置（帳簿価額 5,000,000円）について減損の兆候があり、割引前将来CFは4,500,000円、正味売却価額は3,500,000円、使用価値は3,800,000円であった。計上すべき減損損失はいくらか？",
+      "options": [
+        {"id": "A", "text": "500,000円", "is_correct": false, "explanation": "帳簿価額 - 割引前将来CF で計算しているが、回収可能価額は割引前ではなく、正味売却価額か使用価値の高い方。"},
+        {"id": "B", "text": "1,200,000円", "is_correct": true, "explanation": "正解。割引前将来CF4,500,000 < 帳簿価額5,000,000 なので減損認識。回収可能価額 = max(3,500,000, 3,800,000) = 3,800,000。減損損失 = 5,000,000 - 3,800,000 = 1,200,000円。"},
+        {"id": "C", "text": "1,500,000円", "is_correct": false, "explanation": "正味売却価額3,500,000で計算。回収可能価額は使用価値と正味売却価額のうち高い方を使う。"},
+        {"id": "D", "text": "0円（減損認識せず）", "is_correct": false, "explanation": "割引前将来CF4,500,000 < 帳簿価額5,000,000 なので減損の認識テストをパスし、減損損失を計上する必要がある。"}
+      ],
+      "explanation": "減損会計のステップ: ①兆候の把握 → ②認識（割引前将来CF < 帳簿価額なら減損認識） → ③測定（減損損失 = 帳簿価額 - 回収可能価額）。回収可能価額は『正味売却価額』と『使用価値』のうち高い方。本問は使用価値3,800,000円が高いため、5,000,000 - 3,800,000 = 1,200,000円が減損損失。",
+      "references": [
+        {"title": "企業会計基準第9号 固定資産の減損に係る会計基準", "url": ""}
+      ],
+      "tags": ["減損会計", "固定資産", "回収可能価額", "使用価値"],
+      "common_mistakes": [
+        "認識テストと測定を混同する",
+        "正味売却価額と使用価値の高い方ではなく低い方を選ぶ",
+        "割引前CFをそのまま回収可能価額にする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-006",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "減損会計",
+      "subtopic": "減損認識の判定",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "減損会計における『減損損失の認識』のテストについて、最も正しい記述はどれか？",
+      "options": [
+        {"id": "A", "text": "帳簿価額が回収可能価額を下回る場合に認識する", "is_correct": false, "explanation": "符号が逆。帳簿価額が回収可能価額を上回る場合に減損損失を計上する。また、認識テストではなく測定の話。"},
+        {"id": "B", "text": "資産から得られる割引前将来キャッシュ・フローの総額が帳簿価額を下回る場合に認識する", "is_correct": true, "explanation": "正解。減損の認識テストは『割引前』将来CFと帳簿価額の比較で行う。これは保守主義の観点から、減損を過剰に認識しないため。"},
+        {"id": "C", "text": "使用価値が正味売却価額を下回る場合に認識する", "is_correct": false, "explanation": "これは回収可能価額の選択の話で、認識テストではない。"},
+        {"id": "D", "text": "割引後将来CFの総額が帳簿価額を下回る場合に認識する", "is_correct": false, "explanation": "認識テストでは『割引前』のCFを使う。割引後（=使用価値）は測定の段階で使用する。"}
+      ],
+      "explanation": "減損認識テストでは、対象資産の使用と処分から得られる『割引前将来CFの総額』が帳簿価額を下回るかを判定する。下回れば減損認識。これは減損の認識を慎重に行うため『割引前』を使う。一方、減損測定（金額算定）では割引後の使用価値を用いる。",
+      "references": [
+        {"title": "減損会計基準 認識と測定", "url": ""}
+      ],
+      "tags": ["減損会計", "認識テスト", "割引前CF"],
+      "common_mistakes": [
+        "認識と測定を混同する",
+        "割引前と割引後を間違える",
+        "符号を逆にする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-007",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "退職給付会計",
+      "subtopic": "退職給付費用",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "医療系SaaS企業の当期の退職給付に関するデータは以下の通り。当期の退職給付費用はいくらか？\n勤務費用: 800,000円\n利息費用: 300,000円\n期待運用収益: 200,000円\n数理計算上の差異の費用処理額: 50,000円",
+      "options": [
+        {"id": "A", "text": "1,100,000円", "is_correct": false, "explanation": "勤務費用 + 利息費用 のみ計上。期待運用収益（控除）と数理差異（加算）が漏れている。"},
+        {"id": "B", "text": "950,000円", "is_correct": true, "explanation": "正解。800,000 + 300,000 - 200,000 + 50,000 = 950,000円。"},
+        {"id": "C", "text": "900,000円", "is_correct": false, "explanation": "数理計算上の差異50,000円の費用処理を忘れている。"},
+        {"id": "D", "text": "1,350,000円", "is_correct": false, "explanation": "期待運用収益200,000円を控除せず加算している。期待運用収益は退職給付費用を減らす要素。"}
+      ],
+      "explanation": "退職給付費用 = 勤務費用 + 利息費用 - 期待運用収益 + 数理計算上の差異の費用処理額 + 過去勤務費用の費用処理額。勤務費用は当期の勤務に対応する増加、利息費用は割引現在価値に時間経過で生じる利息、期待運用収益は年金資産の運用益見込みのため費用から控除する。",
+      "references": [
+        {"title": "企業会計基準第26号 退職給付に関する会計基準", "url": ""}
+      ],
+      "tags": ["退職給付会計", "退職給付費用", "勤務費用", "利息費用"],
+      "common_mistakes": [
+        "期待運用収益の符号を間違える",
+        "数理差異の処理を忘れる",
+        "勤務費用と利息費用を混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-008",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "退職給付会計",
+      "subtopic": "退職給付債務の期末残高",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "B2B SaaS企業の退職給付債務（PBO）の期首残高は10,000,000円。当期の勤務費用700,000円、利息費用300,000円、退職金支払額500,000円であった。期末の退職給付債務はいくらか？",
+      "options": [
+        {"id": "A", "text": "10,500,000円", "is_correct": true, "explanation": "正解。10,000,000 + 700,000 + 300,000 - 500,000 = 10,500,000円。"},
+        {"id": "B", "text": "11,000,000円", "is_correct": false, "explanation": "退職金支払額500,000円の控除を忘れている。退職金支払はPBOを減少させる。"},
+        {"id": "C", "text": "10,200,000円", "is_correct": false, "explanation": "利息費用300,000円が反映されていない。"},
+        {"id": "D", "text": "9,500,000円", "is_correct": false, "explanation": "勤務費用と利息費用の加算を忘れている。"}
+      ],
+      "explanation": "退職給付債務（PBO）の期末残高 = 期首PBO + 勤務費用 + 利息費用 - 退職金支払額 ± 数理計算上の差異 + 過去勤務費用。本問では10,000,000 + 700,000 + 300,000 - 500,000 = 10,500,000円。退職金支払はPBOを減らす（債務が履行されるため）。",
+      "references": [
+        {"title": "退職給付債務の計算", "url": ""}
+      ],
+      "tags": ["退職給付会計", "PBO", "退職給付債務", "勤務費用"],
+      "common_mistakes": [
+        "退職金支払を加算してしまう",
+        "勤務費用と利息費用の片方を忘れる",
+        "期首と期末を逆にする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-009",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "投資と資本の相殺消去",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "P社はS社株式の80%を900,000円で取得した。支配獲得日のS社の資本金500,000円、利益剰余金300,000円、評価差額200,000円（時価評価による）であった。連結時の『非支配株主持分』はいくらか？",
+      "options": [
+        {"id": "A", "text": "160,000円", "is_correct": false, "explanation": "資本金 × 20% + 利益剰余金 × 20% で計算しているが、評価差額を考慮していない。"},
+        {"id": "B", "text": "200,000円", "is_correct": true, "explanation": "正解。S社純資産時価合計 = 500,000 + 300,000 + 200,000 = 1,000,000円。非支配株主持分 = 1,000,000 × 20% = 200,000円。"},
+        {"id": "C", "text": "180,000円", "is_correct": false, "explanation": "資本金 + 利益剰余金 = 800,000 のみに20%を掛けている。評価差額200,000円を含める必要がある。"},
+        {"id": "D", "text": "800,000円", "is_correct": false, "explanation": "親会社持分80%を掛けている。非支配株主持分は20%。"}
+      ],
+      "explanation": "非支配株主持分 = 子会社純資産時価合計 × 非支配株主持分比率(=1-親会社持分比率)。本問ではS社純資産時価1,000,000円（資本金500,000 + 利益剰余金300,000 + 評価差額200,000）に20%を乗じた200,000円が連結B/S上の非支配株主持分。",
+      "references": [
+        {"title": "連結会計 非支配株主持分", "url": ""}
+      ],
+      "tags": ["連結会計", "非支配株主持分", "投資と資本の相殺", "評価差額"],
+      "common_mistakes": [
+        "評価差額を含めない",
+        "親会社持分比率を掛ける",
+        "資本金のみに掛ける"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-010",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "未実現利益の消去（期末棚卸資産）",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "P社は当期、S社（100%子会社）に商品を300,000円（原価240,000円）で販売した。S社は期末にこの商品の50%を在庫として保有している。連結修正で消去すべき『未実現利益』はいくらか？",
+      "options": [
+        {"id": "A", "text": "60,000円", "is_correct": false, "explanation": "未実現利益の総額。期末に残っているのは50%のみなので半分にする必要がある。"},
+        {"id": "B", "text": "30,000円", "is_correct": true, "explanation": "正解。利益総額 = 300,000 - 240,000 = 60,000円。期末在庫50%分の未実現利益 = 60,000 × 50% = 30,000円。"},
+        {"id": "C", "text": "150,000円", "is_correct": false, "explanation": "売価300,000の50%。利益ではなく売価を消去している。"},
+        {"id": "D", "text": "120,000円", "is_correct": false, "explanation": "原価240,000の50%。原価を未実現利益と勘違いしている。"}
+      ],
+      "explanation": "ダウンストリーム（親→子）の場合、期末棚卸資産に含まれる未実現利益を全額消去する。利益率 = 60,000/300,000 = 20%。期末在庫の売価相当 = 300,000 × 50% = 150,000円。未実現利益 = 150,000 × 20% = 30,000円。連結修正仕訳: (借)売上原価 30,000 / (貸)商品 30,000。",
+      "references": [
+        {"title": "連結会計 未実現利益の消去", "url": ""}
+      ],
+      "tags": ["連結会計", "未実現利益", "棚卸資産", "ダウンストリーム"],
+      "common_mistakes": [
+        "在庫率を考慮しない",
+        "売価と利益を混同する",
+        "原価を消去する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-011",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "債権債務の相殺消去",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "P社のS社（100%子会社）に対する売掛金は500,000円、S社のP社に対する買掛金は500,000円であった。連結修正仕訳として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "(借)買掛金 500,000 / (貸)売掛金 500,000", "is_correct": true, "explanation": "正解。連結グループ内の債権債務は相殺消去する。買掛金（負債）を減らし、売掛金（資産）を減らす。"},
+        {"id": "B", "text": "(借)売掛金 500,000 / (貸)買掛金 500,000", "is_correct": false, "explanation": "貸借が逆。売掛金（資産）を減らすには貸方、買掛金（負債）を減らすには借方。"},
+        {"id": "C", "text": "(借)売上 500,000 / (貸)仕入 500,000", "is_correct": false, "explanation": "これは内部取引（売上仕入）の消去仕訳。本問は債権債務の消去。"},
+        {"id": "D", "text": "(借)買掛金 250,000 / (貸)売掛金 250,000", "is_correct": false, "explanation": "100%子会社の場合は全額相殺。半額にする理由はない。"}
+      ],
+      "explanation": "連結グループ内の債権債務（売掛金/買掛金、貸付金/借入金、未収金/未払金など）は連結上、内部取引として相殺消去する。100%子会社でも持分70%でも全額相殺（持分比率は無関係）。仕訳: (借)買掛金 / (貸)売掛金。",
+      "references": [
+        {"title": "連結会計 内部取引消去", "url": ""}
+      ],
+      "tags": ["連結会計", "債権債務消去", "売掛金", "買掛金"],
+      "common_mistakes": [
+        "貸借を逆にする",
+        "持分比率を掛ける",
+        "売上仕入の消去と混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-012",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "税効果会計",
+      "subtopic": "繰延税金資産の計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "期末の貸倒引当金繰入額600,000円のうち、税務上損金算入が認められなかった金額は400,000円であった。法定実効税率30%とした場合、計上すべき繰延税金資産はいくらか？",
+      "options": [
+        {"id": "A", "text": "180,000円", "is_correct": false, "explanation": "繰入額600,000 × 30% で計算。否認額のみが将来減算一時差異となる。"},
+        {"id": "B", "text": "120,000円", "is_correct": true, "explanation": "正解。否認額400,000 × 法定実効税率30% = 120,000円。これが将来減算一時差異に対する繰延税金資産。"},
+        {"id": "C", "text": "400,000円", "is_correct": false, "explanation": "否認額そのもの。税率を掛けていない。"},
+        {"id": "D", "text": "60,000円", "is_correct": false, "explanation": "(600,000 - 400,000) × 30% で計算。損金算入された分には税効果は生じない。"}
+      ],
+      "explanation": "税効果会計では、会計と税務の差異（一時差異）に税率を掛けて繰延税金を計上する。本問の貸倒引当金繰入は、税務上認められない部分（否認額400,000円）が『将来減算一時差異』となる。これに法定実効税率30%を掛けた120,000円が繰延税金資産。仕訳: (借)繰延税金資産 120,000 / (貸)法人税等調整額 120,000。",
+      "references": [
+        {"title": "企業会計基準第28号 税効果会計に係る会計基準", "url": ""}
+      ],
+      "tags": ["税効果会計", "繰延税金資産", "一時差異", "貸倒引当金"],
+      "common_mistakes": [
+        "総額に税率を掛ける",
+        "税率を掛け忘れる",
+        "永久差異と一時差異を混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-013",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "税効果会計",
+      "subtopic": "その他有価証券評価差額金",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "その他有価証券（取得原価1,000,000円）の期末時価は1,200,000円である。法定実効税率30%として、税効果を考慮した期末仕訳の評価差額金（純資産）の金額はいくらか？",
+      "options": [
+        {"id": "A", "text": "200,000円", "is_correct": false, "explanation": "税効果を考慮していない。その他有価証券の評価差額には税効果を適用する必要がある。"},
+        {"id": "B", "text": "140,000円", "is_correct": true, "explanation": "正解。評価差額200,000円 × (1 - 30%) = 140,000円。差額のうち税相当(60,000)を繰延税金負債、残り140,000を評価差額金として純資産計上。"},
+        {"id": "C", "text": "60,000円", "is_correct": false, "explanation": "200,000 × 30% = 60,000円。これは繰延税金負債の金額。"},
+        {"id": "D", "text": "260,000円", "is_correct": false, "explanation": "200,000 × 1.3 で計算。税率の方向が逆。"}
+      ],
+      "explanation": "その他有価証券の評価差額は、全部純資産直入法で純資産に直接計上するが、税効果会計を適用する。差額200,000円のうち繰延税金負債 = 200,000 × 30% = 60,000円。残り140,000円が『その他有価証券評価差額金』として純資産直入。仕訳: (借)その他有価証券 200,000 / (貸)繰延税金負債 60,000、(貸)その他有価証券評価差額金 140,000。",
+      "references": [
+        {"title": "税効果会計 その他有価証券評価差額金", "url": ""}
+      ],
+      "tags": ["税効果会計", "その他有価証券", "評価差額金", "純資産直入"],
+      "common_mistakes": [
+        "税効果を考慮しない",
+        "繰延税金負債と評価差額金を逆にする",
+        "税率の掛け方を間違える"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-014",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "外貨建取引",
+      "subtopic": "為替差損益",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方の製造業者が3月10日に米国企業から商品$10,000を仕入れた（取引日レート 1ドル=110円、支払日のレート 1ドル=115円）。決済日の為替差損益として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "為替差益 50,000円", "is_correct": false, "explanation": "符号が逆。円安で外貨建て買掛金の円換算額が増加するため、為替『差損』が発生する。"},
+        {"id": "B", "text": "為替差損 50,000円", "is_correct": true, "explanation": "正解。10,000 × (115 - 110) = 50,000円の為替差損。買掛金1,100,000円が決済時1,150,000円となるため、追加負担分が損失。"},
+        {"id": "C", "text": "為替差損 1,150,000円", "is_correct": false, "explanation": "決済額そのもの。差額のみが損益となる。"},
+        {"id": "D", "text": "為替差益 5,000円", "is_correct": false, "explanation": "1,000円単位を間違えている。$10,000 × $5/$ = $50,000ではなく50,000円。符号も逆。"}
+      ],
+      "explanation": "外貨建買掛金の決済差額は為替差損益となる。取引日: 仕入1,100,000円 / 買掛金1,100,000円。決済日: 買掛金1,100,000円 + 為替差損50,000円 / 現金1,150,000円。円安(円安進行)では外貨建買掛金（負債）の円貨額が増えるため為替差損、外貨建売掛金（資産）の円貨額が増えるため為替差益となる。",
+      "references": [
+        {"title": "外貨建取引等会計処理基準", "url": ""}
+      ],
+      "tags": ["外貨建取引", "為替差損益", "買掛金", "決済"],
+      "common_mistakes": [
+        "差損と差益の符号を逆にする",
+        "取引日と決済日のレートを間違える",
+        "決済額全体を損益とする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-015",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "外貨建取引",
+      "subtopic": "決算時の換算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "決算日における外貨建売掛金は$5,000（取引日レート 1ドル=108円）。決算日のレートは1ドル=112円である。換算替えによる為替差損益はいくらか？",
+      "options": [
+        {"id": "A", "text": "為替差損 20,000円", "is_correct": false, "explanation": "符号が逆。外貨建売掛金（資産）は円安で円貨額が増えるため為替差益。"},
+        {"id": "B", "text": "為替差益 20,000円", "is_correct": true, "explanation": "正解。$5,000 × (112 - 108) = 20,000円の為替差益。換算後売掛金は560,000円となり、帳簿の540,000円から20,000円増加。"},
+        {"id": "C", "text": "為替差損 540,000円", "is_correct": false, "explanation": "取引日換算額そのもの。差額のみが損益となる。"},
+        {"id": "D", "text": "為替差益 4,000円", "is_correct": false, "explanation": "$5 × $4 で計算。$5,000の意味を取り違えている。"}
+      ],
+      "explanation": "外貨建金銭債権債務は決算日レート（CR: Closing Rate）で換算替えする。売掛金（資産）の円貨額: 取引日 $5,000 × 108 = 540,000円 → 決算日 $5,000 × 112 = 560,000円。差額20,000円が為替差益。仕訳: (借)売掛金 20,000 / (貸)為替差損益 20,000。",
+      "references": [
+        {"title": "外貨建取引 決算時の換算", "url": ""}
+      ],
+      "tags": ["外貨建取引", "為替換算", "決算整理", "売掛金"],
+      "common_mistakes": [
+        "資産と負債で符号を逆にしてしまう",
+        "決算日レートと取引日レートを混同する",
+        "全額を損益にする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-016",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "リース取引",
+      "subtopic": "リース資産・リース債務の計上",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ファイナンス・リース取引（所有権移転外）で機械を取得した。リース期間5年、年間リース料300,000円（年1回後払い）、リース料総額の現在価値1,300,000円、見積現金購入価額1,350,000円。リース資産に計上すべき金額はいくらか？",
+      "options": [
+        {"id": "A", "text": "1,500,000円", "is_correct": false, "explanation": "リース料総額（300,000 × 5年）。利息相当額を含むため過大計上。"},
+        {"id": "B", "text": "1,350,000円", "is_correct": false, "explanation": "見積現金購入価額。所有権移転外ファイナンス・リースでは現在価値と見積現金購入価額のいずれか低い方を採用するが、これは高い方。"},
+        {"id": "C", "text": "1,300,000円", "is_correct": true, "explanation": "正解。所有権移転外ファイナンス・リースは『リース料総額の現在価値』と『見積現金購入価額』のいずれか低い方で計上。1,300,000 < 1,350,000なので1,300,000円。"},
+        {"id": "D", "text": "300,000円", "is_correct": false, "explanation": "年間リース料1回分。総額ではない。"}
+      ],
+      "explanation": "ファイナンス・リース（所有権移転外）の計上額は『リース料総額の割引現在価値』と『見積現金購入価額』のいずれか低い方。本問では現在価値1,300,000円 < 見積購入価額1,350,000円のため1,300,000円。仕訳: (借)リース資産 1,300,000 / (貸)リース債務 1,300,000。リース料総額1,500,000との差200,000円は利息相当額。",
+      "references": [
+        {"title": "企業会計基準第13号 リース取引に関する会計基準", "url": ""}
+      ],
+      "tags": ["リース取引", "ファイナンス・リース", "リース資産", "現在価値"],
+      "common_mistakes": [
+        "リース料総額をそのまま計上する",
+        "高い方を採用してしまう",
+        "オペレーティング・リースと混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-017",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "リース取引",
+      "subtopic": "減価償却",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "リース資産1,300,000円（所有権移転外ファイナンス・リース、リース期間5年、経済的耐用年数8年、残存価額0）について、当期の減価償却費（定額法）はいくらか？",
+      "options": [
+        {"id": "A", "text": "162,500円", "is_correct": false, "explanation": "経済的耐用年数8年で計算。所有権移転外はリース期間で償却する。"},
+        {"id": "B", "text": "260,000円", "is_correct": true, "explanation": "正解。所有権移転外ファイナンス・リースはリース期間で償却。1,300,000 ÷ 5年 = 260,000円。"},
+        {"id": "C", "text": "300,000円", "is_correct": false, "explanation": "リース料額そのもの。減価償却額とリース料は別。"},
+        {"id": "D", "text": "200,000円", "is_correct": false, "explanation": "減価償却の計算方法・期間が不明確。"}
+      ],
+      "explanation": "所有権移転外ファイナンス・リース資産の減価償却は『リース期間』を耐用年数とし、残存価額ゼロで定額法等により計算する（経済的耐用年数ではない）。これは、リース期間終了後に資産が貸主に返却されるため。所有権移転（条項付）の場合は『経済的耐用年数』で減価償却する。本問: 1,300,000 ÷ 5年 = 260,000円。",
+      "references": [
+        {"title": "リース資産の減価償却", "url": ""}
+      ],
+      "tags": ["リース取引", "減価償却", "定額法", "リース期間"],
+      "common_mistakes": [
+        "経済的耐用年数で計算する",
+        "所有権移転と移転外を混同する",
+        "残存価額を設定してしまう"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-018",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "有価証券",
+      "subtopic": "売買目的有価証券の評価",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "売買目的有価証券（取得原価500,000円）の決算日時価は580,000円である。決算整理仕訳として正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "(借)売買目的有価証券 80,000 / (貸)有価証券評価益 80,000", "is_correct": true, "explanation": "正解。売買目的有価証券は時価評価し、評価差額は当期の損益（営業外損益）として計上する。"},
+        {"id": "B", "text": "(借)売買目的有価証券 80,000 / (貸)その他有価証券評価差額金 80,000", "is_correct": false, "explanation": "純資産直入はその他有価証券の処理。売買目的は損益認識。"},
+        {"id": "C", "text": "仕訳不要", "is_correct": false, "explanation": "売買目的有価証券は時価評価が必須。仕訳不要は満期保有目的（取得原価で評価）と混同。"},
+        {"id": "D", "text": "(借)有価証券評価益 80,000 / (貸)売買目的有価証券 80,000", "is_correct": false, "explanation": "貸借が逆。価値増加なので資産を増やし、収益を計上する。"}
+      ],
+      "explanation": "売買目的有価証券は時価評価し、評価差額を当期の損益（有価証券評価益/評価損）として認識する。短期売買が目的なので、変動を即時に損益反映する。これに対し、満期保有目的債券は取得原価（または償却原価法）、その他有価証券は時価評価で純資産直入、子会社・関連会社株式は取得原価で評価する。",
+      "references": [
+        {"title": "金融商品に関する会計基準", "url": ""}
+      ],
+      "tags": ["有価証券", "売買目的", "時価評価", "決算整理"],
+      "common_mistakes": [
+        "その他有価証券と混同する",
+        "貸借を逆にする",
+        "時価評価が不要と勘違い"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-019",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "有価証券",
+      "subtopic": "満期保有目的債券",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "X1年4月1日に満期保有目的で社債（額面1,000,000円）を960,000円で取得。満期日X6年3月31日（5年）。償却原価法（定額法）を採用した場合、X2年3月期末の有価証券簿価はいくらか？",
+      "options": [
+        {"id": "A", "text": "960,000円", "is_correct": false, "explanation": "取得原価のまま。満期保有目的でも取得差額がある場合は償却原価法を適用する。"},
+        {"id": "B", "text": "968,000円", "is_correct": true, "explanation": "正解。差額40,000円(=1,000,000-960,000)を5年で按分し、年8,000円を加算。X2年3月期末: 960,000 + 8,000 = 968,000円。"},
+        {"id": "C", "text": "1,000,000円", "is_correct": false, "explanation": "満期償却額を一括計上した場合の金額。年按分が必要。"},
+        {"id": "D", "text": "952,000円", "is_correct": false, "explanation": "差額40,000を5年で按分した8,000を控除している。償却原価法では加算する（取得原価<額面の場合）。"}
+      ],
+      "explanation": "満期保有目的債券で取得原価と額面に差がある場合、償却原価法（定額法）を適用する。差額40,000円を5年で均等按分し、年8,000円を有価証券簿価に加算（同時に有価証券利息として収益認識）。X2年3月末: 960,000 + 8,000 = 968,000円。仕訳: (借)満期保有目的債券 8,000 / (貸)有価証券利息 8,000。",
+      "references": [
+        {"title": "金融商品会計 償却原価法", "url": ""}
+      ],
+      "tags": ["有価証券", "満期保有目的", "償却原価法", "債券"],
+      "common_mistakes": [
+        "償却原価法を適用しない",
+        "符号を逆にする（取得原価<額面なら加算）",
+        "5年を一括処理する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-020",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "圧縮記帳",
+      "subtopic": "直接減額方式",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "国庫補助金3,000,000円を受領し、機械装置5,000,000円を取得した。圧縮記帳（直接減額方式）を行う場合、機械装置のB/S計上額はいくらか？",
+      "options": [
+        {"id": "A", "text": "5,000,000円", "is_correct": false, "explanation": "圧縮記帳を行わない場合の金額。圧縮記帳では取得原価から補助金額を直接控除する。"},
+        {"id": "B", "text": "2,000,000円", "is_correct": true, "explanation": "正解。直接減額方式では機械装置の取得原価5,000,000円から圧縮損3,000,000円を直接控除し、簿価2,000,000円とする。"},
+        {"id": "C", "text": "3,000,000円", "is_correct": false, "explanation": "国庫補助金の額。機械装置の簿価ではない。"},
+        {"id": "D", "text": "8,000,000円", "is_correct": false, "explanation": "5,000,000 + 3,000,000で計算。補助金は資産価額を増やすのではなく減らす（または利益として計上）。"}
+      ],
+      "explanation": "圧縮記帳（直接減額方式）の仕訳: ①(借)機械装置 5,000,000 / (貸)現金 5,000,000、②(借)現金 3,000,000 / (貸)国庫補助金受贈益 3,000,000、③(借)固定資産圧縮損 3,000,000 / (貸)機械装置 3,000,000。結果として機械装置簿価2,000,000円、損益はゼロ（受贈益と圧縮損が相殺）。圧縮記帳は補助金等の課税繰延が目的。",
+      "references": [
+        {"title": "圧縮記帳 国庫補助金", "url": ""}
+      ],
+      "tags": ["圧縮記帳", "国庫補助金", "直接減額方式", "固定資産"],
+      "common_mistakes": [
+        "補助金を加算する",
+        "圧縮損を計上しない",
+        "積立金方式と混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-021",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "引当金",
+      "subtopic": "退職給付引当金（中小企業簡便法）",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "引当金の計上要件として、最も適切でないものはどれか？",
+      "options": [
+        {"id": "A", "text": "将来の特定の費用または損失であること", "is_correct": false, "explanation": "正しい要件。引当金は将来の費用・損失に対して計上される。"},
+        {"id": "B", "text": "発生が当期以前の事象に起因していること", "is_correct": false, "explanation": "正しい要件。当期の事業活動から生じた事象による必要がある。"},
+        {"id": "C", "text": "発生の可能性が高いこと", "is_correct": false, "explanation": "正しい要件。発生確率が低い場合は引当計上しない（偶発債務として注記）。"},
+        {"id": "D", "text": "金額を厳密に確定できること", "is_correct": true, "explanation": "正解（=最も適切でない）。引当金は『金額を合理的に見積もることができる』ことが要件であり、厳密な確定は不要。確定していれば未払金等で処理する。"}
+      ],
+      "explanation": "引当金の4要件: ①将来の特定の費用または損失、②発生が当期以前の事象に起因、③発生の可能性が高い、④金額を『合理的に見積もり』可能。厳密な確定が条件ではなく、見積もりで足りる点が引当金の特徴。確定債務は未払金、確実でない場合は偶発債務として注記。",
+      "references": [
+        {"title": "企業会計原則 注解18 引当金", "url": ""}
+      ],
+      "tags": ["引当金", "計上要件", "見積もり", "保守主義"],
+      "common_mistakes": [
+        "確定額が必要と誤解する",
+        "未払金との区別ができない",
+        "可能性の高低を考慮しない"
+      ],
+      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-022",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "株主資本等変動計算書",
+      "subtopic": "剰余金の配当",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "資本金20,000,000円、資本準備金3,000,000円、利益準備金1,500,000円の会社が、剰余金の配当を2,000,000円実施する。会社法に従い、利益準備金として積み立てるべき金額はいくらか？",
+      "options": [
+        {"id": "A", "text": "200,000円", "is_correct": true, "explanation": "正解。配当額の1/10 = 200,000円。資本準備金3,000,000 + 利益準備金1,500,000 = 4,500,000円 < 資本金の1/4 = 5,000,000円なので、不足額500,000円までは積立必要。配当額の1/10である200,000円が積立額。"},
+        {"id": "B", "text": "500,000円", "is_correct": false, "explanation": "資本金の1/4までの不足額。会社法上は『配当額の1/10』と『不足額』のいずれか少ない方を積み立てる。"},
+        {"id": "C", "text": "0円", "is_correct": false, "explanation": "準備金が資本金の1/4に達していないため積立義務は生じる。"},
+        {"id": "D", "text": "2,000,000円", "is_correct": false, "explanation": "配当額そのもの。準備金積立額は配当額ではない。"}
+      ],
+      "explanation": "会社法上、剰余金の配当時には配当額の1/10を準備金として積み立てる必要がある（資本金の1/4に達するまで）。本問では配当2,000,000の1/10=200,000円。準備金合計4,500,000円は資本金1/4=5,000,000円未満なので積立義務あり。500,000円の不足額に対し、配当額1/10の200,000円が積立額（少ない方）。",
+      "references": [
+        {"title": "会社法第445条 準備金の積立", "url": ""}
+      ],
+      "tags": ["株主資本等変動計算書", "剰余金の配当", "利益準備金", "会社法"],
+      "common_mistakes": [
+        "1/10ルールを忘れる",
+        "1/4の不足額を積み立ててしまう",
+        "資本準備金と利益準備金の合計を考慮しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-023",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "連結P/L 当期純利益",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "P社（個別当期純利益 5,000,000円）はS社（80%子会社、個別当期純利益1,000,000円）を保有。のれん償却額は100,000円。連結P/L上の『親会社株主に帰属する当期純利益』はいくらか？",
+      "options": [
+        {"id": "A", "text": "5,800,000円", "is_correct": false, "explanation": "P社利益5,000,000 + S社利益全額1,000,000 - のれん償却100,000 - 非支配株主分100,000 にしているが、計算が混在。"},
+        {"id": "B", "text": "5,700,000円", "is_correct": true, "explanation": "正解。P社利益5,000,000 + S社利益1,000,000 - のれん償却100,000 - 非支配株主帰属分(1,000,000×20%=200,000) = 5,700,000円。"},
+        {"id": "C", "text": "6,000,000円", "is_correct": false, "explanation": "P社+S社の単純合算。のれん償却と非支配株主持分を考慮していない。"},
+        {"id": "D", "text": "5,000,000円", "is_correct": false, "explanation": "P社個別利益のみ。S社の利益も連結に取り込む必要がある。"}
+      ],
+      "explanation": "連結P/L: ①P社利益とS社利益を合算 → ②のれん償却額を控除 → ③非支配株主持分(=S社利益×非支配株主比率)を控除。本問: 5,000,000 + 1,000,000 - 100,000 - (1,000,000 × 20%) = 5,700,000円。非支配株主持分は連結P/L上、当期純利益から控除する形で表示。",
+      "references": [
+        {"title": "連結損益計算書の作成", "url": ""}
+      ],
+      "tags": ["連結会計", "連結P/L", "当期純利益", "非支配株主"],
+      "common_mistakes": [
+        "のれん償却を忘れる",
+        "非支配株主持分を控除しない",
+        "全額連結だが親会社帰属分のみ表示することを混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-024",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "内部取引の売上消去",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "P社はS社（100%子会社）に当期商品を800,000円販売した（S社はすべて外部に販売済）。連結修正で必要な売上・仕入の消去金額はいくらか？",
+      "options": [
+        {"id": "A", "text": "売上800,000、売上原価800,000を消去", "is_correct": true, "explanation": "正解。連結グループ内の商品売買は、外部への売上ではないので売上と売上原価を同額消去する。"},
+        {"id": "B", "text": "消去不要（外部に販売済のため）", "is_correct": false, "explanation": "S社が外部に販売済でも、P社→S社の売買自体は内部取引であり消去が必要。"},
+        {"id": "C", "text": "売上のみ800,000を消去", "is_correct": false, "explanation": "売上のみ消去では損益が変わってしまう。売上原価も同額消去する。"},
+        {"id": "D", "text": "売上400,000、売上原価400,000を消去", "is_correct": false, "explanation": "100%子会社で持分調整は不要。全額消去する。"}
+      ],
+      "explanation": "連結グループ内の商品売買は内部取引として消去する。S社が外部に販売済でも、P→S間の売上自体は内部取引。仕訳: (借)売上高 800,000 / (貸)売上原価 800,000。これによりグループ全体の売上は外部販売額のみとなる。期末在庫が残れば未実現利益も別途消去（ダウンストリーム）。",
+      "references": [
+        {"title": "連結会計 内部取引消去", "url": ""}
+      ],
+      "tags": ["連結会計", "内部取引", "売上消去", "売上原価"],
+      "common_mistakes": [
+        "外部販売済なら消去不要と誤解する",
+        "片方のみ消去する",
+        "持分比率を掛けてしまう"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-025",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "税効果会計",
+      "subtopic": "永久差異と一時差異",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "次のうち、税効果会計の対象となる『一時差異』に該当するものはどれか？",
+      "options": [
+        {"id": "A", "text": "受取配当金の益金不算入額", "is_correct": false, "explanation": "永久差異。将来にわたって課税所得との差が解消されないため、税効果の対象外。"},
+        {"id": "B", "text": "交際費の損金不算入額", "is_correct": false, "explanation": "永久差異。将来も損金算入されないため、税効果の対象外。"},
+        {"id": "C", "text": "減価償却超過額", "is_correct": true, "explanation": "正解。一時差異。会計上の償却額が税法基準額を超える分は、将来の償却で差額が解消するため『将来減算一時差異』となり繰延税金資産を計上。"},
+        {"id": "D", "text": "罰金・過料の損金不算入額", "is_correct": false, "explanation": "永久差異。罰金は税法上恒久的に損金不算入であり、将来も差異は解消されない。"}
+      ],
+      "explanation": "税効果会計では、会計と税務の差異を『一時差異』と『永久差異』に分ける。一時差異: 将来解消する差異（減価償却超過額、引当金の損金不算入等） → 税効果対象。永久差異: 将来も解消しない差異（受取配当金益金不算入、交際費損金不算入、罰金等） → 税効果対象外。一時差異のみ繰延税金資産・負債を計上。",
+      "references": [
+        {"title": "税効果会計 一時差異と永久差異", "url": ""}
+      ],
+      "tags": ["税効果会計", "一時差異", "永久差異", "減価償却超過"],
+      "common_mistakes": [
+        "永久差異も税効果対象と勘違い",
+        "交際費を一時差異と誤解",
+        "減価償却超過を永久差異と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-026",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "減損会計",
+      "subtopic": "回収可能価額の判定",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "減損会計における『回収可能価額』の定義として正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "正味売却価額と使用価値のいずれか『高い方』", "is_correct": true, "explanation": "正解。回収可能価額は処分(売却)と保有・使用(使用価値)のうち、企業にとって有利な方を選択する。"},
+        {"id": "B", "text": "正味売却価額と使用価値のいずれか『低い方』", "is_correct": false, "explanation": "低い方ではない。低い方を採用すると過剰な減損計上となるため、企業にとって合理的な意思決定（高い方を選択）を反映する。"},
+        {"id": "C", "text": "正味売却価額と帳簿価額のいずれか低い方", "is_correct": false, "explanation": "回収可能価額の定義ではない。帳簿価額は減損損失の測定で比較対象となるが、回収可能価額そのものとは別。"},
+        {"id": "D", "text": "割引前将来CFの総額", "is_correct": false, "explanation": "割引前は『減損認識』の判定に使う。回収可能価額（測定）は割引後の使用価値や正味売却価額。"}
+      ],
+      "explanation": "回収可能価額 = max(正味売却価額, 使用価値)。資産から得られる経済的便益として①売却して得る価値、②保有・使用して得る価値の高い方を選ぶ。これは資産を最も有利に処分・利用するという経済合理性を反映した定義。減損損失 = 帳簿価額 - 回収可能価額。",
+      "references": [
+        {"title": "減損会計基準 回収可能価額", "url": ""}
+      ],
+      "tags": ["減損会計", "回収可能価額", "正味売却価額", "使用価値"],
+      "common_mistakes": [
+        "低い方を選択すると勘違い",
+        "割引前CFと混同する",
+        "認識と測定を混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-027",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "退職給付会計",
+      "subtopic": "退職給付引当金 残高",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "教育系SaaSの期末データ: 退職給付債務(PBO) 8,000,000円、年金資産 3,000,000円、未認識数理計算上の差異 500,000円（債務側に有利、未認識）。B/S上の退職給付引当金（個別F/S）はいくらか？",
+      "options": [
+        {"id": "A", "text": "5,000,000円", "is_correct": false, "explanation": "PBO - 年金資産で計算。未認識数理差異の調整を忘れている。"},
+        {"id": "B", "text": "4,500,000円", "is_correct": true, "explanation": "正解。個別F/Sでは未認識数理差異を調整。8,000,000 - 3,000,000 - 500,000 = 4,500,000円。"},
+        {"id": "C", "text": "5,500,000円", "is_correct": false, "explanation": "符号を間違え、未認識差異を加算している。有利差異は引当金を減らす。"},
+        {"id": "D", "text": "8,000,000円", "is_correct": false, "explanation": "PBOそのもの。年金資産を控除する必要がある。"}
+      ],
+      "explanation": "個別財務諸表上の退職給付引当金 = PBO - 年金資産 - 未認識数理計算上の差異 - 未認識過去勤務費用。本問: 8,000,000 - 3,000,000 - 500,000 = 4,500,000円。連結F/Sでは未認識項目もOCIで認識し、引当金は5,000,000円となる（個別と連結で異なる点に注意）。",
+      "references": [
+        {"title": "退職給付会計基準 個別と連結の違い", "url": ""}
+      ],
+      "tags": ["退職給付会計", "退職給付引当金", "未認識数理差異", "個別F/S"],
+      "common_mistakes": [
+        "未認識差異の調整を忘れる",
+        "個別と連結を混同する",
+        "符号を間違える"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-028",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "外貨建取引",
+      "subtopic": "輸出取引の換算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FinTech企業が3月15日に商品を$20,000で輸出（取引日レート 1ドル=109円）。決算日(3/31)レート111円、決済日(4/20)レート108円であった。決算日における売掛金の円換算額として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "2,180,000円", "is_correct": false, "explanation": "取引日レート109円のまま換算。決算日には決算日レートで換算替えが必要。"},
+        {"id": "B", "text": "2,220,000円", "is_correct": true, "explanation": "正解。決算日レート111円 × $20,000 = 2,220,000円。差額40,000円は為替差益。"},
+        {"id": "C", "text": "2,160,000円", "is_correct": false, "explanation": "決済日レート108円で換算しているが、決算日時点ではまだ未決済。決算日レートを使う。"},
+        {"id": "D", "text": "2,000,000円", "is_correct": false, "explanation": "$20,000 × 100円で計算。レートが異なる。"}
+      ],
+      "explanation": "外貨建金銭債権債務は決算日に決算日レート(CR)で換算替えする。本問の売掛金は$20,000 × 111 = 2,220,000円。取引時の2,180,000円との差額40,000円が為替差益として計上される。決済は翌期のため、決済日レートは使わない（決済時に再度換算）。",
+      "references": [
+        {"title": "外貨建取引 決算時換算", "url": ""}
+      ],
+      "tags": ["外貨建取引", "為替換算", "売掛金", "決算日レート"],
+      "common_mistakes": [
+        "取引日レートのまま",
+        "決済日レートを使う",
+        "AR(Average Rate)を使う"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-029",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "リース取引",
+      "subtopic": "ファイナンスとオペレーティングの判定",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "リース取引が『ファイナンス・リース』に分類される基準として正しいのはどれか？（複数の判定基準のうち適切なもの）",
+      "options": [
+        {"id": "A", "text": "リース料総額の現在価値が見積現金購入価額の概ね90%以上、またはリース期間が経済的耐用年数の概ね75%以上", "is_correct": true, "explanation": "正解。これがファイナンス・リースの定量基準（90%テスト・75%テスト）。いずれかに該当すればファイナンス・リース。"},
+        {"id": "B", "text": "リース料総額が1,000,000円以上の場合", "is_correct": false, "explanation": "金額基準ではない。少額リース(300万円以下等)は簡便処理可能だが、判定基準ではない。"},
+        {"id": "C", "text": "リース期間が3年以上の場合", "is_correct": false, "explanation": "期間の絶対値ではなく、経済的耐用年数との比率（75%）が判定基準。"},
+        {"id": "D", "text": "貸主が法人の場合", "is_correct": false, "explanation": "貸主の属性は分類基準ではない。"}
+      ],
+      "explanation": "ファイナンス・リース判定: ①現在価値基準（リース料総額の現在価値が見積現金購入価額の概ね90%以上）、②経済的耐用年数基準（リース期間が経済的耐用年数の75%以上）。いずれかに該当すればファイナンス・リース、両方非該当ならオペレーティング・リース（賃借料処理）。",
+      "references": [
+        {"title": "リース会計 分類基準", "url": ""}
+      ],
+      "tags": ["リース取引", "ファイナンス・リース", "判定基準", "75%・90%"],
+      "common_mistakes": [
+        "金額や期間の絶対値で判定する",
+        "両方該当が条件と誤解",
+        "オペレーティングと混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-030",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "連結B/S 利益剰余金",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "P社利益剰余金 6,000,000円、S社利益剰余金 2,000,000円（うち支配獲得時1,500,000円）、P社のS社持分70%、のれん償却累計額 60,000円。連結B/S上の利益剰余金はいくらか？",
+      "options": [
+        {"id": "A", "text": "8,000,000円", "is_correct": false, "explanation": "P社+S社の単純合算。支配獲得時剰余金と非支配株主分、のれん償却を考慮していない。"},
+        {"id": "B", "text": "6,290,000円", "is_correct": true, "explanation": "正解。P社剰余金6,000,000 + (S社支配獲得後増加分500,000 × 70%) - のれん償却60,000 = 6,000,000 + 350,000 - 60,000 = 6,290,000円。"},
+        {"id": "C", "text": "6,000,000円", "is_correct": false, "explanation": "P社個別の剰余金のみ。S社の支配獲得後増加分（親会社持分）を含める必要がある。"},
+        {"id": "D", "text": "7,400,000円", "is_correct": false, "explanation": "S社剰余金全額(2,000,000)に70%を掛けた1,400,000を加算しているが、支配獲得時1,500,000は連結B/S形成時に消去済み。"}
+      ],
+      "explanation": "連結B/S利益剰余金 = P社利益剰余金 + (S社支配獲得後の利益剰余金増加額 × 親会社持分比率) - のれん償却累計額。S社支配獲得後増加分 = 2,000,000 - 1,500,000 = 500,000円。これに70%を乗じて350,000円が親会社帰属。のれん償却60,000を控除し、6,000,000 + 350,000 - 60,000 = 6,290,000円。",
+      "references": [
+        {"title": "連結貸借対照表の作成", "url": ""}
+      ],
+      "tags": ["連結会計", "連結B/S", "利益剰余金", "支配獲得時"],
+      "common_mistakes": [
+        "支配獲得時の剰余金を引かない",
+        "持分比率を掛けない",
+        "のれん償却を忘れる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-031",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "有価証券",
+      "subtopic": "その他有価証券（部分純資産直入法）",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "その他有価証券（A銘柄: 取得原価300,000円、時価350,000円）、（B銘柄: 取得原価500,000円、時価420,000円）。部分純資産直入法を採用する場合、損益計算書に計上される金額はいくらか？（税効果は無視）",
+      "options": [
+        {"id": "A", "text": "評価益 50,000円のみ", "is_correct": false, "explanation": "評価益は純資産直入。損益計上ではない。部分純資産直入法では評価損のみ損益計上。"},
+        {"id": "B", "text": "評価損 80,000円のみ", "is_correct": true, "explanation": "正解。部分純資産直入法では評価益(A=50,000)は純資産直入、評価損(B=80,000)は当期損益として計上。"},
+        {"id": "C", "text": "評価損 30,000円（純額）", "is_correct": false, "explanation": "純額処理ではない。部分純資産直入法では評価益と評価損を分けて処理する。"},
+        {"id": "D", "text": "計上なし", "is_correct": false, "explanation": "全部純資産直入法でもないため、評価損は損益認識する必要がある。"}
+      ],
+      "explanation": "その他有価証券の評価には全部純資産直入法と部分純資産直入法がある。部分純資産直入法: 評価益→純資産直入、評価損→損益計上（保守主義）。本問では銘柄ごとに判定: A銘柄評価益50,000は純資産直入、B銘柄評価損80,000はP/Lに『投資有価証券評価損』として計上。",
+      "references": [
+        {"title": "金融商品会計 その他有価証券", "url": ""}
+      ],
+      "tags": ["有価証券", "その他有価証券", "部分純資産直入法", "評価損益"],
+      "common_mistakes": [
+        "全部純資産直入と混同する",
+        "純額で処理してしまう",
+        "銘柄ごと判定を忘れる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-032",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "リース取引",
+      "subtopic": "支払利息の計算",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ファイナンス・リース取引（リース債務計上額1,300,000円、リース料総額1,500,000円、リース期間5年、利子率年5%、年1回後払300,000円）の1年目の支払利息はいくらか？（利息法）",
+      "options": [
+        {"id": "A", "text": "40,000円", "is_correct": false, "explanation": "200,000円(=1,500,000-1,300,000)を5年で按分しただけ。利息法では残高×利率で計算。"},
+        {"id": "B", "text": "65,000円", "is_correct": true, "explanation": "正解。利息法では期首残高 × 利率。1,300,000 × 5% = 65,000円が1年目の利息。"},
+        {"id": "C", "text": "300,000円", "is_correct": false, "explanation": "支払総額そのもの。利息と元本の区別が必要。"},
+        {"id": "D", "text": "75,000円", "is_correct": false, "explanation": "1,500,000 × 5% で計算。残高はリース債務1,300,000で計算する。"}
+      ],
+      "explanation": "ファイナンス・リースの利息は『利息法』が原則: 期首リース債務残高 × 利子率。1年目: 1,300,000 × 5% = 65,000円が利息、残り300,000-65,000=235,000円が元本返済。仕訳: (借)リース債務 235,000、(借)支払利息 65,000 / (貸)現金 300,000。利息と元本を分離する点が定額法と異なる。",
+      "references": [
+        {"title": "リース会計 利息法", "url": ""}
+      ],
+      "tags": ["リース取引", "支払利息", "利息法", "ファイナンス・リース"],
+      "common_mistakes": [
+        "定額按分してしまう",
+        "リース料総額に利率を掛ける",
+        "元本と利息の区別ができない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-033",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "税効果会計",
+      "subtopic": "繰延税金資産の計上要件",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "繰延税金資産の計上について、保守主義の観点から正しい記述はどれか？",
+      "options": [
+        {"id": "A", "text": "将来減算一時差異が発生すれば、必ず全額繰延税金資産を計上する", "is_correct": false, "explanation": "全額計上ではない。将来課税所得で回収可能性が認められる範囲で計上する。"},
+        {"id": "B", "text": "将来の課税所得で回収可能性が認められる金額に限り計上する", "is_correct": true, "explanation": "正解。回収可能性の判断は重要で、企業分類(分類1～5)に応じて見積期間が異なる。回収不能と判断される部分には繰延税金資産を計上しない。"},
+        {"id": "C", "text": "繰延税金負債と相殺してネットで計上する場合のみ認められる", "is_correct": false, "explanation": "相殺は表示の問題。資産・負債の認識は別個に行い、回収可能性の有無で資産の計上判断する。"},
+        {"id": "D", "text": "経営者の裁量で任意に計上できる", "is_correct": false, "explanation": "任意ではない。会計基準に基づき回収可能性を判断する必要がある。"}
+      ],
+      "explanation": "繰延税金資産は『将来の課税所得との相殺により回収可能性』が認められる範囲でのみ計上する。日本では企業を分類1～5に区分し、過去の業績や将来の課税所得見込みに基づき回収可能額を算定。回収不能部分は評価性引当額として控除（米国基準ではvaluation allowance）。これは保守主義の現れ。",
+      "references": [
+        {"title": "繰延税金資産の回収可能性に関する適用指針", "url": ""}
+      ],
+      "tags": ["税効果会計", "繰延税金資産", "回収可能性", "保守主義"],
+      "common_mistakes": [
+        "全額計上できると勘違い",
+        "経営者裁量と誤解する",
+        "ネット表示と認識を混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-034",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "アップストリーム取引の未実現利益",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "S社（P社60%子会社）はP社に商品を1,000,000円（原価700,000円）で販売した。P社は期末にこの商品の40%を在庫として保有している。連結修正で『非支配株主』に負担させる未実現利益はいくらか？",
+      "options": [
+        {"id": "A", "text": "120,000円", "is_correct": false, "explanation": "未実現利益総額。アップストリームでは持分比率で親会社・非支配株主に按分する。"},
+        {"id": "B", "text": "48,000円", "is_correct": true, "explanation": "正解。未実現利益 = (1,000,000-700,000) × 40% = 120,000円。アップストリームでは非支配株主にも按分: 120,000 × 40%(非支配比率) = 48,000円。"},
+        {"id": "C", "text": "72,000円", "is_correct": false, "explanation": "120,000 × 60%。これは親会社負担分（連結利益剰余金から控除）。"},
+        {"id": "D", "text": "0円", "is_correct": false, "explanation": "アップストリームでも未実現利益は消去対象。非支配株主にも按分する必要がある。"}
+      ],
+      "explanation": "アップストリーム（子→親）の未実現利益消去: ①利益総額 = (1,000,000-700,000) × 40% = 120,000円を全額消去 → ②持分比率で按分。親会社60%×120,000=72,000円(連結利益剰余金から控除)、非支配株主40%×120,000=48,000円(非支配株主持分から控除)。ダウンストリームは全額親会社負担、アップストリームは按分する点が違い。",
+      "references": [
+        {"title": "連結会計 未実現利益（アップストリーム）", "url": ""}
+      ],
+      "tags": ["連結会計", "未実現利益", "アップストリーム", "非支配株主"],
+      "common_mistakes": [
+        "ダウンストリームと同じく全額親会社負担とする",
+        "非支配株主への按分を忘れる",
+        "在庫率を考慮しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-035",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "圧縮記帳",
+      "subtopic": "圧縮後の減価償却",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "圧縮記帳（直接減額方式）後の機械装置簿価は2,000,000円（圧縮前5,000,000円、補助金3,000,000円）。耐用年数5年、残存価額0、定額法。当期の減価償却費はいくらか？",
+      "options": [
+        {"id": "A", "text": "1,000,000円", "is_correct": false, "explanation": "圧縮前簿価5,000,000で計算。圧縮後簿価で減価償却を計算する。"},
+        {"id": "B", "text": "400,000円", "is_correct": true, "explanation": "正解。圧縮後簿価2,000,000 ÷ 耐用年数5年 = 400,000円。"},
+        {"id": "C", "text": "600,000円", "is_correct": false, "explanation": "補助金3,000,000を5年で按分しただけ。圧縮後簿価で計算する。"},
+        {"id": "D", "text": "200,000円", "is_correct": false, "explanation": "1,000,000を5年で按分。基礎金額が異なる。"}
+      ],
+      "explanation": "圧縮記帳後の減価償却は『圧縮後の簿価』を基礎に計算する。これにより毎期の減価償却費が小さくなり、課税所得が圧縮されない（=課税が将来に繰延べられる）効果が出る。本問: 2,000,000 ÷ 5 = 400,000円。圧縮しなければ年1,000,000円であったので、当期600,000円分の課税が繰延べられる。",
+      "references": [
+        {"title": "圧縮記帳と減価償却", "url": ""}
+      ],
+      "tags": ["圧縮記帳", "減価償却", "課税繰延", "国庫補助金"],
+      "common_mistakes": [
+        "圧縮前簿価で計算する",
+        "補助金額で計算する",
+        "圧縮の意義を理解していない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-036",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "株主資本等変動計算書",
+      "subtopic": "自己株式の処分",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "自己株式（簿価1,000,000円）を1,200,000円で処分した。処分時の仕訳として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "(借)現金 1,200,000 / (貸)自己株式 1,200,000", "is_correct": false, "explanation": "自己株式は簿価で減らす。差額は『その他資本剰余金』へ。"},
+        {"id": "B", "text": "(借)現金 1,200,000 / (貸)自己株式 1,000,000、(貸)その他資本剰余金 200,000", "is_correct": true, "explanation": "正解。自己株式は簿価で減少、処分差益はその他資本剰余金（純資産）へ計上。損益にしないのが特徴。"},
+        {"id": "C", "text": "(借)現金 1,200,000 / (貸)自己株式 1,000,000、(貸)自己株式処分益 200,000", "is_correct": false, "explanation": "差額は損益（処分益）ではない。資本取引なのでその他資本剰余金（純資産直入）。"},
+        {"id": "D", "text": "(借)現金 1,200,000 / (貸)資本金 1,000,000、(貸)資本剰余金 200,000", "is_correct": false, "explanation": "資本金は変動しない。自己株式の減少として処理する。"}
+      ],
+      "explanation": "自己株式の処分は『資本取引』のため損益計上しない。処分価額 > 簿価なら差額を『その他資本剰余金』(純資産)に計上、処分価額 < 簿価なら『その他資本剰余金』を取崩し、不足ならさらに『繰越利益剰余金』を取崩す。これは株主との取引(資本取引)を損益取引と区別する原則(資本取引・損益取引区分の原則)に基づく。",
+      "references": [
+        {"title": "自己株式及び準備金の額の減少等に関する会計基準", "url": ""}
+      ],
+      "tags": ["株主資本等変動計算書", "自己株式", "その他資本剰余金", "資本取引"],
+      "common_mistakes": [
+        "差額を損益計上する",
+        "自己株式を時価で減らす",
+        "資本金を変動させる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-037",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "退職給付会計",
+      "subtopic": "数理計算上の差異",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "退職給付会計における『数理計算上の差異』の発生原因として最も適切なものはどれか？",
+      "options": [
+        {"id": "A", "text": "退職給付規程の変更", "is_correct": false, "explanation": "規程変更は『過去勤務費用』の発生原因。数理計算上の差異とは別。"},
+        {"id": "B", "text": "年金資産の期待運用収益と実際運用収益との差異", "is_correct": true, "explanation": "正解。期待値と実績値の乖離（運用差異）が代表例。他に予定昇給率や予定退職率など計算前提と実績との差異も該当。"},
+        {"id": "C", "text": "退職金の支払い", "is_correct": false, "explanation": "退職金支払はPBOの減少として処理される正常な変動。差異ではない。"},
+        {"id": "D", "text": "勤務費用の発生", "is_correct": false, "explanation": "勤務費用は当期勤務に対応する正常な債務増加。差異ではない。"}
+      ],
+      "explanation": "数理計算上の差異は、退職給付債務(PBO)や年金資産の計算前提（割引率、退職率、昇給率、運用収益率等）と実績との乖離から生じる。代表例は『期待運用収益と実際運用収益の差異』。発生時に一括認識せず、平均残存勤務期間以内の一定年数で按分処理するのが原則。一方、規程変更による差異は『過去勤務費用』。",
+      "references": [
+        {"title": "退職給付会計基準 数理計算上の差異", "url": ""}
+      ],
+      "tags": ["退職給付会計", "数理計算上の差異", "年金資産", "運用収益"],
+      "common_mistakes": [
+        "過去勤務費用と混同する",
+        "通常の債務増加を差異と誤解",
+        "発生原因を特定できない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-038",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "減損会計",
+      "subtopic": "のれんの減損",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "P社が3年前にM&Aで取得したFinTech子会社（のれん簿価200,000円）の事業資産（帳簿価額1,800,000円、のれん含むと2,000,000円）について減損兆候があり、回収可能価額1,500,000円と判定された。減損損失はいくらか？",
+      "options": [
+        {"id": "A", "text": "300,000円", "is_correct": false, "explanation": "事業資産1,800,000-1,500,000 で計算。のれんを含めて減損対象とする必要がある。"},
+        {"id": "B", "text": "500,000円", "is_correct": true, "explanation": "正解。のれんを含む資産グループの帳簿価額2,000,000 - 回収可能価額1,500,000 = 500,000円。原則としてのれんから優先的に減損損失を配分。"},
+        {"id": "C", "text": "200,000円", "is_correct": false, "explanation": "のれんの簿価そのもの。減損損失額ではない。"},
+        {"id": "D", "text": "0円", "is_correct": false, "explanation": "回収可能価額が帳簿価額を下回るため減損損失は発生する。"}
+      ],
+      "explanation": "のれんは関連する資産グループ（または事業）と一体で減損テストを行う。資産グループの帳簿価額にのれんを含めて評価し、回収可能価額を下回ればその差額を減損損失とする。原則としてのれんから先に減損損失を配分し、残額を他の資産に簿価比例で配分する。本問: 2,000,000 - 1,500,000 = 500,000円が減損損失。",
+      "references": [
+        {"title": "減損会計 のれんを含む資産グループ", "url": ""}
+      ],
+      "tags": ["減損会計", "のれん", "資産グループ", "M&A"],
+      "common_mistakes": [
+        "のれんを含めない",
+        "のれんのみで減損計算する",
+        "配分順序を逆にする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-039",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "引当金",
+      "subtopic": "賞与引当金の見積り",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "決算日3月31日の会社で、6月支給予定の賞与見込額6,000,000円の支給対象期間が前年12月～当年5月の6か月間である。当期に計上すべき賞与引当金繰入額はいくらか？",
+      "options": [
+        {"id": "A", "text": "6,000,000円", "is_correct": false, "explanation": "賞与全額。当期負担分は支給対象期間のうち当期分のみ。"},
+        {"id": "B", "text": "4,000,000円", "is_correct": true, "explanation": "正解。当期負担月数は12月～3月の4か月。6,000,000 × 4/6 = 4,000,000円。"},
+        {"id": "C", "text": "3,000,000円", "is_correct": false, "explanation": "1月～3月の3か月で計算。支給対象期間は12月から始まるので4か月分。"},
+        {"id": "D", "text": "2,000,000円", "is_correct": false, "explanation": "翌期負担分(4,5月)2か月分。当期と翌期を混同している。"}
+      ],
+      "explanation": "賞与引当金は、賞与の支給対象期間のうち当期に対応する月数分を計上する。本問の支給対象期間は前年12月～当年5月の6か月。決算日3月末時点で4か月（12,1,2,3月）が経過。残り2か月（4,5月）は翌期負担。当期計上額: 6,000,000 × 4/6 = 4,000,000円。仕訳: (借)賞与引当金繰入 4,000,000 / (貸)賞与引当金 4,000,000。",
+      "references": [
+        {"title": "賞与引当金の計上", "url": ""}
+      ],
+      "tags": ["引当金", "賞与引当金", "見積り", "期間按分"],
+      "common_mistakes": [
+        "支給対象期間を間違える",
+        "当期と翌期の按分を逆にする",
+        "全額計上する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "boki-2-keisan-040",
+      "version": "1.0",
+      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
+      "domain": {"id": "shogyo-keisan", "name": "商業簿記 - 個別計算", "weight_percent": 20},
+      "topic": "連結会計",
+      "subtopic": "支配獲得日のれん（ケーススタディ）",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "東海地方の製造業P社は、医療系SaaSのS社株式の90%を2,500,000円で取得した。支配獲得日のS社のB/Sは: 諸資産簿価3,000,000円(時価3,400,000円)、諸負債簿価1,000,000円(時価1,000,000円)、資本金1,500,000円、利益剰余金500,000円。連結時に計上すべき『のれん』の金額として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "100,000円", "is_correct": false, "explanation": "投資額2,500,000 - 時価純資産2,400,000 = 100,000円としているが、持分比率90%を考慮していない。"},
+        {"id": "B", "text": "340,000円", "is_correct": true, "explanation": "正解。投資額2,500,000 - (時価純資産2,400,000 × 90%) = 2,500,000 - 2,160,000 = 340,000円。"},
+        {"id": "C", "text": "500,000円", "is_correct": false, "explanation": "投資額2,500,000 - 簿価純資産2,000,000 で計算。時価評価と持分を考慮していない。"},
+        {"id": "D", "text": "700,000円", "is_correct": false, "explanation": "投資額2,500,000 - (簿価純資産2,000,000 × 90%) = 700,000円。時価評価を考慮していない。"}
+      ],
+      "explanation": "のれん = 投資額 - (子会社純資産時価 × 親会社持分比率)。S社純資産時価 = 諸資産時価3,400,000 - 諸負債時価1,000,000 = 2,400,000円。親会社持分相当額 = 2,400,000 × 90% = 2,160,000円。のれん = 2,500,000 - 2,160,000 = 340,000円。",
+      "references": [
+        {"title": "連結会計のれん 総合演習", "url": ""}
+      ],
+      "tags": ["連結会計", "のれん", "総合", "M&A", "時価評価"],
+      "common_mistakes": [
+        "簿価で計算する",
+        "持分比率を全体に掛ける",
+        "負債の時価評価を忘れる"
+      ],
+      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.3},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

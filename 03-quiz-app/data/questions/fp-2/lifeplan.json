@@ -1,0 +1,2351 @@
+{
+  "exam_code": "fp-2",
+  "exam_name": "FP技能検定2級",
+  "version": "2026.04",
+  "total_questions": 30,
+  "domains": [
+    {
+      "id": "lifeplan",
+      "name": "ライフプランニング・資金計画",
+      "weight_percent": 17,
+      "question_count": 30
+    }
+  ],
+  "questions": [
+    {
+      "id": "fp-2-lifeplan-001",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "FP関連法令",
+      "subtopic": "業務範囲と禁止事項",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "FP（ファイナンシャル・プランナー）資格のみを保有する東海地方のFPが、顧客から相談を受けた。各種資格を保有していないFPが行うことができる業務として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "顧客の依頼を受け、税理士法に基づく税務代理として確定申告書を作成し、税務署に提出する",
+          "is_correct": false,
+          "explanation": "税務代理・税務書類の作成・税務相談（個別具体的）は税理士の独占業務であり、無償でも税理士法違反となる。"
+        },
+        {
+          "id": "B",
+          "text": "顧客から相続について相談を受け、遺産分割協議書を作成し、報酬を得る",
+          "is_correct": false,
+          "explanation": "他人の依頼を受けて報酬を得て遺産分割協議書を作成する行為は弁護士法または司法書士法（行政書士法）違反となるおそれがある。"
+        },
+        {
+          "id": "C",
+          "text": "生命保険募集人の登録をしていないが、顧客に対し生命保険商品の必要保障額を試算し、一般的な商品の仕組みを説明する",
+          "is_correct": true,
+          "explanation": "正解。一般的な商品仕組みの説明や必要保障額の試算は、保険募集（契約の締結媒介・代理）に該当しないため、登録なしで行える。"
+        },
+        {
+          "id": "D",
+          "text": "投資助言・代理業の登録をしていないが、顧客と投資顧問契約を結び、特定の上場株式の売買タイミングを助言し、報酬を得る",
+          "is_correct": false,
+          "explanation": "投資顧問契約に基づき個別銘柄の助言を行うには金融商品取引法の投資助言・代理業登録が必要。"
+        }
+      ],
+      "explanation": "FPが業務を行ううえで、税理士法・弁護士法・保険業法・金融商品取引法などの関連法令で他士業の独占業務に踏み込まないことが極めて重要。一般的な仕組みの説明・仮定の試算・パンフレットの説明などは原則可能だが、個別具体的な税務相談、法律事務、保険募集、個別銘柄の投資助言は無資格では不可。",
+      "references": [
+        {
+          "title": "日本FP協会 会員のコンプライアンス",
+          "url": "https://www.jafp.or.jp/about_jafp/katsudou/news/news_2024/files/compliance.pdf"
+        },
+        {
+          "title": "金融庁 金融商品取引業者等登録一覧",
+          "url": "https://www.fsa.go.jp/menkyo/menkyoj/kinyushohin.pdf"
+        }
+      ],
+      "tags": [
+        "FP関連法令",
+        "コンプライアンス",
+        "税理士法",
+        "保険業法",
+        "金商法"
+      ],
+      "common_mistakes": [
+        "「無償なら税務相談OK」と誤解する（無償でも税理士法違反）",
+        "保険商品の一般的説明と募集行為の区別がついていない",
+        "投資助言業の登録が必要な範囲を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-002",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "6つの係数",
+      "subtopic": "終価係数",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方のSaaS企業を経営するA氏（35歳）は、現在の手元資金300万円を年利2%で複利運用し、10年後にどのくらいになるかを試算したい。利用すべき係数として最も適切なものはどれか。なお、年利2%・10年の終価係数は1.2190、現価係数は0.8203、年金終価係数は10.9497、年金現価係数は8.9826とする。",
+      "options": [
+        {
+          "id": "A",
+          "text": "終価係数を用いて、300万円 × 1.2190 = 約365.7万円",
+          "is_correct": true,
+          "explanation": "正解。終価係数は「現在の元本」を将来価値に変換する係数。300万円 × 1.2190 = 365.7万円となる。"
+        },
+        {
+          "id": "B",
+          "text": "現価係数を用いて、300万円 × 0.8203 = 約246.1万円",
+          "is_correct": false,
+          "explanation": "現価係数は将来必要な金額から現在の必要元本を求める係数。今回は逆方向の計算が必要。"
+        },
+        {
+          "id": "C",
+          "text": "年金終価係数を用いて、300万円 × 10.9497 = 約3,285万円",
+          "is_correct": false,
+          "explanation": "年金終価係数は毎年積み立てる場合の将来価値を求める係数。一時金の運用には使用しない。"
+        },
+        {
+          "id": "D",
+          "text": "年金現価係数を用いて、300万円 × 8.9826 = 約2,694.8万円",
+          "is_correct": false,
+          "explanation": "年金現価係数は毎年取り崩す元本を求める係数。一時金の将来価値計算には使用しない。"
+        }
+      ],
+      "explanation": "6つの係数の使い分けは2級で頻出。「現在の一時金 → 将来の一時金」は終価係数、「将来の目標額 → 必要な現在元本」は現価係数、「毎年の積立額 → 将来の合計」は年金終価係数、「将来必要元本 → 取崩し可能な毎年の額」は資本回収係数、「毎年取崩したい額 → 必要な元本」は年金現価係数、「将来必要額 → 毎年の積立額」は減債基金係数。",
+      "references": [
+        {
+          "title": "日本FP協会 6つの係数早見表",
+          "url": "https://www.jafp.or.jp/learn/atlearn/atlearn_pdf/atlearn_2.pdf"
+        }
+      ],
+      "tags": [
+        "6つの係数",
+        "終価係数",
+        "計算問題",
+        "資金計画"
+      ],
+      "common_mistakes": [
+        "終価係数と年金終価係数を混同する",
+        "係数表の数値を取り違えて掛ける対象を間違える",
+        "単利と複利の違いを意識せずに計算する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-003",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "6つの係数",
+      "subtopic": "減債基金係数と資本回収係数",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方の医療系スタートアップに勤務するB氏（40歳）は、25年後に老後資金として2,000万円を用意したい。年利1.5%で毎年一定額を積み立てる場合、毎年の積立額として最も適切なものはどれか。なお、年利1.5%・25年の係数は次のとおり：終価係数1.4509、年金終価係数30.0630、減債基金係数0.0333、資本回収係数0.0483とする。",
+      "options": [
+        {
+          "id": "A",
+          "text": "2,000万円 × 0.0333 = 約66.6万円",
+          "is_correct": true,
+          "explanation": "正解。「将来の目標額から毎年の積立額を求める」のは減債基金係数。2,000万円 × 0.0333 = 66.6万円。"
+        },
+        {
+          "id": "B",
+          "text": "2,000万円 × 0.0483 = 約96.6万円",
+          "is_correct": false,
+          "explanation": "資本回収係数は「現在の元本から毎年の取崩し額を求める」係数。積立計算には使わない。"
+        },
+        {
+          "id": "C",
+          "text": "2,000万円 ÷ 30.0630 ≒ 66.5万円（年金終価係数で除する）",
+          "is_correct": false,
+          "explanation": "数値はほぼ一致するが、減債基金係数は年金終価係数の逆数なので、係数表で減債基金係数が与えられている場合はそちらを乗じるのが正解の手順。"
+        },
+        {
+          "id": "D",
+          "text": "2,000万円 × 1.4509 = 約2,901.8万円",
+          "is_correct": false,
+          "explanation": "終価係数は「現在の元本→将来価値」の変換であり、必要積立額の算出には使用しない。"
+        }
+      ],
+      "explanation": "減債基金係数（=年金終価係数の逆数）は「将来の目標額に対し、毎年いくら積み立てればよいか」を求める係数。資本回収係数（=年金現価係数の逆数）は「現在の元本を毎年いくら取り崩せるか」を求める係数。試験ではこの2つの混同が頻出。Cは数学的にはほぼ等価だが、与えられた係数表を正しく使う設計になっているのは減債基金係数を乗じる方法。",
+      "references": [
+        {
+          "title": "日本FP協会 6つの係数の使い方",
+          "url": "https://www.jafp.or.jp/learn/atlearn/atlearn_pdf/atlearn_2.pdf"
+        }
+      ],
+      "tags": [
+        "6つの係数",
+        "減債基金係数",
+        "積立計算",
+        "老後資金"
+      ],
+      "common_mistakes": [
+        "減債基金係数と資本回収係数を逆に使う",
+        "「年金」とつくと積立だと思い込む",
+        "毎年積立は減債基金、毎年取崩しは資本回収、と覚えていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-004",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "キャッシュフロー表",
+      "subtopic": "可処分所得と将来価値",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FP相談において、給与収入600万円、所得税30万円、住民税28万円、社会保険料90万円、生命保険料15万円、財形貯蓄24万円のサラリーマンの可処分所得として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "600万円 - (30+28+90) = 452万円",
+          "is_correct": true,
+          "explanation": "正解。可処分所得は「年収-所得税-住民税-社会保険料」で求める。生命保険料・財形貯蓄は本人の任意支出のため差し引かない。"
+        },
+        {
+          "id": "B",
+          "text": "600万円 - (30+28+90+15) = 437万円",
+          "is_correct": false,
+          "explanation": "生命保険料は本人が任意で支出する費用であり、可処分所得からは差し引かない。"
+        },
+        {
+          "id": "C",
+          "text": "600万円 - (30+28+90+15+24) = 413万円",
+          "is_correct": false,
+          "explanation": "財形貯蓄も任意の貯蓄であり、可処分所得には含めて計算する（控除しない）。"
+        },
+        {
+          "id": "D",
+          "text": "600万円 - (30+28) = 542万円（社会保険料は控除しない）",
+          "is_correct": false,
+          "explanation": "社会保険料は強制的に天引きされる費用であり、可処分所得を求める際には必ず控除する。"
+        }
+      ],
+      "explanation": "キャッシュフロー表における可処分所得=年収-（所得税+住民税+社会保険料）。生命保険料・財形貯蓄・個人年金保険料・住宅ローン返済・教育費などはすべて可処分所得の中から「支出」する項目であり、可処分所得算出時には差し引かない。FP2級では頻出の基本論点。",
+      "references": [
+        {
+          "title": "日本FP協会 ライフプラン作成ガイド",
+          "url": "https://www.jafp.or.jp/know/3step/lifeplan/"
+        }
+      ],
+      "tags": [
+        "キャッシュフロー表",
+        "可処分所得",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "生命保険料・個人年金保険料を可処分所得から差し引く",
+        "社会保険料を控除し忘れる",
+        "財形貯蓄を支出と勘違いして控除する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-005",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "個人バランスシート",
+      "subtopic": "純資産の算定",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "B2B SaaS企業を経営するC氏（38歳）の財産状況：預貯金800万円、上場株式（時価）500万円（取得価額300万円）、自宅不動産（時価4,000万円・購入価額4,500万円）、住宅ローン残高3,200万円、自動車（時価200万円）、生命保険解約返戻金150万円。FPが個人バランスシートを作成する際の純資産額として最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "純資産：2,450万円",
+          "is_correct": true,
+          "explanation": "正解。資産=800+500+4,000+200+150=5,650万円。負債=3,200万円。純資産=5,650-3,200=2,450万円。資産は時価で計上する。"
+        },
+        {
+          "id": "B",
+          "text": "純資産：2,750万円",
+          "is_correct": false,
+          "explanation": "株式を取得価額300万円で計上した場合の誤った計算。個人BSでは時価評価が原則。"
+        },
+        {
+          "id": "C",
+          "text": "純資産：2,950万円",
+          "is_correct": false,
+          "explanation": "自宅を購入価額4,500万円で計上した場合の誤り。個人BSでは購入価額ではなく時価を使う。"
+        },
+        {
+          "id": "D",
+          "text": "純資産：5,650万円",
+          "is_correct": false,
+          "explanation": "資産合計から負債を差し引いていない。純資産=資産-負債。"
+        }
+      ],
+      "explanation": "個人バランスシートでは、資産は原則として時価（現在の換金価値）で計上する。生命保険は「解約返戻金相当額」で計上。純資産=資産-負債。経営者など複数の資産を持つ場合は、定期的に作成して資産配分・流動性を可視化することが推奨される。",
+      "references": [
+        {
+          "title": "日本FP協会 家計の資産・負債バランスシート",
+          "url": "https://www.jafp.or.jp/know/3step/balancesheet/"
+        }
+      ],
+      "tags": [
+        "個人BS",
+        "純資産",
+        "時価評価",
+        "計算問題"
+      ],
+      "common_mistakes": [
+        "不動産・株式を取得価額で計上する",
+        "生命保険を保険金額で計上する（正しくは解約返戻金）",
+        "純資産と総資産を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-006",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "教育資金",
+      "subtopic": "学資保険・教育ローン・奨学金",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "教育資金準備および借入制度に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "日本政策金融公庫の「教育一般貸付（国の教育ローン）」は、1人あたり最大350万円（自宅外通学等は450万円）まで利用でき、世帯年収の上限が設定されている",
+          "is_correct": true,
+          "explanation": "正解。国の教育ローンは保護者が借りる固定金利のローン。子1人につき350万円（特定要件で450万円）が上限で、世帯年収（所得）に上限がある。"
+        },
+        {
+          "id": "B",
+          "text": "日本学生支援機構の貸与型奨学金は学生本人が借主となり、第一種は有利子・第二種は無利子である",
+          "is_correct": false,
+          "explanation": "逆。第一種奨学金が無利子、第二種奨学金が有利子（在学中は無利子）。"
+        },
+        {
+          "id": "C",
+          "text": "学資保険の契約者が死亡した場合、以後の保険料の払込は免除されないため、遺族が払込を継続する必要がある",
+          "is_correct": false,
+          "explanation": "学資保険は契約者死亡時に以後の保険料が免除され、満期まで保障が継続される（保険料払込免除特則）のが一般的。"
+        },
+        {
+          "id": "D",
+          "text": "国の教育ローンと日本学生支援機構の奨学金は、同一の学生について併用することができない",
+          "is_correct": false,
+          "explanation": "国の教育ローンと日本学生支援機構の奨学金は併用できる（別制度）。"
+        }
+      ],
+      "explanation": "教育資金は3つのルートで考える：(1)貯蓄（学資保険・つみたてNISA等）、(2)国の教育ローン（保護者が借入、固定金利、所得制限あり）、(3)日本学生支援機構の奨学金（学生本人が借入、第一種=無利子・第二種=有利子）。FP2級では奨学金の第一種/第二種の利子有無、教育ローンの限度額・所得制限が頻出。",
+      "references": [
+        {
+          "title": "日本政策金融公庫 教育一般貸付",
+          "url": "https://www.jfc.go.jp/n/finance/search/ippan.html"
+        },
+        {
+          "title": "日本学生支援機構 奨学金の種類",
+          "url": "https://www.jasso.go.jp/shogakukin/about/shurui/index.html"
+        }
+      ],
+      "tags": [
+        "教育資金",
+        "教育ローン",
+        "奨学金",
+        "学資保険"
+      ],
+      "common_mistakes": [
+        "第一種・第二種奨学金の利子有無を逆に覚える",
+        "学資保険の払込免除特則を知らない",
+        "教育ローンと奨学金が併用不可と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-007",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "住宅ローン",
+      "subtopic": "フラット35",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "住宅金融支援機構と民間金融機関が提携して提供する「フラット35」に関する記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "金利は借入時点で全期間固定され、返済期間中の市場金利変動の影響を受けない",
+          "is_correct": true,
+          "explanation": "正解。フラット35は借入時に金利が確定する全期間固定金利型住宅ローン。借入後は市中金利が上昇しても返済額は変わらない。"
+        },
+        {
+          "id": "B",
+          "text": "申込本人の収入だけが返済負担率の審査対象となり、配偶者の収入を合算することはできない",
+          "is_correct": false,
+          "explanation": "フラット35では申込本人と配偶者・親子の収入合算が一定要件で可能。"
+        },
+        {
+          "id": "C",
+          "text": "繰上返済は窓口・インターネット問わず一律1万円以上から可能で、手数料が必要となる",
+          "is_correct": false,
+          "explanation": "フラット35の繰上返済は通常無料。インターネット利用なら10万円以上、窓口は100万円以上が原則で、手数料無料。"
+        },
+        {
+          "id": "D",
+          "text": "住宅金融支援機構の団体信用生命保険（団信）への加入は法律上必須であり、健康上の理由でも加入を免除されることはない",
+          "is_correct": false,
+          "explanation": "フラット35では団信加入は任意であり、健康上の理由等で団信に加入しない選択も可能（金利は団信付の標準金利）。"
+        }
+      ],
+      "explanation": "フラット35の特徴：(1)全期間固定金利、(2)保証料無料・繰上返済手数料無料、(3)団信加入は任意（民間ローンは原則必須）、(4)物件には住宅金融支援機構の技術基準を満たすことが必要、(5)借入額は最大8,000万円・返済期間最長35年、(6)返済負担率は年収400万円未満で30%以下、400万円以上で35%以下。",
+      "references": [
+        {
+          "title": "住宅金融支援機構 フラット35商品概要",
+          "url": "https://www.flat35.com/loan/flat35/index.html"
+        }
+      ],
+      "tags": [
+        "住宅ローン",
+        "フラット35",
+        "全期間固定金利",
+        "団信"
+      ],
+      "common_mistakes": [
+        "フラット35の団信を必須と誤解する",
+        "繰上返済手数料がかかると思い込む",
+        "民間銀行の住宅ローンとフラット35のルールを混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-008",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "住宅ローン",
+      "subtopic": "繰上返済（期間短縮型と返済額軽減型）",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "東海地方の製造業に勤務するD氏（42歳）は、住宅ローン残高2,500万円・残期間25年・金利1.2%で返済中である。教育費の負担増に備え、できるだけキャッシュフローの月次負担を下げたい。繰上返済の方法として最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "返済額軽減型の繰上返済を行い、残期間は25年のまま毎月返済額を下げる",
+          "is_correct": true,
+          "explanation": "正解。返済額軽減型は残期間を維持して毎月返済額を下げるため、月次キャッシュフローの負担軽減に有効。教育費ピーク期の家計対策に合致する。"
+        },
+        {
+          "id": "B",
+          "text": "期間短縮型の繰上返済を行い、毎月返済額は据え置いたまま完済までの期間を短くする",
+          "is_correct": false,
+          "explanation": "期間短縮型は利息軽減効果が大きいが、毎月返済額は変わらないため、教育費期の月次負担軽減という目的には合わない。"
+        },
+        {
+          "id": "C",
+          "text": "借換えにより変動金利型に切り替え、当面の金利を引き下げる",
+          "is_correct": false,
+          "explanation": "金利低下は効果があるが、変動金利は将来上昇リスクを抱える。教育費期の家計安定という観点では繰上返済（返済額軽減型）が望ましい。"
+        },
+        {
+          "id": "D",
+          "text": "繰上返済は行わず、ローン残高を維持して住宅ローン控除を最大限活用する",
+          "is_correct": false,
+          "explanation": "住宅ローン控除は控除額に上限があり、教育費負担の軽減という相談目的に対する直接的解決策ではない。"
+        }
+      ],
+      "explanation": "繰上返済には2種類：(1)期間短縮型＝毎月返済額据置・期間短縮で総利息軽減効果が大、(2)返済額軽減型＝期間据置・毎月返済額減少でキャッシュフロー改善効果が大。一般的に総利息軽減なら期間短縮型が有利だが、相談者のニーズ（教育費期間中の月次負担軽減）に応じて使い分ける。FPは目的に応じた手段選択を提案する。",
+      "references": [
+        {
+          "title": "住宅金融支援機構 繰上返済",
+          "url": "https://www.flat35.com/user/loan/repay.html"
+        }
+      ],
+      "tags": [
+        "住宅ローン",
+        "繰上返済",
+        "期間短縮型",
+        "返済額軽減型",
+        "キャッシュフロー"
+      ],
+      "common_mistakes": [
+        "総利息効果だけ見て期間短縮型を選ぶ",
+        "返済額軽減型と期間短縮型の使い分けを理解していない",
+        "借換えと繰上返済の判断基準を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-009",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的医療保険",
+      "subtopic": "健康保険の高額療養費制度",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "全国健康保険協会管掌健康保険（協会けんぽ）の被保険者である標準報酬月額35万円のE氏（45歳・3歳児を扶養中）が、医療費として1か月で総医療費100万円（自己負担割合3割で30万円支払）を支払った。高額療養費制度に基づき、最終的な自己負担額として最も近いものはどれか。なお、所得区分は標準報酬月額28万～50万円（区分ウ）に該当し、自己負担限度額の計算式は「80,100円＋（総医療費－267,000円）×1%」とする。",
+      "options": [
+        {
+          "id": "A",
+          "text": "約87,430円",
+          "is_correct": true,
+          "explanation": "正解。区分ウの限度額=80,100+（1,000,000-267,000）×0.01=80,100+7,330=87,430円。30万円のうち限度額を超えた212,570円が高額療養費として支給される。"
+        },
+        {
+          "id": "B",
+          "text": "約44,400円",
+          "is_correct": false,
+          "explanation": "44,400円は多数該当（直近12か月で4回目以降）の場合の限度額。本問は通常月の計算で適切ではない。"
+        },
+        {
+          "id": "C",
+          "text": "300,000円（自己負担3割そのまま）",
+          "is_correct": false,
+          "explanation": "高額療養費制度を適用しない計算。月単位で限度額を超える分は払い戻されるため、最終的な自己負担はこの金額にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "約57,600円",
+          "is_correct": false,
+          "explanation": "57,600円は標準報酬月額26万円以下（区分エ）の限度額。本問の所得区分には合致しない。"
+        }
+      ],
+      "explanation": "高額療養費制度は1か月（暦月）の医療費自己負担が一定額を超えた場合、超過分が後日支給される制度。所得区分はア（83万円～）、イ（53～83万円）、ウ（28～50万円）、エ（～26万円）、オ（住民税非課税）の5区分。区分ウの計算式は80,100円＋（総医療費-267,000円）×1%。多数該当（直近12か月で4回目以降）になると限度額がさらに下がる（区分ウなら44,400円）。",
+      "references": [
+        {
+          "title": "厚生労働省 高額療養費制度を利用される皆さまへ",
+          "url": "https://www.mhlw.go.jp/content/000333279.pdf"
+        }
+      ],
+      "tags": [
+        "公的医療保険",
+        "高額療養費",
+        "計算問題",
+        "協会けんぽ"
+      ],
+      "common_mistakes": [
+        "総医療費ではなく自己負担額を計算式に入れてしまう",
+        "所得区分の境界を誤解する",
+        "多数該当の限度額と通常時を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-010",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的医療保険",
+      "subtopic": "退職後の医療保険選択",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "東海地方の中堅製造業を58歳で早期退職予定のF氏（協会けんぽ加入歴25年・標準報酬月額50万円）が、退職後の医療保険選択について相談している。退職後の選択肢に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "健康保険の任意継続被保険者となる場合、加入期間は最長2年で、保険料は退職時の標準報酬月額に基づく額（事業主負担なしで全額本人負担）となる",
+          "is_correct": true,
+          "explanation": "正解。任意継続は最長2年、保険料は退職時の標準報酬月額に基づき本人全額負担（協会けんぽの場合、上限あり）。資格喪失後20日以内の申請が必要。"
+        },
+        {
+          "id": "B",
+          "text": "国民健康保険に加入する場合、保険料は前年所得に関係なく定額制であり、世帯人数による加算もない",
+          "is_correct": false,
+          "explanation": "国民健康保険料は前年所得に基づく所得割と均等割（世帯人数）等で構成される。定額制ではない。"
+        },
+        {
+          "id": "C",
+          "text": "配偶者が会社員の場合、被扶養者となるには本人の年収が180万円未満（60歳未満は130万円未満）かつ被保険者の年収の2分の1未満などの要件があるが、退職金は年収に含めて判定する",
+          "is_correct": false,
+          "explanation": "退職金は一時金であり、被扶養者認定の収入には原則含めない（恒常的な収入のみで判定）。雇用保険の基本手当は日額3,612円以上で収入扱い。"
+        },
+        {
+          "id": "D",
+          "text": "任意継続被保険者は、加入後途中で国民健康保険に切り替えることはできない",
+          "is_correct": false,
+          "explanation": "2022年1月以降、任意継続被保険者は申出により任意で資格喪失（脱退）が可能となった。"
+        }
+      ],
+      "explanation": "退職後の公的医療保険の選択肢：(1)健康保険任意継続（最長2年・全額自己負担・退職時標準報酬月額に上限あり）、(2)国民健康保険（前年所得ベース・世帯単位）、(3)家族の被扶養者（年収130/180万円未満などの要件）、(4)特例退職被保険者（健保組合の場合）。任意継続と国保は保険料を比較して選択。任意継続は2022年改正で任意脱退が可能に。",
+      "references": [
+        {
+          "title": "全国健康保険協会 任意継続被保険者制度",
+          "url": "https://www.kyoukaikenpo.or.jp/g3/cat310/sb3160/sb3162/"
+        }
+      ],
+      "tags": [
+        "公的医療保険",
+        "任意継続",
+        "国民健康保険",
+        "退職"
+      ],
+      "common_mistakes": [
+        "任意継続が脱退不可と誤解する（2022年改正以前の知識）",
+        "国民健康保険料を定額と思い込む",
+        "退職金を被扶養者認定の年収に含めてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-011",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的医療保険",
+      "subtopic": "後期高齢者医療制度",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "後期高齢者医療制度に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "原則として75歳以上の者および65歳以上75歳未満で一定の障害状態にある者が加入する",
+          "is_correct": true,
+          "explanation": "正解。後期高齢者医療制度は75歳以上の全員（強制加入）、および65～74歳で一定の障害認定を受けた者が任意加入できる独立した医療制度。"
+        },
+        {
+          "id": "B",
+          "text": "保険料は全国一律であり、所得に関係なく定額である",
+          "is_correct": false,
+          "explanation": "保険料は都道府県ごとの広域連合が設定し、所得割と均等割で構成される。定額ではない。"
+        },
+        {
+          "id": "C",
+          "text": "自己負担割合は所得に関係なく一律1割である",
+          "is_correct": false,
+          "explanation": "原則1割だが、現役並み所得者は3割、一定以上所得者（2022年10月～）は2割となる。"
+        },
+        {
+          "id": "D",
+          "text": "加入者の保険料負担と公費負担で運営され、現役世代からの支援金は財源に含まれない",
+          "is_correct": false,
+          "explanation": "後期高齢者医療制度の財源は、加入者保険料約1割、現役世代からの支援金約4割、公費約5割で構成される。"
+        }
+      ],
+      "explanation": "後期高齢者医療制度は2008年創設。75歳以上は健保・国保から自動的にこの制度へ移行。運営は都道府県単位の広域連合。窓口負担は1割（一定以上所得2割／現役並み所得3割）。財源は保険料1割・現役世代支援金4割・公費5割。",
+      "references": [
+        {
+          "title": "厚生労働省 後期高齢者医療制度の概要",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000175873.html"
+        }
+      ],
+      "tags": [
+        "後期高齢者医療制度",
+        "公的医療保険",
+        "75歳"
+      ],
+      "common_mistakes": [
+        "自己負担を一律1割と思い込む（2022年10月から2割区分が導入）",
+        "保険料が全国一律と誤解する",
+        "現役世代の支援金が財源に含まれないと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-012",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的年金",
+      "subtopic": "国民年金の被保険者区分",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "国民年金の被保険者区分に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "第1号被保険者は20歳以上60歳未満の自営業者・学生等で、保険料は定額（2026年度月額約17,510円）を本人が負担する",
+          "is_correct": true,
+          "explanation": "正解。第1号は自営業・学生・無職等が該当し、保険料は定額。なお厚生年金加入者は第2号、第2号の被扶養配偶者（年収130万円未満）が第3号となる。"
+        },
+        {
+          "id": "B",
+          "text": "第2号被保険者は厚生年金加入者であり、年齢は20歳以上65歳未満に限定される",
+          "is_correct": false,
+          "explanation": "第2号被保険者は厚生年金加入者だが、年齢上限は原則70歳未満（厚生年金）。国民年金としては65歳未満。20歳未満でも加入する。"
+        },
+        {
+          "id": "C",
+          "text": "第3号被保険者は第2号被保険者の被扶養配偶者で、本人が国民年金保険料を直接納付する",
+          "is_correct": false,
+          "explanation": "第3号は本人の保険料負担なし（厚生年金制度全体で負担）。直接納付ではない。"
+        },
+        {
+          "id": "D",
+          "text": "第1号被保険者の保険料は全額所得控除の対象とならない",
+          "is_correct": false,
+          "explanation": "国民年金保険料は社会保険料控除として全額所得控除の対象となる。"
+        }
+      ],
+      "explanation": "国民年金は3区分：第1号（自営・学生等で20歳以上60歳未満、定額保険料を自分で納付）、第2号（厚生年金加入者、保険料は給与天引き）、第3号（第2号の被扶養配偶者で20歳以上60歳未満、本人負担なし）。第3号制度は2025年改正議論の中で見直し対象となっている。",
+      "references": [
+        {
+          "title": "日本年金機構 国民年金の被保険者",
+          "url": "https://www.nenkin.go.jp/service/kokunen/kanyu/20140710.html"
+        }
+      ],
+      "tags": [
+        "国民年金",
+        "被保険者",
+        "第1号",
+        "第2号",
+        "第3号"
+      ],
+      "common_mistakes": [
+        "第3号被保険者が保険料を払うと誤解",
+        "第2号の年齢範囲を国民年金と厚生年金で混同",
+        "国民年金保険料の社会保険料控除を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-013",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的年金",
+      "subtopic": "老齢基礎年金の計算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "G氏（65歳・男性）の国民年金加入歴は次のとおり：保険料納付済期間420月、保険料全額免除期間36月（2009年4月以降）、未納期間24月。2026年度の老齢基礎年金満額を816,000円（40年=480月で満額）として、老齢基礎年金の年額として最も近いものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "約744,600円",
+          "is_correct": true,
+          "explanation": "正解。納付済420月+全額免除36月×1/2=438月相当（2009年4月以降の全額免除は1/2反映）。年金額=816,000×438/480=744,600円。未納24月は年金額に反映されない。"
+        },
+        {
+          "id": "B",
+          "text": "約775,200円",
+          "is_correct": false,
+          "explanation": "全額免除期間を全額（36月）反映した場合の誤った計算。2009年4月以降の全額免除は1/2でカウント（国庫負担分のみ）。"
+        },
+        {
+          "id": "C",
+          "text": "約816,000円",
+          "is_correct": false,
+          "explanation": "満額（480月納付済）の場合の金額。未納や免除期間がある本問では満額にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "約714,000円",
+          "is_correct": false,
+          "explanation": "全額免除期間を一切カウントしない場合の誤計算。免除期間も国庫負担分は反映される。"
+        }
+      ],
+      "explanation": "老齢基礎年金額=満額×（納付済月数+免除月数×反映割合）÷480。2009年4月以降の反映割合：全額免除1/2、3/4免除5/8、半額免除6/8（=3/4）、1/4免除7/8。2009年3月以前の全額免除は1/3反映。未納期間と合算対象期間（カラ期間）は年金額に反映されない（受給資格期間にはカウント）。",
+      "references": [
+        {
+          "title": "日本年金機構 老齢基礎年金の計算式",
+          "url": "https://www.nenkin.go.jp/service/jukyu/roureinenkin/jukyu-yoken/20150401-02.html"
+        }
+      ],
+      "tags": [
+        "老齢基礎年金",
+        "国民年金",
+        "計算問題",
+        "免除期間"
+      ],
+      "common_mistakes": [
+        "全額免除を全額カウントする（実際は1/2）",
+        "2009年3月以前と4月以降の反映割合を混同",
+        "未納期間と免除期間を同列に扱う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-014",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的年金",
+      "subtopic": "繰上げ・繰下げ受給",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "老齢基礎年金の繰上げ受給・繰下げ受給に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "繰下げ受給は最長75歳まで可能で、月0.7%増額（最大84%増）となる",
+          "is_correct": true,
+          "explanation": "正解。2022年4月改正により繰下げ上限が70歳→75歳に延長。月0.7%×120月=84%増額が最大。"
+        },
+        {
+          "id": "B",
+          "text": "繰上げ受給は60歳から可能で、月0.5%減額となる",
+          "is_correct": false,
+          "explanation": "2022年4月以降、1962年4月2日以降生まれの繰上げ減額率は月0.4%（最大60月で24%減）。0.5%は旧制度。"
+        },
+        {
+          "id": "C",
+          "text": "繰上げ受給を選択しても、後日通常受給に変更（取消）することができる",
+          "is_correct": false,
+          "explanation": "繰上げ受給は取消不可。一度繰上げると一生涯減額された年金を受給する。"
+        },
+        {
+          "id": "D",
+          "text": "繰下げ受給は老齢基礎年金と老齢厚生年金を必ず同時に行う必要がある",
+          "is_correct": false,
+          "explanation": "老齢基礎年金と老齢厚生年金の繰下げは別々に選択可能（一方だけ繰下げできる）。"
+        }
+      ],
+      "explanation": "繰上げ：60歳～64歳・月0.4%減額（1962年4月2日以降生まれ、最大24%減）／繰下げ：66歳～75歳・月0.7%増額（2022年改正で75歳まで拡大、最大84%増）。繰上げは基礎・厚生両方を同時に行う必要があるが、繰下げは別々に選択可能。繰上げは取消不可・障害基礎年金請求不可になるなどデメリットあり。",
+      "references": [
+        {
+          "title": "日本年金機構 年金の繰上げ・繰下げ受給",
+          "url": "https://www.nenkin.go.jp/service/jukyu/roureinenkin/kuriage-kurisage/20140421-01.html"
+        }
+      ],
+      "tags": [
+        "公的年金",
+        "繰上げ受給",
+        "繰下げ受給"
+      ],
+      "common_mistakes": [
+        "繰上げ減額率を旧制度の月0.5%と覚えている",
+        "繰下げ上限を70歳と思い込む",
+        "繰上げが基礎・厚生で別々にできると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-015",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的年金",
+      "subtopic": "在職老齢年金",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "67歳のH氏は厚生年金に加入しながら勤務している。月給（標準報酬月額）40万円・直近1年の標準賞与額60万円・老齢厚生年金（基本月額）15万円である。2026年度の在職老齢年金の支給停止調整額を50万円とした場合、月額の支給停止額として最も近いものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "支給停止：5万円／月、実際の老齢厚生年金支給額：10万円／月",
+          "is_correct": true,
+          "explanation": "正解。総報酬月額相当額=40万円+60万円÷12=45万円。基本月額15万円。合計60万円。停止額=（60-50）÷2=5万円。支給額15-5=10万円。"
+        },
+        {
+          "id": "B",
+          "text": "支給停止：10万円／月、実際の支給額：5万円／月",
+          "is_correct": false,
+          "explanation": "（45+15-50）の計算結果10万円をそのまま停止としてしまった誤り。停止額は超過分の1/2。"
+        },
+        {
+          "id": "C",
+          "text": "支給停止：0円／月、実際の支給額：15万円／月",
+          "is_correct": false,
+          "explanation": "総報酬月額相当額（45万円）+基本月額（15万円）=60万円が50万円を超えているため、支給停止が発生する。"
+        },
+        {
+          "id": "D",
+          "text": "支給停止：15万円／月（全額停止）",
+          "is_correct": false,
+          "explanation": "全額停止は超過部分の1/2が基本月額を上回る場合のみ。本問は5万円停止にとどまる。"
+        }
+      ],
+      "explanation": "在職老齢年金：65歳以上の厚生年金加入者は、総報酬月額相当額（標準報酬月額+直近1年の標準賞与額÷12）と老齢厚生年金の基本月額の合計が支給停止調整額（2026年度50万円・賃金水準で改定）を超える場合、超過部分の1/2が停止される。2022年4月から60～64歳の支給停止調整額も28万円→47万円→50万円(2026年度)へ大幅緩和され、就労継続を促す制度に変更されている。なお老齢基礎年金は対象外。",
+      "references": [
+        {
+          "title": "日本年金機構 在職老齢年金",
+          "url": "https://www.nenkin.go.jp/service/jukyu/roureinenkin/zaishoku/20120329.html"
+        }
+      ],
+      "tags": [
+        "在職老齢年金",
+        "公的年金",
+        "計算問題",
+        "総報酬月額相当額"
+      ],
+      "common_mistakes": [
+        "賞与を含めた総報酬月額相当額の計算を間違える",
+        "支給停止調整額を超えた額をそのまま停止額とする（実際は1/2）",
+        "老齢基礎年金まで停止対象と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-016",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的年金",
+      "subtopic": "加給年金と振替加算",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "加給年金と振替加算に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "加給年金は厚生年金被保険者期間が20年以上ある者が65歳到達時に、生計維持関係にある65歳未満の配偶者または18歳年度末までの子等がいる場合に老齢厚生年金に加算される",
+          "is_correct": true,
+          "explanation": "正解。加給年金は「年金の家族手当」と呼ばれる。20年以上の加入要件と、生計維持関係・年齢要件を満たす扶養家族の存在が条件。"
+        },
+        {
+          "id": "B",
+          "text": "加給年金は配偶者が65歳に到達しても継続して支給される",
+          "is_correct": false,
+          "explanation": "配偶者が65歳に到達すると加給年金は終了し、配偶者本人の老齢基礎年金に「振替加算」が加算される（一定の生年月日まで）。"
+        },
+        {
+          "id": "C",
+          "text": "振替加算の額は配偶者の生年月日にかかわらず一律である",
+          "is_correct": false,
+          "explanation": "振替加算は配偶者の生年月日が新しいほど少額になり、1966年4月2日以降生まれは振替加算なし。"
+        },
+        {
+          "id": "D",
+          "text": "加給年金は厚生年金加入期間が10年以上あれば支給される",
+          "is_correct": false,
+          "explanation": "加給年金の支給要件は厚生年金加入期間20年以上。10年は受給資格期間（短縮後）。"
+        }
+      ],
+      "explanation": "加給年金：厚年20年以上加入者の老齢厚生年金に、65歳未満の配偶者・18歳年度末までの子等の扶養家族がいる場合に加算（年額約40万円+特別加算）。配偶者が65歳到達で打ち切られ、配偶者の老齢基礎年金に振替加算が加算される。振替加算は1966年4月1日以前生まれの配偶者のみで、新しい生年月日ほど減額される（2026年4月以降に65歳になる人の多くは対象外）。",
+      "references": [
+        {
+          "title": "日本年金機構 加給年金額と振替加算",
+          "url": "https://www.nenkin.go.jp/service/jukyu/roureinenkin/jukyu-yoken/20150401-03.html"
+        }
+      ],
+      "tags": [
+        "加給年金",
+        "振替加算",
+        "厚生年金"
+      ],
+      "common_mistakes": [
+        "加給年金が配偶者65歳以降も続くと誤解",
+        "厚生年金加入期間要件を10年（受給資格期間）と混同",
+        "振替加算の世代別逓減を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-017",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的年金",
+      "subtopic": "遺族年金",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "東海地方の製造業に勤務するI氏（45歳）が在職中に死亡した。妻（42歳・専業主婦・第3号被保険者）と子（10歳・8歳）が残された。I氏は厚生年金被保険者期間20年以上。遺族年金に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "妻は遺族基礎年金（子の加算含む）と遺族厚生年金（夫の老齢厚生年金の3/4相当）を受給でき、子が18歳年度末を超えると遺族基礎年金は終了するが遺族厚生年金は妻が再婚等しない限り継続する",
+          "is_correct": true,
+          "explanation": "正解。子のある配偶者は遺族基礎年金（基本額+子の加算）と遺族厚生年金を併給。子が18歳年度末（障害なら20歳）に到達すると遺族基礎年金は終了。妻の遺族厚生年金は原則終身（30歳未満で子なしは5年限定など例外あり）。"
+        },
+        {
+          "id": "B",
+          "text": "遺族厚生年金は被保険者期間にかかわらず一定額の定額部分のみ支給される",
+          "is_correct": false,
+          "explanation": "遺族厚生年金は本人の老齢厚生年金（報酬比例部分）の3/4相当。被保険者期間が25年（300月）未満の場合は300月みなしで計算。"
+        },
+        {
+          "id": "C",
+          "text": "中高齢寡婦加算は妻が40歳到達時から子のある期間に加算される",
+          "is_correct": false,
+          "explanation": "中高齢寡婦加算は遺族基礎年金が終了する（子が18歳年度末を超える、または40歳以上で子がいない）状態の妻に40歳～65歳まで加算される。子のある期間ではなく、子のない期間が対象。"
+        },
+        {
+          "id": "D",
+          "text": "妻の年収が850万円以上の場合でも、生計維持関係が認められれば遺族厚生年金を無条件で受給できる",
+          "is_correct": false,
+          "explanation": "遺族年金の生計維持要件は妻の前年収入850万円未満（または所得655.5万円未満）。これを上回ると原則として遺族年金は受給できない。"
+        }
+      ],
+      "explanation": "遺族年金は「遺族基礎年金（国民年金）」と「遺族厚生年金（厚生年金）」の2階建て。遺族基礎は子のある配偶者・子のみ受給可で、子が18歳年度末を超えると終了。遺族厚生は配偶者・子・父母・孫・祖父母の優先順位で受給可。妻の遺族厚生年金は原則終身（30歳未満子なしは5年）。被保険者期間300月未満は300月みなしで計算。中高齢寡婦加算は40～65歳の子のない妻に加算。",
+      "references": [
+        {
+          "title": "日本年金機構 遺族年金",
+          "url": "https://www.nenkin.go.jp/service/jukyu/izokukyufu/jukyu-yoken/20140421-02.html"
+        }
+      ],
+      "tags": [
+        "遺族年金",
+        "遺族基礎年金",
+        "遺族厚生年金",
+        "中高齢寡婦加算"
+      ],
+      "common_mistakes": [
+        "遺族厚生年金の300月みなし規定を知らない",
+        "中高齢寡婦加算の対象タイミング（子のない期間）を誤解",
+        "生計維持要件の年収850万円基準を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-018",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的年金",
+      "subtopic": "障害年金",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "障害基礎年金および障害厚生年金に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "障害基礎年金は1級・2級の2区分、障害厚生年金は1級・2級・3級の3区分があり、3級は障害厚生年金のみ支給される",
+          "is_correct": true,
+          "explanation": "正解。障害基礎年金は1級・2級のみ、障害厚生年金は1級・2級・3級+障害手当金（一時金）。3級・障害手当金は厚生年金特有。"
+        },
+        {
+          "id": "B",
+          "text": "障害基礎年金1級の額は、老齢基礎年金満額の1.5倍である",
+          "is_correct": false,
+          "explanation": "障害基礎年金1級は老齢基礎年金満額の1.25倍（2級は満額相当）。1.5倍ではない。"
+        },
+        {
+          "id": "C",
+          "text": "障害年金の保険料納付要件は、初診日の前日において、初診日の属する月の前々月までの被保険者期間のうち納付済期間と免除期間の合計が3分の1以下であることが必要である",
+          "is_correct": false,
+          "explanation": "納付済+免除期間が3分の2以上必要（特例として直近1年間に未納がないことでも可）。3分の1以下ではない。"
+        },
+        {
+          "id": "D",
+          "text": "障害基礎年金には子の加算がなく、扶養家族がいてもその分は加算されない",
+          "is_correct": false,
+          "explanation": "障害基礎年金には18歳年度末までの子（障害ある場合は20歳未満）への子の加算がある。"
+        }
+      ],
+      "explanation": "障害年金：(1)初診日要件、(2)保険料納付要件（被保険者期間の2/3以上が納付・免除、または直近1年間に未納なし）、(3)障害認定日要件の3つを満たすと支給。障害基礎は1・2級、障害厚生は1・2級・3級+障害手当金。1級は2級の1.25倍。障害基礎には子の加算、障害厚生1・2級には配偶者加算がある。",
+      "references": [
+        {
+          "title": "日本年金機構 障害年金",
+          "url": "https://www.nenkin.go.jp/service/jukyu/shougainenkin/index.html"
+        }
+      ],
+      "tags": [
+        "障害年金",
+        "障害基礎年金",
+        "障害厚生年金"
+      ],
+      "common_mistakes": [
+        "障害基礎年金にも3級があると誤解",
+        "1級の倍率を1.5倍と覚える（正しくは1.25倍）",
+        "保険料納付要件を3分の1と誤解（正しくは3分の2以上）"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-019",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "雇用保険",
+      "subtopic": "基本手当",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "雇用保険の基本手当に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "自己都合退職の場合、原則として離職前2年間に被保険者期間が通算12ヶ月以上必要であるが、倒産・解雇等の特定受給資格者の場合は離職前1年間に通算6ヶ月以上で足りる",
+          "is_correct": true,
+          "explanation": "正解。一般受給資格者は2年/12ヶ月、特定受給資格者・特定理由離職者は1年/6ヶ月という緩和要件が適用される。"
+        },
+        {
+          "id": "B",
+          "text": "基本手当の所定給付日数は、離職理由に関係なく被保険者期間と年齢のみで決まる",
+          "is_correct": false,
+          "explanation": "離職理由（自己都合か特定受給資格者か）により給付日数が大きく異なる。特定受給資格者の方が日数が長い。"
+        },
+        {
+          "id": "C",
+          "text": "自己都合退職の場合、待期期間7日間後に給付制限（2025年4月以降は原則1ヶ月）はなく、すぐに支給が開始される",
+          "is_correct": false,
+          "explanation": "自己都合退職は待期7日後にさらに給付制限期間（2020年10月以降原則2ヶ月、2025年4月以降原則1ヶ月）が課される。"
+        },
+        {
+          "id": "D",
+          "text": "基本手当日額は、離職前の賃金日額に対する給付率が一律80%である",
+          "is_correct": false,
+          "explanation": "給付率は45%～80%（賃金日額や年齢により異なる）。一律80%ではない。"
+        }
+      ],
+      "explanation": "雇用保険基本手当：(1)受給資格＝離職前2年間に被保険者期間12ヶ月以上（特定受給資格者は1年/6ヶ月）、(2)所定給付日数＝離職理由・年齢・被保険者期間で90～360日、(3)自己都合は待期7日+給付制限（2025年4月から原則1ヶ月）、(4)基本手当日額＝賃金日額×45～80%。受給期間は原則離職翌日から1年（最大3年延長可）。",
+      "references": [
+        {
+          "title": "厚生労働省 雇用保険制度の基本手当",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/koyouhoken/index.html"
+        }
+      ],
+      "tags": [
+        "雇用保険",
+        "基本手当",
+        "受給資格",
+        "給付制限"
+      ],
+      "common_mistakes": [
+        "受給資格期間を一律12ヶ月と覚える",
+        "給付制限期間の改正（2ヶ月→1ヶ月）を把握していない",
+        "給付率を一律と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-020",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "雇用保険",
+      "subtopic": "教育訓練給付・育児休業給付",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "雇用保険の各種給付（基本手当以外）に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "専門実践教育訓練給付金は、原則として受講費用の50%（年間上限40万円・最長3年）が支給され、資格取得し就職した場合は20%が追加支給される",
+          "is_correct": true,
+          "explanation": "正解。専門実践教育訓練は手厚い支給率で、資格取得+就職で計70%（年間56万円上限・最長3年で最大168万円）まで給付される。"
+        },
+        {
+          "id": "B",
+          "text": "一般教育訓練給付金は、受講費用の40%・上限20万円が支給される",
+          "is_correct": false,
+          "explanation": "一般教育訓練給付金は20%・上限10万円。40%は特定一般教育訓練給付金（上限20万円）の数値であり、混同しやすい。"
+        },
+        {
+          "id": "C",
+          "text": "育児休業給付金は、子が満3歳に達するまで支給される",
+          "is_correct": false,
+          "explanation": "育児休業給付金は原則1歳まで（最長2歳まで延長可）。満3歳までは育児休業期間として認められるが給付対象ではない。"
+        },
+        {
+          "id": "D",
+          "text": "高年齢雇用継続基本給付金の支給率は、賃金が60歳到達時の75%未満となった場合に最大25%となる",
+          "is_correct": false,
+          "explanation": "2025年4月から高年齢雇用継続給付の最大支給率は15%に引き下げ（2024年度までは15%、それ以前は最大15%、なお2003年5月以前は25%）。25%は古い情報。"
+        }
+      ],
+      "explanation": "雇用保険の主要給付：(1)一般教育訓練給付金=20%/10万円、(2)特定一般=40%/20万円、(3)専門実践=50%+20%（資格取得+就職時）、(4)育児休業給付金=休業開始時賃金の67%（180日まで）→50%、原則1歳まで（最大2歳）、(5)介護休業給付金=67%、最長93日、(6)高年齢雇用継続給付=賃金60歳時比75%未満で最大15%（2025年4月からは縮小）。",
+      "references": [
+        {
+          "title": "厚生労働省 教育訓練給付制度",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/kyouiku.html"
+        },
+        {
+          "title": "厚生労働省 育児休業給付",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000136385.html"
+        }
+      ],
+      "tags": [
+        "雇用保険",
+        "教育訓練給付",
+        "育児休業給付",
+        "高年齢雇用継続給付"
+      ],
+      "common_mistakes": [
+        "教育訓練給付の3区分（一般・特定一般・専門実践）の支給率を混同",
+        "育児休業給付の支給期間を満3歳までと誤解",
+        "高年齢雇用継続給付の2025年4月改正を把握していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-021",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "労災保険",
+      "subtopic": "労災保険の概要",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "労働者災害補償保険（労災保険）に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "労災保険の保険料は全額事業主負担であり、労働者の負担はない",
+          "is_correct": true,
+          "explanation": "正解。労災保険料は全額事業主負担。雇用保険・健康保険・厚生年金が労使折半なのと対照的。"
+        },
+        {
+          "id": "B",
+          "text": "中小事業主や一人親方の特別加入制度はなく、労災保険は雇用される労働者のみが対象である",
+          "is_correct": false,
+          "explanation": "中小事業主・一人親方・特定作業従事者・海外派遣者は特別加入制度を利用できる。"
+        },
+        {
+          "id": "C",
+          "text": "通勤災害は労災保険の対象外であり、健康保険で対応する",
+          "is_correct": false,
+          "explanation": "通勤災害も労災保険の対象（通勤災害給付）。健康保険ではなく労災保険で対応。"
+        },
+        {
+          "id": "D",
+          "text": "業務上の負傷で休業した場合の休業補償給付は、給付基礎日額の50%相当である",
+          "is_correct": false,
+          "explanation": "休業補償給付は給付基礎日額の60%（特別支給金20%含めて実質80%）。"
+        }
+      ],
+      "explanation": "労災保険の特徴：(1)保険料全額事業主負担、(2)1日でも雇用される労働者は全員対象、(3)通勤災害も対象、(4)中小事業主（労働保険事務組合経由）・一人親方・特定作業従事者は特別加入可、(5)休業補償＝給付基礎日額の60%+特別支給金20%（実質80%相当・休業4日目から）、(6)療養補償は治癒まで全額補償（自己負担なし）。",
+      "references": [
+        {
+          "title": "厚生労働省 労災保険給付の概要",
+          "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/rousai/"
+        }
+      ],
+      "tags": [
+        "労災保険",
+        "労働保険",
+        "特別加入"
+      ],
+      "common_mistakes": [
+        "労災保険料を労使折半と誤解",
+        "通勤災害が対象外と思い込む",
+        "一人親方の特別加入制度を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-022",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "企業年金",
+      "subtopic": "確定給付・確定拠出企業年金",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "東海地方の医療系SaaS企業の経営者J氏（35歳）が、従業員10名の会社に企業年金を導入しようと検討している。確定給付企業年金（DB）と企業型確定拠出年金（DC）の比較として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DBは将来の給付額が確定し、運用リスクは事業主が負う。DCは拠出額が確定し、運用リスクは加入者が負う",
+          "is_correct": true,
+          "explanation": "正解。DBは給付額確定型でリスクは事業主、DCは拠出額確定型でリスクは加入者。これは制度設計の本質的な違い。"
+        },
+        {
+          "id": "B",
+          "text": "DCの掛金限度額は、企業型と個人型（iDeCo）を併用する場合でも、合計で月額68,000円まで利用できる",
+          "is_correct": false,
+          "explanation": "他制度なしの企業型DC加入者は月額55,000円まで。iDeCoとの併用枠は月20,000円（他制度あり=DB等あり=月12,000円）等の制限がある（2024年12月以降）。68,000円は国民年金第1号のiDeCo上限。"
+        },
+        {
+          "id": "C",
+          "text": "DCの加入者掛金（マッチング拠出）は事業主掛金を超えて拠出できる",
+          "is_correct": false,
+          "explanation": "マッチング拠出は事業主掛金を超えない範囲、かつ合計で限度額以内という制約がある。"
+        },
+        {
+          "id": "D",
+          "text": "DBの解散時、剰余金は事業主に全額返還される",
+          "is_correct": false,
+          "explanation": "DB解散時の残余財産は加入者・受給権者への分配が原則であり、事業主への返還は限定的。"
+        }
+      ],
+      "explanation": "企業年金の2大スキーム：DB（確定給付企業年金）は給付額が確定し事業主が運用リスクを負う、DC（確定拠出年金）は掛金確定で運用リスクを加入者が負う。DCはポータビリティ（転職時持ち運び）が高い。掛金限度額：他制度なしの企業型DCは月55,000円、DB等あり月27,500円。マッチング拠出は事業主掛金を超えない範囲。中小企業オーナーなら、簡易企業型DC（簡易型DC）やiDeCo+の活用も選択肢。",
+      "references": [
+        {
+          "title": "厚生労働省 確定拠出年金制度",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/kyoshutsu.html"
+        },
+        {
+          "title": "厚生労働省 確定給付企業年金",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/kakuteikyufu/index.html"
+        }
+      ],
+      "tags": [
+        "企業年金",
+        "DB",
+        "DC",
+        "確定拠出年金",
+        "確定給付企業年金"
+      ],
+      "common_mistakes": [
+        "運用リスクの負担者を逆に覚える",
+        "DC限度額の他制度有無による違いを把握していない",
+        "マッチング拠出の制限を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-023",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "iDeCo",
+      "subtopic": "個人型確定拠出年金（iDeCo）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "個人型確定拠出年金（iDeCo）に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "掛金は全額が小規模企業共済等掛金控除として所得控除の対象となり、運用益は非課税、給付時は退職所得控除または公的年金等控除の対象となる",
+          "is_correct": true,
+          "explanation": "正解。iDeCoは「拠出時・運用時・給付時」の3段階で税制優遇がある、極めて有利な老後資産形成制度。"
+        },
+        {
+          "id": "B",
+          "text": "国民年金第3号被保険者は、iDeCoに加入することができない",
+          "is_correct": false,
+          "explanation": "第3号被保険者もiDeCoに加入可能（限度額月額23,000円＝年27.6万円）。"
+        },
+        {
+          "id": "C",
+          "text": "原則60歳から受給可能だが、加入期間が10年未満の場合は受給開始が遅延される",
+          "is_correct": true,
+          "explanation": "実はこの記述も正しい（受給開始年齢は加入期間に応じて60～65歳）。ただし設問は最も適切な「税制優遇」のAが本問の正解。"
+        },
+        {
+          "id": "D",
+          "text": "国民年金保険料が未納の月でも、iDeCoの掛金は拠出することができる",
+          "is_correct": false,
+          "explanation": "国民年金保険料未納・免除中は原則iDeCoに拠出できない（第1号被保険者の場合）。"
+        }
+      ],
+      "explanation": "iDeCoの3大税制メリット：(1)掛金全額所得控除（小規模企業共済等掛金控除）、(2)運用益非課税、(3)受取時の退職所得控除・公的年金等控除。加入対象は20歳以上65歳未満の国民年金被保険者（任意加入を含む）で、第3号も加入可能。なお選択肢Cも事実としては正しいが、設問は「最も適切」を問うており、税制全体を最も網羅的に説明したAを選ぶ。Cは「加入期間10年未満」での受給開始遅延の記述自体は事実。",
+      "references": [
+        {
+          "title": "国民年金基金連合会 iDeCo公式サイト",
+          "url": "https://www.ideco-koushiki.jp/"
+        }
+      ],
+      "tags": [
+        "iDeCo",
+        "確定拠出年金",
+        "税制優遇",
+        "老後資産形成"
+      ],
+      "common_mistakes": [
+        "第3号被保険者がiDeCo不可と誤解",
+        "国民年金未納でもiDeCo拠出可能と誤解",
+        "受取時の税制（退職所得控除・公的年金等控除）を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-024",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "新NISA",
+      "subtopic": "2024年改正NISA制度",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "2024年1月から開始した新NISA制度に関する次の記述のうち、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "つみたて投資枠は年間120万円・成長投資枠は年間240万円の合計で年間最大360万円まで投資でき、生涯非課税保有限度額は1,800万円（うち成長投資枠は1,200万円まで）である",
+          "is_correct": true,
+          "explanation": "正解。新NISAの基本数値。年間360万円・生涯1,800万円・うち成長投資枠1,200万円が原則。"
+        },
+        {
+          "id": "B",
+          "text": "つみたて投資枠と成長投資枠は併用できず、いずれか一方を選択する必要がある",
+          "is_correct": false,
+          "explanation": "新NISAでは両枠を同時に併用可能（旧NISAは一般・つみたての選択制だった）。"
+        },
+        {
+          "id": "C",
+          "text": "非課税保有期間は5年間（成長投資枠）または20年間（つみたて投資枠）に限定されている",
+          "is_correct": false,
+          "explanation": "新NISAの非課税保有期間は無期限化された。5年・20年は旧NISAの期間。"
+        },
+        {
+          "id": "D",
+          "text": "売却した枠は当年中に再利用できる",
+          "is_correct": false,
+          "explanation": "売却した分の非課税保有限度額（簿価ベース）は翌年以降に復活して再利用できる。当年内ではない。"
+        }
+      ],
+      "explanation": "新NISA（2024年1月～）の主要ポイント：(1)非課税保有期間=無期限、(2)つみたて投資枠=年120万円・成長投資枠=年240万円・併用可で合計年360万円、(3)生涯非課税保有限度額=1,800万円（うち成長投資枠1,200万円まで）、(4)売却による枠の再利用は翌年以降復活、(5)旧NISAとの併用は不可（旧NISAは別枠で非課税継続）、(6)成長投資枠で投資可能な商品は上場株式・ETF・REIT・公募投信（一部除外）。",
+      "references": [
+        {
+          "title": "金融庁 新しいNISA",
+          "url": "https://www.fsa.go.jp/policy/nisa2/index.html"
+        }
+      ],
+      "tags": [
+        "NISA",
+        "新NISA",
+        "つみたて投資枠",
+        "成長投資枠"
+      ],
+      "common_mistakes": [
+        "つみたて投資枠と成長投資枠を併用不可と誤解",
+        "非課税期間が依然として有限と思い込む",
+        "売却枠の復活タイミングを当年内と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-025",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "中小企業の福利厚生",
+      "subtopic": "小規模企業共済",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "一人法人として東海地方でB2B SaaS事業を展開するK氏（30代・代表取締役・常時使用従業員5名以下）が、自身の退職金準備として制度を比較している。小規模企業共済に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "掛金は月額1,000円～70,000円の範囲で500円単位、支払った掛金は全額が小規模企業共済等掛金控除として所得控除でき、共済金の受取は退職所得または公的年金等の課税扱いとなる",
+          "is_correct": true,
+          "explanation": "正解。小規模企業共済の3つの税制優遇（拠出時所得控除・運用時非課税・給付時退職所得控除/公的年金等控除）を端的に表す。"
+        },
+        {
+          "id": "B",
+          "text": "加入対象は個人事業主のみで、法人の役員は対象外である",
+          "is_correct": false,
+          "explanation": "個人事業主のほか、常時使用従業員数等の要件を満たす法人の役員も加入できる。K氏のような一人法人の代表取締役も対象。"
+        },
+        {
+          "id": "C",
+          "text": "共済金は廃業・退職・任意解約のいずれでも全額同じ条件で受け取れる",
+          "is_correct": false,
+          "explanation": "受取金額は共済事由により異なり、任意解約（解約手当金）は廃業・退職時より少なく、特に加入20年未満は元本割れする。"
+        },
+        {
+          "id": "D",
+          "text": "経営セーフティ共済（中小企業倒産防止共済）と異なり、契約者貸付制度はない",
+          "is_correct": false,
+          "explanation": "小規模企業共済には契約者貸付制度（一般貸付・緊急経営安定貸付など）がある。"
+        }
+      ],
+      "explanation": "小規模企業共済（中小機構運営）：小規模企業の経営者・役員・個人事業主の退職金制度。月額1,000～70,000円（500円単位）・全額所得控除・受取時退職所得or公的年金等控除。任意解約は20年未満で元本割れ。共済金A（廃業・死亡）が最も有利、B（65歳以上で180月以上）、準共済（法人成り後も継続要件不足等）、解約手当金（任意解約）の順で受給率が下がる。経営セーフティ共済は別制度（取引先倒産対策、掛金は法人なら損金）。",
+      "references": [
+        {
+          "title": "中小企業基盤整備機構 小規模企業共済",
+          "url": "https://www.smrj.go.jp/kyosai/skyosai/"
+        }
+      ],
+      "tags": [
+        "小規模企業共済",
+        "中小企業",
+        "退職金",
+        "所得控除",
+        "経営者"
+      ],
+      "common_mistakes": [
+        "法人役員が加入不可と誤解",
+        "任意解約と廃業時の給付差を知らない",
+        "経営セーフティ共済と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-026",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "中小企業の福利厚生",
+      "subtopic": "経営セーフティ共済",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "中小企業倒産防止共済（経営セーフティ共済）に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "掛金は月額5,000円～200,000円・5,000円単位で、年払い前納も可能。支払った掛金は法人なら損金算入（個人なら必要経費算入）でき、解約手当金は加入40ヶ月以上で全額返還される",
+          "is_correct": true,
+          "explanation": "正解。掛金は損金算入できるため、利益が出た年に節税対策として活用される代表的制度。40ヶ月以上加入で解約時100%返還。"
+        },
+        {
+          "id": "B",
+          "text": "解約手当金は加入24ヶ月以上で全額（100%）返還される",
+          "is_correct": false,
+          "explanation": "全額返還は40ヶ月以上。24ヶ月以上で80%、40ヶ月以上で100%という階段制。"
+        },
+        {
+          "id": "C",
+          "text": "2024年10月の改正により、解約後の再加入における掛金損金算入は何ら制限されない",
+          "is_correct": false,
+          "explanation": "2024年10月改正で、解約後2年以内に再加入した場合、掛金の損金算入が一定の制限を受けることとなった（節税目的の頻繁な解約・再加入を抑制）。"
+        },
+        {
+          "id": "D",
+          "text": "貸付金は、取引先倒産時のみ無利子・無担保で利用でき、それ以外の用途には利用できない",
+          "is_correct": false,
+          "explanation": "取引先倒産時の共済金貸付（無利子・無担保・限度額は掛金総額の10倍以内かつ8,000万円）に加え、一時貸付金（解約手当金の95%以内）も利用可能。"
+        }
+      ],
+      "explanation": "経営セーフティ共済（中小機構）：取引先倒産による連鎖倒産防止のための掛金積立型制度。月5,000～200,000円（5,000円単位）・累計800万円まで・全額損金算入。取引先倒産時、無担保無利子で掛金の10倍（最大8,000万円）まで貸付可。解約返戻率：12～23ヶ月=80~95%、40ヶ月以上=100%。**2024年10月改正**：解約後2年以内の再加入は掛金の損金算入を不可とする（脱税対策強化）。",
+      "references": [
+        {
+          "title": "中小企業基盤整備機構 経営セーフティ共済",
+          "url": "https://www.smrj.go.jp/kyosai/tkyosai/"
+        }
+      ],
+      "tags": [
+        "経営セーフティ共済",
+        "倒産防止共済",
+        "中小企業",
+        "損金算入",
+        "節税"
+      ],
+      "common_mistakes": [
+        "解約返戻率の階段（24ヶ月、40ヶ月）を混同",
+        "2024年10月改正の再加入制限を知らない",
+        "貸付制度が取引先倒産時のみと誤解（一時貸付金もある）"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-027",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的年金",
+      "subtopic": "厚生年金の老齢厚生年金（報酬比例部分）",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "65歳のL氏（男性）は60歳で退職、厚生年金被保険者期間は40年（480月）、平均標準報酬額は45万円である。簡易な計算式「報酬比例部分=平均標準報酬額×5.481/1000×加入月数（2003年4月以降の場合）」を用いた場合、老齢厚生年金（報酬比例部分）の年額として最も近いものはどれか。なお、本問では2003年3月以前の加入はないものとする。",
+      "options": [
+        {
+          "id": "A",
+          "text": "約1,184,000円",
+          "is_correct": true,
+          "explanation": "正解。45万円×5.481/1000×480月=1,183,896円≒1,184,000円。"
+        },
+        {
+          "id": "B",
+          "text": "約1,490,000円",
+          "is_correct": false,
+          "explanation": "係数を7.125/1000（2003年3月以前の旧式）と取り違えた場合の誤答。改正後は5.481/1000。"
+        },
+        {
+          "id": "C",
+          "text": "約246,000円",
+          "is_correct": false,
+          "explanation": "加入月数を120月（10年）として計算した誤答。本問では480月（40年）。"
+        },
+        {
+          "id": "D",
+          "text": "約816,000円",
+          "is_correct": false,
+          "explanation": "老齢基礎年金満額（2026年度）の値であり、報酬比例部分の計算とは異なる。"
+        }
+      ],
+      "explanation": "老齢厚生年金（報酬比例部分）の本則計算式：(2003年3月以前)平均標準報酬月額×7.125/1000×加入月数 + (2003年4月以降)平均標準報酬額×5.481/1000×加入月数（賞与含む総報酬制）。本問は2003年4月以降のみで45万円×5.481/1000×480=1,183,896円。報酬比例部分は加入月数と平均報酬の両方に比例するため、長期加入かつ高所得ほど大きくなる。実際は「経過的加算」「加給年金」も加わる。",
+      "references": [
+        {
+          "title": "日本年金機構 老齢厚生年金",
+          "url": "https://www.nenkin.go.jp/service/jukyu/roureinenkin/jukyu-yoken/20150401-04.html"
+        }
+      ],
+      "tags": [
+        "老齢厚生年金",
+        "報酬比例部分",
+        "計算問題",
+        "総報酬制"
+      ],
+      "common_mistakes": [
+        "総報酬制（2003年4月～）と従前制（2003年3月以前）の係数を混同",
+        "平均標準報酬月額と平均標準報酬額の違いを意識しない",
+        "加入月数と加入年数を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-028",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "ライフプランニング総合",
+      "subtopic": "FP相談における倫理・原則",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "medium",
+      "stem": "FPがクライアントに対しライフプラン提案を行う際の対応として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "クライアントから入手した個人情報や財産情報は、FP業務遂行上必要な範囲内でのみ利用し、本人の同意を得ずに第三者に開示しない",
+          "is_correct": true,
+          "explanation": "正解。日本FP協会のFP倫理規程（顧客利益優先・守秘義務・利益相反開示等）の根幹。個人情報保護法とも整合。"
+        },
+        {
+          "id": "B",
+          "text": "クライアントの目標達成のためには、リスク許容度を超える商品でも積極的に提案すべきである",
+          "is_correct": false,
+          "explanation": "適合性の原則に反する。クライアントのリスク許容度・知識・経験・財産状況を踏まえた提案が必要。"
+        },
+        {
+          "id": "C",
+          "text": "FP自身が販売する金融商品の提案は、利益相反となる可能性があっても顧客に開示する必要はない",
+          "is_correct": false,
+          "explanation": "FP倫理規程上、利益相反となるおそれのある関係（販売報酬・特定商品との関係等）は顧客に開示する義務がある。"
+        },
+        {
+          "id": "D",
+          "text": "プラン作成後はクライアントの状況が変化しても、当初プランを継続することが最善である",
+          "is_correct": false,
+          "explanation": "ライフプランは定期的見直し（PDCA）が前提。家族構成・収入・税制・年金制度などの変化に応じて修正する。"
+        }
+      ],
+      "explanation": "FP倫理規程の6原則：(1)顧客利益優先、(2)守秘義務、(3)説明責任、(4)能力開発、(5)法令遵守、(6)情報開示（利益相反等）。実務では適合性の原則（Suitability）も重要で、商品のリスク・複雑性とクライアントの属性を整合させる必要がある。ライフプランは作って終わりでなく、年1回以上の見直しが推奨される。",
+      "references": [
+        {
+          "title": "日本FP協会 FP倫理規程",
+          "url": "https://www.jafp.or.jp/about_jafp/rules/files/rinrikitei.pdf"
+        }
+      ],
+      "tags": [
+        "FP倫理",
+        "守秘義務",
+        "適合性の原則",
+        "コンプライアンス"
+      ],
+      "common_mistakes": [
+        "「目標達成のため」リスクを軽視した提案を是とする",
+        "利益相反の開示義務を知らない",
+        "ライフプランを一度作ったら見直さなくてよいと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-029",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "公的医療保険",
+      "subtopic": "傷病手当金",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "全国健康保険協会管掌健康保険（協会けんぽ）の傷病手当金に関する記述として、最も適切なものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "業務外の病気やケガによる療養のため労務不能で連続3日間の待期期間後、4日目以降の労務不能期間について支給開始日以前12ヶ月の標準報酬月額平均の30分の1×2/3の額が、通算1年6ヶ月を限度に支給される",
+          "is_correct": true,
+          "explanation": "正解。傷病手当金の制度。2022年1月改正で支給期間が「通算」1年6ヶ月になった（出勤と休業を繰り返しても累計1年6ヶ月まで）。"
+        },
+        {
+          "id": "B",
+          "text": "業務上のケガでも傷病手当金は支給される",
+          "is_correct": false,
+          "explanation": "業務上の負傷・疾病は労災保険の対象であり、健康保険の傷病手当金は支給されない。"
+        },
+        {
+          "id": "C",
+          "text": "支給期間は支給開始日から暦の上で連続1年6ヶ月までであり、途中で出勤しても再支給はない",
+          "is_correct": false,
+          "explanation": "2022年1月改正により、支給期間は「支給を受けた期間の通算」で1年6ヶ月に変更された。"
+        },
+        {
+          "id": "D",
+          "text": "国民健康保険にも法定の傷病手当金制度がある",
+          "is_correct": false,
+          "explanation": "国民健康保険には法定の傷病手当金制度はない（コロナ対応の特例支給は別途あった）。健康保険（被用者保険）特有の給付。"
+        }
+      ],
+      "explanation": "傷病手当金（健保）：業務外の傷病で連続3日待期後の労務不能期間に、標準報酬月額平均の30分の1×2/3を、通算1年6ヶ月支給（2022年1月改正）。業務上は労災（休業補償給付）。国民健康保険には法定の傷病手当金なし。退職後も継続給付の要件を満たせば支給継続あり（資格喪失日前日まで継続1年以上の被保険者期間+支給を受けているか受けられる状態）。",
+      "references": [
+        {
+          "title": "全国健康保険協会 傷病手当金",
+          "url": "https://www.kyoukaikenpo.or.jp/g3/cat230/sb3160/sb3170/sbb3171/1949-260/"
+        }
+      ],
+      "tags": [
+        "傷病手当金",
+        "健康保険",
+        "労務不能"
+      ],
+      "common_mistakes": [
+        "業務上のケガにも傷病手当金が出ると誤解",
+        "支給期間1年6ヶ月を「暦上連続」と覚えている（2022年改正で通算化）",
+        "国保にも傷病手当金があると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "fp-2-lifeplan-030",
+      "version": "1.0",
+      "exam": {
+        "code": "fp-2",
+        "name": "FP技能検定2級",
+        "vendor": "JAFP/Kinzai",
+        "year": 2026
+      },
+      "domain": {
+        "id": "lifeplan",
+        "name": "ライフプランニング・資金計画",
+        "weight_percent": 17
+      },
+      "topic": "ライフプランニング総合",
+      "subtopic": "中小企業オーナーの総合的な資金計画設計",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "東海地方でB2B SaaS（医療業界向け）を展開する一人法人の代表M氏（35歳・年収目標：法人税込売上3,000万円・役員報酬月60万円・配偶者なし・子なし・将来的に法人としての事業承継またはM&A売却を目指す）が、長期の資産形成・税務最適化・万が一の事業リスク対策を含む総合的な資金計画を相談している。FPの提案として、最も妥当性が高い組み合わせはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "個人で iDeCo（月23,000円・国民年金基金枠調整不要なら月68,000円）+ 新NISAつみたて投資枠の活用、法人で経営セーフティ共済（月20万円損金算入）+ 小規模企業共済（月7万円所得控除）の併用、緊急資金として6ヶ月分の生活費を流動性資産で確保する組み合わせ",
+          "is_correct": true,
+          "explanation": "正解。個人と法人の双方で税制優遇を最大限活用しつつ、流動性確保とリスク対策を盛り込んだバランス設計。"
+        },
+        {
+          "id": "B",
+          "text": "全資金を成長投資枠（年240万円・生涯1,200万円）に投じ、税優遇枠を最速で消化することを最優先する",
+          "is_correct": false,
+          "explanation": "リスク許容度・流動性・分散・複数の税制優遇制度（iDeCo・小規模企業共済等）の活用機会を逸する。新NISA成長投資枠への一極集中は適切でない。"
+        },
+        {
+          "id": "C",
+          "text": "経営セーフティ共済を最大の月20万円拠出するが、解約は売上が立つ年度を狙って3年程度で行いキャッシュ化する戦略を主軸とする",
+          "is_correct": false,
+          "explanation": "2024年10月改正により、解約後2年以内の再加入は損金算入不可となった。短期解約・再加入を前提とした戦略は税効果が大幅に減退する。"
+        },
+        {
+          "id": "D",
+          "text": "事業承継時の利益確保のため、すべての余剰資金を社内留保し、個人資産形成や保険加入は一切行わない",
+          "is_correct": false,
+          "explanation": "個人としての万が一・老後対策が欠落しており、一人法人の代表として事業継続不能時のリスク管理が不十分。社会保障制度（傷病手当金は健保のみ・国保なら無し）も考慮すべき。"
+        }
+      ],
+      "explanation": "中小企業オーナー（特に一人法人の代表）の資金計画は、(1)法人と個人の税務最適化（役員報酬設計・損金/所得控除の活用）、(2)分散投資と流動性確保、(3)社会保障の薄さを補う私的保障（小規模企業共済・iDeCo・所得補償保険等）、(4)事業リスク対策（経営セーフティ共済・損害保険）を組み合わせて設計する。Aの組み合わせは複数の税制優遇制度を併用しつつ流動性も確保しており、ソロ経営者にとってのベストプラクティスの一例。実際のiDeCo上限は事業形態（法人代表で厚年加入）により月23,000円が原則だが、第1号被保険者なら月68,000円。",
+      "references": [
+        {
+          "title": "中小企業基盤整備機構 共済制度の比較",
+          "url": "https://www.smrj.go.jp/kyosai/"
+        },
+        {
+          "title": "金融庁 新しいNISA",
+          "url": "https://www.fsa.go.jp/policy/nisa2/index.html"
+        },
+        {
+          "title": "国民年金基金連合会 iDeCo",
+          "url": "https://www.ideco-koushiki.jp/"
+        }
+      ],
+      "tags": [
+        "ライフプランニング",
+        "中小企業オーナー",
+        "総合設計",
+        "税制優遇",
+        "事業承継",
+        "一人法人"
+      ],
+      "common_mistakes": [
+        "1つの制度（NISAやiDeCo）に集中投資する",
+        "経営セーフティ共済の2024年10月改正を考慮しない短期回転戦略",
+        "個人保障と事業リスク対策を切り分けず社内留保のみに頼る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

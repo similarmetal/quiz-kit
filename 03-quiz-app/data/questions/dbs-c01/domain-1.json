@@ -1,0 +1,861 @@
+{
+  "exam_code": "dbs-c01",
+  "exam_name": "AWS Certified Database – Specialty",
+  "version": "2026.04",
+  "total_questions": 30,
+  "domains": [
+    {
+      "id": "domain-1",
+      "name": "Workload-Specific Database Design",
+      "weight_percent": 26,
+      "question_count": 30
+    }
+  ],
+  "questions": [
+    {
+      "id": "dbs-c01-domain1-001",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "Capacity modes",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "DynamoDB のキャパシティモードのうち、トラフィックの予測が困難でスパイクが発生するワークロード向けに、リクエスト単位で課金されるモードはどれか。",
+      "options": [
+        {"id": "A", "text": "プロビジョンドキャパシティモード", "is_correct": false, "explanation": "事前に RCU/WCU を指定して定常的に支払うモード。予測可能なトラフィック向け。"},
+        {"id": "B", "text": "オンデマンドキャパシティモード", "is_correct": true, "explanation": "正解。リクエスト単位で課金され、トラフィックに応じて自動的にスケール。スパイクや予測困難なワークロードに最適。"},
+        {"id": "C", "text": "リザーブドキャパシティモード", "is_correct": false, "explanation": "リザーブドキャパシティはプロビジョンドモードで使える割引購入オプションであり、独立したキャパシティモードではない。"},
+        {"id": "D", "text": "オートスケーリングモード", "is_correct": false, "explanation": "Auto Scaling はプロビジョンドモードの上限を自動調整する機能であり、独立したキャパシティモードではない。"}
+      ],
+      "explanation": "DynamoDB には Provisioned と On-Demand の2つのキャパシティモードがある。On-Demand はリクエスト数に応じた従量課金で、トラフィックの予測が困難な場面に最適。Provisioned は予測可能で安定したトラフィックでコストを抑えたい場合に使う。両モードはテーブル単位で1日1回切り替え可能。",
+      "references": [
+        {"title": "Read/write capacity mode - DynamoDB", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html"}
+      ],
+      "tags": ["dynamodb", "capacity", "on-demand", "cost"],
+      "common_mistakes": [
+        "Auto Scaling を独立したモードと誤解する",
+        "リザーブドキャパシティを別モードと誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-002",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Aurora",
+      "subtopic": "Aurora Replicas",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "Amazon Aurora MySQL クラスターで作成可能なリードレプリカ（Aurora Replica）の最大数はいくつか。",
+      "options": [
+        {"id": "A", "text": "5", "is_correct": false, "explanation": "RDS for MySQL のリードレプリカの上限と混同している（実際は MySQL も最大15）。Aurora の上限値ではない。"},
+        {"id": "B", "text": "15", "is_correct": true, "explanation": "正解。Aurora クラスター 1 つあたり最大 15 個の Aurora Replica を作成可能。"},
+        {"id": "C", "text": "30", "is_correct": false, "explanation": "Aurora Global Database のセカンダリリージョン経由を含めても 1 クラスターで 15 が上限。"},
+        {"id": "D", "text": "無制限", "is_correct": false, "explanation": "リードレプリカは無制限ではない。クラスターストレージ層は共有だが、レプリカエンドポイント数に上限がある。"}
+      ],
+      "explanation": "Aurora は同一リージョン内で 1 クラスターあたり最大 15 個の Aurora Replica（リーダーノード）を持てる。これらはすべて共有のクラスターボリュームを参照するためレプリケーション遅延は通常 100 ms 未満。RDS for MySQL/PostgreSQL のリードレプリカ（最大 15、PostgreSQL は 5 だったが現在は拡張）と混同しやすい。",
+      "references": [
+        {"title": "Replication with Amazon Aurora", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html"}
+      ],
+      "tags": ["aurora", "replica", "scaling", "limits"],
+      "common_mistakes": [
+        "RDS for MySQL のリードレプリカ数と混同する",
+        "Aurora Replica は無制限と誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-003",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "ElastiCache",
+      "subtopic": "Redis vs Memcached",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "ElastiCache の 2 つのエンジンのうち、永続化（スナップショット）、レプリケーション、Pub/Sub、複雑なデータ構造（List、Set、Sorted Set 等）をサポートするのはどちらか。",
+      "options": [
+        {"id": "A", "text": "Memcached", "is_correct": false, "explanation": "Memcached はシンプルなキー/バリューのみ。永続化やレプリケーション、Pub/Sub は持たない。マルチスレッドで水平スケール特化。"},
+        {"id": "B", "text": "Redis", "is_correct": true, "explanation": "正解。Redis は List/Set/Hash/Sorted Set/Stream など豊富なデータ構造、RDB/AOF 永続化、レプリカ、Pub/Sub、Cluster モードをサポート。"},
+        {"id": "C", "text": "両方とも同等にサポート", "is_correct": false, "explanation": "Memcached はこれらの機能を持たない。"},
+        {"id": "D", "text": "DAX", "is_correct": false, "explanation": "DAX は DynamoDB 専用のキャッシュ。ElastiCache のエンジンではない。"}
+      ],
+      "explanation": "ElastiCache は Redis 互換と Memcached の 2 つのエンジンを提供する。Memcached は純粋なキャッシュ用途のシンプルさとスレッド並列を重視。Redis は永続化・レプリケーション・複雑データ型・Pub/Sub・Streams など多機能で、リーダーボード、セッション、リアルタイム分析、メッセージングなど幅広いユースケースに対応する。",
+      "references": [
+        {"title": "Comparing Memcached and Redis", "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/SelectEngine.html"}
+      ],
+      "tags": ["elasticache", "redis", "memcached", "cache"],
+      "common_mistakes": [
+        "Memcached も Pub/Sub をサポートすると誤解",
+        "DAX を ElastiCache のエンジンと混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-004",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Aurora",
+      "subtopic": "Aurora Serverless v2",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある SaaS スタートアップが、平日昼は高負荷だが夜間・休日はほぼ無負荷になる Web アプリ向けに Aurora を検討している。最小 0.5 ACU から最大 64 ACU までシームレスに自動スケールしたい。最も適切な構成はどれか。",
+      "options": [
+        {"id": "A", "text": "Aurora Provisioned で db.r6g.2xlarge を常時稼働させ、夜間は手動で停止する", "is_correct": false, "explanation": "RDS の停止は最大 7 日で自動再開する。完全な自動スケーリングではなく、運用負荷も高い。"},
+        {"id": "B", "text": "Aurora Serverless v2 を 0.5 ACU 〜 64 ACU の範囲で構成する", "is_correct": true, "explanation": "正解。Serverless v2 は数秒以内に細かい粒度（0.5 ACU 単位）でスケールし、最小 0.5 ACU から最大 256 ACU まで設定可能。SaaS の負荷変動に最適。"},
+        {"id": "C", "text": "Aurora Serverless v1 を ACU レンジで構成する", "is_correct": false, "explanation": "Serverless v1 はスケーリングが粗く、コネクション切断を伴う。新規構築では v2 が推奨で、v1 は将来的に EOL 予定。"},
+        {"id": "D", "text": "Aurora Provisioned + Aurora Auto Scaling をリードレプリカに対して構成する", "is_correct": false, "explanation": "Auto Scaling はリードレプリカの数を増減するだけで、ライターのインスタンスサイズはスケールしない。コストも高止まりする。"}
+      ],
+      "explanation": "Aurora Serverless v2 は ACU（Aurora Capacity Unit）単位で 0.5 〜 256 ACU の範囲を細かい粒度で自動スケールする。スケール時にコネクションは維持されるため、変動の激しい SaaS ワークロードに最適。Serverless v1 はパウズ/再開のラグやスケール粒度の粗さがあり、新規には推奨されない。",
+      "references": [
+        {"title": "Amazon Aurora Serverless v2", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html"}
+      ],
+      "tags": ["aurora", "serverless", "saas", "auto-scaling"],
+      "common_mistakes": [
+        "Auto Scaling だけでライター負荷もスケールできると誤解",
+        "Serverless v1 と v2 の差を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-005",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "GSI vs LSI",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "DynamoDB の Global Secondary Index (GSI) と Local Secondary Index (LSI) の違いに関する説明として正しいのはどれか。",
+      "options": [
+        {"id": "A", "text": "GSI はテーブル作成後でも追加・削除でき、LSI はテーブル作成時のみ作成可能", "is_correct": true, "explanation": "正解。GSI は柔軟（後から追加・削除可、最大 20 個）。LSI はテーブル作成時のみ作成可能で最大 5 個、後から削除のみ可能。"},
+        {"id": "B", "text": "LSI は強整合性読み取りをサポートしないが、GSI はサポートする", "is_correct": false, "explanation": "逆。LSI は強整合性読み取りをサポートするが、GSI は結果整合性のみ。"},
+        {"id": "C", "text": "GSI のパーティションキーは元テーブルと同じである必要がある", "is_correct": false, "explanation": "GSI は任意のパーティションキー/ソートキーを指定でき、元テーブルと異なってよい。"},
+        {"id": "D", "text": "LSI と GSI はどちらも独自のスループットをプロビジョンする必要がある", "is_correct": false, "explanation": "GSI は独自のキャパシティを持つが、LSI はベーステーブルのキャパシティを共有する。"}
+      ],
+      "explanation": "GSI（Global Secondary Index）はベーステーブルと別のキャパシティを持ち、別パーティションキー/ソートキーで再インデックスする。テーブル作成後に追加・削除可能で柔軟性が高いが、結果整合性のみ。LSI（Local Secondary Index）は同じパーティションキーで別のソートキーを持つインデックスで、強整合性読み取り可能だがテーブル作成時のみ定義可能。アクセスパターンが事前に明確なら LSI、後から追加されるなら GSI。",
+      "references": [
+        {"title": "Improving data access with secondary indexes", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html"}
+      ],
+      "tags": ["dynamodb", "gsi", "lsi", "indexing"],
+      "common_mistakes": [
+        "GSI が強整合性読み取りに対応すると誤解",
+        "LSI を後から追加できると誤解",
+        "GSI と LSI でパーティションキーの自由度が同じと誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-006",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Neptune",
+      "subtopic": "Graph workload identification",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業が不正取引検知システムを構築している。アカウント・取引・端末・IP の関連を多段（5、6 ホップ）に辿って詐欺ネットワークを検出する必要がある。最も適したデータベースはどれか。",
+      "options": [
+        {"id": "A", "text": "Amazon DynamoDB", "is_correct": false, "explanation": "DynamoDB はキー/値・ドキュメント型で、多段ジョインや関係性の探索を効率的に行えない。"},
+        {"id": "B", "text": "Amazon Aurora PostgreSQL の再帰 CTE", "is_correct": false, "explanation": "再帰 CTE で実現可能だが、5、6 ホップになるとパフォーマンスが急激に劣化する。グラフ処理特化エンジンのほうが圧倒的に高速。"},
+        {"id": "C", "text": "Amazon Neptune（Property Graph + Gremlin）", "is_correct": true, "explanation": "正解。Neptune はグラフ DB に特化し、多段関係性の探索（friend-of-friend 型クエリ、不正検知、ナレッジグラフ）を高速に実行できる。"},
+        {"id": "D", "text": "Amazon DocumentDB", "is_correct": false, "explanation": "DocumentDB はドキュメント DB（MongoDB 互換）で、グラフトラバーサルには向かない。"}
+      ],
+      "explanation": "高度に接続されたデータ（ソーシャルグラフ、不正検知、レコメンデーション、ナレッジグラフ）に対する多段関係性探索は Neptune の典型ユースケース。Property Graph（Gremlin/openCypher）や RDF（SPARQL）をサポートし、5、6 ホップのトラバーサルを高速に処理できる。リレーショナル DB の再帰 CTE は浅いホップなら可能だが、グラフ専用エンジンには性能で大きく劣る。",
+      "references": [
+        {"title": "What Is Amazon Neptune?", "url": "https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"}
+      ],
+      "tags": ["neptune", "graph", "fraud-detection", "fintech"],
+      "common_mistakes": [
+        "再帰 CTE で多段グラフ探索を効率的にできると誤解",
+        "DocumentDB をグラフ DB と混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-007",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Timestream",
+      "subtopic": "Time-series workload",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "東海地方の自動車部品製造業者が、工場内の数千台の IoT センサーから 1 秒間隔で温度・振動・電力消費データを収集している。直近 24 時間は高速にクエリしたいが、過去 2 年分の長期分析も必要。コストと運用効率を両立する最適なデータベースはどれか。",
+      "options": [
+        {"id": "A", "text": "Amazon RDS PostgreSQL に TimescaleDB 拡張をインストールする", "is_correct": false, "explanation": "TimescaleDB は PostgreSQL の時系列拡張だが RDS では拡張のサポートが限定的。さらに自動階層化やサーバーレスなマネージドメリットが Timestream に劣る。"},
+        {"id": "B", "text": "Amazon Timestream（Memory Store + Magnetic Store の自動階層化）", "is_correct": true, "explanation": "正解。Timestream は時系列データ特化。最新データは高速な Memory Store、古いデータは安価な Magnetic Store に自動移動し、ストレージコストとクエリ性能を両立する。"},
+        {"id": "C", "text": "Amazon DynamoDB をパーティションキー = sensor_id, ソートキー = timestamp で構成", "is_correct": false, "explanation": "実装は可能だが、時系列特有の集計関数や自動データ階層化を持たず、長期保存ではコストが膨らむ。"},
+        {"id": "D", "text": "Amazon S3 + Athena", "is_correct": false, "explanation": "S3+Athena は安価だが、リアルタイム書き込み（毎秒数千件）の取り込みパイプラインを別途設計する必要があり、低レイテンシのクエリにも不向き。"}
+      ],
+      "explanation": "Timestream は時系列データ専用 DB で、高速取り込み（毎秒数百万書き込み）、自動データ階層化（Memory Store → Magnetic Store）、組み込みの時系列関数（補間、平滑化、集計）を提供する。製造業の IoT、産業モニタリング、DevOps メトリクスなど典型ユースケース。RDS や DynamoDB でも実装は可能だが、コストや運用効率で Timestream が優位。",
+      "references": [
+        {"title": "What Is Amazon Timestream?", "url": "https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"}
+      ],
+      "tags": ["timestream", "iot", "time-series", "manufacturing"],
+      "common_mistakes": [
+        "DynamoDB を時系列の最適解と思い込む",
+        "S3+Athena ではリアルタイム書き込みの設計負荷を見落とす"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-008",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "QLDB",
+      "subtopic": "Immutable ledger",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "医療機関が患者カルテの改ざん不可能な台帳を必要としている。すべての変更履歴を暗号学的に検証可能で、誰がいつ何を更新したかの完全なトレースが必要。最も適したデータベースはどれか。",
+      "options": [
+        {"id": "A", "text": "Amazon Aurora MySQL のトリガーで監査ログテーブルを更新する", "is_correct": false, "explanation": "監査ログは管理者が編集できるため改ざん不可性を満たさない。暗号学的な検証可能性もない。"},
+        {"id": "B", "text": "Amazon DynamoDB Streams で全変更を S3 にアーカイブする", "is_correct": false, "explanation": "ストリーム自体は履歴を残すが、台帳としての改ざん不可検証（cryptographic verification）は標準では提供されない。"},
+        {"id": "C", "text": "Amazon QLDB（Quantum Ledger Database）", "is_correct": true, "explanation": "正解。QLDB はイミュータブルな台帳 DB で、Merkle ツリーベースの暗号学的検証可能な完全履歴を保持する。中央集権モデルで、医療カルテなどの監査用途に最適。"},
+        {"id": "D", "text": "Amazon Managed Blockchain", "is_correct": false, "explanation": "Managed Blockchain は複数当事者の分散台帳向けで、単一組織の監査台帳としてはオーバースペックかつ複雑。なお QLDB は 2025 年 7 月までに新規利用停止となるため移行先検討も別途必要だが、改ざん不可台帳の典型例として現在も問われる。"}
+      ],
+      "explanation": "QLDB（Quantum Ledger Database）は中央権限による台帳 DB で、すべての変更を Merkle ツリーで暗号学的にハッシュチェーン化し、改ざん検出を可能にする。医療、金融、サプライチェーンなど監査要件の厳しい業界に適する。なお AWS は QLDB を 2025 年 7 月以降の新規受け付け停止としており、Aurora PostgreSQL などへの移行も検討されているが、設計概念として理解が問われる。",
+      "references": [
+        {"title": "What Is Amazon QLDB?", "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html"}
+      ],
+      "tags": ["qldb", "ledger", "immutable", "healthcare", "audit"],
+      "common_mistakes": [
+        "監査テーブル＋トリガーで同等と誤解する",
+        "Managed Blockchain と QLDB の違いを知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-009",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DocumentDB",
+      "subtopic": "MongoDB compatibility",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある SaaS 企業がオンプレミスの MongoDB から AWS への移行を検討中。ドキュメントスキーマと既存の MongoDB ドライバ・クエリ（aggregate, $lookup 等）を可能な限り変更せず、フルマネージドで運用したい。最適な選択肢はどれか。",
+      "options": [
+        {"id": "A", "text": "Amazon DynamoDB に再設計する", "is_correct": false, "explanation": "DynamoDB は MongoDB と互換性がなく、データモデルとクエリ構文を全面的に書き換える必要がある。移行コストが大きい。"},
+        {"id": "B", "text": "EC2 上に MongoDB を自己構築する", "is_correct": false, "explanation": "互換性は完全だが「フルマネージド」要件を満たさない。バックアップ・パッチ・スケーリングを自社で運用することになる。"},
+        {"id": "C", "text": "Amazon DocumentDB（MongoDB 互換）", "is_correct": true, "explanation": "正解。DocumentDB は MongoDB API 互換のフルマネージドサービスで、既存ドライバとクエリを大部分そのまま使える。"},
+        {"id": "D", "text": "Amazon RDS PostgreSQL の JSONB 型で代替する", "is_correct": false, "explanation": "JSON 格納は可能だが MongoDB ドライバとの互換はなく、aggregate パイプラインなどは書き直しが必要。"}
+      ],
+      "explanation": "DocumentDB は MongoDB 3.6/4.0/5.0 API と互換性のあるフルマネージドドキュメントデータベース。MongoDB ドライバ、ツール、コマンド（aggregate、find、$match、$lookup 等）の多くがそのまま動作する。ただし完全互換ではないため、利用機能の互換性確認は必須。",
+      "references": [
+        {"title": "What Is Amazon DocumentDB?", "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html"}
+      ],
+      "tags": ["documentdb", "mongodb", "saas", "migration"],
+      "common_mistakes": [
+        "RDS PostgreSQL JSONB で MongoDB を代替できると過信",
+        "DynamoDB が MongoDB の置き換えになると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-010",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "MemoryDB",
+      "subtopic": "MemoryDB vs ElastiCache",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ゲーム会社が、リアルタイムリーダーボードを Redis で構築している。スループットだけでなくデータの永続性（プライマリ DB を介さずキャッシュだけで真実のデータを保持）と高可用性を求めている。最適なサービスはどれか。",
+      "options": [
+        {"id": "A", "text": "ElastiCache for Redis（クラスターモード有効）", "is_correct": false, "explanation": "高速だが、ElastiCache は基本的にキャッシュ層であり、ノード障害時にデータ消失の可能性が残る。プライマリ DB と組み合わせる前提。"},
+        {"id": "B", "text": "MemoryDB for Redis", "is_correct": true, "explanation": "正解。MemoryDB はマルチ AZ トランザクションログによる耐久性を持ち、プライマリ DB として Redis API で使用可能。リーダーボード等の永続性が必要なリアルタイムワークロードに最適。"},
+        {"id": "C", "text": "ElastiCache for Memcached", "is_correct": false, "explanation": "Memcached はソート済みセットなどを持たず、リーダーボード実装に不向き。永続化もない。"},
+        {"id": "D", "text": "DynamoDB DAX", "is_correct": false, "explanation": "DAX は DynamoDB 専用キャッシュで Redis API は使えない。リーダーボードのソート済みセット用途に向かない。"}
+      ],
+      "explanation": "MemoryDB for Redis は Redis API 互換でありながら、複数 AZ にまたがるトランザクションログにより耐久性を持つ。ElastiCache はキャッシュ用途で速度最優先、データ消失を許容する設計。MemoryDB は単独でプライマリデータベースとしても使える設計で、リーダーボードやセッションストアでデータ消失を許容できないケースに適する。",
+      "references": [
+        {"title": "What is Amazon MemoryDB?", "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/what-is-memorydb.html"}
+      ],
+      "tags": ["memorydb", "elasticache", "redis", "gaming", "leaderboard"],
+      "common_mistakes": [
+        "ElastiCache でもデータ永続化が完全と誤解",
+        "DAX を汎用キャッシュと誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-011",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "Single-table design",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "SaaS 企業が DynamoDB で「テナント → ユーザー → 注文」の階層を扱う。アクセスパターン: (1) 特定テナントの全ユーザー取得、(2) 特定ユーザーの全注文取得、(3) 特定テナントの全注文取得。最も効率的なシングルテーブル設計はどれか。",
+      "options": [
+        {"id": "A", "text": "テーブル A: tenant、テーブル B: user、テーブル C: order の 3 テーブルで構築", "is_correct": false, "explanation": "シングルテーブル設計の要件を満たさず、複数クエリと結合ロジックがアプリ側に必要。スキャンも増える。"},
+        {"id": "B", "text": "PK=TENANT#<tid>, SK=USER#<uid>（ユーザー）／ PK=USER#<uid>, SK=ORDER#<oid>（注文）に加え、GSI1 で PK=TENANT#<tid>, SK=ORDER#<oid> を構成", "is_correct": true, "explanation": "正解。PK/SK の階層キー設計と GSI による複数アクセスパターンの最適化を組み合わせ、Query で 3 つのアクセスパターンを単一クエリで実現。"},
+        {"id": "C", "text": "PK=ENTITY_TYPE, SK=<id> でエンティティを識別する", "is_correct": false, "explanation": "ENTITY_TYPE が固定値だとホットパーティションになる。階層関係も表現できない。"},
+        {"id": "D", "text": "PK=ID（UUID）でフラットに格納し、Scan + Filter で 3 パターンを実現", "is_correct": false, "explanation": "Scan は全件読み取りで高コスト・低性能。フィルターはサーバーで読み取った後の絞り込みのため RCU を浪費する。"}
+      ],
+      "explanation": "DynamoDB のシングルテーブル設計では、複合キー（PK/SK）と GSI を組み合わせて複数アクセスパターンを 1 テーブルで満たす。PK にエンティティと階層を埋め込み、SK で範囲クエリを可能にする。GSI で別軸のクエリを追加。Scan ではなく Query を使うのが原則。",
+      "references": [
+        {"title": "Best practices for designing and architecting with DynamoDB", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html"}
+      ],
+      "tags": ["dynamodb", "single-table", "saas", "data-modeling"],
+      "common_mistakes": [
+        "ENTITY_TYPE をパーティションキーにしてホットパーティション化",
+        "Scan を多用して RCU を浪費する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-012",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Aurora",
+      "subtopic": "Aurora Global Database",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "FinTech 企業が、東京リージョンに本番 Aurora PostgreSQL を運用しているが、災害対策として大阪・シンガポールに 1 秒未満のレプリケーション遅延、RPO 1 秒・RTO 1 分以内の DR を求めている。最適な構成は？",
+      "options": [
+        {"id": "A", "text": "Aurora Global Database で東京 = プライマリ、大阪・シンガポール = セカンダリ（最大 5 リージョンまで）", "is_correct": true, "explanation": "正解。Aurora Global Database はストレージレベルで複数リージョンに非同期複製。通常 1 秒未満のレイテンシ、RPO ≦1 秒、RTO 1 分（マネージドプランドフェイルオーバー）が実現可能。"},
+        {"id": "B", "text": "RDS for PostgreSQL のクロスリージョンリードレプリカ", "is_correct": false, "explanation": "RDS のクロスリージョンレプリカは論理レプリケーションでラグが大きく（数秒〜数十秒）、RPO 1 秒の要件を満たさない。"},
+        {"id": "C", "text": "DMS による継続的レプリケーションで東京 → 大阪・シンガポール", "is_correct": false, "explanation": "DMS は移行用途中心で、レプリケーションラグが安定せず DR 用途には不適。"},
+        {"id": "D", "text": "Aurora マルチ AZ デプロイのみ（リージョンは 1 つ）", "is_correct": false, "explanation": "マルチ AZ は同一リージョン内の HA で、リージョン障害には対応できない。"}
+      ],
+      "explanation": "Aurora Global Database はストレージレイヤーで複数リージョンへ非同期レプリケーション（通常 1 秒未満のラグ）し、最大 5 セカンダリリージョンを構成可能。マネージドプランドフェイルオーバーやマネージドフェイルオーバーで RTO 約 1 分の昇格が可能。FinTech のような厳しい RPO/RTO の DR 要件に最適。",
+      "references": [
+        {"title": "Using Amazon Aurora Global Database", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html"}
+      ],
+      "tags": ["aurora", "global-database", "dr", "fintech", "rpo-rto"],
+      "common_mistakes": [
+        "RDS のクロスリージョンリードレプリカで Aurora Global Database 同等と誤解",
+        "DMS を DR 目的に使ってしまう"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-013",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "Global Tables",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ゲーム会社がモバイルゲームを世界 4 リージョン（東京、バージニア北部、フランクフルト、シドニー）で展開する。プレイヤーは最寄りリージョンに低レイテンシで読み書きしたい。データは全リージョンで結果的に整合すれば良い。最適なソリューションは？",
+      "options": [
+        {"id": "A", "text": "DynamoDB Global Tables（マルチリージョン、マルチアクティブ）", "is_correct": true, "explanation": "正解。Global Tables は全リージョンが書き込み可能で、自動レプリケーションによる結果整合性。各リージョンのプレイヤーはローカルに低レイテンシで読み書きできる。"},
+        {"id": "B", "text": "DynamoDB を東京のみに配置し、CloudFront でキャッシュ", "is_correct": false, "explanation": "書き込みは依然として東京なので他リージョンの書き込みレイテンシが大きい。"},
+        {"id": "C", "text": "Aurora Global Database", "is_correct": false, "explanation": "Aurora Global Database はマルチリージョン書き込みではなく、書き込みはプライマリリージョンに集中する（Write Forwarding はあるが用途限定）。"},
+        {"id": "D", "text": "リージョンごとに別々の DynamoDB テーブルを置き、Lambda で同期", "is_correct": false, "explanation": "車輪の再発明。競合解決やトランザクション一貫性を自前で実装するのは複雑でリスクが高い。"}
+      ],
+      "explanation": "DynamoDB Global Tables はマルチリージョン・マルチアクティブのレプリケーション機能で、各リージョンが独立してフルアクセス（読み書き）可能。レプリケーションは結果整合性。最終書き込み優先（Last Writer Wins）の競合解決。グローバルゲーム、IoT、グローバル SaaS で典型ユースケース。",
+      "references": [
+        {"title": "Global tables - DynamoDB", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"}
+      ],
+      "tags": ["dynamodb", "global-tables", "gaming", "multi-region"],
+      "common_mistakes": [
+        "Aurora Global Database をマルチアクティブと誤解",
+        "Lambda 同期で同等の機能を自作できると過信"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-014",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "DAX",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある SaaS 企業の DynamoDB テーブルが「特定の人気アイテムへの読み取り」が偏っており、ホットキー警告が出ている。読み取りはミリ秒未満のレイテンシが必要。最も適した対策はどれか。",
+      "options": [
+        {"id": "A", "text": "Amazon DynamoDB Accelerator (DAX) を導入してアプリから DAX エンドポイント経由で読み取る", "is_correct": true, "explanation": "正解。DAX は DynamoDB 専用のインメモリキャッシュで、ミリ秒未満のレイテンシを提供。読み取り偏りのあるホットキーを吸収できる。"},
+        {"id": "B", "text": "GSI を追加してパーティションキーを変更する", "is_correct": false, "explanation": "GSI は別キーでのアクセス用で、特定アイテム読み取り集中の解決にはならない。同じ人気アイテムが GSI でも偏る。"},
+        {"id": "C", "text": "ElastiCache Redis を前段に置き、Lambda でキャッシュ管理", "is_correct": false, "explanation": "実装可能だがキャッシュ無効化を自前で書く必要がある。DAX なら DynamoDB と密結合の write-through が標準提供される。"},
+        {"id": "D", "text": "テーブルを Provisioned から On-Demand に切り替える", "is_correct": false, "explanation": "On-Demand に切り替えてもホットキーはパーティションスループット上限に到達しうる。レイテンシ要件もキャッシュなしでは満たしにくい。"}
+      ],
+      "explanation": "DAX は DynamoDB 専用のインメモリキャッシュで、API 互換性が高くアプリ変更を最小化できる。読み取り集中（ホットキー）対策として典型的。書き込みは write-through で DynamoDB に流れる。読み取り中心 + 高頻度繰り返しアクセスのワークロードで効果が大きい。",
+      "references": [
+        {"title": "DynamoDB Accelerator (DAX)", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.html"}
+      ],
+      "tags": ["dynamodb", "dax", "caching", "saas"],
+      "common_mistakes": [
+        "GSI を追加すればホットキーが解消すると誤解",
+        "On-Demand 化が万能解と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-015",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "RDS",
+      "subtopic": "Storage type selection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業の在庫管理システムが、RDS for PostgreSQL で 5 TB のデータを扱っている。ピーク時に IOPS が安定せずトランザクションが遅延する。コストを抑えつつ予測可能な高 IOPS 性能を確保したい。最適なストレージ選択は？",
+      "options": [
+        {"id": "A", "text": "汎用 SSD（gp2）", "is_correct": false, "explanation": "gp2 はサイズに応じた IOPS で、バーストクレジット枯渇時に性能が低下する。予測可能性に欠ける。"},
+        {"id": "B", "text": "汎用 SSD（gp3）", "is_correct": true, "explanation": "正解。gp3 はストレージサイズと独立して IOPS とスループットをプロビジョン可能で、gp2 より安価かつ予測可能。多くの OLTP に十分。"},
+        {"id": "C", "text": "Provisioned IOPS（io1）", "is_correct": false, "explanation": "極めて高 IOPS（数万〜）が必要なら有効だが、5 TB 程度の OLTP には gp3 で十分でコストが安い。"},
+        {"id": "D", "text": "マグネティック（standard）", "is_correct": false, "explanation": "レガシーストレージで IOPS が低い。新規本番ワークロードには非推奨。"}
+      ],
+      "explanation": "RDS のストレージタイプ：gp2 はサイズに比例した IOPS とバーストでパフォーマンスが変動。gp3 はサイズと独立してベースライン IOPS（3,000）と追加プロビジョンが可能で、ほとんどの OLTP に推奨。io1/io2 は超高 IOPS（最大 256K）が必要な極端な要件向け。Magnetic は古い小規模ワークロード向けで現在は非推奨。",
+      "references": [
+        {"title": "Amazon RDS DB instance storage", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html"}
+      ],
+      "tags": ["rds", "storage", "gp3", "manufacturing", "iops"],
+      "common_mistakes": [
+        "io1 が常に最善と誤解しコスト過剰になる",
+        "gp2 と gp3 の違いを把握していない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-016",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "Streams",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ゲーム会社が DynamoDB に保存されるプレイヤースコアの変更を、ほぼリアルタイムで OpenSearch に同期して検索可能にしたい。アプリには最小限の変更で実装したい。**有効なアーキテクチャ** をすべて選びなさい（複数選択）。",
+      "options": [
+        {"id": "A", "text": "アプリのコードを変更して DynamoDB と OpenSearch に二重書き込みする", "is_correct": false, "explanation": "二重書き込みは整合性が崩れやすく、片方失敗時のリカバリも複雑。アンチパターン。"},
+        {"id": "B", "text": "DynamoDB Streams を有効化し、Lambda トリガーで OpenSearch に書き込む", "is_correct": true, "explanation": "正解。Streams は DynamoDB の変更ログをほぼリアルタイムで配信。Lambda で OpenSearch にプッシュする標準パターン。アプリ変更不要。"},
+        {"id": "C", "text": "Kinesis Data Streams for DynamoDB を有効化し、Lambda または OpenSearch Ingestion で OpenSearch に書き込む", "is_correct": true, "explanation": "正解。Kinesis Data Streams for DynamoDB は Streams と並ぶ CDC オプションで、保持期間が長く（最大 365 日）、複数コンシューマーをファンアウト可能。OpenSearch Ingestion との統合もある。"},
+        {"id": "D", "text": "EventBridge で 1 分ごとに DynamoDB をスキャンし変更を検出する", "is_correct": false, "explanation": "Scan はコストが高く、変更検知の信頼性も低い。準リアルタイムにならない。"}
+      ],
+      "explanation": "DynamoDB の変更を外部システムに伝搬する CDC パターンには、(1) DynamoDB Streams + Lambda、(2) Kinesis Data Streams for DynamoDB（より長い保持と複数コンシューマー対応）の 2 系統がある。両者ともアプリのコード変更は不要で疎結合を保てる。二重書き込みや定期 Scan はアンチパターン。",
+      "references": [
+        {"title": "DynamoDB Streams", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html"},
+        {"title": "Using Kinesis Data Streams with DynamoDB", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/kds.html"}
+      ],
+      "tags": ["dynamodb", "streams", "kinesis", "cdc", "gaming", "mrq"],
+      "common_mistakes": [
+        "二重書き込みパターンを取ってしまう",
+        "Kinesis Data Streams for DynamoDB の存在を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-017",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "RDS",
+      "subtopic": "Read replicas",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "医療機関の予約システムが RDS for PostgreSQL で稼働しており、レポート部門が大規模な分析クエリを実行するため OLTP 性能が低下している。コストとアーキテクチャ変更を最小化して解決するには？",
+      "options": [
+        {"id": "A", "text": "RDS for PostgreSQL のリードレプリカを作成し、レポートクエリをレプリカに向ける", "is_correct": true, "explanation": "正解。リードレプリカで読み取り負荷を分離。アプリは接続文字列の切り替えのみで済む。"},
+        {"id": "B", "text": "Aurora PostgreSQL に再構築する", "is_correct": false, "explanation": "Aurora 移行は将来的に検討すべきだが、即効性のある負荷分離としては過剰。"},
+        {"id": "C", "text": "OLTP テーブルから Redshift へ毎晩バッチ ETL する", "is_correct": false, "explanation": "ETL 構築コストが高く、バッチ遅延（24 時間）も生じる。即効性のある選択肢ではない。"},
+        {"id": "D", "text": "RDS をスケールアップして CPU を増やす", "is_correct": false, "explanation": "スケールアップは一時的解決にすぎず、レポートクエリのリソース食いつぶしを根本的に分離できない。"}
+      ],
+      "explanation": "RDS のリードレプリカは非同期レプリケーションで読み取り専用ノードを作成し、レポート/分析系の読み取りクエリを OLTP から分離する典型パターン。アプリ側は接続文字列を切り替えるだけで対応でき、即効性とコスト効率に優れる。書き込みは引き続きプライマリへ。",
+      "references": [
+        {"title": "Working with read replicas - Amazon RDS", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"}
+      ],
+      "tags": ["rds", "read-replica", "healthcare", "olap"],
+      "common_mistakes": [
+        "Aurora 移行を即時の解決策と誤解",
+        "スケールアップで根本解決と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-018",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Keyspaces",
+      "subtopic": "Cassandra workload",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "オンプレで Apache Cassandra を運用する FinTech 企業が、運用負荷を下げつつ既存の CQL クライアント・ドライバを変更せず AWS に移行したい。最適なサービスは？",
+      "options": [
+        {"id": "A", "text": "Amazon DynamoDB に再設計する", "is_correct": false, "explanation": "DynamoDB は CQL 互換ではなく、ドライバ・クエリ・データモデルすべてを書き換える必要がある。"},
+        {"id": "B", "text": "Amazon Keyspaces (for Apache Cassandra)", "is_correct": true, "explanation": "正解。Keyspaces は Cassandra（CQL）API 互換のフルマネージドサービス。既存ドライバ・クライアントをほぼそのまま使える。"},
+        {"id": "C", "text": "EC2 上に Cassandra クラスターを自前で構築する", "is_correct": false, "explanation": "互換だが運用負荷が下がらない。"},
+        {"id": "D", "text": "Amazon DocumentDB", "is_correct": false, "explanation": "DocumentDB は MongoDB 互換であり、Cassandra（CQL）とは互換性がない。"}
+      ],
+      "explanation": "Amazon Keyspaces は Apache Cassandra 互換のフルマネージドワイドカラム DB。CQL API・既存ドライバを利用でき、サーバーレス（オンデマンド）・プロビジョンド両方のキャパシティモードを提供。マネージドのバックアップ・暗号化・モニタリングを備え、Cassandra ワークロードの AWS 移行先として標準。",
+      "references": [
+        {"title": "What Is Amazon Keyspaces?", "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is-keyspaces.html"}
+      ],
+      "tags": ["keyspaces", "cassandra", "cql", "fintech", "migration"],
+      "common_mistakes": [
+        "DynamoDB が Cassandra 互換と誤解",
+        "DocumentDB を Cassandra 互換と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-019",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Aurora",
+      "subtopic": "Aurora vs RDS",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "次のうち、Aurora MySQL を選ぶ理由として **正しいもの** をすべて選びなさい（複数選択）。",
+      "options": [
+        {"id": "A", "text": "ストレージが 6 方向にレプリケートされ、最大 128 TiB まで自動拡張", "is_correct": true, "explanation": "正解。Aurora は 3 AZ × 2 コピー = 6 方向に分散し、ストレージは 10 GB から最大 128 TiB に自動拡張。"},
+        {"id": "B", "text": "リードレプリカへのフェイルオーバーが RDS for MySQL より高速（多くの場合 30 秒以内）", "is_correct": true, "explanation": "正解。Aurora は共有ストレージのため、フェイルオーバーが通常 30 秒以内。RDS の MySQL はバイナリログベースでより遅い。"},
+        {"id": "C", "text": "リードレプリカでも書き込みが可能（マルチマスター）", "is_correct": false, "explanation": "Aurora MySQL のマルチマスターは特殊な構成で、グローバル DB やマネージド DB の標準ではない（一部リージョン・廃止予定機能）。デフォルトは単一ライター。"},
+        {"id": "D", "text": "MySQL バイナリログレプリケーションが不要で、ストレージレベルでレプリケート", "is_correct": true, "explanation": "正解。Aurora は専用ストレージレイヤーがレプリケーションを担うため、bin log レプリケーションを使わずに済む。"}
+      ],
+      "explanation": "Aurora は RDS のラッパーではなく、AWS 設計のクラウドネイティブ DB。ストレージは 6 方向分散・最大 128 TiB・自動拡張、フェイルオーバーは数十秒、リードレプリカ最大 15、ストレージレベルレプリケーション、Aurora Serverless v2、Global Database など RDS 標準エンジンを上回る機能を提供する。マルチマスターは特殊機能で標準ではない。",
+      "references": [
+        {"title": "Amazon Aurora features", "url": "https://aws.amazon.com/rds/aurora/features/"}
+      ],
+      "tags": ["aurora", "rds", "comparison", "mrq"],
+      "common_mistakes": [
+        "Aurora を「マルチマスターが標準」と誤解",
+        "ストレージ最大値（128 TiB）を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-020",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "Hot partition",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある DynamoDB テーブルが ProvisionedThroughputExceededException を頻発している。テーブル全体の RCU/WCU 使用率は 50% 未満。CloudWatch Contributor Insights では特定のパーティションキー値（user_id=12345）への書き込みが集中している。最も適切な対策は？",
+      "options": [
+        {"id": "A", "text": "テーブル全体の WCU をさらに増やす", "is_correct": false, "explanation": "全体 WCU を増やしてもホットパーティションは個別の上限（最大 1000 WCU/パーティション）に阻まれる。コストが無駄。"},
+        {"id": "B", "text": "Write Sharding：パーティションキーに 0、9 のサフィックス（user_id=12345.<random>）を付与し、複数パーティションへ分散", "is_correct": true, "explanation": "正解。Write Sharding は単一論理キーへのアクセスを物理的に複数パーティションに分散する標準パターン。読み取り側はサフィックス全件を集約する必要があるが、書き込み集中は解消される。"},
+        {"id": "C", "text": "GSI を追加して書き込みを分散", "is_correct": false, "explanation": "GSI は別のクエリ軸を提供するもので、書き込み集中は解消されない（GSI への伝搬書き込みも増えるだけ）。"},
+        {"id": "D", "text": "DAX を導入する", "is_correct": false, "explanation": "DAX は読み取りキャッシュであり書き込み集中に効果はない。"}
+      ],
+      "explanation": "DynamoDB ではパーティションごとに 1000 WCU / 3000 RCU の上限がある。特定キーへの集中は Write Sharding（サフィックス付与）で物理パーティションに分散するのが定石。読み取り時は 0、9 を集約することでトレードオフが生じる。Adaptive Capacity も自動でホットパーティションに追加スループットを割り当てるが、極端な集中には Write Sharding が有効。",
+      "references": [
+        {"title": "Best practices for designing and using partition keys effectively", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html"}
+      ],
+      "tags": ["dynamodb", "hot-partition", "sharding", "throttling"],
+      "common_mistakes": [
+        "テーブル全体の WCU を増やせば解消すると誤解",
+        "GSI が書き込み集中の解になると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-021",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Database selection",
+      "subtopic": "OLTP vs OLAP",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "次のうち、OLTP（オンライントランザクション処理）ワークロードに適した DB と、OLAP（分析）ワークロードに適した DB の組み合わせとして **正しいもの** をすべて選びなさい（複数選択）。",
+      "options": [
+        {"id": "A", "text": "OLTP: Aurora MySQL／OLAP: Redshift", "is_correct": true, "explanation": "正解。Aurora は行指向で短いトランザクション最適。Redshift は列指向で大規模分析に最適化。"},
+        {"id": "B", "text": "OLTP: DynamoDB／OLAP: Athena (S3)", "is_correct": true, "explanation": "正解。DynamoDB は低レイテンシな key/value トランザクション。S3 + Athena はスキャン効率の高い分析クエリに適する。"},
+        {"id": "C", "text": "OLTP: Redshift／OLAP: Aurora MySQL", "is_correct": false, "explanation": "逆。Redshift は OLTP（多数の短いトランザクション）に不向き、Aurora は大規模スキャン分析に Redshift ほど効率的ではない。"},
+        {"id": "D", "text": "OLTP: RDS for PostgreSQL／OLAP: Redshift（または Redshift Spectrum）", "is_correct": true, "explanation": "正解。RDS PostgreSQL は OLTP の代表。Redshift は OLAP の代表。"}
+      ],
+      "explanation": "OLTP は短いトランザクションを多数処理する用途で行指向 DB（RDS, Aurora, DynamoDB）が適する。OLAP は大量データに対する集計・分析でカラム指向 DB（Redshift）や S3 + Athena が適する。両者を混在させて使う場合は CDC（DMS や Streams）でデータレプリケーションするのが標準パターン。",
+      "references": [
+        {"title": "Choosing the right database for your application", "url": "https://aws.amazon.com/products/databases/"}
+      ],
+      "tags": ["oltp", "olap", "redshift", "aurora", "dynamodb", "mrq"],
+      "common_mistakes": [
+        "Redshift で OLTP も対応できると誤解",
+        "Aurora で大規模 BI 分析が最適と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-022",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "RDS",
+      "subtopic": "Engine selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "オンプレの Oracle DB（ライセンス含めて高コスト）から RDS への移行を検討中の SaaS 企業がある。PL/SQL は最小限、独自機能（Oracle Spatial, RAC）は使っていない。オープンソース DB へ移行してコストとマネージド運用を両立したい。最適な選択は？",
+      "options": [
+        {"id": "A", "text": "RDS for Oracle（ライセンス込み）", "is_correct": false, "explanation": "Oracle ライセンスが含まれるためコスト削減目的に合致しない。"},
+        {"id": "B", "text": "RDS for SQL Server", "is_correct": false, "explanation": "別の商用 DB へ移行することになり、コスト削減目的に矛盾。"},
+        {"id": "C", "text": "Aurora PostgreSQL（必要に応じて Babelfish for Oracle 互換ツール、SCT、DMS で移行）", "is_correct": true, "explanation": "正解。Aurora PostgreSQL はクラウドネイティブで Oracle からの移行が比較的容易。SCT/DMS、AWS が提供する Oracle to PostgreSQL 移行ツールが整備されている。"},
+        {"id": "D", "text": "オンプレ Oracle を EC2 上に Lift & Shift", "is_correct": false, "explanation": "EC2 化では Oracle ライセンスコストとマネージド運用負荷が解消されない。"}
+      ],
+      "explanation": "Oracle から PostgreSQL（Aurora PostgreSQL や RDS for PostgreSQL）への移行は、ライセンスコスト削減とオープンソース化の典型パスで、AWS Schema Conversion Tool（SCT）と DMS を組み合わせる。Babelfish は SQL Server 互換用（PostgreSQL 上で T-SQL を解釈）であり Oracle 用ではないため誤解しやすい。Oracle 互換は SCT による変換と AWS DMS が中心。",
+      "references": [
+        {"title": "AWS Schema Conversion Tool", "url": "https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_Welcome.html"}
+      ],
+      "tags": ["rds", "aurora", "postgresql", "oracle-migration"],
+      "common_mistakes": [
+        "Babelfish が Oracle 互換と誤解",
+        "EC2 Lift & Shift をコスト削減策と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-023",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "Cost optimization",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "あるアプリケーションの DynamoDB 利用に関し、次のうち **コスト最適化** に貢献する手段をすべて選びなさい（複数選択）。",
+      "options": [
+        {"id": "A", "text": "予測可能で安定したトラフィックに対し Provisioned + Reserved Capacity を購入", "is_correct": true, "explanation": "正解。Reserved Capacity は最大 50%以上の割引。安定ワークロードに有効。"},
+        {"id": "B", "text": "古いデータに TTL を設定し自動削除", "is_correct": true, "explanation": "正解。TTL によるアイテム削除は WCU を消費せず、ストレージコストを下げる。"},
+        {"id": "C", "text": "Scan を多用してインデックスなしでアクセスする", "is_correct": false, "explanation": "Scan は全件読み取りで高コスト。Query や GSI を使うほうが圧倒的に効率的。"},
+        {"id": "D", "text": "アクセス頻度の低いデータを Standard-IA テーブルクラスに切り替え", "is_correct": true, "explanation": "正解。DynamoDB Standard-IA は低頻度アクセスデータのストレージコストを下げるテーブルクラス（読み取りはやや高コスト）。"}
+      ],
+      "explanation": "DynamoDB のコスト最適化策：Reserved Capacity、TTL でストレージ削減、Standard-IA テーブルクラスで低頻度データの保管コスト削減、Scan 回避と適切な GSI 設計で RCU 削減、適切なキャパシティモード選択（On-Demand vs Provisioned）。Scan の多用はコスト増のアンチパターン。",
+      "references": [
+        {"title": "DynamoDB pricing", "url": "https://aws.amazon.com/dynamodb/pricing/"},
+        {"title": "DynamoDB Standard-IA table class", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.TableClasses.html"}
+      ],
+      "tags": ["dynamodb", "cost", "reserved-capacity", "ttl", "mrq"],
+      "common_mistakes": [
+        "Scan が安いと誤解",
+        "Standard-IA テーブルクラスの存在を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-024",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Aurora",
+      "subtopic": "Aurora Auto Scaling reader",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Aurora MySQL クラスターで、リーダーエンドポイント経由の読み取り負荷が業務時間帯のみ急増する。深夜・休日は不要なリードレプリカが残ってコストを浪費している。最も効果的な対策は？",
+      "options": [
+        {"id": "A", "text": "Aurora Auto Scaling for Replicas を CPU 使用率や接続数のメトリクスで構成し、最小 = 1, 最大 = 10 のように設定", "is_correct": true, "explanation": "正解。Aurora Auto Scaling はリードレプリカ数を自動増減する。深夜は最小数まで減り、業務時間帯は自動的に増える。コスト最適化の標準パターン。"},
+        {"id": "B", "text": "Aurora Serverless v2 に変更する", "is_correct": false, "explanation": "Serverless v2 はインスタンスサイズ（ACU）の自動スケールであり、リードレプリカ数の増減ではない。リーダー負荷分散とは課題が異なる。"},
+        {"id": "C", "text": "リードレプリカを毎晩手動で削除し、朝に再作成する", "is_correct": false, "explanation": "運用負荷が高くミスのリスクが大きい。自動化が標準。"},
+        {"id": "D", "text": "RDS Proxy で接続をプールしリーダー負荷を軽減", "is_correct": false, "explanation": "RDS Proxy は接続管理が主目的でリードレプリカ数の自動増減はしない。"}
+      ],
+      "explanation": "Aurora Auto Scaling for Replicas は、CPU/接続数などのメトリクスに応じてリードレプリカ数を自動増減し、業務時間帯のスパイクに対応しつつ深夜のコストを抑える機能。Serverless v2 はインスタンスサイズの自動スケールで、リーダー数の自動増減とは異なる。両者は組み合わせ可能。",
+      "references": [
+        {"title": "Using Amazon Aurora Auto Scaling with Aurora replicas", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Integrating.AutoScaling.html"}
+      ],
+      "tags": ["aurora", "auto-scaling", "cost", "read-replica"],
+      "common_mistakes": [
+        "Serverless v2 がリーダー数を自動増減すると誤解",
+        "RDS Proxy がスケーリングを担うと誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-025",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Database selection",
+      "subtopic": "Workload mapping",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "次のワークロード〜推奨 DB の組み合わせのうち、**最も適切** なものをすべて選びなさい（複数選択）。",
+      "options": [
+        {"id": "A", "text": "ソーシャルネットワークの友達関係グラフ → Neptune", "is_correct": true, "explanation": "正解。多段の関係性探索はグラフ DB の典型ユースケース。"},
+        {"id": "B", "text": "工場 IoT センサー時系列データ → Timestream", "is_correct": true, "explanation": "正解。時系列特化エンジンで高速取り込みと自動階層化。"},
+        {"id": "C", "text": "1 年で 10 万 IOPS の OLTP（強整合性、ACID）→ DynamoDB", "is_correct": false, "explanation": "DynamoDB はトランザクションをサポートするが、複雑な複数行 ACID トランザクションや厳格な強整合性 OLTP には Aurora や RDS のほうが向く。"},
+        {"id": "D", "text": "セッションキャッシュ（短命、低レイテンシ）→ ElastiCache for Redis", "is_correct": true, "explanation": "正解。Redis のインメモリ TTL 機能でセッションは典型ユースケース。"}
+      ],
+      "explanation": "ワークロード特性 → DB 選定：グラフ関係性 → Neptune、時系列 → Timestream、ドキュメント → DocumentDB、key-value/低レイテンシ高スケール → DynamoDB、リレーショナル ACID → Aurora/RDS、キャッシュ・セッション → ElastiCache/MemoryDB、台帳 → QLDB。各サービスの「典型ユースケース」を覚える。",
+      "references": [
+        {"title": "Purpose-built databases on AWS", "url": "https://aws.amazon.com/products/databases/"}
+      ],
+      "tags": ["database-selection", "workload", "mrq"],
+      "common_mistakes": [
+        "DynamoDB を伝統的 RDB の置き換えと誤解",
+        "Neptune を時系列 DB と混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-026",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Aurora",
+      "subtopic": "Serverless v2 vs Provisioned analysis",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Aurora PostgreSQL のワークロード分析を実施したところ、平日昼に CPU 70%、夜間 5%、休日 10% で利用率の変動が大きい。ピーク時は db.r6g.4xlarge（16 vCPU 128 GB）相当が必要。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "Provisioned db.r6g.4xlarge を常時稼働", "is_correct": false, "explanation": "夜間・休日のリソースが過剰でコストが無駄。"},
+        {"id": "B", "text": "Aurora Serverless v2 を 1 ACU 〜 64 ACU 程度のレンジで設定", "is_correct": true, "explanation": "正解。Serverless v2 はワークロードに応じて細かく自動スケール。最大 64 ACU（128 GB 相当）まで拡張し、夜間は最小 ACU まで縮小してコスト最適化。"},
+        {"id": "C", "text": "Provisioned db.r6g.large を 4 台のリードレプリカで冗長化", "is_correct": false, "explanation": "ライターのスケール課題は解決せず、夜間も全台稼働でコスト無駄。"},
+        {"id": "D", "text": "夜間と休日に EventBridge で Aurora を停止する", "is_correct": false, "explanation": "Aurora の停止は最大 7 日で自動再開し、運用が複雑。Serverless v2 のほうが自動化されている。"}
+      ],
+      "explanation": "Aurora Serverless v2 はワークロード変動が大きいケースで Provisioned を上回るコスト効率を実現。1 ACU = 約 2 GB メモリ + 比例 CPU。64 ACU で db.r6g.4xlarge 相当の処理能力を持ちながら、夜間や休日には最小 ACU（例: 1 ACU）まで自動縮小する。突発的な負荷にもシームレス対応。",
+      "references": [
+        {"title": "Performance and scaling in Aurora Serverless v2", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.setting-capacity.html"}
+      ],
+      "tags": ["aurora", "serverless-v2", "cost-optimization", "analysis"],
+      "common_mistakes": [
+        "Aurora 停止スケジュールが長期運用に向くと誤解",
+        "リードレプリカ追加でライターのスケール課題が解決すると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-027",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "DynamoDB",
+      "subtopic": "Trade-off analysis",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "FinTech 企業が「ユーザー × 取引履歴」テーブルを DynamoDB と Aurora PostgreSQL のどちらで構築するか評価している。要件: 1 秒あたり数万件の書き込み、ホットキーの偏り少、読み取りはユーザー単位の最新 100 件取得が中心、JOIN は不要。最も適切な選択肢と理由として **正しい** のは？",
+      "options": [
+        {"id": "A", "text": "Aurora PostgreSQL を選ぶ：JOIN や強整合性が必要だから", "is_correct": false, "explanation": "JOIN 不要と明記されており、強整合性も DynamoDB で対応可能。Aurora を選ぶ強い理由がない。"},
+        {"id": "B", "text": "DynamoDB を選ぶ：高スケール書き込みとシンプルなアクセスパターン（PK=user_id, SK=timestamp）に最適だから", "is_correct": true, "explanation": "正解。DynamoDB は単純な PK/SK アクセスで書き込みスケール可能。Query の Limit でユーザー最新 100 件を効率的に取得できる。"},
+        {"id": "C", "text": "Aurora PostgreSQL を選ぶ：DynamoDB は数万 wps を処理できないから", "is_correct": false, "explanation": "DynamoDB は数十万 wps を扱える設計。誤った前提。"},
+        {"id": "D", "text": "DynamoDB を選ぶ：Aurora は ACID トランザクションを持たないから", "is_correct": false, "explanation": "Aurora は ACID トランザクションをフルサポートする。理由が誤っている。"}
+      ],
+      "explanation": "アクセスパターン中心の設計で（JOIN 不要、PK/SK アクセス、高スループット書き込み）DynamoDB が適合。Aurora は複雑なクエリ・JOIN・既存 SQL アプリには優位だが、本要件では DynamoDB のシンプルさとスケーラビリティが最適。判断は「スケール特性 × アクセスパターン × データモデル」を総合評価する。",
+      "references": [
+        {"title": "When to use Aurora vs DynamoDB", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"}
+      ],
+      "tags": ["dynamodb", "aurora", "trade-off", "fintech", "evaluation"],
+      "common_mistakes": [
+        "DynamoDB が高スループット書き込みに対応しないと誤解",
+        "Aurora が ACID 非対応と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-028",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Multi-region design",
+      "subtopic": "Architecture evaluation",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "グローバル SaaS 企業が、世界の各リージョンでローカル書き込み・ローカル読み取りを実現したい。データの最終的整合性は許容できるが、運用は最小限にしたい。次のうち **最も適切** な評価はどれか？",
+      "options": [
+        {"id": "A", "text": "Aurora Global Database を全リージョン書き込み可能に構成し、Write Forwarding を多用する", "is_correct": false, "explanation": "Aurora Global Database のセカンダリ書き込みは Write Forwarding 経由でプライマリに転送されるため、ローカル書き込みのレイテンシ要件を満たさない。マルチアクティブではない。"},
+        {"id": "B", "text": "DynamoDB Global Tables を全リージョンに展開し、結果整合性で運用する", "is_correct": true, "explanation": "正解。Global Tables は各リージョンが独立して書き込み・読み取り可能で、結果整合性を許容するならローカルレイテンシで運用できる。最小限の運用負荷。"},
+        {"id": "C", "text": "リージョンごとに RDS for PostgreSQL を別々に運用し、Lambda で同期する", "is_correct": false, "explanation": "競合解決と整合性の自前実装が必要で運用負荷が高い。"},
+        {"id": "D", "text": "ElastiCache Global Datastore を真実のデータベースとして使う", "is_correct": false, "explanation": "ElastiCache はキャッシュであり、永続性のあるプライマリ DB として使うのは設計上の誤り（MemoryDB は別概念）。"}
+      ],
+      "explanation": "「ローカル書き込み・読み取り、結果整合性、最小運用」の要件には DynamoDB Global Tables が最適。Aurora Global Database はリージョン間 DR では強いが、マルチアクティブ書き込みではない（Write Forwarding はあるがレイテンシ的にローカル書き込み相当ではない）。アーキテクチャ評価では各サービスの「マルチアクティブ性」を区別することが重要。",
+      "references": [
+        {"title": "DynamoDB global tables", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"},
+        {"title": "Aurora Global Database write forwarding", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-write-forwarding.html"}
+      ],
+      "tags": ["multi-region", "global-tables", "aurora-global", "evaluation"],
+      "common_mistakes": [
+        "Aurora Global Database をマルチアクティブ書き込みと誤解",
+        "ElastiCache を永続 DB と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-029",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Aurora",
+      "subtopic": "Capacity planning evaluation",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある医療 SaaS は、Aurora MySQL クラスター（db.r6g.2xlarge）の CPU が 1 日数回 90%超に達する。コストとパフォーマンスを評価し最適化したい。データチームの提案を比較した。**最も妥当な提案** はどれか？",
+      "options": [
+        {"id": "A", "text": "リーダーを 1 → 5 に増やす：書き込み CPU ピークの解消にならない可能性が高い", "is_correct": false, "explanation": "リーダー追加は読み取り負荷の分散にしか効かない。書き込みが原因なら効果なし。原因分析が不足。"},
+        {"id": "B", "text": "Aurora Serverless v2 に切り替えてピーク時に自動で ACU を上げる：ワークロードによってはコスト削減と性能改善を両立可能", "is_correct": true, "explanation": "正解。CPU ピークが短時間なら Serverless v2 のスケーリングで対応でき、平常時は ACU を下げてコスト削減。Performance Insights で原因切り分け後の選択肢として妥当。"},
+        {"id": "C", "text": "db.r6g.4xlarge にスケールアップして常時稼働：必要だがピーク以外は過剰スペックでコスト高", "is_correct": false, "explanation": "性能は確保できるがコスト効率が悪い。Serverless v2 のほうが優れる場合が多い。"},
+        {"id": "D", "text": "アプリ側でクエリ最適化やインデックス追加など根本対策をせず、ハード増強のみで対処：技術的負債が蓄積", "is_correct": false, "explanation": "根本原因分析（Performance Insights、スロークエリ）の前にハード増強だけは反パターン。"}
+      ],
+      "explanation": "キャパシティプランニング評価では、(1) 原因の切り分け（書き込み CPU か、読み取り CPU か、特定クエリか）、(2) 適切な対処（クエリ最適化、リーダー追加、スケールアップ、Serverless v2）の順で考える。短時間のピークなら Serverless v2 のオートスケールが有効。常時 100% 近くなら垂直スケール。原因分析なしのハード増強は技術的負債を生む。",
+      "references": [
+        {"title": "Monitoring with Performance Insights on Amazon Aurora", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html"}
+      ],
+      "tags": ["aurora", "capacity-planning", "performance", "evaluation"],
+      "common_mistakes": [
+        "ハード増強だけで根本対策と誤解",
+        "リーダー追加で書き込み CPU を解消できると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain1-030",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Workload-Specific Database Design", "weight_percent": 26},
+      "topic": "Multi-DB architecture",
+      "subtopic": "Polyglot persistence design",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "東海地方の自動車部品製造業者が、新規プロジェクトで以下を必要としている: (1) 製品マスターと注文の OLTP（強整合性、ACID、JOIN あり）、(2) 工場 IoT 数千センサーの時系列、(3) サプライヤー・部品の関連性グラフ、(4) Web アプリの高速セッション・ランキング、(5) 受発注履歴の改ざん不可能な台帳。**最適な polyglot persistence 設計** をすべて選びなさい（複数選択）。",
+      "options": [
+        {"id": "A", "text": "(1) Aurora PostgreSQL、(2) Timestream、(3) Neptune、(4) MemoryDB for Redis、(5) QLDB（または改ざん検出可能な代替設計）", "is_correct": true, "explanation": "正解。各ワークロードに最適な purpose-built データベースを使い分ける典型的な polyglot persistence 設計。"},
+        {"id": "B", "text": "全ワークロードを Aurora PostgreSQL の単一クラスターで構築する", "is_correct": false, "explanation": "万能な単一 DB はなく、IoT 時系列・グラフ・セッションキャッシュは Aurora の最適用途ではない。性能・コスト・運用すべてで劣る。"},
+        {"id": "C", "text": "(1) DynamoDB、(2) DynamoDB、(3) DynamoDB、(4) DynamoDB、(5) DynamoDB（DynamoDB のみで全部）", "is_correct": false, "explanation": "DynamoDB は柔軟だが、JOIN 重視 OLTP・グラフトラバーサル・改ざん不可検証・時系列特化機能はそれぞれ専用 DB のほうが圧倒的に効率的。"},
+        {"id": "D", "text": "(1) Aurora MySQL も選択肢として有効（PostgreSQL でなくても OLTP 要件を満たす）、(2) Timestream、(3) Neptune、(4) ElastiCache for Redis、(5) Audit テーブル＋ハッシュチェーンを Aurora 内で実装", "is_correct": true, "explanation": "正解。Aurora MySQL でも要件を満たす（要件次第）。台帳は QLDB が理想だが、QLDB の新規受付停止後はハッシュチェーンを Aurora に実装する代替設計も実務的には妥当な選択肢。"}
+      ],
+      "explanation": "Polyglot persistence は「各ワークロードに最適な purpose-built データベースを組み合わせる」設計思想。AWS では Aurora（OLTP）/ DynamoDB（key-value）/ Timestream（時系列）/ Neptune（グラフ）/ MemoryDB or ElastiCache（キャッシュ）/ QLDB（台帳）/ DocumentDB（文書）/ Keyspaces（ワイドカラム）など purpose-built DB が揃っている。新規設計では「ワークロード特性 → 最適 DB」のマッピングと、それらの統合（CDC、イベント駆動）を考えるのが筋。単一 DB ですべてを賄うのはアンチパターン。",
+      "references": [
+        {"title": "AWS purpose-built databases", "url": "https://aws.amazon.com/products/databases/"},
+        {"title": "Polyglot persistence on AWS", "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/database.html"}
+      ],
+      "tags": ["polyglot", "architecture-design", "manufacturing", "create", "mrq"],
+      "common_mistakes": [
+        "単一 DB で全ワークロードを賄えると誤解",
+        "purpose-built DB の使い分けを学ばない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

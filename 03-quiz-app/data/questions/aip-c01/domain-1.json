@@ -1,0 +1,882 @@
+{
+  "exam_code": "aip-c01",
+  "exam_name": "AWS Certified Generative AI Developer – Professional",
+  "version": "2026.04",
+  "total_questions": 30,
+  "domains": [
+    {
+      "id": "domain-1",
+      "name": "基盤モデル選定と統合",
+      "weight_percent": 20,
+      "question_count": 30
+    }
+  ],
+  "questions": [
+    {
+      "id": "aip-c01-domain1-001",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Bedrock 基盤モデル",
+      "subtopic": "モデルプロバイダー一覧",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "Amazon Bedrock の基盤モデル（Foundation Model）として、AWSが提供する自社モデルファミリーの名称はどれか。",
+      "options": [
+        {"id": "A", "text": "Amazon Titan / Amazon Nova", "is_correct": true, "explanation": "正解。Amazon Titan はBedrock初期からのAWS純正モデルで、テキスト生成・埋め込み・画像生成を提供。Amazon Nova は2024年に登場した次世代マルチモーダルモデルファミリー（Micro/Lite/Pro/Premier）。"},
+        {"id": "B", "text": "Amazon Polly / Amazon Lex", "is_correct": false, "explanation": "Polly は音声合成（TTS）、Lex はチャットボット構築サービスで、Bedrockの基盤モデルではない。"},
+        {"id": "C", "text": "Amazon Comprehend / Amazon Translate", "is_correct": false, "explanation": "これらはマネージドAIサービス（NLP・翻訳）であり、Bedrock経由で呼び出す基盤モデルではない。"},
+        {"id": "D", "text": "Amazon Rekognition / Amazon Forecast", "is_correct": false, "explanation": "画像分析・時系列予測のマネージドAIサービスで、生成AIの基盤モデルではない。"}
+      ],
+      "explanation": "Bedrock のモデルプロバイダーは、Amazon（Titan, Nova）、Anthropic（Claude）、Meta（Llama）、Mistral AI、Cohere、Stability AI、AI21 Labs など。Titan/Nova はAWS純正で、Bedrock独占モデルとして提供される。他のAmazon AIサービス（Polly, Lex, Comprehend など）はBedrockとは別のマネージドサービス。",
+      "references": [
+        {"title": "Supported foundation models in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html"},
+        {"title": "Amazon Nova foundation models", "url": "https://docs.aws.amazon.com/nova/latest/userguide/what-is-nova.html"}
+      ],
+      "tags": ["bedrock", "titan", "nova", "foundation-models", "aws-models"],
+      "common_mistakes": [
+        "Polly/Lex などの旧来AIサービスをBedrockのモデルと混同する",
+        "Titan と Nova の世代差を把握していない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-002",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Bedrock API",
+      "subtopic": "Converse API の特徴",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Amazon Bedrock の Converse API について正しい説明はどれか。",
+      "options": [
+        {"id": "A", "text": "モデルごとに異なるリクエスト/レスポンス形式を吸収し、複数の基盤モデルを統一インターフェイスで呼び出せる", "is_correct": true, "explanation": "正解。Converse API は対応モデル間でメッセージ・ツール定義の形式を統一する高水準APIで、モデル切替時にコード変更を最小化できる。"},
+        {"id": "B", "text": "Bedrock専用の音声会話API（Speech-to-Speech）", "is_correct": false, "explanation": "Converse API はテキスト/マルチモーダル会話API。音声会話用ではない（Nova Sonic等は別API）。"},
+        {"id": "C", "text": "InvokeModel と異なり、ストリーミング応答には対応しない", "is_correct": false, "explanation": "ConverseStream API でストリーミングに対応している。"},
+        {"id": "D", "text": "Bedrock Agents 専用のオーケストレーションAPI", "is_correct": false, "explanation": "Agents 用途は InvokeAgent API。Converse は単一モデル呼び出し用。"}
+      ],
+      "explanation": "Converse API は2024年に導入された統一会話APIで、モデル固有のJSON構造（Anthropic messages, Llama prompt など）を抽象化する。Tool use（function calling）も標準化されており、モデル切替テストやマルチモデル戦略を簡素化する。ストリーミング版は ConverseStream。",
+      "references": [
+        {"title": "Carry out a conversation with the Converse API", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html"}
+      ],
+      "tags": ["bedrock", "converse-api", "api", "abstraction", "tool-use"],
+      "common_mistakes": [
+        "Converse API がストリーミング非対応と思い込む",
+        "音声API（Sonic等）と混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-003",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Pricing",
+      "subtopic": "On-Demand vs Provisioned Throughput",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるSaaS企業が新規チャットボット機能をプロトタイピングしている。利用量はまだ予測不能で、夜間はほぼゼロ、日中はピークに月数千リクエスト程度。最もコスト効率の良い Bedrock 課金モデルはどれか。",
+      "options": [
+        {"id": "A", "text": "Provisioned Throughput を1ヶ月コミットで購入する", "is_correct": false, "explanation": "Provisioned Throughput は固定スループット容量を時間単位でコミットするモデル。利用量が低く変動的なフェーズではアイドル時間に課金され割高。"},
+        {"id": "B", "text": "On-Demand 課金（入力/出力トークン単位の従量制）", "is_correct": true, "explanation": "正解。On-Demand は呼び出した分のトークンに対してのみ課金されるため、利用量が小さく変動的なプロトタイプ段階に最適。"},
+        {"id": "C", "text": "Provisioned Throughput を6ヶ月コミットでディスカウント購入", "is_correct": false, "explanation": "長期コミットは単価が下がるが、利用量が低い段階では総額で必ず損になる。スケール後に検討すべき選択肢。"},
+        {"id": "D", "text": "Bedrock Model Customization（Fine-tuning）でコスト削減", "is_correct": false, "explanation": "Fine-tuning はモデル動作のカスタマイズで、推論コスト削減手段ではない。むしろ追加コストが発生する。"}
+      ],
+      "explanation": "Bedrock の課金モデルは主に2つ。On-Demand はトークン単位の従量で、変動的・小規模ワークロードに最適。Provisioned Throughput はモデルユニット（MU）単位で時間課金され、大規模・安定ワークロードや一部のカスタムモデルで必須。プロトタイプ段階では On-Demand → 利用が安定したら Provisioned へ移行が定石。",
+      "references": [
+        {"title": "Amazon Bedrock pricing", "url": "https://aws.amazon.com/bedrock/pricing/"},
+        {"title": "Provisioned Throughput", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"}
+      ],
+      "tags": ["bedrock", "pricing", "on-demand", "provisioned-throughput", "saas"],
+      "common_mistakes": [
+        "Provisioned が常に「割引」になると誤解する",
+        "Fine-tuning がコスト削減策と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-004",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Cross-region inference",
+      "subtopic": "Inference profiles",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業のFinOpsチームが、東京リージョン（ap-northeast-1）で Claude Sonnet を使った社内アシスタントを運用している。日中の混雑時間帯に ThrottlingException が頻発する。アプリのレイテンシ要件は緩く、データ越境も社内ポリシーで「米国/日本リージョン間ならOK」。最も適切な対処は？",
+      "options": [
+        {"id": "A", "text": "Cross-region inference profile（例: APAC/Global）を使い、複数リージョンのキャパシティを自動的に活用する", "is_correct": true, "explanation": "正解。Cross-region inference profile は複数リージョンのモデル容量を1つの ARN として参照でき、リージョン単独のクォータ枯渇を緩和する。"},
+        {"id": "B", "text": "東京リージョンで Provisioned Throughput を1ユニット購入する", "is_correct": false, "explanation": "PTでも解決可能だが固定費が高く、まずスループット拡張のために cross-region profile を使うのがコスト効率的。"},
+        {"id": "C", "text": "リトライ間隔を短くして強制的にリクエストを通す", "is_correct": false, "explanation": "Throttling 時に高速リトライはクォータ消費を悪化させる。指数バックオフが原則。"},
+        {"id": "D", "text": "Claude Sonnet を Titan Text に切り替える", "is_correct": false, "explanation": "モデル切替は最終手段。能力差・出力品質の検証が必要で、容量問題の解決策としては筋が悪い。"}
+      ],
+      "explanation": "Bedrock の Cross-region inference profile は、地理的に近いリージョン群（US/EU/APAC/Global）にトラフィックを分散することでスループットと可用性を向上させる仕組み。プロファイル ARN を modelId の代わりに指定するだけで利用でき、データは指定地理範囲内に留まる。データ越境ポリシーがある場合はプロファイルの地理範囲を必ず確認する。",
+      "references": [
+        {"title": "Increase throughput with cross-region inference", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html"}
+      ],
+      "tags": ["bedrock", "cross-region", "inference-profile", "throttling", "manufacturing"],
+      "common_mistakes": [
+        "Provisioned Throughput が常にスロットリング解決策と思い込む",
+        "Cross-region profile のデータ越境範囲を確認しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-005",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "モデル選定",
+      "subtopic": "コンテキストウィンドウ",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるFinTech企業が、平均300ページに及ぶ目論見書PDFを丸ごと読み込んで要約させる機能を作りたい。チャンク分割せず1コールで処理することが要件。最も適したモデル特性は？",
+      "options": [
+        {"id": "A", "text": "200K トークン以上のコンテキストウィンドウを持つモデル（例: Claude 3.5/3.7 Sonnet）", "is_correct": true, "explanation": "正解。Claude 3.5/3.7 Sonnet は200Kトークンのコンテキスト長を持ち、300ページPDF（おおよそ150K〜200Kトークン）を1コールで処理可能。"},
+        {"id": "B", "text": "推論速度（TPS）が最大のモデル", "is_correct": false, "explanation": "速度は重要だがコンテキスト長が不足すると入力が切り捨てられ、要件を満たせない。"},
+        {"id": "C", "text": "埋め込み次元数が最大のモデル", "is_correct": false, "explanation": "埋め込み次元は検索品質の指標であり、要約タスクのコンテキスト長とは無関係。"},
+        {"id": "D", "text": "Fine-tuning に対応しているモデル", "is_correct": false, "explanation": "Fine-tuning は動作カスタマイズ機能で、長文入力能力には影響しない。"}
+      ],
+      "explanation": "長文を一括処理する要件で最重要なのは「コンテキストウィンドウ（最大入力トークン数）」。1ページ ≈ 500〜700トークンとすると、300ページ ≈ 150K〜210Kトークン。Claude 3.5/3.7 Sonnet（200K）、Nova Pro（300K）、Llama 3.1 405B（128K）などが候補。チャンク分割を避けたい場合はモデル選定段階でこの観点を最優先する。",
+      "references": [
+        {"title": "Foundation model context length", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html"}
+      ],
+      "tags": ["bedrock", "context-window", "long-context", "model-selection", "fintech"],
+      "common_mistakes": [
+        "速度や精度を優先してコンテキスト長を見落とす",
+        "埋め込み次元と混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-006",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "InvokeModel API",
+      "subtopic": "ストリーミングと非ストリーミング",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Bedrock の `InvokeModelWithResponseStream` API を使うべき典型的な場面はどれか。",
+      "options": [
+        {"id": "A", "text": "チャットUIで生成中トークンを逐次画面に表示し、体感レイテンシを下げたい", "is_correct": true, "explanation": "正解。ストリーミングAPIはトークン単位でレスポンスを返すため、ユーザは生成途中の出力を見られる。チャットUXの定石。"},
+        {"id": "B", "text": "バッチ処理で1万件のドキュメントを夜間に要約する", "is_correct": false, "explanation": "バッチ用途では完全なレスポンスを待つ通常の InvokeModel か、Bedrock Batch Inference が向いている。"},
+        {"id": "C", "text": "出力をJSONで構造化し、後続のLambdaに渡す", "is_correct": false, "explanation": "構造化JSONはストリーム途中では不完全で、パースエラーになりやすい。完了後パースが原則。"},
+        {"id": "D", "text": "埋め込みベクトルを取得する", "is_correct": false, "explanation": "埋め込みは1コールで完結する数値ベクトルで、ストリーミングする意味がない。"}
+      ],
+      "explanation": "InvokeModelWithResponseStream / ConverseStream はチャット・ライブ要約など「逐次表示」ユースケースに最適。一方、構造化出力やバッチ処理ではフルレスポンスを取得する InvokeModel または Batch Inference を使うのが標準。埋め込み取得は元々レスポンスが小さいためストリーミング不要。",
+      "references": [
+        {"title": "InvokeModelWithResponseStream API", "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html"}
+      ],
+      "tags": ["bedrock", "streaming", "invoke-model", "ux", "api"],
+      "common_mistakes": [
+        "全ユースケースでストリーミングを使えば速いと誤解する",
+        "JSON構造化出力をストリームでパースしようとする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-007",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "モデルライフサイクル",
+      "subtopic": "Deprecation",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある医療系SaaSが Claude 2.1 を本番で使っていたが、AWSから「EOL（Legacy 状態）になり、X月X日以降に呼び出し不可になる」と通知された。CTOが取るべき優先順位の最も高いアクションは？",
+      "options": [
+        {"id": "A", "text": "後継モデル（Claude 3.5/3.7 Sonnet など）への移行検証を計画し、出力差分・コスト・レイテンシを評価したうえで段階的に切替", "is_correct": true, "explanation": "正解。Bedrock のモデルライフサイクルは Active → Legacy → EOL と進む。Legacy 通知後は後継への移行計画を最優先で進めるのがベストプラクティス。"},
+        {"id": "B", "text": "Provisioned Throughput を購入してEOLを回避する", "is_correct": false, "explanation": "PT を購入してもEOL（廃止）は回避できない。容量確保とライフサイクルは別次元。"},
+        {"id": "C", "text": "AWSサポートに連絡してEOLを延長してもらう", "is_correct": false, "explanation": "個別延長は基本的に行われない。スケジュールは公式アナウンスに沿って粛々と移行する。"},
+        {"id": "D", "text": "OSSの Llama に切り替えて自社管理する（SageMaker JumpStart）", "is_correct": false, "explanation": "選択肢としてはあり得るが、Anthropic 系API互換性・運用負荷の評価なしに即決すべきではない。最初の優先アクションとしては不適切。"}
+      ],
+      "explanation": "Bedrock モデルは「Active（一般利用）」「Legacy（非推奨だが利用可）」「EOL（廃止）」と進む。Legacy通知が来たら、後継モデルへの段階的移行（A/Bテスト、出力品質評価、プロンプト調整、コスト試算）を即座に開始することが肝要。Provisioned Throughput や個別延長は廃止を防がない。",
+      "references": [
+        {"title": "Model lifecycle", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html"}
+      ],
+      "tags": ["bedrock", "model-lifecycle", "deprecation", "migration", "healthcare"],
+      "common_mistakes": [
+        "PT契約で廃止を回避できると誤解する",
+        "EOLを軽視して移行計画を後回しにする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-008",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Function calling / Tool use",
+      "subtopic": "Converse API tool config",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるSaaSのカスタマーサポートチャットボットで、ユーザの注文番号から実際の出荷状況DBを参照する必要がある。Bedrock の Converse API でこれを実装する最適な方法は？",
+      "options": [
+        {"id": "A", "text": "Converse API の `toolConfig` でツール（関数）スキーマを定義し、モデルが `toolUse` を返したらアプリ側でDB照会して結果を `toolResult` で再送する", "is_correct": true, "explanation": "正解。Converse API の Tool use 機能で関数スキーマ（JSON Schema）を渡すと、モデルが必要なツール呼び出しを判断し構造化引数を返す。アプリは実行結果を返してターンを継続する。"},
+        {"id": "B", "text": "プロンプトに「出荷状況テーブルを参照せよ」と書いてモデル内部から直接DBに繋ぐ", "is_correct": false, "explanation": "基盤モデルは外部DBに直接接続できない。プロンプトでの指示だけでは現実のデータは取得できない。"},
+        {"id": "C", "text": "Bedrock Knowledge Bases にDBを登録してRAGで検索する", "is_correct": false, "explanation": "リアルタイムな出荷状況は静的ナレッジではないため、ベクトル検索ベースのRAGは不適。動的データには Tool use が適切。"},
+        {"id": "D", "text": "Fine-tuning で出荷状況データを学習させる", "is_correct": false, "explanation": "Fine-tuning は静的知識の埋め込みで、リアルタイム参照用途では絶対に使ってはいけない（情報が古くなる）。"}
+      ],
+      "explanation": "Tool use（Function calling）は、モデルが「外部システムを呼ぶ必要がある」と判断したときに構造化された関数呼び出しを返す機能。リアルタイムなDB照会・API実行・計算など、知識ではなく「アクション」を必要とするタスクに適する。RAG は静的ドキュメント検索、Fine-tuning は動作カスタマイズ。動的データはTool useが原則。",
+      "references": [
+        {"title": "Use a tool to complete an Amazon Bedrock model response", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html"}
+      ],
+      "tags": ["bedrock", "tool-use", "function-calling", "converse-api", "saas"],
+      "common_mistakes": [
+        "RAGで動的データを扱おうとする",
+        "プロンプトだけで外部DB参照ができると誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-009",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Bedrock vs SageMaker JumpStart",
+      "subtopic": "使い分け",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある製造業の研究部門が独自の機械翻訳モデル（オープンウェイト Llama 3.1 をフルパラメータ Fine-tuning する予定）をホストしたい。要件は「VPC内完結」「GPUインスタンス選択の柔軟性」「カスタムDockerイメージのデプロイ」。Bedrock と SageMaker JumpStart のどちらが適切か？",
+      "options": [
+        {"id": "A", "text": "SageMaker JumpStart 経由でデプロイし、SageMaker Endpoint をVPC内に配置する", "is_correct": true, "explanation": "正解。フルパラメータFTやカスタムコンテナ、インスタンスタイプ自由選択が必要なケースは SageMaker の領域。JumpStart は OSS 基盤モデルのカタログを提供する。"},
+        {"id": "B", "text": "Bedrock の Custom Model Import で Llama 3.1 重みをアップロードする", "is_correct": false, "explanation": "Custom Model Import は対応アーキテクチャ・重みフォーマットに制約があり、カスタムDockerやインスタンス選択の柔軟性は提供されない。"},
+        {"id": "C", "text": "Bedrock の Provisioned Throughput でホストする", "is_correct": false, "explanation": "PT は Bedrock 提供モデル（または Custom Model Import 済みモデル）の容量予約機能で、独自Dockerデプロイは不可能。"},
+        {"id": "D", "text": "Lambda上でTransformersライブラリを使ってホストする", "is_correct": false, "explanation": "Llama 3.1 はLambdaのメモリ・実行時間制限（10GB/15分）に収まらず、GPU非対応。非現実的。"}
+      ],
+      "explanation": "Bedrock は「マネージド・サーバレス・モデルカタログ」、SageMaker JumpStart は「より柔軟な基盤モデルデプロイ環境」。フルパラメータFT、カスタムDocker、自由なインスタンス選択、VPC完結デプロイなど高度要件は SageMaker。逆にRAG・Agents・Guardrails など生成AI機能を素早く統合したいなら Bedrock。Custom Model Import は中間で、対応モデルや重み形式に制限がある。",
+      "references": [
+        {"title": "Amazon SageMaker JumpStart foundation models", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html"},
+        {"title": "Import a customized model into Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html"}
+      ],
+      "tags": ["bedrock", "sagemaker-jumpstart", "custom-model", "llama", "manufacturing"],
+      "common_mistakes": [
+        "Bedrock Custom Model Import が万能と誤解する",
+        "Lambda で大型LLMを動かそうとする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-010",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "マルチモーダル",
+      "subtopic": "Vision モデル選定",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある医療系スタートアップが、医師がスマホで撮影した皮膚画像とテキスト所見を一緒に渡し、症例分類の補助コメントを生成するMVPを作りたい。Bedrockで使うべきモデル特性として最も適切なのは？",
+      "options": [
+        {"id": "A", "text": "画像入力に対応したマルチモーダルモデル（Claude 3.x Sonnet、Nova Lite/Pro 等）", "is_correct": true, "explanation": "正解。テキストと画像を同時入力するには Vision 対応のマルチモーダル基盤モデルが必須。Claude 3.x や Nova Pro が候補。"},
+        {"id": "B", "text": "Titan Text Embeddings v2 で画像をベクトル化する", "is_correct": false, "explanation": "Titan Text Embeddings はテキスト専用。画像埋め込みには Titan Multimodal Embeddings が別途必要で、しかも生成モデルではない。"},
+        {"id": "C", "text": "Llama 3 Instruct（テキスト専用）に画像のbase64文字列を渡す", "is_correct": false, "explanation": "テキスト専用モデルにbase64を渡しても画像理解はできない。トークン浪費になるだけ。"},
+        {"id": "D", "text": "Stable Diffusion XL で画像を生成して比較する", "is_correct": false, "explanation": "SDXLは画像「生成」モデル。画像「理解（Vision）」には使えない。"},
+        {"id": "E", "text": "医療用途は責任あるAIの観点から、人間の医師に必ず最終判断させる前提で設計する", "is_correct": true, "explanation": "正解。医療領域では Responsible AI の原則上、AI出力は補助に留め、医師が最終判断を行う設計が必須。"}
+      ],
+      "multiple_response": true,
+      "explanation": "マルチモーダル（Vision付き）モデルとは画像とテキストを同一プロンプトに混在できるモデルのこと。Bedrock では Claude 3.x、Nova Lite/Pro/Premier がVision対応。Titan Multimodal Embeddings は別物（埋め込み用途）。医療など高リスク領域では出力の最終責任は人間が持つ前提で設計するのが Responsible AI のベストプラクティス。",
+      "references": [
+        {"title": "Multimodal foundation models in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html"},
+        {"title": "AWS Responsible AI", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"}
+      ],
+      "tags": ["bedrock", "multimodal", "vision", "healthcare", "responsible-ai"],
+      "common_mistakes": [
+        "Embeddings モデルと生成モデルを混同する",
+        "テキスト専用モデルにbase64画像を渡そうとする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-011",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "ライセンス",
+      "subtopic": "オープンウェイトと商用利用",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "あるFinTech社が Bedrock 経由で Llama 3 を商用サービスに組み込もうとしている。法務から「ライセンス上の制約」を確認するよう指示された。最も正確な認識はどれか。",
+      "options": [
+        {"id": "A", "text": "Bedrock経由で利用する場合でも Meta Llama 3 Community License の条件は適用され、月間アクティブユーザ7億超の事業者には別途商用ライセンスが必要", "is_correct": true, "explanation": "正解。Llama 3 はオープンウェイトだが「Community License」というカスタムライセンスで、極大規模事業者（MAU 7億超）には Meta との別契約が必要。Bedrock経由でもこのライセンスは継承される。"},
+        {"id": "B", "text": "Bedrock経由なら全ライセンス制約はAWSが吸収するため利用者は何も気にする必要がない", "is_correct": false, "explanation": "AWSは利用環境を提供するが、モデルプロバイダー側のライセンス条件（特にユーザ規模の閾値や使用目的の制限）はBedrockユーザにも適用される。"},
+        {"id": "C", "text": "Llama 3 は Apache 2.0 ライセンスなので無条件で商用利用可能", "is_correct": false, "explanation": "Llama 3 のライセンスは Apache 2.0 ではなく、独自の Community License。"},
+        {"id": "D", "text": "Llama 3 は GPL ライセンスなのでサービス全体のソース公開が必要", "is_correct": false, "explanation": "Community License は GPL ではなく、ソース公開義務はない。"}
+      ],
+      "explanation": "Bedrock の各モデルにはモデルプロバイダー固有のEULA・ライセンスがあり、Bedrock コンソールで初回有効化時に同意する。オープンウェイトモデルでも「オープンソース」とは限らない（Llama Community License、Mistral 各種ライセンス、Cohere の商用ライセンスなど）。商用利用前に法務確認は必須。",
+      "references": [
+        {"title": "Manage access to Amazon Bedrock foundation models", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html"},
+        {"title": "Meta Llama Community License", "url": "https://llama.meta.com/llama3/license/"}
+      ],
+      "tags": ["bedrock", "license", "llama", "open-weight", "fintech"],
+      "common_mistakes": [
+        "オープンウェイト = OSS = 自由商用 と誤解する",
+        "Bedrock経由ならライセンス無関係と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 4, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-012",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Embeddings",
+      "subtopic": "Titan Text Embeddings",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業の文書検索システムで、日本語の技術マニュアルをベクトル化してOpenSearch Serverless にインデックスする。Bedrock で利用すべきモデルファミリーはどれか。",
+      "options": [
+        {"id": "A", "text": "Amazon Titan Text Embeddings V2（または Cohere Embed Multilingual）", "is_correct": true, "explanation": "正解。Titan Text Embeddings V2 は多言語対応の埋め込みモデルで、Cohere Embed Multilingual も日本語含め多言語に強い。文書ベクトル化の標準選択肢。"},
+        {"id": "B", "text": "Claude 3.5 Sonnet で文書を要約してから検索する", "is_correct": false, "explanation": "Claude は生成モデル。埋め込み（数値ベクトル）は出力しない。検索インデックスには Embeddings 専用モデルが必要。"},
+        {"id": "C", "text": "Stable Diffusion XL", "is_correct": false, "explanation": "画像生成モデルでテキスト埋め込み用途には使えない。"},
+        {"id": "D", "text": "Titan Image Generator", "is_correct": false, "explanation": "画像生成モデルで、テキストベクトル化の用途とは無関係。"}
+      ],
+      "explanation": "Bedrock の埋め込み（Embeddings）モデルは Titan Text Embeddings V1/V2、Titan Multimodal Embeddings、Cohere Embed English/Multilingual など。生成モデル（Claude, Llama, Titan Text）と用途が完全に異なる。検索・分類・クラスタリングなどベクトル化用途では必ず Embeddings 系モデルを選ぶ。",
+      "references": [
+        {"title": "Amazon Titan Text Embeddings V2", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html"}
+      ],
+      "tags": ["bedrock", "embeddings", "titan", "vector-search", "manufacturing"],
+      "common_mistakes": [
+        "生成モデルと埋め込みモデルを混同する",
+        "言語サポート（多言語）を確認しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-013",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "モデル選定の総合判断",
+      "subtopic": "コスト・レイテンシ・能力のトレードオフ",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "あるSaaSのカスタマーサポートFAQボットで、ユーザの質問に対し1秒以内に短い回答（200文字以下）を返したい。質問の95%は単純なFAQで、残り5%は複雑な技術質問。Bedrockのモデル戦略として最も適切なのは複数選択。",
+      "options": [
+        {"id": "A", "text": "全質問を最高性能モデル（Claude Opus 等）で処理する", "is_correct": false, "explanation": "Opus はコスト・レイテンシともに高い。FAQ用途では過剰。"},
+        {"id": "B", "text": "軽量モデル（Nova Lite / Claude Haiku 等）をデフォルトにし、複雑な質問だけ高性能モデルにルーティング", "is_correct": true, "explanation": "正解。「Cascade」または「ルーティング」と呼ばれるパターン。コストとレイテンシを最小化しつつ難問の品質も保つ。"},
+        {"id": "C", "text": "全質問にレスポンスストリーミングを使う", "is_correct": false, "explanation": "200文字以下なら全文取得でも十分高速で、ストリームで実装複雑度を上げる必要はない。"},
+        {"id": "D", "text": "簡易質問用に Knowledge Bases で過去回答を検索し、難問のみLLMで生成する", "is_correct": true, "explanation": "正解。FAQ的な決まりきった回答はベクトル検索＋テンプレートで返し、不確実な質問のみLLM呼び出しに回すとコスト・レイテンシともに改善。"},
+        {"id": "E", "text": "全質問を Provisioned Throughput で処理しコスト最適化", "is_correct": false, "explanation": "PT は安定大量負荷向け。FAQボットの95%は軽量で済むため、PTでまかなうのは過剰投資。"}
+      ],
+      "multiple_response": true,
+      "explanation": "コスト・レイテンシ・品質はトレードオフの関係にあり、単一モデルで全要件を満たそうとすると非効率。実務では「軽量モデル＋高性能モデル」のカスケード、「RAG＋LLMフォールバック」、Provisioned vs On-Demand の使い分けなど、複数戦略を組み合わせる。FAQ系ワークロードはルーティング設計の典型例。",
+      "references": [
+        {"title": "Inference parameters and model selection", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"},
+        {"title": "Amazon Bedrock Knowledge Bases", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"}
+      ],
+      "tags": ["bedrock", "model-routing", "cost-optimization", "latency", "saas"],
+      "common_mistakes": [
+        "全質問に最高性能モデルを使う",
+        "単一モデル前提で設計する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-014",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "モデルアクセス管理",
+      "subtopic": "Bedrock Model Access",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "Bedrock で新しい基盤モデル（例: Claude 3.7 Sonnet）を初めて自社AWSアカウントで使うときに、最初に必ず行う必要がある操作はどれか。",
+      "options": [
+        {"id": "A", "text": "Bedrock コンソールの「Model access」でそのモデルへのアクセスをリクエスト・有効化する", "is_correct": true, "explanation": "正解。Bedrock では新規モデル利用前に明示的にアクセス申請が必要。EULA・利用規約への同意もここで行う。"},
+        {"id": "B", "text": "Bedrock の Provisioned Throughput を購入する", "is_correct": false, "explanation": "PT 購入は容量予約で、初回利用の前提条件ではない。On-Demand で即利用可能。"},
+        {"id": "C", "text": "AWS Marketplace で購読する", "is_correct": false, "explanation": "Bedrock モデルは Marketplace 経由ではなく Bedrock コンソール内で有効化する。"},
+        {"id": "D", "text": "SageMaker Endpoint を作成する", "is_correct": false, "explanation": "Bedrock は SageMaker Endpoint を使わず、Bedrock 自体のサーバレス推論を利用する。"}
+      ],
+      "explanation": "Bedrock のモデルは「アカウント単位 × リージョン単位」でアクセス申請が必要。コンソールの Model access ページから対象モデルを選び、利用規約を同意することで使えるようになる。一部モデルは即時、一部は審査ありで時間がかかる。CDK・Terraform 自動化時もこのステップを忘れずに組み込む。",
+      "references": [
+        {"title": "Manage access to Amazon Bedrock foundation models", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html"}
+      ],
+      "tags": ["bedrock", "model-access", "onboarding", "iam", "eula"],
+      "common_mistakes": [
+        "Marketplace で購読が必要と誤解する",
+        "リージョンごとの有効化を忘れる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-015",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "推論パラメータ",
+      "subtopic": "temperature と top_p",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Bedrock でモデルの「決定論的（再現性のある）」出力を得たい場合に、推奨される推論パラメータ設定は？",
+      "options": [
+        {"id": "A", "text": "temperature を0 または極めて低い値、top_p も低めに設定する", "is_correct": true, "explanation": "正解。温度0付近では最も確率の高いトークンが選ばれ、出力のばらつきが最小化する。一貫した結果が必要なタスク（分類、抽出）に有効。"},
+        {"id": "B", "text": "temperature を1.0 以上にし top_p も最大化する", "is_correct": false, "explanation": "高い温度は出力をランダム化する。創作向けの設定で、決定論的出力には不適。"},
+        {"id": "C", "text": "max_tokens を最大化する", "is_correct": false, "explanation": "max_tokens は出力長の上限であり、決定論性とは無関係。"},
+        {"id": "D", "text": "top_k だけを高くする", "is_correct": false, "explanation": "top_k を上げると候補が増えてランダム性が増す方向。"}
+      ],
+      "explanation": "サンプリングのランダム性を制御するのは主に temperature, top_p, top_k。決定論的出力には temperature を0に近づけ、可能なら top_p も下げる。ただし完全な再現性は保証されない（モデルの内部実装やバージョン更新で変わる）。創作・ブレインストーミングは逆に温度を上げる。",
+      "references": [
+        {"title": "Inference parameters for foundation models", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"}
+      ],
+      "tags": ["bedrock", "inference-parameters", "temperature", "top-p", "determinism"],
+      "common_mistakes": [
+        "max_tokens で決定論性を制御しようとする",
+        "temperature と top_k の方向性を逆に覚える"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-016",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Cross-region inference",
+      "subtopic": "データレジデンシー",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある医療系SaaSが「個人情報を含む推論データは絶対に日本国外に出さない」というデータレジデンシー要件を持っている。スループット向上のため Cross-region inference profile の利用を検討しているが、最も正しい判断は？",
+      "options": [
+        {"id": "A", "text": "Cross-region inference profile はリクエストデータを構成リージョン内に留めるが、構成リージョンに国外が含まれる場合は使えないため、APAC専用かつ日本のみのプロファイルが提供されているか確認し、なければ単一リージョンで運用する", "is_correct": true, "explanation": "正解。Cross-region inference profile はプロファイルが定義する地理範囲内のリージョンに動的にルーティングする。範囲に国外リージョンが含まれる場合はデータがそこを通過し得るため、レジデンシー要件と衝突する可能性がある。"},
+        {"id": "B", "text": "Cross-region inference profile を使えば暗号化されるので国外リージョンに行ってもレジデンシー違反にならない", "is_correct": false, "explanation": "暗号化と「データの所在」は別問題。GDPR・個人情報保護法の文脈では暗号化していても国外保管・処理は規制対象になり得る。"},
+        {"id": "C", "text": "Bedrock は全リクエストをグローバルにルーティングするので、レジデンシー要件下では Bedrock 自体使えない", "is_correct": false, "explanation": "通常の InvokeModel は呼び出したリージョン内で完結する。Cross-region は明示的にプロファイルを指定したときだけ。"},
+        {"id": "D", "text": "Provisioned Throughput を購入すればデータが国外に出ない", "is_correct": false, "explanation": "PT は容量予約で、地理的処理範囲はリージョン指定に依存する。PTかどうかは関係しない。"}
+      ],
+      "explanation": "Bedrock の標準呼び出しは指定リージョン内で完結するが、Cross-region inference profile を使うとプロファイルが定義する地理範囲（US/EU/APAC/Global など）の複数リージョンへルーティングされる。レジデンシー要件がある場合は (1) プロファイルの地理範囲を確認 (2) 範囲外がある場合は使わない (3) 単一リージョン運用＋クォータ引上げ申請やPTで対応する。",
+      "references": [
+        {"title": "Cross-region inference", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html"},
+        {"title": "Data protection in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html"}
+      ],
+      "tags": ["bedrock", "cross-region", "data-residency", "compliance", "healthcare"],
+      "common_mistakes": [
+        "暗号化していればレジデンシー要件を満たすと誤解する",
+        "Cross-regionプロファイルの地理範囲を確認しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-017",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Bedrock セキュリティ",
+      "subtopic": "VPC Endpoint と PrivateLink",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FinTech企業が、社内のVPCからインターネットを経由せずに Bedrock を呼び出したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "Bedrock 用 Interface VPC Endpoint（PrivateLink）を作成し、VPC内のアプリから利用する", "is_correct": true, "explanation": "正解。Bedrock は PrivateLink 経由のInterface Endpointに対応しており、VPC内通信のみで API 呼び出し可能。"},
+        {"id": "B", "text": "NAT Gateway を経由してインターネット越しに呼び出す", "is_correct": false, "explanation": "NAT GW はインターネットを経由する構成で、要件「インターネットを経由しない」に反する。"},
+        {"id": "C", "text": "Bedrock を VPC 内にデプロイする", "is_correct": false, "explanation": "Bedrock はリージョナルなマネージドサービスでVPC内デプロイは不可能。"},
+        {"id": "D", "text": "AWS Direct Connect 専用線を引く", "is_correct": false, "explanation": "DX はオンプレ/AWS間の専用線で、AWS内サービス間アクセス制御の手段ではない。"}
+      ],
+      "explanation": "Bedrock は Bedrock Runtime / Bedrock / Bedrock Agent / Bedrock Agent Runtime の各エンドポイントに対して Interface VPC Endpoint を作成可能。これにより VPC 内のリソース（Lambda, ECS, EC2）はインターネットを経由せず、AWSバックボーン経由で Bedrock を呼び出せる。FinTech・医療など規制業界の標準構成。",
+      "references": [
+        {"title": "Use Amazon Bedrock with VPC endpoints", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/vpc-interface-endpoints.html"}
+      ],
+      "tags": ["bedrock", "privatelink", "vpc-endpoint", "security", "fintech"],
+      "common_mistakes": [
+        "NAT GW でも「VPC内」だと誤解する",
+        "Bedrock を VPC 内にデプロイできると誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-018",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "IAM",
+      "subtopic": "Bedrock IAM ポリシー",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるアプリ用 IAM ロールに「Claude 3.5 Sonnet（指定リージョン）のみ呼び出せる」最小権限を付与したい。IAMポリシーで正しいアクションとリソースの組み合わせは？",
+      "options": [
+        {"id": "A", "text": "Action: `bedrock:InvokeModel`, `bedrock:InvokeModelWithResponseStream` / Resource: 該当モデルARN（arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-3-5-sonnet-...）", "is_correct": true, "explanation": "正解。InvokeModel系アクションをモデルARNにリソース制限することで、特定モデルのみに制限できる。"},
+        {"id": "B", "text": "Action: `bedrock:*` / Resource: `*`", "is_correct": false, "explanation": "全アクション・全リソース許可で最小権限原則に反する。"},
+        {"id": "C", "text": "Action: `s3:GetObject` / Resource: モデルARN", "is_correct": false, "explanation": "S3アクションは Bedrock 呼び出しに使われない。"},
+        {"id": "D", "text": "Action: `sagemaker:InvokeEndpoint` / Resource: モデルARN", "is_correct": false, "explanation": "Bedrock は SageMaker 名前空間ではなく `bedrock:` 名前空間を使う。"}
+      ],
+      "explanation": "Bedrock の主要 IAM アクションは `bedrock:InvokeModel`, `bedrock:InvokeModelWithResponseStream`, `bedrock:Converse`, `bedrock:ConverseStream`、Agents系は `bedrock:InvokeAgent`, `bedrock:Retrieve`, `bedrock:RetrieveAndGenerate` など。リソースには Foundation Model ARN や Inference Profile ARN を指定して最小権限化する。",
+      "references": [
+        {"title": "Identity-based policy examples for Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html"}
+      ],
+      "tags": ["bedrock", "iam", "least-privilege", "policy", "security"],
+      "common_mistakes": [
+        "`bedrock:*` で済ませてしまう",
+        "SageMaker アクションと混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-019",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Bedrock Batch Inference",
+      "subtopic": "ユースケース",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業が、過去5年分の品質レポート（10万件）に対しLLMで原因分類タグを一括付与したい。リアルタイム性は不要、コストは最小化したい。最適な手段は？",
+      "options": [
+        {"id": "A", "text": "Bedrock の Batch Inference を使い、S3にプロンプトを配置してまとめて推論する", "is_correct": true, "explanation": "正解。Batch Inference は On-Demand 比で大幅に安く（最大50%引き）、大量・非リアルタイム処理に最適。"},
+        {"id": "B", "text": "Lambda + InvokeModel で並列ループ実行する", "is_correct": false, "explanation": "コストは On-Demand と同じで割引はない。スロットリング管理も自前で必要。"},
+        {"id": "C", "text": "Provisioned Throughput を1ヶ月購入する", "is_correct": false, "explanation": "PT は安定大量負荷向けだが、一時バッチには過剰。Batch Inferenceの方が安い。"},
+        {"id": "D", "text": "SageMaker Processing Job で Embedding を取得する", "is_correct": false, "explanation": "Embedding取得ではタグ分類はできない。生成的分類タスクには LLM 推論が必要。"}
+      ],
+      "explanation": "Bedrock Batch Inference は S3 上のJSONLファイルでプロンプトを一括投入し、結果を S3 に書き出す機能。On-Demand よりも単価が安く、大量・非リアルタイム処理に最適。レポート分類、メール分類、要約一括生成などが典型的なユースケース。",
+      "references": [
+        {"title": "Process multiple prompts with batch inference", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html"}
+      ],
+      "tags": ["bedrock", "batch-inference", "cost-optimization", "manufacturing", "scale"],
+      "common_mistakes": [
+        "Batch Inference の存在を知らずLambda並列で自作する",
+        "PT がバッチに最適だと誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-020",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Provisioned Throughput",
+      "subtopic": "Custom Model 必須要件",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "あるFinTech社が Titan Text を Fine-tuning した独自モデルを本番で呼び出したい。Bedrock の利用方法として正しいのは？",
+      "options": [
+        {"id": "A", "text": "カスタムモデル（Fine-tuned）は Provisioned Throughput を購入しないと推論できない", "is_correct": true, "explanation": "正解。Bedrock の Fine-tuning または Continued Pre-training で作成したカスタムモデルは、On-Demand 呼び出しはできず、必ず Provisioned Throughput が必要。"},
+        {"id": "B", "text": "On-Demand で通常通り InvokeModel すれば呼べる", "is_correct": false, "explanation": "カスタムモデルは On-Demand 非対応。"},
+        {"id": "C", "text": "SageMaker Endpoint にデプロイし直す必要がある", "is_correct": false, "explanation": "SageMaker への再デプロイは不要。Bedrock 内で PT 購入すれば呼べる。"},
+        {"id": "D", "text": "Bedrock Batch Inference でしか呼べない", "is_correct": false, "explanation": "カスタムモデルは PT 必須。Batch対応はモデルによる。"}
+      ],
+      "explanation": "Bedrock の Custom Model（Fine-tuning または Continued Pre-training の成果物）は、推論時に Provisioned Throughput の購入が必須。これは PT 単価モデルの一部としてカスタムモデルが扱われるため。コスト試算では FT 学習コスト＋PT 月額の両方を見込む必要がある。",
+      "references": [
+        {"title": "Use a custom model with Provisioned Throughput", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"},
+        {"title": "Customize a model", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"}
+      ],
+      "tags": ["bedrock", "custom-model", "provisioned-throughput", "fine-tuning", "fintech"],
+      "common_mistakes": [
+        "FTしたモデルがOn-Demandで呼べると誤解する",
+        "PT月額コストを無視してFTを採用する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-021",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "モデル選定",
+      "subtopic": "日本語特化能力",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "あるSaaSが日本語の長文契約書解析機能を作る。日本語精度・長コンテキスト・コストのバランスを評価する観点として正しいのは複数選択。",
+      "options": [
+        {"id": "A", "text": "実データに近い日本語サンプルでベンチマークし、自社評価指標（精度、F1、ヒューマン評価）で複数モデルを比較する", "is_correct": true, "explanation": "正解。「日本語に強い」という主張だけでなく自社データで評価することが重要。"},
+        {"id": "B", "text": "コンテキストウィンドウが要件（例: 200K）を満たすモデルだけを候補に絞る", "is_correct": true, "explanation": "正解。要件を満たさないモデルは比較対象から外して効率的に選定する。"},
+        {"id": "C", "text": "Bedrock コンソールの Playground で同じプロンプトを複数モデルに投げて出力を比較する", "is_correct": true, "explanation": "正解。簡易比較に Playground は有効。Model Evaluation 機能でも自動比較可能。"},
+        {"id": "D", "text": "ベンチマークなしで「Claude が一番賢い」とSNSで聞いた評判で決定する", "is_correct": false, "explanation": "汎用ベンチマークは自社用途と必ずしも一致しない。客観評価が原則。"},
+        {"id": "E", "text": "コストだけを基準に最も安いモデルを選ぶ", "is_correct": false, "explanation": "コストは重要だが、日本語精度や能力要件を満たさなければ意味がない。"}
+      ],
+      "multiple_response": true,
+      "explanation": "モデル選定は「タスク要件 → モデル候補絞り込み → ベンチマーク → 総合評価」のプロセス。Bedrock では Model Evaluation 機能や Playground、Inference Profile 経由のA/Bテストが評価ツールとして利用できる。日本語タスクは公開ベンチマークが少ないため自社データでの評価が不可欠。",
+      "references": [
+        {"title": "Evaluate Amazon Bedrock model performance", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"},
+        {"title": "Test foundation models in the playground", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/playgrounds.html"}
+      ],
+      "tags": ["bedrock", "model-selection", "japanese", "evaluation", "saas"],
+      "common_mistakes": [
+        "公開ベンチマークだけで選定する",
+        "コスト/性能のどちらか一方しか見ない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-022",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "ストリーミング応答",
+      "subtopic": "実装パターン",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Web チャットUIで Bedrock の ConverseStream の出力をブラウザに逐次表示したい。標準的なバックエンド実装はどれか。",
+      "options": [
+        {"id": "A", "text": "API Gateway HTTP API + Lambda Web Adapter（または Lambda Function URL with response streaming）+ Server-Sent Events / streaming HTTP でブラウザに送信", "is_correct": true, "explanation": "正解。Lambda の response streaming（Function URL/Lambda Web Adapter経由）と SSE/Streaming HTTP で逐次送信するのが標準パターン。"},
+        {"id": "B", "text": "Lambda が完全なレスポンスをまとめてから HTTP 200 を返す", "is_correct": false, "explanation": "完全レスポンスを待つとストリーミングのUX効果が消える。"},
+        {"id": "C", "text": "EventBridge にイベント発行してブラウザがポーリング", "is_correct": false, "explanation": "EventBridge はトークン単位の高頻度ストリームには不向き。"},
+        {"id": "D", "text": "S3 にトークン毎にオブジェクトを書き出してブラウザがリスト取得", "is_correct": false, "explanation": "S3 PutObject は遅く、トークン単位のストリームには絶対に使わない。"}
+      ],
+      "explanation": "ストリーミング応答の典型構成は (1) クライアント: SSE / Streaming Fetch (2) ゲートウェイ: Lambda Function URL（response streaming対応）/ Lambda Web Adapter / ALB+ECS (3) Bedrock: ConverseStream または InvokeModelWithResponseStream。API Gateway REST はバッファリングがあり完全ストリーミングには不向きなのが注意点。",
+      "references": [
+        {"title": "Lambda response streaming", "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html"},
+        {"title": "ConverseStream API", "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html"}
+      ],
+      "tags": ["bedrock", "streaming", "lambda", "sse", "architecture"],
+      "common_mistakes": [
+        "API Gateway REST でバッファリングが効くことを忘れる",
+        "EventBridge/S3 をストリームバックエンドにしようとする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-023",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "モデル選定総合",
+      "subtopic": "意思決定プロセス",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある医療系SaaSのCTOが「モデル選定の意思決定プロセス」を社内ガイドラインとして整備する。最も妥当な評価軸の優先順位はどれか。",
+      "options": [
+        {"id": "A", "text": "(1) 規制・データ越境制約 → (2) 機能要件（コンテキスト長、マルチモーダル等）→ (3) 品質 → (4) コスト・レイテンシ", "is_correct": true, "explanation": "正解。医療など規制業界では「そもそも使えるか」を最初に判定し、機能要件で候補を絞り、品質→コストの順で最終選定するのが妥当。"},
+        {"id": "B", "text": "(1) コスト → (2) 知名度 → (3) 機能要件 → (4) コンプライアンス", "is_correct": false, "explanation": "コンプライアンスを後回しにすると後戻りリスクが大きい。コストや知名度より先に必須要件を確認する。"},
+        {"id": "C", "text": "(1) ベンダー知名度 → (2) AWS のおすすめ → (3) 残りは現場判断", "is_correct": false, "explanation": "客観評価軸がなく、再現性のある意思決定にならない。"},
+        {"id": "D", "text": "(1) 品質 → (2) コスト → (3) コンプライアンス → (4) 機能要件", "is_correct": false, "explanation": "コンプライアンスを後段に置くと、品質評価まで進めてから不採用になり工数が無駄になる。"}
+      ],
+      "explanation": "モデル選定の評価軸は (1)制約条件（規制・データ越境・ライセンス・データ機密）(2)機能要件（コンテキスト長、マルチモーダル、Tool use）(3)品質（自社データでベンチマーク）(4)非機能要件（コスト、レイテンシ、可用性）の順に絞り込むのがベストプラクティス。制約条件で除外できるモデルは早期に外すことで意思決定コストを下げる。",
+      "references": [
+        {"title": "AWS Generative AI Lens for the Well-Architected Framework", "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/generative-ai-lens.html"}
+      ],
+      "tags": ["bedrock", "model-selection", "decision-framework", "governance", "healthcare"],
+      "common_mistakes": [
+        "コストを最優先にして規制違反になる",
+        "ベンダーの推奨に依存し再現性のない選定になる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-024",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Tool use",
+      "subtopic": "並列ツール呼び出し",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Converse API の Tool use で「ユーザの質問に対しモデルが3つの異なるツール呼び出しを同時に必要と判断する」ケースについて、開発者の対応として正しいのは複数選択。",
+      "options": [
+        {"id": "A", "text": "モデルが返す `toolUse` ブロックを全て検出して並列実行し、対応する `toolResult` をまとめて次ターンに渡す", "is_correct": true, "explanation": "正解。Claude 3.x など並列ツール呼び出し対応モデルでは複数 toolUse が1ターンで返る。並列実行することで最終応答までのレイテンシを削減できる。"},
+        {"id": "B", "text": "ツール結果は元の toolUse の `toolUseId` と紐付けて返す", "is_correct": true, "explanation": "正解。Converse API では toolUseId をキーに toolUse と toolResult をペアリングする。"},
+        {"id": "C", "text": "1つだけ実行して残りは無視する", "is_correct": false, "explanation": "ツール結果が不足するとモデルはハルシネーションするか、再度ツール呼び出しを試みる。全ての要求に応答するのが原則。"},
+        {"id": "D", "text": "ツール結果に「成功」「失敗」のステータスは含めなくて良い", "is_correct": false, "explanation": "失敗時はステータスを `error` にして失敗内容を返すのが推奨。モデルが復旧戦略を判断できる。"},
+        {"id": "E", "text": "並列実行はしないと並列呼び出しがそもそも返ってこない", "is_correct": false, "explanation": "並列で返るかはモデルの判断による。アプリ側の並列実行可否とは独立。"}
+      ],
+      "multiple_response": true,
+      "explanation": "Tool use の標準フローは (1)モデルが toolUse を返す (2)アプリがツール実行 (3)toolResult を返してターン継続。Claude 3.x や Nova は並列ツール呼び出しに対応しており、レイテンシ最適化のため並列実行が推奨。toolUseId による紐付け、エラー時の status:error など仕様遵守が重要。",
+      "references": [
+        {"title": "Use a tool to complete an Amazon Bedrock model response", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html"}
+      ],
+      "tags": ["bedrock", "tool-use", "parallel-tools", "converse-api", "function-calling"],
+      "common_mistakes": [
+        "toolUseId を無視して紐付けを誤る",
+        "並列toolUseのうち1つしか実行しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-025",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "モデル統合",
+      "subtopic": "リージョン可用性",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Bedrock のモデルについて、リージョン可用性に関して正しい説明はどれか。",
+      "options": [
+        {"id": "A", "text": "モデルごとに利用可能なリージョンが異なり、全モデルが全リージョンで使えるわけではない", "is_correct": true, "explanation": "正解。Claude/Llama などは us-east-1 / us-west-2 / ap-northeast-1 など特定リージョンに展開される。新モデルは段階的にリージョン拡大される。"},
+        {"id": "B", "text": "全 Bedrock モデルは全 AWS リージョンで均一に利用可能", "is_correct": false, "explanation": "実際にはモデルごとに対応リージョンが異なる。"},
+        {"id": "C", "text": "モデルは利用者がリージョンを選んでデプロイすれば必ず利用可能", "is_correct": false, "explanation": "Bedrock はマネージドサービスで、ユーザがモデルを「デプロイ」する操作はない。AWSが対応リージョンを決める。"},
+        {"id": "D", "text": "東京リージョンには Bedrock モデルは1つも存在しない", "is_correct": false, "explanation": "ap-northeast-1 でも Claude 系・Titan 系・Nova 系など多数のモデルが提供されている。"}
+      ],
+      "explanation": "Bedrock のモデル可用性はリージョン依存。新モデルは US リージョンで先行公開され、徐々に EU/APAC へ展開される傾向。アプリ設計時はターゲットリージョンでモデルが使えるかを Bedrock コンソールまたは公式ドキュメントで必ず確認する。Cross-region inference profile で複数リージョンを束ねる選択肢もある。",
+      "references": [
+        {"title": "Model support by AWS Region", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html"}
+      ],
+      "tags": ["bedrock", "region", "availability", "deployment", "planning"],
+      "common_mistakes": [
+        "モデルが全リージョンで使えると思い込む",
+        "ユーザがモデルをデプロイする概念があると誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-026",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Bedrock vs SageMaker",
+      "subtopic": "決定木",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "次のうち、SageMaker JumpStart より Bedrock が明らかに優位なシナリオを複数選択せよ。",
+      "options": [
+        {"id": "A", "text": "サーバレスでChatGPT風アプリを最短2週間でローンチしたい", "is_correct": true, "explanation": "正解。Bedrock はインフラ管理ゼロでAPI呼ぶだけで使えるため、最速ローンチに向く。"},
+        {"id": "B", "text": "Knowledge Bases、Guardrails、Agents などBedrock独自の生成AI機能を統合したい", "is_correct": true, "explanation": "正解。これらは Bedrock 専用機能で、SageMaker 単体では同等機能を自分で実装する必要がある。"},
+        {"id": "C", "text": "Anthropic Claude を呼びたい", "is_correct": true, "explanation": "正解。Claude は Bedrock 独占（AWS上）で、SageMaker JumpStart にはない。"},
+        {"id": "D", "text": "オープンソース重みを使ってフルパラメータ Fine-tuning しカスタムDockerでホストしたい", "is_correct": false, "explanation": "これは SageMaker の領域。Bedrock の Fine-tuning は対応モデル限定で、フルパラメータFTやカスタムDockerは不可。"},
+        {"id": "E", "text": "GPUインスタンスタイプを自由に選んでホストしたい", "is_correct": false, "explanation": "Bedrock はサーバレスでインスタンスタイプの概念はない。柔軟なホスト要件は SageMaker。"}
+      ],
+      "multiple_response": true,
+      "explanation": "Bedrock vs SageMaker JumpStart の使い分け：Bedrock は (1)サーバレス (2)Anthropic等独占モデル (3)Knowledge Bases/Agents/Guardrails等の生成AI統合機能 が強み。SageMaker は (1)カスタムDocker (2)フルパラメータFT (3)インスタンスタイプ自由選択 (4)詳細な学習/推論制御 が強み。要件で切り分ける。",
+      "references": [
+        {"title": "Choose between Amazon Bedrock and Amazon SageMaker JumpStart", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html"}
+      ],
+      "tags": ["bedrock", "sagemaker", "decision-framework", "architecture", "comparison"],
+      "common_mistakes": [
+        "Bedrock で何でもできると過大評価する",
+        "SageMaker のほうが新しい・優れていると誤解する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-027",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "監査ログ",
+      "subtopic": "CloudTrail と Model Invocation Logging",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FinTech企業がBedrockのモデル呼び出し内容（プロンプトと応答の中身）を監査用に保存したい。最も適切な仕組みは？",
+      "options": [
+        {"id": "A", "text": "Bedrock の Model Invocation Logging を有効化し、S3 または CloudWatch Logs にプロンプト・応答を出力", "is_correct": true, "explanation": "正解。Model Invocation Logging はBedrock が提供する公式機能で、リクエスト・レスポンス本文を記録できる。"},
+        {"id": "B", "text": "CloudTrail のデータイベントだけでプロンプト本文も記録される", "is_correct": false, "explanation": "CloudTrail は API 呼び出しメタデータ（誰が、いつ、何のAPI）を記録するが、プロンプト本文は含めない。"},
+        {"id": "C", "text": "VPC Flow Logs で記録する", "is_correct": false, "explanation": "VPC Flow Logs はネットワーク層のメタデータで、暗号化されたペイロードを記録できない。"},
+        {"id": "D", "text": "AWS Config で記録する", "is_correct": false, "explanation": "AWS Config はリソース設定変更の追跡で、API ペイロードは記録しない。"}
+      ],
+      "explanation": "Bedrock Model Invocation Logging はモデル呼び出しのプロンプト・応答・メタデータをS3またはCloudWatch Logsに記録する機能。コンプライアンス監査、不正利用検出、品質モニタリングに有効。CloudTrail はAPI呼び出しの「行為」記録、Model Invocation Logging は「中身」記録、と役割を分けて理解する。",
+      "references": [
+        {"title": "Model invocation logging", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html"}
+      ],
+      "tags": ["bedrock", "logging", "audit", "cloudtrail", "fintech"],
+      "common_mistakes": [
+        "CloudTrail で本文まで取れると誤解する",
+        "Model Invocation Logging の存在を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-028",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "推論最適化",
+      "subtopic": "Latency-optimized inference",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある製造業の現場端末から、Claude Haiku への呼び出しレイテンシをさらに下げたい。Bedrock の Latency-optimized inference を使うべきか判断する観点として正しいのは複数選択。",
+      "options": [
+        {"id": "A", "text": "Latency-optimized inference は対応モデル・対応リージョンが限定されるため、まず対応状況を確認する", "is_correct": true, "explanation": "正解。Latency-optimizedモードは特定モデル（例: Claude 3.5 Haiku, Llama 3.1 405B等）と特定リージョンでのみ提供されている。"},
+        {"id": "B", "text": "Latency-optimized は同等品質で速度のみが最適化されるため、品質劣化の心配は少ないが料金が異なる場合がある", "is_correct": true, "explanation": "正解。出力分布は同モデル準拠だが、推論ハードウェア（Trainium2等）最適化のため料金体系が変わる場合がある。"},
+        {"id": "C", "text": "アプリのレイテンシ問題はネットワーク遅延が支配的な可能性もあるため、まずプロファイリングしてLLM推論時間が真のボトルネックか確認する", "is_correct": true, "explanation": "正解。エッジ→AWSのRTTやコールドスタートが主因なら Latency-optimized では解決しない。"},
+        {"id": "D", "text": "Latency-optimized を有効にすればコンテキスト長制約も解除される", "is_correct": false, "explanation": "コンテキスト長はモデル仕様で決まり、Latency-optimized でも変わらない。"},
+        {"id": "E", "text": "Latency-optimized は SageMaker 専用機能で Bedrock では使えない", "is_correct": false, "explanation": "Bedrock の機能。"}
+      ],
+      "multiple_response": true,
+      "explanation": "Latency-optimized inference は AWS Trainium2 等の専用ハードを使ってレイテンシを最適化したモード。対応モデル・リージョン・料金が通常モードと異なる。導入前には (1) 対応状況確認 (2) 真のボトルネック特定 (3) 品質変化のサンプリング検証 (4) コスト比較 を行う。",
+      "references": [
+        {"title": "Latency-optimized inference for foundation models", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/latency-optimized-inference.html"}
+      ],
+      "tags": ["bedrock", "latency-optimized", "performance", "trainium", "manufacturing"],
+      "common_mistakes": [
+        "Latency-optimized = コンテキスト長拡大 と誤解する",
+        "ネットワーク遅延を測らずモデル切替を試す"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-029",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "アプリ統合アーキテクチャ",
+      "subtopic": "Bedrock 抽象化レイヤー設計",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "あるSaaS企業のCTOとして、将来のモデル変更（Anthropic→Meta→Amazon等）に強い社内Bedrockクライアント設計を作りたい。新規ライブラリの設計指針として最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "(1) Converse API を基本I/Fとし (2) modelId はConfig管理 (3) Cross-region inference profile を ARN として注入可能 (4) Tool use スキーマ・Guardrail ID も設定駆動 (5) リトライ・指数バックオフ・観測（CloudWatch metrics）を共通実装", "is_correct": true, "explanation": "正解。Converse API はモデル間の差異を吸収する抽象層。設定駆動＋観測標準化はモデル切替容易性と運用安定性を両立する。"},
+        {"id": "B", "text": "InvokeModel API でモデル別にif分岐するハードコード実装", "is_correct": false, "explanation": "モデル変更のたびにコード改修が発生する。抽象化が効かない。"},
+        {"id": "C", "text": "アプリコード内に直接 boto3 クライアントを散らかせて、モデル指定もべた書き", "is_correct": false, "explanation": "テスト容易性・観測性・切替柔軟性のすべてが損なわれる。"},
+        {"id": "D", "text": "モデルごとにLambda関数を分けて、ARNごとに API Gateway ルートを作る", "is_correct": false, "explanation": "切替コストが上がるだけで、抽象化にも観測にも貢献しない。"}
+      ],
+      "explanation": "モデル切替容易性は AIP-C01 の重要テーマ。設計のポイントは (1) Converse API による I/F 統一 (2) modelId/profileArn を環境変数 or AppConfig 化 (3) Tool スキーマ・Guardrail も設定化 (4) リトライ・タイムアウト・メトリクス（プロンプトトークン、出力トークン、レイテンシ、エラー率）を共通化 (5) A/Bテスト・シャドーインパクトをサポート。これにより新モデル評価・切替が数日で完了する組織能力になる。",
+      "references": [
+        {"title": "AWS Generative AI Lens for the Well-Architected Framework", "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/generative-ai-lens.html"},
+        {"title": "Converse API", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html"}
+      ],
+      "tags": ["bedrock", "architecture", "abstraction", "well-architected", "saas"],
+      "common_mistakes": [
+        "modelId をハードコードして切替コストを上げる",
+        "観測やリトライを後付けにする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain1-030",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "基盤モデル選定と統合", "weight_percent": 20},
+      "topic": "Stability AI",
+      "subtopic": "画像生成モデル選定",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "medium",
+      "stem": "あるSaaS のマーケティング機能で「ユーザのテキスト指示から商品紹介バナー画像を生成」したい。Bedrock 上の画像生成モデルとして候補を比較する際、適切な観点は複数選択。",
+      "options": [
+        {"id": "A", "text": "Stable Diffusion XL / Stable Image Core / Stable Image Ultra（Stability AI）と Amazon Titan Image Generator G1 / G2、Amazon Nova Canvas が候補となる", "is_correct": true, "explanation": "正解。Bedrockの主な画像生成モデル群。"},
+        {"id": "B", "text": "AWS純正の Nova Canvas / Titan Image Generator は商用利用での補償（Indemnification）が手厚い場合があり、リスク軽視できないSaaSでは選好される", "is_correct": true, "explanation": "正解。AWS純正モデルでは IP補償ポリシーが明示されるケースが多く、商用利用リスクが低い。"},
+        {"id": "C", "text": "サンプル画像で品質・スタイル傾向を比較し、ターゲット用途（リアル写真、イラスト、ロゴ）に合うモデルを選ぶ", "is_correct": true, "explanation": "正解。同じプロンプトでもモデル毎に得意ジャンルが異なるため、用途別に評価する。"},
+        {"id": "D", "text": "画像生成モデルなら全部同じ品質なので、最も安いモデルを選べばよい", "is_correct": false, "explanation": "品質・スタイル・解像度・生成速度はモデルによって大きく異なる。"},
+        {"id": "E", "text": "画像生成モデルは Bedrock では使えず必ず SageMaker でしか動かない", "is_correct": false, "explanation": "Bedrock 上で複数の画像生成モデルが提供されている。"}
+      ],
+      "multiple_response": true,
+      "explanation": "Bedrock 画像生成モデルの選定軸は (1) 用途（商品写真風 / イラスト / ロゴ）(2) 品質・解像度（最大画素数）(3) 生成速度・コスト (4) ライセンス・IP補償 (5) ガードレール対応（NSFW フィルタ等）。AWS純正モデル（Titan Image Generator, Nova Canvas）は IP補償の点でB2B商用に好まれる傾向。タスク別の品質評価（人間評価＋ヒューリスティック）が決め手。",
+      "references": [
+        {"title": "Image generation models on Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html"},
+        {"title": "Amazon Nova Canvas", "url": "https://docs.aws.amazon.com/nova/latest/userguide/content-generation.html"}
+      ],
+      "tags": ["bedrock", "image-generation", "stability-ai", "titan", "nova-canvas"],
+      "common_mistakes": [
+        "全画像生成モデルを同等品質と見なす",
+        "ライセンス/補償を確認しないまま商用利用する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

@@ -1,0 +1,642 @@
+{
+  "exam_code": "dbs-c01",
+  "exam_name": "AWS Certified Database – Specialty",
+  "version": "2026.04",
+  "total_questions": 25,
+  "domains": [
+    {
+      "id": "domain-3",
+      "name": "Management and Operations",
+      "weight_percent": 18,
+      "question_count": 25
+    }
+  ],
+  "questions": [
+    {
+      "id": "dbs-c01-domain3-001",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "RDS Backup",
+      "subtopic": "Automated backup retention",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "RDS の自動バックアップで設定可能なバックアップ保持期間 (retention period) として正しいのはどれか。",
+      "options": [
+        {"id": "A", "text": "1 日のみ", "is_correct": false, "explanation": "1 日も可能だが、最大値は 1 日ではない。"},
+        {"id": "B", "text": "0 〜 35 日 (0 で自動バックアップ無効化)", "is_correct": true, "explanation": "正解。RDS 自動バックアップは 0〜35 日で設定可。0 で無効化、デフォルトは 7 日。"},
+        {"id": "C", "text": "1 〜 7 日", "is_correct": false, "explanation": "最大は 35 日であり 7 日ではない。"},
+        {"id": "D", "text": "1 〜 365 日", "is_correct": false, "explanation": "365 日設定したい場合は AWS Backup または手動スナップショットを使う。"}
+      ],
+      "explanation": "RDS の自動バックアップは保持期間 0〜35 日。35 日を超えるアーカイブには手動スナップショット (無期限) または AWS Backup の Vault Lock を使う。自動バックアップから PITR が可能。",
+      "references": [
+        {"title": "Amazon RDS backups", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html"}
+      ],
+      "tags": ["rds", "backup", "retention"],
+      "common_mistakes": ["最大が 7 日と思い込む", "365 日まで設定可能と思い込む"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-002",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Multi-AZ vs Read Replica",
+      "subtopic": "Concept",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "RDS Multi-AZ Deployment と Read Replica の主な違いとして正しいのはどれか。",
+      "options": [
+        {"id": "A", "text": "Multi-AZ は読み取り負荷分散用、Read Replica は HA 用", "is_correct": false, "explanation": "逆。Multi-AZ が HA 用、Read Replica が読み取り負荷分散用。"},
+        {"id": "B", "text": "Multi-AZ は HA (同期レプリケーション)、Read Replica は読み取り負荷分散 (非同期レプリケーション)", "is_correct": true, "explanation": "正解。Multi-AZ スタンバイは原則アクセス不可で同期、Read Replica は読み取り可・非同期。"},
+        {"id": "C", "text": "両方とも読み取り負荷分散用途", "is_correct": false, "explanation": "Multi-AZ スタンバイは通常読み取り不可 (Multi-AZ Cluster は別)。"},
+        {"id": "D", "text": "両方とも HA 用途", "is_correct": false, "explanation": "Read Replica はデフォルトで HA を提供しない (手動 promote が必要)。"}
+      ],
+      "explanation": "Multi-AZ は同期レプリ・自動フェイルオーバーで HA 提供、スタンバイは通常読めない。Read Replica は非同期で読み取り分散、手動 promote 可能。Multi-AZ DB Cluster (PostgreSQL/MySQL) は両方の側面を持つ新しいオプション。",
+      "references": [
+        {"title": "Multi-AZ deployments", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html"}
+      ],
+      "tags": ["rds", "multi-az", "read-replica", "ha"],
+      "common_mistakes": ["Multi-AZ スタンバイから読み取れると誤解", "Read Replica が自動フェイルオーバーすると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-003",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "AWS Backup",
+      "subtopic": "Centralized backup",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "AWS Backup を RDS で使う主な利点として最も適切なのはどれか。",
+      "options": [
+        {"id": "A", "text": "RDS の自動バックアップより常に高速", "is_correct": false, "explanation": "速度優位性は本質ではなく、内部で同様のスナップショット技術を使う。"},
+        {"id": "B", "text": "複数 AWS サービス (RDS/EBS/EFS/DynamoDB 等) のバックアップを 1 ポリシーで集中管理し、Vault Lock で WORM 保護も可能", "is_correct": true, "explanation": "正解。AWS Backup は組織横断の集中バックアップ管理を提供し、コンプライアンス向け Vault Lock (削除不可) もサポートする。"},
+        {"id": "C", "text": "DB エンジン側でしかバックアップできないものをカバーする", "is_correct": false, "explanation": "AWS Backup は内部で RDS スナップショット API を呼び出すため、機能範囲はほぼ同等。"},
+        {"id": "D", "text": "コスト課金が無料", "is_correct": false, "explanation": "AWS Backup でもストレージ使用量に応じた課金が発生する。"}
+      ],
+      "explanation": "AWS Backup の価値は (1) 複数サービス・複数アカウント・複数リージョンの集中ポリシー管理、(2) Vault Lock による不可逆保持、(3) Backup Audit Manager によるコンプライアンス監査。エンタープライズで標準。",
+      "references": [
+        {"title": "What is AWS Backup?", "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"}
+      ],
+      "tags": ["aws-backup", "vault-lock", "compliance"],
+      "common_mistakes": ["AWS Backup が無料と誤解", "RDS 自動バックアップより必ず良いと過信"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-004",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "RDS maintenance window",
+      "subtopic": "Pending modifications",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "RDS インスタンスでパラメータグループを変更したが、すぐに反映させたくない。最も適切な選択は？",
+      "options": [
+        {"id": "A", "text": "\"Apply Immediately\" を選択せず、次のメンテナンスウィンドウまで延期する", "is_correct": true, "explanation": "正解。Apply Immediately 未選択時、変更は次回メンテナンスウィンドウで適用される (再起動が必要なものに限る)。"},
+        {"id": "B", "text": "Apply Immediately を選び、深夜 0 時を設定する", "is_correct": false, "explanation": "Apply Immediately は時刻指定機能ではなく、即時適用を意味する。"},
+        {"id": "C", "text": "AWS Lambda で深夜にスケジュール実行する", "is_correct": false, "explanation": "RDS にはネイティブのメンテナンスウィンドウ機能があり、Lambda を自作する必要はない。"},
+        {"id": "D", "text": "Pending Maintenance を Disable にする", "is_correct": false, "explanation": "メンテナンスを Disable にする選択肢は存在しない。"}
+      ],
+      "explanation": "RDS の変更は静的パラメータの場合、Apply Immediately なら即時 (再起動)、未選択なら次のメンテナンスウィンドウで反映。本番では業務時間外のメンテナンスウィンドウ活用が標準。",
+      "references": [
+        {"title": "Modifying an Amazon RDS DB instance", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html"}
+      ],
+      "tags": ["rds", "maintenance-window", "operations"],
+      "common_mistakes": ["Apply Immediately = 時刻指定と誤解", "Pending Maintenance を無効化できると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-005",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Reserved Instances",
+      "subtopic": "Cost optimization",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "本番 RDS for PostgreSQL を 24/7 で 3 年間稼働させる予定。コスト最適化として最も適切なのは？",
+      "options": [
+        {"id": "A", "text": "Savings Plans に契約する", "is_correct": false, "explanation": "RDS は Compute Savings Plans の対象外。Reserved Instances を使う必要がある。"},
+        {"id": "B", "text": "RDS Reserved Instance (3 年, All Upfront) を購入する", "is_correct": true, "explanation": "正解。RDS RI は最大 ~60% 割引で、長期固定ワークロードのコスト最適化の標準解。All Upfront でさらに割引が増える。"},
+        {"id": "C", "text": "Spot 価格で RDS を起動する", "is_correct": false, "explanation": "RDS には Spot 価格は存在しない (EC2 の概念)。"},
+        {"id": "D", "text": "オンデマンドのまま夜間停止運用", "is_correct": false, "explanation": "RDS インスタンス停止は最大 7 日で自動再起動される。24/7 用途には不向き。"}
+      ],
+      "explanation": "RDS の長期固定ワークロードは RI (1 年/3 年, No/Partial/All Upfront) が標準。Aurora は別 RI 体系。Savings Plans は EC2/Lambda/Fargate 向けで RDS には適用されない (2026年時点)。",
+      "references": [
+        {"title": "Reserved DB Instances for Amazon RDS", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html"}
+      ],
+      "tags": ["rds", "reserved-instance", "cost"],
+      "common_mistakes": ["Savings Plans が RDS にも使えると誤解", "RDS の停止運用が常時可能と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-006",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Aurora Auto Scaling",
+      "subtopic": "Reader scaling",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL の Read Replica を負荷に応じて自動増減したい。最も適切な機能は？",
+      "options": [
+        {"id": "A", "text": "EC2 Auto Scaling Group", "is_correct": false, "explanation": "ASG は EC2 専用で Aurora インスタンスを直接管理しない。"},
+        {"id": "B", "text": "Aurora Auto Scaling (Application Auto Scaling 経由)", "is_correct": true, "explanation": "正解。Aurora Auto Scaling は CPU/接続数等のメトリクスに基づき Read Replica を自動増減する。"},
+        {"id": "C", "text": "Aurora Serverless v1", "is_correct": false, "explanation": "Serverless v1 は単体の DB スケーリングで、Read Replica の数を動的に増減する機能ではない。"},
+        {"id": "D", "text": "Lambda + Step Functions の自作スクリプト", "is_correct": false, "explanation": "ネイティブ Aurora Auto Scaling があるため自作不要。"}
+      ],
+      "explanation": "Aurora Auto Scaling は Application Auto Scaling サービス経由で Read Replica を増減する。ターゲットメトリクス (平均 CPU 使用率 / 平均接続数) を指定し、最小・最大レプリカ数の範囲で増減する。",
+      "references": [
+        {"title": "Aurora Auto Scaling", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Integrating.AutoScaling.html"}
+      ],
+      "tags": ["aurora", "auto-scaling", "read-replica"],
+      "common_mistakes": ["EC2 Auto Scaling Group で Aurora を扱えると誤解", "Serverless と Auto Scaling を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-007",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "RDS Proxy",
+      "subtopic": "Connection pooling",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Lambda 関数が RDS for MySQL に接続している。同時実行数が増えると \"too many connections\" エラーが発生する。最も適切な対処は？",
+      "options": [
+        {"id": "A", "text": "RDS Proxy を導入し、Lambda は Proxy 経由で接続する", "is_correct": true, "explanation": "正解。RDS Proxy は接続プールを提供し、Lambda の大量同時実行による接続スパイクを吸収する。"},
+        {"id": "B", "text": "max_connections を 10000 に増やす", "is_correct": false, "explanation": "DB 側のメモリ消費が大きく、根本解決ではない。Proxy が標準解。"},
+        {"id": "C", "text": "Lambda の同時実行数を 1 に制限する", "is_correct": false, "explanation": "ビジネス要件 (スループット) を犠牲にする。"},
+        {"id": "D", "text": "Aurora Serverless v1 に切り替える", "is_correct": false, "explanation": "Serverless v1 でも接続プール問題は基本同様。Proxy が直接的な解。"}
+      ],
+      "explanation": "RDS Proxy は接続プールを集中管理し、Lambda のような短命・大量同時接続パターンに有効。フェイルオーバー時間も短縮する効果あり。MySQL/PostgreSQL/MariaDB/SQL Server で利用可。",
+      "references": [
+        {"title": "Using Amazon RDS Proxy", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html"}
+      ],
+      "tags": ["rds-proxy", "lambda", "connection-pool"],
+      "common_mistakes": ["max_connections だけ増やせば解決と誤解", "Serverless が接続プールも兼ねると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-008",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Cross-region replication",
+      "subtopic": "DR strategy",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "医療系 SaaS の RDS for PostgreSQL データを別リージョンへリアルタイムに複製し、災害時に短時間で切り替えたい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "毎時スナップショットをクロスリージョンコピー", "is_correct": false, "explanation": "RPO が 1 時間以上で要件 (リアルタイム) を満たさない。"},
+        {"id": "B", "text": "RDS for PostgreSQL のクロスリージョン Read Replica を作成し、災害時に promote する", "is_correct": true, "explanation": "正解。RDS for PostgreSQL はクロスリージョン Read Replica をサポート。非同期だが秒オーダーの遅延で、災害時に promote すれば独立 DB になる。"},
+        {"id": "C", "text": "AWS Backup でクロスリージョンバックアップする", "is_correct": false, "explanation": "Backup ジョブ間隔の RPO に縛られ、リアルタイム要件には不適。"},
+        {"id": "D", "text": "Aurora Global Database に切り替える", "is_correct": false, "explanation": "Aurora Global Database は Aurora 専用。RDS for PostgreSQL では使えない。"}
+      ],
+      "explanation": "RDS for PostgreSQL は 2018 年以降クロスリージョン Read Replica をサポート。DR のためには promote 機能が要点。Aurora 系は Global Database が圧倒的に高速だが、本問は RDS for PostgreSQL シナリオ。",
+      "references": [
+        {"title": "Cross-Region read replicas", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html#USER_ReadRepl.XRgn"}
+      ],
+      "tags": ["rds", "cross-region", "read-replica", "dr"],
+      "common_mistakes": ["RDS for PostgreSQL に Aurora Global Database を適用しようとする", "スナップショットコピーで RPO 要件を満たすと誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-009",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Patch management",
+      "subtopic": "Engine version upgrades",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS for MySQL のマイナーバージョンを最新に保ちたい。本番に影響を最小化しつつ自動運用したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "Auto Minor Version Upgrade を有効化し、メンテナンスウィンドウを業務時間外に設定する", "is_correct": true, "explanation": "正解。Auto Minor Version Upgrade を ON にすると、マイナーバージョンが利用可能になった際にメンテナンスウィンドウで自動アップグレードされる。"},
+        {"id": "B", "text": "毎週 Lambda で API を叩いてマイナーアップグレードを強制実行する", "is_correct": false, "explanation": "ネイティブ機能で十分。自作は運用負荷が増える。"},
+        {"id": "C", "text": "メジャーバージョンも自動アップグレードに任せる", "is_correct": false, "explanation": "メジャーバージョン (例: 5.7 → 8.0) は自動化対象外で、互換性検証が必要。"},
+        {"id": "D", "text": "Auto Minor Version Upgrade を OFF にする", "is_correct": false, "explanation": "セキュリティパッチ等のマイナーアップが自動適用されなくなり、要件と矛盾。"}
+      ],
+      "explanation": "RDS は Auto Minor Version Upgrade を提供 (デフォルト ON)。マイナーは互換性が高いため自動化推奨。メジャーは別途計画が必要 (Blue/Green の活用など)。メンテナンスウィンドウを業務時間外に設定するのが運用上の常識。",
+      "references": [
+        {"title": "Upgrading a DB instance engine version", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html"}
+      ],
+      "tags": ["rds", "patch", "auto-minor-version-upgrade"],
+      "common_mistakes": ["メジャーアップも自動化されると誤解", "Auto Minor を OFF にして放置"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-010",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Aurora Serverless v2",
+      "subtopic": "Cost optimization",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "B2B SaaS の本番 Aurora MySQL がピーク時のみ高負荷でアイドル時は低負荷。プロビジョンド db.r6g.4xlarge を常時稼働中。コスト削減策として最も適切なのは？",
+      "options": [
+        {"id": "A", "text": "Aurora Serverless v2 に変更し、最小・最大 ACU を適切に設定する", "is_correct": true, "explanation": "正解。Serverless v2 は秒単位でスケールし、アイドル時の課金を抑える。本番運用で互換性も高い。"},
+        {"id": "B", "text": "db.r6g.large に常時固定する", "is_correct": false, "explanation": "ピーク時に性能不足になり SLA 違反のリスク。"},
+        {"id": "C", "text": "夜間に毎回スナップショット → 削除 → 翌朝復元", "is_correct": false, "explanation": "Aurora の起動・復元コスト・時間が大きく現実的でない。"},
+        {"id": "D", "text": "EC2 上に MySQL を構築", "is_correct": false, "explanation": "Aurora のメリット (ストレージ自動拡張、HA) を失う上に運用負荷増。"}
+      ],
+      "explanation": "可変ワークロードでは Serverless v2 が最有力。0.5 ACU 単位、秒単位でスケールし、Multi-AZ・Reader にも対応する。プロビジョンドの固定サイズに比べ大幅コスト削減できることが多い。",
+      "references": [
+        {"title": "Aurora Serverless v2", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html"}
+      ],
+      "tags": ["aurora", "serverless-v2", "cost"],
+      "common_mistakes": ["Serverless v2 が本番に向かないと誤解", "固定縮小でコスト削減と誤解 (SLA リスク)"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-011",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "PITR",
+      "subtopic": "Granularity",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS for PostgreSQL の PITR (Point-in-Time Recovery) で復元できる時刻の最小粒度はおよそどれか。",
+      "options": [
+        {"id": "A", "text": "5 分単位", "is_correct": false, "explanation": "もっと細かい単位で復元可能。"},
+        {"id": "B", "text": "5 秒単位 (実質的に秒粒度)", "is_correct": true, "explanation": "正解。RDS PITR は約 5 秒粒度で復元可能。WAL ログを連続バックアップしているため。"},
+        {"id": "C", "text": "1 時間単位", "is_correct": false, "explanation": "1 時間は自動バックアップの開始間隔だが、PITR の粒度ではない。"},
+        {"id": "D", "text": "1 日単位", "is_correct": false, "explanation": "粒度ではなく、保持期間の単位。"}
+      ],
+      "explanation": "RDS は WAL/binlog の連続的なアーカイブにより、保持期間内の任意時刻 (約 5 秒精度) に PITR 可能。誤操作からの細かい時刻巻き戻しに有効。",
+      "references": [
+        {"title": "Restoring a DB instance to a specified time", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html"}
+      ],
+      "tags": ["rds", "pitr", "recovery"],
+      "common_mistakes": ["1 時間粒度と誤解", "1 日単位と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-012",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Multi-Region DR",
+      "subtopic": "Aurora Global Database failover",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora Global Database (東京プライマリ、大阪セカンダリ) で、東京リージョン全体が利用不能になった。最も適切な対応は？",
+      "options": [
+        {"id": "A", "text": "セカンダリ (大阪) を Managed Failover で promote し、新プライマリとして稼働させる", "is_correct": true, "explanation": "正解。Aurora Global Database には Managed Planned Failover (計画) と Unplanned Failover (Detach and Promote) があり、リージョン障害時はセカンダリを promote して継続稼働させる。"},
+        {"id": "B", "text": "東京リージョンの復旧を待つ (RTO 不問)", "is_correct": false, "explanation": "DR 設計の意義を放棄する案。"},
+        {"id": "C", "text": "別の新規 Aurora を東京リージョンで作成しスナップショット復元", "is_correct": false, "explanation": "リージョン全体が unavailable なので作成不可。Global Database を活用すべき。"},
+        {"id": "D", "text": "DynamoDB Global Tables に切り替える", "is_correct": false, "explanation": "切替の話ではなく、Aurora の DR 対応の話。サービス変更は時間も影響もある。"}
+      ],
+      "explanation": "Aurora Global Database はリージョン障害に備え、セカンダリ promote (Detach and Promote) で短時間にスタンドアロンクラスター化できる。Managed Planned Failover (計画切替、データ損失なし) と Unplanned Failover (障害時、わずかなデータ損失あり) を区別すること。",
+      "references": [
+        {"title": "Aurora Global Database disaster recovery", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html"}
+      ],
+      "tags": ["aurora", "global-database", "dr", "failover"],
+      "common_mistakes": ["Managed Failover と Unplanned Failover の違いを知らない", "別サービスへの切替で対応しようとする"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-013",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "RDS Proxy IAM",
+      "subtopic": "Authentication",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Lambda から RDS Proxy 経由で Aurora MySQL に接続する。アプリにパスワードをハードコードせず、安全に認証したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "RDS Proxy で IAM 認証を有効化し、Lambda 実行ロールに rds-db:connect 権限を付与する", "is_correct": true, "explanation": "正解。RDS Proxy は IAM 認証をサポートし、Lambda の実行ロールに rds-db:connect 権限を与えれば、IAM トークンによるパスワードレス認証が可能。"},
+        {"id": "B", "text": "Lambda 環境変数にパスワードを平文で書く", "is_correct": false, "explanation": "セキュリティ違反。最低でも Secrets Manager 必須。"},
+        {"id": "C", "text": "Lambda のソースコード内にパスワードをハードコードする", "is_correct": false, "explanation": "完全なアンチパターン。"},
+        {"id": "D", "text": "Cognito でユーザを管理する", "is_correct": false, "explanation": "Cognito はエンドユーザー認証で、サービス間 DB 認証には使わない。"}
+      ],
+      "explanation": "RDS Proxy は IAM 認証統合を持ち、Lambda 実行ロールから一時トークンを発行して接続できる。これにより認証情報の管理を IAM に集約できる。Secrets Manager 統合で DB ユーザの認証情報自動ローテーションも可能。",
+      "references": [
+        {"title": "RDS Proxy authentication", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-setup.html"}
+      ],
+      "tags": ["rds-proxy", "iam", "lambda", "security"],
+      "common_mistakes": ["環境変数に平文を書く", "Cognito で DB 認証を行うと誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-014",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Aurora storage",
+      "subtopic": "Storage management",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL のストレージ運用について、最も正しいのはどれか。",
+      "options": [
+        {"id": "A", "text": "ストレージは事前に最大サイズを指定し、超えたらエラーになる", "is_correct": false, "explanation": "Aurora は自動拡張で、最大 128TB まで自動でスケール。"},
+        {"id": "B", "text": "ストレージは使用量に応じて 10GB 単位で自動拡張し、最大 128TB", "is_correct": true, "explanation": "正解。Aurora は SSD 共有ストレージで、データ増加に応じて自動的に拡張する。"},
+        {"id": "C", "text": "ディスク追加にはダウンタイムが必要", "is_correct": false, "explanation": "Aurora は無停止で自動拡張する。"},
+        {"id": "D", "text": "Aurora I/O-Optimized ストレージは利用不可", "is_correct": false, "explanation": "I/O-Optimized が選択可能で、I/O 多寡に応じてコスト最適化できる。"}
+      ],
+      "explanation": "Aurora ストレージは自動拡張 (最大 128TB)、6 つのコピーを 3 AZ に分散保持。ストレージタイプは Standard と I/O-Optimized があり、I/O 課金が大きいワークロードでは I/O-Optimized で総コスト抑制が可能。",
+      "references": [
+        {"title": "Amazon Aurora storage and reliability", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html"}
+      ],
+      "tags": ["aurora", "storage", "io-optimized"],
+      "common_mistakes": ["事前にサイズ指定が必要と誤解", "拡張にダウンタイムが必要と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-015",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "DynamoDB",
+      "subtopic": "Auto Scaling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DynamoDB テーブルの Provisioned Capacity を負荷に応じて自動増減したい。最も適切な機能は？",
+      "options": [
+        {"id": "A", "text": "DynamoDB Auto Scaling (Application Auto Scaling 経由)", "is_correct": true, "explanation": "正解。DynamoDB Auto Scaling は Read/Write Capacity Units をターゲット使用率に基づき自動調整する。"},
+        {"id": "B", "text": "EC2 Auto Scaling Group で DynamoDB ノードを増やす", "is_correct": false, "explanation": "DynamoDB はマネージドサービスでノードを直接管理しない。"},
+        {"id": "C", "text": "Lambda + CloudWatch Alarm で自作する", "is_correct": false, "explanation": "ネイティブ機能があるため自作不要。"},
+        {"id": "D", "text": "On-Demand に切り替えれば Auto Scaling 不要", "is_correct": false, "explanation": "それも有効な選択肢だが質問は \"Provisioned を自動増減\" なので Auto Scaling が解。"}
+      ],
+      "explanation": "DynamoDB は Provisioned (Auto Scaling 可) と On-Demand の課金モデル。Provisioned + Auto Scaling は予測可能なワークロードでコスト効率が高く、スパイク的なら On-Demand が適する。",
+      "references": [
+        {"title": "Managing throughput capacity automatically with DynamoDB auto scaling", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html"}
+      ],
+      "tags": ["dynamodb", "auto-scaling", "capacity"],
+      "common_mistakes": ["EC2 ASG で DynamoDB を扱えると誤解", "Auto Scaling と On-Demand を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-016",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "RDS backup window",
+      "subtopic": "Backup impact",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "シングル AZ の RDS for MySQL で、バックアップウィンドウ中に I/O サスペンドが発生し業務影響が出ている。最も適切な対処は？",
+      "options": [
+        {"id": "A", "text": "Multi-AZ 構成に変更する。Multi-AZ ではスナップショットがスタンバイから取られるため、本番への I/O 影響がない", "is_correct": true, "explanation": "正解。Multi-AZ 構成ではバックアップはスタンバイインスタンスから取得されるため、プライマリ I/O への影響を回避できる。"},
+        {"id": "B", "text": "バックアップ保持期間を 0 にする", "is_correct": false, "explanation": "PITR が不可能になり業務継続性が低下する根本的に誤った選択。"},
+        {"id": "C", "text": "バックアップウィンドウを業務時間に変更する", "is_correct": false, "explanation": "業務時間に影響が出やすくなり逆効果。"},
+        {"id": "D", "text": "ストレージタイプを magnetic に変更", "is_correct": false, "explanation": "性能劣化を招き、根本対策ではない。"}
+      ],
+      "explanation": "シングル AZ では一時的に短い I/O サスペンドが発生するが、Multi-AZ ではスタンバイで取得するため本番影響がほぼない。本番運用なら Multi-AZ が標準。",
+      "references": [
+        {"title": "Amazon RDS backups", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html"}
+      ],
+      "tags": ["rds", "backup", "multi-az", "operations"],
+      "common_mistakes": ["保持期間を 0 にして問題回避と誤解", "Multi-AZ でもプライマリからバックアップ取得すると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-017",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Cost optimization",
+      "subtopic": "Read Replica vs Aurora",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "RDS for MySQL に Read Replica を 5 台配置し、レプリケーション遅延に苦しんでいる。Aurora MySQL に移行することで何が改善するか最も適切に説明できるのはどれか。",
+      "options": [
+        {"id": "A", "text": "Aurora は共有ストレージ層でレプリケーションを行うため、Read Replica の遅延が一般に 100ms 未満と大幅に改善する", "is_correct": true, "explanation": "正解。Aurora は共有ストレージレイヤーで書き込みが行われるため、Read Replica は同じストレージを参照するだけで遅延がほぼなく、典型 100ms 未満となる。"},
+        {"id": "B", "text": "Aurora は同期レプリケーションなので遅延がゼロになる", "is_correct": false, "explanation": "Aurora Read Replica は厳密にはゼロではない (キャッシュ無効化等の遅延がある)。\"ほぼゼロ\" が正確。"},
+        {"id": "C", "text": "Aurora は Read Replica が不要", "is_correct": false, "explanation": "Read Replica (Aurora Replica) は Aurora でも使う、ただし内部仕組みが違う。"},
+        {"id": "D", "text": "Aurora の方がレプリ遅延は大きい", "is_correct": false, "explanation": "逆。共有ストレージ設計により小さい。"}
+      ],
+      "explanation": "RDS の Read Replica は MySQL バイナリログを使う非同期レプリで遅延が発生しやすい。Aurora は共有ストレージ + redo log の物理レプリ的な設計で、レプリ遅延が桁違いに小さい。読み取り重視なら Aurora が有力。",
+      "references": [
+        {"title": "Aurora Replicas", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html"}
+      ],
+      "tags": ["aurora", "read-replica", "replication-lag"],
+      "common_mistakes": ["Aurora が同期レプリで遅延ゼロと誤解", "Aurora Replica の存在自体を知らない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-018",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "AWS Backup",
+      "subtopic": "Vault Lock",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "コンプライアンス要件で RDS のバックアップを 7 年間 \"削除不可\" の状態で保持したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "RDS の自動バックアップ retention を 35 日に設定する", "is_correct": false, "explanation": "RDS 自動バックアップは最大 35 日。7 年要件には不適。"},
+        {"id": "B", "text": "AWS Backup でバックアップ計画を作成し、Vault Lock (Compliance Mode) を設定して 7 年間保持する", "is_correct": true, "explanation": "正解。AWS Backup の Vault Lock (Compliance Mode) は WORM 状態を強制し、ルートユーザでも削除できなくなる。SEC 17a-4(f) や CFTC 準拠。"},
+        {"id": "C", "text": "S3 にスナップショットをエクスポートし、Glacier に移動", "is_correct": false, "explanation": "Glacier 単体では削除不可ではない (Vault Lock を設定しなければ)。RDS スナップショットの S3 export は Parquet で、復元には別工程が要る。"},
+        {"id": "D", "text": "手動スナップショットを毎月取得する", "is_correct": false, "explanation": "手動スナップショットは削除可能で、誤操作リスクが残る。"}
+      ],
+      "explanation": "AWS Backup Vault Lock には Governance Mode (権限保有者のみ削除可) と Compliance Mode (誰も削除不可、Cooling Off 期間後は不可逆) がある。コンプライアンス要件 (SEC 17a-4 等) は Compliance Mode が標準解。",
+      "references": [
+        {"title": "AWS Backup Vault Lock", "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html"}
+      ],
+      "tags": ["aws-backup", "vault-lock", "compliance", "retention"],
+      "common_mistakes": ["RDS 自動バックアップで長期保持できると誤解", "Compliance/Governance Mode の違いを知らない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-019",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "RDS scaling",
+      "subtopic": "Storage Auto Scaling",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "RDS for MySQL のストレージ使用率が予測しにくく、何度も手動で拡張している。運用負荷を下げる最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "RDS Storage Auto Scaling を有効化し、最大ストレージサイズを設定する", "is_correct": true, "explanation": "正解。RDS Storage Auto Scaling は使用率に応じて自動拡張 (最大値まで) する。Aurora は元々自動拡張だが RDS は明示的有効化が必要。"},
+        {"id": "B", "text": "EBS の自動拡張機能を直接利用する", "is_correct": false, "explanation": "RDS は EBS を直接管理させない。RDS のストレージ拡張機能経由のみ。"},
+        {"id": "C", "text": "Lambda で容量監視 → 自動拡張", "is_correct": false, "explanation": "ネイティブ機能があるため不要。"},
+        {"id": "D", "text": "ストレージタイプを Magnetic に変更", "is_correct": false, "explanation": "性能劣化を招き、自動拡張機能とも無関係。"}
+      ],
+      "explanation": "RDS Storage Auto Scaling はストレージ使用率が閾値を超えた際に自動拡張する。Aurora とは異なり RDS は明示的に有効化が必要。最大値を設定して暴走防止可能。",
+      "references": [
+        {"title": "Managing capacity automatically with Amazon RDS storage autoscaling", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"}
+      ],
+      "tags": ["rds", "storage", "auto-scaling"],
+      "common_mistakes": ["RDS が常に自動拡張すると思い込む (有効化が必要)", "EBS を直接操作できると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-020",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Cost analysis",
+      "subtopic": "Aurora I/O-Optimized",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Aurora MySQL を運用中、月額の I/O 課金が全体の 30% 以上を占めている。コスト最適化として最も適切なのは？",
+      "options": [
+        {"id": "A", "text": "Aurora I/O-Optimized ストレージタイプに切り替える", "is_correct": true, "explanation": "正解。I/O-Optimized は I/O 課金がなく、ストレージ・インスタンス料金が高めだが、I/O 重視のワークロード (>= 25% が I/O 課金) では総コスト最適化が見込める。"},
+        {"id": "B", "text": "オンプレに戻す", "is_correct": false, "explanation": "極端で運用コスト・HA を失う。"},
+        {"id": "C", "text": "DynamoDB に移行", "is_correct": false, "explanation": "RDBMS 要件を満たせない可能性が高く、データモデル変更の工数大。"},
+        {"id": "D", "text": "Multi-AZ を解除", "is_correct": false, "explanation": "可用性を犠牲にすべきではない。"}
+      ],
+      "explanation": "Aurora は Standard と I/O-Optimized の 2 種ストレージタイプがあり、I/O 課金比率が 25% 程度を超えるワークロードでは I/O-Optimized 切替で総コスト削減できる。AWS Pricing Calculator や Cost Explorer で試算すべし。",
+      "references": [
+        {"title": "Aurora storage configurations", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-storage-types.html"}
+      ],
+      "tags": ["aurora", "io-optimized", "cost"],
+      "common_mistakes": ["I/O-Optimized が常に高いと誤解", "I/O 比率を計算せず判断"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-021",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "DynamoDB Global Tables",
+      "subtopic": "Multi-region",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "DynamoDB を東京・バージニア・フランクフルトの 3 リージョンで Multi-Region Active-Active 構成にしたい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "DynamoDB Global Tables (v2) を有効化する", "is_correct": true, "explanation": "正解。Global Tables (v2) は Multi-Region Active-Active で書き込みをどのリージョンでも受け付け、自動的に他リージョンへ伝播する。"},
+        {"id": "B", "text": "リージョンごとに別テーブルを作り、Lambda + DynamoDB Streams で手動同期する", "is_correct": false, "explanation": "技術的に可能だが Global Tables のネイティブ機能で完結する。"},
+        {"id": "C", "text": "Aurora Global Database を使う", "is_correct": false, "explanation": "Aurora Global Database は Active-Passive (セカンダリは読み取りのみ)。Active-Active ではない。また、DynamoDB ではない。"},
+        {"id": "D", "text": "DynamoDB のクロスリージョンスナップショットコピーを使う", "is_correct": false, "explanation": "スナップショットコピーは Active-Active ではなく、リアルタイム同期も提供しない。"}
+      ],
+      "explanation": "DynamoDB Global Tables は数少ない真の Multi-Region Active-Active を提供するマネージドサービス。各リージョンの書き込みは Last-Writer-Wins コンフリクト解決で他リージョンへ伝播する。グローバル SaaS の標準解。",
+      "references": [
+        {"title": "DynamoDB Global Tables", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"}
+      ],
+      "tags": ["dynamodb", "global-tables", "multi-region", "active-active"],
+      "common_mistakes": ["Aurora Global Database を Active-Active と誤解", "DynamoDB Streams の自作で十分と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-022",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "RDS Proxy",
+      "subtopic": "Failover behavior",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Aurora MySQL の Multi-AZ フェイルオーバーをテストしたところ、RDS Proxy 経由のアプリでは数十秒でリカバリしたが、直接接続のアプリは数分かかった。最も適切な説明は？",
+      "options": [
+        {"id": "A", "text": "RDS Proxy はクライアントとの接続を維持しつつ内部で再接続するため、アプリの DNS TTL に左右されない。直接接続は DNS TTL (デフォルト 5 秒) や接続プールの再接続ロジックの影響でリカバリが遅くなる", "is_correct": true, "explanation": "正解。RDS Proxy はクライアント接続を保持したまま透過的に再接続するため、アプリ側の DNS キャッシュやプールの問題を吸収できる。"},
+        {"id": "B", "text": "RDS Proxy は同期レプリケーションを使うので速い", "is_correct": false, "explanation": "RDS Proxy はレプリケーションを行うサービスではない。接続管理のみ。"},
+        {"id": "C", "text": "直接接続が遅いのはアプリのバグである", "is_correct": false, "explanation": "DNS や接続プールの仕組みによる正常な挙動で、必ずしもバグではない。"},
+        {"id": "D", "text": "Multi-AZ Cluster Endpoint と RDS Proxy は同じものだから", "is_correct": false, "explanation": "別物。Cluster Endpoint は DNS 切替、RDS Proxy はアプリの永続接続を維持。"}
+      ],
+      "explanation": "Aurora の Cluster Endpoint は DNS で切替えるため、クライアント側の DNS キャッシュ・JDBC プールの再接続実装によりリカバリ時間がばらつく。RDS Proxy はプロキシ層で接続を維持しつつ DB 側の再接続を行うため、アプリ側の影響を抑え、フェイルオーバー時間を約 66% 短縮する。",
+      "references": [
+        {"title": "RDS Proxy benefits", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html"}
+      ],
+      "tags": ["rds-proxy", "failover", "aurora"],
+      "common_mistakes": ["RDS Proxy がレプリケーションを行うと誤解", "Cluster Endpoint と Proxy を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-023",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Backup strategy",
+      "subtopic": "Choosing approach",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "FinTech 企業の RDS for PostgreSQL について、(1) 35 日以内の任意時点復元、(2) 3 年保持の日次バックアップ、(3) 複数アカウント横断のバックアップ監査 の3要件を最小運用負荷で満たしたい。最適構成は？",
+      "options": [
+        {"id": "A", "text": "RDS 自動バックアップ (35日) で (1)、AWS Backup の 3 年計画 + 別アカウント Vault コピーで (2)、Backup Audit Manager で (3)", "is_correct": true, "explanation": "正解。それぞれの要件を最も適切なネイティブ機能で満たし、Backup Audit Manager がコンプライアンス監査を集中提供する。"},
+        {"id": "B", "text": "全部 Lambda + S3 で自作する", "is_correct": false, "explanation": "高コスト・高運用負荷で要件と矛盾。"},
+        {"id": "C", "text": "RDS 自動バックアップだけで全要件をカバー", "is_correct": false, "explanation": "35 日制限と監査の要件を満たせない。"},
+        {"id": "D", "text": "Glacier に手動でアップロードする", "is_correct": false, "explanation": "復元・監査・運用が困難。"}
+      ],
+      "explanation": "AWS Backup は組織横断バックアップポリシー、Backup Audit Manager は SOC2/HIPAA等のコンプライアンスフレームワーク提供、Vault Cross-Account Copy は別アカウントへのバックアップ複製を可能にする。3 要件をネイティブで揃えた構成が運用負荷最小。",
+      "references": [
+        {"title": "AWS Backup Audit Manager", "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/aws-backup-audit-manager.html"}
+      ],
+      "tags": ["aws-backup", "audit-manager", "fintech"],
+      "common_mistakes": ["RDS 自動バックアップだけで長期も賄えると誤解", "監査機能の存在を知らない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-024",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "Cost optimization evaluation",
+      "subtopic": "RI vs Aurora Serverless v2",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "B2B SaaS の Aurora MySQL クラスターについて、コスト戦略を評価せよ。ワークロードはピーク時 8 ACU 相当・夜間 1 ACU 相当で、24/7 稼働、3 年計画。",
+      "options": [
+        {"id": "A", "text": "8 ACU 相当のプロビジョンドインスタンス + 3 年 RI", "is_correct": false, "explanation": "夜間も 8 ACU 相当を保持しコストの無駄が大きい。"},
+        {"id": "B", "text": "Aurora Serverless v2 (最小 1 ACU・最大 8 ACU) + 該当する RI 適用 (Serverless v2 にも RI が適用可能)", "is_correct": true, "explanation": "正解。Serverless v2 は ACU 課金で夜間コストを抑え、3 年 RI も適用できる組み合わせがコスト最適。可変ワークロード + 長期計画の最良解。"},
+        {"id": "C", "text": "Spot Instance 上に Aurora を展開", "is_correct": false, "explanation": "Aurora に Spot は存在しない。"},
+        {"id": "D", "text": "オンデマンドのプロビジョンドのまま運用", "is_correct": false, "explanation": "RI なしは長期運用ではコスト高、また固定サイズの無駄も残る。"}
+      ],
+      "explanation": "Aurora Serverless v2 は 2024 年以降 Reserved Instances (容量予約) の対象となり、ベース容量分を予約 + 残りオンデマンドのハイブリッド戦略が可能。可変かつ長期のワークロードでは最有力。",
+      "references": [
+        {"title": "Aurora pricing", "url": "https://aws.amazon.com/rds/aurora/pricing/"}
+      ],
+      "tags": ["aurora", "serverless-v2", "ri", "cost"],
+      "common_mistakes": ["Serverless v2 に RI 不適用と誤解", "プロビジョンドのみが RI 対象と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "dbs-c01-domain3-025",
+      "version": "1.0",
+      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-3", "name": "Management and Operations", "weight_percent": 18},
+      "topic": "DR architecture design",
+      "subtopic": "Multi-region strategy",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "東海地方の医療情報 SaaS が Aurora PostgreSQL の DR を設計する。要件: RPO < 5 秒、RTO < 5 分、コスト最適、セカンダリリージョンでの読み取り活用も検討。最も妥当な総合設計を選べ。",
+      "options": [
+        {"id": "A", "text": "Aurora Global Database (東京 → 大阪) + 大阪リーダーで参照クエリ分散 + 計画切替は Managed Planned Failover、災害時は Detach and Promote、AWS Backup で日次バックアップ別アカウントコピー (Compliance Vault)", "is_correct": true, "explanation": "正解。RPO < 5 秒は Aurora Global Database (典型 1 秒) で達成、Promote の RTO は約 1 分、セカンダリ Reader を読み取りに活用、AWS Backup でコンプライアンスも対応。最も総合的に妥当。"},
+        {"id": "B", "text": "RDS for PostgreSQL のクロスリージョン Read Replica で代替", "is_correct": false, "explanation": "Aurora Global Database より遅延が大きく、RPO < 5 秒を保証しにくい。"},
+        {"id": "C", "text": "毎時スナップショットコピーのみ", "is_correct": false, "explanation": "RPO 1 時間で要件と矛盾。"},
+        {"id": "D", "text": "Multi-AZ のみ", "is_correct": false, "explanation": "リージョン障害には対応できない。"}
+      ],
+      "explanation": "Aurora Global Database は秒単位 RPO・分単位 RTO の DR を提供し、セカンダリの読み取りも活用できる。AWS Backup と組み合わせ、長期保持・コンプライアンス監査も付加できる完成度の高い設計。",
+      "references": [
+        {"title": "Aurora Global Database", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html"},
+        {"title": "AWS Backup Vault Lock", "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html"}
+      ],
+      "tags": ["aurora", "global-database", "dr", "healthcare"],
+      "common_mistakes": ["DR 設計でセカンダリの読み取り活用を忘れる", "コンプライアンス向けバックアップを別軸として設計しない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

@@ -1,0 +1,1241 @@
+{
+  "exam_code": "business-law-2",
+  "exam_name": "ビジネス実務法務検定2級",
+  "version": "2026.04",
+  "total_questions": 15,
+  "domains": [
+    {
+      "id": "privacy-law",
+      "name": "個人情報保護法",
+      "weight_percent": 10,
+      "question_count": 15
+    }
+  ],
+  "questions": [
+    {
+      "id": "business-law-2-privacy-001",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "個人情報の定義",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "個人情報保護法上の「個人情報」の定義として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "生存する個人に関する情報で、特定の個人を識別できるもの（他の情報と容易に照合して識別できるものを含む）",
+          "is_correct": true,
+          "explanation": "正解。個人情報保護法2条1項。「生存」「個人に関する情報」「特定の個人を識別できる」が3つのキーポイント。"
+        },
+        {
+          "id": "B",
+          "text": "氏名・住所・電話番号のみが対象",
+          "is_correct": false,
+          "explanation": "顔写真・声紋・指紋・遺伝子情報なども含まれる。容易照合性により他情報との組合せでも識別可能なら個人情報となる。"
+        },
+        {
+          "id": "C",
+          "text": "死亡した個人の情報も含まれる",
+          "is_correct": false,
+          "explanation": "「生存する個人」に限定。但し遺族のプライバシーや感情への配慮は別途必要。"
+        },
+        {
+          "id": "D",
+          "text": "法人情報も個人情報に含まれる",
+          "is_correct": false,
+          "explanation": "法人は個人ではない。但し法人の役員個人に関する情報は個人情報。"
+        }
+      ],
+      "explanation": "個人情報保護法2条1項の「個人情報」は (1)生存する、(2)個人に関する情報で、(3)特定個人を識別できるもの。識別性は「容易照合性」で広く判定される（他情報との組合せで識別可能な場合も含む）。「個人識別符号」（マイナンバー、運転免許証番号、パスポート番号、顔の特徴データ等）は単独で個人情報。死者の情報・法人情報は対象外（別途配慮対象）。",
+      "references": [
+        {
+          "title": "個人情報保護法 e-Gov 法令検索",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護委員会 個人情報保護法ガイドライン",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "個人情報",
+        "定義",
+        "容易照合性"
+      ],
+      "common_mistakes": [
+        "氏名・住所のみが個人情報と誤解",
+        "法人情報も含まれると誤解",
+        "死者の情報も対象と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-002",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "個人データと保有個人データ",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "「個人情報」「個人データ」「保有個人データ」の関係について正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "個人情報⊃個人データ⊃保有個人データの包含関係（個人情報データベース等を構成するのが個人データ、開示・訂正等の権限がある個人データが保有個人データ）",
+          "is_correct": true,
+          "explanation": "正解。個人情報＞個人データ＞保有個人データ。法は段階的に異なる義務を課す。"
+        },
+        {
+          "id": "B",
+          "text": "3者は同義語",
+          "is_correct": false,
+          "explanation": "法律上明確に区別され、それぞれに異なる義務がある。"
+        },
+        {
+          "id": "C",
+          "text": "保有個人データ⊃個人データの順",
+          "is_correct": false,
+          "explanation": "包含関係が逆。"
+        },
+        {
+          "id": "D",
+          "text": "保有個人データは6か月以内に消去するものに限定される",
+          "is_correct": false,
+          "explanation": "2020年改正で「6か月以内消去」要件は撤廃され、短期保有データも保有個人データに該当することになった。"
+        }
+      ],
+      "explanation": "個人情報保護法における3つの概念: (1)個人情報=識別可能な生存個人情報（最広義）、(2)個人データ=個人情報データベース等を構成する個人情報（事業者が体系的に検索できるよう整理した状態）、(3)保有個人データ=事業者が開示・訂正等の権限を有する個人データ。義務は段階的に重くなる: 個人情報には利用目的・適正取得義務、個人データには安全管理措置・第三者提供制限、保有個人データには開示・訂正・利用停止対応義務。2020年改正で6か月以内消去除外規定が撤廃され、短期保有も全て保有個人データとなった。",
+      "references": [
+        {
+          "title": "個人情報保護法第16条 定義",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護委員会 ガイドライン（通則編）",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "個人データ",
+        "保有個人データ",
+        "包含関係"
+      ],
+      "common_mistakes": [
+        "3概念を同義と誤解",
+        "6か月ルールがまだ生きていると誤解",
+        "包含関係を逆に覚える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-003",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "利用目的の特定",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "教育系SaaS企業X社が、新規ユーザ登録時に取得する個人情報の「利用目的」の通知義務として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "利用目的は具体的に特定して通知または公表する必要があり、「事業活動上必要な範囲」のような抽象的記載は不可",
+          "is_correct": true,
+          "explanation": "正解。法17条1項で「できる限り特定」、21条で通知・公表義務。「事業活動上必要」「マーケティング活動」といった抽象表現は不適切。"
+        },
+        {
+          "id": "B",
+          "text": "利用目的は通知不要で、内部で記録すればよい",
+          "is_correct": false,
+          "explanation": "通知または公表が義務。"
+        },
+        {
+          "id": "C",
+          "text": "「事業活動上必要な範囲で利用」と記載すれば十分",
+          "is_correct": false,
+          "explanation": "ガイドライン上、抽象的記載は不適切。具体的に何にどう使うかを示す必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "利用目的を後から拡大することは無制限に可能",
+          "is_correct": false,
+          "explanation": "本人同意なくの目的変更は「相当の関連性」がある範囲に限定（17条2項）。重大変更には本人同意が必要。"
+        }
+      ],
+      "explanation": "利用目的特定の原則: (1)できる限り特定（17条1項）、(2)通知または公表（21条）、(3)目的外利用は本人同意が必要（18条）。具体性の例: ×「事業活動に必要な範囲」、○「商品配送、購入後のアフターサービス、新製品情報のメール送付」。プライバシーポリシーで網羅的・具体的に記載するのが実務。利用目的の事後拡大は元目的との「相当の関連性」がある範囲に限定（17条2項）— 例えば「商品配送」を「アンケート送付」に拡大は議論の余地あり。",
+      "references": [
+        {
+          "title": "個人情報保護法第17条 利用目的の特定",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護法第21条 取得時の利用目的通知等",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "利用目的",
+        "特定",
+        "通知公表",
+        "saas"
+      ],
+      "common_mistakes": [
+        "抽象的記載で足りると誤解",
+        "通知不要と誤解",
+        "目的の事後拡大が無制限と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-004",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "第三者提供",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "個人データの第三者提供について、本人同意なく適法に行える場合（法定例外）として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1)法令に基づく場合、(2)人の生命・身体・財産保護のため必要、(3)公衆衛生・児童健全育成、(4)国の機関等への協力",
+          "is_correct": true,
+          "explanation": "正解。法27条1項各号の本人同意不要事由。(1)〜(4)に加え、(5)学術研究機関等が学術研究目的で提供等もある。"
+        },
+        {
+          "id": "B",
+          "text": "営業上有益な場合は同意なしに第三者提供できる",
+          "is_correct": false,
+          "explanation": "営業上の有益性は本人同意原則の例外にならない。"
+        },
+        {
+          "id": "C",
+          "text": "親会社・子会社間では同意不要",
+          "is_correct": false,
+          "explanation": "別法人格間の提供は第三者提供。同意か共同利用（27条5項3号）の手続が必要。"
+        },
+        {
+          "id": "D",
+          "text": "第三者提供は全て禁止されている",
+          "is_correct": false,
+          "explanation": "本人同意またはオプトアウト（要配慮個人情報除く）または法定例外で適法に行える。"
+        }
+      ],
+      "explanation": "第三者提供の原則: 本人同意（オプトイン）が必要（27条1項本文）。例外: (1)法令に基づく場合、(2)人の生命・身体・財産保護で本人同意取得困難、(3)公衆衛生・児童健全育成、(4)国の機関等への協力、(5)学術研究機関の学術研究目的、加えて(6)オプトアウト方式（個情委への届出＋本人通知の上、要請に応じ停止。要配慮個人情報・不正取得情報・他社オプトアウト由来情報は不可）、(7)委託、(8)事業承継（M&A）、(9)共同利用（共同利用者の範囲・利用目的・管理者を本人が知り得る状態）。M&Aでは事業承継例外（27条5項2号）で同意不要だが、目的外利用は別途同意要。",
+      "references": [
+        {
+          "title": "個人情報保護法第27条 第三者提供の制限",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護委員会 第三者提供",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "第三者提供",
+        "オプトイン",
+        "法定例外",
+        "m&a"
+      ],
+      "common_mistakes": [
+        "親子会社間は同意不要と誤解",
+        "営業上の理由で例外と誤解",
+        "オプトアウトを知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-005",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "越境移転",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "FinTech企業A社が顧客の個人データを米国のクラウドサービス（AWS米国リージョン）に保管する場合、個人情報保護法上の取扱として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "「外国にある第三者への提供」に該当するため、原則として本人同意が必要（同等水準国・基準適合体制の例外あり）",
+          "is_correct": true,
+          "explanation": "正解。法28条の規制。EU・英国は同等水準国として認定済。それ以外の国へは本人同意（提供先の国名・現地の個人情報制度・現地での保護措置の情報提供を伴う）または基準適合体制の確認が必要。"
+        },
+        {
+          "id": "B",
+          "text": "国外サーバーへの保管は規制対象外",
+          "is_correct": false,
+          "explanation": "「外国にある第三者への提供」として規制対象（28条）。"
+        },
+        {
+          "id": "C",
+          "text": "親会社が日本企業ならどこでも自由",
+          "is_correct": false,
+          "explanation": "別法人格・別所在地なら越境規制が適用される。"
+        },
+        {
+          "id": "D",
+          "text": "EU加盟国へは制限なし、米国へは禁止",
+          "is_correct": false,
+          "explanation": "EUは同等水準国扱いだが米国は禁止ではなく、同意・基準適合体制で適法。"
+        }
+      ],
+      "explanation": "外国にある第三者への個人データ提供は法28条で特別規制。3パターンで適法化: (1)本人同意（提供先国名・現地制度・保護措置の情報提供を伴う事前同意）、(2)同等水準国（個情委指定。EU・英国が指定済）、(3)基準適合体制（OECDプライバシー原則等に対応する体制を提供先で整備）。AWS等のクラウドサービスでは「委託」（27条5項1号）と「越境移転」の両方の論点がある。委託は同意不要だが、外国の委託先には28条が別途適用。実務ではDPA（Data Processing Agreement）と本人同意・情報提供で対応。GDPR連動でも論点。",
+      "references": [
+        {
+          "title": "個人情報保護法第28条 外国にある第三者への提供",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護委員会 越境移転ガイドライン",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_offshore/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "越境移転",
+        "クラウド",
+        "fintech",
+        "aws"
+      ],
+      "common_mistakes": [
+        "国外サーバー保管が規制対象外と誤解",
+        "EU以外は全部禁止と誤解",
+        "委託と越境移転の関係を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-006",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "漏えい等報告義務",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "医療系SaaS企業A社で、個人データの漏えい事案が発生した。2022年4月施行の改正個人情報保護法上の対応として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "個人情報保護委員会への報告と本人通知が義務化されている（一定の類型に該当する場合）",
+          "is_correct": true,
+          "explanation": "正解。法26条で漏えい等報告・本人通知が義務化。要配慮個人情報・財産的被害発生・不正目的・1000人超のいずれかに該当する場合が対象。"
+        },
+        {
+          "id": "B",
+          "text": "報告義務は存在しない",
+          "is_correct": false,
+          "explanation": "2022年4月施行の改正で義務化された。"
+        },
+        {
+          "id": "C",
+          "text": "1万人以上の漏えいでなければ報告不要",
+          "is_correct": false,
+          "explanation": "1000人超のほか、要配慮個人情報・財産的被害・不正目的のいずれかでも報告対象。"
+        },
+        {
+          "id": "D",
+          "text": "本人通知は不要",
+          "is_correct": false,
+          "explanation": "本人通知も義務（26条2項）。連絡先不明等の場合は代替措置（公表等）。"
+        }
+      ],
+      "explanation": "改正個情法（2022年4月施行）の漏えい等報告・本人通知義務（26条）。対象類型: (1)要配慮個人情報の漏えい等、(2)財産的被害が生じるおそれ（クレカ番号等）、(3)不正の目的をもって行われた疑い（サイバー攻撃・内部不正）、(4)1000人を超える漏えい等。手続: 速報（速やかに）と確報（30日以内、不正目的なら60日以内）の2段階。本人通知は対象本人へ。連絡先不明等で困難な場合は代替措置（自社サイト公表）。医療系は要配慮個人情報を扱うため(1)で常に対象になる。",
+      "references": [
+        {
+          "title": "個人情報保護法第26条 漏えい等の報告等",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護委員会 漏えい等の対応",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/leakAction/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "漏えい等報告",
+        "本人通知",
+        "2022年改正",
+        "医療"
+      ],
+      "common_mistakes": [
+        "報告義務がないと誤解",
+        "1万人基準と誤解",
+        "本人通知を不要と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-007",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "GDPRとの比較",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "EU GDPRと日本の個人情報保護法を比較した場合、正しい記述はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "GDPRは制裁金が高額（最大年間売上高の4%または2000万ユーロのいずれか高い方）で域外適用も広範。日本法は2020年改正で課徴金・域外適用が強化されたが、なお差異がある",
+          "is_correct": true,
+          "explanation": "正解。GDPR制裁金は83条で規定。日本法は罰金中心で行政上の課徴金（独禁法のような）はない。"
+        },
+        {
+          "id": "B",
+          "text": "両者は完全に同一の内容",
+          "is_correct": false,
+          "explanation": "保護水準・規制構造・救済手段に多くの差異がある。"
+        },
+        {
+          "id": "C",
+          "text": "GDPRには越境移転規制がない",
+          "is_correct": false,
+          "explanation": "GDPRは越境移転を厳格に規制（44-50条）。十分性認定・SCC・BCR等で対応。"
+        },
+        {
+          "id": "D",
+          "text": "日本法はEEA域外の主体には適用されない",
+          "is_correct": false,
+          "explanation": "日本法も域外適用あり（166条: 国内にいる者を本人とする個人情報を取得した外国事業者等）。"
+        }
+      ],
+      "explanation": "GDPR vs 日本個情法の主要差異: (1)制裁金（GDPR: 売上高4%or2000万ユーロ／日本: 罰則上限1億円程度）、(2)同意要件（GDPRはより厳格な明示同意）、(3)DPO（データ保護責任者）選任義務（GDPRは一定要件で義務）、(4)個人の権利（消去権・データポータビリティはGDPRが先行、日本も拡充中）、(5)越境移転（GDPRは十分性認定・SCC等の柔軟な手段、日本は同等水準国＋基準適合体制）、(6)域外適用（両法ともあるが範囲やや異なる）。日本はEU十分性認定済（2019年）でEUからの移転は容易だが、日本法のEU水準対応は継続課題。",
+      "references": [
+        {
+          "title": "EU GDPR 公式テキスト",
+          "url": "https://gdpr-info.eu/"
+        },
+        {
+          "title": "個人情報保護委員会 日EU相互認証",
+          "url": "https://www.ppc.go.jp/enforcement/cooperation/eu/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "gdpr",
+        "越境移転",
+        "制裁金",
+        "国際比較"
+      ],
+      "common_mistakes": [
+        "両法を同一視",
+        "GDPRに越境移転規制がないと誤解",
+        "日本法に域外適用がないと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-008",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "仮名加工情報・匿名加工情報",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "「仮名加工情報」と「匿名加工情報」の違いについて正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "仮名加工情報は他情報と照合すれば再識別可能（個人情報該当性あり、内部利用が中心）、匿名加工情報は再識別不能化された情報（第三者提供しやすい）",
+          "is_correct": true,
+          "explanation": "正解。法41条（仮名加工）、43条（匿名加工）。仮名加工は2020年改正で導入された新類型で、識別性は残るが内部分析・利活用を促進する制度。"
+        },
+        {
+          "id": "B",
+          "text": "両者は同義",
+          "is_correct": false,
+          "explanation": "識別性・規制内容ともに異なる。"
+        },
+        {
+          "id": "C",
+          "text": "仮名加工情報は第三者提供制限がない",
+          "is_correct": false,
+          "explanation": "仮名加工情報は原則第三者提供禁止（法41条6項）。委託・事業承継・共同利用は可能。"
+        },
+        {
+          "id": "D",
+          "text": "匿名加工情報は再識別を試みなくても良い",
+          "is_correct": false,
+          "explanation": "匿名加工情報の取扱事業者は再識別行為が禁止される（45条1項）。"
+        }
+      ],
+      "explanation": "個人情報の加工2類型: (1)仮名加工情報（41条、2020年改正導入）= 他情報との照合なしには識別不能化したもの。識別性は残るため個人情報該当だが、利用目的変更の柔軟性・漏えい等報告等の一部義務が緩和。原則第三者提供禁止。社内分析（顧客行動分析、機械学習）に有用。(2)匿名加工情報（43条、2015年改正導入）= 復元不能化したもの。個人情報非該当となり第三者提供しやすい。但し再識別行為は禁止。匿名加工方法の基準は個情委規則で詳細規定。データ利活用促進策。",
+      "references": [
+        {
+          "title": "個人情報保護法第41条 仮名加工情報",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護法第43条 匿名加工情報",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護委員会 仮名加工情報・匿名加工情報",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "仮名加工情報",
+        "匿名加工情報",
+        "2020年改正",
+        "データ利活用"
+      ],
+      "common_mistakes": [
+        "仮名加工と匿名加工を同一視",
+        "仮名加工で第三者提供できると誤解",
+        "匿名加工の再識別禁止を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-009",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "個人関連情報",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "「個人関連情報」（Cookie、IPアドレス、閲覧履歴等）の第三者提供について、2022年4月施行の改正個人情報保護法上の取扱として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "提供先で個人データになることが想定される場合、提供先が本人同意を取得していることを確認する必要がある",
+          "is_correct": true,
+          "explanation": "正解。法31条（個人関連情報の第三者提供）。Cookie等が単独では個人情報でなくても、提供先で他情報と紐付けて個人情報化される場合、提供元は本人同意取得の確認が必要。"
+        },
+        {
+          "id": "B",
+          "text": "個人関連情報は規制対象外",
+          "is_correct": false,
+          "explanation": "2022年4月施行で新たに規制対象に。"
+        },
+        {
+          "id": "C",
+          "text": "Cookie利用は完全に禁止された",
+          "is_correct": false,
+          "explanation": "禁止ではなく、本人同意取得確認等の手続を要件化したもの。"
+        },
+        {
+          "id": "D",
+          "text": "提供元で本人同意を取得すれば足りる",
+          "is_correct": false,
+          "explanation": "提供先での同意取得が原則。提供元は確認義務を負う。"
+        }
+      ],
+      "explanation": "個人関連情報（生存個人に関する情報で個人情報・仮名加工・匿名加工に該当しないもの。例: Cookie、IPアドレス、端末情報、閲覧履歴、購買履歴等）は法31条で2022年4月から規制対象。第三者提供時に「提供先で個人データとなることが想定される」場合、提供先で本人同意を得ていることの確認が必要。これはリクナビ事件（内定辞退率予測データを企業に提供し問題化）を契機とした制度。Webサイトのトラッキングタグ・DMP連携・第三者Cookie等での影響大。GDPRのCookie同意ルールと類似の動き。",
+      "references": [
+        {
+          "title": "個人情報保護法第31条 個人関連情報の第三者提供の制限等",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護委員会 個人関連情報",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "個人関連情報",
+        "cookie",
+        "2022年改正",
+        "リクナビ事件"
+      ],
+      "common_mistakes": [
+        "個人関連情報は規制外と誤解",
+        "提供元同意で足りると誤解",
+        "Cookie全面禁止と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-010",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "要配慮個人情報",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "「要配慮個人情報」について正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "人種・信条・社会的身分・病歴・犯罪歴等を含み、取得には原則として本人同意が必要",
+          "is_correct": true,
+          "explanation": "正解。法2条3項で定義、20条2項で取得時の本人同意義務。"
+        },
+        {
+          "id": "B",
+          "text": "氏名・住所・電話番号が要配慮個人情報",
+          "is_correct": false,
+          "explanation": "それらは通常の個人情報。要配慮個人情報は差別・偏見を生むセンシティブ情報。"
+        },
+        {
+          "id": "C",
+          "text": "要配慮個人情報のオプトアウトによる第三者提供が可能",
+          "is_correct": false,
+          "explanation": "要配慮個人情報はオプトアウト不可（27条2項但書）。本人同意必須。"
+        },
+        {
+          "id": "D",
+          "text": "要配慮個人情報という概念は法律上存在しない",
+          "is_correct": false,
+          "explanation": "法2条3項で明文定義されている。"
+        }
+      ],
+      "explanation": "要配慮個人情報（2条3項）: 人種、信条、社会的身分、病歴、犯罪歴、犯罪被害歴、身体障害・知的障害・精神障害等の心身の機能の障害、健康診断結果、医師等による指導・診療・調剤、刑事事件の手続、少年事件の手続。差別・偏見の原因となるセンシティブ情報のため厳格規制: (1)取得時の本人同意必須（20条2項）、(2)オプトアウト方式での第三者提供不可（27条2項但書）、(3)漏えい等報告の対象（26条）。医療系SaaS・人事系サービスでは特に注意。",
+      "references": [
+        {
+          "title": "個人情報保護法第2条3項 要配慮個人情報",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護法第20条 適正な取得",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "要配慮個人情報",
+        "本人同意",
+        "オプトアウト不可"
+      ],
+      "common_mistakes": [
+        "要配慮個人情報の範囲を誤解",
+        "オプトアウト可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-011",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "安全管理措置",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "個人情報取扱事業者が講じるべき「安全管理措置」（個人情報保護法23条）として正しい組合せはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1)組織的、(2)人的、(3)物理的、(4)技術的の4つの安全管理措置",
+          "is_correct": true,
+          "explanation": "正解。個情委「個人情報の保護に関する法律についてのガイドライン（通則編）」で整理された4分類。"
+        },
+        {
+          "id": "B",
+          "text": "技術的措置のみで足りる",
+          "is_correct": false,
+          "explanation": "組織的・人的・物理的・技術的の総合的措置が必要。"
+        },
+        {
+          "id": "C",
+          "text": "安全管理措置は努力義務に過ぎない",
+          "is_correct": false,
+          "explanation": "23条は法的義務（違反すれば指導・勧告・命令の対象）。"
+        },
+        {
+          "id": "D",
+          "text": "中小企業は安全管理措置の対象外",
+          "is_correct": false,
+          "explanation": "事業規模問わず適用。但し個情委ガイドラインでは「中小規模事業者」（従業員100人以下）への簡易的取扱例が示されている。"
+        }
+      ],
+      "explanation": "安全管理措置の4分類（個情委ガイドライン通則編）: (1)組織的=責任者設置・規程策定・点検監査、(2)人的=社員教育・誓約書、(3)物理的=入退室管理・施錠・盗難防止、(4)技術的=アクセス制御・暗号化・ログ管理・マルウェア対策。違反は指導・勧告・命令・公表・課徴金（一部）の対象。委託先の監督義務（25条）も別途あり、委託契約・委託先選定基準・委託先の取扱状況把握が要求される。クラウド利用時は「外的環境の把握」（外国法令・サーバー所在地）の措置も追加。",
+      "references": [
+        {
+          "title": "個人情報保護法第23条 安全管理措置",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護委員会 ガイドライン（通則編）",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "安全管理措置",
+        "ガイドライン",
+        "委託先監督"
+      ],
+      "common_mistakes": [
+        "技術的措置のみと誤解",
+        "努力義務と誤解",
+        "中小企業は対象外と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-012",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "本人の権利",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "本人が個人情報取扱事業者に対して請求できる権利として、正しい組合せはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "(1)開示、(2)訂正・追加・削除、(3)利用停止・消去、(4)第三者提供停止",
+          "is_correct": true,
+          "explanation": "正解。法33条以下。2020年改正で利用停止・消去・第三者提供停止の請求事由が拡充された。"
+        },
+        {
+          "id": "B",
+          "text": "情報の所有権の主張のみ",
+          "is_correct": false,
+          "explanation": "個人情報保護法は所有権ではなく特定の情報統制権を付与。"
+        },
+        {
+          "id": "C",
+          "text": "罰金請求",
+          "is_correct": false,
+          "explanation": "罰金は刑事罰で個情委等が請求するもの。本人の民事的権利ではない。"
+        },
+        {
+          "id": "D",
+          "text": "本人には何ら請求権がない",
+          "is_correct": false,
+          "explanation": "法律上明文の請求権が複数規定されている。"
+        }
+      ],
+      "explanation": "本人の権利（自己情報統制権）: (1)開示請求（33条）— 電磁的記録での開示要求も可能（2020年改正）、(2)訂正等請求（34条）— 内容が事実でない場合、(3)利用停止・消去請求（35条）— 違法取得・目的外利用・不要となった場合等、(4)第三者提供停止（35条）、(5)第三者提供記録の開示請求（33条5項）— 2020年改正で新設。手数料は事業者が定められるが合理的範囲内。期限は特定なしだが「遅滞なく」（実務上1〜2か月以内が目安）。",
+      "references": [
+        {
+          "title": "個人情報保護法第33条 開示",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        },
+        {
+          "title": "個人情報保護法第35条 利用停止等",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "本人の権利",
+        "開示請求",
+        "訂正",
+        "利用停止"
+      ],
+      "common_mistakes": [
+        "本人の権利を所有権と誤解",
+        "請求権の種類を不正確に覚える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-013",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "マイナンバー法",
+      "subtopic": "マイナンバーの取扱",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "事業者がマイナンバー（特定個人情報）を取り扱う際の規制について正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "利用目的が法定されており、社会保障・税・災害対策の関連事務に限定される",
+          "is_correct": true,
+          "explanation": "正解。番号利用法9条以下で利用目的が限定列挙される。一般的な個人情報より厳格。"
+        },
+        {
+          "id": "B",
+          "text": "マイナンバーは利用目的の制限がなく、自由に活用できる",
+          "is_correct": false,
+          "explanation": "むしろ法定利用目的に限定される厳格規制。"
+        },
+        {
+          "id": "C",
+          "text": "マイナンバーの第三者提供は本人同意があれば自由",
+          "is_correct": false,
+          "explanation": "本人同意があっても法定事務以外の提供は禁止。"
+        },
+        {
+          "id": "D",
+          "text": "マイナンバー法は個人情報保護法と完全に同一の規制",
+          "is_correct": false,
+          "explanation": "マイナンバー（特定個人情報）は個人情報の特別類型で、より厳格な規制が課される。"
+        }
+      ],
+      "explanation": "マイナンバー法（行政手続における特定の個人を識別するための番号の利用等に関する法律）の特徴: (1)利用目的の法定制限（社会保障・税・災害対策に関連する法定事務のみ）、(2)本人同意があっても法定外利用・提供禁止、(3)安全管理措置の上乗せ（個人情報保護委員会のガイドラインで詳細規定）、(4)罰則強化（個情法より重い罰則あり）、(5)収集・保管制限（必要な場合に限定、廃棄義務）。事業者は給与所得者の源泉徴収・社会保険手続等で従業員のマイナンバーを取り扱うが、目的外保管は違法。",
+      "references": [
+        {
+          "title": "番号利用法（マイナンバー法）",
+          "url": "https://laws.e-gov.go.jp/law/425AC0000000027"
+        },
+        {
+          "title": "個人情報保護委員会 マイナンバーガイドライン",
+          "url": "https://www.ppc.go.jp/legal/policy/"
+        }
+      ],
+      "tags": [
+        "マイナンバー法",
+        "特定個人情報",
+        "番号利用法",
+        "利用目的制限"
+      ],
+      "common_mistakes": [
+        "マイナンバーを通常の個人情報と同じ扱いと誤解",
+        "本人同意で目的外利用可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-014",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "2024年動向",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "個人情報保護法は3年ごと見直しが規定されているが、近時の改正動向（2020年改正・2024年見直し議論）として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "2020年改正で本人の権利拡充・漏えい等報告義務化・課徴金導入検討等が進み、2024年見直しでは更なる課徴金導入・違反取締強化が議論されている",
+          "is_correct": true,
+          "explanation": "正解。3年ごと見直し条項（附則）に基づく継続的議論。2024年〜2026年の改正論点として課徴金導入が中心。"
+        },
+        {
+          "id": "B",
+          "text": "個情法は固定で改正されない",
+          "is_correct": false,
+          "explanation": "3年ごとの見直しが義務化されており、頻繁に改正される。"
+        },
+        {
+          "id": "C",
+          "text": "日本の個情法は世界的に最も厳格",
+          "is_correct": false,
+          "explanation": "GDPRや米国州法（CCPA等）と比較すると、課徴金等の点で相対的に緩やかな部分が残る。"
+        },
+        {
+          "id": "D",
+          "text": "課徴金は既に導入されている",
+          "is_correct": false,
+          "explanation": "2026年4月時点で個情法の一般的課徴金は未導入。導入論議が進行中。"
+        }
+      ],
+      "explanation": "個情法は附則の見直し規定により定期改正される: (1)2015年改正(全面見直し)、(2)2020年改正(本人権利拡充、漏えい等報告義務化、仮名加工情報導入、域外適用強化、罰則強化)、(3)2021年改正(行政機関等個情法統合)、(4)2024年〜2026年議論(課徴金導入、団体訴訟、違反取締強化、自動化された意思決定への対応)。GDPR並みの保護水準を目指す動きと産業界の負担緩和要求のバランスが論点。X社のようなテック経営者は改正動向の継続フォローが必須。",
+      "references": [
+        {
+          "title": "個人情報保護委員会 法改正",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/"
+        },
+        {
+          "title": "個人情報保護委員会 3年ごと見直し",
+          "url": "https://www.ppc.go.jp/news/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "改正動向",
+        "3年見直し",
+        "課徴金",
+        "2024年改正"
+      ],
+      "common_mistakes": [
+        "改正されないと誤解",
+        "課徴金が導入済と誤解",
+        "GDPRと同等と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "business-law-2-privacy-015",
+      "version": "1.0",
+      "exam": {
+        "code": "business-law-2",
+        "name": "ビジネス実務法務検定2級",
+        "vendor": "Tokyo CCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "privacy-law",
+        "name": "個人情報保護法",
+        "weight_percent": 10
+      },
+      "topic": "個人情報保護法",
+      "subtopic": "委員会の権限",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "個人情報保護委員会の権限と監督機能について正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "報告徴収・立入検査、指導・助言、勧告、命令、公表の権限を持つ独立行政委員会",
+          "is_correct": true,
+          "explanation": "正解。法146条以下。内閣府設置法に基づく独立性の高い委員会で、専門的判断を担保。"
+        },
+        {
+          "id": "B",
+          "text": "個情委は文書による助言しかできない",
+          "is_correct": false,
+          "explanation": "立入検査・命令等の強制権限を有する。命令違反は刑事罰対象（173条）。"
+        },
+        {
+          "id": "C",
+          "text": "個情委は経済産業省の内部組織",
+          "is_correct": false,
+          "explanation": "内閣府の外局として独立性を確保（行政委員会）。"
+        },
+        {
+          "id": "D",
+          "text": "個情委は事業者からの相談には応じない",
+          "is_correct": false,
+          "explanation": "事業者向け相談・問合せ対応も実施している。"
+        }
+      ],
+      "explanation": "個人情報保護委員会は2016年設置の独立行政委員会（内閣府）。権限: (1)報告徴収（146条）、(2)立入検査（146条）、(3)指導・助言（147条）、(4)勧告（148条1項）、(5)命令（148条2項3項）、(6)公表（148条4項）、(7)認定個人情報保護団体の認定・監督。命令違反は1年以下の懲役または100万円以下の罰金（173条）、法人重課あり（179条で1億円以下の罰金）。GDPR下のEU各国データ保護監督機関に相当する組織。日EU相互認証ではこの委員会の役割が重要視された。",
+      "references": [
+        {
+          "title": "個人情報保護委員会",
+          "url": "https://www.ppc.go.jp/"
+        },
+        {
+          "title": "個人情報保護法第146条以下 監督",
+          "url": "https://laws.e-gov.go.jp/law/415AC0000000057"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "個人情報保護委員会",
+        "監督権限",
+        "独立行政委員会"
+      ],
+      "common_mistakes": [
+        "強制権限がないと誤解",
+        "経済産業省の組織と誤解",
+        "罰則がないと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

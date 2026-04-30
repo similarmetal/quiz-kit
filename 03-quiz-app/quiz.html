@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Similarmetal Quiz - Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="topnav"><div class="topnav-inner">
+<a class="topnav-brand" href="index.html">Quiz Kit</a>
+<div class="topnav-links">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link active" href="quiz.html">Quiz</a>
+<a class="nav-link" href="stats.html">Stats</a>
+</div></div></nav>
+
+<div class="container-narrow">
+  <div id="quiz-header" style="margin-bottom: 24px;">
+    <div class="eyebrow" id="quiz-exam-name">─</div>
+    <div class="progress-bar"><div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div></div>
+    <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em;">
+      <span id="progress-text">0 / 0</span>
+      <span id="session-stats">正解: 0  /  不正解: 0</span>
+    </div>
+  </div>
+
+  <div id="quiz-container">
+    <div class="empty-state">
+      <div class="empty-state-icon">📚</div>
+      <p>クイズを開始するには、Home から資格を選んでください。</p>
+      <a href="index.html" class="btn" style="margin-top: 20px;">Home に戻る</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">Similarmetal Quiz Kit · Active Recall + SRS</footer>
+
+<script src="app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    QuizApp.renderQuiz();
+  });
+</script>
+</body>
+</html>

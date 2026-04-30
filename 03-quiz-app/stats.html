@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Similarmetal Quiz - Stats</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="topnav"><div class="topnav-inner">
+<a class="topnav-brand" href="index.html">Quiz Kit</a>
+<div class="topnav-links">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="quiz.html">Quiz</a>
+<a class="nav-link active" href="stats.html">Stats</a>
+</div></div></nav>
+
+<div class="container">
+  <section style="padding: 32px 0;">
+    <div class="eyebrow">Progress Dashboard</div>
+    <h1 class="page-title">統計</h1>
+    <div class="page-subtitle">学習の積み上げを見る。</div>
+  </section>
+
+  <div id="stats-container">
+    <div class="empty-state">
+      <div class="empty-state-icon">📊</div>
+      <p>まだ学習データがありません。</p>
+    </div>
+  </div>
+
+  <h2>Data Management</h2>
+  <div class="h2-sub">バックアップ・復元・リセット。</div>
+  <div class="card-grid-3">
+    <div class="card">
+      <h3 style="margin-top:0;">Export</h3>
+      <p style="font-size: 14px;">学習データをJSONファイルとしてダウンロード。</p>
+      <button class="btn secondary" onclick="QuizApp.exportData()" style="margin-top: 12px;">Export JSON</button>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Import</h3>
+      <p style="font-size: 14px;">バックアップしたデータを復元。</p>
+      <input type="file" id="import-file" accept=".json" style="display:none;" onchange="QuizApp.importData(this)">
+      <button class="btn secondary" onclick="document.getElementById('import-file').click()" style="margin-top: 12px;">Import JSON</button>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Reset</h3>
+      <p style="font-size: 14px;">全データを削除（戻せません）。</p>
+      <button class="btn ghost" onclick="QuizApp.resetData()" style="margin-top: 12px;">Reset All</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">Similarmetal Quiz Kit · Active Recall + SRS</footer>
+
+<script src="app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    QuizApp.renderStats();
+  });
+</script>
+</body>
+</html>

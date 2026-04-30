@@ -1,0 +1,1141 @@
+{
+  "exam_code": "aip-c01",
+  "exam_name": "AWS Certified Generative AI Developer – Professional",
+  "version": "2026.04",
+  "total_questions": 40,
+  "domains": [
+    {
+      "id": "domain-2",
+      "name": "RAGアーキテクチャ",
+      "weight_percent": 25,
+      "question_count": 40
+    }
+  ],
+  "questions": [
+    {
+      "id": "aip-c01-domain2-001",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Bedrock Knowledge Bases",
+      "subtopic": "概要",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "Amazon Bedrock Knowledge Bases が提供する主要な機能として正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "S3に保存されたドキュメントを取り込み、ベクトルデータベースへの埋め込み生成と検索を含む RAG パイプラインをマネージドで提供する", "is_correct": true, "explanation": "正解。Knowledge Bases は ingestion・chunking・embedding・vector store・retrieval を一括でマネージド提供する。"},
+        {"id": "B", "text": "事前学習済みの基盤モデルをファインチューニングするためのトレーニングジョブを実行する", "is_correct": false, "explanation": "Fine-tuning は Bedrock Custom Models 機能であり、Knowledge Bases の役割ではない。"},
+        {"id": "C", "text": "REST API を呼び出して LLM の出力を再ランキングする専用エンドポイントを提供する", "is_correct": false, "explanation": "再ランキングは Bedrock Reranker や Cohere Rerank の役割で、Knowledge Bases そのものではない。"},
+        {"id": "D", "text": "Bedrock Agents の代替としてオーケストレーションを行う", "is_correct": false, "explanation": "オーケストレーションは Agents の責務。Knowledge Bases は知識検索のソース層。"}
+      ],
+      "explanation": "Amazon Bedrock Knowledge Bases は S3 のドキュメントを自動で chunk・embed・index 化し、Retrieve / RetrieveAndGenerate API で検索結果と回答を返すマネージド RAG サービス。複数のベクトルストア（OpenSearch Serverless, Aurora pgvector, Pinecone, MongoDB Atlas, Neptune Analytics 等）に対応する。",
+      "references": [
+        {"title": "Amazon Bedrock Knowledge Bases", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"}
+      ],
+      "tags": ["bedrock", "knowledge-bases", "rag", "managed-service", "overview"],
+      "common_mistakes": [
+        "Knowledge Bases が Fine-tuning も担うと誤解する",
+        "Knowledge Bases と Agents の責務を混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-002",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Embeddings",
+      "subtopic": "Titan Embeddings",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "Amazon Titan Text Embeddings V2 がサポートする出力次元数の組み合わせとして正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "256 / 512 / 1024 次元から選択可能", "is_correct": true, "explanation": "正解。Titan Text Embeddings V2 は 256/512/1024 次元から選択可能で、Matryoshka Representation Learning に基づきストレージとレイテンシを最適化できる。"},
+        {"id": "B", "text": "1536 次元のみ固定", "is_correct": false, "explanation": "1536 次元は OpenAI text-embedding-ada-002 の仕様であり Titan ではない。"},
+        {"id": "C", "text": "768 次元のみ固定", "is_correct": false, "explanation": "768 は BERT-base クラスのモデルでよく見られる次元だが、Titan V2 の選択肢ではない。"},
+        {"id": "D", "text": "任意の整数を指定可能", "is_correct": false, "explanation": "任意指定はできず、決められた次元数からの選択。"}
+      ],
+      "explanation": "Titan Text Embeddings V2 は 256/512/1024 の3次元から選択可能。低次元はベクトルストアのコストとレイテンシを下げ、高次元は精度を高める。Matryoshka 表現により、同じモデルから複数次元の埋め込みを取り出せる点が特徴。",
+      "references": [
+        {"title": "Amazon Titan Text Embeddings", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html"}
+      ],
+      "tags": ["bedrock", "titan", "embeddings", "dimensions", "matryoshka"],
+      "common_mistakes": [
+        "Titan V1 (1536次元固定) と V2 (可変) を混同する",
+        "次元数を増やせば必ず精度が上がると思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-003",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Vector Search",
+      "subtopic": "類似度メトリック",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "テキスト埋め込みのセマンティック検索で最も一般的に使用される距離/類似度指標はどれか？",
+      "options": [
+        {"id": "A", "text": "Cosine similarity（コサイン類似度）", "is_correct": true, "explanation": "正解。テキスト埋め込みはベクトルの方向（意味）を重視するため、コサイン類似度が標準的に使われる。"},
+        {"id": "B", "text": "Manhattan distance（L1）", "is_correct": false, "explanation": "L1 は格子状空間で使われるが、テキスト埋め込みでは標準ではない。"},
+        {"id": "C", "text": "Hamming distance", "is_correct": false, "explanation": "Hamming はバイナリベクトル向けで、密埋め込みには適さない。"},
+        {"id": "D", "text": "Jaccard similarity", "is_correct": false, "explanation": "Jaccard は集合の重複度に使うため、密ベクトルには不適切。"}
+      ],
+      "explanation": "テキスト埋め込みは方向に意味があり、長さ（ノルム）はあまり意味を持たないため、cosine similarity が広く採用される。OpenSearch・Aurora pgvector・Pinecone いずれもデフォルトで cosine をサポートする。Titan・Cohere の埋め込みも cosine 想定で正規化されることが多い。",
+      "references": [
+        {"title": "OpenSearch k-NN distance metrics", "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/knn.html"}
+      ],
+      "tags": ["vector-search", "cosine-similarity", "embeddings", "metric", "knn"],
+      "common_mistakes": [
+        "Euclidean を常に最適と誤解する",
+        "正規化されていれば cosine と dot product が同等であることを知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-004",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Chunking",
+      "subtopic": "戦略の種類",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "Amazon Bedrock Knowledge Bases が標準でサポートする chunking strategy として **正しくない** ものはどれか？",
+      "options": [
+        {"id": "A", "text": "Fixed-size chunking", "is_correct": false, "explanation": "サポートされる。トークン/文字単位の固定長分割。"},
+        {"id": "B", "text": "Hierarchical chunking", "is_correct": false, "explanation": "サポートされる。親子チャンク構造で文脈と粒度を両立する。"},
+        {"id": "C", "text": "Semantic chunking", "is_correct": false, "explanation": "サポートされる。埋め込みベースで意味的境界を検出して分割する。"},
+        {"id": "D", "text": "Genetic-algorithm chunking", "is_correct": true, "explanation": "正解（誤った選択肢）。遺伝的アルゴリズムによる chunking は KB の標準オプションには存在しない。"}
+      ],
+      "explanation": "Bedrock Knowledge Bases が提供する chunking 戦略は: Default (300 tokens)、Fixed-size、Hierarchical（親子）、Semantic（埋め込みベース境界検出）、No chunking、そして Custom (Lambda) の6種類。Genetic は無関係。",
+      "references": [
+        {"title": "Knowledge Bases - Chunking strategies", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-chunking-parsing.html"}
+      ],
+      "tags": ["chunking", "knowledge-bases", "hierarchical", "semantic", "fixed-size"],
+      "common_mistakes": [
+        "Semantic chunking がコストゼロと思い込む（埋め込み呼び出しが発生）",
+        "Hierarchical chunking の親子設定をデフォルトと混同する"
+      ],
+      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-005",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Bedrock Knowledge Bases",
+      "subtopic": "RetrieveAndGenerate API",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある SaaS スタートアップが Bedrock Knowledge Bases に対して、`Retrieve` API と `RetrieveAndGenerate` API のどちらを使うべきか検討している。アプリケーション側で取得したコンテキストを独自の Lambda で再加工してから別の Claude モデルへ渡したい。最適な選択は？",
+      "options": [
+        {"id": "A", "text": "`Retrieve` API を使い、検索結果を Lambda で加工した後、自前で Bedrock InvokeModel を呼ぶ", "is_correct": true, "explanation": "正解。Retrieve は検索結果（チャンク）を返すだけで、生成は呼び出し側が制御できる。柔軟な前処理に向く。"},
+        {"id": "B", "text": "`RetrieveAndGenerate` API を使い、その後 Lambda で出力を後処理する", "is_correct": false, "explanation": "RetrieveAndGenerate は生成済みのテキストを返すため、コンテキストを途中で加工することはできない。"},
+        {"id": "C", "text": "Knowledge Bases では Retrieve API しか提供されないため、自前で生成する", "is_correct": false, "explanation": "RetrieveAndGenerate API も提供されている。誤った前提。"},
+        {"id": "D", "text": "Bedrock Agents 経由でしか Knowledge Bases にアクセスできないため Agents を使う", "is_correct": false, "explanation": "Agents は Knowledge Bases を呼べるが、必須ではない。Retrieve は単独で利用できる。"}
+      ],
+      "explanation": "Bedrock Knowledge Bases には 2 つの主要 API がある。`Retrieve` は検索のみ（コンテキスト返却）、`RetrieveAndGenerate` は内部でモデル呼び出しまで完結する。前者はオーケストレーション・前処理を自前で組みたい場合、後者は最短実装に向く。",
+      "references": [
+        {"title": "Bedrock Knowledge Bases API - Retrieve vs RetrieveAndGenerate", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html"}
+      ],
+      "tags": ["bedrock", "knowledge-bases", "retrieve-api", "saas", "api-design"],
+      "common_mistakes": [
+        "RetrieveAndGenerate でも自由にコンテキストを編集できると誤解",
+        "Knowledge Bases は Agents 経由が必須と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-006",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "OpenSearch Serverless",
+      "subtopic": "ベクトルコレクション",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Amazon OpenSearch Serverless の Vector engine（vector search collection）の説明として **最も適切** なものはどれか？",
+      "options": [
+        {"id": "A", "text": "OCU（OpenSearch Compute Unit）で課金され、最低 2 OCU（インデックス用）+ 2 OCU（検索用）= 4 OCU から起動する", "is_correct": true, "explanation": "正解。OpenSearch Serverless の vector collection は最低 4 OCU 構成（小規模ワークロード向けの redundancy disabled なら 2 OCU）から起動し、OCU 時間で課金される。"},
+        {"id": "B", "text": "EC2 インスタンスサイズを直接指定して構築する", "is_correct": false, "explanation": "Serverless はインスタンス指定不要。プロビジョンドの OpenSearch Service とは別概念。"},
+        {"id": "C", "text": "ストレージ料金は無料で、リクエスト数のみ課金される", "is_correct": false, "explanation": "S3 ストレージ + OCU の課金体系で、無料ではない。"},
+        {"id": "D", "text": "Bedrock Knowledge Bases でしか利用できない", "is_correct": false, "explanation": "OpenSearch Serverless は単体でも利用可能。KB はその一例にすぎない。"}
+      ],
+      "explanation": "OpenSearch Serverless の vector engine は OCU（インデックス + 検索の2種）と S3 ストレージで課金される。冗長性無効モードで最低 2 OCU、本番（HA）構成で 4 OCU から。Knowledge Bases のデフォルトベクトルストアとしても使われる。",
+      "references": [
+        {"title": "OpenSearch Serverless vector search", "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vector-search.html"}
+      ],
+      "tags": ["opensearch-serverless", "vector-engine", "ocu", "pricing", "rag"],
+      "common_mistakes": [
+        "Serverless = 完全従量課金 と誤解（最低 OCU が常時稼働）",
+        "Provisioned OpenSearch と Serverless を混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-007",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Aurora pgvector",
+      "subtopic": "ベクトルインデックス",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Amazon Aurora PostgreSQL の pgvector 拡張がサポートするベクトル検索インデックスの組み合わせとして正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "IVFFlat と HNSW", "is_correct": true, "explanation": "正解。pgvector は IVFFlat と HNSW の2種類の近似最近傍（ANN）インデックスをサポートする。"},
+        {"id": "B", "text": "BTree と GiST のみ", "is_correct": false, "explanation": "BTree/GiST は通常の PostgreSQL インデックスで、ANN ベクトル検索には適さない。"},
+        {"id": "C", "text": "Annoy と FAISS", "is_correct": false, "explanation": "Annoy/FAISS はライブラリで、pgvector が提供する内蔵インデックス種別ではない。"},
+        {"id": "D", "text": "LSH と Product Quantization", "is_correct": false, "explanation": "pgvector ネイティブにはこれらは含まれない（一部 PQ は派生のみ）。"}
+      ],
+      "explanation": "pgvector v0.5+ は IVFFlat（クラスタ分割）と HNSW（階層的グラフ）の2つの ANN インデックスを提供する。HNSW は高精度・高メモリ、IVFFlat は構築が速くメモリ効率が良い。Bedrock Knowledge Bases も Aurora pgvector に対してこれらを使う。",
+      "references": [
+        {"title": "Using Amazon Aurora PostgreSQL as a vector store", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.VectorDB.html"}
+      ],
+      "tags": ["aurora", "pgvector", "hnsw", "ivfflat", "ann"],
+      "common_mistakes": [
+        "BTree がベクトル検索に使えると思い込む",
+        "HNSW と IVFFlat の特性差を理解せず常に HNSW を選ぶ"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-008",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Hybrid Search",
+      "subtopic": "概念",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "RAG における hybrid search が pure semantic search より優れる典型的なケースはどれか？",
+      "options": [
+        {"id": "A", "text": "ユーザクエリに型番・固有ID（例: SKU-12345）など正確な文字列マッチが必要な要素が含まれる場合", "is_correct": true, "explanation": "正解。固有名詞・型番・コードは埋め込みが弱く、BM25 などキーワード検索の併用が効果的。"},
+        {"id": "B", "text": "全ての文書が同一言語で意味的に類似している場合", "is_correct": false, "explanation": "意味類似が支配的なら semantic 単独でも十分。"},
+        {"id": "C", "text": "クエリが極めて短く（1 単語）、類義語の網羅が不要な場合", "is_correct": false, "explanation": "短いクエリは semantic でも処理可能で、ハイブリッドの優位性は小さい。"},
+        {"id": "D", "text": "ベクトルストアが Pinecone のときだけ", "is_correct": false, "explanation": "Pinecone でも他でも、ハイブリッドはストア依存ではなく問題依存。"}
+      ],
+      "explanation": "Hybrid search は意味的類似（ベクトル検索）と語彙一致（BM25/keyword）を融合する。製品コード、医療用語、法的条項番号など正確一致が重要なシナリオで semantic 単独より高精度。Bedrock Knowledge Bases も SEMANTIC / HYBRID の searchType を選択可能。",
+      "references": [
+        {"title": "Bedrock Knowledge Bases - Hybrid search", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html"}
+      ],
+      "tags": ["hybrid-search", "bm25", "semantic-search", "keyword", "rag"],
+      "common_mistakes": [
+        "semantic が常に最強だと思い込む",
+        "ハイブリッドはストア依存と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-009",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Reranking",
+      "subtopic": "目的",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "RAG パイプラインに reranker（例: Cohere Rerank, Bedrock managed reranker）を導入する **主目的** はどれか？",
+      "options": [
+        {"id": "A", "text": "ベクトル検索の上位 N 件を、より高精度なクロスエンコーダで再評価し、上位 K 件の関連度を改善する", "is_correct": true, "explanation": "正解。Reranker はクエリと候補ドキュメントを同時入力するクロスエンコーダで、bi-encoder の結果を精緻化する。"},
+        {"id": "B", "text": "埋め込みモデル自体の次元数を圧縮する", "is_correct": false, "explanation": "次元圧縮は Matryoshka 表現や PCA など別の手法。"},
+        {"id": "C", "text": "検索インデックスを物理的に再構築する", "is_correct": false, "explanation": "インデックス再構築（rebuild）は別作業。Reranker とは無関係。"},
+        {"id": "D", "text": "LLM の出力をフィルタリングする", "is_correct": false, "explanation": "出力フィルタは Guardrails や post-processing で、Reranker の役割ではない。"}
+      ],
+      "explanation": "Reranker はクエリ-文書ペアを直接スコアリングするクロスエンコーダ。bi-encoder（埋め込み類似度）で粗く絞った top-N を入力し、上位を再ランクする。Bedrock では Cohere Rerank や Amazon Rerank が rerankingConfiguration として KB から呼び出せる。",
+      "references": [
+        {"title": "Bedrock Reranker models", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html"}
+      ],
+      "tags": ["reranking", "cohere-rerank", "cross-encoder", "rag", "precision"],
+      "common_mistakes": [
+        "Reranker と embedding モデルを混同",
+        "Reranker は不要なオーバーヘッドだと早合点"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-010",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Multi-modal RAG",
+      "subtopic": "Embeddings",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "テキストと画像を統一的にベクトル化してマルチモーダル RAG を構築したい。Bedrock で利用できる埋め込みモデルとして適切なのは？",
+      "options": [
+        {"id": "A", "text": "Amazon Titan Multimodal Embeddings G1（テキスト・画像を共通ベクトル空間にマップ）", "is_correct": true, "explanation": "正解。Titan Multimodal Embeddings はテキストと画像を同一ベクトル空間に埋め込み、cross-modal 検索を可能にする。"},
+        {"id": "B", "text": "Titan Text Embeddings V2（テキスト専用）", "is_correct": false, "explanation": "テキスト専用のため、画像の埋め込み生成は不可。"},
+        {"id": "C", "text": "Cohere Embed English V3（テキスト専用）", "is_correct": false, "explanation": "Cohere Embed もテキスト専用で、画像は対象外。"},
+        {"id": "D", "text": "Amazon Rekognition Labels API", "is_correct": false, "explanation": "Rekognition はラベル抽出 API でベクトル埋め込み API ではない。"}
+      ],
+      "explanation": "Titan Multimodal Embeddings G1 は 1024 次元（256/384 にも縮約可能）でテキストと画像を同じ空間に埋め込む。製品カタログ、医療画像説明、製造業の図面検索などマルチモーダル RAG に有効。Cohere Embed Multilingual も多言語テキストのみで、画像は非対応。",
+      "references": [
+        {"title": "Titan Multimodal Embeddings G1", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-multiemb-models.html"}
+      ],
+      "tags": ["multimodal", "titan", "embeddings", "image", "rag"],
+      "common_mistakes": [
+        "Titan Text と Titan Multimodal を混同",
+        "Rekognition でベクトル検索ができると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-011",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Citation",
+      "subtopic": "RetrieveAndGenerate",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Bedrock Knowledge Bases の `RetrieveAndGenerate` API のレスポンスにおける citation の主な役割はどれか？",
+      "options": [
+        {"id": "A", "text": "生成された回答の各部分に対応する元ドキュメントの場所（S3 URI とチャンク内容）を示し、ユーザに出典を提示できるようにする", "is_correct": true, "explanation": "正解。Citation は出典トラッキングを提供し、根拠提示と幻覚抑制に不可欠。"},
+        {"id": "B", "text": "モデルの推論時間を計測する", "is_correct": false, "explanation": "推論時間は CloudWatch メトリクスで取得するもの。"},
+        {"id": "C", "text": "プロンプトのトークン数を返す", "is_correct": false, "explanation": "トークン数は usage フィールド等であり、citation の役割ではない。"},
+        {"id": "D", "text": "ベクトル検索のスコアを正規化する", "is_correct": false, "explanation": "スコア正規化は内部処理で、citation のフィールドではない。"}
+      ],
+      "explanation": "RetrieveAndGenerate のレスポンスには citations が含まれ、回答の span ごとに参照元のチャンクと S3 URI（または独自メタデータ）を提示できる。これにより根拠提示・監査・規制業界（医療・金融）でのコンプライアンス対応が容易になる。",
+      "references": [
+        {"title": "Knowledge Bases - Citations and source attribution", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test.html"}
+      ],
+      "tags": ["citations", "knowledge-bases", "source-attribution", "compliance", "trust"],
+      "common_mistakes": [
+        "Citation を性能メトリクスと混同",
+        "Citation は手作業で実装が必要と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-012",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Document Ingestion",
+      "subtopic": "S3 → KB",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "Bedrock Knowledge Bases において、データソース（S3）に新しいドキュメントを追加した際にベクトルストアへ反映するために実行すべき操作はどれか？",
+      "options": [
+        {"id": "A", "text": "`StartIngestionJob` API を呼び出して同期する", "is_correct": true, "explanation": "正解。手動またはイベント駆動で StartIngestionJob を実行し、S3 と KB を同期する。"},
+        {"id": "B", "text": "S3 に PUT イベントを送れば自動でリアルタイム取り込みされる（設定不要）", "is_correct": false, "explanation": "デフォルトでは自動取り込みされない。EventBridge + Lambda で StartIngestionJob を起動する設計が必要。"},
+        {"id": "C", "text": "OpenSearch にバルクロードする SQL を発行する", "is_correct": false, "explanation": "KB が抽象化しているため、ユーザが直接バルクロードする必要はない。"},
+        {"id": "D", "text": "KB を再作成する", "is_correct": false, "explanation": "再作成は不要で過剰対応。Ingestion Job で十分。"}
+      ],
+      "explanation": "Bedrock Knowledge Bases は `StartIngestionJob` で S3 のデータを差分取り込みする。EventBridge ルールで S3 PutObject イベントを Lambda に流し、Lambda から StartIngestionJob を呼ぶ自動化パターンが標準。バッチ更新するアプリケーションでは Step Functions でも制御可能。",
+      "references": [
+        {"title": "StartIngestionJob API", "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StartIngestionJob.html"}
+      ],
+      "tags": ["ingestion", "knowledge-bases", "s3", "eventbridge", "automation"],
+      "common_mistakes": [
+        "S3 PUT で自動取り込みされると思い込む",
+        "毎回 KB を作り直す"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-013",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Embeddings",
+      "subtopic": "次元数のトレードオフ",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業（取引明細書 200 万件を RAG 化）が Titan Embeddings V2 を使う。月次コスト最適化と検索精度のバランスを取りたい。次元数 1024 と 256 の選択でどう判断するべきか？",
+      "options": [
+        {"id": "A", "text": "まず 256 次元でプロトタイプし、検索精度（NDCG, MRR）を実測。許容できる精度なら 256 を採用、不足なら 512/1024 へ段階的に上げる", "is_correct": true, "explanation": "正解。低次元から始めてストレージ・レイテンシを抑え、必要なら段階的に増やすのがコストと精度の両立に最良。"},
+        {"id": "B", "text": "常に 1024 次元を選び、最高精度を確保する", "is_correct": false, "explanation": "最高精度ではあるがストレージとレイテンシが増す。実測なしの選択はコスト過剰になりがち。"},
+        {"id": "C", "text": "ベクトルストアの容量を最小化するため、必ず 256 次元にする", "is_correct": false, "explanation": "ドメインによっては 256 で精度が大きく落ちる。実測なしの一律選択は危険。"},
+        {"id": "D", "text": "次元数は精度に影響しないので任意で選んでよい", "is_correct": false, "explanation": "次元数は精度・コスト・レイテンシすべてに影響する。"}
+      ],
+      "explanation": "Titan V2 は Matryoshka 表現により同一モデルから異なる次元を取り出せる。本番では NDCG@k, Recall@k, MRR を実測し、SLA とコスト目標から最適次元を決めるのが実務。FinTech のように精度要件と監査が厳しい場合は精度優先、社内チャットボットなら 256 が妥当なケースが多い。",
+      "references": [
+        {"title": "Titan Text Embeddings V2 - Matryoshka", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html"}
+      ],
+      "tags": ["embeddings", "dimensions", "cost-optimization", "fintech", "matryoshka"],
+      "common_mistakes": [
+        "次元数を増やせば必ず精度が上がると思い込む",
+        "実測せず一律選択する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-014",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Chunking",
+      "subtopic": "Hierarchical chunking",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育系 SaaS が、長文の教科書 PDF（章・節・項の階層構造）を RAG 化したい。短い文脈での精密検索と、文脈不足による幻覚回避を両立したい。最も適切な chunking 戦略は？",
+      "options": [
+        {"id": "A", "text": "Hierarchical chunking で子チャンク（短）と親チャンク（長）を作成し、検索は子で行い回答生成では親のコンテキストを LLM に渡す", "is_correct": true, "explanation": "正解。Hierarchical は精密な検索粒度と豊富な文脈の両立に向く。Bedrock KB はこの戦略を標準サポート。"},
+        {"id": "B", "text": "全文書を 100 トークンの fixed-size chunk のみで分割する", "is_correct": false, "explanation": "短すぎて文脈が不足し、幻覚が増えやすい。"},
+        {"id": "C", "text": "全文書を 8000 トークンの fixed-size chunk で分割する", "is_correct": false, "explanation": "長すぎて検索の精度が落ちる。検索ノイズが増える。"},
+        {"id": "D", "text": "章を1チャンク、節を別の KB と分けて2系統の KB を運用する", "is_correct": false, "explanation": "運用が複雑化し、Hierarchical で十分対応できる。"}
+      ],
+      "explanation": "Hierarchical chunking は親（300〜1500 tokens 程度）と子（短い）の2層を持ち、子で検索することでクエリとの精密マッチを取りつつ、回答生成では親チャンクを LLM に渡すことで十分な文脈を維持できる。教科書・契約書・規格文書のような階層的長文に最適。",
+      "references": [
+        {"title": "Hierarchical chunking in Knowledge Bases", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-chunking-parsing.html"}
+      ],
+      "tags": ["hierarchical-chunking", "education", "context-window", "rag", "long-document"],
+      "common_mistakes": [
+        "短い chunk が常に最適と誤解",
+        "Hierarchical の親子粒度設計を怠る"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-015",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Aurora pgvector",
+      "subtopic": "HNSW vs IVFFlat",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "Aurora PostgreSQL with pgvector を使った RAG で、書き込みが頻繁（1日100万件追加）かつ検索レイテンシ要件 < 50ms。インデックス戦略として最適なのは？",
+      "options": [
+        {"id": "A", "text": "HNSW を使い、`m`（最大接続数）と `ef_construction` を調整。書き込み時の更新コストは増えるがクエリ速度を優先", "is_correct": true, "explanation": "正解。HNSW は書き込みコストが高いがクエリレイテンシで IVFFlat を上回る。低レイテンシ要件なら HNSW + 並列インデックス更新が定石。"},
+        {"id": "B", "text": "IVFFlat 一択。クエリレイテンシは関係ない", "is_correct": false, "explanation": "IVFFlat はメモリ効率に優れるが、クエリ精度・レイテンシのバランスは HNSW に劣ることが多い。要件と合わない。"},
+        {"id": "C", "text": "BTree インデックスで対応する", "is_correct": false, "explanation": "BTree はベクトル類似検索に使えない。"},
+        {"id": "D", "text": "インデックスを作らず seq scan で対応する", "is_correct": false, "explanation": "件数が多い場合は線形スキャンで SLA を満たせない。"}
+      ],
+      "explanation": "pgvector の HNSW は構築・更新コストが IVFFlat より高いが、クエリレイテンシと recall は良好。50ms 以下の要件にはほぼ HNSW が選択される。`m` を 16〜32、`ef_construction` を 64〜200、検索時の `ef_search` で精度とレイテンシのトレードオフを調整。",
+      "references": [
+        {"title": "pgvector HNSW", "url": "https://github.com/pgvector/pgvector#hnsw"}
+      ],
+      "tags": ["aurora", "pgvector", "hnsw", "ivfflat", "latency"],
+      "common_mistakes": [
+        "IVFFlat の方が常に速いと誤解",
+        "ef_search の調整を忘れる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-016",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Healthcare RAG",
+      "subtopic": "HIPAA",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "ある HIPAA 対応の医療スタートアップが、患者カルテ（PHI 含む）を Bedrock Knowledge Bases で RAG 化したい。データの暗号化・分離要件を満たす構成で **適切なもの** はどれか（複数選択）？",
+      "options": [
+        {"id": "A", "text": "S3 バケットを SSE-KMS（カスタマー管理 CMK）で暗号化し、Knowledge Base の暗号化キーも同じ CMK を使う", "is_correct": true, "explanation": "正解。データソースとベクトルインデックス両方で CMK を使い、組織のキー管理ポリシーに統合できる。"},
+        {"id": "B", "text": "VPC Endpoint（Interface）経由で Bedrock を呼び出し、トラフィックがインターネットを経由しないようにする", "is_correct": true, "explanation": "正解。Bedrock の VPC Endpoint により AWS 内部閉域でアクセスできる。HIPAA 対応の標準パターン。"},
+        {"id": "C", "text": "PHI を含むため、すべての処理を Public Bedrock エンドポイント（インターネット経由）で行う", "is_correct": false, "explanation": "PHI ワークロードでは公衆エンドポイントは推奨されない。VPC Endpoint が原則。"},
+        {"id": "D", "text": "PHI を平文のまま CloudWatch Logs に出力してデバッグを容易にする", "is_correct": false, "explanation": "PHI 平文ログは HIPAA 違反。マスキング/抑制が必須。"}
+      ],
+      "explanation": "HIPAA 対応 RAG では (1) S3・KB・OpenSearch すべてで CMK 暗号化、(2) Bedrock VPC Endpoint による閉域通信、(3) Guardrails による PII/PHI マスク、(4) CloudTrail による監査、(5) 最小権限 IAM ポリシーが必須。Bedrock 自体は HIPAA Eligible Service として BAA 対象。",
+      "references": [
+        {"title": "Bedrock VPC Endpoints", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html"},
+        {"title": "AWS HIPAA Eligible Services", "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"}
+      ],
+      "tags": ["hipaa", "healthcare", "vpc-endpoint", "kms", "phi"],
+      "common_mistakes": [
+        "Bedrock のデフォルト設定だけで HIPAA 対応できると誤解",
+        "CloudWatch に PHI を平文出力する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-017",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Query Rewriting",
+      "subtopic": "クエリ変換",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある B2B SaaS のチャット履歴を活かして、「それのコストは？」のような曖昧な参照クエリでも RAG が正しく機能するようにしたい。最も適切なアプローチはどれか？",
+      "options": [
+        {"id": "A", "text": "会話履歴を含めて LLM に query rewriting させ、独立した完全形のクエリ（例: 「ProductX の月額コストは？」）に変換してから検索する", "is_correct": true, "explanation": "正解。代名詞・省略を含む follow-up 質問は独立クエリに書き換えてから検索することで recall が安定する。"},
+        {"id": "B", "text": "ベクトル検索の `k` を 100 に増やしてカバレッジを上げる", "is_correct": false, "explanation": "ノイズが増えるだけで根本解決にならない。"},
+        {"id": "C", "text": "Cohere Rerank の閾値を下げる", "is_correct": false, "explanation": "曖昧クエリの語彙不足は rerank では解決できない。"},
+        {"id": "D", "text": "履歴を全て埋め込んでベクトル検索する", "is_correct": false, "explanation": "履歴混入はノイズが増えて精度低下する。書き換えの方が確実。"}
+      ],
+      "explanation": "会話型 RAG では query rewriting（または query reformulation）が必須。Bedrock Knowledge Bases の `RetrieveAndGenerate` は内部で履歴を考慮した query reformulation をサポートしており、自前実装する場合も Claude/Titan に書き換えタスクを振るのが標準。",
+      "references": [
+        {"title": "Knowledge Bases - Query reformulation", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test.html"}
+      ],
+      "tags": ["query-rewriting", "conversational-rag", "b2b-saas", "follow-up", "reformulation"],
+      "common_mistakes": [
+        "履歴をそのまま埋め込めば解決すると思う",
+        "k を増やせば曖昧性が解消すると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-018",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Hybrid Search",
+      "subtopic": "実装",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "OpenSearch で hybrid search（semantic + BM25）を実装する場合の正しいアプローチはどれか？",
+      "options": [
+        {"id": "A", "text": "Search Pipeline の normalization processor で、ベクトルクエリと keyword クエリのスコアを正規化し、加重和で統合する", "is_correct": true, "explanation": "正解。OpenSearch の neural search + Search Pipeline で min-max 正規化と加重平均（または arithmetic mean）でハイブリッドスコアを算出するのが推奨パターン。"},
+        {"id": "B", "text": "ベクトル検索の結果と keyword 検索の結果を別々に取得し、application 側で順位を平均する", "is_correct": false, "explanation": "技術的には可能だがスコア正規化を自前で扱う必要があり、Search Pipeline の方が標準。"},
+        {"id": "C", "text": "ベクトルインデックスに keyword フィールドを混ぜれば自動でハイブリッド化される", "is_correct": false, "explanation": "そうはならない。明示的なクエリ統合が必要。"},
+        {"id": "D", "text": "Hybrid search は Aurora pgvector でしかできない", "is_correct": false, "explanation": "OpenSearch でも標準機能として提供されている。"}
+      ],
+      "explanation": "OpenSearch の hybrid search は `hybrid` query + Search Pipeline（normalization-processor + score-combination-processor）で実装する。ベクトル類似度と BM25 はスケールが異なるため正規化が必須。Bedrock Knowledge Bases も SearchType=HYBRID を選ぶと内部で同等処理を行う。",
+      "references": [
+        {"title": "OpenSearch hybrid search", "url": "https://opensearch.org/docs/latest/search-plugins/hybrid-search/"}
+      ],
+      "tags": ["opensearch", "hybrid-search", "search-pipeline", "bm25", "neural-search"],
+      "common_mistakes": [
+        "正規化なしでスコアを単純加算",
+        "ベクトル + keyword フィールド混在で自動ハイブリッドになると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-019",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Reranking",
+      "subtopic": "Cohere Rerank",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業の社内ナレッジ検索で、ベクトル検索の top-50 から最終的に top-5 を選びたい。Bedrock 経由で reranker を使う適切な構成は？",
+      "options": [
+        {"id": "A", "text": "Bedrock の Rerank API（Cohere Rerank または Amazon Rerank）を呼び出し、クエリと top-50 文書をペアでスコアリングして上位 5 件を返す", "is_correct": true, "explanation": "正解。Bedrock Rerank API は top-N のリランキングに最適化されており、Knowledge Bases から rerankingConfiguration として組み込み可能。"},
+        {"id": "B", "text": "Titan Text Embeddings で再度埋め込み類似度を計算する", "is_correct": false, "explanation": "それは bi-encoder の再評価で、クロスエンコーダの精度には及ばない。"},
+        {"id": "C", "text": "Lambda 内で BLEU スコアを使ってリランクする", "is_correct": false, "explanation": "BLEU は機械翻訳評価指標で、関連度ランキングには適さない。"},
+        {"id": "D", "text": "Reranker は Bedrock で利用できないので、自前で SageMaker にデプロイするしかない", "is_correct": false, "explanation": "Bedrock Rerank API は GA 済み。自前デプロイは不要。"}
+      ],
+      "explanation": "Bedrock Rerank API は Cohere Rerank 3.5 と Amazon Rerank をサポートする。`Rerank` API に query と documents を渡すと relevance score が返る。Knowledge Bases の retrieve API では rerankingConfiguration として組み込め、追加実装不要で精度向上できる。",
+      "references": [
+        {"title": "Amazon Bedrock Rerank API", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html"}
+      ],
+      "tags": ["rerank", "cohere", "fintech", "bedrock", "precision"],
+      "common_mistakes": [
+        "Rerank と再埋め込みを混同",
+        "Bedrock に Rerank API があることを知らず SageMaker で自作"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-020",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Document Ingestion",
+      "subtopic": "イベント駆動取り込み",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育系 SaaS が、毎日数千件の新規 PDF を S3 にアップロードする。Bedrock Knowledge Bases へほぼリアルタイム（数分以内）に反映させたい。最適な構成は？",
+      "options": [
+        {"id": "A", "text": "S3 PutObject イベントを EventBridge ルールで受け、Lambda から `StartIngestionJob` を呼び出す（バッチ間隔を短く設定）", "is_correct": true, "explanation": "正解。EventBridge + Lambda + StartIngestionJob はサーバーレス自動化の標準パターン。デバウンス（SQS バッチング）すると無駄なジョブを抑制できる。"},
+        {"id": "B", "text": "EC2 を常時稼働させ、5 秒ごとに S3 を polling する", "is_correct": false, "explanation": "イベント駆動が利用可能な状況で polling は非効率かつコスト増。"},
+        {"id": "C", "text": "毎晩 1 回のクーロンで `StartIngestionJob` を実行する", "is_correct": false, "explanation": "リアルタイム要件（数分以内）を満たさない。"},
+        {"id": "D", "text": "S3 を直接 OpenSearch にミラーする（KB を経由しない）", "is_correct": false, "explanation": "KB の自動 chunking/embedding を捨てると実装が複雑化する。"}
+      ],
+      "explanation": "リアルタイム取り込みのベストプラクティスは EventBridge + Lambda + StartIngestionJob。同時に多数のオブジェクトが到着する場合は SQS でデバウンスし、ジョブ起動を一定時間集約することでコスト最適化できる。Step Functions による進捗管理も併用可能。",
+      "references": [
+        {"title": "Automating Knowledge Bases ingestion", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-data-source.html"}
+      ],
+      "tags": ["ingestion", "eventbridge", "lambda", "real-time", "education"],
+      "common_mistakes": [
+        "Polling で十分と思い込む",
+        "EventBridge × Lambda × StartIngestionJob のパターンを知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-021",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Multi-modal RAG",
+      "subtopic": "実装",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方の製造業が、設備マニュアル（テキスト + 図解画像）を RAG 化して、現場作業員のテキスト質問から関連図解を返したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "Titan Multimodal Embeddings G1 で図解画像とテキストを共通ベクトル空間に埋め込み、テキストクエリで cross-modal 検索する", "is_correct": true, "explanation": "正解。マルチモーダル埋め込みなら、テキストクエリから直接画像を検索できる。"},
+        {"id": "B", "text": "Rekognition で画像のラベルを抽出し、ラベル文字列のみを KB に格納する", "is_correct": false, "explanation": "ラベルだけでは図解の文脈情報が失われ、recall が低下する。"},
+        {"id": "C", "text": "Titan Text Embeddings V2 のみで全部処理する", "is_correct": false, "explanation": "テキスト専用モデルのため、画像の埋め込みは不可能。"},
+        {"id": "D", "text": "図解画像を OCR してテキスト化し、Titan Text Embeddings に投入する", "is_correct": false, "explanation": "OCR で文字は拾えるが、レイアウト・図形・矢印の意味はテキスト化されない。"}
+      ],
+      "explanation": "現場マニュアルの図解は OCR では情報損失が大きい。Titan Multimodal Embeddings G1 は画像とテキストを同一空間に埋め込むため、テキストクエリで図解画像を直接検索できる。Bedrock Knowledge Bases も画像エンベディング対応のデータソースに対応している。",
+      "references": [
+        {"title": "Titan Multimodal Embeddings G1", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-multiemb-models.html"}
+      ],
+      "tags": ["multimodal", "manufacturing", "titan", "cross-modal", "rag"],
+      "common_mistakes": [
+        "OCR だけで画像 RAG ができると誤解",
+        "Rekognition のラベルで十分と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-022",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Performance Tuning",
+      "subtopic": "キャッシュ",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある B2B SaaS で、同一クエリが頻繁に繰り返される RAG エンドポイントのレイテンシとコストを下げたい。最も効果的な対策はどれか？",
+      "options": [
+        {"id": "A", "text": "クエリのハッシュをキーに ElastiCache（Redis）で Retrieve 結果と最終回答をキャッシュする", "is_correct": true, "explanation": "正解。同一クエリの繰り返しに対して LLM 呼び出しごと省略でき、レイテンシとコスト両方を削減できる。"},
+        {"id": "B", "text": "ベクトルストアを Aurora から OpenSearch に切り替える", "is_correct": false, "explanation": "ストア変更だけでは同一クエリの繰り返しは解決しない。"},
+        {"id": "C", "text": "毎回フル再生成し、キャッシュは使わない（鮮度を最優先）", "is_correct": false, "explanation": "頻繁繰り返しシナリオでコスト・レイテンシを犠牲にする選択。"},
+        {"id": "D", "text": "全てのレスポンスを S3 に保存して再利用する", "is_correct": false, "explanation": "S3 はレイテンシが ms 単位だが、Redis に劣る。可読化処理も増える。"}
+      ],
+      "explanation": "RAG のキャッシュは2層が定石: (1) prompt-level cache（同一クエリ・同一コンテキスト）→ Redis、(2) Bedrock prompt caching（モデル側のシステムプロンプト/長文ドキュメントの再利用）。ヒット率の高いシナリオでは大幅なコスト削減になる。",
+      "references": [
+        {"title": "Bedrock prompt caching", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html"},
+        {"title": "ElastiCache for Redis", "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html"}
+      ],
+      "tags": ["caching", "elasticache", "performance", "saas", "cost-optimization"],
+      "common_mistakes": [
+        "ベクトルストア変更でレイテンシ問題が解決すると誤解",
+        "prompt caching の存在を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-023",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Bedrock Knowledge Bases",
+      "subtopic": "Metadata filtering",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Bedrock Knowledge Bases に複数のテナント企業の文書が混在している。テナント別に検索結果をフィルタリングしたい場合、最適な実装は？",
+      "options": [
+        {"id": "A", "text": "ドキュメントごとに `tenant_id` のメタデータを付与し、Retrieve API の filter で `tenant_id = 'X'` を指定する", "is_correct": true, "explanation": "正解。KB は metadata filter（equals, in, contains, lessThan 等）をサポートする。テナント分離はメタデータ + filter で実現。"},
+        {"id": "B", "text": "テナントごとに Knowledge Base を作成する", "is_correct": false, "explanation": "可能だが、テナント数が増えるとコストと運用が爆発的に増える。"},
+        {"id": "C", "text": "アプリケーション側で全件取得後にフィルタする", "is_correct": false, "explanation": "クロステナントの情報漏洩リスク + 帯域とコストの無駄。"},
+        {"id": "D", "text": "S3 のプレフィックスを変えれば自動で分離される", "is_correct": false, "explanation": "プレフィックス分けだけではクエリ時のフィルタにはならない。"}
+      ],
+      "explanation": "Bedrock Knowledge Bases のメタデータ機能は、ドキュメント横断 JSON metadata を付与し Retrieve 時に filter 句で絞り込める。SaaS のテナント分離は metadata に `tenant_id` を含め filter する設計が標準。Aurora pgvector でも metadata カラムで同等。",
+      "references": [
+        {"title": "Knowledge Bases - Metadata filtering", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html"}
+      ],
+      "tags": ["metadata-filter", "multi-tenant", "saas", "knowledge-bases", "isolation"],
+      "common_mistakes": [
+        "metadata filter の存在を知らずに KB を分割",
+        "アプリケーション層フィルタで漏洩リスクを残す"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-024",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Performance Tuning",
+      "subtopic": "並列処理",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RAG パイプラインで 10 万件のドキュメントを再 embed したい。Bedrock の InvokeModel 呼び出しを高速化するために有効な手段はどれか？（複数選択）",
+      "options": [
+        {"id": "A", "text": "Bedrock Batch Inference（インファレンス用 batch 処理）を使い、S3 入力でまとめて embedding を計算する", "is_correct": true, "explanation": "正解。Batch Inference は大量入力をオフラインで処理する標準手段で、On-Demand より低コスト。"},
+        {"id": "B", "text": "Step Functions の Map state または Lambda の同時実行で API 呼び出しを並列化する", "is_correct": true, "explanation": "正解。並列化はスループット向上に直結。Service Quota（TPM/RPM）を超えない範囲で並列度を調整。"},
+        {"id": "C", "text": "全件を 1 リクエストにまとめて InvokeModel に送る", "is_correct": false, "explanation": "Bedrock の embedding API は 1 リクエストあたりの入力サイズ制限があり、不可能。"},
+        {"id": "D", "text": "オンデマンドで 1 件ずつ同期的に処理する", "is_correct": false, "explanation": "10 万件には非効率。バッチか並列が必須。"}
+      ],
+      "explanation": "大量データの埋め込みは (1) Bedrock Batch Inference（コスト最適）、(2) Lambda + SQS や Step Functions Map（リアルタイム並列）、(3) Service Quota の事前申請、の3点が定石。料金は Batch が On-Demand の約半額（モデルにより異なる）。",
+      "references": [
+        {"title": "Bedrock Batch Inference", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html"}
+      ],
+      "tags": ["batch-inference", "parallelism", "step-functions", "scaling", "throughput"],
+      "common_mistakes": [
+        "全件 1 リクエストに詰め込もうとする",
+        "Service Quota を考慮せず並列化して throttling 発生"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-025",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "KB vs Custom RAG",
+      "subtopic": "決定基準",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある FinTech 企業（金融商品の投資家向け開示書類を RAG 化）が、Knowledge Bases と OpenSearch ベースの custom RAG を比較中。**Custom RAG を選ぶ理由として最も妥当なもの** はどれか？",
+      "options": [
+        {"id": "A", "text": "ドキュメントの XBRL タグを保持した独自 chunking ロジックと、独自 reranker、複数の埋め込みモデルのアンサンブルなど高度なカスタマイズが必要", "is_correct": true, "explanation": "正解。KB が標準提供しない独自パイプラインが必要なら custom RAG が妥当。"},
+        {"id": "B", "text": "S3 にアップロードした PDF を最短工数で検索したい", "is_correct": false, "explanation": "それなら KB が最短。"},
+        {"id": "C", "text": "Bedrock の citation 機能を使いたい", "is_correct": false, "explanation": "Citation は KB のマネージド機能で、custom RAG だと自前実装が必要。"},
+        {"id": "D", "text": "サーバーレスで運用したい", "is_correct": false, "explanation": "KB の方がよりサーバーレス。custom RAG は OpenSearch/Lambda 等の構成管理が必要。"}
+      ],
+      "explanation": "判断基準: KB を選ぶのは「短期実装」「マネージド citation」「Bedrock 統合」が必要な時。Custom RAG を選ぶのは「独自 chunking」「複数モデルアンサンブル」「特殊な reranker」「KB が未対応のベクトルストア」が必要な時。FinTech の XBRL タグ保持や独自精度改善はカスタム要件にあたる。",
+      "references": [
+        {"title": "Bedrock Knowledge Bases overview", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"}
+      ],
+      "tags": ["kb-vs-custom", "decision-criteria", "fintech", "architecture", "trade-off"],
+      "common_mistakes": [
+        "サーバーレス = custom と思い込む",
+        "citation を custom RAG が標準提供すると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-026",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Chunking",
+      "subtopic": "粒度の影響",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある社内 RAG で「回答が断片的・要点が曖昧」「検索ヒットしているのに引用元が部分的すぎて意味不明」という問題が報告された。**最も可能性の高い原因** は？",
+      "options": [
+        {"id": "A", "text": "Chunk size が小さすぎて、文脈が分断されている", "is_correct": true, "explanation": "正解。短い chunk は precision を高めるが、回答生成に必要な文脈が不足し、断片的な回答や幻覚を招きやすい。"},
+        {"id": "B", "text": "Embedding モデルの次元数が大きすぎる", "is_correct": false, "explanation": "次元数は精度に影響するが、断片化の根本原因ではない。"},
+        {"id": "C", "text": "Reranker を使っていない", "is_correct": false, "explanation": "Reranker は順位の問題を解くが、文脈分断は解決しない。"},
+        {"id": "D", "text": "ベクトルストアが Aurora pgvector である", "is_correct": false, "explanation": "ストア種別と chunk size は無関係。"}
+      ],
+      "explanation": "「断片的回答 + 引用元が部分的」という症状は典型的に chunk が小さすぎる兆候。対策は (1) chunk size を増やす、(2) chunk overlap を増やす、(3) Hierarchical chunking で親チャンクを LLM に渡す。逆に chunk が大きすぎると検索ノイズが増える。",
+      "references": [
+        {"title": "Knowledge Bases chunking strategies", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-chunking-parsing.html"}
+      ],
+      "tags": ["chunking", "diagnosis", "context", "rag-quality", "troubleshooting"],
+      "common_mistakes": [
+        "断片化の原因を embedding に押し付ける",
+        "Reranker で解決すると思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-027",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Embeddings",
+      "subtopic": "ドリフト",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある教育系 SaaS が Titan Embeddings V1 で構築した RAG を V2 にアップグレードしようとしている。**注意すべき本質的な落とし穴** は？",
+      "options": [
+        {"id": "A", "text": "V1 と V2 の埋め込みは同一空間ではないため、既存ベクトルと新クエリの埋め込みを混在させると検索精度が大きく劣化する。全件再 embedding が必要", "is_correct": true, "explanation": "正解。埋め込みモデルが変われば空間も変わる。混在は致命的な精度劣化を招く。"},
+        {"id": "B", "text": "V2 は次元数が同じなので無変換で互換性がある", "is_correct": false, "explanation": "次元数が同じでもモデルが違えば空間が違う。互換性はない。"},
+        {"id": "C", "text": "V2 にすると料金は変わらない", "is_correct": false, "explanation": "料金体系・性能ともに変わるため要確認。"},
+        {"id": "D", "text": "V2 にすると自動で再 embedding される", "is_correct": false, "explanation": "そうはならない。明示的に StartIngestionJob を再実行する必要がある。"}
+      ],
+      "explanation": "埋め込みモデルの切替は、既存ベクトル DB の全件再 embedding が必須。Knowledge Bases では新しい KB を作成して V2 で再 ingestion するか、データソースを切り替えて再ジョブを実行する。検索クエリと格納ベクトルが同じモデルから生成されている前提を絶対に崩さない。",
+      "references": [
+        {"title": "Embedding model selection", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"}
+      ],
+      "tags": ["embeddings-migration", "titan-v2", "drift", "compatibility", "education"],
+      "common_mistakes": [
+        "次元数が同じなら互換と誤解",
+        "新旧モデルの混在運用"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-028",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Hybrid Search",
+      "subtopic": "症状診断",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある FinTech のサポート bot で、ユーザが「ISIN: US0378331005 の手数料は？」のように ID を含めて質問すると意味的に正しい記事を取り出せず、IDなしの一般質問は問題ない。**最も適切な改善策** は？",
+      "options": [
+        {"id": "A", "text": "Hybrid search に切り替え、BM25（lexical）で ID 文字列の正確一致を確保する", "is_correct": true, "explanation": "正解。固有 ID は埋め込みでは類似度が低くなりがちで、keyword 検索の併用が効果的。"},
+        {"id": "B", "text": "埋め込みモデルを Cohere Multilingual に変える", "is_correct": false, "explanation": "言語の問題ではなく、ID 固有のマッチング問題。"},
+        {"id": "C", "text": "Reranker のスコア閾値を上げる", "is_correct": false, "explanation": "Reranker でも ID 固有性は補えない。根本原因は検索段階。"},
+        {"id": "D", "text": "Chunk size を増やす", "is_correct": false, "explanation": "chunk を大きくしても ID マッチング自体は改善しない。"}
+      ],
+      "explanation": "ID・型番・固有名詞は密埋め込みで類似度が散らばりやすく、recall が落ちる。BM25（語彙）と semantic を組み合わせる hybrid search で大幅に改善する。Bedrock KB の SearchType=HYBRID か OpenSearch の hybrid query で実装可能。",
+      "references": [
+        {"title": "Bedrock KB hybrid search", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html"}
+      ],
+      "tags": ["hybrid-search", "diagnosis", "id-matching", "fintech", "bm25"],
+      "common_mistakes": [
+        "ID マッチングを embedding だけで解決しようとする",
+        "Reranker で全部解決と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-029",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Bedrock Knowledge Bases",
+      "subtopic": "Vector store 比較",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Bedrock Knowledge Bases のベクトルストア選定で **正しい組み合わせ** はどれか？（複数選択）",
+      "options": [
+        {"id": "A", "text": "OpenSearch Serverless: フルマネージド、最低 OCU 課金、KB のデフォルト選択肢として最も統合度が高い", "is_correct": true, "explanation": "正解。KB 作成時のデフォルトストアの一つで、ハイブリッド検索やテナント分離に強い。"},
+        {"id": "B", "text": "Aurora PostgreSQL pgvector: 既存 RDB とジョインしたい場合や、トランザクションと一貫性を持たせたい場合に有利", "is_correct": true, "explanation": "正解。リレーショナルデータと統合するユースケースに適合。"},
+        {"id": "C", "text": "DynamoDB: KB が標準で対応するベクトルストアである", "is_correct": false, "explanation": "DynamoDB は標準対応ベクトルストアではない（KV/Document 用途）。"},
+        {"id": "D", "text": "S3: KB のベクトルストアとして直接利用できる", "is_correct": false, "explanation": "S3 はソースデータ置き場で、ベクトルストアではない。"}
+      ],
+      "explanation": "KB がサポートするベクトルストアは: OpenSearch Serverless / Aurora pgvector / Pinecone / Redis Enterprise Cloud / MongoDB Atlas / Neptune Analytics 等。DynamoDB と S3 はベクトルストアではない（S3 Vectors という別の新サービスは存在するが、ここでは混同を避けるため標準選択ではないと記載）。",
+      "references": [
+        {"title": "Knowledge Bases - Vector store options", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html"}
+      ],
+      "tags": ["vector-store", "knowledge-bases", "opensearch", "aurora", "comparison"],
+      "common_mistakes": [
+        "S3 や DynamoDB がベクトルストアと誤解",
+        "Aurora pgvector の利点（RDB との JOIN）を見落とす"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-030",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "RAG Quality",
+      "subtopic": "幻覚抑制",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある HIPAA 対応の医療チャット bot が、検索結果に該当する記載が無いにもかかわらず、自信ありげに誤った回答を生成する症状が出ている。**最も効果的な対策** は？",
+      "options": [
+        {"id": "A", "text": "RetrieveAndGenerate のシステムプロンプトに「コンテキストに無い情報は I don't know と答える」と明示し、citations が空のときは応答をブロックするロジックを足す", "is_correct": true, "explanation": "正解。grounding の明示と citation 検証は幻覚抑制の中心戦略。"},
+        {"id": "B", "text": "Temperature を 1.5 に上げる", "is_correct": false, "explanation": "創造性が上がり幻覚はむしろ増える。逆効果。"},
+        {"id": "C", "text": "Knowledge Base のベクトルストアを Aurora から OpenSearch に変える", "is_correct": false, "explanation": "ストア変更で幻覚は解決しない。"},
+        {"id": "D", "text": "より大きなモデル（例: Claude Opus）に変えれば幻覚は無くなる", "is_correct": false, "explanation": "モデルを大きくしても grounding 設計が悪ければ幻覚は出る。"}
+      ],
+      "explanation": "RAG の幻覚対策は (1) grounding プロンプト（「コンテキスト外は答えない」）、(2) citation 必須化、(3) Bedrock Guardrails による contextual grounding check、(4) 低 temperature、(5) 信頼できないクエリの拒否。Guardrails の Contextual Grounding Check は specifically この症状に効く新機能。",
+      "references": [
+        {"title": "Bedrock Guardrails - Contextual grounding check", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html"}
+      ],
+      "tags": ["hallucination", "grounding", "healthcare", "guardrails", "citations"],
+      "common_mistakes": [
+        "モデル変更で幻覚を解決すると思い込む",
+        "Temperature を上げる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-031",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Performance Tuning",
+      "subtopic": "レイテンシ分解",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "RAG エンドポイント全体の P95 レイテンシが 8 秒で目標 2 秒に届かない。X-Ray で分解した結果、「embedding 0.2s, vector search 0.3s, rerank 0.5s, LLM 7.0s」だった。**最も効果が大きい改善策** は？",
+      "options": [
+        {"id": "A", "text": "LLM をストリーミング（InvokeModelWithResponseStream）に変更し、最初のトークン到達時間（TTFT）と知覚体験を改善する。あわせてプロンプトを短縮する", "is_correct": true, "explanation": "正解。最大ボトルネックは LLM。ストリーミング + プロンプト最適化が最も効く。"},
+        {"id": "B", "text": "Embedding モデルの次元数を半減する", "is_correct": false, "explanation": "embedding は 0.2s で全体に占める割合が小さい。改善余地が小さい。"},
+        {"id": "C", "text": "ベクトルストアを別リージョンに置く", "is_correct": false, "explanation": "ネットワークレイテンシが増える。逆効果。"},
+        {"id": "D", "text": "Rerank を完全にやめる", "is_correct": false, "explanation": "0.5s の削減はあるが、精度が落ちて再質問が増える可能性がある。"}
+      ],
+      "explanation": "RAG レイテンシは LLM 生成が支配的になりやすい。改善策は (1) ストリーミング、(2) プロンプト・コンテキスト圧縮、(3) より小さなモデル（Haiku 等）の選択、(4) prompt caching、(5) 並列化。X-Ray でボトルネックを特定し、寄与の大きい部分を狙うのが原則。",
+      "references": [
+        {"title": "Bedrock streaming inference", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference.html"}
+      ],
+      "tags": ["latency", "streaming", "x-ray", "performance", "bottleneck"],
+      "common_mistakes": [
+        "寄与の小さい部分を最適化してしまう",
+        "Streaming の知覚レイテンシ効果を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-032",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Citations",
+      "subtopic": "監査要件",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある FinTech が金融商品の説明をする AI コンシェルジュを構築する。規制当局へ「すべての回答について、利用した根拠ドキュメントの履歴を 7 年間保管せよ」と要求された。**満たすべき設計要素** はどれか？（複数選択）",
+      "options": [
+        {"id": "A", "text": "RetrieveAndGenerate のレスポンスに含まれる citations（S3 URI、チャンク内容）を、DynamoDB / S3 に7 年保管する", "is_correct": true, "explanation": "正解。Citation を構造化保管することで監査トレーサビリティを満たせる。"},
+        {"id": "B", "text": "回答ごとに使用したモデル ID・バージョン・プロンプトを CloudTrail と独自監査ログに記録する", "is_correct": true, "explanation": "正解。再現性確保のためモデル・プロンプトのスナップショットも必須。"},
+        {"id": "C", "text": "Citations は内部情報なのでログに残さない", "is_correct": false, "explanation": "規制要件に違反。残すことが必須。"},
+        {"id": "D", "text": "S3 オブジェクトを 30 日後に自動削除する", "is_correct": false, "explanation": "7 年保管要件に反する。"}
+      ],
+      "explanation": "規制対応 RAG では (1) citation の永続保管、(2) モデルバージョン記録、(3) プロンプトと出力のペア保管、(4) 改ざん防止（S3 Object Lock）、(5) アクセス監査（CloudTrail）が必須。Bedrock の Model Invocation Logging を S3 に有効化し、Object Lock を WORM モードにすると改ざん耐性が確保できる。",
+      "references": [
+        {"title": "Bedrock Model invocation logging", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html"},
+        {"title": "S3 Object Lock", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"}
+      ],
+      "tags": ["audit", "fintech", "compliance", "citations", "retention"],
+      "common_mistakes": [
+        "Citation を一時情報として保管しない",
+        "S3 ライフサイクルで早期削除して規制違反"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-033",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "RAG Evaluation",
+      "subtopic": "オフライン評価",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "RAG パイプラインを継続改善する目的で、検索品質と生成品質を別々に測定したい。**最も適切な評価指標の組み合わせ** は？",
+      "options": [
+        {"id": "A", "text": "検索品質: Recall@k, MRR, NDCG。生成品質: faithfulness, answer relevance, context precision（RAG Triad）", "is_correct": true, "explanation": "正解。検索と生成を分けて評価することで、ボトルネックを特定して改善できる。"},
+        {"id": "B", "text": "BLEU と ROUGE のみ（機械翻訳指標）", "is_correct": false, "explanation": "RAG 評価には不向きで、faithfulness などの専用指標が標準。"},
+        {"id": "C", "text": "Perplexity のみ", "is_correct": false, "explanation": "言語モデル評価の指標で、RAG パイプライン全体の評価としては不十分。"},
+        {"id": "D", "text": "ユーザの星評価のみ", "is_correct": false, "explanation": "主観的でノイズが多く、原因分析が困難。"}
+      ],
+      "explanation": "RAG 評価のベストプラクティスは検索層と生成層を分離する。検索層は Recall@k / MRR / NDCG、生成層は RAG Triad（faithfulness=根拠忠実度、answer relevance=回答関連度、context precision=参照精度）。RAGAS、Bedrock Model Evaluation の RAG モードが代表的ツール。",
+      "references": [
+        {"title": "Bedrock Model Evaluation - RAG", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"}
+      ],
+      "tags": ["rag-evaluation", "ragas", "metrics", "ndcg", "faithfulness"],
+      "common_mistakes": [
+        "BLEU/ROUGE で RAG を評価する",
+        "検索と生成を区別せず一括評価"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-034",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Bedrock Knowledge Bases",
+      "subtopic": "RetrieveAndGenerate モデル選択",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある教育系 SaaS の Knowledge Base ベース QA で、回答の引用精度（faithfulness）が低い。LLM 側の選択肢で改善余地が大きいのはどれか？（複数選択）",
+      "options": [
+        {"id": "A", "text": "より高品質モデル（Claude Sonnet/Opus）への切替で grounding 能力を上げる", "is_correct": true, "explanation": "正解。基盤モデルの reasoning 力が grounding 忠実度に影響する。"},
+        {"id": "B", "text": "Generation Configuration の system prompt に「コンテキストに無い情報は答えない」と grounding 指示を追加する", "is_correct": true, "explanation": "正解。明示的な grounding 指示は安全策として効果的。"},
+        {"id": "C", "text": "Temperature を 1.5 に上げて多様性を確保する", "is_correct": false, "explanation": "幻覚が増えるため逆効果。"},
+        {"id": "D", "text": "プロンプトに「もっと自由に推論してください」と書く", "is_correct": false, "explanation": "RAG の grounding 目的に反する。"}
+      ],
+      "explanation": "RetrieveAndGenerate API は generationConfiguration で promptTemplate, inferenceConfig（temperature, topP, maxTokens）, guardrailConfiguration を制御できる。grounding 強化はモデル選択 + プロンプト + 低 temperature + Guardrails の Contextual Grounding Check の組み合わせが効く。",
+      "references": [
+        {"title": "RetrieveAndGenerate generationConfiguration", "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html"}
+      ],
+      "tags": ["model-selection", "grounding", "education", "knowledge-bases", "configuration"],
+      "common_mistakes": [
+        "Temperature を上げて改善しようとする",
+        "promptTemplate のカスタマイズが可能なことを知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-035",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Custom RAG",
+      "subtopic": "アーキテクチャ評価",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある HIPAA 対応の医療スタートアップが提示する 2 つの RAG 設計案を比較するとき、**より優れている案** はどれか？案A: KB（OpenSearch Serverless 標準）+ Guardrails Contextual Grounding。 案B: 自前 Lambda + 外部 Pinecone（パブリック接続） + 自前 reranker、Guardrails なし。",
+      "options": [
+        {"id": "A", "text": "案A。マネージド citation、VPC Endpoint、Contextual Grounding、KMS 統合などコンプライアンス要素が揃い、運用負荷が低い", "is_correct": true, "explanation": "正解。HIPAA・PHI 要件下では監査と暗号化と grounding が一括で揃う案A が安全かつ実装容易。"},
+        {"id": "B", "text": "案B。外部 Pinecone のパブリック接続が PHI ワークロードに最適", "is_correct": false, "explanation": "Pinecone は AWS 上の PrivateLink オプションなしの構成では PHI 流出リスクあり。Guardrails なしも HIPAA 要件に逆行。"},
+        {"id": "C", "text": "両者は同等", "is_correct": false, "explanation": "コンプライアンス・運用負荷で明確に差がある。"},
+        {"id": "D", "text": "情報不足で判断不可", "is_correct": false, "explanation": "提示された差分（PHI、HIPAA、Guardrails 有無）から十分判断可能。"}
+      ],
+      "explanation": "規制業界 RAG の評価軸は (1) BAA 対象サービス利用、(2) 閉域接続、(3) KMS 暗号化、(4) Guardrails によるグラウンディング、(5) 監査ログ、(6) 運用負荷。案A が大半の要件を標準で満たし、案B は HIPAA 文脈ではアンチパターンに近い。Pinecone を使うとしても AWS PrivateLink + BAA が前提。",
+      "references": [
+        {"title": "AWS HIPAA Eligibility - Bedrock", "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"}
+      ],
+      "tags": ["evaluation", "hipaa", "architecture-comparison", "guardrails", "compliance"],
+      "common_mistakes": [
+        "外部 SaaS（Pinecone 公衆）が当然 OK と思い込む",
+        "Guardrails 抜きでも grounding できると過信"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-036",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Cost Optimization",
+      "subtopic": "embedding cost",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある SaaS（月間 500 万クエリ、ドキュメント月次差分 10 万件）の RAG コストを 30% 削減せよと言われた。**最大の効果が見込めるアプローチ** はどれか？",
+      "options": [
+        {"id": "A", "text": "Bedrock prompt caching でシステムプロンプトと長文コンテキストの再利用を有効化、頻出クエリは ElastiCache でキャッシュ、差分 ingestion は Batch Inference に切替", "is_correct": true, "explanation": "正解。読み出し側のキャッシュと書き込み側のバッチ化を組み合わせると、入力トークンと API 呼び出しの両方を大幅削減できる。"},
+        {"id": "B", "text": "全クエリに対して常に Claude Opus を使う", "is_correct": false, "explanation": "コストが最も高いモデルで、削減目的に逆行。"},
+        {"id": "C", "text": "Knowledge Base を毎日作り直す", "is_correct": false, "explanation": "再構築は高コストかつ運用障害になる。"},
+        {"id": "D", "text": "embedding モデルを毎月切り替えて性能比較する", "is_correct": false, "explanation": "モデル切替には全件再 embedding が必要でコストが増える。"}
+      ],
+      "explanation": "RAG コスト最適化は読み出しと書き込みの両面で行う。読み出し: prompt caching、応答キャッシュ、適正なモデル選択（Haiku など）、k 値の絞り込み。書き込み: Batch Inference、差分のみ ingestion、低次元 embedding。30% 削減はこれらの組み合わせで現実的に達成可能。",
+      "references": [
+        {"title": "Bedrock prompt caching", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html"},
+        {"title": "Bedrock Batch Inference pricing", "url": "https://aws.amazon.com/bedrock/pricing/"}
+      ],
+      "tags": ["cost-optimization", "prompt-caching", "batch-inference", "saas", "evaluation"],
+      "common_mistakes": [
+        "高品質モデル一択で逆にコスト増",
+        "キャッシュ層を入れずにモデル切替で削減を狙う"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-037",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "RAG vs Fine-tuning",
+      "subtopic": "選択基準",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある FinTech が「最新の金融商品約款（毎週更新）に基づく回答ができる AI を作る」要件を提示。**最も適切なアプローチ** はどれか？",
+      "options": [
+        {"id": "A", "text": "RAG（Bedrock Knowledge Bases + 週次の StartIngestionJob）。ファインチューニングは不要", "is_correct": true, "explanation": "正解。頻繁に更新される最新情報を反映するなら RAG が標準解。Fine-tuning は再学習コストが高すぎる。"},
+        {"id": "B", "text": "毎週ファインチューニングを行う", "is_correct": false, "explanation": "コスト・時間ともに非現実的。"},
+        {"id": "C", "text": "Continued Pre-training を毎週実行", "is_correct": false, "explanation": "Fine-tuning 以上に大規模学習で非現実的。"},
+        {"id": "D", "text": "プロンプトに毎回約款全文を貼り付ける", "is_correct": false, "explanation": "コンテキストウィンドウとコスト・レイテンシで実用にならない。"}
+      ],
+      "explanation": "知識更新の頻度が高い場合は RAG が原則。Fine-tuning はタスク様式やトーン・出力形式の学習、Continued Pre-training は新ドメイン語彙の獲得に向く。最新情報の反映はベクトルストア更新で十分達成でき、再学習コストがかからない。",
+      "references": [
+        {"title": "Bedrock - Customize models or use RAG", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"}
+      ],
+      "tags": ["rag-vs-fine-tuning", "fintech", "freshness", "decision", "evaluation"],
+      "common_mistakes": [
+        "「カスタマイズ = Fine-tuning」と思い込む",
+        "プロンプト全貼り付けを許容範囲と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-038",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "Hybrid Approach",
+      "subtopic": "判断",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "「過去 10 年分の社内文書（変更頻度低）+ 今週変更された規定（変更頻度高）+ 出力フォーマットを社内標準に揃える」というシナリオで **最適な組み合わせ** はどれか？",
+      "options": [
+        {"id": "A", "text": "全量を RAG（KB）で扱い、出力フォーマット統一は Fine-tuning または system prompt のテンプレートで実現する。週次更新分は EventBridge ベース ingestion", "is_correct": true, "explanation": "正解。情報の鮮度確保は RAG、形式制御は Fine-tuning またはプロンプト戦略の使い分けが定石。"},
+        {"id": "B", "text": "全部 Fine-tuning でカバーする", "is_correct": false, "explanation": "鮮度の高い情報を学習で扱うのはコスト面・整合性面で不適切。"},
+        {"id": "C", "text": "全部プロンプトに貼り付ける", "is_correct": false, "explanation": "10 年分は context window に収まらない。"},
+        {"id": "D", "text": "Continued Pre-training を毎週実行する", "is_correct": false, "explanation": "鮮度更新の手段として過剰でコスト的に非合理。"}
+      ],
+      "explanation": "実務では「鮮度 = RAG、形式・トーン = Fine-tuning（または高度な system prompt）、ドメイン語彙 = Continued Pre-training」と切り分ける。今回のケースは RAG 中心で十分、出力統一を補助的に学習または prompt template で固定するのがベスト。",
+      "references": [
+        {"title": "When to use RAG vs Fine-tuning", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"}
+      ],
+      "tags": ["rag-fine-tuning-mix", "decision", "evaluation", "saas", "format-control"],
+      "common_mistakes": [
+        "形式統一のために情報全量を Fine-tune",
+        "RAG と Fine-tune が排他的だと思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-039",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "End-to-end Design",
+      "subtopic": "新規構築",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "東海地方の製造業（架空企業 ToyoTec）が「設計図 PDF + 過去のトラブル事例（テキスト）+ 部品型番リスト」を扱うエンジニア向け RAG アシスタントをゼロから設計する。**最も適切なエンドツーエンド構成** は？（複数選択）",
+      "options": [
+        {"id": "A", "text": "S3（KMS 暗号化）→ Bedrock Knowledge Base、Hierarchical chunking、Hybrid search（型番マッチ用）、Titan Multimodal Embeddings（図面画像対応）", "is_correct": true, "explanation": "正解。階層構造のドキュメント、ID 一致、図面画像のいずれもカバーする組み合わせ。"},
+        {"id": "B", "text": "Cohere Rerank で top-50 → top-5 にリランキング、出力は Claude Sonnet で生成、Guardrails の Contextual Grounding を有効化", "is_correct": true, "explanation": "正解。精度向上 + 幻覚抑制を両立する。"},
+        {"id": "C", "text": "図面は OCR してテキスト化のみで処理する", "is_correct": false, "explanation": "図面の構造情報が失われ、型番と図解の対応が崩れる。"},
+        {"id": "D", "text": "Knowledge Base のベクトルストアに DynamoDB を選ぶ", "is_correct": false, "explanation": "DynamoDB は KB の標準ベクトルストアではない。"}
+      ],
+      "explanation": "製造業 RAG のベストプラクティス: (1) 暗号化された S3、(2) Hierarchical chunking で長文構造を保持、(3) Hybrid search で型番マッチ、(4) Multimodal embeddings で図面取込、(5) Reranker で精度向上、(6) Contextual Grounding で幻覚抑制、(7) 監査とアクセス管理。これらを組み合わせると現場で実用可能な高品質 RAG が構築できる。",
+      "references": [
+        {"title": "Bedrock Knowledge Bases best practices", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"}
+      ],
+      "tags": ["end-to-end", "manufacturing", "design", "multimodal", "best-practice"],
+      "common_mistakes": [
+        "OCR だけで図面処理を済ませる",
+        "型番マッチを semantic 単独で済ませる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "aip-c01-domain2-040",
+      "version": "1.0",
+      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-2", "name": "RAGアーキテクチャ", "weight_percent": 25},
+      "topic": "End-to-end Design",
+      "subtopic": "マルチテナント SaaS",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "ある B2B SaaS（顧客 100 社、各社平均 5 万ドキュメント）が「マルチテナント RAG プラットフォーム」を新規設計する。**満たすべき設計要素** はどれか？（複数選択）",
+      "options": [
+        {"id": "A", "text": "全顧客で 1 つの Knowledge Base を共有し、ドキュメントに `tenant_id` メタデータを付与、Retrieve API の filter でテナント分離する。IAM Role セッションタグで `tenant_id` を強制バインドする", "is_correct": true, "explanation": "正解。1 KB + metadata filter + IAM セッションタグはコストとセキュリティのバランスが優れる。"},
+        {"id": "B", "text": "テナントごとの利用量メトリクス（CloudWatch カスタムメトリクス）と Bedrock InvokeModel ログ（S3）を連携し、テナント別課金とアラートを実現する", "is_correct": true, "explanation": "正解。SaaS では使用量計測が必須。"},
+        {"id": "C", "text": "各テナントごとに専用の Knowledge Base を作成する（100 個の KB）", "is_correct": false, "explanation": "運用コスト・OCU 課金が爆発する。Service Quota にも引っかかる。"},
+        {"id": "D", "text": "テナント分離は不要（全データが同等）", "is_correct": false, "explanation": "B2B SaaS では情報漏洩で致命傷。必須要件。"}
+      ],
+      "explanation": "マルチテナント RAG SaaS の設計の柱は (1) ドキュメント単位の `tenant_id` メタデータと filter、(2) IAM セッションタグでアプリ層からテナント ID を強制注入、(3) テナント別 metering（CloudWatch + Bedrock invocation logs）、(4) noisy neighbor 対策の per-tenant 上限、(5) 監査ログのテナント別保管。これによりコスト効率とセキュリティを両立できる。",
+      "references": [
+        {"title": "Knowledge Bases metadata filtering", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html"},
+        {"title": "IAM session tags", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html"}
+      ],
+      "tags": ["multi-tenant", "saas", "design", "metadata-filter", "session-tags"],
+      "common_mistakes": [
+        "テナントごとに KB を分ける（コスト爆発）",
+        "アプリ層のみのフィルタで漏洩リスクを残す"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

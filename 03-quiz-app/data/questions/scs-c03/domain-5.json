@@ -1,0 +1,1052 @@
+{
+  "exam_code": "SCS-C03",
+  "exam_name": "AWS Certified Security – Specialty",
+  "version": "2026.04",
+  "total_questions": 35,
+  "domains": [
+    {
+      "id": "domain-5",
+      "name": "Data Protection",
+      "weight_percent": 18,
+      "question_count": 35
+    }
+  ],
+  "questions": [
+    {
+      "id": "scs-c03-domain5-001",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Customer Managed Keys vs AWS Managed Keys",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "AWS KMSにおける「カスタマー管理キー（Customer Managed Key）」と「AWS管理キー（AWS Managed Key）」の最も基本的な違いとして正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "カスタマー管理キーはキーポリシーをユーザが完全に制御できるが、AWS管理キーはキーポリシーをユーザが変更できない", "is_correct": true, "explanation": "正解。AWS管理キー（aws/s3, aws/rds等）のキーポリシーはAWSが制御し、ユーザは編集できない。カスタマー管理キーはキーポリシー、ローテーション、削除タイミング等をユーザが制御できる。"},
+        {"id": "B", "text": "AWS管理キーは無料だが、カスタマー管理キーは1キーあたり月額10ドルかかる", "is_correct": false, "explanation": "誤り。両方ともキーストレージは月額1ドル、API呼び出しは同様の料金。AWS管理キーの月額料金は不要だが、それは料金体系の主要な違いではない。"},
+        {"id": "C", "text": "カスタマー管理キーは対称鍵のみだが、AWS管理キーは非対称鍵もサポートする", "is_correct": false, "explanation": "誤り。カスタマー管理キーは対称・非対称・HMAC等多様なタイプをサポートし、AWS管理キーよりむしろ柔軟。"},
+        {"id": "D", "text": "AWS管理キーはマルチリージョンキーとして作成できるが、カスタマー管理キーはリージョン固有である", "is_correct": false, "explanation": "誤り。マルチリージョンキーはカスタマー管理キーの機能であり、AWS管理キーはマルチリージョン化できない。"}
+      ],
+      "explanation": "AWS KMSのキータイプの最も重要な違いはキーポリシーの所有権である。カスタマー管理キーはユーザが作成・管理し、キーポリシー、IAM委任、ローテーション、削除をすべてコントロールできる。AWS管理キーはAWSサービス（S3, RDS等）が自動作成し、キーポリシーはAWSが管理しユーザは変更不可。よりきめ細かなアクセス制御や監査要件がある場合はカスタマー管理キーを使う。",
+      "references": [
+        {"title": "AWS KMS keys", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys"}
+      ],
+      "tags": ["kms", "customer-managed-key", "aws-managed-key", "key-policy", "encryption"],
+      "common_mistakes": [
+        "AWS管理キーでもキーポリシーを編集できると誤解する",
+        "料金の違いが本質と思い込む",
+        "マルチリージョンキーはAWS管理キーでも使えると勘違いする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-002",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Auto Key Rotation",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "AWS KMSのカスタマー管理キー（対称鍵）に対する自動キーローテーションについて、正しい説明はどれか？",
+      "options": [
+        {"id": "A", "text": "ローテーション周期は90日固定で変更できない", "is_correct": false, "explanation": "誤り。デフォルトは年1回（365日）で、現在は90日〜2,560日の範囲でカスタマイズ可能。"},
+        {"id": "B", "text": "新しいキーマテリアルが生成されるが、KMS Key IDは同じままで、過去の暗号文も復号可能", "is_correct": true, "explanation": "正解。KMS自動ローテーションはキー裏側のキーマテリアルを更新し、Key IDは変わらず、過去のキーマテリアルも保持されるため過去の暗号文の復号が継続できる。"},
+        {"id": "C", "text": "ローテーション後は古いキーマテリアルが破棄されるため、過去の暗号文を再暗号化する必要がある", "is_correct": false, "explanation": "誤り。古いキーマテリアルは保持され続けるので、再暗号化は不要。これがKMS自動ローテーションの大きな利点。"},
+        {"id": "D", "text": "インポートされた外部キーマテリアル（BYOK）も自動ローテーションの対象となる", "is_correct": false, "explanation": "誤り。インポートされたキーマテリアル（External Key）は自動ローテーションをサポートしない。手動で新しいキーを作成し、エイリアスを切り替える必要がある。"}
+      ],
+      "explanation": "KMSの自動キーローテーションは、対称カスタマー管理キーで利用可能で、AWSが内部的にキーマテリアルを更新する。Key IDやARNは変わらず、過去のマテリアルも保持されるため、暗号文の互換性は維持される。デフォルト365日、90日〜2,560日の範囲でカスタマイズ可能。インポートされたキーマテリアル、非対称鍵、HMACキー、AWS管理キーの一部には適用が異なる。",
+      "references": [
+        {"title": "Rotating AWS KMS keys", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"}
+      ],
+      "tags": ["kms", "key-rotation", "byok", "encryption", "key-material"],
+      "common_mistakes": [
+        "ローテーション後は再暗号化が必要と誤解する",
+        "BYOKキーも自動ローテーションできると思い込む",
+        "ローテーション周期が固定だと思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-003",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS vs CloudHSM",
+      "subtopic": "Service Selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある医療系SaaS企業がHIPAA対応のために暗号化キーの管理サービスを選定している。要件は以下：(1) 鍵が顧客の専用ハードウェアに格納されること、(2) FIPS 140-2 Level 3 認証が必要、(3) AWSオペレータからも鍵にアクセスできない構成、(4) 自社アプリケーションはPKCS#11、JCEなど標準APIで利用したい。最も適切なサービスは？",
+      "options": [
+        {"id": "A", "text": "AWS KMS のカスタマー管理キーを利用し、外部キーストア（XKS）は使わずに通常モードで運用する", "is_correct": false, "explanation": "誤り。通常のKMSはFIPS 140-2 Level 3を満たさず（Level 3はクラスタとして満たすが、共有HSMである）、専用ハードウェア要件・PKCS#11標準APIも提供しない。"},
+        {"id": "B", "text": "AWS CloudHSM クラスターを構築し、PKCS#11/JCE/CNG経由でアプリケーションから利用する", "is_correct": true, "explanation": "正解。CloudHSMはFIPS 140-2 Level 3認証の専用HSMハードウェアを顧客に割り当て、AWSはHSM内のキーにアクセスできない。PKCS#11、JCE、Microsoft CNG等の業界標準APIをサポートする。"},
+        {"id": "C", "text": "AWS Secrets Manager にキーを保存し、シークレットローテーションを有効化する", "is_correct": false, "explanation": "誤り。Secrets Managerは認証情報の保管・ローテーション用で、HSM要件、FIPS 140-2 Level 3、専用ハードウェア要件のいずれも満たさない。"},
+        {"id": "D", "text": "AWS KMS のマルチリージョンキーを構成し、リージョン間で同じKey IDを使用する", "is_correct": false, "explanation": "誤り。マルチリージョン機能は可用性・障害復旧目的で、ハードウェア専有性やFIPS 140-2 Level 3要件には対応しない。"}
+      ],
+      "explanation": "AWS KMS と CloudHSM の使い分けは試験頻出。CloudHSMは「専用ハードウェア」「FIPS 140-2 Level 3」「PKCS#11/JCE/CNGなどの業界標準API」「AWSオペレータも鍵にアクセス不可」が要件のときに選ぶ。これら以外（特にAWSサービスとの統合のしやすさが優先）であれば、KMSが圧倒的に簡単で安価。CloudHSMは運用負荷とコストが高いので、要件があるときだけ選択する。",
+      "references": [
+        {"title": "AWS CloudHSM User Guide", "url": "https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html"},
+        {"title": "AWS KMS vs AWS CloudHSM", "url": "https://docs.aws.amazon.com/kms/latest/cryptographic-details/key-mgmt.html"}
+      ],
+      "tags": ["cloudhsm", "kms", "fips-140-2", "hipaa", "pkcs11"],
+      "common_mistakes": [
+        "FIPS 140-2 Level 3要件をKMSで満たせると誤解する",
+        "PKCS#11標準APIがKMSで使えると思い込む",
+        "HSM要件がない場合でもCloudHSMを選んでしまう（コスト過剰）"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-004",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Key Policy vs IAM Policy",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある企業のセキュリティ管理者が、開発アカウントのIAMユーザ「devuser」がKMSカスタマー管理キー「dev-key」で kms:Decrypt を実行できるようにしたい。dev-keyのキーポリシーには `Principal: arn:aws:iam::111111111111:root, Action: kms:* , Resource: *` のステートメントのみが存在する。devuser に kms:Decrypt の IAMポリシーをアタッチした。devuser は復号できるか？",
+      "options": [
+        {"id": "A", "text": "できる。キーポリシーのrootプリンシパルがアカウント内のすべてのIAMアクションを委任しているため、IAMポリシーが最終的な許可を決定する", "is_correct": true, "explanation": "正解。キーポリシーで `Principal: account-root, Action: kms:*` を許可することは、当該アカウントのIAMポリシーにKMSアクションの権限委任を許可する意味を持つ（IAM委任モデル）。これにより、IAMポリシーで kms:Decrypt を付与すれば実行可能になる。"},
+        {"id": "B", "text": "できない。キーポリシーで明示的に devuser を Principal として記載しなければ、IAMポリシーの権限は無効である", "is_correct": false, "explanation": "誤り。キーポリシーで rootプリンシパルにフルアクセスを与えていれば、IAM側でアクセス管理できる。Principalで個別ユーザの記載は必須ではない。"},
+        {"id": "C", "text": "できない。KMSではIAMポリシーが評価されず、キーポリシーのみがアクセスを決定する", "is_correct": false, "explanation": "誤り。KMSは「キーポリシー OR IAMポリシー」のORロジックで評価される。ただしキーポリシーがIAMに委任を許可していることが前提条件となる。"},
+        {"id": "D", "text": "できる。KMSアクションはデフォルトで全アカウント内ユーザに自動的に許可される", "is_correct": false, "explanation": "誤り。KMSはデフォルト拒否（明示的な許可が必要）。キーポリシーまたはIAMポリシーで明示的な権限が必要。"}
+      ],
+      "explanation": "KMSのアクセス制御は他のAWSサービスと異なり、キーポリシーが必ず存在し、最初の関門となる。キーポリシーで `Principal: account-root, Action: kms:*` を記述することで、当該アカウントのIAM管理者にアクセス制御を委任できる（IAM委任モデル）。この前提があって初めてIAMポリシーが効いてくる。キーポリシーがrootに何も与えていない場合、IAMポリシーがあってもアクセスできない。これがKMS固有のアクセス制御モデルである。",
+      "references": [
+        {"title": "Key policies in AWS KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"},
+        {"title": "Using key policies and IAM policies together", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html"}
+      ],
+      "tags": ["kms", "key-policy", "iam-policy", "delegation", "access-control"],
+      "common_mistakes": [
+        "キーポリシーで明示的にユーザPrincipalが必要と誤解する",
+        "IAMポリシー単独でKMSアクセスできると思い込む",
+        "キーポリシーとIAMポリシーがANDで評価されると勘違いする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-005",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Multi-Region Keys",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業（東海地方）のグローバル企業がDR要件として、東京リージョンとフランクフルトリージョンでDynamoDBのGlobal Tableを運用している。両リージョンで同じKMSキーを使用してアプリケーションが透過的に暗号化・復号できる構成にしたい。最適な実装は？",
+      "options": [
+        {"id": "A", "text": "東京で作成したカスタマー管理キーをCloudFormation StackSetsでフランクフルトに同名で作成し、エイリアスを揃える", "is_correct": false, "explanation": "誤り。同じ名前でも別々に作成されたKMSキーはKey IDが異なるため、暗号文には互換性がない（リージョン跨ぎで復号できない）。"},
+        {"id": "B", "text": "東京でマルチリージョンプライマリキーを作成し、フランクフルトにレプリカキーを作成する", "is_correct": true, "explanation": "正解。マルチリージョンキーは同じKey ID、同じキーマテリアル、同じローテーション履歴を持ち、リージョン間で暗号文の相互復号が可能。Global Tableのようなマルチリージョン構成に最適。"},
+        {"id": "C", "text": "東京のキーをエクスポートし、フランクフルトでBYOK（インポート）として登録する", "is_correct": false, "explanation": "誤り。インポートされたキーはマテリアルが同じでもKey IDが異なるため、暗号文の互換性はない。またBYOKは自動ローテーションも非対応。"},
+        {"id": "D", "text": "AWS Backupでクロスリージョンコピー時にKMSキーを動的に再暗号化する", "is_correct": false, "explanation": "誤り。AWS BackupとDynamoDB Global Tableは異なるサービス。Global Tableの透過的なリージョン間レプリケーションには適用しにくい。"}
+      ],
+      "explanation": "マルチリージョンキー（MRK）はKMSの2021年以降の機能で、Key ID（接頭辞 mrk-）と内部のキーマテリアルがレプリカ間で同一になる。これにより、リージョンA で暗号化したものをリージョンBで復号可能。Global DynamoDB、S3 CRR、Aurora Globalなどでよく使われる。注意点として、マルチリージョンキーは独立したキーであり、ローテーションも独立。プライマリは1つで、変更（プライマリの移動）も可能。",
+      "references": [
+        {"title": "Multi-Region keys in AWS KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html"}
+      ],
+      "tags": ["kms", "multi-region-key", "dynamodb-global-table", "disaster-recovery", "manufacturing"],
+      "common_mistakes": [
+        "同名のキーを2リージョンに作るだけで互換性があると誤解する",
+        "BYOKでマルチリージョン互換性が得られると思い込む",
+        "KMSキーがリージョン非依存だと勘違いする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-006",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Grants",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AWS Lambda関数が一時的にKMSキーで復号する権限を必要としている。Lambdaの実行ロールはアカウント全体で共通であり、キーポリシーを修正したくない。柔軟かつ最小権限の原則に沿った実装は？",
+      "options": [
+        {"id": "A", "text": "kms:CreateGrant を使ってLambda実行ロールに対して必要なオペレーション（Decrypt等）の一時的なグラントを作成する", "is_correct": true, "explanation": "正解。Grantsは特定のプリンシパルに、特定のオペレーションを許可する一時的なメカニズム。キーポリシー修正なしに権限委任でき、必要に応じてRetire/Revokeできる。"},
+        {"id": "B", "text": "キーポリシーにLambda実行ロールのARNを追加して permanent な権限を与える", "is_correct": false, "explanation": "誤り。永続的な権限になり、キーポリシー修正が必要。一時的な権限委任には適さない。"},
+        {"id": "C", "text": "AWS Secrets Managerにキーを保存し、Lambdaがシークレット経由でアクセスする", "is_correct": false, "explanation": "誤り。KMSキーマテリアルはSecrets Managerに保存・取得できない（KMSキーは外部に出ない設計）。"},
+        {"id": "D", "text": "STS AssumeRoleで一時的なKMSアクセスロールを引き受ける", "is_correct": false, "explanation": "誤り。STSは認証情報の発行であり、KMSキーポリシーがそのロールにアクセスを許可していなければ意味がない。Grantsの方が直接的に当該の役割を果たす。"}
+      ],
+      "explanation": "KMS Grantsはキーポリシーを変更せずに一時的な権限委任ができる仕組み。AWSサービス（EBS、Lambda、Auto Scaling等）との統合で内部的にも使われている。Grantには CreateGrant、ListGrants、RetireGrant、RevokeGrant のAPIがあり、Constraint（EncryptionContext等）で範囲を絞れる。キーポリシー修正よりも柔軟で、特に大量・短期の権限委任に適する。",
+      "references": [
+        {"title": "Grants in AWS KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/grants.html"}
+      ],
+      "tags": ["kms", "grants", "lambda", "least-privilege", "temporary-access"],
+      "common_mistakes": [
+        "キーポリシー追加が唯一の方法と思い込む",
+        "Grantsの存在を知らない",
+        "STSと混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-007",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "S3 Encryption",
+      "subtopic": "SSE Types Comparison",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある教育系SaaS企業が学生の成績データをS3に保存している。要件：(1) 暗号化キーをAWSで管理したいが監査ログ（CloudTrail）でキー使用状況を把握したい、(2) PUT時の追加コストは最小化、(3) 既存のIAMで鍵アクセス制御をしたい。最適なS3暗号化方式は？",
+      "options": [
+        {"id": "A", "text": "SSE-S3（Amazon S3 managed keys）", "is_correct": false, "explanation": "誤り。SSE-S3はAWS側でキー管理されるが、CloudTrailでキー使用ログが取れず、IAMで個別のキーアクセス制御もできない。"},
+        {"id": "B", "text": "SSE-KMS（AWS KMS managed keys）+ S3 Bucket Keys", "is_correct": true, "explanation": "正解。SSE-KMSはCloudTrailで kms:Decrypt 等のログが取れ、IAM/キーポリシーでアクセス制御ができる。Bucket Keys を有効化することでオブジェクト毎のKMS呼び出しが減り、KMS料金が約99%削減される。"},
+        {"id": "C", "text": "SSE-C（Customer Provided Keys）", "is_correct": false, "explanation": "誤り。SSE-Cはクライアントがキーを毎回提供する必要があり、AWSでキー管理しないため要件と矛盾する。"},
+        {"id": "D", "text": "DSSE-KMS（Dual-layer Server-Side Encryption with KMS）", "is_correct": false, "explanation": "誤り。DSSE-KMSは2層暗号化で米国DoD要件等の特殊要件向け。教育SaaSでは過剰でコスト高、Bucket Keys非対応。"}
+      ],
+      "explanation": "S3暗号化方式の使い分け: SSE-S3はAWS完全管理（最もシンプル、無料）、SSE-KMSはKMS管理（IAM制御・監査可能）、SSE-Cはクライアント管理キー（独自管理が必要なケース）、DSSE-KMSは2層暗号化（DoD/NSA要件等）。SSE-KMSのコスト懸念にはBucket Keysが有効で、各オブジェクトのKMS呼び出しを削減し、KMS料金を最大99%削減できる。",
+      "references": [
+        {"title": "Protecting data with server-side encryption", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html"},
+        {"title": "Reducing the cost of SSE-KMS with Bucket Keys", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html"}
+      ],
+      "tags": ["s3", "sse-kms", "bucket-keys", "encryption", "education"],
+      "common_mistakes": [
+        "SSE-S3でCloudTrail監査が取れると誤解",
+        "Bucket Keysの存在を知らずSSE-KMSのコストが高いと思い込む",
+        "DSSE-KMSをBucket Keysと併用できると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-008",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Secrets Manager vs Parameter Store",
+      "subtopic": "Service Selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "あるFinTechスタートアップがコスト削減を進めている。アプリケーションが利用する秘密情報のうち、(1) RDSのマスターパスワード、(2) サードパーティAPIキー、(3) 設定値（DB接続文字列・タイムアウト等）がある。最も適切な保管戦略は？",
+      "options": [
+        {"id": "A", "text": "すべてSecrets Managerで管理し、定期ローテーションを設定する", "is_correct": false, "explanation": "誤り。設定値（タイムアウト等）まで全てSecrets Managerに入れるのは過剰でコスト高（シークレット1つあたり月額0.40 USD + APIコール料金）。"},
+        {"id": "B", "text": "RDSマスターパスワードはSecrets Manager（自動ローテーション統合あり）、サードパーティAPIキーもSecrets Manager（クロスアカウント・レプリカ対応）、設定値はParameter StoreのStringで管理", "is_correct": true, "explanation": "正解。Secrets ManagerはRDS統合の自動ローテーション、クロスリージョンレプリカ、リソースベースポリシーをサポート。設定値（非機密）はParameter Storeで無料運用が最適。"},
+        {"id": "C", "text": "すべてParameter StoreのSecureStringで管理する", "is_correct": false, "explanation": "誤り。Parameter StoreはRDSとの自動ローテーション統合が弱く、Lambdaを自作する必要がある。クロスリージョンレプリカもなく、運用負荷が高い。"},
+        {"id": "D", "text": "S3にKMS暗号化して保存し、IAMポリシーで管理する", "is_correct": false, "explanation": "誤り。シークレット管理にS3を使うのはアンチパターン。バージョニング、ローテーション、参照ABIが整備されておらず、実装コストが高い。"}
+      ],
+      "explanation": "Secrets ManagerとParameter Storeの使い分けは試験頻出。Secrets Managerは「自動ローテーション（RDS/Redshift/DocumentDB統合）」「クロスアカウント共有（リソースベースポリシー）」「クロスリージョンレプリカ」が必要なときに選ぶ。Parameter StoreのStandard tierは無料で、SecureStringでKMS暗号化もできるが、自動ローテーションは自作Lambdaが必要。設定値・低機密情報はParameter Store、本番秘密はSecrets Managerが推奨パターン。",
+      "references": [
+        {"title": "AWS Secrets Manager", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"},
+        {"title": "AWS Systems Manager Parameter Store", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html"}
+      ],
+      "tags": ["secrets-manager", "parameter-store", "cost-optimization", "rotation", "fintech"],
+      "common_mistakes": [
+        "全部Secrets Managerにするとコストが膨らむ",
+        "Parameter StoreでもRDS自動ローテーションが標準と誤解",
+        "S3でシークレット管理するアンチパターンを採用"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-009",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Secrets Manager",
+      "subtopic": "Cross-Account Access",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アカウントA（管理アカウント）にあるSecrets Managerのシークレットを、アカウントB（ワークロード）のIAMロールから読み取りたい。シークレットはカスタマー管理KMSキーで暗号化されている。必要な構成として正しいものはどれか？（複数選択）",
+      "options": [
+        {"id": "A", "text": "アカウントAのシークレットにリソースベースポリシーを設定し、アカウントBのIAMロールに secretsmanager:GetSecretValue を許可する", "is_correct": true, "explanation": "正解。Secrets Managerはリソースベースポリシーをサポートし、クロスアカウントアクセスを許可できる。"},
+        {"id": "B", "text": "アカウントAのKMSキーのキーポリシーで、アカウントBのIAMロールに kms:Decrypt を許可する", "is_correct": true, "explanation": "正解。シークレットがカスタマー管理キーで暗号化されている場合、その復号にもKMSキーへのアクセスが必要。AWS管理キー（aws/secretsmanager）はクロスアカウントで使えないため、必ずカスタマー管理キーを使う。"},
+        {"id": "C", "text": "アカウントBのIAMロールに secretsmanager:GetSecretValue と kms:Decrypt のIAMポリシーを付与する", "is_correct": true, "explanation": "正解。アカウントBのIAM側でも当該アクションを許可する必要がある。リソース側とIAM側両方の許可が必要。"},
+        {"id": "D", "text": "アカウントAでSecretsをアカウントBにレプリカし、レプリカ先のシークレットを参照させる", "is_correct": false, "explanation": "誤り。レプリカは別リージョンへの複製で、別アカウントへのレプリカではない。クロスアカウントアクセスにはリソースポリシーが必要。"},
+        {"id": "E", "text": "アカウントBで同名のシークレットを作成し、アカウントAから値を同期する", "is_correct": false, "explanation": "誤り。シークレットの2重管理になりアンチパターン。Secrets Managerはクロスアカウント参照を直接サポートする。"}
+      ],
+      "explanation": "Secrets Managerのクロスアカウントアクセスでは、(1) シークレット側のリソースベースポリシー、(2) KMSキー側のキーポリシー（カスタマー管理キー必須）、(3) アクセス側IAMロールのIAMポリシー、の3つすべてが必要。AWS管理キー（aws/secretsmanager）はクロスアカウントで利用できないため、カスタマー管理キーで暗号化することが必須。レプリカはリージョン跨ぎの可用性向上機能で、アカウント跨ぎではない。",
+      "references": [
+        {"title": "Permissions to AWS Secrets Manager secrets for users in a different account", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples_cross.html"}
+      ],
+      "tags": ["secrets-manager", "cross-account", "resource-policy", "kms", "mrq"],
+      "common_mistakes": [
+        "AWS管理キーのままクロスアカウント共有しようとする",
+        "リソースポリシーだけで動くと思い込み、IAM側を忘れる",
+        "レプリカでアカウント跨ぎができると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-010",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Secrets Manager",
+      "subtopic": "Automatic Rotation",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora PostgreSQLのマスターパスワードをSecrets Managerで30日ごとにローテーションしたい。アプリケーションには中断が許されない（24x7サービス）。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "Secrets Managerの「マルチユーザローテーション戦略（alternating users）」を使い、2つのDBユーザを交互に切り替える", "is_correct": true, "explanation": "正解。alternating users方式は2ユーザを交互にローテーションし、新しいパスワードのテスト・反映後も旧ユーザは引き続き有効なため、移行中の接続が中断されない。24x7要件に最適。"},
+        {"id": "B", "text": "Secrets Managerの「シングルユーザローテーション（rotating user）」で、マスターパスワードを30日ごとに変更する", "is_correct": false, "explanation": "誤り。シングルユーザ方式は同じユーザのパスワードを変更するため、ローテーション中に短時間の接続失敗リスクがある。24x7要件には alternating users が推奨。"},
+        {"id": "C", "text": "Lambda関数を自作し、CloudWatch Eventsで30日毎に起動してパスワード更新する", "is_correct": false, "explanation": "誤り。Secrets Managerが提供する管理されたローテーション機能を使うべき。自作はメンテナンス負荷が高い。"},
+        {"id": "D", "text": "RDSのIAM認証に切り替え、パスワード自体を不要にする", "is_correct": false, "explanation": "誤り。IAM認証も有効な選択肢ではあるが、設問の要件（30日ローテーションをSecrets Managerで実装）と整合しない。アプリ側の改修も必要。"}
+      ],
+      "explanation": "Secrets Managerのローテーション戦略には2種類ある: (1) シングルユーザ（rotating user）= 同じユーザのパスワードを変える、ローテ中に短時間の接続失敗リスク、(2) マルチユーザ（alternating users）= 2ユーザを交互に使い、ダウンタイムなし。24x7サービスにはマルチユーザ方式が推奨。Aurora/RDS/DocumentDB/Redshiftは標準ローテーションテンプレートを提供している。",
+      "references": [
+        {"title": "Rotation strategies in AWS Secrets Manager", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets_strategies.html"}
+      ],
+      "tags": ["secrets-manager", "rotation", "rds", "aurora", "high-availability"],
+      "common_mistakes": [
+        "シングルユーザで24x7要件を満たせると誤解",
+        "alternating users戦略の存在を知らない",
+        "Lambdaの自作が王道と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-011",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "ACM",
+      "subtopic": "Public vs Private CA",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "AWS Certificate Manager (ACM) の Public 証明書と ACM Private CA で発行される証明書の最も重要な違いは何か？",
+      "options": [
+        {"id": "A", "text": "Public証明書はインターネットの公開信頼ストアで信頼されるが、Private CA証明書は内部で配布した信頼ストアでしか信頼されない", "is_correct": true, "explanation": "正解。Public証明書はAmazon Trust Servicesが署名し、ブラウザ・OSが既に信頼しているCAから発行されるため、外部公開サービスのTLSに使える。Private CA証明書はプライベート信頼チェーンで、内部利用（mTLS、社内サービス）に適する。"},
+        {"id": "B", "text": "Public証明書は有料、Private CA証明書は無料", "is_correct": false, "explanation": "誤り。逆。ACM Public証明書（AWSサービスにデプロイする場合）は無料。Private CAは月額料金（約400 USD）+発行料金がかかる。"},
+        {"id": "C", "text": "Public証明書は最大3年、Private CA証明書は最大10年の有効期間", "is_correct": false, "explanation": "誤り。ACM Public証明書は最大13ヶ月（パブリックCAの業界標準）、Private CAはユーザが有効期間を設定可能。"},
+        {"id": "D", "text": "Public証明書はTLSのみ、Private CA証明書はSSL/TLS両対応", "is_correct": false, "explanation": "誤り。両方ともTLS用で、機能の違いではない。"}
+      ],
+      "explanation": "ACMには2種類ある: (1) ACM Public証明書 = Amazon Trust Servicesが署名、世界中のブラウザ・OSが信頼、ELB/CloudFront/API Gateway等のAWSサービスに無料でデプロイ可能、最大有効期間13ヶ月。(2) ACM Private CA = 顧客の内部CA、独自に信頼ストアを配布する必要がある、mTLS（クライアント認証）や社内マイクロサービス間TLSに最適、月額課金。Private CAはACM CertificateのSubjectやSubject Alternative Nameの自由度が高い反面、外部からの信頼は得られない。",
+      "references": [
+        {"title": "AWS Certificate Manager", "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"},
+        {"title": "AWS Private Certificate Authority", "url": "https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html"}
+      ],
+      "tags": ["acm", "private-ca", "tls", "certificate", "trust-store"],
+      "common_mistakes": [
+        "PublicとPrivateの料金体系を逆に覚える",
+        "Private CA証明書もブラウザでデフォルト信頼されると誤解",
+        "ACM Public証明書がインポート以外に有効期間設定できると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-012",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Macie",
+      "subtopic": "PII Discovery",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある医療機器メーカーが、患者データが誤ってS3に保存されていないか継続的に検査したい。日本特有の個人識別情報（マイナンバー、保険証番号など）も検出対象とし、検出時には自動でバケットを隔離タグ付けしたい。最適な構成は？",
+      "options": [
+        {"id": "A", "text": "Amazon Macie を有効化し、カスタムデータ識別子（Custom Data Identifier）でマイナンバー・保険証番号の正規表現を定義、findings を EventBridge → Lambda で自動タグ付け", "is_correct": true, "explanation": "正解。Macieは標準でAWSグローバルなPII（クレジットカード、SSN等）を検出するが、日本固有のマイナンバー等はカスタムデータ識別子（CDI）で正規表現定義する。EventBridge連携で自動レスポンスも標準パターン。"},
+        {"id": "B", "text": "AWS Glue DataBrewでデータプロファイリングを行い、検出ルールをLambdaで実装する", "is_correct": false, "explanation": "誤り。Glue DataBrewはデータ準備ツールで、PIIスキャン専用ではない。継続スキャンや管理されたPII検出機能は持たない。"},
+        {"id": "C", "text": "Amazon Comprehend のDetectPiiEntitiesを各オブジェクトで呼び出すLambdaを実装する", "is_correct": false, "explanation": "誤り。ComprehendのPII検出は技術的には使えるが、S3全体のスキャン管理機能はMacieが優位。マイナンバー等の日本固有データはMacieのCDIの方が柔軟。"},
+        {"id": "D", "text": "AWS Configのカスタムルールで「機密データを含むかどうか」を評価する", "is_correct": false, "explanation": "誤り。AWS Configは設定状態の評価ツールで、データ内容を検査する機能を持たない。"}
+      ],
+      "explanation": "Amazon Macieは機械学習でS3内の機密データを自動検出する。グローバルなPII（クレジットカード、SSN、住所等）は標準で検出するが、日本固有（マイナンバー、健康保険証番号、運転免許証番号等）は標準データ識別子に含まれていないことがあるため、カスタムデータ識別子（Custom Data Identifier）で正規表現と検出ロジックを定義する。Allowリスト（除外パターン）も設定可能。EventBridge連携で自動応答（タグ付け、Lambdaトリガー、SNS通知）が定型実装。",
+      "references": [
+        {"title": "Custom data identifiers in Amazon Macie", "url": "https://docs.aws.amazon.com/macie/latest/user/custom-data-identifiers.html"}
+      ],
+      "tags": ["macie", "pii", "custom-data-identifier", "japan", "healthcare"],
+      "common_mistakes": [
+        "Macie標準で日本固有のPIIも全て検出されると誤解",
+        "Comprehend PII検出をMacieの代替と考える",
+        "AWS Configでデータ内容検査ができると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-013",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "S3 Object Lock",
+      "subtopic": "Compliance Mode vs Governance Mode",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある会計事務所がSEC 17a-4(f)準拠の保存要件として、監査ログを7年間誰も削除・改ざんできない状態で保管したい。AWSアカウントのrootユーザでも削除できないことを保証したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "S3 Object Lock の Governance Mode で7年間 Retention 設定", "is_correct": false, "explanation": "誤り。Governance Modeは特権ユーザ（s3:BypassGovernanceRetention 権限）が削除可能。SECコンプライアンス要件には不十分。"},
+        {"id": "B", "text": "S3 Object Lock の Compliance Mode で7年間 Retention 設定（Bucket Default Retention 含む）", "is_correct": true, "explanation": "正解。Compliance Modeでは、設定後はrootユーザを含めて誰も短縮・削除できない（保持期間中）。SEC 17a-4(f)、CFTC、FINRA等の規制要件に対応するモード。"},
+        {"id": "C", "text": "S3 Versioning と MFA Delete を有効化し、IAM ポリシーで s3:DeleteObject を拒否", "is_correct": false, "explanation": "誤り。MFA DeleteはMFAデバイス保有者なら削除可能で、Object Lockの強制保持機能は持たない。SEC要件は満たさない。"},
+        {"id": "D", "text": "S3 Glacier Vault Lock の Vault Lock Policy で7年間 Retention", "is_correct": false, "explanation": "部分的に正しい。Glacier Vault LockもWORM要件に対応するが、設問のシナリオで監査ログをS3に保存している場合、S3 Object Lock Compliance Modeが標準解。両方ともSEC 17a-4(f)対応として承認されている。"}
+      ],
+      "explanation": "S3 Object Lockには2つのモードがある: (1) Governance Mode = 特定の権限を持つユーザは削除可能（柔軟性あり）、(2) Compliance Mode = root含め誰も削除・短縮不可（最強のWORM保証）。SEC 17a-4(f), FINRA, CFTC等の金融規制ではCompliance Modeが推奨。Object Lockには Retention（期間ベース）と Legal Hold（解除されるまで無期限）がある。設定にはバケットでObject Lockを有効化し（バケット作成時のみ可能なケースもあった）、デフォルト保持を設定する。",
+      "references": [
+        {"title": "S3 Object Lock", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"},
+        {"title": "S3 Object Lock retention modes", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-retention-modes"}
+      ],
+      "tags": ["s3", "object-lock", "compliance-mode", "sec-17a-4", "worm"],
+      "common_mistakes": [
+        "Governance ModeでSEC要件を満たせると誤解",
+        "MFA DeleteがObject Lockと同等と思い込む",
+        "Compliance Modeはrootで解除できると勘違い"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-014",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "BYOK Limitations",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "AWS KMS にインポートした外部キーマテリアル（BYOK）に関する制約として正しいものはどれか？（複数選択）",
+      "options": [
+        {"id": "A", "text": "自動キーローテーションがサポートされない", "is_correct": true, "explanation": "正解。インポートされたキーマテリアルはAWS側で生成していないため、自動ローテーション機能は使えない。代替として手動で新キーを作成し、エイリアスを切り替える運用が必要。"},
+        {"id": "B", "text": "インポートしたキーマテリアルはAWSがバックアップしないため、紛失時のリスクは顧客が持つ", "is_correct": true, "explanation": "正解。AWSはインポートキーマテリアルをバックアップしない。元のキーマテリアルを失うと暗号文が永久に復号できなくなる。再インポートも可能だが、元のマテリアルがなければ不可能。"},
+        {"id": "C", "text": "インポート時に有効期限（expiration）を設定できる", "is_correct": true, "explanation": "正解。BYOKでは expiration model を選択でき、KEY_MATERIAL_EXPIRES の場合は期限を設定し、期限後はキーマテリアルがKMSから削除される。"},
+        {"id": "D", "text": "マルチリージョンキーとしてインポートできる", "is_correct": false, "explanation": "誤り。マルチリージョンキーはBYOKでも作成できるが、同じキーマテリアルを各リージョンに別途インポートする必要があり制約が多い（特に拡張時）。"},
+        {"id": "E", "text": "非対称キー（RSA・ECC）はBYOKでインポートできない", "is_correct": false, "explanation": "誤り。RSA・ECCの非対称キーマテリアルもインポート可能（ただし制約あり）。"}
+      ],
+      "explanation": "BYOK（Bring Your Own Key）は規制要件（自社HSMで生成したキーをAWSで使う等）で利用される。主要な制約: (1) 自動ローテーション不可（手動運用）、(2) AWSはバックアップしない（顧客責任）、(3) expirationを設定できる（キーマテリアル期限）、(4) リインポート時は同じキーマテリアルが必要。これらの制約を理解した上で、BYOKを選ぶ理由（コンプライアンス、HSM由来性の証明等）が明確であることが重要。",
+      "references": [
+        {"title": "Importing key material in AWS KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"}
+      ],
+      "tags": ["kms", "byok", "key-import", "rotation", "mrq"],
+      "common_mistakes": [
+        "BYOKキーも自動ローテーション可能と誤解",
+        "AWSがインポートキーマテリアルをバックアップしてくれると思い込む",
+        "BYOKはコンプライアンス以外の場面でも常に有利と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-015",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Encryption in Transit",
+      "subtopic": "Load Balancer TLS",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "B2B SaaS企業が顧客向けAPIをALBでホスティングしている。要件: (1) TLS 1.2以上、(2) 弱いCipher Suiteの除外、(3) PCI-DSS準拠の暗号スイート、(4) 自動ローテーション。最適な構成は？",
+      "options": [
+        {"id": "A", "text": "ACM Public証明書をALBにアタッチし、ALBのSecurity Policyで `ELBSecurityPolicy-TLS13-1-2-2021-06` を選択", "is_correct": true, "explanation": "正解。ACMが証明書を自動更新（renewal）し、ALBのSecurity PolicyでTLSバージョン・Cipher Suiteを制御できる。TLS13-1-2-2021-06はTLS 1.2/1.3対応で弱いCipherを排除している。"},
+        {"id": "B", "text": "自己署名証明書をALBにインポートし、TLS Listenerで`Negotiated`を選択", "is_correct": false, "explanation": "誤り。自己署名証明書は外部クライアントから信頼されない。また「Negotiated」は古いSecurity Policyを許容する可能性がある。"},
+        {"id": "C", "text": "Network Load Balancer (NLB) でTCPパススルーを構成し、EC2上でTLS終端する", "is_correct": false, "explanation": "誤り。EC2上でTLS終端する場合、証明書のローテーションを自前管理する必要があり運用負荷が高い。ACM自動更新の利点が活かせない。"},
+        {"id": "D", "text": "CloudFront経由でALBに接続し、CloudFront側でACM証明書をus-east-1で管理する", "is_correct": false, "explanation": "部分的に正しいが、設問の「ALBで終端」という前提と矛盾。CloudFrontを必要としないなら追加の依存を増やすだけ。"}
+      ],
+      "explanation": "ALBでTLSを実装する標準パターンは(1) ACM Public証明書を発行（無料、自動更新）、(2) ALB Listenerにアタッチ、(3) Security Policyで許容するTLSバージョン・Cipher Suiteを制御。Security PolicyにはTLS 1.0/1.1/1.2/1.3別、FIPS対応版（fips-）等の選択肢がある。PCI-DSSではTLS 1.2以上が必須。NLBでTLS終端も可能だが（NLBにACM証明書アタッチ）、HTTPヘッダ操作は不可。CloudFrontでもACM Public証明書を使う場合はus-east-1限定。",
+      "references": [
+        {"title": "Security policies for ALB", "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"},
+        {"title": "Listener TLS protocols and ciphers", "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html"}
+      ],
+      "tags": ["alb", "acm", "tls", "security-policy", "pci-dss"],
+      "common_mistakes": [
+        "自己署名証明書を本番で使う",
+        "TLS終端をEC2で行いACM自動更新を活かさない",
+        "ALBのSecurity Policyの存在を知らずデフォルトのまま"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-016",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "S3 Encryption",
+      "subtopic": "Default Encryption",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "2023年1月以降、Amazon S3の新規バケットにおけるデフォルト暗号化の挙動として正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "デフォルトで暗号化なし。明示的にデフォルト暗号化を有効化する必要がある", "is_correct": false, "explanation": "誤り。2023年1月のアップデート以降、すべての新規S3バケットはデフォルトで暗号化が有効化される。"},
+        {"id": "B", "text": "新規バケットはデフォルトでSSE-S3が有効化される", "is_correct": true, "explanation": "正解。2023年1月以降、すべての新規S3バケットはデフォルトでSSE-S3（AES-256）暗号化が有効化されている。アップロード時に明示的に他の暗号化を指定すれば変更可能。"},
+        {"id": "C", "text": "新規バケットはデフォルトでSSE-KMS（AWS管理キー）が有効化される", "is_correct": false, "explanation": "誤り。デフォルトはSSE-S3。SSE-KMSはユーザが明示的に有効化する必要がある（コストが発生するため）。"},
+        {"id": "D", "text": "新規バケットはデフォルトでDSSE-KMSが有効化される", "is_correct": false, "explanation": "誤り。DSSE-KMSは2層暗号化で、明示的に有効化する必要がある。デフォルトではない。"}
+      ],
+      "explanation": "2023年1月5日以降、すべての新規Amazon S3バケットはデフォルトでSSE-S3暗号化が有効化されるようになった。これによりS3の「デフォルトで安全」を実現。既存バケットには影響しない（明示的に有効化が必要）。SSE-S3はAWS管理で無料、CloudTrailにキー使用ログは出ない。SSE-KMSやDSSE-KMSへの変更は明示的なバケット設定が必要。",
+      "references": [
+        {"title": "Default encryption for S3 buckets", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html"}
+      ],
+      "tags": ["s3", "default-encryption", "sse-s3", "secure-by-default", "encryption"],
+      "common_mistakes": [
+        "デフォルトはSSE-KMSと誤解",
+        "新規バケットでも暗号化はオプトインと思い込む",
+        "DSSE-KMSが標準と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-017",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS vs CloudHSM",
+      "subtopic": "Cost and Operations",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある中堅製造業（東海地方）のITチームが、社内システムのデータベース暗号化のためAWS KMSとCloudHSMのどちらを採用するか評価している。要件は: (1) 月数百GB程度のデータ暗号化、(2) AWSサービス（RDS、S3）との統合、(3) 運用負荷を最小化、(4) コスト重視。CloudHSMの導入を提案してくる SI ベンダーがいる。最も適切な評価判断は？",
+      "options": [
+        {"id": "A", "text": "AWS KMS を採用。要件にFIPS 140-2 Level 3、PKCS#11標準API、専用ハードウェアの記載がなく、CloudHSMは過剰でコスト高（HSM 1つ ≈ 月1,000 USD超）。RDS/S3統合もKMSが標準", "is_correct": true, "explanation": "正解。CloudHSMはFIPS 140-2 Level 3要件、PKCS#11等の標準API要件、専用ハードウェア要件があるときに選ぶ。それ以外は運用負荷とコストの面でKMSが圧倒的に有利。本シナリオは要件にHSM特有要素がない。"},
+        {"id": "B", "text": "CloudHSM を採用。専用ハードウェアの方が暗号性能が高くデータベース性能が向上する", "is_correct": false, "explanation": "誤り。RDS/S3はKMSと統合されており、CloudHSM経由のパフォーマンス改善は期待できない（むしろHSM-KMS統合の構成は複雑化する）。"},
+        {"id": "C", "text": "両方併用。CloudHSMをカスタムキーストアとしてKMSの背後に置き、コンプライアンス対応する", "is_correct": false, "explanation": "誤り。CloudHSMをカスタムキーストアとして使う構成（KMS Custom Key Store）は技術的には可能だが、コンプライアンス要件がない本シナリオでは過剰。コストも増す。"},
+        {"id": "D", "text": "CloudHSM Single Tenant を採用。マルチテナント懸念を回避できる", "is_correct": false, "explanation": "誤り。KMSも実態としてはAWS内部でHSMを使用しており、ユーザ間でのキー混在はない。「マルチテナント懸念」は誤った前提。"}
+      ],
+      "explanation": "AWS KMS と CloudHSM の選定基準は明確: CloudHSMは「FIPS 140-2 Level 3」「専用HSMハードウェア要求」「PKCS#11/JCE/CNG等の標準API」「AWSオペレータも鍵にアクセス不可」が要件のときのみ。それ以外はKMSが運用・コスト・統合性で有利。CloudHSMは1HSM ≈ 1.45 USD/時 × 24 × 30 ≈ 1,044 USD/月、最低クラスタは2HSM推奨で ≈ 2,000 USD/月以上。SIベンダーから提案されても、要件を厳格に再確認することが重要。",
+      "references": [
+        {"title": "When to use AWS CloudHSM", "url": "https://docs.aws.amazon.com/cloudhsm/latest/userguide/use-cases.html"},
+        {"title": "AWS KMS pricing", "url": "https://aws.amazon.com/kms/pricing/"}
+      ],
+      "tags": ["kms", "cloudhsm", "cost-evaluation", "manufacturing", "tco"],
+      "common_mistakes": [
+        "CloudHSMはKMSの上位互換と誤解",
+        "コンプライアンス要件なしでもCloudHSMを選ぶ",
+        "SIベンダー提案を盲信"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-018",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "S3 Cross-Account",
+      "subtopic": "Encrypted Data Sharing",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "アカウントA のS3バケット（SSE-KMS、カスタマー管理キー使用）に保存されているデータを、アカウントB のEC2インスタンスから読み取らせたい。アクセス時に発生する典型的なエラーと、必要な権限すべてを示すものはどれか？",
+      "options": [
+        {"id": "A", "text": "アカウントA: バケットポリシーでアカウントBに s3:GetObject許可のみ。アカウントB: IAMロールに s3:GetObject 許可のみ", "is_correct": false, "explanation": "誤り。SSE-KMS暗号化されたオブジェクトの場合、KMS復号権限も必要。S3のGetObjectは成功しても、kms:Decrypt がないため AccessDenied が発生する。"},
+        {"id": "B", "text": "アカウントA: バケットポリシーで s3:GetObject許可、KMSキーポリシーでアカウントBプリンシパルに kms:Decrypt許可。アカウントB: IAMロールに s3:GetObject + kms:Decrypt許可", "is_correct": true, "explanation": "正解。SSE-KMSオブジェクトのクロスアカウント取得には4つの許可が必要: (1) 送信側バケットポリシー、(2) 送信側KMSキーポリシー、(3) 受信側IAM (s3)、(4) 受信側IAM (kms)。すべて揃わないとAccessDenied。"},
+        {"id": "C", "text": "アカウントA で aws/s3 のAWS管理キーを使えば、KMS権限はAWSが自動的に処理するので追加権限不要", "is_correct": false, "explanation": "誤り。AWS管理キー（aws/s3）はそもそもクロスアカウントで使用できないため、カスタマー管理キーが必須。"},
+        {"id": "D", "text": "S3 Object Ownership を bucket-owner-enforced に設定すれば、ACLとKMS権限が自動で付与される", "is_correct": false, "explanation": "誤り。Object OwnershipはACLの扱いを制御するもので、KMS権限を自動付与する機能はない。"}
+      ],
+      "explanation": "SSE-KMS暗号化されたオブジェクトのクロスアカウント取得は、試験頻出の落とし穴。S3とKMSの両方で送信側・受信側の合計4つのポリシー設定が必要。AWS管理キー（aws/s3）はクロスアカウントで使えないため、共有が必要なバケットでは必ずカスタマー管理キーを使う。失敗時は AccessDenied だけでエラー詳細が出ないため、CloudTrailで kms:Decrypt の Failed event を見て切り分ける。",
+      "references": [
+        {"title": "Sharing AWS KMS encrypted objects across accounts", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-walkthroughs-managing-access-example4.html"}
+      ],
+      "tags": ["s3", "sse-kms", "cross-account", "kms-policy", "troubleshooting"],
+      "common_mistakes": [
+        "S3バケットポリシーだけでKMS暗号化データを共有できると誤解",
+        "AWS管理キーでクロスアカウント共有を試みる",
+        "KMSキーポリシー側の許可を忘れる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-019",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Encryption Context",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "ある教育SaaSが学生ごとのKMS暗号化を実装している。要件: 学生Aのデータを誤って学生Bの復号権限で復号できないようにしたい（multitenancy）。最適な実装は？",
+      "options": [
+        {"id": "A", "text": "学生ごとに個別のKMSキーを作成し、IAMで管理する", "is_correct": false, "explanation": "誤り。学生数が多くなるとKMSキー数の制約（リージョンあたりデフォルト100,000）と運用負荷で破綻する。"},
+        {"id": "B", "text": "Encryption Context（暗号化コンテキスト）に学生IDを含めて暗号化し、復号時に同じコンテキストを要求する。IAMポリシーの kms:EncryptionContext 条件キーで強制する", "is_correct": true, "explanation": "正解。Encryption ContextはKMS暗号化時のメタデータで、復号時に同じコンテキストが要求される。さらにIAMポリシーで kms:EncryptionContext:studentId などの条件キーで強制でき、特定のコンテキスト以外での復号を拒否できる。"},
+        {"id": "C", "text": "Envelope Encryption のデータキーを学生ごとに別の場所（DynamoDB）に保存する", "is_correct": false, "explanation": "誤り。データキーの分離は可能だが、暗号化文脈の検証メカニズムを提供しない。誤った復号権限が万一漏れた場合に防げない。"},
+        {"id": "D", "text": "学生IDをファイル名に含めるバケット構成で論理分離する", "is_correct": false, "explanation": "誤り。論理分離はアクセス制御に役立つが、誤復号防止のメカニズムにはならない。"}
+      ],
+      "explanation": "Encryption Context（暗号化コンテキスト）はKMSで暗号化する際に追加で渡すKey-Valueメタデータで、復号時に同じコンテキストの提供が必須となる。つまり、暗号化時に `{studentId: A123}` を指定したオブジェクトは、復号時にも `{studentId: A123}` を指定しないと復号できない。さらにIAMポリシーで `kms:EncryptionContext:studentId` 条件キーを使えば、特定の学生IDのコンテキスト以外の復号を許可しない構成が可能。マルチテナンシーや監査ログの追跡で広く使われるベストプラクティス。",
+      "references": [
+        {"title": "Encryption context in AWS KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context"}
+      ],
+      "tags": ["kms", "encryption-context", "multi-tenancy", "education", "policy-condition"],
+      "common_mistakes": [
+        "Encryption Contextの存在を知らない",
+        "テナント数だけKMSキーを作成しようとする",
+        "IAM条件キーでEncryption Contextを強制できると知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-020",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "S3 Versioning",
+      "subtopic": "MFA Delete",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "S3 Versioning と MFA Delete の組合せで何が達成できるか？",
+      "options": [
+        {"id": "A", "text": "オブジェクトの永久削除を防ぎ、特定のオブジェクトバージョンの削除や Versioning 状態の変更にMFA認証を必須にできる", "is_correct": true, "explanation": "正解。MFA Deleteを有効化すると、(1) Versioningの停止/サスペンド、(2) 特定バージョンの永久削除、にMFAデバイスのコードが必要となる。誤って・悪意で削除されることへの追加防御。"},
+        {"id": "B", "text": "S3 Object Lock の Compliance Mode と同等のWORM（書き込み一度読み取り多数）を実現する", "is_correct": false, "explanation": "誤り。MFA DeleteはMFA保有者なら削除可能で、WORM相当の保証はない。完全なWORMにはS3 Object Lock Compliance Modeが必要。"},
+        {"id": "C", "text": "オブジェクトのアップロード時にMFA認証を要求する", "is_correct": false, "explanation": "誤り。MFA Deleteは「削除」のMFA要求であり、アップロード時のMFAではない。"},
+        {"id": "D", "text": "バケット内のオブジェクトすべてを暗号化してアクセスにMFAを要求する", "is_correct": false, "explanation": "誤り。MFA Deleteは暗号化機能ではない。暗号化は別途SSE-S3/SSE-KMSで設定する。"}
+      ],
+      "explanation": "S3 MFA Deleteは、Versioningが有効化されたバケットに対して、(1) Versioning停止/サスペンド操作、(2) 特定バージョンの永久削除（DeleteObjectVersion）の2つにMFAコードを要求する追加防御層。設定と解除はrootユーザのみ可能（CLIでMFAコードを渡す）。Object Lock Compliance Modeと違い「絶対に削除できない」わけではないが、誤操作・偶発的な削除には強力。バックアップ・監査ログ等の重要バケットで活用される。",
+      "references": [
+        {"title": "Configuring MFA Delete", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiFactorAuthenticationDelete.html"}
+      ],
+      "tags": ["s3", "mfa-delete", "versioning", "data-protection", "deletion"],
+      "common_mistakes": [
+        "MFA DeleteとObject Lockを混同",
+        "アップロード時もMFA要求と誤解",
+        "暗号化機能と勘違い"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-021",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Parameter Store",
+      "subtopic": "SecureString",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AWS Systems Manager Parameter Store の SecureString について正しい記述はどれか？（複数選択）",
+      "options": [
+        {"id": "A", "text": "保存時にKMSで暗号化される（デフォルトは aws/ssm のAWS管理キー）", "is_correct": true, "explanation": "正解。SecureStringはKMS暗号化されたパラメータ。デフォルトキーは aws/ssm（AWS管理キー）で、カスタマー管理キーも指定可能。"},
+        {"id": "B", "text": "Standard tier のSecureStringはパラメータ自体は無料で、KMS呼び出し料金のみ発生", "is_correct": true, "explanation": "正解。Standard tier（最大4KB）は無料で、KMS Encrypt/Decrypt のAPI呼び出し料金のみ発生する。Advanced tier（最大8KB）は1パラメータ月額0.05 USD。"},
+        {"id": "C", "text": "RDSのマスターパスワードを自動ローテーションする標準テンプレートが提供されている", "is_correct": false, "explanation": "誤り。Parameter Storeには自動ローテーションのマネージドサービスはない。Lambdaを自作する必要がある。これはSecrets Managerとの主要な違い。"},
+        {"id": "D", "text": "クロスリージョンレプリカを設定できる", "is_correct": false, "explanation": "誤り。クロスリージョンレプリカはSecrets Managerの機能で、Parameter Storeにはない。"},
+        {"id": "E", "text": "リソースベースポリシーでクロスアカウント共有が可能", "is_correct": false, "explanation": "誤り。Parameter Storeはリソースベースポリシーをサポートしないため、クロスアカウント共有は不可（IAMロールのAssumeRoleで間接アクセスは可能）。"}
+      ],
+      "explanation": "Parameter Store SecureString は手軽な暗号化済み秘密情報保管ツール。コスト面では Secrets Manager（1パラメータ月額0.40 USD）より大幅に安いStandard tier（無料）が魅力。ただし、自動ローテーション統合、クロスリージョンレプリカ、リソースベースポリシーがないため、本番のRDSパスワードや高度な要件にはSecrets Managerを使うのが推奨。設定値や軽い秘密情報、開発環境ではParameter Storeが適切。",
+      "references": [
+        {"title": "Parameter Store SecureString parameters", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-securestring.html"}
+      ],
+      "tags": ["parameter-store", "securestring", "kms", "cost", "mrq"],
+      "common_mistakes": [
+        "Parameter Storeでも自動ローテーションが標準と誤解",
+        "クロスリージョンレプリカが使えると思い込む",
+        "リソースベースポリシーで共有できると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-022",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Macie",
+      "subtopic": "Multi-Account",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AWS Organizations 配下に20以上のアカウントを持つ企業が、組織全体のS3バケットの機密データスキャンを一元化したい。新規追加アカウントにも自動でMacieを有効化したい。最適な構成は？",
+      "options": [
+        {"id": "A", "text": "AWS Organizations でMacie の委任管理者（Delegated Administrator）を指定し、組織全体での自動有効化を有効にする", "is_correct": true, "explanation": "正解。Macieは委任管理者構成をサポートし、Organization管理アカウントから1つのアカウントを Macie 委任管理者に指定すると、組織全体の有効化、findings 集約、新規アカウントの自動有効化が可能。"},
+        {"id": "B", "text": "各アカウントでMacieを個別に有効化し、findingsをLambdaで中央バケットに集約する", "is_correct": false, "explanation": "誤り。新規アカウント時の自動有効化が手作業になり、スケールしない。"},
+        {"id": "C", "text": "Security Hub の組織機能を使ってMacie findingsを集約するが、Macieの有効化は各アカウント手動", "is_correct": false, "explanation": "誤り。Security Hubでの集約は可能だが、Macie自体の有効化を別途自動化しないと新規アカウントでスキャンが走らない。"},
+        {"id": "D", "text": "AWS Configのカスタムルールで「Macieが有効化されているか」を監視し、Lambdaで自動修正する", "is_correct": false, "explanation": "誤り。カスタム実装で運用負荷が高い。Macieに標準で組織機能があるためそれを使うべき。"}
+      ],
+      "explanation": "Macieの組織レベル管理は GuardDuty / Security Hub / Inspector と同様、AWS Organizations 委任管理者構成をサポート。管理アカウントから1つのアカウントを Macie 委任管理者に指定し、組織全体の Macie 設定（自動有効化、Sensitive Data Discovery ジョブ管理、findings集約）を一元的に実施できる。新規アカウント追加時の自動有効化（Auto-Enable）も標準機能。エンタープライズマルチアカウント環境のベストプラクティス。",
+      "references": [
+        {"title": "Managing multiple Macie accounts with AWS Organizations", "url": "https://docs.aws.amazon.com/macie/latest/user/accounts-mgmt-org.html"}
+      ],
+      "tags": ["macie", "organizations", "delegated-administrator", "multi-account", "auto-enable"],
+      "common_mistakes": [
+        "委任管理者の概念を知らない",
+        "Lambdaの自作集約を最適解と誤解",
+        "Security Hubだけで全部できると思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-023",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Key Deletion",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "あるDevOpsエンジニアが間違えて本番のKMSカスタマー管理キーを「削除スケジュール」に入れてしまった。気付いたのはスケジュール開始から3日後である。最も適切な対応はどれか？",
+      "options": [
+        {"id": "A", "text": "CancelKeyDeletion APIで削除をキャンセルし、キーを `Disabled` 状態から `Enabled` に戻す", "is_correct": true, "explanation": "正解。KMSキー削除には待機期間（最短7日、最大30日、デフォルト30日）があり、その間は CancelKeyDeletion で復旧可能。キャンセル後はDisabled状態になるので、Enableに戻す必要がある。"},
+        {"id": "B", "text": "削除スケジュールから24時間以上経過しているため復旧不可能。BYOKで再インポートする", "is_correct": false, "explanation": "誤り。最短待機期間は7日のため、3日後ならまだ削除されていない。"},
+        {"id": "C", "text": "キーの新しいバージョンを作成し、同じKey IDを再利用する", "is_correct": false, "explanation": "誤り。KMSにはキーの「バージョン」概念はない（マテリアルローテーションは内部処理）。同じKey IDを再作成することはできない。"},
+        {"id": "D", "text": "AWSサポートにケースを開いて緊急復旧を依頼する", "is_correct": false, "explanation": "誤り。CancelKeyDeletion API で自分で復旧可能なため、サポートケースは不要。"}
+      ],
+      "explanation": "KMSキーの誤削除を防ぐ仕組みとして、削除には待機期間（pending window: 7日〜30日、デフォルト30日）が設けられている。この間はキーは `Pending Deletion` 状態となりキー操作はできないが、CancelKeyDeletion APIで完全復旧できる。キャンセル後は Disabled状態に戻るので、EnableKey で再有効化する。CloudTrailで ScheduleKeyDeletion イベントを監視し、CloudWatch Alarmで通知することがベストプラクティス。AWS管理キーは削除自体ができない。",
+      "references": [
+        {"title": "Deleting AWS KMS keys", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html"}
+      ],
+      "tags": ["kms", "key-deletion", "recovery", "cancel-key-deletion", "incident-response"],
+      "common_mistakes": [
+        "削除スケジュール開始したらすぐ削除されると誤解",
+        "CancelKeyDeletion APIの存在を知らない",
+        "キャンセル後すぐに使えると勘違い（Disabled状態）"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-024",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "ACM",
+      "subtopic": "Private CA mTLS",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "B2B SaaS企業が、API Gateway で顧客クライアント証明書の相互TLS（mTLS）認証を実装したい。顧客企業ごとに証明書を発行し、有効期限管理と失効管理（CRL）を行いたい。最適な構成は？",
+      "options": [
+        {"id": "A", "text": "ACM Public証明書を顧客に発行し、API Gateway のmTLSで検証する", "is_correct": false, "explanation": "誤り。ACM PublicはサーバTLS用で、クライアント証明書としての発行・配布には設計されていない。CRL機能もない。"},
+        {"id": "B", "text": "ACM Private CA を作成し、顧客ごとにクライアント証明書を発行、CRLをS3に公開して API Gateway mTLS で参照する", "is_correct": true, "explanation": "正解。ACM Private CAは内部CAでクライアント証明書発行に最適。CRL（Certificate Revocation List）をS3公開する標準機能を持ち、API Gateway mTLSはトラストストアと連携できる。"},
+        {"id": "C", "text": "AWS KMSで証明書を生成し、Secrets Managerで配布する", "is_correct": false, "explanation": "誤り。KMSはX.509証明書を直接発行しない（鍵管理のみ）。証明書発行にはCAが必要。"},
+        {"id": "D", "text": "OpenSSLで自社CAを構築し、EC2上で証明書発行を運用する", "is_correct": false, "explanation": "誤り。技術的には可能だが、CA運用（鍵管理、CRL配布、有効期限管理、監査）がすべて自前になり運用負荷が高い。Private CAの方が標準。"}
+      ],
+      "explanation": "ACM Private CA は、内部TLS・mTLS・コードサイニング等のためのプライベートCAを提供するマネージドサービス。顧客ごとのクライアント証明書発行、CRL（S3に自動公開）、OCSP（オンライン失効確認）、監査ログ（CloudTrail）すべてが標準機能。API Gatewayのカスタムドメイン+ mTLS と組み合わせると、クライアント証明書認証ができる。月額料金（一般 ≈ 400 USD/月）+発行料金がかかるが、自前OpenSSL CA運用と比べると遥かに安全・効率的。",
+      "references": [
+        {"title": "AWS Private CA", "url": "https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html"},
+        {"title": "Mutual TLS in API Gateway", "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/rest-api-mutual-tls.html"}
+      ],
+      "tags": ["acm-private-ca", "mtls", "api-gateway", "client-certificate", "crl"],
+      "common_mistakes": [
+        "ACM Publicでクライアント証明書を発行できると誤解",
+        "OpenSSL自前CAを最適解と思い込む",
+        "KMSで証明書発行できると勘違い"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-025",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Data Lifecycle",
+      "subtopic": "Classification and Tiering",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある製造業の品質管理データ（IoTセンサ収集）が日次で大量にS3へ蓄積される。要件: (1) 30日以内のデータは即時アクセス必須、(2) 31日〜1年は週1回程度のアクセス、(3) 1年〜7年は監査時のみアクセス、(4) 7年以降は廃棄。最適なライフサイクル設計は？",
+      "options": [
+        {"id": "A", "text": "S3 Standard → S3 Standard-IA (30日後) → S3 Glacier Flexible Retrieval (1年後) → 削除 (7年後)", "is_correct": true, "explanation": "正解。S3 Standard（即時、30日まで）→ Standard-IA（低頻度アクセス、最低保管30日）→ Glacier Flexible Retrieval（数分〜数時間で取り出し、監査時に対応可能）→ 7年後に削除。コストとアクセス要件のバランスが最適。"},
+        {"id": "B", "text": "S3 Standard → S3 One Zone-IA (30日後) → S3 Glacier Deep Archive (1年後) → 削除 (7年後)", "is_correct": false, "explanation": "部分的に正しいが、One Zone-IAは1AZ障害で消失リスクがあり製造業の品質データには不適。Glacier Deep Archiveは取り出し12時間以上で監査時の即応性が低い。"},
+        {"id": "C", "text": "S3 Standard 永続保存し、S3 Object Lockで7年間ロック", "is_correct": false, "explanation": "誤り。S3 Standardだけでは、監査時のみアクセスのデータも高料金で保管することになりコスト効率が悪い。"},
+        {"id": "D", "text": "S3 Intelligent-Tieringで全期間自動最適化", "is_correct": false, "explanation": "部分的に正しいが、Intelligent-Tieringは「アクセスパターンが予測不可」な場合に有効。シナリオは明確に予測可能（30日/1年で変化）なため、ライフサイクルポリシーで明示的に階層遷移する方が低コスト。"}
+      ],
+      "explanation": "S3ストレージクラスの階層設計はコスト最適化の核心。アクセスパターンが明確な場合はライフサイクルポリシーで階層遷移、不明な場合はIntelligent-Tieringを使う。Standard → Standard-IA（最低30日）→ Glacier Flexible Retrieval（最低90日、数分〜12時間で取出）→ Glacier Deep Archive（最低180日、12〜48時間で取出）→ 削除、が定型的な階層パス。One Zone-IAは複数AZ冗長が不要なテストデータ向け。",
+      "references": [
+        {"title": "S3 storage classes", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"},
+        {"title": "S3 Lifecycle configuration", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"}
+      ],
+      "tags": ["s3", "lifecycle", "storage-class", "manufacturing", "iot"],
+      "common_mistakes": [
+        "One Zone-IAを重要データに使う",
+        "Glacier Deep Archiveの取出時間を考慮しない",
+        "Intelligent-Tieringを万能視する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-026",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "DSSE-KMS",
+      "subtopic": "Use Cases",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "S3 の DSSE-KMS（Dual-layer Server-Side Encryption with KMS）は、どのような要件のときに選択すべきか？",
+      "options": [
+        {"id": "A", "text": "高度な機密性が要求される連邦政府やDoD案件で、2層の独立した暗号化が要求されるとき", "is_correct": true, "explanation": "正解。DSSE-KMSは米国DoD/連邦政府等の規制で「2層の独立した暗号化」が要求されるシナリオ向け。NIST SP 800-57やCNSSP 15等のガイダンスで複数層暗号化が推奨されるとき。"},
+        {"id": "B", "text": "コスト最適化したいが、単層暗号化（SSE-KMS）より安く済ませたいとき", "is_correct": false, "explanation": "誤り。逆。DSSE-KMSは2層暗号化のため SSE-KMS の約2倍のKMS呼び出しコストがかかる。"},
+        {"id": "C", "text": "顧客が暗号化キーを完全に管理したいとき", "is_correct": false, "explanation": "誤り。それは SSE-C（Customer Provided Keys）の用途。DSSE-KMSはAWSが2層暗号化処理する。"},
+        {"id": "D", "text": "S3 Bucket Keysでコスト削減したいとき", "is_correct": false, "explanation": "誤り。DSSE-KMSはS3 Bucket Keysをサポートしないため、コスト削減目的なら逆効果。"}
+      ],
+      "explanation": "DSSE-KMS（Dual-layer Server-Side Encryption with KMS）は2023年に追加されたS3暗号化方式で、データを2層の独立した暗号化で保護する。米国DoD、連邦政府、CNSSP 15等の規制で「multi-layer encryption」が要求されるシナリオ向け。SSE-KMSの約2倍のKMSコストがかかり、Bucket Keys非対応のため、特殊要件がない限りはSSE-KMSを選ぶべき。",
+      "references": [
+        {"title": "Using DSSE-KMS", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingDSSEncryption.html"}
+      ],
+      "tags": ["dsse-kms", "s3", "dod", "compliance", "multi-layer-encryption"],
+      "common_mistakes": [
+        "DSSE-KMSがコスト削減策と誤解",
+        "DSSE-KMS でBucket Keysが使えると勘違い",
+        "DSSEを SSE-C と混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-027",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Secrets Manager vs Parameter Store",
+      "subtopic": "Migration Path",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "あるFinTech企業がParameter Store SecureStringで管理してきた1,200件のシークレットを、本番運用要件強化のため一部だけSecrets Managerに移行したい。判断基準として最も適切な組合わせは？",
+      "options": [
+        {"id": "A", "text": "RDS/Redshift/DocumentDBの認証情報のみ Secrets Manager に移行（自動ローテーション統合）、サードパーティAPIキーで定期ローテーションが必要なものは Secrets Manager + カスタムLambdaローテーション、低機密の設定値はParameter Storeに残す", "is_correct": true, "explanation": "正解。Secrets Manager の差別化要素（DB自動ローテーション、リソースポリシー、レプリカ）が必要なものに限って移行。コストと機能のバランスを取る判断。"},
+        {"id": "B", "text": "全1,200件をすべてSecrets Managerに移行（一貫性のため）", "is_correct": false, "explanation": "誤り。1,200件 × 月額0.40 USD = 月480 USD のコストが発生。低機密の設定値まで含めると過剰。"},
+        {"id": "C", "text": "全部Parameter Store SecureStringに統一し、自前Lambdaでローテーションを実装", "is_correct": false, "explanation": "誤り。Parameter Storeは自動ローテーション（特にRDS統合）が弱く、コンプライアンス要件があるFinTechには不向き。"},
+        {"id": "D", "text": "S3 + KMSに全部移行し、IAMで管理する", "is_correct": false, "explanation": "誤り。S3に秘密情報を保存するのはアンチパターン。バージョニング、参照API、キャッシュ、ローテーション等が整備されていない。"}
+      ],
+      "explanation": "Secrets ManagerとParameter Storeの併用は実務でよくあるパターン。判断基準は: (1) 自動ローテーション要件（特にRDS/Redshift/DocumentDB統合がある場合は Secrets Manager の標準テンプレートが圧倒的に楽）、(2) クロスアカウント/クロスリージョン共有要件（リソースポリシーやレプリカが必要なら Secrets Manager）、(3) コスト（1,000件以上の低機密シークレットなら Parameter Store の方が安い）。一律統一ではなく、要件ごとに振り分けることが運用コストの最適解。",
+      "references": [
+        {"title": "Comparing AWS Secrets Manager and AWS Systems Manager Parameter Store", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"}
+      ],
+      "tags": ["secrets-manager", "parameter-store", "migration", "cost-optimization", "fintech"],
+      "common_mistakes": [
+        "全部Secrets Managerに移行してコストが膨らむ",
+        "全部Parameter Storeに残してRDS自動ローテーションを諦める",
+        "S3にシークレット保管のアンチパターン"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-028",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Asymmetric Keys",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるアプリケーションがJWT（JSON Web Token）の署名・検証にKMSを使いたい。要件: (1) 秘密鍵はAWSから出ない、(2) 検証側（外部パートナー）には公開鍵を提供、(3) 署名アルゴリズムはRS256（RSA-PKCS1-v1_5 with SHA-256）。最適な実装は？",
+      "options": [
+        {"id": "A", "text": "KMSで非対称キー（RSA_2048、Key Usage: SIGN_VERIFY）を作成し、KMS Sign APIで署名、外部パートナーには GetPublicKey で取得した公開鍵を提供", "is_correct": true, "explanation": "正解。KMSは非対称キーをサポート。RSA_2048/3072/4096で SIGN_VERIFY 用途を選択し、Sign APIで署名（秘密鍵はKMSから出ない）、GetPublicKeyで公開鍵を取得し外部に提供できる。署名アルゴリズムは RSASSA_PKCS1_V1_5_SHA_256 を指定すれば RS256 と互換。"},
+        {"id": "B", "text": "KMSで対称キー（SYMMETRIC_DEFAULT）を作成し、HMAC署名を使う", "is_correct": false, "explanation": "誤り。HMACは共有秘密鍵方式のため、外部パートナーに鍵を渡すと「秘密鍵がAWSから出ない」要件を満たさない。"},
+        {"id": "C", "text": "Secrets ManagerにRSAキーペアを保存し、Lambdaで署名する", "is_correct": false, "explanation": "誤り。Secrets Managerは鍵保管はできるが、署名APIは提供しない。Lambda側で秘密鍵をメモリにロードする必要があり「KMSから出ない」要件を満たさない。"},
+        {"id": "D", "text": "ACMで証明書を発行し、その秘密鍵で署名する", "is_correct": false, "explanation": "誤り。ACMの証明書は秘密鍵を取り出せない設計だが、JWT署名API用途では設計されていない（HTTPS用途）。"}
+      ],
+      "explanation": "KMSの非対称キーは、JWT署名、API署名、コードサイニング等の用途で使える。RSA（2048/3072/4096）とECC（NIST P-256/P-384/P-521、SECG P-256K1）をサポート。Key Usageで SIGN_VERIFY または ENCRYPT_DECRYPT を選択。Sign API はAWS側で署名処理し、秘密鍵を外部に出さない。GetPublicKey で公開鍵を取得し、検証側に共有できる。JWT RS256 は RSASSA_PKCS1_V1_5_SHA_256 アルゴリズムで生成可能。",
+      "references": [
+        {"title": "Asymmetric KMS keys", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html"},
+        {"title": "Sign and verify with KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#digital-signatures"}
+      ],
+      "tags": ["kms", "asymmetric-key", "jwt", "rsa", "digital-signature"],
+      "common_mistakes": [
+        "対称キーで非対称署名要件を満たそうとする",
+        "Secrets Managerが署名APIを提供すると誤解",
+        "ACMをJWT署名に流用しようとする"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-029",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "S3",
+      "subtopic": "Encryption Enforcement",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FinTech企業が、S3バケットへ暗号化されていないオブジェクトのPUTを完全に拒否したい。「特定のKMSキーでの暗号化」を強制したい。最も適切なバケットポリシーの記述は？",
+      "options": [
+        {"id": "A", "text": "Effect: Deny, Action: s3:PutObject, Condition: `StringNotEquals: s3:x-amz-server-side-encryption: aws:kms` および `StringNotLikeIfExists: s3:x-amz-server-side-encryption-aws-kms-key-id: <KMS Key ARN>`", "is_correct": true, "explanation": "正解。SSE-KMS以外、または指定KMSキー以外でのPUTを拒否する標準パターン。`StringNotLikeIfExists` で他のSSE方式を拒否しつつ、KMSキー指定も検証する。"},
+        {"id": "B", "text": "Effect: Allow, Action: s3:PutObject, Condition: 暗号化が指定された場合のみ許可", "is_correct": false, "explanation": "誤り。Allow + 条件不在では、Default Allow（明示Allow）になり、明示Deny の方が確実。"},
+        {"id": "C", "text": "S3バケットのデフォルト暗号化をSSE-S3に設定すれば、それ以外でアップロードされるとエラーになる", "is_correct": false, "explanation": "誤り。デフォルト暗号化は「暗号化指定なしでPUTされた場合のフォールバック」であり、明示的にSSE-Cで暗号化されたオブジェクトはそのまま受け入れられる。強制にはバケットポリシーが必要。"},
+        {"id": "D", "text": "AWS Configのカスタムルールで「暗号化されていないオブジェクト」を検出し、Lambdaで削除する", "is_correct": false, "explanation": "誤り。事後検出・削除は「PUTを拒否」の要件を満たさない（既にデータがアップロードされてしまう）。予防的にバケットポリシーで拒否する方が確実。"}
+      ],
+      "explanation": "S3で暗号化を強制するには、バケットポリシーで明示Denyを使うパターンが最も確実。`s3:x-amz-server-side-encryption` 条件キーで暗号化方式（aws:kms / AES256 / aws:kms:dsse）を制御し、`s3:x-amz-server-side-encryption-aws-kms-key-id` で特定KMSキーを指定。デフォルト暗号化は事後フォールバックであり、強制ではないことに注意。AWS Configでの事後検出は補助的な層として併用するのが実務的。",
+      "references": [
+        {"title": "Protecting data with server-side encryption", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html"},
+        {"title": "Examples of bucket policies for encryption", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html"}
+      ],
+      "tags": ["s3", "bucket-policy", "encryption-enforcement", "kms", "fintech"],
+      "common_mistakes": [
+        "デフォルト暗号化が強制力を持つと誤解",
+        "AWS Configでの事後検出を予防策と勘違い",
+        "Allow ステートメントだけで強制できると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-030",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Secrets Manager",
+      "subtopic": "Cross-Region Replica",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "AWS Secrets Manager のクロスリージョンレプリカに関する説明として正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "プライマリシークレットをレプリカリージョンに自動同期し、DR時にレプリカを昇格できる", "is_correct": true, "explanation": "正解。Secrets Managerのレプリカ機能はプライマリの変更を自動的にレプリカリージョンに同期し、DRシナリオでレプリカをスタンドアロン化（プライマリ昇格）できる。"},
+        {"id": "B", "text": "レプリカは独立したシークレットになり、プライマリの変更は反映されない", "is_correct": false, "explanation": "誤り。レプリカは自動同期される。独立化したい場合は明示的にプライマリ昇格が必要。"},
+        {"id": "C", "text": "クロスリージョンレプリカはParameter Storeにも存在する", "is_correct": false, "explanation": "誤り。Parameter Storeにはクロスリージョンレプリカ機能がない。これはSecrets Managerの差別化機能。"},
+        {"id": "D", "text": "レプリカはプライマリの読み取り専用コピーで、独立したIAMポリシーを設定できない", "is_correct": false, "explanation": "誤り。レプリカにも独自のリソースポリシーを設定できる。"}
+      ],
+      "explanation": "Secrets Manager のクロスリージョンレプリカは、ディザスタリカバリやレイテンシ低減を目的とした標準機能。プライマリリージョンのシークレット変更（バージョン更新、ローテーション結果）が自動的にレプリカリージョンに同期される。リージョン障害時にはレプリカをスタンドアロン化（プライマリ昇格）して、レプリカリージョンが新プライマリになる。これはParameter Storeにはない機能で、本番ワークロードでSecrets Managerが選ばれる理由の一つ。",
+      "references": [
+        {"title": "Replicating an AWS Secrets Manager secret to other AWS Regions", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html"}
+      ],
+      "tags": ["secrets-manager", "replica", "disaster-recovery", "cross-region", "high-availability"],
+      "common_mistakes": [
+        "Parameter Storeにもレプリカがあると誤解",
+        "レプリカは独立したコピーで自動同期されないと思い込む",
+        "レプリカに独自ポリシーを設定できないと勘違い"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-031",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Macie",
+      "subtopic": "Sensitive Data Discovery Job",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Amazon Macie で大量のS3データのスキャンコストを抑えながら、重要バケットに対しては網羅的に検査したい。最も適切な構成は？（複数選択）",
+      "options": [
+        {"id": "A", "text": "重要バケットに対しては「One-time job」で全オブジェクトをスキャン、その後「Scheduled job」で定期的に新規オブジェクトのみをスキャン", "is_correct": true, "explanation": "正解。One-time jobで初期全量スキャン、Scheduled job（daily/weekly/monthly）で増分スキャンが標準パターン。コスト効率と網羅性のバランス。"},
+        {"id": "B", "text": "Sampling depth（サンプリング深度）を100%に設定し、すべてのオブジェクトをスキャン", "is_correct": false, "explanation": "誤り。Sampling depth 100% はコストが増加する。重要バケットには有効だが、大量データに一律適用はコスト過剰。"},
+        {"id": "C", "text": "Bucket criteria でオブジェクトサイズや最終更新日でフィルタリングし、対象を絞る", "is_correct": true, "explanation": "正解。スキャン対象をオブジェクトサイズ、ファイルタイプ、Tag、Prefixで絞り込むことで、不要なスキャンを排除しコスト削減できる。"},
+        {"id": "D", "text": "Automated sensitive data discovery を組織全体で有効化し、追加コストなしで自動スキャンを得る", "is_correct": false, "explanation": "誤り。Automated sensitive data discoveryは別途料金（バケット日次スキャン）がかかる。「追加コストなし」は誤り。ただし統計的サンプリングで網羅的検査より低コスト。"},
+        {"id": "E", "text": "S3 Standard以外のストレージクラス（IA, Glacier）はスキャン対象外にし、料金も発生させない", "is_correct": false, "explanation": "誤り。MacieはGlacier Deep Archiveを除く多くのストレージクラスをスキャン対象にできる。スキャン対象除外は手動設定が必要。"}
+      ],
+      "explanation": "Macieのコスト管理は重要な実装ポイント。 (1) One-time job（手動実行）= 全量スキャン、(2) Scheduled job = 定期スキャン、(3) Automated sensitive data discovery = サンプリングベースの自動スキャン（別料金）。Bucket criteria でフィルタリング（サイズ、Tag、Prefix、ファイルタイプ）、Sampling depth で深度調整、Custom Data Identifier の Allowlist で誤検出を抑える、等の設定で最適化する。料金はスキャンしたオブジェクトデータ量ベース。",
+      "references": [
+        {"title": "Macie sensitive data discovery jobs", "url": "https://docs.aws.amazon.com/macie/latest/user/discovery-jobs.html"},
+        {"title": "Amazon Macie pricing", "url": "https://aws.amazon.com/macie/pricing/"}
+      ],
+      "tags": ["macie", "discovery-job", "cost-optimization", "sampling", "mrq"],
+      "common_mistakes": [
+        "Automated discoveryが完全無料と誤解",
+        "全バケットを100%サンプリングでスキャン",
+        "Bucket criteriaのフィルタリング機能を活用しない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-032",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Custom Key Store",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある銀行が「キーマテリアルがCloudHSMで管理され、かつKMSのAPI（AWSサービス統合）で使えること」を要求された。最適な構成は？",
+      "options": [
+        {"id": "A", "text": "KMS Custom Key Store（CloudHSMバックエンド）を構成する", "is_correct": true, "explanation": "正解。KMS Custom Key Storeは、KMSのフロントAPI（AWSサービス統合）を使いつつ、キーマテリアル自体はCloudHSMクラスタで管理する構成。HSM要件 + AWS統合性の両立に最適。"},
+        {"id": "B", "text": "CloudHSMクラスタを構築し、PKCS#11でアプリから直接利用する", "is_correct": false, "explanation": "誤り。AWSサービス（S3、RDS、EBS等）と統合する場合、KMS API経由でなければならない。直接CloudHSMはAWSサービス統合できない。"},
+        {"id": "C", "text": "通常のKMSカスタマー管理キーを使い、AWSが内部的にHSMで保護していると説明する", "is_correct": false, "explanation": "誤り。通常KMSは共有HSMで、専用ハードウェア・キーマテリアル分離の要件を満たさない。"},
+        {"id": "D", "text": "KMS外部キーストア（External Key Store, XKS）を使い、社内HSMをバックエンドにする", "is_correct": false, "explanation": "部分的に正しいが、設問は「CloudHSMで管理」と指定しており、Custom Key Store（CloudHSMバックエンド）が直接的な答え。XKSは社外/オンプレHSMバックエンド用途。"}
+      ],
+      "explanation": "KMS Custom Key Store（CKS）は、KMS APIのフロントエンドにCloudHSMクラスタをバックエンドとして接続する構成。AWSサービスから見ると通常のKMSキー（カスタマー管理キー）に見えるが、暗号操作は背後のCloudHSMクラスタが行う。HSMでのキー管理 + AWSサービス統合が両立できる。XKS（External Key Store）は社外HSM用で、Custom Key Store（CloudHSMバックエンド）とは別物。XKSはオンプレHSMバックエンド時に使う。両方とも追加コストと運用複雑性が増すため、要件が明確な場合のみ採用する。",
+      "references": [
+        {"title": "AWS KMS custom key stores", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html"},
+        {"title": "External Key Stores in KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html"}
+      ],
+      "tags": ["kms", "custom-key-store", "cloudhsm", "banking", "compliance"],
+      "common_mistakes": [
+        "CloudHSM単独でAWSサービス統合できると誤解",
+        "通常KMSがHSM要件を満たすと思い込む",
+        "Custom Key Store と XKS を混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-033",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Data Classification",
+      "subtopic": "S3 + Macie + Lake Formation",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "ある医療データレイクで、機密度に応じた自動分類とアクセス制御を設計したい。要件: (1) S3に保存された膨大なデータをスキャンしPII/PHIを検出、(2) 検出結果に基づきS3オブジェクトTagを自動付与、(3) Tagに基づきAnalyticsチームの一部メンバーのみが機密データにアクセス、(4) 監査ログを集約。最適なアーキテクチャは？（複数選択）",
+      "options": [
+        {"id": "A", "text": "Macie で Sensitive Data Discovery ジョブを定期実行し、PII/PHI 含有オブジェクトを検出", "is_correct": true, "explanation": "正解。MacieのSensitive Data Discoveryで継続的にスキャンし、機密データ含有を検出する。HIPAA準拠のPHI検出にも対応。"},
+        {"id": "B", "text": "Macie findings を EventBridge → Lambda で受け取り、対象S3オブジェクトに `data-classification: sensitive` Tag を自動付与", "is_correct": true, "explanation": "正解。EventBridge連携でfindingsを自動処理し、S3 Object Taggingで分類タグを付与する標準パターン。"},
+        {"id": "C", "text": "Lake Formation で `data-classification: sensitive` Tag に基づくロウレベル/カラムレベルのアクセス制御をAnalyticsチームに適用", "is_correct": true, "explanation": "正解。Lake Formation のTag-Based Access Control (TBAC) でアクセス制御を実装。Glue Catalog経由でAthenaクエリにも適用される。"},
+        {"id": "D", "text": "CloudTrail Data Events と Macie audit log を Security Lake に集約", "is_correct": true, "explanation": "正解。Security Lake は OCSF 標準でセキュリティログを集約し、検索・分析・監査要件に対応。CloudTrail Data Eventsで実際のS3アクセス、Macie ログで分類状態を追跡できる。"},
+        {"id": "E", "text": "全データを S3 Object Lock Compliance Mode で永久ロックし、削除を防ぐ", "is_correct": false, "explanation": "誤り。Object Lockは保持要件には有効だが、機密度分類とアクセス制御の要件には対応しない。"}
+      ],
+      "explanation": "データレイクの機密度自動分類アーキテクチャは、Macie（検出）+ EventBridge/Lambda（自動Tag付け）+ Lake Formation（Tag Based Access Control）+ Security Lake（監査集約）の組合せが標準パターン。HIPAA、GDPR、PCI-DSS等の規制要件に対応する。Macieの自動・標準PII検出 + カスタムデータ識別子（PHIの特殊フォーマット）でカバレッジを高める。Lake Formation TBACにより、Glue Catalog経由のAthena/EMR/Redshift Spectrumクエリにも一貫したアクセス制御が反映される。",
+      "references": [
+        {"title": "Amazon Macie automation with EventBridge", "url": "https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html"},
+        {"title": "Lake Formation tag-based access control", "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/tag-based-access-control.html"},
+        {"title": "Amazon Security Lake", "url": "https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html"}
+      ],
+      "tags": ["macie", "lake-formation", "tbac", "security-lake", "healthcare", "hipaa"],
+      "common_mistakes": [
+        "MacieとLake Formationの統合パターンを知らない",
+        "Object LockをアクセスコントロールとTagに代用しようとする",
+        "Security Lakeの存在と役割を誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-034",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "Encryption in Transit",
+      "subtopic": "VPC Endpoint",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "AWS サービスへの通信に VPC Endpoint（Gateway Endpoint または Interface Endpoint）を使用する主要なセキュリティ上の利点は何か？",
+      "options": [
+        {"id": "A", "text": "通信がインターネットを経由せず AWS バックボーン内に閉じる（公開IPやIGW不要）", "is_correct": true, "explanation": "正解。VPC EndpointはAWSサービスへの通信をAWSバックボーン内に閉じる。インターネットゲートウェイやNAT、公開IPが不要となり、攻撃面と漏洩リスクを大幅に低減する。"},
+        {"id": "B", "text": "通信がデフォルトで暗号化されないため、暗号化のためにACMが必須になる", "is_correct": false, "explanation": "誤り。逆。AWSサービスへの通信はTLSでデフォルト暗号化される。VPC EndpointはACMを必須にしない。"},
+        {"id": "C", "text": "VPC Endpoint経由ではIAMポリシーが評価されず、すべてのIAMロールが対象サービスにアクセスできる", "is_correct": false, "explanation": "誤り。IAMポリシーは引き続き評価される。VPC Endpoint Policyという追加の境界制御も適用可能。"},
+        {"id": "D", "text": "VPC Endpoint は通信速度を10倍に向上させる", "is_correct": false, "explanation": "誤り。性能向上効果はあるが、主要な利点はセキュリティ・データ漏洩防止である。"}
+      ],
+      "explanation": "VPC Endpointの主要な利点は、AWSサービスへの通信をパブリックインターネットを経由せずAWSバックボーン内に閉じること。Gateway Endpoint（S3/DynamoDBのみ）はルートテーブル経由、Interface Endpoint（PrivateLink経由）は他のAWSサービス。これにより(1) 攻撃面の縮小、(2) データ漏洩防止（Endpoint Policyで bucket アクセス制限可能）、(3) コンプライアンス（NWのプライベート性）、(4) パブリックIP/IGW/NAT不要によるコスト削減と簡素化が実現する。",
+      "references": [
+        {"title": "VPC endpoints", "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html"}
+      ],
+      "tags": ["vpc-endpoint", "privatelink", "data-in-transit", "aws-backbone", "security"],
+      "common_mistakes": [
+        "VPC Endpointを通すとIAMが効かないと誤解",
+        "VPC Endpointなしの通信は暗号化されないと勘違い",
+        "VPC Endpointの主目的を性能向上と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain5-035",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-5", "name": "Data Protection", "weight_percent": 18},
+      "topic": "KMS",
+      "subtopic": "Envelope Encryption",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "AWS KMS のEnvelope Encryption（エンベロープ暗号化）の仕組みについて、最も正確な説明はどれか？",
+      "options": [
+        {"id": "A", "text": "データはKMSキー（CMK）で直接暗号化され、CMK1個でTBスケールのデータを処理する", "is_correct": false, "explanation": "誤り。KMSはCMKで直接大容量データを暗号化しない（KMS Encrypt APIは最大4KBのみ）。Envelope Encryptionの仕組みを誤解している。"},
+        {"id": "B", "text": "KMSがデータキー（DEK）を生成し、DEKでデータを暗号化、DEK自体をCMKで暗号化して保存する", "is_correct": true, "explanation": "正解。Envelope Encryptionの正しい説明。GenerateDataKeyでDEK（平文+CMK暗号化済み）を取得 → アプリでDEKでデータ暗号化 → 暗号化済みDEKをデータと一緒に保存 → 復号時はCMKでDEKを復号、DEKでデータ復号、というフロー。"},
+        {"id": "C", "text": "データはAWS管理のセントラルリポジトリで暗号化保管される", "is_correct": false, "explanation": "誤り。データはユーザのストレージ（S3等）に保存され、KMSはキー管理のみ。"},
+        {"id": "D", "text": "データはCMKを使ってクライアント側で暗号化され、AWSはキーマテリアルを保持しない", "is_correct": false, "explanation": "誤り。それはClient-Side Encryptionの説明で、Envelope Encryptionとは別概念（重なる部分はあるが、本質ではない）。"}
+      ],
+      "explanation": "Envelope EncryptionはKMSの中核設計思想。 (1) KMSのCMKは直接大量データを暗号化できない（API制限4KB）、(2) その代わりGenerateDataKey APIで「平文DEK + 暗号化済みDEK」のペアを取得、(3) アプリはDEKでデータを暗号化（AES-256-GCM等）、(4) 暗号化済みDEKをデータと一緒に保存、(5) 復号時はCMKでDEKを復号 → DEKでデータを復号、というフロー。これにより無制限のデータをCMKで間接的に保護でき、CMKは秘密にしたまま機能する。S3のSSE-KMS、EBS、RDS等もすべてこのEnvelope Encryptionで実装されている。",
+      "references": [
+        {"title": "Envelope encryption", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#enveloping"}
+      ],
+      "tags": ["kms", "envelope-encryption", "data-key", "cmk", "aes-256"],
+      "common_mistakes": [
+        "CMKが直接大容量データを暗号化していると誤解",
+        "GenerateDataKey APIの存在を知らない",
+        "Envelope EncryptionとClient-Side Encryptionを混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

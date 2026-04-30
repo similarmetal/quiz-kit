@@ -1,0 +1,1012 @@
+{
+  "exam_code": "SCS-C03",
+  "exam_name": "AWS Certified Security – Specialty",
+  "version": "2026.04",
+  "total_questions": 33,
+  "domains": [
+    {
+      "id": "domain-1",
+      "name": "Threat Detection and Incident Response",
+      "weight_percent": 14,
+      "question_count": 33
+    }
+  ],
+  "questions": [
+    {
+      "id": "scs-c03-domain1-sample-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Threat Detection and Incident Response",
+        "weight_percent": 14
+      },
+      "topic": "GuardDuty",
+      "subtopic": "Multi-account threat detection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある企業がAWS Organizations配下で50を超えるアカウントを運用している。セキュリティチームは組織全体のGuardDuty findingsを一元的に確認・対応したい。新規追加されるアカウントに対しても自動的にGuardDutyを有効化したい。最も運用効率が高い構成は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "各アカウントでGuardDutyを個別に有効化し、Lambda関数でfindings をS3バケットに集約する",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、新規アカウント追加時の自動化が手作業になり、スケールしない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS OrganizationsでGuardDutyの委任管理者を指定し、組織全体で自動有効化を構成する",
+          "is_correct": true,
+          "explanation": "正解。委任管理者により、組織全体のGuardDuty管理を1アカウントから実施できる。新規アカウントにも自動適用される。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Configを使って、各アカウントのGuardDuty有効化状態を監視し、Configルールで強制する",
+          "is_correct": false,
+          "explanation": "AWS Configは設定の評価には使えるが、GuardDutyの一元管理機能は提供しない。"
+        },
+        {
+          "id": "D",
+          "text": "各アカウントでGuardDutyを有効化し、Security Hubの組織機能でfindingsを集約する",
+          "is_correct": false,
+          "explanation": "Security Hubは集約には使えるが、GuardDutyの有効化自体は別途必要。委任管理者構成のほうが効率的。"
+        }
+      ],
+      "explanation": "AWS OrganizationsとGuardDutyの統合により、委任管理者を指定すると組織全体のGuardDutyを一元管理できる。新規アカウントへの自動有効化、findings の集中表示、設定の組織レベル更新が可能。これがエンタープライズ規模のマルチアカウント環境のベストプラクティス。",
+      "references": [
+        {
+          "title": "Managing GuardDuty accounts with AWS Organizations",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "guardduty",
+        "multi-account",
+        "delegation",
+        "automation"
+      ],
+      "common_mistakes": [
+        "Security Hub だけで全部できると思い込む（GuardDuty 有効化は別タスク）",
+        "委任管理者 (delegated administrator) の概念を知らない",
+        "Lambda + S3 のカスタム集約を最適解と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-29T00:00:00Z",
+        "created_by": "kit-seed-sample",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "scs-c03-domain1-sample-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Threat Detection and Incident Response",
+        "weight_percent": 14
+      },
+      "topic": "GuardDuty",
+      "subtopic": "Extended Threat Detection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "GuardDuty Extended Threat Detection が複数ステージにわたる高度な攻撃を検出した。findingsには「複数のEC2インスタンスへの横展開」「IAM credentialの悪用」「データ窃取の兆候」が含まれている。最初に取るべき対応として最も適切なのは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "全ての関連EC2インスタンスを即座に停止し、IAM credentialを削除する",
+          "is_correct": false,
+          "explanation": "性急な対応はフォレンジック証拠を破壊するリスクがある。停止前にスナップショット・メモリダンプの取得が必要。"
+        },
+        {
+          "id": "B",
+          "text": "影響範囲を特定するため、GuardDuty Detectiveとの統合ビューで関連エンティティを分析し、AWS Systems Manager OpsCenterでインシデントを管理開始する",
+          "is_correct": true,
+          "explanation": "正解。Extended Threat Detectionの複合findingsに対しては、まず全体像の把握（Detectiveでの可視化）と統制された対応プロセス（OpsCenter）の開始が重要。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Shield Advancedを有効化してDDoS対策を強化する",
+          "is_correct": false,
+          "explanation": "Shield AdvancedはDDoS対策で、credential悪用や横展開の対応とは関係ない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS WAFのルールを更新し、攻撃元IPをブロックする",
+          "is_correct": false,
+          "explanation": "WAFはWeb層の防御で、内部での横展開や credential 悪用には効果がない。"
+        }
+      ],
+      "explanation": "Extended Threat Detection の複合finding は組織化された攻撃を示唆する。フォレンジック証拠保全 → 影響範囲特定 → 段階的封じ込めの順序が重要。Detective での可視化と OpsCenter での管理は、AWS推奨のインシデント対応プロセス。",
+      "references": [
+        {
+          "title": "Amazon GuardDuty Extended Threat Detection",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/extended-threat-detection.html"
+        },
+        {
+          "title": "Amazon Detective Investigation",
+          "url": "https://docs.aws.amazon.com/detective/latest/userguide/what-is-detective.html"
+        }
+      ],
+      "tags": [
+        "guardduty",
+        "detective",
+        "incident-response",
+        "extended-threat-detection",
+        "forensics"
+      ],
+      "common_mistakes": [
+        "証拠保全より先に対象リソースを停止してしまう",
+        "Shield/WAF が万能と誤解",
+        "1つのfindingだけ見て全体を把握しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-29T00:00:00Z",
+        "created_by": "kit-seed-sample",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "scs-c03-domain1-sample-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Threat Detection and Incident Response",
+        "weight_percent": 14
+      },
+      "topic": "Macie",
+      "subtopic": "Sensitive data discovery",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるFinTech企業がS3に保存されている膨大なデータの中から、PII（個人識別情報）が含まれるバケットを継続的に検出したい。検出時にはセキュリティチームに通知したい。最も適切なソリューションは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amazon Macie を有効化し、Sensitive Data Discoveryジョブを定期実行、findings を EventBridge 経由でSNSに通知する",
+          "is_correct": true,
+          "explanation": "正解。Macie はS3の機密データ自動検出に特化したサービス。EventBridge 連携で SNS 通知も標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Glue でデータカタログを作成し、Lambda関数でPII検出パターンを実装する",
+          "is_correct": false,
+          "explanation": "技術的に可能だが、Macieが提供する管理されたPII検出より遥かに開発・運用コストが高い。車輪の再発明。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Comprehend のPII検出APIをLambdaから呼び出し、S3イベントで起動する",
+          "is_correct": false,
+          "explanation": "Comprehend のPII検出は使えるが、S3スキャンの管理機能はMacieに優位性がある。大規模S3には Macie が標準。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config のカスタムルールで PII を検出する",
+          "is_correct": false,
+          "explanation": "AWS Config は設定の評価ツールで、データ内容の検査機能は持たない。"
+        }
+      ],
+      "explanation": "Amazon Macieは S3 上の機密データ（PII、財務データ、認証情報など）を機械学習で自動検出する専用サービス。組織全体のS3を継続的にスキャンし、findings を Security Hub や EventBridge と統合できる。FinTech のような規制業界では特に有効。",
+      "references": [
+        {
+          "title": "What is Amazon Macie?",
+          "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
+        }
+      ],
+      "tags": [
+        "macie",
+        "pii",
+        "data-discovery",
+        "compliance",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "Macie の存在を知らず、Lambda + Comprehend で自作してしまう",
+        "AWS Config で全部できると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-29T00:00:00Z",
+        "created_by": "kit-seed-sample",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "scs-c03-domain1-001",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "GuardDuty",
+      "subtopic": "Finding types",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "あるSaaSスタートアップのセキュリティ担当者が、GuardDutyのfinding type名から脅威カテゴリを判別したい。「UnauthorizedAccess:EC2/SSHBruteForce」というfinding typeが示す脅威カテゴリとして正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "EC2インスタンスのCPU使用率異常", "is_correct": false, "explanation": "GuardDutyはパフォーマンスメトリクスではなく脅威検出に特化している。CPU使用率はCloudWatchの守備範囲。"},
+        {"id": "B", "text": "EC2インスタンスへのSSHブルートフォース攻撃の試行", "is_correct": true, "explanation": "正解。finding type の命名規則は『脅威目的:リソース/攻撃手法』で、SSHBruteForce は SSH ポートに対する総当たり攻撃を示す。"},
+        {"id": "C", "text": "EC2インスタンスからのデータ窃取（Exfiltration）", "is_correct": false, "explanation": "データ窃取は『Exfiltration:』プレフィックスで表される。UnauthorizedAccess プレフィックスは不正アクセス試行を示す。"},
+        {"id": "D", "text": "EC2インスタンス上のマルウェア検出", "is_correct": false, "explanation": "マルウェア検出は『Trojan:』『Backdoor:』『CryptoCurrency:』等のプレフィックスで表される。"}
+      ],
+      "explanation": "GuardDuty の finding type は『ThreatPurpose:ResourceTypeAffected/ThreatFamilyName』形式で命名されている。UnauthorizedAccess は不正アクセスの試行、EC2 は影響リソース、SSHBruteForce は SSH に対するブルートフォース攻撃を示す。命名規則を理解すればfinding を素早く分類できる。",
+      "references": [{"title": "GuardDuty finding format", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-format.html"}],
+      "tags": ["guardduty", "finding-types", "ec2", "brute-force", "threat-detection"],
+      "common_mistakes": ["finding type の命名規則を知らずに毎回マニュアル参照する", "UnauthorizedAccess と Exfiltration を混同する"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-002",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Security Hub",
+      "subtopic": "Standards and controls",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "ある教育系SaaS企業がAWS Security Hubで利用できる準拠基準（セキュリティ基準）を確認している。Security Hub がデフォルトで提供する標準的なセキュリティ基準として正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "AWS Foundational Security Best Practices (FSBP)", "is_correct": true, "explanation": "正解。FSBPはSecurity Hubの代表的な標準で、AWS環境全般に対するベストプラクティスをチェックする。"},
+        {"id": "B", "text": "AWS Well-Architected Operational Excellence Pillar", "is_correct": false, "explanation": "Well-Architected はガイダンスフレームワークで、Security Hub の自動チェック基準ではない。"},
+        {"id": "C", "text": "AWS Trusted Advisor Cost Optimization", "is_correct": false, "explanation": "Trusted Advisor は別サービスで、コスト最適化はSecurity Hubの基準ではない。"},
+        {"id": "D", "text": "AWS Config Conformance Pack Free Tier", "is_correct": false, "explanation": "Config Conformance Pack は別サービスの機能で、Security Hub の標準ではない。"}
+      ],
+      "explanation": "Security Hub は AWS Foundational Security Best Practices (FSBP)、CIS AWS Foundations Benchmark、PCI DSS、NIST 800-53 等の業界標準を選択的に有効化できる。FSBP はAWSが提供する独自基準で最も網羅的。標準を有効化すると、Configベースのチェックが自動的に実行される。",
+      "references": [{"title": "Security Hub standards reference", "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/standards-reference.html"}],
+      "tags": ["security-hub", "fsbp", "standards", "compliance", "best-practices"],
+      "common_mistakes": ["Well-Architected と FSBP を混同する", "Trusted Advisor を Security Hub の構成要素と誤解する"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-003",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Shield Advanced",
+      "subtopic": "DDoS protection scope",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "あるオンラインゲーム企業がAWS Shield Advanced の保護対象リソースを確認している。Shield Advanced で保護できるリソースとして正しいものはどれか？",
+      "options": [
+        {"id": "A", "text": "EC2インスタンスのEBSボリューム", "is_correct": false, "explanation": "EBSボリュームはネットワーク到達性を持たないため、DDoS保護対象にならない。"},
+        {"id": "B", "text": "Application Load Balancer (ALB)、CloudFront ディストリビューション、Global Accelerator、Route 53 ホストゾーン、Elastic IP", "is_correct": true, "explanation": "正解。Shield Advanced はこれらのインターネットフェイシングなエッジ・LB系リソースを保護対象とする。"},
+        {"id": "C", "text": "Amazon RDS データベースインスタンス", "is_correct": false, "explanation": "RDSは直接の保護対象ではない。RDSへのアクセスを保護するには前段のリソースを保護する。"},
+        {"id": "D", "text": "S3バケット", "is_correct": false, "explanation": "S3はShield Advancedの保護対象に含まれない。S3はAWSが標準でDDoS耐性を持っている。"}
+      ],
+      "explanation": "Shield Advanced は CloudFront、Route 53、Global Accelerator、ALB/CLB/NLB（リージョン）、Elastic IP（EC2/NLB）に対するDDoS保護を提供する。これらは攻撃者から直接到達可能なエッジリソース。Shield Response Team (SRT) のサポートも保護対象に対して提供される。",
+      "references": [{"title": "AWS Shield Advanced supported resources", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-protected-resources.html"}],
+      "tags": ["shield-advanced", "ddos", "protected-resources", "edge", "gaming"],
+      "common_mistakes": ["S3やRDSが直接保護対象だと誤解する", "全AWSリソースがShield Advancedで保護されると思い込む"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-004",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "GuardDuty",
+      "subtopic": "Protection plans",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある製造業の企業（東海地方の自動車部品メーカー）が、EKSクラスター上で稼働する生産管理システムへの脅威検出を強化したい。GuardDuty の保護機能について最も適切な説明はどれか？",
+      "options": [
+        {"id": "A", "text": "GuardDuty Standardだけで、EKS監査ログとEKSランタイム監視の両方が自動的に有効になる", "is_correct": false, "explanation": "Standardでは EKS Protection（監査ログ）と Runtime Monitoring は別途有効化が必要。"},
+        {"id": "B", "text": "EKS Protection（コントロールプレーン監査ログ）とRuntime Monitoring（ノードのランタイム監視）は別の保護プランで、それぞれ個別に有効化する必要がある", "is_correct": true, "explanation": "正解。EKS Protection はAPIサーバーの監査ログを分析、Runtime Monitoring はeBPFエージェント経由でコンテナ・ノードの実行時挙動を監視する。"},
+        {"id": "C", "text": "EKSの脅威検出はGuardDutyではなく、Amazon Inspectorのみが対応する", "is_correct": false, "explanation": "Inspectorは脆弱性スキャン専門で、ランタイム脅威検出はGuardDutyの守備範囲。"},
+        {"id": "D", "text": "Runtime Monitoring を有効にすると、各ワーカーノードに手動でカスタムエージェントをインストールする必要がある", "is_correct": false, "explanation": "Runtime Monitoring はEKSアドオンとして自動デプロイ可能で、手動インストールは必須ではない。"}
+      ],
+      "explanation": "GuardDuty には複数の保護プランがあり、用途別に有効化する。EKS Protection は EKS API サーバーの監査ログを分析し、Runtime Monitoring は EC2/ECS/EKS のランタイム挙動（プロセス、ネットワーク、ファイルアクセス）を eBPF で監視する。Standard と各保護プランは独立して課金される。",
+      "references": [{"title": "GuardDuty EKS Protection", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html"}, {"title": "GuardDuty Runtime Monitoring", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html"}],
+      "tags": ["guardduty", "eks-protection", "runtime-monitoring", "ebpf", "manufacturing"],
+      "common_mistakes": ["Standardプランで全保護が有効と誤解", "EKS Protection と Runtime Monitoring を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-005",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Detective",
+      "subtopic": "Behavior graph",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある医療系SaaS企業のセキュリティアナリストが Amazon Detective を使って GuardDuty findings の調査を始めた。Detective の動作原理について正しい説明はどれか？",
+      "options": [
+        {"id": "A", "text": "Detective は CloudTrail、VPC Flow Logs、GuardDuty findings をグラフモデルに取り込み、エンティティ間の関係を可視化する", "is_correct": true, "explanation": "正解。Detective は複数のログソースから振る舞いグラフ (behavior graph) を自動生成し、調査を支援する。"},
+        {"id": "B", "text": "Detective はリアルタイムにトラフィックをブロックする予防的セキュリティサービスである", "is_correct": false, "explanation": "Detective は分析・調査ツールであり、予防的アクション機能は持たない。"},
+        {"id": "C", "text": "Detective はGuardDuty findings を生成・検出する代替サービスである", "is_correct": false, "explanation": "Detective は検出ではなく、検出された findings の調査支援が役割。GuardDuty とは補完関係。"},
+        {"id": "D", "text": "Detective は CloudTrail のログのみを利用し、ネットワークログは扱わない", "is_correct": false, "explanation": "Detective は CloudTrail に加えて VPC Flow Logs と GuardDuty findings も入力として扱う。"}
+      ],
+      "explanation": "Amazon Detective は CloudTrail Management Events、VPC Flow Logs、GuardDuty findings を自動取り込みし、最大1年分のデータからエンティティ（IAM ユーザー、IP、リソース）間の関係を behavior graph として構築する。findings をクリックすると関連エンティティと時系列が即座に可視化され、調査時間を大幅に短縮できる。",
+      "references": [{"title": "What is Amazon Detective?", "url": "https://docs.aws.amazon.com/detective/latest/userguide/what-is-detective.html"}],
+      "tags": ["detective", "behavior-graph", "cloudtrail", "vpc-flow-logs", "investigation"],
+      "common_mistakes": ["Detective を予防的サービスと誤解", "GuardDuty と Detective を競合関係と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-006",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Security Lake",
+      "subtopic": "OCSF format",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "あるFinTech企業がAmazon Security Lakeを採用し、組織全体のセキュリティログを一元管理する計画を立てている。Security Lake の特徴として正しい説明はどれか？",
+      "options": [
+        {"id": "A", "text": "Security Lake はログを独自バイナリ形式で保存するため、AWS外のツールから読み出せない", "is_correct": false, "explanation": "Security Lake は OCSF + Apache Parquet という標準形式を使うため、サードパーティツールからも分析可能。"},
+        {"id": "B", "text": "Security Lake は OCSF (Open Cybersecurity Schema Framework) スキーマで Parquet 形式に正規化し、サードパーティ分析ツールからもクエリできる", "is_correct": true, "explanation": "正解。OCSF + Parquet という業界標準形式での正規化が Security Lake の核心的価値。"},
+        {"id": "C", "text": "Security Lake は CloudTrail と VPC Flow Logs しか取り込めず、サードパーティソースには対応しない", "is_correct": false, "explanation": "Security Lake は AWS ネイティブソースに加え、OCSF 対応のサードパーティソースも取り込める。"},
+        {"id": "D", "text": "Security Lake は SOC アナリストではなく開発者向けで、CloudWatch Logs と同等の機能を持つ", "is_correct": false, "explanation": "Security Lake はSOC運用向けの専用サービスで、CloudWatch Logs とは目的が異なる。"}
+      ],
+      "explanation": "Security Lake は組織のセキュリティデータを S3 ベースのデータレイクに集約し、OCSF スキーマで Parquet 形式に正規化する。これにより、Athena、QuickSight、サードパーティ SIEM (Splunk、Datadog など) から統一クエリが可能になる。マルチアカウント・マルチリージョンの統合と長期保管に最適。",
+      "references": [{"title": "What is Amazon Security Lake?", "url": "https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html"}],
+      "tags": ["security-lake", "ocsf", "parquet", "siem", "fintech"],
+      "common_mistakes": ["Security Lake を CloudWatch Logs の代替と誤解", "OCSF の意義を理解せずに採用"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-007",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Security Hub",
+      "subtopic": "Cross-region aggregation",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある教育プラットフォーム企業が日本・米国・欧州の3リージョンにまたがってシステムを展開している。Security Hub findings をリージョン横断で一元管理したい。最も適切なアプローチはどれか？",
+      "options": [
+        {"id": "A", "text": "各リージョンで個別に Security Hub を運用し、リージョン間でfindings を共有する手段はない", "is_correct": false, "explanation": "Security Hub には cross-region aggregation 機能があり、明確な集約手段が存在する。"},
+        {"id": "B", "text": "Security Hub のクロスリージョン集約 (aggregation Region) 機能を使い、複数リージョンのfindings を1リージョンに集約する", "is_correct": true, "explanation": "正解。aggregation Region を1つ指定し、対象リージョンを構成すればfindings、insights、controlsが集約表示される。"},
+        {"id": "C", "text": "S3 Cross-Region Replication で findings を1つのバケットに集約し、Athena でクエリする", "is_correct": false, "explanation": "技術的に可能だが、Security Hub ネイティブの集約機能のほうが運用負荷が低い。"},
+        {"id": "D", "text": "Lambda で各リージョンの API を順次呼び出し、findings を統合する関数を運用する", "is_correct": false, "explanation": "ネイティブ機能があるためカスタム実装は不要。aggregation Region のほうが運用効率が高い。"}
+      ],
+      "explanation": "Security Hub の Cross-Region Aggregation により、指定した1つの aggregation Region に他リージョンの findings、insights、security scores、controls を集約できる。マルチリージョン環境のSOC運用ではこれが標準。組織レベルの委任管理者と組み合わせると、マルチアカウント×マルチリージョンが1ビューになる。",
+      "references": [{"title": "Cross-Region aggregation in Security Hub", "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html"}],
+      "tags": ["security-hub", "cross-region", "aggregation", "multi-region", "education"],
+      "common_mistakes": ["aggregation Region 機能の存在を知らない", "S3 レプリケーションでカスタム実装してしまう"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-008",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "GuardDuty",
+      "subtopic": "Suppression and trusted lists",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "あるSaaS企業のSOCチームが、定期的に発生する脆弱性スキャンによる『Recon:EC2/Portscan』findings をノイズとして除外したい。意図しないfindings の流入を抑える方法として最も適切なのはどれか？",
+      "options": [
+        {"id": "A", "text": "GuardDutyを一時的に無効化してスキャン期間中は検出を止める", "is_correct": false, "explanation": "GuardDutyを無効化すると正当な脅威も検出できなくなる。さらに無効化期間中の保護プランも消失する。"},
+        {"id": "B", "text": "GuardDutyの suppression rules を作成し、特定finding type と既知のスキャナIPの組み合わせを自動的に低重要度化または非表示化する", "is_correct": true, "explanation": "正解。suppression rules はfinding type、リソース、ネットワーク条件などでフィルタを書け、ノイズ抑制の標準手法。"},
+        {"id": "C", "text": "GuardDuty IAM Policy で finding 一覧 API を拒否し、表示自体をブロックする", "is_correct": false, "explanation": "API レベルでブロックすると正当な findings の確認もできなくなる。設定として不適切。"},
+        {"id": "D", "text": "VPC Flow Logs を無効化してスキャン期間中の検出ソースを断つ", "is_correct": false, "explanation": "GuardDuty はFlow Logs だけに依存しないため効果が限定的で、可視性も失う。"}
+      ],
+      "explanation": "GuardDuty の suppression rules は finding 属性（type、リソース、IP、ポート等）で条件を組み合わせ、自動的に suppressed ステータスにする。これにより既知の良性アクティビティ（脆弱性スキャナ、CI/CD など）のノイズを抑え、本当の脅威に集中できる。trusted IP list と組み合わせる運用も標準。",
+      "references": [{"title": "Suppression rules in GuardDuty", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/findings_suppression-rule.html"}],
+      "tags": ["guardduty", "suppression-rules", "noise-reduction", "soc", "saas"],
+      "common_mistakes": ["GuardDuty全体を無効化してしまう", "trusted IP list と suppression rules の使い分けを誤る"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-009",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Macie",
+      "subtopic": "Custom data identifiers",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある医療系企業が独自フォーマットの患者ID（『PT-XXXX-YYYYY』形式）を機密データとして検出したい。Amazon Macie で対応する方法として正しいのはどれか？",
+      "options": [
+        {"id": "A", "text": "Macieはマネージドな PII 検出のみ対応で、独自フォーマットの検出はできない", "is_correct": false, "explanation": "Macie には Custom Data Identifier (CDI) があり、独自パターンを検出できる。"},
+        {"id": "B", "text": "Custom Data Identifier (CDI) で正規表現と最大マッチ距離のキーワード条件を定義し、独自パターンを検出する", "is_correct": true, "explanation": "正解。CDI は正規表現 + サポートワード + 距離条件で柔軟にカスタムパターンをマッチできる。"},
+        {"id": "C", "text": "Macie のマネージド識別子の中から最も近いカテゴリ（クレジットカード番号など）を選び、誤検出を許容する", "is_correct": false, "explanation": "誤検出を許容する運用は実務的に推奨されない。CDIで正確に定義すべき。"},
+        {"id": "D", "text": "AWS Glue ジョブで CSV を解析して独自検出ロジックを書き、結果を Macie に送り返す", "is_correct": false, "explanation": "車輪の再発明。Macie の CDI 機能を使えば直接対応できる。"}
+      ],
+      "explanation": "Amazon Macie の Custom Data Identifier (CDI) は、正規表現パターン、サポートワード（近接キーワード）、最大マッチ距離、キーワード除外条件の組み合わせで独自の機密データパターンを定義できる。マネージド識別子（クレジットカード、SSN、PII等）と併用して、業界・業務固有の機密情報も検出可能。",
+      "references": [{"title": "Macie custom data identifiers", "url": "https://docs.aws.amazon.com/macie/latest/user/custom-data-identifiers.html"}],
+      "tags": ["macie", "custom-data-identifier", "regex", "healthcare", "phi"],
+      "common_mistakes": ["Macie の CDI 機能を知らずに自作する", "マネージド識別子だけで済むと思い込む"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-010",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Incident Response",
+      "subtopic": "Forensic process",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある製造業企業のセキュリティチームが、侵害された EC2 インスタンスのフォレンジック調査を行う必要がある。AWS のベストプラクティスに沿った調査開始時の対応として、最も適切な順序はどれか？",
+      "options": [
+        {"id": "A", "text": "1) インスタンスを終了 → 2) スナップショット作成 → 3) ログ分析", "is_correct": false, "explanation": "インスタンス終了が先だと揮発性メモリと一部のログが失われる。順序が誤っている。"},
+        {"id": "B", "text": "1) 隔離（Security Group変更）→ 2) メタデータとメモリのキャプチャ → 3) EBS スナップショット → 4) フォレンジックアカウントへの転送 → 5) 分析", "is_correct": true, "explanation": "正解。封じ込めと証拠保全を並行で行い、隔離環境で分析するのがAWS推奨フォレンジックフロー。"},
+        {"id": "C", "text": "1) インスタンス再起動でクリーンアップ → 2) 後でログだけ確認", "is_correct": false, "explanation": "再起動でメモリと一時ファイルが消失し、攻撃の痕跡が失われる。最悪の対応。"},
+        {"id": "D", "text": "1) IAMロールを削除 → 2) インスタンス削除 → 3) 完了報告", "is_correct": false, "explanation": "証拠保全と原因分析が欠落しており、再発防止につながらない。"}
+      ],
+      "explanation": "AWS のフォレンジック手順は『封じ込め (隔離) → 証拠保全 (メタデータ・メモリ・EBS スナップショット) → 専用アカウントへ移送 → 分析 → 復旧』。SSM Run Command でメモリダンプを取得し、専用フォレンジック VPC にスナップショットを共有して隔離環境で調査するのが標準。インスタンス自体は分析完了まで保持する。",
+      "references": [{"title": "AWS Security Incident Response Guide", "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/aws-security-incident-response-guide.html"}],
+      "tags": ["incident-response", "forensics", "ec2", "snapshot", "manufacturing"],
+      "common_mistakes": ["インスタンスを先に終了して証拠を失う", "メモリ取得をスキップする", "再起動でクリーンアップしようとする"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-011",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Multi-service integration",
+      "subtopic": "Detection landscape",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）あるSaaS企業のセキュリティアーキテクトが、AWSのネイティブ脅威検出サービス群の役割整理を行っている。次のうち正しい説明はどれか？2つ選びなさい。",
+      "options": [
+        {"id": "A", "text": "GuardDuty は脅威検出に特化し、findings を生成する『検出エンジン』である", "is_correct": true, "explanation": "正解。GuardDuty は CloudTrail/VPC Flow/DNS/EKS監査ログ等を分析し脅威 findings を生成する検出サービス。"},
+        {"id": "B", "text": "Security Hub は複数のセキュリティサービスから findings を集約・標準化する『集約ハブ』である", "is_correct": true, "explanation": "正解。Security Hub は GuardDuty、Inspector、Macie、Config、サードパーティのfindings を ASFF 形式で集約する。"},
+        {"id": "C", "text": "Detective は GuardDuty を置き換える検出サービスで、findings を独自に生成する", "is_correct": false, "explanation": "Detective は調査支援サービスで、findings の検出は行わない。GuardDuty とは補完関係。"},
+        {"id": "D", "text": "Macie は ネットワーク脅威検出サービスで、VPC Flow Logs を分析する", "is_correct": false, "explanation": "Macie は S3 上の機密データ検出サービスで、ネットワーク脅威検出ではない。"}
+      ],
+      "explanation": "AWS の脅威検出ランドスケープでは、検出 (GuardDuty、Inspector、Macie) → 集約 (Security Hub) → 調査 (Detective) → 対応 (Systems Manager OpsCenter / Incident Manager) という役割分担になっている。これらを正しく組み合わせると、検出から対応までの一貫したフローが構築できる。",
+      "references": [{"title": "AWS security services overview", "url": "https://docs.aws.amazon.com/security/"}],
+      "tags": ["guardduty", "security-hub", "detective", "macie", "architecture"],
+      "common_mistakes": ["Detective が独立した検出エンジンと誤解", "Macie をネットワーク監視と混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-012",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Automated response",
+      "subtopic": "EventBridge + SSM Automation",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるFinTech企業がGuardDutyの『UnauthorizedAccess:IAMUser/MaliciousIPCaller』findings に対して、関連IAMユーザーのアクセスキーを自動的に無効化したい。最も運用効率が高い実装は？",
+      "options": [
+        {"id": "A", "text": "EventBridge ルールで GuardDuty finding を捕捉し、SSM Automation runbookを実行してアクセスキーをDeactivateする", "is_correct": true, "explanation": "正解。EventBridge + SSM Automation の組み合わせは AWS推奨の自動応答パターンで、コードレスで実装できる。"},
+        {"id": "B", "text": "1時間ごとに Lambda でGuardDuty API を polling し、該当 finding があればアクセスキーを無効化する", "is_correct": false, "explanation": "polling は遅延・コスト・実装複雑性のすべてで EventBridge より劣る。"},
+        {"id": "C", "text": "GuardDuty に直接『アクセスキー無効化』のオプションがあるので有効にする", "is_correct": false, "explanation": "GuardDutyに直接的なリメディエーションオプションは存在しない。EventBridgeでオーケストレーションする。"},
+        {"id": "D", "text": "AWS Config の自動修復ルールでGuardDutyのfindings を変換して対応する", "is_correct": false, "explanation": "Config 自動修復は Config 評価結果に基づくもので、GuardDuty findings の入力には対応しない。"}
+      ],
+      "explanation": "GuardDuty findings は EventBridge にネイティブ配信される。EventBridge ルールで finding type をフィルタし、ターゲットに SSM Automation runbook を指定すると、アクセスキー無効化、インスタンス隔離、IAMロール失効などの応答を自動化できる。AWS Security Hub Automated Response and Remediation (ASR/SOAR) の標準パターン。",
+      "references": [{"title": "Automated response with EventBridge and Systems Manager", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html"}],
+      "tags": ["eventbridge", "ssm-automation", "guardduty", "soar", "fintech"],
+      "common_mistakes": ["polling 型実装で遅延と運用負荷を抱える", "Config 自動修復と混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-013",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Forensics",
+      "subtopic": "SageMaker AI notebook",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "ある医療系SaaS企業のセキュリティチームが、過去90日分の CloudTrail と VPC Flow Logs に対して大量のIOC（侵害指標）を一気に照合したい。アナリストは Python と Jupyter に慣れている。最も適切なフォレンジック分析環境は？",
+      "options": [
+        {"id": "A", "text": "本番アカウント上で SageMaker AI notebook を起動し、本番ログにアクセスして分析する", "is_correct": false, "explanation": "本番アカウント上でフォレンジック分析を行うと侵害拡大や証拠汚染のリスクがある。隔離環境が必須。"},
+        {"id": "B", "text": "専用フォレンジックアカウントに SageMaker AI notebook を構築し、Athena 経由で隔離コピーされた CloudTrail / VPC Flow Logs に対して IOC 検索を行う", "is_correct": true, "explanation": "正解。隔離アカウント + SageMaker AI notebook + Athena の組み合わせは AWS 推奨フォレンジック環境。"},
+        {"id": "C", "text": "ローカルPCに全ログをダウンロードして Pandas で分析する", "is_correct": false, "explanation": "PHIを含む可能性のあるログをローカルPCに持ち出すのはコンプライアンス違反のリスクが高い。"},
+        {"id": "D", "text": "EC2 t3.micro インスタンスに JupyterLab を手動構築し、本番のS3バケットを直接マウントする", "is_correct": false, "explanation": "管理されない環境＋本番S3直接アクセスは隔離原則に反する。"}
+      ],
+      "explanation": "フォレンジック分析は専用アカウントの SageMaker AI notebook で行うのがベストプラクティス。Athena でクエリ可能な形でログを隔離コピーし、notebook 上で IOC 照合・タイムライン分析・可視化を行う。SageMaker AI notebook はマネージドなので環境構築不要、IAM Role 経由のアクセスで監査も容易。",
+      "references": [{"title": "Forensic AWS account", "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/aws-security-incident-response-guide.html"}, {"title": "Amazon SageMaker AI Notebooks", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html"}],
+      "tags": ["forensics", "sagemaker", "athena", "ioc", "healthcare"],
+      "common_mistakes": ["本番アカウントで分析環境を構築", "ローカルPCにログを持ち出す"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-014",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "GuardDuty",
+      "subtopic": "Malware Protection for S3",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育プラットフォーム企業が、ユーザーがアップロードする教材ファイルのS3バケットに対してマルウェアスキャンを自動化したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "GuardDuty Malware Protection for S3 を対象バケットに有効化し、新規オブジェクトを自動スキャンする", "is_correct": true, "explanation": "正解。Malware Protection for S3 は新規オブジェクトのアップロードトリガで自動スキャンする AWS マネージド機能。"},
+        {"id": "B", "text": "Lambda で 各 PutObject イベントを捕捉し、ClamAV を含むコンテナを自前で構築してスキャンする", "is_correct": false, "explanation": "技術的に可能だがGuardDuty マネージド機能のほうが運用負荷が低い。シグネチャ更新やスケーリング管理を AWS が行う。"},
+        {"id": "C", "text": "Macie を有効化してマルウェアパターンを検出する", "is_correct": false, "explanation": "Macie は機密データ（PII等）検出に特化しており、マルウェア検出機能は持たない。"},
+        {"id": "D", "text": "S3 Object Lambda でファイル取得時にマルウェアスキャンするカスタムコードを実装する", "is_correct": false, "explanation": "アップロード時ではなく取得時のスキャンとなり、感染ファイルが S3 に滞留する期間が長くなる。"}
+      ],
+      "explanation": "GuardDuty Malware Protection for S3 は、有効化したバケットへのオブジェクト書き込みを契機にマルウェアスキャンを自動実行し、検出時はオブジェクトタグ付けと findings 生成を行う。シグネチャ更新やスキャナ運用は AWS マネージドで、Lambda + ClamAV のような自作より運用負荷が低い。教育・SaaS のユーザーアップロード経路の標準対策。",
+      "references": [{"title": "GuardDuty Malware Protection for Amazon S3", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection-s3.html"}],
+      "tags": ["guardduty", "malware-protection", "s3", "education", "automation"],
+      "common_mistakes": ["Macie でマルウェア検出できると誤解", "Lambda + ClamAV を自作する"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-015",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Macie",
+      "subtopic": "ML training data PII",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある医療系SaaS企業が、SageMaker AI で診断補助モデルをトレーニングする予定。トレーニングデータが格納された S3 バケットに PII が混入していないか事前確認したい。最も適切なアプローチは？",
+      "options": [
+        {"id": "A", "text": "Amazon Macie でトレーニング用 S3 バケットに対して Sensitive Data Discovery ジョブを実行し、PII を含むオブジェクトを特定してから学習を開始する", "is_correct": true, "explanation": "正解。学習前のデータ検査は ML データガバナンスのベストプラクティスで、Macie がそのための専用ツール。"},
+        {"id": "B", "text": "SageMaker AI の Trainingジョブを実行し、エラーが出てから対応する", "is_correct": false, "explanation": "PII 混入はエラーにならず学習に取り込まれる。事後対応は『学習済みモデルからの PII リーク』という重大インシデントになり得る。"},
+        {"id": "C", "text": "Amazon Comprehend を Lambda から逐次呼び出してオブジェクトを1つずつ検査する", "is_correct": false, "explanation": "技術的に可能だがS3全体スキャンは Macie のほうが効率的・コスト効果的。"},
+        {"id": "D", "text": "GuardDuty Malware Protection で代替する", "is_correct": false, "explanation": "GuardDuty Malware Protection はマルウェア検出で、PII 検出機能は持たない。"}
+      ],
+      "explanation": "ML モデルのトレーニングデータに PII が混入すると、モデル経由で PII が再生成・抽出される攻撃 (model inversion / membership inference) のリスクがある。Macie で事前にデータセットをスキャンし、PII を除去・匿名化してからトレーニングするのが、AWS GenAI/ML セキュリティの基本パターン。Domain 7 と直結する重要トピック。",
+      "references": [{"title": "Discovering sensitive data with Macie", "url": "https://docs.aws.amazon.com/macie/latest/user/discovery-jobs.html"}, {"title": "SageMaker AI security best practices", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/security.html"}],
+      "tags": ["macie", "sagemaker", "ml-security", "pii", "healthcare"],
+      "common_mistakes": ["学習前のデータガバナンスを軽視する", "Comprehend で大量S3を逐次処理してしまう"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-016",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Shield Advanced",
+      "subtopic": "Application layer protection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるオンラインゲーム企業がCloudFront + ALB 構成のWebサービスを運用しており、L7 DDoS攻撃のリスクに備えたい。Shield Advanced の機能を最大化する構成として最も適切なのはどれか？",
+      "options": [
+        {"id": "A", "text": "Shield Advanced を CloudFront に紐付け、自動アプリケーションレイヤー DDoS 緩和を有効にして AWS WAF と連携させる", "is_correct": true, "explanation": "正解。Shield Advanced + AWS WAF の自動緩和（automatic application layer DDoS mitigation）はL7 DDoS対策のベストプラクティス。"},
+        {"id": "B", "text": "Shield Standard だけで L7 DDoS は完全に防御できる", "is_correct": false, "explanation": "Shield Standard はL3/L4 のみ自動防御。L7（HTTP flood等）は Shield Advanced + WAFが必要。"},
+        {"id": "C", "text": "Shield Advanced は L3/L4 のみで、L7 攻撃は Network Firewall で守る", "is_correct": false, "explanation": "Network Firewall はVPC内の検査用で、エッジでのL7 DDoS防御には不適。"},
+        {"id": "D", "text": "Shield Advanced は不要で、CloudFront のキャッシュだけで L7 DDoS を吸収できる", "is_correct": false, "explanation": "キャッシュは緩和に役立つが、攻撃パターンの自動学習・WAFルール自動生成には Shield Advanced が必要。"}
+      ],
+      "explanation": "Shield Advanced は L3/L4 に加え、L7 自動DDoS緩和（automatic application layer DDoS mitigation）も提供する。これは Shield Advanced と AWS WAF を組み合わせ、攻撃パターンを学習して WAF ルールを自動生成する機能。Shield Response Team (SRT) によるサポート、コスト保護（DDoS attribution に基づくスケーリング料金の払い戻し）も付随する。",
+      "references": [{"title": "Application layer DDoS protection", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-automatic-app-layer-response.html"}],
+      "tags": ["shield-advanced", "waf", "ddos", "l7", "gaming"],
+      "common_mistakes": ["Shield Standard で全DDoSが防げると誤解", "Network Firewall をエッジ DDoS 用と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-017",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "OpsCenter",
+      "subtopic": "Incident management",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業企業のSOCチームが、複数の脅威検出ソース（GuardDuty、Security Hub、CloudWatch Alarms）から発生するセキュリティインシデントを統一的に管理し、対応状況をトラッキングしたい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "AWS Systems Manager OpsCenter を中央集約点とし、EventBridge ルールで各ソースから OpsItem を自動生成・割当する", "is_correct": true, "explanation": "正解。OpsCenter は OpsItem として各種アラート・findings を統一管理でき、ステータス・担当者・対応履歴を追跡できる。"},
+        {"id": "B", "text": "Slack に全 findings を流して人手でトリアージする", "is_correct": false, "explanation": "通知は重要だが、状態管理機能を持たないSlackだけではインシデントトラッキングにならない。"},
+        {"id": "C", "text": "JIRAでチケット管理し、AWS との統合は手動で行う", "is_correct": false, "explanation": "JIRA連携はOpsCenterからも可能。OpsCenter なら AWS リソース情報の自動添付が利く。"},
+        {"id": "D", "text": "Detective だけで対応状況を管理する", "is_correct": false, "explanation": "Detective は調査ツールで、ステータス管理機能を持たない。"}
+      ],
+      "explanation": "AWS Systems Manager OpsCenter は OpsItem 単位でインシデントを管理し、ステータス・優先度・関連リソース・対応履歴を一元化できる。EventBridge から自動生成する設定で、GuardDuty findings、Security Hub findings、CloudWatch Alarms を統一管理。Incident Manager と組み合わせるとオンコール対応まで自動化できる。",
+      "references": [{"title": "AWS Systems Manager OpsCenter", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html"}],
+      "tags": ["opscenter", "incident-management", "eventbridge", "soc", "manufacturing"],
+      "common_mistakes": ["Slack/JIRA 単独で済ませてリソース紐付けを失う", "OpsCenter と Incident Manager の使い分けを誤る"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-018",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Multi-account",
+      "subtopic": "Delegated administrator pattern",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "（複数選択：3つ選びなさい）ある企業がAWS Organizationsで多数のアカウントを運用しており、SecurityToolingアカウントに各種セキュリティサービスを集約したい。委任管理者として設定できる、または有効なサービスとして正しいものを3つ選びなさい。",
+      "options": [
+        {"id": "A", "text": "GuardDuty の委任管理者を SecurityTooling に指定し、組織全体の findings を集約する", "is_correct": true, "explanation": "正解。GuardDuty は組織レベルで委任管理者を1つ指定でき、新規アカウントの自動有効化も可能。"},
+        {"id": "B", "text": "Security Hub の委任管理者を SecurityTooling に指定し、組織全体の findings を集約する", "is_correct": true, "explanation": "正解。Security Hub も委任管理者をサポートし、cross-account findings 集約が可能。"},
+        {"id": "C", "text": "Macie の委任管理者を SecurityTooling に指定し、組織全体の機密データ検出を一元管理する", "is_correct": true, "explanation": "正解。Macie も委任管理者をサポートし、組織レベルでのジョブ実行と findings 集約が可能。"},
+        {"id": "D", "text": "AWS WAF の委任管理者を SecurityTooling に指定し、全アカウントのWAF ルールを管理する", "is_correct": false, "explanation": "WAF 自体には委任管理者の概念はない。組織レベルでのルール管理は AWS Firewall Manager の役割。"}
+      ],
+      "explanation": "AWS Organizations の委任管理者パターンは、特定の管理者アカウント（SecurityTooling）に組織レベルのサービス管理を委任する仕組み。GuardDuty、Security Hub、Macie、Detective、Inspector、Firewall Manager、Config、CloudTrail などが対応する。これによりルートアカウントを直接運用せず、統制された管理が可能。",
+      "references": [{"title": "AWS Organizations delegated administrator", "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html"}],
+      "tags": ["organizations", "delegated-admin", "security-hub", "macie", "guardduty"],
+      "common_mistakes": ["WAF を Firewall Manager と混同", "委任管理者と管理アカウント (Management Account) を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-019",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "GuardDuty",
+      "subtopic": "Bedrock GenAI workload threat detection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "hard",
+      "stem": "あるFinTech企業がAmazon Bedrock を使った社内向けRAGアプリを運用している。Bedrock 呼び出しを行う IAM ロールが侵害された場合に、異常な使用パターンを早期検知したい。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "GuardDuty を有効にし、IAM 関連の finding type（CredentialAccess、InitialAccess、Discovery など）と CloudTrail 上の bedrock:InvokeModel イベント分析を組み合わせる", "is_correct": true, "explanation": "正解。GuardDuty は CloudTrail を分析するので Bedrock 呼び出しの異常も検出対象。IAM credential 悪用シナリオは GuardDuty が得意。"},
+        {"id": "B", "text": "Bedrock には脅威検出は適用できないため、独自で CloudTrail を Athena で分析する仕組みのみ構築する", "is_correct": false, "explanation": "GuardDuty は CloudTrail 上の Bedrock APIアクション含むIAM異常を検出可能。独自分析だけに頼るのは非効率。"},
+        {"id": "C", "text": "WAF だけで Bedrock 呼び出しの保護を行う", "is_correct": false, "explanation": "WAFはWebリクエストの検査で、IAM資格情報悪用や API レベルの異常検出は守備範囲外。"},
+        {"id": "D", "text": "Bedrock の組み込みセキュリティで全脅威が自動的にブロックされるので追加対策は不要", "is_correct": false, "explanation": "Bedrock のサービス側保護はあるが、顧客側の IAM credential 悪用は顧客責任。GuardDuty の併用が必要。"}
+      ],
+      "explanation": "GuardDuty の IAM 関連 finding（資格情報悪用、未知IPからの API 呼び出し、異常なAPIパターンなど）は Bedrock を含むあらゆる AWS サービス呼び出しに適用される。Bedrock を使う GenAI アプリの責任共有モデルでは、IAMロール侵害・credential 漏洩は顧客側の検出対象。GuardDuty + CloudTrail Data Events + Bedrock Guardrails の多層防御が標準。Domain 7 と直結。",
+      "references": [{"title": "GuardDuty IAM finding types", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/findings-iam.html"}, {"title": "Bedrock security", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security.html"}],
+      "tags": ["guardduty", "bedrock", "genai", "iam", "fintech"],
+      "common_mistakes": ["Bedrock は脅威検出対象外と誤解", "WAF だけで GenAI ワークロードを守れると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-020",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Detective",
+      "subtopic": "Investigation efficiency",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育SaaS企業のセキュリティアナリストが GuardDuty で『Recon:IAMUser/MaliciousIPCaller.Custom』findings を確認した。当該IAMユーザーが過去30日間に行った API 操作と、関連リソースを最短で把握したい。最も効率的な手段は？",
+      "options": [
+        {"id": "A", "text": "Athena で CloudTrail テーブルに対してクエリを書き、IAMユーザーで絞り込む", "is_correct": false, "explanation": "可能だが、テーブル設計・クエリ作成が手作業で時間がかかる。Detective に統合済みなら不要。"},
+        {"id": "B", "text": "Amazon Detective の finding ページから当該 IAM ユーザーのプロファイルにジャンプし、API 呼び出し履歴・関連エンティティ・時系列を即座に確認する", "is_correct": true, "explanation": "正解。Detective は CloudTrail/VPC Flow/GuardDuty を behavior graph 化済みで、エンティティ視点の調査が即座に可能。"},
+        {"id": "C", "text": "CloudWatch Logs Insights で CloudTrail を直接クエリする", "is_correct": false, "explanation": "CloudTrail を CloudWatch Logs に流していないと使えない。流していてもクエリ作成が手間。"},
+        {"id": "D", "text": "IAMユーザー詳細画面から最近の API 呼び出しを確認する", "is_correct": false, "explanation": "IAMコンソールには API 呼び出し履歴の機能はない。Last Used 情報だけでは粒度が足りない。"}
+      ],
+      "explanation": "Amazon Detective は GuardDuty findings から1クリックで関連エンティティ（IAM ユーザー、IP、リソース）の詳細プロファイルにジャンプできる。プロファイルでは過去最大1年分の API 呼び出し統計、関連エンティティ、時系列、異常検出が事前計算済みで表示される。Athena でゼロから書くのと比較して調査時間を10分の1以下に短縮可能。",
+      "references": [{"title": "Amazon Detective entity profiles", "url": "https://docs.aws.amazon.com/detective/latest/userguide/profile-pages.html"}],
+      "tags": ["detective", "investigation", "guardduty", "cloudtrail", "education"],
+      "common_mistakes": ["Athena/CloudWatch Logs Insightsで毎回ゼロから書く", "IAM コンソールに調査機能があると誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-021",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Automated remediation",
+      "subtopic": "Security Hub custom actions",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある製造業企業のSOCチームが、Security Hub のfindings に対して『S3パブリックアクセスブロックの強制有効化』を半自動化したい。アナリストが finding を選択して『Remediate』ボタンを押すと自動修復したい。最も適切な実装は？",
+      "options": [
+        {"id": "A", "text": "Security Hub Custom Action を作成し、選択したfindings を EventBridge 経由で SSM Automation runbook（AWS-EnableS3BucketPublicAccessBlock など）に渡す", "is_correct": true, "explanation": "正解。Custom Action は Security Hub コンソール上のボタンになり、EventBridge → SSM Automation のフローでヒューマンインザループの修復を実装できる。"},
+        {"id": "B", "text": "Security Hub のすべての findings に対して自動修復を有効にし、確認なしで全リソースを変更する", "is_correct": false, "explanation": "確認なしの全自動修復は事故リスクが高く、本シナリオの『アナリストが選択』要件にも合わない。"},
+        {"id": "C", "text": "Lambda 関数を Security Hub に直接アタッチし、finding を即座に処理する", "is_correct": false, "explanation": "Security Hub に直接Lambdaをアタッチする機能はない。EventBridge を経由する必要がある。"},
+        {"id": "D", "text": "Config Rule の自動修復で Security Hub findings を入力として処理する", "is_correct": false, "explanation": "Config Rule の自動修復は Config 評価結果に基づくもので、Security Hub findings を直接入力にはできない。"}
+      ],
+      "explanation": "Security Hub Custom Action はコンソール上のカスタムボタンとして表示され、選択した findings を EventBridge にイベントとして送信する。EventBridge ルールで SSM Automation runbook をターゲット指定すると、半自動（ヒューマンインザループ）の修復フローが完成する。AWS には標準で約100種類の Security Hub Automated Response and Remediation (ASR) runbook が用意されている。",
+      "references": [{"title": "Security Hub custom actions", "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/custom-actions.html"}, {"title": "Automated Security Response on AWS", "url": "https://docs.aws.amazon.com/solutions/latest/automated-security-response-on-aws/solution-overview.html"}],
+      "tags": ["security-hub", "custom-actions", "ssm-automation", "remediation", "manufacturing"],
+      "common_mistakes": ["全自動修復を導入して事故を起こす", "Config 自動修復と Security Hub Custom Action を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-022",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "GuardDuty",
+      "subtopic": "Extended Threat Detection analysis",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "あるFinTech企業のSOCで、GuardDuty Extended Threat Detection が attack sequence finding として『InitialAccess → CredentialAccess → Persistence → Exfiltration』のチェーンを検出した。まず分析すべき対象として最も適切なのは？",
+      "options": [
+        {"id": "A", "text": "InitialAccess（初期侵入）の finding に紐づく外部 IP・侵入経路と、Persistence finding に紐づく永続化メカニズム", "is_correct": true, "explanation": "正解。攻撃チェーン分析では侵入経路と永続化機構の特定が、再侵入防止と封じ込めの優先事項。"},
+        {"id": "B", "text": "Exfiltration の finding だけを見て、流出データを推定する", "is_correct": false, "explanation": "Exfiltration単独の分析は被害推定には役立つが、攻撃の全体像と再侵入防止には不十分。"},
+        {"id": "C", "text": "CredentialAccess findings の 1つだけを切り出し、該当 credential を即座に rotate して終わる", "is_correct": false, "explanation": "個別対応のみでは Persistence で攻撃者が他の credential や永続化機構を確保している可能性に対応できない。"},
+        {"id": "D", "text": "全 finding を一律 high severity 扱いにして、優先順位なく対応する", "is_correct": false, "explanation": "攻撃チェーンには分析順序があり、無秩序な対応は二次被害を招く。"}
+      ],
+      "explanation": "GuardDuty Extended Threat Detection の attack sequence finding は MITRE ATT&CK 風の戦術連鎖（Tactic chain）を検出する。分析の優先順位は『InitialAccess（侵入経路特定）→ Persistence（永続化排除）→ CredentialAccess（資格情報ローテーション）→ Exfiltration（被害評価）』。これにより、対応中の再侵入を防ぎながら根絶できる。",
+      "references": [{"title": "GuardDuty Extended Threat Detection", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/extended-threat-detection.html"}],
+      "tags": ["guardduty", "extended-threat-detection", "attack-sequence", "mitre", "fintech"],
+      "common_mistakes": ["1つの finding だけで対応を完結させる", "攻撃チェーンの分析順序を理解しない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-023",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Macie",
+      "subtopic": "Cost optimization",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある教育プラットフォーム企業がAmazon Macie のコストが想定より高くなっていることに気づいた。組織全体で500TB のS3データがあり、毎月全量スキャンを行っている。コスト効率の高い運用に変更する案として最も適切なのはどれか？",
+      "options": [
+        {"id": "A", "text": "Macie を完全に無効化してコストをゼロにする", "is_correct": false, "explanation": "完全無効化は機密データ検出機能を放棄することになり、コンプライアンス要件を満たせない。"},
+        {"id": "B", "text": "automated sensitive data discovery（自動機密データ検出）を活用してサンプリング検査を行い、bucket scope と sampling depth を最適化、フルスキャンは初回と四半期ごとに限定する", "is_correct": true, "explanation": "正解。Macieのautomated discoveryは継続的サンプリング、ジョブはフルスキャン用に分け、頻度・スコープ最適化でコストを削減できる。"},
+        {"id": "C", "text": "全バケットに対して毎日フルスキャンの頻度を上げる", "is_correct": false, "explanation": "頻度を上げるとコストはさらに増加する。コスト最適化と逆の方向。"},
+        {"id": "D", "text": "Macie を Glue に置き換える", "is_correct": false, "explanation": "Glue は機密データ検出機能を持たない。代替にならない。"}
+      ],
+      "explanation": "Macie のコスト最適化は『automated sensitive data discovery（継続サンプリング）』 + 『discovery jobs（必要時フルスキャン）』の使い分けが鍵。automated はコスト効率の高いサンプリング型、ジョブは深く検査したいバケットや初回ベースライン取得用。bucket allow list、sampling depth、Object filter、保管期間内アクセスデータのみ対象などを組み合わせて最適化する。",
+      "references": [{"title": "Macie cost estimates", "url": "https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-cost.html"}, {"title": "Automated sensitive data discovery", "url": "https://docs.aws.amazon.com/macie/latest/user/discovery-asdd.html"}],
+      "tags": ["macie", "cost-optimization", "automated-discovery", "sampling", "education"],
+      "common_mistakes": ["毎月フルスキャンが標準と思い込む", "automated discovery と job の使い分けを理解しない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-024",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Security Hub",
+      "subtopic": "ASFF and finding lifecycle",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "あるFinTech企業のSOCで、Security Hub の findings 数が膨大になり対応が追いつかない。SOCが新規 finding に集中できるよう、すでにリスク受容済みの finding を再表示しないようにしたい。最も適切なアプローチは？",
+      "options": [
+        {"id": "A", "text": "Security Hub の Workflow Status を SUPPRESSED に変更し、Insights や検索で除外条件を設定する", "is_correct": true, "explanation": "正解。Workflow Status (NEW、NOTIFIED、SUPPRESSED、RESOLVED) はASFFのfinding lifecycle管理で、SUPPRESSED にすると新規通知されない。"},
+        {"id": "B", "text": "該当findingsを生成元のサービス（GuardDuty等）でアーカイブする", "is_correct": false, "explanation": "サービス側のアーカイブは可能だが、Security Hub の Workflow Status とは別管理で、リスク受容のドキュメント化には不向き。"},
+        {"id": "C", "text": "該当 findings を直接削除する API を呼び出す", "is_correct": false, "explanation": "Security Hub の findings は不変イミュータブルで、ステータス変更で管理する。削除はできない。"},
+        {"id": "D", "text": "Security Hub を一時的に無効化する", "is_correct": false, "explanation": "無効化は新規findingsの取り込みも止まり、運用上不適。"}
+      ],
+      "explanation": "Security Hub の ASFF (AWS Security Finding Format) には Workflow Status フィールド（NEW、NOTIFIED、SUPPRESSED、RESOLVED）があり、リスク受容済み findings は SUPPRESSED にしてダッシュボード表示・通知から除外できる。新規 findings は NEW で出現し、対応プロセスの中でステータス遷移させる。Insightsや Custom Action と組み合わせると効率的。",
+      "references": [{"title": "ASFF Workflow object", "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html"}],
+      "tags": ["security-hub", "asff", "workflow-status", "lifecycle", "fintech"],
+      "common_mistakes": ["findings を削除しようとする", "Workflow Status と Compliance Status を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-025",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Multi-account",
+      "subtopic": "Detection at scale",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）ある製造業企業（200アカウント、グローバル展開）のセキュリティアーキテクトが、組織全体の脅威検出を運用効率の高い構成にしたい。AWS のベストプラクティスとして正しいものを2つ選びなさい。",
+      "options": [
+        {"id": "A", "text": "Security Tooling アカウントを Organizations 上に作成し、各セキュリティサービスの委任管理者として指定する", "is_correct": true, "explanation": "正解。AWS Security Reference Architecture (AWS SRA) の中核パターン。専用 Security Tooling アカウントが推奨。"},
+        {"id": "B", "text": "Log Archive 専用アカウントを作成し、CloudTrail Organization Trail のログ集約先と Security Lake のデータレイクを配置する", "is_correct": true, "explanation": "正解。AWS SRA はログ集約用に独立した Log Archive アカウントを推奨。改ざん防止と職務分離の観点から重要。"},
+        {"id": "C", "text": "Management Account に直接 GuardDuty / Security Hub / Macie を有効化し、ルートユーザーで日常運用する", "is_correct": false, "explanation": "Management Account は最小限の利用に留めるのが原則。日常運用は委任管理者経由が推奨。"},
+        {"id": "D", "text": "各アカウントが個別に Security Hub を有効化し、相互に findings を共有する Lambda を実装する", "is_correct": false, "explanation": "ネイティブな委任管理者・組織機能で集約できるためカスタム実装は不要。"}
+      ],
+      "explanation": "AWS Security Reference Architecture (AWS SRA) では、Management、Security Tooling、Log Archive を独立したアカウントとして配置することを推奨している。Security Tooling アカウントは GuardDuty、Security Hub、Macie、Detective、Inspector、Firewall Manager の委任管理者として運用、Log Archive はログ集約・改ざん防止用。Management Account は組織管理機能の最小限利用に留める。",
+      "references": [{"title": "AWS Security Reference Architecture", "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html"}],
+      "tags": ["aws-sra", "multi-account", "security-tooling", "log-archive", "manufacturing"],
+      "common_mistakes": ["Management Account にすべてを集約", "委任管理者と Management Account を混同"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-026",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Forensics",
+      "subtopic": "EBS evidence preservation",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある医療系SaaS企業のEC2インスタンスがマルウェア感染の疑いがある。インスタンスを隔離した後、EBSボリュームのフォレンジック保全を行う。最も適切な手順はどれか？",
+      "options": [
+        {"id": "A", "text": "EBS スナップショットを取得し、KMS で暗号化したまま専用フォレンジックアカウントへ共有、フォレンジック VPC 内で読み取り専用ボリュームとしてアタッチする", "is_correct": true, "explanation": "正解。スナップショットのクロスアカウント共有 + 専用フォレンジック環境での読み取り専用マウントが標準。証拠の不変性を保つ。"},
+        {"id": "B", "text": "本番アカウント上で別 EC2 にボリュームを書き込み可能でアタッチして調査する", "is_correct": false, "explanation": "書き込み可能でアタッチすると証拠が改変される可能性があり、フォレンジック証拠としての価値が失われる。"},
+        {"id": "C", "text": "ボリュームを直接デタッチして、調査担当者のラップトップへ物理的に郵送する", "is_correct": false, "explanation": "EBS は物理ボリュームではない。送付・コンプライアンスの両面で不適切。"},
+        {"id": "D", "text": "感染が疑われるインスタンスを終了して、EBS が削除される設定で証拠を完全消去する", "is_correct": false, "explanation": "証拠を完全消去するのはフォレンジックの真逆。"}
+      ],
+      "explanation": "EBSフォレンジックの標準手順：1) スナップショット作成（イミュータブル）、2) KMSキー権限を付けたままフォレンジックアカウントへスナップショット共有、3) フォレンジックアカウントでボリュームを復元、4) フォレンジック EC2 に read-only でアタッチ、5) ハッシュ取得 + メタデータ記録 + 分析ツールで調査。証拠保全と職務分離を徹底する。",
+      "references": [{"title": "AWS Security Incident Response Guide - Forensic", "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/incident-response-process.html"}],
+      "tags": ["forensics", "ebs", "snapshot", "evidence-preservation", "healthcare"],
+      "common_mistakes": ["書き込み可能でボリュームをアタッチ", "本番アカウントで分析", "インスタンス終了による証拠喪失"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-027",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Detective",
+      "subtopic": "Investigation across services",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）あるオンラインゲーム企業のSOCアナリストが、Amazon Detective を使った調査の効果的な使い方を整理している。次のうち Detective の機能として正しいものを2つ選びなさい。",
+      "options": [
+        {"id": "A", "text": "GuardDuty findings から関連 IAMユーザー・IP・リソースの behavior graph をワンクリックで開ける", "is_correct": true, "explanation": "正解。Detective の主要機能。findings から関連エンティティの可視化までシームレス。"},
+        {"id": "B", "text": "IAM Access Analyzer や Macie の findings からも調査開始できる（findings ソースの拡張）", "is_correct": true, "explanation": "正解。Detective は GuardDuty に加え、Security Hub finding、IAM Access Analyzer、Macie などの findings を起点に調査できる範囲を拡張している。"},
+        {"id": "C", "text": "Detective は脅威を能動的にブロックし、攻撃元IPを自動で拒否リストに追加する", "is_correct": false, "explanation": "Detective は調査・可視化サービスで、能動的なブロック機能は持たない。WAF/Network Firewall の役割。"},
+        {"id": "D", "text": "Detective は CloudTrail のログを直接書き換えて改ざん検知を行う", "is_correct": false, "explanation": "Detective は読み取り専用で、ログ改ざん機能は持たない。改ざん検知は CloudTrail 自体のログファイル整合性検証機能。"}
+      ],
+      "explanation": "Amazon Detective は『調査』に特化した分析サービスで、GuardDuty・Security Hub・IAM Access Analyzer・Macie などの findings から関連エンティティへ即座にジャンプできる behavior graph を提供する。能動的なブロックはWAF/Shield/Network Firewall、ログ改ざん検知はCloudTrail のログファイル整合性検証機能 が担当する。役割の切り分けが重要。",
+      "references": [{"title": "Amazon Detective integrations", "url": "https://docs.aws.amazon.com/detective/latest/userguide/findings-investigation-overview.html"}],
+      "tags": ["detective", "investigation", "behavior-graph", "iam-access-analyzer", "gaming"],
+      "common_mistakes": ["Detective を予防的セキュリティと誤解", "Detective が GuardDuty のみと連携と思い込む"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-028",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Security Lake",
+      "subtopic": "SIEM integration",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある製造業企業がSplunkをSIEMとして導入済みだが、AWS環境のログをSplunkに送るための構成を最適化したい。コストと運用負荷を抑えつつ、CloudTrail/VPC Flow Logs/GuardDutyを統合したい。最も適切なアプローチは？",
+      "options": [
+        {"id": "A", "text": "Amazon Security Lake を有効化し、各ソースをサブスクリプションで取り込み、Splunk から Subscriber として OCSF フォーマットでクエリする", "is_correct": true, "explanation": "正解。Security Lake + Splunk の Subscriber 連携は、複数ログを正規化済みで提供しSplunk側のパース不要・データ取り込みコストも最適化できる。"},
+        {"id": "B", "text": "各ログソースから個別に Splunk へ Kinesis Firehose で送信し、Splunk 側で JSON パースを実装する", "is_correct": false, "explanation": "可能だがソース毎の構成・パース実装が手間で、ストレージコストも重複する。OCSF 統一の利点を失う。"},
+        {"id": "C", "text": "Splunk を捨てて CloudWatch Logs Insights で代替する", "is_correct": false, "explanation": "既存SIEM資産を破棄するのは現実的ではない。Splunk と Security Lake は補完関係。"},
+        {"id": "D", "text": "S3 にログを置き、Splunk にローカルダウンロードして分析する", "is_correct": false, "explanation": "ローカルダウンロードはネットワーク・ストレージコスト・運用効率のすべてで非効率。"}
+      ],
+      "explanation": "Amazon Security Lake は OCSF + Parquet 形式で正規化されたデータレイクを提供し、Splunk、Datadog、Sumo Logic などの SIEM が Subscriber として直接クエリできる。これにより各ソースをSplunkに二重コピーする必要がなく、ストレージコスト削減・統一フォーマットでの分析・サブスクライバー単位でのアクセス制御が可能。長期保管と即時クエリのバランスも取れる。",
+      "references": [{"title": "Security Lake subscribers", "url": "https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html"}],
+      "tags": ["security-lake", "splunk", "siem", "ocsf", "manufacturing"],
+      "common_mistakes": ["既存 SIEM 構成を見直さず冗長な構成を維持", "ログ毎に個別パイプラインを作る"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-029",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Incident Manager",
+      "subtopic": "On-call response",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "あるFinTech企業のSOCで、夜間の重大セキュリティインシデント発生時にオンコール担当者を呼び出すプロセスを自動化したい。電話・SMS・チャットで段階的にエスカレーションする。最も適切な構成は？",
+      "options": [
+        {"id": "A", "text": "AWS Systems Manager Incident Manager を使い、Response Plan を定義してSNS・チャット・SMS・電話・PagerDuty 連携で多段エスカレーションする", "is_correct": true, "explanation": "正解。Incident Manager は AWS ネイティブのオンコール管理サービスで、escalation chain・engagement・チャットルームを統合管理できる。"},
+        {"id": "B", "text": "Lambda + SNS で電話通知のカスタム実装をする", "is_correct": false, "explanation": "SNSはSMSは可能だが電話通話はサポートされない。エスカレーション・確認応答・追跡などの機能を自作するのは非効率。"},
+        {"id": "C", "text": "OpsCenter で OpsItem を生成するだけで、人手で電話する", "is_correct": false, "explanation": "OpsCenter は管理・追跡が役割で、自動オンコール呼び出し機能は持たない。Incident Manager と組み合わせる。"},
+        {"id": "D", "text": "Detective でオンコール呼び出しを構成する", "is_correct": false, "explanation": "Detective は調査ツールで、通知・エスカレーション機能は持たない。"}
+      ],
+      "explanation": "AWS Systems Manager Incident Manager は AWS ネイティブのインシデント対応サービスで、Response Plan・Escalation Plan・Contacts（電話・SMS・チャット）・チャットルーム連携・自動 SSM Automation 実行を統合管理する。CloudWatch Alarms、EventBridge、Security Hub などからトリガし、24/7のオンコール対応を構築できる。OpsCenter（管理）と Incident Manager（呼び出し）は併用が標準。",
+      "references": [{"title": "AWS Systems Manager Incident Manager", "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/what-is-incident-manager.html"}],
+      "tags": ["incident-manager", "on-call", "escalation", "response-plan", "fintech"],
+      "common_mistakes": ["OpsCenterとIncident Managerを混同", "SNS だけで電話エスカレーション可能と誤解"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-030",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Holistic detection architecture",
+      "subtopic": "Service selection",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある教育プラットフォーム企業（SaaS、年商50億円、20アカウント、SOCチーム3名）が、限られた人員で最大限の脅威検出カバレッジを実現したい。優先度の高い脅威検出スタックの選択として最も妥当なのはどれか？",
+      "options": [
+        {"id": "A", "text": "GuardDuty（全保護プラン込み）+ Security Hub（FSBP + CIS）+ Macie（自動discovery）+ IAM Access Analyzer + Detective を委任管理者構成で有効化し、Security Hub Custom Action + SSM Automation で半自動修復", "is_correct": true, "explanation": "正解。マネージドサービス中心の構成で、SOCの3名が運用可能な範囲で最大カバレッジを実現する。"},
+        {"id": "B", "text": "オンプレ製のSIEMを構築し、各種サードパーティ製品のチューニングに3名のSOCの大半の時間を投入する", "is_correct": false, "explanation": "3名のSOCには運用負荷が過大。マネージドサービス活用が現実的。"},
+        {"id": "C", "text": "コスト削減のため Security Hub だけ有効化し、検出ソースは無効にする", "is_correct": false, "explanation": "Security Hub は集約専用で、検出ソースなしでは findings は生成されない。本末転倒。"},
+        {"id": "D", "text": "GuardDuty Standard のみ有効化し、その他はすべて無効化する", "is_correct": false, "explanation": "Standardのみでは EKS / Runtime / S3 / Lambda の脅威がカバーされない。Macie・Security Hub も併用すべき。"}
+      ],
+      "explanation": "小規模 SOC の場合、AWSマネージド検出サービス群を委任管理者構成で組み合わせ、半自動修復で人的負荷を抑えるのが王道。GuardDuty（検出の中核）+ Security Hub（集約）+ Macie（データ）+ Detective（調査）+ IAM Access Analyzer（権限）+ ASR/SSM Automation（修復）で、人員を増やさずに高度な検出・対応スタックが実現できる。コスト評価は Macie の頻度調整で対処可能。",
+      "references": [{"title": "AWS Security Reference Architecture", "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html"}],
+      "tags": ["architecture", "soc", "small-team", "managed-services", "education"],
+      "common_mistakes": ["集約サービスだけ有効化して検出ソースを忘れる", "オンプレSIEM運用に過剰投資する"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-031",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Cost vs coverage trade-off",
+      "subtopic": "Service prioritization",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある医療系スタートアップ（5アカウント、HIPAA対応必須、月予算が限定的）のセキュリティ責任者が、優先順位を考えた脅威検出の段階導入を計画している。最初の3ヶ月で導入すべきサービスとして最も妥当な評価はどれか？",
+      "options": [
+        {"id": "A", "text": "GuardDuty Standard（必須）+ Security Hub FSBP（必須）+ Macie（PHI 検出のため必須）。Detective や Runtime Monitoring は SOC 体制が整ってから段階追加", "is_correct": true, "explanation": "正解。HIPAA環境ではPHI検出が必須でMacieは外せない。GuardDuty/Security Hubはコスト効率・カバレッジの両面で初期導入の標準。"},
+        {"id": "B", "text": "Detective から先に導入し、findings ソースは後から検討する", "is_correct": false, "explanation": "Detective は調査ツールで、検出ソースなしでは活用できない。導入順序の認識が逆。"},
+        {"id": "C", "text": "Shield Advanced を最優先で導入する", "is_correct": false, "explanation": "Shield Advanced は月額3,000ドルと高コスト。HIPAA初期対応では PHI 検出（Macie）の優先度が高い。"},
+        {"id": "D", "text": "予算がないので、3ヶ月間は何も導入しない", "is_correct": false, "explanation": "HIPAA対応必須の前提で何も導入しないのは規制リスクが大きすぎる。最低限の検出は必要。"}
+      ],
+      "explanation": "限られた予算でHIPAA対応する場合、優先度は『データ保護（PHI検出 = Macie）+ アカウント侵害検出（GuardDuty Standard）+ コンプライアンス可視化（Security Hub FSBP）』の3点セット。これでHIPAAに必要な検出統制をカバーしつつ、月額コストも比較的予測可能。Detective、Runtime Monitoring、Shield Advanced はSOC体制と予算が育ってから段階導入する。",
+      "references": [{"title": "HIPAA on AWS", "url": "https://docs.aws.amazon.com/whitepapers/latest/architecting-hipaa-security-and-compliance-on-aws/architecting-hipaa-security-and-compliance-on-aws.html"}],
+      "tags": ["cost-optimization", "hipaa", "startup", "prioritization", "healthcare"],
+      "common_mistakes": ["Detective を最初に導入する", "Shield Advanced を必須と誤解", "コスト懸念で何も導入しない"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-032",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Detection vs alternative",
+      "subtopic": "Build vs buy",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "あるオンラインゲーム企業のセキュリティアーキテクトが、『AWSネイティブ脅威検出（GuardDuty + Security Hub + Detective）』vs『Athena/CloudWatch Logs Insightsで自作』のトレードオフを評価している。最も妥当な評価はどれか？",
+      "options": [
+        {"id": "A", "text": "ネイティブサービスはML/IPレピュテーション/脅威インテリジェンス更新が組み込まれており、自作では同等の検出精度を維持するのに継続的な脅威研究投資が必要。中小規模では費用対効果は明確にネイティブ優位", "is_correct": true, "explanation": "正解。脅威検出の本質は『最新の脅威インテリジェンス』『分析ロジック』であり、これを自作・維持するコストは膨大。"},
+        {"id": "B", "text": "自作のほうが常に安く、フィルタリングも自由で、GuardDutyは不要", "is_correct": false, "explanation": "脅威インテリジェンスフィードのライセンス費・分析開発費・運用人件費を考慮するとネイティブが安い場合が多い。"},
+        {"id": "C", "text": "ネイティブとAthena自作は機能的に完全に同じ", "is_correct": false, "explanation": "MLベースの異常検出、脅威インテリジェンスフィード、CloudTrail/VPC/DNS/EKS統合分析は自作で再現困難。"},
+        {"id": "D", "text": "自作のほうがコンプライアンス上有利である", "is_correct": false, "explanation": "コンプライアンス上はマネージドサービスのSOC2/ISO/HIPAA認定の活用が容易で、自作には監査負荷がある。"}
+      ],
+      "explanation": "脅威検出を自作するには、(1)脅威インテリジェンスフィード購入・更新、(2)ML異常検出モデルの維持、(3)複数ログソース統合の設計、(4)24/7の運用、すべてが必要。GuardDuty はこれらをマネージドで提供し、料金は処理量ベースで予測可能。中小規模では明確にネイティブが優位。大規模独自要件がある場合のみ Security Lake + Athena + 自作分析の併用が検討される。",
+      "references": [{"title": "GuardDuty pricing", "url": "https://aws.amazon.com/guardduty/pricing/"}],
+      "tags": ["build-vs-buy", "guardduty", "athena", "trade-off", "gaming"],
+      "common_mistakes": ["自作の方が常に安いと誤解", "脅威インテリジェンス維持コストを過小評価"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "scs-c03-domain1-033",
+      "version": "1.0",
+      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
+      "domain": {"id": "domain-1", "name": "Threat Detection and Incident Response", "weight_percent": 14},
+      "topic": "Comprehensive runbook design",
+      "subtopic": "Automation creation",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "あるSaaS企業のセキュリティアーキテクトとして、『侵害された IAM アクセスキーを完全に無害化するインシデント対応 runbook』を設計する任務がある。EventBridge → SSM Automation 構成で実装する。runbook が含むべきステップとして最も網羅的かつ正しい順序のものはどれか？",
+      "options": [
+        {"id": "A", "text": "1) アクセスキーを Inactive 化 → 2) 当該IAMユーザー/ロールの全 Active セッションを失効（IAM AttachUserPolicy で AWSDenyAll 一時付与もしくはセッショントークン無効化）→ 3) CloudTrail で過去のアクション履歴をスナップショット化 → 4) 影響リソース特定 → 5) Slack/Incident Managerで通知 → 6) OpsItem 自動生成", "is_correct": true, "explanation": "正解。封じ込め（無害化）→ 既存セッション失効 → 証拠保全 → 影響特定 → 通知 → 追跡の網羅的フロー。"},
+        {"id": "B", "text": "1) アクセスキーを Inactive 化 → 終了", "is_correct": false, "explanation": "既存セッション・トークンは有効のまま残るため、攻撃者が継続アクセス可能。封じ込めとして不完全。"},
+        {"id": "C", "text": "1) IAM ユーザーを完全削除 → 2) 完了報告", "is_correct": false, "explanation": "ユーザー削除は証拠を破壊し、フォレンジックが不可能になる。CloudTrail 履歴の保全が必須。"},
+        {"id": "D", "text": "1) Slack に通知だけして人手対応を待つ", "is_correct": false, "explanation": "自動 runbook の意義が失われる。少なくとも一次封じ込めは自動化すべき。"}
+      ],
+      "explanation": "侵害された IAM credentials の完全な無害化には、『キーの Inactive 化』だけでは不十分で『既存の有効なセッショントークンの失効』が必須（AWSRevokeOlderSessions ポリシーや AWSDenyAll の一時付与）。さらに証拠保全（CloudTrail スナップショット、Detective での behavior graph 確認）、影響リソース特定（Detective）、通知（Incident Manager）、追跡（OpsCenter）まで含めると完成度の高い runbook になる。SSM Automation のステップとしてオーケストレーションする。",
+      "references": [{"title": "What to do if you inadvertently expose AWS credentials", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html"}, {"title": "SSM Automation runbook reference", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-documents.html"}],
+      "tags": ["runbook", "ssm-automation", "iam", "incident-response", "saas"],
+      "common_mistakes": ["アクセスキー無効化だけで完了と思い込む", "セッショントークン失効を忘れる", "ユーザー削除で証拠を破壊"],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    }
+  ]
+}
