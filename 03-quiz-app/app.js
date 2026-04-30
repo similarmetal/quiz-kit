@@ -107,23 +107,21 @@ const QuizApp = (() => {
         (a.order ?? 999) - (b.order ?? 999)
       );
 
-      // 各カテゴリ配下の exam JSON を並列で取得
+      // 各カテゴリ配下の exam JSON をすべて並列取得 (カテゴリ間 × カテゴリ内、両方並列化)
       await Promise.all(categories.map(async (cat) => {
         const codes = cat.exam_codes || [];
-        const exams = [];
-        for (const code of codes) {
+        const fetched = await Promise.all(codes.map(async (code) => {
           try {
             const r = await fetch(`data/exams/${code}.json`);
             if (r.ok) {
               const exam = await r.json();
               exam._category_id = cat.id;
-              exams.push(exam);
+              return exam;
             }
-          } catch (e) {
-            // skip silently
-          }
-        }
-        cat.exams = exams;
+          } catch (e) { /* skip */ }
+          return null;
+        }));
+        cat.exams = fetched.filter(Boolean);
       }));
 
       return categories;
@@ -143,19 +141,18 @@ const QuizApp = (() => {
     const exam = await fetch(`data/exams/${examCode}.json`).then(r => r.ok ? r.json() : null);
     if (!exam) return [];
 
-    const allQuestions = [];
-    for (const domain of (exam.domains || [])) {
+    // 各ドメインの問題JSONを並列取得 (旧: 直列で遅かった)
+    const sets = await Promise.all((exam.domains || []).map(async (domain) => {
       try {
         const res = await fetch(`data/questions/${examCode}/${domain.id}.json`);
         if (res.ok) {
           const set = await res.json();
-          allQuestions.push(...(set.questions || []));
+          return set.questions || [];
         }
-      } catch (e) {
-        // skip
-      }
-    }
-    return allQuestions;
+      } catch (e) { /* skip */ }
+      return [];
+    }));
+    return sets.flat();
   }
 
   // ===== Question selection (which to show next) =====
@@ -214,20 +211,36 @@ const QuizApp = (() => {
     document.getElementById('total-count').innerHTML = `${progress.total_solved}<span class="unit">問</span>`;
     document.getElementById('streak-count').innerHTML = `${progress.streak.count}<span class="unit">日</span>`;
 
-    const categories = await loadCategories();
     const examList = document.getElementById('exam-list');
 
+    // 取得中の明示的ローディング表示
+    examList.innerHTML = `
+      <div class="loading-state">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <div class="loading-text">カテゴリーと試験を読み込んでいます…</div>
+      </div>
+    `;
+
+    const categories = await loadCategories();
     const populated = categories.filter(c => (c.exams || []).length > 0);
+
     if (populated.length === 0) {
+      examList.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">📚</div>
+          <p>問題データが見つかりませんでした。</p>
+          <p style="font-size: 13px; margin-top: 8px;"><code>data/categories.json</code> と <code>data/exams/</code> を確認してください。</p>
+        </div>
+      `;
       document.getElementById('due-count').innerHTML = `0<span class="unit">問</span>`;
       return;
     }
 
     examList.innerHTML = '';
     let totalDue = 0;
-    let totalQuestionCount = 0;
+    const today = todayString();
 
-    // カテゴリ単位でセクションをレンダリング
+    // カテゴリ単位でレンダリング (問題JSONはホームでは読まず、exam.total_questions と progress.history だけでカウント)
     for (const cat of populated) {
       const section = document.createElement('section');
       section.className = 'category-section';
@@ -249,18 +262,17 @@ const QuizApp = (() => {
 
       for (const exam of cat.exams) {
         const examProgress = progress.exams[exam.exam_code] || { history: {} };
-        const questions = await loadQuestionsForExam(exam.exam_code);
-        const today = todayString();
+        const history = examProgress.history || {};
 
+        // history からだけ集計 (questions JSON を読まない)
         let due = 0;
         let mastered = 0;
-        for (const q of questions) {
-          const h = examProgress.history[q.id];
-          if (h && h.due_date <= today) due += 1;
-          if (h && h.repetition >= 4) mastered += 1;
+        for (const id in history) {
+          const h = history[id];
+          if (h && h.due_date && h.due_date <= today) due += 1;
+          if (h && (h.repetition || 0) >= 4) mastered += 1;
         }
         totalDue += due;
-        totalQuestionCount += questions.length;
 
         const card = document.createElement('a');
         card.className = 'exam-card';
@@ -269,7 +281,7 @@ const QuizApp = (() => {
           <div class="exam-card-code">${escapeHtml(exam.exam_code.toUpperCase())}</div>
           <div class="exam-card-name">${escapeHtml(exam.exam_name)}</div>
           <div class="exam-card-meta">
-            <span>${questions.length}問</span>
+            <span>${exam.total_questions || 0}問</span>
             <span>復習: ${due}問</span>
             <span>習熟: ${mastered}問</span>
           </div>
@@ -289,18 +301,34 @@ const QuizApp = (() => {
   async function renderQuiz() {
     const params = new URLSearchParams(window.location.search);
     const examCode = params.get('exam');
+    const quizContainer = document.getElementById('quiz-container');
 
     if (!examCode) {
-      return; // empty state shown
+      quizContainer.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">📚</div>
+          <p>クイズを開始するには、Home から資格を選んでください。</p>
+          <a href="index.html" class="btn" style="margin-top: 20px;">Home に戻る</a>
+        </div>
+      `;
+      return;
     }
+
+    // 問題セット取得中のローディング表示 (HTMLの初期スピナーをそのまま維持してもよいが、明示的に上書き)
+    quizContainer.innerHTML = `
+      <div class="loading-state">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <div class="loading-text">問題セットを読み込んでいます…</div>
+      </div>
+    `;
 
     const exam = await fetch(`data/exams/${examCode}.json`).then(r => r.ok ? r.json() : null);
     if (!exam) {
-      document.getElementById('quiz-container').innerHTML = `
+      quizContainer.innerHTML = `
         <div class="empty-state">
-          <div class="empty-state-icon">~</div>
-          <p>資格データが見つかりません: ${examCode}</p>
-          <a href="index.html" class="btn">Home</a>
+          <div class="empty-state-icon">📚</div>
+          <p>資格データが見つかりません: ${escapeHtml(examCode)}</p>
+          <a href="index.html" class="btn" style="margin-top:20px;">Home</a>
         </div>`;
       return;
     }
