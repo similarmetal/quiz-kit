@@ -1,0 +1,484 @@
+{
+  "exam_code": "mos-excel",
+  "exam_name": "MOS Excel Associate (MO-200)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "tables",
+      "name": "テーブルとテーブルデータの管理",
+      "weight_percent": 20,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-excel-tables-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables",
+        "name": "テーブルとテーブルデータの管理",
+        "weight_percent": 20
+      },
+      "topic": "テーブル化",
+      "subtopic": "Ctrl+T ショートカット",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "ある教育系企業の担当者が、A1:E100 のデータ範囲を選択した状態でテーブルに変換するキーボードショートカットは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ctrl + T",
+          "is_correct": true,
+          "explanation": "正解。Ctrl+T で [テーブルの作成] ダイアログが開く。Ctrl+L も同じ動作（Excel 2003 互換）。"
+        },
+        {
+          "id": "B",
+          "text": "Ctrl + Shift + T",
+          "is_correct": false,
+          "explanation": "Ctrl+Shift+T は Excel 標準では割り当てがない。テーブル作成のショートカットではない。"
+        },
+        {
+          "id": "C",
+          "text": "Alt + T",
+          "is_correct": false,
+          "explanation": "Alt+T は古いメニューバーの [ツール] へのアクセス（互換）。テーブル作成ではない。"
+        },
+        {
+          "id": "D",
+          "text": "F11",
+          "is_correct": false,
+          "explanation": "F11 は選択範囲から「グラフシート」を作成するショートカット。テーブルではない。"
+        }
+      ],
+      "explanation": "テーブル変換は Ctrl+T もしくは Ctrl+L で起動する [テーブルの作成] ダイアログから行う。リボンでは [挿入] → [テーブル] でも同じ。テーブル化すると、自動拡張、構造化参照、フィルタボタン、テーブルスタイル、集計行 など多くの機能が一括で利用可能となる。",
+      "references": [
+        {
+          "title": "Excel テーブルを作成または削除する",
+          "url": "https://support.microsoft.com/ja-jp/office/excel-でテーブルを作成-or-削除する-8fbe1865-7d0b-46e7-940d-ec1dc0b3d3a8"
+        }
+      ],
+      "tags": [
+        "table",
+        "ctrl-t",
+        "shortcut",
+        "create-table",
+        "insert"
+      ],
+      "common_mistakes": [
+        "F11 をテーブル作成と勘違いする",
+        "Ctrl+T と Ctrl+L が同じであることを知らない",
+        "ピボットテーブル作成のショートカットと混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-tables-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables",
+        "name": "テーブルとテーブルデータの管理",
+        "weight_percent": 20
+      },
+      "topic": "集計行",
+      "subtopic": "Total Row",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "テーブル化された売上データの末尾に「合計」「平均」「個数」などをドロップダウンで切り替えられる行を追加するには、[テーブルデザイン] タブで何にチェックを入れる？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[集計行]",
+          "is_correct": true,
+          "explanation": "正解。[テーブルデザイン] → [集計行] にチェックすると最終行が追加され、各列でドロップダウンから集計関数を選べる。"
+        },
+        {
+          "id": "B",
+          "text": "[見出し行]",
+          "is_correct": false,
+          "explanation": "見出し行はテーブル先頭の列名行の表示/非表示を切り替えるオプション。集計行ではない。"
+        },
+        {
+          "id": "C",
+          "text": "[縞模様（行）]",
+          "is_correct": false,
+          "explanation": "行に交互の背景色をつける視覚的書式。集計には関係ない。"
+        },
+        {
+          "id": "D",
+          "text": "[最初の列]",
+          "is_correct": false,
+          "explanation": "最初の列を太字などで強調する書式オプション。集計とは無関係。"
+        }
+      ],
+      "explanation": "テーブルの [集計行] (Total Row) は、テーブル末尾に集計用の行を追加し、各列のドロップダウンから「平均、個数、数値の個数、最大、最小、合計、標本標準偏差、標本分散、その他の関数」を選べる。内部的には SUBTOTAL 関数（フィルタ非適用行を除外）が使われる点が SUM との違い。",
+      "references": [
+        {
+          "title": "Excel テーブルのデータを集計する",
+          "url": "https://support.microsoft.com/ja-jp/office/excel-テーブルのデータを集計する-046d3c6b-0edc-4d8f-87a3-e5b4d7d8c0e4"
+        }
+      ],
+      "tags": [
+        "total-row",
+        "table-design",
+        "subtotal",
+        "aggregation",
+        "structured-reference"
+      ],
+      "common_mistakes": [
+        "見出し行と集計行を取り違える",
+        "SUM ではなく SUBTOTAL が使われることを知らない",
+        "縞模様を集計と勘違い"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-tables-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables",
+        "name": "テーブルとテーブルデータの管理",
+        "weight_percent": 20
+      },
+      "topic": "スライサー",
+      "subtopic": "テーブル絞り込み",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業のアナリストが、売上テーブル（業種・地域・四半期 列を持つ）をボタン形式で直感的にフィルタしたい。最も適切な機能は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[テーブルデザイン] → [スライサーの挿入] でスライサーを追加する",
+          "is_correct": true,
+          "explanation": "正解。スライサーは値をボタンで提示し、クリックで絞り込みできる。複数フィールドを並べて視覚的に操作可能。"
+        },
+        {
+          "id": "B",
+          "text": "[データ] → [フィルター] でオートフィルタを使う",
+          "is_correct": false,
+          "explanation": "オートフィルタも可だが、ドロップダウン操作で「ボタン形式で直感的」という要件には合わない。"
+        },
+        {
+          "id": "C",
+          "text": "[条件付き書式] でハイライトする",
+          "is_correct": false,
+          "explanation": "条件付き書式は見た目の強調で、表示自体を絞り込まない。"
+        },
+        {
+          "id": "D",
+          "text": "[並べ替え] で列をソートする",
+          "is_correct": false,
+          "explanation": "並べ替えは順序の変更で、表示の絞り込みではない。"
+        }
+      ],
+      "explanation": "スライサー（Slicer）はテーブル/ピボットテーブル用のビジュアルフィルタで、Excel 2013 以降テーブルにも対応。各値がボタンとして表示され、クリックで瞬時に絞り込める。複数選択は Ctrl/Shift。複数スライサーを並べて多軸フィルタも可能で、ダッシュボード作成に重宝する。",
+      "references": [
+        {
+          "title": "スライサーを使ってデータをフィルター処理する",
+          "url": "https://support.microsoft.com/ja-jp/office/スライサーを使ってデータをフィルター処理する-249f966b-a9d5-4b0f-b31a-12651785d29d"
+        }
+      ],
+      "tags": [
+        "slicer",
+        "filter",
+        "table",
+        "dashboard",
+        "visual"
+      ],
+      "common_mistakes": [
+        "スライサーがテーブルでも使えることを知らない（ピボット専用と思い込む）",
+        "オートフィルタが万能と思う",
+        "条件付き書式でフィルタの代用ができると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-tables-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables",
+        "name": "テーブルとテーブルデータの管理",
+        "weight_percent": 20
+      },
+      "topic": "重複削除",
+      "subtopic": "Remove Duplicates",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある SaaS 企業の営業担当が、見込み客リスト（氏名、メール、電話）から重複行を削除したい。「メール」が同じ場合のみ重複扱いとしたい。最も適切な手順は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "テーブル内のセルを選択 → [テーブルデザイン] → [重複の削除] → 「メール」列のみチェック",
+          "is_correct": true,
+          "explanation": "正解。[重複の削除] でチェックする列を「メール」のみにすると、メールが同じ行が重複として除去される。"
+        },
+        {
+          "id": "B",
+          "text": "[データ] → [重複の削除] で全列にチェックを入れる",
+          "is_correct": false,
+          "explanation": "全列一致のみが重複扱いとなり、氏名や電話がわずかに違うだけで残ってしまう。要件はメール基準。"
+        },
+        {
+          "id": "C",
+          "text": "[並べ替え] でメール順にしてから目視で削除する",
+          "is_correct": false,
+          "explanation": "ヒューマンエラーが発生しやすく、件数が多いと現実的でない。標準機能を使うべき。"
+        },
+        {
+          "id": "D",
+          "text": "VLOOKUP で重複をマークし、フィルタで非表示にする",
+          "is_correct": false,
+          "explanation": "非表示にしても削除はされない。要件は「削除」。"
+        }
+      ],
+      "explanation": "[重複の削除] は [データ] タブまたは [テーブルデザイン] タブから起動できる。重要なのは「どの列の組み合わせが一致したら重複とみなすか」を選べること。チェックを入れた列が全て一致した行のみ重複として除去される。元データを残したい場合は事前にコピーを取る、または [詳細フィルター] で別箇所に重複なし出力するのも手。",
+      "references": [
+        {
+          "title": "重複する値を見つけて削除する",
+          "url": "https://support.microsoft.com/ja-jp/office/重複の検索と削除-00e35bca-590d-4c9c-9b6f-d7c4cd49e4c2"
+        }
+      ],
+      "tags": [
+        "remove-duplicates",
+        "table",
+        "data-cleansing",
+        "unique",
+        "key-column"
+      ],
+      "common_mistakes": [
+        "全列一致でしか重複削除できないと思い込む",
+        "削除前のバックアップを取らずに失敗",
+        "詳細フィルターと混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-tables-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables",
+        "name": "テーブルとテーブルデータの管理",
+        "weight_percent": 20
+      },
+      "topic": "並べ替え",
+      "subtopic": "複数キーソート",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある製造業の購買担当が、購買履歴テーブルを「部署」列で昇順、その中で「金額」列を降順に並べ替えたい。最も適切な手順は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[データ] → [並べ替え] でレベル1に「部署 昇順」、[レベルの追加] でレベル2に「金額 降順」を指定する",
+          "is_correct": true,
+          "explanation": "正解。[並べ替え] ダイアログで複数キーを階層的に指定できる。MOS Associate 頻出。"
+        },
+        {
+          "id": "B",
+          "text": "金額で降順ソート → 部署で昇順ソート の順に2回フィルタボタンから操作する",
+          "is_correct": false,
+          "explanation": "Excel のソートは安定ソートだが、テーブル内でこの順に操作すると意図したとおりにならない場合がある。標準は [並べ替え] ダイアログで複数レベル指定。"
+        },
+        {
+          "id": "C",
+          "text": "部署と金額をキーにする SORT 関数を別シートで使う",
+          "is_correct": false,
+          "explanation": "SORT 関数は別の表示用結果を作るだけで、元テーブル自体は並べ替わらない。要件はテーブル自体の並び替え。"
+        },
+        {
+          "id": "D",
+          "text": "VBA で Range.Sort を Key1=部署、Key2=金額 で書く",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、Associate レベルでは標準ダイアログで十分。"
+        }
+      ],
+      "explanation": "複数列を優先順位付きで並べ替えたい場合は [データ] → [並べ替え] ダイアログを開き、[レベルの追加] で第2、第3キーを指定する。各レベルで列・並べ替えのキー（値・色など）・順序（昇順・降順・ユーザー設定リスト）を別々に指定できる。これは MOS Associate 頻出。",
+      "references": [
+        {
+          "title": "範囲またはテーブル内のデータを並べ替える",
+          "url": "https://support.microsoft.com/ja-jp/office/範囲またはテーブル内のデータを並べ替える-62d0b95d-2a90-4610-a6ae-2e545c4a4654"
+        }
+      ],
+      "tags": [
+        "sort",
+        "multi-level",
+        "data-tab",
+        "table",
+        "ascending-descending"
+      ],
+      "common_mistakes": [
+        "2回連続でフィルタソートして第1キーを上書きする",
+        "SORT 関数で元データが並ぶと思う",
+        "[並べ替え] ダイアログの [レベルの追加] を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-tables-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables",
+        "name": "テーブルとテーブルデータの管理",
+        "weight_percent": 20
+      },
+      "topic": "テーブルの利点",
+      "subtopic": "自動拡張・構造化参照",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業のアナリストが、毎月行が追加される売上データに対して SUM を使った集計を作っている。普通の範囲（A2:A100）に SUM を書くと、行追加のたびに範囲を修正する必要があり面倒だ。テーブル化することで得られる最大の利点は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "新しい行を追加するとテーブルが自動拡張し、構造化参照（=SUM(売上[金額])）が範囲を自動追従する",
+          "is_correct": true,
+          "explanation": "正解。テーブル名と列名による構造化参照は範囲ではなく「列」を意味するため、テーブル拡張時に式の修正不要。"
+        },
+        {
+          "id": "B",
+          "text": "テーブル化すると関数の計算速度が約10倍になる",
+          "is_correct": false,
+          "explanation": "計算エンジンは同じで、速度向上は基本的にない（大規模ではむしろ重くなることも）。"
+        },
+        {
+          "id": "C",
+          "text": "テーブル化するとシートを保護せずに編集禁止にできる",
+          "is_correct": false,
+          "explanation": "テーブルは編集禁止機能ではない。保護はシート保護やセルロックを別途設定する。"
+        },
+        {
+          "id": "D",
+          "text": "テーブル化すると VBA マクロが自動生成される",
+          "is_correct": false,
+          "explanation": "テーブル化でマクロが自動生成されることはない。"
+        }
+      ],
+      "explanation": "Excel テーブルの核心的価値は「自動拡張」と「構造化参照」。データ末尾に行追加するとテーブルが自動拡張し、関連する数式・条件付き書式・ピボットテーブルのソース範囲も追従する。構造化参照（=SUM(テーブル1[金額]) 等）はセル番地ではなく列名を使うため、行数が変わっても修正不要。これが MOS Associate でテーブルが重視される理由。",
+      "references": [
+        {
+          "title": "Excel テーブルでの構造化参照の使用",
+          "url": "https://support.microsoft.com/ja-jp/office/excel-テーブルの構造化参照の使用-f5ed2452-2337-4f71-bed3-c8ae6d2b276e"
+        }
+      ],
+      "tags": [
+        "table",
+        "structured-reference",
+        "auto-expand",
+        "dynamic-range",
+        "best-practice"
+      ],
+      "common_mistakes": [
+        "テーブル化で速度が上がると誤解",
+        "構造化参照を意識せず A2:A100 を使い続ける",
+        "テーブルを単なる見た目装飾と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

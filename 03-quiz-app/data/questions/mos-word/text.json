@@ -1,0 +1,484 @@
+{
+  "exam_code": "mos-word",
+  "exam_name": "MOS Word Associate (MO-100)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "text",
+      "name": "文字、段落、セクションの挿入と書式設定",
+      "weight_percent": 25,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-word-text-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "text",
+        "name": "文字、段落、セクションの挿入と書式設定",
+        "weight_percent": 25
+      },
+      "topic": "文字書式",
+      "subtopic": "ショートカット",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "選択した文字列を「太字」にするWindows版Wordの標準ショートカットキーはどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ctrl + B",
+          "is_correct": true,
+          "explanation": "正解。Bold（太字）の頭文字に由来し、ほぼ全Officeアプリ共通の標準ショートカット。"
+        },
+        {
+          "id": "B",
+          "text": "Ctrl + I",
+          "is_correct": false,
+          "explanation": "Ctrl + I は斜体（Italic）のショートカット。"
+        },
+        {
+          "id": "C",
+          "text": "Ctrl + U",
+          "is_correct": false,
+          "explanation": "Ctrl + U は下線（Underline）のショートカット。"
+        },
+        {
+          "id": "D",
+          "text": "Ctrl + T",
+          "is_correct": false,
+          "explanation": "Ctrl + T はぶら下げインデントを増やすショートカットで、太字とは異なる。"
+        }
+      ],
+      "explanation": "文字書式の主要ショートカットは Ctrl+B（太字）、Ctrl+I（斜体）、Ctrl+U（下線）。書式コピーは Ctrl+Shift+C/V、書式解除は Ctrl+スペース。これらは MOS で頻出の暗記項目。",
+      "references": [
+        {
+          "title": "Word のキーボード ショートカット - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-のキーボード-ショートカット"
+        }
+      ],
+      "tags": [
+        "shortcut",
+        "bold",
+        "character-format",
+        "ctrl-b",
+        "basics"
+      ],
+      "common_mistakes": [
+        "Ctrl+B と Ctrl+I を取り違える",
+        "Ctrl+T のぶら下げインデントを別機能と混同する",
+        "Mac の Cmd キーと混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-text-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "text",
+        "name": "文字、段落、セクションの挿入と書式設定",
+        "weight_percent": 25
+      },
+      "topic": "段落書式",
+      "subtopic": "行間と段落間隔",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "教育系SaaSのライターが、本文を「行間 1.5 行、段落の前 0pt、段落の後 8pt」に統一したい。最も適切な操作はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "ホームタブ → フォントグループ → 「フォント」ダイアログを開いて設定する",
+          "is_correct": false,
+          "explanation": "フォントダイアログでは行間や段落間隔は設定できない。文字書式の領域。"
+        },
+        {
+          "id": "B",
+          "text": "ホームタブ → 段落グループ → 「段落」ダイアログ → インデントと行間隔タブで設定する",
+          "is_correct": true,
+          "explanation": "正解。段落ダイアログの「インデントと行間隔」タブで段落前/後の間隔と行間（倍数・1.5・固定値など）を一括指定できる。"
+        },
+        {
+          "id": "C",
+          "text": "レイアウトタブ → ページ設定ダイアログ → 文字数と行数で行送りを変更する",
+          "is_correct": false,
+          "explanation": "ページ設定の行送りはページ全体のグリッドで、特定段落の行間/段落間隔の設定には使わない。"
+        },
+        {
+          "id": "D",
+          "text": "デザインタブ → 段落の間隔 → 「ユーザー設定の段落の間隔」で文書全体に適用する",
+          "is_correct": false,
+          "explanation": "デザインタブの段落の間隔は文書全体のスタイルセット側設定で、特定段落への限定適用には不向き。"
+        }
+      ],
+      "explanation": "段落の行間（1.0/1.5/2.0/倍数/最小値/固定値/倍率）と段落の前/後の間隔は、ホームタブの段落ダイアログまたはミニツールバーの行間ボタンで設定する。フォントダイアログは文字側、ページ設定は紙面全体側で、扱う層が違う点を区別する。",
+      "references": [
+        {
+          "title": "Word で行間または段落の間隔を変更する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で行間または段落の間隔を変更する"
+        }
+      ],
+      "tags": [
+        "paragraph",
+        "line-spacing",
+        "indent",
+        "format",
+        "education"
+      ],
+      "common_mistakes": [
+        "フォントダイアログで段落書式を探してしまう",
+        "ページ設定の行送りで段落間隔を変えようとする",
+        "デザインタブの段落の間隔と段落ダイアログを混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-text-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "text",
+        "name": "文字、段落、セクションの挿入と書式設定",
+        "weight_percent": 25
+      },
+      "topic": "スタイル",
+      "subtopic": "見出しスタイルの効用",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "B2B SaaSの技術ライターが、長文の仕様書で「見出し1」「見出し2」スタイルを正しく適用した。これにより自動で得られる効果として誤っているものはどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "「参考資料」タブから自動目次を生成できる",
+          "is_correct": false,
+          "explanation": "見出しスタイルが正しく適用されていれば、自動目次の生成元として直接利用される。"
+        },
+        {
+          "id": "B",
+          "text": "ナビゲーションウィンドウに見出しの階層が表示される",
+          "is_correct": false,
+          "explanation": "見出しスタイルはナビゲーションウィンドウのアウトラインビューの基礎情報となる。"
+        },
+        {
+          "id": "C",
+          "text": "PDFエクスポート時に「ブックマークを作成する : 見出し」が利用できる",
+          "is_correct": false,
+          "explanation": "見出しスタイルからPDFのしおり（ブックマーク）を自動生成できる。"
+        },
+        {
+          "id": "D",
+          "text": "ページ番号が自動的に章ごとにリセットされる",
+          "is_correct": true,
+          "explanation": "正解。章ごとのページ番号リセットは「セクション区切り＋ヘッダー/フッターのリンク解除＋ページ番号書式」で実現するもので、見出しスタイル単独では行われない。"
+        }
+      ],
+      "explanation": "見出しスタイル（見出し1〜9）はWordのアウトラインレベルと結びついており、自動目次・ナビゲーションウィンドウ・PDFしおり・相互参照・スマート検索など多数の機能の基盤になる。一方、章ごとのページ番号リセットは別機能（セクション区切りとページ番号書式）の領域で、混同しやすい。",
+      "references": [
+        {
+          "title": "Word で見出しを追加する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で見出しを追加する"
+        }
+      ],
+      "tags": [
+        "style",
+        "heading",
+        "outline",
+        "navigation",
+        "saas"
+      ],
+      "common_mistakes": [
+        "見出しスタイルを「見た目だけの装飾」と誤解する",
+        "ページ番号リセットを見出しの効果と勘違いする",
+        "アウトラインレベルとスタイルの関係を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-text-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "text",
+        "name": "文字、段落、セクションの挿入と書式設定",
+        "weight_percent": 25
+      },
+      "topic": "セクションと段組み",
+      "subtopic": "ページの一部だけ段組み",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FinTech企業の広報担当が、A4ページの中央にある記事部分のみを2段組みにし、前後のリード文と図表は1段のままにしたい。最も適切な手順は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "記事部分を選択 → レイアウトタブ → 段組み → 2段 を選ぶ（Wordが自動的にセクション区切りを挿入する）",
+          "is_correct": true,
+          "explanation": "正解。範囲選択した状態で段組みを適用すると、Wordは選択範囲の前後に「現在の位置から開始」のセクション区切りを自動挿入し、その範囲だけを2段にする。"
+        },
+        {
+          "id": "B",
+          "text": "ページ全体を2段組みに変更してから、不要な部分を空白で埋める",
+          "is_correct": false,
+          "explanation": "見た目を空白で調整するのは保守性が低く、編集で容易に崩れる。MOS の趣旨である正しい構造化に反する。"
+        },
+        {
+          "id": "C",
+          "text": "テキストボックスを2つ挿入し、内部に記事を分割して貼り付ける",
+          "is_correct": false,
+          "explanation": "段組み機能の代替にテキストボックスを使うのは過剰で、テキストの流し込みや検索性が低下する。"
+        },
+        {
+          "id": "D",
+          "text": "表を1行2列で挿入し、左右のセルに記事を貼り付ける",
+          "is_correct": false,
+          "explanation": "表で段組みを模倣すると、正規の段組み機能が持つ自動の流し込み・調整が利かない。"
+        }
+      ],
+      "explanation": "Wordの段組みはセクション機能と連動しており、範囲選択した上で段組みを適用すれば自動でセクション区切りが入り、その範囲のみが多段になる。任意位置で段を切り替えたい場合は「レイアウト → 区切り → 段区切り」も併用する。",
+      "references": [
+        {
+          "title": "Word でテキストを段組みにする - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-でテキストを段組みにする"
+        }
+      ],
+      "tags": [
+        "column",
+        "section-break",
+        "layout",
+        "fintech",
+        "newsletter"
+      ],
+      "common_mistakes": [
+        "段組みのためにテキストボックスや表を使う",
+        "セクション区切りの自動挿入を意識していない",
+        "段区切りと改ページを混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-text-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "text",
+        "name": "文字、段落、セクションの挿入と書式設定",
+        "weight_percent": 25
+      },
+      "topic": "検索と置換",
+      "subtopic": "ワイルドカード検索",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "東海地方の製造業の品証担当が、長大な技術文書から「製品A」「製品B」「製品C」をすべて「商品〇」へ統一したい（〇はA/B/Cそのままを残す）。「ホーム → 置換」の「ワイルドカードを使用する」を有効にした上で、検索文字列・置換文字列を正しく組み合わせているのはどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "検索: 製品[ABC]   置換: 商品\\1",
+          "is_correct": false,
+          "explanation": "[ABC]はマッチするがグループ化していないため、置換側の \\1 は無効。グループ化するには丸括弧で囲む必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "検索: 製品([ABC])   置換: 商品\\1",
+          "is_correct": true,
+          "explanation": "正解。丸括弧でキャプチャグループを作り、置換側で \\1 として参照する。Wordのワイルドカード置換の標準書式。"
+        },
+        {
+          "id": "C",
+          "text": "検索: 製品*   置換: 商品*",
+          "is_correct": false,
+          "explanation": "ワイルドカード * は0文字以上の任意文字を意味するが、置換側の * は単なる文字として扱われ参照にならない。"
+        },
+        {
+          "id": "D",
+          "text": "検索: 製品?   置換: 商品$1",
+          "is_correct": false,
+          "explanation": "Wordのワイルドカードでは ? は任意の1文字だが、後方参照は $1 ではなく \\1 を使う。混同に注意。"
+        }
+      ],
+      "explanation": "Wordの「ワイルドカードを使用する」は正規表現とは別仕様。グループ化は丸括弧、後方参照は\\1〜\\9で行う。文字クラス [ABC]、任意文字 ?、0文字以上 *、文字範囲 [A-Z]、語頭/語末 < > など。$1 は他ツール（一般的な正規表現）の構文で混同しやすい。",
+      "references": [
+        {
+          "title": "Word でワイルドカード文字を使用して検索および置換する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/ワイルドカード文字を使用して検索および置換する"
+        }
+      ],
+      "tags": [
+        "find-replace",
+        "wildcard",
+        "regex",
+        "manufacturing",
+        "automation"
+      ],
+      "common_mistakes": [
+        "Word のワイルドカードを正規表現と完全に同一視する",
+        "後方参照を $1 と書く",
+        "グループ化（丸括弧）を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-text-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "text",
+        "name": "文字、段落、セクションの挿入と書式設定",
+        "weight_percent": 25
+      },
+      "topic": "書式のコピー/貼り付け",
+      "subtopic": "書式のコピーボタン",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "医療機関の事務担当が、ある段落の書式（フォント・色・段落間隔）を別の複数の段落に連続で適用したい。「ホーム → 書式のコピー/貼り付け」（はけアイコン）に関する正しい操作はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "はけアイコンをシングルクリックすると、複数箇所に連続適用できる",
+          "is_correct": false,
+          "explanation": "シングルクリックは「1回だけ」の貼り付けで、1箇所適用するとモードが解除される。"
+        },
+        {
+          "id": "B",
+          "text": "はけアイコンをダブルクリックすると、Esc キーまたは再クリックで解除するまで連続適用できる",
+          "is_correct": true,
+          "explanation": "正解。ダブルクリックでロックされ、複数箇所に書式を貼り付けできる。Esc キーまたは再度はけアイコンをクリックで解除する。"
+        },
+        {
+          "id": "C",
+          "text": "Ctrl + V を押すたびに直前の書式が再貼り付けされる",
+          "is_correct": false,
+          "explanation": "Ctrl + V は通常の貼り付けで、書式コピー機能とは独立している。"
+        },
+        {
+          "id": "D",
+          "text": "右クリックメニューの「形式を選択して貼り付け」を選ぶと連続適用できる",
+          "is_correct": false,
+          "explanation": "形式を選択して貼り付けはクリップボードの内容を制御する機能で、連続適用モードはない。"
+        }
+      ],
+      "explanation": "書式のコピー/貼り付けは ホームタブ左端の「はけ」アイコン。シングルクリックは1回限り、ダブルクリックで連続モードになる。ショートカットは Ctrl+Shift+C（コピー）/ Ctrl+Shift+V（貼り付け）も覚えておくと効率的。",
+      "references": [
+        {
+          "title": "書式のコピー/貼り付けを使用する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/書式のコピー-貼り付けを使用する"
+        }
+      ],
+      "tags": [
+        "format-painter",
+        "shortcut",
+        "productivity",
+        "healthcare",
+        "basics"
+      ],
+      "common_mistakes": [
+        "シングルクリックで連続適用できると思い込む",
+        "Ctrl + Shift + C/V のショートカットを知らない",
+        "Esc で解除できることを知らず作業を放棄する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

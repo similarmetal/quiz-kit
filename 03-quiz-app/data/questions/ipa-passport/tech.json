@@ -1,0 +1,1000 @@
+{
+  "exam_code": "ipa-passport",
+  "exam_name": "ITパスポート試験 (iパス)",
+  "version": "2026.04",
+  "total_questions": 35,
+  "domains": [
+    {
+      "id": "tech",
+      "name": "テクノロジ系",
+      "weight_percent": 40,
+      "question_count": 35
+    }
+  ],
+  "questions": [
+    {
+      "id": "ipa-passport-tech-001",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "基礎理論",
+      "subtopic": "数値表現（2進数）",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "10進数の「13」を2進数で表現したものはどれか。",
+      "options": [
+        {"id": "A", "text": "1011", "is_correct": false, "explanation": "1011（2）は10進数で 8+0+2+1=11 となり誤り。"},
+        {"id": "B", "text": "1101", "is_correct": true, "explanation": "正解。1101（2）= 8+4+0+1 = 13。"},
+        {"id": "C", "text": "1110", "is_correct": false, "explanation": "1110（2）は 8+4+2+0=14 となり誤り。"},
+        {"id": "D", "text": "10011", "is_correct": false, "explanation": "10011（2）は 16+0+0+2+1=19 となり誤り。"}
+      ],
+      "explanation": "2進数の各桁は右から 1, 2, 4, 8, 16... の重みを持つ。13 = 8+4+1 なので、桁を立てると 1101 となる。10進⇄2進の変換は基本中の基本で、ITパスポートで頻出する。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["基礎理論", "2進数", "数値表現"],
+      "common_mistakes": [
+        "桁の重みを左から数えてしまう",
+        "1の補数や2の補数と混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-002",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "基礎理論",
+      "subtopic": "16進数",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "16進数の「2A」を10進数で表現したものはどれか。",
+      "options": [
+        {"id": "A", "text": "26", "is_correct": false, "explanation": "計算ミス。2×16=32、Aは10なので合計42。"},
+        {"id": "B", "text": "32", "is_correct": false, "explanation": "上位桁の 2×16=32 のみで、Aの分（10）が抜けている。"},
+        {"id": "C", "text": "42", "is_correct": true, "explanation": "正解。2×16 + 10 = 32 + 10 = 42。"},
+        {"id": "D", "text": "52", "is_correct": false, "explanation": "Aを11と勘違いしている可能性がある。Aは10。"}
+      ],
+      "explanation": "16進数では A=10, B=11, C=12, D=13, E=14, F=15。2A は 2×16^1 + 10×16^0 = 32 + 10 = 42 となる。色コード（#FF0000 など）やメモリアドレス表示に使われるため重要。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["基礎理論", "16進数", "数値表現"],
+      "common_mistakes": [
+        "A〜Fの対応値（10〜15）を覚えていない",
+        "桁の重み 16^n を間違える"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-003",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "基礎理論",
+      "subtopic": "論理演算",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "論理演算 A AND B の結果が「真」になるのはどの場合か。",
+      "options": [
+        {"id": "A", "text": "AかBの少なくとも片方が真のとき", "is_correct": false, "explanation": "これはOR（論理和）の説明。"},
+        {"id": "B", "text": "AとBが両方とも真のとき", "is_correct": true, "explanation": "正解。AND（論理積）は両方が真のときだけ真になる。"},
+        {"id": "C", "text": "AとBが異なるとき", "is_correct": false, "explanation": "これはXOR（排他的論理和）の説明。"},
+        {"id": "D", "text": "AとBが両方とも偽のとき", "is_correct": false, "explanation": "両方偽のときANDは偽である。"}
+      ],
+      "explanation": "AND（論理積）は両方の入力が真のときのみ真。OR（論理和）はどちらかが真なら真。XOR（排他的論理和）は2つの入力が異なるときに真。論理演算は条件分岐や検索条件、回路設計の基礎となる。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["基礎理論", "論理演算", "AND", "OR", "XOR"],
+      "common_mistakes": [
+        "ANDとORを取り違える",
+        "XORの存在を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-004",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "基礎理論",
+      "subtopic": "確率",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "サイコロを2回振ったとき、両方とも偶数の目が出る確率はいくらか。",
+      "options": [
+        {"id": "A", "text": "1/6", "is_correct": false, "explanation": "1回振って特定の目が出る確率。問いは2回連続で偶数が出る確率。"},
+        {"id": "B", "text": "1/4", "is_correct": true, "explanation": "正解。1回ごとに偶数が出る確率は 3/6=1/2、独立試行なので 1/2 × 1/2 = 1/4。"},
+        {"id": "C", "text": "1/3", "is_correct": false, "explanation": "1回振って3で割れる目（2,4,6 のうちある条件）と混同している。"},
+        {"id": "D", "text": "1/2", "is_correct": false, "explanation": "1回だけ振って偶数が出る確率は1/2だが、問いは2回連続。"}
+      ],
+      "explanation": "サイコロの目は1〜6の6通り、偶数（2,4,6）は3通りなので1回で偶数が出る確率は 1/2。独立した試行を2回行う場合、両方とも起こる確率は積で求めるので 1/2 × 1/2 = 1/4。データ分析や品質管理の基礎。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["基礎理論", "確率", "独立試行"],
+      "common_mistakes": [
+        "独立試行の確率を足し算してしまう",
+        "1回だけの確率と混同する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-005",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "基礎理論",
+      "subtopic": "統計（平均・中央値）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育SaaSのユーザがテストで「40, 50, 60, 70, 100」点を取った。中央値はいくらか。",
+      "options": [
+        {"id": "A", "text": "50", "is_correct": false, "explanation": "下から2番目の値。中央ではない。"},
+        {"id": "B", "text": "60", "is_correct": true, "explanation": "正解。値を昇順に並べたとき真ん中（3番目）の値が中央値。"},
+        {"id": "C", "text": "64", "is_correct": false, "explanation": "これは平均値（合計320÷5）。中央値ではない。"},
+        {"id": "D", "text": "70", "is_correct": false, "explanation": "上から2番目の値。中央ではない。"}
+      ],
+      "explanation": "中央値（メジアン）は値を順に並べたとき真ん中にくる値。データ数が奇数なら中央の1つ、偶数なら中央2つの平均。外れ値の影響を受けにくいため、平均値と使い分ける必要がある。例題では 100 点の高得点者が平均を引き上げているが、中央値は60で実態を反映している。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["基礎理論", "統計", "中央値", "平均値"],
+      "common_mistakes": [
+        "平均値と中央値を混同する",
+        "並べ替えずに値の真ん中を選ぶ"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-006",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "アルゴリズムとプログラミング",
+      "subtopic": "フローチャート",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "フローチャートで「ひし形（◇）」が表す処理はどれか。",
+      "options": [
+        {"id": "A", "text": "計算や代入などの処理", "is_correct": false, "explanation": "これは長方形（処理記号）の意味。"},
+        {"id": "B", "text": "条件によって処理を分岐", "is_correct": true, "explanation": "正解。ひし形は判断記号で、条件に応じて流れを分岐させる。"},
+        {"id": "C", "text": "入出力", "is_correct": false, "explanation": "入出力は平行四辺形で表す。"},
+        {"id": "D", "text": "プログラムの開始と終了", "is_correct": false, "explanation": "開始/終了は端子（角丸長方形や楕円）で表す。"}
+      ],
+      "explanation": "フローチャートの基本記号は、長方形=処理、ひし形=判断（分岐）、平行四辺形=入出力、角丸長方形=開始/終了、矢印=フロー。アルゴリズムを視覚化する世界共通の表記法で、プログラミングの基礎理解に必須。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["アルゴリズム", "フローチャート", "判断記号"],
+      "common_mistakes": [
+        "ひし形と長方形の役割を逆に覚える",
+        "入出力記号を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-007",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "アルゴリズムとプログラミング",
+      "subtopic": "データ構造（スタック・キュー）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある SaaS が印刷ジョブを「先に依頼した順」で処理したい。最も適したデータ構造はどれか。",
+      "options": [
+        {"id": "A", "text": "スタック（LIFO）", "is_correct": false, "explanation": "スタックは後入れ先出しで、後の依頼から処理されてしまう。"},
+        {"id": "B", "text": "キュー（FIFO）", "is_correct": true, "explanation": "正解。キューは先入れ先出し（FIFO）で、依頼順の処理に最適。"},
+        {"id": "C", "text": "二分木", "is_correct": false, "explanation": "二分木は探索用のデータ構造で、順序処理には不向き。"},
+        {"id": "D", "text": "ハッシュ表", "is_correct": false, "explanation": "ハッシュ表は高速検索用で、順序を保持しない。"}
+      ],
+      "explanation": "キュー（待ち行列）はFIFO（First In First Out）で、データを入れた順に取り出す。印刷ジョブ・予約処理・メッセージング・タスクキューなどで使う。一方スタックはLIFO（Last In First Out）で、関数呼出しや「戻る」操作に使う。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["アルゴリズム", "データ構造", "キュー", "スタック", "FIFO"],
+      "common_mistakes": [
+        "スタックとキューを取り違える",
+        "FIFOとLIFOの意味を覚えていない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-008",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "アルゴリズムとプログラミング",
+      "subtopic": "探索アルゴリズム",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "整列済みのデータから目的の値を高速に探索するのに適したアルゴリズムはどれか。",
+      "options": [
+        {"id": "A", "text": "線形探索", "is_correct": false, "explanation": "先頭から順に調べる方式。整列済みでも未整列でも動作するが速度はO(n)。"},
+        {"id": "B", "text": "2分探索", "is_correct": true, "explanation": "正解。整列済みデータの中央値と比較して半分に絞り込む方式で計算量は O(log n)。"},
+        {"id": "C", "text": "バブルソート", "is_correct": false, "explanation": "バブルソートは整列アルゴリズムで、探索ではない。"},
+        {"id": "D", "text": "選択ソート", "is_correct": false, "explanation": "選択ソートも整列アルゴリズム。問いは探索。"}
+      ],
+      "explanation": "2分探索（バイナリサーチ）は整列済みデータの中央と比較し、対象が中央より大きいか小さいかで探索範囲を半分にしていく。データ件数 n に対して log2 n 回程度の比較で済むため、線形探索 O(n) より遥かに高速。事前の整列が前提条件。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["アルゴリズム", "探索", "2分探索", "計算量"],
+      "common_mistakes": [
+        "探索アルゴリズムと整列アルゴリズムを混同",
+        "2分探索が整列前提であることを忘れる"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-009",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "アルゴリズムとプログラミング",
+      "subtopic": "AI/機械学習（教師あり学習）",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "ある製造業で「過去の検査画像」と「合格／不合格」のラベル付きデータを使ってAIに不良品判定を学習させた。これはどの学習方式に該当するか。",
+      "options": [
+        {"id": "A", "text": "教師あり学習", "is_correct": true, "explanation": "正解。入力（画像）と正解ラベル（合否）の対を与えて学習させる方式。"},
+        {"id": "B", "text": "教師なし学習", "is_correct": false, "explanation": "教師なし学習はラベルのないデータからパターン（クラスタリング等）を見つける方式。"},
+        {"id": "C", "text": "強化学習", "is_correct": false, "explanation": "強化学習は試行錯誤で報酬を最大化する方式。ロボットやゲームAIに使う。"},
+        {"id": "D", "text": "深層強化学習", "is_correct": false, "explanation": "強化学習に深層学習を組み合わせたもの。本問題のラベル付きデータには該当しない。"}
+      ],
+      "explanation": "教師あり学習はラベル（正解）付きデータで学習する方式で、分類（合否判定、画像認識）や回帰（売上予測）に使われる。教師なし学習はラベルなしでクラスタリング等。強化学習は環境との相互作用で報酬最大化を目指す。AI活用は東海地方の製造業でも普及しつつある。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["AI", "機械学習", "教師あり学習", "製造業"],
+      "common_mistakes": [
+        "教師あり/なしの違いを覚えていない",
+        "強化学習を分類タスクに使うと考える"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-010",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "アルゴリズムとプログラミング",
+      "subtopic": "AI/機械学習（教師なし学習）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある B2B SaaS 企業が「契約顧客を購買傾向ごとに自動で分類したい」が、事前にどんなグループがあるかは分かっていない。最も適した手法はどれか。",
+      "options": [
+        {"id": "A", "text": "回帰分析", "is_correct": false, "explanation": "回帰は数値の予測（売上額など）に使う。グループ分けには不向き。"},
+        {"id": "B", "text": "クラスタリング", "is_correct": true, "explanation": "正解。教師なし学習の代表手法で、データの類似性に基づき自動的にグループ化する。"},
+        {"id": "C", "text": "教師あり分類", "is_correct": false, "explanation": "事前に正解ラベル（どのグループか）が必要。問いではグループが未知。"},
+        {"id": "D", "text": "強化学習", "is_correct": false, "explanation": "報酬を伴う逐次的意思決定の問題に使う。グループ分けには不適。"}
+      ],
+      "explanation": "クラスタリングは教師なし学習の典型で、ラベルなしデータから類似性に基づき自動的にグループを発見する。代表的アルゴリズムにk-meansがある。顧客セグメンテーション、異常検知、文書分類などに広く使われる。事前にカテゴリが既知なら教師あり分類を使う。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["AI", "機械学習", "教師なし学習", "クラスタリング", "SaaS"],
+      "common_mistakes": [
+        "教師あり分類とクラスタリングの違いを理解していない",
+        "回帰と分類を混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-011",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "コンピュータ構成要素",
+      "subtopic": "CPU",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "CPUの動作周波数（クロック周波数）の単位として使われるものはどれか。",
+      "options": [
+        {"id": "A", "text": "bps", "is_correct": false, "explanation": "bps は通信速度（bit per second）の単位。"},
+        {"id": "B", "text": "Hz", "is_correct": true, "explanation": "正解。Hz（ヘルツ）は1秒あたりのクロック数を表す。GHz は10億Hz。"},
+        {"id": "C", "text": "dpi", "is_correct": false, "explanation": "dpi はプリンタやディスプレイの解像度（dots per inch）。"},
+        {"id": "D", "text": "fps", "is_correct": false, "explanation": "fps は1秒あたりのフレーム数（frames per second）。動画用。"}
+      ],
+      "explanation": "CPUは内部で一定周期のクロック信号に同期して動作し、その周波数を Hz で表す。例えば 3.5 GHz は1秒間に 35億回の動作サイクルを意味する。クロックが高いほど一般に処理が速いが、コア数や命令効率も性能に影響する。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["コンピュータ構成", "CPU", "クロック", "Hz"],
+      "common_mistakes": [
+        "bps と Hz を混同",
+        "クロック数だけで性能を判断する"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-012",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "コンピュータ構成要素",
+      "subtopic": "メモリ階層（キャッシュ）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "CPUと主記憶（メインメモリ）の速度差を埋めるために設置される、CPUが頻繁に使うデータを一時的に保持する高速メモリはどれか。",
+      "options": [
+        {"id": "A", "text": "ROM", "is_correct": false, "explanation": "ROMは読出し専用メモリで、BIOS等の固定プログラム保存用。"},
+        {"id": "B", "text": "キャッシュメモリ", "is_correct": true, "explanation": "正解。CPUと主記憶の中間に置かれ、高速アクセスでボトルネックを緩和する。"},
+        {"id": "C", "text": "仮想メモリ", "is_correct": false, "explanation": "仮想メモリは主記憶不足時にHDD/SSDを補助に使う仕組み。むしろ低速。"},
+        {"id": "D", "text": "USBメモリ", "is_correct": false, "explanation": "USBメモリは補助記憶装置で、CPUとは直接やり取りしない。"}
+      ],
+      "explanation": "メモリ階層は速度順に レジスタ ＞ キャッシュ ＞ 主記憶（DRAM） ＞ 補助記憶（SSD/HDD）。CPUと主記憶の速度差は大きいため、その間に SRAM ベースのキャッシュメモリ（L1/L2/L3）を配置して頻出データを保持し、システム全体を高速化する。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["コンピュータ構成", "メモリ", "キャッシュ", "メモリ階層"],
+      "common_mistakes": [
+        "仮想メモリとキャッシュを混同",
+        "ROMが高速メモリだと思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-013",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "コンピュータ構成要素",
+      "subtopic": "記憶装置（SSDとHDD）",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "SSD（Solid State Drive）の特徴として正しいものはどれか。",
+      "options": [
+        {"id": "A", "text": "回転する円盤に磁気で記録する", "is_correct": false, "explanation": "これはHDDの記録方式。"},
+        {"id": "B", "text": "半導体（フラッシュメモリ）にデータを記録し、HDDより高速に読み書きできる", "is_correct": true, "explanation": "正解。可動部品がなく、衝撃にも強い。"},
+        {"id": "C", "text": "電源を切るとデータが失われる揮発性メモリである", "is_correct": false, "explanation": "SSDは不揮発性。電源を切ってもデータは保持される。"},
+        {"id": "D", "text": "光で記録する円盤型メディアである", "is_correct": false, "explanation": "これはCD/DVD/BDなどの光ディスクの説明。"}
+      ],
+      "explanation": "SSDはフラッシュメモリベースの不揮発性記憶装置で、HDDの磁気ディスクに比べ高速・低消費電力・耐衝撃性が高い。ノートPC・サーバ・スマホで主流化。揮発性のRAMと違い、電源OFFでもデータは残る。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["記憶装置", "SSD", "HDD", "フラッシュメモリ"],
+      "common_mistakes": [
+        "SSDとRAMを混同して揮発性と思い込む",
+        "HDDの方が高速と誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-014",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "コンピュータ構成要素",
+      "subtopic": "入出力インタフェース",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "PCに周辺機器を接続する規格で、データ通信と給電を1本のケーブルで行え、表裏どちらでも挿せる端子が特徴のものはどれか。",
+      "options": [
+        {"id": "A", "text": "USB Type-C", "is_correct": true, "explanation": "正解。可逆挿入可能、PD（給電）対応、Thunderbolt 互換など多機能。"},
+        {"id": "B", "text": "VGA", "is_correct": false, "explanation": "VGAはアナログ映像出力専用の古い規格で、給電機能はない。"},
+        {"id": "C", "text": "RJ-45", "is_correct": false, "explanation": "RJ-45は有線LAN用のコネクタ。"},
+        {"id": "D", "text": "PS/2", "is_correct": false, "explanation": "PS/2は古い規格でキーボード・マウス用。給電容量も小さい。"}
+      ],
+      "explanation": "USB Type-C は可逆挿入（裏表どちらでもOK）、USB PDによる100W級の給電、DisplayPort Alt Mode による映像出力、Thunderbolt 互換など多機能。スマホ・ノートPC・モニタなどで標準化が進んでいる。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["入出力", "USB", "Type-C", "インタフェース"],
+      "common_mistakes": [
+        "USB Type-A と Type-C を混同",
+        "USB PD の給電機能を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-015",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "システム構成要素",
+      "subtopic": "クラウドサービスモデル",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育系スタートアップが「OS や ミドルウェアの管理はしたくないが、自社で開発した Web アプリは動かしたい」場合、最適なクラウドサービスモデルはどれか。",
+      "options": [
+        {"id": "A", "text": "IaaS", "is_correct": false, "explanation": "IaaS はサーバ・OS まで自社管理が必要。"},
+        {"id": "B", "text": "PaaS", "is_correct": true, "explanation": "正解。OS・ミドルウェアはクラウド事業者が管理し、利用者はアプリケーションのみ管理する。"},
+        {"id": "C", "text": "SaaS", "is_correct": false, "explanation": "SaaSは出来合いのアプリ（Gmail、Salesforce 等）の利用で、自社開発アプリは載せられない。"},
+        {"id": "D", "text": "オンプレミス", "is_correct": false, "explanation": "オンプレはハードもOSも自社管理が必要で、要件と逆。"}
+      ],
+      "explanation": "クラウドの3層モデル：IaaS（サーバ・ストレージ提供、OS以上は自社管理）、PaaS（実行環境提供、アプリ層のみ自社管理）、SaaS（完成アプリの利用）。自社開発アプリを動かすが OS 管理はしたくない要件は PaaS にぴったり（例：AWS Elastic Beanstalk, Google App Engine）。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["クラウド", "IaaS", "PaaS", "SaaS"],
+      "common_mistakes": [
+        "IaaS/PaaS/SaaS の責任分界点を混同",
+        "PaaS の役割を理解していない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-016",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "システム構成要素",
+      "subtopic": "仮想化",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "1台の物理サーバ上で複数のOSを同時に動作させる技術はどれか。",
+      "options": [
+        {"id": "A", "text": "ロードバランシング", "is_correct": false, "explanation": "ロードバランシングは負荷を複数サーバに分散する技術。"},
+        {"id": "B", "text": "サーバ仮想化", "is_correct": true, "explanation": "正解。ハイパーバイザ（VMware、Hyper-V 等）を使い物理ハードを論理的に分割する。"},
+        {"id": "C", "text": "クラスタリング", "is_correct": false, "explanation": "クラスタリングは複数サーバを1つにまとめて高可用化・並列化する技術。"},
+        {"id": "D", "text": "ミラーリング", "is_correct": false, "explanation": "ミラーリングはディスクを2台に同時書き込みするRAID 1の仕組み。"}
+      ],
+      "explanation": "仮想化はハイパーバイザにより1台の物理ハードウェア上に複数の仮想マシン（VM）を作り、それぞれに別のOSを動作させる技術。リソースの効率利用、隔離、移行性向上に貢献する。クラウドサービスの基盤。さらに軽量な仮想化技術として「コンテナ」（Docker等）もある。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["システム構成", "仮想化", "ハイパーバイザ"],
+      "common_mistakes": [
+        "仮想化とクラスタリングを混同",
+        "仮想化とミラーリングの違いを理解していない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-017",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "システム構成要素",
+      "subtopic": "RAID",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "医療機関でカルテデータを保存するストレージに、1台のディスクが故障してもデータを失わない可用性を確保したい。最も簡素な構成はどれか。",
+      "options": [
+        {"id": "A", "text": "RAID 0（ストライピング）", "is_correct": false, "explanation": "RAID 0は性能向上のみで冗長性なし。1台壊れると全データ消失。"},
+        {"id": "B", "text": "RAID 1（ミラーリング）", "is_correct": true, "explanation": "正解。2台のディスクに同じデータを書き込むため、片方が壊れてもデータは残る。"},
+        {"id": "C", "text": "JBOD（単純連結）", "is_correct": false, "explanation": "JBODは複数ディスクを連結するだけで冗長化はしない。"},
+        {"id": "D", "text": "シングルディスク", "is_correct": false, "explanation": "1台構成では故障時にデータが失われる。"}
+      ],
+      "explanation": "RAID（Redundant Array of Independent Disks）は複数ディスクを組み合わせて性能や冗長性を高める技術。RAID 0（ストライピング）は高速、RAID 1（ミラーリング）は冗長、RAID 5/6 はパリティで容量効率と冗長性のバランスを取る。医療データのように消失が許されないデータには冗長化が必須。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["システム構成", "RAID", "可用性", "医療"],
+      "common_mistakes": [
+        "RAID 0 で冗長化されると勘違い",
+        "RAID レベルの違いが整理できていない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-018",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "システム構成要素",
+      "subtopic": "性能指標",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Webサービスの性能指標について、「単位時間あたりに処理できる件数」を表すものはどれか。",
+      "options": [
+        {"id": "A", "text": "レスポンスタイム", "is_correct": false, "explanation": "レスポンスタイムは1リクエストの応答時間（速さ）。"},
+        {"id": "B", "text": "スループット", "is_correct": true, "explanation": "正解。単位時間あたりの処理件数（処理量）を表す。"},
+        {"id": "C", "text": "ターンアラウンドタイム", "is_correct": false, "explanation": "依頼から完了まで（送信から結果取得まで）の時間。"},
+        {"id": "D", "text": "可用性", "is_correct": false, "explanation": "可用性はシステムが稼働している時間の割合（稼働率）。"}
+      ],
+      "explanation": "性能指標は「速さ系」と「量系」で整理する。レスポンスタイム・ターンアラウンドタイムは1件処理の速さ。スループットは単位時間に処理できる件数で、サーバの処理能力を測る指標。負荷試験ではTPS（Transactions Per Second）等で計測する。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["システム構成", "性能", "スループット", "レスポンスタイム"],
+      "common_mistakes": [
+        "スループットとレスポンスタイムを混同",
+        "ターンアラウンドタイムの定義を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-019",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "ソフトウェア",
+      "subtopic": "OSの役割",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "OS（オペレーティングシステム）の主な役割として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "ハードウェア資源を管理しアプリケーションに共通の操作環境を提供する", "is_correct": true, "explanation": "正解。CPU、メモリ、ストレージ、入出力をスケジュールし、アプリに対し抽象化されたAPIを提供する。"},
+        {"id": "B", "text": "ユーザの業務処理を直接実行する", "is_correct": false, "explanation": "業務処理を行うのはアプリケーションソフトの役割。"},
+        {"id": "C", "text": "Webサイトを公開する", "is_correct": false, "explanation": "Webサイト公開はWebサーバソフト（Apache/Nginx等）の役割。"},
+        {"id": "D", "text": "暗号化通信を提供する", "is_correct": false, "explanation": "OSの一部機能ではあるが、主役割ではない。プロトコルやライブラリの責務。"}
+      ],
+      "explanation": "OSは「ユーザ・アプリと、ハードウェアの間に立つ調停者」。資源管理、プロセス制御、メモリ管理、ファイルシステム、入出力、ユーザインタフェースを提供し、複数アプリの並行実行を可能にする。代表例は Windows、macOS、Linux、iOS、Android。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["ソフトウェア", "OS", "資源管理"],
+      "common_mistakes": [
+        "アプリケーションとOSの役割の境界が曖昧",
+        "OSをただの操作画面と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-020",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "ソフトウェア",
+      "subtopic": "OSS（オープンソースソフトウェア）",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "OSS（オープンソースソフトウェア）の特徴として正しいものはどれか。",
+      "options": [
+        {"id": "A", "text": "必ず無償でなければならない", "is_correct": false, "explanation": "無償が一般的だが、有償サポート付きで配布される場合もある。OSSの本質は「ライセンス条件」。"},
+        {"id": "B", "text": "ソースコードが公開され、改変・再配布が認められたライセンスで提供される", "is_correct": true, "explanation": "正解。OSI（Open Source Initiative）の定義に基づく。"},
+        {"id": "C", "text": "商用利用が一切できない", "is_correct": false, "explanation": "商用利用が許可されているライセンス（Apache、MIT等）も多い。"},
+        {"id": "D", "text": "セキュリティ脆弱性は存在しない", "is_correct": false, "explanation": "OSSにも脆弱性はある（例：Log4Shell）。コミュニティによる修正が早いのが利点。"}
+      ],
+      "explanation": "OSSは「ソースコード公開」「自由な利用・改変・再配布」を許諾するライセンス（GPL、MIT、Apache、BSD等）に基づいて提供されるソフトウェア。Linux、Apache、PostgreSQL などが代表例。ビジネス利用も活発で、有償サポート付き版（RHEL等）も存在する。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"},
+        {"title": "Open Source Definition", "url": "https://opensource.org/osd"}
+      ],
+      "tags": ["ソフトウェア", "OSS", "ライセンス"],
+      "common_mistakes": [
+        "「OSS=完全無料」と思い込む",
+        "商用利用が禁止されていると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-021",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "ソフトウェア",
+      "subtopic": "ファイルシステム",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ファイルパス「C:\\Users\\suzuki\\Documents\\report.docx」において、ファイル名はどれか。",
+      "options": [
+        {"id": "A", "text": "C:", "is_correct": false, "explanation": "C: はドライブを指す。"},
+        {"id": "B", "text": "Documents", "is_correct": false, "explanation": "Documents はフォルダ（ディレクトリ）名。"},
+        {"id": "C", "text": "report.docx", "is_correct": true, "explanation": "正解。パスの最後にあり、拡張子 .docx が付いている部分がファイル名。"},
+        {"id": "D", "text": "suzuki", "is_correct": false, "explanation": "suzuki はユーザのホームフォルダ名。"}
+      ],
+      "explanation": "ファイルパスは「ドライブ→フォルダ階層→ファイル名」の構造。Windows では区切り文字に \\、Unix系では / を使う。拡張子（.docx, .pdf 等）は通常ファイル名の最後に付き、種類を表す。絶対パス・相対パスの違いも把握しておくとよい。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["ソフトウェア", "ファイルシステム", "パス"],
+      "common_mistakes": [
+        "ドライブ・フォルダ・ファイル名の階層を理解していない",
+        "拡張子の意味を知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-022",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "データベース",
+      "subtopic": "RDBの基本",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "リレーショナルデータベース（RDB）において、テーブルの各行を一意に識別するための列または列の組合せを何と呼ぶか。",
+      "options": [
+        {"id": "A", "text": "外部キー", "is_correct": false, "explanation": "外部キーは他テーブルの主キーを参照する列。"},
+        {"id": "B", "text": "主キー（プライマリキー）", "is_correct": true, "explanation": "正解。各レコードを一意に識別するキーで、NULLや重複は許されない。"},
+        {"id": "C", "text": "インデックス", "is_correct": false, "explanation": "インデックスは検索高速化のための索引。一意性とは別概念。"},
+        {"id": "D", "text": "属性", "is_correct": false, "explanation": "属性は列のことで、識別とは限らない。"}
+      ],
+      "explanation": "主キー（Primary Key）は行を一意に識別する列で、NULL不可・重複不可の制約を持つ。外部キー（Foreign Key）は他テーブルの主キーを参照し、テーブル間の関連を表現する。これらが RDB のリレーション設計の基本。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["データベース", "RDB", "主キー", "外部キー"],
+      "common_mistakes": [
+        "主キーと外部キーを取り違える",
+        "インデックスと主キーを混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-023",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "データベース",
+      "subtopic": "正規化",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "RDB の正規化を行う主な目的として最も適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "データの冗長性をなくし、更新時の不整合を防ぐ", "is_correct": true, "explanation": "正解。同じ情報を複数箇所に持たないことで、更新漏れによる不整合を防止する。"},
+        {"id": "B", "text": "検索速度を向上させるため必ず1つのテーブルにまとめる", "is_correct": false, "explanation": "1つにまとめると冗長性が生じ正規化の目的に反する。検索高速化はインデックス等で対応。"},
+        {"id": "C", "text": "データを暗号化する", "is_correct": false, "explanation": "暗号化はセキュリティ機能で、正規化とは別概念。"},
+        {"id": "D", "text": "データのバックアップを自動化する", "is_correct": false, "explanation": "バックアップは運用機能で、正規化とは別。"}
+      ],
+      "explanation": "正規化は冗長性を排除しデータ整合性を保つために、テーブルを意味的に分割する設計手法。第1正規形（繰返し排除）、第2正規形（部分関数従属排除）、第3正規形（推移関数従属排除）の順に進める。実務では3NFまで行うことが多い。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["データベース", "正規化", "整合性"],
+      "common_mistakes": [
+        "正規化＝検索高速化と勘違い",
+        "正規化を行えば必ずパフォーマンスが上がると思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-024",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "データベース",
+      "subtopic": "SQL（SELECT）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "SQL で「社員」テーブルから「部署」が「営業部」の社員の名前一覧を取得する文として正しいものはどれか。",
+      "options": [
+        {"id": "A", "text": "SELECT 名前 FROM 社員 WHERE 部署 = '営業部';", "is_correct": true, "explanation": "正解。SELECT 列 FROM テーブル WHERE 条件 が基本構文。"},
+        {"id": "B", "text": "GET 名前 FROM 社員 WHERE 部署 = '営業部';", "is_correct": false, "explanation": "SQL に GET 句は存在しない。"},
+        {"id": "C", "text": "SELECT 部署 = '営業部' FROM 社員;", "is_correct": false, "explanation": "WHERE 句がなく、列指定の書き方も誤り。"},
+        {"id": "D", "text": "FIND 名前 IN 社員 WHERE 部署 = '営業部';", "is_correct": false, "explanation": "SQL には FIND 句は存在しない。"}
+      ],
+      "explanation": "SQL の SELECT 文の基本構文は「SELECT 列名 FROM テーブル名 WHERE 条件」。WHERE 句で行を絞り込み、SELECT で取得列を指定する。JOIN（結合）、GROUP BY（集約）、ORDER BY（並び替え）と組合せて使う。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["データベース", "SQL", "SELECT", "WHERE"],
+      "common_mistakes": [
+        "SQL の基本構文 SELECT...FROM...WHERE を覚えていない",
+        "GET や FIND など他言語の構文を混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-025",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "データベース",
+      "subtopic": "トランザクション（ACID）",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "FinTechのアプリで「A口座から1万円引き出し、B口座に1万円入金する」処理が、途中で電源断となった。整合性を保つ仕組みとして適切なものはどれか。",
+      "options": [
+        {"id": "A", "text": "トランザクション制御により、両方成功するか両方失敗するかのどちらかにする（原子性）", "is_correct": true, "explanation": "正解。ACIDのA（Atomicity）。コミットされない限り中途状態は反映されない。"},
+        {"id": "B", "text": "とりあえずA口座から引き、後でB口座への入金を別ジョブで実施する", "is_correct": false, "explanation": "一貫性が壊れるリスクがある。電源断のタイミングで送金消失の可能性。"},
+        {"id": "C", "text": "金額を一旦半分に分けて2回処理する", "is_correct": false, "explanation": "問題の本質（原子性）を解決していない。"},
+        {"id": "D", "text": "ログをまったく取らずに高速に処理する", "is_correct": false, "explanation": "ログ（WAL等）はむしろ整合性確保に必須。"}
+      ],
+      "explanation": "トランザクションのACID特性：A=原子性（all or nothing）、C=一貫性（制約を守る）、I=独立性（並行処理が干渉しない）、D=永続性（コミット後は消えない）。複数の更新を1つのトランザクションにまとめ、コミット/ロールバックで原子性を保証する。送金のような金融処理ではACIDが必須。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["データベース", "トランザクション", "ACID", "原子性", "FinTech"],
+      "common_mistakes": [
+        "ACIDの各要素の意味を覚えていない",
+        "原子性と一貫性の区別が曖昧"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-026",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "ネットワーク",
+      "subtopic": "TCP/IPとIPアドレス",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "IPv4 アドレスの構成として正しいものはどれか。",
+      "options": [
+        {"id": "A", "text": "32ビットを8ビットずつ4つに区切り 0〜255 の数値で表現", "is_correct": true, "explanation": "正解。例：192.168.1.1。各オクテット 0-255。"},
+        {"id": "B", "text": "64ビットで構成され、6つの16進数で表現する", "is_correct": false, "explanation": "これは IPv6 に近いが正確ではない。IPv6 は 128 ビット。"},
+        {"id": "C", "text": "MACアドレスと同じく48ビット", "is_correct": false, "explanation": "MACアドレスは48ビットだが、IPアドレスとは別物。"},
+        {"id": "D", "text": "ホスト名のみで構成される", "is_correct": false, "explanation": "ホスト名（FQDN）は別概念。DNSでIPに解決される。"}
+      ],
+      "explanation": "IPv4は32ビット（約43億個）で、8ビットずつドット区切りで表記する（例：203.0.113.10）。アドレス枯渇のため、現在は128ビットの IPv6 への移行が進んでいる。MACアドレス（NICの物理識別子）48ビットとは別物。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["ネットワーク", "TCP/IP", "IPv4", "IPアドレス"],
+      "common_mistakes": [
+        "IPv4 と IPv6 のビット数を混同",
+        "MACアドレスとIPアドレスを混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-027",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "ネットワーク",
+      "subtopic": "DNS",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Webブラウザで「www.example.co.jp」と入力したとき、その文字列をIPアドレスに変換する仕組みはどれか。",
+      "options": [
+        {"id": "A", "text": "DHCP", "is_correct": false, "explanation": "DHCPは端末にIPアドレスを自動割当するプロトコル。"},
+        {"id": "B", "text": "DNS", "is_correct": true, "explanation": "正解。ドメイン名と IP アドレスの対応を解決するシステム。"},
+        {"id": "C", "text": "NAT", "is_correct": false, "explanation": "NATはプライベートIPとグローバルIPを変換する仕組み。"},
+        {"id": "D", "text": "ARP", "is_correct": false, "explanation": "ARPはIPアドレスからMACアドレスを取得するプロトコル。"}
+      ],
+      "explanation": "DNS（Domain Name System）はドメイン名（例：www.example.co.jp）を IP アドレス（例：93.184.216.34）に変換するインターネットの「電話帳」。階層的に解決され、キャッシュにより高速化される。DNSが止まると名前解決ができずWeb閲覧やメール送信ができなくなる。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["ネットワーク", "DNS", "名前解決"],
+      "common_mistakes": [
+        "DNS と DHCP を混同",
+        "NAT とDNSの役割を混同"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-028",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "ネットワーク",
+      "subtopic": "HTTP/HTTPS",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "easy",
+      "stem": "Web通信で HTTPS が HTTP より優れている主な点はどれか。",
+      "options": [
+        {"id": "A", "text": "通信内容を暗号化し、盗聴・改ざんを防ぐ", "is_correct": true, "explanation": "正解。SSL/TLSにより暗号化と通信先の認証を行う。"},
+        {"id": "B", "text": "ページの表示速度が必ず速くなる", "is_correct": false, "explanation": "暗号化のオーバヘッドはあるが、HTTP/2/3 等で必ずしも遅くない。速度が主目的ではない。"},
+        {"id": "C", "text": "ホームページを無料で公開できる", "is_correct": false, "explanation": "コスト面はHTTPと変わらない。Let's Encryptで無料証明書も取得可能だが、HTTPS固有の利点ではない。"},
+        {"id": "D", "text": "サーバの故障を防ぐ", "is_correct": false, "explanation": "HTTPSは可用性とは別の話。"}
+      ],
+      "explanation": "HTTPSはHTTP通信をSSL/TLSで暗号化したもの。盗聴防止（暗号化）、改ざん検出（メッセージ認証）、なりすまし防止（証明書による相手認証）を実現する。現在は SEO/プライバシー観点からも HTTPS が事実上必須。ブラウザもHTTPサイトに「保護されていない通信」と警告を出す。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["ネットワーク", "HTTP", "HTTPS", "TLS", "暗号化"],
+      "common_mistakes": [
+        "HTTPS = ただ高速化 と誤解",
+        "HTTPS が暗号化以外の効果（認証）も持つことを知らない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-029",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "ネットワーク",
+      "subtopic": "無線LAN",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "無線LANを利用する際、最も推奨されるセキュリティ規格はどれか。",
+      "options": [
+        {"id": "A", "text": "WEP", "is_correct": false, "explanation": "WEPは古く、容易に解読される脆弱な規格。利用すべきでない。"},
+        {"id": "B", "text": "WPA2/WPA3", "is_correct": true, "explanation": "正解。WPA3 が最新かつ最も安全、WPA2 もまだ実用範囲内。"},
+        {"id": "C", "text": "暗号化なしのオープンネットワーク", "is_correct": false, "explanation": "盗聴・なりすましのリスクが極めて高い。"},
+        {"id": "D", "text": "MACアドレスフィルタリングのみ", "is_correct": false, "explanation": "MACアドレスは偽装可能で、単独では十分な対策にならない。"}
+      ],
+      "explanation": "無線LANのセキュリティ規格は WEP（脆弱、廃止推奨）→ WPA → WPA2 → WPA3（最新）の順に強化されてきた。現在は WPA3 が最も推奨されるが、互換性のため WPA2 もまだ広く使われる。MAC アドレスフィルタは補助的対策で、暗号化の代わりにはならない。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["ネットワーク", "無線LAN", "WPA2", "WPA3", "セキュリティ"],
+      "common_mistakes": [
+        "WEP がまだ使えると誤解",
+        "MAC アドレスフィルタを過信"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-030",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "ネットワーク",
+      "subtopic": "IoT",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "東海地方の製造業で「工場の機械にセンサーをつけて稼働状況をリアルタイムにクラウドへ送り、可視化する」取組みは何と呼ばれるか。",
+      "options": [
+        {"id": "A", "text": "RPA", "is_correct": false, "explanation": "RPAはオフィス業務の自動化技術。物理機器のセンサ収集とは異なる。"},
+        {"id": "B", "text": "IoT（Internet of Things）", "is_correct": true, "explanation": "正解。モノにセンサ・通信機能を持たせて相互接続する技術。"},
+        {"id": "C", "text": "ERP", "is_correct": false, "explanation": "ERPは統合業務システム。経営管理用。"},
+        {"id": "D", "text": "VPN", "is_correct": false, "explanation": "VPNは暗号化通信のための技術で、目的が異なる。"}
+      ],
+      "explanation": "IoT（Internet of Things：モノのインターネット）はセンサや機器をネットワーク接続して、データ収集・遠隔制御を可能にする技術。スマートファクトリ、スマートシティ、ヘルスケアなどで広く活用。東海地方は製造業が盛んで IoT 需要が高い。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["ネットワーク", "IoT", "製造業", "東海地方"],
+      "common_mistakes": [
+        "IoT と RPA を混同",
+        "IoT を Web サービスのことと勘違い"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-031",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "情報セキュリティ",
+      "subtopic": "認証（多要素認証）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "金融系SaaSにログインする際、「ID・パスワード」に加えて「スマホアプリのワンタイムコード」を入力させる方式は何か。",
+      "options": [
+        {"id": "A", "text": "シングルサインオン (SSO)", "is_correct": false, "explanation": "SSOは1度のログインで複数システムを使える仕組み。要素数とは別概念。"},
+        {"id": "B", "text": "多要素認証 (MFA)", "is_correct": true, "explanation": "正解。「知識（パスワード）＋所持（スマホ）」など複数の要素を組み合わせる認証。"},
+        {"id": "C", "text": "リスクベース認証", "is_correct": false, "explanation": "リスクベース認証はアクセス状況でリスク判定し追加認証を求める仕組み。MFAとは別概念だが組合せ可能。"},
+        {"id": "D", "text": "パスワード単独認証", "is_correct": false, "explanation": "1要素のみのため強度が不十分。"}
+      ],
+      "explanation": "認証要素は「知識（パスワード）」「所持（スマホ・ICカード）」「生体（指紋・顔）」の3種に分類される。MFA（Multi-Factor Authentication）は2つ以上の要素を組合せる方式で、パスワード漏洩時にも被害を防止できる。FinTech・クラウドサービスで標準的。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["セキュリティ", "認証", "MFA", "FinTech"],
+      "common_mistakes": [
+        "MFAとSSOを混同",
+        "「2回パスワードを入力」もMFAだと勘違い（同じ要素は1要素扱い）"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-032",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "情報セキュリティ",
+      "subtopic": "暗号方式（公開鍵暗号）",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "公開鍵暗号方式の特徴として正しいものはどれか。",
+      "options": [
+        {"id": "A", "text": "暗号化と復号に同じ鍵を使う", "is_correct": false, "explanation": "これは共通鍵暗号方式の特徴。"},
+        {"id": "B", "text": "暗号化用と復号用に異なる鍵のペアを使い、片方を公開できる", "is_correct": true, "explanation": "正解。公開鍵で暗号化したものは対応する秘密鍵でしか復号できない。鍵配送問題を解決する。"},
+        {"id": "C", "text": "鍵が必ず1つしか存在しない", "is_correct": false, "explanation": "公開鍵暗号は必ず鍵ペアで成り立つ。"},
+        {"id": "D", "text": "共通鍵暗号より高速である", "is_correct": false, "explanation": "公開鍵暗号は計算負荷が高く一般に低速。実務ではハイブリッド方式（鍵交換は公開鍵、本文は共通鍵）を使う。"}
+      ],
+      "explanation": "公開鍵暗号方式（RSA、ECC等）は「公開鍵」と「秘密鍵」のペアを使う。受信者の公開鍵で暗号化し、対応する秘密鍵でしか復号できないため、鍵を安全に配送せずに済む。一方、計算が重いため、TLSなどでは「公開鍵で共通鍵を交換し、本文は共通鍵で暗号化」というハイブリッド方式が標準。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"}
+      ],
+      "tags": ["セキュリティ", "暗号", "公開鍵暗号", "共通鍵暗号"],
+      "common_mistakes": [
+        "公開鍵暗号と共通鍵暗号の特徴を取り違える",
+        "公開鍵暗号の方が常に高速だと誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-033",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "情報セキュリティ",
+      "subtopic": "マルウェア（ランサムウェア）",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "病院のサーバが「ファイルがすべて暗号化された。復号してほしければ仮想通貨で身代金を支払え」というメッセージで使えなくなった。これはどの種類のマルウェアか。",
+      "options": [
+        {"id": "A", "text": "ワーム", "is_correct": false, "explanation": "ワームは自己増殖しネットワーク経由で拡散するマルウェア。身代金要求は主機能ではない。"},
+        {"id": "B", "text": "ランサムウェア", "is_correct": true, "explanation": "正解。データを人質に取り身代金（ransom）を要求する。医療機関での被害が多発している。"},
+        {"id": "C", "text": "アドウェア", "is_correct": false, "explanation": "アドウェアは広告を強制表示するマルウェア。"},
+        {"id": "D", "text": "キーロガー", "is_correct": false, "explanation": "キーロガーはキー入力を盗み記録するマルウェア。"}
+      ],
+      "explanation": "ランサムウェアはファイル暗号化や画面ロックでデータを使えなくし、復旧と引換えに身代金を要求するマルウェア。最近は二重脅迫（情報暴露＋暗号化）型も増加。対策はオフラインバックアップ、パッチ適用、フィッシング教育、EDR導入など多層防御が重要。医療機関は患者データ保護の観点で特に標的になりやすい。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"},
+        {"title": "IPA 情報セキュリティ10大脅威", "url": "https://www.ipa.go.jp/security/10threats/10threats2025.html"}
+      ],
+      "tags": ["セキュリティ", "マルウェア", "ランサムウェア", "医療"],
+      "common_mistakes": [
+        "ワームとランサムウェアを混同",
+        "ランサムウェアの本質（身代金要求）を覚えていない"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-034",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "情報セキュリティ",
+      "subtopic": "セキュリティ対策（WAF/IDS/IPS）",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある SaaS 企業が公開する Web アプリへの SQL インジェクションや XSS 攻撃を防御したい。最も適した対策はどれか。",
+      "options": [
+        {"id": "A", "text": "WAF (Web Application Firewall)", "is_correct": true, "explanation": "正解。Webアプリ層の攻撃（SQLi、XSS等）を検出・遮断する専用ファイアウォール。"},
+        {"id": "B", "text": "ネットワークファイアウォール（パケットフィルタ）", "is_correct": false, "explanation": "L3/L4 で動作し、HTTP のペイロード内容を検査しない。Webアプリ攻撃の検出には不十分。"},
+        {"id": "C", "text": "ウイルス対策ソフトをサーバに導入", "is_correct": false, "explanation": "マルウェア対策で、Webアプリ層の攻撃（SQLi/XSS）の防御はカバー範囲外。"},
+        {"id": "D", "text": "SSL/TLS 証明書の更新", "is_correct": false, "explanation": "通信の暗号化と認証を担うが、攻撃ペイロードが暗号化されたまま届くため、SQLi/XSS には無効。"}
+      ],
+      "explanation": "Webアプリへの攻撃（SQLi、XSS、CSRF等）はHTTP ペイロード内に潜むため、L3/L4 のFWでは検出できない。WAFは HTTP の中身を解析し、攻撃パターン（シグネチャ）や異常を検出して遮断する。多層防御の一環として、入力検証・パラメタライズドクエリ等のアプリ実装と組合せて使う。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"},
+        {"title": "IPA 安全なウェブサイトの作り方", "url": "https://www.ipa.go.jp/security/vuln/websecurity/about.html"}
+      ],
+      "tags": ["セキュリティ", "WAF", "SQLインジェクション", "XSS"],
+      "common_mistakes": [
+        "FWとWAFの守備範囲を混同",
+        "TLSでアプリ層攻撃も防げると誤解"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    },
+    {
+      "id": "ipa-passport-tech-035",
+      "version": "1.0",
+      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
+      "domain": {"id": "tech", "name": "テクノロジ系", "weight_percent": 40},
+      "topic": "情報セキュリティ",
+      "subtopic": "ゼロトラスト",
+      "cognitive_level": "L6-Create",
+      "difficulty": "hard",
+      "stem": "クラウド利用とリモートワークが進む中で「社内ネットワーク内であれば信頼する」という従来モデルを改める考え方が普及している。この考え方として最も適切なのはどれか。",
+      "options": [
+        {"id": "A", "text": "境界型防御（Perimeter Security）", "is_correct": false, "explanation": "従来のFWで内外を区切る考え。クラウド・リモートワーク時代では限界が指摘されている。"},
+        {"id": "B", "text": "ゼロトラスト（Zero Trust）", "is_correct": true, "explanation": "正解。「決して信頼せず常に検証」を原則に、すべてのアクセスを認証・認可・監査する。"},
+        {"id": "C", "text": "DMZ（非武装地帯）", "is_correct": false, "explanation": "DMZは外部公開サーバを隔離する伝統的設計。ゼロトラストとは別概念。"},
+        {"id": "D", "text": "ベストエフォート", "is_correct": false, "explanation": "ベストエフォートは通信品質保証の概念で、セキュリティモデルではない。"}
+      ],
+      "explanation": "ゼロトラストは「Never Trust, Always Verify」を基本原則とし、社内/社外の境界によらず、すべてのアクセスについて 認証・認可・コンテキスト検証・最小権限・継続的監視 を行う考え方。クラウド/SaaS/リモートワーク時代に適応した次世代セキュリティアーキテクチャ。NIST SP 800-207 で体系化されている。",
+      "references": [
+        {"title": "IPA ITパスポート シラバス Ver.6.3", "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2024/2024youkou_ver6_3.html"},
+        {"title": "NIST SP 800-207 Zero Trust Architecture", "url": "https://csrc.nist.gov/publications/detail/sp/800-207/final"}
+      ],
+      "tags": ["セキュリティ", "ゼロトラスト", "境界型防御", "クラウド"],
+      "common_mistakes": [
+        "ゼロトラスト＝特定の製品と誤解（実際はアーキテクチャ思想）",
+        "境界型防御で十分と思い込む"
+      ],
+      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
+      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+    }
+  ]
+}

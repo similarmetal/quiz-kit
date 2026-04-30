@@ -1,0 +1,484 @@
+{
+  "exam_code": "mos-excel",
+  "exam_name": "MOS Excel Associate (MO-200)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "cells",
+      "name": "セル・範囲の管理",
+      "weight_percent": 25,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-excel-cells-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "cells",
+        "name": "セル・範囲の管理",
+        "weight_percent": 25
+      },
+      "topic": "表示形式",
+      "subtopic": "パーセント表示",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "あるSaaS企業の財務担当者が、セル A1 に小数値 0.25 を入力した。これを「25%」と表示するために最も簡単に実行できるショートカットキーは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ctrl + Shift + 5",
+          "is_correct": true,
+          "explanation": "正解。Ctrl+Shift+5（テンキー上の % 記号）でパーセントスタイルが適用され、0.25 が「25%」と表示される。"
+        },
+        {
+          "id": "B",
+          "text": "Ctrl + Shift + 4",
+          "is_correct": false,
+          "explanation": "Ctrl+Shift+4 は通貨スタイル（¥や$）の適用。"
+        },
+        {
+          "id": "C",
+          "text": "Ctrl + Shift + 1",
+          "is_correct": false,
+          "explanation": "Ctrl+Shift+1 は「桁区切り、小数2桁」の標準数値スタイル。"
+        },
+        {
+          "id": "D",
+          "text": "Ctrl + Shift + 3",
+          "is_correct": false,
+          "explanation": "Ctrl+Shift+3 は日付（年月日）スタイル。"
+        }
+      ],
+      "explanation": "数値書式のショートカットは記号キーと対応している: Ctrl+Shift+1 = 数値 (!), Ctrl+Shift+2 = 時刻 (@), Ctrl+Shift+3 = 日付 (#), Ctrl+Shift+4 = 通貨 ($), Ctrl+Shift+5 = パーセント (%), Ctrl+Shift+6 = 指数 (^)。記号と機能を関連付けて覚えると忘れにくい。",
+      "references": [
+        {
+          "title": "Excel のショートカット キー",
+          "url": "https://support.microsoft.com/ja-jp/office/excel-のキーボード-ショートカット-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+        }
+      ],
+      "tags": [
+        "shortcut",
+        "format",
+        "percent",
+        "number-format",
+        "ctrl-shift"
+      ],
+      "common_mistakes": [
+        "Ctrl+5 は取り消し線。Ctrl+Shift+5 と混同する",
+        "通貨と%を取り違える",
+        "0.25 を「0.25%」と表示する別書式を選んでしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-cells-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "cells",
+        "name": "セル・範囲の管理",
+        "weight_percent": 25
+      },
+      "topic": "条件付き書式",
+      "subtopic": "セルの強調表示",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育系企業の人事担当者が、評価点（A2:A100）のうち70未満のセルを赤い背景色で目立たせたい。最も適切な操作は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "A2:A100 を選択 → [ホーム] → [条件付き書式] → [セルの強調表示ルール] → [指定の値より小さい] → 70 と赤背景書式を指定",
+          "is_correct": true,
+          "explanation": "正解。条件付き書式の標準テンプレートで、値の比較を直感的に設定できる。後から閾値変更も容易。"
+        },
+        {
+          "id": "B",
+          "text": "70未満のセルを目視で探し、1つずつ手動で赤色に塗る",
+          "is_correct": false,
+          "explanation": "データ更新時に書式が追従せず、ヒューマンエラーも起きやすい。MOSでは自動化を選ぶ。"
+        },
+        {
+          "id": "C",
+          "text": "VBAで Range.Interior.Color を変更するマクロを書く",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、Associate レベルで標準機能で済む場面ではマクロは過剰。"
+        },
+        {
+          "id": "D",
+          "text": "オートフィルタで 70 未満を抽出してから手動で塗る",
+          "is_correct": false,
+          "explanation": "現時点の塗布は可能だが、フィルタを外しデータが更新されたときに自動追従しない。"
+        }
+      ],
+      "explanation": "条件付き書式は値の変化に応じて書式が動的に切り替わる。代表的なテンプレート: [セルの強調表示ルール]（指定値より大/小、間、等しい、文字列を含む 等）、[上位/下位ルール]、[データバー]、[カラースケール]、[アイコンセット]。手動塗布と異なり、データ更新で自動再評価されるのが核心的価値。",
+      "references": [
+        {
+          "title": "条件付き書式を使用してデータを強調表示する",
+          "url": "https://support.microsoft.com/ja-jp/office/条件付き書式の使用-12b036fd-d140-4e74-b45e-16fed1a7e5c6"
+        }
+      ],
+      "tags": [
+        "conditional-formatting",
+        "highlight",
+        "less-than",
+        "format",
+        "automation"
+      ],
+      "common_mistakes": [
+        "手動着色で済ませてしまう",
+        "条件付き書式とテーブルスタイルを混同する",
+        "ルール優先順位を理解せず複数ルールが衝突する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-cells-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "cells",
+        "name": "セル・範囲の管理",
+        "weight_percent": 25
+      },
+      "topic": "入力規則",
+      "subtopic": "リスト選択",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業の在庫管理担当者が、シートの「ステータス」列に「入庫/出庫/棚卸」のいずれかしか入力できないようドロップダウンを設定したい。Excel リボンで使うべき機能は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[データ] → [データの入力規則] で [入力値の種類] を [リスト] にし、元の値に「入庫,出庫,棚卸」を指定する",
+          "is_correct": true,
+          "explanation": "正解。データの入力規則の [リスト] でドロップダウン選択を強制でき、それ以外の値は警告となる。"
+        },
+        {
+          "id": "B",
+          "text": "[ホーム] → [条件付き書式] で「入庫/出庫/棚卸」以外を赤くする",
+          "is_correct": false,
+          "explanation": "色で警告できるが、誤入力を防ぐ機能ではない。要件は「入力できないようにする」。"
+        },
+        {
+          "id": "C",
+          "text": "[校閲] → [シートの保護] でロックする",
+          "is_correct": false,
+          "explanation": "シート保護は編集可否の制御で、入力値の選択肢を限定する機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "VBA の Worksheet_Change イベントで値をチェックする",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、標準機能（入力規則）で十分な場面でマクロを使うのは Associate レベルでは過剰。"
+        }
+      ],
+      "explanation": "[データ] タブ → [データの入力規則]（Data Validation）で許可される値・形式を指定する。[リスト] を選び、カンマ区切りで値を直接指定するか、別範囲のセル参照（=$F$1:$F$3 等）も使える。エラーアラート、入力時メッセージも併設可能。MOS Associate で頻出。",
+      "references": [
+        {
+          "title": "セルにデータの入力規則を適用する",
+          "url": "https://support.microsoft.com/ja-jp/office/セルにデータの入力規則を適用する-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249"
+        }
+      ],
+      "tags": [
+        "data-validation",
+        "dropdown",
+        "list",
+        "data-tab",
+        "input-restriction"
+      ],
+      "common_mistakes": [
+        "条件付き書式で代用しようとする（入力は防げない）",
+        "シート保護で代用する",
+        "リストの区切りを ; や / にしてしまう（カンマが正しい）"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-cells-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "cells",
+        "name": "セル・範囲の管理",
+        "weight_percent": 25
+      },
+      "topic": "ジャンプ機能",
+      "subtopic": "空白セル選択",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "あるSaaS企業のデータアナリストが、5000行ある顧客データの「電話番号」列に空白がある行を一括で見つけて黄色く塗りたい。最も効率的な手順の最初のステップは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "電話番号列を選択 → F5 (または Ctrl+G) → [セル選択] → [空白セル] を選び、すべての空白セルを一度に選択する",
+          "is_correct": true,
+          "explanation": "正解。ジャンプ機能の [セル選択] (Go To Special) で空白セルだけを一括選択できる。直後に塗りつぶし色を適用すれば一発で完了。"
+        },
+        {
+          "id": "B",
+          "text": "オートフィルタで「(空白セル)」を選び、可視セルを黄色く塗る",
+          "is_correct": false,
+          "explanation": "実行可能で代替手段。ただしフィルタの適用・解除が必要で、ジャンプ機能の方が直接的。MOSでは Ctrl+G の知識が問われる。"
+        },
+        {
+          "id": "C",
+          "text": "Ctrl+F (検索) で空文字を検索して塗る",
+          "is_correct": false,
+          "explanation": "Ctrl+F は文字列検索で、空白セルの一括選択には使えない。"
+        },
+        {
+          "id": "D",
+          "text": "VBA で For Each Cell ループを書いて IsEmpty を判定する",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、Associate レベルの標準機能で達成できる場面でのマクロは過剰。"
+        }
+      ],
+      "explanation": "F5 または Ctrl+G で「ジャンプ」ダイアログを開き、[セル選択] ボタンから [空白セル][数式][定数][条件付き書式] などの種類を一括選択できる（Go To Special）。空白セル選択 → 塗りつぶし → そのまま Enter で完了する流れは MOS Associate 頻出。可視セルだけを選びたいときは Alt+; のショートカットも併用される。",
+      "references": [
+        {
+          "title": "ジャンプ機能を使ってセルを選択する",
+          "url": "https://support.microsoft.com/ja-jp/office/特定のセルや範囲を検索-選択-2cc8e31a-a48b-4f7f-b06a-8e1c4e8e9cf1"
+        }
+      ],
+      "tags": [
+        "go-to",
+        "ctrl-g",
+        "f5",
+        "blank-cells",
+        "selection"
+      ],
+      "common_mistakes": [
+        "Ctrl+F で空白を検索しようとする",
+        "オートフィルタしか思いつかない",
+        "Ctrl+G を「グループ化」と勘違い"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-cells-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "cells",
+        "name": "セル・範囲の管理",
+        "weight_percent": 25
+      },
+      "topic": "ウィンドウ枠の固定",
+      "subtopic": "フリーズペイン",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "ある医療法人の事務員が、1行目に列見出し、A列に患者IDがある大きな表をスクロールしても見出しと患者IDを常に表示したい。Excel で最も適切な操作は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "B2 を選択 → [表示] → [ウィンドウ枠の固定] → [ウィンドウ枠の固定]",
+          "is_correct": true,
+          "explanation": "正解。アクティブセルの上の行と左の列が固定される。B2 選択時は1行目とA列が固定対象。"
+        },
+        {
+          "id": "B",
+          "text": "[表示] → [ウィンドウ枠の固定] → [先頭行の固定] のみ実行する",
+          "is_correct": false,
+          "explanation": "1行目だけ固定され、A列は固定されない。要件は両方の固定。"
+        },
+        {
+          "id": "C",
+          "text": "[表示] → [ウィンドウ枠の固定] → [先頭列の固定] のみ実行する",
+          "is_correct": false,
+          "explanation": "A列だけ固定され、1行目は固定されない。要件は両方の固定。"
+        },
+        {
+          "id": "D",
+          "text": "[表示] → [分割] でウィンドウを分割する",
+          "is_correct": false,
+          "explanation": "分割は複数の独立スクロール領域を作る機能で、固定とは別。再びスクロールすると見出しは動いてしまう。"
+        }
+      ],
+      "explanation": "ウィンドウ枠の固定（フリーズペイン）には3種類: (1) [先頭行の固定] = 1行目のみ、(2) [先頭列の固定] = A列のみ、(3) [ウィンドウ枠の固定] = アクティブセルの「上」と「左」を固定。両方を一度に固定したいなら、固定したい範囲のすぐ右下のセル（例: 1行とA列なら B2）を選んでから [ウィンドウ枠の固定] を選択する。",
+      "references": [
+        {
+          "title": "ウィンドウ枠を固定して行と列をロックする",
+          "url": "https://support.microsoft.com/ja-jp/office/ウィンドウ枠を固定して行と列をロックする-dab2ffc9-020d-4026-b11d-df5b9d6f7a0c"
+        }
+      ],
+      "tags": [
+        "freeze-panes",
+        "view-tab",
+        "scroll",
+        "header",
+        "navigation"
+      ],
+      "common_mistakes": [
+        "[先頭行の固定] だけで両方固定できると思う",
+        "[分割] と [固定] を混同する",
+        "アクティブセル位置を意識せずメニュー選択して期待外の固定になる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-cells-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "cells",
+        "name": "セル・範囲の管理",
+        "weight_percent": 25
+      },
+      "topic": "セルの結合",
+      "subtopic": "結合とソートの相性",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある FinTech 企業の新人が、見出し行のために A1:C1 を [セルを結合して中央揃え] で結合した。後日、別の人が表全体を並べ替えしようとしたら「この操作を行うには、すべての結合セルを同じサイズにする必要があります」というエラーが出た。設計上の最善策はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "セル結合は解除し、[セルの書式設定] → [配置] → [横位置: 選択範囲内で中央] を使う",
+          "is_correct": true,
+          "explanation": "正解。「選択範囲内で中央」は結合せずに見た目だけ中央寄せできるため、ソート・フィルタ・コピーの障害にならない。"
+        },
+        {
+          "id": "B",
+          "text": "結合のままにして、ソート前に毎回結合を解除する",
+          "is_correct": false,
+          "explanation": "毎回手動解除は手間でミスの原因。設計レベルで結合自体を避けるのが正解。"
+        },
+        {
+          "id": "C",
+          "text": "結合した範囲を別シートに移動してから結合する",
+          "is_correct": false,
+          "explanation": "シートを分けてもソートとの不整合は解消しない。問題の本質は結合という構造。"
+        },
+        {
+          "id": "D",
+          "text": "VBA で結合を一時的に解除→ソート→再結合するマクロを書く",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、根本原因（結合の使用）を放置している。設計判断としては不適切。"
+        }
+      ],
+      "explanation": "セル結合は ソート・フィルタ・コピー貼り付け・テーブル化 のすべてを阻害する。Microsoft も推奨しないアンチパターン。代替の [配置] → [横位置: 選択範囲内で中央] (Center Across Selection) は見た目は結合と同じ中央揃えだが、データ的には結合されておらず操作の支障がない。MOS Associate でも「結合の代替」として頻出。",
+      "references": [
+        {
+          "title": "セルを結合せずに中央揃えにする",
+          "url": "https://support.microsoft.com/ja-jp/office/セルの結合と結合解除-2f2c7eed-9f4e-4a1c-9fef-4d3c0f76b0c4"
+        }
+      ],
+      "tags": [
+        "merge-cells",
+        "center-across-selection",
+        "alignment",
+        "sort",
+        "anti-pattern"
+      ],
+      "common_mistakes": [
+        "「選択範囲内で中央」の存在を知らない",
+        "結合を解除しない一時しのぎ",
+        "見出しのために結合は必要だと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

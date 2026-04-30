@@ -1,0 +1,484 @@
+{
+  "exam_code": "mos-excel",
+  "exam_name": "MOS Excel Associate (MO-200)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "workbook",
+      "name": "ワークシート/ブックの管理",
+      "weight_percent": 15,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-excel-workbook-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "workbook",
+        "name": "ワークシート/ブックの管理",
+        "weight_percent": 15
+      },
+      "topic": "ファイル形式",
+      "subtopic": "マクロ有効ブック",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "ある製造業の経理担当者が、VBAマクロを含むExcelブックを保存しようとしている。マクロを有効に保ったまま保存するために選ぶべきファイル形式は？",
+      "options": [
+        {
+          "id": "A",
+          "text": ".xlsx (Excel ブック)",
+          "is_correct": false,
+          "explanation": ".xlsx は標準のブック形式だが、マクロは保存時に削除される。"
+        },
+        {
+          "id": "B",
+          "text": ".xlsm (Excel マクロ有効ブック)",
+          "is_correct": true,
+          "explanation": "正解。.xlsm はマクロ（VBA）を含むブックを保存するための専用形式。"
+        },
+        {
+          "id": "C",
+          "text": ".csv (カンマ区切り値)",
+          "is_correct": false,
+          "explanation": ".csv はテキスト形式で、書式・数式・マクロいずれも保存できない。"
+        },
+        {
+          "id": "D",
+          "text": ".xltx (Excel テンプレート)",
+          "is_correct": false,
+          "explanation": ".xltx はテンプレート形式だが、マクロは含められない。マクロ有効テンプレートは .xltm。"
+        }
+      ],
+      "explanation": "Excel のファイル形式は用途で使い分ける。.xlsx は標準ブック、.xlsm はマクロ有効ブック、.xltx/.xltm はテンプレート、.csv はテキスト互換。VBAマクロを保持したい場合は .xlsm を選択する必要がある。.xlsx で保存しようとすると「マクロが削除される」旨の警告ダイアログが表示される。",
+      "references": [
+        {
+          "title": "ブックを保存するときに使用できるファイル形式",
+          "url": "https://support.microsoft.com/ja-jp/office/excel-でサポートされているファイル形式-0943ff2c-6014-4e8d-aaea-b83d51d46247"
+        }
+      ],
+      "tags": [
+        "file-format",
+        "xlsm",
+        "macro",
+        "save",
+        "vba"
+      ],
+      "common_mistakes": [
+        ".xlsx でマクロが残ると思い込む",
+        ".xltm と .xltx の違いを混同する",
+        ".csv で書式が保存されると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-workbook-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "workbook",
+        "name": "ワークシート/ブックの管理",
+        "weight_percent": 15
+      },
+      "topic": "ブックの保護",
+      "subtopic": "シート構成の保護",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "あるSaaS企業の人事担当者が、配布する集計ブックで「シートの追加・削除・名前変更を禁止したい」が、各シート内のセルへの入力は許可したい。Excel リボンで使うべき機能は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[校閲] タブ → [シートの保護]",
+          "is_correct": false,
+          "explanation": "シートの保護は個別シートのセル編集を制限する機能で、シート構成（追加・削除）には作用しない。"
+        },
+        {
+          "id": "B",
+          "text": "[校閲] タブ → [ブックの保護]",
+          "is_correct": true,
+          "explanation": "正解。ブックの保護はシートの追加・削除・移動・名前変更などのシート構成（structure）を禁止する。"
+        },
+        {
+          "id": "C",
+          "text": "[ファイル] → [情報] → [ブックの暗号化]",
+          "is_correct": false,
+          "explanation": "暗号化はブック全体を開く際のパスワードを設定する機能で、シート構成は制限しない。"
+        },
+        {
+          "id": "D",
+          "text": "[表示] タブ → [ウィンドウの固定]",
+          "is_correct": false,
+          "explanation": "ウィンドウの固定（フリーズペイン）はスクロール時の見出し固定で、保護機能ではない。"
+        }
+      ],
+      "explanation": "Excel の保護には階層がある。(1) 暗号化 = ブックを開くこと自体に PW、(2) ブックの保護 = シートの構成（追加・削除・名前変更等）を禁止、(3) シートの保護 = 各シート内のセル編集を制限。要件「シート追加・削除・名前変更を禁止、セル入力は許可」なら (2) のブックの保護が正解。",
+      "references": [
+        {
+          "title": "ブックを保護する",
+          "url": "https://support.microsoft.com/ja-jp/office/ブックを保護する-05fd9acd-c8b7-4ee3-9a0f-4e0d3f2c6d1d"
+        }
+      ],
+      "tags": [
+        "protection",
+        "workbook",
+        "structure",
+        "review-tab",
+        "security"
+      ],
+      "common_mistakes": [
+        "「シートの保護」と「ブックの保護」を取り違える",
+        "暗号化と保護を混同する",
+        "ウィンドウの保護を構成保護と勘違いする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-workbook-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "workbook",
+        "name": "ワークシート/ブックの管理",
+        "weight_percent": 15
+      },
+      "topic": "シートのグループ化",
+      "subtopic": "複数シート同時編集",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育系スタートアップで、12ヶ月分（Sheet1〜Sheet12）の月次レポートシートに同じ表題「2026年度 売上集計」を A1 セルに一括入力したい。最も効率の良い方法は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sheet1 のシートタブをクリックし、Shift キーを押しながら Sheet12 のタブをクリックして全シートをグループ化、A1 に入力する",
+          "is_correct": true,
+          "explanation": "正解。Shift+クリックで連続シートを選択（グループ化）すると、入力が全選択シートに同時反映される。タイトルバーに [作業グループ] と表示される。"
+        },
+        {
+          "id": "B",
+          "text": "Sheet1 で A1 に入力後、Ctrl+C → 残り11シートに順番に Ctrl+V する",
+          "is_correct": false,
+          "explanation": "実行可能だが手作業で11回貼り付けが必要。グループ化なら1回で済む。MOSでは効率的手順が求められる。"
+        },
+        {
+          "id": "C",
+          "text": "VBA マクロで For Each Sheet ループを書いて A1 に代入する",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、Associate レベルで求められる範囲外。簡単な操作にマクロは過剰。"
+        },
+        {
+          "id": "D",
+          "text": "[表示] → [新しいウィンドウ] で12個のウィンドウを開き、それぞれに入力する",
+          "is_correct": false,
+          "explanation": "新しいウィンドウは同じブックの別ビューを開くだけで、入力は同期されない。意味がない。"
+        }
+      ],
+      "explanation": "シートのグループ化は MOS Excel Associate の頻出操作。連続シートは Shift+クリック、不連続シートは Ctrl+クリックで複数選択する。グループ化中にセルへ入力・書式設定すると、すべての選択シートに同時反映される。解除はグループ外シートをクリックするか、シートタブ右クリック → [作業グループの解除]。タイトルバーに [作業グループ] が表示されている間は注意（誤操作で全シートに影響）。",
+      "references": [
+        {
+          "title": "ワークシートをグループ化する",
+          "url": "https://support.microsoft.com/ja-jp/office/ワークシートをグループ化する-or-グループ解除する-9d87691b-3536-4862-9a23-1e9b5b1c8b3a"
+        }
+      ],
+      "tags": [
+        "group-sheets",
+        "shift-click",
+        "multi-sheet",
+        "efficiency",
+        "worksheet"
+      ],
+      "common_mistakes": [
+        "コピー&ペーストを繰り返してしまう",
+        "Ctrl と Shift の使い分け（連続/不連続）を間違える",
+        "グループ解除を忘れて他シートに誤入力する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-workbook-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "workbook",
+        "name": "ワークシート/ブックの管理",
+        "weight_percent": 15
+      },
+      "topic": "印刷設定",
+      "subtopic": "印刷範囲の設定",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある医療法人の経理担当者が、A1:G50 の表のうち A1:G30 の部分のみを印刷したい。事前に固定的に印刷範囲を設定するためのリボン操作は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "A1:G30 を選択 → [ページレイアウト] → [印刷範囲] → [印刷範囲の設定]",
+          "is_correct": true,
+          "explanation": "正解。選択範囲を印刷範囲として登録すると、以降「Ctrl+P」で常にその範囲のみ印刷される。"
+        },
+        {
+          "id": "B",
+          "text": "[ファイル] → [印刷] → [選択した部分を印刷] を毎回選ぶ",
+          "is_correct": false,
+          "explanation": "毎回選択範囲を作って印刷する一時的な方法。固定設定として保存されないため、要件に合わない。"
+        },
+        {
+          "id": "C",
+          "text": "[表示] → [改ページプレビュー] で青線を A1:G30 に合わせる",
+          "is_correct": false,
+          "explanation": "改ページプレビューは改ページ位置の調整で、印刷範囲そのものの限定はできない。"
+        },
+        {
+          "id": "D",
+          "text": "31〜50 行を非表示にする",
+          "is_correct": false,
+          "explanation": "印刷はされなくなるが、データ自体が非表示となり閲覧・編集が不便。本来の印刷範囲設定を使うべき。"
+        }
+      ],
+      "explanation": "[ページレイアウト] → [印刷範囲] → [印刷範囲の設定] で範囲を Print_Area という名前付き範囲として保存する。設定後はブックを保存しても維持され、印刷ダイアログでも自動的にその範囲が選ばれる。解除は同じメニューの [印刷範囲のクリア]。改ページプレビューは「ページの区切り位置」を調整するもので、印刷範囲そのものではない点に注意。",
+      "references": [
+        {
+          "title": "印刷する特定のワークシートまたはブック領域を設定またはクリアする",
+          "url": "https://support.microsoft.com/ja-jp/office/印刷する特定のワークシート領域を設定またはクリアする-deeec999-cb4a-4e99-9d57-b3f5d4d4e6e7"
+        }
+      ],
+      "tags": [
+        "print",
+        "page-layout",
+        "print-area",
+        "print_area",
+        "pagination"
+      ],
+      "common_mistakes": [
+        "改ページプレビューと印刷範囲を混同する",
+        "毎回 [選択した部分を印刷] にしてしまう",
+        "行を非表示にして無理に範囲を作る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-workbook-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "workbook",
+        "name": "ワークシート/ブックの管理",
+        "weight_percent": 15
+      },
+      "topic": "印刷設定",
+      "subtopic": "改ページの調整",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業のアナリストが、横長の取引明細を印刷すると、最後の数列だけ次ページに溢れて見にくいと指摘された。1ページに収めたい。最も適切な対応は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "[ページレイアウト] → [拡大縮小印刷] で「横」を「1ページ」に設定する",
+          "is_correct": true,
+          "explanation": "正解。横を1ページに収める設定により、自動で縮小率が計算される。縦は通常どおり複数ページ可。"
+        },
+        {
+          "id": "B",
+          "text": "用紙サイズを A4 から A3 に変更する",
+          "is_correct": false,
+          "explanation": "A3 プリンタが必要で、配布先で印刷できない可能性が高い。汎用的でない。まず縮小設定を試すべき。"
+        },
+        {
+          "id": "C",
+          "text": "列幅をすべて手動で半分にする",
+          "is_correct": false,
+          "explanation": "画面表示まで小さくなり編集に支障。印刷時のみ縮小したいなら拡大縮小印刷を使う。"
+        },
+        {
+          "id": "D",
+          "text": "余白を [なし] にする",
+          "is_correct": false,
+          "explanation": "余白ゼロは多くのプリンタが対応せず端が欠ける。わずかな調整にはなるが、根本対策ではない。"
+        }
+      ],
+      "explanation": "[ページレイアウト] → [拡大縮小印刷] で「横: 1ページ」「縦: 自動」と設定すると、横方向だけ1ページに収まるよう自動縮小される。代替に [印刷] 画面の [シートを1ページに印刷] もあるが、縦横とも1ページに圧縮されるため細かい指定はリボンの方が柔軟。用紙変更や余白調整は補助的手段。",
+      "references": [
+        {
+          "title": "ワークシートを 1 ページに収まるように縮小する",
+          "url": "https://support.microsoft.com/ja-jp/office/印刷時にワークシートを-1-ページに収まるように-e1c9e1d4-6bba-4b64-a85a-08c11796a52e"
+        }
+      ],
+      "tags": [
+        "print",
+        "scaling",
+        "page-break",
+        "fit-to-page",
+        "page-layout"
+      ],
+      "common_mistakes": [
+        "用紙サイズで対応しようとする",
+        "[シートを1ページに印刷] で縦も圧縮されてしまう",
+        "余白ゼロにして端が切れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-workbook-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "workbook",
+        "name": "ワークシート/ブックの管理",
+        "weight_percent": 15
+      },
+      "topic": "マクロ有効化",
+      "subtopic": "セキュリティセンター",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "ある社員が外部から受け取った .xlsm ファイルを開いたところ、黄色のメッセージバーで「セキュリティの警告 マクロが無効にされました」と表示された。社内ポリシー上、ファイル提供元を確認した上で安全と判断できた場合、最も適切な手順は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "メッセージバーの [コンテンツの有効化] をクリックして当該ファイルのみマクロを有効化する",
+          "is_correct": true,
+          "explanation": "正解。ファイル単位でマクロを有効化する標準手順。次回同ファイルを開いたとき信頼済み扱いとなり警告は出ない。"
+        },
+        {
+          "id": "B",
+          "text": "[トラスト センター] で「すべてのマクロを警告なしで有効にする」を選択する",
+          "is_correct": false,
+          "explanation": "全マクロを無条件で有効にする設定はリスクが高く、Microsoft も非推奨。社内ポリシー違反の可能性も大。"
+        },
+        {
+          "id": "C",
+          "text": ".xlsm を .xlsx にリネームしてから開く",
+          "is_correct": false,
+          "explanation": "拡張子を変えるとファイルが破損または開けなくなる。マクロを実行したい目的にも反する。"
+        },
+        {
+          "id": "D",
+          "text": "ファイルのプロパティで [読み取り専用] を解除してから開く",
+          "is_correct": false,
+          "explanation": "読み取り専用とマクロブロックは別概念。マクロブロックは Mark of the Web（MOTW）等のゾーン情報による。"
+        }
+      ],
+      "explanation": "インターネットや外部から取得した .xlsm はデフォルトでマクロがブロックされる（Mark of the Web による保護）。ユーザーが提供元を確認した上で、メッセージバーの [コンテンツの有効化] をクリックすると当該ファイル単位で有効化される。組織レベルでの恒久対応は信頼できる場所（Trusted Locations）の登録やデジタル署名の利用。「すべて有効化」はマルウェア感染リスクが高く避けるべき。",
+      "references": [
+        {
+          "title": "Office ファイルのマクロを有効または無効にする",
+          "url": "https://support.microsoft.com/ja-jp/office/office-ファイルのマクロを有効または無効にする-12b036fd-d140-4e74-b45e-16fed1a7e5c6"
+        }
+      ],
+      "tags": [
+        "macro",
+        "security",
+        "trust-center",
+        "xlsm",
+        "motw"
+      ],
+      "common_mistakes": [
+        "[すべてのマクロを有効化] を選んで全社的リスクを負う",
+        "拡張子変更で回避しようとする",
+        "読み取り専用解除でマクロが動くと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

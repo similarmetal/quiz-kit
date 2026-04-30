@@ -1,0 +1,488 @@
+{
+  "exam_code": "mos-word",
+  "exam_name": "MOS Word Associate (MO-100)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "documents",
+      "name": "文書の管理",
+      "weight_percent": 25,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-word-documents-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "documents",
+        "name": "文書の管理",
+        "weight_percent": 25
+      },
+      "topic": "文書内ナビゲーション",
+      "subtopic": "ジャンプ機能とブックマーク",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "あるSaaS企業の営業担当が、100ページを超える提案書の特定のページに素早く移動したい。Wordの「ジャンプ」機能で指定できる移動先として誤っているものはどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "ページ番号",
+          "is_correct": false,
+          "explanation": "ジャンプダイアログ（Ctrl+G）でページ番号は基本的な移動先として指定できる。"
+        },
+        {
+          "id": "B",
+          "text": "ブックマーク",
+          "is_correct": false,
+          "explanation": "ブックマーク名を指定して該当箇所へ移動できる。"
+        },
+        {
+          "id": "C",
+          "text": "セクション",
+          "is_correct": false,
+          "explanation": "セクション番号で指定して該当セクションへ移動できる。"
+        },
+        {
+          "id": "D",
+          "text": "フォントサイズ",
+          "is_correct": true,
+          "explanation": "正解。フォントサイズはジャンプ機能の移動先として指定できない。ジャンプの対象はページ・セクション・行・ブックマーク・コメント・脚注・図表番号などの構造的要素。"
+        }
+      ],
+      "explanation": "Wordのジャンプ機能（Ctrl+G または F5）は、文書内の構造的な位置にカーソルを移動させるための機能。指定可能な移動先はページ・セクション・行・ブックマーク・コメント・脚注・文末脚注・フィールド・表・グラフィック・数式・オブジェクト・見出し。文字書式（フォントサイズ等）は検索の条件にはできるが、ジャンプ先にはならない。",
+      "references": [
+        {
+          "title": "Word でジャンプ機能を使用する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-でジャンプ機能を使用する"
+        }
+      ],
+      "tags": [
+        "navigation",
+        "jump",
+        "bookmark",
+        "shortcut",
+        "ctrl-g"
+      ],
+      "common_mistakes": [
+        "検索機能とジャンプ機能を混同する",
+        "ジャンプ先の種類をすべて記憶していない",
+        "ショートカット F5/Ctrl+G の用途を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-documents-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "documents",
+        "name": "文書の管理",
+        "weight_percent": 25
+      },
+      "topic": "文書フォーマット",
+      "subtopic": "PDF出力",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方の製造業に勤める総務担当が、社内規程文書をPDFで配布する。受け取った社員がPDF内のテキストをコピーしたり、目次やリンクから該当箇所へジャンプできるようにしたい。Wordから「エクスポート」→「PDF/XPSドキュメントの作成」を実行する際、最も適切な設定は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "「最小サイズ（オンライン発行）」を選び、「ドキュメント構造タグをアクセシビリティ用に保存」のチェックを外す",
+          "is_correct": false,
+          "explanation": "サイズ最小化は画質を犠牲にし、構造タグを外すとアクセシビリティとナビゲーション性が損なわれる。要件と矛盾する。"
+        },
+        {
+          "id": "B",
+          "text": "「標準（オンライン発行および印刷）」を選び、「ブックマークを作成する : 見出し」と「ドキュメント構造タグをアクセシビリティ用に保存」を有効にする",
+          "is_correct": true,
+          "explanation": "正解。標準品質を保ちつつ、見出しからPDFのしおり（ブックマーク）が生成され、ナビゲーション性とアクセシビリティを両立できる。テキストコピーもデフォルトで可能。"
+        },
+        {
+          "id": "C",
+          "text": "ファイル → 名前を付けて保存 → ファイル形式「リッチテキスト形式（.rtf）」を選択する",
+          "is_correct": false,
+          "explanation": "RTFはWord互換形式でありPDFではない。PDF配布の要件を満たさない。"
+        },
+        {
+          "id": "D",
+          "text": "印刷ダイアログで「Microsoft XPS Document Writer」を選び、XPSを生成してから拡張子をpdfに変更する",
+          "is_correct": false,
+          "explanation": "XPSはPDFとは別形式で、拡張子変更では正しいPDFにならない。リンクや構造も保持されない。"
+        }
+      ],
+      "explanation": "Wordの「エクスポート → PDF/XPSドキュメントの作成」は、最適化（標準/最小サイズ）とオプション（ブックマーク作成・ドキュメント構造タグ・ドキュメントプロパティ）を選択できる。見出しスタイルから自動でPDFのしおりを生成すると目次的なナビゲーションが可能。アクセシビリティ用構造タグはスクリーンリーダー対応にも必須。",
+      "references": [
+        {
+          "title": "PDF または XPS 形式で保存または変換する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/pdf-または-xps-形式で保存または変換する"
+        }
+      ],
+      "tags": [
+        "pdf",
+        "export",
+        "accessibility",
+        "bookmark",
+        "manufacturing"
+      ],
+      "common_mistakes": [
+        "拡張子を変えるだけでPDFになると誤解する",
+        "RTFをPDF代替と混同する",
+        "アクセシビリティタグを軽視する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-documents-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "documents",
+        "name": "文書の管理",
+        "weight_percent": 25
+      },
+      "topic": "テーマとスタイルセット",
+      "subtopic": "デザイン適用範囲",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "教育系スタートアップのデザイナーが、Word の「デザイン」タブで「テーマ」を変更した。文書全体に適用される変更として正しい組み合わせはどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "用紙サイズ・余白・ページの向き",
+          "is_correct": false,
+          "explanation": "これらは「レイアウト」タブのページ設定で変更する項目で、テーマには含まれない。"
+        },
+        {
+          "id": "B",
+          "text": "配色・フォント・図形の効果（テーマ効果）",
+          "is_correct": true,
+          "explanation": "正解。テーマは配色・フォント（見出しと本文）・効果の3要素で構成され、文書全体に統一されたデザインを適用する。"
+        },
+        {
+          "id": "C",
+          "text": "ヘッダー・フッターの内容そのもの",
+          "is_correct": false,
+          "explanation": "ヘッダー/フッターのテキスト内容自体はテーマでは変わらない。書式の一部はスタイルで変わる場合があるが、内容は別管理。"
+        },
+        {
+          "id": "D",
+          "text": "段落のインデント値",
+          "is_correct": false,
+          "explanation": "インデントは段落書式またはスタイルで設定するもので、テーマでは制御されない。"
+        }
+      ],
+      "explanation": "Wordのテーマは「配色」「フォント（見出しフォントと本文フォント）」「効果（図形・SmartArtなどの視覚効果）」の3要素を一括で切り替える機能。スタイルセットと組み合わせると、文書のデザイン全体を素早く変更できる。ページ設定（用紙・余白）はレイアウトタブで別管理されている点に注意。",
+      "references": [
+        {
+          "title": "Word でドキュメントのテーマを変更する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/ドキュメントのテーマを変更する"
+        }
+      ],
+      "tags": [
+        "theme",
+        "design",
+        "color",
+        "font",
+        "style"
+      ],
+      "common_mistakes": [
+        "テーマとスタイルセットの違いを理解していない",
+        "ページ設定までテーマが変えると思い込む",
+        "テーマがフォント/配色/効果の3要素であることを覚えていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-documents-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "documents",
+        "name": "文書の管理",
+        "weight_percent": 25
+      },
+      "topic": "印刷",
+      "subtopic": "範囲指定",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "B2B SaaSの管理部門担当が、20ページの契約書から1〜3ページと7ページ、および10〜12ページのみを印刷したい。「ファイル → 印刷」のページ指定欄に入力すべき値として正しいものはどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "1-3,7,10-12",
+          "is_correct": true,
+          "explanation": "正解。連続範囲はハイフン、不連続な単独ページや範囲はカンマで区切るのがWordの印刷ページ指定の標準書式。"
+        },
+        {
+          "id": "B",
+          "text": "1〜3、7、10〜12",
+          "is_correct": false,
+          "explanation": "全角の波ダッシュ（〜）と読点（、）は印刷指定欄では認識されない。半角ハイフンと半角カンマが正しい。"
+        },
+        {
+          "id": "C",
+          "text": "1-3 7 10-12",
+          "is_correct": false,
+          "explanation": "区切り文字としてスペースは使えない。カンマが必要。"
+        },
+        {
+          "id": "D",
+          "text": "1+3,7,10+12",
+          "is_correct": false,
+          "explanation": "プラス記号は範囲指定として認識されない。範囲はハイフンを使う。"
+        }
+      ],
+      "explanation": "Wordの印刷ページ範囲指定は半角の「ハイフン（-）で連続範囲」「カンマ（,）で区切り」が基本書式。セクションがある場合は p1s1（セクション1の1ページ目）形式も使える。全角文字や別記号は無効になるため注意。",
+      "references": [
+        {
+          "title": "Word で印刷するページを選択する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で印刷するページを選択する"
+        }
+      ],
+      "tags": [
+        "print",
+        "page-range",
+        "syntax",
+        "saas",
+        "operations"
+      ],
+      "common_mistakes": [
+        "全角の記号を使ってしまう",
+        "範囲とカンマ区切りの構文を混同する",
+        "セクション指定の構文を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-documents-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "documents",
+        "name": "文書の管理",
+        "weight_percent": 25
+      },
+      "topic": "文書プロパティ",
+      "subtopic": "プロパティの編集",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "医療系企業のコンプライアンス担当が、配布前に文書の「作成者」「タイトル」「タグ（キーワード）」などの文書プロパティを確認・編集したい。最も効率的にプロパティ一覧にアクセスする方法はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "「ファイル」タブ → 「情報」 → 右側のプロパティペインから編集する",
+          "is_correct": true,
+          "explanation": "正解。Backstageビューの情報画面で主要プロパティを直接編集でき、「プロパティ → 詳細プロパティ」でさらに詳細なダイアログも開ける。"
+        },
+        {
+          "id": "B",
+          "text": "「挿入」タブ → 「ヘッダー」 → プロパティ一覧から開く",
+          "is_correct": false,
+          "explanation": "ヘッダーからはクイックパーツでプロパティを挿入できるが、編集UIには直接は到達しない。"
+        },
+        {
+          "id": "C",
+          "text": "「校閲」タブ → 「変更履歴」からプロパティを編集する",
+          "is_correct": false,
+          "explanation": "変更履歴は編集追跡機能であり、文書プロパティの編集場所ではない。"
+        },
+        {
+          "id": "D",
+          "text": "「表示」タブ → 「ナビゲーションウィンドウ」を開く",
+          "is_correct": false,
+          "explanation": "ナビゲーションウィンドウは見出し/ページ/検索結果の閲覧用で、プロパティ編集は行えない。"
+        }
+      ],
+      "explanation": "文書プロパティ（作成者・タイトル・タグ・分類・状態など）は「ファイル → 情報」のBackstageビューで直接編集できる。配布前にはここで「ドキュメントの検査」も実行し、個人情報の漏洩を防ぐのが医療・金融など規制業界の標準運用。",
+      "references": [
+        {
+          "title": "ドキュメントのプロパティを表示または変更する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/ドキュメントのプロパティを表示または変更する"
+        }
+      ],
+      "tags": [
+        "properties",
+        "metadata",
+        "backstage",
+        "compliance",
+        "healthcare"
+      ],
+      "common_mistakes": [
+        "Backstageビュー（ファイルタブ）の存在を忘れる",
+        "ナビゲーションウィンドウと混同する",
+        "プロパティと変更履歴を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-documents-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "documents",
+        "name": "文書の管理",
+        "weight_percent": 25
+      },
+      "topic": "文書の保護",
+      "subtopic": "編集制限とパスワード",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "FinTech企業の法務担当が、社外パートナーへ契約書ドラフトを送付する。要件は「文書を開くにはパスワードを要求」「コメントの追加は可能だが本文の編集は禁止」の2点。Wordで実現する適切な構成はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "「ファイル → 情報 → 文書の保護 → パスワードを使用して暗号化」のみを設定する",
+          "is_correct": false,
+          "explanation": "読み取りパスワードは設定できるが、開封後は自由に編集可能で「コメントのみ許可」の要件を満たさない。"
+        },
+        {
+          "id": "B",
+          "text": "「校閲 → 編集の制限」で利用可能な編集を「コメント」に限定し、保護を開始した上で、別途「ファイル → 情報 → パスワードを使用して暗号化」で読み取りパスワードを設定する",
+          "is_correct": true,
+          "explanation": "正解。編集制限（書式と編集の制限）でコメント以外を禁止し、ファイル暗号化で開封パスワードを別途設定する。両者は独立した機能で組み合わせる必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "「ファイル → 情報 → 最終版にする」をクリックする",
+          "is_correct": false,
+          "explanation": "「最終版にする」は読み取り専用の通知に過ぎず、ユーザーが編集を再有効化できるためセキュリティ要件としては不十分。パスワードもない。"
+        },
+        {
+          "id": "D",
+          "text": "「ファイル → 情報 → アクセスの制限」で IRM を有効にしたあと、PDFにエクスポートする",
+          "is_correct": false,
+          "explanation": "PDFにエクスポートしてしまうとWordとしての校閲フローが崩れ、要件の「コメント可」が実用上不適切。IRMだけでは開封パスワードの代替にならない。"
+        }
+      ],
+      "explanation": "Wordの保護機能は階層的で、(1) 開封制御＝パスワード暗号化、(2) 編集制御＝書式と編集の制限（読み取り専用・コメント・変更履歴・フォーム）、(3) 通知＝最終版にする、(4) IRM＝Microsoft 365のアクセス権制御、と用途が異なる。要件が複合する場合は機能を組み合わせて適用するのが正解。",
+      "references": [
+        {
+          "title": "Word 文書を保護する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-文書を保護する"
+        },
+        {
+          "title": "編集を制限する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/編集を制限する"
+        }
+      ],
+      "tags": [
+        "protection",
+        "password",
+        "edit-restriction",
+        "comment",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "「最終版にする」をセキュリティ機能と誤解する",
+        "編集制限とパスワードが別機能だと知らない",
+        "IRMで全要件が満たせると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

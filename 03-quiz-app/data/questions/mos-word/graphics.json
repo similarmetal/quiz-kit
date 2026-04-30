@@ -1,0 +1,484 @@
+{
+  "exam_code": "mos-word",
+  "exam_name": "MOS Word Associate (MO-100)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "graphics",
+      "name": "グラフィック要素の挿入と書式設定",
+      "weight_percent": 20,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-word-graphics-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "graphics",
+        "name": "グラフィック要素の挿入と書式設定",
+        "weight_percent": 20
+      },
+      "topic": "画像の配置",
+      "subtopic": "文字列の折り返し",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "教育系SaaSのライターが、画像を本文中に挿入し、テキストが画像の左右両方に流れ込むようにしたい。「文字列の折り返し」で選ぶべきオプションはどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "行内（インライン）",
+          "is_correct": false,
+          "explanation": "行内は画像が文字と同じ扱いになり、文字は左右に回り込まず単に1文字として配置される。"
+        },
+        {
+          "id": "B",
+          "text": "四角形（または狭く）",
+          "is_correct": true,
+          "explanation": "正解。四角形/狭くを選ぶと、画像の周囲（左右両方および上下）にテキストが回り込む。"
+        },
+        {
+          "id": "C",
+          "text": "前面",
+          "is_correct": false,
+          "explanation": "前面は画像が文字の前に重なる配置で、文字は画像の下に隠れて回り込まない。"
+        },
+        {
+          "id": "D",
+          "text": "背面",
+          "is_correct": false,
+          "explanation": "背面は文字の背後に画像が配置されるオプションで、テキストの折り返しは発生しない。"
+        }
+      ],
+      "explanation": "「文字列の折り返し」には 行内・四角形・狭く・内部・上下・背面・前面 がある。左右に文字を流すには「四角形」または「狭く」が適切。「上下」は画像の上下にだけ文字が並び、左右には流れない点に注意。",
+      "references": [
+        {
+          "title": "Word で画像の周囲にテキストを折り返す - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で画像の周囲にテキストを折り返す"
+        }
+      ],
+      "tags": [
+        "image",
+        "wrap-text",
+        "layout",
+        "education",
+        "design"
+      ],
+      "common_mistakes": [
+        "「行内」と「四角形」の違いを理解していない",
+        "「前面/背面」が折り返しと無関係なのを忘れる",
+        "「上下」で左右に流れると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-graphics-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "graphics",
+        "name": "グラフィック要素の挿入と書式設定",
+        "weight_percent": 20
+      },
+      "topic": "SmartArt",
+      "subtopic": "用途",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "B2B SaaSの企画担当が「組織図」「プロセスフロー」「サイクル図」を簡単に挿入したい。最も適切な機能はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "挿入タブ → SmartArt",
+          "is_correct": true,
+          "explanation": "正解。SmartArt はリスト・手順・循環・階層・集合関係・マトリックス・ピラミッド・図 の8カテゴリのグラフィックを提供し、組織図・プロセス・サイクル等を素早く作れる。"
+        },
+        {
+          "id": "B",
+          "text": "挿入タブ → 図形",
+          "is_correct": false,
+          "explanation": "図形は単独の四角・矢印などの基本図形で、組織図のような構造を1コマンドで挿入する用途には向かない。"
+        },
+        {
+          "id": "C",
+          "text": "挿入タブ → グラフ",
+          "is_correct": false,
+          "explanation": "グラフは数値データを可視化する棒・円・折れ線などのチャート機能で、概念図や組織図とは別。"
+        },
+        {
+          "id": "D",
+          "text": "挿入タブ → 3Dモデル",
+          "is_correct": false,
+          "explanation": "3Dモデルは立体オブジェクトの挿入機能で、組織図用ではない。"
+        }
+      ],
+      "explanation": "SmartArtは概念図に特化したグラフィック機能で、テキストペインに箇条書きを入力するだけで図形が自動配置される。階層型は組織図、プロセス型は手順、循環型はサイクルに最適。色・スタイルは「SmartArtのデザイン」「書式」タブで一括変更できる。",
+      "references": [
+        {
+          "title": "Word で SmartArt グラフィックを作成する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で-smartart-グラフィックを作成する"
+        }
+      ],
+      "tags": [
+        "smartart",
+        "diagram",
+        "org-chart",
+        "saas",
+        "visualization"
+      ],
+      "common_mistakes": [
+        "図形でゼロから作って時間を浪費する",
+        "グラフとSmartArtを混同する",
+        "3Dモデルに概念図機能があると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-graphics-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "graphics",
+        "name": "グラフィック要素の挿入と書式設定",
+        "weight_percent": 20
+      },
+      "topic": "代替テキスト",
+      "subtopic": "アクセシビリティ",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "医療機関の広報担当が、配布する案内文書のアクセシビリティを高めたい。挿入した画像に対して代替テキスト（Alt Text）を設定する方法として最も適切なのは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "画像を右クリック → 「代替テキストの編集」を選び、画像内容を簡潔に説明する文を入力する",
+          "is_correct": true,
+          "explanation": "正解。代替テキストはスクリーンリーダーで読み上げられ、視覚障害のある利用者でも内容を把握できる。装飾画像なら「装飾用」のチェックを付けるのが推奨。"
+        },
+        {
+          "id": "B",
+          "text": "画像の下にキャプションとして「画像」と書く",
+          "is_correct": false,
+          "explanation": "キャプションは可視テキストで、スクリーンリーダーがAltとして読み上げる仕組みではない。アクセシビリティ要件を満たさない。"
+        },
+        {
+          "id": "C",
+          "text": "画像のファイル名を「説明文.png」に変更する",
+          "is_correct": false,
+          "explanation": "ファイル名は文書内では情報として使われず、Alt Text の代わりにはならない。"
+        },
+        {
+          "id": "D",
+          "text": "「校閲タブ → アクセシビリティチェック」を実行すれば自動でAltが入る",
+          "is_correct": false,
+          "explanation": "アクセシビリティチェックは欠落を指摘するツールで、Altテキストを自動生成して挿入するわけではない（生成提案はあるが確定は手動）。"
+        }
+      ],
+      "explanation": "代替テキスト（Alt Text）は画像・図形・SmartArt・グラフ・3Dモデルの内容を文章で説明するメタ情報。医療や教育、行政文書ではアクセシビリティ要件として必須。「装飾用」フラグを付けるとスクリーンリーダーがスキップする。校閲タブのアクセシビリティチェックでAlt欠落を検出可能。",
+      "references": [
+        {
+          "title": "アクセシビリティを向上させるための代替テキストを追加する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/アクセシビリティを向上させるための代替テキストを追加する"
+        }
+      ],
+      "tags": [
+        "alt-text",
+        "accessibility",
+        "screen-reader",
+        "healthcare",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "キャプションと代替テキストを混同する",
+        "ファイル名でAltの代用ができると思い込む",
+        "装飾用画像にも詳細なAltを書いてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-graphics-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "graphics",
+        "name": "グラフィック要素の挿入と書式設定",
+        "weight_percent": 20
+      },
+      "topic": "ヘッダーとフッター",
+      "subtopic": "セクションごとの異なるヘッダー",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "FinTech企業の規程文書で、第1章と第2章でヘッダーの内容を変えたい。両章の境にセクション区切りは挿入済みだが、第2章のヘッダーを変更すると第1章のヘッダーも一緒に変わってしまう。原因と対処として正しいのは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "ヘッダー編集中の「ヘッダーとフッター」タブで「前と同じヘッダー/フッター」がオンになっているため。これを解除してから第2章のヘッダーを編集する",
+          "is_correct": true,
+          "explanation": "正解。新しいセクションは初期状態で前のセクションのヘッダー/フッターとリンクされている。「前と同じヘッダー/フッター」をオフにすると独立して編集できる。"
+        },
+        {
+          "id": "B",
+          "text": "セクション区切りではなくページ区切りを入れるべきなので、区切りを入れ替える",
+          "is_correct": false,
+          "explanation": "ページ区切りはヘッダーをセクション単位で分けないため、要件をかえって満たせなくなる。原因は別。"
+        },
+        {
+          "id": "C",
+          "text": "第1章と第2章を別ファイルに分けるしかない",
+          "is_correct": false,
+          "explanation": "Word の標準機能で実現可能で、ファイル分割は不要。"
+        },
+        {
+          "id": "D",
+          "text": "「先頭ページのみ別指定」をオンにする",
+          "is_correct": false,
+          "explanation": "「先頭ページのみ別指定」は、各セクション/文書の1ページ目のみヘッダーを変える機能で、第2章全体のヘッダー切替とは目的が異なる。"
+        }
+      ],
+      "explanation": "セクションごとにヘッダー/フッターを変えるには、(1) セクション区切りを挿入、(2) ヘッダー/フッターを編集モードにし、(3) ヘッダーとフッタータブの「前と同じ」をオフ、(4) 当該セクションのヘッダーを編集、の4ステップ。新規セクションは既定で前セクションとリンクされる仕様を理解することが重要。",
+      "references": [
+        {
+          "title": "Word でセクションごとに異なるヘッダーまたはフッターを使用する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/セクションごとに異なるヘッダーまたはフッターを使用する"
+        }
+      ],
+      "tags": [
+        "header",
+        "footer",
+        "section",
+        "link-to-previous",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "「前と同じ」のリンク状態に気づかない",
+        "ページ区切りとセクション区切りを混同する",
+        "「先頭ページのみ別指定」を万能と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-graphics-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "graphics",
+        "name": "グラフィック要素の挿入と書式設定",
+        "weight_percent": 20
+      },
+      "topic": "ページ番号",
+      "subtopic": "開始番号の設定",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東海地方の製造業の品証担当が、表紙と目次の2ページ分にはページ番号を表示せず、本文1ページ目から「1」と表示したい。最も適切な手順は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "表紙と目次のあとにセクション区切りを入れ、本文側のヘッダー/フッターで「前と同じ」を解除し、ページ番号の書式設定で「開始番号 1」を指定し、表紙・目次セクションのページ番号は削除する",
+          "is_correct": true,
+          "explanation": "正解。セクション区切りでヘッダー/フッターを切り離し、本文側で開始番号を1にすると要件を満たせる。表紙・目次側のページ番号フィールドは削除（または非表示）する。"
+        },
+        {
+          "id": "B",
+          "text": "本文1ページ目に「1」と手入力するだけでよい",
+          "is_correct": false,
+          "explanation": "手入力ではページ追加・削除に追従せず、自動更新もされない。"
+        },
+        {
+          "id": "C",
+          "text": "「先頭ページのみ別指定」をオンにすれば自動的に本文から1番が始まる",
+          "is_correct": false,
+          "explanation": "「先頭ページのみ別指定」は1ページ目だけ非表示にする機能で、開始番号の制御はしない。表紙・目次が複数ページある場合の要件も満たせない。"
+        },
+        {
+          "id": "D",
+          "text": "表紙と目次を別ファイルに分けて、印刷時に物理的にホチキス止めする",
+          "is_correct": false,
+          "explanation": "Word単独で実現できるため不要。データ管理上の不利益も大きい。"
+        }
+      ],
+      "explanation": "ページ番号の制御は (1) セクション区切り、(2) ヘッダー/フッターのリンク解除（前と同じ）、(3) ページ番号の書式設定で開始番号を指定、(4) 不要セクションの番号削除 という流れで行う。「先頭ページのみ別指定」は1ページのみ別表示する補助機能で、複数ページ前付がある場合は不十分。",
+      "references": [
+        {
+          "title": "Word でページ番号を追加する、または番号付けを開始する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-でページ番号を追加する"
+        }
+      ],
+      "tags": [
+        "page-number",
+        "section",
+        "starting-number",
+        "manufacturing",
+        "layout"
+      ],
+      "common_mistakes": [
+        "「先頭ページのみ別指定」で複数ページ前付を制御できると思い込む",
+        "ページ番号を手入力で管理する",
+        "開始番号の設定箇所を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-graphics-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "graphics",
+        "name": "グラフィック要素の挿入と書式設定",
+        "weight_percent": 20
+      },
+      "topic": "図形とアイコン",
+      "subtopic": "オブジェクトの整列",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "B2B SaaSのデザイナーが、ページ上に配置した複数の図形を「上下中央に揃え、左端で揃える」ようにしたい。Wordで複数図形を選択した後に使う最も適切な機能はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "図形の書式タブ → 配置 → 「上下中央揃え」と「左揃え」を順に実行する",
+          "is_correct": true,
+          "explanation": "正解。複数図形を選択（Shift+クリック）した状態で「配置」メニューから整列・等間隔・グリッドへの吸着を制御できる。"
+        },
+        {
+          "id": "B",
+          "text": "ホームタブ → 段落 → 中央揃え",
+          "is_correct": false,
+          "explanation": "段落の中央揃えはテキスト用で、図形オブジェクトの配置には作用しない。"
+        },
+        {
+          "id": "C",
+          "text": "レイアウトタブ → 余白",
+          "is_correct": false,
+          "explanation": "余白はページ全体の設定で、図形同士の整列はしない。"
+        },
+        {
+          "id": "D",
+          "text": "図形を1つずつドラッグして目視で揃える",
+          "is_correct": false,
+          "explanation": "目視整列は精度が出ず、Wordの整列機能を使うのが正解。"
+        }
+      ],
+      "explanation": "図形・画像などの配置は「図形の書式 → 配置」または「図の形式 → 配置」メニューで、左右中央・上下中央・上揃え・下揃え・左揃え・右揃え・左右に整列・上下に整列 を一括実行できる。グループ化（Ctrl+G に相当する図形のグループ化機能）と組み合わせると更に扱いやすくなる。",
+      "references": [
+        {
+          "title": "Word で図形や画像を配置する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で図形や画像を配置する"
+        }
+      ],
+      "tags": [
+        "shape",
+        "align",
+        "object",
+        "saas",
+        "design"
+      ],
+      "common_mistakes": [
+        "段落の中央揃えで図形が動くと思う",
+        "目視で揃えてしまう",
+        "配置メニューの存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

@@ -1,0 +1,488 @@
+{
+  "exam_code": "mos-excel",
+  "exam_name": "MOS Excel Associate (MO-200)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "formulas",
+      "name": "数式・関数の利用",
+      "weight_percent": 25,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-excel-formulas-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "formulas",
+        "name": "数式・関数の利用",
+        "weight_percent": 25
+      },
+      "topic": "絶対参照",
+      "subtopic": "$ 記号の意味",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "セル B2 に式 `=A2*$C$1` を入力し、B3〜B10 にコピー（オートフィル）した。B5 にコピーされた式はどうなるか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "=A5*$C$1",
+          "is_correct": true,
+          "explanation": "正解。A2 は相対参照なのでコピー先で A5 にずれ、$C$1 は絶対参照なのでそのまま固定される。"
+        },
+        {
+          "id": "B",
+          "text": "=A2*$C$1",
+          "is_correct": false,
+          "explanation": "両方とも変わらないのは、すべて絶対参照（$A$2*$C$1）の場合。A2 は相対参照なので変化する。"
+        },
+        {
+          "id": "C",
+          "text": "=A5*$C$4",
+          "is_correct": false,
+          "explanation": "$C$1 は完全絶対参照（行も列も $）のため、行方向のコピーでも C1 のまま動かない。"
+        },
+        {
+          "id": "D",
+          "text": "=$A$5*$C$1",
+          "is_correct": false,
+          "explanation": "A2 は $ なしの相対参照なので A5 となるが、$ は付かない。"
+        }
+      ],
+      "explanation": "$ 記号は「コピー時に変えない」という固定指示。$A$1 は完全絶対（行列とも固定）、A$1 は行のみ固定、$A1 は列のみ固定、A1 は完全相対。F4 キーで4状態（A1 → $A$1 → A$1 → $A1 → A1）を循環できる。MOS Associate 最頻出概念。",
+      "references": [
+        {
+          "title": "絶対参照と相対参照を切り替える",
+          "url": "https://support.microsoft.com/ja-jp/office/数式の相対参照-絶対参照-複合参照を切り替える-dfec08cd-ae65-4f56-839e-5f0d8d0baca9"
+        }
+      ],
+      "tags": [
+        "absolute-reference",
+        "relative-reference",
+        "dollar-sign",
+        "f4",
+        "fill"
+      ],
+      "common_mistakes": [
+        "$ の意味を「お金関連」と勘違い",
+        "$A$1 と A$1 の違いを理解していない",
+        "F4 の循環を知らずに毎回手入力"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-formulas-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "formulas",
+        "name": "数式・関数の利用",
+        "weight_percent": 25
+      },
+      "topic": "条件分岐",
+      "subtopic": "IF + AND",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある教育系企業のテスト採点シートで、点数（A2）が80以上「かつ」出席率（B2）が90%以上のとき「合格」、それ以外を「不合格」と表示したい。C2 に入力する式は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "=IF(AND(A2>=80, B2>=0.9), \"合格\", \"不合格\")",
+          "is_correct": true,
+          "explanation": "正解。AND で両条件を結合し、両方 TRUE のときのみ「合格」。"
+        },
+        {
+          "id": "B",
+          "text": "=IF(OR(A2>=80, B2>=0.9), \"合格\", \"不合格\")",
+          "is_correct": false,
+          "explanation": "OR は「いずれかが TRUE」で合格となるため、片方の条件しか満たさなくても合格になる。要件と異なる。"
+        },
+        {
+          "id": "C",
+          "text": "=IF(A2>=80, IF(B2>=0.9, \"合格\"), \"不合格\")",
+          "is_correct": false,
+          "explanation": "ネストした IF 自体は機能するが、内側 IF の偽値が省略されており、A2>=80 かつ B2<0.9 の場合 FALSE が返る。要件と一致しない。"
+        },
+        {
+          "id": "D",
+          "text": "=IF(A2>=80 AND B2>=0.9, \"合格\", \"不合格\")",
+          "is_correct": false,
+          "explanation": "Excel の数式では AND は関数として AND(条件1, 条件2) の形で書く。SQL のような中置記法は使えない。"
+        }
+      ],
+      "explanation": "複数条件の AND は AND() 関数で表現する。書式は AND(条件1, 条件2, ...)。同様に OR(...)、NOT(...) もある。Excel 2019 以降は IFS や SWITCH も使えるが、AND/OR との組み合わせが MOS Associate の標準。条件式を書く際は「すべて満たす（AND）」と「いずれかを満たす（OR）」を明確に区別すること。",
+      "references": [
+        {
+          "title": "AND 関数",
+          "url": "https://support.microsoft.com/ja-jp/office/and-関数-5f19b2e8-e1df-4408-897a-ce285a19e9d9"
+        }
+      ],
+      "tags": [
+        "if",
+        "and",
+        "or",
+        "logical",
+        "nested-if"
+      ],
+      "common_mistakes": [
+        "AND と OR を取り違える",
+        "AND を SQL 風の中置で書く",
+        "% を文字でなく 0〜1 の小数で扱うことを忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-formulas-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "formulas",
+        "name": "数式・関数の利用",
+        "weight_percent": 25
+      },
+      "topic": "VLOOKUP / XLOOKUP",
+      "subtopic": "近似一致と完全一致",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある FinTech 企業の担当者が =VLOOKUP(A2, 商品マスタ!A:C, 3, TRUE) と書いたところ、商品コードが完全一致しないのに別商品の値が返ってしまった。原因として最も適切なものは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "第4引数を TRUE（近似一致）にしたため、ソート済みでない範囲で誤った結果が返った。FALSE（または 0）にすべき",
+          "is_correct": true,
+          "explanation": "正解。TRUE は範囲が昇順ソートされている前提の近似一致モード。コードのような完全一致が必要な場合は FALSE を指定する。"
+        },
+        {
+          "id": "B",
+          "text": "VLOOKUP は左端列でしか検索できないため、必ず INDEX/MATCH を使うべき",
+          "is_correct": false,
+          "explanation": "左端列の制約は事実だが、本問の検索は1列目（A列）で行っており該当しない。原因は第4引数。"
+        },
+        {
+          "id": "C",
+          "text": "範囲が A:C と列全体になっているため計算が遅く、結果が不正確になる",
+          "is_correct": false,
+          "explanation": "列全体指定は遅くなる可能性があるが、結果が不正確になる原因にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "Excel の VLOOKUP は廃止されており、XLOOKUP しか使えない",
+          "is_correct": false,
+          "explanation": "VLOOKUP は廃止されておらず、現行 Excel でも利用可能。"
+        }
+      ],
+      "explanation": "VLOOKUP の第4引数は最も誤りやすいポイント: TRUE/省略 = 近似一致（範囲は昇順前提）、FALSE/0 = 完全一致。コード・ID 系は必ず FALSE。XLOOKUP は既定で完全一致なのでより安全。VLOOKUP では「左端列以外を検索できない」「列番号で指定するため列追加に弱い」などの制約があり、Microsoft も新規には XLOOKUP を推奨している。",
+      "references": [
+        {
+          "title": "VLOOKUP 関数",
+          "url": "https://support.microsoft.com/ja-jp/office/vlookup-関数-0bbc8083-26fe-4963-8ab8-93a18ad188a1"
+        },
+        {
+          "title": "XLOOKUP 関数",
+          "url": "https://support.microsoft.com/ja-jp/office/xlookup-関数-b7fd680e-6d10-43e6-84f9-088b007cc9e4"
+        }
+      ],
+      "tags": [
+        "vlookup",
+        "xlookup",
+        "exact-match",
+        "approximate-match",
+        "lookup"
+      ],
+      "common_mistakes": [
+        "TRUE と FALSE の意味を逆に覚える",
+        "近似一致でソート前提を忘れる",
+        "XLOOKUP の既定が完全一致と知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-formulas-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "formulas",
+        "name": "数式・関数の利用",
+        "weight_percent": 25
+      },
+      "topic": "条件付き集計",
+      "subtopic": "COUNTIF / SUMIF",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある製造業の販売管理シートに、A列に「部署」、B列に「売上」が並んでいる。「営業1課」の売上合計を求める式として正しいものは？",
+      "options": [
+        {
+          "id": "A",
+          "text": "=SUMIF(A:A, \"営業1課\", B:B)",
+          "is_correct": true,
+          "explanation": "正解。SUMIF(範囲, 条件, 合計範囲) の形式。条件範囲が A 列、条件が \"営業1課\"、合計範囲が B 列。"
+        },
+        {
+          "id": "B",
+          "text": "=COUNTIF(A:A, \"営業1課\")",
+          "is_correct": false,
+          "explanation": "COUNTIF は条件を満たすセルの「個数」を返す。合計ではない。"
+        },
+        {
+          "id": "C",
+          "text": "=SUMIF(B:B, \"営業1課\", A:A)",
+          "is_correct": false,
+          "explanation": "範囲と合計範囲が逆。B 列に「営業1課」を探しに行くため何も合計されない。"
+        },
+        {
+          "id": "D",
+          "text": "=SUM(IF(A:A=\"営業1課\", B:B))",
+          "is_correct": false,
+          "explanation": "従来は配列数式（Ctrl+Shift+Enter）が必要で、Associate レベルでは SUMIF が標準。書式・対応バージョンの観点で SUMIF が適切。"
+        }
+      ],
+      "explanation": "条件付き集計の代表関数: COUNTIF（条件に一致するセル数）、SUMIF（条件に一致するセルに対応する合計）、AVERAGEIF（条件平均）。複数条件は COUNTIFS / SUMIFS / AVERAGEIFS を使う（条件範囲・条件のペアを複数指定）。SUMIF の引数順序は「範囲, 条件, 合計範囲」で、SUMIFS は「合計範囲, 条件範囲1, 条件1, ...」と先頭が異なる点に注意。",
+      "references": [
+        {
+          "title": "SUMIF 関数",
+          "url": "https://support.microsoft.com/ja-jp/office/sumif-関数-169b8c99-c05c-4483-a712-1697a653039b"
+        }
+      ],
+      "tags": [
+        "sumif",
+        "countif",
+        "conditional-aggregate",
+        "criteria",
+        "sumifs"
+      ],
+      "common_mistakes": [
+        "SUMIF と COUNTIF を取り違える",
+        "範囲と合計範囲を逆にする",
+        "SUMIF と SUMIFS の引数順を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-formulas-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "formulas",
+        "name": "数式・関数の利用",
+        "weight_percent": 25
+      },
+      "topic": "文字列結合",
+      "subtopic": "CONCAT / TEXTJOIN",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある SaaS 企業の担当者が、A列の姓と B列の名を「、」で区切って 1 セルに結合したい。さらに姓または名が空欄の場合は区切り文字を出したくない。最も適切な関数は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "=TEXTJOIN(\"、\", TRUE, A2, B2)",
+          "is_correct": true,
+          "explanation": "正解。TEXTJOIN(区切り, 空白を無視するか, 文字列1, 文字列2,...) で第2引数 TRUE が「空白を無視」を意味し、要件にぴったり。"
+        },
+        {
+          "id": "B",
+          "text": "=CONCAT(A2, \"、\", B2)",
+          "is_correct": false,
+          "explanation": "CONCAT は単純結合で空欄を無視できない。空欄でも区切り「、」が出てしまう。"
+        },
+        {
+          "id": "C",
+          "text": "=A2 & \"、\" & B2",
+          "is_correct": false,
+          "explanation": "& 演算子は CONCAT と同様で空欄をスキップしない。要件を満たさない。"
+        },
+        {
+          "id": "D",
+          "text": "=CONCATENATE(A2, B2)",
+          "is_correct": false,
+          "explanation": "CONCATENATE は区切り文字を指定できず、また空欄も無視できない。Excel 2016 以降は非推奨。"
+        }
+      ],
+      "explanation": "文字列結合の関数は3世代ある: (1) CONCATENATE - 旧来のもので非推奨、(2) CONCAT - 配列対応版、(3) TEXTJOIN - 区切り文字と空白無視オプション付き。TEXTJOIN(delimiter, ignore_empty, text1, ...) の第2引数で空白セルをスキップできるのが他関数にない強み。MOS Associate 頻出。& 演算子は最もシンプルだが空白セルでも区切りが出てしまう点に注意。",
+      "references": [
+        {
+          "title": "TEXTJOIN 関数",
+          "url": "https://support.microsoft.com/ja-jp/office/textjoin-関数-357b449a-ec91-49d0-80c3-0e8fc845691c"
+        }
+      ],
+      "tags": [
+        "textjoin",
+        "concat",
+        "concatenate",
+        "string",
+        "delimiter"
+      ],
+      "common_mistakes": [
+        "CONCAT と TEXTJOIN の機能差を知らない",
+        "& で空白セルの区切りが出てしまう",
+        "CONCATENATE が非推奨と知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-excel-formulas-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-excel",
+        "name": "MOS Excel Associate (MO-200)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "formulas",
+        "name": "数式・関数の利用",
+        "weight_percent": 25
+      },
+      "topic": "エラー処理",
+      "subtopic": "IFERROR",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある医療法人の担当者が、=A2/B2 の式を100行コピーしたところ、B列が空白の行で「#DIV/0!」エラーが多数出ている。エラー時には「-」を表示し、それ以外は通常の除算結果を表示したい。最も簡潔な式は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "=IFERROR(A2/B2, \"-\")",
+          "is_correct": true,
+          "explanation": "正解。IFERROR は式がエラーの場合に第2引数を返す。1関数で完結し最も簡潔。"
+        },
+        {
+          "id": "B",
+          "text": "=IF(B2=0, \"-\", A2/B2)",
+          "is_correct": false,
+          "explanation": "0 のケースは検出するが、B列が空白テキストや非数値の場合の #VALUE! エラーは捕捉できない。IFERROR の方が広く対応。"
+        },
+        {
+          "id": "C",
+          "text": "=IF(ISERROR(A2/B2), \"-\", A2/B2)",
+          "is_correct": false,
+          "explanation": "機能的には正しいが、A2/B2 を2回書く必要があり冗長。IFERROR が登場以降、こちらは非推奨。"
+        },
+        {
+          "id": "D",
+          "text": "=A2/IFERROR(B2, 1)",
+          "is_correct": false,
+          "explanation": "B2 がエラーでも 1 で割るだけで、A2/B2 全体のエラー処理にはならない。論理的に誤り。"
+        }
+      ],
+      "explanation": "IFERROR(式, エラー時の値) はあらゆるエラー（#DIV/0!, #N/A, #VALUE!, #REF! 等）を一括で捕捉できる便利関数。式を1回しか書かないため可読性も高い。VLOOKUP の不一致時に空文字を返すなどでも頻用される。特定のエラーだけ処理したい場合は IFNA（#N/A 限定）も活用。",
+      "references": [
+        {
+          "title": "IFERROR 関数",
+          "url": "https://support.microsoft.com/ja-jp/office/iferror-関数-c526fd07-caeb-47b8-8bb6-63f3e417f611"
+        }
+      ],
+      "tags": [
+        "iferror",
+        "error-handling",
+        "div-zero",
+        "isnerror",
+        "ifna"
+      ],
+      "common_mistakes": [
+        "IFERROR を知らず、IF+ISERROR で冗長に書く",
+        "#DIV/0! だけ防げば良いと考え B2=0 だけ判定する",
+        "IFERROR の引数位置を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "exam_code": "mos-word",
+  "exam_name": "MOS Word Associate (MO-100)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "references",
+      "name": "参考資料の作成と管理",
+      "weight_percent": 10,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-word-references-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "references",
+        "name": "参考資料の作成と管理",
+        "weight_percent": 10
+      },
+      "topic": "目次",
+      "subtopic": "自動目次の更新",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "教育コンテンツのエディタが、見出しスタイルを変更したあと、文書冒頭の自動目次に新しい章を反映したい。最も適切な操作は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "目次を選択した状態で「目次の更新」をクリックし、「目次をすべて更新する」を選ぶ",
+          "is_correct": true,
+          "explanation": "正解。目次のページ番号だけでなく、章の追加/削除も反映するには「目次をすべて更新する」を選ぶ。"
+        },
+        {
+          "id": "B",
+          "text": "目次は手動で書き直すしかない",
+          "is_correct": false,
+          "explanation": "Wordの自動目次は更新可能。手動編集は不要。"
+        },
+        {
+          "id": "C",
+          "text": "F5 を押す",
+          "is_correct": false,
+          "explanation": "F5 はジャンプダイアログを開くショートカットで、目次の更新は行わない。"
+        },
+        {
+          "id": "D",
+          "text": "デザインタブの「テーマの変更」をクリックする",
+          "is_correct": false,
+          "explanation": "テーマ変更はデザインの切替で、目次の内容は更新されない。"
+        }
+      ],
+      "explanation": "自動目次は見出しスタイルから生成され、目次フィールドの右クリック → 目次の更新（または目次上部の「目次の更新」ボタン → F9 でも可）で「ページ番号だけ更新」「目次をすべて更新する」を選べる。構成変更時は後者を選ぶ。",
+      "references": [
+        {
+          "title": "Word で目次を更新する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で目次を更新する"
+        }
+      ],
+      "tags": [
+        "toc",
+        "update",
+        "field",
+        "education",
+        "automation"
+      ],
+      "common_mistakes": [
+        "「ページ番号だけ更新」と「すべて更新」の違いを知らない",
+        "F9 / F5 を混同する",
+        "目次は手動で書くものと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-references-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "references",
+        "name": "参考資料の作成と管理",
+        "weight_percent": 10
+      },
+      "topic": "脚注と文末脚注",
+      "subtopic": "違いと配置",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Word の「脚注」と「文末脚注」の違いとして正しい説明はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "脚注は各ページの下部に表示され、文末脚注は文書（またはセクション）の末尾にまとめて表示される",
+          "is_correct": true,
+          "explanation": "正解。脚注は同一ページの下部、文末脚注は文書末またはセクション末にまとめて表示される。番号書式や開始番号もそれぞれ別に設定できる。"
+        },
+        {
+          "id": "B",
+          "text": "脚注は本文の右余白に配置され、文末脚注は左余白に配置される",
+          "is_correct": false,
+          "explanation": "余白の左右に配置されるのはコメントや注釈の表示モードなど別機能で、脚注/文末脚注の説明としては誤り。"
+        },
+        {
+          "id": "C",
+          "text": "脚注は印刷されないが、文末脚注は印刷される",
+          "is_correct": false,
+          "explanation": "両者とも標準で印刷対象。印刷有無で分類されるわけではない。"
+        },
+        {
+          "id": "D",
+          "text": "脚注はクリックでハイパーリンクとして外部URLを開き、文末脚注は開かない",
+          "is_correct": false,
+          "explanation": "脚注/文末脚注はどちらも本文と注の相互ジャンプ用で、外部URLを開く機能ではない。"
+        }
+      ],
+      "explanation": "脚注（footnote）はページ下部、文末脚注（endnote）は文書末またはセクション末にまとめて配置される注釈。参考資料タブの「脚注」グループから挿入し、ダイアログで番号書式（1,2,3 / i,ii,iii / a,b,c など）や開始番号、配置（ページの最後/下端、文書の最後/セクションの最後）を制御する。",
+      "references": [
+        {
+          "title": "Word で脚注と文末脚注を追加する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で脚注と文末脚注を追加する"
+        }
+      ],
+      "tags": [
+        "footnote",
+        "endnote",
+        "references",
+        "academic",
+        "format"
+      ],
+      "common_mistakes": [
+        "脚注と文末脚注の配置を逆に覚える",
+        "余白注釈と脚注を混同する",
+        "番号書式の設定箇所を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-references-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "references",
+        "name": "参考資料の作成と管理",
+        "weight_percent": 10
+      },
+      "topic": "引用文献と参考文献",
+      "subtopic": "スタイルの選択",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "学術系SaaSのレビュアーが、Wordの「参考資料 → 引用文献の挿入」を使う際、引用書式（APA/MLA/シカゴ など）を変更する場所はどこか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "ホームタブ → スタイル",
+          "is_correct": false,
+          "explanation": "ホームタブのスタイルは段落/文字スタイルで、引用書式（参考文献スタイル）とは別。"
+        },
+        {
+          "id": "B",
+          "text": "参考資料タブ → 引用文献と文献目録 → 「スタイル」ドロップダウン",
+          "is_correct": true,
+          "explanation": "正解。参考資料タブの引用文献と文献目録グループにある「スタイル」ドロップダウンで APA、MLA、Chicago、IEEE などを切り替えられる。"
+        },
+        {
+          "id": "C",
+          "text": "デザインタブ → スタイルセット",
+          "is_correct": false,
+          "explanation": "スタイルセットは見出し/本文の見た目に関するもので、引用書式とは別。"
+        },
+        {
+          "id": "D",
+          "text": "ファイル → オプション → 文章校正",
+          "is_correct": false,
+          "explanation": "文章校正は誤字や文法のチェック設定で、引用書式は管理しない。"
+        }
+      ],
+      "explanation": "Word の引用機能は、ソース（書籍/雑誌記事/Webサイトなど）をマスター/現在の文書のソースリストに登録し、本文中に引用を挿入するとともに、最後にまとめて参考文献の一覧を生成する。書式（APA/MLA/Chicago/IEEEなど）はスタイルドロップダウンで切替でき、選んだスタイルに合わせて表記が自動更新される。",
+      "references": [
+        {
+          "title": "Word で引用文献と参考文献を追加する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で引用文献と参考文献を追加する"
+        }
+      ],
+      "tags": [
+        "citation",
+        "bibliography",
+        "apa",
+        "mla",
+        "academic"
+      ],
+      "common_mistakes": [
+        "段落スタイルと引用スタイルを混同する",
+        "デザインタブで引用書式を探す",
+        "スタイル切替で全引用が更新されることを知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-references-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "references",
+        "name": "参考資料の作成と管理",
+        "weight_percent": 10
+      },
+      "topic": "図表番号",
+      "subtopic": "図表番号と図表目次",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "医療機関の研修担当が、文書中の全図に「図1」「図2」...と通し番号を付け、文書末尾に図表目次を作りたい。最も適切な手順は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "各図の下に手入力で「図1」「図2」...と書き、目次は手動で作成する",
+          "is_correct": false,
+          "explanation": "図の追加・削除のたびに番号を手で振り直す必要があり、規模が大きくなると破綻する。Wordの図表番号機能を使うのが正解。"
+        },
+        {
+          "id": "B",
+          "text": "各図を選択 → 参考資料タブ → 「図表番号の挿入」で「図」ラベルを使い番号を振る → 文書末尾で「図表目次の挿入」を実行する",
+          "is_correct": true,
+          "explanation": "正解。図表番号は自動連番で管理され、目次は参考資料タブの「図表目次の挿入」でラベルを「図」に指定すると一覧が生成される。"
+        },
+        {
+          "id": "C",
+          "text": "ホームタブの段落番号で番号を振り、図の下に置く",
+          "is_correct": false,
+          "explanation": "段落番号は本文用で、図表番号機能と連動した目次生成や相互参照には使えない。"
+        },
+        {
+          "id": "D",
+          "text": "ヘッダーに「図1」と入力し、図ごとにヘッダーを書き換える",
+          "is_correct": false,
+          "explanation": "ヘッダーはページ単位の繰り返し領域で、図1点に対応させる用途には不適切。"
+        }
+      ],
+      "explanation": "Wordの図表番号は「ラベル（図/表/数式 等）+ 通し番号 + 説明テキスト」で構成され、追加・削除時に自動でリナンバーされる。これに対応する図表目次は参考資料タブから生成でき、ラベルでフィルタすれば「図一覧」「表一覧」を別々に作れる。相互参照（次問）と組み合わせると、本文から「図3を参照」のように動的なリンクを張れる。",
+      "references": [
+        {
+          "title": "Word で図表番号を追加する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で図表番号を追加する"
+        }
+      ],
+      "tags": [
+        "caption",
+        "figure",
+        "table-of-figures",
+        "healthcare",
+        "automation"
+      ],
+      "common_mistakes": [
+        "図表番号機能を使わず手入力する",
+        "段落番号で代用しようとする",
+        "図表目次の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-references-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "references",
+        "name": "参考資料の作成と管理",
+        "weight_percent": 10
+      },
+      "topic": "ハイパーリンクとブックマーク",
+      "subtopic": "文書内リンク",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "B2B SaaSのプロダクトマネージャが、長文の仕様書の本文から「3章 アーキテクチャ」へジャンプするリンクを作りたい。最も適切な手順は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "リンク先テキストを範囲選択 → 挿入タブ → ブックマークで名前を付け、リンクを張りたい場所で 挿入 → リンク → ブックマークを指定する",
+          "is_correct": true,
+          "explanation": "正解。文書内ジャンプの標準パターン。ブックマークでリンク先を識別し、ハイパーリンクの「このドキュメント内」 → ブックマーク選択でリンクが完成する。"
+        },
+        {
+          "id": "B",
+          "text": "目次を作成し、目次の項目をクリックさせる",
+          "is_correct": false,
+          "explanation": "目次自体は文書全体の構造を見せるもので、特定本文中から特定箇所への単独リンクの用途には大げさ。"
+        },
+        {
+          "id": "C",
+          "text": "テキストの色を青にして下線を引くだけでハイパーリンクになる",
+          "is_correct": false,
+          "explanation": "見た目だけ変えても実際のジャンプ機能は付かない。Hyperlinkフィールドが必要。"
+        },
+        {
+          "id": "D",
+          "text": "コメントで「3章を参照」と書き残す",
+          "is_correct": false,
+          "explanation": "コメントは校閲用の注釈で、クリック移動できるリンクではない。"
+        }
+      ],
+      "explanation": "Word では「ブックマーク」で文書内の任意位置に名前付きアンカーを作り、ハイパーリンクの種類「このドキュメント内」から見出しまたはブックマークを選んで内部リンクを張れる。見出しスタイルが付いていれば、ブックマーク不要で見出しを直接指定することもできる。",
+      "references": [
+        {
+          "title": "Word でハイパーリンクを作成または編集する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-でハイパーリンクを作成または編集する"
+        }
+      ],
+      "tags": [
+        "hyperlink",
+        "bookmark",
+        "internal-link",
+        "saas",
+        "navigation"
+      ],
+      "common_mistakes": [
+        "色と下線を変えただけでリンクになると思う",
+        "ブックマークの存在を知らない",
+        "目次で代用しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-references-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "references",
+        "name": "参考資料の作成と管理",
+        "weight_percent": 10
+      },
+      "topic": "相互参照",
+      "subtopic": "図表番号への参照",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "FinTech企業の社内ライターが、本文中に「図3を参照」と書き、後で図の追加で番号がずれても自動的に「図4を参照」と更新されるようにしたい。最も適切な機能は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "挿入タブ → 「相互参照」で参照する種類を「図」「番号とラベルのみ」など適切なオプションで挿入する",
+          "is_correct": true,
+          "explanation": "正解。相互参照は図表番号・見出し・ブックマーク・脚注などへの動的リンクで、対象が変わると本文側も自動更新される。"
+        },
+        {
+          "id": "B",
+          "text": "コメントで「図3」と書く",
+          "is_correct": false,
+          "explanation": "コメントは校閲用で、参照リンクとしての更新追従は行わない。"
+        },
+        {
+          "id": "C",
+          "text": "本文に「図3」とテキスト入力し、フォントを赤にする",
+          "is_correct": false,
+          "explanation": "見た目を変えただけのテキストは番号変化に追従しない。"
+        },
+        {
+          "id": "D",
+          "text": "新規ハイパーリンクで外部Webにリンクする",
+          "is_correct": false,
+          "explanation": "外部URLは文書内の図表番号と無関係で、要件を満たさない。"
+        }
+      ],
+      "explanation": "相互参照（Cross-reference）は、見出し・図表番号・ブックマーク・脚注・段落番号などをフィールドとして本文に挿入し、参照対象の変化に追従して更新される機能。番号、ラベルと番号、ページ番号、上/下、テキストのみ など参照形式を選べる。文書全体の更新は Ctrl+A → F9 でフィールドを一括更新できる。",
+      "references": [
+        {
+          "title": "Word で相互参照を作成する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で相互参照を作成する"
+        }
+      ],
+      "tags": [
+        "cross-reference",
+        "field",
+        "caption",
+        "fintech",
+        "automation"
+      ],
+      "common_mistakes": [
+        "相互参照とハイパーリンクを混同する",
+        "F9 のフィールド更新を知らず古い番号のまま印刷する",
+        "テキスト入力で代用してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}

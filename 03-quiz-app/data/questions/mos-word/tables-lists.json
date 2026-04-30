@@ -1,0 +1,484 @@
+{
+  "exam_code": "mos-word",
+  "exam_name": "MOS Word Associate (MO-100)",
+  "version": "2026.04",
+  "total_questions": 6,
+  "domains": [
+    {
+      "id": "tables-lists",
+      "name": "表とリストの管理",
+      "weight_percent": 20,
+      "question_count": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "mos-word-tables-lists-001",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables-lists",
+        "name": "表とリストの管理",
+        "weight_percent": 20
+      },
+      "topic": "表の作成",
+      "subtopic": "テキストから表への変換",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "教育系SaaSの担当者がCSV風に「氏名,メール,所属」とカンマ区切りで書かれた100行のテキストを表に変換したい。最も適切な手順は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "対象テキストを選択 → 挿入タブ → 表 → 「文字列を表にする」 → 区切り文字「コンマ」を選ぶ",
+          "is_correct": true,
+          "explanation": "正解。「文字列を表にする」ダイアログで区切り文字（段落・タブ・コンマ・その他）を指定すれば、自動的に列が分割された表になる。"
+        },
+        {
+          "id": "B",
+          "text": "挿入タブ → 表 → グリッドから3列100行を作成し、手作業でセルにテキストを貼り付ける",
+          "is_correct": false,
+          "explanation": "実現はできるが、100行を手作業で扱うのは非効率で MOS が問う「正しい機能の活用」に反する。"
+        },
+        {
+          "id": "C",
+          "text": "Excel に貼り付けて区切り文字でセルに分けたあと、コピーしてWord に表として貼り付ける",
+          "is_correct": false,
+          "explanation": "間接的に達成可能だが、Word単体で完結する「文字列を表にする」が標準的かつ効率的。"
+        },
+        {
+          "id": "D",
+          "text": "挿入タブ → 表 → 「クイック表」から「表形式の一覧」テンプレートを選んで上書きする",
+          "is_correct": false,
+          "explanation": "クイック表はあらかじめ用意されたサンプル表で、既存テキストの構造を取り込む機能ではない。"
+        }
+      ],
+      "explanation": "区切り文字付きテキストを表に変換するには「挿入 → 表 → 文字列を表にする」を使う。区切り文字は段落（行ごと）、タブ、コンマ、その他（任意の1文字）から選べる。逆方向は「表ツール → レイアウト → 表の解除」。",
+      "references": [
+        {
+          "title": "Word で文字列を表にする、または表を文字列にする - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で文字列を表にする-または表を文字列にする"
+        }
+      ],
+      "tags": [
+        "table",
+        "convert",
+        "csv",
+        "education",
+        "import"
+      ],
+      "common_mistakes": [
+        "クイック表とテキスト変換を混同する",
+        "区切り文字オプションの存在を知らない",
+        "Excelを経由しないと変換できないと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-tables-lists-002",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables-lists",
+        "name": "表とリストの管理",
+        "weight_percent": 20
+      },
+      "topic": "表のスタイル",
+      "subtopic": "タイトル行と縞模様",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Wordの表をクリックしたときにリボンに表示される「テーブルデザイン」タブで、「タイトル行」「集計行」「縞模様（行）」のオン/オフを切り替えるグループはどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "表スタイルのオプション",
+          "is_correct": true,
+          "explanation": "正解。「表スタイルのオプション」グループでチェックボックスにより、選択中の表スタイルがタイトル行・集計行・最初の列・最後の列・縞模様（行/列）をどう描画するかを制御できる。"
+        },
+        {
+          "id": "B",
+          "text": "表スタイル",
+          "is_correct": false,
+          "explanation": "「表スタイル」はギャラリーで色のテーマを選ぶ場所。オン/オフのチェックは隣の「表スタイルのオプション」グループ。"
+        },
+        {
+          "id": "C",
+          "text": "飾り枠",
+          "is_correct": false,
+          "explanation": "「飾り枠」グループは罫線の太さや色、罫線の作成/削除に関するもので、タイトル行などの構造制御は行わない。"
+        },
+        {
+          "id": "D",
+          "text": "セルのサイズ",
+          "is_correct": false,
+          "explanation": "「セルのサイズ」は表ツールのレイアウトタブにあり、行高・列幅の調整用。"
+        }
+      ],
+      "explanation": "「テーブルデザイン」タブは『表スタイルのオプション』『表スタイル』『飾り枠』の3グループで構成され、構造（タイトル行など）と装飾（スタイル・罫線）が分かれている。チェックを入れた要素のみがスタイルにより強調される仕組み。",
+      "references": [
+        {
+          "title": "Word の表にスタイルを適用する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-の表にスタイルを適用する"
+        }
+      ],
+      "tags": [
+        "table-style",
+        "header-row",
+        "ribbon",
+        "design",
+        "ui"
+      ],
+      "common_mistakes": [
+        "「表スタイル」と「表スタイルのオプション」を混同する",
+        "罫線設定をタイトル行制御と取り違える",
+        "デザインタブとレイアウトタブの役割分担を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-tables-lists-003",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables-lists",
+        "name": "表とリストの管理",
+        "weight_percent": 20
+      },
+      "topic": "セルの結合・分割",
+      "subtopic": "セルの分割",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Wordの表で1つのセルを「2列×3行」に分割したい。どのタブのどの機能を使うか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "テーブルデザインタブ → 表のスタイル",
+          "is_correct": false,
+          "explanation": "テーブルデザインタブは見た目の装飾用で、構造（セル分割）を行わない。"
+        },
+        {
+          "id": "B",
+          "text": "レイアウトタブ（表ツール） → 結合グループ → セルの分割",
+          "is_correct": true,
+          "explanation": "正解。表ツールの「レイアウト」タブの結合グループに「セルの結合」「セルの分割」「表の分割」がある。"
+        },
+        {
+          "id": "C",
+          "text": "ホームタブ → 段落グループ → セルの分割",
+          "is_correct": false,
+          "explanation": "ホームタブの段落グループに「セルの分割」は存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "挿入タブ → 表 → セルの分割",
+          "is_correct": false,
+          "explanation": "挿入タブの「表」は新規作成用メニューで、既存セルの分割は持たない。"
+        }
+      ],
+      "explanation": "表内にカーソルを置くと表ツールの「テーブルデザイン」「レイアウト」タブが表示される。レイアウトタブ → 結合グループに「セルの結合」「セルの分割」「表の分割」が並ぶ。セル分割ダイアログでは列数・行数を指定する。",
+      "references": [
+        {
+          "title": "Word でセルを分割する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-でセルを分割する"
+        }
+      ],
+      "tags": [
+        "table",
+        "split-cell",
+        "layout",
+        "merge",
+        "ribbon"
+      ],
+      "common_mistakes": [
+        "テーブルデザインタブとレイアウトタブを混同する",
+        "ホームタブで構造変更を探す",
+        "「表の分割」と「セルの分割」を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-tables-lists-004",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables-lists",
+        "name": "表とリストの管理",
+        "weight_percent": 20
+      },
+      "topic": "表の並べ替え",
+      "subtopic": "複数キーソート",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "FinTech企業の経理担当が、社員一覧の表を「部署（昇順）→ 入社日（降順）→ 氏名（昇順）」で並べ替えたい。Wordの並べ替えダイアログでの最も適切な指定は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "並べ替えは1キーのみ可能なので、3回繰り返して順に実行する",
+          "is_correct": false,
+          "explanation": "Wordの並べ替えは最大3キーまで同時指定できる。3回繰り返すと最後の並べ替えが優先されてしまい正しい結果にならない。"
+        },
+        {
+          "id": "B",
+          "text": "「最優先されるキー = 部署 昇順」「2番目 = 入社日 降順 種類 = 日付」「3番目 = 氏名 昇順」の3段で設定する",
+          "is_correct": true,
+          "explanation": "正解。Wordの並べ替えダイアログは最大3キーまで。種類（テキスト/数値/日付）も列ごとに指定でき、要件をそのまま表現できる。"
+        },
+        {
+          "id": "C",
+          "text": "表を選択せず、ホームタブの「並べ替え」だけで自動的に表全体が並ぶ",
+          "is_correct": false,
+          "explanation": "ホームタブの並べ替えはカーソル位置の表/段落を対象にし、列単位の複数キー指定はダイアログで行う必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "Excel にコピーして並べ替えるしかない",
+          "is_correct": false,
+          "explanation": "Word単体で複数キーの並べ替えは可能。"
+        }
+      ],
+      "explanation": "Wordの表並べ替えはレイアウトタブまたはホームタブの「並べ替え」アイコンから。最大3キーを指定でき、各キーに種類（テキスト/数値/日付）と昇順/降順を設定できる。タイトル行ありを選ぶと先頭行が見出しとして除外される。",
+      "references": [
+        {
+          "title": "Word で表のデータを並べ替える - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で表のデータを並べ替える"
+        }
+      ],
+      "tags": [
+        "sort",
+        "table",
+        "multi-key",
+        "fintech",
+        "data"
+      ],
+      "common_mistakes": [
+        "1キーずつ繰り返し並べ替えてしまう",
+        "種類（日付/数値/テキスト）の指定を忘れる",
+        "タイトル行ありオプションを使い忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-tables-lists-005",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables-lists",
+        "name": "表とリストの管理",
+        "weight_percent": 20
+      },
+      "topic": "リストレベル",
+      "subtopic": "Tab/Shift+Tab によるレベル変更",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "段落番号のリスト内でカーソルを項目の先頭に置いた状態で、リストレベルを「1段下げる（インデントを深くする）」ための標準的な操作はどれか？",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tab キーを押す",
+          "is_correct": true,
+          "explanation": "正解。リスト項目の先頭で Tab を押すと1段深いレベルに、Shift+Tab で1段浅いレベルになる。"
+        },
+        {
+          "id": "B",
+          "text": "Enter キーを押す",
+          "is_correct": false,
+          "explanation": "Enter は新しい同レベルの項目を作るだけで、レベル変更はしない。"
+        },
+        {
+          "id": "C",
+          "text": "Ctrl + Tab を押す",
+          "is_correct": false,
+          "explanation": "Ctrl + Tab はリスト項目内にタブ文字を挿入するためのもので、レベル変更ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Alt + → を押す",
+          "is_correct": false,
+          "explanation": "Wordの段落番号でレベル変更にAlt+→の標準ショートカットはない。リボンやTabが標準。"
+        }
+      ],
+      "explanation": "段落番号や箇条書きのリストでは Tab がレベルを下げ、Shift+Tab がレベルを上げる。これはリスト項目の先頭にカーソルがあるときの動作で、行中で Tab を押すとタブ文字（Ctrl+Tab と同じ）として挿入される点に注意。リボン側は「ホーム → リストのレベルの変更」。",
+      "references": [
+        {
+          "title": "Word で多段階リストを作成する - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で多段階リストを作成する"
+        }
+      ],
+      "tags": [
+        "list",
+        "level",
+        "tab",
+        "shortcut",
+        "outline"
+      ],
+      "common_mistakes": [
+        "Tab がリスト先頭でのみレベル変更になることを知らない",
+        "Ctrl+Tab とTabを取り違える",
+        "Enter でレベルが変わると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "mos-word-tables-lists-006",
+      "version": "1.0",
+      "exam": {
+        "code": "mos-word",
+        "name": "MOS Word Associate (MO-100)",
+        "vendor": "Microsoft",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tables-lists",
+        "name": "表とリストの管理",
+        "weight_percent": 20
+      },
+      "topic": "段落番号のリセット",
+      "subtopic": "番号の振り直し・継続",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "東海地方の製造業の品証担当が、章ごとに「1.2.3...」という段落番号を振りたい。第2章の最初の番号が前章からの継続で「11」と表示されてしまう。1から振り直す最も適切な方法は？",
+      "options": [
+        {
+          "id": "A",
+          "text": "対象の最初の番号を右クリック → 「1から再開」を選ぶ",
+          "is_correct": true,
+          "explanation": "正解。段落番号上で右クリックすると「1から再開」「自動的に番号を振る」「番号の設定」が選べ、選んだ項目から番号を振り直せる。"
+        },
+        {
+          "id": "B",
+          "text": "Backspace で番号を消してから「1.」と直接入力する",
+          "is_correct": false,
+          "explanation": "手入力するとリストとしての連続性が壊れ、以降の番号管理も難しくなる。MOS の趣旨である正しい構造化に反する。"
+        },
+        {
+          "id": "C",
+          "text": "前章の最後で改ページ（Ctrl+Enter）を入れれば自動的にリセットされる",
+          "is_correct": false,
+          "explanation": "改ページではリストの連番はリセットされない。番号付けはページ区切りと独立。"
+        },
+        {
+          "id": "D",
+          "text": "デザインタブの「テーマのリセット」を実行する",
+          "is_correct": false,
+          "explanation": "テーマのリセットは配色・フォント・効果に関する操作で、リスト番号には影響しない。"
+        }
+      ],
+      "explanation": "段落番号の継続/再開はリストの仕様で、項目を右クリックすると「1から再開」「自動的に番号を振る」が現れる。「番号の設定」で開始番号を任意の値に設定することもできる。改ページやテーマのリセットでは挙動は変わらない。",
+      "references": [
+        {
+          "title": "Word で番号付きリストの番号を振り直す - Microsoft サポート",
+          "url": "https://support.microsoft.com/ja-jp/office/word-で番号付きリストの番号を振り直す"
+        }
+      ],
+      "tags": [
+        "list",
+        "numbering",
+        "restart",
+        "manufacturing",
+        "structure"
+      ],
+      "common_mistakes": [
+        "番号を手入力で書き換えてしまう",
+        "改ページで番号がリセットされると思い込む",
+        "「1から再開」コマンドの存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
+    }
+  ]
+}
