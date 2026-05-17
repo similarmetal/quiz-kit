@@ -15,1015 +15,2720 @@
     {
       "id": "scs-c03-domain2-001",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudTrail",
       "subtopic": "Management Events vs Data Events",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "あるSaaS企業でセキュリティ担当者がCloudTrailを新規に作成した。デフォルト構成のままで、S3オブジェクトレベルのGetObject/PutObject呼び出しがCloudTrailに記録されないことを確認した。この挙動の説明として正しいものはどれか？",
       "options": [
-        {"id": "A", "text": "S3のデータイベントはデフォルトでは記録されず、Data Eventsとして明示的に有効化する必要がある", "is_correct": true, "explanation": "正解。CloudTrailはデフォルトでManagement Eventsのみ記録する。S3オブジェクトレベルやLambda関数呼び出しなどのData Eventsは追加コストがかかるため明示的な有効化が必要。"},
-        {"id": "B", "text": "S3のオブジェクト操作はCloudTrailではなくS3 Server Access Logsでのみ記録できる", "is_correct": false, "explanation": "誤り。S3 Server Access Logsも選択肢の1つだが、CloudTrail Data Eventsでも記録できる。Data EventsはAPI呼び出し者のIAM情報を含むためフォレンジックに有利。"},
-        {"id": "C", "text": "新規CloudTrailは作成後24時間経過するまでデータイベントを記録しない", "is_correct": false, "explanation": "誤り。そのような遅延仕様は存在しない。Data Eventsは構成された瞬間から記録される。"},
-        {"id": "D", "text": "Management Eventsの中にすべてのS3オブジェクト操作が含まれている", "is_correct": false, "explanation": "誤り。S3オブジェクト操作はData Eventsに分類される。Management EventsにはCreateBucketなどの管理APIのみ含まれる。"}
+        {
+          "id": "A",
+          "text": "S3のデータイベントはデフォルトでは記録されず、Data Eventsとして明示的に有効化する必要がある",
+          "is_correct": true,
+          "explanation": "正解。CloudTrailはデフォルトでManagement Eventsのみ記録する。S3オブジェクトレベルやLambda関数呼び出しなどのData Eventsは追加コストがかかるため明示的な有効化が必要。"
+        },
+        {
+          "id": "B",
+          "text": "Management Eventsの中にすべてのS3オブジェクト操作が含まれている",
+          "is_correct": false,
+          "explanation": "誤り。S3オブジェクト操作はData Eventsに分類される。Management EventsにはCreateBucketなどの管理APIのみ含まれる。"
+        },
+        {
+          "id": "C",
+          "text": "新規CloudTrailは作成後24時間経過するまでデータイベントを記録しない",
+          "is_correct": false,
+          "explanation": "誤り。そのような遅延仕様は存在しない。Data Eventsは構成された瞬間から記録される。"
+        },
+        {
+          "id": "D",
+          "text": "S3のオブジェクト操作はCloudTrailではなくS3 Server Access Logsでのみ記録できる",
+          "is_correct": false,
+          "explanation": "誤り。S3 Server Access Logsも選択肢の1つだが、CloudTrail Data Eventsでも記録できる。Data EventsはAPI呼び出し者のIAM情報を含むためフォレンジックに有利。"
+        }
       ],
       "explanation": "CloudTrailのイベントは大きくManagement Events、Data Events、Insights Eventsに分類される。Data Events（S3オブジェクト、Lambda呼び出し、DynamoDBアイテム操作など）はボリュームが大きく追加課金されるため、デフォルトでは無効。明示的に有効化することで詳細な操作証跡を取得できる。",
       "references": [
-        {"title": "Logging data events for trails", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"}
+        {
+          "title": "Logging data events for trails",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+        }
       ],
-      "tags": ["cloudtrail", "data-events", "management-events", "s3-logging"],
+      "tags": [
+        "cloudtrail",
+        "data-events",
+        "management-events",
+        "s3-logging"
+      ],
       "common_mistakes": [
         "Data Eventsがデフォルトでオンになっていると思い込む",
         "Management EventsとData Eventsの違いを理解していない",
         "S3 Server Access Logsだけで十分と思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-002",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudTrail",
       "subtopic": "Insights Events",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "あるFinTech企業のセキュリティチームは、CloudTrail Insightsを有効化した。Insightsが検出するイベントの種類について最も正確な説明はどれか？",
       "options": [
-        {"id": "A", "text": "悪意のあるIPアドレスからのAPI呼び出しを脅威インテリジェンスフィードと照合して検出する", "is_correct": false, "explanation": "誤り。それはGuardDutyの機能。CloudTrail InsightsはAPI呼び出しの統計的異常を検出する。"},
-        {"id": "B", "text": "API呼び出しの量・エラー率がアカウントの過去の通常パターンから逸脱した場合に検出する", "is_correct": true, "explanation": "正解。CloudTrail Insightsは過去7日間のベースラインから統計的に異常な書き込みAPIアクティビティ（量の急増、エラー率の急増など）を自動検出する。"},
-        {"id": "C", "text": "IAMポリシー違反となるすべてのAPI呼び出しを検出する", "is_correct": false, "explanation": "誤り。IAMポリシー違反（Deny）の検出はCloudTrailの通常ログで可能だが、Insights特有の機能ではない。"},
-        {"id": "D", "text": "ルートユーザーのすべてのAPI呼び出しをハイライト表示する", "is_correct": false, "explanation": "誤り。ルートユーザー監視はCloudWatch Alarmsやmetric filterで実装する別機能。"}
+        {
+          "id": "A",
+          "text": "悪意のあるIPアドレスからのAPI呼び出しを脅威インテリジェンスフィードと照合して検出する",
+          "is_correct": false,
+          "explanation": "誤り。それはGuardDutyの機能。CloudTrail InsightsはAPI呼び出しの統計的異常を検出する。"
+        },
+        {
+          "id": "B",
+          "text": "API呼び出しの量・エラー率がアカウントの過去の通常パターンから逸脱した場合に検出する",
+          "is_correct": true,
+          "explanation": "正解。CloudTrail Insightsは過去7日間のベースラインから統計的に異常な書き込みAPIアクティビティ（量の急増、エラー率の急増など）を自動検出する。"
+        },
+        {
+          "id": "C",
+          "text": "IAMポリシー違反となるすべてのAPI呼び出しを検出する",
+          "is_correct": false,
+          "explanation": "誤り。IAMポリシー違反（Deny）の検出はCloudTrailの通常ログで可能だが、Insights特有の機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "ルートユーザーのすべてのAPI呼び出しをハイライト表示する",
+          "is_correct": false,
+          "explanation": "誤り。ルートユーザー監視はCloudWatch Alarmsやmetric filterで実装する別機能。"
+        }
       ],
       "explanation": "CloudTrail Insights Eventsは機械学習ベースで、書き込み系API呼び出しの量・エラー率の異常を検出する。例えば「通常1時間に5回のRunInstancesが急に500回呼ばれた」「IAM API呼び出しのエラー率が急増した」など、攻撃の兆候や設定ミスを示唆する変化を可視化できる。追加料金が発生する。",
       "references": [
-        {"title": "Logging Insights events", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"}
+        {
+          "title": "Logging Insights events",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+        }
       ],
-      "tags": ["cloudtrail", "insights-events", "anomaly-detection", "fintech"],
+      "tags": [
+        "cloudtrail",
+        "insights-events",
+        "anomaly-detection",
+        "fintech"
+      ],
       "common_mistakes": [
         "GuardDutyとInsightsの役割を混同する",
         "Insightsが脅威インテリジェンスを使うと誤解する",
         "Insightsが読み取りAPIも分析対象にすると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-003",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudTrail Lake",
       "subtopic": "Long-term retention and queries",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療機器メーカーが、規制要件としてCloudTrailログを7年間保持し、必要時にSQLでクエリ可能にしたい。S3への配信、Athenaテーブル管理、データの暗号化、Glueクローラーなどの管理作業を最小化したい。最も適切なソリューションは？",
       "options": [
-        {"id": "A", "text": "CloudTrailをS3に配信し、AthenaとGlueクローラーでパーティション化テーブルを作成、Lifecycle Policyで7年間保持する", "is_correct": false, "explanation": "技術的に可能だがGlueクローラー、パーティション、テーブル定義などの管理が必要。Lakeのほうがフルマネージド。"},
-        {"id": "B", "text": "CloudTrail Lakeでイベントデータストアを作成し、保持期間を7年に設定する", "is_correct": true, "explanation": "正解。CloudTrail LakeはCloudTrailイベントを最長10年（2025年現在は10年）まで保持し、SQLクエリを直接実行できるフルマネージドデータレイク。S3やAthenaの管理不要。"},
-        {"id": "C", "text": "CloudTrailをCloudWatch Logsに送り、Logs Insightsで7年分クエリする", "is_correct": false, "explanation": "誤り。CloudWatch Logsの最大保持期間は10年だが、コストが高くSQLクエリは使えない（独自のLogs Insightsクエリ言語）。"},
-        {"id": "D", "text": "EventBridgeでCloudTrailイベントを受信し、Kinesis Firehose経由でS3 Glacierに保存する", "is_correct": false, "explanation": "誤り。すべてのCloudTrailイベントがEventBridgeに自動配信されるわけではなく、また検索可能性も悪い。複雑すぎる。"}
+        {
+          "id": "A",
+          "text": "CloudTrailをS3に配信し、AthenaとGlueクローラーでパーティション化テーブルを作成、Lifecycle Policyで7年間保持する",
+          "is_correct": false,
+          "explanation": "技術的に可能だがGlueクローラー、パーティション、テーブル定義などの管理が必要。Lakeのほうがフルマネージド。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridgeでCloudTrailイベントを受信し、Kinesis Firehose経由でS3 Glacierに保存する",
+          "is_correct": false,
+          "explanation": "誤り。すべてのCloudTrailイベントがEventBridgeに自動配信されるわけではなく、また検索可能性も悪い。複雑すぎる。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail Lakeでイベントデータストアを作成し、保持期間を7年に設定する",
+          "is_correct": true,
+          "explanation": "正解。CloudTrail LakeはCloudTrailイベントを最長10年（2025年現在は10年）まで保持し、SQLクエリを直接実行できるフルマネージドデータレイク。S3やAthenaの管理不要。"
+        },
+        {
+          "id": "D",
+          "text": "CloudTrailをCloudWatch Logsに送り、Logs Insightsで7年分クエリする",
+          "is_correct": false,
+          "explanation": "誤り。CloudWatch Logsの最大保持期間は10年だが、コストが高くSQLクエリは使えない（独自のLogs Insightsクエリ言語）。"
+        }
       ],
       "explanation": "CloudTrail Lakeはイベントデータを構造化されたイベントデータストアに格納し、SQLクエリを直接実行できるフルマネージドサービス。最長10年の保持、組織アカウント・複数リージョンの集約、KMS暗号化、Glueクローラー不要などの利点がある。長期保持＋分析が必要な規制業界に最適。",
       "references": [
-        {"title": "Working with AWS CloudTrail Lake", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html"}
+        {
+          "title": "Working with AWS CloudTrail Lake",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html"
+        }
       ],
-      "tags": ["cloudtrail-lake", "long-term-retention", "compliance", "healthcare", "sql-query"],
+      "tags": [
+        "cloudtrail-lake",
+        "long-term-retention",
+        "compliance",
+        "healthcare",
+        "sql-query"
+      ],
       "common_mistakes": [
         "AthenaとS3で自作するのが標準と思い込む",
         "CloudWatch Logsで長期保持するのが安いと誤解する",
         "CloudTrail Lakeの存在を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-004",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudTrail",
       "subtopic": "Organization Trail",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業の企業がAWS Organizations配下に40アカウントを運用している。新規追加アカウントを含むすべてのアカウントのCloudTrailログを単一のS3バケットに集約し、メンバーアカウントの管理者がCloudTrailを停止できないようにしたい。最も運用効率の高い構成は？",
       "options": [
-        {"id": "A", "text": "各アカウントで個別にCloudTrailを作成し、SCPでcloudtrail:StopLoggingを禁止する", "is_correct": false, "explanation": "新規アカウント追加時の自動化が手作業になり、SCPだけでは集約バケットへの配信を強制できない。"},
-        {"id": "B", "text": "管理アカウントでOrganization Trailを作成し、すべてのメンバーアカウントへ自動適用する", "is_correct": true, "explanation": "正解。Organization TrailはOrganizationsの管理アカウントまたは委任管理者で作成し、すべてのメンバーアカウントに自動適用される。メンバーは無効化・変更できず、新規アカウントも自動で含まれる。"},
-        {"id": "C", "text": "Control TowerのLanding Zoneを再構成して、すべてのアカウントを再登録する", "is_correct": false, "explanation": "Control Towerは既にCloudTrailを構成するが、既存環境の再構成は影響が大きすぎる。Organization Trailの新規作成で十分。"},
-        {"id": "D", "text": "AWS Configアグリゲータを使ってログを集約する", "is_correct": false, "explanation": "AWS ConfigはCloudTrailの代替ではない。Configはリソース設定の変更履歴、CloudTrailはAPI呼び出し履歴で目的が異なる。"}
+        {
+          "id": "A",
+          "text": "AWS Configアグリゲータを使ってログを集約する",
+          "is_correct": false,
+          "explanation": "AWS ConfigはCloudTrailの代替ではない。Configはリソース設定の変更履歴、CloudTrailはAPI呼び出し履歴で目的が異なる。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントで個別にCloudTrailを作成し、SCPでcloudtrail:StopLoggingを禁止する",
+          "is_correct": false,
+          "explanation": "新規アカウント追加時の自動化が手作業になり、SCPだけでは集約バケットへの配信を強制できない。"
+        },
+        {
+          "id": "C",
+          "text": "Control TowerのLanding Zoneを再構成して、すべてのアカウントを再登録する",
+          "is_correct": false,
+          "explanation": "Control Towerは既にCloudTrailを構成するが、既存環境の再構成は影響が大きすぎる。Organization Trailの新規作成で十分。"
+        },
+        {
+          "id": "D",
+          "text": "管理アカウントでOrganization Trailを作成し、すべてのメンバーアカウントへ自動適用する",
+          "is_correct": true,
+          "explanation": "正解。Organization TrailはOrganizationsの管理アカウントまたは委任管理者で作成し、すべてのメンバーアカウントに自動適用される。メンバーは無効化・変更できず、新規アカウントも自動で含まれる。"
+        }
       ],
       "explanation": "Organization Trailは管理アカウントまたは委任管理者で作成すると、組織内の全メンバーアカウントに自動適用される。メンバーアカウントの管理者は表示はできるが変更・削除はできない。新規アカウント追加時も自動で含まれるため、エンタープライズで標準。CloudTrailは委任管理者をサポートするため管理アカウントから直接作成する必要はない。",
       "references": [
-        {"title": "Creating a trail for an organization", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-trail-organization.html"}
+        {
+          "title": "Creating a trail for an organization",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-trail-organization.html"
+        }
       ],
-      "tags": ["cloudtrail", "organizations", "organization-trail", "multi-account", "manufacturing"],
+      "tags": [
+        "cloudtrail",
+        "organizations",
+        "organization-trail",
+        "multi-account",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "SCPだけで強制できると誤解する",
         "Organization Trailの存在を知らずアカウントごとに作る",
         "Control Towerの再構成が必要と思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-005",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudTrail",
       "subtopic": "Log file integrity validation",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "あるオンライン教育プラットフォームのセキュリティ監査チームは、CloudTrailログがS3に配信された後、改ざんされていないことを検証したい。AWSが提供する標準機能はどれか？",
       "options": [
-        {"id": "A", "text": "S3 Object Lock の Compliance モードを設定する", "is_correct": false, "explanation": "Object Lockはオブジェクトの削除・変更防止に有効だが、改ざん検証（過去の改ざんを検出）の機能ではない。"},
-        {"id": "B", "text": "CloudTrailのlog file integrity validationを有効化し、digestファイルでハッシュチェーンを検証する", "is_correct": true, "explanation": "正解。この機能を有効化すると、CloudTrailは1時間ごとにdigestファイルをS3に配信し、各ログファイルのSHA-256ハッシュとdigestファイル間のRSA署名チェーンで改ざんを検証できる。"},
-        {"id": "C", "text": "AWS Config Rulesで cloudtrail-log-file-validation-enabled を有効化するだけで自動検証される", "is_correct": false, "explanation": "Configルールは設定状態のチェックのみで、実際の整合性検証は別途 aws cloudtrail validate-logs コマンドで実施する必要がある。"},
-        {"id": "D", "text": "S3バケットにバージョニングとMFA Deleteを設定する", "is_correct": false, "explanation": "削除耐性は向上するが、ファイル内容の改ざん検証は提供しない。"}
+        {
+          "id": "A",
+          "text": "CloudTrailのlog file integrity validationを有効化し、digestファイルでハッシュチェーンを検証する",
+          "is_correct": true,
+          "explanation": "正解。この機能を有効化すると、CloudTrailは1時間ごとにdigestファイルをS3に配信し、各ログファイルのSHA-256ハッシュとdigestファイル間のRSA署名チェーンで改ざんを検証できる。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Config Rulesで cloudtrail-log-file-validation-enabled を有効化するだけで自動検証される",
+          "is_correct": false,
+          "explanation": "Configルールは設定状態のチェックのみで、実際の整合性検証は別途 aws cloudtrail validate-logs コマンドで実施する必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "S3バケットにバージョニングとMFA Deleteを設定する",
+          "is_correct": false,
+          "explanation": "削除耐性は向上するが、ファイル内容の改ざん検証は提供しない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Object Lock の Compliance モードを設定する",
+          "is_correct": false,
+          "explanation": "Object Lockはオブジェクトの削除・変更防止に有効だが、改ざん検証（過去の改ざんを検出）の機能ではない。"
+        }
       ],
       "explanation": "CloudTrail log file integrity validationは、ログファイルが配信後に改ざんされていないことを暗号学的に検証できる機能。1時間ごとにdigestファイル（前のdigestのハッシュも含むチェーン）が配信され、AWS提供のRSA公開鍵で署名検証できる。aws cloudtrail validate-logsコマンドで定期実行する。Object Lockやバージョニングは補完的な防御だが、暗号学的検証は提供しない。",
       "references": [
-        {"title": "Validating CloudTrail log file integrity", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html"}
+        {
+          "title": "Validating CloudTrail log file integrity",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html"
+        }
       ],
-      "tags": ["cloudtrail", "log-integrity", "tamper-detection", "compliance", "education"],
+      "tags": [
+        "cloudtrail",
+        "log-integrity",
+        "tamper-detection",
+        "compliance",
+        "education"
+      ],
       "common_mistakes": [
         "Object Lockで改ざん検証ができると誤解する",
         "整合性検証が自動実行されると思い込む",
         "log file validationを有効化しないままコンプライアンス監査を受ける"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-006",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Metric Filters and Alarms",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるゲーム会社のセキュリティチームは、ルートユーザーのコンソールログイン試行が発生したらSlackに即座に通知したい。CloudTrailログはCloudWatch Logsに送信されている。最もシンプルな実装は？",
       "options": [
-        {"id": "A", "text": "Lambdaを5分間隔で起動し、Logs Insightsでルートログインをクエリし、検出時にSlackへ通知する", "is_correct": false, "explanation": "5分の遅延と継続的なクエリコストが発生。Metric Filterが標準解。"},
-        {"id": "B", "text": "CloudWatch Logsにmetric filterを作成しuserIdentity.type=Rootをカウントし、CloudWatch AlarmからSNS経由でChatbotでSlackに通知する", "is_correct": true, "explanation": "正解。metric filterで特定パターンをカスタムメトリクスにし、Alarm→SNS→Chatbot/EventBridge→Slackの定番ルート。準リアルタイムかつ低コスト。"},
-        {"id": "C", "text": "GuardDutyを有効化すれば自動的にSlackへ通知される", "is_correct": false, "explanation": "GuardDutyはルートログインをfindingとして検出するが、Slack通知は別途EventBridge+Chatbotの構成が必要。"},
-        {"id": "D", "text": "CloudTrail Insightsで自動検出される", "is_correct": false, "explanation": "Insightsは統計的異常を検出するが、初回ルートログインは過去パターンから外れず検出されない可能性が高い。"}
+        {
+          "id": "A",
+          "text": "Lambdaを5分間隔で起動し、Logs Insightsでルートログインをクエリし、検出時にSlackへ通知する",
+          "is_correct": false,
+          "explanation": "5分の遅延と継続的なクエリコストが発生。Metric Filterが標準解。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Logsにmetric filterを作成しuserIdentity.type=Rootをカウントし、CloudWatch AlarmからSNS経由でChatbotでSlackに通知する",
+          "is_correct": true,
+          "explanation": "正解。metric filterで特定パターンをカスタムメトリクスにし、Alarm→SNS→Chatbot/EventBridge→Slackの定番ルート。準リアルタイムかつ低コスト。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail Insightsで自動検出される",
+          "is_correct": false,
+          "explanation": "Insightsは統計的異常を検出するが、初回ルートログインは過去パターンから外れず検出されない可能性が高い。"
+        },
+        {
+          "id": "D",
+          "text": "GuardDutyを有効化すれば自動的にSlackへ通知される",
+          "is_correct": false,
+          "explanation": "GuardDutyはルートログインをfindingとして検出するが、Slack通知は別途EventBridge+Chatbotの構成が必要。"
+        }
       ],
       "explanation": "CloudWatch Logs metric filterは、ログ内の特定パターンを抽出してCloudWatchカスタムメトリクスに変換する。CloudTrailをCloudWatch Logsに送り、{ $.userIdentity.type = \"Root\" } のようなフィルターパターンでルートログインをカウント。AlarmからSNSトピック→AWS Chatbot or Lambda→Slackで通知する。CIS AWS Foundations Benchmarkでも推奨される標準パターン。",
       "references": [
-        {"title": "Creating CloudWatch alarms for CloudTrail events", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudwatch-alarms-for-cloudtrail.html"}
+        {
+          "title": "Creating CloudWatch alarms for CloudTrail events",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudwatch-alarms-for-cloudtrail.html"
+        }
       ],
-      "tags": ["cloudwatch-logs", "metric-filter", "root-account", "alerting", "gaming"],
+      "tags": [
+        "cloudwatch-logs",
+        "metric-filter",
+        "root-account",
+        "alerting",
+        "gaming"
+      ],
       "common_mistakes": [
         "Logs Insightsを定期実行することがリアルタイム検出だと思い込む",
         "Metric Filterの記法を知らない",
         "AlarmからSlackへ直接送れると誤解する（SNS+Chatbotが必要）"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-007",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Subscription Filters",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "あるFinTech企業はセキュリティイベントログをリアルタイムでSplunk（オンプレミス）にストリーミングしたい。3,000以上のCloudWatch Logsロググループを対象とし、転送中の暗号化と障害時のリトライが必要。最も適切なアーキテクチャは？",
       "options": [
-        {"id": "A", "text": "各ロググループにLambda関数のサブスクリプションフィルターを作成し、Lambda内でSplunk HEC APIを直接呼び出す", "is_correct": false, "explanation": "3,000ロググループ各々にLambda起動はスケール上限と運用負荷の問題。バッチング・リトライも自前実装になる。"},
-        {"id": "B", "text": "CloudWatch Logs サブスクリプションフィルターでKinesis Data Firehoseに送信し、FirehoseのSplunk HTTP Event Collector配信を構成する", "is_correct": true, "explanation": "正解。Firehoseは Splunk HEC を delivery destination としてネイティブサポート。バッチング・リトライ・配信失敗時のS3バックアップ・転送中暗号化（HTTPS）を自動提供する。"},
-        {"id": "C", "text": "CloudWatch Logsをすべて停止し、エージェントベースで直接Splunkに送る", "is_correct": false, "explanation": "AWSサービスのログ（CloudTrail、VPC Flow Logsなど）はエージェントで取得できないため、CloudWatch Logsを介する必要がある。"},
-        {"id": "D", "text": "Logs InsightsクエリをCRONで定期実行し、結果をS3経由でSplunkに取り込む", "is_correct": false, "explanation": "リアルタイム要件を満たさない。クエリコストも高い。"}
+        {
+          "id": "A",
+          "text": "Logs InsightsクエリをCRONで定期実行し、結果をS3経由でSplunkに取り込む",
+          "is_correct": false,
+          "explanation": "リアルタイム要件を満たさない。クエリコストも高い。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Logsをすべて停止し、エージェントベースで直接Splunkに送る",
+          "is_correct": false,
+          "explanation": "AWSサービスのログ（CloudTrail、VPC Flow Logsなど）はエージェントで取得できないため、CloudWatch Logsを介する必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Logs サブスクリプションフィルターでKinesis Data Firehoseに送信し、FirehoseのSplunk HTTP Event Collector配信を構成する",
+          "is_correct": true,
+          "explanation": "正解。Firehoseは Splunk HEC を delivery destination としてネイティブサポート。バッチング・リトライ・配信失敗時のS3バックアップ・転送中暗号化（HTTPS）を自動提供する。"
+        },
+        {
+          "id": "D",
+          "text": "各ロググループにLambda関数のサブスクリプションフィルターを作成し、Lambda内でSplunk HEC APIを直接呼び出す",
+          "is_correct": false,
+          "explanation": "3,000ロググループ各々にLambda起動はスケール上限と運用負荷の問題。バッチング・リトライも自前実装になる。"
+        }
       ],
       "explanation": "Kinesis Data FirehoseはSplunk HTTP Event Collectorをネイティブの送信先としてサポートする。CloudWatch Logsのサブスクリプションフィルターから直接Firehoseに送信でき、バッチング、再試行、失敗時のS3バックアップ、HTTPS転送が自動で行われる。Lambda経由の自作実装と比べ、運用負荷とコストの両面で優位。Firehose配信はバッファリング設定で数秒〜数分のレイテンシ。",
       "references": [
-        {"title": "Subscription filters with Amazon Data Firehose", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters.html"}
+        {
+          "title": "Subscription filters with Amazon Data Firehose",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters.html"
+        }
       ],
-      "tags": ["cloudwatch-logs", "subscription-filter", "firehose", "splunk", "fintech"],
+      "tags": [
+        "cloudwatch-logs",
+        "subscription-filter",
+        "firehose",
+        "splunk",
+        "fintech"
+      ],
       "common_mistakes": [
         "Lambdaで全部処理しようとする",
         "FirehoseがSplunkをネイティブサポートしていることを知らない",
         "サブスクリプションフィルターの送信先選択肢を覚えていない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-008",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Logs Insights",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある教育SaaS企業のセキュリティアナリストがCloudWatch Logs Insightsを使い、過去24時間のVPC Flow Logsから特定の不審IPアドレスへの上位通信ボリュームを集計したい。最も適切なクエリ構造は？",
       "options": [
-        {"id": "A", "text": "filter dstAddr like /^10\\./ | stats sum(bytes) by srcAddr", "is_correct": false, "explanation": "プライベート宛先のみフィルタしており、不審IP（外部）への通信量を測れない。"},
-        {"id": "B", "text": "filter action = \"ACCEPT\" | stats sum(bytes) as total by dstAddr | sort total desc | limit 10", "is_correct": true, "explanation": "正解。ACCEPTされた通信を宛先IPごとに集計し、上位10件を抽出する典型的なLogs Insightsクエリ。dstAddrでグルーピングして上位IPを特定できる。"},
-        {"id": "C", "text": "fields dstAddr, bytes | display all", "is_correct": false, "explanation": "displayは集計せず生データを表示するだけ。'all'というキーワードも存在しない。"},
-        {"id": "D", "text": "SELECT dstAddr, SUM(bytes) FROM flowlogs GROUP BY dstAddr", "is_correct": false, "explanation": "それはAthenaのSQL構文。Logs InsightsはパイプベースのDSLでSQLとは異なる。"}
+        {
+          "id": "A",
+          "text": "SELECT dstAddr, SUM(bytes) FROM flowlogs GROUP BY dstAddr",
+          "is_correct": false,
+          "explanation": "それはAthenaのSQL構文。Logs InsightsはパイプベースのDSLでSQLとは異なる。"
+        },
+        {
+          "id": "B",
+          "text": "fields dstAddr, bytes | display all",
+          "is_correct": false,
+          "explanation": "displayは集計せず生データを表示するだけ。'all'というキーワードも存在しない。"
+        },
+        {
+          "id": "C",
+          "text": "filter dstAddr like /^10\\./ | stats sum(bytes) by srcAddr",
+          "is_correct": false,
+          "explanation": "プライベート宛先のみフィルタしており、不審IP（外部）への通信量を測れない。"
+        },
+        {
+          "id": "D",
+          "text": "filter action = \"ACCEPT\" | stats sum(bytes) as total by dstAddr | sort total desc | limit 10",
+          "is_correct": true,
+          "explanation": "正解。ACCEPTされた通信を宛先IPごとに集計し、上位10件を抽出する典型的なLogs Insightsクエリ。dstAddrでグルーピングして上位IPを特定できる。"
+        }
       ],
       "explanation": "CloudWatch Logs Insightsは、`filter`、`stats`、`sort`、`limit`、`fields`、`parse` などのコマンドをパイプで連結する独自DSL。VPC Flow Logsには標準でinterfaceId、srcAddr、dstAddr、srcPort、dstPort、bytes、action などのフィールドがあり、`stats sum(bytes) by dstAddr` で宛先別ボリュームを集計できる。SQLではない点に注意。",
       "references": [
-        {"title": "CloudWatch Logs Insights query syntax", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html"}
+        {
+          "title": "CloudWatch Logs Insights query syntax",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html"
+        }
       ],
-      "tags": ["cloudwatch-logs", "logs-insights", "vpc-flow-logs", "query-language", "education"],
+      "tags": [
+        "cloudwatch-logs",
+        "logs-insights",
+        "vpc-flow-logs",
+        "query-language",
+        "education"
+      ],
       "common_mistakes": [
         "Logs InsightsをSQLと混同する",
         "AthenaとLogs Insightsを取り違える",
         "filter / stats / sort / limit のパイプ順序を間違える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-009",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "VPC Flow Logs",
       "subtopic": "Capture configuration",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある製造業の企業がVPC Flow Logsを構成する。トラフィック分析の観点から最も網羅的にネットワーク調査ができる構成はどれか？",
       "options": [
-        {"id": "A", "text": "サブネット単位でACCEPT のみ記録", "is_correct": false, "explanation": "REJECTを除外すると、ブロックされた攻撃試行などのセキュリティ重要イベントを失う。"},
-        {"id": "B", "text": "VPC単位でALL（ACCEPT/REJECT両方）を記録し、カスタムフォーマットでpkt-srcaddr, pkt-dstaddr, tcp-flagsを含める", "is_correct": true, "explanation": "正解。VPC単位で構成すると全ENIをカバーし、ALLでブロック試行も含む。カスタムフィールドにpkt-srcaddr（中間プロキシ越しの実送信元）やtcp-flagsを含めると詳細解析が可能。"},
-        {"id": "C", "text": "ENI単位でREJECTのみ記録", "is_correct": false, "explanation": "ACCEPTを除外すると正常通信のベースライン分析や不審通信の検出ができない。"},
-        {"id": "D", "text": "VPC単位でACCEPTのみをデフォルトフォーマットで記録", "is_correct": false, "explanation": "REJECTもデフォルトフィールドのみではフォレンジックには不十分。pkt-src/dst、tcp-flagsなどの追加フィールドが有用。"}
+        {
+          "id": "A",
+          "text": "VPC単位でALL（ACCEPT/REJECT両方）を記録し、カスタムフォーマットでpkt-srcaddr, pkt-dstaddr, tcp-flagsを含める",
+          "is_correct": true,
+          "explanation": "正解。VPC単位で構成すると全ENIをカバーし、ALLでブロック試行も含む。カスタムフィールドにpkt-srcaddr（中間プロキシ越しの実送信元）やtcp-flagsを含めると詳細解析が可能。"
+        },
+        {
+          "id": "B",
+          "text": "VPC単位でACCEPTのみをデフォルトフォーマットで記録",
+          "is_correct": false,
+          "explanation": "REJECTもデフォルトフィールドのみではフォレンジックには不十分。pkt-src/dst、tcp-flagsなどの追加フィールドが有用。"
+        },
+        {
+          "id": "C",
+          "text": "ENI単位でREJECTのみ記録",
+          "is_correct": false,
+          "explanation": "ACCEPTを除外すると正常通信のベースライン分析や不審通信の検出ができない。"
+        },
+        {
+          "id": "D",
+          "text": "サブネット単位でACCEPT のみ記録",
+          "is_correct": false,
+          "explanation": "REJECTを除外すると、ブロックされた攻撃試行などのセキュリティ重要イベントを失う。"
+        }
       ],
       "explanation": "VPC Flow LogsはVPC、サブネット、ENIの3レベルで設定可能でVPC単位が最も網羅的。フィルターはACCEPT/REJECT/ALLから選び、セキュリティ用途ではALLが推奨される。カスタムフォーマットでpkt-srcaddr（NLBやNATの背後の実送信元）、tcp-flags、traffic-path、flow-direction などのフィールドを追加すると詳細な解析が可能になる。",
       "references": [
-        {"title": "VPC Flow Logs", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"}
+        {
+          "title": "VPC Flow Logs",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"
+        }
       ],
-      "tags": ["vpc-flow-logs", "network-monitoring", "custom-format", "manufacturing"],
+      "tags": [
+        "vpc-flow-logs",
+        "network-monitoring",
+        "custom-format",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "ACCEPTのみで十分と考える",
         "ENI単位で構成して新規ENIを取りこぼす",
         "デフォルトフィールドのみで全部分析できると思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-010",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "VPC Flow Logs",
       "subtopic": "Athena Analysis",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "あるFinTech企業がVPC Flow LogsをS3にParquet形式で保存し、Athenaでクエリしている。1日のログ量は2TBで、毎日「特定IPからの通信」という条件で過去30日間検索する。クエリコストを大幅に削減する最も効果的な方法は？",
       "options": [
-        {"id": "A", "text": "S3 Glacier Deep Archiveに移行し、必要時にRestoreする", "is_correct": false, "explanation": "コールドストレージはRestoreに時間とコストがかかり、日次クエリには不向き。"},
-        {"id": "B", "text": "S3パスを year/month/day でパーティション化し、Athenaテーブルでパーティション射影（partition projection）を有効化する", "is_correct": true, "explanation": "正解。パーティション化＋射影により、クエリで日付範囲をWHERE句に指定すると対象パーティションのみスキャンされ、コスト・実行時間が劇的に減少する。"},
-        {"id": "C", "text": "クエリ結果のみをS3にキャッシュし、Lambdaで毎日生成する", "is_correct": false, "explanation": "クエリパターンが固定なら有効だが「特定IP」の値が変わる場合は再スキャンが必要。根本解決ではない。"},
-        {"id": "D", "text": "VPC Flow LogsをCloudWatch Logsに切り替えてLogs Insightsで検索する", "is_correct": false, "explanation": "CloudWatch Logsは大量データの長期検索ではAthenaよりコストが高くなることが多く、移行も大規模になる。"}
+        {
+          "id": "A",
+          "text": "クエリ結果のみをS3にキャッシュし、Lambdaで毎日生成する",
+          "is_correct": false,
+          "explanation": "クエリパターンが固定なら有効だが「特定IP」の値が変わる場合は再スキャンが必要。根本解決ではない。"
+        },
+        {
+          "id": "B",
+          "text": "S3パスを year/month/day でパーティション化し、Athenaテーブルでパーティション射影（partition projection）を有効化する",
+          "is_correct": true,
+          "explanation": "正解。パーティション化＋射影により、クエリで日付範囲をWHERE句に指定すると対象パーティションのみスキャンされ、コスト・実行時間が劇的に減少する。"
+        },
+        {
+          "id": "C",
+          "text": "VPC Flow LogsをCloudWatch Logsに切り替えてLogs Insightsで検索する",
+          "is_correct": false,
+          "explanation": "CloudWatch Logsは大量データの長期検索ではAthenaよりコストが高くなることが多く、移行も大規模になる。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Glacier Deep Archiveに移行し、必要時にRestoreする",
+          "is_correct": false,
+          "explanation": "コールドストレージはRestoreに時間とコストがかかり、日次クエリには不向き。"
+        }
       ],
       "explanation": "Athenaのクエリ料金はスキャン量（$5/TB）に比例する。S3にParquet形式で保存し、year=YYYY/month=MM/day=DD のようにHiveパーティションでデータを配置し、Athenaのpartition projection（パーティション射影）を有効化すると、Glueクローラー不要かつWHERE date BETWEEN ... の条件で対象パーティションのみスキャンされる。30日分でクエリ範囲を絞れば、スキャン量は数十分の一に削減できる。",
       "references": [
-        {"title": "Partition projection with Amazon Athena", "url": "https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html"}
+        {
+          "title": "Partition projection with Amazon Athena",
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html"
+        }
       ],
-      "tags": ["athena", "vpc-flow-logs", "partition-projection", "cost-optimization", "fintech"],
+      "tags": [
+        "athena",
+        "vpc-flow-logs",
+        "partition-projection",
+        "cost-optimization",
+        "fintech"
+      ],
       "common_mistakes": [
         "Parquet化だけで十分と思い込む（パーティション化が効く）",
         "Glacierで安くなると誤解（クエリ不能になる）",
         "Glueクローラーを毎日実行する重い構成にする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-011",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "AWS Config",
       "subtopic": "Conformance Packs",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療系SaaS企業がHIPAA準拠を証明するため、AWS Configで複数のルールを一度にデプロイし、組織全体に展開したい。ルールセットの再利用性が高く、修復アクションも含めたい。最適な構成は？",
       "options": [
-        {"id": "A", "text": "個別にConfig Rulesを各アカウントで作成し、Terraformでバージョン管理する", "is_correct": false, "explanation": "技術的に可能だがConformance Packが提供する標準化・組織展開・修復のセットを再実装することになる。"},
-        {"id": "B", "text": "Conformance Pack（HIPAA Operational Best Practices テンプレート）をOrganizations経由で全アカウントに配布する", "is_correct": true, "explanation": "正解。AWS提供のサンプルConformance Pack（HIPAA、PCI、CIS等）または独自テンプレートをOrganizationsで一括配布できる。修復アクションもPack内に定義可能。"},
-        {"id": "C", "text": "Security Hub の HIPAA セキュリティ標準を有効化するだけで十分", "is_correct": false, "explanation": "Security Hubは検知のみ。Configルールによる継続評価と修復はConformance Packが標準。両者を併用するのが理想。"},
-        {"id": "D", "text": "AWS Audit ManagerのHIPAAフレームワークを有効化すれば自動的にConfigルールも作成される", "is_correct": false, "explanation": "Audit Managerは証跡収集に特化。Configルールは別途構成が必要で、自動作成はされない。"}
+        {
+          "id": "A",
+          "text": "個別にConfig Rulesを各アカウントで作成し、Terraformでバージョン管理する",
+          "is_correct": false,
+          "explanation": "技術的に可能だがConformance Packが提供する標準化・組織展開・修復のセットを再実装することになる。"
+        },
+        {
+          "id": "B",
+          "text": "Security Hub の HIPAA セキュリティ標準を有効化するだけで十分",
+          "is_correct": false,
+          "explanation": "Security Hubは検知のみ。Configルールによる継続評価と修復はConformance Packが標準。両者を併用するのが理想。"
+        },
+        {
+          "id": "C",
+          "text": "Conformance Pack（HIPAA Operational Best Practices テンプレート）をOrganizations経由で全アカウントに配布する",
+          "is_correct": true,
+          "explanation": "正解。AWS提供のサンプルConformance Pack（HIPAA、PCI、CIS等）または独自テンプレートをOrganizationsで一括配布できる。修復アクションもPack内に定義可能。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Audit ManagerのHIPAAフレームワークを有効化すれば自動的にConfigルールも作成される",
+          "is_correct": false,
+          "explanation": "Audit Managerは証跡収集に特化。Configルールは別途構成が必要で、自動作成はされない。"
+        }
       ],
       "explanation": "AWS ConfigのConformance Packsは、複数のConfigルールと修復アクションをCloudFormationテンプレートにまとめ、単一のエンティティとしてデプロイ・管理できる仕組み。AWSはHIPAA、PCI-DSS、CIS、NISTなどの標準テンプレートを提供。Organizations経由でメンバーアカウントに一括展開でき、コンプライアンス状態のスコアもパック単位で集約される。",
       "references": [
-        {"title": "Conformance packs", "url": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html"}
+        {
+          "title": "Conformance packs",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html"
+        }
       ],
-      "tags": ["aws-config", "conformance-pack", "hipaa", "compliance", "healthcare"],
+      "tags": [
+        "aws-config",
+        "conformance-pack",
+        "hipaa",
+        "compliance",
+        "healthcare"
+      ],
       "common_mistakes": [
         "Security HubとConfigの責任範囲を混同する",
         "Conformance Packが組織展開できることを知らない",
         "Audit ManagerがConfigルールを自動作成すると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-012",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "AWS Config",
       "subtopic": "Aggregator",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "あるSaaS企業がAWS Organizations配下に20アカウントを運用している。セキュリティチームは、組織全体のConfigルールのコンプライアンス状況を単一画面で確認したい。最も簡潔な手段は？",
       "options": [
-        {"id": "A", "text": "管理アカウントでAggregatorを作成し、組織全体をソースとして指定する", "is_correct": true, "explanation": "正解。Configアグリゲータは複数アカウント・リージョンのConfig Rule評価結果を1ダッシュボードに集約する標準機能。組織全体ソース指定で新規アカウントも自動追加。"},
-        {"id": "B", "text": "各アカウントのConfigダッシュボードを毎日手動で確認する", "is_correct": false, "explanation": "20アカウントでスケールしない。Aggregatorが用意されている。"},
-        {"id": "C", "text": "Lambdaで各アカウントのConfig APIを定期呼び出ししてS3に保存する", "is_correct": false, "explanation": "Aggregatorの再実装になり運用負荷が高い。"},
-        {"id": "D", "text": "Security Hubを有効化すればConfig評価も自動表示される", "is_correct": false, "explanation": "Security Hubは別ビュー。Config評価結果の集約はAggregatorが標準。"}
+        {
+          "id": "A",
+          "text": "Lambdaで各アカウントのConfig APIを定期呼び出ししてS3に保存する",
+          "is_correct": false,
+          "explanation": "Aggregatorの再実装になり運用負荷が高い。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントのConfigダッシュボードを毎日手動で確認する",
+          "is_correct": false,
+          "explanation": "20アカウントでスケールしない。Aggregatorが用意されている。"
+        },
+        {
+          "id": "C",
+          "text": "Security Hubを有効化すればConfig評価も自動表示される",
+          "is_correct": false,
+          "explanation": "Security Hubは別ビュー。Config評価結果の集約はAggregatorが標準。"
+        },
+        {
+          "id": "D",
+          "text": "管理アカウントでAggregatorを作成し、組織全体をソースとして指定する",
+          "is_correct": true,
+          "explanation": "正解。Configアグリゲータは複数アカウント・リージョンのConfig Rule評価結果を1ダッシュボードに集約する標準機能。組織全体ソース指定で新規アカウントも自動追加。"
+        }
       ],
       "explanation": "AWS Config Aggregatorは、複数アカウント・複数リージョンからConfigルールの評価結果と設定項目（CI）を1つのアカウントに集約するサービス。Organizationsと統合すると組織全体ソース指定が可能で、新規アカウントも自動的に集約対象になる。集約後は単一のダッシュボードで全社のコンプライアンス状況を確認できる。",
       "references": [
-        {"title": "Multi-account, multi-region data aggregation", "url": "https://docs.aws.amazon.com/config/latest/developerguide/aggregate-data.html"}
+        {
+          "title": "Multi-account, multi-region data aggregation",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/aggregate-data.html"
+        }
       ],
-      "tags": ["aws-config", "aggregator", "multi-account", "saas"],
+      "tags": [
+        "aws-config",
+        "aggregator",
+        "multi-account",
+        "saas"
+      ],
       "common_mistakes": [
         "Aggregatorの存在を知らずカスタム実装を提案する",
         "Security Hubで全部解決すると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-013",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "AWS Config",
       "subtopic": "Custom Rules",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業企業のセキュリティチームは、独自要件として「すべてのEC2インスタンスは特定タグ DataClassification を持たねばならない」を継続的に評価したい。マネージドルールには該当するものがない。最もシンプルかつコード管理が少ない実装は？",
       "options": [
-        {"id": "A", "text": "マネージドルール required-tags を使い、tagKey1=DataClassification を構成パラメータに指定する", "is_correct": true, "explanation": "正解。required-tagsはAWSマネージドルールで、複数のタグキー存在チェックを構成パラメータで指定できる。Lambda開発不要で最もシンプル。"},
-        {"id": "B", "text": "AWS Config Custom RuleとしてLambda関数を実装し、評価ロジックを書く", "is_correct": false, "explanation": "実装可能だがマネージドルールで足りるのにCustom Ruleを書くのは過剰。"},
-        {"id": "C", "text": "AWS Config Custom Policy Rule（Guard言語）で実装する", "is_correct": false, "explanation": "Guard構文で書けるが、required-tagsマネージドルールがあるためそちらが優先。"},
-        {"id": "D", "text": "Lambda関数を毎時実行し、EC2全件をスキャンしてSlackに通知する", "is_correct": false, "explanation": "Configを使わないため設定変更履歴が残らず、コンプライアンスダッシュボードにも統合されない。"}
+        {
+          "id": "A",
+          "text": "マネージドルール required-tags を使い、tagKey1=DataClassification を構成パラメータに指定する",
+          "is_correct": true,
+          "explanation": "正解。required-tagsはAWSマネージドルールで、複数のタグキー存在チェックを構成パラメータで指定できる。Lambda開発不要で最もシンプル。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Config Custom Policy Rule（Guard言語）で実装する",
+          "is_correct": false,
+          "explanation": "Guard構文で書けるが、required-tagsマネージドルールがあるためそちらが優先。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda関数を毎時実行し、EC2全件をスキャンしてSlackに通知する",
+          "is_correct": false,
+          "explanation": "Configを使わないため設定変更履歴が残らず、コンプライアンスダッシュボードにも統合されない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config Custom RuleとしてLambda関数を実装し、評価ロジックを書く",
+          "is_correct": false,
+          "explanation": "実装可能だがマネージドルールで足りるのにCustom Ruleを書くのは過剰。"
+        }
       ],
       "explanation": "AWS Configには多数のマネージドルールがあり、required-tagsはタグ存在の評価に特化したマネージドルールである。tagKey1〜tagKey6のパラメータでチェック対象タグを指定できる。マネージドルールで要件が満たせる場合はCustom Lambda RuleやCustom Policy Rule（Guard）を書く必要はない。一般原則：マネージド > Custom Policy（Guard） > Custom Lambda の順で検討する。",
       "references": [
-        {"title": "required-tags", "url": "https://docs.aws.amazon.com/config/latest/developerguide/required-tags.html"}
+        {
+          "title": "required-tags",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/required-tags.html"
+        }
       ],
-      "tags": ["aws-config", "managed-rules", "tagging", "manufacturing"],
+      "tags": [
+        "aws-config",
+        "managed-rules",
+        "tagging",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "存在するマネージドルールを調べずCustom Ruleを書いてしまう",
         "required-tagsの構成パラメータを知らない",
         "Guardベースの新形式を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-014",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Athena",
       "subtopic": "CloudTrail Analysis",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある教育SaaS企業のセキュリティアナリストが、AthenaでCloudTrailログを解析し「過去7日間にAccessDeniedエラーを最も多く受けたIAMプリンシパルTOP10」を特定したい。最も適切なクエリ構造は？",
       "options": [
-        {"id": "A", "text": "SELECT useridentity.arn, COUNT(*) FROM cloudtrail_logs WHERE errorcode = 'AccessDenied' AND eventtime > date_add('day', -7, current_timestamp) GROUP BY useridentity.arn ORDER BY 2 DESC LIMIT 10", "is_correct": true, "explanation": "正解。errorcodeでAccessDeniedを絞り、useridentity.arnで集約してCOUNT降順上位10を抽出。Athenaの典型的なフォレンジッククエリ。"},
-        {"id": "B", "text": "SELECT * FROM cloudtrail_logs WHERE errormessage LIKE '%denied%'", "is_correct": false, "explanation": "errormessageは表記揺れがあり、TOPN集計もしていない。errorcode による絞り込みが正確。"},
-        {"id": "C", "text": "SELECT useridentity FROM cloudtrail_logs WHERE eventname = 'AccessDenied'", "is_correct": false, "explanation": "AccessDeniedはeventnameではなくerrorcodeフィールドの値。eventnameはAPI名（例: GetObject）。"},
-        {"id": "D", "text": "SHOW TABLES; DESCRIBE cloudtrail_logs;", "is_correct": false, "explanation": "メタデータ取得のクエリでありデータ分析にならない。"}
+        {
+          "id": "A",
+          "text": "SHOW TABLES; DESCRIBE cloudtrail_logs;",
+          "is_correct": false,
+          "explanation": "メタデータ取得のクエリでありデータ分析にならない。"
+        },
+        {
+          "id": "B",
+          "text": "SELECT useridentity.arn, COUNT(*) FROM cloudtrail_logs WHERE errorcode = 'AccessDenied' AND eventtime > date_add('day', -7, current_timestamp) GROUP BY useridentity.arn ORDER BY 2 DESC LIMIT 10",
+          "is_correct": true,
+          "explanation": "正解。errorcodeでAccessDeniedを絞り、useridentity.arnで集約してCOUNT降順上位10を抽出。Athenaの典型的なフォレンジッククエリ。"
+        },
+        {
+          "id": "C",
+          "text": "SELECT * FROM cloudtrail_logs WHERE errormessage LIKE '%denied%'",
+          "is_correct": false,
+          "explanation": "errormessageは表記揺れがあり、TOPN集計もしていない。errorcode による絞り込みが正確。"
+        },
+        {
+          "id": "D",
+          "text": "SELECT useridentity FROM cloudtrail_logs WHERE eventname = 'AccessDenied'",
+          "is_correct": false,
+          "explanation": "AccessDeniedはeventnameではなくerrorcodeフィールドの値。eventnameはAPI名（例: GetObject）。"
+        }
       ],
       "explanation": "CloudTrailログをAthenaで解析する際は、errorcodeフィールド（'AccessDenied' や 'UnauthorizedOperation'）で拒否イベントを抽出し、useridentity.arn または useridentity.principalid で集約する。eventtime によるパーティション絞り込みも重要。AccessDeniedの急増はクレデンシャル漏洩や設定ミスの兆候となるため、定期実行を推奨。",
       "references": [
-        {"title": "Querying AWS CloudTrail logs", "url": "https://docs.aws.amazon.com/athena/latest/ug/cloudtrail-logs.html"}
+        {
+          "title": "Querying AWS CloudTrail logs",
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/cloudtrail-logs.html"
+        }
       ],
-      "tags": ["athena", "cloudtrail", "access-denied", "forensics", "education"],
+      "tags": [
+        "athena",
+        "cloudtrail",
+        "access-denied",
+        "forensics",
+        "education"
+      ],
       "common_mistakes": [
         "errorcode と eventname を混同する",
         "errormessageの自由文をパースしようとする",
         "eventtimeのパーティション絞り込みを忘れスキャン量が膨大になる"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-015",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudFormation StackSets",
       "subtopic": "Organization-wide deployment",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるFinTech企業のクラウドセキュリティチームは、組織内すべてのアカウントの全リージョンで「同一のCloudWatchエージェント設定とCloudWatch Logs ロググループ」を展開・維持したい。新規アカウント追加時も自動展開したい。最も適切な仕組みは？",
       "options": [
-        {"id": "A", "text": "各アカウントごとにCloudFormationテンプレートを手動デプロイ", "is_correct": false, "explanation": "スケールしない。手動作業が新規アカウント追加のたびに発生する。"},
-        {"id": "B", "text": "CloudFormation StackSets（service-managed permission、auto-deployment有効）でテンプレートをOrganizationsに配布する", "is_correct": true, "explanation": "正解。StackSetsの service-managed permissions は Organizations と統合され、auto-deployment を有効化すると新規アカウントにも自動展開される。複数リージョン展開も標準機能。"},
-        {"id": "C", "text": "AWS Service Catalogでポートフォリオを共有し、各アカウント管理者にプロビジョニングを依頼する", "is_correct": false, "explanation": "Service Catalogは利用者主導のセルフサービス。強制展開には不向き。"},
-        {"id": "D", "text": "AWS Lambdaで各アカウントにAssume Roleし、CFNを毎日デプロイするカスタム自動化", "is_correct": false, "explanation": "技術的に可能だがStackSetsの再実装。運用負荷が高い。"}
+        {
+          "id": "A",
+          "text": "AWS Service Catalogでポートフォリオを共有し、各アカウント管理者にプロビジョニングを依頼する",
+          "is_correct": false,
+          "explanation": "Service Catalogは利用者主導のセルフサービス。強制展開には不向き。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントごとにCloudFormationテンプレートを手動デプロイ",
+          "is_correct": false,
+          "explanation": "スケールしない。手動作業が新規アカウント追加のたびに発生する。"
+        },
+        {
+          "id": "C",
+          "text": "CloudFormation StackSets（service-managed permission、auto-deployment有効）でテンプレートをOrganizationsに配布する",
+          "is_correct": true,
+          "explanation": "正解。StackSetsの service-managed permissions は Organizations と統合され、auto-deployment を有効化すると新規アカウントにも自動展開される。複数リージョン展開も標準機能。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Lambdaで各アカウントにAssume Roleし、CFNを毎日デプロイするカスタム自動化",
+          "is_correct": false,
+          "explanation": "技術的に可能だがStackSetsの再実装。運用負荷が高い。"
+        }
       ],
       "explanation": "CloudFormation StackSetsは複数アカウント・複数リージョンへ単一テンプレートを配布する仕組み。Organizationsと統合した service-managed permissions を選ぶと、各アカウントにIAMロールを手動作成する必要がない。auto-deployment を有効にすると、新規アカウントが組織に追加された時点で自動的にスタックがデプロイされる。組織横断のセキュリティベースライン展開に最適。",
       "references": [
-        {"title": "AWS CloudFormation StackSets", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"}
+        {
+          "title": "AWS CloudFormation StackSets",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"
+        }
       ],
-      "tags": ["stacksets", "organizations", "auto-deployment", "multi-account", "fintech"],
+      "tags": [
+        "stacksets",
+        "organizations",
+        "auto-deployment",
+        "multi-account",
+        "fintech"
+      ],
       "common_mistakes": [
         "Service CatalogとStackSetsの役割を混同する",
         "self-managed と service-managed の違いを知らない",
         "auto-deploymentを忘れて新規アカウントを取りこぼす"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-016",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Cross-account log aggregation",
       "subtopic": "Centralized S3 bucket",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "あるゲーム会社が複数アカウントのCloudTrailログを「ログアーカイブ専用アカウント」のS3バケットに集約したい。各アカウントのCloudTrailサービスがバケットに書き込めるようにする最低限の構成は？（複数選択：2つ選びなさい）",
       "options": [
-        {"id": "A", "text": "ログアーカイブアカウントのS3バケットポリシーで、cloudtrail.amazonaws.comサービスプリンシパルからのs3:PutObject／s3:GetBucketAcl を許可する", "is_correct": true, "explanation": "正解。CloudTrailサービスがバケットに書き込むには、バケットポリシーで cloudtrail.amazonaws.com に対する PutObject と GetBucketAcl の許可、aws:SourceArn・aws:SourceAccount による限定が必須。"},
-        {"id": "B", "text": "各メンバーアカウントでCloudTrailを作成し、保存先S3バケットとしてログアーカイブアカウントのバケットを指定する", "is_correct": true, "explanation": "正解。CloudTrail作成時にクロスアカウントの集約バケットをARN指定するのが基本構成。Organization Trailの場合は管理アカウントから一括指定。"},
-        {"id": "C", "text": "ログアーカイブアカウントのIAMロールを各メンバーアカウントが Assume してログを Pull する", "is_correct": false, "explanation": "誤り。CloudTrailのログ配信はサービス自体がPushするモデルで、Assume Roleは不要。"},
-        {"id": "D", "text": "メンバーアカウントのKMSキーでログを暗号化し、ログアーカイブアカウントへ送る", "is_correct": false, "explanation": "誤り。KMSキーは集約先（または共有された）キーで暗号化するのが一般的。メンバー個別キーでは集約後の復号で問題になる。"}
+        {
+          "id": "A",
+          "text": "ログアーカイブアカウントのIAMロールを各メンバーアカウントが Assume してログを Pull する",
+          "is_correct": false,
+          "explanation": "誤り。CloudTrailのログ配信はサービス自体がPushするモデルで、Assume Roleは不要。"
+        },
+        {
+          "id": "B",
+          "text": "ログアーカイブアカウントのS3バケットポリシーで、cloudtrail.amazonaws.comサービスプリンシパルからのs3:PutObject／s3:GetBucketAcl を許可する",
+          "is_correct": true,
+          "explanation": "正解。CloudTrailサービスがバケットに書き込むには、バケットポリシーで cloudtrail.amazonaws.com に対する PutObject と GetBucketAcl の許可、aws:SourceArn・aws:SourceAccount による限定が必須。"
+        },
+        {
+          "id": "C",
+          "text": "メンバーアカウントのKMSキーでログを暗号化し、ログアーカイブアカウントへ送る",
+          "is_correct": false,
+          "explanation": "誤り。KMSキーは集約先（または共有された）キーで暗号化するのが一般的。メンバー個別キーでは集約後の復号で問題になる。"
+        },
+        {
+          "id": "D",
+          "text": "各メンバーアカウントでCloudTrailを作成し、保存先S3バケットとしてログアーカイブアカウントのバケットを指定する",
+          "is_correct": true,
+          "explanation": "正解。CloudTrail作成時にクロスアカウントの集約バケットをARN指定するのが基本構成。Organization Trailの場合は管理アカウントから一括指定。"
+        }
       ],
       "explanation": "クロスアカウントCloudTrail集約の基本パターンは「ログアーカイブアカウントのS3にバケットポリシーで cloudtrail.amazonaws.com からの書き込みを許可」「各アカウントのCloudTrailで保存先として指定」の2点。aws:SourceArn と aws:SourceAccount の条件を必ず含めることでconfused deputy攻撃を防ぐ。Organization Trailを使う場合は1つのトレイル定義で全メンバー分が一括設定される。",
       "references": [
-        {"title": "Receiving CloudTrail log files from multiple accounts", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html"}
+        {
+          "title": "Receiving CloudTrail log files from multiple accounts",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html"
+        }
       ],
-      "tags": ["cloudtrail", "cross-account", "s3-bucket-policy", "log-aggregation", "gaming"],
+      "tags": [
+        "cloudtrail",
+        "cross-account",
+        "s3-bucket-policy",
+        "log-aggregation",
+        "gaming"
+      ],
       "common_mistakes": [
         "Assume Roleで集約しようとする",
         "GetBucketAcl許可を忘れて配信失敗する",
         "aws:SourceArn / SourceAccountを設定せずconfused deputyリスクを残す"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-017",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Log retention",
       "subtopic": "S3 Lifecycle and cost",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業企業のCloudTrailログを格納するS3バケットは、すでに30TBを超えコストが課題。ログは「過去30日は頻繁に検索」「30日〜2年は四半期ごとの監査でアクセス」「2年〜7年は事故時のみ」「7年経過後は削除」したい。最もコスト効率が高い設計は？",
       "options": [
-        {"id": "A", "text": "Lifecycle Policyで 30日後 Standard-IA、90日後 Glacier Instant Retrieval、730日後 Glacier Deep Archive、2555日後 Expiration", "is_correct": true, "explanation": "正解。アクセス頻度に応じた段階移行が最適。30日以降の四半期監査にはIAやGlacier Instant Retrieval（ミリ秒検索）が向き、2年超は冬眠保管にDeep Archive、7年で削除。"},
-        {"id": "B", "text": "30日後にすべてDeep Archive、7年後 Expiration", "is_correct": false, "explanation": "Deep Archiveは検索に時間がかかり、四半期監査の利便性を著しく損なう。"},
-        {"id": "C", "text": "S3 Intelligent-Tieringのみ使用", "is_correct": false, "explanation": "Intelligent-Tieringは便利だが、長期保管（2年以上）はDeep Archive固定のほうが安価。CloudTrailのような書き込み主導かつアクセスパターン明確な場合は明示的Lifecycleが効率的。"},
-        {"id": "D", "text": "ログをCloudWatch Logsに30日保持し、S3には保存しない", "is_correct": false, "explanation": "CloudWatch Logsは長期保持コストが高く、Athena連携も不便。"}
+        {
+          "id": "A",
+          "text": "S3 Intelligent-Tieringのみ使用",
+          "is_correct": false,
+          "explanation": "Intelligent-Tieringは便利だが、長期保管（2年以上）はDeep Archive固定のほうが安価。CloudTrailのような書き込み主導かつアクセスパターン明確な場合は明示的Lifecycleが効率的。"
+        },
+        {
+          "id": "B",
+          "text": "30日後にすべてDeep Archive、7年後 Expiration",
+          "is_correct": false,
+          "explanation": "Deep Archiveは検索に時間がかかり、四半期監査の利便性を著しく損なう。"
+        },
+        {
+          "id": "C",
+          "text": "ログをCloudWatch Logsに30日保持し、S3には保存しない",
+          "is_correct": false,
+          "explanation": "CloudWatch Logsは長期保持コストが高く、Athena連携も不便。"
+        },
+        {
+          "id": "D",
+          "text": "Lifecycle Policyで 30日後 Standard-IA、90日後 Glacier Instant Retrieval、730日後 Glacier Deep Archive、2555日後 Expiration",
+          "is_correct": true,
+          "explanation": "正解。アクセス頻度に応じた段階移行が最適。30日以降の四半期監査にはIAやGlacier Instant Retrieval（ミリ秒検索）が向き、2年超は冬眠保管にDeep Archive、7年で削除。"
+        }
       ],
       "explanation": "S3 Lifecycle Policiesは、オブジェクトの経過日数に応じてストレージクラス遷移と最終削除を自動化する。CloudTrailのようにアクセス頻度が時間とともに低下するログは、Standard → Standard-IA → Glacier Instant Retrieval（即時検索可） → Glacier Flexible Retrieval → Glacier Deep Archive → Expiration の段階遷移が標準パターン。Glacier Instant Retrievalはミリ秒で取り出せるため定期監査用途に向く。",
       "references": [
-        {"title": "Managing your storage lifecycle", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"}
+        {
+          "title": "Managing your storage lifecycle",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+        }
       ],
-      "tags": ["s3-lifecycle", "cost-optimization", "glacier", "log-retention", "manufacturing"],
+      "tags": [
+        "s3-lifecycle",
+        "cost-optimization",
+        "glacier",
+        "log-retention",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "Deep Archiveをすべての段階で使ってしまう",
         "Glacier Instant RetrievalとFlexible Retrievalの違いを知らない",
         "Intelligent-Tieringが万能と思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-018",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "S3 Access Logs vs CloudTrail Data Events",
       "subtopic": "Comparison",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある医療データ解析企業がS3バケットへのアクセスを監査したい。要件は「IAMユーザー/ロール単位での操作証跡」「アクセス時刻と発信元IP」「他社AWSアカウントからのクロスアカウントアクセスの識別」「リアルタイム検索（数分以内）」。最適な選択は？",
       "options": [
-        {"id": "A", "text": "S3 Server Access Logsのみ", "is_correct": false, "explanation": "Server Access LogsはRequester/Operationなどを記録するが、配信遅延が数時間あるためリアルタイム検索を満たさない。"},
-        {"id": "B", "text": "CloudTrail Data Events for S3を有効化し、CloudWatch Logsに送信して即時クエリ", "is_correct": true, "explanation": "正解。Data EventsはuserIdentity（IAM ARN）、sourceIPAddress、recipientAccountId（クロスアカウントの識別）を記録し、CloudWatch Logs送信で数分以内のクエリが可能。"},
-        {"id": "C", "text": "VPC Flow Logsを有効化する", "is_correct": false, "explanation": "VPC Flow Logsはネットワーク層のフロー情報のみで、IAM情報やS3操作の詳細は含まない。"},
-        {"id": "D", "text": "Macie Sensitive Data Discoveryを有効化する", "is_correct": false, "explanation": "MacieはS3コンテンツの機密データ検出。アクセス監査ではない。"}
+        {
+          "id": "A",
+          "text": "CloudTrail Data Events for S3を有効化し、CloudWatch Logsに送信して即時クエリ",
+          "is_correct": true,
+          "explanation": "正解。Data EventsはuserIdentity（IAM ARN）、sourceIPAddress、recipientAccountId（クロスアカウントの識別）を記録し、CloudWatch Logs送信で数分以内のクエリが可能。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Server Access Logsのみ",
+          "is_correct": false,
+          "explanation": "Server Access LogsはRequester/Operationなどを記録するが、配信遅延が数時間あるためリアルタイム検索を満たさない。"
+        },
+        {
+          "id": "C",
+          "text": "Macie Sensitive Data Discoveryを有効化する",
+          "is_correct": false,
+          "explanation": "MacieはS3コンテンツの機密データ検出。アクセス監査ではない。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Flow Logsを有効化する",
+          "is_correct": false,
+          "explanation": "VPC Flow Logsはネットワーク層のフロー情報のみで、IAM情報やS3操作の詳細は含まない。"
+        }
       ],
       "explanation": "S3アクセス監査の選択肢比較：(1) S3 Server Access Logsはサーバー側ログで配信遅延あり、IAMロール情報が限定的、無料。(2) CloudTrail Data Eventsはイベントごとに課金されるが、IAM情報・呼び出し元・クロスアカウント情報が詳細でリアルタイム。要件に「IAM単位」「クロスアカウント識別」「リアルタイム」がある本問はData Events一択。両者を併用するパターンもあるが第一選択はData Events。",
       "references": [
-        {"title": "Logging Amazon S3 API calls using AWS CloudTrail", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudtrail-logging.html"}
+        {
+          "title": "Logging Amazon S3 API calls using AWS CloudTrail",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudtrail-logging.html"
+        }
       ],
-      "tags": ["cloudtrail-data-events", "s3-access-logs", "audit", "healthcare"],
+      "tags": [
+        "cloudtrail-data-events",
+        "s3-access-logs",
+        "audit",
+        "healthcare"
+      ],
       "common_mistakes": [
         "Server Access LogsとData Eventsの能力差を知らない",
         "Server Access Logsをリアルタイム監査に使おうとする",
         "Data Eventsの追加コストを過大評価して避ける"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-019",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Real-time log analytics",
       "subtopic": "Kinesis Data Streams + Lambda",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある教育プラットフォーム企業が、CloudTrailイベントをリアルタイム（5秒以内）で異常検知し、検出時に自動修復ステップ関数を起動したい。1秒あたり最大2,000イベントが流入する。最も適切なアーキテクチャは？",
       "options": [
-        {"id": "A", "text": "CloudTrail → CloudWatch Logs → サブスクリプションフィルター → Kinesis Data Streams → Lambda（異常検知 + StepFunctions起動）", "is_correct": true, "explanation": "正解。Kinesis Data Streamsはサブセカンドのレイテンシで、Lambdaトリガー（バッチサイズ・並列度の調整可能）で5秒以内処理が現実的。シャードを増やせば2,000 events/secも処理可能。"},
-        {"id": "B", "text": "CloudTrail → S3 → Athena定期クエリ（1時間毎）", "is_correct": false, "explanation": "1時間遅延でリアルタイム要件不適合。"},
-        {"id": "C", "text": "CloudTrail → EventBridge → Lambda → SNS のみ", "is_correct": false, "explanation": "EventBridgeはCloudTrail Management Eventsの一部のみ配信し、すべてのイベントが流れるわけではない。Data Eventsはほぼ流れない。"},
-        {"id": "D", "text": "CloudTrail → S3 → S3 EventNotification → Lambda（per-objectファイルパース）", "is_correct": false, "explanation": "S3配信は約5〜15分遅延し、リアルタイム要件不適合。"}
+        {
+          "id": "A",
+          "text": "CloudTrail → S3 → Athena定期クエリ（1時間毎）",
+          "is_correct": false,
+          "explanation": "1時間遅延でリアルタイム要件不適合。"
+        },
+        {
+          "id": "B",
+          "text": "CloudTrail → CloudWatch Logs → サブスクリプションフィルター → Kinesis Data Streams → Lambda（異常検知 + StepFunctions起動）",
+          "is_correct": true,
+          "explanation": "正解。Kinesis Data Streamsはサブセカンドのレイテンシで、Lambdaトリガー（バッチサイズ・並列度の調整可能）で5秒以内処理が現実的。シャードを増やせば2,000 events/secも処理可能。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail → EventBridge → Lambda → SNS のみ",
+          "is_correct": false,
+          "explanation": "EventBridgeはCloudTrail Management Eventsの一部のみ配信し、すべてのイベントが流れるわけではない。Data Eventsはほぼ流れない。"
+        },
+        {
+          "id": "D",
+          "text": "CloudTrail → S3 → S3 EventNotification → Lambda（per-objectファイルパース）",
+          "is_correct": false,
+          "explanation": "S3配信は約5〜15分遅延し、リアルタイム要件不適合。"
+        }
       ],
       "explanation": "リアルタイム（秒単位）でCloudTrailを処理するなら CloudWatch Logs サブスクリプションフィルター + Kinesis Data Streams + Lambdaが王道。EventBridgeも便利だがCloudTrailからの自動配信は限定的（一部のManagement Eventのみ）。S3配信は数分遅延、Athenaクエリはバッチ処理向き。Kinesisはシャード単位で並列度を制御でき、StepFunctions起動など下流の自動化につなげやすい。",
       "references": [
-        {"title": "Real-time processing of CloudTrail logs", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters.html"}
+        {
+          "title": "Real-time processing of CloudTrail logs",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters.html"
+        }
       ],
-      "tags": ["kinesis-data-streams", "real-time", "cloudtrail", "lambda", "education"],
+      "tags": [
+        "kinesis-data-streams",
+        "real-time",
+        "cloudtrail",
+        "lambda",
+        "education"
+      ],
       "common_mistakes": [
         "S3経由でリアルタイム処理ができると誤解",
         "EventBridgeにすべてのCloudTrailイベントが流れると思い込む",
         "Kinesis Data Streamsと Firehose の用途を混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-020",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Encryption at rest",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療法人がHIPAA要件のため、CloudWatch Logsのロググループをカスタマー管理KMS（CMK）で暗号化したい。注意すべき設定はどれか？（複数選択：2つ選びなさい）",
       "options": [
-        {"id": "A", "text": "KMSキーポリシーで logs.<region>.amazonaws.com サービスプリンシパルに kms:Encrypt*, Decrypt*, ReEncrypt*, GenerateDataKey*, Describe* を許可する", "is_correct": true, "explanation": "正解。CloudWatch Logsサービスがロググループ暗号化を行うため、KMSキーポリシーで logs.<region>.amazonaws.com サービスプリンシパルに必要な権限を付与する必要がある。"},
-        {"id": "B", "text": "associate-kms-key API でロググループにKMSキーを紐付ける", "is_correct": true, "explanation": "正解。既存ロググループの場合は associate-kms-key APIで紐付けが必要。新規作成時は CreateLogGroup の kmsKeyId 引数で指定。"},
-        {"id": "C", "text": "ロググループのリージョンと異なるKMSキーを使う", "is_correct": false, "explanation": "誤り。KMSはリージョンサービスであり、同一リージョンのキーを使う必要がある。"},
-        {"id": "D", "text": "ロググループをいったん削除して再作成する", "is_correct": false, "explanation": "誤り。既存ロググループはAPIで暗号化を有効化できるため、削除する必要はない。ただし暗号化適用後の新規ログから暗号化される（既存ログには適用されない）。"}
+        {
+          "id": "A",
+          "text": "ロググループのリージョンと異なるKMSキーを使う",
+          "is_correct": false,
+          "explanation": "誤り。KMSはリージョンサービスであり、同一リージョンのキーを使う必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "ロググループをいったん削除して再作成する",
+          "is_correct": false,
+          "explanation": "誤り。既存ロググループはAPIで暗号化を有効化できるため、削除する必要はない。ただし暗号化適用後の新規ログから暗号化される（既存ログには適用されない）。"
+        },
+        {
+          "id": "C",
+          "text": "KMSキーポリシーで logs.<region>.amazonaws.com サービスプリンシパルに kms:Encrypt*, Decrypt*, ReEncrypt*, GenerateDataKey*, Describe* を許可する",
+          "is_correct": true,
+          "explanation": "正解。CloudWatch Logsサービスがロググループ暗号化を行うため、KMSキーポリシーで logs.<region>.amazonaws.com サービスプリンシパルに必要な権限を付与する必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "associate-kms-key API でロググループにKMSキーを紐付ける",
+          "is_correct": true,
+          "explanation": "正解。既存ロググループの場合は associate-kms-key APIで紐付けが必要。新規作成時は CreateLogGroup の kmsKeyId 引数で指定。"
+        }
       ],
       "explanation": "CloudWatch LogsをCMKで暗号化するには2つの設定が必要：(1) KMSキーポリシーで logs.<region>.amazonaws.com に対する暗号化操作許可（kms:viaService条件と aws:SourceArn でロググループARNを限定すると安全）、(2) associate-kms-key APIまたは CreateLogGroup でロググループにキーを関連付け。HIPAAやPCI-DSSなどの規制業界では必須の構成。",
       "references": [
-        {"title": "Encrypt log data in CloudWatch Logs using AWS KMS", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html"}
+        {
+          "title": "Encrypt log data in CloudWatch Logs using AWS KMS",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html"
+        }
       ],
-      "tags": ["cloudwatch-logs", "kms", "encryption", "hipaa", "healthcare"],
+      "tags": [
+        "cloudwatch-logs",
+        "kms",
+        "encryption",
+        "hipaa",
+        "healthcare"
+      ],
       "common_mistakes": [
         "KMSキーポリシーでサービスプリンシパル許可を忘れる",
         "クロスリージョンのKMSキーを使おうとする",
         "既存ロググループに後付けで暗号化できないと思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-021",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "VPC Flow Logs",
       "subtopic": "Destinations",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "VPC Flow Logsの配信先として正しい組み合わせは？",
       "options": [
-        {"id": "A", "text": "CloudWatch Logs / Amazon S3 / Amazon Kinesis Data Firehose", "is_correct": true, "explanation": "正解。VPC Flow Logsは CloudWatch Logs、S3、Kinesis Data Firehose の3つの送信先に配信できる。"},
-        {"id": "B", "text": "CloudWatch Logs / Amazon SQS / Amazon Aurora", "is_correct": false, "explanation": "誤り。SQSやAuroraへの直接配信はサポートされていない。"},
-        {"id": "C", "text": "Amazon S3 / Amazon RDS / Amazon EBS", "is_correct": false, "explanation": "誤り。RDS/EBSへの配信はない。"},
-        {"id": "D", "text": "Amazon EventBridge / AWS Step Functions", "is_correct": false, "explanation": "誤り。VPC Flow Logsから直接EventBridgeへの配信はサポートされていない。"}
+        {
+          "id": "A",
+          "text": "Amazon EventBridge / AWS Step Functions",
+          "is_correct": false,
+          "explanation": "誤り。VPC Flow Logsから直接EventBridgeへの配信はサポートされていない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon S3 / Amazon RDS / Amazon EBS",
+          "is_correct": false,
+          "explanation": "誤り。RDS/EBSへの配信はない。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Logs / Amazon S3 / Amazon Kinesis Data Firehose",
+          "is_correct": true,
+          "explanation": "正解。VPC Flow Logsは CloudWatch Logs、S3、Kinesis Data Firehose の3つの送信先に配信できる。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Logs / Amazon SQS / Amazon Aurora",
+          "is_correct": false,
+          "explanation": "誤り。SQSやAuroraへの直接配信はサポートされていない。"
+        }
       ],
       "explanation": "VPC Flow Logsは2025年現在、CloudWatch Logs、S3、Kinesis Data Firehose の3つの送信先をサポート。Firehoseはクロスアカウント・クロスリージョン配信や OpenSearch Service への直接ストリームに有効。S3はAthena分析向き、CloudWatch LogsはLogs Insightsクエリ向き。",
       "references": [
-        {"title": "Publish flow logs to Amazon S3", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html"}
+        {
+          "title": "Publish flow logs to Amazon S3",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html"
+        }
       ],
-      "tags": ["vpc-flow-logs", "destinations", "cloudwatch-logs", "s3", "firehose"],
+      "tags": [
+        "vpc-flow-logs",
+        "destinations",
+        "cloudwatch-logs",
+        "s3",
+        "firehose"
+      ],
       "common_mistakes": [
         "EventBridgeへ直接配信できると誤解",
         "Firehose配信先を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-022",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "AWS Config",
       "subtopic": "Recording strategy",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "あるFinTech企業が大量のEC2 Auto Scalingを運用しており、AWS Configのコストが急増した。設定アイテム（CI）が大量に生成されている。コンプライアンス要件を維持しつつコスト削減する最も適切なアプローチを2つ選びなさい。（複数選択）",
       "options": [
-        {"id": "A", "text": "Configレコーダーで Daily Recording モードに切り替え、変更単位ではなく日次スナップショットで記録する", "is_correct": true, "explanation": "正解。2023年導入のDaily Recordingは、頻繁に変更されるリソース（EC2、Auto Scalingなど）を1日1回記録に切り替えてCI数を大幅削減できる。"},
-        {"id": "B", "text": "Configレコーダーから AWS::EC2::NetworkInterface など高頻度更新リソースを除外する exclusion list を設定する", "is_correct": true, "explanation": "正解。Recording strategy で exclusion を使い、ENI など高頻度変更リソースを除外することで CI 数とコストを削減。コンプライアンス重要リソースのみ記録する。"},
-        {"id": "C", "text": "AWS Configを完全に無効化し、CloudTrailのみで監査する", "is_correct": false, "explanation": "誤り。Configはリソースの状態スナップショットを評価する独自機能を持ち、CloudTrailの代替にはならない。"},
-        {"id": "D", "text": "Config Aggregatorを削除する", "is_correct": false, "explanation": "誤り。Aggregatorは集約のみでCI生成コストには影響しない。"}
+        {
+          "id": "A",
+          "text": "Configレコーダーで Daily Recording モードに切り替え、変更単位ではなく日次スナップショットで記録する",
+          "is_correct": true,
+          "explanation": "正解。2023年導入のDaily Recordingは、頻繁に変更されるリソース（EC2、Auto Scalingなど）を1日1回記録に切り替えてCI数を大幅削減できる。"
+        },
+        {
+          "id": "B",
+          "text": "Configレコーダーから AWS::EC2::NetworkInterface など高頻度更新リソースを除外する exclusion list を設定する",
+          "is_correct": true,
+          "explanation": "正解。Recording strategy で exclusion を使い、ENI など高頻度変更リソースを除外することで CI 数とコストを削減。コンプライアンス重要リソースのみ記録する。"
+        },
+        {
+          "id": "C",
+          "text": "Config Aggregatorを削除する",
+          "is_correct": false,
+          "explanation": "誤り。Aggregatorは集約のみでCI生成コストには影響しない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Configを完全に無効化し、CloudTrailのみで監査する",
+          "is_correct": false,
+          "explanation": "誤り。Configはリソースの状態スナップショットを評価する独自機能を持ち、CloudTrailの代替にはならない。"
+        }
       ],
       "explanation": "AWS Configのコスト最適化2大手法：(1) Daily Recording モード — 連続変更を1日1回記録、変更追跡不要なリソースに最適。(2) Recording strategy のリソース除外 — EC2 Network Interface、AutoScaling Group などの高頻度変更リソースを除外。Configは記録するCI（Configuration Item）単位で課金されるため、何を記録するかの設計がコストに直結する。",
       "references": [
-        {"title": "Selecting which AWS resources Config records", "url": "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html"}
+        {
+          "title": "Selecting which AWS resources Config records",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html"
+        }
       ],
-      "tags": ["aws-config", "cost-optimization", "recording-strategy", "fintech"],
+      "tags": [
+        "aws-config",
+        "cost-optimization",
+        "recording-strategy",
+        "fintech"
+      ],
       "common_mistakes": [
         "Configを無効化することがコスト削減と誤解",
         "Daily Recordingモードの存在を知らない",
         "exclusion listでセキュリティ重要リソースまで除外してしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-023",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudTrail",
       "subtopic": "Event selectors and advanced event selectors",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるゲーム会社が「特定のS3バケット arn:aws:s3:::game-secrets-bucket／prefix=prod/ のオブジェクト操作のみ」をCloudTrail Data Eventsとして記録したい。他のS3バケットや他のprefixのコストは抑えたい。最適な構成は？",
       "options": [
-        {"id": "A", "text": "Advanced event selectorでresources.ARN starts with arn:aws:s3:::game-secrets-bucket/prod/ を指定する", "is_correct": true, "explanation": "正解。Advanced event selectorは事象タイプ・リソースタイプ・リソースARN・readOnly等の条件でフィルタ可能で、bucket+prefix単位の記録対象を細かく指定できる。"},
-        {"id": "B", "text": "S3バケットポリシーで他のバケット操作をDenyする", "is_correct": false, "explanation": "誤り。バケットポリシーは認可制御で、CloudTrail記録のフィルタにはならない。"},
-        {"id": "C", "text": "VPC Flow Logsを有効化する", "is_correct": false, "explanation": "誤り。Flow LogsはS3 API呼び出しは記録しない。"},
-        {"id": "D", "text": "Basic event selectorで全Data Eventsを記録し、後でAthenaで絞る", "is_correct": false, "explanation": "誤り。Basic event selectorはbucket単位までで、prefixレベルのフィルタができないためコストを最適化できない。"}
+        {
+          "id": "A",
+          "text": "Basic event selectorで全Data Eventsを記録し、後でAthenaで絞る",
+          "is_correct": false,
+          "explanation": "誤り。Basic event selectorはbucket単位までで、prefixレベルのフィルタができないためコストを最適化できない。"
+        },
+        {
+          "id": "B",
+          "text": "S3バケットポリシーで他のバケット操作をDenyする",
+          "is_correct": false,
+          "explanation": "誤り。バケットポリシーは認可制御で、CloudTrail記録のフィルタにはならない。"
+        },
+        {
+          "id": "C",
+          "text": "VPC Flow Logsを有効化する",
+          "is_correct": false,
+          "explanation": "誤り。Flow LogsはS3 API呼び出しは記録しない。"
+        },
+        {
+          "id": "D",
+          "text": "Advanced event selectorでresources.ARN starts with arn:aws:s3:::game-secrets-bucket/prod/ を指定する",
+          "is_correct": true,
+          "explanation": "正解。Advanced event selectorは事象タイプ・リソースタイプ・リソースARN・readOnly等の条件でフィルタ可能で、bucket+prefix単位の記録対象を細かく指定できる。"
+        }
       ],
       "explanation": "CloudTrailのAdvanced event selectorは、Data Eventsの記録対象をきめ細かく制御できる仕組み。eventCategory、resources.type（AWS::S3::Object など）、resources.ARN（starts-with、equals、not-starts-with、not-equals）、readOnly などで条件指定できる。Basic event selectorとは異なりprefix単位のフィルタリングが可能で、不要な高ボリュームData Eventsの記録を回避してコストを削減できる。",
       "references": [
-        {"title": "Logging data events with advanced event selectors", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#logging-data-events-advanced-event-selectors"}
+        {
+          "title": "Logging data events with advanced event selectors",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#logging-data-events-advanced-event-selectors"
+        }
       ],
-      "tags": ["cloudtrail", "advanced-event-selector", "s3-data-events", "cost-optimization", "gaming"],
+      "tags": [
+        "cloudtrail",
+        "advanced-event-selector",
+        "s3-data-events",
+        "cost-optimization",
+        "gaming"
+      ],
       "common_mistakes": [
         "Basic と Advanced selector の能力差を知らない",
         "バケットポリシーでログをフィルタできると誤解",
         "全Data Eventsを記録した後で絞ることのコストを過小評価"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-024",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Cross-account log sharing",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "あるSaaS企業のセキュリティ運用アカウント（SecOps）で、複数のワークロードアカウントからリアルタイムにCloudWatch Logsを集約したい。最も標準的な仕組みは？",
       "options": [
-        {"id": "A", "text": "SecOpsアカウントでCloudWatch Logs destination（Kinesis Data Streams宛）を作成し、各ワークロードアカウントからサブスクリプションフィルターで送信する", "is_correct": true, "explanation": "正解。CloudWatch Logsのクロスアカウント destination はKinesis Data Streamsを介したリアルタイム集約の標準パターン。アクセスポリシーで送信元アカウントを許可する。"},
-        {"id": "B", "text": "ワークロードアカウントのCloudWatch Logs ロググループに、SecOpsアカウントのIAMロールから定期的にFilterLogEventsをポーリングする", "is_correct": false, "explanation": "リアルタイム性が低く、APIスロットリングの懸念がある。Pull型は非標準。"},
-        {"id": "C", "text": "ワークロードアカウントのS3バケットにエクスポートし、SecOpsからS3クロスアカウントアクセスする", "is_correct": false, "explanation": "S3 export はバッチ処理であり、リアルタイム要件を満たさない。"},
-        {"id": "D", "text": "EventBridge クロスアカウントで送信する", "is_correct": false, "explanation": "EventBridgeにCloudWatch Logsの全イベントは流れない。"}
+        {
+          "id": "A",
+          "text": "SecOpsアカウントでCloudWatch Logs destination（Kinesis Data Streams宛）を作成し、各ワークロードアカウントからサブスクリプションフィルターで送信する",
+          "is_correct": true,
+          "explanation": "正解。CloudWatch Logsのクロスアカウント destination はKinesis Data Streamsを介したリアルタイム集約の標準パターン。アクセスポリシーで送信元アカウントを許可する。"
+        },
+        {
+          "id": "B",
+          "text": "ワークロードアカウントのCloudWatch Logs ロググループに、SecOpsアカウントのIAMロールから定期的にFilterLogEventsをポーリングする",
+          "is_correct": false,
+          "explanation": "リアルタイム性が低く、APIスロットリングの懸念がある。Pull型は非標準。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge クロスアカウントで送信する",
+          "is_correct": false,
+          "explanation": "EventBridgeにCloudWatch Logsの全イベントは流れない。"
+        },
+        {
+          "id": "D",
+          "text": "ワークロードアカウントのS3バケットにエクスポートし、SecOpsからS3クロスアカウントアクセスする",
+          "is_correct": false,
+          "explanation": "S3 export はバッチ処理であり、リアルタイム要件を満たさない。"
+        }
       ],
       "explanation": "CloudWatch Logsクロスアカウント集約の標準パターン：宛先アカウント（SecOps）でKinesis Data Streams or Firehoseを宛先とする「destination」を作成し、その destination にAccessPolicyで送信元アカウントを許可する。送信元（ワークロード）アカウントでは、ロググループに対するサブスクリプションフィルターをその destination ARNに設定する。これによりリアルタイムでクロスアカウント集約が実現する。",
       "references": [
-        {"title": "Cross-account log data sharing with subscriptions", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CrossAccountSubscriptions.html"}
+        {
+          "title": "Cross-account log data sharing with subscriptions",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CrossAccountSubscriptions.html"
+        }
       ],
-      "tags": ["cloudwatch-logs", "cross-account", "subscription-filter", "kinesis", "saas"],
+      "tags": [
+        "cloudwatch-logs",
+        "cross-account",
+        "subscription-filter",
+        "kinesis",
+        "saas"
+      ],
       "common_mistakes": [
         "Pull型でリアルタイム集約しようとする",
         "Kinesis destination パターンを知らない",
         "EventBridgeでCloudWatch Logsを集約できると誤解"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-025",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Athena",
       "subtopic": "Workgroups and access control",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療系SaaSで、複数チーム（SecOps、コンプライアンス、開発）がAthenaを共有利用している。チームごとに「クエリ結果S3バケット」「データスキャン上限」「クエリ履歴の隔離」を分けたい。最適な仕組みは？",
       "options": [
-        {"id": "A", "text": "チームごとにAWSアカウントを分割し、それぞれに独立したAthena環境を構築する", "is_correct": false, "explanation": "アカウント分割は重い対応。Workgroupでチーム間隔離が可能。"},
-        {"id": "B", "text": "Athena Workgroupをチーム別に作成し、IAMポリシーで利用するWorkgroupを制限する", "is_correct": true, "explanation": "正解。Workgroupは結果出力先、データスキャン上限、暗号化、CloudWatchメトリクス、課金タグを分離する。IAMポリシーで athena:StartQueryExecution の Workgroup条件で利用制御。"},
-        {"id": "C", "text": "チームごとに別のGlueデータカタログを使う", "is_correct": false, "explanation": "Glue Catalogでチーム別環境は作れるが、本問の「結果S3」「スキャン上限」「クエリ履歴」隔離はWorkgroupの機能。"},
-        {"id": "D", "text": "Lake Formationのテーブル単位アクセス制御を有効化する", "is_correct": false, "explanation": "Lake Formationはデータアクセスの細粒度制御に有効だが、結果出力先・スキャン上限の隔離はWorkgroupの機能。"}
+        {
+          "id": "A",
+          "text": "チームごとに別のGlueデータカタログを使う",
+          "is_correct": false,
+          "explanation": "Glue Catalogでチーム別環境は作れるが、本問の「結果S3」「スキャン上限」「クエリ履歴」隔離はWorkgroupの機能。"
+        },
+        {
+          "id": "B",
+          "text": "Athena Workgroupをチーム別に作成し、IAMポリシーで利用するWorkgroupを制限する",
+          "is_correct": true,
+          "explanation": "正解。Workgroupは結果出力先、データスキャン上限、暗号化、CloudWatchメトリクス、課金タグを分離する。IAMポリシーで athena:StartQueryExecution の Workgroup条件で利用制御。"
+        },
+        {
+          "id": "C",
+          "text": "チームごとにAWSアカウントを分割し、それぞれに独立したAthena環境を構築する",
+          "is_correct": false,
+          "explanation": "アカウント分割は重い対応。Workgroupでチーム間隔離が可能。"
+        },
+        {
+          "id": "D",
+          "text": "Lake Formationのテーブル単位アクセス制御を有効化する",
+          "is_correct": false,
+          "explanation": "Lake Formationはデータアクセスの細粒度制御に有効だが、結果出力先・スキャン上限の隔離はWorkgroupの機能。"
+        }
       ],
       "explanation": "Athena Workgroupは複数チーム共有時の運用を分離する仕組み。各Workgroupは独立した結果S3バケット、データスキャン上限（クエリ単位/Workgroup単位）、暗号化キー、ログ・メトリクスを持つ。IAMポリシーでprincipalに利用可能なWorkgroupを限定でき、課金タグも分離できる。コスト管理・監査の観点でAthena運用のベストプラクティス。",
       "references": [
-        {"title": "Using Athena workgroups", "url": "https://docs.aws.amazon.com/athena/latest/ug/manage-queries-control-costs-with-workgroups.html"}
+        {
+          "title": "Using Athena workgroups",
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/manage-queries-control-costs-with-workgroups.html"
+        }
       ],
-      "tags": ["athena", "workgroups", "multi-team", "access-control", "healthcare"],
+      "tags": [
+        "athena",
+        "workgroups",
+        "multi-team",
+        "access-control",
+        "healthcare"
+      ],
       "common_mistakes": [
         "Workgroupとデータカタログの役割を混同する",
         "Lake Formationだけで全部解決すると思い込む",
         "アカウント分割が必要と過剰設計する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-026",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudTrail",
       "subtopic": "Multi-region trail",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "CloudTrailのMulti-region trailの説明として正しいものは？",
       "options": [
-        {"id": "A", "text": "そのアカウントの全リージョンのイベントが、新規リージョン追加時も自動的に1つのトレイルに記録される", "is_correct": true, "explanation": "正解。Multi-region trailは作成リージョンを起点に全リージョンのイベントを集約し、AWSが新規追加するリージョンも自動で含まれる。"},
-        {"id": "B", "text": "クロスアカウントの全イベントを集約する", "is_correct": false, "explanation": "誤り。クロスアカウントの集約はOrganization Trailの機能。Multi-regionとは別概念。"},
-        {"id": "C", "text": "リージョン間の通信トラフィックを記録する", "is_correct": false, "explanation": "誤り。それはVPC Flow LogsやVPC Reachability Analyzerなどの領域。"},
-        {"id": "D", "text": "S3バケットのリージョンを跨ぐ通信を記録する", "is_correct": false, "explanation": "誤り。CloudTrailのスコープではない。"}
+        {
+          "id": "A",
+          "text": "クロスアカウントの全イベントを集約する",
+          "is_correct": false,
+          "explanation": "誤り。クロスアカウントの集約はOrganization Trailの機能。Multi-regionとは別概念。"
+        },
+        {
+          "id": "B",
+          "text": "S3バケットのリージョンを跨ぐ通信を記録する",
+          "is_correct": false,
+          "explanation": "誤り。CloudTrailのスコープではない。"
+        },
+        {
+          "id": "C",
+          "text": "そのアカウントの全リージョンのイベントが、新規リージョン追加時も自動的に1つのトレイルに記録される",
+          "is_correct": true,
+          "explanation": "正解。Multi-region trailは作成リージョンを起点に全リージョンのイベントを集約し、AWSが新規追加するリージョンも自動で含まれる。"
+        },
+        {
+          "id": "D",
+          "text": "リージョン間の通信トラフィックを記録する",
+          "is_correct": false,
+          "explanation": "誤り。それはVPC Flow LogsやVPC Reachability Analyzerなどの領域。"
+        }
       ],
       "explanation": "CloudTrailのMulti-region trailは1つのトレイル定義で全リージョンのAPIイベントをキャプチャする機能。新規にAWSが追加するリージョンも自動的に含まれるためモニタリング漏れがない。Single-region trailと比べて運用効率が高く、AWSのベストプラクティスとして推奨される。Organization Trailと組み合わせれば「全アカウント×全リージョン」が単一トレイルでカバーできる。",
       "references": [
-        {"title": "Working with multiple Regions", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-multiple-regions"}
+        {
+          "title": "Working with multiple Regions",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-multiple-regions"
+        }
       ],
-      "tags": ["cloudtrail", "multi-region", "best-practice"],
+      "tags": [
+        "cloudtrail",
+        "multi-region",
+        "best-practice"
+      ],
       "common_mistakes": [
         "Multi-regionとOrganization Trailを混同する",
         "新規リージョンの自動カバーを知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-027",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "AWS Config",
       "subtopic": "Remediation",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業企業のセキュリティチームは、Configルールでパブリックアクセス可能なS3バケットを検出した際、自動的にBlock Public Access設定を有効化したい。最もシンプルな実装は？",
       "options": [
-        {"id": "A", "text": "Configルールに Automatic Remediation を構成し、SSM Automationドキュメント AWS-DisableS3BucketPublicReadWrite を実行する", "is_correct": true, "explanation": "正解。Configの Auto Remediation はSSM Automationドキュメントを呼び出して非準拠リソースを自動修復できる。AWS提供ドキュメントが豊富にある。"},
-        {"id": "B", "text": "EventBridgeでConfigイベントを受信しLambdaを書く", "is_correct": false, "explanation": "実装可能だがConfigの Auto Remediation 機能で十分なケースが多い。"},
-        {"id": "C", "text": "Security Hubのカスタムアクションを構成する", "is_correct": false, "explanation": "Security Hubカスタムアクションは手動操作トリガー型で、自動修復はできない。"},
-        {"id": "D", "text": "AWS WAFでパブリックアクセスをブロックする", "is_correct": false, "explanation": "WAFはWeb層でS3バケットポリシーには影響しない。"}
+        {
+          "id": "A",
+          "text": "Security Hubのカスタムアクションを構成する",
+          "is_correct": false,
+          "explanation": "Security Hubカスタムアクションは手動操作トリガー型で、自動修復はできない。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridgeでConfigイベントを受信しLambdaを書く",
+          "is_correct": false,
+          "explanation": "実装可能だがConfigの Auto Remediation 機能で十分なケースが多い。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAFでパブリックアクセスをブロックする",
+          "is_correct": false,
+          "explanation": "WAFはWeb層でS3バケットポリシーには影響しない。"
+        },
+        {
+          "id": "D",
+          "text": "Configルールに Automatic Remediation を構成し、SSM Automationドキュメント AWS-DisableS3BucketPublicReadWrite を実行する",
+          "is_correct": true,
+          "explanation": "正解。Configの Auto Remediation はSSM Automationドキュメントを呼び出して非準拠リソースを自動修復できる。AWS提供ドキュメントが豊富にある。"
+        }
       ],
       "explanation": "AWS Configの Automatic Remediation は、ルールが非準拠を検出した際に自動的にSSM Automationドキュメントを実行する機能。AWSは多数の修復用Automationドキュメント（AWS-DisableS3BucketPublicReadWrite、AWS-EnableCloudTrailLogFileValidation など）を提供しており、コード不要で標準的な是正ができる。再試行や手動承認、リソースタイプ別パラメータも構成可能。",
       "references": [
-        {"title": "Remediating noncompliant AWS resources by AWS Config rules", "url": "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"}
+        {
+          "title": "Remediating noncompliant AWS resources by AWS Config rules",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"
+        }
       ],
-      "tags": ["aws-config", "remediation", "ssm-automation", "s3-block-public-access", "manufacturing"],
+      "tags": [
+        "aws-config",
+        "remediation",
+        "ssm-automation",
+        "s3-block-public-access",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "EventBridge + Lambda で自作してしまう",
         "Security Hubカスタムアクションが自動化と誤解",
         "SSM Automationドキュメントの存在を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-028",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "VPC Flow Logs",
       "subtopic": "Limitations",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "VPC Flow Logsで「記録されない」通信パターンに該当するのはどれか？（複数選択：2つ選びなさい）",
       "options": [
-        {"id": "A", "text": "Amazon DNS（VPC内のリゾルバ）への問い合わせ", "is_correct": true, "explanation": "正解。Amazon DNSサーバーへのDNSクエリはVPC Flow Logsに記録されない。代わりにRoute 53 Resolver Query Loggingを使う。"},
-        {"id": "B", "text": "DHCPトラフィック", "is_correct": true, "explanation": "正解。DHCP関連トラフィックはVPC Flow Logsに記録されない仕様。"},
-        {"id": "C", "text": "EC2インスタンス間のTCP通信", "is_correct": false, "explanation": "誤り。EC2間TCP/UDP通信はFlow Logsに記録される。"},
-        {"id": "D", "text": "NAT Gatewayを経由したインターネット通信", "is_correct": false, "explanation": "誤り。NAT Gateway経由の通信もENI単位で記録される。"}
+        {
+          "id": "A",
+          "text": "EC2インスタンス間のTCP通信",
+          "is_correct": false,
+          "explanation": "誤り。EC2間TCP/UDP通信はFlow Logsに記録される。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon DNS（VPC内のリゾルバ）への問い合わせ",
+          "is_correct": true,
+          "explanation": "正解。Amazon DNSサーバーへのDNSクエリはVPC Flow Logsに記録されない。代わりにRoute 53 Resolver Query Loggingを使う。"
+        },
+        {
+          "id": "C",
+          "text": "DHCPトラフィック",
+          "is_correct": true,
+          "explanation": "正解。DHCP関連トラフィックはVPC Flow Logsに記録されない仕様。"
+        },
+        {
+          "id": "D",
+          "text": "NAT Gatewayを経由したインターネット通信",
+          "is_correct": false,
+          "explanation": "誤り。NAT Gateway経由の通信もENI単位で記録される。"
+        }
       ],
       "explanation": "VPC Flow Logsには記録されないトラフィックがある：(1) Amazon DNSサーバーへのリクエスト（ただしカスタムDNSサーバーへのクエリは記録される）、(2) Windowsライセンス用Amazonサーバーへの通信、(3) インスタンスメタデータサービス（IMDS, 169.254.169.254）、(4) Amazon Time Sync（169.254.169.123）、(5) DHCP、(6) 予約VPCルーターへの通信、(7) ミラーENIから宛先への通信。DNSクエリの監査が必要な場合はRoute 53 Resolver Query Loggingを併用。",
       "references": [
-        {"title": "Flow log limitations", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-limitations"}
+        {
+          "title": "Flow log limitations",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-limitations"
+        }
       ],
-      "tags": ["vpc-flow-logs", "limitations", "route53-resolver-logs", "dns"],
+      "tags": [
+        "vpc-flow-logs",
+        "limitations",
+        "route53-resolver-logs",
+        "dns"
+      ],
       "common_mistakes": [
         "Flow LogsがすべてのVPC内通信を記録すると思い込む",
         "DNSクエリの監査をFlow Logsで実施しようとする",
         "IMDSアクセスがFlow Logsに記録されると誤解"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-029",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudTrail Lake",
       "subtopic": "Federated query",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある教育SaaSのセキュリティチームがCloudTrail Lakeに加え、AthenaやQuickSightからもイベントデータを共有解析したい。最も標準的な統合方法は？",
       "options": [
-        {"id": "A", "text": "イベントデータストアでFederationを有効化し、Glue Data Catalogに公開する", "is_correct": true, "explanation": "正解。CloudTrail LakeのFederation機能でイベントデータストアをGlue Data Catalogに公開すると、Athena、QuickSight、Redshift Spectrum、EMR などGlue互換サービスから読み取り可能になる。"},
-        {"id": "B", "text": "CloudTrail LakeからS3に毎時エクスポートしてAthenaでクエリする", "is_correct": false, "explanation": "Lake Federationでよりシンプルかつコスト効率良く実現可能。"},
-        {"id": "C", "text": "Lambda関数でCloudTrail Lake APIを定期実行しS3に保存", "is_correct": false, "explanation": "Federationによりカスタム実装は不要。"},
-        {"id": "D", "text": "Security LakeへのODBC接続を構成する", "is_correct": false, "explanation": "Security Lakeとは別サービス。CloudTrail LakeはFederation機能でGlue連携する。"}
+        {
+          "id": "A",
+          "text": "イベントデータストアでFederationを有効化し、Glue Data Catalogに公開する",
+          "is_correct": true,
+          "explanation": "正解。CloudTrail LakeのFederation機能でイベントデータストアをGlue Data Catalogに公開すると、Athena、QuickSight、Redshift Spectrum、EMR などGlue互換サービスから読み取り可能になる。"
+        },
+        {
+          "id": "B",
+          "text": "Security LakeへのODBC接続を構成する",
+          "is_correct": false,
+          "explanation": "Security Lakeとは別サービス。CloudTrail LakeはFederation機能でGlue連携する。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail LakeからS3に毎時エクスポートしてAthenaでクエリする",
+          "is_correct": false,
+          "explanation": "Lake Federationでよりシンプルかつコスト効率良く実現可能。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda関数でCloudTrail Lake APIを定期実行しS3に保存",
+          "is_correct": false,
+          "explanation": "Federationによりカスタム実装は不要。"
+        }
       ],
       "explanation": "CloudTrail Lake Federation は、イベントデータストアのデータをAWS Glue Data Catalogに公開する機能。これによりAthena、QuickSight、Redshift Spectrum、EMR、Apache Sparkなどの分析ツールから直接クエリできる。元データはCloudTrail Lake内に留まるため重複保管不要。Athenaワークグループや既存BIダッシュボードへの統合が容易。",
       "references": [
-        {"title": "Federate an event data store", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html"}
+        {
+          "title": "Federate an event data store",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html"
+        }
       ],
-      "tags": ["cloudtrail-lake", "federation", "glue-data-catalog", "athena", "education"],
+      "tags": [
+        "cloudtrail-lake",
+        "federation",
+        "glue-data-catalog",
+        "athena",
+        "education"
+      ],
       "common_mistakes": [
         "Federation機能の存在を知らない",
         "Security LakeとCloudTrail Lakeを混同する",
         "S3エクスポートが必須と思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-030",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Real-time analytics",
       "subtopic": "OpenSearch Service integration",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "あるFinTech企業がVPC Flow LogsとCloudTrailを統合的にOpenSearch Serviceに取り込み、Kibanaダッシュボードでリアルタイムに可視化したい。耐障害性とフルマネージドを最重視した構成は？",
       "options": [
-        {"id": "A", "text": "VPC Flow Logs と CloudTrail → CloudWatch Logs → サブスクリプションフィルター → Kinesis Data Firehose → OpenSearch Service（S3バックアップ有効）", "is_correct": true, "explanation": "正解。FirehoseはOpenSearch Service宛配信をネイティブサポートし、配信失敗時のS3バックアップ、自動リトライ、暗号化、バッファリング、データ変換 Lambda 統合などを提供。"},
-        {"id": "B", "text": "VPC Flow LogsとCloudTrailをS3に保存し、OpenSearch Ingestion Pipelineで継続インジェスト", "is_correct": false, "explanation": "OpenSearch Ingestion Pipelineも選択肢だが、S3 → OpenSearchはバッチ的処理になりリアルタイム性で劣る。"},
-        {"id": "C", "text": "Lambda関数を10秒間隔でCRON実行し、CloudWatch Logsをポーリング → OpenSearch", "is_correct": false, "explanation": "10秒間隔でも遅延があり、自前実装でリトライやバックアップを書く必要がある。"},
-        {"id": "D", "text": "EC2上にFluent Bitエージェントを立てて自前で集約", "is_correct": false, "explanation": "AWSサービスログをFluent Bitで取得することは標準的でなく、運用負荷が高い。"}
+        {
+          "id": "A",
+          "text": "Lambda関数を10秒間隔でCRON実行し、CloudWatch Logsをポーリング → OpenSearch",
+          "is_correct": false,
+          "explanation": "10秒間隔でも遅延があり、自前実装でリトライやバックアップを書く必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "VPC Flow Logs と CloudTrail → CloudWatch Logs → サブスクリプションフィルター → Kinesis Data Firehose → OpenSearch Service（S3バックアップ有効）",
+          "is_correct": true,
+          "explanation": "正解。FirehoseはOpenSearch Service宛配信をネイティブサポートし、配信失敗時のS3バックアップ、自動リトライ、暗号化、バッファリング、データ変換 Lambda 統合などを提供。"
+        },
+        {
+          "id": "C",
+          "text": "EC2上にFluent Bitエージェントを立てて自前で集約",
+          "is_correct": false,
+          "explanation": "AWSサービスログをFluent Bitで取得することは標準的でなく、運用負荷が高い。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Flow LogsとCloudTrailをS3に保存し、OpenSearch Ingestion Pipelineで継続インジェスト",
+          "is_correct": false,
+          "explanation": "OpenSearch Ingestion Pipelineも選択肢だが、S3 → OpenSearchはバッチ的処理になりリアルタイム性で劣る。"
+        }
       ],
       "explanation": "リアルタイムログ可視化のフルマネージド標準パターンは「CloudWatch Logs サブスクリプションフィルター → Kinesis Data Firehose → OpenSearch Service」。FirehoseはOpenSearch Service direct delivery をサポートし、配信失敗時にS3にバックアップを取る、Lambda 関数でデータ変換可能、自動リトライ、転送中暗号化（HTTPS）、保管時暗号化（KMS）を全て自動で提供する。",
       "references": [
-        {"title": "Send streaming data to Amazon OpenSearch Service", "url": "https://docs.aws.amazon.com/firehose/latest/dev/create-destination.html#create-destination-elasticsearch"}
+        {
+          "title": "Send streaming data to Amazon OpenSearch Service",
+          "url": "https://docs.aws.amazon.com/firehose/latest/dev/create-destination.html#create-destination-elasticsearch"
+        }
       ],
-      "tags": ["firehose", "opensearch", "real-time-analytics", "kibana", "fintech"],
+      "tags": [
+        "firehose",
+        "opensearch",
+        "real-time-analytics",
+        "kibana",
+        "fintech"
+      ],
       "common_mistakes": [
         "FirehoseのOpenSearchネイティブ送信先を知らない",
         "CRONポーリングをリアルタイム処理と誤解",
         "S3バックアップなしの構成で配信失敗時にデータロスする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-031",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "CloudWatch Alarms",
       "subtopic": "Composite alarms",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある医療SaaSでは、複数のセキュリティメトリクス（IAMポリシー変更、ルートログイン、KMSキー削除予約）が個別にAlarmで通知されている。問題は「同時多発的に複数Alarmが発火する場合に、深刻度の高い複合インシデントとして1つの通知に集約したい」こと。最適な実装は？",
       "options": [
-        {"id": "A", "text": "CloudWatch Composite Alarmで複数Alarmの組み合わせ条件（ANDやOR、ALARM/OK状態の組み合わせ）を定義し、それを単一の通知に紐づける", "is_correct": true, "explanation": "正解。Composite AlarmはAlarm rule言語で「ALARM(arn1) AND ALARM(arn2) OR ALARM(arn3)」のような複合条件を定義でき、個別Alarmsの通知を抑制（Suppressor Alarm）して集約通知を出すことができる。"},
-        {"id": "B", "text": "Lambdaで複数AlarmのState Changeを購読し、独自集約ロジックを書く", "is_correct": false, "explanation": "実装可能だがComposite Alarm機能の再実装になる。"},
-        {"id": "C", "text": "Anomaly Detection Alarmで全部置き換える", "is_correct": false, "explanation": "Anomaly Detectionは1メトリクスの統計的異常検知で、複数Alarm集約とは異なる目的。"},
-        {"id": "D", "text": "Slackチャネルで個別通知を受け、人手で判断する", "is_correct": false, "explanation": "アラート疲労を招く。自動集約が必要。"}
+        {
+          "id": "A",
+          "text": "Lambdaで複数AlarmのState Changeを購読し、独自集約ロジックを書く",
+          "is_correct": false,
+          "explanation": "実装可能だがComposite Alarm機能の再実装になる。"
+        },
+        {
+          "id": "B",
+          "text": "Anomaly Detection Alarmで全部置き換える",
+          "is_correct": false,
+          "explanation": "Anomaly Detectionは1メトリクスの統計的異常検知で、複数Alarm集約とは異なる目的。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Composite Alarmで複数Alarmの組み合わせ条件（ANDやOR、ALARM/OK状態の組み合わせ）を定義し、それを単一の通知に紐づける",
+          "is_correct": true,
+          "explanation": "正解。Composite AlarmはAlarm rule言語で「ALARM(arn1) AND ALARM(arn2) OR ALARM(arn3)」のような複合条件を定義でき、個別Alarmsの通知を抑制（Suppressor Alarm）して集約通知を出すことができる。"
+        },
+        {
+          "id": "D",
+          "text": "Slackチャネルで個別通知を受け、人手で判断する",
+          "is_correct": false,
+          "explanation": "アラート疲労を招く。自動集約が必要。"
+        }
       ],
       "explanation": "CloudWatch Composite Alarmは複数の標準Alarmの状態を論理式で組み合わせ、複合インシデントを単一Alarmとして発火させる機能。Alarm rule言語で ALARM(arn) / OK(arn) / INSUFFICIENT_DATA(arn) と AND/OR/NOT を組み合わせて評価する。Suppressor Alarmと組み合わせると個別Alarmの通知を抑制し、Composite側だけ通知できる。アラート疲労（alert fatigue）対策として有効。",
       "references": [
-        {"title": "Composite alarms", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm_How_To.html"}
+        {
+          "title": "Composite alarms",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm_How_To.html"
+        }
       ],
-      "tags": ["cloudwatch-alarms", "composite-alarm", "alert-fatigue", "healthcare"],
+      "tags": [
+        "cloudwatch-alarms",
+        "composite-alarm",
+        "alert-fatigue",
+        "healthcare"
+      ],
       "common_mistakes": [
         "Composite Alarmの存在を知らずLambdaで自作",
         "Anomaly Detectionで集約しようとする",
         "Suppressor Alarmで通知抑制ができることを知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-032",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "S3 Server Access Logs",
       "subtopic": "Configuration",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "S3 Server Access Logsについて正しい説明はどれか？",
       "options": [
-        {"id": "A", "text": "ターゲットバケットは同一リージョン内の別バケット（または同一バケット）で、ログ送信元バケットの所有者と同一AWSアカウントに属する必要がある", "is_correct": true, "explanation": "正解。S3 Server Access Logsはターゲットバケットがソースと同一リージョン・同一アカウントである必要がある。配信遅延は数時間あり得る。"},
-        {"id": "B", "text": "リアルタイム配信される（数秒以内）", "is_correct": false, "explanation": "誤り。配信は best-effort で数時間遅れる場合がある。"},
-        {"id": "C", "text": "ターゲットバケットはクロスリージョン・クロスアカウント任意で指定できる", "is_correct": false, "explanation": "誤り。同一リージョン・同一アカウント要件がある。"},
-        {"id": "D", "text": "IAMロールARNが必ず記録される", "is_correct": false, "explanation": "誤り。Server Access LogsのRequester情報は限定的で、IAM Roleの完全ARNは記録されないことが多い。詳細監査にはCloudTrail Data Eventsを使う。"}
+        {
+          "id": "A",
+          "text": "IAMロールARNが必ず記録される",
+          "is_correct": false,
+          "explanation": "誤り。Server Access LogsのRequester情報は限定的で、IAM Roleの完全ARNは記録されないことが多い。詳細監査にはCloudTrail Data Eventsを使う。"
+        },
+        {
+          "id": "B",
+          "text": "ターゲットバケットはクロスリージョン・クロスアカウント任意で指定できる",
+          "is_correct": false,
+          "explanation": "誤り。同一リージョン・同一アカウント要件がある。"
+        },
+        {
+          "id": "C",
+          "text": "リアルタイム配信される（数秒以内）",
+          "is_correct": false,
+          "explanation": "誤り。配信は best-effort で数時間遅れる場合がある。"
+        },
+        {
+          "id": "D",
+          "text": "ターゲットバケットは同一リージョン内の別バケット（または同一バケット）で、ログ送信元バケットの所有者と同一AWSアカウントに属する必要がある",
+          "is_correct": true,
+          "explanation": "正解。S3 Server Access Logsはターゲットバケットがソースと同一リージョン・同一アカウントである必要がある。配信遅延は数時間あり得る。"
+        }
       ],
       "explanation": "S3 Server Access Logsは無料だが制約が多い：(1) ターゲットバケットは同一リージョン・同一アカウント、(2) 配信遅延は数時間（best-effort）、(3) Requester情報は限定的、(4) ログ形式は固定。詳細な操作監査・リアルタイム要件・クロスアカウントが必要な場合は CloudTrail Data Events を選ぶ。両者の組み合わせも可能。",
       "references": [
-        {"title": "Logging requests using server access logging", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html"}
+        {
+          "title": "Logging requests using server access logging",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html"
+        }
       ],
-      "tags": ["s3-server-access-logs", "logging", "limitations"],
+      "tags": [
+        "s3-server-access-logs",
+        "logging",
+        "limitations"
+      ],
       "common_mistakes": [
         "Server Access Logsをリアルタイム監査と誤解",
         "クロスアカウントターゲットを指定しようとする",
         "Server Access LogsとCloudTrail Data Eventsを混同"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-033",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Logging architecture",
       "subtopic": "Design synthesis",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "あるFinTech企業（Organizations配下60アカウント）の最高セキュリティ責任者から「グリーンフィールドでロギング基盤を新規設計せよ」と指示があった。要件：①全API操作の改ざん不能な長期保管（10年）、②全アカウント・全リージョンの自動カバー、③SQLでの即時クエリ、④S3アクセスのIAM単位監査、⑤VPC内通信のフォレンジック、⑥準リアルタイムの異常検知。どの組み合わせが最適か？",
       "options": [
-        {"id": "A", "text": "Organization Trail (CloudTrail Lake、改ざん検証有効、10年保持) + S3 Data Events (重要バケット) + VPC Flow Logs (S3+Athena) + CloudTrail Insights + GuardDuty + Security Hub", "is_correct": true, "explanation": "正解。Organization TrailをCloudTrail Lakeに送ることで①②③をカバー、S3 Data Eventsで④、VPC Flow LogsでHealth Athenaで⑤、CloudTrail InsightsとGuardDutyで⑥を満たす。Security Hubは findings 集約。"},
-        {"id": "B", "text": "各アカウントで個別CloudTrail + 各アカウントS3バケットでログ保管 + Lambda集約", "is_correct": false, "explanation": "②自動カバーと③即時クエリの要件を満たさず運用負荷が高い。"},
-        {"id": "C", "text": "CloudWatch Logsに全ログを送信し、Logs Insightsで10年保持", "is_correct": false, "explanation": "コスト過大、SQLサポートなし、改ざん検証機能もLake未満。"},
-        {"id": "D", "text": "S3 Server Access LogsとVPC Flow Logsのみ", "is_correct": false, "explanation": "①CloudTrail操作監査、③SQL即時クエリ、⑥リアルタイム検知の要件を満たさない。"}
+        {
+          "id": "A",
+          "text": "Organization Trail (CloudTrail Lake、改ざん検証有効、10年保持) + S3 Data Events (重要バケット) + VPC Flow Logs (S3+Athena) + CloudTrail Insights + GuardDuty + Security Hub",
+          "is_correct": true,
+          "explanation": "正解。Organization TrailをCloudTrail Lakeに送ることで①②③をカバー、S3 Data Eventsで④、VPC Flow LogsでHealth Athenaで⑤、CloudTrail InsightsとGuardDutyで⑥を満たす。Security Hubは findings 集約。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Logsに全ログを送信し、Logs Insightsで10年保持",
+          "is_correct": false,
+          "explanation": "コスト過大、SQLサポートなし、改ざん検証機能もLake未満。"
+        },
+        {
+          "id": "C",
+          "text": "各アカウントで個別CloudTrail + 各アカウントS3バケットでログ保管 + Lambda集約",
+          "is_correct": false,
+          "explanation": "②自動カバーと③即時クエリの要件を満たさず運用負荷が高い。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Server Access LogsとVPC Flow Logsのみ",
+          "is_correct": false,
+          "explanation": "①CloudTrail操作監査、③SQL即時クエリ、⑥リアルタイム検知の要件を満たさない。"
+        }
       ],
       "explanation": "FinTechグリーンフィールドのロギング基盤の典型構成：(1) Organization Trail を CloudTrail Lake (10年保持、改ざん検証有効) で集約 → 改ざん不能な長期API監査と即時SQLクエリ。(2) S3 Data Events を Advanced selector で重要バケットに限定して有効化 → IAM単位の細粒度監査。(3) VPC Flow Logs を S3 (Parquet) に Partition Projection で配置 → Athenaで効率的なフォレンジック。(4) CloudTrail Insights + GuardDuty Extended Threat Detection → 準リアルタイム異常検知。(5) Security Hub で findings 集約。この組み合わせがエンタープライズ標準。",
       "references": [
-        {"title": "Logging strategies for security and audit", "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-security-best-practices/aws-security-best-practices.html"},
-        {"title": "AWS Security Reference Architecture", "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html"}
+        {
+          "title": "Logging strategies for security and audit",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-security-best-practices/aws-security-best-practices.html"
+        },
+        {
+          "title": "AWS Security Reference Architecture",
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html"
+        }
       ],
-      "tags": ["architecture", "greenfield", "organization-trail", "cloudtrail-lake", "fintech"],
+      "tags": [
+        "architecture",
+        "greenfield",
+        "organization-trail",
+        "cloudtrail-lake",
+        "fintech"
+      ],
       "common_mistakes": [
         "1つのサービスで全要件を満たそうとする",
         "Organizations統合とMulti-region trail を活用せず個別構築",
         "CloudWatch Logsでの長期保持を選んでコスト爆発"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-034",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Monitoring automation",
       "subtopic": "EventBridge integration",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある教育SaaSでセキュリティ自動化を強化したい。要件：「特定のIAM Policy変更（AdministratorAccess付与など）がCloudTrailに記録されたら、即座にステップ関数で承認ワークフローを起動する」。最も適切かつシンプルな実装は？（複数選択：2つ選びなさい）",
       "options": [
-        {"id": "A", "text": "EventBridgeルールでイベントパターン（source: aws.iam, eventName: AttachUserPolicy/AttachRolePolicyなど）を定義し、ターゲットにStep Functionsを指定する", "is_correct": true, "explanation": "正解。Management EventsはEventBridgeにリアルタイム配信されるため、イベントパターンでフィルタしターゲットにStep Functionsを直接指定できる。Lambda不要のサーバーレス構成。"},
-        {"id": "B", "text": "EventBridgeイベントパターンに detail.requestParameters.policyArn の値を含めて AdministratorAccess を絞り込む", "is_correct": true, "explanation": "正解。EventBridgeイベントパターンはJSONフィールドのコンテンツフィルタリングに対応するため、policyArnなどのリクエストパラメータでさらに絞り込み可能。"},
-        {"id": "C", "text": "CloudWatch Logsのmetric filterで検出してCloudWatch Alarmで通知する", "is_correct": false, "explanation": "通知はできるがStep Functionsを起動するにはAlarm→SNS→Lambda経由になり冗長。EventBridge直結が標準。"},
-        {"id": "D", "text": "CloudTrail Lakeで定期SQLクエリを実行し、結果に応じてStep Functionsを起動する", "is_correct": false, "explanation": "Lakeはバッチ向き。リアルタイムイベント駆動はEventBridgeが標準。"}
+        {
+          "id": "A",
+          "text": "EventBridgeルールでイベントパターン（source: aws.iam, eventName: AttachUserPolicy/AttachRolePolicyなど）を定義し、ターゲットにStep Functionsを指定する",
+          "is_correct": true,
+          "explanation": "正解。Management EventsはEventBridgeにリアルタイム配信されるため、イベントパターンでフィルタしターゲットにStep Functionsを直接指定できる。Lambda不要のサーバーレス構成。"
+        },
+        {
+          "id": "B",
+          "text": "CloudTrail Lakeで定期SQLクエリを実行し、結果に応じてStep Functionsを起動する",
+          "is_correct": false,
+          "explanation": "Lakeはバッチ向き。リアルタイムイベント駆動はEventBridgeが標準。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridgeイベントパターンに detail.requestParameters.policyArn の値を含めて AdministratorAccess を絞り込む",
+          "is_correct": true,
+          "explanation": "正解。EventBridgeイベントパターンはJSONフィールドのコンテンツフィルタリングに対応するため、policyArnなどのリクエストパラメータでさらに絞り込み可能。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Logsのmetric filterで検出してCloudWatch Alarmで通知する",
+          "is_correct": false,
+          "explanation": "通知はできるがStep Functionsを起動するにはAlarm→SNS→Lambda経由になり冗長。EventBridge直結が標準。"
+        }
       ],
       "explanation": "CloudTrailのManagement EventsはEventBridgeのデフォルトイベントバスにリアルタイム配信される。イベントパターンで source / detail-type / detail内の任意のJSONフィールドをフィルタでき、ターゲットにStep Functions、Lambda、SNS、SQS、Kinesis、EventBridge Pipes など多数を指定可能。Lambda不要のserverless自動化が組める。Data Eventsは2024年以降CloudTrail のオプションでEventBridgeへ送れるようになったが、Management EventsはネイティブにEventBridgeに流れる。",
       "references": [
-        {"title": "Use Amazon EventBridge with AWS CloudTrail", "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudwatch-logs-and-events.html"}
+        {
+          "title": "Use Amazon EventBridge with AWS CloudTrail",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudwatch-logs-and-events.html"
+        }
       ],
-      "tags": ["eventbridge", "iam", "step-functions", "automation", "education"],
+      "tags": [
+        "eventbridge",
+        "iam",
+        "step-functions",
+        "automation",
+        "education"
+      ],
       "common_mistakes": [
         "EventBridgeのコンテンツフィルタを知らずLambdaで自作",
         "metric filter経由で全部やろうとする",
         "Management Eventsの自動配信を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain2-035",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Security Logging and Monitoring", "weight_percent": 18},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Security Logging and Monitoring",
+        "weight_percent": 18
+      },
       "topic": "Athena",
       "subtopic": "Federated query and security",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ある製造業企業がAthenaでCloudTrailログをクエリしているが、開発チームのアナリストにDBAアカウント不要で「特定列のみマスクした安全な閲覧」を許可したい。最もシンプルな実装は？",
       "options": [
-        {"id": "A", "text": "AWS Lake Formation で Athenaテーブルに対して列レベルアクセス制御（column-level）または行フィルタを設定し、開発アナリストには機密列を非表示にする", "is_correct": true, "explanation": "正解。Lake Formation は Glue Catalogベースのテーブルに対し、列レベル・行レベル・タグベースのアクセス制御を提供する。AthenaはLake Formation連携でこれらを尊重する。"},
-        {"id": "B", "text": "S3バケットポリシーで列を非表示にする", "is_correct": false, "explanation": "誤り。S3バケットポリシーはオブジェクト単位の制御で、テーブル列レベルの制御は不可能。"},
-        {"id": "C", "text": "Athenaのワークグループに列マスキング機能を有効化する", "is_correct": false, "explanation": "誤り。Athenaワークグループ自体に列マスキング機能はない。Lake Formationを使う。"},
-        {"id": "D", "text": "Glueクローラーで機密列を除外する", "is_correct": false, "explanation": "誤り。Glueクローラーで列除外もできるが、別ユーザーには見せたい場合に対応できない。Lake Formationが用役者ごとの制御を提供。"}
+        {
+          "id": "A",
+          "text": "S3バケットポリシーで列を非表示にする",
+          "is_correct": false,
+          "explanation": "誤り。S3バケットポリシーはオブジェクト単位の制御で、テーブル列レベルの制御は不可能。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Lake Formation で Athenaテーブルに対して列レベルアクセス制御（column-level）または行フィルタを設定し、開発アナリストには機密列を非表示にする",
+          "is_correct": true,
+          "explanation": "正解。Lake Formation は Glue Catalogベースのテーブルに対し、列レベル・行レベル・タグベースのアクセス制御を提供する。AthenaはLake Formation連携でこれらを尊重する。"
+        },
+        {
+          "id": "C",
+          "text": "Athenaのワークグループに列マスキング機能を有効化する",
+          "is_correct": false,
+          "explanation": "誤り。Athenaワークグループ自体に列マスキング機能はない。Lake Formationを使う。"
+        },
+        {
+          "id": "D",
+          "text": "Glueクローラーで機密列を除外する",
+          "is_correct": false,
+          "explanation": "誤り。Glueクローラーで列除外もできるが、別ユーザーには見せたい場合に対応できない。Lake Formationが用役者ごとの制御を提供。"
+        }
       ],
       "explanation": "AWS Lake Formationは Glue Data Catalog 上のテーブルに対して、AWSアカウント・IAMプリンシパル単位で「テーブル/列/行/タグ」レベルのアクセス制御を実装するサービス。Athena/Redshift Spectrum/EMR/QuickSight などからの読み取りはLake Formationポリシーを尊重する。同じテーブルに対して「セキュリティチームには全列見せ、開発チームには機密列をマスク」のような分離が可能。CloudTrailテーブルや VPC Flow Logsテーブルの安全な共有解析に有効。",
       "references": [
-        {"title": "Lake Formation tag-based and fine-grained access control", "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html"}
+        {
+          "title": "Lake Formation tag-based and fine-grained access control",
+          "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html"
+        }
       ],
-      "tags": ["lake-formation", "athena", "column-level-security", "data-governance", "manufacturing"],
+      "tags": [
+        "lake-formation",
+        "athena",
+        "column-level-security",
+        "data-governance",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "S3バケットポリシーで列制御できると誤解",
         "AthenaワークグループにLake Formationの機能があると誤解",
         "Glueクローラーで全要件を満たそうとする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

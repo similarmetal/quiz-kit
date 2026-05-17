@@ -15,692 +15,2286 @@
     {
       "id": "mla-c01-domain2-001",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "SageMaker Built-in Algorithms",
       "subtopic": "XGBoost",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SageMaker Built-in Algorithm の中で、勾配ブースティング決定木に基づき、構造化された表形式データの分類・回帰タスクで広く使われるアルゴリズムはどれか？",
       "options": [
-        {"id": "A", "text": "Linear Learner", "is_correct": false, "explanation": "Linear Learnerは線形モデル（線形回帰・ロジスティック回帰）であり、ブースティング木ベースではない。"},
-        {"id": "B", "text": "XGBoost", "is_correct": true, "explanation": "正解。XGBoostは勾配ブースティング決定木の代表的実装で、SageMakerのBuilt-in Algorithmとして提供されている。"},
-        {"id": "C", "text": "DeepAR", "is_correct": false, "explanation": "DeepARはRNNベースの時系列予測アルゴリズムで、構造化データ向けの汎用ブースティングではない。"},
-        {"id": "D", "text": "Factorization Machines", "is_correct": false, "explanation": "FMはレコメンドや高次元疎データ向けで、勾配ブースティング木ではない。"}
+        {
+          "id": "A",
+          "text": "XGBoost",
+          "is_correct": true,
+          "explanation": "正解。XGBoostは勾配ブースティング決定木の代表的実装で、SageMakerのBuilt-in Algorithmとして提供されている。"
+        },
+        {
+          "id": "B",
+          "text": "Linear Learner",
+          "is_correct": false,
+          "explanation": "Linear Learnerは線形モデル（線形回帰・ロジスティック回帰）であり、ブースティング木ベースではない。"
+        },
+        {
+          "id": "C",
+          "text": "DeepAR",
+          "is_correct": false,
+          "explanation": "DeepARはRNNベースの時系列予測アルゴリズムで、構造化データ向けの汎用ブースティングではない。"
+        },
+        {
+          "id": "D",
+          "text": "Factorization Machines",
+          "is_correct": false,
+          "explanation": "FMはレコメンドや高次元疎データ向けで、勾配ブースティング木ではない。"
+        }
       ],
       "explanation": "XGBoostは表形式データのKaggle等で長らく主流の勾配ブースティングアルゴリズム。SageMakerはオープンソース版XGBoostをBuilt-in Algorithmとして提供し、CSV/Parquet/libsvm入力に対応する。",
-      "references": [{"title": "XGBoost Algorithm", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html"}],
-      "tags": ["sagemaker", "built-in", "xgboost", "tabular"],
-      "common_mistakes": ["XGBoost と DeepAR を混同する", "Linear Learner がブースティング系と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "XGBoost Algorithm",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html"
+        }
+      ],
+      "tags": [
+        "sagemaker",
+        "built-in",
+        "xgboost",
+        "tabular"
+      ],
+      "common_mistakes": [
+        "XGBoost と DeepAR を混同する",
+        "Linear Learner がブースティング系と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-002",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Model Evaluation",
       "subtopic": "Confusion Matrix",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "二値分類モデルの混同行列で、実際は陽性であるサンプルを誤って陰性と予測した件数を表す指標はどれか？",
       "options": [
-        {"id": "A", "text": "True Positive (TP)", "is_correct": false, "explanation": "TPは陽性を正しく陽性と予測した件数。"},
-        {"id": "B", "text": "False Positive (FP)", "is_correct": false, "explanation": "FPは実際は陰性なのに陽性と予測した件数（Type I error）。"},
-        {"id": "C", "text": "False Negative (FN)", "is_correct": true, "explanation": "正解。FNは実際は陽性なのに陰性と予測した件数（Type II error）。Recall低下の原因になる。"},
-        {"id": "D", "text": "True Negative (TN)", "is_correct": false, "explanation": "TNは陰性を正しく陰性と予測した件数。"}
+        {
+          "id": "A",
+          "text": "True Negative (TN)",
+          "is_correct": false,
+          "explanation": "TNは陰性を正しく陰性と予測した件数。"
+        },
+        {
+          "id": "B",
+          "text": "False Negative (FN)",
+          "is_correct": true,
+          "explanation": "正解。FNは実際は陽性なのに陰性と予測した件数（Type II error）。Recall低下の原因になる。"
+        },
+        {
+          "id": "C",
+          "text": "True Positive (TP)",
+          "is_correct": false,
+          "explanation": "TPは陽性を正しく陽性と予測した件数。"
+        },
+        {
+          "id": "D",
+          "text": "False Positive (FP)",
+          "is_correct": false,
+          "explanation": "FPは実際は陰性なのに陽性と予測した件数（Type I error）。"
+        }
       ],
       "explanation": "FN（False Negative）は「見逃し」であり、医療診断や不正検知などで特に重大な影響を与える。Recall = TP / (TP + FN) の分母に効くため、FNが多いとRecallが低下する。",
-      "references": [{"title": "Model Quality Metrics", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-metrics.html"}],
-      "tags": ["confusion-matrix", "metrics", "fn", "recall"],
-      "common_mistakes": ["FN と FP を逆に覚える", "Recall と Precision の分母を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Model Quality Metrics",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-metrics.html"
+        }
+      ],
+      "tags": [
+        "confusion-matrix",
+        "metrics",
+        "fn",
+        "recall"
+      ],
+      "common_mistakes": [
+        "FN と FP を逆に覚える",
+        "Recall と Precision の分母を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-003",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Hyperparameter Tuning",
       "subtopic": "AMT Strategies",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SageMaker Automatic Model Tuning（AMT）が提供する探索戦略のうち、低性能なジョブを早期停止しリソースを別の有望な構成に振り向けるものはどれか？",
       "options": [
-        {"id": "A", "text": "Grid Search", "is_correct": false, "explanation": "Grid Searchは指定値の全組み合わせを試す全探索で、早期停止の概念を持たない。"},
-        {"id": "B", "text": "Random Search", "is_correct": false, "explanation": "Random Searchは探索空間からランダムに点を取るが、早期停止戦略は内蔵されない。"},
-        {"id": "C", "text": "Bayesian Optimization", "is_correct": false, "explanation": "Bayesian は過去結果から次の有望な点を選ぶ手法。AMTには early stopping の機能はあるが、Hyperbandほど積極的にリソース再配分しない。"},
-        {"id": "D", "text": "Hyperband", "is_correct": true, "explanation": "正解。Hyperbandは複数の構成を少ないリソースで並行評価し、性能の悪いものを段階的に打ち切る successive halving 系の戦略。"}
+        {
+          "id": "A",
+          "text": "Grid Search",
+          "is_correct": false,
+          "explanation": "Grid Searchは指定値の全組み合わせを試す全探索で、早期停止の概念を持たない。"
+        },
+        {
+          "id": "B",
+          "text": "Random Search",
+          "is_correct": false,
+          "explanation": "Random Searchは探索空間からランダムに点を取るが、早期停止戦略は内蔵されない。"
+        },
+        {
+          "id": "C",
+          "text": "Hyperband",
+          "is_correct": true,
+          "explanation": "正解。Hyperbandは複数の構成を少ないリソースで並行評価し、性能の悪いものを段階的に打ち切る successive halving 系の戦略。"
+        },
+        {
+          "id": "D",
+          "text": "Bayesian Optimization",
+          "is_correct": false,
+          "explanation": "Bayesian は過去結果から次の有望な点を選ぶ手法。AMTには early stopping の機能はあるが、Hyperbandほど積極的にリソース再配分しない。"
+        }
       ],
       "explanation": "SageMaker AMT は Bayesian / Random / Grid / Hyperband の4戦略を提供する。Hyperbandは early stopping を組み込んだ手法で、深層学習のように学習途中でも性能が見える場合に効率的。",
-      "references": [{"title": "How Hyperparameter Tuning Works", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html"}],
-      "tags": ["amt", "hyperparameter-tuning", "hyperband"],
-      "common_mistakes": ["Bayesian と Hyperband を混同する", "Hyperband が深層学習以外で使えないと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "How Hyperparameter Tuning Works",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html"
+        }
+      ],
+      "tags": [
+        "amt",
+        "hyperparameter-tuning",
+        "hyperband"
+      ],
+      "common_mistakes": [
+        "Bayesian と Hyperband を混同する",
+        "Hyperband が深層学習以外で使えないと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-004",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Algorithm Selection",
       "subtopic": "Unsupervised Learning",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
-      "stem": "東海地方の製造業企業が、生産ラインのセンサーデータから「通常とは異なる挙動」を教師ラベルなしで検出したい。最も適切なアルゴリズム種別は？",
+      "stem": "ある製造業企業が、生産ラインのセンサーデータから「通常とは異なる挙動」を教師ラベルなしで検出したい。最も適切なアルゴリズム種別は？",
       "options": [
-        {"id": "A", "text": "教師あり分類（XGBoost）", "is_correct": false, "explanation": "教師あり分類は正常/異常のラベル付きデータが必要。本シナリオではラベルがない。"},
-        {"id": "B", "text": "教師なし異常検知（Random Cut Forest など）", "is_correct": true, "explanation": "正解。Random Cut Forest（RCF）はSageMaker Built-inの異常検知アルゴリズムで、ラベルなしで時系列・多変量データの異常を検出できる。"},
-        {"id": "C", "text": "強化学習（RL）", "is_correct": false, "explanation": "RLは報酬最大化を目的とする手法で、観測のみからの異常検知には適さない。"},
-        {"id": "D", "text": "回帰（Linear Regression）", "is_correct": false, "explanation": "回帰は連続値予測のための手法であり、異常スコアの算出が主目的ではない。"}
+        {
+          "id": "A",
+          "text": "強化学習（RL）",
+          "is_correct": false,
+          "explanation": "RLは報酬最大化を目的とする手法で、観測のみからの異常検知には適さない。"
+        },
+        {
+          "id": "B",
+          "text": "教師あり分類（XGBoost）",
+          "is_correct": false,
+          "explanation": "教師あり分類は正常/異常のラベル付きデータが必要。本シナリオではラベルがない。"
+        },
+        {
+          "id": "C",
+          "text": "回帰（Linear Regression）",
+          "is_correct": false,
+          "explanation": "回帰は連続値予測のための手法であり、異常スコアの算出が主目的ではない。"
+        },
+        {
+          "id": "D",
+          "text": "教師なし異常検知（Random Cut Forest など）",
+          "is_correct": true,
+          "explanation": "正解。Random Cut Forest（RCF）はSageMaker Built-inの異常検知アルゴリズムで、ラベルなしで時系列・多変量データの異常を検出できる。"
+        }
       ],
       "explanation": "ラベルがない状況での外れ値検出は教師なし異常検知の典型的ユースケース。SageMaker Built-inのRandom Cut Forest、IP Insightsや、Kinesis Data Analytics の RCF も製造IoTで広く使われる。",
-      "references": [{"title": "Random Cut Forest Algorithm", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html"}],
-      "tags": ["unsupervised", "anomaly-detection", "rcf", "manufacturing"],
-      "common_mistakes": ["ラベルなしで分類できると誤解", "回帰で異常を検出しようとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Random Cut Forest Algorithm",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html"
+        }
+      ],
+      "tags": [
+        "unsupervised",
+        "anomaly-detection",
+        "rcf",
+        "manufacturing"
+      ],
+      "common_mistakes": [
+        "ラベルなしで分類できると誤解",
+        "回帰で異常を検出しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-005",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "JumpStart",
       "subtopic": "Foundation Models",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "SaaSスタートアップが、社内ドキュメント検索向けに大規模言語モデルを素早く立ち上げたい。学習データは少なく、まずは事前学習済みモデルをそのまま試したい。SageMaker JumpStart の最も適切な使い方は？",
       "options": [
-        {"id": "A", "text": "JumpStart の foundation model を選択し、デプロイ用のサンプルノートブックでエンドポイントを作成する", "is_correct": true, "explanation": "正解。JumpStart はキュレーションされた事前学習済モデルをワンクリックに近い形でデプロイできる。"},
-        {"id": "B", "text": "Built-in Algorithm の Linear Learner で文書分類モデルを学習する", "is_correct": false, "explanation": "Linear Learner は線形モデルで、テキスト埋め込みやLLMの代替にはならない。"},
-        {"id": "C", "text": "EC2 上に独自の Transformer 実装を構築する", "is_correct": false, "explanation": "ゼロから構築するのは時間と専門知識を要し、JumpStart の利点を捨てる。"},
-        {"id": "D", "text": "Kinesis Data Analytics の組込みSQLで類似度検索を実装する", "is_correct": false, "explanation": "Kinesis Data Analytics はストリーム処理で、LLMやベクトル検索の機能を持たない。"}
+        {
+          "id": "A",
+          "text": "JumpStart の foundation model を選択し、デプロイ用のサンプルノートブックでエンドポイントを作成する",
+          "is_correct": true,
+          "explanation": "正解。JumpStart はキュレーションされた事前学習済モデルをワンクリックに近い形でデプロイできる。"
+        },
+        {
+          "id": "B",
+          "text": "Kinesis Data Analytics の組込みSQLで類似度検索を実装する",
+          "is_correct": false,
+          "explanation": "Kinesis Data Analytics はストリーム処理で、LLMやベクトル検索の機能を持たない。"
+        },
+        {
+          "id": "C",
+          "text": "Built-in Algorithm の Linear Learner で文書分類モデルを学習する",
+          "is_correct": false,
+          "explanation": "Linear Learner は線形モデルで、テキスト埋め込みやLLMの代替にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 上に独自の Transformer 実装を構築する",
+          "is_correct": false,
+          "explanation": "ゼロから構築するのは時間と専門知識を要し、JumpStart の利点を捨てる。"
+        }
       ],
       "explanation": "SageMaker JumpStart は Llama、Mistral、Falcon、Stable Diffusion など多数の foundation model をワンクリックでデプロイ・ファインチューニングできる。MLOps の初期 PoC を加速する標準的な選択肢。",
-      "references": [{"title": "Amazon SageMaker JumpStart", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html"}],
-      "tags": ["jumpstart", "foundation-model", "llm", "saas"],
-      "common_mistakes": ["JumpStart と Bedrock の役割を混同する", "Built-in Algorithm にLLMが含まれると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Amazon SageMaker JumpStart",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html"
+        }
+      ],
+      "tags": [
+        "jumpstart",
+        "foundation-model",
+        "llm",
+        "saas"
+      ],
+      "common_mistakes": [
+        "JumpStart と Bedrock の役割を混同する",
+        "Built-in Algorithm にLLMが含まれると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-006",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Overfitting",
       "subtopic": "Regularization",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "深層学習モデルが訓練データに対して 99% の精度を出すが、検証データでは 70% に留まっている。最も適切に問題を緩和する手法は？",
       "options": [
-        {"id": "A", "text": "学習率を 10 倍にする", "is_correct": false, "explanation": "学習率を上げても汎化性能は改善しない。むしろ収束を妨げる可能性がある。"},
-        {"id": "B", "text": "モデルの層を増やしてキャパシティを大きくする", "is_correct": false, "explanation": "キャパシティを増やすと過学習はさらに悪化する。"},
-        {"id": "C", "text": "Dropout や L2 正則化を導入し、early stopping を有効化する", "is_correct": true, "explanation": "正解。Dropout、weight decay (L2)、early stopping は過学習対策の代表的手法。"},
-        {"id": "D", "text": "バッチサイズを 1 にする", "is_correct": false, "explanation": "バッチサイズを極端に下げても汎化性能は保証されず、訓練が不安定になる。"}
+        {
+          "id": "A",
+          "text": "バッチサイズを 1 にする",
+          "is_correct": false,
+          "explanation": "バッチサイズを極端に下げても汎化性能は保証されず、訓練が不安定になる。"
+        },
+        {
+          "id": "B",
+          "text": "Dropout や L2 正則化を導入し、early stopping を有効化する",
+          "is_correct": true,
+          "explanation": "正解。Dropout、weight decay (L2)、early stopping は過学習対策の代表的手法。"
+        },
+        {
+          "id": "C",
+          "text": "学習率を 10 倍にする",
+          "is_correct": false,
+          "explanation": "学習率を上げても汎化性能は改善しない。むしろ収束を妨げる可能性がある。"
+        },
+        {
+          "id": "D",
+          "text": "モデルの層を増やしてキャパシティを大きくする",
+          "is_correct": false,
+          "explanation": "キャパシティを増やすと過学習はさらに悪化する。"
+        }
       ],
       "explanation": "訓練と検証の精度乖離は過学習の典型症状。Dropout（学習中にランダムにユニットを無効化）、L1/L2正則化（重みのペナルティ）、early stopping（検証ロス悪化で停止）、データ拡張、より多くの訓練データの追加が王道の対策。",
-      "references": [{"title": "Avoid Overfitting in Machine Learning", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html"}],
-      "tags": ["overfitting", "regularization", "dropout", "early-stopping"],
-      "common_mistakes": ["過学習に対してキャパシティを増やしてしまう", "学習率調整で過学習が解決すると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Avoid Overfitting in Machine Learning",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html"
+        }
+      ],
+      "tags": [
+        "overfitting",
+        "regularization",
+        "dropout",
+        "early-stopping"
+      ],
+      "common_mistakes": [
+        "過学習に対してキャパシティを増やしてしまう",
+        "学習率調整で過学習が解決すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-007",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Training Jobs",
       "subtopic": "Spot Training",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "コスト最適化を重視するチームが、SageMaker Training Job で Spot インスタンスを利用したい。中断耐性を確保するために必須の設定は？",
       "options": [
-        {"id": "A", "text": "学習スクリプトでチェックポイントを定期保存し、`CheckpointConfig.S3Uri` を指定する", "is_correct": true, "explanation": "正解。Spot 中断時に学習を再開できるようにチェックポイントをS3に書き出す必要がある。"},
-        {"id": "B", "text": "`MaxRuntimeInSeconds` を無制限に設定する", "is_correct": false, "explanation": "無制限設定はコスト管理を悪化させる。Spot自体の中断耐性とは無関係。"},
-        {"id": "C", "text": "EFS をマウントすれば自動的に再開できる", "is_correct": false, "explanation": "EFS にチェックポイントを置くことは可能だが「自動」ではなく、SageMakerの仕組みは S3 連携が標準。"},
-        {"id": "D", "text": "On-Demand と Spot を 50/50 に混在させる", "is_correct": false, "explanation": "そのような混在モードはSageMaker Training Job では存在しない。"}
+        {
+          "id": "A",
+          "text": "`MaxRuntimeInSeconds` を無制限に設定する",
+          "is_correct": false,
+          "explanation": "無制限設定はコスト管理を悪化させる。Spot自体の中断耐性とは無関係。"
+        },
+        {
+          "id": "B",
+          "text": "On-Demand と Spot を 50/50 に混在させる",
+          "is_correct": false,
+          "explanation": "そのような混在モードはSageMaker Training Job では存在しない。"
+        },
+        {
+          "id": "C",
+          "text": "学習スクリプトでチェックポイントを定期保存し、`CheckpointConfig.S3Uri` を指定する",
+          "is_correct": true,
+          "explanation": "正解。Spot 中断時に学習を再開できるようにチェックポイントをS3に書き出す必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "EFS をマウントすれば自動的に再開できる",
+          "is_correct": false,
+          "explanation": "EFS にチェックポイントを置くことは可能だが「自動」ではなく、SageMakerの仕組みは S3 連携が標準。"
+        }
       ],
       "explanation": "Managed Spot Training では `EnableManagedSpotTraining=true` と `CheckpointConfig` の組合せが必須。中断時はSageMakerが自動で別Spotを確保し、S3上のチェックポイントから学習を再開する。最大90%のコスト削減が見込める。",
-      "references": [{"title": "Use Managed Spot Training in Amazon SageMaker", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html"}],
-      "tags": ["training-job", "spot", "checkpointing", "cost"],
-      "common_mistakes": ["チェックポイントなしでSpotを使い学習やり直しになる", "MaxRuntimeとSpot耐性を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Use Managed Spot Training in Amazon SageMaker",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html"
+        }
+      ],
+      "tags": [
+        "training-job",
+        "spot",
+        "checkpointing",
+        "cost"
+      ],
+      "common_mistakes": [
+        "チェックポイントなしでSpotを使い学習やり直しになる",
+        "MaxRuntimeとSpot耐性を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-008",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Model Evaluation",
       "subtopic": "ROC AUC",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "FinTech企業がクレジットカード不正検知モデルの性能を比較している。陽性（不正）クラスは全体の 0.5% と極端に不均衡である。閾値非依存で全体的な識別能力を比較する指標として最適なのは？",
       "options": [
-        {"id": "A", "text": "Accuracy", "is_correct": false, "explanation": "極度の不均衡データではAccuracyは「全部陰性」と予測しても99.5%となり、識別能力を示さない。"},
-        {"id": "B", "text": "ROC AUC（あるいは PR AUC）", "is_correct": true, "explanation": "正解。AUC は閾値に依存せずモデルの順位付け能力を評価できる。特に不均衡データでは PR AUC（Average Precision）も併用すべき。"},
-        {"id": "C", "text": "RMSE", "is_correct": false, "explanation": "RMSEは回帰指標であり、二値分類には適さない。"},
-        {"id": "D", "text": "Mean Absolute Percentage Error (MAPE)", "is_correct": false, "explanation": "MAPEも回帰や予測誤差の指標で、分類のクラス識別能力を評価しない。"}
+        {
+          "id": "A",
+          "text": "RMSE",
+          "is_correct": false,
+          "explanation": "RMSEは回帰指標であり、二値分類には適さない。"
+        },
+        {
+          "id": "B",
+          "text": "Mean Absolute Percentage Error (MAPE)",
+          "is_correct": false,
+          "explanation": "MAPEも回帰や予測誤差の指標で、分類のクラス識別能力を評価しない。"
+        },
+        {
+          "id": "C",
+          "text": "Accuracy",
+          "is_correct": false,
+          "explanation": "極度の不均衡データではAccuracyは「全部陰性」と予測しても99.5%となり、識別能力を示さない。"
+        },
+        {
+          "id": "D",
+          "text": "ROC AUC（あるいは PR AUC）",
+          "is_correct": true,
+          "explanation": "正解。AUC は閾値に依存せずモデルの順位付け能力を評価できる。特に不均衡データでは PR AUC（Average Precision）も併用すべき。"
+        }
       ],
       "explanation": "不均衡データの分類モデル比較では、Accuracyは誤った判断を招く。AUC-ROC は陽性・陰性のスコア分布を全閾値で評価する指標。極端な不均衡では PR AUC（Precision-Recall曲線下面積）の方がより有意義であることもある。",
-      "references": [{"title": "Model Quality Metrics", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-metrics.html"}],
-      "tags": ["auc", "roc", "imbalanced", "fintech", "fraud"],
-      "common_mistakes": ["不均衡データでもAccuracyで比較してしまう", "ROC AUC と PR AUC の使い分けを知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Model Quality Metrics",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-metrics.html"
+        }
+      ],
+      "tags": [
+        "auc",
+        "roc",
+        "imbalanced",
+        "fintech",
+        "fraud"
+      ],
+      "common_mistakes": [
+        "不均衡データでもAccuracyで比較してしまう",
+        "ROC AUC と PR AUC の使い分けを知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-009",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Algorithm Selection",
       "subtopic": "Time Series",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "B2B SaaS企業が、複数顧客にまたがる需要時系列を一括で予測したい。共通パターンを学習しつつ、顧客ごとの予測値を出力したい。SageMakerで最も適切なアルゴリズムは？",
       "options": [
-        {"id": "A", "text": "Linear Learner", "is_correct": false, "explanation": "Linear Learnerは時系列の依存性を扱えない。"},
-        {"id": "B", "text": "K-Means", "is_correct": false, "explanation": "K-Meansはクラスタリングであり予測タスクには使わない。"},
-        {"id": "C", "text": "DeepAR", "is_correct": true, "explanation": "正解。DeepARはRNNベースの時系列予測アルゴリズムで、複数の関連する時系列を1モデルで学習し、顧客横断の共通パターンを捉えられる。"},
-        {"id": "D", "text": "PCA", "is_correct": false, "explanation": "PCAは次元削減であり、時系列予測ではない。"}
+        {
+          "id": "A",
+          "text": "DeepAR",
+          "is_correct": true,
+          "explanation": "正解。DeepARはRNNベースの時系列予測アルゴリズムで、複数の関連する時系列を1モデルで学習し、顧客横断の共通パターンを捉えられる。"
+        },
+        {
+          "id": "B",
+          "text": "Linear Learner",
+          "is_correct": false,
+          "explanation": "Linear Learnerは時系列の依存性を扱えない。"
+        },
+        {
+          "id": "C",
+          "text": "K-Means",
+          "is_correct": false,
+          "explanation": "K-Meansはクラスタリングであり予測タスクには使わない。"
+        },
+        {
+          "id": "D",
+          "text": "PCA",
+          "is_correct": false,
+          "explanation": "PCAは次元削減であり、時系列予測ではない。"
+        }
       ],
       "explanation": "DeepAR は『複数の関連時系列』を同時学習することで個別ARIMAより精度が出やすい。SaaS の MAU、製造ラインごとの需要、コールセンタの稼働など、グループ化可能な時系列予測に強い。",
-      "references": [{"title": "DeepAR Forecasting Algorithm", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html"}],
-      "tags": ["deepar", "forecasting", "time-series", "saas"],
-      "common_mistakes": ["時系列予測に PCA や K-Means を選んでしまう", "DeepAR が単一系列のみと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "DeepAR Forecasting Algorithm",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html"
+        }
+      ],
+      "tags": [
+        "deepar",
+        "forecasting",
+        "time-series",
+        "saas"
+      ],
+      "common_mistakes": [
+        "時系列予測に PCA や K-Means を選んでしまう",
+        "DeepAR が単一系列のみと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-010",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Bias Detection",
       "subtopic": "SageMaker Clarify",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "教育分野のSaaSが、生徒の合否予測モデルが性別や地域でバイアスを生んでいないかを学習後に確認したい。SageMaker Clarify で実施できるのは？",
       "options": [
-        {"id": "A", "text": "学習前のデータ分布の偏りのみを検出する", "is_correct": false, "explanation": "Clarifyは学習前 (pre-training) と学習後 (post-training) の両方の bias metric をサポートする。本問は post-training の用途。"},
-        {"id": "B", "text": "学習後の予測値に対するバイアスメトリクス（DPPL, DI, DAR等）を計算する", "is_correct": true, "explanation": "正解。SageMaker Clarify post-training は、保護属性ごとの予測差を多様な指標で算出する。"},
-        {"id": "C", "text": "モデルの精度を自動的に改善する", "is_correct": false, "explanation": "Clarifyは検出と説明可能性のためのサービスで、モデルを自動再学習しない。"},
-        {"id": "D", "text": "推論レイテンシを計測する", "is_correct": false, "explanation": "推論レイテンシはCloudWatchやModel Monitorの領分で、Clarifyの目的ではない。"}
+        {
+          "id": "A",
+          "text": "学習前のデータ分布の偏りのみを検出する",
+          "is_correct": false,
+          "explanation": "Clarifyは学習前 (pre-training) と学習後 (post-training) の両方の bias metric をサポートする。本問は post-training の用途。"
+        },
+        {
+          "id": "B",
+          "text": "学習後の予測値に対するバイアスメトリクス（DPPL, DI, DAR等）を計算する",
+          "is_correct": true,
+          "explanation": "正解。SageMaker Clarify post-training は、保護属性ごとの予測差を多様な指標で算出する。"
+        },
+        {
+          "id": "C",
+          "text": "推論レイテンシを計測する",
+          "is_correct": false,
+          "explanation": "推論レイテンシはCloudWatchやModel Monitorの領分で、Clarifyの目的ではない。"
+        },
+        {
+          "id": "D",
+          "text": "モデルの精度を自動的に改善する",
+          "is_correct": false,
+          "explanation": "Clarifyは検出と説明可能性のためのサービスで、モデルを自動再学習しない。"
+        }
       ],
       "explanation": "SageMaker Clarify は (1) pre-training bias（データ分布の偏り）、(2) post-training bias（モデル予測の偏り）、(3) explainability（SHAP等による特徴量寄与）の3軸を提供する。Model Monitor と組み合わせて bias drift も検出可能。",
-      "references": [{"title": "SageMaker Clarify - Detect Post-training Bias", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-post-training-bias.html"}],
-      "tags": ["clarify", "bias", "fairness", "education"],
-      "common_mistakes": ["Clarifyを学習前のみのツールと誤解", "Clarifyが自動修正すると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "SageMaker Clarify - Detect Post-training Bias",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-post-training-bias.html"
+        }
+      ],
+      "tags": [
+        "clarify",
+        "bias",
+        "fairness",
+        "education"
+      ],
+      "common_mistakes": [
+        "Clarifyを学習前のみのツールと誤解",
+        "Clarifyが自動修正すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-011",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Distributed Training",
       "subtopic": "Data vs Model Parallel",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "医療系SaaSがCTスキャン画像で大規模CNNを学習する。1モデルが単一GPUのメモリに収まらない。SageMaker Training Job で最も適切な分散戦略は？",
       "options": [
-        {"id": "A", "text": "Data Parallel（SageMaker Distributed Data Parallel）", "is_correct": false, "explanation": "Data Parallelは大きなバッチを複数GPUに分割するが、モデル自体が1GPUに収まらない場合は解にならない。"},
-        {"id": "B", "text": "Model Parallel（SageMaker Distributed Model Parallel）", "is_correct": true, "explanation": "正解。SageMaker SMP はモデルを複数デバイスに分割（テンソル並列・パイプライン並列）し、巨大モデルでも学習可能にする。"},
-        {"id": "C", "text": "シングルGPUに変更し、バッチサイズを 1 にする", "is_correct": false, "explanation": "モデル自体が収まらないので、バッチ削減では解決しない。"},
-        {"id": "D", "text": "EFS にモデルを置いてオフロードする", "is_correct": false, "explanation": "EFS は永続ストレージで、GPU メモリ不足の解決にはならない。"}
+        {
+          "id": "A",
+          "text": "シングルGPUに変更し、バッチサイズを 1 にする",
+          "is_correct": false,
+          "explanation": "モデル自体が収まらないので、バッチ削減では解決しない。"
+        },
+        {
+          "id": "B",
+          "text": "Data Parallel（SageMaker Distributed Data Parallel）",
+          "is_correct": false,
+          "explanation": "Data Parallelは大きなバッチを複数GPUに分割するが、モデル自体が1GPUに収まらない場合は解にならない。"
+        },
+        {
+          "id": "C",
+          "text": "Model Parallel（SageMaker Distributed Model Parallel）",
+          "is_correct": true,
+          "explanation": "正解。SageMaker SMP はモデルを複数デバイスに分割（テンソル並列・パイプライン並列）し、巨大モデルでも学習可能にする。"
+        },
+        {
+          "id": "D",
+          "text": "EFS にモデルを置いてオフロードする",
+          "is_correct": false,
+          "explanation": "EFS は永続ストレージで、GPU メモリ不足の解決にはならない。"
+        }
       ],
       "explanation": "Data Parallel は『データ』を分割する手法で、巨大モデルが単一GPUに収まらない問題は解決しない。Model Parallel（テンソル並列やパイプライン並列）はモデル自体を複数デバイスに分割する。SMP は ZeRO や FSDP も統合し、LLM学習でも標準的。",
-      "references": [{"title": "SageMaker Distributed Model Parallel", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-parallel.html"}],
-      "tags": ["distributed-training", "model-parallel", "smp", "healthcare"],
-      "common_mistakes": ["Data Parallel と Model Parallel の使い分けを誤る", "EFSでGPUメモリ問題を解こうとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "SageMaker Distributed Model Parallel",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-parallel.html"
+        }
+      ],
+      "tags": [
+        "distributed-training",
+        "model-parallel",
+        "smp",
+        "healthcare"
+      ],
+      "common_mistakes": [
+        "Data Parallel と Model Parallel の使い分けを誤る",
+        "EFSでGPUメモリ問題を解こうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-012",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Hyperparameter Tuning",
       "subtopic": "Warm Start",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業のチームが先週、SageMaker AMT で HPO ジョブを実行した。今週、新規データを追加して再度 HPO したいが、過去の試行結果を活かして探索を効率化したい。最も適切な方法は？",
       "options": [
-        {"id": "A", "text": "Warm Start で前回の HPO ジョブを Parent として参照する", "is_correct": true, "explanation": "正解。AMT の Warm Start は前回の試行履歴を参照し、Bayesian/Hyperband での探索を効率化する。"},
-        {"id": "B", "text": "前回のベスト構成を固定し、別ジョブで Grid Search を実行する", "is_correct": false, "explanation": "ベスト構成固定では探索の意味がなく、データ変化に追従できない。"},
-        {"id": "C", "text": "前回ジョブの結果を CSV に出力し、Lambda で解析する", "is_correct": false, "explanation": "AMT 自体に Warm Start 機能があるため、再実装は不要で非効率。"},
-        {"id": "D", "text": "前回学習済みモデルを継続学習し、HPO は省略する", "is_correct": false, "explanation": "継続学習はモデル更新の手段であり、ハイパーパラメータの再探索とは別問題。"}
+        {
+          "id": "A",
+          "text": "前回のベスト構成を固定し、別ジョブで Grid Search を実行する",
+          "is_correct": false,
+          "explanation": "ベスト構成固定では探索の意味がなく、データ変化に追従できない。"
+        },
+        {
+          "id": "B",
+          "text": "前回学習済みモデルを継続学習し、HPO は省略する",
+          "is_correct": false,
+          "explanation": "継続学習はモデル更新の手段であり、ハイパーパラメータの再探索とは別問題。"
+        },
+        {
+          "id": "C",
+          "text": "前回ジョブの結果を CSV に出力し、Lambda で解析する",
+          "is_correct": false,
+          "explanation": "AMT 自体に Warm Start 機能があるため、再実装は不要で非効率。"
+        },
+        {
+          "id": "D",
+          "text": "Warm Start で前回の HPO ジョブを Parent として参照する",
+          "is_correct": true,
+          "explanation": "正解。AMT の Warm Start は前回の試行履歴を参照し、Bayesian/Hyperband での探索を効率化する。"
+        }
       ],
       "explanation": "Warm Start には IDENTICAL_DATA_AND_ALGORITHM と TRANSFER_LEARNING の2モードがあり、データやアルゴリズムが少し変わっても過去の試行結果を再利用できる。HPO の累積コストを抑える標準テクニック。",
-      "references": [{"title": "Run a Warm Start Hyperparameter Tuning Job", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html"}],
-      "tags": ["amt", "warm-start", "hpo"],
-      "common_mistakes": ["Warm Start の存在を知らず再探索する", "継続学習とHPOを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Run a Warm Start Hyperparameter Tuning Job",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html"
+        }
+      ],
+      "tags": [
+        "amt",
+        "warm-start",
+        "hpo"
+      ],
+      "common_mistakes": [
+        "Warm Start の存在を知らず再探索する",
+        "継続学習とHPOを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-013",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "JumpStart",
       "subtopic": "Fine-tuning",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "教育SaaS企業が、独自の教材文書（数千件）を活用して JumpStart のテキスト分類用 foundation model を社内ドメインに適応させたい。最もコスト効率がよく公式に推奨されるアプローチは？",
       "options": [
-        {"id": "A", "text": "JumpStart の transfer learning / fine-tuning ノートブックを使い、自社データで学習する", "is_correct": true, "explanation": "正解。JumpStart は多くのモデルで fine-tuning スクリプトとサンプル notebook を提供し、自社データへの適応が標準フローになっている。"},
-        {"id": "B", "text": "事前学習をゼロからやり直す", "is_correct": false, "explanation": "ゼロからの事前学習は数千件規模のデータでは過学習し、コストも莫大。"},
-        {"id": "C", "text": "プロンプトに教材を全て含めて推論時にだけ与える", "is_correct": false, "explanation": "コンテキスト長を超え、コストも増大する。fine-tuning が標準解。"},
-        {"id": "D", "text": "Linear Learner で代替する", "is_correct": false, "explanation": "Linear Learner は事前学習済言語表現を活用しないため、ドメイン適応の効果は限定的。"}
+        {
+          "id": "A",
+          "text": "JumpStart の transfer learning / fine-tuning ノートブックを使い、自社データで学習する",
+          "is_correct": true,
+          "explanation": "正解。JumpStart は多くのモデルで fine-tuning スクリプトとサンプル notebook を提供し、自社データへの適応が標準フローになっている。"
+        },
+        {
+          "id": "B",
+          "text": "プロンプトに教材を全て含めて推論時にだけ与える",
+          "is_correct": false,
+          "explanation": "コンテキスト長を超え、コストも増大する。fine-tuning が標準解。"
+        },
+        {
+          "id": "C",
+          "text": "Linear Learner で代替する",
+          "is_correct": false,
+          "explanation": "Linear Learner は事前学習済言語表現を活用しないため、ドメイン適応の効果は限定的。"
+        },
+        {
+          "id": "D",
+          "text": "事前学習をゼロからやり直す",
+          "is_correct": false,
+          "explanation": "ゼロからの事前学習は数千件規模のデータでは過学習し、コストも莫大。"
+        }
       ],
       "explanation": "JumpStart の fine-tuning は転移学習で、事前学習済重みをベースに自社データだけで再学習する。少量データでも高い精度が出やすく、ゼロからの学習比でコストを大幅に削減できる。",
-      "references": [{"title": "Fine-tune a Model in SageMaker JumpStart", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-fine-tune.html"}],
-      "tags": ["jumpstart", "fine-tuning", "transfer-learning", "education"],
-      "common_mistakes": ["プロンプトに全データを詰めるアプローチを選ぶ", "ゼロから学習が常に最良と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Fine-tune a Model in SageMaker JumpStart",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-fine-tune.html"
+        }
+      ],
+      "tags": [
+        "jumpstart",
+        "fine-tuning",
+        "transfer-learning",
+        "education"
+      ],
+      "common_mistakes": [
+        "プロンプトに全データを詰めるアプローチを選ぶ",
+        "ゼロから学習が常に最良と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-014",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Training Jobs",
       "subtopic": "Input Modes",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "数百GBの訓練データがS3にあり、SageMaker Training Job で扱う。学習開始までの待ち時間を最小化し、ストレージコストも抑えたい。最適な入力モードは？",
       "options": [
-        {"id": "A", "text": "File モード（学習前に全データをEBSにコピー）", "is_correct": false, "explanation": "Fileモードは全データを学習開始前にダウンロードするため待ち時間とEBS容量が大きくなる。"},
-        {"id": "B", "text": "Pipe モードまたは FastFile モードで S3 からストリーミング", "is_correct": true, "explanation": "正解。Pipe / FastFile は学習開始まで全データのコピーを待たず、S3から直接ストリームできる。"},
-        {"id": "C", "text": "EFS にコピーしてから学習", "is_correct": false, "explanation": "EFS にコピーする手間が発生し、待ち時間とコストの観点で最適ではない。"},
-        {"id": "D", "text": "Glacier にデータを移してから読む", "is_correct": false, "explanation": "Glacier は読み出しに時間とコストがかかり、学習用途には不適切。"}
+        {
+          "id": "A",
+          "text": "File モード（学習前に全データをEBSにコピー）",
+          "is_correct": false,
+          "explanation": "Fileモードは全データを学習開始前にダウンロードするため待ち時間とEBS容量が大きくなる。"
+        },
+        {
+          "id": "B",
+          "text": "Pipe モードまたは FastFile モードで S3 からストリーミング",
+          "is_correct": true,
+          "explanation": "正解。Pipe / FastFile は学習開始まで全データのコピーを待たず、S3から直接ストリームできる。"
+        },
+        {
+          "id": "C",
+          "text": "Glacier にデータを移してから読む",
+          "is_correct": false,
+          "explanation": "Glacier は読み出しに時間とコストがかかり、学習用途には不適切。"
+        },
+        {
+          "id": "D",
+          "text": "EFS にコピーしてから学習",
+          "is_correct": false,
+          "explanation": "EFS にコピーする手間が発生し、待ち時間とコストの観点で最適ではない。"
+        }
       ],
       "explanation": "SageMaker Training の入力モードは File / Pipe / FastFile があり、大規模データでは Pipe か FastFile（S3 から直接マウントに近い動作）でジョブ立ち上がりを高速化できる。FastFile は POSIX 互換で実装が容易。",
-      "references": [{"title": "Access Training Data", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"}],
-      "tags": ["training-job", "pipe-mode", "fastfile", "s3"],
-      "common_mistakes": ["大規模データでも File モードを選んでしまう", "EFSが常に最速と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Access Training Data",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
+        }
+      ],
+      "tags": [
+        "training-job",
+        "pipe-mode",
+        "fastfile",
+        "s3"
+      ],
+      "common_mistakes": [
+        "大規模データでも File モードを選んでしまう",
+        "EFSが常に最速と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-015",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Model Evaluation",
       "subtopic": "Regression Metrics",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTechの与信スコア回帰モデルで、誤差の絶対値を直接釣り合わせて評価したい（外れ値の影響を抑えたい）。最も適切な指標は？",
       "options": [
-        {"id": "A", "text": "MSE（平均二乗誤差）", "is_correct": false, "explanation": "MSEは外れ値による誤差を二乗で増幅するため、外れ値に敏感。"},
-        {"id": "B", "text": "RMSE", "is_correct": false, "explanation": "RMSEもMSEのルートで、外れ値感度はMSE同様に高い。"},
-        {"id": "C", "text": "MAE（平均絶対誤差）", "is_correct": true, "explanation": "正解。MAE は誤差の絶対値の平均で、外れ値の影響を MSE/RMSE より抑えられる。"},
-        {"id": "D", "text": "R² 決定係数", "is_correct": false, "explanation": "R² は分散説明率で、外れ値抑制の指標ではない。"}
+        {
+          "id": "A",
+          "text": "R² 決定係数",
+          "is_correct": false,
+          "explanation": "R² は分散説明率で、外れ値抑制の指標ではない。"
+        },
+        {
+          "id": "B",
+          "text": "RMSE",
+          "is_correct": false,
+          "explanation": "RMSEもMSEのルートで、外れ値感度はMSE同様に高い。"
+        },
+        {
+          "id": "C",
+          "text": "MAE（平均絶対誤差）",
+          "is_correct": true,
+          "explanation": "正解。MAE は誤差の絶対値の平均で、外れ値の影響を MSE/RMSE より抑えられる。"
+        },
+        {
+          "id": "D",
+          "text": "MSE（平均二乗誤差）",
+          "is_correct": false,
+          "explanation": "MSEは外れ値による誤差を二乗で増幅するため、外れ値に敏感。"
+        }
       ],
       "explanation": "MAE = (1/n) Σ |y - ŷ|。外れ値を持つデータでは MAE と MSE/RMSE の差が大きくなる。両方を見て、二乗誤差で罰したいか線形に罰したいかでビジネス要件に合わせて選ぶ。",
-      "references": [{"title": "Validate a Machine Learning Model", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-metrics.html"}],
-      "tags": ["regression", "mae", "rmse", "fintech"],
-      "common_mistakes": ["RMSE と MAE の外れ値感度の違いを知らない", "R² で外れ値感度を評価しようとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Validate a Machine Learning Model",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-metrics.html"
+        }
+      ],
+      "tags": [
+        "regression",
+        "mae",
+        "rmse",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "RMSE と MAE の外れ値感度の違いを知らない",
+        "R² で外れ値感度を評価しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-016",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Algorithm Selection",
       "subtopic": "Clustering",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "B2B SaaSのカスタマーサクセスチームが、利用ログから顧客を行動パターン別に自動グルーピングしたい。クラスタ数は事前に仮説として 5 個程度ある。最も適したSageMaker Built-inアルゴリズムは？",
       "options": [
-        {"id": "A", "text": "K-Means", "is_correct": true, "explanation": "正解。K-Meansはクラスタ数 K を指定して特徴量空間で重心ベースのクラスタリングを行う代表手法。"},
-        {"id": "B", "text": "XGBoost", "is_correct": false, "explanation": "XGBoostは教師あり手法で、クラスタリングではない。"},
-        {"id": "C", "text": "DeepAR", "is_correct": false, "explanation": "DeepARは時系列予測アルゴリズム。"},
-        {"id": "D", "text": "Linear Learner", "is_correct": false, "explanation": "Linear Learnerは線形分類・回帰で、クラスタリングではない。"}
+        {
+          "id": "A",
+          "text": "XGBoost",
+          "is_correct": false,
+          "explanation": "XGBoostは教師あり手法で、クラスタリングではない。"
+        },
+        {
+          "id": "B",
+          "text": "DeepAR",
+          "is_correct": false,
+          "explanation": "DeepARは時系列予測アルゴリズム。"
+        },
+        {
+          "id": "C",
+          "text": "Linear Learner",
+          "is_correct": false,
+          "explanation": "Linear Learnerは線形分類・回帰で、クラスタリングではない。"
+        },
+        {
+          "id": "D",
+          "text": "K-Means",
+          "is_correct": true,
+          "explanation": "正解。K-Meansはクラスタ数 K を指定して特徴量空間で重心ベースのクラスタリングを行う代表手法。"
+        }
       ],
       "explanation": "K-Meansはユーザーセグメンテーションの標準手法。SageMaker Built-inでは大規模データに対応した分散K-Meansが提供される。クラスタ数の決定にはエルボー法やシルエット係数を使う。",
-      "references": [{"title": "K-Means Algorithm", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/k-means.html"}],
-      "tags": ["k-means", "clustering", "saas", "segmentation"],
-      "common_mistakes": ["教師ありと教師なしを混同する", "クラスタ数の決定法を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "K-Means Algorithm",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/k-means.html"
+        }
+      ],
+      "tags": [
+        "k-means",
+        "clustering",
+        "saas",
+        "segmentation"
+      ],
+      "common_mistakes": [
+        "教師ありと教師なしを混同する",
+        "クラスタ数の決定法を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-017",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Hyperparameter Tuning",
       "subtopic": "Objective Metric",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SageMaker AMTのチューニングジョブで、自前のtrainingスクリプトが学習中に標準出力に `validation:auc=0.8721` の形でメトリクスを出力する。AMTがこの値を目的指標として認識するために必要な設定は？",
       "options": [
-        {"id": "A", "text": "TrainingJobDefinition の MetricDefinitions に正規表現を定義し、TuningObjective に該当メトリクスを指定する", "is_correct": true, "explanation": "正解。MetricDefinitions に正規表現で stdout から値を抽出し、TuningJobConfig.HyperParameterTuningJobObjective で対象として指定する。"},
-        {"id": "B", "text": "CloudWatch Logs Insights で集計した結果を渡す", "is_correct": false, "explanation": "AMTは実行時にログから抽出する仕組みがあり、別途のログ集計は不要。"},
-        {"id": "C", "text": "S3 の特定パスに metrics.json を書き、AMTが自動検出する", "is_correct": false, "explanation": "そのような自動検出仕様はない。Built-in Algorithm の場合は事前定義のメトリクスが使われる。"},
-        {"id": "D", "text": "Lambda関数でメトリクスを EventBridge に送る", "is_correct": false, "explanation": "AMTはCloudWatch Logs から正規表現抽出する仕組みであり、EventBridge経由は不要。"}
+        {
+          "id": "A",
+          "text": "TrainingJobDefinition の MetricDefinitions に正規表現を定義し、TuningObjective に該当メトリクスを指定する",
+          "is_correct": true,
+          "explanation": "正解。MetricDefinitions に正規表現で stdout から値を抽出し、TuningJobConfig.HyperParameterTuningJobObjective で対象として指定する。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Logs Insights で集計した結果を渡す",
+          "is_correct": false,
+          "explanation": "AMTは実行時にログから抽出する仕組みがあり、別途のログ集計は不要。"
+        },
+        {
+          "id": "C",
+          "text": "S3 の特定パスに metrics.json を書き、AMTが自動検出する",
+          "is_correct": false,
+          "explanation": "そのような自動検出仕様はない。Built-in Algorithm の場合は事前定義のメトリクスが使われる。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda関数でメトリクスを EventBridge に送る",
+          "is_correct": false,
+          "explanation": "AMTはCloudWatch Logs から正規表現抽出する仕組みであり、EventBridge経由は不要。"
+        }
       ],
       "explanation": "カスタムスクリプトをAMTでチューニングする際は、`MetricDefinitions = [{Name: 'validation:auc', Regex: 'validation:auc=([0-9.]+)'}]` のように指定する。AMTはCloudWatch Logsをパースして目的関数を取得する。",
-      "references": [{"title": "Define Metrics", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/training-metrics.html"}],
-      "tags": ["amt", "metric-definitions", "regex", "custom-script"],
-      "common_mistakes": ["正規表現を書かないとカスタムメトリクスが拾われないことを知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Define Metrics",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/training-metrics.html"
+        }
+      ],
+      "tags": [
+        "amt",
+        "metric-definitions",
+        "regex",
+        "custom-script"
+      ],
+      "common_mistakes": [
+        "正規表現を書かないとカスタムメトリクスが拾われないことを知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-018",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Algorithm Selection",
       "subtopic": "Dimensionality Reduction",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTechのリスク分析チームが、500次元の特徴量を可視化と冗長性削減のために線形変換で低次元（約50次元）に圧縮したい。SageMaker Built-inで最適なのは？",
       "options": [
-        {"id": "A", "text": "PCA", "is_correct": true, "explanation": "正解。PCA（主成分分析）は分散最大化方向に線形射影し次元削減する。SageMaker Built-inに大規模データ対応のPCAがある。"},
-        {"id": "B", "text": "K-Means", "is_correct": false, "explanation": "K-Meansは次元削減ではなくクラスタリング。"},
-        {"id": "C", "text": "Linear Learner", "is_correct": false, "explanation": "Linear Learnerは教師あり学習で、次元削減目的ではない。"},
-        {"id": "D", "text": "Random Cut Forest", "is_correct": false, "explanation": "RCFは異常検知。"}
+        {
+          "id": "A",
+          "text": "K-Means",
+          "is_correct": false,
+          "explanation": "K-Meansは次元削減ではなくクラスタリング。"
+        },
+        {
+          "id": "B",
+          "text": "PCA",
+          "is_correct": true,
+          "explanation": "正解。PCA（主成分分析）は分散最大化方向に線形射影し次元削減する。SageMaker Built-inに大規模データ対応のPCAがある。"
+        },
+        {
+          "id": "C",
+          "text": "Random Cut Forest",
+          "is_correct": false,
+          "explanation": "RCFは異常検知。"
+        },
+        {
+          "id": "D",
+          "text": "Linear Learner",
+          "is_correct": false,
+          "explanation": "Linear Learnerは教師あり学習で、次元削減目的ではない。"
+        }
       ],
       "explanation": "PCAは線形変換で次元削減する基本手法。SageMaker Built-inでは randomized / regular の2モードがあり、大規模・高次元データでも分散学習可能。可視化や下流タスクの前処理に使われる。",
-      "references": [{"title": "PCA Algorithm", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pca.html"}],
-      "tags": ["pca", "dimensionality-reduction", "fintech"],
-      "common_mistakes": ["次元削減と異常検知を混同", "PCAが線形手法であることを忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "PCA Algorithm",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pca.html"
+        }
+      ],
+      "tags": [
+        "pca",
+        "dimensionality-reduction",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "次元削減と異常検知を混同",
+        "PCAが線形手法であることを忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-019",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Bias Detection",
       "subtopic": "Pre-training Bias",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "医療系SaaSが疾患予測モデルを開発する前に、訓練データに性別や年齢層の偏りがないか定量評価したい。SageMaker Clarify で適切な機能と指標は？",
       "options": [
-        {"id": "A", "text": "Pre-training bias 分析を実行し、Class Imbalance や DPL（Difference in Proportions of Labels）等の指標を確認する", "is_correct": true, "explanation": "正解。Clarify は事前バイアス指標として CI、DPL、KL、JS、KS など複数の統計的指標を提供する。"},
-        {"id": "B", "text": "Model Monitor の bias drift をデプロイ前に有効化する", "is_correct": false, "explanation": "bias drift は本番後の監視機能で、デプロイ前の事前バイアス検出には使えない。"},
-        {"id": "C", "text": "推論エンドポイントで Shadow Test を実施する", "is_correct": false, "explanation": "Shadow Test はモデル比較で、データの偏りを定量評価するものではない。"},
-        {"id": "D", "text": "Feature Store の Online Store の統計を見る", "is_correct": false, "explanation": "Feature Store はストレージ機能で、bias 分析機能はない。"}
+        {
+          "id": "A",
+          "text": "Model Monitor の bias drift をデプロイ前に有効化する",
+          "is_correct": false,
+          "explanation": "bias drift は本番後の監視機能で、デプロイ前の事前バイアス検出には使えない。"
+        },
+        {
+          "id": "B",
+          "text": "推論エンドポイントで Shadow Test を実施する",
+          "is_correct": false,
+          "explanation": "Shadow Test はモデル比較で、データの偏りを定量評価するものではない。"
+        },
+        {
+          "id": "C",
+          "text": "Pre-training bias 分析を実行し、Class Imbalance や DPL（Difference in Proportions of Labels）等の指標を確認する",
+          "is_correct": true,
+          "explanation": "正解。Clarify は事前バイアス指標として CI、DPL、KL、JS、KS など複数の統計的指標を提供する。"
+        },
+        {
+          "id": "D",
+          "text": "Feature Store の Online Store の統計を見る",
+          "is_correct": false,
+          "explanation": "Feature Store はストレージ機能で、bias 分析機能はない。"
+        }
       ],
       "explanation": "Clarify の pre-training bias レポートは、保護属性（性別、年齢層など）に対するラベル分布や分布の距離指標を計算する。学習前にデータを是正することで、下流のモデル品質と公平性が向上する。",
-      "references": [{"title": "Detect Pretraining Data Bias", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-data-bias-metrics.html"}],
-      "tags": ["clarify", "bias", "pre-training", "healthcare"],
-      "common_mistakes": ["Pre-training と Post-training の bias 分析を混同", "Model Monitor の bias drift と前処理段階の bias を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Detect Pretraining Data Bias",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-data-bias-metrics.html"
+        }
+      ],
+      "tags": [
+        "clarify",
+        "bias",
+        "pre-training",
+        "healthcare"
+      ],
+      "common_mistakes": [
+        "Pre-training と Post-training の bias 分析を混同",
+        "Model Monitor の bias drift と前処理段階の bias を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-020",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Training Jobs",
       "subtopic": "Debugging",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SageMaker Training Job で深層モデルの損失が早期に収束し検証精度が頭打ちになる。学習中の勾配消失や活性化飽和を可視化・自動検出したい。最も適切な機能は？",
       "options": [
-        {"id": "A", "text": "SageMaker Debugger（Profiler / Built-in Rules: vanishing_gradient, exploding_tensor等）", "is_correct": true, "explanation": "正解。Debugger は学習中のテンソルを取り込み、組み込みルールで勾配消失や過学習などを自動検出する。"},
-        {"id": "B", "text": "CloudWatch Container Insights", "is_correct": false, "explanation": "Container Insightsはクラスタの汎用メトリクスで、学習中のテンソル分析機能はない。"},
-        {"id": "C", "text": "X-Ray でトレースする", "is_correct": false, "explanation": "X-RayはAPIトレース用で、ML学習内部の挙動可視化には不向き。"},
-        {"id": "D", "text": "SageMaker Model Monitor", "is_correct": false, "explanation": "Model Monitorは推論時のデータ・モデル品質監視で、学習中の分析ではない。"}
+        {
+          "id": "A",
+          "text": "CloudWatch Container Insights",
+          "is_correct": false,
+          "explanation": "Container Insightsはクラスタの汎用メトリクスで、学習中のテンソル分析機能はない。"
+        },
+        {
+          "id": "B",
+          "text": "X-Ray でトレースする",
+          "is_correct": false,
+          "explanation": "X-RayはAPIトレース用で、ML学習内部の挙動可視化には不向き。"
+        },
+        {
+          "id": "C",
+          "text": "SageMaker Model Monitor",
+          "is_correct": false,
+          "explanation": "Model Monitorは推論時のデータ・モデル品質監視で、学習中の分析ではない。"
+        },
+        {
+          "id": "D",
+          "text": "SageMaker Debugger（Profiler / Built-in Rules: vanishing_gradient, exploding_tensor等）",
+          "is_correct": true,
+          "explanation": "正解。Debugger は学習中のテンソルを取り込み、組み込みルールで勾配消失や過学習などを自動検出する。"
+        }
       ],
       "explanation": "SageMaker Debugger は学習中の重み・勾配・活性化などをサンプリングし、組み込みルール（vanishing_gradient, dead_relu, loss_not_decreasing 等）で自動検出する。Profiler はリソース利用率の可視化と組み合わせて使う。",
-      "references": [{"title": "Amazon SageMaker Debugger", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-debugger.html"}],
-      "tags": ["debugger", "profiler", "training", "deep-learning"],
-      "common_mistakes": ["Debugger と Model Monitor の用途を混同", "CloudWatch だけで深層学習の問題が分かると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Amazon SageMaker Debugger",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-debugger.html"
+        }
+      ],
+      "tags": [
+        "debugger",
+        "profiler",
+        "training",
+        "deep-learning"
+      ],
+      "common_mistakes": [
+        "Debugger と Model Monitor の用途を混同",
+        "CloudWatch だけで深層学習の問題が分かると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-021",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Model Evaluation",
       "subtopic": "Threshold Selection",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "FinTechの不正検知モデルで Precision 0.4 / Recall 0.9（閾値=0.3）と Precision 0.8 / Recall 0.5（閾値=0.7）の動作点が得られた。ビジネスは『不正の見逃しを最小化したい』が、調査人員が限られている。閾値選定の判断として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "閾値=0.3 を即採用する（Recallが高いから）", "is_correct": false, "explanation": "Recallが高くてもPrecision 0.4はFPが多すぎ、限られた人員ではアラート過多で運用破綻する可能性。"},
-        {"id": "B", "text": "閾値=0.7 を即採用する（Precisionが高いから）", "is_correct": false, "explanation": "Recall 0.5では半数を見逃す。ビジネス要件と矛盾。"},
-        {"id": "C", "text": "コスト関数（FN損失 vs FP調査コスト）を定義し、Precision-Recall曲線上で最適閾値を選ぶ", "is_correct": true, "explanation": "正解。FNとFPのコストを金額換算した期待損失を最小化する閾値が、ビジネス要件と運用制約の両方を満たす。"},
-        {"id": "D", "text": "Accuracy が最大の閾値を選ぶ", "is_correct": false, "explanation": "不均衡データでAccuracyを最大化しても、不正検知の本質的目標と一致しない。"}
+        {
+          "id": "A",
+          "text": "コスト関数（FN損失 vs FP調査コスト）を定義し、Precision-Recall曲線上で最適閾値を選ぶ",
+          "is_correct": true,
+          "explanation": "正解。FNとFPのコストを金額換算した期待損失を最小化する閾値が、ビジネス要件と運用制約の両方を満たす。"
+        },
+        {
+          "id": "B",
+          "text": "閾値=0.3 を即採用する（Recallが高いから）",
+          "is_correct": false,
+          "explanation": "Recallが高くてもPrecision 0.4はFPが多すぎ、限られた人員ではアラート過多で運用破綻する可能性。"
+        },
+        {
+          "id": "C",
+          "text": "閾値=0.7 を即採用する（Precisionが高いから）",
+          "is_correct": false,
+          "explanation": "Recall 0.5では半数を見逃す。ビジネス要件と矛盾。"
+        },
+        {
+          "id": "D",
+          "text": "Accuracy が最大の閾値を選ぶ",
+          "is_correct": false,
+          "explanation": "不均衡データでAccuracyを最大化しても、不正検知の本質的目標と一致しない。"
+        }
       ],
       "explanation": "閾値選定はモデル精度の問題ではなくビジネス意思決定。FNコスト（不正見逃しの実損）とFPコスト（誤アラートの調査人件費）を見積もり、PR曲線上で期待損失最小点を選ぶ。SageMaker Clarify や custom evaluation script で行う。",
-      "references": [{"title": "Validate a Machine Learning Model", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-metrics.html"}],
-      "tags": ["threshold", "precision-recall", "fintech", "fraud", "business"],
-      "common_mistakes": ["RecallかPrecisionの片方だけで閾値を決める", "コスト換算をせずに F1 だけで決める"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Validate a Machine Learning Model",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-metrics.html"
+        }
+      ],
+      "tags": [
+        "threshold",
+        "precision-recall",
+        "fintech",
+        "fraud",
+        "business"
+      ],
+      "common_mistakes": [
+        "RecallかPrecisionの片方だけで閾値を決める",
+        "コスト換算をせずに F1 だけで決める"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-022",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Overfitting",
       "subtopic": "Cross Validation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "教育SaaSが学習者の合否予測モデルをHPOで最適化したところ、HPOで選ばれた最良構成のクロスバリデーションスコアと最終ホールドアウトスコアが大きく乖離した。最も妥当な原因の解釈は？",
       "options": [
-        {"id": "A", "text": "HPO の試行回数が多すぎて、検証セットに対する『間接的な過学習』が発生した", "is_correct": true, "explanation": "正解。HPOが大量の構成を検証セットで評価することで、検証セットに対する選択バイアスが起こる。最終評価は完全に独立したホールドアウトで行うべき。"},
-        {"id": "B", "text": "GPU の浮動小数点誤差", "is_correct": false, "explanation": "再現性問題はあり得るが、検証とテストのスコア乖離の主因とは考えにくい。"},
-        {"id": "C", "text": "アルゴリズムが本質的にバグっている", "is_correct": false, "explanation": "症状から最初に疑うべきはHPO過学習で、即バグと結論するのは早計。"},
-        {"id": "D", "text": "Spotインスタンスの中断", "is_correct": false, "explanation": "中断はチェックポイントから再開するため、スコア乖離の直接原因ではない。"}
+        {
+          "id": "A",
+          "text": "アルゴリズムが本質的にバグっている",
+          "is_correct": false,
+          "explanation": "症状から最初に疑うべきはHPO過学習で、即バグと結論するのは早計。"
+        },
+        {
+          "id": "B",
+          "text": "HPO の試行回数が多すぎて、検証セットに対する『間接的な過学習』が発生した",
+          "is_correct": true,
+          "explanation": "正解。HPOが大量の構成を検証セットで評価することで、検証セットに対する選択バイアスが起こる。最終評価は完全に独立したホールドアウトで行うべき。"
+        },
+        {
+          "id": "C",
+          "text": "Spotインスタンスの中断",
+          "is_correct": false,
+          "explanation": "中断はチェックポイントから再開するため、スコア乖離の直接原因ではない。"
+        },
+        {
+          "id": "D",
+          "text": "GPU の浮動小数点誤差",
+          "is_correct": false,
+          "explanation": "再現性問題はあり得るが、検証とテストのスコア乖離の主因とは考えにくい。"
+        }
       ],
       "explanation": "HPOは検証指標を最適化する仕組みなので、試行が多いと検証セットに対する過適合が発生する。これを防ぐには (1) ネストしたCV、(2) 完全に独立したテストセットで最終評価、(3) HPO 試行回数の上限を制御、などが推奨される。",
-      "references": [{"title": "Cross Validation in SageMaker", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-considerations.html"}],
-      "tags": ["hpo", "overfitting", "validation", "education"],
-      "common_mistakes": ["HPO検証スコアをそのまま信じてしまう", "ホールドアウトを別途用意しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Cross Validation in SageMaker",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-considerations.html"
+        }
+      ],
+      "tags": [
+        "hpo",
+        "overfitting",
+        "validation",
+        "education"
+      ],
+      "common_mistakes": [
+        "HPO検証スコアをそのまま信じてしまう",
+        "ホールドアウトを別途用意しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-023",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Distributed Training",
       "subtopic": "Bottleneck Analysis",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "SageMaker Distributed Data Parallel で学習中、GPU使用率が30%程度で頭打ちになる一方、CPUとI/Oは高い。最も可能性が高いボトルネックと対策は？",
       "options": [
-        {"id": "A", "text": "GPU 自体の演算能力不足。GPU タイプをさらに大きくする", "is_correct": false, "explanation": "GPU使用率が30%程度であればGPUは余っており、上位GPU化はROIが低い。"},
-        {"id": "B", "text": "データロードが律速。Pipe/FastFile モードや num_workers 増加、データ前処理のオフライン化を行う", "is_correct": true, "explanation": "正解。CPU/IOが高くGPUが遊んでいるのはデータパイプラインの律速サイン。"},
-        {"id": "C", "text": "学習率が低い。学習率を10倍にする", "is_correct": false, "explanation": "学習率は精度に影響するが、GPU使用率の上限とは別問題。"},
-        {"id": "D", "text": "通信が律速。NCCL のバージョンを下げる", "is_correct": false, "explanation": "NCCLバージョンを下げる対応は標準ではなく、CPU/IO律速のサインに対しても誤対処。"}
+        {
+          "id": "A",
+          "text": "学習率が低い。学習率を10倍にする",
+          "is_correct": false,
+          "explanation": "学習率は精度に影響するが、GPU使用率の上限とは別問題。"
+        },
+        {
+          "id": "B",
+          "text": "通信が律速。NCCL のバージョンを下げる",
+          "is_correct": false,
+          "explanation": "NCCLバージョンを下げる対応は標準ではなく、CPU/IO律速のサインに対しても誤対処。"
+        },
+        {
+          "id": "C",
+          "text": "データロードが律速。Pipe/FastFile モードや num_workers 増加、データ前処理のオフライン化を行う",
+          "is_correct": true,
+          "explanation": "正解。CPU/IOが高くGPUが遊んでいるのはデータパイプラインの律速サイン。"
+        },
+        {
+          "id": "D",
+          "text": "GPU 自体の演算能力不足。GPU タイプをさらに大きくする",
+          "is_correct": false,
+          "explanation": "GPU使用率が30%程度であればGPUは余っており、上位GPU化はROIが低い。"
+        }
       ],
       "explanation": "GPU使用率が低くCPU/IOが高い場合は典型的なinput pipelineボトルネック。データ読込・前処理を非同期化し、Pipe/FastFile モードや事前にTFRecord/Parquet化することで改善する。SageMaker Profiler で詳細解析が可能。",
-      "references": [{"title": "SageMaker Profiler", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-profiler.html"}],
-      "tags": ["distributed", "data-parallel", "profiling", "io-bottleneck"],
-      "common_mistakes": ["GPU使用率低=GPUを大きくすれば良いと誤解", "通信問題と勘違いする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "SageMaker Profiler",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-profiler.html"
+        }
+      ],
+      "tags": [
+        "distributed",
+        "data-parallel",
+        "profiling",
+        "io-bottleneck"
+      ],
+      "common_mistakes": [
+        "GPU使用率低=GPUを大きくすれば良いと誤解",
+        "通信問題と勘違いする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-024",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Hyperparameter Tuning",
       "subtopic": "Search Strategy Selection",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "学習1ジョブが30分かかる中規模深層学習モデルで、ハイパーパラメータ7つ（連続/離散混在）を探索したい。試行回数は予算上80回まで。最も探索効率が高い戦略は？",
       "options": [
-        {"id": "A", "text": "Grid Search", "is_correct": false, "explanation": "7次元のGrid Searchは組合せ爆発で80回では現実的に網羅不能。"},
-        {"id": "B", "text": "Random Search", "is_correct": false, "explanation": "Random は Grid よりよいが、過去結果から学ばないため Bayesian/Hyperband に劣る。"},
-        {"id": "C", "text": "Bayesian Optimization", "is_correct": true, "explanation": "正解。中規模試行数（数十〜数百）でハイパーパラメータが連続/離散混在のとき、Bayesianが最も効率的に最適点を探索する。"},
-        {"id": "D", "text": "全試行を並列On-Demandで実行し、結果を線形回帰で外挿する", "is_correct": false, "explanation": "並列実行はBayesianの直列学習効果を損なう。AMTでは並列度を制御することで balance を取る。"}
+        {
+          "id": "A",
+          "text": "全試行を並列On-Demandで実行し、結果を線形回帰で外挿する",
+          "is_correct": false,
+          "explanation": "並列実行はBayesianの直列学習効果を損なう。AMTでは並列度を制御することで balance を取る。"
+        },
+        {
+          "id": "B",
+          "text": "Grid Search",
+          "is_correct": false,
+          "explanation": "7次元のGrid Searchは組合せ爆発で80回では現実的に網羅不能。"
+        },
+        {
+          "id": "C",
+          "text": "Random Search",
+          "is_correct": false,
+          "explanation": "Random は Grid よりよいが、過去結果から学ばないため Bayesian/Hyperband に劣る。"
+        },
+        {
+          "id": "D",
+          "text": "Bayesian Optimization",
+          "is_correct": true,
+          "explanation": "正解。中規模試行数（数十〜数百）でハイパーパラメータが連続/離散混在のとき、Bayesianが最も効率的に最適点を探索する。"
+        }
       ],
       "explanation": "AMTのデフォルト戦略はBayesianで、試行数が中規模かつ評価コストが高い場合に最適。Hyperbandは大量試行を打ち切る場合に有効だが、本問は試行コストが小さくないので Bayesian が適切。Grid は次元数が増えると指数的に試行が必要になる。",
-      "references": [{"title": "Choosing a Hyperparameter Tuning Strategy", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html"}],
-      "tags": ["amt", "bayesian", "search-strategy", "hpo"],
-      "common_mistakes": ["どんな場合もHyperbandが最良と誤解", "次元数とGridの相性を考慮しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Choosing a Hyperparameter Tuning Strategy",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html"
+        }
+      ],
+      "tags": [
+        "amt",
+        "bayesian",
+        "search-strategy",
+        "hpo"
+      ],
+      "common_mistakes": [
+        "どんな場合もHyperbandが最良と誤解",
+        "次元数とGridの相性を考慮しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-025",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Algorithm Selection",
       "subtopic": "SVM vs NN",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "B2B SaaSのチームが、表形式の中規模データ（数千行・数十特徴量）の分類問題で SVM と Neural Network のどちらを選ぶか議論している。データ量は限定的だが特徴量間の非線形性は強い。最も合理的な判断は？",
       "options": [
-        {"id": "A", "text": "Neural Network。NNは常にSVMより精度が高い", "is_correct": false, "explanation": "中小規模データではNNは過学習しやすく、SVMやXGBoostに劣ることがしばしばある。"},
-        {"id": "B", "text": "RBFカーネルSVMを第一候補としつつ、ベンチマークとしてXGBoostや浅いNNとも比較する", "is_correct": true, "explanation": "正解。中規模データかつ非線形ではカーネルSVMが強い。実務的には XGBoost と NN とのベンチマーク比較を行うのが標準。"},
-        {"id": "C", "text": "Linear Regression を使う", "is_correct": false, "explanation": "非線形性が強いと述べられており、線形モデルでは表現力不足。"},
-        {"id": "D", "text": "K-Means", "is_correct": false, "explanation": "K-Meansは教師なしであり分類問題ではない。"}
+        {
+          "id": "A",
+          "text": "RBFカーネルSVMを第一候補としつつ、ベンチマークとしてXGBoostや浅いNNとも比較する",
+          "is_correct": true,
+          "explanation": "正解。中規模データかつ非線形ではカーネルSVMが強い。実務的には XGBoost と NN とのベンチマーク比較を行うのが標準。"
+        },
+        {
+          "id": "B",
+          "text": "Neural Network。NNは常にSVMより精度が高い",
+          "is_correct": false,
+          "explanation": "中小規模データではNNは過学習しやすく、SVMやXGBoostに劣ることがしばしばある。"
+        },
+        {
+          "id": "C",
+          "text": "K-Means",
+          "is_correct": false,
+          "explanation": "K-Meansは教師なしであり分類問題ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Linear Regression を使う",
+          "is_correct": false,
+          "explanation": "非線形性が強いと述べられており、線形モデルでは表現力不足。"
+        }
       ],
       "explanation": "アルゴリズム選定はデータ量・特徴量・問題種類に依存する。中規模・非線形データではRBFカーネルSVM、勾配ブースティング（XGBoost/LightGBM）が強い傾向。NNは大規模データや非構造化データ（画像・テキスト）で優位。",
-      "references": [{"title": "Choose an Algorithm", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html"}],
-      "tags": ["algorithm-selection", "svm", "nn", "tabular"],
-      "common_mistakes": ["NN信仰でデータ量を考慮しない", "1モデルだけ試して比較しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Choose an Algorithm",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html"
+        }
+      ],
+      "tags": [
+        "algorithm-selection",
+        "svm",
+        "nn",
+        "tabular"
+      ],
+      "common_mistakes": [
+        "NN信仰でデータ量を考慮しない",
+        "1モデルだけ試して比較しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-026",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "JumpStart",
       "subtopic": "Model Selection Trade-offs",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
-      "stem": "東海地方の製造業向けナレッジQAボットを構築する。社内文書が少なく、出力品質と推論コストを両立させたい。次の中で最も合理的な構成は？",
+      "stem": "ある製造業向けナレッジQAボットを構築する。社内文書が少なく、出力品質と推論コストを両立させたい。次の中で最も合理的な構成は？",
       "options": [
-        {"id": "A", "text": "JumpStart で大規模 LLM をフル fine-tuning し、g5.48xlarge でリアルタイム推論", "is_correct": false, "explanation": "少量データでのフルfine-tuningはコストと効果のバランスが悪く、巨大GPUインスタンスは推論コストが過大。"},
-        {"id": "B", "text": "中規模 instruction-tuned モデルを JumpStart からデプロイし、社内文書は RAG で外部から注入する", "is_correct": true, "explanation": "正解。少量データでは fine-tuning より RAG が効率的。中規模モデルで品質と推論コストのバランスを取る。"},
-        {"id": "C", "text": "Bedrock も SageMaker も使わず、EC2 で独自モデルを学習・運用", "is_correct": false, "explanation": "運用負荷が大きく、AWS マネージドサービスの恩恵を受けられない。"},
-        {"id": "D", "text": "Amazon Comprehend のカスタム分類で全文要約させる", "is_correct": false, "explanation": "Comprehend は分類・エンティティ抽出向けで、生成的QAタスクには適さない。"}
+        {
+          "id": "A",
+          "text": "JumpStart で大規模 LLM をフル fine-tuning し、g5.48xlarge でリアルタイム推論",
+          "is_correct": false,
+          "explanation": "少量データでのフルfine-tuningはコストと効果のバランスが悪く、巨大GPUインスタンスは推論コストが過大。"
+        },
+        {
+          "id": "B",
+          "text": "中規模 instruction-tuned モデルを JumpStart からデプロイし、社内文書は RAG で外部から注入する",
+          "is_correct": true,
+          "explanation": "正解。少量データでは fine-tuning より RAG が効率的。中規模モデルで品質と推論コストのバランスを取る。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Comprehend のカスタム分類で全文要約させる",
+          "is_correct": false,
+          "explanation": "Comprehend は分類・エンティティ抽出向けで、生成的QAタスクには適さない。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock も SageMaker も使わず、EC2 で独自モデルを学習・運用",
+          "is_correct": false,
+          "explanation": "運用負荷が大きく、AWS マネージドサービスの恩恵を受けられない。"
+        }
       ],
       "explanation": "少量ドメインデータでは、fine-tuning より RAG（外部検索 + 生成）の方が効果的。JumpStart の中規模モデル（例: Llama-3 8B、Mistral 7B）+ Kendra/OpenSearch + LangChain 構成は、品質・コスト・運用のバランスが取れる。",
-      "references": [{"title": "JumpStart Foundation Models", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html"}],
-      "tags": ["jumpstart", "rag", "manufacturing", "llm", "trade-off"],
-      "common_mistakes": ["少量データでもfine-tuningが最良と誤解", "巨大モデルなら必ず良いと思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "JumpStart Foundation Models",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html"
+        }
+      ],
+      "tags": [
+        "jumpstart",
+        "rag",
+        "manufacturing",
+        "llm",
+        "trade-off"
+      ],
+      "common_mistakes": [
+        "少量データでもfine-tuningが最良と誤解",
+        "巨大モデルなら必ず良いと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-027",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Bias Detection",
       "subtopic": "Trade-off Analysis",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "FinTechの与信モデルでClarifyのpost-training結果が、性別属性間で『DPPL=0.18（陽性率差）』『DI=0.7（不利益群陽性率/有利益群陽性率）』を示した。次にすべき分析として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "DI=0.8 未満は四五則ルール（4/5 rule）で問題視されるため、属性除去・再サンプリング・閾値再調整・公平性制約付き再学習の選択肢を比較検討する", "is_correct": true, "explanation": "正解。DI < 0.8 は実務上の公平性閾値の代表例。原因分析と複数の緩和策の比較検討が次のステップ。"},
-        {"id": "B", "text": "DI=0.7 は問題なし、デプロイへ進む", "is_correct": false, "explanation": "DI<0.8は公平性懸念があり、デプロイ前に緩和を検討すべき。"},
-        {"id": "C", "text": "性別を特徴量から外せば自動的にバイアスはなくなる", "is_correct": false, "explanation": "代理変数（住所、職業など）に性別情報が反映され、属性除去だけでは解決しない。"},
-        {"id": "D", "text": "Recall を最優先で改善する", "is_correct": false, "explanation": "公平性問題に対してRecall改善は本質的解決にならない。"}
+        {
+          "id": "A",
+          "text": "DI=0.7 は問題なし、デプロイへ進む",
+          "is_correct": false,
+          "explanation": "DI<0.8は公平性懸念があり、デプロイ前に緩和を検討すべき。"
+        },
+        {
+          "id": "B",
+          "text": "性別を特徴量から外せば自動的にバイアスはなくなる",
+          "is_correct": false,
+          "explanation": "代理変数（住所、職業など）に性別情報が反映され、属性除去だけでは解決しない。"
+        },
+        {
+          "id": "C",
+          "text": "DI=0.8 未満は四五則ルール（4/5 rule）で問題視されるため、属性除去・再サンプリング・閾値再調整・公平性制約付き再学習の選択肢を比較検討する",
+          "is_correct": true,
+          "explanation": "正解。DI < 0.8 は実務上の公平性閾値の代表例。原因分析と複数の緩和策の比較検討が次のステップ。"
+        },
+        {
+          "id": "D",
+          "text": "Recall を最優先で改善する",
+          "is_correct": false,
+          "explanation": "公平性問題に対してRecall改善は本質的解決にならない。"
+        }
       ],
       "explanation": "Clarifyのpost-training metricsはDPPL, DI, RD, DAR, DRR, AD, TE, FT等多様。DIは『四五則（4/5 rule）』として 0.8 未満を実務的に問題視する慣習がある。属性除去は代理変数があると効かないため、再サンプリングや公平性制約付学習が併用される。",
-      "references": [{"title": "Post-training Bias Metrics", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html"}],
-      "tags": ["clarify", "bias", "fairness", "fintech", "disparate-impact"],
-      "common_mistakes": ["DIの意味を知らずに数値を見過ごす", "属性除去でバイアスが消えると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Post-training Bias Metrics",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html"
+        }
+      ],
+      "tags": [
+        "clarify",
+        "bias",
+        "fairness",
+        "fintech",
+        "disparate-impact"
+      ],
+      "common_mistakes": [
+        "DIの意味を知らずに数値を見過ごす",
+        "属性除去でバイアスが消えると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-028",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Algorithm Selection",
       "subtopic": "Holistic Comparison",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "中規模SaaSのデータサイエンスチームが、構造化データの分類タスクで XGBoost、AutoGluon、Linear Learner、深層MLPの4手法を比較する。次のうち、評価設計として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "同一の検証セット上でAccuracyだけで比較し、最高値の手法を採用", "is_correct": false, "explanation": "単一指標・単一splitでの比較は分散・タスク特性を反映できない。"},
-        {"id": "B", "text": "学習時間・推論レイテンシ・コスト・複数の精度指標（AUC, F1）を同一クロスバリデーションで比較し、運用要件と合わせて総合評価する", "is_correct": true, "explanation": "正解。学習・推論・運用・コスト・精度の多軸で比較するのがベストプラクティス。"},
-        {"id": "C", "text": "XGBoostだけで決定する。経験的に最強だから", "is_correct": false, "explanation": "経験則だけで評価を省くのは科学的でない。"},
-        {"id": "D", "text": "AutoGluon の出力をそのまま採用し、他手法は試さない", "is_correct": false, "explanation": "AutoGluonの結果は強力だが、運用要件との適合（推論レイテンシなど）を別途検証すべき。"}
+        {
+          "id": "A",
+          "text": "同一の検証セット上でAccuracyだけで比較し、最高値の手法を採用",
+          "is_correct": false,
+          "explanation": "単一指標・単一splitでの比較は分散・タスク特性を反映できない。"
+        },
+        {
+          "id": "B",
+          "text": "XGBoostだけで決定する。経験的に最強だから",
+          "is_correct": false,
+          "explanation": "経験則だけで評価を省くのは科学的でない。"
+        },
+        {
+          "id": "C",
+          "text": "AutoGluon の出力をそのまま採用し、他手法は試さない",
+          "is_correct": false,
+          "explanation": "AutoGluonの結果は強力だが、運用要件との適合（推論レイテンシなど）を別途検証すべき。"
+        },
+        {
+          "id": "D",
+          "text": "学習時間・推論レイテンシ・コスト・複数の精度指標（AUC, F1）を同一クロスバリデーションで比較し、運用要件と合わせて総合評価する",
+          "is_correct": true,
+          "explanation": "正解。学習・推論・運用・コスト・精度の多軸で比較するのがベストプラクティス。"
+        }
       ],
       "explanation": "アルゴリズム評価は精度だけでなく、学習時間、推論レイテンシ、推論コスト、説明可能性、運用容易性まで含めた多軸比較が望ましい。特にエンドポイントSLAやコストはビジネスインパクトが大きい。",
-      "references": [{"title": "Choose an Algorithm", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html"}],
-      "tags": ["evaluation", "algorithm-comparison", "tradeoff"],
-      "common_mistakes": ["精度だけで意思決定する", "AutoMLの結果を盲信する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Choose an Algorithm",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html"
+        }
+      ],
+      "tags": [
+        "evaluation",
+        "algorithm-comparison",
+        "tradeoff"
+      ],
+      "common_mistakes": [
+        "精度だけで意思決定する",
+        "AutoMLの結果を盲信する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-029",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Hyperparameter Tuning",
       "subtopic": "Strategy Evaluation",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "あるチームが SageMaker AMT を使い、Bayesian と Hyperband の2戦略をHPO比較したい。評価設計として最も妥当なのは？",
       "options": [
-        {"id": "A", "text": "両戦略を同じ問題設定・同じ予算（試行数または時間）で実行し、最良検証スコア・累積コスト・収束カーブを比較する", "is_correct": true, "explanation": "正解。HPO戦略の評価は同条件下での最終スコア、コスト、探索効率を多角的に比べるのが標準。"},
-        {"id": "B", "text": "Bayesian だけ実行し、ベストスコアを Hyperband の理論値と比較", "is_correct": false, "explanation": "片方だけ実行して理論値で比較するのは公平でない。"},
-        {"id": "C", "text": "Hyperband は深層学習専用なので比較不要", "is_correct": false, "explanation": "Hyperbandは深層学習に強いが、early stopping可能なら他のモデルでも有効。"},
-        {"id": "D", "text": "AutoGluon を併用し、3手法のスコアだけで決定する", "is_correct": false, "explanation": "AutoGluon併用は別話題。HPO戦略比較自体には3手法のスコアだけでなくコスト等の評価も必要。"}
+        {
+          "id": "A",
+          "text": "両戦略を同じ問題設定・同じ予算（試行数または時間）で実行し、最良検証スコア・累積コスト・収束カーブを比較する",
+          "is_correct": true,
+          "explanation": "正解。HPO戦略の評価は同条件下での最終スコア、コスト、探索効率を多角的に比べるのが標準。"
+        },
+        {
+          "id": "B",
+          "text": "AutoGluon を併用し、3手法のスコアだけで決定する",
+          "is_correct": false,
+          "explanation": "AutoGluon併用は別話題。HPO戦略比較自体には3手法のスコアだけでなくコスト等の評価も必要。"
+        },
+        {
+          "id": "C",
+          "text": "Hyperband は深層学習専用なので比較不要",
+          "is_correct": false,
+          "explanation": "Hyperbandは深層学習に強いが、early stopping可能なら他のモデルでも有効。"
+        },
+        {
+          "id": "D",
+          "text": "Bayesian だけ実行し、ベストスコアを Hyperband の理論値と比較",
+          "is_correct": false,
+          "explanation": "片方だけ実行して理論値で比較するのは公平でない。"
+        }
       ],
       "explanation": "HPO戦略比較は『同じ評価条件・同じ予算』が公平性の基本。さらに、最終スコアだけでなく、何ジョブ目で良い解に近づいたか（収束効率）、累積GPU時間（コスト）も合わせて評価する。",
-      "references": [{"title": "Tuning Best Practices", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-considerations.html"}],
-      "tags": ["amt", "evaluation", "bayesian", "hyperband"],
-      "common_mistakes": ["公平な条件で比較しない", "理論値を実験値の代用にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Tuning Best Practices",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-considerations.html"
+        }
+      ],
+      "tags": [
+        "amt",
+        "evaluation",
+        "bayesian",
+        "hyperband"
+      ],
+      "common_mistakes": [
+        "公平な条件で比較しない",
+        "理論値を実験値の代用にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain2-030",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "ML Model Development", "weight_percent": 26},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "ML Model Development",
+        "weight_percent": 26
+      },
       "topic": "Custom Algorithm Design",
       "subtopic": "End-to-end Pipeline",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "医療系SaaSが、HIPAA準拠下で『画像分類モデルを内製し、HPOからモデル登録まで自動化する』エンドツーエンドフローを設計する。最も妥当な構成案は？",
       "options": [
-        {"id": "A", "text": "ECRに自作Dockerイメージを置き、SageMaker Training Jobで起動 → AMTでHPO → SageMaker Pipelinesで前処理〜評価〜Model Registry登録までオーケストレーション → KMS暗号化とVPC専用エンドポイントで通信を保護", "is_correct": true, "explanation": "正解。BYOコンテナ + AMT + Pipelines + Model Registry + KMS/VPCがHIPAA対応の標準的な内製E2E構成。"},
-        {"id": "B", "text": "ローカル GPU で学習し、結果モデルだけ S3 にアップ。Model Registry は使わない", "is_correct": false, "explanation": "再現性・統制が弱く、HIPAA監査要件を満たしにくい。"},
-        {"id": "C", "text": "Lambda 関数だけで全工程を実装する", "is_correct": false, "explanation": "Lambdaは15分上限とリソース制限があり、画像分類学習には不適切。"},
-        {"id": "D", "text": "Step Functions と Glue だけで構成し、SageMaker は使わない", "is_correct": false, "explanation": "Glueは学習に最適化されていない。SageMakerが画像学習・推論のマネージド基盤として標準。"}
+        {
+          "id": "A",
+          "text": "ローカル GPU で学習し、結果モデルだけ S3 にアップ。Model Registry は使わない",
+          "is_correct": false,
+          "explanation": "再現性・統制が弱く、HIPAA監査要件を満たしにくい。"
+        },
+        {
+          "id": "B",
+          "text": "ECRに自作Dockerイメージを置き、SageMaker Training Jobで起動 → AMTでHPO → SageMaker Pipelinesで前処理〜評価〜Model Registry登録までオーケストレーション → KMS暗号化とVPC専用エンドポイントで通信を保護",
+          "is_correct": true,
+          "explanation": "正解。BYOコンテナ + AMT + Pipelines + Model Registry + KMS/VPCがHIPAA対応の標準的な内製E2E構成。"
+        },
+        {
+          "id": "C",
+          "text": "Step Functions と Glue だけで構成し、SageMaker は使わない",
+          "is_correct": false,
+          "explanation": "Glueは学習に最適化されていない。SageMakerが画像学習・推論のマネージド基盤として標準。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda 関数だけで全工程を実装する",
+          "is_correct": false,
+          "explanation": "Lambdaは15分上限とリソース制限があり、画像分類学習には不適切。"
+        }
       ],
       "explanation": "HIPAA等の規制業界では (1) 再現性（コンテナ管理＝ECR）、(2) 統制（Pipelines、Model Registry）、(3) 機密保護（KMS、VPC、PrivateLink）、(4) 監査（CloudTrail、Lineage）が必須。BYOコンテナ＋AMT＋Pipelinesの組合せはAWSが推奨するエンタープライズ構成。",
-      "references": [{"title": "Use Your Own Algorithms or Models", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html"}, {"title": "SageMaker Pipelines", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"}],
-      "tags": ["custom-container", "ecr", "pipelines", "hipaa", "healthcare"],
-      "common_mistakes": ["E2Eを Lambda だけで作ろうとする", "Model Registry を使わずバージョン管理が崩壊"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Use Your Own Algorithms or Models",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html"
+        },
+        {
+          "title": "SageMaker Pipelines",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
+        }
+      ],
+      "tags": [
+        "custom-container",
+        "ecr",
+        "pipelines",
+        "hipaa",
+        "healthcare"
+      ],
+      "common_mistakes": [
+        "E2Eを Lambda だけで作ろうとする",
+        "Model Registry を使わずバージョン管理が崩壊"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

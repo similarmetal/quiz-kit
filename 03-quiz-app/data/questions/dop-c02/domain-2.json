@@ -15,577 +15,1913 @@
     {
       "id": "dop-c02-domain2-001",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "StackSets basics",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS CloudFormation StackSets が一度の操作で複数のアカウントとリージョンに同じテンプレートをデプロイできる仕組みの主要コンポーネント名は？",
       "options": [
-        {"id": "A", "text": "Administrator account と Target account（Stack instances）", "is_correct": true, "explanation": "正解。StackSets は管理者アカウントから複数のターゲットアカウント／リージョンに stack instance を作成する。"},
-        {"id": "B", "text": "Producer account と Consumer account", "is_correct": false, "explanation": "EventBridge の概念に近い言い方であり、StackSets では使われない用語。"},
-        {"id": "C", "text": "Master stack と Slave stack", "is_correct": false, "explanation": "「Master/Slave」は AWS の現行用語ではなく、CloudFormation の概念にも存在しない。"},
-        {"id": "D", "text": "Source stack と Replica stack", "is_correct": false, "explanation": "存在しない用語。CloudFormation のレプリケーション概念は StackSets の Stack instance で表現される。"}
+        {
+          "id": "A",
+          "text": "Administrator account と Target account（Stack instances）",
+          "is_correct": true,
+          "explanation": "正解。StackSets は管理者アカウントから複数のターゲットアカウント／リージョンに stack instance を作成する。"
+        },
+        {
+          "id": "B",
+          "text": "Source stack と Replica stack",
+          "is_correct": false,
+          "explanation": "存在しない用語。CloudFormation のレプリケーション概念は StackSets の Stack instance で表現される。"
+        },
+        {
+          "id": "C",
+          "text": "Master stack と Slave stack",
+          "is_correct": false,
+          "explanation": "「Master/Slave」は AWS の現行用語ではなく、CloudFormation の概念にも存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "Producer account と Consumer account",
+          "is_correct": false,
+          "explanation": "EventBridge の概念に近い言い方であり、StackSets では使われない用語。"
+        }
       ],
       "explanation": "StackSets は管理者アカウント（self-managed か service-managed の Organizations 連携）からターゲットアカウント／リージョンへ stack instance を展開する。Service-managed では Organizations の OU 単位で自動的に新規アカウントへ展開可能。",
-      "references": [{"title": "Working with AWS CloudFormation StackSets", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"}],
-      "tags": ["cloudformation", "stacksets", "multi-account", "iac"],
-      "common_mistakes": ["StackSets と nested stacks を混同する", "service-managed と self-managed の違いを理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Working with AWS CloudFormation StackSets",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "stacksets",
+        "multi-account",
+        "iac"
+      ],
+      "common_mistakes": [
+        "StackSets と nested stacks を混同する",
+        "service-managed と self-managed の違いを理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-002",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "Systems Manager",
       "subtopic": "Session Manager basics",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS Systems Manager Session Manager が SSH や RDP を使わずにEC2 インスタンスへセキュアにシェルアクセスできるしくみとして正しいのはどれか？",
       "options": [
-        {"id": "A", "text": "SSM Agent が Systems Manager のエンドポイントへアウトバウンド HTTPS で接続し、その経路を通じてセッションが確立される", "is_correct": true, "explanation": "正解。インバウンドポートを開ける必要がなく、IAM 認証と CloudTrail/CloudWatch Logs によるロギングが可能。"},
-        {"id": "B", "text": "Session Manager 専用の VPN 接続を VPC ごとに張り、その中で SSH を中継する", "is_correct": false, "explanation": "Session Manager は VPN を必要としない。VPC エンドポイントは推奨されるがVPN ではない。"},
-        {"id": "C", "text": "Bastion Host を自動でプロビジョニングし、SSH を踏み台越しに通す", "is_correct": false, "explanation": "Session Manager は Bastion を不要にすることが目的の一つで、Bastion を作るわけではない。"},
-        {"id": "D", "text": "SSM Agent が インバウンド ポート 443 を開けて Systems Manager からの接続を待ち受ける", "is_correct": false, "explanation": "アウトバウンドのみで、インバウンドポートは不要。これが Session Manager のセキュリティ上の利点。"}
+        {
+          "id": "A",
+          "text": "Bastion Host を自動でプロビジョニングし、SSH を踏み台越しに通す",
+          "is_correct": false,
+          "explanation": "Session Manager は Bastion を不要にすることが目的の一つで、Bastion を作るわけではない。"
+        },
+        {
+          "id": "B",
+          "text": "SSM Agent が Systems Manager のエンドポイントへアウトバウンド HTTPS で接続し、その経路を通じてセッションが確立される",
+          "is_correct": true,
+          "explanation": "正解。インバウンドポートを開ける必要がなく、IAM 認証と CloudTrail/CloudWatch Logs によるロギングが可能。"
+        },
+        {
+          "id": "C",
+          "text": "SSM Agent が インバウンド ポート 443 を開けて Systems Manager からの接続を待ち受ける",
+          "is_correct": false,
+          "explanation": "アウトバウンドのみで、インバウンドポートは不要。これが Session Manager のセキュリティ上の利点。"
+        },
+        {
+          "id": "D",
+          "text": "Session Manager 専用の VPN 接続を VPC ごとに張り、その中で SSH を中継する",
+          "is_correct": false,
+          "explanation": "Session Manager は VPN を必要としない。VPC エンドポイントは推奨されるがVPN ではない。"
+        }
       ],
       "explanation": "Session Manager は SSM Agent のアウトバウンド HTTPS（TCP 443）接続を利用するため、ノードに対してインバウンドポートを開放する必要がない。VPC エンドポイントを使えばインターネットを経由せずにアクセスでき、CloudTrail と CloudWatch Logs の両方で操作監査可能。",
-      "references": [{"title": "AWS Systems Manager Session Manager", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html"}],
-      "tags": ["systems-manager", "session-manager", "ssm-agent", "security"],
-      "common_mistakes": ["Session Manager がインバウンド 443 を必要とすると誤解する", "SSH の代替に Bastion を残す必要があると考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Systems Manager Session Manager",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html"
+        }
+      ],
+      "tags": [
+        "systems-manager",
+        "session-manager",
+        "ssm-agent",
+        "security"
+      ],
+      "common_mistakes": [
+        "Session Manager がインバウンド 443 を必要とすると誤解する",
+        "SSH の代替に Bastion を残す必要があると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-003",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "Change sets",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ある SaaS 企業のインフラチームが本番環境の CloudFormation スタックに更新を加える前に、どのリソースが「Replace（再作成）」されるかを必ず確認したい。最も適切な仕組みは？",
       "options": [
-        {"id": "A", "text": "更新前に Change Set を作成し、Replacement カラムで影響を確認する", "is_correct": true, "explanation": "正解。Change Set はテンプレートと既存スタックの差分を生成し、各リソースの Action（Add/Modify/Remove）と Replacement（True/False/Conditional）を提示する。"},
-        {"id": "B", "text": "stack のドリフト検出を実行する", "is_correct": false, "explanation": "ドリフト検出は手動変更との差を見るもので、これから加える変更の影響予測ではない。"},
-        {"id": "C", "text": "テンプレートを `cfn-lint` でローカル検証する", "is_correct": false, "explanation": "lint は構文・形式の検証で、実環境上のリソース置換予測は出ない。"},
-        {"id": "D", "text": "rollback configuration を有効化する", "is_correct": false, "explanation": "rollback configuration はメトリクス連動の自動ロールバック設定で、影響予測ではない。"}
+        {
+          "id": "A",
+          "text": "rollback configuration を有効化する",
+          "is_correct": false,
+          "explanation": "rollback configuration はメトリクス連動の自動ロールバック設定で、影響予測ではない。"
+        },
+        {
+          "id": "B",
+          "text": "テンプレートを `cfn-lint` でローカル検証する",
+          "is_correct": false,
+          "explanation": "lint は構文・形式の検証で、実環境上のリソース置換予測は出ない。"
+        },
+        {
+          "id": "C",
+          "text": "更新前に Change Set を作成し、Replacement カラムで影響を確認する",
+          "is_correct": true,
+          "explanation": "正解。Change Set はテンプレートと既存スタックの差分を生成し、各リソースの Action（Add/Modify/Remove）と Replacement（True/False/Conditional）を提示する。"
+        },
+        {
+          "id": "D",
+          "text": "stack のドリフト検出を実行する",
+          "is_correct": false,
+          "explanation": "ドリフト検出は手動変更との差を見るもので、これから加える変更の影響予測ではない。"
+        }
       ],
       "explanation": "Change Set は本番デプロイ前のレビュー手段として設計されている。Replacement: True は当該リソースが削除→再作成されることを意味し、データ損失やダウンタイムにつながる場合があるため、必ずレビューする運用が望ましい。",
-      "references": [{"title": "Updating stacks using change sets", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html"}],
-      "tags": ["cloudformation", "change-set", "blue-green", "production"],
-      "common_mistakes": ["Drift Detection と Change Set を混同する", "cfn-lint で本番影響を判定できると誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Updating stacks using change sets",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "change-set",
+        "blue-green",
+        "production"
+      ],
+      "common_mistakes": [
+        "Drift Detection と Change Set を混同する",
+        "cfn-lint で本番影響を判定できると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-004",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "Drift detection",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "CloudFormation の Drift Detection が「IN_SYNC」「MODIFIED」「DELETED」「NOT_CHECKED」などの結果を返すが、ある製造業の運用チームは「ドリフトを検出できないリソースがある」ことに気づいた。次のうち、ドリフト検出が機能しない・限定される主な理由として最も適切なのはどれか？",
       "options": [
-        {"id": "A", "text": "リソースタイプによっては Drift Detection に対応していない、もしくは特定プロパティのみ対応している", "is_correct": true, "explanation": "正解。Drift Detection は対応リソース／プロパティが定義されており、未対応のリソースタイプ・プロパティは検出できない。"},
-        {"id": "B", "text": "スタック作成時に IAM ロールを指定していないと一切検出できない", "is_correct": false, "explanation": "サービスロールはアクセス権限制御の仕組みで、ドリフト検出の機能可否を決めるものではない。"},
-        {"id": "C", "text": "Drift Detection は CloudFormation StackSets でのみ動作し、通常の Stack には適用できない", "is_correct": false, "explanation": "むしろ通常 Stack で先に提供され、StackSets 用の機能は後発で追加された。"},
-        {"id": "D", "text": "CloudTrail を有効にしないとドリフトイベントが取れない", "is_correct": false, "explanation": "CloudTrail は API 監査用途で、Drift Detection の動作要件ではない。"}
+        {
+          "id": "A",
+          "text": "スタック作成時に IAM ロールを指定していないと一切検出できない",
+          "is_correct": false,
+          "explanation": "サービスロールはアクセス権限制御の仕組みで、ドリフト検出の機能可否を決めるものではない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudTrail を有効にしないとドリフトイベントが取れない",
+          "is_correct": false,
+          "explanation": "CloudTrail は API 監査用途で、Drift Detection の動作要件ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Drift Detection は CloudFormation StackSets でのみ動作し、通常の Stack には適用できない",
+          "is_correct": false,
+          "explanation": "むしろ通常 Stack で先に提供され、StackSets 用の機能は後発で追加された。"
+        },
+        {
+          "id": "D",
+          "text": "リソースタイプによっては Drift Detection に対応していない、もしくは特定プロパティのみ対応している",
+          "is_correct": true,
+          "explanation": "正解。Drift Detection は対応リソース／プロパティが定義されており、未対応のリソースタイプ・プロパティは検出できない。"
+        }
       ],
       "explanation": "Drift Detection はサポート対象のリソース／プロパティに限定される。AWS のドキュメントに対応リソースの一覧があり、未対応リソースは NOT_CHECKED となる。本番運用では Config の組み合わせや、対応外リソースの個別チェックが必要。",
-      "references": [{"title": "Detecting unmanaged configuration changes to stacks and resources", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"}],
-      "tags": ["cloudformation", "drift-detection", "compliance"],
-      "common_mistakes": ["全リソースが必ずドリフト検出されると誤解する", "Drift Detection と Config Rules の差を理解していない"],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Detecting unmanaged configuration changes to stacks and resources",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "drift-detection",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "全リソースが必ずドリフト検出されると誤解する",
+        "Drift Detection と Config Rules の差を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-005",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AWS CDK",
       "subtopic": "Construct levels",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS CDK の Construct には L1, L2, L3 のレベルがある。あるエンジニアが「ロードバランサ + Fargate サービス + ヘルスチェック + ロギング設定をベストプラクティス込みで一括生成したい」と話している。どの Construct レベルを選ぶのが最も適切か？",
       "options": [
-        {"id": "A", "text": "L1 (Cfn*) Construct のみで構成", "is_correct": false, "explanation": "L1 は CFN リソースの 1:1 ラッパーで、ベストプラクティスは含まれず、ボイラープレートが膨大になる。"},
-        {"id": "B", "text": "L2 Construct を組み合わせて自前で配線", "is_correct": false, "explanation": "L2 でも実現可能だが、目的が「一括生成・ベストプラクティス込み」なら L3 のほうが適切。"},
-        {"id": "C", "text": "L3 (Patterns) Construct、例えば `ApplicationLoadBalancedFargateService` を使う", "is_correct": true, "explanation": "正解。L3 はユースケース指向の高水準パターンで、複数の L2 を組み合わせベストプラクティス構成を提供する。"},
-        {"id": "D", "text": "CloudFormation テンプレートを直接書き、CDK の cfn-include で取り込む", "is_correct": false, "explanation": "可能だが本問の趣旨「CDK の一括生成」と逆行し、抽象化のメリットを失う。"}
+        {
+          "id": "A",
+          "text": "L3 (Patterns) Construct、例えば `ApplicationLoadBalancedFargateService` を使う",
+          "is_correct": true,
+          "explanation": "正解。L3 はユースケース指向の高水準パターンで、複数の L2 を組み合わせベストプラクティス構成を提供する。"
+        },
+        {
+          "id": "B",
+          "text": "L1 (Cfn*) Construct のみで構成",
+          "is_correct": false,
+          "explanation": "L1 は CFN リソースの 1:1 ラッパーで、ベストプラクティスは含まれず、ボイラープレートが膨大になる。"
+        },
+        {
+          "id": "C",
+          "text": "CloudFormation テンプレートを直接書き、CDK の cfn-include で取り込む",
+          "is_correct": false,
+          "explanation": "可能だが本問の趣旨「CDK の一括生成」と逆行し、抽象化のメリットを失う。"
+        },
+        {
+          "id": "D",
+          "text": "L2 Construct を組み合わせて自前で配線",
+          "is_correct": false,
+          "explanation": "L2 でも実現可能だが、目的が「一括生成・ベストプラクティス込み」なら L3 のほうが適切。"
+        }
       ],
       "explanation": "CDK の Construct 階層: L1 = CFN 1:1（CfnBucket など）、L2 = AWS リソースのベストプラクティス付きラッパー（Bucket）、L3 = 複数リソースを組み合わせた解決パターン（ApplicationLoadBalancedFargateService など）。学習要点として頻出の概念。",
-      "references": [{"title": "AWS CDK Constructs", "url": "https://docs.aws.amazon.com/cdk/v2/guide/constructs.html"}],
-      "tags": ["cdk", "constructs", "l1", "l2", "l3", "patterns"],
-      "common_mistakes": ["L1 で全部書こうとしてボイラープレートが増える", "L3 の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS CDK Constructs",
+          "url": "https://docs.aws.amazon.com/cdk/v2/guide/constructs.html"
+        }
+      ],
+      "tags": [
+        "cdk",
+        "constructs",
+        "l1",
+        "l2",
+        "l3",
+        "patterns"
+      ],
+      "common_mistakes": [
+        "L1 で全部書こうとしてボイラープレートが増える",
+        "L3 の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-006",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "Systems Manager",
       "subtopic": "Patch Manager",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある医療系 SaaS で、HIPAA 準拠のため EC2 Linux サーバ群に対して「重要セキュリティパッチを毎週土曜深夜に自動適用、適用結果はレポート化」したい。最小の運用負担で実現する組み合わせはどれか？",
       "options": [
-        {"id": "A", "text": "Systems Manager Patch Manager の Patch Baseline + Maintenance Window + Patch Group タグ", "is_correct": true, "explanation": "正解。Patch Baseline で対象パッチを定義、Maintenance Window で時間帯を制御、Patch Group タグで対象を絞り込み、コンプライアンスレポートも自動生成される。"},
-        {"id": "B", "text": "EC2 ユーザデータで yum-cron をインストールし、Auto Scaling で再生成", "is_correct": false, "explanation": "適用ログ集約や Maintenance Window 制御を欠くため運用負担が高く、レポートも分散する。"},
-        {"id": "C", "text": "AWS Backup と Lambda を組み合わせてイメージ更新", "is_correct": false, "explanation": "AWS Backup はバックアップサービスでパッチ適用機能を持たない。"},
-        {"id": "D", "text": "Inspector のフィンディングを EventBridge で受け、Systems Manager Run Command で適用", "is_correct": false, "explanation": "Inspector は脆弱性検出には使えるが、定期的なパッチ適用統合パターンとしては Patch Manager のほうが標準。"}
+        {
+          "id": "A",
+          "text": "Inspector のフィンディングを EventBridge で受け、Systems Manager Run Command で適用",
+          "is_correct": false,
+          "explanation": "Inspector は脆弱性検出には使えるが、定期的なパッチ適用統合パターンとしては Patch Manager のほうが標準。"
+        },
+        {
+          "id": "B",
+          "text": "Systems Manager Patch Manager の Patch Baseline + Maintenance Window + Patch Group タグ",
+          "is_correct": true,
+          "explanation": "正解。Patch Baseline で対象パッチを定義、Maintenance Window で時間帯を制御、Patch Group タグで対象を絞り込み、コンプライアンスレポートも自動生成される。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Backup と Lambda を組み合わせてイメージ更新",
+          "is_correct": false,
+          "explanation": "AWS Backup はバックアップサービスでパッチ適用機能を持たない。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 ユーザデータで yum-cron をインストールし、Auto Scaling で再生成",
+          "is_correct": false,
+          "explanation": "適用ログ集約や Maintenance Window 制御を欠くため運用負担が高く、レポートも分散する。"
+        }
       ],
       "explanation": "Patch Manager は Patch Baseline（対象 OS と承認ルール）、Patch Group（タグ）、Maintenance Window（時間枠）、Compliance（適用結果のレポート）の四要素で構成される。HIPAA など監査要件があるシナリオでは特に有効。",
-      "references": [{"title": "AWS Systems Manager Patch Manager", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-patch.html"}],
-      "tags": ["systems-manager", "patch-manager", "compliance", "hipaa", "maintenance-window"],
-      "common_mistakes": ["yum-cron のような OS 機能で済ませて監査ログが取れない", "Patch Group をインスタンスタグだと知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Systems Manager Patch Manager",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-patch.html"
+        }
+      ],
+      "tags": [
+        "systems-manager",
+        "patch-manager",
+        "compliance",
+        "hipaa",
+        "maintenance-window"
+      ],
+      "common_mistakes": [
+        "yum-cron のような OS 機能で済ませて監査ログが取れない",
+        "Patch Group をインスタンスタグだと知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-007",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AppConfig",
       "subtopic": "Feature flags rollout",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS AppConfig を使って Feature Flag を 1% → 10% → 50% → 100% と段階的に有効化する場合、ロールアウト中に CloudWatch アラームが発報したら自動でロールバックさせたい。AppConfig が提供する仕組みはどれか？",
       "options": [
-        {"id": "A", "text": "Deployment Strategy の Bake Time と CloudWatch Alarms を関連付ける", "is_correct": true, "explanation": "正解。AppConfig の Deployment Strategy には Growth Type, Bake Time, CloudWatch Alarms の指定があり、bake 中にアラームが発報すれば自動ロールバックされる。"},
-        {"id": "B", "text": "Lambda カスタムリゾルバを書き、毎分アラームを polling する", "is_correct": false, "explanation": "AppConfig がネイティブで提供する機能をわざわざ自作する必要はない。"},
-        {"id": "C", "text": "CodeDeploy のデプロイフックを利用する", "is_correct": false, "explanation": "CodeDeploy はアプリのデプロイで、AppConfig の Configuration デプロイとは別ドメイン。"},
-        {"id": "D", "text": "Step Functions に分岐ロジックを実装する", "is_correct": false, "explanation": "実装可能だが、ネイティブ機能で完結するため過剰設計。"}
+        {
+          "id": "A",
+          "text": "Lambda カスタムリゾルバを書き、毎分アラームを polling する",
+          "is_correct": false,
+          "explanation": "AppConfig がネイティブで提供する機能をわざわざ自作する必要はない。"
+        },
+        {
+          "id": "B",
+          "text": "Step Functions に分岐ロジックを実装する",
+          "is_correct": false,
+          "explanation": "実装可能だが、ネイティブ機能で完結するため過剰設計。"
+        },
+        {
+          "id": "C",
+          "text": "Deployment Strategy の Bake Time と CloudWatch Alarms を関連付ける",
+          "is_correct": true,
+          "explanation": "正解。AppConfig の Deployment Strategy には Growth Type, Bake Time, CloudWatch Alarms の指定があり、bake 中にアラームが発報すれば自動ロールバックされる。"
+        },
+        {
+          "id": "D",
+          "text": "CodeDeploy のデプロイフックを利用する",
+          "is_correct": false,
+          "explanation": "CodeDeploy はアプリのデプロイで、AppConfig の Configuration デプロイとは別ドメイン。"
+        }
       ],
       "explanation": "AppConfig Deployment Strategy は (1) Growth Factor（増分%）、(2) Deployment Duration、(3) Final Bake Time、(4) Growth Type（Linear / Exponential）、(5) Alarm Rollback で構成。bake time 中の CloudWatch Alarm 発報で自動ロールバック。Feature Flag 安全な公開の標準パターン。",
-      "references": [{"title": "AWS AppConfig Deployment strategies", "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html"}],
-      "tags": ["appconfig", "feature-flags", "deployment-strategy", "rollback"],
-      "common_mistakes": ["AppConfig と Parameter Store を混同する", "ロールバックを手動運用にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS AppConfig Deployment strategies",
+          "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html"
+        }
+      ],
+      "tags": [
+        "appconfig",
+        "feature-flags",
+        "deployment-strategy",
+        "rollback"
+      ],
+      "common_mistakes": [
+        "AppConfig と Parameter Store を混同する",
+        "ロールバックを手動運用にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-008",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AWS Config",
       "subtopic": "Conformance packs",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある FinTech 企業で、AWS Organizations 配下の全アカウントに対して PCI DSS 関連の Config ルールセットを一括展開したい。最小の運用で展開・ガバナンス可能な方法は？",
       "options": [
-        {"id": "A", "text": "Conformance Pack を作成し、Organizations のサービス委任管理者から組織全体に展開", "is_correct": true, "explanation": "正解。Conformance Pack は複数 Config Rule のテンプレートで、Organizations と統合し OU 単位で一括デプロイ可能。"},
-        {"id": "B", "text": "各アカウントで個別に Config Rule を作成", "is_correct": false, "explanation": "アカウント数が増えるとスケールしない。"},
-        {"id": "C", "text": "CloudFormation StackSets で Config Rule をデプロイ", "is_correct": false, "explanation": "技術的に可能だが、Config 専用の Conformance Pack のほうがコンプライアンスダッシュボードや組織配信に最適化されている。"},
-        {"id": "D", "text": "AWS Audit Manager で Config を代替", "is_correct": false, "explanation": "Audit Manager は監査エビデンス収集ツールで、Config Rule の評価エンジン自体を置き換えるものではない。"}
+        {
+          "id": "A",
+          "text": "AWS Audit Manager で Config を代替",
+          "is_correct": false,
+          "explanation": "Audit Manager は監査エビデンス収集ツールで、Config Rule の評価エンジン自体を置き換えるものではない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFormation StackSets で Config Rule をデプロイ",
+          "is_correct": false,
+          "explanation": "技術的に可能だが、Config 専用の Conformance Pack のほうがコンプライアンスダッシュボードや組織配信に最適化されている。"
+        },
+        {
+          "id": "C",
+          "text": "各アカウントで個別に Config Rule を作成",
+          "is_correct": false,
+          "explanation": "アカウント数が増えるとスケールしない。"
+        },
+        {
+          "id": "D",
+          "text": "Conformance Pack を作成し、Organizations のサービス委任管理者から組織全体に展開",
+          "is_correct": true,
+          "explanation": "正解。Conformance Pack は複数 Config Rule のテンプレートで、Organizations と統合し OU 単位で一括デプロイ可能。"
+        }
       ],
       "explanation": "Conformance Pack は Config ルール群と修復アクションを一つの YAML テンプレートにまとめたもので、Organizations と統合し、コンプライアンスダッシュボードを提供する。PCI DSS、HIPAA、NIST など多くのサンプルパックが公式で提供されている。",
-      "references": [{"title": "AWS Config Conformance Packs", "url": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html"}],
-      "tags": ["aws-config", "conformance-pack", "organizations", "compliance", "pci-dss"],
-      "common_mistakes": ["StackSets ですべて代替できると考える", "Conformance Pack の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Config Conformance Packs",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html"
+        }
+      ],
+      "tags": [
+        "aws-config",
+        "conformance-pack",
+        "organizations",
+        "compliance",
+        "pci-dss"
+      ],
+      "common_mistakes": [
+        "StackSets ですべて代替できると考える",
+        "Conformance Pack の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-009",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "Custom resources",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "CloudFormation で AWS が提供しないサードパーティ SaaS（例：Datadog のモニター）をテンプレート内で作成・更新・削除したい。最も一般的かつ推奨される実装は？",
       "options": [
-        {"id": "A", "text": "Custom Resource (AWS::CloudFormation::CustomResource) と Lambda backed の Resource Provider を実装する", "is_correct": true, "explanation": "正解。Custom Resource は Lambda（または SNS）をバックエンドに任意の API を Create/Update/Delete に対応させられる。レスポンス URL に PUT して結果を CFN に返す。"},
-        {"id": "B", "text": "CloudFormation Hooks の事前検証フックでサードパーティリソースを生成する", "is_correct": false, "explanation": "Hooks はガードレール用途（リソースの作成前後の検証）であり、リソース生成の本体ではない。"},
-        {"id": "C", "text": "AWS Lambda 関数を別途デプロイし、テンプレートと無関係に呼び出す", "is_correct": false, "explanation": "テンプレートの宣言的なライフサイクル管理から外れ、ロールバックや削除整合性が壊れる。"},
-        {"id": "D", "text": "Stack の Outputs に webhook URL を書く", "is_correct": false, "explanation": "Outputs は値の参照用で、外部 API を呼び出す機能はない。"}
+        {
+          "id": "A",
+          "text": "Custom Resource (AWS::CloudFormation::CustomResource) と Lambda backed の Resource Provider を実装する",
+          "is_correct": true,
+          "explanation": "正解。Custom Resource は Lambda（または SNS）をバックエンドに任意の API を Create/Update/Delete に対応させられる。レスポンス URL に PUT して結果を CFN に返す。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Lambda 関数を別途デプロイし、テンプレートと無関係に呼び出す",
+          "is_correct": false,
+          "explanation": "テンプレートの宣言的なライフサイクル管理から外れ、ロールバックや削除整合性が壊れる。"
+        },
+        {
+          "id": "C",
+          "text": "Stack の Outputs に webhook URL を書く",
+          "is_correct": false,
+          "explanation": "Outputs は値の参照用で、外部 API を呼び出す機能はない。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFormation Hooks の事前検証フックでサードパーティリソースを生成する",
+          "is_correct": false,
+          "explanation": "Hooks はガードレール用途（リソースの作成前後の検証）であり、リソース生成の本体ではない。"
+        }
       ],
       "explanation": "Custom Resource は CloudFormation の拡張ポイントで、Create/Update/Delete のライフサイクルイベントに応じて Lambda を呼び出す。CFN のロールバックや削除に整合的に追従できるのが利点。最近は CloudFormation Registry の Resource Type（third-party resource provider）でも実現可能。",
-      "references": [{"title": "AWS CloudFormation Custom resources", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html"}],
-      "tags": ["cloudformation", "custom-resource", "lambda", "extensibility"],
-      "common_mistakes": ["Custom Resource と Hooks を混同する", "Lambda を別系統で呼び出して整合性を壊す"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS CloudFormation Custom resources",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "custom-resource",
+        "lambda",
+        "extensibility"
+      ],
+      "common_mistakes": [
+        "Custom Resource と Hooks を混同する",
+        "Lambda を別系統で呼び出して整合性を壊す"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-010",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "StackSets service-managed",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の製造業企業が AWS Organizations を採用し、新規アカウント作成時に「ベースラインの IAM ロールと VPC エンドポイントの構成」を自動展開したい。運用負担が最も少ない方法は？",
+      "stem": "ある製造業企業が AWS Organizations を採用し、新規アカウント作成時に「ベースラインの IAM ロールと VPC エンドポイントの構成」を自動展開したい。運用負担が最も少ない方法は？",
       "options": [
-        {"id": "A", "text": "Service-managed StackSets で「自動デプロイ（Auto-deployment）」を有効化し、ターゲットを OU に指定", "is_correct": true, "explanation": "正解。Service-managed StackSets と Organizations 連携で、新規アカウントが OU に追加されると自動で stack instance が展開される。"},
-        {"id": "B", "text": "Self-managed StackSets で、新規アカウント作成イベントを EventBridge で受けて Lambda が stack を作る", "is_correct": false, "explanation": "実装可能だが、Service-managed のほうが標準でこれを実現する。"},
-        {"id": "C", "text": "Account Factory（Control Tower）で個別に ServiceCatalog を実行する", "is_correct": false, "explanation": "Control Tower の Account Factory はアカウント発行段階の処理。Stack の自動展開には StackSets が連携する。"},
-        {"id": "D", "text": "管理者アカウントから aws cli を cron 実行", "is_correct": false, "explanation": "イベント駆動でなく、運用負担が高い。"}
+        {
+          "id": "A",
+          "text": "管理者アカウントから aws cli を cron 実行",
+          "is_correct": false,
+          "explanation": "イベント駆動でなく、運用負担が高い。"
+        },
+        {
+          "id": "B",
+          "text": "Service-managed StackSets で「自動デプロイ（Auto-deployment）」を有効化し、ターゲットを OU に指定",
+          "is_correct": true,
+          "explanation": "正解。Service-managed StackSets と Organizations 連携で、新規アカウントが OU に追加されると自動で stack instance が展開される。"
+        },
+        {
+          "id": "C",
+          "text": "Account Factory（Control Tower）で個別に ServiceCatalog を実行する",
+          "is_correct": false,
+          "explanation": "Control Tower の Account Factory はアカウント発行段階の処理。Stack の自動展開には StackSets が連携する。"
+        },
+        {
+          "id": "D",
+          "text": "Self-managed StackSets で、新規アカウント作成イベントを EventBridge で受けて Lambda が stack を作る",
+          "is_correct": false,
+          "explanation": "実装可能だが、Service-managed のほうが標準でこれを実現する。"
+        }
       ],
       "explanation": "Service-managed StackSets は Organizations が信頼関係を管理し、auto-deployment を有効化すると新規アカウントの OU 加入時に自動で stack instance が作成される。エンタープライズマルチアカウント運用の標準パターン。",
-      "references": [{"title": "Working with AWS Organizations and AWS CloudFormation StackSets", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-enable-trusted-access.html"}],
-      "tags": ["cloudformation", "stacksets", "organizations", "auto-deployment", "multi-account"],
-      "common_mistakes": ["self-managed と service-managed の違いを把握していない", "Account Factory ですべて完結すると思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Working with AWS Organizations and AWS CloudFormation StackSets",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-enable-trusted-access.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "stacksets",
+        "organizations",
+        "auto-deployment",
+        "multi-account"
+      ],
+      "common_mistakes": [
+        "self-managed と service-managed の違いを把握していない",
+        "Account Factory ですべて完結すると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-011",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "Systems Manager",
       "subtopic": "State Manager",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "教育系 SaaS 企業が、フリート 200 台の EC2 Linux に対して「CloudWatch Agent の設定ファイルを最新状態に保つ」「ドリフトしたら自動修復」を実現したい。最も適切な仕組みは？",
       "options": [
-        {"id": "A", "text": "Systems Manager State Manager の Association で SSM Document を定期実行し、望ましい状態を強制する", "is_correct": true, "explanation": "正解。State Manager Association は Desired State の維持を目的とし、定期スケジュールで SSM Document を実行する。"},
-        {"id": "B", "text": "Systems Manager Run Command を毎回手動実行", "is_correct": false, "explanation": "Run Command は単発実行用途で、状態維持は State Manager の役割。"},
-        {"id": "C", "text": "Lambda で systemd ユニットを書き換える Custom Resource を作る", "is_correct": false, "explanation": "可能だが State Manager の標準機能を再発明することになる。"},
-        {"id": "D", "text": "Auto Scaling Launch Template の user data に書く", "is_correct": false, "explanation": "起動時のみ適用され、稼働中インスタンスのドリフト是正にはならない。"}
+        {
+          "id": "A",
+          "text": "Lambda で systemd ユニットを書き換える Custom Resource を作る",
+          "is_correct": false,
+          "explanation": "可能だが State Manager の標準機能を再発明することになる。"
+        },
+        {
+          "id": "B",
+          "text": "Systems Manager Run Command を毎回手動実行",
+          "is_correct": false,
+          "explanation": "Run Command は単発実行用途で、状態維持は State Manager の役割。"
+        },
+        {
+          "id": "C",
+          "text": "Systems Manager State Manager の Association で SSM Document を定期実行し、望ましい状態を強制する",
+          "is_correct": true,
+          "explanation": "正解。State Manager Association は Desired State の維持を目的とし、定期スケジュールで SSM Document を実行する。"
+        },
+        {
+          "id": "D",
+          "text": "Auto Scaling Launch Template の user data に書く",
+          "is_correct": false,
+          "explanation": "起動時のみ適用され、稼働中インスタンスのドリフト是正にはならない。"
+        }
       ],
       "explanation": "State Manager Association は EC2/オンプレ/コンテナの「望ましい状態」を維持するためのスケジュール実行機能。SSM Document（AmazonCloudWatch-ManageAgent など）を周期的に流し、想定設定からズレた場合に自動で再適用する。",
-      "references": [{"title": "AWS Systems Manager State Manager", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state.html"}],
-      "tags": ["systems-manager", "state-manager", "ssm-document", "drift-remediation"],
-      "common_mistakes": ["State Manager と Run Command の役割を混同する", "user data だけで継続的状態維持できると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Systems Manager State Manager",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state.html"
+        }
+      ],
+      "tags": [
+        "systems-manager",
+        "state-manager",
+        "ssm-document",
+        "drift-remediation"
+      ],
+      "common_mistakes": [
+        "State Manager と Run Command の役割を混同する",
+        "user data だけで継続的状態維持できると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-012",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AWS CDK",
       "subtopic": "Aspects and policy enforcement",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "CDK アプリ全体に対して「全 S3 バケットに必ず暗号化を設定する」というポリシーを横断的に適用したい。最も CDK らしいアプローチは？",
       "options": [
-        {"id": "A", "text": "Aspects（IAspect）を実装し、`Annotations` でエラーを発生させて検証・補正する", "is_correct": true, "explanation": "正解。Aspect は CDK の Construct ツリーを横断的に走査・修正できる仕組みで、ガードレール用途に最適。"},
-        {"id": "B", "text": "Lambda の事後修復で実行時に暗号化を強制する", "is_correct": false, "explanation": "デプロイ後の修復は事後対処で、コードレベルで防げる問題を解決しない。"},
-        {"id": "C", "text": "CDK Pipelines のステージごとに手動レビュー", "is_correct": false, "explanation": "人手に依存し、自動的なポリシー強制にならない。"},
-        {"id": "D", "text": "cdk.json に `enforce-encryption: true` フラグを追加", "is_correct": false, "explanation": "そのようなフラグは存在しない。"}
+        {
+          "id": "A",
+          "text": "cdk.json に `enforce-encryption: true` フラグを追加",
+          "is_correct": false,
+          "explanation": "そのようなフラグは存在しない。"
+        },
+        {
+          "id": "B",
+          "text": "CDK Pipelines のステージごとに手動レビュー",
+          "is_correct": false,
+          "explanation": "人手に依存し、自動的なポリシー強制にならない。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda の事後修復で実行時に暗号化を強制する",
+          "is_correct": false,
+          "explanation": "デプロイ後の修復は事後対処で、コードレベルで防げる問題を解決しない。"
+        },
+        {
+          "id": "D",
+          "text": "Aspects（IAspect）を実装し、`Annotations` でエラーを発生させて検証・補正する",
+          "is_correct": true,
+          "explanation": "正解。Aspect は CDK の Construct ツリーを横断的に走査・修正できる仕組みで、ガードレール用途に最適。"
+        }
       ],
       "explanation": "CDK Aspects は Construct ツリーを visitor パターンで走査し、ノードごとに検査や変換が可能。`Annotations.of(node).addError()` で synth 時にエラー化できるため、ガードレールとして強力。組織標準（Cloud Custodian 風）の実装に向く。",
-      "references": [{"title": "AWS CDK Aspects", "url": "https://docs.aws.amazon.com/cdk/v2/guide/aspects.html"}],
-      "tags": ["cdk", "aspects", "guardrails", "policy-as-code"],
-      "common_mistakes": ["Aspects の存在を知らず Lambda 修復に頼る", "synth 時検証と実行時修復を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS CDK Aspects",
+          "url": "https://docs.aws.amazon.com/cdk/v2/guide/aspects.html"
+        }
+      ],
+      "tags": [
+        "cdk",
+        "aspects",
+        "guardrails",
+        "policy-as-code"
+      ],
+      "common_mistakes": [
+        "Aspects の存在を知らず Lambda 修復に頼る",
+        "synth 時検証と実行時修復を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-013",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "Terraform on AWS",
       "subtopic": "State management",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるチームが Terraform で AWS インフラを管理しているが、複数人が同時に terraform apply して State が壊れる事故が発生した。AWS マネージドな仕組みで状態の整合性を保証する組み合わせは？",
       "options": [
-        {"id": "A", "text": "S3 を State backend、DynamoDB Table を State Lock 用に使う", "is_correct": true, "explanation": "正解。S3 + DynamoDB は Terraform で広く使われる標準的な State 管理パターン。DynamoDB が分散ロックを提供する。"},
-        {"id": "B", "text": "S3 を State backend、SQS をロックに使う", "is_correct": false, "explanation": "SQS はキューで、分散ロックの提供サービスではない。"},
-        {"id": "C", "text": "EFS を State backend、Step Functions をロックに使う", "is_correct": false, "explanation": "EFS はファイル共有で、Terraform のサポートする backend ではない。"},
-        {"id": "D", "text": "CodeCommit を State backend、CodeBuild の同時実行制限でロックを代替", "is_correct": false, "explanation": "CodeCommit は Terraform backend に対応していない。"}
+        {
+          "id": "A",
+          "text": "S3 を State backend、DynamoDB Table を State Lock 用に使う",
+          "is_correct": true,
+          "explanation": "正解。S3 + DynamoDB は Terraform で広く使われる標準的な State 管理パターン。DynamoDB が分散ロックを提供する。"
+        },
+        {
+          "id": "B",
+          "text": "EFS を State backend、Step Functions をロックに使う",
+          "is_correct": false,
+          "explanation": "EFS はファイル共有で、Terraform のサポートする backend ではない。"
+        },
+        {
+          "id": "C",
+          "text": "CodeCommit を State backend、CodeBuild の同時実行制限でロックを代替",
+          "is_correct": false,
+          "explanation": "CodeCommit は Terraform backend に対応していない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 を State backend、SQS をロックに使う",
+          "is_correct": false,
+          "explanation": "SQS はキューで、分散ロックの提供サービスではない。"
+        }
       ],
       "explanation": "Terraform の S3 backend は dynamodb_table オプションで State Lock を提供する。DynamoDB の条件付き書き込みでロックを実現。これにより複数人が同時に apply しても整合性を保つ。",
-      "references": [{"title": "Terraform S3 Backend", "url": "https://developer.hashicorp.com/terraform/language/settings/backends/s3"}],
-      "tags": ["terraform", "iac", "state-management", "dynamodb", "s3"],
-      "common_mistakes": ["DynamoDB ロックを設定しないで State 競合を起こす", "ロックに SQS を使えると思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Terraform S3 Backend",
+          "url": "https://developer.hashicorp.com/terraform/language/settings/backends/s3"
+        }
+      ],
+      "tags": [
+        "terraform",
+        "iac",
+        "state-management",
+        "dynamodb",
+        "s3"
+      ],
+      "common_mistakes": [
+        "DynamoDB ロックを設定しないで State 競合を起こす",
+        "ロックに SQS を使えると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-014",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "Systems Manager",
       "subtopic": "Run Command and automation",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "急なゼロデイ脆弱性対応で、特定タグ `env=prod` がついた約 1,500 台の EC2 全てに「特定パッチを今すぐ適用」を 30 分以内に実行したい。最適な手段は？",
       "options": [
-        {"id": "A", "text": "Systems Manager Run Command でターゲットをタグでフィルタ、Concurrency と Error Threshold を設定し並列実行", "is_correct": true, "explanation": "正解。Run Command はアドホック実行に向き、タグセレクタとレートコントロール（Concurrency / Error Threshold）でフリート全体を安全に並列実行できる。"},
-        {"id": "B", "text": "State Manager Association を新規作成して即時実行を待つ", "is_correct": false, "explanation": "State Manager は継続的な状態維持目的で、緊急アドホック実行の最適手段ではない。"},
-        {"id": "C", "text": "Patch Manager の Maintenance Window を新規作成し直近時刻に設定", "is_correct": false, "explanation": "Maintenance Window は計画運用向けで、緊急即時対応にはオーバーヘッドが大きい。"},
-        {"id": "D", "text": "EC2 を terminate して Auto Scaling で新規起動", "is_correct": false, "explanation": "対応コストが高く、ステートフルなワークロードでは選択しづらい。"}
+        {
+          "id": "A",
+          "text": "EC2 を terminate して Auto Scaling で新規起動",
+          "is_correct": false,
+          "explanation": "対応コストが高く、ステートフルなワークロードでは選択しづらい。"
+        },
+        {
+          "id": "B",
+          "text": "Systems Manager Run Command でターゲットをタグでフィルタ、Concurrency と Error Threshold を設定し並列実行",
+          "is_correct": true,
+          "explanation": "正解。Run Command はアドホック実行に向き、タグセレクタとレートコントロール（Concurrency / Error Threshold）でフリート全体を安全に並列実行できる。"
+        },
+        {
+          "id": "C",
+          "text": "State Manager Association を新規作成して即時実行を待つ",
+          "is_correct": false,
+          "explanation": "State Manager は継続的な状態維持目的で、緊急アドホック実行の最適手段ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Patch Manager の Maintenance Window を新規作成し直近時刻に設定",
+          "is_correct": false,
+          "explanation": "Maintenance Window は計画運用向けで、緊急即時対応にはオーバーヘッドが大きい。"
+        }
       ],
       "explanation": "Run Command は SSM Document を即時実行するアドホックな機能で、タグベースのターゲティングと Rate Control（Concurrency / Error Threshold）が組み込まれている。緊急パッチ／設定変更の標準パターン。実行ログは CloudWatch Logs / S3 に集約可能。",
-      "references": [{"title": "AWS Systems Manager Run Command", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/execute-remote-commands.html"}],
-      "tags": ["systems-manager", "run-command", "patching", "incident-response", "rate-control"],
-      "common_mistakes": ["Run Command と State Manager の役割の違いを取り違える", "Concurrency 制御を忘れて全台同時実行で過負荷"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Systems Manager Run Command",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/execute-remote-commands.html"
+        }
+      ],
+      "tags": [
+        "systems-manager",
+        "run-command",
+        "patching",
+        "incident-response",
+        "rate-control"
+      ],
+      "common_mistakes": [
+        "Run Command と State Manager の役割の違いを取り違える",
+        "Concurrency 制御を忘れて全台同時実行で過負荷"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-015",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AWS CDK",
       "subtopic": "Cross-stack references",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "CDK で 2 つの Stack を運用している。Stack A の VPC を Stack B の RDS が参照する。Stack A の VPC を破棄不可能にしてしまうデプロイを避けるためのベストプラクティスは？",
       "options": [
-        {"id": "A", "text": "可能なら同一 Stack に統合する。分離が必要なら CfnOutput / Fn::ImportValue ではなく `vpc.fromLookup` や SSM Parameter で疎結合化する", "is_correct": true, "explanation": "正解。CFN の Export 値が他 Stack で参照されている間は当該 Output が削除できず、Stack A の更新が阻まれる。SSM Parameter Store か `fromLookup` で疎結合化するのが推奨。"},
-        {"id": "B", "text": "両 Stack に同じ ID で VPC を二重定義する", "is_correct": false, "explanation": "重複定義は競合と意図しないリソース増殖を招く。"},
-        {"id": "C", "text": "Stack B から Stack A を Custom Resource で再作成する", "is_correct": false, "explanation": "依存関係が逆転し管理が破綻する。"},
-        {"id": "D", "text": "Outputs を全て削除し、Stack 間で全リソースをハードコード", "is_correct": false, "explanation": "ハードコードはマルチ環境展開で破綻する。"}
+        {
+          "id": "A",
+          "text": "Outputs を全て削除し、Stack 間で全リソースをハードコード",
+          "is_correct": false,
+          "explanation": "ハードコードはマルチ環境展開で破綻する。"
+        },
+        {
+          "id": "B",
+          "text": "両 Stack に同じ ID で VPC を二重定義する",
+          "is_correct": false,
+          "explanation": "重複定義は競合と意図しないリソース増殖を招く。"
+        },
+        {
+          "id": "C",
+          "text": "可能なら同一 Stack に統合する。分離が必要なら CfnOutput / Fn::ImportValue ではなく `vpc.fromLookup` や SSM Parameter で疎結合化する",
+          "is_correct": true,
+          "explanation": "正解。CFN の Export 値が他 Stack で参照されている間は当該 Output が削除できず、Stack A の更新が阻まれる。SSM Parameter Store か `fromLookup` で疎結合化するのが推奨。"
+        },
+        {
+          "id": "D",
+          "text": "Stack B から Stack A を Custom Resource で再作成する",
+          "is_correct": false,
+          "explanation": "依存関係が逆転し管理が破綻する。"
+        }
       ],
       "explanation": "CDK の Cross-stack 参照は CFN Export/Import に変換される。Export は他 Stack で参照されている間更新できず、密結合が生じる。回避策として (1) 同一 Stack に統合、(2) SSM Parameter Store 経由、(3) `Vpc.fromLookup` で既存リソース解決、などが推奨される。",
-      "references": [{"title": "Resources in AWS CDK", "url": "https://docs.aws.amazon.com/cdk/v2/guide/resources.html"}],
-      "tags": ["cdk", "cross-stack", "ssm-parameter", "loose-coupling"],
-      "common_mistakes": ["CfnOutput をそのまま使い続け Stack の更新が詰まる", "同一 ID で重複定義して競合"],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Resources in AWS CDK",
+          "url": "https://docs.aws.amazon.com/cdk/v2/guide/resources.html"
+        }
+      ],
+      "tags": [
+        "cdk",
+        "cross-stack",
+        "ssm-parameter",
+        "loose-coupling"
+      ],
+      "common_mistakes": [
+        "CfnOutput をそのまま使い続け Stack の更新が詰まる",
+        "同一 ID で重複定義して競合"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-016",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AppConfig",
       "subtopic": "Configuration validation",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "AppConfig で配信する Configuration の妥当性を、デプロイ前に必ず検証してから配信したい。AppConfig がサポートする検証方法はどれか？",
       "options": [
-        {"id": "A", "text": "JSON Schema での型・値域検証、または Lambda Validator によるカスタム検証", "is_correct": true, "explanation": "正解。AppConfig は Configuration Profile に Validator を関連付けることができ、JSON Schema または Lambda の二種類が利用可能。"},
-        {"id": "B", "text": "S3 の バケットポリシーで Validator を実装", "is_correct": false, "explanation": "バケットポリシーは IAM 権限制御で、コンテンツ検証機能ではない。"},
-        {"id": "C", "text": "EventBridge ルールで JSON 構造を検査", "is_correct": false, "explanation": "EventBridge のパターンマッチは検証ロジックには貧弱で、AppConfig 標準機能ではない。"},
-        {"id": "D", "text": "CodePipeline の Manual Approval ステージで人がレビュー", "is_correct": false, "explanation": "人手レビューは可能だが、AppConfig が提供する自動検証ではない。"}
+        {
+          "id": "A",
+          "text": "CodePipeline の Manual Approval ステージで人がレビュー",
+          "is_correct": false,
+          "explanation": "人手レビューは可能だが、AppConfig が提供する自動検証ではない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 の バケットポリシーで Validator を実装",
+          "is_correct": false,
+          "explanation": "バケットポリシーは IAM 権限制御で、コンテンツ検証機能ではない。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge ルールで JSON 構造を検査",
+          "is_correct": false,
+          "explanation": "EventBridge のパターンマッチは検証ロジックには貧弱で、AppConfig 標準機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "JSON Schema での型・値域検証、または Lambda Validator によるカスタム検証",
+          "is_correct": true,
+          "explanation": "正解。AppConfig は Configuration Profile に Validator を関連付けることができ、JSON Schema または Lambda の二種類が利用可能。"
+        }
       ],
       "explanation": "AppConfig Validator は Configuration の検証に二種類提供される: (1) JSON Schema（型・必須・値域などの宣言的検証）、(2) Lambda Validator（任意のカスタムロジック）。デプロイ前にこれらを実行し、失敗時はリリースされない。",
-      "references": [{"title": "AWS AppConfig validators", "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html#appconfig-creating-configuration-and-profile-validators"}],
-      "tags": ["appconfig", "validation", "json-schema", "lambda"],
-      "common_mistakes": ["Validator の存在を知らず誤った設定をデプロイ", "JSON Schema と Lambda Validator の使い分けが曖昧"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS AppConfig validators",
+          "url": "https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html#appconfig-creating-configuration-and-profile-validators"
+        }
+      ],
+      "tags": [
+        "appconfig",
+        "validation",
+        "json-schema",
+        "lambda"
+      ],
+      "common_mistakes": [
+        "Validator の存在を知らず誤った設定をデプロイ",
+        "JSON Schema と Lambda Validator の使い分けが曖昧"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-017",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AWS Config",
       "subtopic": "Auto-remediation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "AWS Config Rule で「公開されている S3 Bucket」を検出すると同時に自動で Public Access Block を有効化したい。さらに、修復に失敗したら EventBridge → SNS で通知したい。どの組み合わせが最も適切か？",
       "options": [
-        {"id": "A", "text": "Config Rule の Remediation Action に SSM Automation `AWS-DisableS3BucketPublicReadWrite` を設定し、修復失敗イベントを EventBridge ルールでフィルタして SNS に送る", "is_correct": true, "explanation": "正解。Config Remediation Action は SSM Automation を呼び出せる。EventBridge には Config Compliance Change と Remediation の両方のイベントが流れるため、失敗イベントでフィルタ可能。"},
-        {"id": "B", "text": "Lambda を Remediation Action に直接指定", "is_correct": false, "explanation": "Config Remediation は SSM Automation Document を介して呼ぶ。Lambda 直接呼び出しは Config の標準フローではない（Automation Document 経由で Lambda を呼ぶことは可能）。"},
-        {"id": "C", "text": "Config の Conformance Pack に Lambda fn を含めれば自動で SNS 通知される", "is_correct": false, "explanation": "Conformance Pack はルール集約で、SNS 通知の自動配線機能は持たない。"},
-        {"id": "D", "text": "Remediation Action で StackSets を呼び、対象 Bucket をテンプレートから再生成", "is_correct": false, "explanation": "Bucket 再生成はデータ損失を伴い、最小修復ではない。"}
+        {
+          "id": "A",
+          "text": "Config Rule の Remediation Action に SSM Automation `AWS-DisableS3BucketPublicReadWrite` を設定し、修復失敗イベントを EventBridge ルールでフィルタして SNS に送る",
+          "is_correct": true,
+          "explanation": "正解。Config Remediation Action は SSM Automation を呼び出せる。EventBridge には Config Compliance Change と Remediation の両方のイベントが流れるため、失敗イベントでフィルタ可能。"
+        },
+        {
+          "id": "B",
+          "text": "Remediation Action で StackSets を呼び、対象 Bucket をテンプレートから再生成",
+          "is_correct": false,
+          "explanation": "Bucket 再生成はデータ損失を伴い、最小修復ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda を Remediation Action に直接指定",
+          "is_correct": false,
+          "explanation": "Config Remediation は SSM Automation Document を介して呼ぶ。Lambda 直接呼び出しは Config の標準フローではない（Automation Document 経由で Lambda を呼ぶことは可能）。"
+        },
+        {
+          "id": "D",
+          "text": "Config の Conformance Pack に Lambda fn を含めれば自動で SNS 通知される",
+          "is_correct": false,
+          "explanation": "Conformance Pack はルール集約で、SNS 通知の自動配線機能は持たない。"
+        }
       ],
       "explanation": "Config の Auto-Remediation は SSM Automation Document を実行する。失敗時の通知は Config の Compliance Change イベントや Automation の Step Failed イベントを EventBridge で拾うのが標準。AWS には `AWS-DisableS3BucketPublicReadWrite` をはじめ多数のマネージド Document が用意されている。",
-      "references": [{"title": "AWS Config Remediation Actions", "url": "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"}],
-      "tags": ["aws-config", "remediation", "ssm-automation", "eventbridge", "s3"],
-      "common_mistakes": ["Config が Lambda を直接 Remediation できると思う", "Remediation 失敗イベントの種別を知らない"],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Config Remediation Actions",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"
+        }
+      ],
+      "tags": [
+        "aws-config",
+        "remediation",
+        "ssm-automation",
+        "eventbridge",
+        "s3"
+      ],
+      "common_mistakes": [
+        "Config が Lambda を直接 Remediation できると思う",
+        "Remediation 失敗イベントの種別を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-018",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "Nested vs StackSets vs Modules",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "次のうち、利用シーンに対する CloudFormation 構造の最適マッチとして「最も適切でない」ものはどれか？",
       "options": [
-        {"id": "A", "text": "再利用可能な VPC テンプレートを 1 つの親 Stack 内で部品化 → Nested Stack", "is_correct": false, "explanation": "適切。Nested Stack は同一 Stack 内での部品化に向く。"},
-        {"id": "B", "text": "複数アカウント・複数リージョンへ同一テンプレートを展開 → StackSets", "is_correct": false, "explanation": "適切。StackSets はマルチアカウント／マルチリージョンの定石。"},
-        {"id": "C", "text": "組織標準の小さなビルディングブロックを再利用 → CloudFormation Modules", "is_correct": false, "explanation": "適切。Modules は再利用可能なテンプレート断片を CFN Registry に登録できる。"},
-        {"id": "D", "text": "アプリの段階的リリース（1% → 100% の Feature Flag 配信）→ CloudFormation StackSets", "is_correct": true, "explanation": "正解（=不適切）。Feature Flag の段階的配信は AppConfig や CodeDeploy Canary が適切で、CloudFormation StackSets はインフラ展開の仕組み。"}
+        {
+          "id": "A",
+          "text": "組織標準の小さなビルディングブロックを再利用 → CloudFormation Modules",
+          "is_correct": false,
+          "explanation": "適切。Modules は再利用可能なテンプレート断片を CFN Registry に登録できる。"
+        },
+        {
+          "id": "B",
+          "text": "アプリの段階的リリース（1% → 100% の Feature Flag 配信）→ CloudFormation StackSets",
+          "is_correct": true,
+          "explanation": "正解（=不適切）。Feature Flag の段階的配信は AppConfig や CodeDeploy Canary が適切で、CloudFormation StackSets はインフラ展開の仕組み。"
+        },
+        {
+          "id": "C",
+          "text": "再利用可能な VPC テンプレートを 1 つの親 Stack 内で部品化 → Nested Stack",
+          "is_correct": false,
+          "explanation": "適切。Nested Stack は同一 Stack 内での部品化に向く。"
+        },
+        {
+          "id": "D",
+          "text": "複数アカウント・複数リージョンへ同一テンプレートを展開 → StackSets",
+          "is_correct": false,
+          "explanation": "適切。StackSets はマルチアカウント／マルチリージョンの定石。"
+        }
       ],
       "explanation": "Nested Stack（同一スタック内モジュール化）、StackSets（マルチアカウント／リージョン展開）、Modules（再利用部品の Registry）はそれぞれ異なる目的。Feature Flag の段階配信は AppConfig の責務であり、CFN ではない。設計判断の幅を問う典型問題。",
-      "references": [{"title": "CloudFormation Modules", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html"}],
-      "tags": ["cloudformation", "nested-stack", "stacksets", "modules", "appconfig"],
-      "common_mistakes": ["StackSets を Feature Flag 配信に流用しようとする", "Module と Nested Stack を混同する"],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CloudFormation Modules",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "nested-stack",
+        "stacksets",
+        "modules",
+        "appconfig"
+      ],
+      "common_mistakes": [
+        "StackSets を Feature Flag 配信に流用しようとする",
+        "Module と Nested Stack を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-019",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "DeletionPolicy and UpdateReplacePolicy",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある B2B SaaS で、CloudFormation Stack に含まれる本番 RDS をうっかり削除・置き換えする事故を防ぎたい。最も網羅的な保護組み合わせはどれか？",
       "options": [
-        {"id": "A", "text": "RDS リソースに `DeletionPolicy: Retain` と `UpdateReplacePolicy: Retain`、Stack に `Termination Protection`、IAM SCP で `cloudformation:DeleteStack` と `rds:DeleteDBInstance` を制限", "is_correct": true, "explanation": "正解。Resource 単位の保護（Deletion / UpdateReplace）、Stack 単位（Termination Protection）、IAM 単位（最小権限／SCP）の三層が最も網羅的。"},
-        {"id": "B", "text": "DeletionPolicy: Retain だけ", "is_correct": false, "explanation": "UpdateReplacePolicy が無いと、変更で再作成される際に旧 RDS は削除される。"},
-        {"id": "C", "text": "Termination Protection だけ", "is_correct": false, "explanation": "Stack の削除は防げるが、stack 更新による Replace は防げない。"},
-        {"id": "D", "text": "RDS のスナップショットだけ取得", "is_correct": false, "explanation": "スナップショットは保険であり予防策ではない。"}
+        {
+          "id": "A",
+          "text": "DeletionPolicy: Retain だけ",
+          "is_correct": false,
+          "explanation": "UpdateReplacePolicy が無いと、変更で再作成される際に旧 RDS は削除される。"
+        },
+        {
+          "id": "B",
+          "text": "Termination Protection だけ",
+          "is_correct": false,
+          "explanation": "Stack の削除は防げるが、stack 更新による Replace は防げない。"
+        },
+        {
+          "id": "C",
+          "text": "RDS リソースに `DeletionPolicy: Retain` と `UpdateReplacePolicy: Retain`、Stack に `Termination Protection`、IAM SCP で `cloudformation:DeleteStack` と `rds:DeleteDBInstance` を制限",
+          "is_correct": true,
+          "explanation": "正解。Resource 単位の保護（Deletion / UpdateReplace）、Stack 単位（Termination Protection）、IAM 単位（最小権限／SCP）の三層が最も網羅的。"
+        },
+        {
+          "id": "D",
+          "text": "RDS のスナップショットだけ取得",
+          "is_correct": false,
+          "explanation": "スナップショットは保険であり予防策ではない。"
+        }
       ],
       "explanation": "CloudFormation の本番リソース保護は (1) `DeletionPolicy: Retain/Snapshot`、(2) `UpdateReplacePolicy`（更新で再作成される際の旧リソースの扱い）、(3) Stack-level の Termination Protection、(4) IAM/SCP のガードレールを組み合わせるのがベストプラクティス。RDS では UpdateReplacePolicy が特に重要（パラメータ変更で Replace されることがあるため）。",
-      "references": [{"title": "DeletionPolicy attribute", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"}],
-      "tags": ["cloudformation", "deletion-policy", "update-replace-policy", "termination-protection", "rds"],
-      "common_mistakes": ["UpdateReplacePolicy の存在を知らない", "DeletionPolicy だけで安心する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "DeletionPolicy attribute",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "deletion-policy",
+        "update-replace-policy",
+        "termination-protection",
+        "rds"
+      ],
+      "common_mistakes": [
+        "UpdateReplacePolicy の存在を知らない",
+        "DeletionPolicy だけで安心する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-020",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AWS CDK",
       "subtopic": "CDK Pipelines self-mutation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "CDK Pipelines を採用したチームから「パイプライン自体の構成変更を反映するのに毎回手動で `cdk deploy` する必要があるのは煩雑だ」と相談された。最適な解決策と、その仕組みは？",
       "options": [
-        {"id": "A", "text": "CDK Pipelines のデフォルトで備わる self-mutation を活用する。Pipeline は最初に自分自身の差分を検出し、必要なら Pipeline を更新してから残りのステージを実行する", "is_correct": true, "explanation": "正解。CDK Pipelines は self-mutation がデフォルトで有効。Pipeline 自体の定義を git に含めれば、Pipeline 更新が自己反映される。"},
-        {"id": "B", "text": "CodePipeline の Lambda Action で別 Pipeline を再生成する", "is_correct": false, "explanation": "可能だが CDK Pipelines の標準機能を再発明することになる。"},
-        {"id": "C", "text": "Step Functions で Pipeline をデプロイし直すワークフローを書く", "is_correct": false, "explanation": "標準機能で実現可能なのに過剰設計。"},
-        {"id": "D", "text": "EventBridge スケジュールで毎晩 `cdk deploy` を実行", "is_correct": false, "explanation": "リアクティブでなく、変更タイミングと反映タイミングが乖離する。"}
+        {
+          "id": "A",
+          "text": "Step Functions で Pipeline をデプロイし直すワークフローを書く",
+          "is_correct": false,
+          "explanation": "標準機能で実現可能なのに過剰設計。"
+        },
+        {
+          "id": "B",
+          "text": "CodePipeline の Lambda Action で別 Pipeline を再生成する",
+          "is_correct": false,
+          "explanation": "可能だが CDK Pipelines の標準機能を再発明することになる。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge スケジュールで毎晩 `cdk deploy` を実行",
+          "is_correct": false,
+          "explanation": "リアクティブでなく、変更タイミングと反映タイミングが乖離する。"
+        },
+        {
+          "id": "D",
+          "text": "CDK Pipelines のデフォルトで備わる self-mutation を活用する。Pipeline は最初に自分自身の差分を検出し、必要なら Pipeline を更新してから残りのステージを実行する",
+          "is_correct": true,
+          "explanation": "正解。CDK Pipelines は self-mutation がデフォルトで有効。Pipeline 自体の定義を git に含めれば、Pipeline 更新が自己反映される。"
+        }
       ],
       "explanation": "CDK Pipelines は最初のステージで Pipeline 自身の差分をチェックし、self-mutation することでパイプラインそのものをコード化する。これにより `cdk synth → push → 自動更新` の継続的デリバリが Pipeline 自体にも適用される。",
-      "references": [{"title": "AWS CDK Pipelines", "url": "https://docs.aws.amazon.com/cdk/v2/guide/cdk_pipeline.html"}],
-      "tags": ["cdk", "cdk-pipelines", "self-mutation", "ci-cd"],
-      "common_mistakes": ["self-mutation を知らずに毎回手動 deploy", "self-mutation を意図せず無効化してしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS CDK Pipelines",
+          "url": "https://docs.aws.amazon.com/cdk/v2/guide/cdk_pipeline.html"
+        }
+      ],
+      "tags": [
+        "cdk",
+        "cdk-pipelines",
+        "self-mutation",
+        "ci-cd"
+      ],
+      "common_mistakes": [
+        "self-mutation を知らずに毎回手動 deploy",
+        "self-mutation を意図せず無効化してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-021",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "Stack policies",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "CloudFormation Stack Policy について正しい記述はどれか？",
       "options": [
-        {"id": "A", "text": "Stack Policy は Stack 内のリソースを保護する JSON ポリシーで、明示的に Allow しないと指定したリソースは更新できなくなる", "is_correct": true, "explanation": "正解。Stack Policy は更新時のみ評価される。Allow リスト方式で明示的にリソース更新を許可する。"},
-        {"id": "B", "text": "Stack Policy は IAM の代替として認証も担う", "is_correct": false, "explanation": "Stack Policy は認可のみで、IAM が認証を担う。"},
-        {"id": "C", "text": "Stack Policy は Stack 削除時の挙動を制御する", "is_correct": false, "explanation": "削除時の制御は DeletionPolicy / Termination Protection の責務。"},
-        {"id": "D", "text": "Stack Policy はテンプレート内の Properties セクションで宣言する", "is_correct": false, "explanation": "Stack Policy はテンプレートとは別の JSON ファイルで、Stack に紐付けて管理する。"}
+        {
+          "id": "A",
+          "text": "Stack Policy は Stack 内のリソースを保護する JSON ポリシーで、明示的に Allow しないと指定したリソースは更新できなくなる",
+          "is_correct": true,
+          "explanation": "正解。Stack Policy は更新時のみ評価される。Allow リスト方式で明示的にリソース更新を許可する。"
+        },
+        {
+          "id": "B",
+          "text": "Stack Policy は IAM の代替として認証も担う",
+          "is_correct": false,
+          "explanation": "Stack Policy は認可のみで、IAM が認証を担う。"
+        },
+        {
+          "id": "C",
+          "text": "Stack Policy はテンプレート内の Properties セクションで宣言する",
+          "is_correct": false,
+          "explanation": "Stack Policy はテンプレートとは別の JSON ファイルで、Stack に紐付けて管理する。"
+        },
+        {
+          "id": "D",
+          "text": "Stack Policy は Stack 削除時の挙動を制御する",
+          "is_correct": false,
+          "explanation": "削除時の制御は DeletionPolicy / Termination Protection の責務。"
+        }
       ],
       "explanation": "Stack Policy は CloudFormation 固有の更新時アクセス制御で、`Update:*` 系のアクションをリソース単位で Allow/Deny できる。テンプレート（リソース定義）とは別の JSON で、stack 単位に保存される。本番 DB を Stack Update から保護する用途で有効。",
-      "references": [{"title": "Prevent updates to stack resources", "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"}],
-      "tags": ["cloudformation", "stack-policy", "iam", "deletion-policy"],
-      "common_mistakes": ["Stack Policy を IAM Policy と混同する", "Stack Policy で削除を制御できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Prevent updates to stack resources",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "stack-policy",
+        "iam",
+        "deletion-policy"
+      ],
+      "common_mistakes": [
+        "Stack Policy を IAM Policy と混同する",
+        "Stack Policy で削除を制御できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-022",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "Systems Manager",
       "subtopic": "Parameter Store advanced tier",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Parameter Store の Standard と Advanced tier、Intelligent-Tiering を比較して、最も正しい記述は？",
       "options": [
-        {"id": "A", "text": "Standard は最大 4KB、Advanced は最大 8KB、Advanced のみ Parameter Policy（TTL/通知）が利用可能。Intelligent-Tiering は値サイズに応じて自動で Standard/Advanced を選ぶ", "is_correct": true, "explanation": "正解。これが各 tier の本質的な違い。Advanced は有償だが Policy 機能と容量上限の拡張がある。"},
-        {"id": "B", "text": "Advanced は無料、Standard が有償", "is_correct": false, "explanation": "課金関係が逆。Standard は無料、Advanced は有償。"},
-        {"id": "C", "text": "Intelligent-Tiering は古いパラメータを自動削除する", "is_correct": false, "explanation": "Intelligent-Tiering は tier 自動選択であり、自動削除機能ではない。"},
-        {"id": "D", "text": "Standard でも Parameter Policy が使える", "is_correct": false, "explanation": "Parameter Policy は Advanced のみ。"}
+        {
+          "id": "A",
+          "text": "Standard でも Parameter Policy が使える",
+          "is_correct": false,
+          "explanation": "Parameter Policy は Advanced のみ。"
+        },
+        {
+          "id": "B",
+          "text": "Standard は最大 4KB、Advanced は最大 8KB、Advanced のみ Parameter Policy（TTL/通知）が利用可能。Intelligent-Tiering は値サイズに応じて自動で Standard/Advanced を選ぶ",
+          "is_correct": true,
+          "explanation": "正解。これが各 tier の本質的な違い。Advanced は有償だが Policy 機能と容量上限の拡張がある。"
+        },
+        {
+          "id": "C",
+          "text": "Advanced は無料、Standard が有償",
+          "is_correct": false,
+          "explanation": "課金関係が逆。Standard は無料、Advanced は有償。"
+        },
+        {
+          "id": "D",
+          "text": "Intelligent-Tiering は古いパラメータを自動削除する",
+          "is_correct": false,
+          "explanation": "Intelligent-Tiering は tier 自動選択であり、自動削除機能ではない。"
+        }
       ],
       "explanation": "Parameter Store の tier 比較: Standard（無料・4KB・Policy 不可・10,000 個まで）、Advanced（有償・8KB・Policy 可・100,000 個）。Policy は TTL（自動失効）、Expiration Notification、NoChangeNotification 等。Intelligent-Tiering は値サイズや Policy 利用に応じて自動で Advanced へ昇格する。",
-      "references": [{"title": "Managing parameter tiers", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"}],
-      "tags": ["parameter-store", "advanced-tier", "intelligent-tiering", "parameter-policy"],
-      "common_mistakes": ["Standard と Advanced の課金関係を逆に覚える", "Parameter Policy が Standard でも使えると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Managing parameter tiers",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+        }
+      ],
+      "tags": [
+        "parameter-store",
+        "advanced-tier",
+        "intelligent-tiering",
+        "parameter-policy"
+      ],
+      "common_mistakes": [
+        "Standard と Advanced の課金関係を逆に覚える",
+        "Parameter Policy が Standard でも使えると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-023",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AWS Config",
       "subtopic": "Custom rules with Lambda vs Guard",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "Custom Config Rule を実装するのに「AWS Config Custom Lambda Rule」と「AWS Config Custom Policy Rule（Guard 言語）」のどちらが望ましいか評価したい。一般的に Guard が優位なのはどのようなケースか？",
       "options": [
-        {"id": "A", "text": "ロジックが「リソース設定の宣言的な検査（必須タグ、必須暗号化、許容される値域）」で十分、かつ Lambda の運用負担を避けたいケース", "is_correct": true, "explanation": "正解。Guard は YAML/DSL 風の宣言的言語で、Lambda の保守不要。シンプルなコンプライアンス検査に最適。"},
-        {"id": "B", "text": "外部 SaaS API を呼び出して結果を判定するケース", "is_correct": false, "explanation": "外部 API 呼び出しは Lambda の領域で、Guard は AWS Config データに対する宣言的検査専用。"},
-        {"id": "C", "text": "数千行に及ぶ複雑なビジネスロジックをコードで表現するケース", "is_correct": false, "explanation": "そのような複雑度なら Lambda（Python/Node 等）のほうが向く。"},
-        {"id": "D", "text": "リソース変更を即時にブロックするケース（preventive control）", "is_correct": false, "explanation": "Config はリアクティブなコンプライアンス評価。preventive は SCP / IAM / CFN Hooks などの責務。"}
+        {
+          "id": "A",
+          "text": "外部 SaaS API を呼び出して結果を判定するケース",
+          "is_correct": false,
+          "explanation": "外部 API 呼び出しは Lambda の領域で、Guard は AWS Config データに対する宣言的検査専用。"
+        },
+        {
+          "id": "B",
+          "text": "数千行に及ぶ複雑なビジネスロジックをコードで表現するケース",
+          "is_correct": false,
+          "explanation": "そのような複雑度なら Lambda（Python/Node 等）のほうが向く。"
+        },
+        {
+          "id": "C",
+          "text": "ロジックが「リソース設定の宣言的な検査（必須タグ、必須暗号化、許容される値域）」で十分、かつ Lambda の運用負担を避けたいケース",
+          "is_correct": true,
+          "explanation": "正解。Guard は YAML/DSL 風の宣言的言語で、Lambda の保守不要。シンプルなコンプライアンス検査に最適。"
+        },
+        {
+          "id": "D",
+          "text": "リソース変更を即時にブロックするケース（preventive control）",
+          "is_correct": false,
+          "explanation": "Config はリアクティブなコンプライアンス評価。preventive は SCP / IAM / CFN Hooks などの責務。"
+        }
       ],
       "explanation": "Custom Policy Rule（Guard 言語）は宣言的でメンテしやすい一方、Custom Lambda Rule は任意のロジック（外部 API など）を書けるが運用負担が大きい。シンプルな宣言的検査は Guard、複雑なロジックは Lambda、と使い分ける。",
-      "references": [{"title": "Custom Policy Rules", "url": "https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"}],
-      "tags": ["aws-config", "custom-rule", "guard", "lambda", "policy-as-code"],
-      "common_mistakes": ["Guard で外部 API を呼べると思う", "Config をリアルタイムブロックに使えると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Custom Policy Rules",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"
+        }
+      ],
+      "tags": [
+        "aws-config",
+        "custom-rule",
+        "guard",
+        "lambda",
+        "policy-as-code"
+      ],
+      "common_mistakes": [
+        "Guard で外部 API を呼べると思う",
+        "Config をリアルタイムブロックに使えると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-024",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "CloudFormation",
       "subtopic": "Hooks for guardrails",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある製造業企業のセキュリティチームが「CloudFormation で公開バケットを作るデプロイは provision 段階でブロックしたい」と求めている。Detective ではなく Preventive な統制を CFN 内部で実現する仕組みは？",
       "options": [
-        {"id": "A", "text": "CloudFormation Hooks（pre-provision, pre-update, pre-delete）で対象リソースを検査し、違反なら provision を失敗させる", "is_correct": true, "explanation": "正解。CFN Hooks は CloudFormation の provision サイクル内で動作し、違反時にデプロイを停止できる preventive な仕組み。"},
-        {"id": "B", "text": "Config Rules で違反を検出し Lambda で削除", "is_correct": false, "explanation": "Detective + Reactive で、provision の失敗にはならない。リソースが一旦作成される。"},
-        {"id": "C", "text": "EventBridge で `CreateBucket` を捕捉して Lambda で消す", "is_correct": false, "explanation": "事後対処で、瞬間的に違反状態が発生する。"},
-        {"id": "D", "text": "IAM SCP で `s3:CreateBucket` を全面禁止", "is_correct": false, "explanation": "SCP は preventive だが、合法な S3 作成も全部禁止する過剰制限になる。条件付きの細かい制御は Hooks のほうが適切。"}
+        {
+          "id": "A",
+          "text": "IAM SCP で `s3:CreateBucket` を全面禁止",
+          "is_correct": false,
+          "explanation": "SCP は preventive だが、合法な S3 作成も全部禁止する過剰制限になる。条件付きの細かい制御は Hooks のほうが適切。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridge で `CreateBucket` を捕捉して Lambda で消す",
+          "is_correct": false,
+          "explanation": "事後対処で、瞬間的に違反状態が発生する。"
+        },
+        {
+          "id": "C",
+          "text": "Config Rules で違反を検出し Lambda で削除",
+          "is_correct": false,
+          "explanation": "Detective + Reactive で、provision の失敗にはならない。リソースが一旦作成される。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFormation Hooks（pre-provision, pre-update, pre-delete）で対象リソースを検査し、違反なら provision を失敗させる",
+          "is_correct": true,
+          "explanation": "正解。CFN Hooks は CloudFormation の provision サイクル内で動作し、違反時にデプロイを停止できる preventive な仕組み。"
+        }
       ],
       "explanation": "CloudFormation Hooks（CFN Registry Type の一種）は、provision サイクルの pre-create/pre-update/pre-delete に介入してリソース内容を検査し、違反時に provision を失敗させる。preventive 統制を CFN 内部で実現する標準手段。AWS Cloud Control / Cloud Formation Guard との連携が一般的。",
-      "references": [{"title": "AWS CloudFormation Hooks", "url": "https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html"}],
-      "tags": ["cloudformation", "hooks", "preventive-control", "guardrails"],
-      "common_mistakes": ["Hooks の存在を知らず Config Rules で代替しようとする", "Hooks を Custom Resource と混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS CloudFormation Hooks",
+          "url": "https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html"
+        }
+      ],
+      "tags": [
+        "cloudformation",
+        "hooks",
+        "preventive-control",
+        "guardrails"
+      ],
+      "common_mistakes": [
+        "Hooks の存在を知らず Config Rules で代替しようとする",
+        "Hooks を Custom Resource と混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain2-025",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Configuration Management and Infrastructure as Code", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Configuration Management and Infrastructure as Code",
+        "weight_percent": 17
+      },
       "topic": "AWS CDK",
       "subtopic": "Custom L3 construct design",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "FinTech 企業の DevOps チームから「全社共通の『Compliant な VPC + Bastion-less SSM Access + 監査ログ S3 + KMS 暗号化』を 1 行で利用できるようにしたい」と要望があった。再利用性・拡張性を最大化する CDK の作り方として最も適切な設計は？",
       "options": [
-        {"id": "A", "text": "L3 Construct（Pattern）として `CompliantNetwork` を実装し、内部で VPC / VPC Endpoints / Flow Logs / KMS Key / S3 Bucket を組み合わせ、`props` でユースケース別パラメータを公開、Aspect で命名規則・タグを強制する", "is_correct": true, "explanation": "正解。L3 Construct で組織標準のベストプラクティスをカプセル化し、props でカスタマイズ点を絞り、Aspect で組織ガードレールを横断適用するのが最も再利用性・拡張性に優れる。"},
-        {"id": "B", "text": "全部 L1 Construct で書き、ドキュメントで使い方を共有", "is_correct": false, "explanation": "L1 はボイラープレートが多くカプセル化が弱い。再利用性が低い。"},
-        {"id": "C", "text": "CloudFormation テンプレートを直接書いて Git で配布", "is_correct": false, "explanation": "プログラマティックな抽象化が弱く、CDK の利点を活かせない。"},
-        {"id": "D", "text": "CodePipeline 内に共通コードを Inline で埋め込む", "is_correct": false, "explanation": "再利用と分離の単位として不適切。"}
+        {
+          "id": "A",
+          "text": "L3 Construct（Pattern）として `CompliantNetwork` を実装し、内部で VPC / VPC Endpoints / Flow Logs / KMS Key / S3 Bucket を組み合わせ、`props` でユースケース別パラメータを公開、Aspect で命名規則・タグを強制する",
+          "is_correct": true,
+          "explanation": "正解。L3 Construct で組織標準のベストプラクティスをカプセル化し、props でカスタマイズ点を絞り、Aspect で組織ガードレールを横断適用するのが最も再利用性・拡張性に優れる。"
+        },
+        {
+          "id": "B",
+          "text": "CodePipeline 内に共通コードを Inline で埋め込む",
+          "is_correct": false,
+          "explanation": "再利用と分離の単位として不適切。"
+        },
+        {
+          "id": "C",
+          "text": "全部 L1 Construct で書き、ドキュメントで使い方を共有",
+          "is_correct": false,
+          "explanation": "L1 はボイラープレートが多くカプセル化が弱い。再利用性が低い。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFormation テンプレートを直接書いて Git で配布",
+          "is_correct": false,
+          "explanation": "プログラマティックな抽象化が弱く、CDK の利点を活かせない。"
+        }
       ],
       "explanation": "再利用可能な組織標準は (1) L3 Construct でドメイン語彙を提供（CompliantNetwork など）、(2) props でカスタマイズ点を限定、(3) Aspect で横断的ポリシー強制、(4) CDK Pipelines や Construct Library として配布、という構成が最も拡張性・統制バランスに優れる。L6 レベル（設計・創出）の設問。",
-      "references": [{"title": "Writing your own custom L3 constructs", "url": "https://docs.aws.amazon.com/cdk/v2/guide/constructs.html"}],
-      "tags": ["cdk", "l3-construct", "design", "guardrails", "reusability"],
-      "common_mistakes": ["L1 の塊で済ませ抽象化を諦める", "Aspect を使わずガードレールを各所に重複実装する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Writing your own custom L3 constructs",
+          "url": "https://docs.aws.amazon.com/cdk/v2/guide/constructs.html"
+        }
+      ],
+      "tags": [
+        "cdk",
+        "l3-construct",
+        "design",
+        "guardrails",
+        "reusability"
+      ],
+      "common_mistakes": [
+        "L1 の塊で済ませ抽象化を諦める",
+        "Aspect を使わずガードレールを各所に重複実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

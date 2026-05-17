@@ -15,380 +15,1154 @@
     {
       "id": "aif-c01-domain5-001",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Bedrock data privacy",
       "subtopic": "Customer data usage policy",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Amazon Bedrock のカスタマーデータ取り扱いポリシーとして正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "顧客のプロンプトと応答は基盤モデルの再学習に自動的に使用される", "is_correct": false, "explanation": "誤り。AWS は顧客のプロンプト・応答を基盤モデル提供者と共有せず、再学習にも使用しない。これは Bedrock の重要なセキュリティ前提。"},
-        {"id": "B", "text": "顧客のプロンプトと応答は基盤モデルプロバイダーや AWS の基盤モデルの学習には使用されない", "is_correct": true, "explanation": "正解。AWS は Bedrock の入出力データを基盤モデルの学習に使用しないと明示している。これがエンタープライズに採用される大きな理由の一つ。"},
-        {"id": "C", "text": "デフォルトで全リクエストが S3 に保存され公開される", "is_correct": false, "explanation": "デフォルトでは顧客の S3 への保存も公開もされない。CloudWatch / S3 への Model Invocation Logging はオプトインで顧客が明示的に有効化する。"},
-        {"id": "D", "text": "Bedrock は HIPAA 対象外で、医療データには使用できない", "is_correct": false, "explanation": "Bedrock は HIPAA 適格サービス（HIPAA-eligible）に含まれている。"}
+        {
+          "id": "A",
+          "text": "顧客のプロンプトと応答は基盤モデルプロバイダーや AWS の基盤モデルの学習には使用されない",
+          "is_correct": true,
+          "explanation": "正解。AWS は Bedrock の入出力データを基盤モデルの学習に使用しないと明示している。これがエンタープライズに採用される大きな理由の一つ。"
+        },
+        {
+          "id": "B",
+          "text": "顧客のプロンプトと応答は基盤モデルの再学習に自動的に使用される",
+          "is_correct": false,
+          "explanation": "誤り。AWS は顧客のプロンプト・応答を基盤モデル提供者と共有せず、再学習にも使用しない。これは Bedrock の重要なセキュリティ前提。"
+        },
+        {
+          "id": "C",
+          "text": "デフォルトで全リクエストが S3 に保存され公開される",
+          "is_correct": false,
+          "explanation": "デフォルトでは顧客の S3 への保存も公開もされない。CloudWatch / S3 への Model Invocation Logging はオプトインで顧客が明示的に有効化する。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock は HIPAA 対象外で、医療データには使用できない",
+          "is_correct": false,
+          "explanation": "Bedrock は HIPAA 適格サービス（HIPAA-eligible）に含まれている。"
+        }
       ],
       "explanation": "Amazon Bedrock のデータ保護方針として、AWS は顧客の入出力データをサードパーティのモデル提供者に共有せず、AWS や提供者の基盤モデル改善にも使用しない。これはエンタープライズ AI 導入の信頼基盤。",
       "references": [
-        {"title": "Data Protection in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html"}
+        {
+          "title": "Data Protection in Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html"
+        }
       ],
-      "tags": ["bedrock", "data-privacy", "compliance", "policy"],
-      "common_mistakes": ["Bedrock がプロンプトを学習に使うと誤解する", "HIPAA 対象外と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bedrock",
+        "data-privacy",
+        "compliance",
+        "policy"
+      ],
+      "common_mistakes": [
+        "Bedrock がプロンプトを学習に使うと誤解する",
+        "HIPAA 対象外と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-002",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "CloudTrail",
       "subtopic": "Bedrock API auditing",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Bedrock の InvokeModel など API 呼び出しを誰がいつ実行したかを後から監査するために使うべき AWS サービスは？",
       "options": [
-        {"id": "A", "text": "AWS CloudTrail", "is_correct": true, "explanation": "正解。CloudTrail は AWS API 呼び出しの監査ログを記録する標準サービスで、Bedrock の API も対象。"},
-        {"id": "B", "text": "AWS Config", "is_correct": false, "explanation": "Config はリソース設定の変更履歴を追跡するサービスで、API 呼び出し履歴の監査には CloudTrail が標準。"},
-        {"id": "C", "text": "Amazon CloudWatch Metrics", "is_correct": false, "explanation": "CloudWatch Metrics は数値メトリクス収集で、誰が何を呼び出したかは記録しない。"},
-        {"id": "D", "text": "AWS Trusted Advisor", "is_correct": false, "explanation": "Trusted Advisor はベストプラクティスチェックで、API 監査ログ機能はない。"}
+        {
+          "id": "A",
+          "text": "Amazon CloudWatch Metrics",
+          "is_correct": false,
+          "explanation": "CloudWatch Metrics は数値メトリクス収集で、誰が何を呼び出したかは記録しない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS CloudTrail",
+          "is_correct": true,
+          "explanation": "正解。CloudTrail は AWS API 呼び出しの監査ログを記録する標準サービスで、Bedrock の API も対象。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config",
+          "is_correct": false,
+          "explanation": "Config はリソース設定の変更履歴を追跡するサービスで、API 呼び出し履歴の監査には CloudTrail が標準。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Trusted Advisor",
+          "is_correct": false,
+          "explanation": "Trusted Advisor はベストプラクティスチェックで、API 監査ログ機能はない。"
+        }
       ],
       "explanation": "CloudTrail は全 AWS API 呼び出しを記録（Who/When/What/Where/From）する基本サービス。Bedrock の InvokeModel、CreateAgent などの管理操作・データ操作も対象で、コンプライアンス監査の中核となる。",
       "references": [
-        {"title": "Logging Bedrock API Calls Using CloudTrail", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/logging-using-cloudtrail.html"}
+        {
+          "title": "Logging Bedrock API Calls Using CloudTrail",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/logging-using-cloudtrail.html"
+        }
       ],
-      "tags": ["cloudtrail", "audit", "bedrock", "compliance"],
-      "common_mistakes": ["Config と CloudTrail の役割を混同する", "CloudWatch Metrics で監査できると誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloudtrail",
+        "audit",
+        "bedrock",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Config と CloudTrail の役割を混同する",
+        "CloudWatch Metrics で監査できると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-003",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "VPC Endpoint",
       "subtopic": "Bedrock private connectivity",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "VPC 内のアプリケーションから Bedrock を呼び出す際に、トラフィックをパブリックインターネットを経由させずに AWS ネットワーク内に留めたい。最も適切な方法は？",
       "options": [
-        {"id": "A", "text": "NAT Gateway 経由で Bedrock のパブリックエンドポイントを呼び出す", "is_correct": false, "explanation": "NAT Gateway はインターネット経由になるため、AWS ネットワーク内に留める要件を満たさない。"},
-        {"id": "B", "text": "Bedrock 用の Interface VPC Endpoint（AWS PrivateLink）を作成する", "is_correct": true, "explanation": "正解。Interface VPC Endpoint（PrivateLink）により、トラフィックは AWS バックボーン内に留まり、インターネットを経由しない。"},
-        {"id": "C", "text": "Direct Connect で AWS に接続する", "is_correct": false, "explanation": "Direct Connect はオンプレミスと AWS 間の専用線で、VPC 内アプリから Bedrock 呼び出しの経路最適化とは別の話。"},
-        {"id": "D", "text": "S3 Gateway VPC Endpoint を作成する", "is_correct": false, "explanation": "Gateway Endpoint は S3 と DynamoDB のみ対応。Bedrock は Interface Endpoint が必要。"}
+        {
+          "id": "A",
+          "text": "NAT Gateway 経由で Bedrock のパブリックエンドポイントを呼び出す",
+          "is_correct": false,
+          "explanation": "NAT Gateway はインターネット経由になるため、AWS ネットワーク内に留める要件を満たさない。"
+        },
+        {
+          "id": "B",
+          "text": "Direct Connect で AWS に接続する",
+          "is_correct": false,
+          "explanation": "Direct Connect はオンプレミスと AWS 間の専用線で、VPC 内アプリから Bedrock 呼び出しの経路最適化とは別の話。"
+        },
+        {
+          "id": "C",
+          "text": "Bedrock 用の Interface VPC Endpoint（AWS PrivateLink）を作成する",
+          "is_correct": true,
+          "explanation": "正解。Interface VPC Endpoint（PrivateLink）により、トラフィックは AWS バックボーン内に留まり、インターネットを経由しない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Gateway VPC Endpoint を作成する",
+          "is_correct": false,
+          "explanation": "Gateway Endpoint は S3 と DynamoDB のみ対応。Bedrock は Interface Endpoint が必要。"
+        }
       ],
       "explanation": "Interface VPC Endpoint（AWS PrivateLink）は ENI ベースで多くの AWS サービスにプライベート接続を提供する。Bedrock も対応しており、エンタープライズ要件（インターネット非経由、監査ポリシー）を満たすための標準パターン。",
       "references": [
-        {"title": "Use Bedrock with VPC Endpoints", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html"}
+        {
+          "title": "Use Bedrock with VPC Endpoints",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html"
+        }
       ],
-      "tags": ["vpc-endpoint", "privatelink", "bedrock", "network"],
-      "common_mistakes": ["Gateway と Interface Endpoint を混同する", "NAT Gateway をプライベート接続と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "vpc-endpoint",
+        "privatelink",
+        "bedrock",
+        "network"
+      ],
+      "common_mistakes": [
+        "Gateway と Interface Endpoint を混同する",
+        "NAT Gateway をプライベート接続と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-004",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "KMS",
       "subtopic": "Encryption for AI workloads",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "AWS で KMS（Key Management Service）が AI/ML ワークロードで主に提供する機能はどれか。",
       "options": [
-        {"id": "A", "text": "モデルの推論を高速化する", "is_correct": false, "explanation": "推論高速化は Inferentia や GPU など別のサービス・機能の役割。"},
-        {"id": "B", "text": "S3 / Bedrock / SageMaker などで使う暗号化キーの作成・管理・監査", "is_correct": true, "explanation": "正解。KMS は暗号化キーのライフサイクル管理サービスで、データの保管時暗号化（at-rest）に広く使われる。"},
-        {"id": "C", "text": "ネットワークトラフィックの暗号化を提供する", "is_correct": false, "explanation": "通信暗号化は TLS の役割で、KMS の主機能ではない（KMS はデータ暗号鍵を管理）。"},
-        {"id": "D", "text": "アクセス権限を一括管理する", "is_correct": false, "explanation": "アクセス権限管理は IAM の役割。KMS はキーへのアクセスポリシーは持つが、サービス全体のアクセス制御ではない。"}
+        {
+          "id": "A",
+          "text": "アクセス権限を一括管理する",
+          "is_correct": false,
+          "explanation": "アクセス権限管理は IAM の役割。KMS はキーへのアクセスポリシーは持つが、サービス全体のアクセス制御ではない。"
+        },
+        {
+          "id": "B",
+          "text": "ネットワークトラフィックの暗号化を提供する",
+          "is_correct": false,
+          "explanation": "通信暗号化は TLS の役割で、KMS の主機能ではない（KMS はデータ暗号鍵を管理）。"
+        },
+        {
+          "id": "C",
+          "text": "モデルの推論を高速化する",
+          "is_correct": false,
+          "explanation": "推論高速化は Inferentia や GPU など別のサービス・機能の役割。"
+        },
+        {
+          "id": "D",
+          "text": "S3 / Bedrock / SageMaker などで使う暗号化キーの作成・管理・監査",
+          "is_correct": true,
+          "explanation": "正解。KMS は暗号化キーのライフサイクル管理サービスで、データの保管時暗号化（at-rest）に広く使われる。"
+        }
       ],
       "explanation": "KMS は対称・非対称鍵を作成・管理し、各 AWS サービスの暗号化機能と統合する。Bedrock の Custom Model 暗号化、SageMaker のモデルアーティファクト暗号化、S3 の SSE-KMS などで利用される。",
       "references": [
-        {"title": "AWS KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"}
+        {
+          "title": "AWS KMS",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
+        }
       ],
-      "tags": ["kms", "encryption", "ai-ml", "security"],
-      "common_mistakes": ["KMS と IAM の役割を混同する", "KMS が通信暗号化を担うと誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "kms",
+        "encryption",
+        "ai-ml",
+        "security"
+      ],
+      "common_mistakes": [
+        "KMS と IAM の役割を混同する",
+        "KMS が通信暗号化を担うと誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-005",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Compliance",
       "subtopic": "HIPAA / GDPR",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ある医療スタートアップが Bedrock を使って米国の患者向けサービスを展開する。準拠が必要となる代表的なコンプライアンス枠組みはどれか。",
       "options": [
-        {"id": "A", "text": "HIPAA（Health Insurance Portability and Accountability Act）", "is_correct": true, "explanation": "正解。米国の医療情報を扱う場合は HIPAA が代表的に必要となり、Bedrock は HIPAA 適格サービスとして AWS BAA の対象。"},
-        {"id": "B", "text": "PCI DSS のみで十分", "is_correct": false, "explanation": "PCI DSS はクレジットカード決済の標準で、医療情報の保護には HIPAA が必要。"},
-        {"id": "C", "text": "FedRAMP のみで十分", "is_correct": false, "explanation": "FedRAMP は米国政府向けクラウド要件で、医療スタートアップには HIPAA が中心。"},
-        {"id": "D", "text": "ISO 9001 のみで十分", "is_correct": false, "explanation": "ISO 9001 は品質マネジメントの規格で、医療プライバシー保護要件は満たさない。"}
+        {
+          "id": "A",
+          "text": "HIPAA（Health Insurance Portability and Accountability Act）",
+          "is_correct": true,
+          "explanation": "正解。米国の医療情報を扱う場合は HIPAA が代表的に必要となり、Bedrock は HIPAA 適格サービスとして AWS BAA の対象。"
+        },
+        {
+          "id": "B",
+          "text": "PCI DSS のみで十分",
+          "is_correct": false,
+          "explanation": "PCI DSS はクレジットカード決済の標準で、医療情報の保護には HIPAA が必要。"
+        },
+        {
+          "id": "C",
+          "text": "FedRAMP のみで十分",
+          "is_correct": false,
+          "explanation": "FedRAMP は米国政府向けクラウド要件で、医療スタートアップには HIPAA が中心。"
+        },
+        {
+          "id": "D",
+          "text": "ISO 9001 のみで十分",
+          "is_correct": false,
+          "explanation": "ISO 9001 は品質マネジメントの規格で、医療プライバシー保護要件は満たさない。"
+        }
       ],
       "explanation": "AWS は AWS Artifact を通じて HIPAA、GDPR、SOC 1/2/3、PCI DSS、ISO 27001/27017/27018、FedRAMP など多くのコンプライアンス文書を提供する。AI/ML ワークロードでも、利用業界に応じた枠組みを選び BAA・DPA を締結する。",
       "references": [
-        {"title": "AWS Compliance Programs", "url": "https://aws.amazon.com/compliance/programs/"},
-        {"title": "AWS HIPAA Eligible Services", "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"}
+        {
+          "title": "AWS Compliance Programs",
+          "url": "https://aws.amazon.com/compliance/programs/"
+        },
+        {
+          "title": "AWS HIPAA Eligible Services",
+          "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"
+        }
       ],
-      "tags": ["compliance", "hipaa", "healthcare", "bedrock"],
-      "common_mistakes": ["PCI DSS で医療情報をカバーできると誤解する", "ISO 9001 を医療プライバシー規格と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "compliance",
+        "hipaa",
+        "healthcare",
+        "bedrock"
+      ],
+      "common_mistakes": [
+        "PCI DSS で医療情報をカバーできると誤解する",
+        "ISO 9001 を医療プライバシー規格と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-006",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "IAM",
       "subtopic": "Least privilege for Bedrock",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Bedrock を業務アプリで利用する Lambda 関数に対し、最小権限で IAM ポリシーを設計する場合の正しい考え方は？",
       "options": [
-        {"id": "A", "text": "Lambda 関数のロールに AdministratorAccess を付与する", "is_correct": false, "explanation": "AdministratorAccess は最小権限の原則に反する。本番環境では絶対に避ける。"},
-        {"id": "B", "text": "bedrock:InvokeModel など必要な API のみを、特定モデル ARN を Resource として制限して許可する", "is_correct": true, "explanation": "正解。最小権限は「必要な Action」と「必要な Resource」の両方を絞ること。Bedrock では Resource にモデル ARN を指定できる。"},
-        {"id": "C", "text": "bedrock:* を全 Resource に許可する", "is_correct": false, "explanation": "ワイルドカードは権限過剰で、不要な操作（モデル削除等）も可能になる。"},
-        {"id": "D", "text": "ポリシーは一切付けず、ネットワークだけで制御する", "is_correct": false, "explanation": "ポリシーなしでは API 呼び出し自体ができない、もしくは継承された過剰権限で動く可能性があり最小権限ではない。"}
+        {
+          "id": "A",
+          "text": "bedrock:* を全 Resource に許可する",
+          "is_correct": false,
+          "explanation": "ワイルドカードは権限過剰で、不要な操作（モデル削除等）も可能になる。"
+        },
+        {
+          "id": "B",
+          "text": "bedrock:InvokeModel など必要な API のみを、特定モデル ARN を Resource として制限して許可する",
+          "is_correct": true,
+          "explanation": "正解。最小権限は「必要な Action」と「必要な Resource」の両方を絞ること。Bedrock では Resource にモデル ARN を指定できる。"
+        },
+        {
+          "id": "C",
+          "text": "ポリシーは一切付けず、ネットワークだけで制御する",
+          "is_correct": false,
+          "explanation": "ポリシーなしでは API 呼び出し自体ができない、もしくは継承された過剰権限で動く可能性があり最小権限ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda 関数のロールに AdministratorAccess を付与する",
+          "is_correct": false,
+          "explanation": "AdministratorAccess は最小権限の原則に反する。本番環境では絶対に避ける。"
+        }
       ],
       "explanation": "IAM の最小権限は Action と Resource の両軸で絞る。Bedrock では bedrock:InvokeModel で Resource を `arn:aws:bedrock:region::foundation-model/anthropic.claude-3-...` のように特定モデルに限定できる。",
       "references": [
-        {"title": "Identity and Access Management for Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html"}
+        {
+          "title": "Identity and Access Management for Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html"
+        }
       ],
-      "tags": ["iam", "least-privilege", "bedrock", "lambda"],
-      "common_mistakes": ["AdministratorAccess を試験用と本番用で兼用する", "Resource をワイルドカードで放置する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "iam",
+        "least-privilege",
+        "bedrock",
+        "lambda"
+      ],
+      "common_mistakes": [
+        "AdministratorAccess を試験用と本番用で兼用する",
+        "Resource をワイルドカードで放置する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-007",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Threats",
       "subtopic": "Prompt injection",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "生成 AI アプリケーション固有の脅威として「プロンプトインジェクション」がある。これに該当する攻撃シナリオはどれか。",
       "options": [
-        {"id": "A", "text": "攻撃者がユーザ入力を介してシステムプロンプトの指示を上書きしようとする", "is_correct": true, "explanation": "正解。プロンプトインジェクションはユーザ入力で「これまでの指示を無視して...」のように上位プロンプトを上書きしようとする攻撃。"},
-        {"id": "B", "text": "攻撃者が SQL を注入してデータベースを操作する", "is_correct": false, "explanation": "それは SQL インジェクションで、伝統的な Web アプリ脆弱性。"},
-        {"id": "C", "text": "攻撃者が DDoS で API エンドポイントを過負荷にする", "is_correct": false, "explanation": "DDoS は可用性攻撃で、プロンプトインジェクションとは別カテゴリ。"},
-        {"id": "D", "text": "攻撃者がフィッシングメールでユーザの認証情報を奪う", "is_correct": false, "explanation": "フィッシングはソーシャル攻撃で、プロンプトインジェクションではない。"}
+        {
+          "id": "A",
+          "text": "攻撃者が DDoS で API エンドポイントを過負荷にする",
+          "is_correct": false,
+          "explanation": "DDoS は可用性攻撃で、プロンプトインジェクションとは別カテゴリ。"
+        },
+        {
+          "id": "B",
+          "text": "攻撃者がフィッシングメールでユーザの認証情報を奪う",
+          "is_correct": false,
+          "explanation": "フィッシングはソーシャル攻撃で、プロンプトインジェクションではない。"
+        },
+        {
+          "id": "C",
+          "text": "攻撃者がユーザ入力を介してシステムプロンプトの指示を上書きしようとする",
+          "is_correct": true,
+          "explanation": "正解。プロンプトインジェクションはユーザ入力で「これまでの指示を無視して...」のように上位プロンプトを上書きしようとする攻撃。"
+        },
+        {
+          "id": "D",
+          "text": "攻撃者が SQL を注入してデータベースを操作する",
+          "is_correct": false,
+          "explanation": "それは SQL インジェクションで、伝統的な Web アプリ脆弱性。"
+        }
       ],
       "explanation": "プロンプトインジェクションは LLM 固有の脅威で OWASP LLM Top 10 でも筆頭に挙げられる。Bedrock Guardrails や厳格な入力検証、システムプロンプトとユーザ入力の分離設計、Human-in-the-Loop での重要操作確認などで対策する。",
       "references": [
-        {"title": "OWASP Top 10 for LLM Applications", "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"}
+        {
+          "title": "OWASP Top 10 for LLM Applications",
+          "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+        }
       ],
-      "tags": ["prompt-injection", "threat", "llm", "security"],
-      "common_mistakes": ["SQL インジェクションとプロンプトインジェクションを混同する", "DDoS と区別しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "prompt-injection",
+        "threat",
+        "llm",
+        "security"
+      ],
+      "common_mistakes": [
+        "SQL インジェクションとプロンプトインジェクションを混同する",
+        "DDoS と区別しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-008",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Bedrock encryption",
       "subtopic": "Custom model encryption",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある FinTech 企業が Bedrock のカスタムモデル（Custom Model）を作成する。社内コンプライアンス上、モデルアーティファクトを自社管理キーで暗号化したい。最も適切な方法は？",
       "options": [
-        {"id": "A", "text": "AWS マネージドキー（aws/bedrock）で暗号化する", "is_correct": false, "explanation": "AWS マネージドキーでも暗号化はされるが「自社管理」要件を満たさない。キーポリシー・ローテーションを自社で制御するにはカスタマー管理キー（CMK）が必要。"},
-        {"id": "B", "text": "KMS のカスタマー管理キー（CMK）を作成し、Bedrock のカスタムモデルジョブで指定する", "is_correct": true, "explanation": "正解。KMS CMK を指定することで、自社がキーポリシーとライフサイクルを完全に管理でき、コンプライアンス要件を満たす。"},
-        {"id": "C", "text": "S3 のクライアントサイド暗号化のみ行う", "is_correct": false, "explanation": "S3 だけでなく、Bedrock の処理する保存データ全体での暗号化制御が必要。CMK 指定が標準。"},
-        {"id": "D", "text": "暗号化は AWS 任せでよい", "is_correct": false, "explanation": "コンプライアンス要件で「自社管理キー」が指定された場合、AWS 任せでは要件を満たせない。"}
+        {
+          "id": "A",
+          "text": "暗号化は AWS 任せでよい",
+          "is_correct": false,
+          "explanation": "コンプライアンス要件で「自社管理キー」が指定された場合、AWS 任せでは要件を満たせない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS マネージドキー（aws/bedrock）で暗号化する",
+          "is_correct": false,
+          "explanation": "AWS マネージドキーでも暗号化はされるが「自社管理」要件を満たさない。キーポリシー・ローテーションを自社で制御するにはカスタマー管理キー（CMK）が必要。"
+        },
+        {
+          "id": "C",
+          "text": "S3 のクライアントサイド暗号化のみ行う",
+          "is_correct": false,
+          "explanation": "S3 だけでなく、Bedrock の処理する保存データ全体での暗号化制御が必要。CMK 指定が標準。"
+        },
+        {
+          "id": "D",
+          "text": "KMS のカスタマー管理キー（CMK）を作成し、Bedrock のカスタムモデルジョブで指定する",
+          "is_correct": true,
+          "explanation": "正解。KMS CMK を指定することで、自社がキーポリシーとライフサイクルを完全に管理でき、コンプライアンス要件を満たす。"
+        }
       ],
       "explanation": "Bedrock のカスタムモデル機能は、トレーニングジョブ・モデルアーティファクトともに KMS で暗号化される。CMK を指定することでキーポリシー、利用範囲、ローテーション、削除を顧客が制御でき、規制業界の要件を満たせる。",
       "references": [
-        {"title": "Encryption of Bedrock Custom Models", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/encryption.html"}
+        {
+          "title": "Encryption of Bedrock Custom Models",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/encryption.html"
+        }
       ],
-      "tags": ["bedrock", "kms", "cmk", "fintech", "encryption"],
-      "common_mistakes": ["AWS マネージドキーで自社管理要件が満たせると誤解する", "S3 暗号化だけで足りると考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bedrock",
+        "kms",
+        "cmk",
+        "fintech",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "AWS マネージドキーで自社管理要件が満たせると誤解する",
+        "S3 暗号化だけで足りると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-009",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Audit Manager",
       "subtopic": "AI/ML compliance evidence collection",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある SaaS 企業が SOC 2 監査に向けて、AI ワークロードに関するコントロール（暗号化、アクセス権限、ログ等）の証跡収集を自動化したい。最も適切な AWS サービスは？",
       "options": [
-        {"id": "A", "text": "AWS Audit Manager", "is_correct": true, "explanation": "正解。Audit Manager はあらかじめ用意されたフレームワーク（SOC 2、HIPAA 等）に基づき、AWS リソースから自動で証跡を収集し、監査担当者へ提供する。"},
-        {"id": "B", "text": "AWS CloudFormation", "is_correct": false, "explanation": "CloudFormation は IaC のためのプロビジョニングサービスで、監査証跡収集機能ではない。"},
-        {"id": "C", "text": "AWS Cost Explorer", "is_correct": false, "explanation": "Cost Explorer はコスト分析ツールで、監査証跡には使えない。"},
-        {"id": "D", "text": "AWS Backup", "is_correct": false, "explanation": "Backup はバックアップ管理サービスで、コンプライアンス証跡収集とは異なる。"}
+        {
+          "id": "A",
+          "text": "AWS Audit Manager",
+          "is_correct": true,
+          "explanation": "正解。Audit Manager はあらかじめ用意されたフレームワーク（SOC 2、HIPAA 等）に基づき、AWS リソースから自動で証跡を収集し、監査担当者へ提供する。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Backup",
+          "is_correct": false,
+          "explanation": "Backup はバックアップ管理サービスで、コンプライアンス証跡収集とは異なる。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Cost Explorer",
+          "is_correct": false,
+          "explanation": "Cost Explorer はコスト分析ツールで、監査証跡には使えない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS CloudFormation",
+          "is_correct": false,
+          "explanation": "CloudFormation は IaC のためのプロビジョニングサービスで、監査証跡収集機能ではない。"
+        }
       ],
       "explanation": "Audit Manager は CloudTrail、Config、Security Hub などからデータを集約し、選択したフレームワークのコントロールごとに証跡を自動マッピング。AI/ML 環境でも IAM、暗号化、ログ取得状況などの証跡収集を効率化できる。",
       "references": [
-        {"title": "AWS Audit Manager", "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html"}
+        {
+          "title": "AWS Audit Manager",
+          "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html"
+        }
       ],
-      "tags": ["audit-manager", "compliance", "soc2", "saas"],
-      "common_mistakes": ["CloudFormation を監査証跡ツールと誤解する", "Cost Explorer をコンプライアンス用と勘違いする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "audit-manager",
+        "compliance",
+        "soc2",
+        "saas"
+      ],
+      "common_mistakes": [
+        "CloudFormation を監査証跡ツールと誤解する",
+        "Cost Explorer をコンプライアンス用と勘違いする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-010",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Bedrock model invocation logging",
       "subtopic": "Audit and observability",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある企業が Bedrock のプロンプトと応答全文を、後の監査と品質改善のために保存したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "Bedrock の Model Invocation Logging を有効化し、CloudWatch Logs または S3 に出力する", "is_correct": true, "explanation": "正解。Model Invocation Logging はプロンプト・応答本文を含む詳細ログを CloudWatch Logs / S3 へ出力するための公式機能。"},
-        {"id": "B", "text": "CloudTrail で十分であり、追加設定は不要", "is_correct": false, "explanation": "CloudTrail は API 呼び出しのメタデータを記録するが、プロンプト/応答本文は含まれない。"},
-        {"id": "C", "text": "VPC Flow Logs を有効化する", "is_correct": false, "explanation": "VPC Flow Logs はネットワークパケット情報のメタデータで、プロンプト本文は含まれない。"},
-        {"id": "D", "text": "CloudWatch Metrics に保存する", "is_correct": false, "explanation": "Metrics は数値メトリクスで、本文を保存するためのものではない。"}
+        {
+          "id": "A",
+          "text": "VPC Flow Logs を有効化する",
+          "is_correct": false,
+          "explanation": "VPC Flow Logs はネットワークパケット情報のメタデータで、プロンプト本文は含まれない。"
+        },
+        {
+          "id": "B",
+          "text": "Bedrock の Model Invocation Logging を有効化し、CloudWatch Logs または S3 に出力する",
+          "is_correct": true,
+          "explanation": "正解。Model Invocation Logging はプロンプト・応答本文を含む詳細ログを CloudWatch Logs / S3 へ出力するための公式機能。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Metrics に保存する",
+          "is_correct": false,
+          "explanation": "Metrics は数値メトリクスで、本文を保存するためのものではない。"
+        },
+        {
+          "id": "D",
+          "text": "CloudTrail で十分であり、追加設定は不要",
+          "is_correct": false,
+          "explanation": "CloudTrail は API 呼び出しのメタデータを記録するが、プロンプト/応答本文は含まれない。"
+        }
       ],
       "explanation": "Bedrock Model Invocation Logging は、CloudTrail の API メタデータでは取得できないプロンプト・応答本文を保存する追加機能。デフォルトはオフで、明示的に有効化する。S3 / CloudWatch Logs どちらにも出力可能で、KMS 暗号化を組み合わせるのが推奨。",
       "references": [
-        {"title": "Model Invocation Logging", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html"}
+        {
+          "title": "Model Invocation Logging",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html"
+        }
       ],
-      "tags": ["bedrock", "logging", "audit", "observability"],
-      "common_mistakes": ["CloudTrail で本文も取れると誤解する", "Flow Logs を生成 AI 監査と勘違いする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bedrock",
+        "logging",
+        "audit",
+        "observability"
+      ],
+      "common_mistakes": [
+        "CloudTrail で本文も取れると誤解する",
+        "Flow Logs を生成 AI 監査と勘違いする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-011",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Data residency",
       "subtopic": "Bedrock regional data handling",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある日本企業が、データレジデンシー要件としてユーザデータを日本国内（ap-northeast-1）に留める必要がある。Bedrock 利用時に注意すべきことは？",
       "options": [
-        {"id": "A", "text": "Bedrock のリージョンとして ap-northeast-1 を選び、利用するモデルがそのリージョンで提供されているか確認する", "is_correct": true, "explanation": "正解。Bedrock はリージョン単位のサービスで、リージョンを選んで呼び出すとデータはそのリージョン内で処理される。ただしモデル提供有無はリージョンで異なるため確認が必要。"},
-        {"id": "B", "text": "Bedrock はグローバルサービスのためリージョン指定は不要", "is_correct": false, "explanation": "Bedrock はリージョナルサービスで、リージョンごとにエンドポイントが異なる。"},
-        {"id": "C", "text": "S3 のリージョンだけ ap-northeast-1 にすればよい", "is_correct": false, "explanation": "S3 のリージョンを揃えるのは前提だが、Bedrock 自体のリージョン指定が必要。"},
-        {"id": "D", "text": "CloudFront を必ず経由させる", "is_correct": false, "explanation": "CloudFront は CDN サービスで、データレジデンシーの要件解決には直接関係しない。"}
+        {
+          "id": "A",
+          "text": "S3 のリージョンだけ ap-northeast-1 にすればよい",
+          "is_correct": false,
+          "explanation": "S3 のリージョンを揃えるのは前提だが、Bedrock 自体のリージョン指定が必要。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFront を必ず経由させる",
+          "is_correct": false,
+          "explanation": "CloudFront は CDN サービスで、データレジデンシーの要件解決には直接関係しない。"
+        },
+        {
+          "id": "C",
+          "text": "Bedrock のリージョンとして ap-northeast-1 を選び、利用するモデルがそのリージョンで提供されているか確認する",
+          "is_correct": true,
+          "explanation": "正解。Bedrock はリージョン単位のサービスで、リージョンを選んで呼び出すとデータはそのリージョン内で処理される。ただしモデル提供有無はリージョンで異なるため確認が必要。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock はグローバルサービスのためリージョン指定は不要",
+          "is_correct": false,
+          "explanation": "Bedrock はリージョナルサービスで、リージョンごとにエンドポイントが異なる。"
+        }
       ],
       "explanation": "Bedrock はリージョナルサービスで、選択したリージョンのエンドポイントを呼び出すことで処理データはそのリージョン内に留まる。ただしモデル可用性はリージョンによって異なるため、利用予定モデルが対象リージョンで GA されているかを Bedrock console / docs で確認する。クロスリージョン推論を有効化する場合は処理リージョンが拡大する点に留意。",
       "references": [
-        {"title": "Bedrock supported regions and models", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html"}
+        {
+          "title": "Bedrock supported regions and models",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html"
+        }
       ],
-      "tags": ["data-residency", "bedrock", "region", "japan"],
-      "common_mistakes": ["Bedrock をグローバルサービスと誤解する", "S3 のリージョン設定だけで足りると考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "data-residency",
+        "bedrock",
+        "region",
+        "japan"
+      ],
+      "common_mistakes": [
+        "Bedrock をグローバルサービスと誤解する",
+        "S3 のリージョン設定だけで足りると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-012",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Data poisoning",
       "subtopic": "AI/ML threat modeling",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "AI/ML ワークロード固有の脅威である「データポイズニング（Data Poisoning）」の防御策として最も適切なものは？",
       "options": [
-        {"id": "A", "text": "学習データソースの真正性確認、データの来歴（lineage）追跡、異常値検知を組み合わせる", "is_correct": true, "explanation": "正解。データポイズニング対策は信頼できるソース管理、データ系譜の追跡、外れ値検出を多層で実装するのが基本。"},
-        {"id": "B", "text": "EC2 のセキュリティグループを厳格化する", "is_correct": false, "explanation": "ネットワーク制御は周辺対策で、学習データの汚染自体を防ぐ手段にはならない。"},
-        {"id": "C", "text": "推論エンドポイントを SSL で保護する", "is_correct": false, "explanation": "通信保護は重要だが、ポイズニングは学習データへの汚染であり、通信暗号化では防げない。"},
-        {"id": "D", "text": "CloudWatch Alarms で CPU 使用率を監視する", "is_correct": false, "explanation": "リソース監視はパフォーマンスのためで、データ品質問題の検出にはならない。"}
+        {
+          "id": "A",
+          "text": "CloudWatch Alarms で CPU 使用率を監視する",
+          "is_correct": false,
+          "explanation": "リソース監視はパフォーマンスのためで、データ品質問題の検出にはならない。"
+        },
+        {
+          "id": "B",
+          "text": "推論エンドポイントを SSL で保護する",
+          "is_correct": false,
+          "explanation": "通信保護は重要だが、ポイズニングは学習データへの汚染であり、通信暗号化では防げない。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 のセキュリティグループを厳格化する",
+          "is_correct": false,
+          "explanation": "ネットワーク制御は周辺対策で、学習データの汚染自体を防ぐ手段にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "学習データソースの真正性確認、データの来歴（lineage）追跡、異常値検知を組み合わせる",
+          "is_correct": true,
+          "explanation": "正解。データポイズニング対策は信頼できるソース管理、データ系譜の追跡、外れ値検出を多層で実装するのが基本。"
+        }
       ],
       "explanation": "データポイズニングは攻撃者が学習データに悪意あるデータを混入させ、モデル挙動を歪める脅威。データソースの認証、SageMaker / Glue でのデータ系譜追跡、Clarify / Data Wrangler などでの分布チェック、ヒューマンレビューを組み合わせるのが現実的対策。",
       "references": [
-        {"title": "Securing ML Workloads on AWS", "url": "https://docs.aws.amazon.com/whitepapers/latest/securing-ml-systems/securing-ml-systems.html"}
+        {
+          "title": "Securing ML Workloads on AWS",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/securing-ml-systems/securing-ml-systems.html"
+        }
       ],
-      "tags": ["data-poisoning", "threat", "ml", "security"],
-      "common_mistakes": ["セキュリティグループでデータポイズニングを防げると誤解する", "通信暗号化だけで安全と思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "data-poisoning",
+        "threat",
+        "ml",
+        "security"
+      ],
+      "common_mistakes": [
+        "セキュリティグループでデータポイズニングを防げると誤解する",
+        "通信暗号化だけで安全と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-013",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Defense in depth",
       "subtopic": "Layered security for generative AI",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある B2B SaaS が Bedrock を使った RAG アプリで、機密ドキュメントが他テナントに漏れないようにしたい。多層防御の観点で最も網羅的な構成はどれか。",
       "options": [
-        {"id": "A", "text": "IAM で Bedrock 呼び出しを制限するだけで十分", "is_correct": false, "explanation": "IAM 単一層は侵害時に脆弱。最小権限は必須だが、これだけでは多層防御にならない。"},
-        {"id": "B", "text": "テナント別 KMS キーでドキュメント暗号化、IAM で最小権限、VPC Endpoint でプライベート接続、Bedrock Guardrails で出力フィルタ、テナント ID をプロンプトと検索クエリに紐付け、CloudTrail / Model Invocation Logging で監査", "is_correct": true, "explanation": "正解。データ層（KMS）、ID 層（IAM＋テナント）、ネットワーク層（PrivateLink）、アプリ層（Guardrails＋検索フィルタ）、可観測性層（CloudTrail＋ログ）の多層構成。"},
-        {"id": "C", "text": "VPC Endpoint だけ用意すれば情報漏洩は起きない", "is_correct": false, "explanation": "ネットワーク経路の保護のみではアプリ層の漏えい（プロンプトインジェクション、検索クエリ漏洩）を防げない。"},
-        {"id": "D", "text": "プロンプトに「他テナント情報を出すな」と書けば十分", "is_correct": false, "explanation": "プロンプト単独の指示はインジェクションで容易に回避され、テナント分離の実装にはならない。"}
+        {
+          "id": "A",
+          "text": "テナント別 KMS キーでドキュメント暗号化、IAM で最小権限、VPC Endpoint でプライベート接続、Bedrock Guardrails で出力フィルタ、テナント ID をプロンプトと検索クエリに紐付け、CloudTrail / Model Invocation Logging で監査",
+          "is_correct": true,
+          "explanation": "正解。データ層（KMS）、ID 層（IAM＋テナント）、ネットワーク層（PrivateLink）、アプリ層（Guardrails＋検索フィルタ）、可観測性層（CloudTrail＋ログ）の多層構成。"
+        },
+        {
+          "id": "B",
+          "text": "プロンプトに「他テナント情報を出すな」と書けば十分",
+          "is_correct": false,
+          "explanation": "プロンプト単独の指示はインジェクションで容易に回避され、テナント分離の実装にはならない。"
+        },
+        {
+          "id": "C",
+          "text": "IAM で Bedrock 呼び出しを制限するだけで十分",
+          "is_correct": false,
+          "explanation": "IAM 単一層は侵害時に脆弱。最小権限は必須だが、これだけでは多層防御にならない。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Endpoint だけ用意すれば情報漏洩は起きない",
+          "is_correct": false,
+          "explanation": "ネットワーク経路の保護のみではアプリ層の漏えい（プロンプトインジェクション、検索クエリ漏洩）を防げない。"
+        }
       ],
       "explanation": "マルチテナント生成AIアプリのセキュリティは、データ・ID・ネットワーク・アプリ・可観測性の多層防御で構成する。特に検索クエリへのテナントID必須付与、Knowledge Base のメタデータフィルタ、Guardrails の併用が肝要。",
       "references": [
-        {"title": "Multi-tenant SaaS on AWS", "url": "https://docs.aws.amazon.com/whitepapers/latest/saas-architecture-fundamentals/saas-architecture-fundamentals.html"},
-        {"title": "Bedrock Knowledge Base Metadata Filtering", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html"}
+        {
+          "title": "Multi-tenant SaaS on AWS",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/saas-architecture-fundamentals/saas-architecture-fundamentals.html"
+        },
+        {
+          "title": "Bedrock Knowledge Base Metadata Filtering",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html"
+        }
       ],
-      "tags": ["defense-in-depth", "multi-tenant", "saas", "rag"],
-      "common_mistakes": ["IAM 単独で多層防御だと考える", "プロンプト指示だけでテナント分離できると誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "defense-in-depth",
+        "multi-tenant",
+        "saas",
+        "rag"
+      ],
+      "common_mistakes": [
+        "IAM 単独で多層防御だと考える",
+        "プロンプト指示だけでテナント分離できると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-014",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Shared Responsibility",
       "subtopic": "AI services responsibility model",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "AWS のマネージド AI サービス（例: Bedrock）を使う場合、責任共有モデル（Shared Responsibility Model）として、顧客が依然として責任を持つ範囲はどれか。",
       "options": [
-        {"id": "A", "text": "基盤モデルそのもののインフラ運用とパッチ", "is_correct": false, "explanation": "AWS 側の責任。マネージドサービスのインフラ・基盤モデル運用は AWS が担う。"},
-        {"id": "B", "text": "プロンプト設計、利用データの分類・取り扱い、IAM 設定、出力の検証、利用ポリシーの整備", "is_correct": true, "explanation": "正解。クラウドの「中で」（in the cloud）の責任は顧客側にあり、データ管理・アクセス制御・ユースケース妥当性の確保は顧客責任。"},
-        {"id": "C", "text": "AWS データセンターの物理セキュリティ", "is_correct": false, "explanation": "物理セキュリティは AWS の責任。"},
-        {"id": "D", "text": "ハイパーバイザのセキュリティ", "is_correct": false, "explanation": "ハイパーバイザ層は AWS の責任。"}
+        {
+          "id": "A",
+          "text": "基盤モデルそのもののインフラ運用とパッチ",
+          "is_correct": false,
+          "explanation": "AWS 側の責任。マネージドサービスのインフラ・基盤モデル運用は AWS が担う。"
+        },
+        {
+          "id": "B",
+          "text": "プロンプト設計、利用データの分類・取り扱い、IAM 設定、出力の検証、利用ポリシーの整備",
+          "is_correct": true,
+          "explanation": "正解。クラウドの「中で」（in the cloud）の責任は顧客側にあり、データ管理・アクセス制御・ユースケース妥当性の確保は顧客責任。"
+        },
+        {
+          "id": "C",
+          "text": "ハイパーバイザのセキュリティ",
+          "is_correct": false,
+          "explanation": "ハイパーバイザ層は AWS の責任。"
+        },
+        {
+          "id": "D",
+          "text": "AWS データセンターの物理セキュリティ",
+          "is_correct": false,
+          "explanation": "物理セキュリティは AWS の責任。"
+        }
       ],
       "explanation": "Shared Responsibility Model では「Security of the Cloud」（インフラ）は AWS、「Security in the Cloud」（データ・設定・ユースケース）は顧客の責任。生成 AI でも、プロンプト設計、データ分類、アクセス権限、利用ポリシー、出力検証など顧客責任は大きい。",
       "references": [
-        {"title": "AWS Shared Responsibility Model", "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"}
+        {
+          "title": "AWS Shared Responsibility Model",
+          "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+        }
       ],
-      "tags": ["shared-responsibility", "compliance", "governance"],
-      "common_mistakes": ["マネージドサービスは全て AWS の責任と誤解する", "データ分類を AWS の役割と勘違いする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "shared-responsibility",
+        "compliance",
+        "governance"
+      ],
+      "common_mistakes": [
+        "マネージドサービスは全て AWS の責任と誤解する",
+        "データ分類を AWS の役割と勘違いする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain5-015",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Security, Compliance, and Governance for AI Solutions", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Security, Compliance, and Governance for AI Solutions",
+        "weight_percent": 14
+      },
       "topic": "Governance",
       "subtopic": "Holistic generative AI program",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある中堅企業が「生成 AI 推進」を全社プロジェクトとして始めた。情シス、法務、人事、現場が混在し、ガイドラインも未整備。経営者として AI ガバナンスを構築する優先順位として最も妥当な評価は？",
       "options": [
-        {"id": "A", "text": "まず最先端モデルを選定し、後からポリシーを作る", "is_correct": false, "explanation": "技術選定先行はベンダーロックインや方針未整備のままの導入を招き、ガバナンス上問題。"},
-        {"id": "B", "text": "AI 利用ポリシーと責任体制（誰が何を承認するか）の整備 → リスク評価とユースケース選定 → Bedrock Guardrails / IAM / 暗号化等の技術統制 → 監査・改善のサイクル確立、の順で進める", "is_correct": true, "explanation": "正解。ガバナンスは「ポリシー → リスク評価 → 技術統制 → 監査改善」の順が定石。経営層が責任体制を明確化したうえで現場が実装する流れ。"},
-        {"id": "C", "text": "現場主導で各部門が好きにモデルを使い、問題が出たら止める", "is_correct": false, "explanation": "シャドー AI を生み、データ漏えい・コンプライアンス違反のリスクが高い。事後対応はコスト増。"},
-        {"id": "D", "text": "Bedrock Guardrails さえ設定すればガバナンスは完了", "is_correct": false, "explanation": "Guardrails は技術統制の一部で、ポリシー・責任体制・監査プロセスを欠くガバナンスは不完全。"}
+        {
+          "id": "A",
+          "text": "まず最先端モデルを選定し、後からポリシーを作る",
+          "is_correct": false,
+          "explanation": "技術選定先行はベンダーロックインや方針未整備のままの導入を招き、ガバナンス上問題。"
+        },
+        {
+          "id": "B",
+          "text": "現場主導で各部門が好きにモデルを使い、問題が出たら止める",
+          "is_correct": false,
+          "explanation": "シャドー AI を生み、データ漏えい・コンプライアンス違反のリスクが高い。事後対応はコスト増。"
+        },
+        {
+          "id": "C",
+          "text": "AI 利用ポリシーと責任体制（誰が何を承認するか）の整備 → リスク評価とユースケース選定 → Bedrock Guardrails / IAM / 暗号化等の技術統制 → 監査・改善のサイクル確立、の順で進める",
+          "is_correct": true,
+          "explanation": "正解。ガバナンスは「ポリシー → リスク評価 → 技術統制 → 監査改善」の順が定石。経営層が責任体制を明確化したうえで現場が実装する流れ。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock Guardrails さえ設定すればガバナンスは完了",
+          "is_correct": false,
+          "explanation": "Guardrails は技術統制の一部で、ポリシー・責任体制・監査プロセスを欠くガバナンスは不完全。"
+        }
       ],
       "explanation": "AI ガバナンスは技術ではなく経営課題。まず利用ポリシーと責任体制（RACI）を明確化し、それに基づいてユースケースのリスク分類、技術的な統制実装（Guardrails、IAM、KMS、PrivateLink、CloudTrail、Audit Manager）、定期監査を回す。Responsible AI ベストプラクティスに沿ったプログラム化が成功要件。",
       "references": [
-        {"title": "AWS Generative AI Customer Guide", "url": "https://aws.amazon.com/ai/generative-ai/"},
-        {"title": "AWS Responsible AI", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"}
+        {
+          "title": "AWS Generative AI Customer Guide",
+          "url": "https://aws.amazon.com/ai/generative-ai/"
+        },
+        {
+          "title": "AWS Responsible AI",
+          "url": "https://aws.amazon.com/machine-learning/responsible-ai/"
+        }
       ],
-      "tags": ["governance", "policy", "executive", "responsible-ai"],
-      "common_mistakes": ["技術選定先行でガバナンス整備を後回しにする", "Guardrails 単独でガバナンス完了と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "governance",
+        "policy",
+        "executive",
+        "responsible-ai"
+      ],
+      "common_mistakes": [
+        "技術選定先行でガバナンス整備を後回しにする",
+        "Guardrails 単独でガバナンス完了と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

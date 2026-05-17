@@ -15,1255 +15,3730 @@
     {
       "id": "shindanshi-1-joho-001",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ハードウェア",
       "subtopic": "CPU/メモリ階層",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "コンピュータの記憶装置のうち、CPUに最も近く、最も高速にアクセスできる記憶装置はどれか。",
       "options": [
-        {"id": "A", "text": "HDD（ハードディスク）", "is_correct": false, "explanation": "HDDは補助記憶装置で、メモリ階層の中で最も低速側に位置する。"},
-        {"id": "B", "text": "メインメモリ（DRAM）", "is_correct": false, "explanation": "DRAMは主記憶装置で、キャッシュより低速。"},
-        {"id": "C", "text": "キャッシュメモリ（SRAM）", "is_correct": true, "explanation": "正解。SRAMで構成されるキャッシュメモリはCPU内部・近接に配置され、最速。"},
-        {"id": "D", "text": "SSD", "is_correct": false, "explanation": "SSDはHDDより高速だが、メモリ階層では補助記憶装置に分類される。"}
+        {
+          "id": "A",
+          "text": "キャッシュメモリ（SRAM）",
+          "is_correct": true,
+          "explanation": "正解。SRAMで構成されるキャッシュメモリはCPU内部・近接に配置され、最速。"
+        },
+        {
+          "id": "B",
+          "text": "メインメモリ（DRAM）",
+          "is_correct": false,
+          "explanation": "DRAMは主記憶装置で、キャッシュより低速。"
+        },
+        {
+          "id": "C",
+          "text": "HDD（ハードディスク）",
+          "is_correct": false,
+          "explanation": "HDDは補助記憶装置で、メモリ階層の中で最も低速側に位置する。"
+        },
+        {
+          "id": "D",
+          "text": "SSD",
+          "is_correct": false,
+          "explanation": "SSDはHDDより高速だが、メモリ階層では補助記憶装置に分類される。"
+        }
       ],
       "explanation": "メモリ階層は、CPUに近い順にレジスタ→キャッシュ（L1/L2/L3、SRAM）→メインメモリ（DRAM）→SSD/HDD（補助記憶）と並ぶ。上位ほど高速だが容量は小さく、価格も高い。診断士1次の頻出論点。",
       "references": [
-        {"title": "IPA 基本情報技術者試験シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA 基本情報技術者試験シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["hardware", "memory-hierarchy", "cpu", "cache"],
+      "tags": [
+        "hardware",
+        "memory-hierarchy",
+        "cpu",
+        "cache"
+      ],
       "common_mistakes": [
         "SSDが最速と誤解する",
         "DRAMとSRAMの違いを知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-002",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ソフトウェア",
       "subtopic": "OSの役割",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "オペレーティングシステム（OS）の主要な機能として、最も適切でないものはどれか。",
       "options": [
-        {"id": "A", "text": "プロセス管理（CPUの割り当て、スケジューリング）", "is_correct": false, "explanation": "OSの中核機能の一つ。"},
-        {"id": "B", "text": "メモリ管理（仮想記憶、ページング）", "is_correct": false, "explanation": "OSの中核機能。物理メモリを抽象化し、複数プロセスに分配する。"},
-        {"id": "C", "text": "業務データベースの設計と正規化", "is_correct": true, "explanation": "正解（最も適切でない）。これは業務SE/DBA の役割で、OSの機能ではない。"},
-        {"id": "D", "text": "ファイルシステム管理（ディスクへの読み書き）", "is_correct": false, "explanation": "OSの中核機能。デバイスを抽象化してアプリへAPI提供する。"}
+        {
+          "id": "A",
+          "text": "プロセス管理（CPUの割り当て、スケジューリング）",
+          "is_correct": false,
+          "explanation": "OSの中核機能の一つ。"
+        },
+        {
+          "id": "B",
+          "text": "業務データベースの設計と正規化",
+          "is_correct": true,
+          "explanation": "正解（最も適切でない）。これは業務SE/DBA の役割で、OSの機能ではない。"
+        },
+        {
+          "id": "C",
+          "text": "メモリ管理（仮想記憶、ページング）",
+          "is_correct": false,
+          "explanation": "OSの中核機能。物理メモリを抽象化し、複数プロセスに分配する。"
+        },
+        {
+          "id": "D",
+          "text": "ファイルシステム管理（ディスクへの読み書き）",
+          "is_correct": false,
+          "explanation": "OSの中核機能。デバイスを抽象化してアプリへAPI提供する。"
+        }
       ],
       "explanation": "OSの主要機能はプロセス管理、メモリ管理、ファイルシステム、デバイス管理、ユーザー管理。業務DBの設計はアプリケーション層の仕事で、OSの責務ではない。OSとミドルウェア・アプリの役割分担を理解しているかが問われる。",
       "references": [
-        {"title": "IPA ITパスポート試験シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA ITパスポート試験シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["os", "software", "process-management"],
-      "common_mistakes": ["OSとミドルウェアの境界を曖昧に理解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "os",
+        "software",
+        "process-management"
+      ],
+      "common_mistakes": [
+        "OSとミドルウェアの境界を曖昧に理解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-003",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "データベース",
       "subtopic": "正規化",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の製造業A社が販売管理データベースを設計している。「受注テーブル」に1件の受注に対して複数の商品明細が繰り返し列として並んでいる（商品1、商品2、商品3…）。これを第1正規形にするための適切な操作はどれか。",
+      "stem": "ある製造業A社が販売管理データベースを設計している。「受注テーブル」に1件の受注に対して複数の商品明細が繰り返し列として並んでいる（商品1、商品2、商品3…）。これを第1正規形にするための適切な操作はどれか。",
       "options": [
-        {"id": "A", "text": "繰り返し項目を別テーブル（受注明細テーブル）に分離する", "is_correct": true, "explanation": "正解。第1正規化は繰り返し項目を排除する操作で、別テーブルへの分割が定石。"},
-        {"id": "B", "text": "部分関数従属を排除して、主キーの一部に依存する属性を別テーブルに分ける", "is_correct": false, "explanation": "これは第2正規化の操作。第1正規化の後に行う。"},
-        {"id": "C", "text": "推移的関数従属を排除して、非キー属性同士の依存を別テーブルに分ける", "is_correct": false, "explanation": "これは第3正規化の操作。"},
-        {"id": "D", "text": "テーブルを1つに統合して、列を増やす（非正規化）", "is_correct": false, "explanation": "これはむしろ非正規化（パフォーマンス向上目的）で、第1正規形の目的と逆。"}
+        {
+          "id": "A",
+          "text": "テーブルを1つに統合して、列を増やす（非正規化）",
+          "is_correct": false,
+          "explanation": "これはむしろ非正規化（パフォーマンス向上目的）で、第1正規形の目的と逆。"
+        },
+        {
+          "id": "B",
+          "text": "推移的関数従属を排除して、非キー属性同士の依存を別テーブルに分ける",
+          "is_correct": false,
+          "explanation": "これは第3正規化の操作。"
+        },
+        {
+          "id": "C",
+          "text": "繰り返し項目を別テーブル（受注明細テーブル）に分離する",
+          "is_correct": true,
+          "explanation": "正解。第1正規化は繰り返し項目を排除する操作で、別テーブルへの分割が定石。"
+        },
+        {
+          "id": "D",
+          "text": "部分関数従属を排除して、主キーの一部に依存する属性を別テーブルに分ける",
+          "is_correct": false,
+          "explanation": "これは第2正規化の操作。第1正規化の後に行う。"
+        }
       ],
       "explanation": "正規化は段階的に行う。第1正規形（1NF）は繰り返し項目の排除、第2正規形（2NF）は部分関数従属の排除、第3正規形（3NF）は推移的関数従属の排除。受注明細のような1対多データはまず別テーブルに分けるのが基本。",
       "references": [
-        {"title": "IPA 応用情報技術者試験シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA 応用情報技術者試験シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["database", "normalization", "rdb"],
-      "common_mistakes": ["1NF/2NF/3NFの違いを混同する", "正規化の順番を逆に覚える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "database",
+        "normalization",
+        "rdb"
+      ],
+      "common_mistakes": [
+        "1NF/2NF/3NFの違いを混同する",
+        "正規化の順番を逆に覚える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-004",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "データベース",
       "subtopic": "ACID特性",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "データベースのトランザクション処理におけるACID特性のうち、「トランザクション中の処理が、すべて成功するかすべて失敗するかのどちらかである」性質はどれか。",
       "options": [
-        {"id": "A", "text": "原子性（Atomicity）", "is_correct": true, "explanation": "正解。Atomicityはall-or-nothingを保証する性質。"},
-        {"id": "B", "text": "一貫性（Consistency）", "is_correct": false, "explanation": "Consistencyはトランザクション前後でDBの整合性ルール（制約）が保たれること。"},
-        {"id": "C", "text": "独立性（Isolation）", "is_correct": false, "explanation": "Isolationは複数トランザクションが互いに干渉しない性質。"},
-        {"id": "D", "text": "永続性（Durability）", "is_correct": false, "explanation": "Durabilityはコミット後の結果が障害でも失われない性質。"}
+        {
+          "id": "A",
+          "text": "独立性（Isolation）",
+          "is_correct": false,
+          "explanation": "Isolationは複数トランザクションが互いに干渉しない性質。"
+        },
+        {
+          "id": "B",
+          "text": "永続性（Durability）",
+          "is_correct": false,
+          "explanation": "Durabilityはコミット後の結果が障害でも失われない性質。"
+        },
+        {
+          "id": "C",
+          "text": "一貫性（Consistency）",
+          "is_correct": false,
+          "explanation": "Consistencyはトランザクション前後でDBの整合性ルール（制約）が保たれること。"
+        },
+        {
+          "id": "D",
+          "text": "原子性（Atomicity）",
+          "is_correct": true,
+          "explanation": "正解。Atomicityはall-or-nothingを保証する性質。"
+        }
       ],
       "explanation": "ACIDはAtomicity（原子性）/Consistency（一貫性）/Isolation（独立性）/Durability（永続性）の頭文字。原子性は銀行の振込のようにall-or-nothingが必要な処理で重要。診断士でも頻出。",
       "references": [
-        {"title": "IPA 応用情報技術者試験シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA 応用情報技術者試験シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["database", "acid", "transaction"],
-      "common_mistakes": ["AtomicityとConsistencyの定義を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "database",
+        "acid",
+        "transaction"
+      ],
+      "common_mistakes": [
+        "AtomicityとConsistencyの定義を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-005",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ネットワーク",
       "subtopic": "OSI参照モデル",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "OSI参照モデルにおいて、IPアドレスを用いてエンドツーエンドの経路選択（ルーティング）を担当する層はどれか。",
       "options": [
-        {"id": "A", "text": "データリンク層（第2層）", "is_correct": false, "explanation": "データリンク層はMACアドレスを用いた隣接ノード間の通信を担当する。"},
-        {"id": "B", "text": "ネットワーク層（第3層）", "is_correct": true, "explanation": "正解。IPアドレスとルーティングはネットワーク層の責務。"},
-        {"id": "C", "text": "トランスポート層（第4層）", "is_correct": false, "explanation": "トランスポート層はTCP/UDPでポート番号を扱い、信頼性制御を担う。"},
-        {"id": "D", "text": "アプリケーション層（第7層）", "is_correct": false, "explanation": "アプリケーション層はHTTPやSMTPなどアプリケーション固有のプロトコルを扱う。"}
+        {
+          "id": "A",
+          "text": "ネットワーク層（第3層）",
+          "is_correct": true,
+          "explanation": "正解。IPアドレスとルーティングはネットワーク層の責務。"
+        },
+        {
+          "id": "B",
+          "text": "トランスポート層（第4層）",
+          "is_correct": false,
+          "explanation": "トランスポート層はTCP/UDPでポート番号を扱い、信頼性制御を担う。"
+        },
+        {
+          "id": "C",
+          "text": "データリンク層（第2層）",
+          "is_correct": false,
+          "explanation": "データリンク層はMACアドレスを用いた隣接ノード間の通信を担当する。"
+        },
+        {
+          "id": "D",
+          "text": "アプリケーション層（第7層）",
+          "is_correct": false,
+          "explanation": "アプリケーション層はHTTPやSMTPなどアプリケーション固有のプロトコルを扱う。"
+        }
       ],
       "explanation": "OSI参照モデルの7層構造（物理/データリンク/ネットワーク/トランスポート/セッション/プレゼンテーション/アプリケーション）は基本中の基本。IPは第3層、TCPは第4層、HTTPは第7層という対応関係を覚える。",
       "references": [
-        {"title": "IPA ITパスポート試験 シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA ITパスポート試験 シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["network", "osi", "tcp-ip", "routing"],
-      "common_mistakes": ["MACアドレスとIPアドレスの層を間違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network",
+        "osi",
+        "tcp-ip",
+        "routing"
+      ],
+      "common_mistakes": [
+        "MACアドレスとIPアドレスの層を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-006",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ネットワーク",
       "subtopic": "TCP/UDP",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるSaaS企業が、リアルタイム動画配信サービスを提供している。多少のパケットロスは許容しつつも、できる限り低遅延でデータを届けたい。トランスポート層プロトコルとして適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "TCP（再送制御・順序保証あり）", "is_correct": false, "explanation": "TCPは信頼性が高いが、再送制御により遅延が増えるため動画配信には不向き。"},
-        {"id": "B", "text": "UDP（コネクションレス、再送なし）", "is_correct": true, "explanation": "正解。UDPはオーバーヘッドが小さく低遅延。多少のロスを許容できる動画/音声/ゲームに最適。"},
-        {"id": "C", "text": "ICMP（ping/疎通確認用）", "is_correct": false, "explanation": "ICMPはエラー通知や診断用。データ転送プロトコルではない。"},
-        {"id": "D", "text": "ARP（IP→MAC解決）", "is_correct": false, "explanation": "ARPはアドレス解決プロトコルで、データリンク層の役割。"}
+        {
+          "id": "A",
+          "text": "TCP（再送制御・順序保証あり）",
+          "is_correct": false,
+          "explanation": "TCPは信頼性が高いが、再送制御により遅延が増えるため動画配信には不向き。"
+        },
+        {
+          "id": "B",
+          "text": "UDP（コネクションレス、再送なし）",
+          "is_correct": true,
+          "explanation": "正解。UDPはオーバーヘッドが小さく低遅延。多少のロスを許容できる動画/音声/ゲームに最適。"
+        },
+        {
+          "id": "C",
+          "text": "ICMP（ping/疎通確認用）",
+          "is_correct": false,
+          "explanation": "ICMPはエラー通知や診断用。データ転送プロトコルではない。"
+        },
+        {
+          "id": "D",
+          "text": "ARP（IP→MAC解決）",
+          "is_correct": false,
+          "explanation": "ARPはアドレス解決プロトコルで、データリンク層の役割。"
+        }
       ],
       "explanation": "TCPは信頼性重視（Web・メール・ファイル転送）、UDPは速度重視（動画・音声・オンラインゲーム・DNS）。アプリケーションの要件に応じて使い分ける。HTTP/3はUDPベースのQUICを採用しているのも近年のトレンド。",
       "references": [
-        {"title": "IPA 応用情報技術者試験シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA 応用情報技術者試験シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["network", "tcp", "udp", "streaming"],
-      "common_mistakes": ["TCPがあらゆる用途で最適と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network",
+        "tcp",
+        "udp",
+        "streaming"
+      ],
+      "common_mistakes": [
+        "TCPがあらゆる用途で最適と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-007",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "セキュリティ",
       "subtopic": "公開鍵暗号",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療系SaaSの企業が、患者データを外部の取引先と安全にやり取りしたい。送信側で「自分（送信者）の秘密鍵で署名」「受信者の公開鍵で暗号化」を行いたい。それぞれの目的の組合せとして最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "署名は機密性、暗号化は完全性を保証する", "is_correct": false, "explanation": "逆。署名は完全性・真正性を、暗号化は機密性を保証する。"},
-        {"id": "B", "text": "署名は送信者の真正性・改ざん検知、暗号化は通信内容の機密性を保証する", "is_correct": true, "explanation": "正解。秘密鍵による署名は本人認証・改ざん検知（完全性）、公開鍵による暗号化は受信者だけが復号可能（機密性）。"},
-        {"id": "C", "text": "署名は受信者の認証、暗号化は送信者の認証を保証する", "is_correct": false, "explanation": "署名と暗号化の目的が逆になっている。"},
-        {"id": "D", "text": "署名と暗号化はどちらも機密性を保証するが、性能が異なる", "is_correct": false, "explanation": "署名の主目的は機密性ではない。"}
+        {
+          "id": "A",
+          "text": "署名は機密性、暗号化は完全性を保証する",
+          "is_correct": false,
+          "explanation": "逆。署名は完全性・真正性を、暗号化は機密性を保証する。"
+        },
+        {
+          "id": "B",
+          "text": "署名と暗号化はどちらも機密性を保証するが、性能が異なる",
+          "is_correct": false,
+          "explanation": "署名の主目的は機密性ではない。"
+        },
+        {
+          "id": "C",
+          "text": "署名は送信者の真正性・改ざん検知、暗号化は通信内容の機密性を保証する",
+          "is_correct": true,
+          "explanation": "正解。秘密鍵による署名は本人認証・改ざん検知（完全性）、公開鍵による暗号化は受信者だけが復号可能（機密性）。"
+        },
+        {
+          "id": "D",
+          "text": "署名は受信者の認証、暗号化は送信者の認証を保証する",
+          "is_correct": false,
+          "explanation": "署名と暗号化の目的が逆になっている。"
+        }
       ],
       "explanation": "公開鍵暗号方式では2つのユースケースがある。①暗号化：受信者の公開鍵で暗号化→受信者の秘密鍵で復号（機密性）。②署名：送信者の秘密鍵で署名→送信者の公開鍵で検証（真正性・完全性）。両者を組み合わせると、機密性+真正性+完全性が同時に確保される。",
       "references": [
-        {"title": "IPA 情報セキュリティスペシャリスト試験範囲", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA 情報セキュリティスペシャリスト試験範囲",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["security", "public-key", "digital-signature", "encryption"],
-      "common_mistakes": ["署名と暗号化で使う鍵の組合せを混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security",
+        "public-key",
+        "digital-signature",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "署名と暗号化で使う鍵の組合せを混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-008",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "セキュリティ",
       "subtopic": "認証・認可",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "中小企業X社で、複数のクラウドサービス（Microsoft 365、Salesforce、Slack）を利用しているが、各サービスでパスワードを別管理しており、ユーザの利便性とセキュリティ低下が問題になっている。最も適切な対策はどれか。",
       "options": [
-        {"id": "A", "text": "全サービスのパスワードを統一し、社員に毎月変更させる", "is_correct": false, "explanation": "パスワードの統一は1つ漏れた時の被害を拡大させる。NISTでも頻繁な強制変更は非推奨。"},
-        {"id": "B", "text": "シングルサインオン（SSO）とID連携（SAML/OIDC）を導入し、IdPで多要素認証を強制する", "is_correct": true, "explanation": "正解。SSO+MFAは利便性とセキュリティを両立する標準解。各サービスはIdPに認証を委ねる。"},
-        {"id": "C", "text": "各サービスに同じユーザIDで個別ログインさせ、ブラウザのパスワード保存機能を活用する", "is_correct": false, "explanation": "ブラウザ保存は個人端末依存で、企業として管理できない。利便性の改善にもならない。"},
-        {"id": "D", "text": "VPNを導入して、社内ネットワークからのみ各サービスにアクセスさせる", "is_correct": false, "explanation": "クラウドサービスへのアクセス制限としてVPNは古い設計。ID連携の代替にならない。"}
+        {
+          "id": "A",
+          "text": "VPNを導入して、社内ネットワークからのみ各サービスにアクセスさせる",
+          "is_correct": false,
+          "explanation": "クラウドサービスへのアクセス制限としてVPNは古い設計。ID連携の代替にならない。"
+        },
+        {
+          "id": "B",
+          "text": "全サービスのパスワードを統一し、社員に毎月変更させる",
+          "is_correct": false,
+          "explanation": "パスワードの統一は1つ漏れた時の被害を拡大させる。NISTでも頻繁な強制変更は非推奨。"
+        },
+        {
+          "id": "C",
+          "text": "各サービスに同じユーザIDで個別ログインさせ、ブラウザのパスワード保存機能を活用する",
+          "is_correct": false,
+          "explanation": "ブラウザ保存は個人端末依存で、企業として管理できない。利便性の改善にもならない。"
+        },
+        {
+          "id": "D",
+          "text": "シングルサインオン（SSO）とID連携（SAML/OIDC）を導入し、IdPで多要素認証を強制する",
+          "is_correct": true,
+          "explanation": "正解。SSO+MFAは利便性とセキュリティを両立する標準解。各サービスはIdPに認証を委ねる。"
+        }
       ],
       "explanation": "SSOはSAMLやOpenID Connectといった標準プロトコルで、IdP（Azure AD/Entra ID、Okta、Google Workspaceなど）がユーザ認証を一元化する。各サービス（SP）はIdPの認証結果を信頼してアクセスを許可する。MFA（多要素認証）をIdPで一括強制すれば、すべてのサービスのセキュリティが上がる。",
       "references": [
-        {"title": "NIST SP 800-63 Digital Identity Guidelines", "url": "https://pages.nist.gov/800-63-3/"}
+        {
+          "title": "NIST SP 800-63 Digital Identity Guidelines",
+          "url": "https://pages.nist.gov/800-63-3/"
+        }
       ],
-      "tags": ["security", "sso", "saml", "mfa", "iam"],
-      "common_mistakes": ["VPNで全部解決すると思い込む", "頻繁なパスワード変更がセキュアと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security",
+        "sso",
+        "saml",
+        "mfa",
+        "iam"
+      ],
+      "common_mistakes": [
+        "VPNで全部解決すると思い込む",
+        "頻繁なパスワード変更がセキュアと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-009",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ハードウェア",
       "subtopic": "RAID",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "中小製造業のサーバで重要な業務データを保存している。1台のディスク故障に耐えつつ、できるだけ容量効率を高めたい。最も適切なRAID構成はどれか。",
       "options": [
-        {"id": "A", "text": "RAID 0（ストライピングのみ、冗長性なし）", "is_correct": false, "explanation": "RAID 0は性能向上のみで、ディスク1台故障で全データ消失する。"},
-        {"id": "B", "text": "RAID 1（ミラーリング）", "is_correct": false, "explanation": "1台故障に耐えるが、容量効率が50%と低い。"},
-        {"id": "C", "text": "RAID 5（パリティ分散）", "is_correct": true, "explanation": "正解。1台故障に耐え、容量効率は (N-1)/N でRAID 1より良い。"},
-        {"id": "D", "text": "JBOD（ディスクの単純連結）", "is_correct": false, "explanation": "JBODは冗長性なし。1台故障で当該ディスクのデータが失われる。"}
+        {
+          "id": "A",
+          "text": "RAID 5（パリティ分散）",
+          "is_correct": true,
+          "explanation": "正解。1台故障に耐え、容量効率は (N-1)/N でRAID 1より良い。"
+        },
+        {
+          "id": "B",
+          "text": "RAID 1（ミラーリング）",
+          "is_correct": false,
+          "explanation": "1台故障に耐えるが、容量効率が50%と低い。"
+        },
+        {
+          "id": "C",
+          "text": "RAID 0（ストライピングのみ、冗長性なし）",
+          "is_correct": false,
+          "explanation": "RAID 0は性能向上のみで、ディスク1台故障で全データ消失する。"
+        },
+        {
+          "id": "D",
+          "text": "JBOD（ディスクの単純連結）",
+          "is_correct": false,
+          "explanation": "JBODは冗長性なし。1台故障で当該ディスクのデータが失われる。"
+        }
       ],
       "explanation": "RAID 5はN本のディスクのうち1本分の容量をパリティに使う。3台構成なら容量効率67%、4台なら75%。1台故障時はパリティから復元可能。ただし2台同時故障には耐えられないため、より高い可用性が必要ならRAID 6（パリティ2重）を選ぶ。",
       "references": [
-        {"title": "IPA 基本情報技術者試験シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA 基本情報技術者試験シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["hardware", "raid", "storage", "redundancy"],
-      "common_mistakes": ["RAID 0の冗長性ありと誤解する", "RAID 1とRAID 5の容量効率を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "hardware",
+        "raid",
+        "storage",
+        "redundancy"
+      ],
+      "common_mistakes": [
+        "RAID 0の冗長性ありと誤解する",
+        "RAID 1とRAID 5の容量効率を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-010",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "セキュリティ",
       "subtopic": "マルウェア",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ファイルやシステムを暗号化して、復号と引き換えに身代金を要求するマルウェアの種類はどれか。",
       "options": [
-        {"id": "A", "text": "スパイウェア", "is_correct": false, "explanation": "スパイウェアは情報を盗むことが目的で、暗号化は行わない。"},
-        {"id": "B", "text": "ランサムウェア", "is_correct": true, "explanation": "正解。Ransom（身代金）+ Software。データを暗号化し復号鍵を人質にする。"},
-        {"id": "C", "text": "アドウェア", "is_correct": false, "explanation": "アドウェアは広告表示が目的。"},
-        {"id": "D", "text": "キーロガー", "is_correct": false, "explanation": "キーロガーはキーボード入力を記録する。暗号化はしない。"}
+        {
+          "id": "A",
+          "text": "アドウェア",
+          "is_correct": false,
+          "explanation": "アドウェアは広告表示が目的。"
+        },
+        {
+          "id": "B",
+          "text": "ランサムウェア",
+          "is_correct": true,
+          "explanation": "正解。Ransom（身代金）+ Software。データを暗号化し復号鍵を人質にする。"
+        },
+        {
+          "id": "C",
+          "text": "スパイウェア",
+          "is_correct": false,
+          "explanation": "スパイウェアは情報を盗むことが目的で、暗号化は行わない。"
+        },
+        {
+          "id": "D",
+          "text": "キーロガー",
+          "is_correct": false,
+          "explanation": "キーロガーはキーボード入力を記録する。暗号化はしない。"
+        }
       ],
       "explanation": "ランサムウェアは2017年のWannaCryなどで世界中に被害を出し、近年は二重恐喝（暗号化+情報漏洩を盾に）も増加。対策はオフラインバックアップ、パッチ適用、EDR導入、教育、ネットワーク分離など。中小企業も標的になる。",
       "references": [
-        {"title": "IPA 情報セキュリティ10大脅威", "url": "https://www.ipa.go.jp/security/10threats/"}
+        {
+          "title": "IPA 情報セキュリティ10大脅威",
+          "url": "https://www.ipa.go.jp/security/10threats/"
+        }
       ],
-      "tags": ["security", "malware", "ransomware"],
-      "common_mistakes": ["他のマルウェア種別と混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security",
+        "malware",
+        "ransomware"
+      ],
+      "common_mistakes": [
+        "他のマルウェア種別と混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-011",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ネットワーク",
       "subtopic": "サブネット計算",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "IPアドレス 192.168.10.0/24 のネットワークで、ホストとして利用可能なIPアドレスの個数はいくつか。",
       "options": [
-        {"id": "A", "text": "256個", "is_correct": false, "explanation": "256はアドレス総数だが、ネットワークアドレスとブロードキャストアドレスは使えない。"},
-        {"id": "B", "text": "254個", "is_correct": true, "explanation": "正解。256-2（ネットワークアドレスとブロードキャスト）= 254。"},
-        {"id": "C", "text": "128個", "is_correct": false, "explanation": "/25なら128だが、/24は256アドレス（254ホスト）。"},
-        {"id": "D", "text": "65,534個", "is_correct": false, "explanation": "これは/16のホスト数。"}
+        {
+          "id": "A",
+          "text": "256個",
+          "is_correct": false,
+          "explanation": "256はアドレス総数だが、ネットワークアドレスとブロードキャストアドレスは使えない。"
+        },
+        {
+          "id": "B",
+          "text": "128個",
+          "is_correct": false,
+          "explanation": "/25なら128だが、/24は256アドレス（254ホスト）。"
+        },
+        {
+          "id": "C",
+          "text": "254個",
+          "is_correct": true,
+          "explanation": "正解。256-2（ネットワークアドレスとブロードキャスト）= 254。"
+        },
+        {
+          "id": "D",
+          "text": "65,534個",
+          "is_correct": false,
+          "explanation": "これは/16のホスト数。"
+        }
       ],
       "explanation": "/24は8ビットがホスト部で、2^8=256個のアドレス。先頭（.0）はネットワークアドレス、末尾（.255）はブロードキャストで予約され、ホストには256-2=254個が割当可能。/Nビット表記からホスト数を即計算できるようにする。",
       "references": [
-        {"title": "IPA 基本情報技術者試験シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA 基本情報技術者試験シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["network", "ipv4", "subnet", "cidr"],
-      "common_mistakes": ["256をそのまま答える", "ネットワークアドレスを忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network",
+        "ipv4",
+        "subnet",
+        "cidr"
+      ],
+      "common_mistakes": [
+        "256をそのまま答える",
+        "ネットワークアドレスを忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-012",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "データベース",
       "subtopic": "SQL/結合",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SQLにおいて、左テーブルのすべての行と、右テーブルで条件に一致する行を結合し、一致しない部分はNULLで埋める結合方法はどれか。",
       "options": [
-        {"id": "A", "text": "INNER JOIN", "is_correct": false, "explanation": "INNER JOINは両テーブルで条件に一致する行のみを返す。"},
-        {"id": "B", "text": "LEFT OUTER JOIN", "is_correct": true, "explanation": "正解。左テーブルを基準に、右側の一致しない行はNULLで結合される。"},
-        {"id": "C", "text": "RIGHT OUTER JOIN", "is_correct": false, "explanation": "右テーブルを基準にする結合。左右が逆。"},
-        {"id": "D", "text": "CROSS JOIN", "is_correct": false, "explanation": "CROSS JOINは直積（全組合せ）を返す。"}
+        {
+          "id": "A",
+          "text": "RIGHT OUTER JOIN",
+          "is_correct": false,
+          "explanation": "右テーブルを基準にする結合。左右が逆。"
+        },
+        {
+          "id": "B",
+          "text": "INNER JOIN",
+          "is_correct": false,
+          "explanation": "INNER JOINは両テーブルで条件に一致する行のみを返す。"
+        },
+        {
+          "id": "C",
+          "text": "CROSS JOIN",
+          "is_correct": false,
+          "explanation": "CROSS JOINは直積（全組合せ）を返す。"
+        },
+        {
+          "id": "D",
+          "text": "LEFT OUTER JOIN",
+          "is_correct": true,
+          "explanation": "正解。左テーブルを基準に、右側の一致しない行はNULLで結合される。"
+        }
       ],
       "explanation": "JOINの種類: INNER（両者一致）、LEFT OUTER（左基準）、RIGHT OUTER（右基準）、FULL OUTER（両側）、CROSS（直積）。「マスタにあるが取引のない顧客」を抽出するときLEFT JOINとIS NULLを使うのが定番。",
       "references": [
-        {"title": "IPA 応用情報技術者試験シラバス", "url": "https://www.ipa.go.jp/shiken/syllabus/"}
+        {
+          "title": "IPA 応用情報技術者試験シラバス",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
       ],
-      "tags": ["database", "sql", "join"],
-      "common_mistakes": ["INNERとOUTERの違いが曖昧"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "database",
+        "sql",
+        "join"
+      ],
+      "common_mistakes": [
+        "INNERとOUTERの違いが曖昧"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-013",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "セキュリティ",
       "subtopic": "脅威と攻撃手法",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "攻撃者がWebアプリケーションの入力欄にSQL文の断片を埋め込み、認証回避やデータ漏洩を引き起こす攻撃はどれか。また、最も効果的な対策はどれか。",
       "options": [
-        {"id": "A", "text": "クロスサイトスクリプティング（XSS）。対策はHTMLエスケープ。", "is_correct": false, "explanation": "XSSはJavaScriptの埋め込みで、SQL断片の埋め込みではない。"},
-        {"id": "B", "text": "SQLインジェクション。対策はプレースホルダ（パラメータ化クエリ）の使用。", "is_correct": true, "explanation": "正解。プレースホルダはSQLと値を分離する根本的な対策。"},
-        {"id": "C", "text": "DDoS攻撃。対策はWAFと帯域制限。", "is_correct": false, "explanation": "DDoSは大量アクセスによるサービス妨害で、SQL構文の埋め込みではない。"},
-        {"id": "D", "text": "セッションハイジャック。対策はHTTPS化。", "is_correct": false, "explanation": "セッションIDの窃取を扱う攻撃で、SQL文の問題ではない。"}
+        {
+          "id": "A",
+          "text": "SQLインジェクション。対策はプレースホルダ（パラメータ化クエリ）の使用。",
+          "is_correct": true,
+          "explanation": "正解。プレースホルダはSQLと値を分離する根本的な対策。"
+        },
+        {
+          "id": "B",
+          "text": "セッションハイジャック。対策はHTTPS化。",
+          "is_correct": false,
+          "explanation": "セッションIDの窃取を扱う攻撃で、SQL文の問題ではない。"
+        },
+        {
+          "id": "C",
+          "text": "DDoS攻撃。対策はWAFと帯域制限。",
+          "is_correct": false,
+          "explanation": "DDoSは大量アクセスによるサービス妨害で、SQL構文の埋め込みではない。"
+        },
+        {
+          "id": "D",
+          "text": "クロスサイトスクリプティング（XSS）。対策はHTMLエスケープ。",
+          "is_correct": false,
+          "explanation": "XSSはJavaScriptの埋め込みで、SQL断片の埋め込みではない。"
+        }
       ],
       "explanation": "SQLインジェクションは最も古典的かつ深刻なWeb脆弱性の一つ。文字列連結でSQLを組み立てると攻撃者の入力がSQL構文として解釈されてしまう。プレースホルダ（バインド変数）を用いれば値はSQL構文として扱われず、根本対策となる。WAFは多層防御の補完であって主対策ではない。",
       "references": [
-        {"title": "IPA 安全なウェブサイトの作り方", "url": "https://www.ipa.go.jp/security/vuln/websecurity/"}
+        {
+          "title": "IPA 安全なウェブサイトの作り方",
+          "url": "https://www.ipa.go.jp/security/vuln/websecurity/"
+        }
       ],
-      "tags": ["security", "sql-injection", "web-security", "owasp"],
-      "common_mistakes": ["XSSとSQLインジェクションを混同", "WAFを根本対策と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security",
+        "sql-injection",
+        "web-security",
+        "owasp"
+      ],
+      "common_mistakes": [
+        "XSSとSQLインジェクションを混同",
+        "WAFを根本対策と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-014",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ハードウェア",
       "subtopic": "文字コード",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Webアプリケーションや国際的なデータ交換で、世界中の文字を統一的に扱える可変長文字コードとして広く使われているのはどれか。",
       "options": [
-        {"id": "A", "text": "ASCII", "is_correct": false, "explanation": "ASCIIは英数字記号128文字のみで、日本語は扱えない。"},
-        {"id": "B", "text": "Shift_JIS", "is_correct": false, "explanation": "Shift_JISは日本語限定。国際化には不向き。"},
-        {"id": "C", "text": "UTF-8", "is_correct": true, "explanation": "正解。Unicodeを可変長で表現する標準的なエンコーディング。Webの事実標準。"},
-        {"id": "D", "text": "EBCDIC", "is_correct": false, "explanation": "メインフレーム時代のIBM文字コード。現代のWebでは使われない。"}
+        {
+          "id": "A",
+          "text": "ASCII",
+          "is_correct": false,
+          "explanation": "ASCIIは英数字記号128文字のみで、日本語は扱えない。"
+        },
+        {
+          "id": "B",
+          "text": "UTF-8",
+          "is_correct": true,
+          "explanation": "正解。Unicodeを可変長で表現する標準的なエンコーディング。Webの事実標準。"
+        },
+        {
+          "id": "C",
+          "text": "Shift_JIS",
+          "is_correct": false,
+          "explanation": "Shift_JISは日本語限定。国際化には不向き。"
+        },
+        {
+          "id": "D",
+          "text": "EBCDIC",
+          "is_correct": false,
+          "explanation": "メインフレーム時代のIBM文字コード。現代のWebでは使われない。"
+        }
       ],
       "explanation": "UTF-8はUnicodeの可変長エンコーディング（1〜4バイト）で、ASCII互換、世界中の文字を表現できる、Webや多くのシステムでデファクト標準。文字化け問題はShift_JIS↔UTF-8の混在で起きやすい。",
       "references": [
-        {"title": "Unicode Consortium", "url": "https://www.unicode.org/"}
+        {
+          "title": "Unicode Consortium",
+          "url": "https://www.unicode.org/"
+        }
       ],
-      "tags": ["character-encoding", "utf-8", "unicode"],
-      "common_mistakes": ["UTF-8が固定長と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "character-encoding",
+        "utf-8",
+        "unicode"
+      ],
+      "common_mistakes": [
+        "UTF-8が固定長と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-015",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ネットワーク",
       "subtopic": "DNS",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "DNS（Domain Name System）の主な役割として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "ドメイン名とIPアドレスの対応付けを行う", "is_correct": true, "explanation": "正解。例: www.example.com → 93.184.216.34 のような名前解決。"},
-        {"id": "B", "text": "Webページの内容をキャッシュする", "is_correct": false, "explanation": "それはCDNやプロキシの役割。"},
-        {"id": "C", "text": "電子メールを暗号化して送信する", "is_correct": false, "explanation": "それはS/MIMEやPGPの役割。"},
-        {"id": "D", "text": "ファイル転送を行う", "is_correct": false, "explanation": "それはFTPやSCPの役割。"}
+        {
+          "id": "A",
+          "text": "Webページの内容をキャッシュする",
+          "is_correct": false,
+          "explanation": "それはCDNやプロキシの役割。"
+        },
+        {
+          "id": "B",
+          "text": "ファイル転送を行う",
+          "is_correct": false,
+          "explanation": "それはFTPやSCPの役割。"
+        },
+        {
+          "id": "C",
+          "text": "ドメイン名とIPアドレスの対応付けを行う",
+          "is_correct": true,
+          "explanation": "正解。例: www.example.com → 93.184.216.34 のような名前解決。"
+        },
+        {
+          "id": "D",
+          "text": "電子メールを暗号化して送信する",
+          "is_correct": false,
+          "explanation": "それはS/MIMEやPGPの役割。"
+        }
       ],
       "explanation": "DNSはインターネットの電話帳に相当。階層構造（ルート→TLD→権威サーバ）で世界中の名前解決を分散管理する。DNSキャッシュポイズニングなどの攻撃対策としてDNSSECがある。",
       "references": [
-        {"title": "JPRS DNS関連情報", "url": "https://jprs.jp/related-info/"}
+        {
+          "title": "JPRS DNS関連情報",
+          "url": "https://jprs.jp/related-info/"
+        }
       ],
-      "tags": ["network", "dns", "name-resolution"],
-      "common_mistakes": ["DNSとDHCPを混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network",
+        "dns",
+        "name-resolution"
+      ],
+      "common_mistakes": [
+        "DNSとDHCPを混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-016",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ERP",
       "subtopic": "ERPの定義",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ERP（Enterprise Resource Planning）パッケージの最も本質的な特徴はどれか。",
       "options": [
-        {"id": "A", "text": "営業の商談管理に特化したシステム", "is_correct": false, "explanation": "それはCRM/SFAの説明。"},
-        {"id": "B", "text": "販売・購買・在庫・会計・人事など基幹業務を統合データベースで一元管理する", "is_correct": true, "explanation": "正解。基幹業務を1つのデータモデルで統合し、データ重複・不整合を排除する。"},
-        {"id": "C", "text": "Webサイトのアクセス解析を行うツール", "is_correct": false, "explanation": "それはGoogle AnalyticsなどのWeb分析ツール。"},
-        {"id": "D", "text": "サーバ仮想化基盤の管理ツール", "is_correct": false, "explanation": "それはVMware vCenterなどの仮想化管理製品。"}
+        {
+          "id": "A",
+          "text": "営業の商談管理に特化したシステム",
+          "is_correct": false,
+          "explanation": "それはCRM/SFAの説明。"
+        },
+        {
+          "id": "B",
+          "text": "Webサイトのアクセス解析を行うツール",
+          "is_correct": false,
+          "explanation": "それはGoogle AnalyticsなどのWeb分析ツール。"
+        },
+        {
+          "id": "C",
+          "text": "サーバ仮想化基盤の管理ツール",
+          "is_correct": false,
+          "explanation": "それはVMware vCenterなどの仮想化管理製品。"
+        },
+        {
+          "id": "D",
+          "text": "販売・購買・在庫・会計・人事など基幹業務を統合データベースで一元管理する",
+          "is_correct": true,
+          "explanation": "正解。基幹業務を1つのデータモデルで統合し、データ重複・不整合を排除する。"
+        }
       ],
       "explanation": "ERPはMRPから発展し、企業の基幹業務（販売・購買・在庫・生産・会計・人事）を統合的に管理する。代表製品はSAP S/4HANA、Oracle ERP Cloud、Microsoft Dynamics 365など。中小企業向けにはOBC、ミロク、freeeなど。",
       "references": [
-        {"title": "中小企業庁 IT経営", "url": "https://www.chusho.meti.go.jp/keiei/it/"}
+        {
+          "title": "中小企業庁 IT経営",
+          "url": "https://www.chusho.meti.go.jp/keiei/it/"
+        }
       ],
-      "tags": ["erp", "business-system", "integration"],
-      "common_mistakes": ["ERPとCRMを混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "erp",
+        "business-system",
+        "integration"
+      ],
+      "common_mistakes": [
+        "ERPとCRMを混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-017",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "SCM",
       "subtopic": "ブルウィップ効果",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "サプライチェーンマネジメント（SCM）における「ブルウィップ効果」の説明として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "需要情報が川下から川上に伝わる過程で需要変動が増幅する現象", "is_correct": true, "explanation": "正解。小売の小さな需要変動が、卸→製造→原材料と遡るほど増幅される。"},
-        {"id": "B", "text": "工場での生産効率を高めるために在庫を最小化する手法", "is_correct": false, "explanation": "それはJITやリーン生産方式の説明。"},
-        {"id": "C", "text": "サプライヤーが顧客の在庫管理を代行する仕組み", "is_correct": false, "explanation": "それはVMI（Vendor Managed Inventory）の説明。"},
-        {"id": "D", "text": "需要予測の精度を高めるためのAI活用", "is_correct": false, "explanation": "需要予測の話は近接するが、ブルウィップ効果そのものではない。"}
+        {
+          "id": "A",
+          "text": "需要情報が川下から川上に伝わる過程で需要変動が増幅する現象",
+          "is_correct": true,
+          "explanation": "正解。小売の小さな需要変動が、卸→製造→原材料と遡るほど増幅される。"
+        },
+        {
+          "id": "B",
+          "text": "サプライヤーが顧客の在庫管理を代行する仕組み",
+          "is_correct": false,
+          "explanation": "それはVMI（Vendor Managed Inventory）の説明。"
+        },
+        {
+          "id": "C",
+          "text": "工場での生産効率を高めるために在庫を最小化する手法",
+          "is_correct": false,
+          "explanation": "それはJITやリーン生産方式の説明。"
+        },
+        {
+          "id": "D",
+          "text": "需要予測の精度を高めるためのAI活用",
+          "is_correct": false,
+          "explanation": "需要予測の話は近接するが、ブルウィップ効果そのものではない。"
+        }
       ],
       "explanation": "ブルウィップ効果（Bullwhip Effect）は鞭の先端のように、川上に行くほど需要変動が増幅する現象。原因は情報の遅延、ロット発注、価格変動による先食い、品切れ予防のための過剰発注など。POSデータ共有やCPFR、VMIで対策する。SCMの典型論点。",
       "references": [
-        {"title": "Lee, Padmanabhan & Whang (1997) Bullwhip Effect"}
+        {
+          "title": "Lee, Padmanabhan & Whang (1997) Bullwhip Effect"
+        }
       ],
-      "tags": ["scm", "bullwhip", "demand-amplification"],
-      "common_mistakes": ["VMIや JIT と混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "scm",
+        "bullwhip",
+        "demand-amplification"
+      ],
+      "common_mistakes": [
+        "VMIや JIT と混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-018",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "CRM",
       "subtopic": "CRMとSFA",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "中小企業X社（B2B SaaS）が顧客との関係強化を図りたい。営業活動の進捗管理、商談履歴の蓄積、案件のパイプライン可視化を行いたい場合、最も適切なシステムはどれか。",
       "options": [
-        {"id": "A", "text": "ERP（基幹業務統合）", "is_correct": false, "explanation": "ERPは基幹業務だが、商談プロセス管理は得意領域ではない。"},
-        {"id": "B", "text": "SFA（Sales Force Automation）", "is_correct": true, "explanation": "正解。SFAは営業活動の標準化・進捗管理・案件管理に特化。"},
-        {"id": "C", "text": "MES（Manufacturing Execution System）", "is_correct": false, "explanation": "MESは製造実行システム。営業とは別領域。"},
-        {"id": "D", "text": "WMS（Warehouse Management System）", "is_correct": false, "explanation": "WMSは倉庫管理システム。"}
+        {
+          "id": "A",
+          "text": "WMS（Warehouse Management System）",
+          "is_correct": false,
+          "explanation": "WMSは倉庫管理システム。"
+        },
+        {
+          "id": "B",
+          "text": "SFA（Sales Force Automation）",
+          "is_correct": true,
+          "explanation": "正解。SFAは営業活動の標準化・進捗管理・案件管理に特化。"
+        },
+        {
+          "id": "C",
+          "text": "MES（Manufacturing Execution System）",
+          "is_correct": false,
+          "explanation": "MESは製造実行システム。営業とは別領域。"
+        },
+        {
+          "id": "D",
+          "text": "ERP（基幹業務統合）",
+          "is_correct": false,
+          "explanation": "ERPは基幹業務だが、商談プロセス管理は得意領域ではない。"
+        }
       ],
       "explanation": "SFAは営業活動の自動化・効率化のシステムで、商談・案件・パイプライン・活動履歴を管理する。広義のCRMの一部とされ、Salesforce Sales Cloud、HubSpot、Microsoft Dynamics 365 Salesなどが代表。CRMはマーケ・営業・サポートを含む顧客関係管理全般を指す。",
       "references": [
-        {"title": "中小企業庁 IT経営", "url": "https://www.chusho.meti.go.jp/keiei/it/"}
+        {
+          "title": "中小企業庁 IT経営",
+          "url": "https://www.chusho.meti.go.jp/keiei/it/"
+        }
       ],
-      "tags": ["crm", "sfa", "sales"],
-      "common_mistakes": ["SFAとCRMの位置付けを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "crm",
+        "sfa",
+        "sales"
+      ],
+      "common_mistakes": [
+        "SFAとCRMの位置付けを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-019",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "BI",
       "subtopic": "BIツールの目的",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "BI（Business Intelligence）ツールの主な目的として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "業務基幹データを統合して、分析・可視化し、経営意思決定を支援する", "is_correct": true, "explanation": "正解。データを集約・分析・可視化して経営判断を支援するのがBIの本質。"},
-        {"id": "B", "text": "電子メールを自動振り分ける", "is_correct": false, "explanation": "それはメールクライアントのフィルタ機能。"},
-        {"id": "C", "text": "ソースコードのバージョン管理を行う", "is_correct": false, "explanation": "それはGitなどの役割。"},
-        {"id": "D", "text": "ネットワークトラフィックを監視する", "is_correct": false, "explanation": "それはネットワーク監視ツール。"}
+        {
+          "id": "A",
+          "text": "ソースコードのバージョン管理を行う",
+          "is_correct": false,
+          "explanation": "それはGitなどの役割。"
+        },
+        {
+          "id": "B",
+          "text": "電子メールを自動振り分ける",
+          "is_correct": false,
+          "explanation": "それはメールクライアントのフィルタ機能。"
+        },
+        {
+          "id": "C",
+          "text": "業務基幹データを統合して、分析・可視化し、経営意思決定を支援する",
+          "is_correct": true,
+          "explanation": "正解。データを集約・分析・可視化して経営判断を支援するのがBIの本質。"
+        },
+        {
+          "id": "D",
+          "text": "ネットワークトラフィックを監視する",
+          "is_correct": false,
+          "explanation": "それはネットワーク監視ツール。"
+        }
       ],
       "explanation": "BIはETL/ELT（データ抽出・統合）、DWH（データウェアハウス）、可視化（ダッシュボード）の3要素で構成される。代表製品はTableau、Power BI、Looker、Domo、Qlikなど。中小企業ではPower BI、Lookerを使うことが多い。DXの基礎インフラ。",
       "references": [
-        {"title": "中小企業庁 DX推進ガイドライン"}
+        {
+          "title": "中小企業庁 DX推進ガイドライン"
+        }
       ],
-      "tags": ["bi", "data-analysis", "dashboard"],
-      "common_mistakes": ["BIとETLの位置付けを誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 3, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.25},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bi",
+        "data-analysis",
+        "dashboard"
+      ],
+      "common_mistakes": [
+        "BIとETLの位置付けを誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 3,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.25
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-020",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "DX",
       "subtopic": "DXの本質",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "経済産業省が定義する「DX（デジタル・トランスフォーメーション）」の本質として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "紙の書類をPDFにしてファイルサーバに保管すること", "is_correct": false, "explanation": "それはデジタイゼーション（単なるデジタル化）。"},
-        {"id": "B", "text": "業務をデジタルで効率化すること", "is_correct": false, "explanation": "それはデジタライゼーション（業務のデジタル化）で、DXより手前の段階。"},
-        {"id": "C", "text": "データとデジタル技術を活用してビジネスモデル・組織・文化を変革し、競争優位を確立すること", "is_correct": true, "explanation": "正解。経産省「DX推進ガイドライン」の定義に沿った、ビジネスモデル変革まで含む概念。"},
-        {"id": "D", "text": "全社員にPCを配布してリモートワークさせること", "is_correct": false, "explanation": "それはICT環境整備の一例で、DXそのものではない。"}
+        {
+          "id": "A",
+          "text": "紙の書類をPDFにしてファイルサーバに保管すること",
+          "is_correct": false,
+          "explanation": "それはデジタイゼーション（単なるデジタル化）。"
+        },
+        {
+          "id": "B",
+          "text": "全社員にPCを配布してリモートワークさせること",
+          "is_correct": false,
+          "explanation": "それはICT環境整備の一例で、DXそのものではない。"
+        },
+        {
+          "id": "C",
+          "text": "業務をデジタルで効率化すること",
+          "is_correct": false,
+          "explanation": "それはデジタライゼーション（業務のデジタル化）で、DXより手前の段階。"
+        },
+        {
+          "id": "D",
+          "text": "データとデジタル技術を活用してビジネスモデル・組織・文化を変革し、競争優位を確立すること",
+          "is_correct": true,
+          "explanation": "正解。経産省「DX推進ガイドライン」の定義に沿った、ビジネスモデル変革まで含む概念。"
+        }
       ],
       "explanation": "DXは3段階で考える。①デジタイゼーション（紙→デジタル）、②デジタライゼーション（業務プロセスのデジタル化）、③デジタルトランスフォーメーション（ビジネスモデル・組織変革）。経産省は2018年「DXレポート」「DX推進ガイドライン」で定義しており、診断士でも頻出。",
       "references": [
-        {"title": "経済産業省 DX推進ガイドライン", "url": "https://www.meti.go.jp/policy/it_policy/dx/dx.html"}
+        {
+          "title": "経済産業省 DX推進ガイドライン",
+          "url": "https://www.meti.go.jp/policy/it_policy/dx/dx.html"
+        }
       ],
-      "tags": ["dx", "digital-transformation", "strategy"],
-      "common_mistakes": ["デジタル化＝DXと誤解する", "ITツール導入だけで完結すると考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dx",
+        "digital-transformation",
+        "strategy"
+      ],
+      "common_mistakes": [
+        "デジタル化＝DXと誤解する",
+        "ITツール導入だけで完結すると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-021",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "経営とIT",
       "subtopic": "EDI",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "EDI（Electronic Data Interchange）の説明として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "企業間の取引情報を標準化された電子フォーマットで交換する仕組み", "is_correct": true, "explanation": "正解。受発注・請求・支払などをコンピュータ間で自動的にやり取りする。"},
-        {"id": "B", "text": "社内の電子メールシステム", "is_correct": false, "explanation": "EDIは企業間取引データ交換に特化したもので、メールシステムではない。"},
-        {"id": "C", "text": "社内ファイル共有のシステム", "is_correct": false, "explanation": "それはファイルサーバやSharePointなどの役割。"},
-        {"id": "D", "text": "電子マネー決済の仕組み", "is_correct": false, "explanation": "それは電子マネー・キャッシュレス決済の話。"}
+        {
+          "id": "A",
+          "text": "企業間の取引情報を標準化された電子フォーマットで交換する仕組み",
+          "is_correct": true,
+          "explanation": "正解。受発注・請求・支払などをコンピュータ間で自動的にやり取りする。"
+        },
+        {
+          "id": "B",
+          "text": "社内の電子メールシステム",
+          "is_correct": false,
+          "explanation": "EDIは企業間取引データ交換に特化したもので、メールシステムではない。"
+        },
+        {
+          "id": "C",
+          "text": "社内ファイル共有のシステム",
+          "is_correct": false,
+          "explanation": "それはファイルサーバやSharePointなどの役割。"
+        },
+        {
+          "id": "D",
+          "text": "電子マネー決済の仕組み",
+          "is_correct": false,
+          "explanation": "それは電子マネー・キャッシュレス決済の話。"
+        }
       ],
       "explanation": "EDIは流通・製造業を中心に普及した企業間取引のEDI。標準として全銀協手順、JCA手順、流通BMS、EDIINT/AS2、近年はWeb-EDIやAPI連携も増えている。中小企業庁の「2024年問題」（ISDN廃止）でWeb-EDI移行が課題になっている。",
       "references": [
-        {"title": "中小企業庁 EDI移行支援", "url": "https://www.chusho.meti.go.jp/"}
+        {
+          "title": "中小企業庁 EDI移行支援",
+          "url": "https://www.chusho.meti.go.jp/"
+        }
       ],
-      "tags": ["edi", "b2b", "integration"],
-      "common_mistakes": ["EDIをB2Cの決済システムと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 3, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "edi",
+        "b2b",
+        "integration"
+      ],
+      "common_mistakes": [
+        "EDIをB2Cの決済システムと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 3,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-022",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "経営とIT",
       "subtopic": "RPA",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方のメーカーA社が、経理部門で毎日繰り返される「複数システムからのデータ抽出→Excel集計→メール送信」業務を自動化したい。最も適切なツールはどれか。",
+      "stem": "あるメーカーA社が、経理部門で毎日繰り返される「複数システムからのデータ抽出→Excel集計→メール送信」業務を自動化したい。最も適切なツールはどれか。",
       "options": [
-        {"id": "A", "text": "RPA（Robotic Process Automation）", "is_correct": true, "explanation": "正解。定型的な画面操作・データ転記の自動化はRPAの典型ユースケース。"},
-        {"id": "B", "text": "ERP（基幹業務統合）", "is_correct": false, "explanation": "ERPはあるが、ERP導入だけで既存業務の自動化はできない。"},
-        {"id": "C", "text": "DWH（データウェアハウス）", "is_correct": false, "explanation": "DWHは分析用のデータ蓄積基盤で、業務操作の自動化には不向き。"},
-        {"id": "D", "text": "EDI（企業間データ交換）", "is_correct": false, "explanation": "EDIは企業間の標準化取引で、社内業務の自動化とは別。"}
+        {
+          "id": "A",
+          "text": "EDI（企業間データ交換）",
+          "is_correct": false,
+          "explanation": "EDIは企業間の標準化取引で、社内業務の自動化とは別。"
+        },
+        {
+          "id": "B",
+          "text": "RPA（Robotic Process Automation）",
+          "is_correct": true,
+          "explanation": "正解。定型的な画面操作・データ転記の自動化はRPAの典型ユースケース。"
+        },
+        {
+          "id": "C",
+          "text": "ERP（基幹業務統合）",
+          "is_correct": false,
+          "explanation": "ERPはあるが、ERP導入だけで既存業務の自動化はできない。"
+        },
+        {
+          "id": "D",
+          "text": "DWH（データウェアハウス）",
+          "is_correct": false,
+          "explanation": "DWHは分析用のデータ蓄積基盤で、業務操作の自動化には不向き。"
+        }
       ],
       "explanation": "RPAはWindowsアプリ・Webブラウザ・Excelなどの操作を録画・スクリプト化して自動実行する技術。代表製品はUiPath、Automation Anywhere、Blue Prism、Power Automate Desktop、WinActorなど。AIと組み合わせて非定型業務にも応用される（IPA: Intelligent Process Automation）。",
       "references": [
-        {"title": "中小企業庁 IT経営", "url": "https://www.chusho.meti.go.jp/keiei/it/"}
+        {
+          "title": "中小企業庁 IT経営",
+          "url": "https://www.chusho.meti.go.jp/keiei/it/"
+        }
       ],
-      "tags": ["rpa", "automation", "business-process"],
-      "common_mistakes": ["RPAとAIを同義に捉える", "RPAで非定型業務まで全部できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rpa",
+        "automation",
+        "business-process"
+      ],
+      "common_mistakes": [
+        "RPAとAIを同義に捉える",
+        "RPAで非定型業務まで全部できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-023",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "経営とIT",
       "subtopic": "電子帳簿保存法",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "2024年1月から完全義務化された電子帳簿保存法における「電子取引データの保存」要件として、最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "電子取引（メール添付PDFの請求書など）は印刷して紙で保存すれば良い", "is_correct": false, "explanation": "2024年からは紙保存は不可。電子データのまま保存が義務。"},
-        {"id": "B", "text": "電子取引データは、検索機能・タイムスタンプまたは訂正削除履歴・改ざん防止規程のいずれかなど、所定の要件を満たして電子保存する必要がある", "is_correct": true, "explanation": "正解。真実性と可視性の両要件を満たす保存が必要。"},
-        {"id": "C", "text": "電子取引データは1ヶ月間だけ保存すれば良い", "is_correct": false, "explanation": "保存期間は原則7年（一部10年）。1ヶ月では不十分。"},
-        {"id": "D", "text": "電子取引データの保存は中小企業には適用されない", "is_correct": false, "explanation": "規模を問わずすべての事業者に適用される。"}
+        {
+          "id": "A",
+          "text": "電子取引データの保存は中小企業には適用されない",
+          "is_correct": false,
+          "explanation": "規模を問わずすべての事業者に適用される。"
+        },
+        {
+          "id": "B",
+          "text": "電子取引（メール添付PDFの請求書など）は印刷して紙で保存すれば良い",
+          "is_correct": false,
+          "explanation": "2024年からは紙保存は不可。電子データのまま保存が義務。"
+        },
+        {
+          "id": "C",
+          "text": "電子取引データは、検索機能・タイムスタンプまたは訂正削除履歴・改ざん防止規程のいずれかなど、所定の要件を満たして電子保存する必要がある",
+          "is_correct": true,
+          "explanation": "正解。真実性と可視性の両要件を満たす保存が必要。"
+        },
+        {
+          "id": "D",
+          "text": "電子取引データは1ヶ月間だけ保存すれば良い",
+          "is_correct": false,
+          "explanation": "保存期間は原則7年（一部10年）。1ヶ月では不十分。"
+        }
       ],
       "explanation": "電子帳簿保存法は2022年改正、2023年末まで猶予期間で2024年1月から完全義務化。電子取引データは「真実性確保（タイムスタンプ・訂正削除履歴・規程整備）」と「可視性確保（検索機能・ディスプレイ・操作マニュアル）」が求められる。違反は青色申告取消等のリスク。",
       "references": [
-        {"title": "国税庁 電子帳簿保存法", "url": "https://www.nta.go.jp/law/joho-zeikaishaku/sonota/jirei/"}
+        {
+          "title": "国税庁 電子帳簿保存法",
+          "url": "https://www.nta.go.jp/law/joho-zeikaishaku/sonota/jirei/"
+        }
       ],
-      "tags": ["electronic-bookkeeping", "compliance", "regulation"],
-      "common_mistakes": ["紙保存で代替可能と誤解", "中小企業免除と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "electronic-bookkeeping",
+        "compliance",
+        "regulation"
+      ],
+      "common_mistakes": [
+        "紙保存で代替可能と誤解",
+        "中小企業免除と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-024",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "経営とIT",
       "subtopic": "POSシステム",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "小売業のPOSシステムから得られるデータを活用する場合、「ある商品Aを買った人は商品Bも買う傾向がある」という関連を発見するために最も適切な手法はどれか。",
       "options": [
-        {"id": "A", "text": "ABC分析", "is_correct": false, "explanation": "ABC分析は売上構成比でランク分けする手法で、商品間の相関は見ない。"},
-        {"id": "B", "text": "アソシエーション分析（バスケット分析）", "is_correct": true, "explanation": "正解。レシート単位で「同時購入の関連性」を抽出する手法。"},
-        {"id": "C", "text": "クラスタリング", "is_correct": false, "explanation": "クラスタリングは類似度で集団分けする手法で、購買併発の検出は専門外。"},
-        {"id": "D", "text": "回帰分析", "is_correct": false, "explanation": "回帰分析は数値の予測モデルで、購買併発検出には使わない。"}
+        {
+          "id": "A",
+          "text": "ABC分析",
+          "is_correct": false,
+          "explanation": "ABC分析は売上構成比でランク分けする手法で、商品間の相関は見ない。"
+        },
+        {
+          "id": "B",
+          "text": "回帰分析",
+          "is_correct": false,
+          "explanation": "回帰分析は数値の予測モデルで、購買併発検出には使わない。"
+        },
+        {
+          "id": "C",
+          "text": "クラスタリング",
+          "is_correct": false,
+          "explanation": "クラスタリングは類似度で集団分けする手法で、購買併発の検出は専門外。"
+        },
+        {
+          "id": "D",
+          "text": "アソシエーション分析（バスケット分析）",
+          "is_correct": true,
+          "explanation": "正解。レシート単位で「同時購入の関連性」を抽出する手法。"
+        }
       ],
       "explanation": "アソシエーション分析（バスケット分析）は、同時購入の関連ルールを抽出する手法。「おむつを買った人はビールも買う」の事例が有名。指標として支持度（support）、信頼度（confidence）、リフト値（lift）を用いる。POSデータ活用の基本。",
       "references": [
-        {"title": "IPA データ分析ガイド"}
+        {
+          "title": "IPA データ分析ガイド"
+        }
       ],
-      "tags": ["data-analysis", "association", "pos", "retail"],
-      "common_mistakes": ["クラスタリングと混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "data-analysis",
+        "association",
+        "pos",
+        "retail"
+      ],
+      "common_mistakes": [
+        "クラスタリングと混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-025",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "経営とIT",
       "subtopic": "MES/IoT",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
-      "stem": "東海地方の中堅製造業A社が、工場の生産ライン稼働状況を可視化し、ボトルネックを特定して改善したい。生産計画はERPで管理しているが、現場の進捗は紙の日報。最も適切なシステム導入はどれか。",
+      "stem": "ある中堅製造業A社が、工場の生産ライン稼働状況を可視化し、ボトルネックを特定して改善したい。生産計画はERPで管理しているが、現場の進捗は紙の日報。最も適切なシステム導入はどれか。",
       "options": [
-        {"id": "A", "text": "MES（Manufacturing Execution System）とIoTセンサーを連携させて、設備稼働を自動収集・可視化する", "is_correct": true, "explanation": "正解。MESは現場の実行管理、IoTは自動収集の役割。ERPと連携することで計画と実績が繋がる。"},
-        {"id": "B", "text": "ERPを別ベンダー製に置き換える", "is_correct": false, "explanation": "問題は現場可視化であり、ERP置換は的外れ。"},
-        {"id": "C", "text": "CRMを導入して顧客の声を集める", "is_correct": false, "explanation": "CRMは顧客管理で、生産現場可視化とは別。"},
-        {"id": "D", "text": "全員に紙の日報を3倍書かせて精度を上げる", "is_correct": false, "explanation": "現場の作業負荷を増やすだけで自動化にならない。"}
+        {
+          "id": "A",
+          "text": "MES（Manufacturing Execution System）とIoTセンサーを連携させて、設備稼働を自動収集・可視化する",
+          "is_correct": true,
+          "explanation": "正解。MESは現場の実行管理、IoTは自動収集の役割。ERPと連携することで計画と実績が繋がる。"
+        },
+        {
+          "id": "B",
+          "text": "ERPを別ベンダー製に置き換える",
+          "is_correct": false,
+          "explanation": "問題は現場可視化であり、ERP置換は的外れ。"
+        },
+        {
+          "id": "C",
+          "text": "CRMを導入して顧客の声を集める",
+          "is_correct": false,
+          "explanation": "CRMは顧客管理で、生産現場可視化とは別。"
+        },
+        {
+          "id": "D",
+          "text": "全員に紙の日報を3倍書かせて精度を上げる",
+          "is_correct": false,
+          "explanation": "現場の作業負荷を増やすだけで自動化にならない。"
+        }
       ],
       "explanation": "MESはERPと現場の間に位置し、生産指示・進捗管理・品質管理・設備管理を担う。IoT（PLCのデータ取得、センサー、エッジコンピューティング）と組み合わせることで、リアルタイム可視化（IoT見える化）が実現する。スマートファクトリーの中核。",
       "references": [
-        {"title": "経産省 スマートファクトリー", "url": "https://www.meti.go.jp/"}
+        {
+          "title": "経産省 スマートファクトリー",
+          "url": "https://www.meti.go.jp/"
+        }
       ],
-      "tags": ["mes", "iot", "smart-factory", "manufacturing"],
-      "common_mistakes": ["ERPで現場まで全部管理できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "mes",
+        "iot",
+        "smart-factory",
+        "manufacturing"
+      ],
+      "common_mistakes": [
+        "ERPで現場まで全部管理できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-026",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "経営とIT",
       "subtopic": "BPR",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "BPR（Business Process Re-engineering）の本質的な特徴として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "既存業務の改善を継続的に行うこと（カイゼン）", "is_correct": false, "explanation": "それはカイゼン（改善）。BPRは継続改善より抜本的変革を志向する。"},
-        {"id": "B", "text": "業務プロセスを白紙から抜本的に再設計すること", "is_correct": true, "explanation": "正解。Hammer & Champyによる定義で、ゼロベースで設計し直す。"},
-        {"id": "C", "text": "ITツールを最新版に置き換えること", "is_correct": false, "explanation": "それはシステム更改で、業務プロセス再設計とは別。"},
-        {"id": "D", "text": "従業員を解雇して人件費削減すること", "is_correct": false, "explanation": "それはリストラクチャリングのうち雇用調整。BPRと混同されやすいが別概念。"}
+        {
+          "id": "A",
+          "text": "ITツールを最新版に置き換えること",
+          "is_correct": false,
+          "explanation": "それはシステム更改で、業務プロセス再設計とは別。"
+        },
+        {
+          "id": "B",
+          "text": "業務プロセスを白紙から抜本的に再設計すること",
+          "is_correct": true,
+          "explanation": "正解。Hammer & Champyによる定義で、ゼロベースで設計し直す。"
+        },
+        {
+          "id": "C",
+          "text": "既存業務の改善を継続的に行うこと（カイゼン）",
+          "is_correct": false,
+          "explanation": "それはカイゼン（改善）。BPRは継続改善より抜本的変革を志向する。"
+        },
+        {
+          "id": "D",
+          "text": "従業員を解雇して人件費削減すること",
+          "is_correct": false,
+          "explanation": "それはリストラクチャリングのうち雇用調整。BPRと混同されやすいが別概念。"
+        }
       ],
       "explanation": "BPRはHammer & Champyが1990年代に提唱。「劇的（Dramatic）」「抜本的（Radical）」「プロセス（Process）」「再考（Rethink）」の4つの核がある。日本ではBPRがリストラの代名詞として誤用された経緯もあるが、本来は業務プロセスの設計思想。",
       "references": [
-        {"title": "Hammer & Champy (1993) Reengineering the Corporation"}
+        {
+          "title": "Hammer & Champy (1993) Reengineering the Corporation"
+        }
       ],
-      "tags": ["bpr", "process-redesign", "transformation"],
-      "common_mistakes": ["BPR＝リストラ（人員削減）と誤解", "カイゼンとBPRを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bpr",
+        "process-redesign",
+        "transformation"
+      ],
+      "common_mistakes": [
+        "BPR＝リストラ（人員削減）と誤解",
+        "カイゼンとBPRを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-027",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "システム開発",
       "subtopic": "ウォーターフォール",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ウォーターフォールモデルの特徴として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "要件定義→設計→実装→テストを段階的かつ後戻りしない流れで進める", "is_correct": true, "explanation": "正解。各工程を順次完了させ、原則として前工程に戻らない。"},
-        {"id": "B", "text": "短い反復で開発を繰り返す", "is_correct": false, "explanation": "それはアジャイル開発の特徴。"},
-        {"id": "C", "text": "プロトタイプを作って顧客と対話する", "is_correct": false, "explanation": "それはプロトタイピングモデル。"},
-        {"id": "D", "text": "リスク分析を中心に螺旋状に開発する", "is_correct": false, "explanation": "それはスパイラルモデル。"}
+        {
+          "id": "A",
+          "text": "短い反復で開発を繰り返す",
+          "is_correct": false,
+          "explanation": "それはアジャイル開発の特徴。"
+        },
+        {
+          "id": "B",
+          "text": "プロトタイプを作って顧客と対話する",
+          "is_correct": false,
+          "explanation": "それはプロトタイピングモデル。"
+        },
+        {
+          "id": "C",
+          "text": "要件定義→設計→実装→テストを段階的かつ後戻りしない流れで進める",
+          "is_correct": true,
+          "explanation": "正解。各工程を順次完了させ、原則として前工程に戻らない。"
+        },
+        {
+          "id": "D",
+          "text": "リスク分析を中心に螺旋状に開発する",
+          "is_correct": false,
+          "explanation": "それはスパイラルモデル。"
+        }
       ],
       "explanation": "ウォーターフォールは1970年代からの伝統的開発手法で、要件→設計→実装→テスト→運用の流れを上から下に流す。要件が固まる大規模・基幹系には適するが、変化への対応は弱い。アジャイルとの使い分けが重要。",
       "references": [
-        {"title": "IPA システム開発手法ガイド"}
+        {
+          "title": "IPA システム開発手法ガイド"
+        }
       ],
-      "tags": ["development", "waterfall", "sdlc"],
-      "common_mistakes": ["ウォーターフォールが常に最適と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "development",
+        "waterfall",
+        "sdlc"
+      ],
+      "common_mistakes": [
+        "ウォーターフォールが常に最適と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-028",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "システム開発",
       "subtopic": "アジャイル/スクラム",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "スクラム開発における「スプリント」の説明として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "通常1〜4週間程度の固定期間で機能を開発・リリースする反復単位", "is_correct": true, "explanation": "正解。タイムボックスで開発し、最後に動くソフトウェアをデモする。"},
-        {"id": "B", "text": "プロジェクト全体の最終締切までの期間", "is_correct": false, "explanation": "それは全体のスケジュール。スプリントは反復単位。"},
-        {"id": "C", "text": "テスト工程だけを切り出した短期間", "is_correct": false, "explanation": "スプリントは設計〜テストまで含む。"},
-        {"id": "D", "text": "リリース前の最終確認の1日間", "is_correct": false, "explanation": "それはリリース判定に近い。"}
+        {
+          "id": "A",
+          "text": "リリース前の最終確認の1日間",
+          "is_correct": false,
+          "explanation": "それはリリース判定に近い。"
+        },
+        {
+          "id": "B",
+          "text": "テスト工程だけを切り出した短期間",
+          "is_correct": false,
+          "explanation": "スプリントは設計〜テストまで含む。"
+        },
+        {
+          "id": "C",
+          "text": "プロジェクト全体の最終締切までの期間",
+          "is_correct": false,
+          "explanation": "それは全体のスケジュール。スプリントは反復単位。"
+        },
+        {
+          "id": "D",
+          "text": "通常1〜4週間程度の固定期間で機能を開発・リリースする反復単位",
+          "is_correct": true,
+          "explanation": "正解。タイムボックスで開発し、最後に動くソフトウェアをデモする。"
+        }
       ],
       "explanation": "スクラムはアジャイル手法の一種で、スプリント（通常1〜4週）でPotentially Shippable Productを作る。役割はProduct Owner、Scrum Master、Developer。イベントはSprint Planning、Daily Scrum、Sprint Review、Sprint Retrospective。アーティファクトはProduct Backlog、Sprint Backlog、Increment。",
       "references": [
-        {"title": "Scrum Guide", "url": "https://scrumguides.org/"}
+        {
+          "title": "Scrum Guide",
+          "url": "https://scrumguides.org/"
+        }
       ],
-      "tags": ["agile", "scrum", "sprint", "development"],
-      "common_mistakes": ["スプリント＝プロジェクト全体と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "agile",
+        "scrum",
+        "sprint",
+        "development"
+      ],
+      "common_mistakes": [
+        "スプリント＝プロジェクト全体と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-029",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "システム開発",
       "subtopic": "DevOps",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "DevOpsの目的として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "開発（Dev）と運用（Ops）の協働を促進し、CI/CDなどの自動化を通じてリリース速度と品質を高める", "is_correct": true, "explanation": "正解。組織文化と自動化技術の両面から開発・運用の壁を取り払う考え方。"},
-        {"id": "B", "text": "開発担当者と運用担当者を完全に分離してセキュリティを強化する", "is_correct": false, "explanation": "DevOpsの趣旨と逆。むしろ協働がコンセプト。"},
-        {"id": "C", "text": "ウォーターフォールを徹底して文書管理を厳密にする", "is_correct": false, "explanation": "DevOpsはむしろアジャイルとの親和性が高い。"},
-        {"id": "D", "text": "外部ベンダーに開発と運用を丸投げする", "is_correct": false, "explanation": "それはアウトソーシングで、DevOpsの本質ではない。"}
+        {
+          "id": "A",
+          "text": "開発（Dev）と運用（Ops）の協働を促進し、CI/CDなどの自動化を通じてリリース速度と品質を高める",
+          "is_correct": true,
+          "explanation": "正解。組織文化と自動化技術の両面から開発・運用の壁を取り払う考え方。"
+        },
+        {
+          "id": "B",
+          "text": "ウォーターフォールを徹底して文書管理を厳密にする",
+          "is_correct": false,
+          "explanation": "DevOpsはむしろアジャイルとの親和性が高い。"
+        },
+        {
+          "id": "C",
+          "text": "開発担当者と運用担当者を完全に分離してセキュリティを強化する",
+          "is_correct": false,
+          "explanation": "DevOpsの趣旨と逆。むしろ協働がコンセプト。"
+        },
+        {
+          "id": "D",
+          "text": "外部ベンダーに開発と運用を丸投げする",
+          "is_correct": false,
+          "explanation": "それはアウトソーシングで、DevOpsの本質ではない。"
+        }
       ],
       "explanation": "DevOpsはCALMS（Culture, Automation, Lean, Measurement, Sharing）が中核。CI/CDパイプライン（Jenkins, GitHub Actions, GitLab CI）、IaC（Terraform, CloudFormation）、コンテナ（Docker, Kubernetes）、観測可能性（Prometheus, Grafana）などの技術が組み合わさる。近年はSREやDevSecOpsへ拡張。",
       "references": [
-        {"title": "DORA State of DevOps Report"}
+        {
+          "title": "DORA State of DevOps Report"
+        }
       ],
-      "tags": ["devops", "ci-cd", "automation", "culture"],
-      "common_mistakes": ["DevOps＝ツール導入だけと誤解", "DevとOpsの分離を強化すると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "devops",
+        "ci-cd",
+        "automation",
+        "culture"
+      ],
+      "common_mistakes": [
+        "DevOps＝ツール導入だけと誤解",
+        "DevとOpsの分離を強化すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-030",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "システム開発",
       "subtopic": "要件定義",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "システム開発における「機能要件」と「非機能要件」の違いとして最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "機能要件は「何をするか」、非機能要件は「どのように振る舞うか（性能・可用性・セキュリティ等）」", "is_correct": true, "explanation": "正解。IPA「非機能要求グレード」もこの分類で性能・可用性・運用保守性などを定義する。"},
-        {"id": "B", "text": "機能要件は重要、非機能要件は不要", "is_correct": false, "explanation": "非機能要件こそシステムの品質を決定する重要要素。"},
-        {"id": "C", "text": "機能要件はベンダー、非機能要件はユーザが書くもの", "is_correct": false, "explanation": "両方ともユーザとベンダーで合意する必要がある。"},
-        {"id": "D", "text": "両者は同じ意味", "is_correct": false, "explanation": "明確に異なる概念。"}
+        {
+          "id": "A",
+          "text": "機能要件はベンダー、非機能要件はユーザが書くもの",
+          "is_correct": false,
+          "explanation": "両方ともユーザとベンダーで合意する必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "機能要件は「何をするか」、非機能要件は「どのように振る舞うか（性能・可用性・セキュリティ等）」",
+          "is_correct": true,
+          "explanation": "正解。IPA「非機能要求グレード」もこの分類で性能・可用性・運用保守性などを定義する。"
+        },
+        {
+          "id": "C",
+          "text": "機能要件は重要、非機能要件は不要",
+          "is_correct": false,
+          "explanation": "非機能要件こそシステムの品質を決定する重要要素。"
+        },
+        {
+          "id": "D",
+          "text": "両者は同じ意味",
+          "is_correct": false,
+          "explanation": "明確に異なる概念。"
+        }
       ],
       "explanation": "機能要件はシステムが提供する機能（受注登録、検索、帳票出力など）。非機能要件は性能（応答時間、スループット）、可用性（稼働率、RTO/RPO）、運用保守性、セキュリティ、移行性、ユーザビリティなど。IPAが「非機能要求グレード」を公開しており、要件定義の標準として広く使われる。",
       "references": [
-        {"title": "IPA 非機能要求グレード", "url": "https://www.ipa.go.jp/sec/softwareengineering/std/ent03-b.html"}
+        {
+          "title": "IPA 非機能要求グレード",
+          "url": "https://www.ipa.go.jp/sec/softwareengineering/std/ent03-b.html"
+        }
       ],
-      "tags": ["requirements", "functional", "non-functional"],
-      "common_mistakes": ["非機能要件を軽視する", "両者を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "requirements",
+        "functional",
+        "non-functional"
+      ],
+      "common_mistakes": [
+        "非機能要件を軽視する",
+        "両者を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-031",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "システム開発",
       "subtopic": "テスト技法",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ソフトウェアテストにおいて、内部のソースコード構造に基づいて条件分岐や経路を網羅するテスト手法はどれか。",
       "options": [
-        {"id": "A", "text": "ブラックボックステスト", "is_correct": false, "explanation": "ブラックボックスは入出力仕様に基づき内部を見ない。"},
-        {"id": "B", "text": "ホワイトボックステスト", "is_correct": true, "explanation": "正解。ソースコードの内部構造を見て、命令網羅・分岐網羅などを測る。"},
-        {"id": "C", "text": "受け入れテスト", "is_correct": false, "explanation": "ユーザがビジネス観点で行う最終テスト。"},
-        {"id": "D", "text": "負荷テスト", "is_correct": false, "explanation": "性能要件を確認するテストで、内部構造の網羅とは別。"}
+        {
+          "id": "A",
+          "text": "負荷テスト",
+          "is_correct": false,
+          "explanation": "性能要件を確認するテストで、内部構造の網羅とは別。"
+        },
+        {
+          "id": "B",
+          "text": "受け入れテスト",
+          "is_correct": false,
+          "explanation": "ユーザがビジネス観点で行う最終テスト。"
+        },
+        {
+          "id": "C",
+          "text": "ホワイトボックステスト",
+          "is_correct": true,
+          "explanation": "正解。ソースコードの内部構造を見て、命令網羅・分岐網羅などを測る。"
+        },
+        {
+          "id": "D",
+          "text": "ブラックボックステスト",
+          "is_correct": false,
+          "explanation": "ブラックボックスは入出力仕様に基づき内部を見ない。"
+        }
       ],
       "explanation": "テストは観点で「ホワイトボックス」「ブラックボックス」、フェーズで「単体→結合→システム→受入」、目的で「機能・性能・負荷・セキュリティ」など多角的に分類される。ホワイトボックスでは命令網羅、分岐網羅、条件網羅、複合条件網羅といった基準でカバレッジを測る。",
       "references": [
-        {"title": "JSTQB ソフトウェアテスト技術者資格"}
+        {
+          "title": "JSTQB ソフトウェアテスト技術者資格"
+        }
       ],
-      "tags": ["testing", "white-box", "coverage"],
-      "common_mistakes": ["ブラックボックスとホワイトボックスを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "testing",
+        "white-box",
+        "coverage"
+      ],
+      "common_mistakes": [
+        "ブラックボックスとホワイトボックスを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-032",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "システム開発",
       "subtopic": "プロジェクト管理",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "プロジェクト管理で「QCD」と呼ばれる3要素はそれぞれ何を指すか。",
       "options": [
-        {"id": "A", "text": "Quality（品質）、Cost（コスト）、Delivery（納期）", "is_correct": true, "explanation": "正解。製造業由来でPMの基本3制約。"},
-        {"id": "B", "text": "Quality（品質）、Communication（コミュニケーション）、Decision（意思決定）", "is_correct": false, "explanation": "勝手な造語。"},
-        {"id": "C", "text": "Quantity（数量）、Cost（コスト）、Demand（需要）", "is_correct": false, "explanation": "QCDではない。"},
-        {"id": "D", "text": "Question（質問）、Check（確認）、Decision（決定）", "is_correct": false, "explanation": "ありえない組合せ。"}
+        {
+          "id": "A",
+          "text": "Quality（品質）、Communication（コミュニケーション）、Decision（意思決定）",
+          "is_correct": false,
+          "explanation": "勝手な造語。"
+        },
+        {
+          "id": "B",
+          "text": "Quantity（数量）、Cost（コスト）、Demand（需要）",
+          "is_correct": false,
+          "explanation": "QCDではない。"
+        },
+        {
+          "id": "C",
+          "text": "Question（質問）、Check（確認）、Decision（決定）",
+          "is_correct": false,
+          "explanation": "ありえない組合せ。"
+        },
+        {
+          "id": "D",
+          "text": "Quality（品質）、Cost（コスト）、Delivery（納期）",
+          "is_correct": true,
+          "explanation": "正解。製造業由来でPMの基本3制約。"
+        }
       ],
       "explanation": "QCDはプロジェクト管理・製造業の基本三要素。PMBOKでは「スコープ・スケジュール・コスト・品質」のトリプルコンストレイント拡張版が使われ、近年はリソース・リスク・ステークホルダーも管理対象。",
       "references": [
-        {"title": "PMBOK Guide"}
+        {
+          "title": "PMBOK Guide"
+        }
       ],
-      "tags": ["pm", "qcd", "project-management"],
-      "common_mistakes": ["Cの解釈を間違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 3, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.25},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "pm",
+        "qcd",
+        "project-management"
+      ],
+      "common_mistakes": [
+        "Cの解釈を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 3,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.25
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-033",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "統計分析",
       "subtopic": "基本統計量",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるデータセット {2, 4, 4, 6, 8} の平均値、中央値、最頻値の組合せとして正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "平均値=4.8、中央値=4、最頻値=4", "is_correct": true, "explanation": "正解。平均=(2+4+4+6+8)/5=24/5=4.8、中央値（5個の真ん中）=4、最頻値=4（2回）。"},
-        {"id": "B", "text": "平均値=5、中央値=4、最頻値=4", "is_correct": false, "explanation": "平均は4.8。計算ミスを誘うディストラクタ。"},
-        {"id": "C", "text": "平均値=4.8、中央値=6、最頻値=8", "is_correct": false, "explanation": "中央値・最頻値の理解が誤っている。"},
-        {"id": "D", "text": "平均値=4、中央値=4.8、最頻値=2", "is_correct": false, "explanation": "平均と中央値の入れ替え、最頻値も誤り。"}
+        {
+          "id": "A",
+          "text": "平均値=4.8、中央値=4、最頻値=4",
+          "is_correct": true,
+          "explanation": "正解。平均=(2+4+4+6+8)/5=24/5=4.8、中央値（5個の真ん中）=4、最頻値=4（2回）。"
+        },
+        {
+          "id": "B",
+          "text": "平均値=5、中央値=4、最頻値=4",
+          "is_correct": false,
+          "explanation": "平均は4.8。計算ミスを誘うディストラクタ。"
+        },
+        {
+          "id": "C",
+          "text": "平均値=4、中央値=4.8、最頻値=2",
+          "is_correct": false,
+          "explanation": "平均と中央値の入れ替え、最頻値も誤り。"
+        },
+        {
+          "id": "D",
+          "text": "平均値=4.8、中央値=6、最頻値=8",
+          "is_correct": false,
+          "explanation": "中央値・最頻値の理解が誤っている。"
+        }
       ],
       "explanation": "代表値の3兄弟。平均（mean）=合計/個数。中央値（median）=並び替えて真ん中（偶数個なら2つの平均）。最頻値（mode）=最も多く出現する値。外れ値があるデータでは中央値が安定指標。診断士の統計問題で頻出。",
       "references": [
-        {"title": "総務省統計局 統計学習サイト", "url": "https://www.stat.go.jp/"}
+        {
+          "title": "総務省統計局 統計学習サイト",
+          "url": "https://www.stat.go.jp/"
+        }
       ],
-      "tags": ["statistics", "central-tendency", "mean", "median"],
-      "common_mistakes": ["中央値を機械的に「真ん中の番号」の値と勘違い"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "statistics",
+        "central-tendency",
+        "mean",
+        "median"
+      ],
+      "common_mistakes": [
+        "中央値を機械的に「真ん中の番号」の値と勘違い"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-034",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "統計分析",
       "subtopic": "回帰分析",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "単回帰分析の結果、決定係数（R²）が0.85だった。これの解釈として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "目的変数の変動のうち約85%が説明変数で説明できる", "is_correct": true, "explanation": "正解。R²はモデルの説明力を表し、0〜1の値で1に近いほど当てはまりが良い。"},
-        {"id": "B", "text": "予測の85%が完全に正解する", "is_correct": false, "explanation": "R²は予測精度の指標ではあるが「正解率」ではない。"},
-        {"id": "C", "text": "サンプルの85%が回帰直線上にある", "is_correct": false, "explanation": "そういう意味ではない。"},
-        {"id": "D", "text": "p値が0.85である", "is_correct": false, "explanation": "R²とp値は別の概念。"}
+        {
+          "id": "A",
+          "text": "サンプルの85%が回帰直線上にある",
+          "is_correct": false,
+          "explanation": "そういう意味ではない。"
+        },
+        {
+          "id": "B",
+          "text": "目的変数の変動のうち約85%が説明変数で説明できる",
+          "is_correct": true,
+          "explanation": "正解。R²はモデルの説明力を表し、0〜1の値で1に近いほど当てはまりが良い。"
+        },
+        {
+          "id": "C",
+          "text": "p値が0.85である",
+          "is_correct": false,
+          "explanation": "R²とp値は別の概念。"
+        },
+        {
+          "id": "D",
+          "text": "予測の85%が完全に正解する",
+          "is_correct": false,
+          "explanation": "R²は予測精度の指標ではあるが「正解率」ではない。"
+        }
       ],
       "explanation": "決定係数R²は回帰モデルの当てはまりの良さの指標。R²=1-（残差二乗和/全変動）。0.85なら目的変数の変動の85%が説明変数で説明できる。ただし高R²がモデルの正しさを保証しない（過学習や因果関係の誤解）。重回帰では自由度調整済みR²を使う。",
       "references": [
-        {"title": "総務省統計局 統計学習サイト"}
+        {
+          "title": "総務省統計局 統計学習サイト"
+        }
       ],
-      "tags": ["statistics", "regression", "r-squared"],
-      "common_mistakes": ["R²と相関係数を混同", "R²＝予測精度と過信"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "statistics",
+        "regression",
+        "r-squared"
+      ],
+      "common_mistakes": [
+        "R²と相関係数を混同",
+        "R²＝予測精度と過信"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-035",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "統計分析",
       "subtopic": "仮説検定",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある教育系SaaS企業がA/Bテストを実施し、新UIの方がコンバージョン率が高いという結果を得た。p値=0.03、有意水準α=0.05。結論として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "帰無仮説（差がない）を棄却し、新UIに有意差があると判断する", "is_correct": true, "explanation": "正解。p値=0.03 < 0.05 なので帰無仮説を棄却する。"},
-        {"id": "B", "text": "帰無仮説を採択し、新UIに差はないと判断する", "is_correct": false, "explanation": "p値が有意水準より小さいので帰無仮説を棄却すべき。"},
-        {"id": "C", "text": "p値が0.5未満なので有意とは言えない", "is_correct": false, "explanation": "有意水準は0.5ではなく0.05。"},
-        {"id": "D", "text": "サンプルサイズに関係なく必ず採用すべき", "is_correct": false, "explanation": "効果量や実務的意義も考慮すべきで、p値だけでは判断不十分。"}
+        {
+          "id": "A",
+          "text": "サンプルサイズに関係なく必ず採用すべき",
+          "is_correct": false,
+          "explanation": "効果量や実務的意義も考慮すべきで、p値だけでは判断不十分。"
+        },
+        {
+          "id": "B",
+          "text": "p値が0.5未満なので有意とは言えない",
+          "is_correct": false,
+          "explanation": "有意水準は0.5ではなく0.05。"
+        },
+        {
+          "id": "C",
+          "text": "帰無仮説（差がない）を棄却し、新UIに有意差があると判断する",
+          "is_correct": true,
+          "explanation": "正解。p値=0.03 < 0.05 なので帰無仮説を棄却する。"
+        },
+        {
+          "id": "D",
+          "text": "帰無仮説を採択し、新UIに差はないと判断する",
+          "is_correct": false,
+          "explanation": "p値が有意水準より小さいので帰無仮説を棄却すべき。"
+        }
       ],
       "explanation": "仮説検定はH0（帰無仮説）とH1（対立仮説）を立て、p値が有意水準αを下回ればH0を棄却。ただし統計的有意 ≠ 実務的有意。効果量（Cohen's dなど）と信頼区間も合わせて見る。A/Bテストではサンプルサイズの事前設計と多重検定補正も重要。",
       "references": [
-        {"title": "総務省統計局 統計学習サイト"}
+        {
+          "title": "総務省統計局 統計学習サイト"
+        }
       ],
-      "tags": ["statistics", "hypothesis-testing", "ab-test"],
-      "common_mistakes": ["p値の意味を誤解", "有意水準と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "statistics",
+        "hypothesis-testing",
+        "ab-test"
+      ],
+      "common_mistakes": [
+        "p値の意味を誤解",
+        "有意水準と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-036",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "統計分析",
       "subtopic": "機械学習",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "機械学習における「教師あり学習」「教師なし学習」「強化学習」の違いとして最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "教師あり=正解ラベル付きデータで学習、教師なし=ラベルなしで構造を見出す、強化学習=報酬で行動を最適化", "is_correct": true, "explanation": "正解。それぞれの学習パラダイムの本質的な違い。"},
-        {"id": "B", "text": "教師あり=人間が監督する、教師なし=AIが勝手に学ぶ、強化学習=罰を与える", "is_correct": false, "explanation": "通俗的すぎる説明で本質を捉えていない。"},
-        {"id": "C", "text": "教師あり=Python、教師なし=R、強化学習=Julia", "is_correct": false, "explanation": "プログラミング言語で分類するものではない。"},
-        {"id": "D", "text": "全て同じ意味", "is_correct": false, "explanation": "明確に異なるパラダイム。"}
+        {
+          "id": "A",
+          "text": "教師あり=Python、教師なし=R、強化学習=Julia",
+          "is_correct": false,
+          "explanation": "プログラミング言語で分類するものではない。"
+        },
+        {
+          "id": "B",
+          "text": "全て同じ意味",
+          "is_correct": false,
+          "explanation": "明確に異なるパラダイム。"
+        },
+        {
+          "id": "C",
+          "text": "教師あり=人間が監督する、教師なし=AIが勝手に学ぶ、強化学習=罰を与える",
+          "is_correct": false,
+          "explanation": "通俗的すぎる説明で本質を捉えていない。"
+        },
+        {
+          "id": "D",
+          "text": "教師あり=正解ラベル付きデータで学習、教師なし=ラベルなしで構造を見出す、強化学習=報酬で行動を最適化",
+          "is_correct": true,
+          "explanation": "正解。それぞれの学習パラダイムの本質的な違い。"
+        }
       ],
       "explanation": "教師あり学習（分類・回帰）：ラベル付きデータでモデル学習。教師なし学習（クラスタリング・次元削減）：ラベルなしで構造発見。強化学習：環境との相互作用で報酬最大化（AlphaGo、ロボット制御）。半教師あり、自己教師ありなどのハイブリッドも近年発展中。",
       "references": [
-        {"title": "IPA AI白書"}
+        {
+          "title": "IPA AI白書"
+        }
       ],
-      "tags": ["ai", "machine-learning", "supervised", "unsupervised"],
-      "common_mistakes": ["カテゴリと手法の対応を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 3, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.25},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ai",
+        "machine-learning",
+        "supervised",
+        "unsupervised"
+      ],
+      "common_mistakes": [
+        "カテゴリと手法の対応を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 3,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.25
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-037",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "統計分析",
       "subtopic": "相関と因果",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "アイスクリームの売上と水難事故の発生件数に強い正の相関があった。これから言える結論として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "アイスクリームを買うと水難事故が増えるという因果関係がある", "is_correct": false, "explanation": "相関は因果を意味しない（correlation does not imply causation）。"},
-        {"id": "B", "text": "両者には共通する第3の要因（夏季の暑さ）が考えられ、相関＝因果と即断できない", "is_correct": true, "explanation": "正解。気温という交絡因子が両者に影響している典型例。"},
-        {"id": "C", "text": "水難事故を減らすにはアイスクリームの販売を禁止すべき", "is_correct": false, "explanation": "因果関係を誤解した政策提言。"},
-        {"id": "D", "text": "相関がある以上、必ず因果関係も存在する", "is_correct": false, "explanation": "統計学の基本原則に反する。"}
+        {
+          "id": "A",
+          "text": "両者には共通する第3の要因（夏季の暑さ）が考えられ、相関＝因果と即断できない",
+          "is_correct": true,
+          "explanation": "正解。気温という交絡因子が両者に影響している典型例。"
+        },
+        {
+          "id": "B",
+          "text": "アイスクリームを買うと水難事故が増えるという因果関係がある",
+          "is_correct": false,
+          "explanation": "相関は因果を意味しない（correlation does not imply causation）。"
+        },
+        {
+          "id": "C",
+          "text": "相関がある以上、必ず因果関係も存在する",
+          "is_correct": false,
+          "explanation": "統計学の基本原則に反する。"
+        },
+        {
+          "id": "D",
+          "text": "水難事故を減らすにはアイスクリームの販売を禁止すべき",
+          "is_correct": false,
+          "explanation": "因果関係を誤解した政策提言。"
+        }
       ],
       "explanation": "相関と因果の混同は古典的な誤りで、ビジネス意思決定でも頻発する。交絡因子（confounder）、選択バイアス、逆因果など複数の罠がある。因果推論にはRCT（無作為化比較試験）、傾向スコアマッチング、操作変数法、差分の差分法（DID）などを用いる。",
       "references": [
-        {"title": "総務省統計局 統計学習サイト"}
+        {
+          "title": "総務省統計局 統計学習サイト"
+        }
       ],
-      "tags": ["statistics", "causation", "correlation"],
-      "common_mistakes": ["相関＝因果と即断する", "交絡因子を見逃す"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "statistics",
+        "causation",
+        "correlation"
+      ],
+      "common_mistakes": [
+        "相関＝因果と即断する",
+        "交絡因子を見逃す"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-038",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "クラウド",
       "subtopic": "IaaS/PaaS/SaaS",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "クラウドサービスのモデルにおいて、ユーザがアプリケーションコードを書けばOSやミドルウェアの管理は不要というモデルはどれか。",
       "options": [
-        {"id": "A", "text": "IaaS（Infrastructure as a Service）", "is_correct": false, "explanation": "IaaSはOS以上をユーザが管理する必要がある（EC2など）。"},
-        {"id": "B", "text": "PaaS（Platform as a Service）", "is_correct": true, "explanation": "正解。OSやミドルウェアは事業者管理、ユーザはアプリ開発に集中（App Engine、Heroku、App Serviceなど）。"},
-        {"id": "C", "text": "SaaS（Software as a Service）", "is_correct": false, "explanation": "SaaSはアプリも提供されており、ユーザは設定・利用のみ（Microsoft 365、Salesforce）。"},
-        {"id": "D", "text": "オンプレミス", "is_correct": false, "explanation": "ハードウェアまで自社管理で、クラウドモデルではない。"}
+        {
+          "id": "A",
+          "text": "IaaS（Infrastructure as a Service）",
+          "is_correct": false,
+          "explanation": "IaaSはOS以上をユーザが管理する必要がある（EC2など）。"
+        },
+        {
+          "id": "B",
+          "text": "PaaS（Platform as a Service）",
+          "is_correct": true,
+          "explanation": "正解。OSやミドルウェアは事業者管理、ユーザはアプリ開発に集中（App Engine、Heroku、App Serviceなど）。"
+        },
+        {
+          "id": "C",
+          "text": "SaaS（Software as a Service）",
+          "is_correct": false,
+          "explanation": "SaaSはアプリも提供されており、ユーザは設定・利用のみ（Microsoft 365、Salesforce）。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレミス",
+          "is_correct": false,
+          "explanation": "ハードウェアまで自社管理で、クラウドモデルではない。"
+        }
       ],
       "explanation": "責任共有モデル：オンプレ→IaaS→PaaS→SaaSの順に事業者管理範囲が拡大。AWS Lambda、Azure Functionsなどサーバレスはさらにインフラを意識せずに済むFaaS（Function as a Service）として位置付けられる。",
       "references": [
-        {"title": "NIST SP 800-145 Cloud Definition", "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf"}
+        {
+          "title": "NIST SP 800-145 Cloud Definition",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf"
+        }
       ],
-      "tags": ["cloud", "iaas", "paas", "saas"],
-      "common_mistakes": ["3モデルの責任範囲を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloud",
+        "iaas",
+        "paas",
+        "saas"
+      ],
+      "common_mistakes": [
+        "3モデルの責任範囲を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-039",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "クラウド",
       "subtopic": "AWS主要サービス",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "AWSのサービスのうち、オブジェクトストレージとして広く使われているのはどれか。",
       "options": [
-        {"id": "A", "text": "Amazon EC2", "is_correct": false, "explanation": "EC2は仮想サーバ。"},
-        {"id": "B", "text": "Amazon RDS", "is_correct": false, "explanation": "RDSはマネージドリレーショナルDB。"},
-        {"id": "C", "text": "Amazon S3", "is_correct": true, "explanation": "正解。S3 (Simple Storage Service) は事実上の業界標準オブジェクトストレージ。"},
-        {"id": "D", "text": "Amazon VPC", "is_correct": false, "explanation": "VPCは仮想ネットワーク。"}
+        {
+          "id": "A",
+          "text": "Amazon RDS",
+          "is_correct": false,
+          "explanation": "RDSはマネージドリレーショナルDB。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon EC2",
+          "is_correct": false,
+          "explanation": "EC2は仮想サーバ。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon S3",
+          "is_correct": true,
+          "explanation": "正解。S3 (Simple Storage Service) は事実上の業界標準オブジェクトストレージ。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon VPC",
+          "is_correct": false,
+          "explanation": "VPCは仮想ネットワーク。"
+        }
       ],
       "explanation": "S3はAWS最古のサービスの1つで、大容量・耐久性99.999999999%（イレブンナイン）・低コスト・グローバル分散が特徴。データレイク、バックアップ、静的Webホスティング、ログ保存など用途は多岐。中小企業診断士でもクラウド基本サービスとして問われる。",
       "references": [
-        {"title": "Amazon S3 公式ドキュメント", "url": "https://docs.aws.amazon.com/s3/"}
+        {
+          "title": "Amazon S3 公式ドキュメント",
+          "url": "https://docs.aws.amazon.com/s3/"
+        }
       ],
-      "tags": ["cloud", "aws", "s3", "storage"],
-      "common_mistakes": ["EC2とS3の用途を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloud",
+        "aws",
+        "s3",
+        "storage"
+      ],
+      "common_mistakes": [
+        "EC2とS3の用途を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-040",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "クラウド",
       "subtopic": "メリット・デメリット",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "中小企業がオンプレミスからクラウドへ移行する際のメリットとして、最も適切でないものはどれか。",
       "options": [
-        {"id": "A", "text": "初期投資（CAPEX）を抑え、利用量に応じた従量課金（OPEX）に転換できる", "is_correct": false, "explanation": "クラウドの代表的メリット。"},
-        {"id": "B", "text": "需要に応じてリソースを伸縮できる（スケーラビリティ）", "is_correct": false, "explanation": "クラウドの代表的メリット。"},
-        {"id": "C", "text": "全てのセキュリティ責任がクラウド事業者に移転され、自社で対応不要になる", "is_correct": true, "explanation": "正解（最も適切でない）。責任共有モデルにより、ユーザ側にも責任がある（IAM管理、データ保護等）。"},
-        {"id": "D", "text": "災害対策（マルチAZ・マルチリージョン）が容易になる", "is_correct": false, "explanation": "クラウドの代表的メリット。"}
+        {
+          "id": "A",
+          "text": "災害対策（マルチAZ・マルチリージョン）が容易になる",
+          "is_correct": false,
+          "explanation": "クラウドの代表的メリット。"
+        },
+        {
+          "id": "B",
+          "text": "需要に応じてリソースを伸縮できる（スケーラビリティ）",
+          "is_correct": false,
+          "explanation": "クラウドの代表的メリット。"
+        },
+        {
+          "id": "C",
+          "text": "初期投資（CAPEX）を抑え、利用量に応じた従量課金（OPEX）に転換できる",
+          "is_correct": false,
+          "explanation": "クラウドの代表的メリット。"
+        },
+        {
+          "id": "D",
+          "text": "全てのセキュリティ責任がクラウド事業者に移転され、自社で対応不要になる",
+          "is_correct": true,
+          "explanation": "正解（最も適切でない）。責任共有モデルにより、ユーザ側にも責任がある（IAM管理、データ保護等）。"
+        }
       ],
       "explanation": "クラウドの責任共有モデル（Shared Responsibility Model）：事業者は「クラウド自体のセキュリティ」（物理・ハイパーバイザ・基盤）、ユーザは「クラウド内でのセキュリティ」（IAM、データ、設定、アプリ）。誤解により設定ミスでデータ漏洩する事例が多発。",
       "references": [
-        {"title": "AWS Shared Responsibility Model", "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"}
+        {
+          "title": "AWS Shared Responsibility Model",
+          "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+        }
       ],
-      "tags": ["cloud", "shared-responsibility", "security"],
-      "common_mistakes": ["責任が全てクラウド事業者にあると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloud",
+        "shared-responsibility",
+        "security"
+      ],
+      "common_mistakes": [
+        "責任が全てクラウド事業者にあると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-041",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "クラウド",
       "subtopic": "ハイブリッド/マルチクラウド",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "金融系FinTech企業X社が、機密性の高い顧客データはオンプレで保持しつつ、Web向けAPIや解析ワークロードはAWSで動かしたい。この構成の名称として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "オンプレオンリー", "is_correct": false, "explanation": "クラウドを併用しているのでオンプレオンリーではない。"},
-        {"id": "B", "text": "ハイブリッドクラウド", "is_correct": true, "explanation": "正解。プライベート環境（オンプレや自社DC）とパブリッククラウドを組み合わせる構成。"},
-        {"id": "C", "text": "マルチクラウド", "is_correct": false, "explanation": "マルチクラウドは複数パブリッククラウド（AWS+Azureなど）の併用を指す。"},
-        {"id": "D", "text": "コミュニティクラウド", "is_correct": false, "explanation": "業界共通インフラを共有する形式。今回のケースとは異なる。"}
+        {
+          "id": "A",
+          "text": "ハイブリッドクラウド",
+          "is_correct": true,
+          "explanation": "正解。プライベート環境（オンプレや自社DC）とパブリッククラウドを組み合わせる構成。"
+        },
+        {
+          "id": "B",
+          "text": "コミュニティクラウド",
+          "is_correct": false,
+          "explanation": "業界共通インフラを共有する形式。今回のケースとは異なる。"
+        },
+        {
+          "id": "C",
+          "text": "マルチクラウド",
+          "is_correct": false,
+          "explanation": "マルチクラウドは複数パブリッククラウド（AWS+Azureなど）の併用を指す。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレオンリー",
+          "is_correct": false,
+          "explanation": "クラウドを併用しているのでオンプレオンリーではない。"
+        }
       ],
       "explanation": "クラウドのデプロイモデル（NIST定義）：パブリック、プライベート、ハイブリッド、コミュニティの4種。ハイブリッドはセキュリティ要件・既存資産活用・段階移行などの理由で選ばれる。AWS Direct Connect / Azure ExpressRoute / Outposts / Anthosなどがハイブリッド構築の選択肢。",
       "references": [
-        {"title": "NIST SP 800-145 Cloud Definition"}
+        {
+          "title": "NIST SP 800-145 Cloud Definition"
+        }
       ],
-      "tags": ["cloud", "hybrid", "multi-cloud"],
-      "common_mistakes": ["ハイブリッドとマルチクラウドを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloud",
+        "hybrid",
+        "multi-cloud"
+      ],
+      "common_mistakes": [
+        "ハイブリッドとマルチクラウドを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-042",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "クラウド",
       "subtopic": "コンテナ",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "アプリケーションを軽量な仮想環境にパッケージ化し、ホストOSのカーネルを共有して動かす技術はどれか。",
       "options": [
-        {"id": "A", "text": "ハイパーバイザ型仮想化（VMware ESXi、Hyper-V）", "is_correct": false, "explanation": "ハイパーバイザはOSごと仮想化する。コンテナより重い。"},
-        {"id": "B", "text": "コンテナ（Docker、containerd）", "is_correct": true, "explanation": "正解。OSカーネルを共有する軽量仮想化。起動が速く密度が高い。"},
-        {"id": "C", "text": "ベアメタル", "is_correct": false, "explanation": "ベアメタルは仮想化を介さず物理サーバ直接利用。"},
-        {"id": "D", "text": "メインフレーム", "is_correct": false, "explanation": "古典的大型汎用機。コンテナとは別概念。"}
+        {
+          "id": "A",
+          "text": "メインフレーム",
+          "is_correct": false,
+          "explanation": "古典的大型汎用機。コンテナとは別概念。"
+        },
+        {
+          "id": "B",
+          "text": "コンテナ（Docker、containerd）",
+          "is_correct": true,
+          "explanation": "正解。OSカーネルを共有する軽量仮想化。起動が速く密度が高い。"
+        },
+        {
+          "id": "C",
+          "text": "ハイパーバイザ型仮想化（VMware ESXi、Hyper-V）",
+          "is_correct": false,
+          "explanation": "ハイパーバイザはOSごと仮想化する。コンテナより重い。"
+        },
+        {
+          "id": "D",
+          "text": "ベアメタル",
+          "is_correct": false,
+          "explanation": "ベアメタルは仮想化を介さず物理サーバ直接利用。"
+        }
       ],
       "explanation": "コンテナはホストOSのカーネルを共有する軽量仮想化技術。1台のサーバに数百〜数千のコンテナを動かせる。Docker、Kubernetes（K8s）が事実上の標準。クラウドではAWS ECS/EKS、Azure AKS、Google GKEがマネージド提供。マイクロサービスやDevOpsの基盤。",
       "references": [
-        {"title": "CNCF Cloud Native Landscape", "url": "https://landscape.cncf.io/"}
+        {
+          "title": "CNCF Cloud Native Landscape",
+          "url": "https://landscape.cncf.io/"
+        }
       ],
-      "tags": ["cloud", "container", "docker", "kubernetes"],
-      "common_mistakes": ["VMとコンテナの違いを理解できていない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloud",
+        "container",
+        "docker",
+        "kubernetes"
+      ],
+      "common_mistakes": [
+        "VMとコンテナの違いを理解できていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-043",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "AI",
       "subtopic": "生成AI",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "中小企業X社が業務に生成AI（ChatGPTなど）を活用したい。情報セキュリティ・著作権の観点から最も注意すべき事項はどれか。",
       "options": [
-        {"id": "A", "text": "顧客の個人情報や社外秘情報を入力する際、サービスの学習利用設定や利用規約を確認し、機密情報の入力可否を社内ルール化する", "is_correct": true, "explanation": "正解。多くのAIサービスはデフォルトで入力データが学習に使われる可能性があり、漏洩・著作権リスクの両面に配慮が必要。"},
-        {"id": "B", "text": "生成AIを使えば全ての業務に直ちに導入してよい", "is_correct": false, "explanation": "ガバナンスなしでの導入はリスク。"},
-        {"id": "C", "text": "生成AIの出力は常に正確なので検証不要", "is_correct": false, "explanation": "ハルシネーション（誤情報）のリスクがあり、検証必須。"},
-        {"id": "D", "text": "全社員に個人アカウントで自由に使わせる", "is_correct": false, "explanation": "シャドーITとなりガバナンスが効かない。"}
+        {
+          "id": "A",
+          "text": "全社員に個人アカウントで自由に使わせる",
+          "is_correct": false,
+          "explanation": "シャドーITとなりガバナンスが効かない。"
+        },
+        {
+          "id": "B",
+          "text": "生成AIを使えば全ての業務に直ちに導入してよい",
+          "is_correct": false,
+          "explanation": "ガバナンスなしでの導入はリスク。"
+        },
+        {
+          "id": "C",
+          "text": "顧客の個人情報や社外秘情報を入力する際、サービスの学習利用設定や利用規約を確認し、機密情報の入力可否を社内ルール化する",
+          "is_correct": true,
+          "explanation": "正解。多くのAIサービスはデフォルトで入力データが学習に使われる可能性があり、漏洩・著作権リスクの両面に配慮が必要。"
+        },
+        {
+          "id": "D",
+          "text": "生成AIの出力は常に正確なので検証不要",
+          "is_correct": false,
+          "explanation": "ハルシネーション（誤情報）のリスクがあり、検証必須。"
+        }
       ],
       "explanation": "生成AI活用時のリスクは①情報漏洩（プロンプトに機密入力）、②著作権（生成物・学習データ）、③ハルシネーション、④バイアス・差別、⑤プロンプトインジェクション攻撃、⑥労働観・教育観への影響など多岐。社内ガイドライン整備、Enterprise契約、ログ監査、人による検証が基本対策。",
       "references": [
-        {"title": "経産省 AI事業者ガイドライン", "url": "https://www.meti.go.jp/"}
+        {
+          "title": "経産省 AI事業者ガイドライン",
+          "url": "https://www.meti.go.jp/"
+        }
       ],
-      "tags": ["ai", "generative-ai", "governance", "security"],
-      "common_mistakes": ["AIの出力を無検証で信用", "学習利用設定の確認を怠る"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ai",
+        "generative-ai",
+        "governance",
+        "security"
+      ],
+      "common_mistakes": [
+        "AIの出力を無検証で信用",
+        "学習利用設定の確認を怠る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-044",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "IoT",
       "subtopic": "IoTアーキテクチャ",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "IoTシステムにおいて、デバイスの近くで前処理・集約・推論を行うことで、レイテンシとクラウド帯域コストを抑える技術はどれか。",
       "options": [
-        {"id": "A", "text": "クラウドコンピューティング", "is_correct": false, "explanation": "クラウドはデータセンターでの集中処理。レイテンシ高め。"},
-        {"id": "B", "text": "エッジコンピューティング", "is_correct": true, "explanation": "正解。エッジ（現場・ゲートウェイ）で処理し、必要分だけクラウドへ送る。"},
-        {"id": "C", "text": "メインフレーム", "is_correct": false, "explanation": "中央集中型の大型機。エッジ概念とは逆。"},
-        {"id": "D", "text": "シンクライアント", "is_correct": false, "explanation": "端末で処理せずサーバに依存する逆向きの考え。"}
+        {
+          "id": "A",
+          "text": "シンクライアント",
+          "is_correct": false,
+          "explanation": "端末で処理せずサーバに依存する逆向きの考え。"
+        },
+        {
+          "id": "B",
+          "text": "メインフレーム",
+          "is_correct": false,
+          "explanation": "中央集中型の大型機。エッジ概念とは逆。"
+        },
+        {
+          "id": "C",
+          "text": "クラウドコンピューティング",
+          "is_correct": false,
+          "explanation": "クラウドはデータセンターでの集中処理。レイテンシ高め。"
+        },
+        {
+          "id": "D",
+          "text": "エッジコンピューティング",
+          "is_correct": true,
+          "explanation": "正解。エッジ（現場・ゲートウェイ）で処理し、必要分だけクラウドへ送る。"
+        }
       ],
       "explanation": "エッジコンピューティングはレイテンシ・帯域・プライバシーの観点から重要。AWS Greengrass、Azure IoT Edge、Google Edge TPUなどが代表。製造業では設備異常検知、自動運転、5G+MEC、スマート工場で活用。フォグコンピューティングという中間概念もある。",
       "references": [
-        {"title": "総務省 IoT/エッジコンピューティング", "url": "https://www.soumu.go.jp/"}
+        {
+          "title": "総務省 IoT/エッジコンピューティング",
+          "url": "https://www.soumu.go.jp/"
+        }
       ],
-      "tags": ["iot", "edge-computing", "latency"],
-      "common_mistakes": ["クラウドとエッジを対立概念で捉えすぎる（実際は併用）"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "iot",
+        "edge-computing",
+        "latency"
+      ],
+      "common_mistakes": [
+        "クラウドとエッジを対立概念で捉えすぎる（実際は併用）"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-045",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ブロックチェーン",
       "subtopic": "ブロックチェーンの特徴",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ブロックチェーン技術の特徴として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "中央管理者を置かず、分散ノードがコンセンサスアルゴリズムで合意し、改ざん耐性の高い台帳を維持する", "is_correct": true, "explanation": "正解。分散性・改ざん困難性・透明性が中核特徴。"},
-        {"id": "B", "text": "中央サーバが全データを管理し、高速処理する", "is_correct": false, "explanation": "従来型集中システムの特徴で、ブロックチェーンと逆。"},
-        {"id": "C", "text": "データを暗号化して非公開にすることが目的", "is_correct": false, "explanation": "パブリックチェーンは誰でも閲覧可能。秘匿が主目的ではない。"},
-        {"id": "D", "text": "リアルタイム高速処理に最適化されており、トランザクションは無料", "is_correct": false, "explanation": "むしろスループット制約とガス代がある。"}
+        {
+          "id": "A",
+          "text": "中央管理者を置かず、分散ノードがコンセンサスアルゴリズムで合意し、改ざん耐性の高い台帳を維持する",
+          "is_correct": true,
+          "explanation": "正解。分散性・改ざん困難性・透明性が中核特徴。"
+        },
+        {
+          "id": "B",
+          "text": "リアルタイム高速処理に最適化されており、トランザクションは無料",
+          "is_correct": false,
+          "explanation": "むしろスループット制約とガス代がある。"
+        },
+        {
+          "id": "C",
+          "text": "データを暗号化して非公開にすることが目的",
+          "is_correct": false,
+          "explanation": "パブリックチェーンは誰でも閲覧可能。秘匿が主目的ではない。"
+        },
+        {
+          "id": "D",
+          "text": "中央サーバが全データを管理し、高速処理する",
+          "is_correct": false,
+          "explanation": "従来型集中システムの特徴で、ブロックチェーンと逆。"
+        }
       ],
       "explanation": "ブロックチェーンはハッシュチェーン+分散合意（PoW、PoS、PBFTなど）+P2Pネットワークで構成。用途は暗号資産だけでなくサプライチェーン追跡、契約自動化（スマートコントラクト）、デジタル証明、NFTなど。中小企業ではトレーサビリティや真正性証明での応用が研究されている。",
       "references": [
-        {"title": "経産省 ブロックチェーン技術活用", "url": "https://www.meti.go.jp/"}
+        {
+          "title": "経産省 ブロックチェーン技術活用",
+          "url": "https://www.meti.go.jp/"
+        }
       ],
-      "tags": ["blockchain", "distributed-ledger", "consensus"],
-      "common_mistakes": ["ブロックチェーン＝暗号資産と矮小化", "中央サーバが必要と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "blockchain",
+        "distributed-ledger",
+        "consensus"
+      ],
+      "common_mistakes": [
+        "ブロックチェーン＝暗号資産と矮小化",
+        "中央サーバが必要と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-046",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "ITガバナンス",
       "subtopic": "情報セキュリティポリシー",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "中小企業X社が情報セキュリティポリシーを新たに整備する際、最も適切なアプローチはどれか。",
       "options": [
-        {"id": "A", "text": "経営方針→基本方針（ポリシー）→対策基準（スタンダード）→実施手順（プロシージャ）の階層で整備し、トップマネジメントの承認を得る", "is_correct": true, "explanation": "正解。ISO/IEC 27001等で推奨される構造で、責任とコミットメントを明確にする。"},
-        {"id": "B", "text": "現場の担当者だけで作成し、現場運用に任せる", "is_correct": false, "explanation": "経営層のコミットなしでは実効性が乏しく、ISMSとして機能しない。"},
-        {"id": "C", "text": "他社の文書をそのままコピペして使う", "is_correct": false, "explanation": "自社のリスク・業務に合わせた調整が必須。"},
-        {"id": "D", "text": "策定後は変更しない", "is_correct": false, "explanation": "PDCAで継続的に見直すべき。"}
+        {
+          "id": "A",
+          "text": "他社の文書をそのままコピペして使う",
+          "is_correct": false,
+          "explanation": "自社のリスク・業務に合わせた調整が必須。"
+        },
+        {
+          "id": "B",
+          "text": "経営方針→基本方針（ポリシー）→対策基準（スタンダード）→実施手順（プロシージャ）の階層で整備し、トップマネジメントの承認を得る",
+          "is_correct": true,
+          "explanation": "正解。ISO/IEC 27001等で推奨される構造で、責任とコミットメントを明確にする。"
+        },
+        {
+          "id": "C",
+          "text": "策定後は変更しない",
+          "is_correct": false,
+          "explanation": "PDCAで継続的に見直すべき。"
+        },
+        {
+          "id": "D",
+          "text": "現場の担当者だけで作成し、現場運用に任せる",
+          "is_correct": false,
+          "explanation": "経営層のコミットなしでは実効性が乏しく、ISMSとして機能しない。"
+        }
       ],
       "explanation": "情報セキュリティポリシーは三層構造（ポリシー＝基本方針、スタンダード＝対策基準、プロシージャ＝実施手順）で整備する。ISO/IEC 27001（ISMS）はPDCAでの継続改善を求める。中小企業ではIPA「中小企業の情報セキュリティ対策ガイドライン」が参考になる。",
       "references": [
-        {"title": "IPA 中小企業の情報セキュリティ対策ガイドライン", "url": "https://www.ipa.go.jp/security/keihatsu/sme/guideline/"}
+        {
+          "title": "IPA 中小企業の情報セキュリティ対策ガイドライン",
+          "url": "https://www.ipa.go.jp/security/keihatsu/sme/guideline/"
+        }
       ],
-      "tags": ["governance", "isms", "policy"],
-      "common_mistakes": ["ポリシーを現場任せにする", "コピペで済ませる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "governance",
+        "isms",
+        "policy"
+      ],
+      "common_mistakes": [
+        "ポリシーを現場任せにする",
+        "コピペで済ませる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-047",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "システム監査",
       "subtopic": "監査の独立性",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "システム監査の最も重要な原則として、最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "監査対象部門から独立した立場で、客観的・公正な評価を行うこと", "is_correct": true, "explanation": "正解。独立性・客観性・公正性は監査の三本柱。"},
-        {"id": "B", "text": "監査対象部門の業務を直接運営すること", "is_correct": false, "explanation": "それは監査の独立性を損なう（自己監査）。"},
-        {"id": "C", "text": "経営者の意向に常に従って報告書を作成すること", "is_correct": false, "explanation": "それは独立性を欠く。客観性が損なわれる。"},
-        {"id": "D", "text": "監査結果を社外に必ず公開すること", "is_correct": false, "explanation": "公開可否は契約や法令次第で、必ず公開ではない。"}
+        {
+          "id": "A",
+          "text": "経営者の意向に常に従って報告書を作成すること",
+          "is_correct": false,
+          "explanation": "それは独立性を欠く。客観性が損なわれる。"
+        },
+        {
+          "id": "B",
+          "text": "監査結果を社外に必ず公開すること",
+          "is_correct": false,
+          "explanation": "公開可否は契約や法令次第で、必ず公開ではない。"
+        },
+        {
+          "id": "C",
+          "text": "監査対象部門から独立した立場で、客観的・公正な評価を行うこと",
+          "is_correct": true,
+          "explanation": "正解。独立性・客観性・公正性は監査の三本柱。"
+        },
+        {
+          "id": "D",
+          "text": "監査対象部門の業務を直接運営すること",
+          "is_correct": false,
+          "explanation": "それは監査の独立性を損なう（自己監査）。"
+        }
       ],
       "explanation": "システム監査は経済産業省「システム監査基準」で「監査人の独立性、客観性、職業倫理」が求められる。監査人は監査対象から独立し、利害関係を持たない。日本ではシステム監査技術者（IPA）資格や公認システム監査人（CISA、SAAJ）が代表。",
       "references": [
-        {"title": "経済産業省 システム監査基準", "url": "https://www.meti.go.jp/policy/netsecurity/sys-kansa/"}
+        {
+          "title": "経済産業省 システム監査基準",
+          "url": "https://www.meti.go.jp/policy/netsecurity/sys-kansa/"
+        }
       ],
-      "tags": ["audit", "governance", "independence"],
-      "common_mistakes": ["内部統制と監査の役割を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "audit",
+        "governance",
+        "independence"
+      ],
+      "common_mistakes": [
+        "内部統制と監査の役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-048",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "セキュリティ",
       "subtopic": "ゼロトラスト",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "テレワーク・クラウド利用が進んだ企業が「社内ネットワークなら安全」という前提を捨て、すべてのアクセスを検証する考え方を採用したい。最も適切な概念はどれか。",
       "options": [
-        {"id": "A", "text": "ペリメタ（境界）防御モデル", "is_correct": false, "explanation": "従来モデルで、社内＝信頼を前提とする。今回の状況には不向き。"},
-        {"id": "B", "text": "ゼロトラストアーキテクチャ", "is_correct": true, "explanation": "正解。Never trust, always verify。すべての通信を検証する設計思想。"},
-        {"id": "C", "text": "DMZ（非武装地帯）", "is_correct": false, "explanation": "ペリメタ防御の一部で、内外の境界を作る考え。"},
-        {"id": "D", "text": "ハニーポット", "is_correct": false, "explanation": "おとり用のシステムで、ゼロトラストとは別の対策。"}
+        {
+          "id": "A",
+          "text": "ペリメタ（境界）防御モデル",
+          "is_correct": false,
+          "explanation": "従来モデルで、社内＝信頼を前提とする。今回の状況には不向き。"
+        },
+        {
+          "id": "B",
+          "text": "DMZ（非武装地帯）",
+          "is_correct": false,
+          "explanation": "ペリメタ防御の一部で、内外の境界を作る考え。"
+        },
+        {
+          "id": "C",
+          "text": "ハニーポット",
+          "is_correct": false,
+          "explanation": "おとり用のシステムで、ゼロトラストとは別の対策。"
+        },
+        {
+          "id": "D",
+          "text": "ゼロトラストアーキテクチャ",
+          "is_correct": true,
+          "explanation": "正解。Never trust, always verify。すべての通信を検証する設計思想。"
+        }
       ],
       "explanation": "ゼロトラストはNIST SP 800-207で標準化。原則：①すべてのリソースをセキュリティで保護、②ネットワークの場所に関わらず通信は安全でない前提、③個別アクセスは継続的な認証・認可（ID、デバイス、コンテキスト）。クラウド・テレワーク時代の標準アーキテクチャ。実装はSASE、SSE、ZTNAなど。",
       "references": [
-        {"title": "NIST SP 800-207 Zero Trust Architecture", "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf"}
+        {
+          "title": "NIST SP 800-207 Zero Trust Architecture",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf"
+        }
       ],
-      "tags": ["security", "zero-trust", "sase"],
-      "common_mistakes": ["ゼロトラスト＝特定製品と誤解", "VPNで代替できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security",
+        "zero-trust",
+        "sase"
+      ],
+      "common_mistakes": [
+        "ゼロトラスト＝特定製品と誤解",
+        "VPNで代替できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-049",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "経営とIT",
       "subtopic": "IT投資評価",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "中小企業X社がIT投資の効果を経営層へ説明する場合、最も適切な指標の組合せはどれか。",
       "options": [
-        {"id": "A", "text": "ROI（投資対効果）、TCO（総所有コスト）、KPI（重要業績評価指標）を組み合わせて定量・定性両面で評価する", "is_correct": true, "explanation": "正解。投資効果・運用コスト・業務指標を多面的に評価することで意思決定の質が上がる。"},
-        {"id": "B", "text": "導入時の購入金額のみで判断する", "is_correct": false, "explanation": "運用・保守費用などの継続費用を見落とす。"},
-        {"id": "C", "text": "ベンダーの売上規模だけを見る", "is_correct": false, "explanation": "ベンダー規模は投資判断の主指標にはならない。"},
-        {"id": "D", "text": "従業員アンケートだけで判断する", "is_correct": false, "explanation": "定性情報のみでは経営的判断として不十分。"}
+        {
+          "id": "A",
+          "text": "ROI（投資対効果）、TCO（総所有コスト）、KPI（重要業績評価指標）を組み合わせて定量・定性両面で評価する",
+          "is_correct": true,
+          "explanation": "正解。投資効果・運用コスト・業務指標を多面的に評価することで意思決定の質が上がる。"
+        },
+        {
+          "id": "B",
+          "text": "導入時の購入金額のみで判断する",
+          "is_correct": false,
+          "explanation": "運用・保守費用などの継続費用を見落とす。"
+        },
+        {
+          "id": "C",
+          "text": "ベンダーの売上規模だけを見る",
+          "is_correct": false,
+          "explanation": "ベンダー規模は投資判断の主指標にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "従業員アンケートだけで判断する",
+          "is_correct": false,
+          "explanation": "定性情報のみでは経営的判断として不十分。"
+        }
       ],
       "explanation": "IT投資評価ではROI（Return on Investment）、TCO（Total Cost of Ownership：初期+運用+保守+教育の総コスト）、NPV、IRR、Payback Periodなどの財務指標と、KPI（売上、生産性、顧客満足度）を組み合わせる。中小企業ではIT補助金やDX投資促進税制も検討対象。",
       "references": [
-        {"title": "中小企業庁 IT導入補助金"}
+        {
+          "title": "中小企業庁 IT導入補助金"
+        }
       ],
-      "tags": ["it-investment", "roi", "tco", "kpi"],
-      "common_mistakes": ["TCOを軽視", "ROIだけで判断"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 3, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "it-investment",
+        "roi",
+        "tco",
+        "kpi"
+      ],
+      "common_mistakes": [
+        "TCOを軽視",
+        "ROIだけで判断"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 3,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-joho-050",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "joho", "name": "経営情報システム", "weight_percent": 14},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "joho",
+        "name": "経営情報システム",
+        "weight_percent": 14
+      },
       "topic": "経営とIT",
       "subtopic": "個人情報保護法",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "改正個人情報保護法（2022年施行、以降も継続改正）下で、中小企業が個人情報漏洩事故を起こした場合の対応として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "発覚しても個人情報保護委員会には報告せず、社内のみで対処する", "is_correct": false, "explanation": "一定要件で個人情報保護委員会への報告と本人通知が義務化されている。"},
-        {"id": "B", "text": "一定要件（要配慮個人情報、財産的被害のおそれ、不正アクセス、1,000人超の漏洩等）に該当する場合は速報・確報を個人情報保護委員会に行い、本人にも通知する", "is_correct": true, "explanation": "正解。改正法で報告・通知が義務化された主要要件を押さえている。"},
-        {"id": "C", "text": "中小企業（取扱5,000人以下等）は対象外なので何もしなくてよい", "is_correct": false, "explanation": "5,000人要件は2017年改正で撤廃済み。すべての事業者が対象。"},
-        {"id": "D", "text": "海外企業に委託していれば日本の個人情報保護法は適用されない", "is_correct": false, "explanation": "越境移転に関するルールも別途あり、適用は免れない。"}
+        {
+          "id": "A",
+          "text": "海外企業に委託していれば日本の個人情報保護法は適用されない",
+          "is_correct": false,
+          "explanation": "越境移転に関するルールも別途あり、適用は免れない。"
+        },
+        {
+          "id": "B",
+          "text": "一定要件（要配慮個人情報、財産的被害のおそれ、不正アクセス、1,000人超の漏洩等）に該当する場合は速報・確報を個人情報保護委員会に行い、本人にも通知する",
+          "is_correct": true,
+          "explanation": "正解。改正法で報告・通知が義務化された主要要件を押さえている。"
+        },
+        {
+          "id": "C",
+          "text": "発覚しても個人情報保護委員会には報告せず、社内のみで対処する",
+          "is_correct": false,
+          "explanation": "一定要件で個人情報保護委員会への報告と本人通知が義務化されている。"
+        },
+        {
+          "id": "D",
+          "text": "中小企業（取扱5,000人以下等）は対象外なので何もしなくてよい",
+          "is_correct": false,
+          "explanation": "5,000人要件は2017年改正で撤廃済み。すべての事業者が対象。"
+        }
       ],
       "explanation": "改正個人情報保護法の重要点：①漏洩等事案の報告・本人通知の義務化（2022施行）、②外国にある第三者への提供時の情報提供義務、③仮名加工情報・個人関連情報の概念、④個人の権利強化（利用停止・消去請求の拡大）、⑤違反時の罰則強化（法人最大1億円）。中小も例外なく対応必須。",
       "references": [
-        {"title": "個人情報保護委員会 ガイドライン", "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines/"}
+        {
+          "title": "個人情報保護委員会 ガイドライン",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines/"
+        }
       ],
-      "tags": ["privacy", "personal-information", "compliance", "regulation"],
-      "common_mistakes": ["5,000人要件があると誤解", "中小企業は適用外と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "privacy",
+        "personal-information",
+        "compliance",
+        "regulation"
+      ],
+      "common_mistakes": [
+        "5,000人要件があると誤解",
+        "中小企業は適用外と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

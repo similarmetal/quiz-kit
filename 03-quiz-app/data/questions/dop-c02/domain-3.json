@@ -15,465 +15,1538 @@
     {
       "id": "dop-c02-domain3-001",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Auto Scaling",
       "subtopic": "Scaling policy types",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "EC2 Auto Scaling のスケーリングポリシーとして提供されている種類はどれか？",
       "options": [
-        {"id": "A", "text": "Target Tracking, Step Scaling, Simple Scaling, Predictive Scaling", "is_correct": true, "explanation": "正解。これら 4 種類が公式に提供されている。"},
-        {"id": "B", "text": "Target Tracking と Manual のみ", "is_correct": false, "explanation": "Step / Simple / Predictive を含まず不正確。"},
-        {"id": "C", "text": "Round Robin Scaling", "is_correct": false, "explanation": "存在しない名称。"},
-        {"id": "D", "text": "Latency Based Scaling", "is_correct": false, "explanation": "存在しないポリシー種別。"}
+        {
+          "id": "A",
+          "text": "Target Tracking, Step Scaling, Simple Scaling, Predictive Scaling",
+          "is_correct": true,
+          "explanation": "正解。これら 4 種類が公式に提供されている。"
+        },
+        {
+          "id": "B",
+          "text": "Round Robin Scaling",
+          "is_correct": false,
+          "explanation": "存在しない名称。"
+        },
+        {
+          "id": "C",
+          "text": "Latency Based Scaling",
+          "is_correct": false,
+          "explanation": "存在しないポリシー種別。"
+        },
+        {
+          "id": "D",
+          "text": "Target Tracking と Manual のみ",
+          "is_correct": false,
+          "explanation": "Step / Simple / Predictive を含まず不正確。"
+        }
       ],
       "explanation": "EC2 Auto Scaling の 4 種類のポリシー: (1) Target Tracking（メトリクス目標値追従、最も推奨）、(2) Step Scaling（しきい値を段階的に）、(3) Simple Scaling（古典的、cooldown 待ち）、(4) Predictive Scaling（機械学習で先読み）。",
-      "references": [{"title": "Amazon EC2 Auto Scaling scaling policies", "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/scaling-overview.html"}],
-      "tags": ["auto-scaling", "target-tracking", "predictive", "step-scaling"],
-      "common_mistakes": ["Predictive Scaling を知らない", "Simple と Target Tracking を区別できない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Amazon EC2 Auto Scaling scaling policies",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/scaling-overview.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "target-tracking",
+        "predictive",
+        "step-scaling"
+      ],
+      "common_mistakes": [
+        "Predictive Scaling を知らない",
+        "Simple と Target Tracking を区別できない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-002",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "DR strategies",
       "subtopic": "Patterns",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS が公式に整理する 4 つの DR パターンの順番（RTO/RPO が長い → 短い）として正しいのは？",
       "options": [
-        {"id": "A", "text": "Backup & Restore → Pilot Light → Warm Standby → Multi-Site Active/Active", "is_correct": true, "explanation": "正解。コストと複雑度も同じ順で増加する。"},
-        {"id": "B", "text": "Multi-Site → Backup & Restore → Pilot Light → Warm Standby", "is_correct": false, "explanation": "順序が崩れている。"},
-        {"id": "C", "text": "Pilot Light → Backup & Restore → Multi-Site → Warm Standby", "is_correct": false, "explanation": "Warm Standby と Multi-Site の関係が逆。"},
-        {"id": "D", "text": "Cold Standby → Hot Standby → Active-Passive → Active-Active", "is_correct": false, "explanation": "AWS 公式の用語ではない。"}
+        {
+          "id": "A",
+          "text": "Pilot Light → Backup & Restore → Multi-Site → Warm Standby",
+          "is_correct": false,
+          "explanation": "Warm Standby と Multi-Site の関係が逆。"
+        },
+        {
+          "id": "B",
+          "text": "Backup & Restore → Pilot Light → Warm Standby → Multi-Site Active/Active",
+          "is_correct": true,
+          "explanation": "正解。コストと複雑度も同じ順で増加する。"
+        },
+        {
+          "id": "C",
+          "text": "Multi-Site → Backup & Restore → Pilot Light → Warm Standby",
+          "is_correct": false,
+          "explanation": "順序が崩れている。"
+        },
+        {
+          "id": "D",
+          "text": "Cold Standby → Hot Standby → Active-Passive → Active-Active",
+          "is_correct": false,
+          "explanation": "AWS 公式の用語ではない。"
+        }
       ],
       "explanation": "AWS DR の 4 パターン: (1) Backup & Restore（数時間〜日、最安）、(2) Pilot Light（コアのみ常時起動、その他は停止）、(3) Warm Standby（縮小規模で常時稼働）、(4) Multi-Site Active/Active（フル稼働、最高コスト）。要件に応じて選ぶ。",
-      "references": [{"title": "AWS Disaster Recovery Workloads", "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"}],
-      "tags": ["dr", "rto", "rpo", "backup-restore", "pilot-light", "warm-standby", "multi-site"],
-      "common_mistakes": ["Pilot Light と Warm Standby の差を曖昧に覚える", "Multi-Site と Warm Standby の境界を間違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Disaster Recovery Workloads",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"
+        }
+      ],
+      "tags": [
+        "dr",
+        "rto",
+        "rpo",
+        "backup-restore",
+        "pilot-light",
+        "warm-standby",
+        "multi-site"
+      ],
+      "common_mistakes": [
+        "Pilot Light と Warm Standby の差を曖昧に覚える",
+        "Multi-Site と Warm Standby の境界を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-003",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Route 53",
       "subtopic": "Health checks",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "Route 53 のヘルスチェックは何種類提供されているか？",
       "options": [
-        {"id": "A", "text": "エンドポイントの監視、別ヘルスチェックの状態を集約する Calculated、CloudWatch アラームと連携する 3 種類", "is_correct": true, "explanation": "正解。Endpoint / Calculated / CloudWatch Alarm の 3 種類。"},
-        {"id": "B", "text": "TCP のみの 1 種類", "is_correct": false, "explanation": "TCP/HTTP/HTTPS など複数プロトコル + Calculated/CW の組み合わせがある。"},
-        {"id": "C", "text": "Lambda のみで実装される 1 種類", "is_correct": false, "explanation": "Lambda は使わないマネージドサービス。"},
-        {"id": "D", "text": "GuardDuty 連携の 1 種類", "is_correct": false, "explanation": "GuardDuty とは無関係。"}
+        {
+          "id": "A",
+          "text": "TCP のみの 1 種類",
+          "is_correct": false,
+          "explanation": "TCP/HTTP/HTTPS など複数プロトコル + Calculated/CW の組み合わせがある。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda のみで実装される 1 種類",
+          "is_correct": false,
+          "explanation": "Lambda は使わないマネージドサービス。"
+        },
+        {
+          "id": "C",
+          "text": "エンドポイントの監視、別ヘルスチェックの状態を集約する Calculated、CloudWatch アラームと連携する 3 種類",
+          "is_correct": true,
+          "explanation": "正解。Endpoint / Calculated / CloudWatch Alarm の 3 種類。"
+        },
+        {
+          "id": "D",
+          "text": "GuardDuty 連携の 1 種類",
+          "is_correct": false,
+          "explanation": "GuardDuty とは無関係。"
+        }
       ],
       "explanation": "Route 53 ヘルスチェック種別: (1) Endpoint（HTTP/HTTPS/TCP）、(2) Calculated（複数チェックの AND/OR ロジック）、(3) CloudWatch Alarm（CW メトリクスの状態をヘルスチェックに）。Failover Routing と組み合わせて DR を構築する。",
-      "references": [{"title": "Route 53 health checks", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html"}],
-      "tags": ["route53", "health-check", "failover", "dns"],
-      "common_mistakes": ["Calculated Health Check の存在を知らない", "CloudWatch Alarm 連携を知らない"],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 4, "explanation_completeness": 5, "overall": 4.25},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Route 53 health checks",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "health-check",
+        "failover",
+        "dns"
+      ],
+      "common_mistakes": [
+        "Calculated Health Check の存在を知らない",
+        "CloudWatch Alarm 連携を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 4,
+        "explanation_completeness": 5,
+        "overall": 4.25
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-004",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Auto Scaling",
       "subtopic": "Predictive vs Target Tracking",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある教育系 SaaS は毎週月曜 9:00 にトラフィックが急増する。Target Tracking のみだと立ち上がりが遅くキャパ不足が出る。最も適切な対策は？",
       "options": [
-        {"id": "A", "text": "Predictive Scaling を有効化し、Target Tracking と併用する", "is_correct": true, "explanation": "正解。Predictive Scaling は機械学習で過去パターンから予測し、必要時刻の前にキャパを確保する。Target Tracking と併用が推奨。"},
-        {"id": "B", "text": "Simple Scaling に変更", "is_correct": false, "explanation": "古典的方式で予測機能はない。"},
-        {"id": "C", "text": "Step Scaling に変更", "is_correct": false, "explanation": "閾値段階的だが先読みではない。"},
-        {"id": "D", "text": "Lambda で 9:00 直前に手動スケール", "is_correct": false, "explanation": "Predictive がネイティブに実現する内容を再発明する。"}
+        {
+          "id": "A",
+          "text": "Step Scaling に変更",
+          "is_correct": false,
+          "explanation": "閾値段階的だが先読みではない。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda で 9:00 直前に手動スケール",
+          "is_correct": false,
+          "explanation": "Predictive がネイティブに実現する内容を再発明する。"
+        },
+        {
+          "id": "C",
+          "text": "Simple Scaling に変更",
+          "is_correct": false,
+          "explanation": "古典的方式で予測機能はない。"
+        },
+        {
+          "id": "D",
+          "text": "Predictive Scaling を有効化し、Target Tracking と併用する",
+          "is_correct": true,
+          "explanation": "正解。Predictive Scaling は機械学習で過去パターンから予測し、必要時刻の前にキャパを確保する。Target Tracking と併用が推奨。"
+        }
       ],
       "explanation": "Predictive Scaling は最大 14 日間の履歴から日次・週次パターンを学習し、需要の立ち上がる前にキャパを確保する。Target Tracking と併用することで、予測値 + リアルタイム反応の二段構えになる。",
-      "references": [{"title": "Predictive scaling for Amazon EC2 Auto Scaling", "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html"}],
-      "tags": ["auto-scaling", "predictive-scaling", "target-tracking", "machine-learning"],
-      "common_mistakes": ["Predictive と Scheduled Scaling を混同する", "Target Tracking だけで十分と思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Predictive scaling for Amazon EC2 Auto Scaling",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "predictive-scaling",
+        "target-tracking",
+        "machine-learning"
+      ],
+      "common_mistakes": [
+        "Predictive と Scheduled Scaling を混同する",
+        "Target Tracking だけで十分と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-005",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "AWS Backup",
       "subtopic": "Cross-account, cross-region",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある FinTech 企業が、本番アカウントの RDS / EBS / DynamoDB を別アカウント・別リージョンに自動コピーバックアップしたい。最小運用で実現する手段は？",
       "options": [
-        {"id": "A", "text": "AWS Backup の Backup Plan で Cross-Region & Cross-Account Copy を設定し、Vault にコピー先を指定", "is_correct": true, "explanation": "正解。AWS Backup は対象サービス横断で、Cross-Region / Cross-Account Copy をネイティブにサポート。"},
-        {"id": "B", "text": "EventBridge Scheduler でサービスごとに Lambda を組む", "is_correct": false, "explanation": "AWS Backup を再発明する。"},
-        {"id": "C", "text": "S3 Replication を全リソースに適用", "is_correct": false, "explanation": "S3 Replication は S3 オブジェクトのみ。RDS/EBS/DDB には使えない。"},
-        {"id": "D", "text": "DRS（Elastic Disaster Recovery）でバックアップ", "is_correct": false, "explanation": "DRS は EC2/オンプレのレプリケーションで、RDS/DDB/S3 を扱う一元バックアップではない。"}
+        {
+          "id": "A",
+          "text": "AWS Backup の Backup Plan で Cross-Region & Cross-Account Copy を設定し、Vault にコピー先を指定",
+          "is_correct": true,
+          "explanation": "正解。AWS Backup は対象サービス横断で、Cross-Region / Cross-Account Copy をネイティブにサポート。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Replication を全リソースに適用",
+          "is_correct": false,
+          "explanation": "S3 Replication は S3 オブジェクトのみ。RDS/EBS/DDB には使えない。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge Scheduler でサービスごとに Lambda を組む",
+          "is_correct": false,
+          "explanation": "AWS Backup を再発明する。"
+        },
+        {
+          "id": "D",
+          "text": "DRS（Elastic Disaster Recovery）でバックアップ",
+          "is_correct": false,
+          "explanation": "DRS は EC2/オンプレのレプリケーションで、RDS/DDB/S3 を扱う一元バックアップではない。"
+        }
       ],
       "explanation": "AWS Backup は EBS / RDS / DynamoDB / EFS / FSx / S3 / Aurora / Neptune など多数のサービスを統合。Backup Plan に Cross-Region & Cross-Account Copy を組み込めば、別アカウント・別リージョンの Vault に自動コピーされる。Organizations 連携で組織標準も配布可能。",
-      "references": [{"title": "AWS Backup Cross-Region Backup", "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/cross-region-backup.html"}],
-      "tags": ["aws-backup", "cross-region", "cross-account", "rds", "ebs", "dynamodb"],
-      "common_mistakes": ["S3 Replication で全部できると思う", "サービスごとに別個のバックアップ機構を組む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Backup Cross-Region Backup",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/cross-region-backup.html"
+        }
+      ],
+      "tags": [
+        "aws-backup",
+        "cross-region",
+        "cross-account",
+        "rds",
+        "ebs",
+        "dynamodb"
+      ],
+      "common_mistakes": [
+        "S3 Replication で全部できると思う",
+        "サービスごとに別個のバックアップ機構を組む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-006",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "ELB",
       "subtopic": "ALB connection draining",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ALB の Target Group の Deregistration Delay（接続ドレイン）の役割として最も適切な記述は？",
       "options": [
-        {"id": "A", "text": "ターゲットを登録解除する際、in-flight のリクエストが完了するまで設定秒数（既定 300 秒）待つ", "is_correct": true, "explanation": "正解。Deregistration Delay は graceful shutdown を実現する。"},
-        {"id": "B", "text": "新規ターゲットへトラフィックが流れ始めるまでの遅延", "is_correct": false, "explanation": "それはヘルスチェック関連の概念であり Deregistration Delay ではない。"},
-        {"id": "C", "text": "ヘルスチェック失敗から実際に out-of-service と判定するまでの遅延", "is_correct": false, "explanation": "それは Unhealthy Threshold × Interval で決まる別概念。"},
-        {"id": "D", "text": "ALB が Idle タイムアウトする秒数", "is_correct": false, "explanation": "Idle Timeout は別属性。"}
+        {
+          "id": "A",
+          "text": "ヘルスチェック失敗から実際に out-of-service と判定するまでの遅延",
+          "is_correct": false,
+          "explanation": "それは Unhealthy Threshold × Interval で決まる別概念。"
+        },
+        {
+          "id": "B",
+          "text": "ターゲットを登録解除する際、in-flight のリクエストが完了するまで設定秒数（既定 300 秒）待つ",
+          "is_correct": true,
+          "explanation": "正解。Deregistration Delay は graceful shutdown を実現する。"
+        },
+        {
+          "id": "C",
+          "text": "ALB が Idle タイムアウトする秒数",
+          "is_correct": false,
+          "explanation": "Idle Timeout は別属性。"
+        },
+        {
+          "id": "D",
+          "text": "新規ターゲットへトラフィックが流れ始めるまでの遅延",
+          "is_correct": false,
+          "explanation": "それはヘルスチェック関連の概念であり Deregistration Delay ではない。"
+        }
       ],
       "explanation": "Deregistration Delay は Target Group の属性で、ターゲットを登録解除する際に既存接続を最大何秒待つかを指定。これがないと Auto Scaling やデプロイ時に in-flight リクエストが切断される。Blue/Green / Rolling Deploy の品質に直結。",
-      "references": [{"title": "Deregistration delay", "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"}],
-      "tags": ["elb", "alb", "deregistration-delay", "connection-draining", "graceful-shutdown"],
-      "common_mistakes": ["Idle Timeout と Deregistration Delay を混同", "ヘルスチェック関連属性と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Deregistration delay",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"
+        }
+      ],
+      "tags": [
+        "elb",
+        "alb",
+        "deregistration-delay",
+        "connection-draining",
+        "graceful-shutdown"
+      ],
+      "common_mistakes": [
+        "Idle Timeout と Deregistration Delay を混同",
+        "ヘルスチェック関連属性と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-007",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Multi-AZ",
       "subtopic": "RDS failover",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "RDS Multi-AZ（シングルインスタンス + スタンバイ）と RDS Multi-AZ DB Cluster（3 ノード）を比較した場合、最も大きな違いは？",
       "options": [
-        {"id": "A", "text": "Multi-AZ DB Cluster はリーダーレプリカが読み取りを受け付け、フェイルオーバーが約 35 秒以内、書き込みも別 AZ", "is_correct": true, "explanation": "正解。Multi-AZ DB Cluster（3-node）は readable standby を持ち、可用性とリード性能が向上する。"},
-        {"id": "B", "text": "両者は同じで命名違い", "is_correct": false, "explanation": "アーキテクチャが異なる。"},
-        {"id": "C", "text": "Multi-AZ DB Cluster はクロスリージョン構成", "is_correct": false, "explanation": "両者ともリージョン内で完結。"},
-        {"id": "D", "text": "Multi-AZ シングルはスタンバイから読める", "is_correct": false, "explanation": "従来の Multi-AZ シングルではスタンバイは読めない（read replica は別概念）。"}
+        {
+          "id": "A",
+          "text": "Multi-AZ DB Cluster はクロスリージョン構成",
+          "is_correct": false,
+          "explanation": "両者ともリージョン内で完結。"
+        },
+        {
+          "id": "B",
+          "text": "Multi-AZ シングルはスタンバイから読める",
+          "is_correct": false,
+          "explanation": "従来の Multi-AZ シングルではスタンバイは読めない（read replica は別概念）。"
+        },
+        {
+          "id": "C",
+          "text": "Multi-AZ DB Cluster はリーダーレプリカが読み取りを受け付け、フェイルオーバーが約 35 秒以内、書き込みも別 AZ",
+          "is_correct": true,
+          "explanation": "正解。Multi-AZ DB Cluster（3-node）は readable standby を持ち、可用性とリード性能が向上する。"
+        },
+        {
+          "id": "D",
+          "text": "両者は同じで命名違い",
+          "is_correct": false,
+          "explanation": "アーキテクチャが異なる。"
+        }
       ],
       "explanation": "RDS Multi-AZ deployment（伝統的）はスタンバイがホットスタンバイで読み書き不可。Multi-AZ DB Cluster（MySQL/PostgreSQL）は 1 writer + 2 readable standby の 3 ノード構成で、フェイルオーバー時間が短く読み取りもスケールする。",
-      "references": [{"title": "Multi-AZ DB cluster deployments", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"}],
-      "tags": ["rds", "multi-az", "db-cluster", "high-availability"],
-      "common_mistakes": ["Multi-AZ シングルから読めると誤解する", "Multi-AZ Cluster をクロスリージョンと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Multi-AZ DB cluster deployments",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "multi-az",
+        "db-cluster",
+        "high-availability"
+      ],
+      "common_mistakes": [
+        "Multi-AZ シングルから読めると誤解する",
+        "Multi-AZ Cluster をクロスリージョンと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-008",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Auto Scaling",
       "subtopic": "Lifecycle hooks",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Auto Scaling Group がスケールインする際に、終了対象 EC2 のログやキャッシュを EFS に flush してから終了させたい。最適な仕組みは？",
       "options": [
-        {"id": "A", "text": "Lifecycle Hook（Terminating:Wait）でインスタンスを保留状態にし、SSM Run Command で flush 処理を実行、完了後に CompleteLifecycleAction を呼ぶ", "is_correct": true, "explanation": "正解。Lifecycle Hook は終了直前に Wait 状態に入れる仕組みで、外部処理（Run Command や Lambda）で完了通知が出るまで待機する。"},
-        {"id": "B", "text": "Termination Policy を OldestInstance に変更", "is_correct": false, "explanation": "Termination Policy は対象選定アルゴリズムで、後処理機構ではない。"},
-        {"id": "C", "text": "Cooldown を長めに設定", "is_correct": false, "explanation": "Cooldown は次のスケーリングまでの待機で、終了前処理ではない。"},
-        {"id": "D", "text": "EC2 user data に shutdown スクリプトを書く", "is_correct": false, "explanation": "shutdown スクリプトは終了開始後の数十秒で打ち切られる可能性が高い。"}
+        {
+          "id": "A",
+          "text": "Termination Policy を OldestInstance に変更",
+          "is_correct": false,
+          "explanation": "Termination Policy は対象選定アルゴリズムで、後処理機構ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Cooldown を長めに設定",
+          "is_correct": false,
+          "explanation": "Cooldown は次のスケーリングまでの待機で、終了前処理ではない。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 user data に shutdown スクリプトを書く",
+          "is_correct": false,
+          "explanation": "shutdown スクリプトは終了開始後の数十秒で打ち切られる可能性が高い。"
+        },
+        {
+          "id": "D",
+          "text": "Lifecycle Hook（Terminating:Wait）でインスタンスを保留状態にし、SSM Run Command で flush 処理を実行、完了後に CompleteLifecycleAction を呼ぶ",
+          "is_correct": true,
+          "explanation": "正解。Lifecycle Hook は終了直前に Wait 状態に入れる仕組みで、外部処理（Run Command や Lambda）で完了通知が出るまで待機する。"
+        }
       ],
       "explanation": "Lifecycle Hook は EC2 インスタンスの起動／終了プロセスに介入し、待機状態（Pending:Wait, Terminating:Wait）にする。EventBridge / Run Command / Step Functions と連携してカスタム処理を実行し、`CompleteLifecycleAction` API で完了通知。",
-      "references": [{"title": "Amazon EC2 Auto Scaling lifecycle hooks", "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html"}],
-      "tags": ["auto-scaling", "lifecycle-hook", "graceful-shutdown", "ssm-run-command"],
-      "common_mistakes": ["Termination Policy と Lifecycle Hook を混同", "user data の shutdown でログ flush できると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Amazon EC2 Auto Scaling lifecycle hooks",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "lifecycle-hook",
+        "graceful-shutdown",
+        "ssm-run-command"
+      ],
+      "common_mistakes": [
+        "Termination Policy と Lifecycle Hook を混同",
+        "user data の shutdown でログ flush できると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-009",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Route 53",
       "subtopic": "Routing policies",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の製造業企業が東京と大阪に Active/Active のリージョン展開をしたい。地理的に近い方を返しつつ、片側障害時には自動でもう一方へフェイルオーバーする。最も適切な Route 53 構成は？",
+      "stem": "ある製造業企業が東京と大阪に Active/Active のリージョン展開をしたい。地理的に近い方を返しつつ、片側障害時には自動でもう一方へフェイルオーバーする。最も適切な Route 53 構成は？",
       "options": [
-        {"id": "A", "text": "Latency-based または Geolocation Routing をプライマリに、各レコードに Health Check を関連付け、フェイルオーバー時はもう片方のみ返す", "is_correct": true, "explanation": "正解。Latency / Geolocation 各レコードに Health Check を付けると、unhealthy レコードは応答候補から外れる。"},
-        {"id": "B", "text": "Simple Routing でラウンドロビン", "is_correct": false, "explanation": "Simple Routing にはヘルスチェック連動がない。"},
-        {"id": "C", "text": "Failover Routing のみで Active/Active を実現", "is_correct": false, "explanation": "Failover は Active/Passive 用。Active/Active には不適切。"},
-        {"id": "D", "text": "Multivalue Answer Routing（ヘルスチェックなし）", "is_correct": false, "explanation": "ヘルスチェック連動なしでは障害時にも unhealthy IP を返す可能性がある。"}
+        {
+          "id": "A",
+          "text": "Latency-based または Geolocation Routing をプライマリに、各レコードに Health Check を関連付け、フェイルオーバー時はもう片方のみ返す",
+          "is_correct": true,
+          "explanation": "正解。Latency / Geolocation 各レコードに Health Check を付けると、unhealthy レコードは応答候補から外れる。"
+        },
+        {
+          "id": "B",
+          "text": "Simple Routing でラウンドロビン",
+          "is_correct": false,
+          "explanation": "Simple Routing にはヘルスチェック連動がない。"
+        },
+        {
+          "id": "C",
+          "text": "Multivalue Answer Routing（ヘルスチェックなし）",
+          "is_correct": false,
+          "explanation": "ヘルスチェック連動なしでは障害時にも unhealthy IP を返す可能性がある。"
+        },
+        {
+          "id": "D",
+          "text": "Failover Routing のみで Active/Active を実現",
+          "is_correct": false,
+          "explanation": "Failover は Active/Passive 用。Active/Active には不適切。"
+        }
       ],
       "explanation": "Active/Active で地理に応じた振り分けと自動フェイルオーバーを両立するには、Latency or Geolocation Routing にヘルスチェックを関連付ける。Failover Routing は Active/Passive 用、Multivalue Answer はヘルスチェック付き擬似 LB として使えるが地理判定はしない。",
-      "references": [{"title": "Configuring DNS failover", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring.html"}],
-      "tags": ["route53", "latency-routing", "geolocation", "failover", "active-active"],
-      "common_mistakes": ["Failover Routing で Active/Active を実現できると思う", "Multivalue を Latency 代わりに使う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Configuring DNS failover",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "latency-routing",
+        "geolocation",
+        "failover",
+        "active-active"
+      ],
+      "common_mistakes": [
+        "Failover Routing で Active/Active を実現できると思う",
+        "Multivalue を Latency 代わりに使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-010",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Auto Scaling",
       "subtopic": "Warm pools",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある SaaS で EC2 Auto Scaling のスケールアウト時の起動ラグ（数分の bootstrap）が問題になっている。コストを抑えつつ起動遅延を短縮する仕組みは？",
       "options": [
-        {"id": "A", "text": "Warm Pool（停止状態のインスタンスをプリプロビジョン）を有効化する", "is_correct": true, "explanation": "正解。Warm Pool は停止／hibernate 状態のインスタンスを事前準備し、スケールアウト時に高速起動する。停止中は EBS のみ課金。"},
-        {"id": "B", "text": "min size を最大に張り付かせる", "is_correct": false, "explanation": "コスト的に不経済で「コストを抑える」要件に反する。"},
-        {"id": "C", "text": "On-Demand Capacity Reservations でリザーブのみ", "is_correct": false, "explanation": "Capacity Reservation は枠の確保で起動高速化機能ではない。"},
-        {"id": "D", "text": "Spot Instances で代替", "is_correct": false, "explanation": "起動時間自体は短縮されない。"}
+        {
+          "id": "A",
+          "text": "Spot Instances で代替",
+          "is_correct": false,
+          "explanation": "起動時間自体は短縮されない。"
+        },
+        {
+          "id": "B",
+          "text": "Warm Pool（停止状態のインスタンスをプリプロビジョン）を有効化する",
+          "is_correct": true,
+          "explanation": "正解。Warm Pool は停止／hibernate 状態のインスタンスを事前準備し、スケールアウト時に高速起動する。停止中は EBS のみ課金。"
+        },
+        {
+          "id": "C",
+          "text": "min size を最大に張り付かせる",
+          "is_correct": false,
+          "explanation": "コスト的に不経済で「コストを抑える」要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "On-Demand Capacity Reservations でリザーブのみ",
+          "is_correct": false,
+          "explanation": "Capacity Reservation は枠の確保で起動高速化機能ではない。"
+        }
       ],
       "explanation": "Warm Pool は Auto Scaling Group に紐づく事前プロビジョニング済みインスタンス群で、停止または hibernate で待機する。スケールアウト時はそこから取り出すため bootstrap が省略可能。EC2 ランニング料金は発生せず、EBS 料金のみ。",
-      "references": [{"title": "Warm pools for Amazon EC2 Auto Scaling", "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html"}],
-      "tags": ["auto-scaling", "warm-pool", "hibernate", "scale-out-latency"],
-      "common_mistakes": ["Warm Pool の存在を知らず min size を増やす", "Capacity Reservation で起動が早くなると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Warm pools for Amazon EC2 Auto Scaling",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "warm-pool",
+        "hibernate",
+        "scale-out-latency"
+      ],
+      "common_mistakes": [
+        "Warm Pool の存在を知らず min size を増やす",
+        "Capacity Reservation で起動が早くなると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-011",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "DR",
       "subtopic": "Pilot Light implementation",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある FinTech 企業の経理基幹システムについて、Pilot Light 構成で DR を組みたい。最も適切な構成要素は？",
       "options": [
-        {"id": "A", "text": "DR リージョンに RDS Read Replica（または Aurora Global DB）を常時稼働、アプリ層は AMI 化＋Auto Scaling Min=0 で停止、フェイルオーバー時に昇格＋Min を引き上げ", "is_correct": true, "explanation": "正解。データ層は常時レプリケーション、アプリ層は素早く立ち上げられる準備のみ、というのが Pilot Light の典型構成。"},
-        {"id": "B", "text": "DR リージョンに本番と同規模のフリートを常時稼働", "is_correct": false, "explanation": "それは Multi-Site Active/Active か Warm Standby に近い。"},
-        {"id": "C", "text": "DR リージョンには何も置かず、障害時に CloudFormation で全部新規作成", "is_correct": false, "explanation": "それは Backup & Restore に該当。"},
-        {"id": "D", "text": "DR リージョンに本番より小さいフリートを常時稼働", "is_correct": false, "explanation": "それは Warm Standby の説明。"}
+        {
+          "id": "A",
+          "text": "DR リージョンには何も置かず、障害時に CloudFormation で全部新規作成",
+          "is_correct": false,
+          "explanation": "それは Backup & Restore に該当。"
+        },
+        {
+          "id": "B",
+          "text": "DR リージョンに本番より小さいフリートを常時稼働",
+          "is_correct": false,
+          "explanation": "それは Warm Standby の説明。"
+        },
+        {
+          "id": "C",
+          "text": "DR リージョンに RDS Read Replica（または Aurora Global DB）を常時稼働、アプリ層は AMI 化＋Auto Scaling Min=0 で停止、フェイルオーバー時に昇格＋Min を引き上げ",
+          "is_correct": true,
+          "explanation": "正解。データ層は常時レプリケーション、アプリ層は素早く立ち上げられる準備のみ、というのが Pilot Light の典型構成。"
+        },
+        {
+          "id": "D",
+          "text": "DR リージョンに本番と同規模のフリートを常時稼働",
+          "is_correct": false,
+          "explanation": "それは Multi-Site Active/Active か Warm Standby に近い。"
+        }
       ],
       "explanation": "Pilot Light: コアの状態（データベース等）は常時レプリケーションし、アプリ層は最低限の構成（AMI、テンプレート、停止状態のリソース）のみ用意。障害時に「火を点ける」イメージで素早く起動。Backup & Restore より RTO は短く、Warm Standby よりコストは低い。",
-      "references": [{"title": "Pilot Light", "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"}],
-      "tags": ["dr", "pilot-light", "rds-replica", "aurora-global"],
-      "common_mistakes": ["Pilot Light と Warm Standby の境界を曖昧にする", "Backup & Restore と Pilot Light を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Pilot Light",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"
+        }
+      ],
+      "tags": [
+        "dr",
+        "pilot-light",
+        "rds-replica",
+        "aurora-global"
+      ],
+      "common_mistakes": [
+        "Pilot Light と Warm Standby の境界を曖昧にする",
+        "Backup & Restore と Pilot Light を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-012",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Elastic Disaster Recovery",
       "subtopic": "DRS basics",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "オンプレ Linux サーバ群を AWS リージョンへ DR したい。Block-level の継続レプリケーションを行い、必要時に EC2 として起動する AWS マネージドサービスは？",
       "options": [
-        {"id": "A", "text": "AWS Elastic Disaster Recovery（DRS、旧 CloudEndure Disaster Recovery）", "is_correct": true, "explanation": "正解。DRS は block-level の継続レプリケーションを Staging Subnet に行い、Drill / Recovery で EC2 として起動。"},
-        {"id": "B", "text": "AWS Backup", "is_correct": false, "explanation": "AWS Backup はスケジュールバックアップで、block-level の連続レプリケーションは行わない。"},
-        {"id": "C", "text": "AWS DataSync", "is_correct": false, "explanation": "DataSync はファイル／オブジェクトのデータ移送で、サーバの DR ではない。"},
-        {"id": "D", "text": "Application Migration Service（MGN）", "is_correct": false, "explanation": "MGN は移行用途。DR には DRS を使う。"}
+        {
+          "id": "A",
+          "text": "Application Migration Service（MGN）",
+          "is_correct": false,
+          "explanation": "MGN は移行用途。DR には DRS を使う。"
+        },
+        {
+          "id": "B",
+          "text": "AWS DataSync",
+          "is_correct": false,
+          "explanation": "DataSync はファイル／オブジェクトのデータ移送で、サーバの DR ではない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Backup",
+          "is_correct": false,
+          "explanation": "AWS Backup はスケジュールバックアップで、block-level の連続レプリケーションは行わない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Elastic Disaster Recovery（DRS、旧 CloudEndure Disaster Recovery）",
+          "is_correct": true,
+          "explanation": "正解。DRS は block-level の継続レプリケーションを Staging Subnet に行い、Drill / Recovery で EC2 として起動。"
+        }
       ],
       "explanation": "AWS Elastic Disaster Recovery (DRS) は CloudEndure の後継で、ソース（オンプレ／別クラウド／別リージョン）から AWS の Staging Area に block-level でレプリケーションする。実際に EC2 として起動するのは Drill / Recovery 時のみで、平時の課金は Staging EBS と少量の EC2 のみ。MGN は移行用、AWS Backup はスケジュール、DataSync はデータ転送、と用途が異なる。",
-      "references": [{"title": "AWS Elastic Disaster Recovery", "url": "https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html"}],
-      "tags": ["drs", "disaster-recovery", "cloudendure", "block-level-replication"],
-      "common_mistakes": ["DRS と MGN を混同する", "AWS Backup で block-level DR ができると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Elastic Disaster Recovery",
+          "url": "https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html"
+        }
+      ],
+      "tags": [
+        "drs",
+        "disaster-recovery",
+        "cloudendure",
+        "block-level-replication"
+      ],
+      "common_mistakes": [
+        "DRS と MGN を混同する",
+        "AWS Backup で block-level DR ができると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-013",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Resilience Hub",
       "subtopic": "Assessment and recommendations",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "AWS Resilience Hub の主要な提供価値はどれか？",
       "options": [
-        {"id": "A", "text": "アプリケーションの RTO/RPO 目標に対する適合度を評価し、構成のギャップと推奨改善策を提示する", "is_correct": true, "explanation": "正解。Resilience Hub はターゲット（RTO/RPO）と現在の構成を突き合わせ、ギャップ分析・推奨を行う。"},
-        {"id": "B", "text": "RDS のフェイルオーバーを高速化する", "is_correct": false, "explanation": "RDS の機能であって Resilience Hub の主機能ではない。"},
-        {"id": "C", "text": "EC2 を 自動でマルチリージョン展開する", "is_correct": false, "explanation": "そういう自動展開機能ではない。"},
-        {"id": "D", "text": "CloudFormation の Drift を検出する", "is_correct": false, "explanation": "Drift は CloudFormation の機能。"}
+        {
+          "id": "A",
+          "text": "アプリケーションの RTO/RPO 目標に対する適合度を評価し、構成のギャップと推奨改善策を提示する",
+          "is_correct": true,
+          "explanation": "正解。Resilience Hub はターゲット（RTO/RPO）と現在の構成を突き合わせ、ギャップ分析・推奨を行う。"
+        },
+        {
+          "id": "B",
+          "text": "RDS のフェイルオーバーを高速化する",
+          "is_correct": false,
+          "explanation": "RDS の機能であって Resilience Hub の主機能ではない。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 を 自動でマルチリージョン展開する",
+          "is_correct": false,
+          "explanation": "そういう自動展開機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFormation の Drift を検出する",
+          "is_correct": false,
+          "explanation": "Drift は CloudFormation の機能。"
+        }
       ],
       "explanation": "AWS Resilience Hub はワークロードの RTO/RPO 目標に対する適合度を評価する。CloudFormation スタックや Resource Group をベースにアプリを定義し、Resiliency Score / Recommendations / Tests（FIS 連携）を提供する。",
-      "references": [{"title": "AWS Resilience Hub", "url": "https://docs.aws.amazon.com/resilience-hub/latest/userguide/what-is.html"}],
-      "tags": ["resilience-hub", "rto", "rpo", "fis"],
-      "common_mistakes": ["Resilience Hub が自動修復してくれると誤解", "Resilience Hub と Trusted Advisor を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Resilience Hub",
+          "url": "https://docs.aws.amazon.com/resilience-hub/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "resilience-hub",
+        "rto",
+        "rpo",
+        "fis"
+      ],
+      "common_mistakes": [
+        "Resilience Hub が自動修復してくれると誤解",
+        "Resilience Hub と Trusted Advisor を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-014",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "ELB",
       "subtopic": "Cross-zone load balancing",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "NLB と ALB の Cross-Zone Load Balancing について、デフォルト挙動と課金影響について最も正しい記述は？",
       "options": [
-        {"id": "A", "text": "ALB はデフォルト ON、NLB はデフォルト OFF。NLB で ON にすると AZ 間データ転送料金（Regional Data Transfer）が発生する", "is_correct": true, "explanation": "正解。両者でデフォルトが異なり、NLB は AZ 間転送が課金されるため OFF が既定。"},
-        {"id": "B", "text": "両方ともデフォルト ON で、AZ 間転送は無料", "is_correct": false, "explanation": "NLB は OFF が既定で、AZ 間転送は課金される。"},
-        {"id": "C", "text": "両方ともデフォルト OFF", "is_correct": false, "explanation": "ALB は ON が既定。"},
-        {"id": "D", "text": "Cross-Zone は NLB ではサポートされない", "is_correct": false, "explanation": "サポートされる（Target Group 設定）。"}
+        {
+          "id": "A",
+          "text": "Cross-Zone は NLB ではサポートされない",
+          "is_correct": false,
+          "explanation": "サポートされる（Target Group 設定）。"
+        },
+        {
+          "id": "B",
+          "text": "ALB はデフォルト ON、NLB はデフォルト OFF。NLB で ON にすると AZ 間データ転送料金（Regional Data Transfer）が発生する",
+          "is_correct": true,
+          "explanation": "正解。両者でデフォルトが異なり、NLB は AZ 間転送が課金されるため OFF が既定。"
+        },
+        {
+          "id": "C",
+          "text": "両方ともデフォルト ON で、AZ 間転送は無料",
+          "is_correct": false,
+          "explanation": "NLB は OFF が既定で、AZ 間転送は課金される。"
+        },
+        {
+          "id": "D",
+          "text": "両方ともデフォルト OFF",
+          "is_correct": false,
+          "explanation": "ALB は ON が既定。"
+        }
       ],
       "explanation": "Cross-Zone LB は AZ 間で均等にロードを分散する機能。ALB では既定 ON（追加課金なし）、NLB では既定 OFF（ON にすると AZ 間 Regional Data Transfer の課金が発生）。設計時に費用と均等分散のトレードオフを評価する必要がある。",
-      "references": [{"title": "Cross-zone load balancing", "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#cross-zone-load-balancing"}],
-      "tags": ["elb", "alb", "nlb", "cross-zone", "data-transfer"],
-      "common_mistakes": ["ALB と NLB のデフォルトを混同", "AZ 間転送料金を意識しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Cross-zone load balancing",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#cross-zone-load-balancing"
+        }
+      ],
+      "tags": [
+        "elb",
+        "alb",
+        "nlb",
+        "cross-zone",
+        "data-transfer"
+      ],
+      "common_mistakes": [
+        "ALB と NLB のデフォルトを混同",
+        "AZ 間転送料金を意識しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-015",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Multi-Region",
       "subtopic": "DynamoDB Global Tables",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "DynamoDB Global Tables（v2）の特徴として正しい記述はどれか？",
       "options": [
-        {"id": "A", "text": "マルチリージョン Active/Active の Multi-master 構成で、Last Writer Wins により競合解消する", "is_correct": true, "explanation": "正解。DynamoDB Global Tables は全リージョンで読み書き可能、競合は Last Writer Wins。"},
-        {"id": "B", "text": "1 リージョンを Writer、他を Reader とするシングルマスター構成", "is_correct": false, "explanation": "それは RDS の Aurora Global DB に近い構造で、DDB Global Tables とは違う。"},
-        {"id": "C", "text": "競合解消は手動でアプリが行う必要がある", "is_correct": false, "explanation": "Global Tables は LWW を自動適用する。"},
-        {"id": "D", "text": "TTL や Stream は無効化される", "is_correct": false, "explanation": "両方とも利用可能。"}
+        {
+          "id": "A",
+          "text": "1 リージョンを Writer、他を Reader とするシングルマスター構成",
+          "is_correct": false,
+          "explanation": "それは RDS の Aurora Global DB に近い構造で、DDB Global Tables とは違う。"
+        },
+        {
+          "id": "B",
+          "text": "競合解消は手動でアプリが行う必要がある",
+          "is_correct": false,
+          "explanation": "Global Tables は LWW を自動適用する。"
+        },
+        {
+          "id": "C",
+          "text": "マルチリージョン Active/Active の Multi-master 構成で、Last Writer Wins により競合解消する",
+          "is_correct": true,
+          "explanation": "正解。DynamoDB Global Tables は全リージョンで読み書き可能、競合は Last Writer Wins。"
+        },
+        {
+          "id": "D",
+          "text": "TTL や Stream は無効化される",
+          "is_correct": false,
+          "explanation": "両方とも利用可能。"
+        }
       ],
       "explanation": "DynamoDB Global Tables (v2) は全リージョンで Multi-master Active/Active の動作。書き込みはローカルリージョンで完了し、他リージョンへ非同期にレプリケート。競合は Last Writer Wins（タイムスタンプベース）。Streams、TTL、PITR と組み合わせ可能。",
-      "references": [{"title": "Global Tables: Multi-Region Replication", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"}],
-      "tags": ["dynamodb", "global-tables", "multi-master", "active-active"],
-      "common_mistakes": ["Global Tables をシングルマスターと誤解", "Aurora Global DB と機能を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Global Tables: Multi-Region Replication",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "global-tables",
+        "multi-master",
+        "active-active"
+      ],
+      "common_mistakes": [
+        "Global Tables をシングルマスターと誤解",
+        "Aurora Global DB と機能を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-016",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Aurora",
       "subtopic": "Global Database failover",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Aurora Global Database の Managed Planned Failover と Unplanned Cross-Region Failover の違いとして最も適切なのは？",
       "options": [
-        {"id": "A", "text": "Planned はレプリカ遅延を 0 にしてからプライマリを移すためデータロス無し（RPO≈0）。Unplanned は障害時の手動切替で、レプリケーション遅延分のデータロスが発生する可能性", "is_correct": true, "explanation": "正解。これが両者の本質的な違い。"},
-        {"id": "B", "text": "両方とも RPO は常に 0", "is_correct": false, "explanation": "Unplanned は障害時のため RPO=0 を保証しない。"},
-        {"id": "C", "text": "Planned は手動のみ、Unplanned は自動", "is_correct": false, "explanation": "Planned/Unplanned とも操作の発火条件で区別される。"},
-        {"id": "D", "text": "Unplanned は同リージョン内のみ可能", "is_correct": false, "explanation": "Unplanned は別リージョンへの昇格を含む。"}
+        {
+          "id": "A",
+          "text": "Unplanned は同リージョン内のみ可能",
+          "is_correct": false,
+          "explanation": "Unplanned は別リージョンへの昇格を含む。"
+        },
+        {
+          "id": "B",
+          "text": "Planned は手動のみ、Unplanned は自動",
+          "is_correct": false,
+          "explanation": "Planned/Unplanned とも操作の発火条件で区別される。"
+        },
+        {
+          "id": "C",
+          "text": "両方とも RPO は常に 0",
+          "is_correct": false,
+          "explanation": "Unplanned は障害時のため RPO=0 を保証しない。"
+        },
+        {
+          "id": "D",
+          "text": "Planned はレプリカ遅延を 0 にしてからプライマリを移すためデータロス無し（RPO≈0）。Unplanned は障害時の手動切替で、レプリケーション遅延分のデータロスが発生する可能性",
+          "is_correct": true,
+          "explanation": "正解。これが両者の本質的な違い。"
+        }
       ],
       "explanation": "Aurora Global Database: 通常時のレプリケーション RPO は約 1 秒未満。Managed Planned Failover はレプリカが追いつくまで書き込みを停止して切替えるため RPO=0、RTO 約 1 分。Unplanned Failover はリージョン障害時に手動で別リージョンの cluster を昇格させる手順で、最後の未レプリケーション分はロスする可能性がある。",
-      "references": [{"title": "Aurora Global Database", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html"}],
-      "tags": ["aurora", "global-database", "rto", "rpo", "failover"],
-      "common_mistakes": ["Planned と Unplanned で RPO の差を意識しない", "クロスリージョン昇格の操作手順を理解しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Aurora Global Database",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "global-database",
+        "rto",
+        "rpo",
+        "failover"
+      ],
+      "common_mistakes": [
+        "Planned と Unplanned で RPO の差を意識しない",
+        "クロスリージョン昇格の操作手順を理解しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-017",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Auto Scaling",
       "subtopic": "Instance refresh and rolling updates",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Auto Scaling Group の Launch Template を更新した（新しい AMI）。ローリングで安全に置き換えたい。最も適切な機能は？",
       "options": [
-        {"id": "A", "text": "Auto Scaling の Instance Refresh で MinHealthyPercentage を指定し、ローリング置換する", "is_correct": true, "explanation": "正解。Instance Refresh はネイティブな機能で、設定された最小 healthy 率を保ちながら順次置換する。Checkpoint 設定でステップ確認も可能。"},
-        {"id": "B", "text": "Auto Scaling Group を作り直す", "is_correct": false, "explanation": "ターゲット移行や DNS 切替の手間が大きい。"},
-        {"id": "C", "text": "全インスタンスを一斉に terminate", "is_correct": false, "explanation": "ダウンタイムが発生する。"},
-        {"id": "D", "text": "Lambda で 1 台ずつ terminate を発火", "is_correct": false, "explanation": "Instance Refresh をわざわざ再発明する。"}
+        {
+          "id": "A",
+          "text": "Auto Scaling の Instance Refresh で MinHealthyPercentage を指定し、ローリング置換する",
+          "is_correct": true,
+          "explanation": "正解。Instance Refresh はネイティブな機能で、設定された最小 healthy 率を保ちながら順次置換する。Checkpoint 設定でステップ確認も可能。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda で 1 台ずつ terminate を発火",
+          "is_correct": false,
+          "explanation": "Instance Refresh をわざわざ再発明する。"
+        },
+        {
+          "id": "C",
+          "text": "全インスタンスを一斉に terminate",
+          "is_correct": false,
+          "explanation": "ダウンタイムが発生する。"
+        },
+        {
+          "id": "D",
+          "text": "Auto Scaling Group を作り直す",
+          "is_correct": false,
+          "explanation": "ターゲット移行や DNS 切替の手間が大きい。"
+        }
       ],
       "explanation": "Instance Refresh は ASG の Launch Template / Configuration 更新を反映するネイティブ機能。MinHealthyPercentage、InstanceWarmup、Checkpoint などで段階的・安全に置換できる。Skip Matching で同一構成インスタンスを置換不要にも設定可能。",
-      "references": [{"title": "Use an instance refresh to update instances", "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html"}],
-      "tags": ["auto-scaling", "instance-refresh", "rolling-update", "launch-template"],
-      "common_mistakes": ["Instance Refresh の存在を知らない", "MinHealthyPercentage の意味を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Use an instance refresh to update instances",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "instance-refresh",
+        "rolling-update",
+        "launch-template"
+      ],
+      "common_mistakes": [
+        "Instance Refresh の存在を知らない",
+        "MinHealthyPercentage の意味を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-018",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Route 53 ARC",
       "subtopic": "Application Recovery Controller",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Multi-Region Active/Active で運用中のシステムで、リージョン障害時の切替を「データプレーンに依存しないコントロールプレーン」で確実に実行したい。最も適切なサービスは？",
       "options": [
-        {"id": "A", "text": "Route 53 Application Recovery Controller (ARC) の Routing Control / Readiness Check を使う", "is_correct": true, "explanation": "正解。ARC は Route 53 と独立した高可用性のコントロールプレーンを提供し、複数リージョンの cluster を介して制御するため、単一リージョン障害に耐性がある。"},
-        {"id": "B", "text": "通常の Route 53 ヘルスチェックのみで自動化", "is_correct": false, "explanation": "可能だが大規模・規制業界では ARC の Routing Control と Readiness Check のほうが厳密。"},
-        {"id": "C", "text": "CloudWatch Alarm + Lambda で DNS 書き換え", "is_correct": false, "explanation": "Lambda コントロールプレーンが障害下で動作しないリスクが大きい。"},
-        {"id": "D", "text": "EventBridge ルールで自動的に DNS を切替", "is_correct": false, "explanation": "EventBridge も依存サービスが多い。"}
+        {
+          "id": "A",
+          "text": "CloudWatch Alarm + Lambda で DNS 書き換え",
+          "is_correct": false,
+          "explanation": "Lambda コントロールプレーンが障害下で動作しないリスクが大きい。"
+        },
+        {
+          "id": "B",
+          "text": "Route 53 Application Recovery Controller (ARC) の Routing Control / Readiness Check を使う",
+          "is_correct": true,
+          "explanation": "正解。ARC は Route 53 と独立した高可用性のコントロールプレーンを提供し、複数リージョンの cluster を介して制御するため、単一リージョン障害に耐性がある。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge ルールで自動的に DNS を切替",
+          "is_correct": false,
+          "explanation": "EventBridge も依存サービスが多い。"
+        },
+        {
+          "id": "D",
+          "text": "通常の Route 53 ヘルスチェックのみで自動化",
+          "is_correct": false,
+          "explanation": "可能だが大規模・規制業界では ARC の Routing Control と Readiness Check のほうが厳密。"
+        }
       ],
       "explanation": "Route 53 ARC は (1) Readiness Check（リージョンの準備状態の継続評価）、(2) Routing Control（DNS の流入をオン／オフする手動ノブ）、(3) 5 リージョンに分散した Cluster で制御。災害シナリオで最も重要な「コントロールプレーンが障害下でも確実に動く」を実現する設計。",
-      "references": [{"title": "Route 53 Application Recovery Controller", "url": "https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-recovery-controller.html"}],
-      "tags": ["route53-arc", "routing-control", "readiness-check", "dr"],
-      "common_mistakes": ["ARC の存在を知らずに Lambda 自作する", "Readiness Check と Routing Control の役割を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Route 53 Application Recovery Controller",
+          "url": "https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-recovery-controller.html"
+        }
+      ],
+      "tags": [
+        "route53-arc",
+        "routing-control",
+        "readiness-check",
+        "dr"
+      ],
+      "common_mistakes": [
+        "ARC の存在を知らずに Lambda 自作する",
+        "Readiness Check と Routing Control の役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-019",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Chaos engineering",
       "subtopic": "FIS",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある SaaS 企業の DevOps チームが「Resilience を継続検証したい」「ステージング環境で AZ 障害や RDS フェイルオーバーをシミュレートしたい」と考えている。最も適切なサービスと運用は？",
       "options": [
-        {"id": "A", "text": "AWS Fault Injection Service (FIS) で実験テンプレートを定義し、Stop Conditions として CloudWatch Alarm を設定、Resilience Hub の Test と統合する", "is_correct": true, "explanation": "正解。FIS は AWS マネージドのカオスエンジニアリングサービスで、停止条件によるセーフガード付きで実験を実行できる。Resilience Hub の Test とも連携。"},
-        {"id": "B", "text": "Lambda で AZ 障害を自作する", "is_correct": false, "explanation": "FIS の安全装置（Stop Conditions、IAM 制約、ロールバック）を欠く。"},
-        {"id": "C", "text": "本番でランダムに EC2 を terminate するスクリプトを cron で動かす", "is_correct": false, "explanation": "ガードなし、本番影響あり。FIS のような統制が必要。"},
-        {"id": "D", "text": "Trusted Advisor の Resilience Check のみで完結", "is_correct": false, "explanation": "Trusted Advisor は静的な助言のみで実験ではない。"}
+        {
+          "id": "A",
+          "text": "本番でランダムに EC2 を terminate するスクリプトを cron で動かす",
+          "is_correct": false,
+          "explanation": "ガードなし、本番影響あり。FIS のような統制が必要。"
+        },
+        {
+          "id": "B",
+          "text": "Trusted Advisor の Resilience Check のみで完結",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は静的な助言のみで実験ではない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Fault Injection Service (FIS) で実験テンプレートを定義し、Stop Conditions として CloudWatch Alarm を設定、Resilience Hub の Test と統合する",
+          "is_correct": true,
+          "explanation": "正解。FIS は AWS マネージドのカオスエンジニアリングサービスで、停止条件によるセーフガード付きで実験を実行できる。Resilience Hub の Test とも連携。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で AZ 障害を自作する",
+          "is_correct": false,
+          "explanation": "FIS の安全装置（Stop Conditions、IAM 制約、ロールバック）を欠く。"
+        }
       ],
       "explanation": "AWS FIS は Experiment Template に Action（fault 種別）、Target（リソース選定）、Stop Condition（CloudWatch Alarm）を定義する。fault 種別には AZ 障害、API Throttle、EBS Pause I/O、RDS フェイルオーバー、ECS タスク停止など多数。Resilience Hub の Test 機能と統合することで、リカバリ目標達成度を継続検証できる。",
-      "references": [{"title": "AWS Fault Injection Service", "url": "https://docs.aws.amazon.com/fis/latest/userguide/what-is.html"}],
-      "tags": ["fis", "chaos-engineering", "resilience-hub", "experiment"],
-      "common_mistakes": ["FIS の Stop Conditions を設定せずに本番影響", "Trusted Advisor で実験ができると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Fault Injection Service",
+          "url": "https://docs.aws.amazon.com/fis/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "fis",
+        "chaos-engineering",
+        "resilience-hub",
+        "experiment"
+      ],
+      "common_mistakes": [
+        "FIS の Stop Conditions を設定せずに本番影響",
+        "Trusted Advisor で実験ができると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain3-020",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-3", "name": "Resilient Cloud Solutions", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Resilient Cloud Solutions",
+        "weight_percent": 15
+      },
       "topic": "Multi-Region architecture",
       "subtopic": "End-to-end design",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "国内 FinTech 企業が「東京＋大阪リージョンの Active/Active、RTO < 1 分、RPO < 1 秒、コントロールプレーンの単一リージョン依存を排除」を実現したい。最も適切な設計の組み合わせは？",
       "options": [
-        {"id": "A", "text": "Aurora Global DB（write forwarding）または DynamoDB Global Tables、Route 53 ARC（Routing Control + 5-cluster コントロールプレーン）、ALB + ASG を両リージョン、AWS Backup と Cross-Region Copy、FIS で継続的に DR 検証", "is_correct": true, "explanation": "正解。データ層・トラフィック層・コントロール層・継続検証の各レイヤを Active/Active 適合な AWS マネージドで構成する設計が要件を満たす。"},
-        {"id": "B", "text": "東京 RDS Multi-AZ のみで、大阪は Backup & Restore", "is_correct": false, "explanation": "RTO/RPO 要件を満たさず、Active/Active でもない。"},
-        {"id": "C", "text": "Route 53 通常 Failover + Lambda コントロールプレーン", "is_correct": false, "explanation": "Lambda は単一リージョン障害下で動作しない可能性があり、コントロールプレーン依存を排除できない。"},
-        {"id": "D", "text": "S3 Replication で全データを移送、EC2 は手動起動", "is_correct": false, "explanation": "RPO/RTO を達成できず、データ整合性も保てない。"}
+        {
+          "id": "A",
+          "text": "東京 RDS Multi-AZ のみで、大阪は Backup & Restore",
+          "is_correct": false,
+          "explanation": "RTO/RPO 要件を満たさず、Active/Active でもない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Replication で全データを移送、EC2 は手動起動",
+          "is_correct": false,
+          "explanation": "RPO/RTO を達成できず、データ整合性も保てない。"
+        },
+        {
+          "id": "C",
+          "text": "Route 53 通常 Failover + Lambda コントロールプレーン",
+          "is_correct": false,
+          "explanation": "Lambda は単一リージョン障害下で動作しない可能性があり、コントロールプレーン依存を排除できない。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora Global DB（write forwarding）または DynamoDB Global Tables、Route 53 ARC（Routing Control + 5-cluster コントロールプレーン）、ALB + ASG を両リージョン、AWS Backup と Cross-Region Copy、FIS で継続的に DR 検証",
+          "is_correct": true,
+          "explanation": "正解。データ層・トラフィック層・コントロール層・継続検証の各レイヤを Active/Active 適合な AWS マネージドで構成する設計が要件を満たす。"
+        }
       ],
       "explanation": "厳格な RTO/RPO・コントロールプレーン分離を満たす Multi-Region 設計は (1) データ層 = Aurora Global DB（write forwarding）/ DDB Global Tables（multi-master）、(2) トラフィック層 = Route 53 ARC（Routing Control）、(3) アプリ層 = 各リージョンに ALB + ASG、(4) バックアップ = AWS Backup Cross-Region Copy、(5) 検証 = FIS / Resilience Hub。設計力 (L6) を問う問題。",
       "references": [
-        {"title": "AWS Multi-Region Application Architecture", "url": "https://aws.amazon.com/solutions/implementations/multi-region-application-architecture/"},
-        {"title": "Disaster recovery options in the cloud", "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"}
+        {
+          "title": "AWS Multi-Region Application Architecture",
+          "url": "https://aws.amazon.com/solutions/implementations/multi-region-application-architecture/"
+        },
+        {
+          "title": "Disaster recovery options in the cloud",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"
+        }
       ],
-      "tags": ["multi-region", "active-active", "aurora-global", "dynamodb-global", "route53-arc", "fis", "design"],
-      "common_mistakes": ["コントロールプレーンの単一リージョン依存を見過ごす", "Active/Active と Multi-AZ を取り違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "multi-region",
+        "active-active",
+        "aurora-global",
+        "dynamodb-global",
+        "route53-arc",
+        "fis",
+        "design"
+      ],
+      "common_mistakes": [
+        "コントロールプレーンの単一リージョン依存を見過ごす",
+        "Active/Active と Multi-AZ を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

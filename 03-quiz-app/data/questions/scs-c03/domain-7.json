@@ -34,27 +34,27 @@
       "options": [
         {
           "id": "A",
-          "text": "顧客のプロンプトと応答は、AWS 全体のサービス品質改善のため匿名化された上で再学習に利用される",
-          "is_correct": false,
-          "explanation": "誤り。AWS は匿名化の有無にかかわらず顧客の入出力データをモデル学習・改善に利用しない。"
-        },
-        {
-          "id": "B",
           "text": "顧客のプロンプトと応答は基盤モデルの学習・改善には利用されず、サードパーティのモデルプロバイダにも共有されない",
           "is_correct": true,
           "explanation": "正解。Amazon Bedrock のデータ保護ポリシーでは、顧客の入力（プロンプト）と出力（応答）は基盤モデルの再学習に利用されず、Anthropic 等のモデルプロバイダにも共有されない。"
         },
         {
-          "id": "C",
-          "text": "顧客が明示的に Opt-out しない限り、プロンプトと応答は学習に利用される",
+          "id": "B",
+          "text": "顧客のプロンプトと応答は、AWS 全体のサービス品質改善のため匿名化された上で再学習に利用される",
           "is_correct": false,
-          "explanation": "誤り。Bedrock では Opt-out 不要で、デフォルトで学習に利用されない設計となっている。"
+          "explanation": "誤り。AWS は匿名化の有無にかかわらず顧客の入出力データをモデル学習・改善に利用しない。"
         },
         {
-          "id": "D",
+          "id": "C",
           "text": "Bedrock Guardrails が有効化されている場合のみ、データはモデル学習から除外される",
           "is_correct": false,
           "explanation": "誤り。Guardrails の有無にかかわらず、Bedrock の顧客データはモデル学習に利用されない。Guardrails はコンテンツフィルタリング目的の機能。"
+        },
+        {
+          "id": "D",
+          "text": "顧客が明示的に Opt-out しない限り、プロンプトと応答は学習に利用される",
+          "is_correct": false,
+          "explanation": "誤り。Bedrock では Opt-out 不要で、デフォルトで学習に利用されない設計となっている。"
         }
       ],
       "explanation": "Amazon Bedrock の最も重要なデータプライバシー原則は、顧客が送信するプロンプトおよびモデルの応答が基盤モデル（FM）の学習や改善に二度と使われないことである。これは AWS のサービスポリシーで明記されており、規制業界（医療・金融）で生成 AI を採用する根拠となる。Guardrails 設定や Opt-out 設定は不要で、デフォルトでこの保護が適用される。これは多くの SaaS 型 LLM サービスとの大きな差別化要素である。",
@@ -116,15 +116,15 @@
       "options": [
         {
           "id": "A",
-          "text": "コンテンツフィルター、拒否トピック、ワードフィルター、機密情報フィルター、コンテキストグラウンディングチェック",
-          "is_correct": true,
-          "explanation": "正解。Bedrock Guardrails は 5 つの主要ポリシータイプを提供する。コンテンツフィルター（hate/insults/sexual/violence/misconduct/prompt-attacks）、拒否トピック、ワードフィルター、機密情報フィルター（PII）、コンテキストグラウンディング（hallucination 検出）。"
-        },
-        {
-          "id": "B",
           "text": "VPC エンドポイント、KMS 暗号化、IAM ポリシー、CloudTrail ロギング",
           "is_correct": false,
           "explanation": "誤り。これらは Bedrock 全体のインフラレベルセキュリティ機能で、Guardrails のポリシータイプではない。"
+        },
+        {
+          "id": "B",
+          "text": "コンテンツフィルター、拒否トピック、ワードフィルター、機密情報フィルター、コンテキストグラウンディングチェック",
+          "is_correct": true,
+          "explanation": "正解。Bedrock Guardrails は 5 つの主要ポリシータイプを提供する。コンテンツフィルター（hate/insults/sexual/violence/misconduct/prompt-attacks）、拒否トピック、ワードフィルター、機密情報フィルター（PII）、コンテキストグラウンディング（hallucination 検出）。"
         },
         {
           "id": "C",
@@ -194,7 +194,7 @@
       "subtopic": "VPC Endpoints (PrivateLink)",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
-      "stem": "ある製造業の企業（東海地方）が、工場ネットワーク内の RAG アプリから Amazon Bedrock を呼び出したい。インターネット経由でのデータ流出を完全に防ぎたい。最も適切なアーキテクチャは？",
+      "stem": "ある製造業の企業が、工場ネットワーク内の RAG アプリから Amazon Bedrock を呼び出したい。インターネット経由でのデータ流出を完全に防ぎたい。最も適切なアーキテクチャは？",
       "options": [
         {
           "id": "A",
@@ -204,15 +204,15 @@
         },
         {
           "id": "B",
-          "text": "VPC Interface Endpoint (PrivateLink) を Bedrock 用に作成し、プライベートサブネットから AWS バックボーン経由でアクセスする",
-          "is_correct": true,
-          "explanation": "正解。Bedrock は AWS PrivateLink をサポートしており、VPC Interface Endpoint を作成すれば AWS のプライベートネットワーク内のみで通信が完結する。インターネット経由の通信は不要。"
-        },
-        {
-          "id": "C",
           "text": "Direct Connect で AWS リージョンに接続し、パブリック VIF を使って Bedrock にアクセスする",
           "is_correct": false,
           "explanation": "Direct Connect のパブリック VIF は AWS パブリックエンドポイントへの接続を提供するが、データは依然としてパブリックエンドポイントに送信されるため、PrivateLink ほどの分離はない。"
+        },
+        {
+          "id": "C",
+          "text": "VPC Interface Endpoint (PrivateLink) を Bedrock 用に作成し、プライベートサブネットから AWS バックボーン経由でアクセスする",
+          "is_correct": true,
+          "explanation": "正解。Bedrock は AWS PrivateLink をサポートしており、VPC Interface Endpoint を作成すれば AWS のプライベートネットワーク内のみで通信が完結する。インターネット経由の通信は不要。"
         },
         {
           "id": "D",
@@ -286,9 +286,9 @@
         },
         {
           "id": "B",
-          "text": "IAM ポリシーで `bedrock:InvokeModel` アクションを許可し、Resource フィールドにそれぞれのモデル ARN を指定したロールを各チームに割り当てる",
-          "is_correct": true,
-          "explanation": "正解。Bedrock の IAM ポリシーでは、Resource にモデル ARN（例: `arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-*`）を指定することで、ロールごとに呼び出し可能なモデルを限定できる。"
+          "text": "VPC Endpoint Policy で許可する API のみを指定する",
+          "is_correct": false,
+          "explanation": "Endpoint Policy で制限可能だが、IAM Resource ベースの制御の方が ABAC でチーム単位制御に適しており標準的。チーム別ロールの観点では IAM ポリシーが正解。"
         },
         {
           "id": "C",
@@ -298,9 +298,9 @@
         },
         {
           "id": "D",
-          "text": "VPC Endpoint Policy で許可する API のみを指定する",
-          "is_correct": false,
-          "explanation": "Endpoint Policy で制限可能だが、IAM Resource ベースの制御の方が ABAC でチーム単位制御に適しており標準的。チーム別ロールの観点では IAM ポリシーが正解。"
+          "text": "IAM ポリシーで `bedrock:InvokeModel` アクションを許可し、Resource フィールドにそれぞれのモデル ARN を指定したロールを各チームに割り当てる",
+          "is_correct": true,
+          "explanation": "正解。Bedrock の IAM ポリシーでは、Resource にモデル ARN（例: `arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-*`）を指定することで、ロールごとに呼び出し可能なモデルを限定できる。"
         }
       ],
       "explanation": "Bedrock の IAM ポリシーは `Resource` フィールドに具体的な Foundation Model ARN を指定することで、ロール別に呼び出し可能なモデルを制限できる。例えば `Resource: arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-*` のように指定する。これによりチーム別、用途別の最小権限を実装できる。さらに `Condition` で特定のアプリ ID やタグによる制限も可能。",
@@ -362,27 +362,27 @@
       "options": [
         {
           "id": "A",
-          "text": "ファインチューニングに使った医療データは元のベースモデル（Claude）に組み込まれ、他の Bedrock 顧客の応答品質改善にも使われる",
-          "is_correct": false,
-          "explanation": "誤り。Bedrock のカスタムモデルは顧客専用で、トレーニングデータがベースモデルに組み込まれることはない。"
-        },
-        {
-          "id": "B",
           "text": "カスタムモデルは顧客のアカウント内でのみアクセス可能なプライベートコピーであり、トレーニングデータと結果モデルは KMS Customer Managed Key で暗号化できる",
           "is_correct": true,
           "explanation": "正解。Bedrock のカスタムモデルは顧客専用のプライベート資産で、他顧客とは完全に隔離される。KMS CMK でモデルアーティファクトとトレーニングデータを暗号化可能で、HIPAA BAA 対象サービス。"
         },
         {
-          "id": "C",
-          "text": "カスタムモデルは GPU クラスタ上で全顧客と共有されるため、推論時に他社のクエリと混ざるリスクがある",
+          "id": "B",
+          "text": "ファインチューニングに使った医療データは元のベースモデル（Claude）に組み込まれ、他の Bedrock 顧客の応答品質改善にも使われる",
           "is_correct": false,
-          "explanation": "誤り。カスタムモデルにはプロビジョンドスループットが割り当てられ、他顧客との分離が保証される。"
+          "explanation": "誤り。Bedrock のカスタムモデルは顧客専用で、トレーニングデータがベースモデルに組み込まれることはない。"
         },
         {
-          "id": "D",
+          "id": "C",
           "text": "Bedrock では Fine-tuning ができないため、SageMaker JumpStart で代替する必要がある",
           "is_correct": false,
           "explanation": "誤り。Bedrock は Fine-tuning（および Continued Pre-training）をサポートしている。"
+        },
+        {
+          "id": "D",
+          "text": "カスタムモデルは GPU クラスタ上で全顧客と共有されるため、推論時に他社のクエリと混ざるリスクがある",
+          "is_correct": false,
+          "explanation": "誤り。カスタムモデルにはプロビジョンドスループットが割り当てられ、他顧客との分離が保証される。"
         }
       ],
       "explanation": "Bedrock のモデルカスタマイゼーション（Fine-tuning / Continued Pre-training）では、トレーニングデータと結果のカスタムモデルは顧客専用に隔離される。トレーニングデータは指定した S3 バケット（KMS 暗号化可）から読み取られ、生成されたカスタムモデルアーティファクトも KMS Customer Managed Key で暗号化できる。カスタムモデルは元のベースモデルに混ざることはなく、他顧客にも共有されない。Bedrock は HIPAA / SOC / ISO 等の監査対象に含まれている。",
@@ -526,27 +526,27 @@
       "options": [
         {
           "id": "A",
-          "text": "CloudTrail は API コールのメタデータ（誰がいつ呼んだか）を記録し、Model Invocation Logging はプロンプト本文と応答本文を S3/CloudWatch Logs に記録する",
-          "is_correct": true,
-          "explanation": "正解。CloudTrail はマネジメント・データイベントとして API 呼び出しのメタデータを記録するが、プロンプト・応答の本文は記録しない。本文を記録したい場合は Model Invocation Logging を別途有効化する必要がある。"
-        },
-        {
-          "id": "B",
           "text": "CloudTrail はプロンプト本文を含む全データを記録し、Model Invocation Logging はメタデータのみ記録する",
           "is_correct": false,
           "explanation": "誤り。CloudTrail は本文を記録しない。Model Invocation Logging が本文を記録する。"
         },
         {
-          "id": "C",
-          "text": "両者は同じデータを記録するが、CloudTrail は S3 に、Model Invocation Logging は CloudWatch Logs にのみ送信する",
-          "is_correct": false,
-          "explanation": "誤り。記録内容は異なる。また Model Invocation Logging は S3 と CloudWatch Logs の両方に送信可能。"
-        },
-        {
-          "id": "D",
+          "id": "B",
           "text": "Model Invocation Logging は Bedrock Guardrails が動作したリクエストのみを記録する",
           "is_correct": false,
           "explanation": "誤り。Model Invocation Logging はすべての推論リクエストを記録対象にできる（Guardrails 連動はオプション）。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail は API コールのメタデータ（誰がいつ呼んだか）を記録し、Model Invocation Logging はプロンプト本文と応答本文を S3/CloudWatch Logs に記録する",
+          "is_correct": true,
+          "explanation": "正解。CloudTrail はマネジメント・データイベントとして API 呼び出しのメタデータを記録するが、プロンプト・応答の本文は記録しない。本文を記録したい場合は Model Invocation Logging を別途有効化する必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "両者は同じデータを記録するが、CloudTrail は S3 に、Model Invocation Logging は CloudWatch Logs にのみ送信する",
+          "is_correct": false,
+          "explanation": "誤り。記録内容は異なる。また Model Invocation Logging は S3 と CloudWatch Logs の両方に送信可能。"
         }
       ],
       "explanation": "Bedrock のロギングは 2 階層に分かれる。CloudTrail は IAM 主体・API 名・タイムスタンプ・ソース IP などのメタデータを記録するが、コンプライアンス上の理由でプロンプト・応答本文は含まれない。本文の監査が必要な場合（規制業界、ハルシネーション分析、監査トレイル）は Model Invocation Logging を有効化し、S3 や CloudWatch Logs に出力する。Model Invocation Logging には KMS 暗号化も適用可能で、出力先のアクセス制御を厳格にすることが重要。",
@@ -608,15 +608,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Bedrock Guardrails の Sensitive Information Filter で `CREDIT_DEBIT_CARD_NUMBER` を `BLOCK` または `ANONYMIZE` に設定する",
-          "is_correct": true,
-          "explanation": "正解。Sensitive Information Filter は PII（クレジットカード、SSN、メール等）を検出し、`BLOCK`（リクエスト全体を拒否）または `ANONYMIZE`（マスキング）が選べる。入出力の両方に適用可能。"
-        },
-        {
-          "id": "B",
           "text": "Amazon Macie をリアルタイムで API ゲートウェイに統合し、PII を含むリクエストを破棄する",
           "is_correct": false,
           "explanation": "Macie は S3 の静的データに対する PII 検出が主用途で、API リクエストのインライン検査は標準機能ではない。"
+        },
+        {
+          "id": "B",
+          "text": "WAF で正規表現マッチを行い、リクエストブロックする",
+          "is_correct": false,
+          "explanation": "WAF は HTTP 層の保護で、JSON ボディ内の意味解析は限定的。Guardrails の方が Bedrock 専用で適切。"
         },
         {
           "id": "C",
@@ -626,9 +626,9 @@
         },
         {
           "id": "D",
-          "text": "WAF で正規表現マッチを行い、リクエストブロックする",
-          "is_correct": false,
-          "explanation": "WAF は HTTP 層の保護で、JSON ボディ内の意味解析は限定的。Guardrails の方が Bedrock 専用で適切。"
+          "text": "Bedrock Guardrails の Sensitive Information Filter で `CREDIT_DEBIT_CARD_NUMBER` を `BLOCK` または `ANONYMIZE` に設定する",
+          "is_correct": true,
+          "explanation": "正解。Sensitive Information Filter は PII（クレジットカード、SSN、メール等）を検出し、`BLOCK`（リクエスト全体を拒否）または `ANONYMIZE`（マスキング）が選べる。入出力の両方に適用可能。"
         }
       ],
       "explanation": "Bedrock Guardrails の Sensitive Information Filter は、PII（個人識別情報）を検知して入出力の両方で対応できる機能。`CREDIT_DEBIT_CARD_NUMBER`、`SSN`、`EMAIL`、`PHONE`、`NAME`、カスタム正規表現など多数のタイプをサポートする。アクションは `BLOCK`（リクエスト拒否）と `ANONYMIZE`（マスキング、例: `{CREDIT_DEBIT_CARD_NUMBER}`）から選択。FinTech や医療では `BLOCK` が一般的だが、UX を維持したい場合は `ANONYMIZE` を選ぶ。",
@@ -690,27 +690,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Knowledge Base のデータソース S3 バケットを KMS Customer Managed Key で暗号化し、IAM ロールでアクセスを制限する",
-          "is_correct": true,
-          "explanation": "正解。S3 ソースの暗号化と Knowledge Base 実行ロールの最小権限化は機密 RAG の基本。さらに KMS キーポリシーで Bedrock サービスプリンシパルの kms:Decrypt を限定する。"
-        },
-        {
-          "id": "B",
-          "text": "ベクトルストアとして OpenSearch Serverless を使い、network policy を `private` に設定して VPC エンドポイントからのみアクセスさせる",
-          "is_correct": true,
-          "explanation": "正解。Knowledge Base のベクトルストア（OpenSearch Serverless / Aurora 等）にも機密データの埋め込みが含まれるため、ネットワーク隔離が必須。"
-        },
-        {
-          "id": "C",
           "text": "Knowledge Base のデータをパブリック S3 バケットに置き、署名付き URL でアクセス制御する",
           "is_correct": false,
           "explanation": "誤り。パブリックバケットでの機密データ管理はベストプラクティスに反する。"
         },
         {
-          "id": "D",
+          "id": "B",
+          "text": "Knowledge Base のデータソース S3 バケットを KMS Customer Managed Key で暗号化し、IAM ロールでアクセスを制限する",
+          "is_correct": true,
+          "explanation": "正解。S3 ソースの暗号化と Knowledge Base 実行ロールの最小権限化は機密 RAG の基本。さらに KMS キーポリシーで Bedrock サービスプリンシパルの kms:Decrypt を限定する。"
+        },
+        {
+          "id": "C",
           "text": "Bedrock Guardrails の機密情報フィルターを Knowledge Base 自体には適用しない",
           "is_correct": false,
           "explanation": "誤り。Guardrails は RAG の応答にも適用すべきで、PII の意図しない漏洩を防ぐ。"
+        },
+        {
+          "id": "D",
+          "text": "ベクトルストアとして OpenSearch Serverless を使い、network policy を `private` に設定して VPC エンドポイントからのみアクセスさせる",
+          "is_correct": true,
+          "explanation": "正解。Knowledge Base のベクトルストア（OpenSearch Serverless / Aurora 等）にも機密データの埋め込みが含まれるため、ネットワーク隔離が必須。"
         }
       ],
       "explanation": "Bedrock Knowledge Bases（RAG マネージドサービス）における機密データ保護では、(1) ソース S3 の KMS 暗号化と IAM ロール最小権限化、(2) ベクトルストア（OpenSearch Serverless / Aurora pgvector / Pinecone）のネットワーク隔離（VPC エンドポイント、private network policy）が二大ポイント。さらに Knowledge Base の出力に Guardrails を組み合わせて多層防御するのが理想。複数選択。",
@@ -778,15 +778,15 @@
         },
         {
           "id": "B",
-          "text": "Agent のシステムプロンプトに「大量発注しないでください」と明記し、それのみで対応する",
-          "is_correct": false,
-          "explanation": "プロンプトベースの制約はインジェクションで突破され得るため、決定的な防御にはならない。"
-        },
-        {
-          "id": "C",
           "text": "Agent をできるだけ高機能にするため、IAM ロールには `*:*` を付与する",
           "is_correct": false,
           "explanation": "誤り。最小権限原則に反し、悪意あるプロンプトで重大な被害を出すリスクが高まる。"
+        },
+        {
+          "id": "C",
+          "text": "Agent のシステムプロンプトに「大量発注しないでください」と明記し、それのみで対応する",
+          "is_correct": false,
+          "explanation": "プロンプトベースの制約はインジェクションで突破され得るため、決定的な防御にはならない。"
         },
         {
           "id": "D",
@@ -854,21 +854,21 @@
       "options": [
         {
           "id": "A",
+          "text": "SageMaker Studio をパブリックサブネットに配置し、Internet Gateway 経由で S3 にアクセスする",
+          "is_correct": false,
+          "explanation": "誤り。パブリックサブネットでは外部流出の経路ができてしまう。VPC モードが必要。"
+        },
+        {
+          "id": "B",
           "text": "SageMaker トレーニングジョブで `EnableNetworkIsolation=true` を設定し、コンテナのインターネットアクセスを無効化する",
           "is_correct": true,
           "explanation": "正解。`EnableNetworkIsolation` は SageMaker コンテナを完全にインターネットから切り離す設定で、外部依存性のないトレーニングや HIPAA 環境で必須。"
         },
         {
-          "id": "B",
+          "id": "C",
           "text": "SageMaker のトレーニングジョブを VPC モードでプライベートサブネットに配置し、S3 / ECR / SageMaker API には VPC Endpoint 経由でアクセスする",
           "is_correct": true,
           "explanation": "正解。VPC モード+VPC Endpoint で AWS バックボーンのみで通信が完結し、医療データの流出経路を遮断できる。"
-        },
-        {
-          "id": "C",
-          "text": "SageMaker Studio をパブリックサブネットに配置し、Internet Gateway 経由で S3 にアクセスする",
-          "is_correct": false,
-          "explanation": "誤り。パブリックサブネットでは外部流出の経路ができてしまう。VPC モードが必要。"
         },
         {
           "id": "D",
@@ -936,15 +936,15 @@
       "options": [
         {
           "id": "A",
-          "text": "EBS は KMS CMK、S3 アーティファクトは KMS CMK、ノード間通信は分散トレーニング時に `EnableInterContainerTrafficEncryption=true` を設定する",
-          "is_correct": true,
-          "explanation": "正解。EBS と S3 出力には CreateTrainingJob API の `VolumeKmsKeyId` / `OutputDataConfig.KmsKeyId` を設定。ノード間通信は `EnableInterContainerTrafficEncryption=true` で TLS 暗号化される。"
-        },
-        {
-          "id": "B",
           "text": "EBS は AWS 管理キーのみサポートで CMK は使えない",
           "is_correct": false,
           "explanation": "誤り。SageMaker は VolumeKmsKeyId で Customer Managed Key 指定が可能。"
+        },
+        {
+          "id": "B",
+          "text": "EBS は KMS CMK、S3 アーティファクトは KMS CMK、ノード間通信は分散トレーニング時に `EnableInterContainerTrafficEncryption=true` を設定する",
+          "is_correct": true,
+          "explanation": "正解。EBS と S3 出力には CreateTrainingJob API の `VolumeKmsKeyId` / `OutputDataConfig.KmsKeyId` を設定。ノード間通信は `EnableInterContainerTrafficEncryption=true` で TLS 暗号化される。"
         },
         {
           "id": "C",
@@ -1018,9 +1018,9 @@
       "options": [
         {
           "id": "A",
-          "text": "Permission Boundary で最大権限を絞り、Execution Role には実際に必要なアクション（特定 S3 バケット読み書き、ECR pull、特定モデルの InvokeEndpoint）のみ付与する",
-          "is_correct": true,
-          "explanation": "正解。Permission Boundary でガードレールを設定し、ロール自体は実用途に絞ったポリシーで構成するのが最小権限化の標準アプローチ。"
+          "text": "Execution Role を削除し、IAM User の Access Key を Notebook 内にハードコードする",
+          "is_correct": false,
+          "explanation": "重大なセキュリティアンチパターン。Access Key のハードコードは絶対に行ってはならない。"
         },
         {
           "id": "B",
@@ -1030,9 +1030,9 @@
         },
         {
           "id": "C",
-          "text": "Execution Role を削除し、IAM User の Access Key を Notebook 内にハードコードする",
-          "is_correct": false,
-          "explanation": "重大なセキュリティアンチパターン。Access Key のハードコードは絶対に行ってはならない。"
+          "text": "Permission Boundary で最大権限を絞り、Execution Role には実際に必要なアクション（特定 S3 バケット読み書き、ECR pull、特定モデルの InvokeEndpoint）のみ付与する",
+          "is_correct": true,
+          "explanation": "正解。Permission Boundary でガードレールを設定し、ロール自体は実用途に絞ったポリシーで構成するのが最小権限化の標準アプローチ。"
         },
         {
           "id": "D",
@@ -1100,9 +1100,9 @@
       "options": [
         {
           "id": "A",
-          "text": "GuardDuty Runtime Monitoring（EKS/ECS/EC2）と Malware Protection に加え、IAM 異常使用検知（Foundation 機能）でクレデンシャル漏洩や API 異常を検出する",
-          "is_correct": true,
-          "explanation": "正解。GuardDuty 自体に Bedrock 専用保護プランはないが、SageMaker トレーニング EC2 や推論 EKS/ECS には Runtime Monitoring が適用でき、IAM 認証情報の異常利用検知（CredentialAccess）は Bedrock を含むあらゆる AWS API に有効。"
+          "text": "Macie だけで AI/ML ワークロードの脅威検出が完結する",
+          "is_correct": false,
+          "explanation": "誤り。Macie は S3 の機密データ検出が主用途で、ランタイム脅威検出機能はない。"
         },
         {
           "id": "B",
@@ -1118,9 +1118,9 @@
         },
         {
           "id": "D",
-          "text": "Macie だけで AI/ML ワークロードの脅威検出が完結する",
-          "is_correct": false,
-          "explanation": "誤り。Macie は S3 の機密データ検出が主用途で、ランタイム脅威検出機能はない。"
+          "text": "GuardDuty Runtime Monitoring（EKS/ECS/EC2）と Malware Protection に加え、IAM 異常使用検知（Foundation 機能）でクレデンシャル漏洩や API 異常を検出する",
+          "is_correct": true,
+          "explanation": "正解。GuardDuty 自体に Bedrock 専用保護プランはないが、SageMaker トレーニング EC2 や推論 EKS/ECS には Runtime Monitoring が適用でき、IAM 認証情報の異常利用検知（CredentialAccess）は Bedrock を含むあらゆる AWS API に有効。"
         }
       ],
       "explanation": "GuardDuty による AI/ML ワークロード保護は、(1) SageMaker トレーニング / 推論で使われる EC2 / EKS / ECS への Runtime Monitoring、(2) IAM クレデンシャル異常利用の検知（Bedrock / SageMaker API への異常呼び出しもこれで検知可能）、(3) Malware Protection（S3 上の学習データに対するスキャン含む）の組み合わせで実現する。Bedrock / SageMaker 専用の保護プランは存在せず、GuardDuty の汎用機能と Bedrock Guardrails / Model Invocation Logging を組み合わせて多層防御する。",
@@ -1264,27 +1264,27 @@
       "options": [
         {
           "id": "A",
-          "text": "SageMaker Model Monitor でデータドリフト・モデル品質ドリフトを継続監視し、ベースラインからの逸脱でアラートを発する",
-          "is_correct": true,
-          "explanation": "正解。Model Monitor はデータ統計とモデル品質メトリクスを継続的に評価し、ポイズニングや概念ドリフトの早期検出に有効。"
-        },
-        {
-          "id": "B",
-          "text": "学習データを格納する S3 バケットに Object Lock（WORM 化）を適用し、改ざんを物理的に防ぐ。さらに CloudTrail Data Events で全アクセスを監査する",
-          "is_correct": true,
-          "explanation": "正解。Object Lock で書き換え不可化＋ Data Events で誰がアクセスしたか追跡することで、ポイズニング経路を遮断・検出できる。"
-        },
-        {
-          "id": "C",
           "text": "Bedrock Guardrails の機密情報フィルターを学習データに適用する",
           "is_correct": false,
           "explanation": "誤り。Guardrails は推論時のフィルタで、学習データのポイズニング検出機能はない。"
         },
         {
-          "id": "D",
+          "id": "B",
+          "text": "SageMaker Model Monitor でデータドリフト・モデル品質ドリフトを継続監視し、ベースラインからの逸脱でアラートを発する",
+          "is_correct": true,
+          "explanation": "正解。Model Monitor はデータ統計とモデル品質メトリクスを継続的に評価し、ポイズニングや概念ドリフトの早期検出に有効。"
+        },
+        {
+          "id": "C",
           "text": "WAF を S3 の前段に配置してアクセスを制御する",
           "is_correct": false,
           "explanation": "誤り。WAF は Web レイヤーの保護で、S3 への直接アクセスには適用できない。"
+        },
+        {
+          "id": "D",
+          "text": "学習データを格納する S3 バケットに Object Lock（WORM 化）を適用し、改ざんを物理的に防ぐ。さらに CloudTrail Data Events で全アクセスを監査する",
+          "is_correct": true,
+          "explanation": "正解。Object Lock で書き換え不可化＋ Data Events で誰がアクセスしたか追跡することで、ポイズニング経路を遮断・検出できる。"
         }
       ],
       "explanation": "ML データポイズニング対策は (1) 予防（書き換え不可ストレージ + アクセス監査）と (2) 検出（モデル品質の継続監視）の二輪で考える。S3 Object Lock + CloudTrail Data Events で改ざん経路を塞ぎ、SageMaker Model Monitor でデータ統計と推論精度の継続評価を行う。Macie で機密データ漏洩、GuardDuty で異常 IAM 利用も併用すると更に堅牢。複数選択。",
@@ -1346,27 +1346,27 @@
       "options": [
         {
           "id": "A",
-          "text": "API Gateway で API Key + Usage Plan によるレートリミットを設定し、WAF のレートベースルールで異常な高頻度アクセス元をブロックし、CloudWatch メトリクスで invocation 異常を検知する",
-          "is_correct": true,
-          "explanation": "正解。モデル抽出は「大量クエリ」が前提なので、レートリミット（API Gateway Usage Plan）、WAF レートベースルール、CloudWatch アラームの組み合わせが効果的。出力に乱数ノイズを加える手法も補助的に有効。"
-        },
-        {
-          "id": "B",
-          "text": "Bedrock Guardrails で抽出攻撃をブロックする",
-          "is_correct": false,
-          "explanation": "Guardrails は Bedrock 専用機能で、SageMaker のカスタム推論エンドポイントには直接適用できない。"
-        },
-        {
-          "id": "C",
           "text": "SageMaker Model Monitor を有効化すれば自動的にモデル抽出を防げる",
           "is_correct": false,
           "explanation": "Model Monitor は精度ドリフト検出が主機能で、モデル抽出攻撃の防御機能はない。"
         },
         {
-          "id": "D",
+          "id": "B",
+          "text": "API Gateway で API Key + Usage Plan によるレートリミットを設定し、WAF のレートベースルールで異常な高頻度アクセス元をブロックし、CloudWatch メトリクスで invocation 異常を検知する",
+          "is_correct": true,
+          "explanation": "正解。モデル抽出は「大量クエリ」が前提なので、レートリミット（API Gateway Usage Plan）、WAF レートベースルール、CloudWatch アラームの組み合わせが効果的。出力に乱数ノイズを加える手法も補助的に有効。"
+        },
+        {
+          "id": "C",
           "text": "推論エンドポイントを完全公開し、認証なしで誰でも使えるようにする",
           "is_correct": false,
           "explanation": "明確なセキュリティアンチパターン。攻撃者を招待することになる。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock Guardrails で抽出攻撃をブロックする",
+          "is_correct": false,
+          "explanation": "Guardrails は Bedrock 専用機能で、SageMaker のカスタム推論エンドポイントには直接適用できない。"
         }
       ],
       "explanation": "モデル抽出攻撃（Model Stealing / Extraction）は大量のクエリでブラックボックスモデルを再現する攻撃。AWS では SageMaker エンドポイントを API Gateway 経由で公開し、(1) API Key + Usage Plan でクライアント単位のレートリミット、(2) WAF のレートベースルール / Bot Control で異常高頻度をブロック、(3) CloudWatch でモデル invocation 数とユニーククライアント数を監視、(4) IAM SigV4 認証や Cognito で正規利用者のみ許可、を組み合わせる。Guardrails や Model Monitor は別目的のサービスで代替にならない。",
@@ -1428,27 +1428,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Service Control Policy（SCP）で `bedrock:InvokeModel` を Deny し、Resource 条件で禁止モデル ARN を指定する。さらに `Condition` で `bedrock:GuardrailIdentifier` の存在を必須化する",
-          "is_correct": true,
-          "explanation": "正解。SCP は Organizations 配下全アカウントの権限上限制御に最適。Resource 条件でモデル ARN 制限、Condition キーで Guardrail 必須化を組織レベルで強制できる。"
-        },
-        {
-          "id": "B",
           "text": "各アカウントの IAM ポリシーを手動で更新する",
           "is_correct": false,
           "explanation": "アカウント数が多いとスケールせず、新規アカウントへの自動適用ができない。"
         },
         {
-          "id": "C",
-          "text": "AWS Config で Bedrock の利用ログを評価し、違反時にメール通知する（事後対応のみ）",
-          "is_correct": false,
-          "explanation": "事後検知は補助的だが、予防的統制には SCP が必須。"
-        },
-        {
-          "id": "D",
+          "id": "B",
           "text": "Bedrock Guardrails のグローバル設定で組織全体のポリシーを設定する",
           "is_correct": false,
           "explanation": "誤り。Guardrails は個別の Bedrock リクエストに紐づけるリソースで、組織レベルの「適用必須化」は SCP の役割。"
+        },
+        {
+          "id": "C",
+          "text": "Service Control Policy（SCP）で `bedrock:InvokeModel` を Deny し、Resource 条件で禁止モデル ARN を指定する。さらに `Condition` で `bedrock:GuardrailIdentifier` の存在を必須化する",
+          "is_correct": true,
+          "explanation": "正解。SCP は Organizations 配下全アカウントの権限上限制御に最適。Resource 条件でモデル ARN 制限、Condition キーで Guardrail 必須化を組織レベルで強制できる。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config で Bedrock の利用ログを評価し、違反時にメール通知する（事後対応のみ）",
+          "is_correct": false,
+          "explanation": "事後検知は補助的だが、予防的統制には SCP が必須。"
         }
       ],
       "explanation": "AWS Organizations 環境での Bedrock ガバナンスは Service Control Policy（SCP）が中核。SCP で `bedrock:InvokeModel` の Resource 条件に禁止モデル ARN を入れて Deny する、また `Condition` キー `bedrock:GuardrailIdentifier`（または `aws:RequestTag` 等）で Guardrails 紐付けがないリクエストを Deny することで、組織全体の予防的統制を実装できる。Config や CloudTrail は事後検知の補完。Guardrails 自体に組織レベルの強制機構はない。",
@@ -1510,27 +1510,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Bedrock を VPC Endpoint 経由で呼び、IAM Resource ベースで利用モデル限定、Guardrails（コンテンツ + PII + Grounding）適用、Model Invocation Logging を CMK 暗号化 S3 に出力、SCP で禁止モデル拒否、CloudTrail Data Events 有効化",
-          "is_correct": true,
-          "explanation": "正解。VPC Endpoint（ネットワーク隔離）+ IAM 最小権限 + Guardrails（多層フィルター）+ ロギング（CMK 暗号化）+ 組織統制（SCP）+ 監査（CloudTrail Data Events）という多層防御の典型構成で、AWS Well-Architected Security Pillar に最も整合。"
+          "text": "Bedrock ではなく自社で LLM をホスティング（GPU EC2）し、全機能を内製化する",
+          "is_correct": false,
+          "explanation": "選択肢の文脈（マネージドが選好されるエンタープライズ SaaS）では、運用負荷とセキュリティ機能のトレードオフが悪い。"
         },
         {
           "id": "B",
-          "text": "Bedrock をパブリックエンドポイント経由で呼び、IAM `*:*` で運用、Guardrails は無効化、ログ取得もしない（速度最優先）",
-          "is_correct": false,
-          "explanation": "重大なセキュリティアンチパターン。エンタープライズ顧客の信頼を失う。"
-        },
-        {
-          "id": "C",
           "text": "Bedrock 呼び出しを完全に自社実装の LLM プロキシに置き換え、Guardrails 相当を独自実装する",
           "is_correct": false,
           "explanation": "車輪の再発明。Guardrails のマネージド機能（PII、Grounding）の品質に長期で追いつくのは困難で、運用コストも肥大化する。"
         },
         {
-          "id": "D",
-          "text": "Bedrock ではなく自社で LLM をホスティング（GPU EC2）し、全機能を内製化する",
+          "id": "C",
+          "text": "Bedrock をパブリックエンドポイント経由で呼び、IAM `*:*` で運用、Guardrails は無効化、ログ取得もしない（速度最優先）",
           "is_correct": false,
-          "explanation": "選択肢の文脈（マネージドが選好されるエンタープライズ SaaS）では、運用負荷とセキュリティ機能のトレードオフが悪い。"
+          "explanation": "重大なセキュリティアンチパターン。エンタープライズ顧客の信頼を失う。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock を VPC Endpoint 経由で呼び、IAM Resource ベースで利用モデル限定、Guardrails（コンテンツ + PII + Grounding）適用、Model Invocation Logging を CMK 暗号化 S3 に出力、SCP で禁止モデル拒否、CloudTrail Data Events 有効化",
+          "is_correct": true,
+          "explanation": "正解。VPC Endpoint（ネットワーク隔離）+ IAM 最小権限 + Guardrails（多層フィルター）+ ロギング（CMK 暗号化）+ 組織統制（SCP）+ 監査（CloudTrail Data Events）という多層防御の典型構成で、AWS Well-Architected Security Pillar に最も整合。"
         }
       ],
       "explanation": "エンタープライズ向け SaaS で生成 AI を提供する際は「ネットワーク隔離（VPC Endpoint）」「アクセス制御（IAM Resource 制限）」「コンテンツ安全（Guardrails 全機能）」「監査（Model Invocation Logging + CloudTrail）」「組織統制（SCP）」の多層防御が標準。これらの全てがマネージドで提供されることが Bedrock の強みであり、自社実装で代替するのは TCO とセキュリティ品質の両面で不利。AWS Well-Architected Generative AI Lens にも合致。",
@@ -1598,15 +1598,15 @@
         },
         {
           "id": "B",
-          "text": "Content Filters を全カテゴリ NONE にしてフィルタを最小化し、UX を最大化する",
-          "is_correct": false,
-          "explanation": "誤り。子ども向けで安全性を犠牲にするのは事業リスクとレピュテーションリスクが大きい。"
-        },
-        {
-          "id": "C",
           "text": "Word Filter のみを設定し、その他のポリシーは Bedrock のデフォルトに任せる",
           "is_correct": false,
           "explanation": "誤り。Bedrock Guardrails には「デフォルト適用ポリシー」は存在せず、明示的に設計する必要がある。Word Filter だけでは不十分。"
+        },
+        {
+          "id": "C",
+          "text": "Content Filters を全カテゴリ NONE にしてフィルタを最小化し、UX を最大化する",
+          "is_correct": false,
+          "explanation": "誤り。子ども向けで安全性を犠牲にするのは事業リスクとレピュテーションリスクが大きい。"
         },
         {
           "id": "D",

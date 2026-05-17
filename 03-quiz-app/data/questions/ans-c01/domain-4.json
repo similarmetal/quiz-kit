@@ -15,752 +15,2291 @@
     {
       "id": "ans-c01-domain4-001",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Security Groups",
       "subtopic": "Stateful behavior",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "セキュリティグループ (SG) と Network ACL (NACL) の最も重要な違いは何か。",
       "options": [
-        {"id": "A", "text": "SG はステートフル、NACL はステートレス", "is_correct": true, "explanation": "正解。SG は戻りトラフィックを自動許可、NACL は両方向ルールが必要。"},
-        {"id": "B", "text": "SG は VPC レベル、NACL はリージョンレベル", "is_correct": false, "explanation": "両者ともリージョン内 VPC スコープ。"},
-        {"id": "C", "text": "SG は IP のみ、NACL はホスト名も対応", "is_correct": false, "explanation": "両者ともホスト名は不可。SG はプリフィックスリスト、SG ID 参照可。"},
-        {"id": "D", "text": "NACL はインバウンド、SG はアウトバウンド専用", "is_correct": false, "explanation": "両者とも双方向ルール記述可。"}
+        {
+          "id": "A",
+          "text": "SG はステートフル、NACL はステートレス",
+          "is_correct": true,
+          "explanation": "正解。SG は戻りトラフィックを自動許可、NACL は両方向ルールが必要。"
+        },
+        {
+          "id": "B",
+          "text": "SG は IP のみ、NACL はホスト名も対応",
+          "is_correct": false,
+          "explanation": "両者ともホスト名は不可。SG はプリフィックスリスト、SG ID 参照可。"
+        },
+        {
+          "id": "C",
+          "text": "NACL はインバウンド、SG はアウトバウンド専用",
+          "is_correct": false,
+          "explanation": "両者とも双方向ルール記述可。"
+        },
+        {
+          "id": "D",
+          "text": "SG は VPC レベル、NACL はリージョンレベル",
+          "is_correct": false,
+          "explanation": "両者ともリージョン内 VPC スコープ。"
+        }
       ],
       "explanation": "SG はステートフル（リターントラフィックを自動許可）、NACL はステートレス（戻りトラフィックも明示的に許可必要）。SG は ENI レベル、NACL はサブネットレベルで適用される。多層防御として両方使うのが標準。",
       "references": [
-        {"title": "Security groups vs network ACLs", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-best-practices.html"}
+        {
+          "title": "Security groups vs network ACLs",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-best-practices.html"
+        }
       ],
-      "tags": ["security-group", "nacl", "stateful", "stateless"],
-      "common_mistakes": ["NACL もステートフルと誤解", "両者の適用範囲を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security-group",
+        "nacl",
+        "stateful",
+        "stateless"
+      ],
+      "common_mistakes": [
+        "NACL もステートフルと誤解",
+        "両者の適用範囲を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-002",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "AWS WAF",
       "subtopic": "Managed rule groups",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS WAF の Managed Rule Group の役割として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "AWS や AWS Marketplace のセキュリティベンダが提供する事前構成済みのルールセット", "is_correct": true, "explanation": "正解。OWASP Top 10、Bot 制御、IP 評判等のテンプレート。"},
-        {"id": "B", "text": "ユーザがゼロから書く WAF ルール", "is_correct": false, "explanation": "それはカスタムルール。Managed は提供物。"},
-        {"id": "C", "text": "Shield Advanced のルール", "is_correct": false, "explanation": "Shield と WAF は別。"},
-        {"id": "D", "text": "DNS Firewall のルール", "is_correct": false, "explanation": "DNS Firewall は別サービス。"}
+        {
+          "id": "A",
+          "text": "DNS Firewall のルール",
+          "is_correct": false,
+          "explanation": "DNS Firewall は別サービス。"
+        },
+        {
+          "id": "B",
+          "text": "AWS や AWS Marketplace のセキュリティベンダが提供する事前構成済みのルールセット",
+          "is_correct": true,
+          "explanation": "正解。OWASP Top 10、Bot 制御、IP 評判等のテンプレート。"
+        },
+        {
+          "id": "C",
+          "text": "ユーザがゼロから書く WAF ルール",
+          "is_correct": false,
+          "explanation": "それはカスタムルール。Managed は提供物。"
+        },
+        {
+          "id": "D",
+          "text": "Shield Advanced のルール",
+          "is_correct": false,
+          "explanation": "Shield と WAF は別。"
+        }
       ],
       "explanation": "AWS Managed Rules、AWS Marketplace ベンダー（F5、Fortinet、Imperva 等）の Managed Rule Group が利用可能。Core rule set、SQLi 防御、Bot Control、Anonymous IP リスト等を即時利用できる。カスタムルールと併用して多層防御を構築。",
       "references": [
-        {"title": "AWS WAF Managed Rules", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-managed-rule-groups.html"}
+        {
+          "title": "AWS WAF Managed Rules",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-managed-rule-groups.html"
+        }
       ],
-      "tags": ["waf", "managed-rules", "owasp"],
-      "common_mistakes": ["カスタムルールと混同", "Shield Advanced と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "waf",
+        "managed-rules",
+        "owasp"
+      ],
+      "common_mistakes": [
+        "カスタムルールと混同",
+        "Shield Advanced と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-003",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Network Firewall",
       "subtopic": "Architecture",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS Network Firewall の主な機能として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "VPC 境界での L3-L7 ステートフル検査と Suricata 互換 IPS ルール", "is_correct": true, "explanation": "正解。Network Firewall は Suricata の IDS/IPS 構文をサポートし、L7 まで検査する。"},
-        {"id": "B", "text": "L2 スイッチング", "is_correct": false, "explanation": "AWS は L2 を扱わない。Network Firewall は L3+。"},
-        {"id": "C", "text": "EC2 単体に対するホスト型 FW", "is_correct": false, "explanation": "EC2 個別なら SG。Network Firewall はサブネット境界。"},
-        {"id": "D", "text": "DDoS 防御", "is_correct": false, "explanation": "DDoS は Shield。Network Firewall とは別。"}
+        {
+          "id": "A",
+          "text": "DDoS 防御",
+          "is_correct": false,
+          "explanation": "DDoS は Shield。Network Firewall とは別。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 単体に対するホスト型 FW",
+          "is_correct": false,
+          "explanation": "EC2 個別なら SG。Network Firewall はサブネット境界。"
+        },
+        {
+          "id": "C",
+          "text": "VPC 境界での L3-L7 ステートフル検査と Suricata 互換 IPS ルール",
+          "is_correct": true,
+          "explanation": "正解。Network Firewall は Suricata の IDS/IPS 構文をサポートし、L7 まで検査する。"
+        },
+        {
+          "id": "D",
+          "text": "L2 スイッチング",
+          "is_correct": false,
+          "explanation": "AWS は L2 を扱わない。Network Firewall は L3+。"
+        }
       ],
       "explanation": "AWS Network Firewall はマネージドのステートフル FW で、サブネット境界に配置（専用 firewall サブネットが必要）。Suricata 互換ルールで IDS/IPS、ドメイン名フィルタ、TLS 検査をサポート。ハブアンドスポーク VPC では検査 VPC に集約配置するのが標準。",
       "references": [
-        {"title": "AWS Network Firewall", "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"}
+        {
+          "title": "AWS Network Firewall",
+          "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+        }
       ],
-      "tags": ["network-firewall", "suricata", "ips", "stateful"],
-      "common_mistakes": ["SG/NACL と混同", "Shield Advanced と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network-firewall",
+        "suricata",
+        "ips",
+        "stateful"
+      ],
+      "common_mistakes": [
+        "SG/NACL と混同",
+        "Shield Advanced と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-004",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Shield Advanced",
       "subtopic": "Features",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Shield Standard と Shield Advanced の主な違いとして最も正確なのはどれか。",
       "options": [
-        {"id": "A", "text": "Standard は L3/L4 自動防御、Advanced は L3-L7 防御 + DRT サポート + WAF 統合 + コスト保護", "is_correct": true, "explanation": "正解。Advanced は包括的 DDoS 対策と DDoS Response Team サポートを含む。"},
-        {"id": "B", "text": "Standard は無料、Advanced も無料", "is_correct": false, "explanation": "Advanced は有料 ($3,000/月から)。"},
-        {"id": "C", "text": "両者とも DRT（DDoS Response Team）にアクセスできる", "is_correct": false, "explanation": "DRT は Advanced のみ。"},
-        {"id": "D", "text": "Standard は ALB のみ、Advanced は EC2 のみ", "is_correct": false, "explanation": "保護対象は両者で異なるが、その対比は誤り。"}
+        {
+          "id": "A",
+          "text": "Standard は ALB のみ、Advanced は EC2 のみ",
+          "is_correct": false,
+          "explanation": "保護対象は両者で異なるが、その対比は誤り。"
+        },
+        {
+          "id": "B",
+          "text": "Standard は無料、Advanced も無料",
+          "is_correct": false,
+          "explanation": "Advanced は有料 ($3,000/月から)。"
+        },
+        {
+          "id": "C",
+          "text": "両者とも DRT（DDoS Response Team）にアクセスできる",
+          "is_correct": false,
+          "explanation": "DRT は Advanced のみ。"
+        },
+        {
+          "id": "D",
+          "text": "Standard は L3/L4 自動防御、Advanced は L3-L7 防御 + DRT サポート + WAF 統合 + コスト保護",
+          "is_correct": true,
+          "explanation": "正解。Advanced は包括的 DDoS 対策と DDoS Response Team サポートを含む。"
+        }
       ],
       "explanation": "Shield Standard は全 AWS ユーザに無料で L3/L4 DDoS 自動防御を提供。Shield Advanced は有料で、より包括的な保護（L3-L7、攻撃通知、DRT 24/7 サポート、攻撃時の Scaling コスト保護、Global Threat Environment Dashboard）と WAF の包含、Health-based detection を含む。",
       "references": [
-        {"title": "Shield Standard vs Advanced", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html"}
+        {
+          "title": "Shield Standard vs Advanced",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html"
+        }
       ],
-      "tags": ["shield", "ddos", "advanced", "drt"],
-      "common_mistakes": ["DRT が Standard でも使えると誤解", "両者の費用構造を取り違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "shield",
+        "ddos",
+        "advanced",
+        "drt"
+      ],
+      "common_mistakes": [
+        "DRT が Standard でも使えると誤解",
+        "両者の費用構造を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-005",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "GuardDuty",
       "subtopic": "Network monitoring",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Amazon GuardDuty が VPC 関連の脅威検知に使うデータソースとして正しいのはどれか（複数選択可だが、選択肢で最も包括的なものを選ぶ）。",
       "options": [
-        {"id": "A", "text": "VPC Flow Logs、DNS Logs、CloudTrail Events、EKS audit logs、Runtime monitoring", "is_correct": true, "explanation": "正解。GuardDuty は複数のデータソースを統合的に分析する。"},
-        {"id": "B", "text": "VPC Flow Logs のみ", "is_correct": false, "explanation": "それは一部。DNS や CloudTrail も活用。"},
-        {"id": "C", "text": "EC2 のシステムログ", "is_correct": false, "explanation": "EC2 OS ログは GuardDuty の標準データソースではない（Runtime monitoring agent は別オプション）。"},
-        {"id": "D", "text": "S3 のオブジェクトログのみ", "is_correct": false, "explanation": "GuardDuty は S3 保護も持つが、それだけがデータソースではない。"}
+        {
+          "id": "A",
+          "text": "VPC Flow Logs、DNS Logs、CloudTrail Events、EKS audit logs、Runtime monitoring",
+          "is_correct": true,
+          "explanation": "正解。GuardDuty は複数のデータソースを統合的に分析する。"
+        },
+        {
+          "id": "B",
+          "text": "S3 のオブジェクトログのみ",
+          "is_correct": false,
+          "explanation": "GuardDuty は S3 保護も持つが、それだけがデータソースではない。"
+        },
+        {
+          "id": "C",
+          "text": "VPC Flow Logs のみ",
+          "is_correct": false,
+          "explanation": "それは一部。DNS や CloudTrail も活用。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 のシステムログ",
+          "is_correct": false,
+          "explanation": "EC2 OS ログは GuardDuty の標準データソースではない（Runtime monitoring agent は別オプション）。"
+        }
       ],
       "explanation": "GuardDuty は VPC Flow Logs、DNS Logs、CloudTrail（管理イベント・S3データイベント・Lambdaイベント）、EKS audit logs、Runtime monitoring（EC2/ECS/EKS のホストデータ）を機械学習で分析する。エージェントレス（Runtime 除く）かつ自動有効化される設計が特徴。",
       "references": [
-        {"title": "GuardDuty data sources", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html"}
+        {
+          "title": "GuardDuty data sources",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html"
+        }
       ],
-      "tags": ["guardduty", "vpc-flow-logs", "dns-logs", "threat-detection"],
-      "common_mistakes": ["Flow Logs だけと誤解", "EC2 OS ログを直接使うと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "guardduty",
+        "vpc-flow-logs",
+        "dns-logs",
+        "threat-detection"
+      ],
+      "common_mistakes": [
+        "Flow Logs だけと誤解",
+        "EC2 OS ログを直接使うと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-006",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "DNS Firewall",
       "subtopic": "Purpose",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Route 53 Resolver DNS Firewall の主な目的として最も正確なのはどれか。",
       "options": [
-        {"id": "A", "text": "VPC 内から悪意あるドメイン（C2、フィッシング）への DNS 解決を防ぐ", "is_correct": true, "explanation": "正解。マルウェアの DNS exfiltration や C2 通信を DNS 層でブロック。"},
-        {"id": "B", "text": "DDoS 攻撃を防ぐ", "is_correct": false, "explanation": "DDoS は Shield。DNS Firewall は egress 方向の DNS 制御。"},
-        {"id": "C", "text": "DNS 応答を高速化する", "is_correct": false, "explanation": "応答速度向上機能ではない。"},
-        {"id": "D", "text": "DNSSEC 検証を行う", "is_correct": false, "explanation": "DNSSEC は別機能 (Resolver の validation)。"}
+        {
+          "id": "A",
+          "text": "DDoS 攻撃を防ぐ",
+          "is_correct": false,
+          "explanation": "DDoS は Shield。DNS Firewall は egress 方向の DNS 制御。"
+        },
+        {
+          "id": "B",
+          "text": "VPC 内から悪意あるドメイン（C2、フィッシング）への DNS 解決を防ぐ",
+          "is_correct": true,
+          "explanation": "正解。マルウェアの DNS exfiltration や C2 通信を DNS 層でブロック。"
+        },
+        {
+          "id": "C",
+          "text": "DNSSEC 検証を行う",
+          "is_correct": false,
+          "explanation": "DNSSEC は別機能 (Resolver の validation)。"
+        },
+        {
+          "id": "D",
+          "text": "DNS 応答を高速化する",
+          "is_correct": false,
+          "explanation": "応答速度向上機能ではない。"
+        }
       ],
       "explanation": "Route 53 Resolver DNS Firewall は VPC からのアウトバウンド DNS クエリにポリシー（Allow/Block/Alert）を適用する。AWS Managed の脅威リスト（Malware Domains, Bot 等）を使うか、カスタムドメインリストを使う。マルウェアの C2 通信やデータ窃取の DNS exfiltration を遮断。",
       "references": [
-        {"title": "Route 53 DNS Firewall", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall.html"}
+        {
+          "title": "Route 53 DNS Firewall",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall.html"
+        }
       ],
-      "tags": ["dns-firewall", "route53", "egress", "malware"],
-      "common_mistakes": ["DDoS 防御と誤解", "DNSSEC と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dns-firewall",
+        "route53",
+        "egress",
+        "malware"
+      ],
+      "common_mistakes": [
+        "DDoS 防御と誤解",
+        "DNSSEC と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-007",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Firewall Manager",
       "subtopic": "Multi-account governance",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Firewall Manager の主な役割として最も正確なのはどれか。",
       "options": [
-        {"id": "A", "text": "Organizations 全体で WAF / Shield Advanced / SG / Network Firewall / DNS Firewall ポリシーを集中管理する", "is_correct": true, "explanation": "正解。複数のセキュリティサービスを Organizations 単位で一括ガバナンス。"},
-        {"id": "B", "text": "EC2 のホスト型 FW を管理", "is_correct": false, "explanation": "ホスト型 FW (iptables 等) は対象外。AWS 側のサービス専用。"},
-        {"id": "C", "text": "S3 バケットポリシーを管理", "is_correct": false, "explanation": "S3 は別サービス。"},
-        {"id": "D", "text": "IAM ポリシーを管理", "is_correct": false, "explanation": "IAM は別。"}
+        {
+          "id": "A",
+          "text": "S3 バケットポリシーを管理",
+          "is_correct": false,
+          "explanation": "S3 は別サービス。"
+        },
+        {
+          "id": "B",
+          "text": "IAM ポリシーを管理",
+          "is_correct": false,
+          "explanation": "IAM は別。"
+        },
+        {
+          "id": "C",
+          "text": "Organizations 全体で WAF / Shield Advanced / SG / Network Firewall / DNS Firewall ポリシーを集中管理する",
+          "is_correct": true,
+          "explanation": "正解。複数のセキュリティサービスを Organizations 単位で一括ガバナンス。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 のホスト型 FW を管理",
+          "is_correct": false,
+          "explanation": "ホスト型 FW (iptables 等) は対象外。AWS 側のサービス専用。"
+        }
       ],
       "explanation": "AWS Firewall Manager は AWS Organizations 配下のすべてのアカウント・リソースに対して、WAF / Shield Advanced / Security Group / Network Firewall / DNS Firewall / Route 53 Resolver DNS Firewall のポリシーを集中管理・自動適用するガバナンスサービス。新規リソース・新規アカウントにも自動展開される。",
       "references": [
-        {"title": "AWS Firewall Manager", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"}
+        {
+          "title": "AWS Firewall Manager",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"
+        }
       ],
-      "tags": ["firewall-manager", "governance", "organizations", "multi-account"],
-      "common_mistakes": ["Network Manager と混同", "ホスト型 FW を管理できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "firewall-manager",
+        "governance",
+        "organizations",
+        "multi-account"
+      ],
+      "common_mistakes": [
+        "Network Manager と混同",
+        "ホスト型 FW を管理できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-008",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Network Firewall",
       "subtopic": "TLS inspection",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Network Firewall の TLS Inspection 機能として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "ACM で発行された証明書を使って TLS トラフィックを復号・検査・再暗号化する", "is_correct": true, "explanation": "正解。Network Firewall は ACM 証明書を使った TLS Inspection をサポートし、egress/ingress を MITM 検査する。"},
-        {"id": "B", "text": "TLS のメタデータ (SNI) のみ検査", "is_correct": false, "explanation": "SNI ベースのフィルタは可能だが、TLS Inspection は復号も含む。"},
-        {"id": "C", "text": "TLS は復号できない", "is_correct": false, "explanation": "復号機能は提供される。"},
-        {"id": "D", "text": "SSH も検査できる", "is_correct": false, "explanation": "SSH 検査機能は提供されない。TLS のみ。"}
+        {
+          "id": "A",
+          "text": "TLS は復号できない",
+          "is_correct": false,
+          "explanation": "復号機能は提供される。"
+        },
+        {
+          "id": "B",
+          "text": "SSH も検査できる",
+          "is_correct": false,
+          "explanation": "SSH 検査機能は提供されない。TLS のみ。"
+        },
+        {
+          "id": "C",
+          "text": "TLS のメタデータ (SNI) のみ検査",
+          "is_correct": false,
+          "explanation": "SNI ベースのフィルタは可能だが、TLS Inspection は復号も含む。"
+        },
+        {
+          "id": "D",
+          "text": "ACM で発行された証明書を使って TLS トラフィックを復号・検査・再暗号化する",
+          "is_correct": true,
+          "explanation": "正解。Network Firewall は ACM 証明書を使った TLS Inspection をサポートし、egress/ingress を MITM 検査する。"
+        }
       ],
       "explanation": "Network Firewall の TLS Inspection は、ACM の証明書（プライベート CA も含む）を使って egress/ingress の TLS 接続を中間者として復号、Suricata ルールで検査し再暗号化する。SNI フィルタは復号せず可能だが、ペイロード検査には復号が必要。プライバシー要件と要件のバランスを考えて適用範囲を絞る。",
       "references": [
-        {"title": "TLS inspection in Network Firewall", "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html"}
+        {
+          "title": "TLS inspection in Network Firewall",
+          "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html"
+        }
       ],
-      "tags": ["network-firewall", "tls-inspection", "acm", "decryption"],
-      "common_mistakes": ["SNI のみと誤解", "復号できないと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network-firewall",
+        "tls-inspection",
+        "acm",
+        "decryption"
+      ],
+      "common_mistakes": [
+        "SNI のみと誤解",
+        "復号できないと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-009",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "VPC Endpoints security",
       "subtopic": "Endpoint policies",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Interface VPC Endpoint のセキュリティ制御として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "Endpoint policy（IAM 形式の resource policy）で許可する API/リソースを制限し、SG で接続元を制限する", "is_correct": true, "explanation": "正解。Endpoint policy + Security Group の二段で制御する。"},
-        {"id": "B", "text": "NACL のみで制御", "is_correct": false, "explanation": "NACL も使えるが Endpoint policy が主。"},
-        {"id": "C", "text": "VPC エンドポイントには制御機能がない", "is_correct": false, "explanation": "Endpoint policy + SG で十分制御可能。"},
-        {"id": "D", "text": "Route 53 で制御", "is_correct": false, "explanation": "DNS 解決には関与するが、API 認可ではない。"}
+        {
+          "id": "A",
+          "text": "Endpoint policy（IAM 形式の resource policy）で許可する API/リソースを制限し、SG で接続元を制限する",
+          "is_correct": true,
+          "explanation": "正解。Endpoint policy + Security Group の二段で制御する。"
+        },
+        {
+          "id": "B",
+          "text": "NACL のみで制御",
+          "is_correct": false,
+          "explanation": "NACL も使えるが Endpoint policy が主。"
+        },
+        {
+          "id": "C",
+          "text": "Route 53 で制御",
+          "is_correct": false,
+          "explanation": "DNS 解決には関与するが、API 認可ではない。"
+        },
+        {
+          "id": "D",
+          "text": "VPC エンドポイントには制御機能がない",
+          "is_correct": false,
+          "explanation": "Endpoint policy + SG で十分制御可能。"
+        }
       ],
       "explanation": "Interface VPC Endpoint には ENI が作られ、Security Group が適用できる（接続元 IP/SG の制御）。さらに Endpoint policy（IAM 形式の JSON）で「どの IAM プリンシパルがどの API/リソースに対してアクセスできるか」を細かく制御できる。例: S3 Endpoint で特定バケット以外を Deny。",
       "references": [
-        {"title": "VPC endpoint policies", "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html"}
+        {
+          "title": "VPC endpoint policies",
+          "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html"
+        }
       ],
-      "tags": ["vpc-endpoint", "endpoint-policy", "security-group", "privatelink"],
-      "common_mistakes": ["Endpoint policy の存在を忘れる", "SG 単独で十分と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "vpc-endpoint",
+        "endpoint-policy",
+        "security-group",
+        "privatelink"
+      ],
+      "common_mistakes": [
+        "Endpoint policy の存在を忘れる",
+        "SG 単独で十分と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-010",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "WAF",
       "subtopic": "Rate limiting",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある教育 SaaS が試験申込ページに対する Bot による申込連打を防ぎたい。同一 IP からの 5分あたり 100 リクエスト超を遮断したい。最適な実装は？",
       "options": [
-        {"id": "A", "text": "AWS WAF の Rate-based rule（5 分間 100 / IP）を ALB に紐づく WebACL に追加", "is_correct": true, "explanation": "正解。Rate-based rule は IP 単位で連打を抑制する標準パターン。"},
-        {"id": "B", "text": "Security Group で IP を全部許可しておく", "is_correct": false, "explanation": "SG はカウントベースの制御は不可能。"},
-        {"id": "C", "text": "ALB のターゲットグループで Health Check 強化", "is_correct": false, "explanation": "Health Check は Bot 制御ではない。"},
-        {"id": "D", "text": "EC2 の sysctl で TCP コネクション数を制限", "is_correct": false, "explanation": "OS レベル制御は単一サーバ単位で全体ガードにならない。"}
+        {
+          "id": "A",
+          "text": "EC2 の sysctl で TCP コネクション数を制限",
+          "is_correct": false,
+          "explanation": "OS レベル制御は単一サーバ単位で全体ガードにならない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS WAF の Rate-based rule（5 分間 100 / IP）を ALB に紐づく WebACL に追加",
+          "is_correct": true,
+          "explanation": "正解。Rate-based rule は IP 単位で連打を抑制する標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "Security Group で IP を全部許可しておく",
+          "is_correct": false,
+          "explanation": "SG はカウントベースの制御は不可能。"
+        },
+        {
+          "id": "D",
+          "text": "ALB のターゲットグループで Health Check 強化",
+          "is_correct": false,
+          "explanation": "Health Check は Bot 制御ではない。"
+        }
       ],
       "explanation": "AWS WAF の Rate-based rule は時間窓（最短 1 分、5/10 分等）と閾値（最低 10 req）で IP ベースまたは forwarded IP / cookie / header 単位の連打制御が可能。Bot Control や CAPTCHA アクションと組み合わせると、より精緻な防御が成立する。",
       "references": [
-        {"title": "WAF rate-based rules", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html"}
+        {
+          "title": "WAF rate-based rules",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html"
+        }
       ],
-      "tags": ["waf", "rate-based-rule", "bot", "education-saas"],
-      "common_mistakes": ["SG でレート制限できると誤解", "OS レベル制御で全体を守ろうとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "waf",
+        "rate-based-rule",
+        "bot",
+        "education-saas"
+      ],
+      "common_mistakes": [
+        "SG でレート制限できると誤解",
+        "OS レベル制御で全体を守ろうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-011",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Network Firewall",
       "subtopic": "Suricata stateful rules",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Network Firewall で「VPC からの egress を `*.bank-x.example.jp` ドメインにのみ許可、それ以外は遮断」を実装したい。最適なルール記述は？",
       "options": [
-        {"id": "A", "text": "Stateful rule で `pass tls any any -> any any (tls.sni; content:\".bank-x.example.jp\"; endswith; nocase; sid:1; rev:1;)` のような Suricata ルール、Default Action は drop", "is_correct": true, "explanation": "正解。Suricata の TLS SNI マッチで許可、それ以外は default drop。"},
-        {"id": "B", "text": "Security Group の Outbound を 443/TCP のみ許可", "is_correct": false, "explanation": "SG は IP/Port のみで FQDN 制御不可。"},
-        {"id": "C", "text": "NACL で 443 のみ許可", "is_correct": false, "explanation": "NACL も IP/Port のみで FQDN 不可。"},
-        {"id": "D", "text": "DNS Firewall で許可リスト", "is_correct": true, "explanation": "正解候補。DNS 層で名前解決をブロックすれば実質遮断できる。Network Firewall で許可ドメインのみホワイトリスト + DNS Firewall の組合せがベスト。"}
+        {
+          "id": "A",
+          "text": "DNS Firewall で許可リスト",
+          "is_correct": false,
+          "explanation": "DNS Firewall の許可リストでも名前解決を制御でき多層防御として併用価値はあるが、本問が問う「ルール記述」としては Network Firewall の Suricata ルールが解であり、これ単体は最適解ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Security Group の Outbound を 443/TCP のみ許可",
+          "is_correct": false,
+          "explanation": "SG は IP/Port のみで FQDN 制御不可。"
+        },
+        {
+          "id": "C",
+          "text": "Stateful rule で `pass tls any any -> any any (tls.sni; content:\".bank-x.example.jp\"; endswith; nocase; sid:1; rev:1;)` のような Suricata ルール、Default Action は drop",
+          "is_correct": true,
+          "explanation": "正解。Suricata の TLS SNI マッチで許可、それ以外は default drop。"
+        },
+        {
+          "id": "D",
+          "text": "NACL で 443 のみ許可",
+          "is_correct": false,
+          "explanation": "NACL も IP/Port のみで FQDN 不可。"
+        }
       ],
       "explanation": "FQDN ベースの egress 制御は2つの方法：(1) Network Firewall の Stateful rule で TLS SNI または HTTP host ヘッダーマッチ、(2) Route 53 Resolver DNS Firewall でドメイン解決をブロック。Network Firewall は通信プロトコル層で確実、DNS Firewall は早期ブロックで軽量。多層防御として両方併用が理想だが、Network Firewall ルールでの SNI 検査が exam では「最適」とされやすい。",
       "references": [
-        {"title": "Stateful rules in Network Firewall", "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-suricata.html"}
+        {
+          "title": "Stateful rules in Network Firewall",
+          "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-suricata.html"
+        }
       ],
-      "tags": ["network-firewall", "suricata", "tls-sni", "fqdn-filter", "egress"],
-      "common_mistakes": ["SG/NACL で FQDN フィルタできると誤解", "DNS Firewall の効果を過信"],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja", "note": "A と D は併用が理想。最適単独は A"}
+      "tags": [
+        "network-firewall",
+        "suricata",
+        "tls-sni",
+        "fqdn-filter",
+        "egress"
+      ],
+      "common_mistakes": [
+        "SG/NACL で FQDN フィルタできると誤解",
+        "DNS Firewall の効果を過信"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja",
+        "note": "A と D は併用が理想。最適単独は A"
+      }
     },
     {
       "id": "ans-c01-domain4-012",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Shield Advanced",
       "subtopic": "Protected resources",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "金融機関がパブリック ALB と CloudFront を Shield Advanced で保護したい。費用効率を最大化する構成は？",
       "options": [
-        {"id": "A", "text": "Shield Advanced を Organizations 単位で Subscribe し、Firewall Manager で対象リソース（ALB、CloudFront）を一括登録", "is_correct": true, "explanation": "正解。Subscribe は Org 単位で1回。Firewall Manager で対象を自動拡張するのが標準。"},
-        {"id": "B", "text": "リソース毎に個別 Subscribe", "is_correct": false, "explanation": "Shield Advanced の Subscription はアカウント単位。リソース単位ではない。"},
-        {"id": "C", "text": "ALB のみ Shield、CloudFront は Standard で十分", "is_correct": false, "explanation": "CloudFront こそ DDoS 標的になりやすく、Advanced で保護したい資産。"},
-        {"id": "D", "text": "Shield Standard を Advanced 風に設定する", "is_correct": false, "explanation": "Standard は機能が異なり、置換不可。"}
+        {
+          "id": "A",
+          "text": "ALB のみ Shield、CloudFront は Standard で十分",
+          "is_correct": false,
+          "explanation": "CloudFront こそ DDoS 標的になりやすく、Advanced で保護したい資産。"
+        },
+        {
+          "id": "B",
+          "text": "Shield Standard を Advanced 風に設定する",
+          "is_correct": false,
+          "explanation": "Standard は機能が異なり、置換不可。"
+        },
+        {
+          "id": "C",
+          "text": "リソース毎に個別 Subscribe",
+          "is_correct": false,
+          "explanation": "Shield Advanced の Subscription はアカウント単位。リソース単位ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Shield Advanced を Organizations 単位で Subscribe し、Firewall Manager で対象リソース（ALB、CloudFront）を一括登録",
+          "is_correct": true,
+          "explanation": "正解。Subscribe は Org 単位で1回。Firewall Manager で対象を自動拡張するのが標準。"
+        }
       ],
       "explanation": "Shield Advanced はアカウント単位で月額固定 $3,000（Org 単位で1度）。保護するリソース（ALB、NLB、CloudFront、Route 53、Global Accelerator、EIP）を Firewall Manager の Shield Advanced ポリシーで自動対象化することで、新規リソースにも保護を自動適用できる。",
       "references": [
-        {"title": "Firewall Manager and Shield Advanced", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-fms-shield.html"}
+        {
+          "title": "Firewall Manager and Shield Advanced",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-fms-shield.html"
+        }
       ],
-      "tags": ["shield-advanced", "firewall-manager", "cost-optimization", "fintech"],
-      "common_mistakes": ["リソース毎に Subscribe が必要と誤解", "CloudFront を保護対象から外す"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "shield-advanced",
+        "firewall-manager",
+        "cost-optimization",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "リソース毎に Subscribe が必要と誤解",
+        "CloudFront を保護対象から外す"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-013",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "DNS Firewall",
       "subtopic": "Managed domain lists",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある企業がマルウェア感染防止のため、AWS が管理する脅威ドメインリストを使って VPC からの DNS クエリをブロックしたい。最適な実装は？",
       "options": [
-        {"id": "A", "text": "DNS Firewall ルールグループで `AWSManagedDomainsMalwareDomainList` 等の Managed Domain List を Block アクションで設定", "is_correct": true, "explanation": "正解。AWS Managed のドメインリスト（Malware、Botnet 等）が利用可能。"},
-        {"id": "B", "text": "Route 53 Public hosted zone で全ドメインを管理", "is_correct": false, "explanation": "Public hosted zone は権威ゾーン。ブロック機能ではない。"},
-        {"id": "C", "text": "VPC の DHCP Option Set で社内 DNS を強制", "is_correct": false, "explanation": "それは別の用途で、脅威ドメインのブロックではない。"},
-        {"id": "D", "text": "GuardDuty を有効化すれば自動的にブロック", "is_correct": false, "explanation": "GuardDuty は検知だが、自動的に DNS をブロックはしない。"}
+        {
+          "id": "A",
+          "text": "DNS Firewall ルールグループで `AWSManagedDomainsMalwareDomainList` 等の Managed Domain List を Block アクションで設定",
+          "is_correct": true,
+          "explanation": "正解。AWS Managed のドメインリスト（Malware、Botnet 等）が利用可能。"
+        },
+        {
+          "id": "B",
+          "text": "VPC の DHCP Option Set で社内 DNS を強制",
+          "is_correct": false,
+          "explanation": "それは別の用途で、脅威ドメインのブロックではない。"
+        },
+        {
+          "id": "C",
+          "text": "Route 53 Public hosted zone で全ドメインを管理",
+          "is_correct": false,
+          "explanation": "Public hosted zone は権威ゾーン。ブロック機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "GuardDuty を有効化すれば自動的にブロック",
+          "is_correct": false,
+          "explanation": "GuardDuty は検知だが、自動的に DNS をブロックはしない。"
+        }
       ],
       "explanation": "Route 53 Resolver DNS Firewall は AWS Managed Domain List（AWSManagedDomainsMalwareDomainList、AWSManagedDomainsBotnetCommandandControlDomainList、AWSManagedDomainsAggregateThreatList 等）を提供する。これをルールグループに追加し VPC にアタッチするだけで、即座に脅威ドメインへの DNS 解決をブロックできる。",
       "references": [
-        {"title": "Managed domain lists", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall-managed-domain-lists.html"}
+        {
+          "title": "Managed domain lists",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall-managed-domain-lists.html"
+        }
       ],
-      "tags": ["dns-firewall", "managed-domain-list", "malware", "botnet"],
-      "common_mistakes": ["GuardDuty が自動ブロックすると誤解", "Public hosted zone と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dns-firewall",
+        "managed-domain-list",
+        "malware",
+        "botnet"
+      ],
+      "common_mistakes": [
+        "GuardDuty が自動ブロックすると誤解",
+        "Public hosted zone と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-014",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "VPC Endpoints",
       "subtopic": "S3 access restrictions",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech 企業のコンプライアンス要件: VPC 内 EC2 から S3 へのアクセスは許可された特定バケットのみ。インターネット経由での S3 アクセスは完全禁止。要件を満たす最適な構成は？",
       "options": [
-        {"id": "A", "text": "S3 Gateway Endpoint を作成し、Endpoint Policy で許可バケットのみ Allow。プライベートサブネットの RT は S3 プレフィックスを VPCE 経由に。NAT GW を撤去または S3 プレフィックスのみ deny", "is_correct": true, "explanation": "正解。Endpoint Policy + ルーティングで他経路を遮断する。"},
-        {"id": "B", "text": "EC2 にパブリック IP を付与しない", "is_correct": false, "explanation": "プライベートサブネットでも NAT GW で S3 へ抜けられる。要件未充足。"},
-        {"id": "C", "text": "セキュリティグループで S3 IP 範囲を deny", "is_correct": false, "explanation": "S3 IP は変動かつ範囲が広く、SG で完全管理は困難。VPCE 強制が標準。"},
-        {"id": "D", "text": "WAF で S3 リクエストをフィルタ", "is_correct": false, "explanation": "WAF は ALB/CloudFront/API GW 等の前段で、EC2→S3 経路には適用できない。"}
+        {
+          "id": "A",
+          "text": "WAF で S3 リクエストをフィルタ",
+          "is_correct": false,
+          "explanation": "WAF は ALB/CloudFront/API GW 等の前段で、EC2→S3 経路には適用できない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Gateway Endpoint を作成し、Endpoint Policy で許可バケットのみ Allow。プライベートサブネットの RT は S3 プレフィックスを VPCE 経由に。NAT GW を撤去または S3 プレフィックスのみ deny",
+          "is_correct": true,
+          "explanation": "正解。Endpoint Policy + ルーティングで他経路を遮断する。"
+        },
+        {
+          "id": "C",
+          "text": "セキュリティグループで S3 IP 範囲を deny",
+          "is_correct": false,
+          "explanation": "S3 IP は変動かつ範囲が広く、SG で完全管理は困難。VPCE 強制が標準。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 にパブリック IP を付与しない",
+          "is_correct": false,
+          "explanation": "プライベートサブネットでも NAT GW で S3 へ抜けられる。要件未充足。"
+        }
       ],
       "explanation": "S3 アクセスを VPCE 経由に強制する標準：(1) Gateway Endpoint で S3 への経路を VPCE に向ける、(2) Endpoint Policy で許可バケット限定、(3) S3 バケットポリシーで `aws:sourceVpce` 条件で当該 VPCE 以外を deny、(4) NAT GW のルートから S3 プレフィックスを除外（または NAT GW を撤去）。多層で経路と認可を制御する。",
       "references": [
-        {"title": "VPC endpoints for S3", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html"}
+        {
+          "title": "VPC endpoints for S3",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html"
+        }
       ],
-      "tags": ["s3", "vpc-endpoint", "fintech", "compliance"],
-      "common_mistakes": ["プライベートサブネット = VPCE 強制と誤解", "WAF を EC2→S3 に適用できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "s3",
+        "vpc-endpoint",
+        "fintech",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "プライベートサブネット = VPCE 強制と誤解",
+        "WAF を EC2→S3 に適用できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-015",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Resolver DNSSEC",
       "subtopic": "Validation enforcement",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "政府系 SaaS が VPC 内のすべての DNS 応答に DNSSEC 署名検証を強制したい。強制の仕組みとして最も正確なのはどれか。",
       "options": [
-        {"id": "A", "text": "VPC ごとに Route 53 Resolver の DNSSEC validation を有効化する。検証失敗は SERVFAIL となり解決できない", "is_correct": true, "explanation": "正解。Resolver の validation は VPC 単位の設定。"},
-        {"id": "B", "text": "Public hosted zone の DNSSEC signing を有効化", "is_correct": false, "explanation": "それは権威側の署名。検証側の強制は別。"},
-        {"id": "C", "text": "DNS Firewall で DNSSEC を強制", "is_correct": false, "explanation": "DNS Firewall は別機能（ブロックリスト）。"},
-        {"id": "D", "text": "VPC の DHCP Option Set で DNSSEC を強制", "is_correct": false, "explanation": "DHCP Option Set にそのオプションはない。"}
+        {
+          "id": "A",
+          "text": "DNS Firewall で DNSSEC を強制",
+          "is_correct": false,
+          "explanation": "DNS Firewall は別機能（ブロックリスト）。"
+        },
+        {
+          "id": "B",
+          "text": "VPC の DHCP Option Set で DNSSEC を強制",
+          "is_correct": false,
+          "explanation": "DHCP Option Set にそのオプションはない。"
+        },
+        {
+          "id": "C",
+          "text": "VPC ごとに Route 53 Resolver の DNSSEC validation を有効化する。検証失敗は SERVFAIL となり解決できない",
+          "is_correct": true,
+          "explanation": "正解。Resolver の validation は VPC 単位の設定。"
+        },
+        {
+          "id": "D",
+          "text": "Public hosted zone の DNSSEC signing を有効化",
+          "is_correct": false,
+          "explanation": "それは権威側の署名。検証側の強制は別。"
+        }
       ],
       "explanation": "Route 53 Resolver の DNSSEC validation を VPC 単位で有効化すると、その VPC 内からの全 DNS クエリで署名検証を行い、失敗した応答 (Bogus) を SERVFAIL としてアプリに返す。これにより DNS スプーフィング・キャッシュポイズニング耐性を強化できる。",
       "references": [
-        {"title": "Enable DNSSEC validation", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dnssec-validation.html"}
+        {
+          "title": "Enable DNSSEC validation",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dnssec-validation.html"
+        }
       ],
-      "tags": ["dnssec", "resolver", "validation", "compliance"],
-      "common_mistakes": ["Signing と Validation を混同", "DNS Firewall で代替できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dnssec",
+        "resolver",
+        "validation",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Signing と Validation を混同",
+        "DNS Firewall で代替できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-016",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Network Firewall",
       "subtopic": "Centralized inspection",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Transit Gateway ハブアンドスポーク構成の企業が、すべての VPC 間通信と egress を中央で検査したい。最適なアーキテクチャは？",
       "options": [
-        {"id": "A", "text": "検査用 VPC を作って Network Firewall を配置し、TGW ルートテーブルで全 VPC のトラフィックを検査 VPC 経由にルーティング (appliance mode)", "is_correct": true, "explanation": "正解。中央検査 VPC + Network Firewall + TGW appliance mode が標準。"},
-        {"id": "B", "text": "各 VPC に Network Firewall を配置", "is_correct": false, "explanation": "コスト・運用負荷が高い。中央集約パターンが合理的。"},
-        {"id": "C", "text": "EC2 ベースの自前 FW アプライアンスを使う", "is_correct": false, "explanation": "マネージド Network Firewall のほうが運用効率良。"},
-        {"id": "D", "text": "WAF を TGW に直接アタッチ", "is_correct": false, "explanation": "WAF は ALB/CFn の前段で TGW にはアタッチできない。"}
+        {
+          "id": "A",
+          "text": "WAF を TGW に直接アタッチ",
+          "is_correct": false,
+          "explanation": "WAF は ALB/CFn の前段で TGW にはアタッチできない。"
+        },
+        {
+          "id": "B",
+          "text": "各 VPC に Network Firewall を配置",
+          "is_correct": false,
+          "explanation": "コスト・運用負荷が高い。中央集約パターンが合理的。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 ベースの自前 FW アプライアンスを使う",
+          "is_correct": false,
+          "explanation": "マネージド Network Firewall のほうが運用効率良。"
+        },
+        {
+          "id": "D",
+          "text": "検査用 VPC を作って Network Firewall を配置し、TGW ルートテーブルで全 VPC のトラフィックを検査 VPC 経由にルーティング (appliance mode)",
+          "is_correct": true,
+          "explanation": "正解。中央検査 VPC + Network Firewall + TGW appliance mode が標準。"
+        }
       ],
       "explanation": "TGW + 中央検査 VPC + Network Firewall は AWS 推奨の Centralized Inspection アーキテクチャ。TGW で「全ての VPC 間 / egress を検査 VPC へ送る」ようルートテーブルを設定し、Appliance mode を有効化すれば対称ルーティングが保証される（フローが同じ AZ 内の Firewall に固定される）。",
       "references": [
-        {"title": "Centralized inspection with Transit Gateway", "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures-igw-tgw.html"}
+        {
+          "title": "Centralized inspection with Transit Gateway",
+          "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures-igw-tgw.html"
+        }
       ],
-      "tags": ["network-firewall", "tgw", "centralized-inspection", "appliance-mode"],
-      "common_mistakes": ["VPC 毎に Firewall を置く", "WAF を TGW に紐づけると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network-firewall",
+        "tgw",
+        "centralized-inspection",
+        "appliance-mode"
+      ],
+      "common_mistakes": [
+        "VPC 毎に Firewall を置く",
+        "WAF を TGW に紐づけると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-017",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "WAF",
       "subtopic": "JSON / GraphQL inspection",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "GraphQL API を提供する SaaS が、JSON Body 内の特定フィールドを検査して攻撃をブロックしたい。WAF の機能として正しいのは？",
       "options": [
-        {"id": "A", "text": "WAF v2 の JSON body inspection で JSON Path を指定して特定フィールドを評価", "is_correct": true, "explanation": "正解。WAF は JSON body のパース・JSON Path 評価をサポートする。"},
-        {"id": "B", "text": "WAF は HTTP header のみ検査可能", "is_correct": false, "explanation": "Body 検査もサポート（最大 64KB の inspection）。"},
-        {"id": "C", "text": "Lambda@Edge を必ず使う必要がある", "is_correct": false, "explanation": "WAF だけで JSON 検査可能。Lambda@Edge は別の用途。"},
-        {"id": "D", "text": "GraphQL は WAF で扱えない", "is_correct": false, "explanation": "JSON で送られる GraphQL は WAF の JSON inspection で扱える。"}
+        {
+          "id": "A",
+          "text": "WAF v2 の JSON body inspection で JSON Path を指定して特定フィールドを評価",
+          "is_correct": true,
+          "explanation": "正解。WAF は JSON body のパース・JSON Path 評価をサポートする。"
+        },
+        {
+          "id": "B",
+          "text": "WAF は HTTP header のみ検査可能",
+          "is_correct": false,
+          "explanation": "Body 検査もサポート（最大 64KB の inspection）。"
+        },
+        {
+          "id": "C",
+          "text": "GraphQL は WAF で扱えない",
+          "is_correct": false,
+          "explanation": "JSON で送られる GraphQL は WAF の JSON inspection で扱える。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda@Edge を必ず使う必要がある",
+          "is_correct": false,
+          "explanation": "WAF だけで JSON 検査可能。Lambda@Edge は別の用途。"
+        }
       ],
       "explanation": "AWS WAF v2 は HTTP body の JSON パースと JSON Path ベースの検査をサポート。最大 64 KB（CloudFront）/ 8 KB（Regional）の body を検査でき、`$.query` や `$.variables.userId` のような JSON Path で特定フィールドを評価できる。GraphQL や JSON-RPC API の保護に必須機能。",
       "references": [
-        {"title": "WAF JSON body inspection", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html"}
+        {
+          "title": "WAF JSON body inspection",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html"
+        }
       ],
-      "tags": ["waf", "json-inspection", "graphql", "body-inspection"],
-      "common_mistakes": ["WAF は header のみと誤解", "GraphQL は対応外と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "waf",
+        "json-inspection",
+        "graphql",
+        "body-inspection"
+      ],
+      "common_mistakes": [
+        "WAF は header のみと誤解",
+        "GraphQL は対応外と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-018",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Compliance HIPAA",
       "subtopic": "Network architecture",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "医療機関が EHR システムを HIPAA 準拠のもと AWS 上に構築する。ネットワーク観点で必要となる要素として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "VPC で PHI 処理 EC2 を分離、転送中暗号化（TLS）と静止時暗号化（KMS）、ALB/NLB は HTTPS のみ、専用 VPC で他環境と分離、Flow Logs と GuardDuty の常時有効化", "is_correct": true, "explanation": "正解。HIPAA は包括的な技術的セーフガードを要求し、AWS では多層的に実装する。"},
-        {"id": "B", "text": "VPC で PHI を扱わなければ HIPAA 適用外", "is_correct": false, "explanation": "PHI を扱う以上 HIPAA 該当。回避できない。"},
-        {"id": "C", "text": "Direct Connect を使えば HIPAA 自動準拠", "is_correct": false, "explanation": "DX は接続方式で HIPAA 全体要件は別。"},
-        {"id": "D", "text": "BAA を結ばずに本番運用", "is_correct": false, "explanation": "AWS との BAA が前提。BAA なしでは HIPAA Compliant でない。"}
+        {
+          "id": "A",
+          "text": "VPC で PHI を扱わなければ HIPAA 適用外",
+          "is_correct": false,
+          "explanation": "PHI を扱う以上 HIPAA 該当。回避できない。"
+        },
+        {
+          "id": "B",
+          "text": "VPC で PHI 処理 EC2 を分離、転送中暗号化（TLS）と静止時暗号化（KMS）、ALB/NLB は HTTPS のみ、専用 VPC で他環境と分離、Flow Logs と GuardDuty の常時有効化",
+          "is_correct": true,
+          "explanation": "正解。HIPAA は包括的な技術的セーフガードを要求し、AWS では多層的に実装する。"
+        },
+        {
+          "id": "C",
+          "text": "BAA を結ばずに本番運用",
+          "is_correct": false,
+          "explanation": "AWS との BAA が前提。BAA なしでは HIPAA Compliant でない。"
+        },
+        {
+          "id": "D",
+          "text": "Direct Connect を使えば HIPAA 自動準拠",
+          "is_correct": false,
+          "explanation": "DX は接続方式で HIPAA 全体要件は別。"
+        }
       ],
       "explanation": "HIPAA Security Rule の Technical Safeguards は (1) Access Control、(2) Audit Controls、(3) Integrity、(4) Person/Entity Authentication、(5) Transmission Security の5領域を要求。AWS では VPC 分離、暗号化（KMS、ACM）、Flow Logs、CloudTrail、GuardDuty、Network Firewall、IAM 多要素認証等を組み合わせる。BAA 締結が大前提。",
       "references": [
-        {"title": "HIPAA on AWS", "url": "https://aws.amazon.com/compliance/hipaa-compliance/"}
+        {
+          "title": "HIPAA on AWS",
+          "url": "https://aws.amazon.com/compliance/hipaa-compliance/"
+        }
       ],
-      "tags": ["hipaa", "compliance", "phi", "encryption", "audit"],
-      "common_mistakes": ["BAA 不要と誤解", "DX で HIPAA 自動準拠と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "hipaa",
+        "compliance",
+        "phi",
+        "encryption",
+        "audit"
+      ],
+      "common_mistakes": [
+        "BAA 不要と誤解",
+        "DX で HIPAA 自動準拠と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-019",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Compliance PCI DSS",
       "subtopic": "Network segmentation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "決済代行サービスが PCI DSS 4.0 を満たすためのネットワーク要件として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "CDE (Cardholder Data Environment) を専用 VPC/サブネットに分離、Network Firewall で境界制御、TLS 強制、四半期スキャン、変更管理ログ", "is_correct": true, "explanation": "正解。PCI DSS は CDE の分離と継続監査を要求する。"},
-        {"id": "B", "text": "CDE を Internet 直結にして簡素化", "is_correct": false, "explanation": "PCI DSS の根本に反する。CDE は最大限分離すべき。"},
-        {"id": "C", "text": "PCI Compliance は AWS 側が担保するため設定不要", "is_correct": false, "explanation": "Shared Responsibility Model。顧客側設定が必須。"},
-        {"id": "D", "text": "TLS 1.0 で暗号化していれば十分", "is_correct": false, "explanation": "PCI DSS 4.0 は TLS 1.2 以上を要求（1.3 推奨）。"}
+        {
+          "id": "A",
+          "text": "TLS 1.0 で暗号化していれば十分",
+          "is_correct": false,
+          "explanation": "PCI DSS 4.0 は TLS 1.2 以上を要求（1.3 推奨）。"
+        },
+        {
+          "id": "B",
+          "text": "PCI Compliance は AWS 側が担保するため設定不要",
+          "is_correct": false,
+          "explanation": "Shared Responsibility Model。顧客側設定が必須。"
+        },
+        {
+          "id": "C",
+          "text": "CDE (Cardholder Data Environment) を専用 VPC/サブネットに分離、Network Firewall で境界制御、TLS 強制、四半期スキャン、変更管理ログ",
+          "is_correct": true,
+          "explanation": "正解。PCI DSS は CDE の分離と継続監査を要求する。"
+        },
+        {
+          "id": "D",
+          "text": "CDE を Internet 直結にして簡素化",
+          "is_correct": false,
+          "explanation": "PCI DSS の根本に反する。CDE は最大限分離すべき。"
+        }
       ],
       "explanation": "PCI DSS 4.0 の要件 1 (Network Security Controls) は CDE の論理分離を要求する。AWS では (1) 専用 VPC/サブネット、(2) Network Firewall や Stateful Firewall、(3) Flow Logs と SIEM 統合、(4) TLS 1.2+、(5) 暗号鍵の KMS 管理、(6) 四半期 ASV スキャン、(7) 変更管理 (Config + CloudTrail) などを組み合わせる。",
       "references": [
-        {"title": "PCI DSS on AWS", "url": "https://aws.amazon.com/compliance/pci-dss-level-1-faqs/"}
+        {
+          "title": "PCI DSS on AWS",
+          "url": "https://aws.amazon.com/compliance/pci-dss-level-1-faqs/"
+        }
       ],
-      "tags": ["pci-dss", "compliance", "cde", "network-segmentation"],
-      "common_mistakes": ["AWS が全責任を負うと誤解", "TLS 1.0 で十分と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "pci-dss",
+        "compliance",
+        "cde",
+        "network-segmentation"
+      ],
+      "common_mistakes": [
+        "AWS が全責任を負うと誤解",
+        "TLS 1.0 で十分と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-020",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Network Firewall",
       "subtopic": "Logging and findings",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Network Firewall のアラート発生をリアルタイムに SIEM へ送りつつ、後で解析するための長期保管も両立したい。最適な構成は？",
       "options": [
-        {"id": "A", "text": "Alert ログを Kinesis Data Firehose 経由で SIEM (Splunk/Datadog) へ、Flow ログを S3 へ Parquet 出力", "is_correct": true, "explanation": "正解。役割で送信先を分け、リアルタイム性とコストを両立。"},
-        {"id": "B", "text": "全ログを CloudWatch Logs にだけ送る", "is_correct": false, "explanation": "CW Logs のみだと長期保管コスト高で SIEM 連携も冗長。"},
-        {"id": "C", "text": "EC2 のディスクに保存", "is_correct": false, "explanation": "EC2 ストレージは耐久性・スケーラビリティ低くアンチパターン。"},
-        {"id": "D", "text": "ログは取らずアラートだけ EventBridge に送る", "is_correct": false, "explanation": "監査・フォレンジック観点でログ保管は必須。"}
+        {
+          "id": "A",
+          "text": "EC2 のディスクに保存",
+          "is_correct": false,
+          "explanation": "EC2 ストレージは耐久性・スケーラビリティ低くアンチパターン。"
+        },
+        {
+          "id": "B",
+          "text": "全ログを CloudWatch Logs にだけ送る",
+          "is_correct": false,
+          "explanation": "CW Logs のみだと長期保管コスト高で SIEM 連携も冗長。"
+        },
+        {
+          "id": "C",
+          "text": "ログは取らずアラートだけ EventBridge に送る",
+          "is_correct": false,
+          "explanation": "監査・フォレンジック観点でログ保管は必須。"
+        },
+        {
+          "id": "D",
+          "text": "Alert ログを Kinesis Data Firehose 経由で SIEM (Splunk/Datadog) へ、Flow ログを S3 へ Parquet 出力",
+          "is_correct": true,
+          "explanation": "正解。役割で送信先を分け、リアルタイム性とコストを両立。"
+        }
       ],
       "explanation": "Network Firewall のロギングは Alert / Flow / TLS の3種類があり、それぞれ S3 / CloudWatch Logs / Firehose に出力できる。リアルタイム検知は Firehose → SIEM、長期保管は S3 + Parquet（Athena 解析）に分けるのがコスト効率良。Alert + Flow をすべて SIEM に送るとコスト高になる。",
       "references": [
-        {"title": "Network Firewall logging", "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-logging.html"}
+        {
+          "title": "Network Firewall logging",
+          "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-logging.html"
+        }
       ],
-      "tags": ["network-firewall", "logging", "siem", "kinesis-firehose", "athena"],
-      "common_mistakes": ["全ログを CW Logs に送って高コストにする", "ログを取らずアラートのみで運用"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network-firewall",
+        "logging",
+        "siem",
+        "kinesis-firehose",
+        "athena"
+      ],
+      "common_mistakes": [
+        "全ログを CW Logs に送って高コストにする",
+        "ログを取らずアラートのみで運用"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-021",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "GuardDuty",
       "subtopic": "Malware Protection for EC2",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "GuardDuty Malware Protection for EC2 が「悪意ある SSH 接続元 → EC2 → クリプトマイニング C2」を検知した。最初に取るべき対応は？",
       "options": [
-        {"id": "A", "text": "(1) 該当 EC2 を SG で隔離、(2) スナップショット採取、(3) DNS Firewall ルールで C2 ドメインをブロック、(4) GuardDuty Detective でラテラルムーブメント分析", "is_correct": true, "explanation": "正解。証拠保全 → 隔離 → 拡散防止 → 詳細解析の順で迅速対応。"},
-        {"id": "B", "text": "EC2 を即座に terminate する", "is_correct": false, "explanation": "Terminate は証拠（メモリ・ディスク）を失う。スナップショット先行が原則。"},
-        {"id": "C", "text": "WAF ルールで攻撃元 IP をブロック", "is_correct": false, "explanation": "WAF は ALB 系。EC2 ホスト侵害には直接効かない。"},
-        {"id": "D", "text": "AWS Support に丸投げして対応待ち", "is_correct": false, "explanation": "初動は顧客責任。Shield Advanced の DRT は DDoS のみ。"}
+        {
+          "id": "A",
+          "text": "(1) 該当 EC2 を SG で隔離、(2) スナップショット採取、(3) DNS Firewall ルールで C2 ドメインをブロック、(4) GuardDuty Detective でラテラルムーブメント分析",
+          "is_correct": true,
+          "explanation": "正解。証拠保全 → 隔離 → 拡散防止 → 詳細解析の順で迅速対応。"
+        },
+        {
+          "id": "B",
+          "text": "WAF ルールで攻撃元 IP をブロック",
+          "is_correct": false,
+          "explanation": "WAF は ALB 系。EC2 ホスト侵害には直接効かない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Support に丸投げして対応待ち",
+          "is_correct": false,
+          "explanation": "初動は顧客責任。Shield Advanced の DRT は DDoS のみ。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 を即座に terminate する",
+          "is_correct": false,
+          "explanation": "Terminate は証拠（メモリ・ディスク）を失う。スナップショット先行が原則。"
+        }
       ],
       "explanation": "EC2 侵害インシデントの IR ベストプラクティス：(1) Capture（フォレンジック証拠：メモリダンプ、EBS スナップショット）、(2) Contain（SG/NACL で隔離、ENI 切替）、(3) Eradicate（C2 通信遮断、マルウェア除去）、(4) Recover（クリーンインスタンス復帰）。Detective でラテラルムーブメント可視化、DNS Firewall で C2 遮断を組み合わせる。",
       "references": [
-        {"title": "GuardDuty Malware Protection", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html"}
+        {
+          "title": "GuardDuty Malware Protection",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html"
+        }
       ],
-      "tags": ["guardduty", "malware-protection", "incident-response", "forensics"],
-      "common_mistakes": ["即 Terminate して証拠喪失", "WAF で EC2 侵害を防げると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "guardduty",
+        "malware-protection",
+        "incident-response",
+        "forensics"
+      ],
+      "common_mistakes": [
+        "即 Terminate して証拠喪失",
+        "WAF で EC2 侵害を防げると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-022",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Firewall Manager",
       "subtopic": "Default SG remediation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Organizations 全体で「デフォルト Security Group のすべてのルールを削除し、誰も使えない状態にする」ガバナンスを強制したい。最適な実装は？",
       "options": [
-        {"id": "A", "text": "Firewall Manager の Audit Security Group ポリシーで Default SG をターゲットにし、修復アクションでルール削除を強制", "is_correct": true, "explanation": "正解。Firewall Manager の SG ポリシーは監査と自動修復をサポートする。"},
-        {"id": "B", "text": "各アカウントで CDK スクリプトを手動実行", "is_correct": false, "explanation": "スケールしない。Firewall Manager で集中管理が標準。"},
-        {"id": "C", "text": "AWS Config ルールで検知のみ", "is_correct": false, "explanation": "Config ルールは評価まで。修復は別途 SSM Automation 等が必要。Firewall Manager のほうが完結。"},
-        {"id": "D", "text": "SCP で SG 操作を全面禁止", "is_correct": false, "explanation": "SCP では既存 Default SG のルール削除はできない（ガードレール過剰）。"}
+        {
+          "id": "A",
+          "text": "AWS Config ルールで検知のみ",
+          "is_correct": false,
+          "explanation": "Config ルールは評価まで。修復は別途 SSM Automation 等が必要。Firewall Manager のほうが完結。"
+        },
+        {
+          "id": "B",
+          "text": "Firewall Manager の Audit Security Group ポリシーで Default SG をターゲットにし、修復アクションでルール削除を強制",
+          "is_correct": true,
+          "explanation": "正解。Firewall Manager の SG ポリシーは監査と自動修復をサポートする。"
+        },
+        {
+          "id": "C",
+          "text": "SCP で SG 操作を全面禁止",
+          "is_correct": false,
+          "explanation": "SCP では既存 Default SG のルール削除はできない（ガードレール過剰）。"
+        },
+        {
+          "id": "D",
+          "text": "各アカウントで CDK スクリプトを手動実行",
+          "is_correct": false,
+          "explanation": "スケールしない。Firewall Manager で集中管理が標準。"
+        }
       ],
       "explanation": "Firewall Manager の Security Group ポリシーには (1) Common Security Group（共通 SG を全リソースにアタッチ）、(2) Audit SG（既存 SG を監査・修復）、(3) Usage SG（未使用 SG の検知）の3種がある。Audit ポリシーで Default SG のルールを削除する設定にすれば、新規アカウントにも自動適用されガバナンスが効く。",
       "references": [
-        {"title": "Firewall Manager Security Group policies", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security-group-policies.html"}
+        {
+          "title": "Firewall Manager Security Group policies",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/security-group-policies.html"
+        }
       ],
-      "tags": ["firewall-manager", "security-group", "governance", "audit"],
-      "common_mistakes": ["手動 CDK で運用しようとする", "SCP で既存リソース削除できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "firewall-manager",
+        "security-group",
+        "governance",
+        "audit"
+      ],
+      "common_mistakes": [
+        "手動 CDK で運用しようとする",
+        "SCP で既存リソース削除できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-023",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "WAF",
       "subtopic": "CAPTCHA / Challenge actions",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Bot による不正ログイン試行を WAF で防ぐ際、誤検知でユーザ体験を損ねたくない。最適な対策は？",
       "options": [
-        {"id": "A", "text": "WAF Bot Control + Rate-based rule + CAPTCHA / Challenge アクションで疑わしいリクエストに人間検証を要求する", "is_correct": true, "explanation": "正解。Block 一辺倒でなく Challenge / CAPTCHA で誤検知時のユーザ体験を確保。"},
-        {"id": "B", "text": "全リクエストを Block にする", "is_correct": false, "explanation": "正規ユーザも遮断され UX 破壊。"},
-        {"id": "C", "text": "WAF を使わず ALB のみで対処", "is_correct": false, "explanation": "ALB だけでは Bot 検知不能。"},
-        {"id": "D", "text": "Cognito の認証回数制限のみで十分", "is_correct": false, "explanation": "Cognito だけでは到達前段の Bot 制御に弱い。"}
+        {
+          "id": "A",
+          "text": "WAF を使わず ALB のみで対処",
+          "is_correct": false,
+          "explanation": "ALB だけでは Bot 検知不能。"
+        },
+        {
+          "id": "B",
+          "text": "全リクエストを Block にする",
+          "is_correct": false,
+          "explanation": "正規ユーザも遮断され UX 破壊。"
+        },
+        {
+          "id": "C",
+          "text": "WAF Bot Control + Rate-based rule + CAPTCHA / Challenge アクションで疑わしいリクエストに人間検証を要求する",
+          "is_correct": true,
+          "explanation": "正解。Block 一辺倒でなく Challenge / CAPTCHA で誤検知時のユーザ体験を確保。"
+        },
+        {
+          "id": "D",
+          "text": "Cognito の認証回数制限のみで十分",
+          "is_correct": false,
+          "explanation": "Cognito だけでは到達前段の Bot 制御に弱い。"
+        }
       ],
       "explanation": "WAF v2 の CAPTCHA / Challenge アクションは、疑わしいリクエストにブラウザ向けの人間検証を要求する。正規ユーザは透過的（Challenge）または1度の CAPTCHA で通過、Bot は通過困難となる。Bot Control Managed Rule Group との組合せでBot 種別判別と段階的対応が可能。",
       "references": [
-        {"title": "WAF CAPTCHA and Challenge", "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha-and-challenge.html"}
+        {
+          "title": "WAF CAPTCHA and Challenge",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha-and-challenge.html"
+        }
       ],
-      "tags": ["waf", "captcha", "challenge", "bot-control"],
-      "common_mistakes": ["全 Block で UX 破壊", "Bot Control を使わずカスタムだけで頑張る"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "waf",
+        "captcha",
+        "challenge",
+        "bot-control"
+      ],
+      "common_mistakes": [
+        "全 Block で UX 破壊",
+        "Bot Control を使わずカスタムだけで頑張る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-024",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Security Groups",
       "subtopic": "SG references",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ALB から ECS タスクへ通信する際、ECS タスク側の SG を厳密に最小権限化したい。最適な指定方法は？",
       "options": [
-        {"id": "A", "text": "ECS タスク SG のインバウンドで ALB の SG ID を許可元として指定する", "is_correct": true, "explanation": "正解。SG ID 参照は ALB の動的 IP 変動に追随し、最小権限を維持できる。"},
-        {"id": "B", "text": "ALB のパブリック IP を CIDR で許可", "is_correct": false, "explanation": "ALB の IP は変動するため固定で許可するとサービス停止リスク。"},
-        {"id": "C", "text": "0.0.0.0/0 を許可してアプリ側で制御", "is_correct": false, "explanation": "ネットワーク層の最小権限に反する。"},
-        {"id": "D", "text": "VPC CIDR を許可", "is_correct": false, "explanation": "VPC 内全リソースを許可するため過剰。"}
+        {
+          "id": "A",
+          "text": "0.0.0.0/0 を許可してアプリ側で制御",
+          "is_correct": false,
+          "explanation": "ネットワーク層の最小権限に反する。"
+        },
+        {
+          "id": "B",
+          "text": "VPC CIDR を許可",
+          "is_correct": false,
+          "explanation": "VPC 内全リソースを許可するため過剰。"
+        },
+        {
+          "id": "C",
+          "text": "ALB のパブリック IP を CIDR で許可",
+          "is_correct": false,
+          "explanation": "ALB の IP は変動するため固定で許可するとサービス停止リスク。"
+        },
+        {
+          "id": "D",
+          "text": "ECS タスク SG のインバウンドで ALB の SG ID を許可元として指定する",
+          "is_correct": true,
+          "explanation": "正解。SG ID 参照は ALB の動的 IP 変動に追随し、最小権限を維持できる。"
+        }
       ],
       "explanation": "Security Group の Source/Destination は CIDR だけでなく他の SG ID（Cross-VPC は Peering 経由なら可能、同一 VPC は標準）、プレフィックスリスト（管理対象 IP セット）を参照できる。SG 参照は最小権限の最も推奨される方法で、ALB / NLB / Lambda の動的 IP に追随する。",
       "references": [
-        {"title": "Security group rules", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html"}
+        {
+          "title": "Security group rules",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html"
+        }
       ],
-      "tags": ["security-group", "least-privilege", "alb", "ecs"],
-      "common_mistakes": ["ALB の IP を CIDR で固定許可", "0.0.0.0/0 で開放してしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security-group",
+        "least-privilege",
+        "alb",
+        "ecs"
+      ],
+      "common_mistakes": [
+        "ALB の IP を CIDR で固定許可",
+        "0.0.0.0/0 で開放してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-025",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "DDoS protection",
       "subtopic": "Layered defense",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "オンライン教育 SaaS が L7 DDoS（HTTP flood）と L3/L4 DDoS の両方に備えたい。最適な多層防御は？",
       "options": [
-        {"id": "A", "text": "CloudFront 前段配置 + AWS Shield Advanced + WAF (Rate-based + Bot Control) + ALB Auto Scaling", "is_correct": true, "explanation": "正解。エッジで吸収、Shield で L3/4 防御、WAF で L7 制御、スケーリングで吸収余力。"},
-        {"id": "B", "text": "ALB のみ強化", "is_correct": false, "explanation": "L3/L4 や Bot 対策が不足。"},
-        {"id": "C", "text": "Shield Standard のみで十分", "is_correct": false, "explanation": "Standard は基本的 L3/4 のみ。L7 や Cost Protection 不足。"},
-        {"id": "D", "text": "EC2 のセキュリティグループでブロック", "is_correct": false, "explanation": "DDoS は SG で防げる規模・粒度ではない。"}
+        {
+          "id": "A",
+          "text": "CloudFront 前段配置 + AWS Shield Advanced + WAF (Rate-based + Bot Control) + ALB Auto Scaling",
+          "is_correct": true,
+          "explanation": "正解。エッジで吸収、Shield で L3/4 防御、WAF で L7 制御、スケーリングで吸収余力。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 のセキュリティグループでブロック",
+          "is_correct": false,
+          "explanation": "DDoS は SG で防げる規模・粒度ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Shield Standard のみで十分",
+          "is_correct": false,
+          "explanation": "Standard は基本的 L3/4 のみ。L7 や Cost Protection 不足。"
+        },
+        {
+          "id": "D",
+          "text": "ALB のみ強化",
+          "is_correct": false,
+          "explanation": "L3/L4 や Bot 対策が不足。"
+        }
       ],
       "explanation": "DDoS 多層防御のベストプラクティス：(1) エッジ層 (CloudFront / Global Accelerator) で吸収、(2) Shield Advanced で L3/4 + コスト保護、(3) WAF で L7 (Rate-based、Bot Control、CAPTCHA)、(4) アプリ層 Auto Scaling、(5) Route 53 ヘルスチェック + フェイルオーバー。これらが Defense in Depth の実装。",
       "references": [
-        {"title": "DDoS Resilience on AWS", "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/aws-best-practices-ddos-resiliency.html"}
+        {
+          "title": "DDoS Resilience on AWS",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/aws-best-practices-ddos-resiliency.html"
+        }
       ],
-      "tags": ["ddos", "shield-advanced", "waf", "cloudfront", "defense-in-depth"],
-      "common_mistakes": ["Shield Standard で十分と誤解", "SG で DDoS を防げると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ddos",
+        "shield-advanced",
+        "waf",
+        "cloudfront",
+        "defense-in-depth"
+      ],
+      "common_mistakes": [
+        "Shield Standard で十分と誤解",
+        "SG で DDoS を防げると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-026",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Compliance evaluation",
       "subtopic": "Service choice",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある企業が「VPC内で発生する不審な挙動を継続検知し、コンプライアンス上の証跡として残す」要件を持つ。複数案を比較する。最も評価が高い選択肢は？",
       "options": [
-        {"id": "A", "text": "GuardDuty + Security Hub + CloudTrail + VPC Flow Logs を Organizations で集中管理し、Findings は SIEM へ転送、保管は S3 Object Lock で改ざん不可", "is_correct": true, "explanation": "正解。脅威検知・統合管理・改ざん耐性ある証跡を満たす AWS ネイティブ構成。"},
-        {"id": "B", "text": "EC2 にエージェントを入れて自前監視", "is_correct": false, "explanation": "再発明。GuardDuty / Security Hub のほうが運用負荷低く包括的。"},
-        {"id": "C", "text": "VPC Flow Logs だけ S3 に保管すれば証跡として十分", "is_correct": false, "explanation": "証跡だけで脅威検知なし。継続検知の要件未充足。"},
-        {"id": "D", "text": "セキュリティ統制は AWS 任せ、顧客側は何もしない", "is_correct": false, "explanation": "Shared Responsibility Model に反する。"}
+        {
+          "id": "A",
+          "text": "VPC Flow Logs だけ S3 に保管すれば証跡として十分",
+          "is_correct": false,
+          "explanation": "証跡だけで脅威検知なし。継続検知の要件未充足。"
+        },
+        {
+          "id": "B",
+          "text": "GuardDuty + Security Hub + CloudTrail + VPC Flow Logs を Organizations で集中管理し、Findings は SIEM へ転送、保管は S3 Object Lock で改ざん不可",
+          "is_correct": true,
+          "explanation": "正解。脅威検知・統合管理・改ざん耐性ある証跡を満たす AWS ネイティブ構成。"
+        },
+        {
+          "id": "C",
+          "text": "セキュリティ統制は AWS 任せ、顧客側は何もしない",
+          "is_correct": false,
+          "explanation": "Shared Responsibility Model に反する。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 にエージェントを入れて自前監視",
+          "is_correct": false,
+          "explanation": "再発明。GuardDuty / Security Hub のほうが運用負荷低く包括的。"
+        }
       ],
       "explanation": "AWS ネイティブの Defense in Depth：(1) GuardDuty で継続的脅威検知、(2) Security Hub でクロスサービス統合、(3) CloudTrail で API 監査、(4) VPC Flow Logs / Network Firewall ログでネットワーク証跡、(5) S3 Object Lock (compliance mode) で WORM 保管、(6) Detective でフォレンジック。Org 管理アカウントから集中ガバナンス。",
       "references": [
-        {"title": "AWS Security Hub", "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"}
+        {
+          "title": "AWS Security Hub",
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+        }
       ],
-      "tags": ["guardduty", "security-hub", "compliance", "object-lock", "siem"],
-      "common_mistakes": ["自前 Agent で再発明", "Flow Logs だけで脅威検知できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "guardduty",
+        "security-hub",
+        "compliance",
+        "object-lock",
+        "siem"
+      ],
+      "common_mistakes": [
+        "自前 Agent で再発明",
+        "Flow Logs だけで脅威検知できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-027",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Egress control",
       "subtopic": "Best architecture",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "100 以上の VPC を持つ大企業が「すべての Egress を中央検査し、許可ドメインのみ通信可」のガバナンスを実装する。複数の選択肢を評価する。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "TGW ハブ + 検査 VPC（Network Firewall + DNS Firewall + NAT GW）+ Firewall Manager で Org 全 VPC のルートを強制", "is_correct": true, "explanation": "正解。中央検査 + ガバナンス自動適用が大規模に最適。"},
-        {"id": "B", "text": "各 VPC に独立した Network Firewall を配置", "is_correct": false, "explanation": "100 VPC × FW のコストと運用が膨大。中央集約が経済的。"},
-        {"id": "C", "text": "プロキシサーバ EC2 を VPC 毎に立てる", "is_correct": false, "explanation": "メンテナンス・スケール問題。マネージドサービス選択が標準。"},
-        {"id": "D", "text": "WAF を Egress に使う", "is_correct": false, "explanation": "WAF は Ingress 防御。Egress には不適。"}
+        {
+          "id": "A",
+          "text": "WAF を Egress に使う",
+          "is_correct": false,
+          "explanation": "WAF は Ingress 防御。Egress には不適。"
+        },
+        {
+          "id": "B",
+          "text": "プロキシサーバ EC2 を VPC 毎に立てる",
+          "is_correct": false,
+          "explanation": "メンテナンス・スケール問題。マネージドサービス選択が標準。"
+        },
+        {
+          "id": "C",
+          "text": "TGW ハブ + 検査 VPC（Network Firewall + DNS Firewall + NAT GW）+ Firewall Manager で Org 全 VPC のルートを強制",
+          "is_correct": true,
+          "explanation": "正解。中央検査 + ガバナンス自動適用が大規模に最適。"
+        },
+        {
+          "id": "D",
+          "text": "各 VPC に独立した Network Firewall を配置",
+          "is_correct": false,
+          "explanation": "100 VPC × FW のコストと運用が膨大。中央集約が経済的。"
+        }
       ],
       "explanation": "大規模 Egress 制御は中央検査 VPC パターンが標準。検査 VPC に Network Firewall (TLS 検査含む) と DNS Firewall、NAT GW を集約し、TGW ルートテーブルで全 VPC の egress を検査 VPC へ向ける（appliance mode）。Firewall Manager で新規 VPC にも自動適用。コスト・運用・セキュリティの最適バランス。",
       "references": [
-        {"title": "Centralized egress to internet", "url": "https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-nat-igw.html"}
+        {
+          "title": "Centralized egress to internet",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-nat-igw.html"
+        }
       ],
-      "tags": ["egress-control", "network-firewall", "tgw", "centralized", "firewall-manager"],
-      "common_mistakes": ["VPC 毎 FW でコスト爆発", "WAF を Egress に使えると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "egress-control",
+        "network-firewall",
+        "tgw",
+        "centralized",
+        "firewall-manager"
+      ],
+      "common_mistakes": [
+        "VPC 毎 FW でコスト爆発",
+        "WAF を Egress に使えると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-028",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Verified Access",
       "subtopic": "Risk-based access",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "医療機関がリモート従業員に EHR Web アプリへのアクセスを提供する。要件: ID + デバイス + 場所 + 端末コンプライアンスを総合判断、PII アクセスは MFA 必須、監査ログ完全保管。最適な実装は？",
       "options": [
-        {"id": "A", "text": "AWS Verified Access + Cedar policy で多次元評価、CloudTrail / Verified Access logs を S3 (Object Lock) へ、IdP で MFA 必須", "is_correct": true, "explanation": "正解。Cedar の表現力と Verified Access のログでこの要件を満たせる。"},
-        {"id": "B", "text": "Client VPN + IAM ロール", "is_correct": false, "explanation": "デバイスポスチャや場所等の多次元判断は Client VPN だけでは困難。"},
-        {"id": "C", "text": "Cognito 認証だけで十分", "is_correct": false, "explanation": "Cognito は認証だが、ネットワーク到達制御や Cedar の細かいポリシーは別。"},
-        {"id": "D", "text": "WAF で IP 制限", "is_correct": false, "explanation": "リモート従業員は IP 変動。WAF だけで多次元統制は不可能。"}
+        {
+          "id": "A",
+          "text": "Client VPN + IAM ロール",
+          "is_correct": false,
+          "explanation": "デバイスポスチャや場所等の多次元判断は Client VPN だけでは困難。"
+        },
+        {
+          "id": "B",
+          "text": "WAF で IP 制限",
+          "is_correct": false,
+          "explanation": "リモート従業員は IP 変動。WAF だけで多次元統制は不可能。"
+        },
+        {
+          "id": "C",
+          "text": "Cognito 認証だけで十分",
+          "is_correct": false,
+          "explanation": "Cognito は認証だが、ネットワーク到達制御や Cedar の細かいポリシーは別。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Verified Access + Cedar policy で多次元評価、CloudTrail / Verified Access logs を S3 (Object Lock) へ、IdP で MFA 必須",
+          "is_correct": true,
+          "explanation": "正解。Cedar の表現力と Verified Access のログでこの要件を満たせる。"
+        }
       ],
       "explanation": "Verified Access は Cedar ポリシー言語で `principal.email`, `device.compliance`, `context.location`, `context.mfa_authenticated` 等の属性を組み合わせ、宣言的にゼロトラスト認可を記述できる。Verified Access logs と CloudTrail で完全監査、S3 Object Lock で改ざん不可保管、IdP の Conditional Access で MFA を強制すれば HIPAA / 高機密要件を満たせる。",
       "references": [
-        {"title": "Verified Access policies (Cedar)", "url": "https://docs.aws.amazon.com/verified-access/latest/ug/policies.html"}
+        {
+          "title": "Verified Access policies (Cedar)",
+          "url": "https://docs.aws.amazon.com/verified-access/latest/ug/policies.html"
+        }
       ],
-      "tags": ["verified-access", "zero-trust", "cedar", "hipaa", "mfa"],
-      "common_mistakes": ["Client VPN で多次元統制できると誤解", "WAF で代用しようとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "verified-access",
+        "zero-trust",
+        "cedar",
+        "hipaa",
+        "mfa"
+      ],
+      "common_mistakes": [
+        "Client VPN で多次元統制できると誤解",
+        "WAF で代用しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-029",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "Network Firewall",
       "subtopic": "Throughput considerations",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "Network Firewall を本番に投入する際、スループット要件 (10 Gbps) と高可用性を満たす設計の評価として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "複数 AZ に Firewall サブネットを配置し、各 AZ あたり最低 1 endpoint を設置。スケールは AWS 側で自動 (1 endpoint = 100 Gbps target) だが、ENI の AZ 配置と TGW Appliance Mode 設定で対称ルーティング保証", "is_correct": true, "explanation": "正解。AZ 別 endpoint と Appliance Mode が本番設計の要点。"},
-        {"id": "B", "text": "1 AZ に 1 endpoint で十分", "is_correct": false, "explanation": "AZ 障害で全停止。HA 違反。"},
-        {"id": "C", "text": "EC2 ベースの自前 IPS で構築", "is_correct": false, "explanation": "マネージドの Network Firewall でスケール・運用効率良。"},
-        {"id": "D", "text": "Network Firewall は 1 Gbps が上限", "is_correct": false, "explanation": "事実誤認。endpoint あたり目安は数十〜100 Gbps。"}
+        {
+          "id": "A",
+          "text": "複数 AZ に Firewall サブネットを配置し、各 AZ あたり最低 1 endpoint を設置。スケールは AWS 側で自動 (1 endpoint = 100 Gbps target) だが、ENI の AZ 配置と TGW Appliance Mode 設定で対称ルーティング保証",
+          "is_correct": true,
+          "explanation": "正解。AZ 別 endpoint と Appliance Mode が本番設計の要点。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 ベースの自前 IPS で構築",
+          "is_correct": false,
+          "explanation": "マネージドの Network Firewall でスケール・運用効率良。"
+        },
+        {
+          "id": "C",
+          "text": "1 AZ に 1 endpoint で十分",
+          "is_correct": false,
+          "explanation": "AZ 障害で全停止。HA 違反。"
+        },
+        {
+          "id": "D",
+          "text": "Network Firewall は 1 Gbps が上限",
+          "is_correct": false,
+          "explanation": "事実誤認。endpoint あたり目安は数十〜100 Gbps。"
+        }
       ],
       "explanation": "Network Firewall は AZ 単位で endpoint を配置するアーキテクチャで、各 endpoint は AWS が自動スケールする（標準で数十 Gbps、最大 100 Gbps クラス）。HA は複数 AZ デプロイで実現。TGW + Network Firewall 構成では TGW Appliance Mode を有効化することでフローを同じ AZ の同じ endpoint に固定し、ステートフル検査の対称性を保つ。",
       "references": [
-        {"title": "Network Firewall best practices", "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures.html"}
+        {
+          "title": "Network Firewall best practices",
+          "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures.html"
+        }
       ],
-      "tags": ["network-firewall", "throughput", "high-availability", "appliance-mode"],
-      "common_mistakes": ["1 AZ で十分と誤解", "EC2 自前 IPS で代替しようとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "network-firewall",
+        "throughput",
+        "high-availability",
+        "appliance-mode"
+      ],
+      "common_mistakes": [
+        "1 AZ で十分と誤解",
+        "EC2 自前 IPS で代替しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain4-030",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Network Security, Compliance, and Governance", "weight_percent": 24},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Network Security, Compliance, and Governance",
+        "weight_percent": 24
+      },
       "topic": "End-to-end security architecture",
       "subtopic": "Multi-account governance",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "FinTech企業が PCI DSS + ISO 27001 を満たすゼロトラスト + 多層防御のネットワークセキュリティアーキテクチャを設計する。50 アカウント、東京/大阪。最も適切な総合設計は？",
       "options": [
-        {"id": "A", "text": "(1) Cloud WAN + 中央検査 VPC（Network Firewall + DNS Firewall）+ TGW Appliance Mode、(2) Verified Access + Cedar policy でリモートアクセス、(3) Firewall Manager で WAF/Shield Advanced/SG ガバナンス、(4) GuardDuty + Security Hub + Detective で脅威検知、(5) Config Conformance Pack (PCI DSS) で継続検証、(6) S3 Object Lock + CloudTrail Org Trail で改ざん不可監査、(7) IPAM で全 CIDR 一元管理", "is_correct": true, "explanation": "正解。要件全要素を AWS マネージドサービスで包括設計。"},
-        {"id": "B", "text": "EC2 + iptables + 自前監視で柔軟性確保", "is_correct": false, "explanation": "再発明・運用負荷大・スケール不能。AWS マネージドが標準。"},
-        {"id": "C", "text": "オンプレに全機能を残し AWS は VPN 接続だけ", "is_correct": false, "explanation": "AWS の利点を活かせず、PCI DSS 監査も困難。"},
-        {"id": "D", "text": "Single VPC に全リソースを集約しシンプル化", "is_correct": false, "explanation": "セグメンテーション不在で PCI DSS 違反。"}
+        {
+          "id": "A",
+          "text": "EC2 + iptables + 自前監視で柔軟性確保",
+          "is_correct": false,
+          "explanation": "再発明・運用負荷大・スケール不能。AWS マネージドが標準。"
+        },
+        {
+          "id": "B",
+          "text": "(1) Cloud WAN + 中央検査 VPC（Network Firewall + DNS Firewall）+ TGW Appliance Mode、(2) Verified Access + Cedar policy でリモートアクセス、(3) Firewall Manager で WAF/Shield Advanced/SG ガバナンス、(4) GuardDuty + Security Hub + Detective で脅威検知、(5) Config Conformance Pack (PCI DSS) で継続検証、(6) S3 Object Lock + CloudTrail Org Trail で改ざん不可監査、(7) IPAM で全 CIDR 一元管理",
+          "is_correct": true,
+          "explanation": "正解。要件全要素を AWS マネージドサービスで包括設計。"
+        },
+        {
+          "id": "C",
+          "text": "オンプレに全機能を残し AWS は VPN 接続だけ",
+          "is_correct": false,
+          "explanation": "AWS の利点を活かせず、PCI DSS 監査も困難。"
+        },
+        {
+          "id": "D",
+          "text": "Single VPC に全リソースを集約しシンプル化",
+          "is_correct": false,
+          "explanation": "セグメンテーション不在で PCI DSS 違反。"
+        }
       ],
       "explanation": "L6 総合設計問題。包括的ゼロトラスト + 多層防御 + コンプライアンス + マルチアカウントガバナンスを満たすには：(a) ネットワーク層=Cloud WAN/中央検査、(b) ID/デバイス層=Verified Access、(c) ガバナンス層=Firewall Manager、(d) 検知層=GuardDuty/Security Hub/Detective、(e) コンプライアンス層=Config Conformance Pack、(f) 監査保管層=S3 Object Lock + Org Trail、(g) IP 管理=IPAM。これらを統合する設計が AWS Well-Architected Security Pillar の理想形。",
       "references": [
-        {"title": "AWS Well-Architected Security Pillar", "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"}
+        {
+          "title": "AWS Well-Architected Security Pillar",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"
+        }
       ],
-      "tags": ["zero-trust", "defense-in-depth", "pci-dss", "iso27001", "multi-account", "design"],
-      "common_mistakes": ["EC2 + iptables で再発明", "Single VPC でセグメント不在"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "zero-trust",
+        "defense-in-depth",
+        "pci-dss",
+        "iso27001",
+        "multi-account",
+        "design"
+      ],
+      "common_mistakes": [
+        "EC2 + iptables で再発明",
+        "Single VPC でセグメント不在"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

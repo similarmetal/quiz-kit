@@ -187,6 +187,17 @@ const QuizApp = (() => {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
+  // 配列を破壊的にシャッフル (Fisher–Yates)。
+  // データ側で正解位置は均等化済みだが、表示時にもランダム化して
+  // 位置パターンの学習（"だいたいA"）を完全に排除する。
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
   // ===== Streak management =====
   function updateStreak(progress) {
     const today = todayString();
@@ -389,6 +400,12 @@ const QuizApp = (() => {
 
   function renderQuestion(q) {
     const container = document.getElementById('quiz-container');
+    const correctIds = q.options.filter(o => o.is_correct).map(o => o.id);
+    const isMulti = correctIds.length > 1;
+    currentSession.correctIds = correctIds;
+    currentSession.isMulti = isMulti;
+    currentSession.selectedSet = new Set();
+
     container.innerHTML = `
       <div class="quiz-card">
         <div class="quiz-meta">
@@ -397,6 +414,7 @@ const QuizApp = (() => {
           <span>${q.cognitive_level || ''} · ${q.difficulty || ''}</span>
         </div>
         <div class="quiz-stem">${escapeHtml(q.stem)}</div>
+        ${isMulti ? `<div class="quiz-multi-hint">複数選択：当てはまるものを${correctIds.length}つ選び、「回答する」を押してください。</div>` : ''}
         <div class="quiz-options" id="quiz-options"></div>
         <div class="quiz-explanation" id="quiz-explanation">
           <h4>総合解説</h4>
@@ -408,50 +426,95 @@ const QuizApp = (() => {
       </div>
     `;
 
+    // 表示順をシャッフルし、表示位置でラベル(A/B/C…)を振り直す。
+    const displayOpts = shuffle(q.options.slice());
+
     const optsEl = document.getElementById('quiz-options');
-    for (const opt of q.options) {
+    displayOpts.forEach((opt, idx) => {
+      const label = String.fromCharCode(65 + idx);
       const div = document.createElement('div');
       div.className = 'quiz-option';
       div.dataset.optionId = opt.id;
       div.innerHTML = `
-        <div class="quiz-option-id">${opt.id}</div>
+        <div class="quiz-option-id">${label}</div>
         <div class="quiz-option-text">
           ${escapeHtml(opt.text)}
           ${opt.explanation ? `<div class="quiz-option-explain">${escapeHtml(opt.explanation)}</div>` : ''}
         </div>
       `;
-      div.addEventListener('click', () => selectOption(opt.id));
+      if (isMulti) {
+        div.addEventListener('click', () => toggleOption(opt.id, div));
+      } else {
+        div.addEventListener('click', () => selectOption(opt.id));
+      }
       optsEl.appendChild(div);
+    });
+
+    // 複数正解問題は「回答する」ボタンを出し、確定するまで採点しない。
+    if (isMulti) {
+      const actionsEl = document.getElementById('quiz-actions');
+      actionsEl.innerHTML =
+        `<button type="button" class="btn quiz-submit-btn" id="multi-submit" disabled>回答する</button>`;
+      document.getElementById('multi-submit').addEventListener('click', submitMultiAnswer);
     }
   }
 
+  // 複数選択: クリックで選択をトグル（採点はしない）。
+  function toggleOption(optionId, el) {
+    if (currentSession.currentAnswer !== null) return; // already answered
+    const set = currentSession.selectedSet;
+    if (set.has(optionId)) {
+      set.delete(optionId);
+      el.classList.remove('selected');
+    } else {
+      set.add(optionId);
+      el.classList.add('selected');
+    }
+    const btn = document.getElementById('multi-submit');
+    if (btn) btn.disabled = set.size === 0;
+  }
+
+  // 複数選択の確定。選択集合が正解集合と完全一致したときのみ正解。
+  function submitMultiAnswer() {
+    if (currentSession.currentAnswer !== null) return;
+    const chosen = currentSession.selectedSet;
+    if (chosen.size === 0) return;
+    currentSession.currentAnswer = Array.from(chosen).join(',');
+    const q = currentSession.currentQuestion;
+    const correct = new Set(currentSession.correctIds);
+    const isCorrect =
+      chosen.size === correct.size && [...chosen].every(id => correct.has(id));
+    revealAndExplain(q, chosen, isCorrect);
+  }
+
+  // 単一選択: クリックで即時採点（従来挙動）。
   function selectOption(optionId) {
     if (currentSession.currentAnswer !== null) return; // already answered
-
     currentSession.currentAnswer = optionId;
     const q = currentSession.currentQuestion;
     const correctOpt = q.options.find(o => o.is_correct);
     const isCorrect = optionId === correctOpt.id;
+    revealAndExplain(q, new Set([optionId]), isCorrect);
+  }
 
-    // Update UI
-    const opts = document.querySelectorAll('.quiz-option');
-    opts.forEach(el => {
+  // 正解開示・解説表示・自己評価ボタン描画（単一/複数で共通）。
+  function revealAndExplain(q, chosenSet, isCorrect) {
+    document.querySelectorAll('.quiz-option').forEach(el => {
       const oid = el.dataset.optionId;
       const opt = q.options.find(o => o.id === oid);
+      el.classList.remove('selected');
       if (opt.is_correct) {
         el.classList.add('correct', 'show-explain');
-      } else if (oid === optionId) {
+      } else if (chosenSet.has(oid)) {
         el.classList.add('incorrect', 'show-explain');
       } else {
         el.classList.add('show-explain');
       }
     });
 
-    // Show overall explanation
     const explainEl = document.getElementById('quiz-explanation');
     document.getElementById('quiz-explanation-text').textContent = q.explanation || '';
 
-    // References
     const refsEl = document.getElementById('quiz-references');
     if (q.references && q.references.length > 0) {
       refsEl.innerHTML = '<h4 style="margin-top:14px;">参考</h4>' +
@@ -460,7 +523,6 @@ const QuizApp = (() => {
       refsEl.innerHTML = '';
     }
 
-    // Common mistakes
     const cmEl = document.getElementById('quiz-common-mistakes');
     if (q.common_mistakes && q.common_mistakes.length > 0) {
       cmEl.innerHTML = '<h4 style="margin-top:14px;">よくある間違い</h4><ul style="padding-left:20px;font-size:14px;">' +
@@ -471,7 +533,6 @@ const QuizApp = (() => {
 
     explainEl.classList.add('show');
 
-    // Update stats
     if (isCorrect) {
       currentSession.correct += 1;
     } else {

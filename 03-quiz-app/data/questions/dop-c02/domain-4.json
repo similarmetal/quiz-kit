@@ -15,470 +15,1539 @@
     {
       "id": "dop-c02-domain4-001",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Retention",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "CloudWatch Logs の Log Group のデフォルトのデータ保持期間（Retention）はどれか？",
       "options": [
-        {"id": "A", "text": "Never expire（無期限保持）", "is_correct": true, "explanation": "正解。明示的に Retention を設定しない限り、ログは永続保存される。コスト最適化のため、必ず Retention 設定が推奨される。"},
-        {"id": "B", "text": "30 日", "is_correct": false, "explanation": "30 日は選択肢の一つだがデフォルトではない。"},
-        {"id": "C", "text": "1 年", "is_correct": false, "explanation": "1 年もよくある運用設定だがデフォルトではない。"},
-        {"id": "D", "text": "90 日で自動削除", "is_correct": false, "explanation": "90 日は CloudTrail Event History の保持期間と混同しやすい。"}
+        {
+          "id": "A",
+          "text": "Never expire（無期限保持）",
+          "is_correct": true,
+          "explanation": "正解。明示的に Retention を設定しない限り、ログは永続保存される。コスト最適化のため、必ず Retention 設定が推奨される。"
+        },
+        {
+          "id": "B",
+          "text": "1 年",
+          "is_correct": false,
+          "explanation": "1 年もよくある運用設定だがデフォルトではない。"
+        },
+        {
+          "id": "C",
+          "text": "30 日",
+          "is_correct": false,
+          "explanation": "30 日は選択肢の一つだがデフォルトではない。"
+        },
+        {
+          "id": "D",
+          "text": "90 日で自動削除",
+          "is_correct": false,
+          "explanation": "90 日は CloudTrail Event History の保持期間と混同しやすい。"
+        }
       ],
       "explanation": "CloudWatch Logs のデフォルト Retention は「Never Expire」。これを忘れると永続保存になりコストが膨らむため、ベストプラクティスとして Log Group 作成時に Retention（1d, 3d, 5d, 1w, ... 10y）を必ず設定するべき。",
-      "references": [{"title": "Change log data retention", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#SettingLogRetention"}],
-      "tags": ["cloudwatch-logs", "retention", "cost-optimization"],
-      "common_mistakes": ["Retention を設定し忘れる", "30 日が既定だと誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Change log data retention",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#SettingLogRetention"
+        }
+      ],
+      "tags": [
+        "cloudwatch-logs",
+        "retention",
+        "cost-optimization"
+      ],
+      "common_mistakes": [
+        "Retention を設定し忘れる",
+        "30 日が既定だと誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-002",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch",
       "subtopic": "Standard vs detailed monitoring",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "EC2 の CloudWatch メトリクスについて、Standard Monitoring と Detailed Monitoring の違いとして正しいのは？",
       "options": [
-        {"id": "A", "text": "Standard は 5 分間隔、Detailed は 1 分間隔", "is_correct": true, "explanation": "正解。Detailed Monitoring を有効化すると 1 分粒度になり追加料金が発生する。"},
-        {"id": "B", "text": "Standard は 1 秒、Detailed は 1 分", "is_correct": false, "explanation": "1 秒粒度は High-Resolution Custom Metrics の話。"},
-        {"id": "C", "text": "両方とも 5 分", "is_correct": false, "explanation": "Detailed は 1 分。"},
-        {"id": "D", "text": "Standard は 15 分", "is_correct": false, "explanation": "15 分粒度のメトリクスは存在しない。"}
+        {
+          "id": "A",
+          "text": "両方とも 5 分",
+          "is_correct": false,
+          "explanation": "Detailed は 1 分。"
+        },
+        {
+          "id": "B",
+          "text": "Standard は 5 分間隔、Detailed は 1 分間隔",
+          "is_correct": true,
+          "explanation": "正解。Detailed Monitoring を有効化すると 1 分粒度になり追加料金が発生する。"
+        },
+        {
+          "id": "C",
+          "text": "Standard は 15 分",
+          "is_correct": false,
+          "explanation": "15 分粒度のメトリクスは存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "Standard は 1 秒、Detailed は 1 分",
+          "is_correct": false,
+          "explanation": "1 秒粒度は High-Resolution Custom Metrics の話。"
+        }
       ],
       "explanation": "EC2 の Standard Monitoring は 5 分粒度（無償）、Detailed Monitoring は 1 分粒度（追加料金）。Custom Metrics は High-Resolution（最大 1 秒粒度）も指定可能で、その場合 PutMetricData の課金が高い。",
-      "references": [{"title": "Enable detailed monitoring", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-new.html"}],
-      "tags": ["cloudwatch", "ec2", "detailed-monitoring", "metrics"],
-      "common_mistakes": ["High-Resolution Custom Metric と混同", "Standard を 1 分と覚えてしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Enable detailed monitoring",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-new.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch",
+        "ec2",
+        "detailed-monitoring",
+        "metrics"
+      ],
+      "common_mistakes": [
+        "High-Resolution Custom Metric と混同",
+        "Standard を 1 分と覚えてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-003",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "X-Ray",
       "subtopic": "Sampling rules",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "AWS X-Ray の Sampling Rule の役割として最も適切なものは？",
       "options": [
-        {"id": "A", "text": "全てのリクエストをトレースするとコスト・性能が問題になるため、確率的にサブセットを抽出する", "is_correct": true, "explanation": "正解。Reservoir + Rate でサンプリング戦略を定義し、コスト／パフォーマンス／可観測性のバランスを取る。"},
-        {"id": "B", "text": "API Gateway のリクエストを全て捕捉する設定", "is_correct": false, "explanation": "Sampling Rule はむしろ全捕捉を回避するための仕組み。"},
-        {"id": "C", "text": "X-Ray のデータを暗号化する", "is_correct": false, "explanation": "暗号化は別の機能。"},
-        {"id": "D", "text": "X-Ray のクエリ言語の名前", "is_correct": false, "explanation": "クエリ言語ではない。"}
+        {
+          "id": "A",
+          "text": "X-Ray のクエリ言語の名前",
+          "is_correct": false,
+          "explanation": "クエリ言語ではない。"
+        },
+        {
+          "id": "B",
+          "text": "API Gateway のリクエストを全て捕捉する設定",
+          "is_correct": false,
+          "explanation": "Sampling Rule はむしろ全捕捉を回避するための仕組み。"
+        },
+        {
+          "id": "C",
+          "text": "全てのリクエストをトレースするとコスト・性能が問題になるため、確率的にサブセットを抽出する",
+          "is_correct": true,
+          "explanation": "正解。Reservoir + Rate でサンプリング戦略を定義し、コスト／パフォーマンス／可観測性のバランスを取る。"
+        },
+        {
+          "id": "D",
+          "text": "X-Ray のデータを暗号化する",
+          "is_correct": false,
+          "explanation": "暗号化は別の機能。"
+        }
       ],
       "explanation": "X-Ray の Sampling Rule は (1) Reservoir（毎秒固定数）と (2) Rate（残りからの割合）で抽出戦略を定義。サービス名・URL・HTTP メソッドなどでフィルタ可能。コスト管理と統計的代表性のバランスを取る。",
-      "references": [{"title": "Configuring sampling rules", "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-console-sampling.html"}],
-      "tags": ["x-ray", "sampling", "tracing", "cost-optimization"],
-      "common_mistakes": ["全リクエストをサンプルすべきと考える", "Reservoir と Rate の関係を理解しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Configuring sampling rules",
+          "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-console-sampling.html"
+        }
+      ],
+      "tags": [
+        "x-ray",
+        "sampling",
+        "tracing",
+        "cost-optimization"
+      ],
+      "common_mistakes": [
+        "全リクエストをサンプルすべきと考える",
+        "Reservoir と Rate の関係を理解しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-004",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Subscription filter",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "CloudWatch Logs の Subscription Filter から「リアルタイムにストリーム配信できる」転送先として正しい組み合わせは？",
       "options": [
-        {"id": "A", "text": "Kinesis Data Streams、Kinesis Data Firehose、Lambda、OpenSearch Service", "is_correct": true, "explanation": "正解。これらが Subscription Filter で公式サポートされる宛先。"},
-        {"id": "B", "text": "S3、SNS、SQS、SES のみ", "is_correct": false, "explanation": "Subscription Filter は SNS/SQS/SES に直接配信できない。"},
-        {"id": "C", "text": "EventBridge にしか配信できない", "is_correct": false, "explanation": "EventBridge は別経路。"},
-        {"id": "D", "text": "DynamoDB Streams のみ", "is_correct": false, "explanation": "DynamoDB Streams は Subscription Filter の宛先にならない。"}
+        {
+          "id": "A",
+          "text": "EventBridge にしか配信できない",
+          "is_correct": false,
+          "explanation": "EventBridge は別経路。"
+        },
+        {
+          "id": "B",
+          "text": "DynamoDB Streams のみ",
+          "is_correct": false,
+          "explanation": "DynamoDB Streams は Subscription Filter の宛先にならない。"
+        },
+        {
+          "id": "C",
+          "text": "S3、SNS、SQS、SES のみ",
+          "is_correct": false,
+          "explanation": "Subscription Filter は SNS/SQS/SES に直接配信できない。"
+        },
+        {
+          "id": "D",
+          "text": "Kinesis Data Streams、Kinesis Data Firehose、Lambda、OpenSearch Service",
+          "is_correct": true,
+          "explanation": "正解。これらが Subscription Filter で公式サポートされる宛先。"
+        }
       ],
       "explanation": "CloudWatch Logs Subscription Filter は (1) Lambda、(2) Kinesis Data Streams、(3) Kinesis Data Firehose、(4) OpenSearch Service の 4 種類に配信可能。S3 へは Firehose を経由するのが一般的。クロスアカウントも可能。",
-      "references": [{"title": "Real-time processing of log data with subscriptions", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html"}],
-      "tags": ["cloudwatch-logs", "subscription-filter", "kinesis", "firehose", "opensearch"],
-      "common_mistakes": ["S3 に直接配信できると誤解する", "SNS に直接配信できると誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Real-time processing of log data with subscriptions",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch-logs",
+        "subscription-filter",
+        "kinesis",
+        "firehose",
+        "opensearch"
+      ],
+      "common_mistakes": [
+        "S3 に直接配信できると誤解する",
+        "SNS に直接配信できると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-005",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "EventBridge",
       "subtopic": "Event Bus types",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "EventBridge の Event Bus 種別として正しい記述は？",
       "options": [
-        {"id": "A", "text": "Default（AWS サービスイベント）、Custom（自社用）、Partner（SaaS パートナー連携）の 3 種類", "is_correct": true, "explanation": "正解。各 Event Bus には別個にルールを設定する。"},
-        {"id": "B", "text": "Default のみ。Custom は作れない", "is_correct": false, "explanation": "Custom Event Bus は重要な機能。"},
-        {"id": "C", "text": "EventBridge には Bus 概念はない", "is_correct": false, "explanation": "EventBridge の中核概念。"},
-        {"id": "D", "text": "Bus は SQS Queue の別名", "is_correct": false, "explanation": "別概念。"}
+        {
+          "id": "A",
+          "text": "Default（AWS サービスイベント）、Custom（自社用）、Partner（SaaS パートナー連携）の 3 種類",
+          "is_correct": true,
+          "explanation": "正解。各 Event Bus には別個にルールを設定する。"
+        },
+        {
+          "id": "B",
+          "text": "Default のみ。Custom は作れない",
+          "is_correct": false,
+          "explanation": "Custom Event Bus は重要な機能。"
+        },
+        {
+          "id": "C",
+          "text": "Bus は SQS Queue の別名",
+          "is_correct": false,
+          "explanation": "別概念。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge には Bus 概念はない",
+          "is_correct": false,
+          "explanation": "EventBridge の中核概念。"
+        }
       ],
       "explanation": "EventBridge の Event Bus は (1) Default Bus（AWS サービスのイベント）、(2) Custom Event Bus（PutEvents で送信するアプリ独自イベント）、(3) Partner Event Bus（Datadog、PagerDuty、Salesforce など SaaS から）。Bus ごとにルールを設定し、ターゲットへ配信する。",
-      "references": [{"title": "EventBridge event buses", "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html"}],
-      "tags": ["eventbridge", "event-bus", "partner", "custom"],
-      "common_mistakes": ["Default Bus にカスタムイベントを送ろうとする", "Partner Event Bus の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "EventBridge event buses",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html"
+        }
+      ],
+      "tags": [
+        "eventbridge",
+        "event-bus",
+        "partner",
+        "custom"
+      ],
+      "common_mistakes": [
+        "Default Bus にカスタムイベントを送ろうとする",
+        "Partner Event Bus の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-006",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch",
       "subtopic": "Composite alarm",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "CloudWatch Composite Alarm を使うことで解決できる代表的な問題は？",
       "options": [
-        {"id": "A", "text": "複数のメトリクスアラームを組み合わせ（AND/OR）て、ノイズを減らした統合通知を発火する", "is_correct": true, "explanation": "正解。Composite Alarm は子アラームの ALARM/OK 状態を論理結合し、上位イベントとして扱う。"},
-        {"id": "B", "text": "アラームを集約して一度に削除する", "is_correct": false, "explanation": "ライフサイクル機能ではなく評価ロジックの統合。"},
-        {"id": "C", "text": "EventBridge Rule の代替", "is_correct": false, "explanation": "別概念。"},
-        {"id": "D", "text": "アラームのコストを下げる課金単位", "is_correct": false, "explanation": "Composite Alarm 自体に追加料金がある。"}
+        {
+          "id": "A",
+          "text": "アラームを集約して一度に削除する",
+          "is_correct": false,
+          "explanation": "ライフサイクル機能ではなく評価ロジックの統合。"
+        },
+        {
+          "id": "B",
+          "text": "複数のメトリクスアラームを組み合わせ（AND/OR）て、ノイズを減らした統合通知を発火する",
+          "is_correct": true,
+          "explanation": "正解。Composite Alarm は子アラームの ALARM/OK 状態を論理結合し、上位イベントとして扱う。"
+        },
+        {
+          "id": "C",
+          "text": "アラームのコストを下げる課金単位",
+          "is_correct": false,
+          "explanation": "Composite Alarm 自体に追加料金がある。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge Rule の代替",
+          "is_correct": false,
+          "explanation": "別概念。"
+        }
       ],
       "explanation": "Composite Alarm は子アラームの状態を AND / OR / NOT で組み合わせ、ノイズ削減や原因絞り込みを行う。例: 「CPU 高 AND ALB 5xx 高 AND DB 接続数高」を 1 つのアラームに統合し、運用通知の S/N 比を上げる。",
-      "references": [{"title": "CloudWatch composite alarms", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html"}],
-      "tags": ["cloudwatch", "composite-alarm", "alarm", "noise-reduction"],
-      "common_mistakes": ["Composite Alarm の論理式を理解しない", "EventBridge と Composite Alarm を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CloudWatch composite alarms",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch",
+        "composite-alarm",
+        "alarm",
+        "noise-reduction"
+      ],
+      "common_mistakes": [
+        "Composite Alarm の論理式を理解しない",
+        "EventBridge と Composite Alarm を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-007",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Metric filter",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある SaaS のアプリログから「ERROR レベルが 5 分間に 10 件以上」を検知して通知したい。最も簡潔な実装は？",
       "options": [
-        {"id": "A", "text": "CloudWatch Logs Metric Filter で `[level=ERROR]` 等を抽出してカスタムメトリクスにし、CloudWatch Alarm を 5 分窓・閾値 10 で設定", "is_correct": true, "explanation": "正解。Metric Filter はログから値抽出してメトリクス化する仕組み。標準的なパターン。"},
-        {"id": "B", "text": "Lambda で 1 分おきに `FilterLogEvents` API を呼び続ける", "is_correct": false, "explanation": "ポーリング方式は API 呼び出しコストとレイテンシが大きい。"},
-        {"id": "C", "text": "Subscription Filter で全ログを Lambda に流し、Lambda 内でカウント", "is_correct": false, "explanation": "実装可能だがオーバーヘッド大。Metric Filter のほうが標準的。"},
-        {"id": "D", "text": "CloudTrail Insights で検出", "is_correct": false, "explanation": "CloudTrail Insights は API 呼び出しの異常検知用途。"}
+        {
+          "id": "A",
+          "text": "Subscription Filter で全ログを Lambda に流し、Lambda 内でカウント",
+          "is_correct": false,
+          "explanation": "実装可能だがオーバーヘッド大。Metric Filter のほうが標準的。"
+        },
+        {
+          "id": "B",
+          "text": "CloudTrail Insights で検出",
+          "is_correct": false,
+          "explanation": "CloudTrail Insights は API 呼び出しの異常検知用途。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Logs Metric Filter で `[level=ERROR]` 等を抽出してカスタムメトリクスにし、CloudWatch Alarm を 5 分窓・閾値 10 で設定",
+          "is_correct": true,
+          "explanation": "正解。Metric Filter はログから値抽出してメトリクス化する仕組み。標準的なパターン。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で 1 分おきに `FilterLogEvents` API を呼び続ける",
+          "is_correct": false,
+          "explanation": "ポーリング方式は API 呼び出しコストとレイテンシが大きい。"
+        }
       ],
       "explanation": "Metric Filter は CloudWatch Logs のパターンマッチで値を抽出し、CloudWatch カスタムメトリクスに変換する機能。アラームと組み合わせれば「ログ内のキーワード件数」をリアルタイムに監視可能。値抽出の場合 `$.field` JSON パターンや `[ts, level=ERROR, ...]` のスペース区切りパターンが使える。",
-      "references": [{"title": "Creating metrics from log events", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html"}],
-      "tags": ["cloudwatch-logs", "metric-filter", "alarm", "log-pattern"],
-      "common_mistakes": ["Subscription Filter + Lambda で過剰実装する", "Metric Filter の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Creating metrics from log events",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch-logs",
+        "metric-filter",
+        "alarm",
+        "log-pattern"
+      ],
+      "common_mistakes": [
+        "Subscription Filter + Lambda で過剰実装する",
+        "Metric Filter の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-008",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch Synthetics",
       "subtopic": "Canary",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "B2B SaaS のログイン画面が外部から正常に動作しているかを 5 分おきに合成監視したい。最も適切なサービスは？",
       "options": [
-        {"id": "A", "text": "CloudWatch Synthetics Canary（Heartbeat / API / GUI Workflow など）", "is_correct": true, "explanation": "正解。Canary は Lambda + Puppeteer/Selenium ベースで定期実行する合成監視機能。"},
-        {"id": "B", "text": "AWS Health Dashboard", "is_correct": false, "explanation": "AWS 側のサービス健全性で、自社アプリのエンドツーエンド監視ではない。"},
-        {"id": "C", "text": "VPC Reachability Analyzer", "is_correct": false, "explanation": "VPC ネットワーク経路の検証ツール。"},
-        {"id": "D", "text": "Route 53 ヘルスチェックのみで完結", "is_correct": false, "explanation": "ログインフロー（多段画面）の検証はヘルスチェック単独では難しい。"}
+        {
+          "id": "A",
+          "text": "VPC Reachability Analyzer",
+          "is_correct": false,
+          "explanation": "VPC ネットワーク経路の検証ツール。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Health Dashboard",
+          "is_correct": false,
+          "explanation": "AWS 側のサービス健全性で、自社アプリのエンドツーエンド監視ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Route 53 ヘルスチェックのみで完結",
+          "is_correct": false,
+          "explanation": "ログインフロー（多段画面）の検証はヘルスチェック単独では難しい。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Synthetics Canary（Heartbeat / API / GUI Workflow など）",
+          "is_correct": true,
+          "explanation": "正解。Canary は Lambda + Puppeteer/Selenium ベースで定期実行する合成監視機能。"
+        }
       ],
       "explanation": "CloudWatch Synthetics Canary は (1) Heartbeat、(2) API、(3) Visual Monitoring、(4) GUI Workflow Builder などのブループリントから生成。Lambda + Puppeteer/Selenium で実行され、結果は CloudWatch Logs / S3 にスクリーンショット付きで保存される。失敗をアラームに連動可能。",
-      "references": [{"title": "CloudWatch Synthetics", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html"}],
-      "tags": ["cloudwatch-synthetics", "canary", "synthetic-monitoring", "puppeteer"],
-      "common_mistakes": ["Route 53 ヘルスチェックで多段フローを検証しようとする", "AWS Health と Synthetics を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CloudWatch Synthetics",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch-synthetics",
+        "canary",
+        "synthetic-monitoring",
+        "puppeteer"
+      ],
+      "common_mistakes": [
+        "Route 53 ヘルスチェックで多段フローを検証しようとする",
+        "AWS Health と Synthetics を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-009",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch Logs Insights",
       "subtopic": "Query language",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある SRE が Lambda の RequestId 別に「実行時間が長い上位 20 件」を CloudWatch Logs から抽出したい。最も適切な手段は？",
       "options": [
-        {"id": "A", "text": "CloudWatch Logs Insights のクエリで `parse / stats / sort / limit` を使い、対話的に抽出", "is_correct": true, "explanation": "正解。Logs Insights は SQL に近いクエリ言語で対話的に分析できる。"},
-        {"id": "B", "text": "S3 にログをエクスポートしてから Athena で分析", "is_correct": false, "explanation": "可能だが対話的・即時分析には Logs Insights が向く。"},
-        {"id": "C", "text": "全ログを Lambda でダウンロードして Python で集計", "is_correct": false, "explanation": "再発明で非効率。"},
-        {"id": "D", "text": "X-Ray でしか分析できない", "is_correct": false, "explanation": "Logs Insights でも分析可能。"}
+        {
+          "id": "A",
+          "text": "CloudWatch Logs Insights のクエリで `parse / stats / sort / limit` を使い、対話的に抽出",
+          "is_correct": true,
+          "explanation": "正解。Logs Insights は SQL に近いクエリ言語で対話的に分析できる。"
+        },
+        {
+          "id": "B",
+          "text": "全ログを Lambda でダウンロードして Python で集計",
+          "is_correct": false,
+          "explanation": "再発明で非効率。"
+        },
+        {
+          "id": "C",
+          "text": "X-Ray でしか分析できない",
+          "is_correct": false,
+          "explanation": "Logs Insights でも分析可能。"
+        },
+        {
+          "id": "D",
+          "text": "S3 にログをエクスポートしてから Athena で分析",
+          "is_correct": false,
+          "explanation": "可能だが対話的・即時分析には Logs Insights が向く。"
+        }
       ],
       "explanation": "CloudWatch Logs Insights は SQL ライクなクエリ言語で、`fields`、`parse`、`filter`、`stats`、`sort`、`limit` などをサポート。Lambda の REPORT 行から Duration をパースし上位を抽出するのは典型ユースケース。",
-      "references": [{"title": "CloudWatch Logs Insights query syntax", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html"}],
-      "tags": ["cloudwatch-logs-insights", "query", "lambda", "sre"],
-      "common_mistakes": ["Athena で済ませる発想", "Logs Insights クエリ言語の構文を覚えていない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CloudWatch Logs Insights query syntax",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch-logs-insights",
+        "query",
+        "lambda",
+        "sre"
+      ],
+      "common_mistakes": [
+        "Athena で済ませる発想",
+        "Logs Insights クエリ言語の構文を覚えていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-010",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "Container Insights",
       "subtopic": "ECS / EKS observability",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "EKS クラスタの Pod / Node 単位のリソース利用状況とアプリログを統合的に可視化したい。AWS マネージドで最も適切なサービスは？",
       "options": [
-        {"id": "A", "text": "CloudWatch Container Insights（CloudWatch Agent + Fluent Bit による収集）", "is_correct": true, "explanation": "正解。Container Insights はクラスタ／ノード／Pod 粒度のメトリクスとログを CloudWatch に集約する。"},
-        {"id": "B", "text": "AWS Inspector", "is_correct": false, "explanation": "Inspector は脆弱性スキャンで、リソース利用観測ではない。"},
-        {"id": "C", "text": "AWS Trusted Advisor", "is_correct": false, "explanation": "ベストプラクティスの静的助言で、ランタイム可観測性ではない。"},
-        {"id": "D", "text": "AWS Config", "is_correct": false, "explanation": "リソース構成の追跡で、利用状況メトリクスではない。"}
+        {
+          "id": "A",
+          "text": "AWS Trusted Advisor",
+          "is_correct": false,
+          "explanation": "ベストプラクティスの静的助言で、ランタイム可観測性ではない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Container Insights（CloudWatch Agent + Fluent Bit による収集）",
+          "is_correct": true,
+          "explanation": "正解。Container Insights はクラスタ／ノード／Pod 粒度のメトリクスとログを CloudWatch に集約する。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config",
+          "is_correct": false,
+          "explanation": "リソース構成の追跡で、利用状況メトリクスではない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Inspector",
+          "is_correct": false,
+          "explanation": "Inspector は脆弱性スキャンで、リソース利用観測ではない。"
+        }
       ],
       "explanation": "Container Insights は ECS / EKS / Fargate / Kubernetes on EC2 で動作し、CloudWatch Agent + Fluent Bit / Fluentd でメトリクスとログを収集。ダッシュボード、アラーム、Logs Insights を統合的に提供する。Prometheus メトリクスもインジェスト可能。",
-      "references": [{"title": "Container Insights", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html"}],
-      "tags": ["container-insights", "eks", "ecs", "fluent-bit", "observability"],
-      "common_mistakes": ["Inspector / Trusted Advisor と混同", "Prometheus と Container Insights の関係を理解しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Container Insights",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html"
+        }
+      ],
+      "tags": [
+        "container-insights",
+        "eks",
+        "ecs",
+        "fluent-bit",
+        "observability"
+      ],
+      "common_mistakes": [
+        "Inspector / Trusted Advisor と混同",
+        "Prometheus と Container Insights の関係を理解しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-011",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "Lambda Insights",
       "subtopic": "Performance monitoring",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Lambda 関数の CPU / Memory / Cold Start を細かく観測したい。最も適切なオプションは？",
       "options": [
-        {"id": "A", "text": "CloudWatch Lambda Insights を有効化し、提供されている拡張レイヤーを Lambda に追加する", "is_correct": true, "explanation": "正解。Lambda Insights はプロセスレベルのリソース利用とコールドスタート情報を収集する公式拡張。"},
-        {"id": "B", "text": "AWS Inspector を Lambda に紐付ける", "is_correct": false, "explanation": "Inspector は脆弱性検査で、ランタイム性能観測ではない。"},
-        {"id": "C", "text": "CloudWatch 標準メトリクスのみで十分", "is_correct": false, "explanation": "標準メトリクスは Invocation 数や Duration が中心で、CPU 内訳・メモリ高解像度は得られない。"},
-        {"id": "D", "text": "VPC Flow Logs を有効化", "is_correct": false, "explanation": "ネットワークログで、関数実行の内部観測ではない。"}
+        {
+          "id": "A",
+          "text": "AWS Inspector を Lambda に紐付ける",
+          "is_correct": false,
+          "explanation": "Inspector は脆弱性検査で、ランタイム性能観測ではない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch 標準メトリクスのみで十分",
+          "is_correct": false,
+          "explanation": "標準メトリクスは Invocation 数や Duration が中心で、CPU 内訳・メモリ高解像度は得られない。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Lambda Insights を有効化し、提供されている拡張レイヤーを Lambda に追加する",
+          "is_correct": true,
+          "explanation": "正解。Lambda Insights はプロセスレベルのリソース利用とコールドスタート情報を収集する公式拡張。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Flow Logs を有効化",
+          "is_correct": false,
+          "explanation": "ネットワークログで、関数実行の内部観測ではない。"
+        }
       ],
       "explanation": "Lambda Insights は AWS 提供の拡張レイヤーを Lambda にアタッチして有効化。プロセス単位の CPU 使用率、メモリ高解像度、Cold Start、ネットワーク I/O などを CloudWatch Logs / Metrics に出力する。性能トラブル分析に有効。",
-      "references": [{"title": "CloudWatch Lambda Insights", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html"}],
-      "tags": ["lambda-insights", "lambda", "cold-start", "observability"],
-      "common_mistakes": ["Inspector と Lambda Insights を混同", "標準メトリクスだけで足りると考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CloudWatch Lambda Insights",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights.html"
+        }
+      ],
+      "tags": [
+        "lambda-insights",
+        "lambda",
+        "cold-start",
+        "observability"
+      ],
+      "common_mistakes": [
+        "Inspector と Lambda Insights を混同",
+        "標準メトリクスだけで足りると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-012",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "X-Ray",
       "subtopic": "Service map and segments",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "API Gateway → Lambda → DynamoDB の構成で、エンドツーエンドのレイテンシ内訳とエラー位置を可視化したい。最小設定で実現する方法は？",
       "options": [
-        {"id": "A", "text": "API Gateway / Lambda の X-Ray Active Tracing を有効化、AWS SDK 自動計装でダウンストリームも自動的に Trace される", "is_correct": true, "explanation": "正解。Active Tracing をオンにすれば、AWS SDK 経由のサブセグメントも自動付加され、Service Map 上で内訳が見える。"},
-        {"id": "B", "text": "Application Insights のみで完結", "is_correct": false, "explanation": "Application Insights はアプリ層モニタリング自動化で、X-Ray とは別の機能。"},
-        {"id": "C", "text": "VPC Flow Logs のみで内訳が見える", "is_correct": false, "explanation": "Flow Logs はネットワーク 5-tuple のログで、サービス間レイテンシ内訳は得られない。"},
-        {"id": "D", "text": "CloudWatch Alarm で十分", "is_correct": false, "explanation": "Alarm は閾値判定で、レイテンシ内訳の可視化機能ではない。"}
+        {
+          "id": "A",
+          "text": "CloudWatch Alarm で十分",
+          "is_correct": false,
+          "explanation": "Alarm は閾値判定で、レイテンシ内訳の可視化機能ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Application Insights のみで完結",
+          "is_correct": false,
+          "explanation": "Application Insights はアプリ層モニタリング自動化で、X-Ray とは別の機能。"
+        },
+        {
+          "id": "C",
+          "text": "VPC Flow Logs のみで内訳が見える",
+          "is_correct": false,
+          "explanation": "Flow Logs はネットワーク 5-tuple のログで、サービス間レイテンシ内訳は得られない。"
+        },
+        {
+          "id": "D",
+          "text": "API Gateway / Lambda の X-Ray Active Tracing を有効化、AWS SDK 自動計装でダウンストリームも自動的に Trace される",
+          "is_correct": true,
+          "explanation": "正解。Active Tracing をオンにすれば、AWS SDK 経由のサブセグメントも自動付加され、Service Map 上で内訳が見える。"
+        }
       ],
       "explanation": "X-Ray Active Tracing を API Gateway / Lambda で有効化し、AWS SDK の自動計装に任せると、Service Map に外部サービス含むセグメント／サブセグメントが自動描画される。Annotation と Metadata を追加することで業務軸の検索も可能。",
-      "references": [{"title": "AWS X-Ray", "url": "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"}],
-      "tags": ["x-ray", "tracing", "service-map", "active-tracing"],
-      "common_mistakes": ["X-Ray と Application Insights を混同", "Active Tracing を有効化し忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS X-Ray",
+          "url": "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"
+        }
+      ],
+      "tags": [
+        "x-ray",
+        "tracing",
+        "service-map",
+        "active-tracing"
+      ],
+      "common_mistakes": [
+        "X-Ray と Application Insights を混同",
+        "Active Tracing を有効化し忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-013",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "EventBridge",
       "subtopic": "Pipes and Scheduler",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "EventBridge Pipes と EventBridge Scheduler の役割の違いとして最も正しいのは？",
       "options": [
-        {"id": "A", "text": "Pipes は Source → Filter → Enrich → Target のポイント・ツー・ポイント連携。Scheduler は cron / rate / 1 回限定の高スケール時刻起動", "is_correct": true, "explanation": "正解。Pipes は SQS/Kinesis/DynamoDB Streams 等を 1 つのターゲットへ整流。Scheduler は時刻トリガー専用で 100 万 routine / Account を扱える。"},
-        {"id": "B", "text": "両方ともスケジューラーで機能は同じ", "is_correct": false, "explanation": "別目的のサービス。"},
-        {"id": "C", "text": "Pipes は cron トリガー、Scheduler はストリーム連携", "is_correct": false, "explanation": "役割が逆。"},
-        {"id": "D", "text": "Pipes は廃止された", "is_correct": false, "explanation": "現役のサービス。"}
+        {
+          "id": "A",
+          "text": "Pipes は Source → Filter → Enrich → Target のポイント・ツー・ポイント連携。Scheduler は cron / rate / 1 回限定の高スケール時刻起動",
+          "is_correct": true,
+          "explanation": "正解。Pipes は SQS/Kinesis/DynamoDB Streams 等を 1 つのターゲットへ整流。Scheduler は時刻トリガー専用で 100 万 routine / Account を扱える。"
+        },
+        {
+          "id": "B",
+          "text": "Pipes は廃止された",
+          "is_correct": false,
+          "explanation": "現役のサービス。"
+        },
+        {
+          "id": "C",
+          "text": "Pipes は cron トリガー、Scheduler はストリーム連携",
+          "is_correct": false,
+          "explanation": "役割が逆。"
+        },
+        {
+          "id": "D",
+          "text": "両方ともスケジューラーで機能は同じ",
+          "is_correct": false,
+          "explanation": "別目的のサービス。"
+        }
       ],
       "explanation": "EventBridge Pipes は Source（SQS/Kinesis/DDB Streams 等）から Target（Step Functions/Lambda/SNS など）へポイント・ツー・ポイント連携。Filter / Enrich のパイプライン処理が組める。Scheduler は時刻ベースの起動を高スケールで扱い、Lambda・Step Functions・各種 AWS API を直接呼べる。",
       "references": [
-        {"title": "EventBridge Pipes", "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html"},
-        {"title": "EventBridge Scheduler", "url": "https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html"}
+        {
+          "title": "EventBridge Pipes",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html"
+        },
+        {
+          "title": "EventBridge Scheduler",
+          "url": "https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html"
+        }
       ],
-      "tags": ["eventbridge", "pipes", "scheduler", "integration"],
-      "common_mistakes": ["Pipes と Scheduler を取り違える", "Pipes と通常 EventBridge Rule を区別できない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "eventbridge",
+        "pipes",
+        "scheduler",
+        "integration"
+      ],
+      "common_mistakes": [
+        "Pipes と Scheduler を取り違える",
+        "Pipes と通常 EventBridge Rule を区別できない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-014",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch Logs",
       "subtopic": "Cross-account aggregation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Organizations 配下 30 アカウントのアプリログを集中ロギングアカウントに集約し、Logs Insights で横断クエリしたい。最も推奨される構成は？",
       "options": [
-        {"id": "A", "text": "各アカウントの Subscription Filter で集中アカウントの Kinesis Data Firehose / Logs Destination に転送。Cross-account クエリは集中アカウントの Log Group で実行", "is_correct": true, "explanation": "正解。Subscription Filter のクロスアカウント Destination が公式パターン。集中アカウントで Logs Insights を実行できる。"},
-        {"id": "B", "text": "S3 マルチパートアップロードで各アカウントから集約", "is_correct": false, "explanation": "Logs Insights は Log Group が対象で、S3 オブジェクトは Athena 別経路。"},
-        {"id": "C", "text": "EventBridge Cross-account だけで配信", "is_correct": false, "explanation": "EventBridge ではログのストリーム転送には不向き。"},
-        {"id": "D", "text": "GuardDuty でログを集約", "is_correct": false, "explanation": "GuardDuty は脅威検出サービス。"}
+        {
+          "id": "A",
+          "text": "EventBridge Cross-account だけで配信",
+          "is_correct": false,
+          "explanation": "EventBridge ではログのストリーム転送には不向き。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントの Subscription Filter で集中アカウントの Kinesis Data Firehose / Logs Destination に転送。Cross-account クエリは集中アカウントの Log Group で実行",
+          "is_correct": true,
+          "explanation": "正解。Subscription Filter のクロスアカウント Destination が公式パターン。集中アカウントで Logs Insights を実行できる。"
+        },
+        {
+          "id": "C",
+          "text": "GuardDuty でログを集約",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検出サービス。"
+        },
+        {
+          "id": "D",
+          "text": "S3 マルチパートアップロードで各アカウントから集約",
+          "is_correct": false,
+          "explanation": "Logs Insights は Log Group が対象で、S3 オブジェクトは Athena 別経路。"
+        }
       ],
       "explanation": "CloudWatch Logs のクロスアカウント集約は、各アカウントの Subscription Filter から集中アカウントの Logs Destination（Kinesis Data Streams / Firehose 経由）へ送るのが標準。集中アカウントで Logs Insights、Metric Filter、保管ポリシーを統一できる。CloudWatch Cross-account observability（Monitoring Account）も併用可能。",
-      "references": [{"title": "Cross-account log data sharing with subscriptions", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CrossAccountSubscriptions.html"}],
-      "tags": ["cloudwatch-logs", "cross-account", "subscription-filter", "logs-insights", "organizations"],
-      "common_mistakes": ["S3 集約で Logs Insights を使えると思う", "Subscription Filter の cross-account 機能を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Cross-account log data sharing with subscriptions",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CrossAccountSubscriptions.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch-logs",
+        "cross-account",
+        "subscription-filter",
+        "logs-insights",
+        "organizations"
+      ],
+      "common_mistakes": [
+        "S3 集約で Logs Insights を使えると思う",
+        "Subscription Filter の cross-account 機能を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-015",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch",
       "subtopic": "Anomaly detection vs Static threshold",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある B2B SaaS の API レスポンスタイムは時刻・曜日で大きく変動し、固定閾値だと誤発報が多い。最も適切な対策は？",
       "options": [
-        {"id": "A", "text": "CloudWatch Anomaly Detection（時系列モデルで上下バンドを学習）に基づくアラームを使う", "is_correct": true, "explanation": "正解。Anomaly Detection は機械学習で平常パターンの上下バンドを生成し、それを外れた場合を異常として検出する。"},
-        {"id": "B", "text": "Static threshold をもっと低く設定", "is_correct": false, "explanation": "誤発報がさらに増える。"},
-        {"id": "C", "text": "アラームを完全に廃止", "is_correct": false, "explanation": "可観測性を放棄してしまう。"},
-        {"id": "D", "text": "GuardDuty で API レイテンシを検出", "is_correct": false, "explanation": "GuardDuty は脅威検出で性能異常検知ではない。"}
+        {
+          "id": "A",
+          "text": "Static threshold をもっと低く設定",
+          "is_correct": false,
+          "explanation": "誤発報がさらに増える。"
+        },
+        {
+          "id": "B",
+          "text": "アラームを完全に廃止",
+          "is_correct": false,
+          "explanation": "可観測性を放棄してしまう。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Anomaly Detection（時系列モデルで上下バンドを学習）に基づくアラームを使う",
+          "is_correct": true,
+          "explanation": "正解。Anomaly Detection は機械学習で平常パターンの上下バンドを生成し、それを外れた場合を異常として検出する。"
+        },
+        {
+          "id": "D",
+          "text": "GuardDuty で API レイテンシを検出",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検出で性能異常検知ではない。"
+        }
       ],
       "explanation": "CloudWatch Anomaly Detection は最大 2 週間の履歴から時系列モデルを学習し、上限／下限のバンドを返す。アラームをこのバンドに基づいて発報させることで、時間帯／曜日の変動を考慮した動的閾値が実現する。Contributor Insights や Metric Math と組み合わせ可能。",
-      "references": [{"title": "CloudWatch Anomaly Detection", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html"}],
-      "tags": ["cloudwatch", "anomaly-detection", "alarm", "machine-learning"],
-      "common_mistakes": ["時間変動を意識せず static threshold で誤発報", "Anomaly Detection のバンドを理解せず使う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CloudWatch Anomaly Detection",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch",
+        "anomaly-detection",
+        "alarm",
+        "machine-learning"
+      ],
+      "common_mistakes": [
+        "時間変動を意識せず static threshold で誤発報",
+        "Anomaly Detection のバンドを理解せず使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-016",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "OpenSearch",
       "subtopic": "Log analytics architecture",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "大量のアプリログを長期間（13 ヶ月）保存しつつ、直近 7 日間は高速にダッシュボードで分析したい。最もコスト最適な構成は？",
       "options": [
-        {"id": "A", "text": "Firehose で OpenSearch（直近 7 日のホットインデックス）と S3（長期 Glacier 階層）に同時配信、古いインデックスは UltraWarm/Cold Tier や ISM ポリシーで階層化", "is_correct": true, "explanation": "正解。OpenSearch の Hot/UltraWarm/Cold Tier と S3 階層化を組み合わせるのがコスト最適パターン。"},
-        {"id": "B", "text": "全期間 OpenSearch のホットノードに保存", "is_correct": false, "explanation": "13 ヶ月をホットに置くとコストが膨大。"},
-        {"id": "C", "text": "全期間 S3 + Athena のみで完結", "is_correct": false, "explanation": "ダッシュボード用途のレイテンシが不足。"},
-        {"id": "D", "text": "DynamoDB にログを格納", "is_correct": false, "explanation": "ログ分析には不向きでコストが高い。"}
+        {
+          "id": "A",
+          "text": "全期間 OpenSearch のホットノードに保存",
+          "is_correct": false,
+          "explanation": "13 ヶ月をホットに置くとコストが膨大。"
+        },
+        {
+          "id": "B",
+          "text": "全期間 S3 + Athena のみで完結",
+          "is_correct": false,
+          "explanation": "ダッシュボード用途のレイテンシが不足。"
+        },
+        {
+          "id": "C",
+          "text": "DynamoDB にログを格納",
+          "is_correct": false,
+          "explanation": "ログ分析には不向きでコストが高い。"
+        },
+        {
+          "id": "D",
+          "text": "Firehose で OpenSearch（直近 7 日のホットインデックス）と S3（長期 Glacier 階層）に同時配信、古いインデックスは UltraWarm/Cold Tier や ISM ポリシーで階層化",
+          "is_correct": true,
+          "explanation": "正解。OpenSearch の Hot/UltraWarm/Cold Tier と S3 階層化を組み合わせるのがコスト最適パターン。"
+        }
       ],
       "explanation": "OpenSearch Service の Tier: Hot（NVMe）、UltraWarm（S3 ベースの低コスト）、Cold（読み取り時のみ温める）。ISM (Index State Management) ポリシーで日次インデックスを Hot → UltraWarm → Cold → Delete と移行。Firehose で並行 S3 配信し長期 Glacier に置けば監査保管要件も満たす。",
-      "references": [{"title": "Amazon OpenSearch Service UltraWarm", "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ultrawarm.html"}],
-      "tags": ["opensearch", "ultrawarm", "ism", "log-analytics", "tiering"],
-      "common_mistakes": ["全期間ホットに置いてコスト爆発", "S3 + Athena のみでダッシュボード要件を満たそうとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Amazon OpenSearch Service UltraWarm",
+          "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ultrawarm.html"
+        }
+      ],
+      "tags": [
+        "opensearch",
+        "ultrawarm",
+        "ism",
+        "log-analytics",
+        "tiering"
+      ],
+      "common_mistakes": [
+        "全期間ホットに置いてコスト爆発",
+        "S3 + Athena のみでダッシュボード要件を満たそうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-017",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch",
       "subtopic": "Contributor Insights",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ALB のアクセスログから「上位 N 件の 4xx を出したクライアント IP」をリアルタイムで把握したい。CloudWatch のどの機能が最適か？",
       "options": [
-        {"id": "A", "text": "CloudWatch Contributor Insights（Logs に対する Top-N 集計ルール）", "is_correct": true, "explanation": "正解。Contributor Insights は Logs から Top Contributors（Top Talkers / Top Errors）を抽出する機能。"},
-        {"id": "B", "text": "CloudWatch Synthetics", "is_correct": false, "explanation": "Synthetics は合成監視で、ログ集計機能ではない。"},
-        {"id": "C", "text": "VPC Reachability Analyzer", "is_correct": false, "explanation": "経路可達性検証ツール。"},
-        {"id": "D", "text": "AWS Inspector", "is_correct": false, "explanation": "脆弱性スキャン。"}
+        {
+          "id": "A",
+          "text": "CloudWatch Contributor Insights（Logs に対する Top-N 集計ルール）",
+          "is_correct": true,
+          "explanation": "正解。Contributor Insights は Logs から Top Contributors（Top Talkers / Top Errors）を抽出する機能。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Inspector",
+          "is_correct": false,
+          "explanation": "脆弱性スキャン。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Synthetics",
+          "is_correct": false,
+          "explanation": "Synthetics は合成監視で、ログ集計機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Reachability Analyzer",
+          "is_correct": false,
+          "explanation": "経路可達性検証ツール。"
+        }
       ],
       "explanation": "Contributor Insights は CloudWatch Logs の構造化ログから「Top N コントリビュータ」を継続集計する機能。ALB / VPC Flow Logs / アプリログから上位の IP / UserAgent / API キーなどをほぼリアルタイムに可視化する。攻撃検出やノイズ調査に有効。",
-      "references": [{"title": "Using Contributor Insights to analyze high-cardinality data", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html"}],
-      "tags": ["contributor-insights", "cloudwatch", "top-n", "alb", "log-analytics"],
-      "common_mistakes": ["Contributor Insights の存在を知らない", "Synthetics と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Using Contributor Insights to analyze high-cardinality data",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html"
+        }
+      ],
+      "tags": [
+        "contributor-insights",
+        "cloudwatch",
+        "top-n",
+        "alb",
+        "log-analytics"
+      ],
+      "common_mistakes": [
+        "Contributor Insights の存在を知らない",
+        "Synthetics と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-018",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch",
       "subtopic": "Cross-account observability",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある SaaS が CloudWatch の「Cross-account observability（Monitoring Account / Source Account モデル）」を導入しようとしている。導入による効果として最も正確な記述はどれか？",
       "options": [
-        {"id": "A", "text": "Source Account のメトリクス／ログ／トレースをアカウントを切り替えずに Monitoring Account の単一コンソールで横断的に閲覧・クエリできる", "is_correct": true, "explanation": "正解。Cross-account observability は CloudWatch コンソールでの横断ビュー機能で、メトリクス・ログ（Logs Insights）・トレース（X-Ray）を統合参照できる。"},
-        {"id": "B", "text": "Source Account からデータが消える", "is_correct": false, "explanation": "データは Source Account に残ったままで参照のみ可能。"},
-        {"id": "C", "text": "全アカウントの IAM が統合される", "is_correct": false, "explanation": "可観測性データの参照範囲のみで、IAM は統合されない。"},
-        {"id": "D", "text": "EventBridge Bus が自動共有される", "is_correct": false, "explanation": "別機能で自動連動はしない。"}
+        {
+          "id": "A",
+          "text": "全アカウントの IAM が統合される",
+          "is_correct": false,
+          "explanation": "可観測性データの参照範囲のみで、IAM は統合されない。"
+        },
+        {
+          "id": "B",
+          "text": "Source Account のメトリクス／ログ／トレースをアカウントを切り替えずに Monitoring Account の単一コンソールで横断的に閲覧・クエリできる",
+          "is_correct": true,
+          "explanation": "正解。Cross-account observability は CloudWatch コンソールでの横断ビュー機能で、メトリクス・ログ（Logs Insights）・トレース（X-Ray）を統合参照できる。"
+        },
+        {
+          "id": "C",
+          "text": "Source Account からデータが消える",
+          "is_correct": false,
+          "explanation": "データは Source Account に残ったままで参照のみ可能。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge Bus が自動共有される",
+          "is_correct": false,
+          "explanation": "別機能で自動連動はしない。"
+        }
       ],
       "explanation": "CloudWatch Cross-Account Observability は (1) Monitoring Account を指定、(2) Source Accounts が共有を承認、すると Monitoring 側で Metrics / Logs Insights / X-Ray が透過的に参照できる。データは Source Account から動かず、参照経路のみが提供される。Organizations 連携で大規模配置可能。",
-      "references": [{"title": "CloudWatch cross-account observability", "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"}],
-      "tags": ["cloudwatch", "cross-account-observability", "monitoring-account", "source-account"],
-      "common_mistakes": ["データがコピーされると誤解", "IAM が共通化されると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CloudWatch cross-account observability",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch",
+        "cross-account-observability",
+        "monitoring-account",
+        "source-account"
+      ],
+      "common_mistakes": [
+        "データがコピーされると誤解",
+        "IAM が共通化されると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-019",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "Observability",
       "subtopic": "CloudWatch vs Managed Prometheus / Grafana",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある DevOps チームが CloudWatch、AMP（Amazon Managed Service for Prometheus）、AMG（Amazon Managed Grafana）の組み合わせを評価している。一般的な使い分けとして最も適切なのは？",
       "options": [
-        {"id": "A", "text": "AWS リソース／ログは CloudWatch、Kubernetes/EKS の Prometheus メトリクスは AMP、可視化と複数データソースの統合ダッシュボードは AMG", "is_correct": true, "explanation": "正解。三者は補完関係で、それぞれの強みを活かす構成が一般的。"},
-        {"id": "B", "text": "CloudWatch を全廃し、AMP のみで完結する", "is_correct": false, "explanation": "AWS マネージドサービスのメトリクス取得には CloudWatch が必要な場合が多い。"},
-        {"id": "C", "text": "AMG は廃止された", "is_correct": false, "explanation": "現役のサービス。"},
-        {"id": "D", "text": "AMP は AWS マネージドサービスのメトリクスを自動収集する", "is_correct": false, "explanation": "AMP は Prometheus 互換でアプリ／K8s メトリクスが対象。CloudWatch メトリクスは Cloudwatch Exporter 等で連携できるが、自動収集ではない。"}
+        {
+          "id": "A",
+          "text": "CloudWatch を全廃し、AMP のみで完結する",
+          "is_correct": false,
+          "explanation": "AWS マネージドサービスのメトリクス取得には CloudWatch が必要な場合が多い。"
+        },
+        {
+          "id": "B",
+          "text": "AMP は AWS マネージドサービスのメトリクスを自動収集する",
+          "is_correct": false,
+          "explanation": "AMP は Prometheus 互換でアプリ／K8s メトリクスが対象。CloudWatch メトリクスは Cloudwatch Exporter 等で連携できるが、自動収集ではない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS リソース／ログは CloudWatch、Kubernetes/EKS の Prometheus メトリクスは AMP、可視化と複数データソースの統合ダッシュボードは AMG",
+          "is_correct": true,
+          "explanation": "正解。三者は補完関係で、それぞれの強みを活かす構成が一般的。"
+        },
+        {
+          "id": "D",
+          "text": "AMG は廃止された",
+          "is_correct": false,
+          "explanation": "現役のサービス。"
+        }
       ],
       "explanation": "CloudWatch（AWS ネイティブ）、AMP（Prometheus 互換、PromQL）、AMG（Grafana ホスト）の三層は補完関係。EKS では AMP に Prometheus 形式のメトリクスを送り、AMG で CloudWatch / AMP / X-Ray / Athena 等を統合表示するのが現代的な選択。",
       "references": [
-        {"title": "Amazon Managed Service for Prometheus", "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html"},
-        {"title": "Amazon Managed Grafana", "url": "https://docs.aws.amazon.com/grafana/latest/userguide/what-is-Amazon-Managed-Service-Grafana.html"}
+        {
+          "title": "Amazon Managed Service for Prometheus",
+          "url": "https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html"
+        },
+        {
+          "title": "Amazon Managed Grafana",
+          "url": "https://docs.aws.amazon.com/grafana/latest/userguide/what-is-Amazon-Managed-Service-Grafana.html"
+        }
       ],
-      "tags": ["cloudwatch", "amp", "amg", "prometheus", "grafana", "observability"],
-      "common_mistakes": ["AMP が AWS メトリクスを自動収集すると誤解", "AMG が廃止されたと思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloudwatch",
+        "amp",
+        "amg",
+        "prometheus",
+        "grafana",
+        "observability"
+      ],
+      "common_mistakes": [
+        "AMP が AWS メトリクスを自動収集すると誤解",
+        "AMG が廃止されたと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain4-020",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Monitoring and Logging", "weight_percent": 15},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Monitoring and Logging",
+        "weight_percent": 15
+      },
       "topic": "Observability strategy",
       "subtopic": "End-to-end design",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "国内 FinTech 企業の SRE チームから「マルチアカウント・マルチリージョンの観測戦略を一から設計してほしい」と依頼された。最も実践的な設計の組み合わせは？",
       "options": [
-        {"id": "A", "text": "(1) 全アカウントで CloudWatch Cross-account observability を Monitoring Account に集約、(2) Logs は Subscription Filter → 集中 Log Group / S3、(3) X-Ray Active Tracing を全層で有効化、(4) Synthetics でユーザフロー監視、(5) Anomaly Detection / Composite Alarm でノイズ削減、(6) ダッシュボードは AMG で統合、(7) Resilience Hub と FIS で継続検証", "is_correct": true, "explanation": "正解。階層的・包括的な観測戦略の典型構成。L6 設計力。"},
-        {"id": "B", "text": "各アカウントで CloudWatch をバラバラに使い、月次でレポートを集計", "is_correct": false, "explanation": "横断観測がなく事故対応が遅れる。"},
-        {"id": "C", "text": "全部 OpenSearch にぶち込めば良い", "is_correct": false, "explanation": "メトリクス／トレース／ダッシュボード統合が貧弱。"},
-        {"id": "D", "text": "GuardDuty のみで観測する", "is_correct": false, "explanation": "GuardDuty は脅威検出専用。性能・可用性は観測不能。"}
+        {
+          "id": "A",
+          "text": "各アカウントで CloudWatch をバラバラに使い、月次でレポートを集計",
+          "is_correct": false,
+          "explanation": "横断観測がなく事故対応が遅れる。"
+        },
+        {
+          "id": "B",
+          "text": "全部 OpenSearch にぶち込めば良い",
+          "is_correct": false,
+          "explanation": "メトリクス／トレース／ダッシュボード統合が貧弱。"
+        },
+        {
+          "id": "C",
+          "text": "GuardDuty のみで観測する",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検出専用。性能・可用性は観測不能。"
+        },
+        {
+          "id": "D",
+          "text": "(1) 全アカウントで CloudWatch Cross-account observability を Monitoring Account に集約、(2) Logs は Subscription Filter → 集中 Log Group / S3、(3) X-Ray Active Tracing を全層で有効化、(4) Synthetics でユーザフロー監視、(5) Anomaly Detection / Composite Alarm でノイズ削減、(6) ダッシュボードは AMG で統合、(7) Resilience Hub と FIS で継続検証",
+          "is_correct": true,
+          "explanation": "正解。階層的・包括的な観測戦略の典型構成。L6 設計力。"
+        }
       ],
       "explanation": "実践的な観測戦略は階層的に設計する: (1) メトリクス層（CloudWatch + AMP）、(2) ログ層（CW Logs Subscription + S3）、(3) トレース層（X-Ray）、(4) UX 層（Synthetics/RUM）、(5) アラート層（Composite + Anomaly）、(6) 可視化層（AMG）、(7) 継続検証層（Resilience Hub + FIS）。Cross-account observability で組織横断ビューを 1 ヶ所に集約。L6 の設計力を問う設問。",
       "references": [
-        {"title": "AWS Observability Best Practices", "url": "https://aws-observability.github.io/observability-best-practices/"}
+        {
+          "title": "AWS Observability Best Practices",
+          "url": "https://aws-observability.github.io/observability-best-practices/"
+        }
       ],
-      "tags": ["observability", "design", "multi-account", "cross-account", "amg", "fis", "resilience-hub"],
-      "common_mistakes": ["集中観測なしでバラバラに使う", "ログだけ・メトリクスだけで観測戦略と呼ぶ"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "observability",
+        "design",
+        "multi-account",
+        "cross-account",
+        "amg",
+        "fis",
+        "resilience-hub"
+      ],
+      "common_mistakes": [
+        "集中観測なしでバラバラに使う",
+        "ログだけ・メトリクスだけで観測戦略と呼ぶ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

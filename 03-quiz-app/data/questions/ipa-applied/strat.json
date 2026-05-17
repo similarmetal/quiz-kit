@@ -15,692 +15,2253 @@
     {
       "id": "ipa-applied-strat-001",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "経営戦略",
       "subtopic": "SWOT分析",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SWOT分析における4つの軸として正しい組合せはどれか。",
       "options": [
-        {"id": "A", "text": "強み・弱み・機会・脅威", "is_correct": true, "explanation": "正解。Strengths（強み）、Weaknesses（弱み）、Opportunities（機会）、Threats（脅威）の頭文字。内部要因（強・弱）と外部要因（機会・脅威）を整理する。"},
-        {"id": "B", "text": "売上・コスト・利益・税金", "is_correct": false, "explanation": "財務指標であり、SWOTとは異なる。"},
-        {"id": "C", "text": "顧客・自社・競合・市場", "is_correct": false, "explanation": "これは3C+市場分析のフレームワーク。"},
-        {"id": "D", "text": "Plan・Do・Check・Action", "is_correct": false, "explanation": "PDCAサイクル。SWOTとは別概念。"}
+        {
+          "id": "A",
+          "text": "強み・弱み・機会・脅威",
+          "is_correct": true,
+          "explanation": "正解。Strengths（強み）、Weaknesses（弱み）、Opportunities（機会）、Threats（脅威）の頭文字。内部要因（強・弱）と外部要因（機会・脅威）を整理する。"
+        },
+        {
+          "id": "B",
+          "text": "Plan・Do・Check・Action",
+          "is_correct": false,
+          "explanation": "PDCAサイクル。SWOTとは別概念。"
+        },
+        {
+          "id": "C",
+          "text": "売上・コスト・利益・税金",
+          "is_correct": false,
+          "explanation": "財務指標であり、SWOTとは異なる。"
+        },
+        {
+          "id": "D",
+          "text": "顧客・自社・競合・市場",
+          "is_correct": false,
+          "explanation": "これは3C+市場分析のフレームワーク。"
+        }
       ],
       "explanation": "SWOT分析は古典的な戦略フレームワーク。クロスSWOT（強み×機会＝積極策など）で具体的戦略を導出する応用も。3C・5フォース・PESTと組み合わせると分析が立体的になる。中小企業診断士でも頻出。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（経営戦略）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["SWOT", "経営戦略", "フレームワーク"],
-      "common_mistakes": ["内部要因と外部要因を混同", "他フレームワークと取り違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（経営戦略）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "SWOT",
+        "経営戦略",
+        "フレームワーク"
+      ],
+      "common_mistakes": [
+        "内部要因と外部要因を混同",
+        "他フレームワークと取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-002",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "経営戦略",
       "subtopic": "5フォース分析",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ポーターの5フォース（5つの競争要因）に該当しないものはどれか。",
       "options": [
-        {"id": "A", "text": "業界内競合の強さ", "is_correct": false, "explanation": "5フォースの中心。"},
-        {"id": "B", "text": "新規参入の脅威", "is_correct": false, "explanation": "5フォースの一つ。"},
-        {"id": "C", "text": "政府の補助金政策", "is_correct": true, "explanation": "正解（5フォースに含まれない）。政府要因はPEST分析（Political）の対象。5フォースの構成要素ではない。"},
-        {"id": "D", "text": "代替品の脅威", "is_correct": false, "explanation": "5フォースの一つ。異業種からの代替も含む。"}
+        {
+          "id": "A",
+          "text": "代替品の脅威",
+          "is_correct": false,
+          "explanation": "5フォースの一つ。異業種からの代替も含む。"
+        },
+        {
+          "id": "B",
+          "text": "政府の補助金政策",
+          "is_correct": true,
+          "explanation": "正解（5フォースに含まれない）。政府要因はPEST分析（Political）の対象。5フォースの構成要素ではない。"
+        },
+        {
+          "id": "C",
+          "text": "新規参入の脅威",
+          "is_correct": false,
+          "explanation": "5フォースの一つ。"
+        },
+        {
+          "id": "D",
+          "text": "業界内競合の強さ",
+          "is_correct": false,
+          "explanation": "5フォースの中心。"
+        }
       ],
       "explanation": "ポーターの5フォース：(1)業界内競合、(2)新規参入の脅威、(3)代替品の脅威、(4)買い手の交渉力、(5)売り手（供給者）の交渉力。業界の収益性を説明するモデル。政府・社会・技術等のマクロ要因はPESTで別途分析する。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（経営戦略）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["5フォース", "ポーター", "経営戦略"],
-      "common_mistakes": ["5フォースとPESTを混同", "売り手・買い手のどちらかを忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（経営戦略）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "5フォース",
+        "ポーター",
+        "経営戦略"
+      ],
+      "common_mistakes": [
+        "5フォースとPESTを混同",
+        "売り手・買い手のどちらかを忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-003",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "経営戦略",
       "subtopic": "PPM（プロダクト・ポートフォリオ・マネジメント）",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ボストンコンサルティンググループ（BCG）のPPMマトリクスにおいて、市場成長率が高く相対市場シェアも高い事業の分類はどれか。",
       "options": [
-        {"id": "A", "text": "問題児（Problem Child）", "is_correct": false, "explanation": "高成長率＆低シェア。投資判断が難しい象限。"},
-        {"id": "B", "text": "花形（Star）", "is_correct": true, "explanation": "正解。高成長率×高シェアの花形事業は積極投資し、将来の金のなる木に育てる。"},
-        {"id": "C", "text": "金のなる木（Cash Cow）", "is_correct": false, "explanation": "低成長率×高シェア。安定したキャッシュ源で他事業に投資する原資。"},
-        {"id": "D", "text": "負け犬（Dog）", "is_correct": false, "explanation": "低成長率×低シェア。撤退・縮小の検討対象。"}
+        {
+          "id": "A",
+          "text": "金のなる木（Cash Cow）",
+          "is_correct": false,
+          "explanation": "低成長率×高シェア。安定したキャッシュ源で他事業に投資する原資。"
+        },
+        {
+          "id": "B",
+          "text": "負け犬（Dog）",
+          "is_correct": false,
+          "explanation": "低成長率×低シェア。撤退・縮小の検討対象。"
+        },
+        {
+          "id": "C",
+          "text": "花形（Star）",
+          "is_correct": true,
+          "explanation": "正解。高成長率×高シェアの花形事業は積極投資し、将来の金のなる木に育てる。"
+        },
+        {
+          "id": "D",
+          "text": "問題児（Problem Child）",
+          "is_correct": false,
+          "explanation": "高成長率＆低シェア。投資判断が難しい象限。"
+        }
       ],
       "explanation": "PPM4象限：花形（投資維持）→金のなる木（収穫）／問題児（選択的投資 or 撤退）→負け犬（撤退）。花形は成長率が落ち着けば金のなる木になる遷移パスが理想。M&Aや事業ポートフォリオ最適化の基本ツール。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（経営戦略）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["PPM", "BCG", "ポートフォリオ"],
-      "common_mistakes": ["4象限の名称を取り違える", "市場成長率とシェアの軸を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（経営戦略）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "PPM",
+        "BCG",
+        "ポートフォリオ"
+      ],
+      "common_mistakes": [
+        "4象限の名称を取り違える",
+        "市場成長率とシェアの軸を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-004",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "経営戦略",
       "subtopic": "バリューチェーン",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ポーターのバリューチェーンモデルにおける「主活動」に分類されるものはどれか。",
       "options": [
-        {"id": "A", "text": "人事・労務管理", "is_correct": false, "explanation": "支援活動の一つ。"},
-        {"id": "B", "text": "技術開発", "is_correct": false, "explanation": "支援活動の一つ。R&Dを含む。"},
-        {"id": "C", "text": "マーケティング・販売", "is_correct": true, "explanation": "正解。マーケティング・販売は主活動の一つ。購買物流→製造→出荷物流→マーケティング・販売→サービスの5つが主活動。"},
-        {"id": "D", "text": "全般管理（インフラ）", "is_correct": false, "explanation": "支援活動の一つ。経営企画、財務、法務などが含まれる。"}
+        {
+          "id": "A",
+          "text": "全般管理（インフラ）",
+          "is_correct": false,
+          "explanation": "支援活動の一つ。経営企画、財務、法務などが含まれる。"
+        },
+        {
+          "id": "B",
+          "text": "技術開発",
+          "is_correct": false,
+          "explanation": "支援活動の一つ。R&Dを含む。"
+        },
+        {
+          "id": "C",
+          "text": "人事・労務管理",
+          "is_correct": false,
+          "explanation": "支援活動の一つ。"
+        },
+        {
+          "id": "D",
+          "text": "マーケティング・販売",
+          "is_correct": true,
+          "explanation": "正解。マーケティング・販売は主活動の一つ。購買物流→製造→出荷物流→マーケティング・販売→サービスの5つが主活動。"
+        }
       ],
       "explanation": "バリューチェーン：(1)主活動：購買物流・製造・出荷物流・マーケティング販売・サービス、(2)支援活動：全般管理・人的資源管理・技術開発・調達。各活動でどこに付加価値とコストが生じているかを分析し、競争優位の源泉を特定する。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（経営戦略）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["バリューチェーン", "ポーター", "経営戦略"],
-      "common_mistakes": ["主活動と支援活動を混同", "マーケティングを支援と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（経営戦略）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "バリューチェーン",
+        "ポーター",
+        "経営戦略"
+      ],
+      "common_mistakes": [
+        "主活動と支援活動を混同",
+        "マーケティングを支援と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-005",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "経営戦略",
       "subtopic": "コアコンピタンス",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ハメル＆プラハラードが提唱した「コアコンピタンス」の特徴として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "他社が容易に模倣でき、業界標準となっている技術や能力", "is_correct": false, "explanation": "模倣困難性が低ければコアコンピタンスとは呼ばない。"},
-        {"id": "B", "text": "顧客価値の提供に貢献し、模倣困難で、複数事業に応用可能な企業独自の能力", "is_correct": true, "explanation": "正解。3要件（顧客価値貢献、模倣困難性、応用可能性）を満たす中核能力をコアコンピタンスという。"},
-        {"id": "C", "text": "短期的な売上を最大化する販売テクニック", "is_correct": false, "explanation": "短期的・戦術的施策ではない。長期的・戦略的能力。"},
-        {"id": "D", "text": "業界全体で共通する基本的な業務スキル", "is_correct": false, "explanation": "業界共通スキルは差別化にならず、コアコンピタンスではない。"}
+        {
+          "id": "A",
+          "text": "顧客価値の提供に貢献し、模倣困難で、複数事業に応用可能な企業独自の能力",
+          "is_correct": true,
+          "explanation": "正解。3要件（顧客価値貢献、模倣困難性、応用可能性）を満たす中核能力をコアコンピタンスという。"
+        },
+        {
+          "id": "B",
+          "text": "他社が容易に模倣でき、業界標準となっている技術や能力",
+          "is_correct": false,
+          "explanation": "模倣困難性が低ければコアコンピタンスとは呼ばない。"
+        },
+        {
+          "id": "C",
+          "text": "業界全体で共通する基本的な業務スキル",
+          "is_correct": false,
+          "explanation": "業界共通スキルは差別化にならず、コアコンピタンスではない。"
+        },
+        {
+          "id": "D",
+          "text": "短期的な売上を最大化する販売テクニック",
+          "is_correct": false,
+          "explanation": "短期的・戦術的施策ではない。長期的・戦略的能力。"
+        }
       ],
       "explanation": "コアコンピタンス：(1)顧客価値貢献、(2)競合困難（模倣困難性）、(3)応用可能性。例：ホンダのエンジン技術、スターバックスの店舗体験設計。VRIO分析（経済価値・希少性・模倣困難性・組織）と一緒に語られる。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（経営戦略）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["コアコンピタンス", "経営戦略", "VRIO"],
-      "common_mistakes": ["コアコンピタンス＝得意なこと、と単純化しすぎる", "模倣困難性を見落とす"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（経営戦略）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "コアコンピタンス",
+        "経営戦略",
+        "VRIO"
+      ],
+      "common_mistakes": [
+        "コアコンピタンス＝得意なこと、と単純化しすぎる",
+        "模倣困難性を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-006",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "システム戦略",
       "subtopic": "EA（エンタープライズアーキテクチャ）",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "EA（エンタープライズアーキテクチャ）の4階層に含まれないものはどれか。",
       "options": [
-        {"id": "A", "text": "ビジネスアーキテクチャ（BA）", "is_correct": false, "explanation": "EA 4階層の最上位。業務プロセス・組織を扱う。"},
-        {"id": "B", "text": "データアーキテクチャ（DA）", "is_correct": false, "explanation": "EA 4階層の一つ。データモデル・情報資産を扱う。"},
-        {"id": "C", "text": "アプリケーションアーキテクチャ（AA）", "is_correct": false, "explanation": "EA 4階層の一つ。業務アプリ構成を扱う。"},
-        {"id": "D", "text": "プロジェクトアーキテクチャ（PA）", "is_correct": true, "explanation": "正解（含まれない）。EA 4階層は BA／DA／AA／TA（テクノロジ）。プロジェクトアーキテクチャは存在しない造語。"}
+        {
+          "id": "A",
+          "text": "データアーキテクチャ（DA）",
+          "is_correct": false,
+          "explanation": "EA 4階層の一つ。データモデル・情報資産を扱う。"
+        },
+        {
+          "id": "B",
+          "text": "プロジェクトアーキテクチャ（PA）",
+          "is_correct": true,
+          "explanation": "正解（含まれない）。EA 4階層は BA／DA／AA／TA（テクノロジ）。プロジェクトアーキテクチャは存在しない造語。"
+        },
+        {
+          "id": "C",
+          "text": "ビジネスアーキテクチャ（BA）",
+          "is_correct": false,
+          "explanation": "EA 4階層の最上位。業務プロセス・組織を扱う。"
+        },
+        {
+          "id": "D",
+          "text": "アプリケーションアーキテクチャ（AA）",
+          "is_correct": false,
+          "explanation": "EA 4階層の一つ。業務アプリ構成を扱う。"
+        }
       ],
       "explanation": "EA 4階層：BA（ビジネス）→DA（データ）→AA（アプリケーション）→TA（テクノロジ）。FEAF、TOGAFなどの標準フレームワーク。経済産業省も日本版EAを推進し、IT戦略と業務戦略の整合を取る基盤となる。",
-      "references": [{"title": "経済産業省 EA", "url": "https://www.meti.go.jp/policy/it_policy/EA/"}],
-      "tags": ["EA", "TOGAF", "システム戦略"],
-      "common_mistakes": ["EA 4階層を3つしか覚えていない", "TAとDAを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "経済産業省 EA",
+          "url": "https://www.meti.go.jp/policy/it_policy/EA/"
+        }
+      ],
+      "tags": [
+        "EA",
+        "TOGAF",
+        "システム戦略"
+      ],
+      "common_mistakes": [
+        "EA 4階層を3つしか覚えていない",
+        "TAとDAを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-007",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "システム戦略",
       "subtopic": "SOA",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SOA（Service-Oriented Architecture）の特徴として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "業務機能を独立した「サービス」として実装し、再利用・疎結合な連携を実現する", "is_correct": true, "explanation": "正解。SOAはビジネス機能をサービス単位で構築し、ESB等で疎結合連携。マイクロサービスの先祖的概念。"},
-        {"id": "B", "text": "1つの巨大なモノリシックアプリで全機能を提供する", "is_correct": false, "explanation": "SOAと逆方向のアーキテクチャ。"},
-        {"id": "C", "text": "クライアント側ですべてのロジックを処理する", "is_correct": false, "explanation": "SOAはサーバ側サービスの再利用が中心。"},
-        {"id": "D", "text": "ネットワーク経由のサービス連携を行わない", "is_correct": false, "explanation": "SOAはネットワーク連携が前提。HTTP/SOAP/REST等を通じてサービス間通信する。"}
+        {
+          "id": "A",
+          "text": "ネットワーク経由のサービス連携を行わない",
+          "is_correct": false,
+          "explanation": "SOAはネットワーク連携が前提。HTTP/SOAP/REST等を通じてサービス間通信する。"
+        },
+        {
+          "id": "B",
+          "text": "1つの巨大なモノリシックアプリで全機能を提供する",
+          "is_correct": false,
+          "explanation": "SOAと逆方向のアーキテクチャ。"
+        },
+        {
+          "id": "C",
+          "text": "業務機能を独立した「サービス」として実装し、再利用・疎結合な連携を実現する",
+          "is_correct": true,
+          "explanation": "正解。SOAはビジネス機能をサービス単位で構築し、ESB等で疎結合連携。マイクロサービスの先祖的概念。"
+        },
+        {
+          "id": "D",
+          "text": "クライアント側ですべてのロジックを処理する",
+          "is_correct": false,
+          "explanation": "SOAはサーバ側サービスの再利用が中心。"
+        }
       ],
       "explanation": "SOAは2000年代に台頭したアーキテクチャ。サービス単位設計、ESB（エンタープライズサービスバス）、SOAPによる連携。マイクロサービスはSOAの進化形でAPI Gateway、コンテナ、軽量プロトコルが追加された。経営戦略とITを橋渡しする基本概念。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（システム戦略）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["SOA", "マイクロサービス", "アーキテクチャ"],
-      "common_mistakes": ["SOAとモノリシックを混同", "マイクロサービスとSOAの違いが曖昧"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（システム戦略）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "SOA",
+        "マイクロサービス",
+        "アーキテクチャ"
+      ],
+      "common_mistakes": [
+        "SOAとモノリシックを混同",
+        "マイクロサービスとSOAの違いが曖昧"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-008",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "システム戦略",
       "subtopic": "BCM / BCP",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "BCP（事業継続計画）とBCM（事業継続マネジメント）の関係として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "BCPはBCMの一部で、計画文書を指す。BCMはより広く、計画策定・運用・改善を含むマネジメントサイクル", "is_correct": true, "explanation": "正解。BCMはBCPを含むPDCAサイクル全体を指す管理活動。BCPは計画書（成果物）の側面が強い。"},
-        {"id": "B", "text": "BCPはBCMの上位概念で、BCMは技術運用のみ", "is_correct": false, "explanation": "上下関係が逆。BCMが上位。"},
-        {"id": "C", "text": "BCPとBCMは完全に同義語", "is_correct": false, "explanation": "実務では区別する。BCMは継続的マネジメント、BCPは具体計画。"},
-        {"id": "D", "text": "BCPは情報システムだけ、BCMは人事だけを扱う", "is_correct": false, "explanation": "BCP/BCMは事業全体を対象とし、特定領域のみではない。"}
+        {
+          "id": "A",
+          "text": "BCPは情報システムだけ、BCMは人事だけを扱う",
+          "is_correct": false,
+          "explanation": "BCP/BCMは事業全体を対象とし、特定領域のみではない。"
+        },
+        {
+          "id": "B",
+          "text": "BCPとBCMは完全に同義語",
+          "is_correct": false,
+          "explanation": "実務では区別する。BCMは継続的マネジメント、BCPは具体計画。"
+        },
+        {
+          "id": "C",
+          "text": "BCPはBCMの上位概念で、BCMは技術運用のみ",
+          "is_correct": false,
+          "explanation": "上下関係が逆。BCMが上位。"
+        },
+        {
+          "id": "D",
+          "text": "BCPはBCMの一部で、計画文書を指す。BCMはより広く、計画策定・運用・改善を含むマネジメントサイクル",
+          "is_correct": true,
+          "explanation": "正解。BCMはBCPを含むPDCAサイクル全体を指す管理活動。BCPは計画書（成果物）の側面が強い。"
+        }
       ],
       "explanation": "BCMS（ISO 22301）はBCMの国際規格。BCPはその中心成果物。BCMはBIA（ビジネスインパクト分析）→戦略選定→BCP策定→訓練→改善のPDCA。重要業務の特定、RTO/RPO設定、代替手段の整備を継続的に行う。",
-      "references": [{"title": "経済産業省 BCP・BCMガイドライン", "url": "https://www.meti.go.jp/policy/economy/keiei_innovation/keieiryoku/bcp.html"}],
-      "tags": ["BCP", "BCM", "ISO22301"],
-      "common_mistakes": ["BCPとBCMを同一視", "BCMをITに限定する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "経済産業省 BCP・BCMガイドライン",
+          "url": "https://www.meti.go.jp/policy/economy/keiei_innovation/keieiryoku/bcp.html"
+        }
+      ],
+      "tags": [
+        "BCP",
+        "BCM",
+        "ISO22301"
+      ],
+      "common_mistakes": [
+        "BCPとBCMを同一視",
+        "BCMをITに限定する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-009",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "システム戦略",
       "subtopic": "DX",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "経済産業省「DXレポート」が指摘した「2025年の崖」の主旨として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "老朽化したレガシーシステムを刷新できないと、2025年以降に毎年最大12兆円の経済損失が発生し得る", "is_correct": true, "explanation": "正解。経済産業省が2018年DXレポートで提示した警鐘。レガシー保守費・人材枯渇・競争力低下の複合課題。"},
-        {"id": "B", "text": "クラウドサービスの普及により情報システム部門が不要になる", "is_correct": false, "explanation": "クラウド普及はDXの一手段だが、本論点ではない。"},
-        {"id": "C", "text": "AIにより全ての業務が完全自動化される", "is_correct": false, "explanation": "DXレポートはこのような断定はしない。"},
-        {"id": "D", "text": "個人情報保護法の改正対応が間に合わない", "is_correct": false, "explanation": "別の法令対応の話で、DXレポートの主旨ではない。"}
+        {
+          "id": "A",
+          "text": "老朽化したレガシーシステムを刷新できないと、2025年以降に毎年最大12兆円の経済損失が発生し得る",
+          "is_correct": true,
+          "explanation": "正解。経済産業省が2018年DXレポートで提示した警鐘。レガシー保守費・人材枯渇・競争力低下の複合課題。"
+        },
+        {
+          "id": "B",
+          "text": "クラウドサービスの普及により情報システム部門が不要になる",
+          "is_correct": false,
+          "explanation": "クラウド普及はDXの一手段だが、本論点ではない。"
+        },
+        {
+          "id": "C",
+          "text": "AIにより全ての業務が完全自動化される",
+          "is_correct": false,
+          "explanation": "DXレポートはこのような断定はしない。"
+        },
+        {
+          "id": "D",
+          "text": "個人情報保護法の改正対応が間に合わない",
+          "is_correct": false,
+          "explanation": "別の法令対応の話で、DXレポートの主旨ではない。"
+        }
       ],
       "explanation": "DXレポート2018→2.1 2020→3.0など継続発信。2025年問題：(1)レガシーシステムのブラックボックス化、(2)IT人材の引退・不足（2025年に約43万人不足）、(3)競争力低下。DX推進指標、デジタルガバナンスコード等で対応を促している。",
-      "references": [{"title": "経済産業省 DXレポート", "url": "https://www.meti.go.jp/policy/it_policy/dx/dx.html"}],
-      "tags": ["DX", "2025年の崖", "経済産業省"],
-      "common_mistakes": ["DXを単なるデジタル化と理解", "経済損失額を覚えていない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "経済産業省 DXレポート",
+          "url": "https://www.meti.go.jp/policy/it_policy/dx/dx.html"
+        }
+      ],
+      "tags": [
+        "DX",
+        "2025年の崖",
+        "経済産業省"
+      ],
+      "common_mistakes": [
+        "DXを単なるデジタル化と理解",
+        "経済損失額を覚えていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-010",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "システム企画",
       "subtopic": "RFI / RFP",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "システム調達における「RFP（Request for Proposal）」の説明として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "ベンダ各社に技術や製品の概要情報を求める文書", "is_correct": false, "explanation": "これは RFI（Request for Information）の説明。"},
-        {"id": "B", "text": "発注者がベンダに具体的な提案（システム構成、スケジュール、見積等）を求める文書", "is_correct": true, "explanation": "正解。RFPは要件・条件を明確に伝え、提案を求める正式文書。比較評価の基礎となる。"},
-        {"id": "C", "text": "ベンダから受領した最終見積書", "is_correct": false, "explanation": "これは見積書（Quotation）。RFPは発注側の問いかけ文書。"},
-        {"id": "D", "text": "プロジェクト終結時にベンダが提出する報告書", "is_correct": false, "explanation": "プロジェクト完了報告書の話で、RFPとは無関係。"}
+        {
+          "id": "A",
+          "text": "ベンダ各社に技術や製品の概要情報を求める文書",
+          "is_correct": false,
+          "explanation": "これは RFI（Request for Information）の説明。"
+        },
+        {
+          "id": "B",
+          "text": "発注者がベンダに具体的な提案（システム構成、スケジュール、見積等）を求める文書",
+          "is_correct": true,
+          "explanation": "正解。RFPは要件・条件を明確に伝え、提案を求める正式文書。比較評価の基礎となる。"
+        },
+        {
+          "id": "C",
+          "text": "ベンダから受領した最終見積書",
+          "is_correct": false,
+          "explanation": "これは見積書（Quotation）。RFPは発注側の問いかけ文書。"
+        },
+        {
+          "id": "D",
+          "text": "プロジェクト終結時にベンダが提出する報告書",
+          "is_correct": false,
+          "explanation": "プロジェクト完了報告書の話で、RFPとは無関係。"
+        }
       ],
       "explanation": "調達フロー：RFI（情報収集）→RFP（提案依頼）→提案書受領→評価→契約→受入。RFPには要件、評価基準、納期、予算枠、契約条件等を明示する。質の高いRFPが調達成功の核。中小企業診断士でも頻出。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（システム企画）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["RFP", "RFI", "調達"],
-      "common_mistakes": ["RFIとRFPを混同", "RFPに評価基準を書かない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（システム企画）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "RFP",
+        "RFI",
+        "調達"
+      ],
+      "common_mistakes": [
+        "RFIとRFPを混同",
+        "RFPに評価基準を書かない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-011",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "システム企画",
       "subtopic": "要件定義",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "システム要件のうち「非機能要件」に分類されるものはどれか。",
       "options": [
-        {"id": "A", "text": "ユーザがログインできること", "is_correct": false, "explanation": "ログイン機能は機能要件。"},
-        {"id": "B", "text": "応答時間が3秒以内であること", "is_correct": true, "explanation": "正解。性能要件は非機能要件の代表。可用性・拡張性・セキュリティ・保守性なども非機能要件。"},
-        {"id": "C", "text": "顧客情報を登録・更新できること", "is_correct": false, "explanation": "業務機能の要件で、機能要件。"},
-        {"id": "D", "text": "売上集計レポートを出力できること", "is_correct": false, "explanation": "出力機能要件で、機能要件。"}
+        {
+          "id": "A",
+          "text": "ユーザがログインできること",
+          "is_correct": false,
+          "explanation": "ログイン機能は機能要件。"
+        },
+        {
+          "id": "B",
+          "text": "売上集計レポートを出力できること",
+          "is_correct": false,
+          "explanation": "出力機能要件で、機能要件。"
+        },
+        {
+          "id": "C",
+          "text": "応答時間が3秒以内であること",
+          "is_correct": true,
+          "explanation": "正解。性能要件は非機能要件の代表。可用性・拡張性・セキュリティ・保守性なども非機能要件。"
+        },
+        {
+          "id": "D",
+          "text": "顧客情報を登録・更新できること",
+          "is_correct": false,
+          "explanation": "業務機能の要件で、機能要件。"
+        }
       ],
       "explanation": "要件分類：(1)機能要件：システムが「何をするか」、(2)非機能要件：「どう動くか」（性能、可用性、信頼性、セキュリティ、運用性、移行性等）。IPA「非機能要求グレード」が日本標準。非機能要件の不備が炎上の最大要因と言われる。",
-      "references": [{"title": "IPA 非機能要求グレード", "url": "https://www.ipa.go.jp/sec/softwareengineering/std/ent03-b.html"}],
-      "tags": ["要件定義", "非機能要件", "IPA"],
-      "common_mistakes": ["全要件を機能要件と思い込む", "性能要件を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 非機能要求グレード",
+          "url": "https://www.ipa.go.jp/sec/softwareengineering/std/ent03-b.html"
+        }
+      ],
+      "tags": [
+        "要件定義",
+        "非機能要件",
+        "IPA"
+      ],
+      "common_mistakes": [
+        "全要件を機能要件と思い込む",
+        "性能要件を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-012",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスマネジメント",
       "subtopic": "マーケティングミックス（4P）",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "マーケティングミックスの4Pに含まれないものはどれか。",
       "options": [
-        {"id": "A", "text": "Product（製品）", "is_correct": false, "explanation": "4Pの一つ。"},
-        {"id": "B", "text": "Price（価格）", "is_correct": false, "explanation": "4Pの一つ。"},
-        {"id": "C", "text": "Place（流通）", "is_correct": false, "explanation": "4Pの一つ。チャネル・販路。"},
-        {"id": "D", "text": "Profit（利益）", "is_correct": true, "explanation": "正解（含まれない）。4PはProduct、Price、Place、Promotionで、Profitは含まれない（結果指標）。"}
+        {
+          "id": "A",
+          "text": "Place（流通）",
+          "is_correct": false,
+          "explanation": "4Pの一つ。チャネル・販路。"
+        },
+        {
+          "id": "B",
+          "text": "Product（製品）",
+          "is_correct": false,
+          "explanation": "4Pの一つ。"
+        },
+        {
+          "id": "C",
+          "text": "Price（価格）",
+          "is_correct": false,
+          "explanation": "4Pの一つ。"
+        },
+        {
+          "id": "D",
+          "text": "Profit（利益）",
+          "is_correct": true,
+          "explanation": "正解（含まれない）。4PはProduct、Price、Place、Promotionで、Profitは含まれない（結果指標）。"
+        }
       ],
       "explanation": "マッカーシーの4P：Product、Price、Place、Promotion。サービス向けに7P（People、Process、Physical evidence追加）、顧客視点の4C（Customer value、Cost、Convenience、Communication）に拡張される。SaaSではPriceの設計が特に難所。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（マーケティング）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["4P", "マーケティング", "ストラテジ"],
-      "common_mistakes": ["4PとSWOTを混同", "Promotion を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（マーケティング）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "4P",
+        "マーケティング",
+        "ストラテジ"
+      ],
+      "common_mistakes": [
+        "4PとSWOTを混同",
+        "Promotion を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-013",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスマネジメント",
       "subtopic": "財務会計（損益分岐点）",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製品の販売単価が1,000円、変動費が400円/個、固定費が60万円のとき、損益分岐点販売数量は何個か。",
       "options": [
-        {"id": "A", "text": "600個", "is_correct": false, "explanation": "固定費を販売単価で割った値。変動費を考慮していない。"},
-        {"id": "B", "text": "1,000個", "is_correct": true, "explanation": "正解。限界利益＝1000-400=600円/個。固定費60万円÷限界利益600円=1,000個。"},
-        {"id": "C", "text": "1,500個", "is_correct": false, "explanation": "計算誤り。限界利益で割る必要がある。"},
-        {"id": "D", "text": "2,000個", "is_correct": false, "explanation": "限界利益を300円としたような誤算。"}
+        {
+          "id": "A",
+          "text": "1,000個",
+          "is_correct": true,
+          "explanation": "正解。限界利益＝1000-400=600円/個。固定費60万円÷限界利益600円=1,000個。"
+        },
+        {
+          "id": "B",
+          "text": "1,500個",
+          "is_correct": false,
+          "explanation": "計算誤り。限界利益で割る必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "2,000個",
+          "is_correct": false,
+          "explanation": "限界利益を300円としたような誤算。"
+        },
+        {
+          "id": "D",
+          "text": "600個",
+          "is_correct": false,
+          "explanation": "固定費を販売単価で割った値。変動費を考慮していない。"
+        }
       ],
       "explanation": "損益分岐点（BEP）販売量 = 固定費 ÷ 限界利益（販売単価−変動費）。限界利益率 = 1 - 変動費/単価。FinTechや製造業の収益計画、SaaSのユニットエコノミクス（CAC回収・LTV）にも応用される基礎指標。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（財務）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["損益分岐点", "財務", "限界利益"],
-      "common_mistakes": ["変動費を引き忘れる", "固定費と変動費を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（財務）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "損益分岐点",
+        "財務",
+        "限界利益"
+      ],
+      "common_mistakes": [
+        "変動費を引き忘れる",
+        "固定費と変動費を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-014",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスマネジメント",
       "subtopic": "OR（線形計画法）",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "次の線形計画問題：最大化 Z = 3x + 2y、制約：x + y ≦ 4、x ≦ 3、y ≦ 2、x≧0、y≧0。最適解（x, y, Z）はどれか。",
       "options": [
-        {"id": "A", "text": "x=2, y=2, Z=10", "is_correct": false, "explanation": "頂点(2,2)はx+y=4で制約に達するが、Z=10で最適ではない。"},
-        {"id": "B", "text": "x=3, y=1, Z=11", "is_correct": true, "explanation": "正解。頂点(3,1)でx+y=4とx=3の両制約を同時に満たし、Z=3*3+2*1=11で最大。"},
-        {"id": "C", "text": "x=0, y=2, Z=4", "is_correct": false, "explanation": "頂点だが目的関数値が小さく最適ではない。"},
-        {"id": "D", "text": "x=4, y=0, Z=12", "is_correct": false, "explanation": "x≦3に違反する。実行可能解ではない。"}
+        {
+          "id": "A",
+          "text": "x=2, y=2, Z=10",
+          "is_correct": false,
+          "explanation": "頂点(2,2)はx+y=4で制約に達するが、Z=10で最適ではない。"
+        },
+        {
+          "id": "B",
+          "text": "x=3, y=1, Z=11",
+          "is_correct": true,
+          "explanation": "正解。頂点(3,1)でx+y=4とx=3の両制約を同時に満たし、Z=3*3+2*1=11で最大。"
+        },
+        {
+          "id": "C",
+          "text": "x=4, y=0, Z=12",
+          "is_correct": false,
+          "explanation": "x≦3に違反する。実行可能解ではない。"
+        },
+        {
+          "id": "D",
+          "text": "x=0, y=2, Z=4",
+          "is_correct": false,
+          "explanation": "頂点だが目的関数値が小さく最適ではない。"
+        }
       ],
       "explanation": "実行可能領域の頂点列挙：(0,0)→Z=0、(3,0)→Z=9、(3,1)→Z=11、(2,2)→Z=10、(0,2)→Z=4。最大値は(3,1)でZ=11。線形計画は実行可能領域の頂点（角）に最適解が必ず存在する。シンプレックス法、内点法等で機械的に求められる。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（OR）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["線形計画", "OR", "最適化"],
-      "common_mistakes": ["制約を見落として実行不可能解を選ぶ", "頂点列挙を網羅しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（OR）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "線形計画",
+        "OR",
+        "最適化"
+      ],
+      "common_mistakes": [
+        "制約を見落として実行不可能解を選ぶ",
+        "頂点列挙を網羅しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-015",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスマネジメント",
       "subtopic": "知的財産権",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ソフトウェアのソースコードに認められる知的財産権として最も主要なものはどれか。",
       "options": [
-        {"id": "A", "text": "特許権", "is_correct": false, "explanation": "ソフトウェア発明（アルゴリズム的・技術的アイデア）が特許取得対象になる場合はあるが、コード自体の保護ではない。"},
-        {"id": "B", "text": "著作権", "is_correct": true, "explanation": "正解。ソースコードはプログラムの著作物として著作権法で保護される（著作権法10条1項9号）。"},
-        {"id": "C", "text": "商標権", "is_correct": false, "explanation": "商標は標章（ロゴ・名称）の保護で、ソースコードとは別。"},
-        {"id": "D", "text": "意匠権", "is_correct": false, "explanation": "意匠権は工業デザインの保護で、ソースコードには適用されない。"}
+        {
+          "id": "A",
+          "text": "意匠権",
+          "is_correct": false,
+          "explanation": "意匠権は工業デザインの保護で、ソースコードには適用されない。"
+        },
+        {
+          "id": "B",
+          "text": "商標権",
+          "is_correct": false,
+          "explanation": "商標は標章（ロゴ・名称）の保護で、ソースコードとは別。"
+        },
+        {
+          "id": "C",
+          "text": "著作権",
+          "is_correct": true,
+          "explanation": "正解。ソースコードはプログラムの著作物として著作権法で保護される（著作権法10条1項9号）。"
+        },
+        {
+          "id": "D",
+          "text": "特許権",
+          "is_correct": false,
+          "explanation": "ソフトウェア発明（アルゴリズム的・技術的アイデア）が特許取得対象になる場合はあるが、コード自体の保護ではない。"
+        }
       ],
       "explanation": "ソフトウェア知財：(1)著作権（コード自体、表現の保護）、(2)特許権（発明＝アルゴリズム・装置として認められれば）、(3)営業秘密（不正競争防止法）。ライセンス（OSS、商用）は著作権ベースで成立する。最近はAI生成コードの著作権論議も活発。",
-      "references": [{"title": "文化庁 著作権", "url": "https://www.bunka.go.jp/seisaku/chosakuken/"}],
-      "tags": ["著作権", "知的財産", "OSS"],
-      "common_mistakes": ["ソースコードに特許権が自動的にあると誤解", "OSSライセンスを著作権と無関係と思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "文化庁 著作権",
+          "url": "https://www.bunka.go.jp/seisaku/chosakuken/"
+        }
+      ],
+      "tags": [
+        "著作権",
+        "知的財産",
+        "OSS"
+      ],
+      "common_mistakes": [
+        "ソースコードに特許権が自動的にあると誤解",
+        "OSSライセンスを著作権と無関係と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-016",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "関連法規",
       "subtopic": "下請法",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "下請法（下請代金支払遅延等防止法）の規制対象として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "資本金が大きい親事業者から、より資本金が小さい下請事業者への発注（情報成果物作成委託、役務提供委託等）", "is_correct": true, "explanation": "正解。下請法は親事業者と下請事業者の資本金規模差・取引内容で適用される。情報成果物作成委託では原則 資本金5,000万円超 vs 5,000万円以下、または資本金1,000万円超 vs 1,000万円以下が対象。"},
-        {"id": "B", "text": "全ての企業間取引に一律適用される", "is_correct": false, "explanation": "資本金区分・取引内容により適用範囲が定まる。"},
-        {"id": "C", "text": "個人事業主同士の取引のみが対象", "is_correct": false, "explanation": "下請法は親事業者の資本金規模が条件で、個人事業主のみではない。"},
-        {"id": "D", "text": "海外取引にも自動的に適用される", "is_correct": false, "explanation": "下請法は日本国内の取引が原則対象。"}
+        {
+          "id": "A",
+          "text": "海外取引にも自動的に適用される",
+          "is_correct": false,
+          "explanation": "下請法は日本国内の取引が原則対象。"
+        },
+        {
+          "id": "B",
+          "text": "個人事業主同士の取引のみが対象",
+          "is_correct": false,
+          "explanation": "下請法は親事業者の資本金規模が条件で、個人事業主のみではない。"
+        },
+        {
+          "id": "C",
+          "text": "全ての企業間取引に一律適用される",
+          "is_correct": false,
+          "explanation": "資本金区分・取引内容により適用範囲が定まる。"
+        },
+        {
+          "id": "D",
+          "text": "資本金が大きい親事業者から、より資本金が小さい下請事業者への発注（情報成果物作成委託、役務提供委託等）",
+          "is_correct": true,
+          "explanation": "正解。下請法は親事業者と下請事業者の資本金規模差・取引内容で適用される。情報成果物作成委託では原則 資本金5,000万円超 vs 5,000万円以下、または資本金1,000万円超 vs 1,000万円以下が対象。"
+        }
       ],
       "explanation": "下請法は親事業者の禁止行為（受領拒否、下請代金支払遅延、減額、返品、買いたたき、購入強制等）を規定。違反で公正取引委員会の勧告等。SI業界・ソフトウェア開発でも適用が多く、Solo経営者がフリーランス受託する側でも理解必須。",
-      "references": [{"title": "公正取引委員会 下請法", "url": "https://www.jftc.go.jp/shitauke/"}],
-      "tags": ["下請法", "法務", "公正取引"],
-      "common_mistakes": ["資本金区分を覚えていない", "全取引に適用と思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "公正取引委員会 下請法",
+          "url": "https://www.jftc.go.jp/shitauke/"
+        }
+      ],
+      "tags": [
+        "下請法",
+        "法務",
+        "公正取引"
+      ],
+      "common_mistakes": [
+        "資本金区分を覚えていない",
+        "全取引に適用と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-017",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "関連法規",
       "subtopic": "労働関連法令",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "労働者派遣法における「指揮命令」の関係として正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "派遣先（業務委託先）の事業主が派遣労働者に対して直接指揮命令を行う", "is_correct": true, "explanation": "正解。派遣の特徴は雇用関係（派遣元）と指揮命令関係（派遣先）が分離する点。請負・準委任契約とは異なる。"},
-        {"id": "B", "text": "派遣元の事業主が派遣先の業務に直接指揮命令を行う", "is_correct": false, "explanation": "派遣元は雇用関係はあるが、業務遂行上の指揮命令は派遣先が行う。"},
-        {"id": "C", "text": "派遣労働者は誰の指揮命令も受けない", "is_correct": false, "explanation": "派遣労働者は派遣先の指揮命令下で就労する。"},
-        {"id": "D", "text": "派遣先と派遣元が共同で指揮命令する", "is_correct": false, "explanation": "原則は派遣先のみ。共同という制度ではない。"}
+        {
+          "id": "A",
+          "text": "派遣先（業務委託先）の事業主が派遣労働者に対して直接指揮命令を行う",
+          "is_correct": true,
+          "explanation": "正解。派遣の特徴は雇用関係（派遣元）と指揮命令関係（派遣先）が分離する点。請負・準委任契約とは異なる。"
+        },
+        {
+          "id": "B",
+          "text": "派遣労働者は誰の指揮命令も受けない",
+          "is_correct": false,
+          "explanation": "派遣労働者は派遣先の指揮命令下で就労する。"
+        },
+        {
+          "id": "C",
+          "text": "派遣先と派遣元が共同で指揮命令する",
+          "is_correct": false,
+          "explanation": "原則は派遣先のみ。共同という制度ではない。"
+        },
+        {
+          "id": "D",
+          "text": "派遣元の事業主が派遣先の業務に直接指揮命令を行う",
+          "is_correct": false,
+          "explanation": "派遣元は雇用関係はあるが、業務遂行上の指揮命令は派遣先が行う。"
+        }
       ],
       "explanation": "派遣（雇用は派遣元、指揮命令は派遣先）／請負・準委任（雇用も指揮命令も受託会社）。違法派遣（偽装請負）が問題化することが多く、SIerやIT現場で注意点。働き方改革関連法、同一労働同一賃金（派遣も）も最新論点。",
-      "references": [{"title": "厚生労働省 労働者派遣法", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000186502.html"}],
-      "tags": ["派遣法", "労務", "偽装請負"],
-      "common_mistakes": ["派遣と請負を混同", "指揮命令の主体を誤る"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "厚生労働省 労働者派遣法",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000186502.html"
+        }
+      ],
+      "tags": [
+        "派遣法",
+        "労務",
+        "偽装請負"
+      ],
+      "common_mistakes": [
+        "派遣と請負を混同",
+        "指揮命令の主体を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-018",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスインダストリ",
       "subtopic": "EC・電子マネー",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "電子マネーやキャッシュレス決済の方式のうち「プリペイド型」に該当するものはどれか。",
       "options": [
-        {"id": "A", "text": "クレジットカード", "is_correct": false, "explanation": "後払い型（ポストペイ）。利用後に請求される。"},
-        {"id": "B", "text": "デビットカード", "is_correct": false, "explanation": "即時払い型。銀行口座から即時引落とし。"},
-        {"id": "C", "text": "Suica、楽天Edy、WAONなどの電子マネー", "is_correct": true, "explanation": "正解。事前にチャージしてから使うプリペイド型。"},
-        {"id": "D", "text": "売掛金請求書による法人間決済", "is_correct": false, "explanation": "商取引の請求支払で、電子マネーではない。"}
+        {
+          "id": "A",
+          "text": "売掛金請求書による法人間決済",
+          "is_correct": false,
+          "explanation": "商取引の請求支払で、電子マネーではない。"
+        },
+        {
+          "id": "B",
+          "text": "Suica、楽天Edy、WAONなどの電子マネー",
+          "is_correct": true,
+          "explanation": "正解。事前にチャージしてから使うプリペイド型。"
+        },
+        {
+          "id": "C",
+          "text": "デビットカード",
+          "is_correct": false,
+          "explanation": "即時払い型。銀行口座から即時引落とし。"
+        },
+        {
+          "id": "D",
+          "text": "クレジットカード",
+          "is_correct": false,
+          "explanation": "後払い型（ポストペイ）。利用後に請求される。"
+        }
       ],
       "explanation": "決済タイミング分類：(1)プリペイド（先払い：交通系・電子マネー・QRコード一部）、(2)即時払い（デビット）、(3)ポストペイ（後払い：クレジット）。FinTech領域は決済・送金・与信が三大カテゴリ。スマートコントラクトとの連携も注目。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（ビジネスインダストリ）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["電子マネー", "キャッシュレス", "FinTech"],
-      "common_mistakes": ["プリペイドとポストペイを混同", "デビットを後払いと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（ビジネスインダストリ）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "電子マネー",
+        "キャッシュレス",
+        "FinTech"
+      ],
+      "common_mistakes": [
+        "プリペイドとポストペイを混同",
+        "デビットを後払いと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-019",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスインダストリ",
       "subtopic": "スマートコントラクト",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ブロックチェーン上で動作する「スマートコントラクト」の特徴として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "事前に定義された条件が満たされたとき、自動的に契約条項を執行するプログラム", "is_correct": true, "explanation": "正解。スマートコントラクトはコードで契約を表現し、条件達成時に自動執行する。改ざん耐性をブロックチェーンが担保。Ethereumが代表。"},
-        {"id": "B", "text": "弁護士が手書きで作成する契約書", "is_correct": false, "explanation": "従来の紙ベース契約。スマートコントラクトとは正反対。"},
-        {"id": "C", "text": "中央集権的なサーバで動く一般的なWebアプリ", "is_correct": false, "explanation": "中央集権ではなく分散台帳上で動く点が本質。"},
-        {"id": "D", "text": "AIが自動生成する一般的なテキスト契約書", "is_correct": false, "explanation": "AI契約書生成とは別概念。スマートコントラクトはコードと自動執行が要点。"}
+        {
+          "id": "A",
+          "text": "AIが自動生成する一般的なテキスト契約書",
+          "is_correct": false,
+          "explanation": "AI契約書生成とは別概念。スマートコントラクトはコードと自動執行が要点。"
+        },
+        {
+          "id": "B",
+          "text": "中央集権的なサーバで動く一般的なWebアプリ",
+          "is_correct": false,
+          "explanation": "中央集権ではなく分散台帳上で動く点が本質。"
+        },
+        {
+          "id": "C",
+          "text": "事前に定義された条件が満たされたとき、自動的に契約条項を執行するプログラム",
+          "is_correct": true,
+          "explanation": "正解。スマートコントラクトはコードで契約を表現し、条件達成時に自動執行する。改ざん耐性をブロックチェーンが担保。Ethereumが代表。"
+        },
+        {
+          "id": "D",
+          "text": "弁護士が手書きで作成する契約書",
+          "is_correct": false,
+          "explanation": "従来の紙ベース契約。スマートコントラクトとは正反対。"
+        }
       ],
       "explanation": "スマートコントラクト：Nick Szabo提唱、Ethereumで実装。条件評価→自動実行を分散台帳で改ざん耐性を持って実行。DeFi、NFT、サプライチェーン追跡等で活用。法的位置づけ（電子契約法、特定商取引法等）は各国で整備中。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（ビジネスインダストリ）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["スマートコントラクト", "ブロックチェーン", "DeFi"],
-      "common_mistakes": ["スマートコントラクトをAI契約書と混同", "中央集権サーバで動くと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（ビジネスインダストリ）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "スマートコントラクト",
+        "ブロックチェーン",
+        "DeFi"
+      ],
+      "common_mistakes": [
+        "スマートコントラクトをAI契約書と混同",
+        "中央集権サーバで動くと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-020",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスマネジメント",
       "subtopic": "IE（インダストリアルエンジニアリング）",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の製造業で工程改善を行う際、各工程の標準作業時間と実際の作業時間を比較分析する手法のうち、ある瞬間に作業者が何の作業をしているかを統計的にサンプリングし、作業比率を算出する方法はどれか。",
+      "stem": "ある製造業で工程改善を行う際、各工程の標準作業時間と実際の作業時間を比較分析する手法のうち、ある瞬間に作業者が何の作業をしているかを統計的にサンプリングし、作業比率を算出する方法はどれか。",
       "options": [
-        {"id": "A", "text": "ストップウォッチ法（直接時間研究）", "is_correct": false, "explanation": "個別作業を直接タイマーで計測する手法。連続観測。"},
-        {"id": "B", "text": "ワークサンプリング法", "is_correct": true, "explanation": "正解。ランダム時刻に観測し、各作業状態の比率を統計的に推定。複数作業者・長期間の分析に向く。"},
-        {"id": "C", "text": "PTS法（既定時間標準法）", "is_correct": false, "explanation": "事前定義された動作時間データから合算する手法（MTM、WF等）。"},
-        {"id": "D", "text": "実績資料法", "is_correct": false, "explanation": "過去実績の集計から見積する方法。"}
+        {
+          "id": "A",
+          "text": "ストップウォッチ法（直接時間研究）",
+          "is_correct": false,
+          "explanation": "個別作業を直接タイマーで計測する手法。連続観測。"
+        },
+        {
+          "id": "B",
+          "text": "実績資料法",
+          "is_correct": false,
+          "explanation": "過去実績の集計から見積する方法。"
+        },
+        {
+          "id": "C",
+          "text": "PTS法（既定時間標準法）",
+          "is_correct": false,
+          "explanation": "事前定義された動作時間データから合算する手法（MTM、WF等）。"
+        },
+        {
+          "id": "D",
+          "text": "ワークサンプリング法",
+          "is_correct": true,
+          "explanation": "正解。ランダム時刻に観測し、各作業状態の比率を統計的に推定。複数作業者・長期間の分析に向く。"
+        }
       ],
       "explanation": "IEの作業測定手法：(1)直接計測：ストップウォッチ法、(2)PTS法（要素動作合算）、(3)ワークサンプリング法（統計的観測）、(4)実績資料法。トヨタ生産方式（TPS）、リーン生産でも基礎技法として使われる。製造業のDX推進でもデータ収集の起点。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（OR/IE）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["IE", "ワークサンプリング", "製造業"],
-      "common_mistakes": ["ストップウォッチ法とサンプリングを混同", "PTSを実績法と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（OR/IE）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "IE",
+        "ワークサンプリング",
+        "製造業"
+      ],
+      "common_mistakes": [
+        "ストップウォッチ法とサンプリングを混同",
+        "PTSを実績法と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-021",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "技術戦略",
       "subtopic": "イノベーション",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "クリステンセンが提唱した「破壊的イノベーション」の特徴として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "既存の市場や顧客に対し、性能向上を漸進的に行う", "is_correct": false, "explanation": "これは「持続的イノベーション」の説明。"},
-        {"id": "B", "text": "既存技術より一見「劣る」が、新規市場・低価格を起点に主流市場を侵食する", "is_correct": true, "explanation": "正解。当初は性能・機能で劣るが価格・利便性で隙間を取り、改善を経て主流市場まで侵食する。「The Innovator's Dilemma」の中核概念。"},
-        {"id": "C", "text": "規模の経済を活かして既存企業がコスト優位を確立する", "is_correct": false, "explanation": "オペレーション戦略の話で、破壊的イノベーションの定義ではない。"},
-        {"id": "D", "text": "全く新しい技術発明により業界をリードする", "is_correct": false, "explanation": "これは「ラディカルイノベーション」の概念に近く、破壊的イノベーションとは別。"}
+        {
+          "id": "A",
+          "text": "既存技術より一見「劣る」が、新規市場・低価格を起点に主流市場を侵食する",
+          "is_correct": true,
+          "explanation": "正解。当初は性能・機能で劣るが価格・利便性で隙間を取り、改善を経て主流市場まで侵食する。「The Innovator's Dilemma」の中核概念。"
+        },
+        {
+          "id": "B",
+          "text": "規模の経済を活かして既存企業がコスト優位を確立する",
+          "is_correct": false,
+          "explanation": "オペレーション戦略の話で、破壊的イノベーションの定義ではない。"
+        },
+        {
+          "id": "C",
+          "text": "既存の市場や顧客に対し、性能向上を漸進的に行う",
+          "is_correct": false,
+          "explanation": "これは「持続的イノベーション」の説明。"
+        },
+        {
+          "id": "D",
+          "text": "全く新しい技術発明により業界をリードする",
+          "is_correct": false,
+          "explanation": "これは「ラディカルイノベーション」の概念に近く、破壊的イノベーションとは別。"
+        }
       ],
       "explanation": "クリステンセン2分類：(1)持続的イノベーション（既存顧客向け性能向上、既存企業が得意）、(2)破壊的イノベーション（新規市場、低性能から開始、既存企業が見落とす）。デジカメ→スマホ、HDD大型→小型、Blockbuster→Netflix が典型例。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（技術戦略）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["破壊的イノベーション", "クリステンセン", "技術戦略"],
-      "common_mistakes": ["破壊的＝技術革新と誤解", "持続的と破壊的を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（技術戦略）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "破壊的イノベーション",
+        "クリステンセン",
+        "技術戦略"
+      ],
+      "common_mistakes": [
+        "破壊的＝技術革新と誤解",
+        "持続的と破壊的を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-022",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスマネジメント",
       "subtopic": "財務（ROI）",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある投資案件で、投下金額1,000万円、3年間の累計利益額が300万円のとき、3年間の単純ROI（投資収益率）はいくらか。",
       "options": [
-        {"id": "A", "text": "10%", "is_correct": false, "explanation": "年平均ROIに近い値で、3年累計とは異なる。"},
-        {"id": "B", "text": "30%", "is_correct": true, "explanation": "正解。ROI = 利益 / 投下資本 = 300/1000 = 0.3 = 30%。"},
-        {"id": "C", "text": "33%", "is_correct": false, "explanation": "1000/300の値の取り違え。"},
-        {"id": "D", "text": "300%", "is_correct": false, "explanation": "桁誤り。"}
+        {
+          "id": "A",
+          "text": "33%",
+          "is_correct": false,
+          "explanation": "1000/300の値の取り違え。"
+        },
+        {
+          "id": "B",
+          "text": "30%",
+          "is_correct": true,
+          "explanation": "正解。ROI = 利益 / 投下資本 = 300/1000 = 0.3 = 30%。"
+        },
+        {
+          "id": "C",
+          "text": "300%",
+          "is_correct": false,
+          "explanation": "桁誤り。"
+        },
+        {
+          "id": "D",
+          "text": "10%",
+          "is_correct": false,
+          "explanation": "年平均ROIに近い値で、3年累計とは異なる。"
+        }
       ],
       "explanation": "ROI（Return on Investment）= 利益÷投下資本×100%。本問は単純ROI。実務では時間価値（NPV、IRR）を考慮した割引キャッシュフロー法で投資評価する。SaaSのCAC回収期間、LTV/CAC比なども類似指標。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（財務）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["ROI", "財務", "投資評価"],
-      "common_mistakes": ["ROIの計算式を覚えていない", "桁を間違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（財務）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "ROI",
+        "財務",
+        "投資評価"
+      ],
+      "common_mistakes": [
+        "ROIの計算式を覚えていない",
+        "桁を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-023",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスインダストリ",
       "subtopic": "IoT",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方のある製造業で、工場設備にセンサーを取り付け、稼働データをクラウドに集めて予知保全を行うシステムを構築する。データの「エッジ処理」を採用する主な理由として最も適切なものはどれか。",
+      "stem": "あるある製造業で、工場設備にセンサーを取り付け、稼働データをクラウドに集めて予知保全を行うシステムを構築する。データの「エッジ処理」を採用する主な理由として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "全データを必ずクラウドへ送信し、すべての処理をクラウドで行うため", "is_correct": false, "explanation": "それはエッジ処理の対極であるクラウド処理。"},
-        {"id": "B", "text": "現場でデータを前処理・フィルタリングし、低レイテンシの応答とネットワーク帯域削減を実現するため", "is_correct": true, "explanation": "正解。エッジコンピューティングは現場で異常検知や前処理を行い、必要なデータだけクラウドへ送る。低遅延・低帯域・プライバシー保護に有利。"},
-        {"id": "C", "text": "データ容量を増やすため", "is_correct": false, "explanation": "むしろ削減するのが目的。"},
-        {"id": "D", "text": "全データを暗号化することのみが目的", "is_correct": false, "explanation": "暗号化は別の論点で、エッジの主目的ではない。"}
+        {
+          "id": "A",
+          "text": "全データを暗号化することのみが目的",
+          "is_correct": false,
+          "explanation": "暗号化は別の論点で、エッジの主目的ではない。"
+        },
+        {
+          "id": "B",
+          "text": "データ容量を増やすため",
+          "is_correct": false,
+          "explanation": "むしろ削減するのが目的。"
+        },
+        {
+          "id": "C",
+          "text": "現場でデータを前処理・フィルタリングし、低レイテンシの応答とネットワーク帯域削減を実現するため",
+          "is_correct": true,
+          "explanation": "正解。エッジコンピューティングは現場で異常検知や前処理を行い、必要なデータだけクラウドへ送る。低遅延・低帯域・プライバシー保護に有利。"
+        },
+        {
+          "id": "D",
+          "text": "全データを必ずクラウドへ送信し、すべての処理をクラウドで行うため",
+          "is_correct": false,
+          "explanation": "それはエッジ処理の対極であるクラウド処理。"
+        }
       ],
       "explanation": "エッジコンピューティング：データソース近傍で処理。利点(1)低レイテンシ、(2)帯域節約、(3)プライバシー、(4)オフライン耐性。AWS IoT Greengrass、Azure IoT Edge等が代表サービス。製造業の予知保全（Predictive Maintenance）で採用が広がる。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（IoT）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["IoT", "エッジコンピューティング", "予知保全", "製造業"],
-      "common_mistakes": ["エッジ処理とクラウド処理を逆に理解", "エッジの利点を覚えていない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（IoT）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "IoT",
+        "エッジコンピューティング",
+        "予知保全",
+        "製造業"
+      ],
+      "common_mistakes": [
+        "エッジ処理とクラウド処理を逆に理解",
+        "エッジの利点を覚えていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-024",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "関連法規",
       "subtopic": "個人情報保護法",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "個人情報保護法における「要配慮個人情報」に該当しないものはどれか。",
       "options": [
-        {"id": "A", "text": "病歴・健康診断結果", "is_correct": false, "explanation": "要配慮個人情報の代表例。医療情報。"},
-        {"id": "B", "text": "犯罪歴・前科", "is_correct": false, "explanation": "要配慮個人情報。"},
-        {"id": "C", "text": "氏名・住所・電話番号", "is_correct": true, "explanation": "正解（要配慮ではない）。氏名・連絡先は通常の個人情報。要配慮（センシティブ情報）には該当しない。"},
-        {"id": "D", "text": "人種・信条・社会的身分", "is_correct": false, "explanation": "要配慮個人情報の例。"}
+        {
+          "id": "A",
+          "text": "犯罪歴・前科",
+          "is_correct": false,
+          "explanation": "要配慮個人情報。"
+        },
+        {
+          "id": "B",
+          "text": "人種・信条・社会的身分",
+          "is_correct": false,
+          "explanation": "要配慮個人情報の例。"
+        },
+        {
+          "id": "C",
+          "text": "病歴・健康診断結果",
+          "is_correct": false,
+          "explanation": "要配慮個人情報の代表例。医療情報。"
+        },
+        {
+          "id": "D",
+          "text": "氏名・住所・電話番号",
+          "is_correct": true,
+          "explanation": "正解（要配慮ではない）。氏名・連絡先は通常の個人情報。要配慮（センシティブ情報）には該当しない。"
+        }
       ],
       "explanation": "個人情報保護法（2022改正、2024告示等継続）：要配慮個人情報＝人種、信条、社会的身分、病歴、犯罪歴、犯罪被害事実、その他差別偏見につながりうる情報。原則として本人同意なしの取得不可。一般個人情報よりも厳格な扱いが必要。医療・FinTech企業で特に注意。",
-      "references": [{"title": "個人情報保護委員会", "url": "https://www.ppc.go.jp/"}],
-      "tags": ["個人情報保護法", "要配慮個人情報", "プライバシー"],
-      "common_mistakes": ["要配慮の範囲を誤って広く理解", "氏名を要配慮と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "個人情報保護委員会",
+          "url": "https://www.ppc.go.jp/"
+        }
+      ],
+      "tags": [
+        "個人情報保護法",
+        "要配慮個人情報",
+        "プライバシー"
+      ],
+      "common_mistakes": [
+        "要配慮の範囲を誤って広く理解",
+        "氏名を要配慮と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-025",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスマネジメント",
       "subtopic": "在庫管理",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "在庫管理におけるABC分析の説明として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "在庫をAIで自動補充するシステム", "is_correct": false, "explanation": "別概念（自動補充は別の手法）。ABC分析は分析手法。"},
-        {"id": "B", "text": "在庫品目を金額・重要度で並べ、A群（重要・少品目）／B群／C群（重要度低・多品目）に分類して管理重点を変える手法", "is_correct": true, "explanation": "正解。パレート法則（80:20）に基づき、重要少数のA群を厳格管理し、C群は省力化することで全体最適を目指す。"},
-        {"id": "C", "text": "在庫の発注タイミングを決める数式", "is_correct": false, "explanation": "これはEOQ（経済的発注量）や定期発注方式の話。ABC分析とは別。"},
-        {"id": "D", "text": "在庫の物理的配置を最適化する手法", "is_correct": false, "explanation": "倉庫レイアウト最適化の話。ABC分析とは別。"}
+        {
+          "id": "A",
+          "text": "在庫品目を金額・重要度で並べ、A群（重要・少品目）／B群／C群（重要度低・多品目）に分類して管理重点を変える手法",
+          "is_correct": true,
+          "explanation": "正解。パレート法則（80:20）に基づき、重要少数のA群を厳格管理し、C群は省力化することで全体最適を目指す。"
+        },
+        {
+          "id": "B",
+          "text": "在庫の物理的配置を最適化する手法",
+          "is_correct": false,
+          "explanation": "倉庫レイアウト最適化の話。ABC分析とは別。"
+        },
+        {
+          "id": "C",
+          "text": "在庫の発注タイミングを決める数式",
+          "is_correct": false,
+          "explanation": "これはEOQ（経済的発注量）や定期発注方式の話。ABC分析とは別。"
+        },
+        {
+          "id": "D",
+          "text": "在庫をAIで自動補充するシステム",
+          "is_correct": false,
+          "explanation": "別概念（自動補充は別の手法）。ABC分析は分析手法。"
+        }
       ],
       "explanation": "ABC分析（重点管理）はQC七つ道具のパレート図と通じる考え方。製造業・小売業の在庫管理、サービスのSKU管理に必須。A群を毎日チェック、C群を月次でというように管理頻度を変える。SaaSの顧客管理（A=エンタープライズ顧客）にも応用可能。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（OR/IE）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["ABC分析", "在庫管理", "パレート"],
-      "common_mistakes": ["ABC分析とEOQを混同", "A群とC群の管理頻度を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（OR/IE）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "ABC分析",
+        "在庫管理",
+        "パレート"
+      ],
+      "common_mistakes": [
+        "ABC分析とEOQを混同",
+        "A群とC群の管理頻度を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-026",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "経営戦略",
       "subtopic": "M&A",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "Solo経営者がIT受託会社を承継する形でM&Aを行う際、デューデリジェンス（DD）の主目的として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "対象会社の財務・法務・労務・税務・事業・ITリスク等を多面的に調査し、買収判断と価格交渉の根拠とする", "is_correct": true, "explanation": "正解。DDは買収前の精査で、隠れたリスク（簿外債務、訴訟、人事労務問題、税務リスク等）を洗い出す。Solo経営者にとって失敗は致命的のため、慎重なDDが事業承継M&Aの肝。"},
-        {"id": "B", "text": "対象会社の社員に新事業ビジョンを発表する", "is_correct": false, "explanation": "PMI（買収後統合）段階の活動。DDではない。"},
-        {"id": "C", "text": "M&A仲介手数料を交渉する", "is_correct": false, "explanation": "別の交渉プロセス。DDの主目的ではない。"},
-        {"id": "D", "text": "買収後のシステム統合を実施する", "is_correct": false, "explanation": "PMIの一部で、DD後の段階。"}
+        {
+          "id": "A",
+          "text": "対象会社の社員に新事業ビジョンを発表する",
+          "is_correct": false,
+          "explanation": "PMI（買収後統合）段階の活動。DDではない。"
+        },
+        {
+          "id": "B",
+          "text": "対象会社の財務・法務・労務・税務・事業・ITリスク等を多面的に調査し、買収判断と価格交渉の根拠とする",
+          "is_correct": true,
+          "explanation": "正解。DDは買収前の精査で、隠れたリスク（簿外債務、訴訟、人事労務問題、税務リスク等）を洗い出す。Solo経営者にとって失敗は致命的のため、慎重なDDが事業承継M&Aの肝。"
+        },
+        {
+          "id": "C",
+          "text": "買収後のシステム統合を実施する",
+          "is_correct": false,
+          "explanation": "PMIの一部で、DD後の段階。"
+        },
+        {
+          "id": "D",
+          "text": "M&A仲介手数料を交渉する",
+          "is_correct": false,
+          "explanation": "別の交渉プロセス。DDの主目的ではない。"
+        }
       ],
       "explanation": "M&AフローはNDA→意向表明→基本合意→DD→最終契約→クロージング→PMI。DDは財務／法務／税務／労務／事業／IT／環境等多角的に行う。中小企業M&Aは事業承継ニーズで増加中。Solo経営者が事業拡大する戦略として近年注目（Search Fund型）。",
-      "references": [{"title": "中小企業庁 中小M&Aガイドライン", "url": "https://www.chusho.meti.go.jp/zaimu/shoukei/"}],
-      "tags": ["M&A", "デューデリジェンス", "事業承継"],
-      "common_mistakes": ["DDとPMIを混同", "DDを表面的な財務分析だけと思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "中小企業庁 中小M&Aガイドライン",
+          "url": "https://www.chusho.meti.go.jp/zaimu/shoukei/"
+        }
+      ],
+      "tags": [
+        "M&A",
+        "デューデリジェンス",
+        "事業承継"
+      ],
+      "common_mistakes": [
+        "DDとPMIを混同",
+        "DDを表面的な財務分析だけと思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-027",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "関連法規",
       "subtopic": "環境法令",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ITに関連する環境法令のうち、データセンタや家電・PC等の電気電子機器の有害物質使用を制限する欧州由来の指令はどれか。",
       "options": [
-        {"id": "A", "text": "RoHS指令", "is_correct": true, "explanation": "正解。RoHS（Restriction of Hazardous Substances）は鉛・水銀・カドミウム等の使用を制限するEU指令。日本企業の輸出にも適用される。"},
-        {"id": "B", "text": "GDPR", "is_correct": false, "explanation": "GDPRはEUの個人データ保護規則。環境法令ではない。"},
-        {"id": "C", "text": "PCI DSS", "is_correct": false, "explanation": "クレジットカード情報のセキュリティ基準。環境法令ではない。"},
-        {"id": "D", "text": "ISO 27001", "is_correct": false, "explanation": "情報セキュリティマネジメントシステムの規格。環境とは別。"}
+        {
+          "id": "A",
+          "text": "GDPR",
+          "is_correct": false,
+          "explanation": "GDPRはEUの個人データ保護規則。環境法令ではない。"
+        },
+        {
+          "id": "B",
+          "text": "PCI DSS",
+          "is_correct": false,
+          "explanation": "クレジットカード情報のセキュリティ基準。環境法令ではない。"
+        },
+        {
+          "id": "C",
+          "text": "RoHS指令",
+          "is_correct": true,
+          "explanation": "正解。RoHS（Restriction of Hazardous Substances）は鉛・水銀・カドミウム等の使用を制限するEU指令。日本企業の輸出にも適用される。"
+        },
+        {
+          "id": "D",
+          "text": "ISO 27001",
+          "is_correct": false,
+          "explanation": "情報セキュリティマネジメントシステムの規格。環境とは別。"
+        }
       ],
       "explanation": "環境関連法令／指令：(1)RoHS指令（有害物質制限）、(2)WEEE指令（廃電気電子機器）、(3)REACH規則（化学物質）、(4)国内：資源有効利用促進法・家電リサイクル法・小型家電リサイクル法。製造業のサプライチェーン管理、ESG経営でも重要。",
-      "references": [{"title": "経済産業省 環境関連法令", "url": "https://www.meti.go.jp/policy/recycle/"}],
-      "tags": ["RoHS", "環境法令", "EU"],
-      "common_mistakes": ["RoHSとGDPRを混同", "環境とセキュリティを混ぜる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "経済産業省 環境関連法令",
+          "url": "https://www.meti.go.jp/policy/recycle/"
+        }
+      ],
+      "tags": [
+        "RoHS",
+        "環境法令",
+        "EU"
+      ],
+      "common_mistakes": [
+        "RoHSとGDPRを混同",
+        "環境とセキュリティを混ぜる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-028",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "ビジネスマネジメント",
       "subtopic": "財務会計（減価償却）",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "取得価額300万円、耐用年数5年、残存価額0円の固定資産を定額法で減価償却する場合、年間の減価償却費はいくらか。",
       "options": [
-        {"id": "A", "text": "30万円", "is_correct": false, "explanation": "10年で割った値で、耐用年数を間違えている。"},
-        {"id": "B", "text": "60万円", "is_correct": true, "explanation": "正解。300万円÷5年=60万円。定額法は毎年同額を償却する。"},
-        {"id": "C", "text": "100万円", "is_correct": false, "explanation": "3年で割った値で、耐用年数を間違えている。"},
-        {"id": "D", "text": "150万円", "is_correct": false, "explanation": "計算誤り。"}
+        {
+          "id": "A",
+          "text": "100万円",
+          "is_correct": false,
+          "explanation": "3年で割った値で、耐用年数を間違えている。"
+        },
+        {
+          "id": "B",
+          "text": "30万円",
+          "is_correct": false,
+          "explanation": "10年で割った値で、耐用年数を間違えている。"
+        },
+        {
+          "id": "C",
+          "text": "150万円",
+          "is_correct": false,
+          "explanation": "計算誤り。"
+        },
+        {
+          "id": "D",
+          "text": "60万円",
+          "is_correct": true,
+          "explanation": "正解。300万円÷5年=60万円。定額法は毎年同額を償却する。"
+        }
       ],
       "explanation": "減価償却：定額法（毎年同額：取得価額÷耐用年数）と定率法（残存簿価×一定率、初期に多く償却）。サーバ・PC等は4～5年、ソフトウェアは5年（自社利用）or3年（販売目的）が法定耐用年数の目安。SaaSのクラウド利用料は経費処理可能（オンプレ資産化と異なる節税論点）。",
-      "references": [{"title": "国税庁 減価償却", "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/2100.htm"}],
-      "tags": ["減価償却", "財務", "定額法"],
-      "common_mistakes": ["定額法と定率法を混同", "耐用年数を覚えていない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "国税庁 減価償却",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/2100.htm"
+        }
+      ],
+      "tags": [
+        "減価償却",
+        "財務",
+        "定額法"
+      ],
+      "common_mistakes": [
+        "定額法と定率法を混同",
+        "耐用年数を覚えていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-029",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "システム戦略",
       "subtopic": "クラウド戦略",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "Solo経営者の中小SaaS企業が、エンタープライズ顧客向けに新サービスを設計する。「マルチテナントSaaSアーキテクチャ」を選定する根拠として最も適切でないものはどれか。",
       "options": [
-        {"id": "A", "text": "1つのインフラ基盤を多顧客で共有することで、運用コストとマージンを最適化できる", "is_correct": false, "explanation": "マルチテナントの典型的な利点。"},
-        {"id": "B", "text": "機能リリース・パッチ適用を1度行えば全顧客に反映でき、運用効率が高い", "is_correct": false, "explanation": "マルチテナントの利点。"},
-        {"id": "C", "text": "顧客ごとに完全に分離した物理サーバ・別バージョンを提供できる", "is_correct": true, "explanation": "正解（不適切な根拠）。これはシングルテナント／オンプレ／プライベートデプロイの特徴。マルチテナントでは原則同一バージョン共有。完全分離が必要なケースはマルチテナントでない選択をすべき。"},
-        {"id": "D", "text": "テナント分離（行レベル/スキーマ/DB単位）の設計次第でセキュリティと拡張性のバランスを取れる", "is_correct": false, "explanation": "マルチテナントの設計上の重要論点で、根拠として正しい。"}
+        {
+          "id": "A",
+          "text": "顧客ごとに完全に分離した物理サーバ・別バージョンを提供できる",
+          "is_correct": true,
+          "explanation": "正解（不適切な根拠）。これはシングルテナント／オンプレ／プライベートデプロイの特徴。マルチテナントでは原則同一バージョン共有。完全分離が必要なケースはマルチテナントでない選択をすべき。"
+        },
+        {
+          "id": "B",
+          "text": "機能リリース・パッチ適用を1度行えば全顧客に反映でき、運用効率が高い",
+          "is_correct": false,
+          "explanation": "マルチテナントの利点。"
+        },
+        {
+          "id": "C",
+          "text": "1つのインフラ基盤を多顧客で共有することで、運用コストとマージンを最適化できる",
+          "is_correct": false,
+          "explanation": "マルチテナントの典型的な利点。"
+        },
+        {
+          "id": "D",
+          "text": "テナント分離（行レベル/スキーマ/DB単位）の設計次第でセキュリティと拡張性のバランスを取れる",
+          "is_correct": false,
+          "explanation": "マルチテナントの設計上の重要論点で、根拠として正しい。"
+        }
       ],
       "explanation": "テナンシー設計の3型：(1)プール型（テナントID列でレコード分離、最も低コスト）、(2)ブリッジ型（スキーマ別 or DB別）、(3)サイロ型（テナント別インスタンス、最も分離強）。エンタープライズSaaSの規制要件（金融・医療）ではブリッジ型・サイロ型を選ぶことも。コスト・セキュリティ・運用負荷のトレードオフ。",
-      "references": [{"title": "AWS SaaS Lens (Well-Architected)", "url": "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html"}],
-      "tags": ["SaaS", "マルチテナント", "クラウド戦略"],
-      "common_mistakes": ["マルチテナントとシングルテナントの利点を混同", "テナンシーモデルの設計選択肢を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS SaaS Lens (Well-Architected)",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html"
+        }
+      ],
+      "tags": [
+        "SaaS",
+        "マルチテナント",
+        "クラウド戦略"
+      ],
+      "common_mistakes": [
+        "マルチテナントとシングルテナントの利点を混同",
+        "テナンシーモデルの設計選択肢を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-strat-030",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 22},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 22
+      },
       "topic": "経営戦略",
       "subtopic": "競争戦略",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ポーターの3つの基本戦略のうち、特定の顧客セグメント・地域・製品ラインに資源を集中する戦略はどれか。",
       "options": [
-        {"id": "A", "text": "コストリーダーシップ戦略", "is_correct": false, "explanation": "業界全体で最低コストを目指す戦略。集中ではない。"},
-        {"id": "B", "text": "差別化戦略", "is_correct": false, "explanation": "業界全体で独自価値を提供する戦略。集中ではない。"},
-        {"id": "C", "text": "集中戦略（フォーカス戦略）", "is_correct": true, "explanation": "正解。特定セグメントに資源を集中する戦略。コスト集中／差別化集中の2サブタイプがある。"},
-        {"id": "D", "text": "多角化戦略", "is_correct": false, "explanation": "アンゾフのマトリクスの戦略で、ポーターの3基本戦略とは別系統。"}
+        {
+          "id": "A",
+          "text": "コストリーダーシップ戦略",
+          "is_correct": false,
+          "explanation": "業界全体で最低コストを目指す戦略。集中ではない。"
+        },
+        {
+          "id": "B",
+          "text": "集中戦略（フォーカス戦略）",
+          "is_correct": true,
+          "explanation": "正解。特定セグメントに資源を集中する戦略。コスト集中／差別化集中の2サブタイプがある。"
+        },
+        {
+          "id": "C",
+          "text": "多角化戦略",
+          "is_correct": false,
+          "explanation": "アンゾフのマトリクスの戦略で、ポーターの3基本戦略とは別系統。"
+        },
+        {
+          "id": "D",
+          "text": "差別化戦略",
+          "is_correct": false,
+          "explanation": "業界全体で独自価値を提供する戦略。集中ではない。"
+        }
       ],
       "explanation": "ポーターの3基本戦略：(1)コストリーダーシップ、(2)差別化、(3)集中。中小企業・Solo経営者は資源限定のため集中戦略が定石。さらにブルーオーシャン（未開拓市場）戦略やニッチトップ戦略と組み合わせて差別化する手法も主流。",
-      "references": [{"title": "IPA 情報処理技術者試験 シラバス（経営戦略）", "url": "https://www.ipa.go.jp/shiken/syllabus/"}],
-      "tags": ["ポーター", "競争戦略", "集中戦略"],
-      "common_mistakes": ["ポーターとアンゾフを混同", "集中戦略を差別化と取り違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報処理技術者試験 シラバス（経営戦略）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/"
+        }
+      ],
+      "tags": [
+        "ポーター",
+        "競争戦略",
+        "集中戦略"
+      ],
+      "common_mistakes": [
+        "ポーターとアンゾフを混同",
+        "集中戦略を差別化と取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

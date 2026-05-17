@@ -15,692 +15,2312 @@
     {
       "id": "boki-2-kessan-001",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "売上原価の算定",
       "subtopic": "三分法による売上原価算定",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "三分法による売上原価の算定式として正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "期首商品棚卸高 + 当期仕入高 - 期末商品棚卸高", "is_correct": true, "explanation": "正解。期首在庫に当期仕入を足し、期末在庫を控除することで当期に販売した分の原価が算出される。"},
-        {"id": "B", "text": "期首商品棚卸高 - 当期仕入高 + 期末商品棚卸高", "is_correct": false, "explanation": "仕入を引いてしまっており符号が逆。仕入は売上原価を増やす要素。"},
-        {"id": "C", "text": "当期仕入高 + 期末商品棚卸高 - 期首商品棚卸高", "is_correct": false, "explanation": "期末在庫はまだ売れ残っているので売上原価から控除すべき。逆に足してしまっている。"},
-        {"id": "D", "text": "期末商品棚卸高 - 期首商品棚卸高 + 当期仕入高", "is_correct": false, "explanation": "期首・期末の符号が逆になっている。期末在庫が控除対象。"}
+        {
+          "id": "A",
+          "text": "期首商品棚卸高 + 当期仕入高 - 期末商品棚卸高",
+          "is_correct": true,
+          "explanation": "正解。期首在庫に当期仕入を足し、期末在庫を控除することで当期に販売した分の原価が算出される。"
+        },
+        {
+          "id": "B",
+          "text": "期末商品棚卸高 - 期首商品棚卸高 + 当期仕入高",
+          "is_correct": false,
+          "explanation": "期首・期末の符号が逆になっている。期末在庫が控除対象。"
+        },
+        {
+          "id": "C",
+          "text": "期首商品棚卸高 - 当期仕入高 + 期末商品棚卸高",
+          "is_correct": false,
+          "explanation": "仕入を引いてしまっており符号が逆。仕入は売上原価を増やす要素。"
+        },
+        {
+          "id": "D",
+          "text": "当期仕入高 + 期末商品棚卸高 - 期首商品棚卸高",
+          "is_correct": false,
+          "explanation": "期末在庫はまだ売れ残っているので売上原価から控除すべき。逆に足してしまっている。"
+        }
       ],
       "explanation": "売上原価 = 期首商品棚卸高 + 当期仕入高 - 期末商品棚卸高。決算整理仕訳として「(借)仕入 ××/(貸)繰越商品 ××」(期首振替)、「(借)繰越商品 ××/(貸)仕入 ××」(期末振替)を行うことで、仕入勘定の残高が売上原価となる(いわゆる『しいくりくりしい』)。",
-      "references": [{"title": "簿記2級 売上原価の算定", "url": ""}],
-      "tags": ["決算整理", "売上原価", "三分法", "しいくりくりしい"],
-      "common_mistakes": ["期末在庫を加算してしまう", "期首・期末の符号を逆にする", "仕入と売上を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 売上原価の算定",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "売上原価",
+        "三分法",
+        "しいくりくりしい"
+      ],
+      "common_mistakes": [
+        "期末在庫を加算してしまう",
+        "期首・期末の符号を逆にする",
+        "仕入と売上を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-002",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "売上原価の算定",
       "subtopic": "売上原価の計算",
       "cognitive_level": "L3-Apply",
       "difficulty": "easy",
-      "stem": "東海地方の製造業A社の決算整理前の状況は次のとおりである。期首商品棚卸高 200,000円、当期仕入高 1,500,000円、期末商品棚卸高 300,000円。当期の売上原価はいくらか。",
+      "stem": "ある製造業A社の決算整理前の状況は次のとおりである。期首商品棚卸高 200,000円、当期仕入高 1,500,000円、期末商品棚卸高 300,000円。当期の売上原価はいくらか。",
       "options": [
-        {"id": "A", "text": "1,400,000円", "is_correct": true, "explanation": "正解。200,000 + 1,500,000 - 300,000 = 1,400,000円。"},
-        {"id": "B", "text": "1,600,000円", "is_correct": false, "explanation": "期末在庫を加算してしまっている。期末在庫はまだ売れていないので控除する。"},
-        {"id": "C", "text": "1,500,000円", "is_correct": false, "explanation": "期首・期末を相殺せずに当期仕入のみを売上原価とした誤り。"},
-        {"id": "D", "text": "2,000,000円", "is_correct": false, "explanation": "計算過程が不明確。期首・当期仕入・期末の関係性を再確認すること。"}
+        {
+          "id": "A",
+          "text": "1,500,000円",
+          "is_correct": false,
+          "explanation": "期首・期末を相殺せずに当期仕入のみを売上原価とした誤り。"
+        },
+        {
+          "id": "B",
+          "text": "1,400,000円",
+          "is_correct": true,
+          "explanation": "正解。200,000 + 1,500,000 - 300,000 = 1,400,000円。"
+        },
+        {
+          "id": "C",
+          "text": "1,600,000円",
+          "is_correct": false,
+          "explanation": "期末在庫を加算してしまっている。期末在庫はまだ売れていないので控除する。"
+        },
+        {
+          "id": "D",
+          "text": "2,000,000円",
+          "is_correct": false,
+          "explanation": "計算過程が不明確。期首・当期仕入・期末の関係性を再確認すること。"
+        }
       ],
       "explanation": "売上原価 = 期首商品棚卸高 + 当期仕入高 - 期末商品棚卸高。200,000 + 1,500,000 - 300,000 = 1,400,000円。決算整理仕訳は (借)仕入 200,000 / (貸)繰越商品 200,000、(借)繰越商品 300,000 / (貸)仕入 300,000。",
-      "references": [{"title": "簿記2級 売上原価計算", "url": ""}],
-      "tags": ["決算整理", "売上原価", "計算", "三分法"],
-      "common_mistakes": ["期末在庫を加算する", "期首在庫を控除する", "仕入勘定の振替を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 売上原価計算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "売上原価",
+        "計算",
+        "三分法"
+      ],
+      "common_mistakes": [
+        "期末在庫を加算する",
+        "期首在庫を控除する",
+        "仕入勘定の振替を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-003",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "棚卸減耗損・商品評価損",
       "subtopic": "減耗損と評価損の計算",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SaaS事業者B社の期末商品について、帳簿棚卸数量 100個、実地棚卸数量 95個、原価 @1,000円、正味売却価額 @900円であった。棚卸減耗損と商品評価損の金額として正しい組み合わせは？",
       "options": [
-        {"id": "A", "text": "棚卸減耗損 5,000円、商品評価損 9,500円", "is_correct": true, "explanation": "正解。減耗損 = (100-95) × 1,000 = 5,000円。評価損 = 95 × (1,000-900) = 9,500円。評価損は実地数量で計算する。"},
-        {"id": "B", "text": "棚卸減耗損 5,000円、商品評価損 10,000円", "is_correct": false, "explanation": "評価損を帳簿数量100個で計算してしまった誤り。評価損は実際に存在する95個に対してのみ認識する。"},
-        {"id": "C", "text": "棚卸減耗損 4,500円、商品評価損 9,500円", "is_correct": false, "explanation": "減耗損を正味売却価額@900で計算した誤り。減耗損は原価@1,000で評価する。"},
-        {"id": "D", "text": "棚卸減耗損 9,500円、商品評価損 5,000円", "is_correct": false, "explanation": "減耗損と評価損の金額が逆。減耗は『数量差×原価』、評価は『実地数量×単価差』。"}
+        {
+          "id": "A",
+          "text": "棚卸減耗損 5,000円、商品評価損 10,000円",
+          "is_correct": false,
+          "explanation": "評価損を帳簿数量100個で計算してしまった誤り。評価損は実際に存在する95個に対してのみ認識する。"
+        },
+        {
+          "id": "B",
+          "text": "棚卸減耗損 9,500円、商品評価損 5,000円",
+          "is_correct": false,
+          "explanation": "減耗損と評価損の金額が逆。減耗は『数量差×原価』、評価は『実地数量×単価差』。"
+        },
+        {
+          "id": "C",
+          "text": "棚卸減耗損 5,000円、商品評価損 9,500円",
+          "is_correct": true,
+          "explanation": "正解。減耗損 = (100-95) × 1,000 = 5,000円。評価損 = 95 × (1,000-900) = 9,500円。評価損は実地数量で計算する。"
+        },
+        {
+          "id": "D",
+          "text": "棚卸減耗損 4,500円、商品評価損 9,500円",
+          "is_correct": false,
+          "explanation": "減耗損を正味売却価額@900で計算した誤り。減耗損は原価@1,000で評価する。"
+        }
       ],
       "explanation": "棚卸減耗損 = (帳簿数量 - 実地数量) × 原価 = (100-95) × 1,000 = 5,000円。商品評価損 = 実地数量 × (原価 - 正味売却価額) = 95 × (1,000-900) = 9,500円。ボックス図で『縦=単価、横=数量』を描き、減耗は右端、評価は上部に位置するイメージ。",
-      "references": [{"title": "簿記2級 棚卸減耗損と商品評価損", "url": ""}],
-      "tags": ["決算整理", "棚卸減耗損", "商品評価損", "計算"],
-      "common_mistakes": ["評価損を帳簿数量で計算する", "減耗損を正味売却価額で計算する", "減耗と評価の順序を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 棚卸減耗損と商品評価損",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "棚卸減耗損",
+        "商品評価損",
+        "計算"
+      ],
+      "common_mistakes": [
+        "評価損を帳簿数量で計算する",
+        "減耗損を正味売却価額で計算する",
+        "減耗と評価の順序を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-004",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "棚卸減耗損・商品評価損",
       "subtopic": "P/L表示区分",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "棚卸減耗損のうち、原価性のあるもの(通常発生する範囲)はP/L上どこに表示されるか。",
       "options": [
-        {"id": "A", "text": "売上原価または販売費及び一般管理費", "is_correct": true, "explanation": "正解。原価性のある減耗損は売上原価の内訳または販管費に計上する。"},
-        {"id": "B", "text": "営業外費用", "is_correct": false, "explanation": "原価性のないものを営業外費用に表示することはあるが、原価性のあるものは違う。"},
-        {"id": "C", "text": "特別損失のみ", "is_correct": false, "explanation": "特別損失は災害損失など臨時かつ巨額なものに限る。通常の減耗は該当しない。"},
-        {"id": "D", "text": "資本剰余金から減額", "is_correct": false, "explanation": "P/L項目を資本から減額する処理は誤り。費用としてP/Lで認識する。"}
+        {
+          "id": "A",
+          "text": "営業外費用",
+          "is_correct": false,
+          "explanation": "原価性のないものを営業外費用に表示することはあるが、原価性のあるものは違う。"
+        },
+        {
+          "id": "B",
+          "text": "資本剰余金から減額",
+          "is_correct": false,
+          "explanation": "P/L項目を資本から減額する処理は誤り。費用としてP/Lで認識する。"
+        },
+        {
+          "id": "C",
+          "text": "特別損失のみ",
+          "is_correct": false,
+          "explanation": "特別損失は災害損失など臨時かつ巨額なものに限る。通常の減耗は該当しない。"
+        },
+        {
+          "id": "D",
+          "text": "売上原価または販売費及び一般管理費",
+          "is_correct": true,
+          "explanation": "正解。原価性のある減耗損は売上原価の内訳または販管費に計上する。"
+        }
       ],
       "explanation": "棚卸減耗損は、原価性がある(=毎期通常発生する範囲)場合は売上原価または販管費に表示し、原価性がない(=異常で臨時)場合は営業外費用または特別損失とする。商品評価損は原則として売上原価に含めて表示する。",
-      "references": [{"title": "簿記2級 P/L表示区分", "url": ""}],
-      "tags": ["決算整理", "棚卸減耗損", "P/L", "表示区分"],
-      "common_mistakes": ["減耗損を一律で営業外費用と覚える", "原価性の有無を考慮しない", "評価損と減耗損の表示を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.7},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 P/L表示区分",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "棚卸減耗損",
+        "P/L",
+        "表示区分"
+      ],
+      "common_mistakes": [
+        "減耗損を一律で営業外費用と覚える",
+        "原価性の有無を考慮しない",
+        "評価損と減耗損の表示を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.7
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-005",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "減価償却",
       "subtopic": "定額法の計算",
       "cognitive_level": "L3-Apply",
       "difficulty": "easy",
       "stem": "医療機器メーカーC社が取得した機械装置(取得原価 1,000,000円、残存価額 0円、耐用年数 5年)について、定額法による当期の減価償却費はいくらか。",
       "options": [
-        {"id": "A", "text": "200,000円", "is_correct": true, "explanation": "正解。(1,000,000 - 0) ÷ 5年 = 200,000円。"},
-        {"id": "B", "text": "180,000円", "is_correct": false, "explanation": "残存価額10%の旧基準(1,000,000×0.9÷5)で計算した誤り。現行は残存0円が原則。"},
-        {"id": "C", "text": "400,000円", "is_correct": false, "explanation": "定率法のような200%償却率(1/5×2)で計算した誤り。本問は定額法。"},
-        {"id": "D", "text": "100,000円", "is_correct": false, "explanation": "耐用年数を10年と誤認した値。本問は5年。"}
+        {
+          "id": "A",
+          "text": "200,000円",
+          "is_correct": true,
+          "explanation": "正解。(1,000,000 - 0) ÷ 5年 = 200,000円。"
+        },
+        {
+          "id": "B",
+          "text": "400,000円",
+          "is_correct": false,
+          "explanation": "定率法のような200%償却率(1/5×2)で計算した誤り。本問は定額法。"
+        },
+        {
+          "id": "C",
+          "text": "180,000円",
+          "is_correct": false,
+          "explanation": "残存価額10%の旧基準(1,000,000×0.9÷5)で計算した誤り。現行は残存0円が原則。"
+        },
+        {
+          "id": "D",
+          "text": "100,000円",
+          "is_correct": false,
+          "explanation": "耐用年数を10年と誤認した値。本問は5年。"
+        }
       ],
       "explanation": "定額法の減価償却費 = (取得原価 - 残存価額) ÷ 耐用年数 = (1,000,000 - 0) ÷ 5 = 200,000円。仕訳は (借)減価償却費 200,000 / (貸)減価償却累計額 200,000(間接法)。直接法の場合は貸方が機械装置となる。",
-      "references": [{"title": "簿記2級 減価償却 定額法", "url": ""}],
-      "tags": ["決算整理", "減価償却", "定額法", "計算"],
-      "common_mistakes": ["旧基準の残存10%で計算する", "定率法と混同する", "間接法と直接法の貸方を間違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 減価償却 定額法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "減価償却",
+        "定額法",
+        "計算"
+      ],
+      "common_mistakes": [
+        "旧基準の残存10%で計算する",
+        "定率法と混同する",
+        "間接法と直接法の貸方を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-006",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "減価償却",
       "subtopic": "200%定率法",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "FinTech企業D社が当期首に取得した備品(取得原価 800,000円、耐用年数 8年)について、200%定率法で減価償却を行う。当期(1年目)の減価償却費はいくらか。",
       "options": [
-        {"id": "A", "text": "200,000円", "is_correct": true, "explanation": "正解。償却率 = 1/8 × 200% = 0.25。800,000 × 0.25 = 200,000円。"},
-        {"id": "B", "text": "100,000円", "is_correct": false, "explanation": "定額法 800,000÷8 = 100,000円で計算した誤り。本問は200%定率法。"},
-        {"id": "C", "text": "150,000円", "is_correct": false, "explanation": "150%定率法(0.1875)の値で計算した誤り。本問は200%定率法。"},
-        {"id": "D", "text": "160,000円", "is_correct": false, "explanation": "償却率を0.2(=1/5)と誤計算。耐用年数8年では1/8×2=0.25。"}
+        {
+          "id": "A",
+          "text": "150,000円",
+          "is_correct": false,
+          "explanation": "150%定率法(0.1875)の値で計算した誤り。本問は200%定率法。"
+        },
+        {
+          "id": "B",
+          "text": "200,000円",
+          "is_correct": true,
+          "explanation": "正解。償却率 = 1/8 × 200% = 0.25。800,000 × 0.25 = 200,000円。"
+        },
+        {
+          "id": "C",
+          "text": "100,000円",
+          "is_correct": false,
+          "explanation": "定額法 800,000÷8 = 100,000円で計算した誤り。本問は200%定率法。"
+        },
+        {
+          "id": "D",
+          "text": "160,000円",
+          "is_correct": false,
+          "explanation": "償却率を0.2(=1/5)と誤計算。耐用年数8年では1/8×2=0.25。"
+        }
       ],
       "explanation": "200%定率法の償却率 = (1 ÷ 耐用年数) × 200% = (1/8) × 2 = 0.25。当期減価償却費 = 期首帳簿価額 × 償却率 = 800,000 × 0.25 = 200,000円。なお保証率を下回ったら改定取得価額×改定償却率に切替えるが、1年目は通常切替不要。",
-      "references": [{"title": "簿記2級 200%定率法", "url": ""}],
-      "tags": ["決算整理", "減価償却", "定率法", "200%定率法"],
-      "common_mistakes": ["定額法と混同する", "150%と200%を間違える", "保証率の切替えを忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 200%定率法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "減価償却",
+        "定率法",
+        "200%定率法"
+      ],
+      "common_mistakes": [
+        "定額法と混同する",
+        "150%と200%を間違える",
+        "保証率の切替えを忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-007",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "減価償却",
       "subtopic": "生産高比例法",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の運送業E社が取得した車両(取得原価 3,000,000円、残存価額 0円、総走行可能距離 200,000km)について、当期の走行距離が30,000kmであった。生産高比例法による当期減価償却費はいくらか。",
+      "stem": "ある運送業E社が取得した車両(取得原価 3,000,000円、残存価額 0円、総走行可能距離 200,000km)について、当期の走行距離が30,000kmであった。生産高比例法による当期減価償却費はいくらか。",
       "options": [
-        {"id": "A", "text": "450,000円", "is_correct": true, "explanation": "正解。3,000,000 × (30,000 / 200,000) = 450,000円。"},
-        {"id": "B", "text": "600,000円", "is_correct": false, "explanation": "総走行可能距離を150,000kmと誤認した値。問題文では200,000km。"},
-        {"id": "C", "text": "300,000円", "is_correct": false, "explanation": "残存価額10%(=300,000円)を控除して計算した誤り。本問は残存0円。"},
-        {"id": "D", "text": "150,000円", "is_correct": false, "explanation": "計算式が不明。生産高比例法は『取得原価 × 当期使用量/総使用可能量』。"}
+        {
+          "id": "A",
+          "text": "300,000円",
+          "is_correct": false,
+          "explanation": "残存価額10%(=300,000円)を控除して計算した誤り。本問は残存0円。"
+        },
+        {
+          "id": "B",
+          "text": "150,000円",
+          "is_correct": false,
+          "explanation": "計算式が不明。生産高比例法は『取得原価 × 当期使用量/総使用可能量』。"
+        },
+        {
+          "id": "C",
+          "text": "450,000円",
+          "is_correct": true,
+          "explanation": "正解。3,000,000 × (30,000 / 200,000) = 450,000円。"
+        },
+        {
+          "id": "D",
+          "text": "600,000円",
+          "is_correct": false,
+          "explanation": "総走行可能距離を150,000kmと誤認した値。問題文では200,000km。"
+        }
       ],
       "explanation": "生産高比例法の減価償却費 = (取得原価 - 残存価額) × (当期実際使用量 / 総使用可能量) = 3,000,000 × (30,000 / 200,000) = 450,000円。車両・航空機・鉱業用設備など、使用量に応じた費用配分が合理的な資産に適用される。",
-      "references": [{"title": "簿記2級 生産高比例法", "url": ""}],
-      "tags": ["決算整理", "減価償却", "生産高比例法", "計算"],
-      "common_mistakes": ["定額法・定率法と混同する", "総使用可能量の数値を見落とす", "残存価額を勝手に10%と仮定する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 生産高比例法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "減価償却",
+        "生産高比例法",
+        "計算"
+      ],
+      "common_mistakes": [
+        "定額法・定率法と混同する",
+        "総使用可能量の数値を見落とす",
+        "残存価額を勝手に10%と仮定する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-008",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "減価償却",
       "subtopic": "減価償却の仕訳(間接法)",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "決算において、間接法により減価償却費 100,000円を計上する場合の正しい仕訳はどれか。",
       "options": [
-        {"id": "A", "text": "(借)減価償却費 100,000 / (貸)減価償却累計額 100,000", "is_correct": true, "explanation": "正解。間接法では資産勘定を直接減らさず、評価勘定『減価償却累計額』を使う。"},
-        {"id": "B", "text": "(借)減価償却費 100,000 / (貸)備品 100,000", "is_correct": false, "explanation": "これは直接法の仕訳。間接法では累計額勘定を使用する。"},
-        {"id": "C", "text": "(借)減価償却累計額 100,000 / (貸)減価償却費 100,000", "is_correct": false, "explanation": "貸借が逆。費用は借方、評価勘定の増加は貸方。"},
-        {"id": "D", "text": "(借)備品 100,000 / (貸)減価償却費 100,000", "is_correct": false, "explanation": "完全に貸借が逆かつ勘定も誤り。費用認識ができていない。"}
+        {
+          "id": "A",
+          "text": "(借)備品 100,000 / (貸)減価償却費 100,000",
+          "is_correct": false,
+          "explanation": "完全に貸借が逆かつ勘定も誤り。費用認識ができていない。"
+        },
+        {
+          "id": "B",
+          "text": "(借)減価償却累計額 100,000 / (貸)減価償却費 100,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。費用は借方、評価勘定の増加は貸方。"
+        },
+        {
+          "id": "C",
+          "text": "(借)減価償却費 100,000 / (貸)備品 100,000",
+          "is_correct": false,
+          "explanation": "これは直接法の仕訳。間接法では累計額勘定を使用する。"
+        },
+        {
+          "id": "D",
+          "text": "(借)減価償却費 100,000 / (貸)減価償却累計額 100,000",
+          "is_correct": true,
+          "explanation": "正解。間接法では資産勘定を直接減らさず、評価勘定『減価償却累計額』を使う。"
+        }
       ],
       "explanation": "間接法の減価償却仕訳: (借)減価償却費 100,000 / (貸)減価償却累計額 100,000。減価償却累計額は資産のマイナスを表す評価勘定でB/Sでは固定資産から控除形式で表示される。直接法では(貸)を備品など資産勘定とする。",
-      "references": [{"title": "簿記2級 減価償却 間接法", "url": ""}],
-      "tags": ["決算整理", "減価償却", "間接法", "仕訳"],
-      "common_mistakes": ["直接法と間接法を混同する", "貸借を逆にする", "評価勘定の概念を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 減価償却 間接法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "減価償却",
+        "間接法",
+        "仕訳"
+      ],
+      "common_mistakes": [
+        "直接法と間接法を混同する",
+        "貸借を逆にする",
+        "評価勘定の概念を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-009",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "経過勘定",
       "subtopic": "前払費用の処理",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "教育サービス業F社は、決算日(3月末)に翌期分の家賃 6ヶ月分(120,000円)を支払い済みであり、支払家賃勘定に計上している。決算整理仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)前払家賃 120,000 / (貸)支払家賃 120,000", "is_correct": true, "explanation": "正解。翌期分の費用を当期から除外するため、前払費用(資産)に振り替える。"},
-        {"id": "B", "text": "(借)支払家賃 120,000 / (貸)前払家賃 120,000", "is_correct": false, "explanation": "貸借が逆。これは翌期首の再振替仕訳。"},
-        {"id": "C", "text": "(借)未払家賃 120,000 / (貸)支払家賃 120,000", "is_correct": false, "explanation": "未払家賃は『当期に発生したが未払いのもの』を負債として計上する勘定。前払とは方向が逆。"},
-        {"id": "D", "text": "仕訳不要", "is_correct": false, "explanation": "翌期分が当期費用に含まれたままだと費用が過大になる。期間損益計算のため必ず調整する。"}
+        {
+          "id": "A",
+          "text": "(借)前払家賃 120,000 / (貸)支払家賃 120,000",
+          "is_correct": true,
+          "explanation": "正解。翌期分の費用を当期から除外するため、前払費用(資産)に振り替える。"
+        },
+        {
+          "id": "B",
+          "text": "仕訳不要",
+          "is_correct": false,
+          "explanation": "翌期分が当期費用に含まれたままだと費用が過大になる。期間損益計算のため必ず調整する。"
+        },
+        {
+          "id": "C",
+          "text": "(借)未払家賃 120,000 / (貸)支払家賃 120,000",
+          "is_correct": false,
+          "explanation": "未払家賃は『当期に発生したが未払いのもの』を負債として計上する勘定。前払とは方向が逆。"
+        },
+        {
+          "id": "D",
+          "text": "(借)支払家賃 120,000 / (貸)前払家賃 120,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。これは翌期首の再振替仕訳。"
+        }
       ],
       "explanation": "前払費用は『当期に支払ったが、サービス提供は翌期以降のもの』。決算で費用から控除し資産(前払家賃)に振り替える。仕訳: (借)前払家賃 120,000 / (貸)支払家賃 120,000。翌期首には逆仕訳(再振替)を行い、再び費用化される。",
-      "references": [{"title": "簿記2級 経過勘定 前払費用", "url": ""}],
-      "tags": ["決算整理", "経過勘定", "前払費用", "仕訳"],
-      "common_mistakes": ["前払と未払を混同する", "貸借を逆にする", "翌期の再振替を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 経過勘定 前払費用",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "経過勘定",
+        "前払費用",
+        "仕訳"
+      ],
+      "common_mistakes": [
+        "前払と未払を混同する",
+        "貸借を逆にする",
+        "翌期の再振替を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-010",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "経過勘定",
       "subtopic": "未払費用の計算",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "G社は3月末決算。借入金 1,200,000円(年利率3%、利払日:6月末・12月末)について、当期末に必要な経過利息の決算整理仕訳と金額の組み合わせとして正しいのは？",
       "options": [
-        {"id": "A", "text": "(借)支払利息 9,000 / (貸)未払利息 9,000", "is_correct": true, "explanation": "正解。1,200,000×3%×3/12=9,000円(1月〜3月の3ヶ月分)。"},
-        {"id": "B", "text": "(借)支払利息 18,000 / (貸)未払利息 18,000", "is_correct": false, "explanation": "6ヶ月分(1,200,000×3%×6/12)で計算した誤り。前回利払日12月末以降の3ヶ月分が正しい。"},
-        {"id": "C", "text": "(借)未払利息 9,000 / (貸)支払利息 9,000", "is_correct": false, "explanation": "貸借が逆。費用の見越し計上は(借)費用 / (貸)未払費用。"},
-        {"id": "D", "text": "(借)前払利息 9,000 / (貸)支払利息 9,000", "is_correct": false, "explanation": "前払利息は『支払済だが未経過』。本問は『発生済だが未払』なので未払利息。"}
+        {
+          "id": "A",
+          "text": "(借)前払利息 9,000 / (貸)支払利息 9,000",
+          "is_correct": false,
+          "explanation": "前払利息は『支払済だが未経過』。本問は『発生済だが未払』なので未払利息。"
+        },
+        {
+          "id": "B",
+          "text": "(借)支払利息 9,000 / (貸)未払利息 9,000",
+          "is_correct": true,
+          "explanation": "正解。1,200,000×3%×3/12=9,000円(1月〜3月の3ヶ月分)。"
+        },
+        {
+          "id": "C",
+          "text": "(借)未払利息 9,000 / (貸)支払利息 9,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。費用の見越し計上は(借)費用 / (貸)未払費用。"
+        },
+        {
+          "id": "D",
+          "text": "(借)支払利息 18,000 / (貸)未払利息 18,000",
+          "is_correct": false,
+          "explanation": "6ヶ月分(1,200,000×3%×6/12)で計算した誤り。前回利払日12月末以降の3ヶ月分が正しい。"
+        }
       ],
       "explanation": "未払費用は『当期に発生したがまだ支払っていない費用』。利払日12月末から決算日3月末までの3ヶ月分を見越し計上する。1,200,000 × 3% × 3/12 = 9,000円。仕訳: (借)支払利息 9,000 / (貸)未払利息 9,000。翌期首に再振替する。",
-      "references": [{"title": "簿記2級 経過勘定 未払費用", "url": ""}],
-      "tags": ["決算整理", "経過勘定", "未払費用", "計算"],
-      "common_mistakes": ["前払と未払を混同する", "経過月数を間違える", "貸借を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 経過勘定 未払費用",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "経過勘定",
+        "未払費用",
+        "計算"
+      ],
+      "common_mistakes": [
+        "前払と未払を混同する",
+        "経過月数を間違える",
+        "貸借を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-011",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "経過勘定",
       "subtopic": "前受収益と未収収益",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "経過勘定に関する次の説明のうち、正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "前受収益は負債、未収収益は資産として計上する", "is_correct": true, "explanation": "正解。前受は将来サービスを提供する義務(負債)、未収は将来受け取る権利(資産)。"},
-        {"id": "B", "text": "前受収益も未収収益も負債として計上する", "is_correct": false, "explanation": "未収収益は将来受け取る権利を表すので資産。"},
-        {"id": "C", "text": "前受収益は収益、未収収益も収益のため両方P/L項目", "is_correct": false, "explanation": "経過勘定はB/S項目(資産・負債)。当期分の収益・費用への振替がP/L項目。"},
-        {"id": "D", "text": "前受収益は資産、未収収益は負債", "is_correct": false, "explanation": "完全に逆。前受は『先に受け取った→提供義務』なので負債。"}
+        {
+          "id": "A",
+          "text": "前受収益も未収収益も負債として計上する",
+          "is_correct": false,
+          "explanation": "未収収益は将来受け取る権利を表すので資産。"
+        },
+        {
+          "id": "B",
+          "text": "前受収益は資産、未収収益は負債",
+          "is_correct": false,
+          "explanation": "完全に逆。前受は『先に受け取った→提供義務』なので負債。"
+        },
+        {
+          "id": "C",
+          "text": "前受収益は負債、未収収益は資産として計上する",
+          "is_correct": true,
+          "explanation": "正解。前受は将来サービスを提供する義務(負債)、未収は将来受け取る権利(資産)。"
+        },
+        {
+          "id": "D",
+          "text": "前受収益は収益、未収収益も収益のため両方P/L項目",
+          "is_correct": false,
+          "explanation": "経過勘定はB/S項目(資産・負債)。当期分の収益・費用への振替がP/L項目。"
+        }
       ],
       "explanation": "経過勘定の4分類: 前払費用(資産・費用)、前受収益(負債・収益)、未払費用(負債・費用)、未収収益(資産・収益)。『前』はキャッシュ先行、『未』はサービス先行。資産/負債の判別は『将来の権利か義務か』で考える。",
-      "references": [{"title": "簿記2級 経過勘定の分類", "url": ""}],
-      "tags": ["決算整理", "経過勘定", "前受収益", "未収収益"],
-      "common_mistakes": ["前受/未収の資産・負債分類を混同する", "B/S項目とP/L項目を混同する", "再振替仕訳を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 経過勘定の分類",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "経過勘定",
+        "前受収益",
+        "未収収益"
+      ],
+      "common_mistakes": [
+        "前受/未収の資産・負債分類を混同する",
+        "B/S項目とP/L項目を混同する",
+        "再振替仕訳を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-012",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "引当金",
       "subtopic": "貸倒引当金の差額補充法",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "B2B SaaS業のH社の決算において、売掛金期末残高 5,000,000円に対し2%の貸倒引当金を差額補充法で設定する。決算前の貸倒引当金残高は40,000円。当期の繰入額の正しい仕訳は？",
       "options": [
-        {"id": "A", "text": "(借)貸倒引当金繰入 60,000 / (貸)貸倒引当金 60,000", "is_correct": true, "explanation": "正解。設定額 100,000 - 既存 40,000 = 60,000円を補充。"},
-        {"id": "B", "text": "(借)貸倒引当金繰入 100,000 / (貸)貸倒引当金 100,000", "is_correct": false, "explanation": "差額補充法ではなく、設定額全額を繰り入れた誤り(これは洗替法の一部処理)。"},
-        {"id": "C", "text": "(借)貸倒損失 60,000 / (貸)売掛金 60,000", "is_correct": false, "explanation": "これは実際に貸倒が発生した場合の処理。引当金の設定とは別。"},
-        {"id": "D", "text": "(借)貸倒引当金 60,000 / (貸)貸倒引当金繰入 60,000", "is_correct": false, "explanation": "貸借が逆。引当金の増加は貸方、繰入(費用)は借方。"}
+        {
+          "id": "A",
+          "text": "(借)貸倒引当金 60,000 / (貸)貸倒引当金繰入 60,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。引当金の増加は貸方、繰入(費用)は借方。"
+        },
+        {
+          "id": "B",
+          "text": "(借)貸倒引当金繰入 100,000 / (貸)貸倒引当金 100,000",
+          "is_correct": false,
+          "explanation": "差額補充法ではなく、設定額全額を繰り入れた誤り(これは洗替法の一部処理)。"
+        },
+        {
+          "id": "C",
+          "text": "(借)貸倒損失 60,000 / (貸)売掛金 60,000",
+          "is_correct": false,
+          "explanation": "これは実際に貸倒が発生した場合の処理。引当金の設定とは別。"
+        },
+        {
+          "id": "D",
+          "text": "(借)貸倒引当金繰入 60,000 / (貸)貸倒引当金 60,000",
+          "is_correct": true,
+          "explanation": "正解。設定額 100,000 - 既存 40,000 = 60,000円を補充。"
+        }
       ],
       "explanation": "差額補充法は『設定すべき金額と既存残高の差額のみ繰り入れる』方法。設定額 = 5,000,000 × 2% = 100,000円。既存 40,000円との差 60,000円を繰り入れる。仕訳: (借)貸倒引当金繰入 60,000 / (貸)貸倒引当金 60,000。なお既存残高が設定額を上回る場合は『戻入(益)』となる。",
-      "references": [{"title": "簿記2級 貸倒引当金 差額補充法", "url": ""}],
-      "tags": ["決算整理", "引当金", "貸倒引当金", "差額補充法"],
-      "common_mistakes": ["差額補充法と洗替法を混同", "貸借を逆にする", "貸倒損失と繰入を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 貸倒引当金 差額補充法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "引当金",
+        "貸倒引当金",
+        "差額補充法"
+      ],
+      "common_mistakes": [
+        "差額補充法と洗替法を混同",
+        "貸借を逆にする",
+        "貸倒損失と繰入を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-013",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "引当金",
       "subtopic": "賞与引当金",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "I社の支給対象期間が12月〜翌5月の賞与について、6月支給見込額 1,200,000円。3月末決算で当期負担分の賞与引当金を計上する仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)賞与引当金繰入 800,000 / (貸)賞与引当金 800,000", "is_correct": true, "explanation": "正解。12〜3月の4ヶ月分(1,200,000 × 4/6 = 800,000円)が当期負担分。"},
-        {"id": "B", "text": "(借)賞与引当金繰入 1,200,000 / (貸)賞与引当金 1,200,000", "is_correct": false, "explanation": "支給見込額全額を計上した誤り。期間按分が必要。"},
-        {"id": "C", "text": "(借)賞与引当金繰入 400,000 / (貸)賞与引当金 400,000", "is_correct": false, "explanation": "翌期負担分(4・5月の2ヶ月)を計上した誤り。当期分は12〜3月の4ヶ月。"},
-        {"id": "D", "text": "(借)賞与 1,200,000 / (貸)未払賞与 1,200,000", "is_correct": false, "explanation": "確定債務でない将来支給予定額は引当金で処理する。賞与勘定は支給時に使用。"}
+        {
+          "id": "A",
+          "text": "(借)賞与引当金繰入 800,000 / (貸)賞与引当金 800,000",
+          "is_correct": true,
+          "explanation": "正解。12〜3月の4ヶ月分(1,200,000 × 4/6 = 800,000円)が当期負担分。"
+        },
+        {
+          "id": "B",
+          "text": "(借)賞与引当金繰入 400,000 / (貸)賞与引当金 400,000",
+          "is_correct": false,
+          "explanation": "翌期負担分(4・5月の2ヶ月)を計上した誤り。当期分は12〜3月の4ヶ月。"
+        },
+        {
+          "id": "C",
+          "text": "(借)賞与 1,200,000 / (貸)未払賞与 1,200,000",
+          "is_correct": false,
+          "explanation": "確定債務でない将来支給予定額は引当金で処理する。賞与勘定は支給時に使用。"
+        },
+        {
+          "id": "D",
+          "text": "(借)賞与引当金繰入 1,200,000 / (貸)賞与引当金 1,200,000",
+          "is_correct": false,
+          "explanation": "支給見込額全額を計上した誤り。期間按分が必要。"
+        }
       ],
       "explanation": "賞与引当金は『将来支給する賞与のうち、当期に労働提供を受けた分』を費用計上するもの。支給対象期間6ヶ月のうち当期(12月〜3月)は4ヶ月分。1,200,000 × 4/6 = 800,000円。引当金の4要件(発生可能性高、過去事象起因、合理的見積可能、当期事由)を満たす。",
-      "references": [{"title": "簿記2級 賞与引当金", "url": ""}],
-      "tags": ["決算整理", "引当金", "賞与引当金", "期間按分"],
-      "common_mistakes": ["全額を当期負担とする", "翌期負担分と当期負担分を逆にする", "未払賞与と引当金を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 賞与引当金",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "引当金",
+        "賞与引当金",
+        "期間按分"
+      ],
+      "common_mistakes": [
+        "全額を当期負担とする",
+        "翌期負担分と当期負担分を逆にする",
+        "未払賞与と引当金を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-014",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "引当金",
       "subtopic": "退職給付引当金",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "退職給付引当金に関する次の記述のうち、誤っているものはどれか。",
       "options": [
-        {"id": "A", "text": "毎期の繰入額は『退職給付費用』として販売費及び一般管理費に計上する", "is_correct": false, "explanation": "正しい記述。退職給付費用は通常、販管費に計上する。"},
-        {"id": "B", "text": "退職一時金の支払時は退職給付引当金を取り崩す", "is_correct": false, "explanation": "正しい記述。(借)退職給付引当金/(貸)現預金 等の処理。"},
-        {"id": "C", "text": "退職給付引当金は短期(流動)負債として計上する", "is_correct": true, "explanation": "正解(誤った記述)。退職給付引当金は通常、固定負債(投資その他)に計上する。"},
-        {"id": "D", "text": "従業員の労働提供によって将来の退職給付債務が発生するため引当金として認識する", "is_correct": false, "explanation": "正しい記述。発生主義の観点から当期負担分を費用化する。"}
+        {
+          "id": "A",
+          "text": "毎期の繰入額は『退職給付費用』として販売費及び一般管理費に計上する",
+          "is_correct": false,
+          "explanation": "正しい記述。退職給付費用は通常、販管費に計上する。"
+        },
+        {
+          "id": "B",
+          "text": "退職給付引当金は短期(流動)負債として計上する",
+          "is_correct": true,
+          "explanation": "正解(誤った記述)。退職給付引当金は通常、固定負債(投資その他)に計上する。"
+        },
+        {
+          "id": "C",
+          "text": "退職一時金の支払時は退職給付引当金を取り崩す",
+          "is_correct": false,
+          "explanation": "正しい記述。(借)退職給付引当金/(貸)現預金 等の処理。"
+        },
+        {
+          "id": "D",
+          "text": "従業員の労働提供によって将来の退職給付債務が発生するため引当金として認識する",
+          "is_correct": false,
+          "explanation": "正しい記述。発生主義の観点から当期負担分を費用化する。"
+        }
       ],
       "explanation": "退職給付引当金は長期にわたる退職金支給債務を表すため、原則として固定負債(B/Sの『退職給付に係る負債』)に計上する。当期繰入は退職給付費用として販管費。退職金支給時に取り崩す。引当金の4要件(発生可能性、過去事象、合理的見積、当期事由)を満たす典型例。",
-      "references": [{"title": "簿記2級 退職給付引当金", "url": ""}],
-      "tags": ["決算整理", "引当金", "退職給付引当金", "B/S表示"],
-      "common_mistakes": ["流動・固定の区分を間違える", "費用の表示区分を間違える", "支給時の処理で費用計上してしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 退職給付引当金",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "引当金",
+        "退職給付引当金",
+        "B/S表示"
+      ],
+      "common_mistakes": [
+        "流動・固定の区分を間違える",
+        "費用の表示区分を間違える",
+        "支給時の処理で費用計上してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-015",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "引当金",
       "subtopic": "修繕引当金",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
-      "stem": "東海地方の製造業J社は、3年ごとに大規模修繕(見積額 600,000円)を実施している。前回修繕は当期2年前に完了済。修繕引当金として当期に計上すべき金額として最も適切なものはどれか。",
+      "stem": "ある製造業J社は、3年ごとに大規模修繕(見積額 600,000円)を実施している。前回修繕は当期2年前に完了済。修繕引当金として当期に計上すべき金額として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "200,000円", "is_correct": true, "explanation": "正解。次回までの3年間で平準化して計上。600,000 ÷ 3 = 200,000円/年。"},
-        {"id": "B", "text": "600,000円", "is_correct": false, "explanation": "見積額全額を当期に計上した誤り。修繕引当金は周期に応じて期間配分する。"},
-        {"id": "C", "text": "300,000円", "is_correct": false, "explanation": "2年に1回として計算した誤り。問題文では3年ごと。"},
-        {"id": "D", "text": "0円(計上不要)", "is_correct": false, "explanation": "修繕引当金は引当金の4要件を満たすため計上が必要。発生主義的に期間配分する。"}
+        {
+          "id": "A",
+          "text": "600,000円",
+          "is_correct": false,
+          "explanation": "見積額全額を当期に計上した誤り。修繕引当金は周期に応じて期間配分する。"
+        },
+        {
+          "id": "B",
+          "text": "300,000円",
+          "is_correct": false,
+          "explanation": "2年に1回として計算した誤り。問題文では3年ごと。"
+        },
+        {
+          "id": "C",
+          "text": "200,000円",
+          "is_correct": true,
+          "explanation": "正解。次回までの3年間で平準化して計上。600,000 ÷ 3 = 200,000円/年。"
+        },
+        {
+          "id": "D",
+          "text": "0円(計上不要)",
+          "is_correct": false,
+          "explanation": "修繕引当金は引当金の4要件を満たすため計上が必要。発生主義的に期間配分する。"
+        }
       ],
       "explanation": "修繕引当金は将来の大規模修繕費用を平準化するための引当金。見積額600,000円を3年で按分して年200,000円ずつ計上。仕訳: (借)修繕引当金繰入 200,000 / (貸)修繕引当金 200,000。実際の修繕時に取り崩す。引当金の要件(将来発生・過去事象・合理的見積・当期事由)を満たす。",
-      "references": [{"title": "簿記2級 修繕引当金", "url": ""}],
-      "tags": ["決算整理", "引当金", "修繕引当金", "期間配分"],
-      "common_mistakes": ["全額を一括計上", "周期年数を間違える", "費用と引当金の使い分けを誤る"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 修繕引当金",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "引当金",
+        "修繕引当金",
+        "期間配分"
+      ],
+      "common_mistakes": [
+        "全額を一括計上",
+        "周期年数を間違える",
+        "費用と引当金の使い分けを誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-016",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "有価証券",
       "subtopic": "売買目的有価証券の評価替え",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "K社は売買目的で取得した株式(取得原価 500,000円)を保有している。決算日の時価は580,000円。決算整理仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)売買目的有価証券 80,000 / (貸)有価証券評価益 80,000", "is_correct": true, "explanation": "正解。時価580,000 - 簿価500,000 = 80,000円の評価益。売買目的はP/Lに認識。"},
-        {"id": "B", "text": "(借)売買目的有価証券 80,000 / (貸)その他有価証券評価差額金 80,000", "is_correct": false, "explanation": "評価差額金は『その他有価証券』の処理。売買目的は損益計算書経由。"},
-        {"id": "C", "text": "(借)有価証券評価損 80,000 / (貸)売買目的有価証券 80,000", "is_correct": false, "explanation": "貸借が逆かつ損益勘定も逆。値上がりだから評価益が発生する。"},
-        {"id": "D", "text": "仕訳不要", "is_correct": false, "explanation": "売買目的は時価評価が必須。仕訳不要は満期保有目的(債券)など。"}
+        {
+          "id": "A",
+          "text": "仕訳不要",
+          "is_correct": false,
+          "explanation": "売買目的は時価評価が必須。仕訳不要は満期保有目的(債券)など。"
+        },
+        {
+          "id": "B",
+          "text": "(借)売買目的有価証券 80,000 / (貸)その他有価証券評価差額金 80,000",
+          "is_correct": false,
+          "explanation": "評価差額金は『その他有価証券』の処理。売買目的は損益計算書経由。"
+        },
+        {
+          "id": "C",
+          "text": "(借)有価証券評価損 80,000 / (貸)売買目的有価証券 80,000",
+          "is_correct": false,
+          "explanation": "貸借が逆かつ損益勘定も逆。値上がりだから評価益が発生する。"
+        },
+        {
+          "id": "D",
+          "text": "(借)売買目的有価証券 80,000 / (貸)有価証券評価益 80,000",
+          "is_correct": true,
+          "explanation": "正解。時価580,000 - 簿価500,000 = 80,000円の評価益。売買目的はP/Lに認識。"
+        }
       ],
       "explanation": "売買目的有価証券は決算時に時価評価し、評価差額をP/L(有価証券評価損益)に計上する。時価580,000円 - 帳簿500,000円 = +80,000円の評価益。仕訳: (借)売買目的有価証券 80,000 / (貸)有価証券評価益 80,000。短期売買が前提のため、含み損益を業績に直接反映する考え方。",
-      "references": [{"title": "簿記2級 売買目的有価証券の評価", "url": ""}],
-      "tags": ["決算整理", "有価証券", "売買目的", "時価評価"],
-      "common_mistakes": ["その他有価証券と混同(評価差額金で処理)", "評価益と評価損を逆にする", "時価評価不要と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 売買目的有価証券の評価",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "有価証券",
+        "売買目的",
+        "時価評価"
+      ],
+      "common_mistakes": [
+        "その他有価証券と混同(評価差額金で処理)",
+        "評価益と評価損を逆にする",
+        "時価評価不要と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-017",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "有価証券",
       "subtopic": "その他有価証券評価差額金",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "L社が長期保有目的(その他有価証券)で取得した株式(取得原価 1,000,000円)の決算日時価は900,000円。全部純資産直入法により決算整理仕訳として正しいものは(税効果会計は無視)？",
       "options": [
-        {"id": "A", "text": "(借)その他有価証券評価差額金 100,000 / (貸)その他有価証券 100,000", "is_correct": true, "explanation": "正解。評価差額は損益でなく純資産(評価差額金)で処理。値下がりは差額金のマイナス側。"},
-        {"id": "B", "text": "(借)有価証券評価損 100,000 / (貸)その他有価証券 100,000", "is_correct": false, "explanation": "売買目的の処理。その他有価証券は純資産直入法を使う(部分純資産直入で時価下落時のみ損失計上は別問題)。"},
-        {"id": "C", "text": "(借)その他有価証券 100,000 / (貸)その他有価証券評価差額金 100,000", "is_correct": false, "explanation": "値下がりだから資産は減少すべき。借方・貸方が逆。"},
-        {"id": "D", "text": "仕訳不要", "is_correct": false, "explanation": "決算時に時価評価が必要。原価で据え置くのは満期保有目的債券など。"}
+        {
+          "id": "A",
+          "text": "(借)その他有価証券評価差額金 100,000 / (貸)その他有価証券 100,000",
+          "is_correct": true,
+          "explanation": "正解。評価差額は損益でなく純資産(評価差額金)で処理。値下がりは差額金のマイナス側。"
+        },
+        {
+          "id": "B",
+          "text": "(借)有価証券評価損 100,000 / (貸)その他有価証券 100,000",
+          "is_correct": false,
+          "explanation": "売買目的の処理。その他有価証券は純資産直入法を使う(部分純資産直入で時価下落時のみ損失計上は別問題)。"
+        },
+        {
+          "id": "C",
+          "text": "仕訳不要",
+          "is_correct": false,
+          "explanation": "決算時に時価評価が必要。原価で据え置くのは満期保有目的債券など。"
+        },
+        {
+          "id": "D",
+          "text": "(借)その他有価証券 100,000 / (貸)その他有価証券評価差額金 100,000",
+          "is_correct": false,
+          "explanation": "値下がりだから資産は減少すべき。借方・貸方が逆。"
+        }
       ],
       "explanation": "その他有価証券は決算で時価評価するが、評価差額は損益でなく純資産直入(その他有価証券評価差額金)で処理する(全部純資産直入法)。簿価1,000,000 - 時価900,000 = 100,000円の評価差損。仕訳: (借)その他有価証券評価差額金 100,000 / (貸)その他有価証券 100,000。翌期首に再振替(洗替)。",
-      "references": [{"title": "簿記2級 その他有価証券", "url": ""}],
-      "tags": ["決算整理", "有価証券", "その他有価証券", "全部純資産直入法"],
-      "common_mistakes": ["売買目的と同じく評価損益で処理する", "貸借を逆にする", "翌期の再振替を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 その他有価証券",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "有価証券",
+        "その他有価証券",
+        "全部純資産直入法"
+      ],
+      "common_mistakes": [
+        "売買目的と同じく評価損益で処理する",
+        "貸借を逆にする",
+        "翌期の再振替を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-018",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "外貨建債権債務",
       "subtopic": "外貨建売掛金の決算換算",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "輸出業M社は、米ドル建売掛金 10,000ドル(発生時レート 1ドル=140円)を保有。決算日のレートは 1ドル=145円。決算整理仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)売掛金 50,000 / (貸)為替差損益 50,000", "is_correct": true, "explanation": "正解。10,000×(145-140)=50,000円の円換算増加=為替差益。"},
-        {"id": "B", "text": "(借)為替差損益 50,000 / (貸)売掛金 50,000", "is_correct": false, "explanation": "貸借が逆。円安で外貨建資産は円換算額が増えるため売掛金は借方増加。"},
-        {"id": "C", "text": "(借)売掛金 1,450,000 / (貸)為替差損益 1,450,000", "is_correct": false, "explanation": "全額を計上した誤り。差額のみが調整対象(50,000円)。"},
-        {"id": "D", "text": "仕訳不要(発生時レートで据え置き)", "is_correct": false, "explanation": "外貨建金銭債権債務は決算時に決算日レートで換算替えが必要。"}
+        {
+          "id": "A",
+          "text": "(借)為替差損益 50,000 / (貸)売掛金 50,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。円安で外貨建資産は円換算額が増えるため売掛金は借方増加。"
+        },
+        {
+          "id": "B",
+          "text": "(借)売掛金 50,000 / (貸)為替差損益 50,000",
+          "is_correct": true,
+          "explanation": "正解。10,000×(145-140)=50,000円の円換算増加=為替差益。"
+        },
+        {
+          "id": "C",
+          "text": "(借)売掛金 1,450,000 / (貸)為替差損益 1,450,000",
+          "is_correct": false,
+          "explanation": "全額を計上した誤り。差額のみが調整対象(50,000円)。"
+        },
+        {
+          "id": "D",
+          "text": "仕訳不要(発生時レートで据え置き)",
+          "is_correct": false,
+          "explanation": "外貨建金銭債権債務は決算時に決算日レートで換算替えが必要。"
+        }
       ],
       "explanation": "外貨建金銭債権債務は決算時にCRレート(決算日レート)で換算替えする。10,000 × 140 = 1,400,000円(発生時) → 10,000 × 145 = 1,450,000円(決算時)。差額50,000円が為替差益。仕訳: (借)売掛金 50,000 / (貸)為替差損益 50,000。為替差益・差損は通常、営業外損益。",
-      "references": [{"title": "簿記2級 外貨建取引", "url": ""}],
-      "tags": ["決算整理", "外貨建", "為替差損益", "決算日レート"],
-      "common_mistakes": ["全額を再計上する", "円安と円高で方向を間違える", "発生時レートで据え置く"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 外貨建取引",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "外貨建",
+        "為替差損益",
+        "決算日レート"
+      ],
+      "common_mistakes": [
+        "全額を再計上する",
+        "円安と円高で方向を間違える",
+        "発生時レートで据え置く"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-019",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "外貨建債権債務",
       "subtopic": "外貨建買掛金の決算換算",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "輸入業N社は米ドル建買掛金 5,000ドル(発生時レート 1ドル=150円)を保有。決算日レートは 1ドル=145円。決算整理仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)買掛金 25,000 / (貸)為替差損益 25,000", "is_correct": true, "explanation": "正解。5,000×(150-145)=25,000円。負債の円換算額が減少するため為替差益。"},
-        {"id": "B", "text": "(借)為替差損益 25,000 / (貸)買掛金 25,000", "is_correct": false, "explanation": "貸借が逆。円高で外貨建負債の円建額は減少する。"},
-        {"id": "C", "text": "(借)買掛金 25,000 / (貸)為替差損 25,000", "is_correct": false, "explanation": "勘定科目が誤り。差益または差損益で処理し、本問は差益。"},
-        {"id": "D", "text": "(借)買掛金 5,000 / (貸)為替差損益 5,000", "is_correct": false, "explanation": "金額が誤り。レート差5円×5,000ドル=25,000円で計算する。"}
+        {
+          "id": "A",
+          "text": "(借)為替差損益 25,000 / (貸)買掛金 25,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。円高で外貨建負債の円建額は減少する。"
+        },
+        {
+          "id": "B",
+          "text": "(借)買掛金 25,000 / (貸)為替差損 25,000",
+          "is_correct": false,
+          "explanation": "勘定科目が誤り。差益または差損益で処理し、本問は差益。"
+        },
+        {
+          "id": "C",
+          "text": "(借)買掛金 25,000 / (貸)為替差損益 25,000",
+          "is_correct": true,
+          "explanation": "正解。5,000×(150-145)=25,000円。負債の円換算額が減少するため為替差益。"
+        },
+        {
+          "id": "D",
+          "text": "(借)買掛金 5,000 / (貸)為替差損益 5,000",
+          "is_correct": false,
+          "explanation": "金額が誤り。レート差5円×5,000ドル=25,000円で計算する。"
+        }
       ],
       "explanation": "外貨建買掛金(負債)は決算日レートで再換算する。発生時 5,000×150=750,000円 → 決算時 5,000×145=725,000円。差額25,000円分、円建負債が減少→為替差益。仕訳: (借)買掛金 25,000 / (貸)為替差損益 25,000。資産と負債で為替変動の方向が逆になる点に注意。",
-      "references": [{"title": "簿記2級 外貨建負債の換算", "url": ""}],
-      "tags": ["決算整理", "外貨建", "買掛金", "為替差損益"],
-      "common_mistakes": ["資産と負債の方向を混同する", "円高・円安の影響を逆に考える", "差益と差損を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 外貨建負債の換算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "外貨建",
+        "買掛金",
+        "為替差損益"
+      ],
+      "common_mistakes": [
+        "資産と負債の方向を混同する",
+        "円高・円安の影響を逆に考える",
+        "差益と差損を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-020",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "法人税等",
       "subtopic": "法人税・住民税・事業税の計上",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "O社の決算において税引前当期純利益は 5,000,000円。法定実効税率30%として法人税等を計上する。中間納付額 600,000円(仮払法人税等で計上済)があるとき、決算整理仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)法人税、住民税及び事業税 1,500,000 / (貸)仮払法人税等 600,000、未払法人税等 900,000", "is_correct": true, "explanation": "正解。総額1,500,000円、中間納付分を相殺し残額を未払計上。"},
-        {"id": "B", "text": "(借)法人税、住民税及び事業税 900,000 / (貸)未払法人税等 900,000", "is_correct": false, "explanation": "中間納付分が控除されたままで、総額の費用計上ができていない。"},
-        {"id": "C", "text": "(借)法人税、住民税及び事業税 1,500,000 / (貸)未払法人税等 1,500,000", "is_correct": false, "explanation": "仮払法人税等(資産)の取り崩し処理が漏れている。中間納付済の600,000円は未払にならない。"},
-        {"id": "D", "text": "(借)未払法人税等 900,000 / (貸)法人税、住民税及び事業税 900,000", "is_correct": false, "explanation": "貸借が完全に逆。費用は借方、未払(負債)は貸方。"}
+        {
+          "id": "A",
+          "text": "(借)法人税、住民税及び事業税 1,500,000 / (貸)未払法人税等 1,500,000",
+          "is_correct": false,
+          "explanation": "仮払法人税等(資産)の取り崩し処理が漏れている。中間納付済の600,000円は未払にならない。"
+        },
+        {
+          "id": "B",
+          "text": "(借)未払法人税等 900,000 / (貸)法人税、住民税及び事業税 900,000",
+          "is_correct": false,
+          "explanation": "貸借が完全に逆。費用は借方、未払(負債)は貸方。"
+        },
+        {
+          "id": "C",
+          "text": "(借)法人税、住民税及び事業税 900,000 / (貸)未払法人税等 900,000",
+          "is_correct": false,
+          "explanation": "中間納付分が控除されたままで、総額の費用計上ができていない。"
+        },
+        {
+          "id": "D",
+          "text": "(借)法人税、住民税及び事業税 1,500,000 / (貸)仮払法人税等 600,000、未払法人税等 900,000",
+          "is_correct": true,
+          "explanation": "正解。総額1,500,000円、中間納付分を相殺し残額を未払計上。"
+        }
       ],
       "explanation": "確定税額 = 5,000,000 × 30% = 1,500,000円。中間納付済の仮払法人税等600,000円を控除し、残額900,000円を未払法人税等として計上。仕訳: (借)法人税、住民税及び事業税 1,500,000 / (貸)仮払法人税等 600,000・(貸)未払法人税等 900,000。なお当期純利益は5,000,000-1,500,000=3,500,000円となる。",
-      "references": [{"title": "簿記2級 法人税等の計上", "url": ""}],
-      "tags": ["決算整理", "法人税等", "未払法人税等", "仮払法人税等"],
-      "common_mistakes": ["仮払法人税等の取り崩し漏れ", "中間納付控除前の総額しか計上しない", "貸借を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 法人税等の計上",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "法人税等",
+        "未払法人税等",
+        "仮払法人税等"
+      ],
+      "common_mistakes": [
+        "仮払法人税等の取り崩し漏れ",
+        "中間納付控除前の総額しか計上しない",
+        "貸借を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-021",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "税効果会計",
       "subtopic": "貸倒引当金の損金算入限度超過",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "P社は当期に貸倒引当金 200,000円を繰り入れたが、税法上の損金算入限度額は150,000円であり、50,000円が将来加算一時差異として将来解消される見込み。法定実効税率30%として税効果会計の決算整理仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)繰延税金資産 15,000 / (貸)法人税等調整額 15,000", "is_correct": true, "explanation": "正解。一時差異50,000×30%=15,000円。将来減算一時差異により繰延税金資産発生。"},
-        {"id": "B", "text": "(借)法人税等調整額 15,000 / (貸)繰延税金負債 15,000", "is_correct": false, "explanation": "繰延税金負債は将来加算一時差異(将来課税が増える)に対応。本問は将来減算。"},
-        {"id": "C", "text": "(借)繰延税金資産 50,000 / (貸)法人税等調整額 50,000", "is_correct": false, "explanation": "一時差異額そのままで計上した誤り。実効税率を乗じる必要がある。"},
-        {"id": "D", "text": "仕訳不要", "is_correct": false, "explanation": "税効果会計の対象。一時差異が生じているため繰延税金資産または負債を計上する。"}
+        {
+          "id": "A",
+          "text": "(借)繰延税金資産 15,000 / (貸)法人税等調整額 15,000",
+          "is_correct": true,
+          "explanation": "正解。一時差異50,000×30%=15,000円。将来減算一時差異により繰延税金資産発生。"
+        },
+        {
+          "id": "B",
+          "text": "(借)法人税等調整額 15,000 / (貸)繰延税金負債 15,000",
+          "is_correct": false,
+          "explanation": "繰延税金負債は将来加算一時差異(将来課税が増える)に対応。本問は将来減算。"
+        },
+        {
+          "id": "C",
+          "text": "(借)繰延税金資産 50,000 / (貸)法人税等調整額 50,000",
+          "is_correct": false,
+          "explanation": "一時差異額そのままで計上した誤り。実効税率を乗じる必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "仕訳不要",
+          "is_correct": false,
+          "explanation": "税効果会計の対象。一時差異が生じているため繰延税金資産または負債を計上する。"
+        }
       ],
       "explanation": "貸倒引当金繰入の損金算入限度超過は『将来減算一時差異』(将来、貸倒が確定すれば損金になり課税所得が減る)。50,000 × 30% = 15,000円の繰延税金資産を計上。仕訳: (借)繰延税金資産 15,000 / (貸)法人税等調整額 15,000。これにより税引後利益と税引前利益のひずみを修正(=会計と税務の差を調整)。",
-      "references": [{"title": "簿記2級 税効果会計", "url": ""}],
-      "tags": ["決算整理", "税効果会計", "繰延税金資産", "一時差異"],
-      "common_mistakes": ["将来減算と将来加算を混同", "実効税率を乗じ忘れる", "永久差異と一時差異を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 税効果会計",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "税効果会計",
+        "繰延税金資産",
+        "一時差異"
+      ],
+      "common_mistakes": [
+        "将来減算と将来加算を混同",
+        "実効税率を乗じ忘れる",
+        "永久差異と一時差異を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-022",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "税効果会計",
       "subtopic": "減価償却限度超過と税効果",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Q社は当期に減価償却費 300,000円を計上したが、税法上の償却限度額は240,000円。差額60,000円は将来、税務上の償却が会計上の償却を上回る期に解消される。実効税率30%。税効果仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)繰延税金資産 18,000 / (貸)法人税等調整額 18,000", "is_correct": true, "explanation": "正解。減価償却限度超過は将来減算一時差異。60,000×30%=18,000円。"},
-        {"id": "B", "text": "(借)繰延税金負債 18,000 / (貸)法人税等調整額 18,000", "is_correct": false, "explanation": "貸借および勘定が誤り。将来加算ではなく将来減算なので資産側。"},
-        {"id": "C", "text": "(借)法人税等調整額 18,000 / (貸)繰延税金資産 18,000", "is_correct": false, "explanation": "貸借が逆。資産の発生は借方。"},
-        {"id": "D", "text": "(借)減価償却費 60,000 / (貸)減価償却累計額 60,000", "is_correct": false, "explanation": "これは減価償却の追加計上仕訳。税効果会計の調整仕訳ではない。"}
+        {
+          "id": "A",
+          "text": "(借)法人税等調整額 18,000 / (貸)繰延税金資産 18,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。資産の発生は借方。"
+        },
+        {
+          "id": "B",
+          "text": "(借)繰延税金資産 18,000 / (貸)法人税等調整額 18,000",
+          "is_correct": true,
+          "explanation": "正解。減価償却限度超過は将来減算一時差異。60,000×30%=18,000円。"
+        },
+        {
+          "id": "C",
+          "text": "(借)減価償却費 60,000 / (貸)減価償却累計額 60,000",
+          "is_correct": false,
+          "explanation": "これは減価償却の追加計上仕訳。税効果会計の調整仕訳ではない。"
+        },
+        {
+          "id": "D",
+          "text": "(借)繰延税金負債 18,000 / (貸)法人税等調整額 18,000",
+          "is_correct": false,
+          "explanation": "貸借および勘定が誤り。将来加算ではなく将来減算なので資産側。"
+        }
       ],
       "explanation": "減価償却限度超過額60,000円は当期は会計費用が税務費用を上回るため課税所得は会計利益より高くなる(=税金前払)。将来、超過額は税務上の追加償却で解消されるため将来減算一時差異→繰延税金資産。60,000×30%=18,000円。仕訳: (借)繰延税金資産 18,000 / (貸)法人税等調整額 18,000。",
-      "references": [{"title": "簿記2級 税効果 減価償却限度超過", "url": ""}],
-      "tags": ["決算整理", "税効果会計", "減価償却", "繰延税金資産"],
-      "common_mistakes": ["減価償却の追加仕訳と税効果仕訳を混同", "資産と負債を逆にする", "実効税率を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 税効果 減価償却限度超過",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "税効果会計",
+        "減価償却",
+        "繰延税金資産"
+      ],
+      "common_mistakes": [
+        "減価償却の追加仕訳と税効果仕訳を混同",
+        "資産と負債を逆にする",
+        "実効税率を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-023",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "財務諸表",
       "subtopic": "B/Sの表示区分",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "貸借対照表(B/S)の表示区分として誤っているものはどれか。",
       "options": [
-        {"id": "A", "text": "売掛金 → 流動資産", "is_correct": false, "explanation": "正しい。営業循環基準により流動資産。"},
-        {"id": "B", "text": "建物 → 有形固定資産", "is_correct": false, "explanation": "正しい。1年超利用する有形物は有形固定資産。"},
-        {"id": "C", "text": "のれん → 投資その他の資産", "is_correct": true, "explanation": "正解(誤った記述)。のれんは『無形固定資産』に区分される。"},
-        {"id": "D", "text": "長期借入金 → 固定負債", "is_correct": false, "explanation": "正しい。返済期限が1年超のものは固定負債(1年基準)。"}
+        {
+          "id": "A",
+          "text": "売掛金 → 流動資産",
+          "is_correct": false,
+          "explanation": "正しい。営業循環基準により流動資産。"
+        },
+        {
+          "id": "B",
+          "text": "建物 → 有形固定資産",
+          "is_correct": false,
+          "explanation": "正しい。1年超利用する有形物は有形固定資産。"
+        },
+        {
+          "id": "C",
+          "text": "のれん → 投資その他の資産",
+          "is_correct": true,
+          "explanation": "正解(誤った記述)。のれんは『無形固定資産』に区分される。"
+        },
+        {
+          "id": "D",
+          "text": "長期借入金 → 固定負債",
+          "is_correct": false,
+          "explanation": "正しい。返済期限が1年超のものは固定負債(1年基準)。"
+        }
       ],
       "explanation": "B/S表示区分: 流動資産(現金、売掛金、棚卸資産等)、有形固定資産(建物、機械、土地)、無形固定資産(のれん、特許権、ソフトウェア)、投資その他の資産(投資有価証券、長期前払費用)、流動負債(買掛金、短期借入金)、固定負債(長期借入金、社債、退職給付引当金)。1年基準と営業循環基準で区分。",
-      "references": [{"title": "簿記2級 B/S表示区分", "url": ""}],
-      "tags": ["決算整理", "B/S", "財務諸表", "表示区分"],
-      "common_mistakes": ["のれんを投資勘定と混同", "1年基準を忘れる", "営業循環基準と1年基準の関係を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.7},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 B/S表示区分",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "B/S",
+        "財務諸表",
+        "表示区分"
+      ],
+      "common_mistakes": [
+        "のれんを投資勘定と混同",
+        "1年基準を忘れる",
+        "営業循環基準と1年基準の関係を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.7
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-024",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "財務諸表",
       "subtopic": "P/Lの段階利益",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "R社の当期P/Lデータ: 売上高 10,000、売上原価 6,000、販管費 2,000、営業外収益 300、営業外費用 200、特別利益 100、特別損失 150、法人税等 600。経常利益はいくらか。",
       "options": [
-        {"id": "A", "text": "2,100", "is_correct": true, "explanation": "正解。売上総利益4,000 - 販管費2,000 = 営業利益2,000。+営業外収益300 - 営業外費用200 = 経常利益2,100。"},
-        {"id": "B", "text": "2,000", "is_correct": false, "explanation": "営業利益の値。経常利益は営業外損益を加減した後の値。"},
-        {"id": "C", "text": "2,050", "is_correct": false, "explanation": "経常利益に特別利益を含め特別損失を引いた『税引前当期純利益』。"},
-        {"id": "D", "text": "1,450", "is_correct": false, "explanation": "税引後当期純利益(2,050-法人税等600)に近い値。経常利益は税前。"}
+        {
+          "id": "A",
+          "text": "1,450",
+          "is_correct": false,
+          "explanation": "税引後当期純利益(2,050-法人税等600)に近い値。経常利益は税前。"
+        },
+        {
+          "id": "B",
+          "text": "2,000",
+          "is_correct": false,
+          "explanation": "営業利益の値。経常利益は営業外損益を加減した後の値。"
+        },
+        {
+          "id": "C",
+          "text": "2,050",
+          "is_correct": false,
+          "explanation": "経常利益に特別利益を含め特別損失を引いた『税引前当期純利益』。"
+        },
+        {
+          "id": "D",
+          "text": "2,100",
+          "is_correct": true,
+          "explanation": "正解。売上総利益4,000 - 販管費2,000 = 営業利益2,000。+営業外収益300 - 営業外費用200 = 経常利益2,100。"
+        }
       ],
       "explanation": "P/L段階利益の構造: ①売上総利益=売上-売上原価=4,000、②営業利益=①-販管費=2,000、③経常利益=②+営業外収益-営業外費用=2,100、④税引前当期純利益=③+特別利益-特別損失=2,050、⑤当期純利益=④-法人税等=1,450。経常利益は『毎期繰り返される利益』を示す重要指標。",
-      "references": [{"title": "簿記2級 P/L 段階利益", "url": ""}],
-      "tags": ["決算整理", "P/L", "経常利益", "段階利益"],
-      "common_mistakes": ["経常利益と営業利益を混同", "特別損益を経常に含める", "税引前と税引後を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 P/L 段階利益",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "P/L",
+        "経常利益",
+        "段階利益"
+      ],
+      "common_mistakes": [
+        "経常利益と営業利益を混同",
+        "特別損益を経常に含める",
+        "税引前と税引後を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-025",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "財務諸表",
       "subtopic": "株主資本等変動計算書",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "株主資本等変動計算書(S/S)に表示されない項目はどれか。",
       "options": [
-        {"id": "A", "text": "資本金の増加(増資)", "is_correct": false, "explanation": "S/Sに表示する典型項目。"},
-        {"id": "B", "text": "剰余金の配当", "is_correct": false, "explanation": "S/Sに表示する典型項目。"},
-        {"id": "C", "text": "当期純利益(損失)の振替", "is_correct": false, "explanation": "S/Sに表示する典型項目(繰越利益剰余金の増加)。"},
-        {"id": "D", "text": "売掛金の発生", "is_correct": true, "explanation": "正解(誤り、S/Sには表示しない)。売掛金は資産でB/S項目。"}
+        {
+          "id": "A",
+          "text": "売掛金の発生",
+          "is_correct": true,
+          "explanation": "正解(誤り、S/Sには表示しない)。売掛金は資産でB/S項目。"
+        },
+        {
+          "id": "B",
+          "text": "資本金の増加(増資)",
+          "is_correct": false,
+          "explanation": "S/Sに表示する典型項目。"
+        },
+        {
+          "id": "C",
+          "text": "当期純利益(損失)の振替",
+          "is_correct": false,
+          "explanation": "S/Sに表示する典型項目(繰越利益剰余金の増加)。"
+        },
+        {
+          "id": "D",
+          "text": "剰余金の配当",
+          "is_correct": false,
+          "explanation": "S/Sに表示する典型項目。"
+        }
       ],
       "explanation": "株主資本等変動計算書(S/S)は純資産の変動を表す財務諸表。表示するのは資本金、資本剰余金、利益剰余金、自己株式、評価・換算差額等の各項目の変動。具体的には増資、配当、当期純利益振替、自己株式取得・処分、評価差額金変動など。資産・負債項目はB/Sに、収益・費用はP/Lに表示される。",
-      "references": [{"title": "簿記2級 株主資本等変動計算書", "url": ""}],
-      "tags": ["決算整理", "S/S", "株主資本等変動計算書", "純資産"],
-      "common_mistakes": ["資産項目をS/Sに含めようとする", "P/L項目とS/S項目を混同", "純資産の範囲を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.7},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 株主資本等変動計算書",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "S/S",
+        "株主資本等変動計算書",
+        "純資産"
+      ],
+      "common_mistakes": [
+        "資産項目をS/Sに含めようとする",
+        "P/L項目とS/S項目を混同",
+        "純資産の範囲を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.7
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-026",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "当期純利益の振替",
       "subtopic": "損益勘定から繰越利益剰余金へ",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "決算で算定された当期純利益 800,000円を繰越利益剰余金に振り替える仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)損益 800,000 / (貸)繰越利益剰余金 800,000", "is_correct": true, "explanation": "正解。損益勘定の貸方残(=純利益)を繰越利益剰余金に振り替える。"},
-        {"id": "B", "text": "(借)繰越利益剰余金 800,000 / (貸)損益 800,000", "is_correct": false, "explanation": "貸借が逆。これは当期純損失の振替仕訳。"},
-        {"id": "C", "text": "(借)損益 800,000 / (貸)資本金 800,000", "is_correct": false, "explanation": "資本金は株主からの払込資本。利益は剰余金に区分する。"},
-        {"id": "D", "text": "(借)現金 800,000 / (貸)繰越利益剰余金 800,000", "is_correct": false, "explanation": "現金の動きはない。決算振替仕訳は損益勘定から行う。"}
+        {
+          "id": "A",
+          "text": "(借)繰越利益剰余金 800,000 / (貸)損益 800,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。これは当期純損失の振替仕訳。"
+        },
+        {
+          "id": "B",
+          "text": "(借)損益 800,000 / (貸)繰越利益剰余金 800,000",
+          "is_correct": true,
+          "explanation": "正解。損益勘定の貸方残(=純利益)を繰越利益剰余金に振り替える。"
+        },
+        {
+          "id": "C",
+          "text": "(借)現金 800,000 / (貸)繰越利益剰余金 800,000",
+          "is_correct": false,
+          "explanation": "現金の動きはない。決算振替仕訳は損益勘定から行う。"
+        },
+        {
+          "id": "D",
+          "text": "(借)損益 800,000 / (貸)資本金 800,000",
+          "is_correct": false,
+          "explanation": "資本金は株主からの払込資本。利益は剰余金に区分する。"
+        }
       ],
       "explanation": "決算手続の最終段階: ①収益・費用を損益勘定に集約 ②損益勘定の差額(=当期純利益または純損失)を繰越利益剰余金に振り替える。当期純利益の場合: (借)損益/(貸)繰越利益剰余金。当期純損失なら逆仕訳。これにより損益勘定はゼロになり、利益はB/Sの純資産に蓄積される。",
-      "references": [{"title": "簿記2級 損益振替", "url": ""}],
-      "tags": ["決算整理", "決算振替", "繰越利益剰余金", "損益勘定"],
-      "common_mistakes": ["利益と損失で貸借を間違える", "資本金と剰余金を混同", "現金が動くと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.7},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 損益振替",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "決算振替",
+        "繰越利益剰余金",
+        "損益勘定"
+      ],
+      "common_mistakes": [
+        "利益と損失で貸借を間違える",
+        "資本金と剰余金を混同",
+        "現金が動くと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.7
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-027",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "配当の処理",
       "subtopic": "剰余金の配当と利益準備金",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "S社は株主総会で剰余金 1,000,000円の配当を決議した。資本金 50,000,000円、資本準備金 8,000,000円、利益準備金 4,000,000円である。配当時に積み立てるべき利益準備金の金額はいくらか。",
       "options": [
-        {"id": "A", "text": "100,000円", "is_correct": true, "explanation": "正解。配当の1/10=100,000円。資本準備金+利益準備金が資本金の1/4(12,500,000円)に達するまで積立。"},
-        {"id": "B", "text": "250,000円", "is_correct": false, "explanation": "配当額の1/4で計算した誤り。会社法では1/10を積み立てる。"},
-        {"id": "C", "text": "0円(積立不要)", "is_correct": false, "explanation": "資本金の1/4まで未達(現状8,000,000+4,000,000=12,000,000<12,500,000)のため積立必要。"},
-        {"id": "D", "text": "500,000円", "is_correct": false, "explanation": "資本金の1/4までの不足額500,000円ではなく、配当の1/10の100,000円とのいずれか小さい方。"}
+        {
+          "id": "A",
+          "text": "500,000円",
+          "is_correct": false,
+          "explanation": "資本金の1/4までの不足額500,000円ではなく、配当の1/10の100,000円とのいずれか小さい方。"
+        },
+        {
+          "id": "B",
+          "text": "250,000円",
+          "is_correct": false,
+          "explanation": "配当額の1/4で計算した誤り。会社法では1/10を積み立てる。"
+        },
+        {
+          "id": "C",
+          "text": "100,000円",
+          "is_correct": true,
+          "explanation": "正解。配当の1/10=100,000円。資本準備金+利益準備金が資本金の1/4(12,500,000円)に達するまで積立。"
+        },
+        {
+          "id": "D",
+          "text": "0円(積立不要)",
+          "is_correct": false,
+          "explanation": "資本金の1/4まで未達(現状8,000,000+4,000,000=12,000,000<12,500,000)のため積立必要。"
+        }
       ],
       "explanation": "会社法上、剰余金配当時には『配当の1/10』を準備金として積み立てる(資本剰余金から配当→資本準備金、利益剰余金から配当→利益準備金)。ただし資本準備金+利益準備金が資本金の1/4に達するまで。資本金1/4=12,500,000円、現状12,000,000円なので不足500,000円。配当の1/10=100,000円<不足500,000円のため、小さい方の100,000円を積立。",
-      "references": [{"title": "簿記2級 剰余金配当 利益準備金", "url": ""}],
-      "tags": ["決算整理", "配当", "利益準備金", "会社法"],
-      "common_mistakes": ["配当の1/4で計算する", "資本金の1/4の上限を忘れる", "資本準備金と利益準備金の区別を間違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 剰余金配当 利益準備金",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "配当",
+        "利益準備金",
+        "会社法"
+      ],
+      "common_mistakes": [
+        "配当の1/4で計算する",
+        "資本金の1/4の上限を忘れる",
+        "資本準備金と利益準備金の区別を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-028",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "総合演習",
       "subtopic": "決算整理後の当期純利益計算",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "T社の決算整理前の税引前利益は3,000,000円。次の決算整理を反映後の税引前当期純利益はいくらか。①売上原価の追加計上(期末商品の評価損) 100,000円、②減価償却費 200,000円、③貸倒引当金繰入 50,000円、④為替差益 80,000円、⑤未払利息 30,000円。",
       "options": [
-        {"id": "A", "text": "2,700,000円", "is_correct": true, "explanation": "正解。3,000,000 -100,000 -200,000 -50,000 +80,000 -30,000 = 2,700,000円。"},
-        {"id": "B", "text": "2,620,000円", "is_correct": false, "explanation": "為替差益80,000円を控除してしまった誤り。差益は加算項目。"},
-        {"id": "C", "text": "2,780,000円", "is_correct": false, "explanation": "未払利息を加算してしまった誤り。未払利息は費用なので利益から控除。"},
-        {"id": "D", "text": "2,300,000円", "is_correct": false, "explanation": "全項目を控除して計算した誤り。為替差益は加算する。"}
+        {
+          "id": "A",
+          "text": "2,780,000円",
+          "is_correct": false,
+          "explanation": "未払利息を加算してしまった誤り。未払利息は費用なので利益から控除。"
+        },
+        {
+          "id": "B",
+          "text": "2,300,000円",
+          "is_correct": false,
+          "explanation": "全項目を控除して計算した誤り。為替差益は加算する。"
+        },
+        {
+          "id": "C",
+          "text": "2,620,000円",
+          "is_correct": false,
+          "explanation": "為替差益80,000円を控除してしまった誤り。差益は加算項目。"
+        },
+        {
+          "id": "D",
+          "text": "2,700,000円",
+          "is_correct": true,
+          "explanation": "正解。3,000,000 -100,000 -200,000 -50,000 +80,000 -30,000 = 2,700,000円。"
+        }
       ],
       "explanation": "決算整理仕訳が利益に与える影響を整理: ①評価損(費用)-100,000、②減価償却費-200,000、③貸引繰入-50,000、④為替差益+80,000、⑤未払利息(費用)-30,000。合計-300,000円。3,000,000 - 300,000 = 2,700,000円。費用と収益の符号、特に為替差益のような収益項目を見落とさないこと。",
-      "references": [{"title": "簿記2級 決算整理総合", "url": ""}],
-      "tags": ["決算整理", "総合演習", "当期純利益", "税引前利益"],
-      "common_mistakes": ["為替差益を費用扱い", "未払利息を収益扱い", "評価損を加算してしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 決算整理総合",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "総合演習",
+        "当期純利益",
+        "税引前利益"
+      ],
+      "common_mistakes": [
+        "為替差益を費用扱い",
+        "未払利息を収益扱い",
+        "評価損を加算してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-029",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "総合演習",
       "subtopic": "B/S・P/L作成の判断",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "U社の決算整理後の項目について、B/Sの『流動負債』に表示されるものとして最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "未払法人税等", "is_correct": true, "explanation": "正解。決算後に納付期限が来る(通常2ヶ月以内)ため流動負債。"},
-        {"id": "B", "text": "退職給付引当金", "is_correct": false, "explanation": "長期にわたる債務のため固定負債(B/S上『退職給付に係る負債』として固定)。"},
-        {"id": "C", "text": "繰延税金資産", "is_correct": false, "explanation": "資産項目(投資その他の資産)。負債ではない。"},
-        {"id": "D", "text": "資本準備金", "is_correct": false, "explanation": "純資産項目。負債ではない。"}
+        {
+          "id": "A",
+          "text": "未払法人税等",
+          "is_correct": true,
+          "explanation": "正解。決算後に納付期限が来る(通常2ヶ月以内)ため流動負債。"
+        },
+        {
+          "id": "B",
+          "text": "繰延税金資産",
+          "is_correct": false,
+          "explanation": "資産項目(投資その他の資産)。負債ではない。"
+        },
+        {
+          "id": "C",
+          "text": "退職給付引当金",
+          "is_correct": false,
+          "explanation": "長期にわたる債務のため固定負債(B/S上『退職給付に係る負債』として固定)。"
+        },
+        {
+          "id": "D",
+          "text": "資本準備金",
+          "is_correct": false,
+          "explanation": "純資産項目。負債ではない。"
+        }
       ],
       "explanation": "B/S表示区分: 流動負債(1年以内に支払期限到来)…買掛金、未払法人税等、未払金、賞与引当金、短期借入金等。固定負債(1年超)…長期借入金、社債、退職給付引当金、修繕引当金。資本準備金は純資産、繰延税金資産は資産(投資その他)。1年基準で区分する。",
-      "references": [{"title": "簿記2級 B/S 流動・固定区分", "url": ""}],
-      "tags": ["決算整理", "B/S", "流動負債", "1年基準"],
-      "common_mistakes": ["退職給付引当金を流動負債と誤認", "繰延税金資産を負債と勘違い", "純資産項目を負債項目と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 B/S 流動・固定区分",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "B/S",
+        "流動負債",
+        "1年基準"
+      ],
+      "common_mistakes": [
+        "退職給付引当金を流動負債と誤認",
+        "繰延税金資産を負債と勘違い",
+        "純資産項目を負債項目と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kessan-030",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "shogyo-kessan", "name": "商業簿記 - 決算整理", "weight_percent": 15},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "shogyo-kessan",
+        "name": "商業簿記 - 決算整理",
+        "weight_percent": 15
+      },
       "topic": "総合演習",
       "subtopic": "決算整理仕訳の設計",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
-      "stem": "あなたが東海地方の医療機器メーカーV社の経理担当として決算を担当している。次の事実から、最も優先すべき決算整理仕訳を1つ選択せよ。【状況】①期末棚卸で帳簿100個・実地98個を確認(@5,000円、正味売却価額@4,500円)、②得意先1社が経営悪化で売掛金300,000円の回収可能性が懸念、③売買目的株式の時価が簿価より50,000円下落、④長期借入金の経過利息20,000円が未払。これら全てを反映する場合、利益への影響額が最も大きい仕訳はどれか。",
+      "stem": "あなたがある医療機器メーカーV社の経理担当として決算を担当している。次の事実から、最も優先すべき決算整理仕訳を1つ選択せよ。【状況】①期末棚卸で帳簿100個・実地98個を確認(@5,000円、正味売却価額@4,500円)、②得意先1社が経営悪化で売掛金300,000円の回収可能性が懸念、③売買目的株式の時価が簿価より50,000円下落、④長期借入金の経過利息20,000円が未払。これら全てを反映する場合、利益への影響額が最も大きい仕訳はどれか。",
       "options": [
-        {"id": "A", "text": "棚卸減耗損 10,000円 + 商品評価損 49,000円(計59,000円)の計上", "is_correct": false, "explanation": "減耗 (100-98)×5,000=10,000円 + 評価損 98×500=49,000円。利益マイナス59,000円。"},
-        {"id": "B", "text": "貸倒引当金繰入 300,000円(個別評価)の計上", "is_correct": true, "explanation": "正解。経営悪化先の売掛金は個別評価で全額引当の可能性。利益マイナス300,000円で最大インパクト。"},
-        {"id": "C", "text": "有価証券評価損 50,000円の計上", "is_correct": false, "explanation": "売買目的の評価替え50,000円。利益マイナス50,000円。"},
-        {"id": "D", "text": "支払利息 20,000円 / 未払利息 20,000円の計上", "is_correct": false, "explanation": "経過利息20,000円。利益マイナス20,000円で最小。"}
+        {
+          "id": "A",
+          "text": "有価証券評価損 50,000円の計上",
+          "is_correct": false,
+          "explanation": "売買目的の評価替え50,000円。利益マイナス50,000円。"
+        },
+        {
+          "id": "B",
+          "text": "貸倒引当金繰入 300,000円(個別評価)の計上",
+          "is_correct": true,
+          "explanation": "正解。経営悪化先の売掛金は個別評価で全額引当の可能性。利益マイナス300,000円で最大インパクト。"
+        },
+        {
+          "id": "C",
+          "text": "支払利息 20,000円 / 未払利息 20,000円の計上",
+          "is_correct": false,
+          "explanation": "経過利息20,000円。利益マイナス20,000円で最小。"
+        },
+        {
+          "id": "D",
+          "text": "棚卸減耗損 10,000円 + 商品評価損 49,000円(計59,000円)の計上",
+          "is_correct": false,
+          "explanation": "減耗 (100-98)×5,000=10,000円 + 評価損 98×500=49,000円。利益マイナス59,000円。"
+        }
       ],
       "explanation": "各事象の利益影響: A=▲59,000、B=▲300,000(最大)、C=▲50,000、D=▲20,000。経営悪化先への個別評価による貸倒引当金は『回収可能性』を保守的に見積もる必要があり、個別評価対象先は全額引当が原則(財務内容評価法/キャッシュ・フロー見積法)。実務では監査上も最重要論点となる。経理担当者は重要性原則に従い、最もインパクトの大きい論点から処理する。",
-      "references": [{"title": "簿記2級 決算整理 個別評価", "url": ""}],
-      "tags": ["決算整理", "総合演習", "個別評価", "重要性原則"],
-      "common_mistakes": ["一律評価と個別評価を混同", "棚卸減耗の金額計算を誤る", "重要性の判断ができない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "簿記2級 決算整理 個別評価",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "決算整理",
+        "総合演習",
+        "個別評価",
+        "重要性原則"
+      ],
+      "common_mistakes": [
+        "一律評価と個別評価を混同",
+        "棚卸減耗の金額計算を誤る",
+        "重要性の判断ができない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

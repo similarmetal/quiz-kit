@@ -15,873 +15,2320 @@
     {
       "id": "ipa-passport-strat-001",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "SWOT分析",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SWOT分析における「O」が表すものはどれか。",
       "options": [
-        {"id": "A", "text": "組織 (Organization)", "is_correct": false, "explanation": "OはOrganizationではない。組織分析は別のフレームワーク（7Sなど）で扱う。"},
-        {"id": "B", "text": "機会 (Opportunity)", "is_correct": true, "explanation": "正解。SWOTのOは外部環境のうちプラス要因である「機会 (Opportunity)」を指す。"},
-        {"id": "C", "text": "目的 (Objective)", "is_correct": false, "explanation": "目的はSWOT分析の構成要素ではない。SWOTは現状分析のフレームワーク。"},
-        {"id": "D", "text": "業務 (Operation)", "is_correct": false, "explanation": "業務分析はSWOTの目的ではない。SWOTは戦略立案のための環境分析。"}
+        {
+          "id": "A",
+          "text": "機会 (Opportunity)",
+          "is_correct": true,
+          "explanation": "正解。SWOTのOは外部環境のうちプラス要因である「機会 (Opportunity)」を指す。"
+        },
+        {
+          "id": "B",
+          "text": "組織 (Organization)",
+          "is_correct": false,
+          "explanation": "OはOrganizationではない。組織分析は別のフレームワーク（7Sなど）で扱う。"
+        },
+        {
+          "id": "C",
+          "text": "業務 (Operation)",
+          "is_correct": false,
+          "explanation": "業務分析はSWOTの目的ではない。SWOTは戦略立案のための環境分析。"
+        },
+        {
+          "id": "D",
+          "text": "目的 (Objective)",
+          "is_correct": false,
+          "explanation": "目的はSWOT分析の構成要素ではない。SWOTは現状分析のフレームワーク。"
+        }
       ],
       "explanation": "SWOT分析は、内部環境のStrengths(強み)・Weaknesses(弱み)、外部環境のOpportunities(機会)・Threats(脅威)を整理する戦略立案の基本フレームワーク。内部と外部、プラスとマイナスの2軸で4象限に整理する。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["swot", "strategy", "analysis", "framework"],
+      "tags": [
+        "swot",
+        "strategy",
+        "analysis",
+        "framework"
+      ],
       "common_mistakes": [
         "OをOrganizationと勘違いする",
         "内部環境と外部環境の区別がつかない",
         "強み/弱みも外部要因と思ってしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-002",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "PEST分析",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
-      "stem": "東海地方の製造業A社が新規事業の検討で、政治・経済・社会・技術の4要因からマクロ環境を整理したい。最も適したフレームワークはどれか。",
+      "stem": "ある製造業A社が新規事業の検討で、政治・経済・社会・技術の4要因からマクロ環境を整理したい。最も適したフレームワークはどれか。",
       "options": [
-        {"id": "A", "text": "PEST分析", "is_correct": true, "explanation": "正解。PESTはPolitical/Economic/Social/Technologicalの4軸でマクロ環境を分析するフレームワーク。"},
-        {"id": "B", "text": "5フォース分析", "is_correct": false, "explanation": "5フォースは業界内の競争環境（ミクロ）を分析するもの。マクロ環境分析には適さない。"},
-        {"id": "C", "text": "バリューチェーン分析", "is_correct": false, "explanation": "バリューチェーンは社内の活動を主活動・支援活動に分解するフレームワーク。"},
-        {"id": "D", "text": "PPM分析", "is_correct": false, "explanation": "PPMは事業ポートフォリオの分類フレームワークで、マクロ環境分析の用途とは異なる。"}
+        {
+          "id": "A",
+          "text": "バリューチェーン分析",
+          "is_correct": false,
+          "explanation": "バリューチェーンは社内の活動を主活動・支援活動に分解するフレームワーク。"
+        },
+        {
+          "id": "B",
+          "text": "PEST分析",
+          "is_correct": true,
+          "explanation": "正解。PESTはPolitical/Economic/Social/Technologicalの4軸でマクロ環境を分析するフレームワーク。"
+        },
+        {
+          "id": "C",
+          "text": "5フォース分析",
+          "is_correct": false,
+          "explanation": "5フォースは業界内の競争環境（ミクロ）を分析するもの。マクロ環境分析には適さない。"
+        },
+        {
+          "id": "D",
+          "text": "PPM分析",
+          "is_correct": false,
+          "explanation": "PPMは事業ポートフォリオの分類フレームワークで、マクロ環境分析の用途とは異なる。"
+        }
       ],
       "explanation": "PEST分析はマクロ環境（自社で制御できない外部要因）を整理するフレームワーク。法規制・経済動向・人口動態・技術革新などを俯瞰し、SWOTの「機会・脅威」抽出にも用いられる。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["pest", "macro-environment", "strategy", "framework"],
+      "tags": [
+        "pest",
+        "macro-environment",
+        "strategy",
+        "framework"
+      ],
       "common_mistakes": [
         "5フォースとPESTの守備範囲を混同する",
         "Pを「Price」と誤解する",
         "ミクロ分析とマクロ分析を区別できない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-003",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "5フォース分析",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるSaaS企業が業界の収益性を分析している。「乗り換えコストが低く、顧客が容易に他サービスに移れる」という状況は、ポーターの5フォースのうちどの脅威に最も該当するか。",
       "options": [
-        {"id": "A", "text": "新規参入の脅威", "is_correct": false, "explanation": "新規参入の脅威は、新たな競合が市場に入ってくる可能性であり、既存顧客の移動とは別の要因。"},
-        {"id": "B", "text": "代替品の脅威", "is_correct": false, "explanation": "代替品の脅威は別カテゴリの製品・サービスが顧客ニーズを満たす場合を指す。同業他社への乗り換えとは異なる。"},
-        {"id": "C", "text": "買い手の交渉力", "is_correct": true, "explanation": "正解。乗り換えコスト（スイッチングコスト）が低いと買い手の交渉力が強くなり、価格・条件面で買い手有利になる。"},
-        {"id": "D", "text": "売り手の交渉力", "is_correct": false, "explanation": "売り手の交渉力は仕入先（サプライヤー）の力を指し、顧客の乗り換えやすさとは反対の視点。"}
+        {
+          "id": "A",
+          "text": "代替品の脅威",
+          "is_correct": false,
+          "explanation": "代替品の脅威は別カテゴリの製品・サービスが顧客ニーズを満たす場合を指す。同業他社への乗り換えとは異なる。"
+        },
+        {
+          "id": "B",
+          "text": "売り手の交渉力",
+          "is_correct": false,
+          "explanation": "売り手の交渉力は仕入先（サプライヤー）の力を指し、顧客の乗り換えやすさとは反対の視点。"
+        },
+        {
+          "id": "C",
+          "text": "買い手の交渉力",
+          "is_correct": true,
+          "explanation": "正解。乗り換えコスト（スイッチングコスト）が低いと買い手の交渉力が強くなり、価格・条件面で買い手有利になる。"
+        },
+        {
+          "id": "D",
+          "text": "新規参入の脅威",
+          "is_correct": false,
+          "explanation": "新規参入の脅威は、新たな競合が市場に入ってくる可能性であり、既存顧客の移動とは別の要因。"
+        }
       ],
       "explanation": "5フォースは①業界内競争、②新規参入、③代替品、④買い手、⑤売り手の5つの圧力で業界の魅力度を分析する。スイッチングコストの低さは買い手交渉力を強める典型要因で、SaaS業界では特に重要視される。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["five-forces", "porter", "saas", "strategy"],
+      "tags": [
+        "five-forces",
+        "porter",
+        "saas",
+        "strategy"
+      ],
       "common_mistakes": [
         "代替品と買い手の交渉力を混同する",
         "スイッチングコストの概念を知らない",
         "売り手と買い手の方向を逆に覚える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-004",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "PPM (プロダクト・ポートフォリオ・マネジメント)",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "PPM分析において、市場成長率が高く、自社の市場シェアも高い事業はどの象限に位置づけられるか。",
       "options": [
-        {"id": "A", "text": "問題児 (Question Mark)", "is_correct": false, "explanation": "問題児は市場成長率は高いがシェアが低い事業。投資判断が問われる位置。"},
-        {"id": "B", "text": "花形 (Star)", "is_correct": true, "explanation": "正解。花形は成長率もシェアも高い事業で、積極的な投資により将来の金のなる木に育てる対象。"},
-        {"id": "C", "text": "金のなる木 (Cash Cow)", "is_correct": false, "explanation": "金のなる木は成長率が低くシェアが高い成熟事業。資金回収のフェーズにある。"},
-        {"id": "D", "text": "負け犬 (Dog)", "is_correct": false, "explanation": "負け犬は成長率もシェアも低く、撤退を検討する対象。"}
+        {
+          "id": "A",
+          "text": "問題児 (Question Mark)",
+          "is_correct": false,
+          "explanation": "問題児は市場成長率は高いがシェアが低い事業。投資判断が問われる位置。"
+        },
+        {
+          "id": "B",
+          "text": "負け犬 (Dog)",
+          "is_correct": false,
+          "explanation": "負け犬は成長率もシェアも低く、撤退を検討する対象。"
+        },
+        {
+          "id": "C",
+          "text": "金のなる木 (Cash Cow)",
+          "is_correct": false,
+          "explanation": "金のなる木は成長率が低くシェアが高い成熟事業。資金回収のフェーズにある。"
+        },
+        {
+          "id": "D",
+          "text": "花形 (Star)",
+          "is_correct": true,
+          "explanation": "正解。花形は成長率もシェアも高い事業で、積極的な投資により将来の金のなる木に育てる対象。"
+        }
       ],
       "explanation": "PPMはBCG（ボストン・コンサルティング・グループ）が提唱した、市場成長率（縦軸）と相対的市場シェア（横軸）の2軸で事業を4象限に分類するフレームワーク。花形→金のなる木への移行が理想形。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["ppm", "bcg-matrix", "portfolio", "strategy"],
+      "tags": [
+        "ppm",
+        "bcg-matrix",
+        "portfolio",
+        "strategy"
+      ],
       "common_mistakes": [
         "縦軸と横軸の指標を逆に覚える",
         "花形と金のなる木の違いを理解していない",
         "問題児を即撤退対象と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-005",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "バリューチェーン",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ポーターのバリューチェーン分析における「主活動」に該当するのはどれか。",
       "options": [
-        {"id": "A", "text": "人事・労務管理", "is_correct": false, "explanation": "人事・労務管理は支援活動に分類される。"},
-        {"id": "B", "text": "技術開発", "is_correct": false, "explanation": "技術開発は支援活動に分類される。"},
-        {"id": "C", "text": "出荷物流", "is_correct": true, "explanation": "正解。主活動は購買物流・製造・出荷物流・販売マーケティング・サービスの5つで、出荷物流はその一つ。"},
-        {"id": "D", "text": "全般管理 (インフラ)", "is_correct": false, "explanation": "全般管理は支援活動の一つで、企業全体のインフラを支える。"}
+        {
+          "id": "A",
+          "text": "出荷物流",
+          "is_correct": true,
+          "explanation": "正解。主活動は購買物流・製造・出荷物流・販売マーケティング・サービスの5つで、出荷物流はその一つ。"
+        },
+        {
+          "id": "B",
+          "text": "人事・労務管理",
+          "is_correct": false,
+          "explanation": "人事・労務管理は支援活動に分類される。"
+        },
+        {
+          "id": "C",
+          "text": "全般管理 (インフラ)",
+          "is_correct": false,
+          "explanation": "全般管理は支援活動の一つで、企業全体のインフラを支える。"
+        },
+        {
+          "id": "D",
+          "text": "技術開発",
+          "is_correct": false,
+          "explanation": "技術開発は支援活動に分類される。"
+        }
       ],
       "explanation": "バリューチェーンは事業活動を「主活動（直接的に価値を生む）」と「支援活動（主活動を支える）」に分け、各工程での付加価値を可視化するフレームワーク。主活動5つ＋支援活動4つの構成を覚える。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["value-chain", "porter", "strategy", "primary-activities"],
+      "tags": [
+        "value-chain",
+        "porter",
+        "strategy",
+        "primary-activities"
+      ],
       "common_mistakes": [
         "技術開発を主活動と誤解する",
         "支援活動と主活動の区別がつかない",
         "サービス（アフターサービス）を支援活動と勘違いする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-006",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "M&A",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "M&Aにおける「TOB（株式公開買付け）」の説明として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "対象企業の株式を、買付け価格・期間・株数を公告して市場外で買い集める手法", "is_correct": true, "explanation": "正解。TOBは公告した条件に基づき、不特定多数の株主から市場外で株式を買い集めるM&A手法。"},
-        {"id": "B", "text": "対象企業の経営陣が自社株を買収して非上場化する手法", "is_correct": false, "explanation": "これはMBO（マネジメント・バイアウト）の説明。"},
-        {"id": "C", "text": "買収企業の株式を対価として対象企業の株式を取得する手法", "is_correct": false, "explanation": "これは株式交換の説明であり、TOBとは別の手法。"},
-        {"id": "D", "text": "両社が新会社を設立して経営統合する手法", "is_correct": false, "explanation": "これは共同株式移転や合併の説明。TOBは株式買付け手法。"}
+        {
+          "id": "A",
+          "text": "両社が新会社を設立して経営統合する手法",
+          "is_correct": false,
+          "explanation": "これは共同株式移転や合併の説明。TOBは株式買付け手法。"
+        },
+        {
+          "id": "B",
+          "text": "対象企業の株式を、買付け価格・期間・株数を公告して市場外で買い集める手法",
+          "is_correct": true,
+          "explanation": "正解。TOBは公告した条件に基づき、不特定多数の株主から市場外で株式を買い集めるM&A手法。"
+        },
+        {
+          "id": "C",
+          "text": "買収企業の株式を対価として対象企業の株式を取得する手法",
+          "is_correct": false,
+          "explanation": "これは株式交換の説明であり、TOBとは別の手法。"
+        },
+        {
+          "id": "D",
+          "text": "対象企業の経営陣が自社株を買収して非上場化する手法",
+          "is_correct": false,
+          "explanation": "これはMBO（マネジメント・バイアウト）の説明。"
+        }
       ],
       "explanation": "TOB (Take-Over Bid) は買付け価格・期間・株数を公告して市場外で株式を買い集める方法。敵対的買収にも友好的買収にも使われ、上場企業の支配権取得の代表的手法。日本ではソロ法人や個人投資家にも関係する基本知識。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["m-and-a", "tob", "acquisition", "strategy"],
+      "tags": [
+        "m-and-a",
+        "tob",
+        "acquisition",
+        "strategy"
+      ],
       "common_mistakes": [
         "TOBとMBOを混同する",
         "TOBを必ず敵対的買収と誤解する",
         "市場内取引と市場外取引の違いを理解していない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-007",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "ナレッジマネジメント",
       "subtopic": "SECIモデル",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ナレッジマネジメントのSECIモデルにおいて、暗黙知を別の人の暗黙知へと共有・伝達するプロセスはどれか。",
       "options": [
-        {"id": "A", "text": "共同化 (Socialization)", "is_correct": true, "explanation": "正解。共同化は経験の共有を通じて暗黙知を暗黙知のまま他者に伝えるプロセス。OJTや背中を見て学ぶ手法が該当。"},
-        {"id": "B", "text": "表出化 (Externalization)", "is_correct": false, "explanation": "表出化は暗黙知を形式知（言葉・図など）に変換するプロセス。"},
-        {"id": "C", "text": "連結化 (Combination)", "is_correct": false, "explanation": "連結化は形式知同士を組み合わせて新しい形式知を作るプロセス。"},
-        {"id": "D", "text": "内面化 (Internalization)", "is_correct": false, "explanation": "内面化は形式知を実践を通じて自分の暗黙知に変えるプロセス。"}
+        {
+          "id": "A",
+          "text": "連結化 (Combination)",
+          "is_correct": false,
+          "explanation": "連結化は形式知同士を組み合わせて新しい形式知を作るプロセス。"
+        },
+        {
+          "id": "B",
+          "text": "内面化 (Internalization)",
+          "is_correct": false,
+          "explanation": "内面化は形式知を実践を通じて自分の暗黙知に変えるプロセス。"
+        },
+        {
+          "id": "C",
+          "text": "共同化 (Socialization)",
+          "is_correct": true,
+          "explanation": "正解。共同化は経験の共有を通じて暗黙知を暗黙知のまま他者に伝えるプロセス。OJTや背中を見て学ぶ手法が該当。"
+        },
+        {
+          "id": "D",
+          "text": "表出化 (Externalization)",
+          "is_correct": false,
+          "explanation": "表出化は暗黙知を形式知（言葉・図など）に変換するプロセス。"
+        }
       ],
       "explanation": "SECIモデルは野中郁次郎氏が提唱した知識創造プロセス。Socialization(共同化)→Externalization(表出化)→Combination(連結化)→Internalization(内面化)の螺旋的サイクルで組織知が拡大する。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["seci", "knowledge-management", "tacit-knowledge", "nonaka"],
+      "tags": [
+        "seci",
+        "knowledge-management",
+        "tacit-knowledge",
+        "nonaka"
+      ],
       "common_mistakes": [
         "共同化と内面化を混同する",
         "暗黙知と形式知の方向を取り違える",
         "SECIの順序を逆に覚える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-008",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "CSF / KGI / KPI",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "B2B SaaS企業が「年間経常収益（ARR）20%増」を目標に掲げた。これに対応する指標として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "CSF（重要成功要因）", "is_correct": false, "explanation": "CSFは目標達成のために何が重要かを示すもの。具体的な数値目標とは異なる。"},
-        {"id": "B", "text": "KGI（重要目標達成指標）", "is_correct": true, "explanation": "正解。KGIは最終的なゴールを定量化した指標。「ARR 20%増」のような最終成果目標が該当する。"},
-        {"id": "C", "text": "KPI（重要業績評価指標）", "is_correct": false, "explanation": "KPIはKGI達成のための中間指標（例：新規契約数、解約率）。最終ゴール自体ではない。"},
-        {"id": "D", "text": "BSC（バランスト・スコアカード）", "is_correct": false, "explanation": "BSCは指標体系全体のフレームワーク名。個別の数値目標を指す用語ではない。"}
+        {
+          "id": "A",
+          "text": "CSF（重要成功要因）",
+          "is_correct": false,
+          "explanation": "CSFは目標達成のために何が重要かを示すもの。具体的な数値目標とは異なる。"
+        },
+        {
+          "id": "B",
+          "text": "KPI（重要業績評価指標）",
+          "is_correct": false,
+          "explanation": "KPIはKGI達成のための中間指標（例：新規契約数、解約率）。最終ゴール自体ではない。"
+        },
+        {
+          "id": "C",
+          "text": "BSC（バランスト・スコアカード）",
+          "is_correct": false,
+          "explanation": "BSCは指標体系全体のフレームワーク名。個別の数値目標を指す用語ではない。"
+        },
+        {
+          "id": "D",
+          "text": "KGI（重要目標達成指標）",
+          "is_correct": true,
+          "explanation": "正解。KGIは最終的なゴールを定量化した指標。「ARR 20%増」のような最終成果目標が該当する。"
+        }
       ],
       "explanation": "KGIはゴール（What）、KPIはゴールへの道筋を計る中間指標（How）、CSFはKGI達成に必須の要因（Why）という関係。SaaSではARR/MRR がKGIになることが多い。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["kgi", "kpi", "csf", "saas", "metrics"],
+      "tags": [
+        "kgi",
+        "kpi",
+        "csf",
+        "saas",
+        "metrics"
+      ],
       "common_mistakes": [
         "KGIとKPIの上下関係が逆になる",
         "CSFを数値指標と誤解する",
         "BSCを単一指標と勘違いする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-009",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "アンゾフの成長マトリクス",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "教育系SaaS企業が、既存の英語学習サービスを新たに海外市場へ展開する。アンゾフの成長マトリクスではどの戦略に該当するか。",
       "options": [
-        {"id": "A", "text": "市場浸透戦略", "is_correct": false, "explanation": "市場浸透は既存製品×既存市場でシェア拡大を図る戦略。海外進出は該当しない。"},
-        {"id": "B", "text": "市場開拓戦略", "is_correct": true, "explanation": "正解。既存製品を新市場（海外含む）へ展開する戦略は市場開拓に該当する。"},
-        {"id": "C", "text": "製品開発戦略", "is_correct": false, "explanation": "製品開発は既存市場に対して新製品を投入する戦略。海外展開とは方向性が異なる。"},
-        {"id": "D", "text": "多角化戦略", "is_correct": false, "explanation": "多角化は新市場×新製品の組み合わせ。今回は既存製品の展開なので該当しない。"}
+        {
+          "id": "A",
+          "text": "市場開拓戦略",
+          "is_correct": true,
+          "explanation": "正解。既存製品を新市場（海外含む）へ展開する戦略は市場開拓に該当する。"
+        },
+        {
+          "id": "B",
+          "text": "多角化戦略",
+          "is_correct": false,
+          "explanation": "多角化は新市場×新製品の組み合わせ。今回は既存製品の展開なので該当しない。"
+        },
+        {
+          "id": "C",
+          "text": "市場浸透戦略",
+          "is_correct": false,
+          "explanation": "市場浸透は既存製品×既存市場でシェア拡大を図る戦略。海外進出は該当しない。"
+        },
+        {
+          "id": "D",
+          "text": "製品開発戦略",
+          "is_correct": false,
+          "explanation": "製品開発は既存市場に対して新製品を投入する戦略。海外展開とは方向性が異なる。"
+        }
       ],
       "explanation": "アンゾフの成長マトリクスは「市場×製品」の新旧2×2で4戦略を整理する。リスクは市場浸透＜市場開拓・製品開発＜多角化の順に高くなる。海外進出は典型的な市場開拓戦略。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["ansoff", "growth-strategy", "market-development", "saas"],
+      "tags": [
+        "ansoff",
+        "growth-strategy",
+        "market-development",
+        "saas"
+      ],
       "common_mistakes": [
         "市場開拓と市場浸透を混同する",
         "海外展開を即多角化と捉える",
         "製品×市場の軸を逆に覚える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-010",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "コアコンピタンス",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ある製造業A社が「自社の強みは何か」を再定義している。次のうち、コアコンピタンスとして認められる条件として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "短期間で得られる利益が大きいこと", "is_correct": false, "explanation": "短期利益は企業活動の結果指標であり、コアコンピタンスの本質的条件ではない。"},
-        {"id": "B", "text": "競合他社が容易に模倣できないこと", "is_correct": true, "explanation": "正解。コアコンピタンスは①顧客価値、②競合との差別化（模倣困難性）、③多分野への応用可能性の3条件を満たす中核能力。"},
-        {"id": "C", "text": "業界全体で標準化された技術を持っていること", "is_correct": false, "explanation": "標準技術は誰でも持てるため差別化にならず、コアコンピタンスの定義に反する。"},
-        {"id": "D", "text": "1つの製品にのみ使われる特殊な技術", "is_correct": false, "explanation": "コアコンピタンスは複数事業に波及できる汎用性が条件。1製品に閉じる技術は該当しない。"}
+        {
+          "id": "A",
+          "text": "1つの製品にのみ使われる特殊な技術",
+          "is_correct": false,
+          "explanation": "コアコンピタンスは複数事業に波及できる汎用性が条件。1製品に閉じる技術は該当しない。"
+        },
+        {
+          "id": "B",
+          "text": "競合他社が容易に模倣できないこと",
+          "is_correct": true,
+          "explanation": "正解。コアコンピタンスは①顧客価値、②競合との差別化（模倣困難性）、③多分野への応用可能性の3条件を満たす中核能力。"
+        },
+        {
+          "id": "C",
+          "text": "業界全体で標準化された技術を持っていること",
+          "is_correct": false,
+          "explanation": "標準技術は誰でも持てるため差別化にならず、コアコンピタンスの定義に反する。"
+        },
+        {
+          "id": "D",
+          "text": "短期間で得られる利益が大きいこと",
+          "is_correct": false,
+          "explanation": "短期利益は企業活動の結果指標であり、コアコンピタンスの本質的条件ではない。"
+        }
       ],
       "explanation": "コアコンピタンス（Hamel & Prahalad, 1990）は、①顧客便益への貢献、②模倣困難性、③多事業への展開可能性の3条件を満たす企業の中核能力。SWOTのS（強み）の中でも、これら3条件を満たすものが特に競争優位の源泉となる。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["core-competence", "competitive-advantage", "strategy", "manufacturing"],
+      "tags": [
+        "core-competence",
+        "competitive-advantage",
+        "strategy",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "短期業績をコアコンピタンスと誤解する",
         "模倣困難性の重要性を見落とす",
         "汎用性条件を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-011",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "法務",
       "subtopic": "著作権法",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "社員Aが業務時間中に会社のPCで、業務命令に従って自社サービス用のソースコードを作成した。著作権の原始的帰属について最も適切な記述はどれか（特段の契約や就業規則がない場合）。",
       "options": [
-        {"id": "A", "text": "社員A個人に帰属する", "is_correct": false, "explanation": "プログラムの著作物については、職務著作として法人帰属が原則。一般著作物と扱いが異なる点に注意。"},
-        {"id": "B", "text": "会社（法人）に帰属する", "is_correct": true, "explanation": "正解。プログラムの著作物は法人の発意・業務従事者・職務上作成という条件を満たせば、契約等で別段の定めがない限り法人帰属となる（著作権法15条2項）。"},
-        {"id": "C", "text": "社員Aと会社の共有", "is_correct": false, "explanation": "プログラムの著作物の職務著作は法人単独帰属が原則であり、共有とはならない。"},
-        {"id": "D", "text": "誰にも帰属せずパブリックドメイン", "is_correct": false, "explanation": "創作と同時に著作権は発生し、パブリックドメインにはならない。"}
+        {
+          "id": "A",
+          "text": "誰にも帰属せずパブリックドメイン",
+          "is_correct": false,
+          "explanation": "創作と同時に著作権は発生し、パブリックドメインにはならない。"
+        },
+        {
+          "id": "B",
+          "text": "社員Aと会社の共有",
+          "is_correct": false,
+          "explanation": "プログラムの著作物の職務著作は法人単独帰属が原則であり、共有とはならない。"
+        },
+        {
+          "id": "C",
+          "text": "会社（法人）に帰属する",
+          "is_correct": true,
+          "explanation": "正解。プログラムの著作物は法人の発意・業務従事者・職務上作成という条件を満たせば、契約等で別段の定めがない限り法人帰属となる（著作権法15条2項）。"
+        },
+        {
+          "id": "D",
+          "text": "社員A個人に帰属する",
+          "is_correct": false,
+          "explanation": "プログラムの著作物については、職務著作として法人帰属が原則。一般著作物と扱いが異なる点に注意。"
+        }
       ],
       "explanation": "プログラムの著作物については、著作権法15条2項により職務著作の要件（法人発意・従業者の職務・別段の定めなし）を満たせば、公表名義に関わらず法人帰属となる。一般著作物より法人帰属の要件が緩い点が特徴。",
       "references": [
-        {"title": "著作権法（e-Gov法令検索）", "url": "https://elaws.e-gov.go.jp/document?lawid=345AC0000000048"}
+        {
+          "title": "著作権法（e-Gov法令検索）",
+          "url": "https://elaws.e-gov.go.jp/document?lawid=345AC0000000048"
+        }
       ],
-      "tags": ["copyright", "work-for-hire", "law", "software"],
+      "tags": [
+        "copyright",
+        "work-for-hire",
+        "law",
+        "software"
+      ],
       "common_mistakes": [
         "プログラムも一般著作物と同じ要件と思い込む",
         "公表名義要件があると誤解する",
         "創作者個人帰属が原則と勘違いする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-012",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "法務",
       "subtopic": "不正アクセス禁止法",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "不正アクセス禁止法で禁止されている行為に該当しないものはどれか。",
       "options": [
-        {"id": "A", "text": "他人のIDとパスワードを無断で使用してSaaSにログインする", "is_correct": false, "explanation": "他人の識別符号を無断で使用するなりすまし行為は不正アクセス行為に該当する。"},
-        {"id": "B", "text": "脆弱性を悪用してパスワード認証を回避しサーバに侵入する", "is_correct": false, "explanation": "セキュリティホールを突くアクセスは典型的な不正アクセス行為。"},
-        {"id": "C", "text": "他人のIDとパスワードを第三者に提供する", "is_correct": false, "explanation": "識別符号の提供（フィッシング含む）も不正アクセス禁止法で禁止される。"},
-        {"id": "D", "text": "自分の所有するサーバに自分のIDでログインする", "is_correct": true, "explanation": "正解。自身が正当な権限を持つアクセスは不正アクセスに該当しない。法律は「アクセス制御の回避」「他人へのなりすまし」を規制対象とする。"}
+        {
+          "id": "A",
+          "text": "脆弱性を悪用してパスワード認証を回避しサーバに侵入する",
+          "is_correct": false,
+          "explanation": "セキュリティホールを突くアクセスは典型的な不正アクセス行為。"
+        },
+        {
+          "id": "B",
+          "text": "他人のIDとパスワードを無断で使用してSaaSにログインする",
+          "is_correct": false,
+          "explanation": "他人の識別符号を無断で使用するなりすまし行為は不正アクセス行為に該当する。"
+        },
+        {
+          "id": "C",
+          "text": "他人のIDとパスワードを第三者に提供する",
+          "is_correct": false,
+          "explanation": "識別符号の提供（フィッシング含む）も不正アクセス禁止法で禁止される。"
+        },
+        {
+          "id": "D",
+          "text": "自分の所有するサーバに自分のIDでログインする",
+          "is_correct": true,
+          "explanation": "正解。自身が正当な権限を持つアクセスは不正アクセスに該当しない。法律は「アクセス制御の回避」「他人へのなりすまし」を規制対象とする。"
+        }
       ],
       "explanation": "不正アクセス禁止法は、①他人の識別符号の無断使用、②セキュリティホール攻撃、③識別符号の不正取得・提供などを禁止する。自分の権限内のアクセスは対象外。違反は3年以下の懲役または100万円以下の罰金。",
       "references": [
-        {"title": "不正アクセス行為の禁止等に関する法律（e-Gov）", "url": "https://elaws.e-gov.go.jp/document?lawid=411AC0000000128"}
+        {
+          "title": "不正アクセス行為の禁止等に関する法律（e-Gov）",
+          "url": "https://elaws.e-gov.go.jp/document?lawid=411AC0000000128"
+        }
       ],
-      "tags": ["unauthorized-access", "law", "cybersecurity", "compliance"],
+      "tags": [
+        "unauthorized-access",
+        "law",
+        "cybersecurity",
+        "compliance"
+      ],
       "common_mistakes": [
         "正当権限内のアクセスも違法と誤解する",
         "識別符号の提供は対象外と勘違いする",
         "罰則の存在を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-013",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "法務",
       "subtopic": "個人情報保護法",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療系スタートアップが、患者のメールアドレスを取得して新サービスの案内メールを送信したい。個人情報保護法上、原則として必要となる対応はどれか。",
       "options": [
-        {"id": "A", "text": "利用目的を本人に通知または公表する", "is_correct": true, "explanation": "正解。個人情報を取得する際には利用目的を特定し、本人に通知または公表することが原則として必要（同意取得が必要な場合もある）。"},
-        {"id": "B", "text": "個人情報保護委員会への事前届出のみで足りる", "is_correct": false, "explanation": "個人情報の取得自体に行政への事前届出は不要。利用目的の本人への明示が原則。"},
-        {"id": "C", "text": "本人への通知は不要で、社内利用なら自由に使える", "is_correct": false, "explanation": "社内利用でも利用目的の特定と通知/公表が必要であり、自由には使えない。"},
-        {"id": "D", "text": "メールアドレスは個人情報ではないため対応不要", "is_correct": false, "explanation": "氏名と組み合わせ可能なメールアドレスや個人を特定できるアドレスは個人情報に該当することが多い。"}
+        {
+          "id": "A",
+          "text": "利用目的を本人に通知または公表する",
+          "is_correct": true,
+          "explanation": "正解。個人情報を取得する際には利用目的を特定し、本人に通知または公表することが原則として必要（同意取得が必要な場合もある）。"
+        },
+        {
+          "id": "B",
+          "text": "個人情報保護委員会への事前届出のみで足りる",
+          "is_correct": false,
+          "explanation": "個人情報の取得自体に行政への事前届出は不要。利用目的の本人への明示が原則。"
+        },
+        {
+          "id": "C",
+          "text": "本人への通知は不要で、社内利用なら自由に使える",
+          "is_correct": false,
+          "explanation": "社内利用でも利用目的の特定と通知/公表が必要であり、自由には使えない。"
+        },
+        {
+          "id": "D",
+          "text": "メールアドレスは個人情報ではないため対応不要",
+          "is_correct": false,
+          "explanation": "氏名と組み合わせ可能なメールアドレスや個人を特定できるアドレスは個人情報に該当することが多い。"
+        }
       ],
       "explanation": "個人情報保護法は利用目的の特定（17条）、取得時の利用目的通知/公表（21条）を義務付ける。要配慮個人情報（医療情報など）は原則同意取得が必要で、医療系では特に厳格な運用が求められる。",
       "references": [
-        {"title": "個人情報の保護に関する法律（個人情報保護委員会）", "url": "https://www.ppc.go.jp/personalinfo/legal/"}
+        {
+          "title": "個人情報の保護に関する法律（個人情報保護委員会）",
+          "url": "https://www.ppc.go.jp/personalinfo/legal/"
+        }
       ],
-      "tags": ["privacy", "personal-information", "healthcare", "compliance"],
+      "tags": [
+        "privacy",
+        "personal-information",
+        "healthcare",
+        "compliance"
+      ],
       "common_mistakes": [
         "メールアドレスは個人情報でないと誤解する",
         "社内利用なら自由と勘違いする",
         "要配慮個人情報の概念を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-014",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "法務",
       "subtopic": "労働基準法",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "労働基準法に定められた、使用者が労働者に与えなければならない法定労働時間の原則はどれか。",
       "options": [
-        {"id": "A", "text": "1日6時間、1週30時間以内", "is_correct": false, "explanation": "労働基準法の法定労働時間は1日8時間。6時間制は法定ではない。"},
-        {"id": "B", "text": "1日8時間、1週40時間以内", "is_correct": true, "explanation": "正解。労働基準法32条で、法定労働時間は1日8時間・1週40時間以内と定められている。"},
-        {"id": "C", "text": "1日10時間、1週50時間以内", "is_correct": false, "explanation": "これは法定労働時間より長い水準で、原則上限としては誤り。"},
-        {"id": "D", "text": "上限は労使の自由協議に委ねられる", "is_correct": false, "explanation": "労働基準法は強行法規で、原則上限が法定されている。36協定で時間外労働は可能だが原則は別。"}
+        {
+          "id": "A",
+          "text": "1日10時間、1週50時間以内",
+          "is_correct": false,
+          "explanation": "これは法定労働時間より長い水準で、原則上限としては誤り。"
+        },
+        {
+          "id": "B",
+          "text": "1日8時間、1週40時間以内",
+          "is_correct": true,
+          "explanation": "正解。労働基準法32条で、法定労働時間は1日8時間・1週40時間以内と定められている。"
+        },
+        {
+          "id": "C",
+          "text": "上限は労使の自由協議に委ねられる",
+          "is_correct": false,
+          "explanation": "労働基準法は強行法規で、原則上限が法定されている。36協定で時間外労働は可能だが原則は別。"
+        },
+        {
+          "id": "D",
+          "text": "1日6時間、1週30時間以内",
+          "is_correct": false,
+          "explanation": "労働基準法の法定労働時間は1日8時間。6時間制は法定ではない。"
+        }
       ],
       "explanation": "労働基準法32条は法定労働時間を1日8時間・週40時間と定める。これを超える時間外労働には36（サブロク）協定の締結と届出、割増賃金の支払いが必要。",
       "references": [
-        {"title": "労働基準法（e-Gov法令検索）", "url": "https://elaws.e-gov.go.jp/document?lawid=322AC0000000049"}
+        {
+          "title": "労働基準法（e-Gov法令検索）",
+          "url": "https://elaws.e-gov.go.jp/document?lawid=322AC0000000049"
+        }
       ],
-      "tags": ["labor-law", "working-hours", "compliance", "law"],
+      "tags": [
+        "labor-law",
+        "working-hours",
+        "compliance",
+        "law"
+      ],
       "common_mistakes": [
         "1日10時間が法定だと誤解する",
         "36協定の存在を知らない",
         "週の上限を週45時間と勘違いする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-015",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "法務",
       "subtopic": "下請法 / PL法",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "製造物責任法（PL法）に関する記述として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "製造物の欠陥により人の生命・身体・財産に損害が生じた場合、製造業者等は過失の有無にかかわらず賠償責任を負う", "is_correct": true, "explanation": "正解。PL法は無過失責任を原則とし、被害者は製造業者の過失を立証する必要がない。欠陥の存在と損害との因果関係の立証で足りる。"},
-        {"id": "B", "text": "製造業者の故意または過失を被害者が立証しなければ賠償請求できない", "is_correct": false, "explanation": "これは民法の不法行為責任の一般原則で、PL法の特徴である無過失責任とは異なる。"},
-        {"id": "C", "text": "ソフトウェアの不具合は常にPL法の対象となる", "is_correct": false, "explanation": "PL法の「製造物」は製造または加工された動産を指し、純粋なソフトウェア単体は原則対象外。組み込まれた製品全体としては対象になりうる。"},
-        {"id": "D", "text": "適用対象は事業者間取引（B2B）に限られる", "is_correct": false, "explanation": "PL法は消費者保護を目的としB2C・B2Bを問わず適用される。"}
+        {
+          "id": "A",
+          "text": "ソフトウェアの不具合は常にPL法の対象となる",
+          "is_correct": false,
+          "explanation": "PL法の「製造物」は製造または加工された動産を指し、純粋なソフトウェア単体は原則対象外。組み込まれた製品全体としては対象になりうる。"
+        },
+        {
+          "id": "B",
+          "text": "適用対象は事業者間取引（B2B）に限られる",
+          "is_correct": false,
+          "explanation": "PL法は消費者保護を目的としB2C・B2Bを問わず適用される。"
+        },
+        {
+          "id": "C",
+          "text": "製造物の欠陥により人の生命・身体・財産に損害が生じた場合、製造業者等は過失の有無にかかわらず賠償責任を負う",
+          "is_correct": true,
+          "explanation": "正解。PL法は無過失責任を原則とし、被害者は製造業者の過失を立証する必要がない。欠陥の存在と損害との因果関係の立証で足りる。"
+        },
+        {
+          "id": "D",
+          "text": "製造業者の故意または過失を被害者が立証しなければ賠償請求できない",
+          "is_correct": false,
+          "explanation": "これは民法の不法行為責任の一般原則で、PL法の特徴である無過失責任とは異なる。"
+        }
       ],
       "explanation": "製造物責任法（PL法）は、製造物の欠陥による被害者保護を目的とし、製造業者等の無過失責任を定めた特別法。被害者は欠陥・損害・因果関係を立証すれば足りる。ソフトウェア単体は原則対象外という点も重要。",
       "references": [
-        {"title": "製造物責任法（消費者庁）", "url": "https://www.caa.go.jp/policies/policy/consumer_safety/other/product_liability_act/"}
+        {
+          "title": "製造物責任法（消費者庁）",
+          "url": "https://www.caa.go.jp/policies/policy/consumer_safety/other/product_liability_act/"
+        }
       ],
-      "tags": ["pl-law", "product-liability", "compliance", "manufacturing"],
+      "tags": [
+        "pl-law",
+        "product-liability",
+        "compliance",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "PL法でも過失立証が必要と誤解する",
         "ソフトウェア単体もPL法対象と思い込む",
         "B2Cのみ適用と勘違いする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-016",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営工学",
       "subtopic": "PERT図",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるシステム開発プロジェクトで、PERT図を作成した。クリティカルパスとは何か、最も適切な説明はどれか。",
       "options": [
-        {"id": "A", "text": "プロジェクト全体の中で最も重要なタスクを通る経路", "is_correct": false, "explanation": "重要度ではなく所要時間で決まる。重要だが余裕のあるタスクはクリティカルパス上にないこともある。"},
-        {"id": "B", "text": "プロジェクト完了に最長の所要時間を要する経路（余裕時間がゼロの経路）", "is_correct": true, "explanation": "正解。クリティカルパスは最長経路で、ここの遅れは即プロジェクト全体の遅れになる。重点管理対象。"},
-        {"id": "C", "text": "プロジェクトで最も短い所要時間で終わる経路", "is_correct": false, "explanation": "最短経路はプロジェクト全体の完了日には影響しない。"},
-        {"id": "D", "text": "並行作業ができないタスクの集合", "is_correct": false, "explanation": "並行可能性の有無ではなく所要時間の合計で決まる。"}
+        {
+          "id": "A",
+          "text": "プロジェクトで最も短い所要時間で終わる経路",
+          "is_correct": false,
+          "explanation": "最短経路はプロジェクト全体の完了日には影響しない。"
+        },
+        {
+          "id": "B",
+          "text": "プロジェクト全体の中で最も重要なタスクを通る経路",
+          "is_correct": false,
+          "explanation": "重要度ではなく所要時間で決まる。重要だが余裕のあるタスクはクリティカルパス上にないこともある。"
+        },
+        {
+          "id": "C",
+          "text": "並行作業ができないタスクの集合",
+          "is_correct": false,
+          "explanation": "並行可能性の有無ではなく所要時間の合計で決まる。"
+        },
+        {
+          "id": "D",
+          "text": "プロジェクト完了に最長の所要時間を要する経路（余裕時間がゼロの経路）",
+          "is_correct": true,
+          "explanation": "正解。クリティカルパスは最長経路で、ここの遅れは即プロジェクト全体の遅れになる。重点管理対象。"
+        }
       ],
       "explanation": "PERT図は作業の依存関係と所要時間をネットワークで表現する手法。クリティカルパスは最長経路でプロジェクト最短完了時間を決め、ここに遅延は許されない。スケジュールリスクの重点管理対象として用いる。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["pert", "critical-path", "project-management", "scheduling"],
+      "tags": [
+        "pert",
+        "critical-path",
+        "project-management",
+        "scheduling"
+      ],
       "common_mistakes": [
         "クリティカルパスを「最短経路」と覚える",
         "重要度で判断と勘違いする",
         "余裕時間（フロート）の概念を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-017",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営工学",
       "subtopic": "損益分岐点",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製品の固定費が600万円、1個あたりの変動費が4,000円、販売価格が10,000円である。損益分岐点売上数量はいくつか。",
       "options": [
-        {"id": "A", "text": "600個", "is_correct": false, "explanation": "600は固定費を販売価格で割った値で、変動費を考慮していないため誤り。"},
-        {"id": "B", "text": "1,000個", "is_correct": true, "explanation": "正解。1個あたり限界利益は10,000-4,000=6,000円。固定費600万円÷6,000円=1,000個で損益ゼロ。"},
-        {"id": "C", "text": "1,500個", "is_correct": false, "explanation": "固定費を変動費で割った値（600万÷4,000=1,500）であり、計算式が誤っている。"},
-        {"id": "D", "text": "2,000個", "is_correct": false, "explanation": "1,000個の倍であり、限界利益の計算を誤った場合に出てくる数値。"}
+        {
+          "id": "A",
+          "text": "1,000個",
+          "is_correct": true,
+          "explanation": "正解。1個あたり限界利益は10,000-4,000=6,000円。固定費600万円÷6,000円=1,000個で損益ゼロ。"
+        },
+        {
+          "id": "B",
+          "text": "2,000個",
+          "is_correct": false,
+          "explanation": "1,000個の倍であり、限界利益の計算を誤った場合に出てくる数値。"
+        },
+        {
+          "id": "C",
+          "text": "1,500個",
+          "is_correct": false,
+          "explanation": "固定費を変動費で割った値（600万÷4,000=1,500）であり、計算式が誤っている。"
+        },
+        {
+          "id": "D",
+          "text": "600個",
+          "is_correct": false,
+          "explanation": "600は固定費を販売価格で割った値で、変動費を考慮していないため誤り。"
+        }
       ],
       "explanation": "損益分岐点売上数量＝固定費÷(販売単価−変動費単価)＝固定費÷限界利益単価。本問では600万円÷6,000円＝1,000個。これを下回ると赤字、超えると黒字。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["break-even-point", "cvp-analysis", "accounting", "calculation"],
+      "tags": [
+        "break-even-point",
+        "cvp-analysis",
+        "accounting",
+        "calculation"
+      ],
       "common_mistakes": [
         "固定費÷販売単価で計算してしまう",
         "限界利益の概念を知らない",
         "変動費と固定費の区別を間違える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-018",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "業務分析",
       "subtopic": "パレート図 / ABC分析",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "顧客サポートチームが「問い合わせ件数が多いカテゴリから順に対策する」ためにデータを可視化したい。最も適した手法はどれか。",
       "options": [
-        {"id": "A", "text": "ヒストグラム", "is_correct": false, "explanation": "ヒストグラムはデータの分布（連続データの度数）を見る図で、カテゴリ別優先順位を決める用途には向かない。"},
-        {"id": "B", "text": "散布図", "is_correct": false, "explanation": "散布図は2変数の相関を見る図。優先順位の可視化には適さない。"},
-        {"id": "C", "text": "パレート図", "is_correct": true, "explanation": "正解。パレート図は項目別件数を降順に並べた棒グラフと累積比率の折れ線で構成され、重点的に対処すべき少数項目を特定するのに最適（ABC分析）。"},
-        {"id": "D", "text": "管理図", "is_correct": false, "explanation": "管理図は工程の安定性を時系列で監視する図。優先順位付けには使わない。"}
+        {
+          "id": "A",
+          "text": "散布図",
+          "is_correct": false,
+          "explanation": "散布図は2変数の相関を見る図。優先順位の可視化には適さない。"
+        },
+        {
+          "id": "B",
+          "text": "パレート図",
+          "is_correct": true,
+          "explanation": "正解。パレート図は項目別件数を降順に並べた棒グラフと累積比率の折れ線で構成され、重点的に対処すべき少数項目を特定するのに最適（ABC分析）。"
+        },
+        {
+          "id": "C",
+          "text": "管理図",
+          "is_correct": false,
+          "explanation": "管理図は工程の安定性を時系列で監視する図。優先順位付けには使わない。"
+        },
+        {
+          "id": "D",
+          "text": "ヒストグラム",
+          "is_correct": false,
+          "explanation": "ヒストグラムはデータの分布（連続データの度数）を見る図で、カテゴリ別優先順位を決める用途には向かない。"
+        }
       ],
       "explanation": "パレート図は「少数の重要項目が全体の多数を占める」というパレートの法則（80:20の法則）を可視化する。QC七つ道具の一つで、改善対象の優先順位付けに活用される。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["pareto", "abc-analysis", "qc-tools", "business-analysis"],
+      "tags": [
+        "pareto",
+        "abc-analysis",
+        "qc-tools",
+        "business-analysis"
+      ],
       "common_mistakes": [
         "ヒストグラムとパレート図を混同する",
         "QC七つ道具の用途を区別できない",
         "パレートの法則を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-019",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "業務分析",
       "subtopic": "ヒストグラム",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ヒストグラムから読み取れる情報として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "2変量の相関関係", "is_correct": false, "explanation": "相関を見るのは散布図。"},
-        {"id": "B", "text": "データの度数分布（ばらつきや偏り）", "is_correct": true, "explanation": "正解。ヒストグラムはデータをいくつかの区間（階級）に分け、各区間の度数を縦棒で表すことでばらつき・中心傾向・偏りを把握できる。"},
-        {"id": "C", "text": "時系列での変動", "is_correct": false, "explanation": "時系列の変動は折れ線グラフや管理図で表す。"},
-        {"id": "D", "text": "原因と結果の関係", "is_correct": false, "explanation": "原因結果の整理には特性要因図（フィッシュボーン）を使う。"}
+        {
+          "id": "A",
+          "text": "時系列での変動",
+          "is_correct": false,
+          "explanation": "時系列の変動は折れ線グラフや管理図で表す。"
+        },
+        {
+          "id": "B",
+          "text": "2変量の相関関係",
+          "is_correct": false,
+          "explanation": "相関を見るのは散布図。"
+        },
+        {
+          "id": "C",
+          "text": "データの度数分布（ばらつきや偏り）",
+          "is_correct": true,
+          "explanation": "正解。ヒストグラムはデータをいくつかの区間（階級）に分け、各区間の度数を縦棒で表すことでばらつき・中心傾向・偏りを把握できる。"
+        },
+        {
+          "id": "D",
+          "text": "原因と結果の関係",
+          "is_correct": false,
+          "explanation": "原因結果の整理には特性要因図（フィッシュボーン）を使う。"
+        }
       ],
       "explanation": "ヒストグラムは度数分布を可視化するQC七つ道具の一つ。形状から正常/異常な分布を判別できる（ふた山型、絶壁型、離れ小島型など）。連続データの解析に多用される。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["histogram", "qc-tools", "data-visualization", "analysis"],
+      "tags": [
+        "histogram",
+        "qc-tools",
+        "data-visualization",
+        "analysis"
+      ],
       "common_mistakes": [
         "ヒストグラムと棒グラフを同じと思う",
         "時系列変動も読み取れると誤解する",
         "QC七つ道具の用途整理ができていない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-020",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "会計",
       "subtopic": "貸借対照表 (B/S)",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "貸借対照表（B/S）の基本構造として正しい等式はどれか。",
       "options": [
-        {"id": "A", "text": "資産＝負債＋純資産", "is_correct": true, "explanation": "正解。B/Sの基本等式（簿記の貸借平均原理）。左側に資産、右側に負債と純資産が並び、両者は常に一致する。"},
-        {"id": "B", "text": "売上＝費用＋利益", "is_correct": false, "explanation": "これは損益計算書（P/L）の関係式であり、B/Sではない。"},
-        {"id": "C", "text": "資産＝売上−費用", "is_correct": false, "explanation": "資産はストックで、売上−費用はフロー（利益）。次元が異なる。"},
-        {"id": "D", "text": "純資産＝資産＋負債", "is_correct": false, "explanation": "符号が誤り。純資産＝資産−負債が正しい。"}
+        {
+          "id": "A",
+          "text": "売上＝費用＋利益",
+          "is_correct": false,
+          "explanation": "これは損益計算書（P/L）の関係式であり、B/Sではない。"
+        },
+        {
+          "id": "B",
+          "text": "純資産＝資産＋負債",
+          "is_correct": false,
+          "explanation": "符号が誤り。純資産＝資産−負債が正しい。"
+        },
+        {
+          "id": "C",
+          "text": "資産＝売上−費用",
+          "is_correct": false,
+          "explanation": "資産はストックで、売上−費用はフロー（利益）。次元が異なる。"
+        },
+        {
+          "id": "D",
+          "text": "資産＝負債＋純資産",
+          "is_correct": true,
+          "explanation": "正解。B/Sの基本等式（簿記の貸借平均原理）。左側に資産、右側に負債と純資産が並び、両者は常に一致する。"
+        }
       ],
       "explanation": "貸借対照表は一時点の財政状態を表す財務諸表。左側（借方）に資産、右側（貸方）に負債と純資産を表示し、両者の合計は必ず一致する。これを貸借平均原理と呼ぶ。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["balance-sheet", "accounting", "financial-statements", "bookkeeping"],
+      "tags": [
+        "balance-sheet",
+        "accounting",
+        "financial-statements",
+        "bookkeeping"
+      ],
       "common_mistakes": [
         "B/SとP/Lの関係式を混同する",
         "純資産の計算式を逆に覚える",
         "ストックとフローの違いを理解していない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-021",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "会計",
       "subtopic": "損益計算書 (P/L)",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "売上高1,000万円、売上原価600万円、販売費及び一般管理費200万円、営業外収益50万円、営業外費用30万円のとき、経常利益はいくらか。",
       "options": [
-        {"id": "A", "text": "200万円", "is_correct": false, "explanation": "200万円は営業利益（1,000−600−200）。経常利益は営業外損益を加減した値。"},
-        {"id": "B", "text": "220万円", "is_correct": true, "explanation": "正解。営業利益200万円＋営業外収益50万円−営業外費用30万円＝220万円が経常利益。"},
-        {"id": "C", "text": "400万円", "is_correct": false, "explanation": "400万円は売上総利益（1,000−600）。販管費を控除していない。"},
-        {"id": "D", "text": "180万円", "is_correct": false, "explanation": "営業外損益の符号を誤って計算した値。"}
+        {
+          "id": "A",
+          "text": "220万円",
+          "is_correct": true,
+          "explanation": "正解。営業利益200万円＋営業外収益50万円−営業外費用30万円＝220万円が経常利益。"
+        },
+        {
+          "id": "B",
+          "text": "400万円",
+          "is_correct": false,
+          "explanation": "400万円は売上総利益（1,000−600）。販管費を控除していない。"
+        },
+        {
+          "id": "C",
+          "text": "180万円",
+          "is_correct": false,
+          "explanation": "営業外損益の符号を誤って計算した値。"
+        },
+        {
+          "id": "D",
+          "text": "200万円",
+          "is_correct": false,
+          "explanation": "200万円は営業利益（1,000−600−200）。経常利益は営業外損益を加減した値。"
+        }
       ],
       "explanation": "P/Lの利益階層は、売上総利益→営業利益→経常利益→税引前当期純利益→当期純利益。経常利益＝営業利益＋営業外収益−営業外費用で、企業の通常活動からの利益を示す重要指標。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["pl", "profit", "accounting", "calculation"],
+      "tags": [
+        "pl",
+        "profit",
+        "accounting",
+        "calculation"
+      ],
       "common_mistakes": [
         "営業利益と経常利益を混同する",
         "売上総利益で止めてしまう",
         "営業外収益と費用の符号を逆にする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-022",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "会計",
       "subtopic": "投資効果指標 (ROI / ROE)",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ROE（自己資本利益率）の計算式として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "売上高÷総資産", "is_correct": false, "explanation": "これは総資産回転率の式であり、ROEではない。"},
-        {"id": "B", "text": "当期純利益÷自己資本", "is_correct": true, "explanation": "正解。ROE＝当期純利益÷自己資本。株主の出資に対する収益性を示す指標。"},
-        {"id": "C", "text": "営業利益÷総資産", "is_correct": false, "explanation": "これはROA（総資産利益率）に近い式で、ROEとは分母・分子が異なる。"},
-        {"id": "D", "text": "投資による利益÷投資額", "is_correct": false, "explanation": "これはROI（投資利益率）の概念で、ROEとは分母・分子が異なる。"}
+        {
+          "id": "A",
+          "text": "売上高÷総資産",
+          "is_correct": false,
+          "explanation": "これは総資産回転率の式であり、ROEではない。"
+        },
+        {
+          "id": "B",
+          "text": "当期純利益÷自己資本",
+          "is_correct": true,
+          "explanation": "正解。ROE＝当期純利益÷自己資本。株主の出資に対する収益性を示す指標。"
+        },
+        {
+          "id": "C",
+          "text": "営業利益÷総資産",
+          "is_correct": false,
+          "explanation": "これはROA（総資産利益率）に近い式で、ROEとは分母・分子が異なる。"
+        },
+        {
+          "id": "D",
+          "text": "投資による利益÷投資額",
+          "is_correct": false,
+          "explanation": "これはROI（投資利益率）の概念で、ROEとは分母・分子が異なる。"
+        }
       ],
       "explanation": "ROE（Return on Equity）は当期純利益÷自己資本で、株主視点の収益性指標。ROI（Return on Investment）は投資額に対する利益、ROA（Return on Assets）は総資産に対する利益と区別する。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["roe", "roi", "roa", "financial-metrics", "accounting"],
+      "tags": [
+        "roe",
+        "roi",
+        "roa",
+        "financial-metrics",
+        "accounting"
+      ],
       "common_mistakes": [
         "ROEとROAを混同する",
         "ROEとROIを同じものと思う",
         "分母を総資産にしてしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-023",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "会計",
       "subtopic": "原価計算",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "原価計算における「直接費」と「間接費」の区分の基準として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "金額の大小", "is_correct": false, "explanation": "金額の大小ではなく、特定の製品への賦課可否で区分する。"},
-        {"id": "B", "text": "特定の製品・サービスに直接賦課できるかどうか", "is_correct": true, "explanation": "正解。直接費は特定製品に直接賦課できる費用、間接費は複数製品に共通でかかり配賦が必要な費用。"},
-        {"id": "C", "text": "発生時期が固定的か変動的か", "is_correct": false, "explanation": "これは固定費と変動費の区分基準。直接/間接とは別軸。"},
-        {"id": "D", "text": "現金支出を伴うか否か", "is_correct": false, "explanation": "現金支出の有無は支出費用と非支出費用の区分で、直接/間接とは関係ない。"}
+        {
+          "id": "A",
+          "text": "金額の大小",
+          "is_correct": false,
+          "explanation": "金額の大小ではなく、特定の製品への賦課可否で区分する。"
+        },
+        {
+          "id": "B",
+          "text": "発生時期が固定的か変動的か",
+          "is_correct": false,
+          "explanation": "これは固定費と変動費の区分基準。直接/間接とは別軸。"
+        },
+        {
+          "id": "C",
+          "text": "特定の製品・サービスに直接賦課できるかどうか",
+          "is_correct": true,
+          "explanation": "正解。直接費は特定製品に直接賦課できる費用、間接費は複数製品に共通でかかり配賦が必要な費用。"
+        },
+        {
+          "id": "D",
+          "text": "現金支出を伴うか否か",
+          "is_correct": false,
+          "explanation": "現金支出の有無は支出費用と非支出費用の区分で、直接/間接とは関係ない。"
+        }
       ],
       "explanation": "原価は「直接費／間接費」（製品への賦課性）と「変動費／固定費」（操業度との関係）の2軸で区分される。製造原価＝直接材料費＋直接労務費＋直接経費＋製造間接費（配賦）。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["cost-accounting", "direct-cost", "indirect-cost", "accounting"],
+      "tags": [
+        "cost-accounting",
+        "direct-cost",
+        "indirect-cost",
+        "accounting"
+      ],
       "common_mistakes": [
         "直接費/間接費を変動費/固定費と混同する",
         "金額基準で区分すると思い込む",
         "配賦の概念を理解していない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-024",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "情報戦略",
       "subtopic": "SoR / SoE",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるFinTech企業が、勘定系（信頼性重視）と顧客向けモバイルアプリ（UX重視）を別アーキテクチャで構築している。SoRとSoEの分類として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "勘定系がSoR、モバイルアプリがSoE", "is_correct": true, "explanation": "正解。SoR (Systems of Record) は記録/正確性重視（勘定系）、SoE (Systems of Engagement) は顧客接点/UX重視（モバイル）。"},
-        {"id": "B", "text": "勘定系がSoE、モバイルアプリがSoR", "is_correct": false, "explanation": "RecordとEngagementの担当領域が逆。"},
-        {"id": "C", "text": "両方ともSoR", "is_correct": false, "explanation": "顧客接点を担うシステムをSoRに含めるのは不適切。"},
-        {"id": "D", "text": "両方ともSoE", "is_correct": false, "explanation": "勘定系のような厳密な記録管理システムはSoEではなくSoR。"}
+        {
+          "id": "A",
+          "text": "両方ともSoE",
+          "is_correct": false,
+          "explanation": "勘定系のような厳密な記録管理システムはSoEではなくSoR。"
+        },
+        {
+          "id": "B",
+          "text": "勘定系がSoE、モバイルアプリがSoR",
+          "is_correct": false,
+          "explanation": "RecordとEngagementの担当領域が逆。"
+        },
+        {
+          "id": "C",
+          "text": "両方ともSoR",
+          "is_correct": false,
+          "explanation": "顧客接点を担うシステムをSoRに含めるのは不適切。"
+        },
+        {
+          "id": "D",
+          "text": "勘定系がSoR、モバイルアプリがSoE",
+          "is_correct": true,
+          "explanation": "正解。SoR (Systems of Record) は記録/正確性重視（勘定系）、SoE (Systems of Engagement) は顧客接点/UX重視（モバイル）。"
+        }
       ],
       "explanation": "SoR（記録）は基幹系・正確性重視・変更頻度低、SoE（エンゲージメント）はフロント・UX重視・変更頻度高という特性を持つ。FinTechでは両者を分離してSoEは俊敏なクラウド基盤で、SoRは堅牢に運用するのが定石。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["sor", "soe", "fintech", "architecture", "system-design"],
+      "tags": [
+        "sor",
+        "soe",
+        "fintech",
+        "architecture",
+        "system-design"
+      ],
       "common_mistakes": [
         "SoRとSoEを逆に覚える",
         "SoEを単なるWebシステムと誤解する",
         "両者を統合すべきと考える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-025",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "情報戦略",
       "subtopic": "EA (エンタープライズアーキテクチャ)",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "EA（エンタープライズアーキテクチャ）の4つのアーキテクチャの組み合わせとして適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "ビジネス、データ、アプリケーション、テクノロジ", "is_correct": true, "explanation": "正解。EAはBA・DA・AA・TAの4階層で組織のあるべき姿を整理する。"},
-        {"id": "B", "text": "ハードウェア、ソフトウェア、ネットワーク、運用", "is_correct": false, "explanation": "これはITインフラの一般的な分類でEAの体系ではない。"},
-        {"id": "C", "text": "戦略、戦術、運用、評価", "is_correct": false, "explanation": "これは経営管理階層の分類で、EAの構成要素ではない。"},
-        {"id": "D", "text": "PDCAの4段階", "is_correct": false, "explanation": "PDCAは改善サイクルの概念で、EAの構成とは異なる。"}
+        {
+          "id": "A",
+          "text": "ビジネス、データ、アプリケーション、テクノロジ",
+          "is_correct": true,
+          "explanation": "正解。EAはBA・DA・AA・TAの4階層で組織のあるべき姿を整理する。"
+        },
+        {
+          "id": "B",
+          "text": "PDCAの4段階",
+          "is_correct": false,
+          "explanation": "PDCAは改善サイクルの概念で、EAの構成とは異なる。"
+        },
+        {
+          "id": "C",
+          "text": "ハードウェア、ソフトウェア、ネットワーク、運用",
+          "is_correct": false,
+          "explanation": "これはITインフラの一般的な分類でEAの体系ではない。"
+        },
+        {
+          "id": "D",
+          "text": "戦略、戦術、運用、評価",
+          "is_correct": false,
+          "explanation": "これは経営管理階層の分類で、EAの構成要素ではない。"
+        }
       ],
       "explanation": "EAはビジネス（BA）・データ（DA）・アプリケーション（AA）・テクノロジ（TA）の4アーキテクチャで現状（AsIs）と将来像（ToBe）、移行計画を整理するフレームワーク。組織横断のIT戦略立案に用いる。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["ea", "enterprise-architecture", "it-strategy", "framework"],
+      "tags": [
+        "ea",
+        "enterprise-architecture",
+        "it-strategy",
+        "framework"
+      ],
       "common_mistakes": [
         "EAの4階層を覚えていない",
         "EAを単なるシステム構成図と誤解する",
         "AsIs/ToBeの概念を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-026",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "情報戦略",
       "subtopic": "BPR",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "BPR（ビジネスプロセス・リエンジニアリング）の説明として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "業務プロセスをゼロベースで抜本的に再設計し、コスト・品質・スピードを劇的に改善する手法", "is_correct": true, "explanation": "正解。BPRは漸進的改善ではなく抜本的再設計を志向する。Hammer & Champyが提唱。"},
-        {"id": "B", "text": "現行業務を維持しながらツールのみを最新化する手法", "is_correct": false, "explanation": "ツール置換だけはBPRではなく、現状業務の追認に近い。"},
-        {"id": "C", "text": "現場の小集団活動による継続的改善活動", "is_correct": false, "explanation": "これはカイゼン（KAIZEN）の説明。BPRより漸進的・現場主導である点が異なる。"},
-        {"id": "D", "text": "顧客満足度を測定する手法", "is_correct": false, "explanation": "これはCS調査などの手法であり、業務プロセス再設計とは別概念。"}
+        {
+          "id": "A",
+          "text": "現行業務を維持しながらツールのみを最新化する手法",
+          "is_correct": false,
+          "explanation": "ツール置換だけはBPRではなく、現状業務の追認に近い。"
+        },
+        {
+          "id": "B",
+          "text": "業務プロセスをゼロベースで抜本的に再設計し、コスト・品質・スピードを劇的に改善する手法",
+          "is_correct": true,
+          "explanation": "正解。BPRは漸進的改善ではなく抜本的再設計を志向する。Hammer & Champyが提唱。"
+        },
+        {
+          "id": "C",
+          "text": "顧客満足度を測定する手法",
+          "is_correct": false,
+          "explanation": "これはCS調査などの手法であり、業務プロセス再設計とは別概念。"
+        },
+        {
+          "id": "D",
+          "text": "現場の小集団活動による継続的改善活動",
+          "is_correct": false,
+          "explanation": "これはカイゼン（KAIZEN）の説明。BPRより漸進的・現場主導である点が異なる。"
+        }
       ],
       "explanation": "BPRは現行業務を白紙に戻し、ITを前提にプロセスを根本から再設計する変革手法。漸進的改善のカイゼンとは対比的概念。DX推進の文脈でも頻出する用語。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["bpr", "process-reengineering", "transformation", "dx"],
+      "tags": [
+        "bpr",
+        "process-reengineering",
+        "transformation",
+        "dx"
+      ],
       "common_mistakes": [
         "BPRとカイゼンを混同する",
         "BPRをツール置換と勘違いする",
         "BPRが漸進的改善だと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-027",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "システム企画",
       "subtopic": "RFP / RFI",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるSaaS企業がベンダー選定の前段階で、市場にどのようなソリューションがあるかを情報収集したい。最も適切な文書はどれか。",
       "options": [
-        {"id": "A", "text": "RFI（情報提供依頼書）", "is_correct": true, "explanation": "正解。RFIはベンダーから製品情報や事例を広く収集するための文書。提案前の予備調査段階で用いる。"},
-        {"id": "B", "text": "RFP（提案依頼書）", "is_correct": false, "explanation": "RFPは要件を確定したうえで具体的提案を求める文書。情報収集段階より後のフェーズで使う。"},
-        {"id": "C", "text": "SOW（作業範囲記述書）", "is_correct": false, "explanation": "SOWは契約後の作業範囲を定義する文書で、ベンダー選定段階のものではない。"},
-        {"id": "D", "text": "NDA（秘密保持契約）", "is_correct": false, "explanation": "NDAは情報共有の前提となる契約で、情報収集の本体文書ではない。"}
+        {
+          "id": "A",
+          "text": "RFP（提案依頼書）",
+          "is_correct": false,
+          "explanation": "RFPは要件を確定したうえで具体的提案を求める文書。情報収集段階より後のフェーズで使う。"
+        },
+        {
+          "id": "B",
+          "text": "SOW（作業範囲記述書）",
+          "is_correct": false,
+          "explanation": "SOWは契約後の作業範囲を定義する文書で、ベンダー選定段階のものではない。"
+        },
+        {
+          "id": "C",
+          "text": "RFI（情報提供依頼書）",
+          "is_correct": true,
+          "explanation": "正解。RFIはベンダーから製品情報や事例を広く収集するための文書。提案前の予備調査段階で用いる。"
+        },
+        {
+          "id": "D",
+          "text": "NDA（秘密保持契約）",
+          "is_correct": false,
+          "explanation": "NDAは情報共有の前提となる契約で、情報収集の本体文書ではない。"
+        }
       ],
       "explanation": "システム調達ではRFI（情報収集）→RFP（提案依頼）→契約・SOWという流れが標準。RFI段階で各ベンダーの製品概要・事例・対応領域を把握し、RFPで要件を絞って具体提案を求める。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["rfi", "rfp", "procurement", "system-planning"],
+      "tags": [
+        "rfi",
+        "rfp",
+        "procurement",
+        "system-planning"
+      ],
       "common_mistakes": [
         "RFIとRFPの順序を逆に覚える",
         "RFIで提案を求めると勘違いする",
         "SOWを選定段階の文書と思う"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-028",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "情報戦略",
       "subtopic": "アジャイル開発",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "アジャイル開発の特徴として最も適切な記述はどれか。",
       "options": [
-        {"id": "A", "text": "上流工程で要件を確定し、後工程での仕様変更を厳格に抑止する", "is_correct": false, "explanation": "これはウォーターフォール型の特徴。アジャイルは変化への対応を重視する。"},
-        {"id": "B", "text": "短い反復（イテレーション）を繰り返し、動くソフトウェアを段階的に提供しながら変化に適応する", "is_correct": true, "explanation": "正解。アジャイル宣言の核心は変化への適応・動くソフトウェア・顧客との協調・個人と対話。"},
-        {"id": "C", "text": "全工程の文書化を徹底し、動くソフトウェアより包括的なドキュメントを優先する", "is_correct": false, "explanation": "アジャイル宣言では「包括的なドキュメントよりも動くソフトウェア」を価値とする。逆の説明。"},
-        {"id": "D", "text": "計画通りの遂行を最優先し、予期せぬ変更は次プロジェクトに繰り越す", "is_correct": false, "explanation": "アジャイルは「計画に従うことよりも変化への対応」を重視する。"}
+        {
+          "id": "A",
+          "text": "上流工程で要件を確定し、後工程での仕様変更を厳格に抑止する",
+          "is_correct": false,
+          "explanation": "これはウォーターフォール型の特徴。アジャイルは変化への対応を重視する。"
+        },
+        {
+          "id": "B",
+          "text": "全工程の文書化を徹底し、動くソフトウェアより包括的なドキュメントを優先する",
+          "is_correct": false,
+          "explanation": "アジャイル宣言では「包括的なドキュメントよりも動くソフトウェア」を価値とする。逆の説明。"
+        },
+        {
+          "id": "C",
+          "text": "計画通りの遂行を最優先し、予期せぬ変更は次プロジェクトに繰り越す",
+          "is_correct": false,
+          "explanation": "アジャイルは「計画に従うことよりも変化への対応」を重視する。"
+        },
+        {
+          "id": "D",
+          "text": "短い反復（イテレーション）を繰り返し、動くソフトウェアを段階的に提供しながら変化に適応する",
+          "is_correct": true,
+          "explanation": "正解。アジャイル宣言の核心は変化への適応・動くソフトウェア・顧客との協調・個人と対話。"
+        }
       ],
       "explanation": "アジャイル開発は2001年のアジャイル宣言で示された4つの価値観（個人と対話、動くソフトウェア、顧客との協調、変化への対応）に基づく開発スタイル。Scrum/XPなどが代表的フレームワーク。SaaS等の不確実性が高い領域で広く採用される。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"},
-        {"title": "アジャイルソフトウェア開発宣言", "url": "https://agilemanifesto.org/iso/ja/manifesto.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        },
+        {
+          "title": "アジャイルソフトウェア開発宣言",
+          "url": "https://agilemanifesto.org/iso/ja/manifesto.html"
+        }
       ],
-      "tags": ["agile", "scrum", "iteration", "software-development"],
+      "tags": [
+        "agile",
+        "scrum",
+        "iteration",
+        "software-development"
+      ],
       "common_mistakes": [
         "アジャイル＝ドキュメント不要と極端に解釈する",
         "ウォーターフォールの特徴と取り違える",
         "変更を歓迎しないと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-029",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "経営戦略",
       "subtopic": "ブルーオーシャン戦略",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
-      "stem": "東海地方の中堅製造業A社が、競争激化により利益率が低下している。経営者は「ブルーオーシャン戦略」を採るべきか検討中である。次のうち、ブルーオーシャン戦略の本質を最も適切に評価した記述はどれか。",
+      "stem": "ある中堅製造業A社が、競争激化により利益率が低下している。経営者は「ブルーオーシャン戦略」を採るべきか検討中である。次のうち、ブルーオーシャン戦略の本質を最も適切に評価した記述はどれか。",
       "options": [
-        {"id": "A", "text": "既存市場で価格競争に勝つことを目指す戦略であり、コストリーダーシップ強化が主眼", "is_correct": false, "explanation": "既存市場での価格競争はレッドオーシャン側の戦略。ブルーオーシャンとは方向が逆。"},
-        {"id": "B", "text": "競争のない新市場を創造し、価値の革新と低コストを同時に実現することを目指す戦略", "is_correct": true, "explanation": "正解。Kim & Mauborgne (2005) の主張は、トレードオフ通念を破り「価値革新」と「低コスト」の両立で競争のない市場を創ることにある。"},
-        {"id": "C", "text": "競合をベンチマークし、その上を行くことで市場シェアを拡大する戦略", "is_correct": false, "explanation": "ベンチマーク追随はレッドオーシャンの典型。新市場創造とは異なる。"},
-        {"id": "D", "text": "業界標準のサービスを最も低価格で提供する戦略", "is_correct": false, "explanation": "差別化なしの低価格はコストリーダーシップ戦略であり、ブルーオーシャンの「価値革新」要件を欠く。"}
+        {
+          "id": "A",
+          "text": "競争のない新市場を創造し、価値の革新と低コストを同時に実現することを目指す戦略",
+          "is_correct": true,
+          "explanation": "正解。Kim & Mauborgne (2005) の主張は、トレードオフ通念を破り「価値革新」と「低コスト」の両立で競争のない市場を創ることにある。"
+        },
+        {
+          "id": "B",
+          "text": "業界標準のサービスを最も低価格で提供する戦略",
+          "is_correct": false,
+          "explanation": "差別化なしの低価格はコストリーダーシップ戦略であり、ブルーオーシャンの「価値革新」要件を欠く。"
+        },
+        {
+          "id": "C",
+          "text": "競合をベンチマークし、その上を行くことで市場シェアを拡大する戦略",
+          "is_correct": false,
+          "explanation": "ベンチマーク追随はレッドオーシャンの典型。新市場創造とは異なる。"
+        },
+        {
+          "id": "D",
+          "text": "既存市場で価格競争に勝つことを目指す戦略であり、コストリーダーシップ強化が主眼",
+          "is_correct": false,
+          "explanation": "既存市場での価格競争はレッドオーシャン側の戦略。ブルーオーシャンとは方向が逆。"
+        }
       ],
       "explanation": "ブルーオーシャン戦略は競争のない新市場（青い海）を創造する戦略。「差別化と低コストはトレードオフ」という従来思考を否定し、両立による価値革新を目指す。ERRC（取り除く・減らす・増やす・付け加える）の4アクションが代表的フレームワーク。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["blue-ocean", "value-innovation", "strategy", "manufacturing"],
+      "tags": [
+        "blue-ocean",
+        "value-innovation",
+        "strategy",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "低価格戦略と同義と思い込む",
         "競合追随戦略と混同する",
         "差別化と低コストを両立できないと考える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-passport-strat-030",
       "version": "1.0",
-      "exam": {"code": "ipa-passport", "name": "ITパスポート試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "strat", "name": "ストラテジ系", "weight_percent": 35},
+      "exam": {
+        "code": "ipa-passport",
+        "name": "ITパスポート試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "strat",
+        "name": "ストラテジ系",
+        "weight_percent": 35
+      },
       "topic": "情報戦略",
       "subtopic": "新規事業企画",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "教育系スタートアップB社が、社会人向けリスキリングSaaSの新規事業を構想している。事業企画の最初のフェーズで実施すべき活動として、最も妥当性の高いアプローチはどれか。",
       "options": [
-        {"id": "A", "text": "競合製品をベンチマークしてすぐに開発に着手し、リリース後に課題を修正する", "is_correct": false, "explanation": "顧客課題未検証のまま開発するとPMF（プロダクト・マーケット・フィット）に至らないリスクが高い。"},
-        {"id": "B", "text": "想定顧客（社会人学習者・企業人事）への課題インタビューとMVPによる仮説検証を行い、PMFを目指す", "is_correct": true, "explanation": "正解。リーンスタートアップの「構築-計測-学習」サイクルに沿い、課題仮説の検証→MVP→学習で不確実性を低減するのが新規事業の定石。"},
-        {"id": "C", "text": "詳細なRFPを作成して大手SIerに開発を一括委託する", "is_correct": false, "explanation": "要件未確定の探索フェーズで一括委託は不適切。後工程での変更コストが膨大になる。"},
-        {"id": "D", "text": "業界平均の損益分岐点を上回る売上計画を先に決め、それに合うように機能を実装する", "is_correct": false, "explanation": "売上計画から逆算した機能設計は顧客課題の検証を経ておらず、需要のない機能を作るリスクが高い。"}
+        {
+          "id": "A",
+          "text": "詳細なRFPを作成して大手SIerに開発を一括委託する",
+          "is_correct": false,
+          "explanation": "要件未確定の探索フェーズで一括委託は不適切。後工程での変更コストが膨大になる。"
+        },
+        {
+          "id": "B",
+          "text": "想定顧客（社会人学習者・企業人事）への課題インタビューとMVPによる仮説検証を行い、PMFを目指す",
+          "is_correct": true,
+          "explanation": "正解。リーンスタートアップの「構築-計測-学習」サイクルに沿い、課題仮説の検証→MVP→学習で不確実性を低減するのが新規事業の定石。"
+        },
+        {
+          "id": "C",
+          "text": "業界平均の損益分岐点を上回る売上計画を先に決め、それに合うように機能を実装する",
+          "is_correct": false,
+          "explanation": "売上計画から逆算した機能設計は顧客課題の検証を経ておらず、需要のない機能を作るリスクが高い。"
+        },
+        {
+          "id": "D",
+          "text": "競合製品をベンチマークしてすぐに開発に着手し、リリース後に課題を修正する",
+          "is_correct": false,
+          "explanation": "顧客課題未検証のまま開発するとPMF（プロダクト・マーケット・フィット）に至らないリスクが高い。"
+        }
       ],
       "explanation": "新規事業の初期フェーズでは「顧客課題の検証」が最優先。リーンスタートアップの考え方に基づき、想定顧客インタビュー→課題仮説→MVPによる解決策検証→PMF探索のサイクルを回す。詳細要件書や売上計画から入る伝統的アプローチは不確実性の高い領域では機能しない。",
       "references": [
-        {"title": "ITパスポート試験 シラバス（IPA）", "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"}
+        {
+          "title": "ITパスポート試験 シラバス（IPA）",
+          "url": "https://www.ipa.go.jp/shiken/syllabus/ip.html"
+        }
       ],
-      "tags": ["lean-startup", "mvp", "pmf", "new-business", "education"],
+      "tags": [
+        "lean-startup",
+        "mvp",
+        "pmf",
+        "new-business",
+        "education"
+      ],
       "common_mistakes": [
         "MVPの目的を「最低限の機能で売る」と誤解する",
         "PMFの概念を知らずに開発に着手する",
         "売上計画ありきで機能を逆算してしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

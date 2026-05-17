@@ -15,628 +15,1887 @@
     {
       "id": "dbs-c01-domain5-001",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "RDS encryption at rest",
       "subtopic": "KMS",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "RDS の保管時暗号化 (Encryption at Rest) で利用される技術はどれか。",
       "options": [
-        {"id": "A", "text": "AWS KMS で管理される鍵を用いた AES-256 暗号化", "is_correct": true, "explanation": "正解。RDS の保管時暗号化は KMS で管理される CMK で AES-256 によって行われる。"},
-        {"id": "B", "text": "TLS 1.2 による暗号化", "is_correct": false, "explanation": "TLS は通信路 (in-transit) の暗号化で保管時とは別。"},
-        {"id": "C", "text": "DB エンジンのパスワードハッシュ", "is_correct": false, "explanation": "認証情報の話で保管データ全体の暗号化ではない。"},
-        {"id": "D", "text": "S3 バケットポリシー", "is_correct": false, "explanation": "S3 と RDS の暗号化は別物。"}
+        {
+          "id": "A",
+          "text": "AWS KMS で管理される鍵を用いた AES-256 暗号化",
+          "is_correct": true,
+          "explanation": "正解。RDS の保管時暗号化は KMS で管理される CMK で AES-256 によって行われる。"
+        },
+        {
+          "id": "B",
+          "text": "DB エンジンのパスワードハッシュ",
+          "is_correct": false,
+          "explanation": "認証情報の話で保管データ全体の暗号化ではない。"
+        },
+        {
+          "id": "C",
+          "text": "S3 バケットポリシー",
+          "is_correct": false,
+          "explanation": "S3 と RDS の暗号化は別物。"
+        },
+        {
+          "id": "D",
+          "text": "TLS 1.2 による暗号化",
+          "is_correct": false,
+          "explanation": "TLS は通信路 (in-transit) の暗号化で保管時とは別。"
+        }
       ],
       "explanation": "RDS の保管時暗号化は KMS の AWS マネージドキー (aws/rds) または Customer Managed Key で AES-256 暗号化を行う。基盤ストレージ・スナップショット・自動バックアップ・Read Replica すべてが暗号化対象。インスタンス作成時のみ有効化可能で、後から有効化はできない (スナップショット復元時に切替可)。",
       "references": [
-        {"title": "Encrypting Amazon RDS resources", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html"}
+        {
+          "title": "Encrypting Amazon RDS resources",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html"
+        }
       ],
-      "tags": ["rds", "kms", "encryption-at-rest"],
-      "common_mistakes": ["TLS と保管時暗号化を混同", "後から暗号化を有効化できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "kms",
+        "encryption-at-rest"
+      ],
+      "common_mistakes": [
+        "TLS と保管時暗号化を混同",
+        "後から暗号化を有効化できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-002",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "IAM database authentication",
       "subtopic": "Token-based",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "RDS の IAM データベース認証の特徴として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "IAM 認証情報を使って一時 (15 分有効) のトークンを生成し、それをパスワード代わりに使う", "is_correct": true, "explanation": "正解。AWS SDK / CLI で生成されるトークンは 15 分有効、TLS 接続必須。"},
-        {"id": "B", "text": "IAM ロールをそのままパスワードに使う", "is_correct": false, "explanation": "ロール ARN ではなく、IAM 認証情報で生成された一時トークンを使う。"},
-        {"id": "C", "text": "永続的なパスワードを IAM が発行する", "is_correct": false, "explanation": "永続パスワードではなく一時トークン。"},
-        {"id": "D", "text": "MFA トークンを直接使う", "is_correct": false, "explanation": "MFA トークンを直接 DB のパスワードにする仕組みではない。"}
+        {
+          "id": "A",
+          "text": "IAM ロールをそのままパスワードに使う",
+          "is_correct": false,
+          "explanation": "ロール ARN ではなく、IAM 認証情報で生成された一時トークンを使う。"
+        },
+        {
+          "id": "B",
+          "text": "IAM 認証情報を使って一時 (15 分有効) のトークンを生成し、それをパスワード代わりに使う",
+          "is_correct": true,
+          "explanation": "正解。AWS SDK / CLI で生成されるトークンは 15 分有効、TLS 接続必須。"
+        },
+        {
+          "id": "C",
+          "text": "MFA トークンを直接使う",
+          "is_correct": false,
+          "explanation": "MFA トークンを直接 DB のパスワードにする仕組みではない。"
+        },
+        {
+          "id": "D",
+          "text": "永続的なパスワードを IAM が発行する",
+          "is_correct": false,
+          "explanation": "永続パスワードではなく一時トークン。"
+        }
       ],
       "explanation": "IAM DB Auth は MySQL/PostgreSQL/MariaDB でサポート。事前に DB ユーザに rds_iam ロール (PostgreSQL) や AWSAuthenticationPlugin (MySQL) を付け、IAM 側で rds-db:connect 権限を付与する。Lambda などサービス間認証で特に有用。",
       "references": [
-        {"title": "IAM database authentication", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"}
+        {
+          "title": "IAM database authentication",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"
+        }
       ],
-      "tags": ["rds", "iam", "authentication"],
-      "common_mistakes": ["永続パスワードと誤解", "MFA と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "iam",
+        "authentication"
+      ],
+      "common_mistakes": [
+        "永続パスワードと誤解",
+        "MFA と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-003",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Encryption in transit",
       "subtopic": "TLS",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "RDS for PostgreSQL でアプリとの通信を強制的に TLS 暗号化したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "パラメータ rds.force_ssl=1 を設定し、クライアント側で SSL 必須接続にする", "is_correct": true, "explanation": "正解。rds.force_ssl=1 で TLS 接続を強制。クライアント側でも sslmode=verify-full と CA 証明書 (rds-ca-2019/2024) で検証する。"},
-        {"id": "B", "text": "セキュリティグループで 5432 ポートを閉じる", "is_correct": false, "explanation": "TLS の話とは別レイヤー。閉じれば通信自体不可。"},
-        {"id": "C", "text": "Aurora に変更すれば TLS 強制になる", "is_correct": false, "explanation": "TLS 強制は別パラメータ設定で行う。エンジン変更で自動的に強制にはならない。"},
-        {"id": "D", "text": "VPC エンドポイントを作る", "is_correct": false, "explanation": "VPC エンドポイントは AWS API への接続用で RDS DB 接続経路ではない。"}
+        {
+          "id": "A",
+          "text": "Aurora に変更すれば TLS 強制になる",
+          "is_correct": false,
+          "explanation": "TLS 強制は別パラメータ設定で行う。エンジン変更で自動的に強制にはならない。"
+        },
+        {
+          "id": "B",
+          "text": "セキュリティグループで 5432 ポートを閉じる",
+          "is_correct": false,
+          "explanation": "TLS の話とは別レイヤー。閉じれば通信自体不可。"
+        },
+        {
+          "id": "C",
+          "text": "パラメータ rds.force_ssl=1 を設定し、クライアント側で SSL 必須接続にする",
+          "is_correct": true,
+          "explanation": "正解。rds.force_ssl=1 で TLS 接続を強制。クライアント側でも sslmode=verify-full と CA 証明書 (rds-ca-2019/2024) で検証する。"
+        },
+        {
+          "id": "D",
+          "text": "VPC エンドポイントを作る",
+          "is_correct": false,
+          "explanation": "VPC エンドポイントは AWS API への接続用で RDS DB 接続経路ではない。"
+        }
       ],
       "explanation": "RDS for PostgreSQL は rds.force_ssl=1、MySQL は require_secure_transport=ON で TLS 強制。クライアントは AWS が公開する RDS グローバル CA バンドル (rds-ca-rsa2048-g1 等) で証明書検証することが推奨。",
       "references": [
-        {"title": "Using SSL/TLS to encrypt a connection to a DB instance", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html"}
+        {
+          "title": "Using SSL/TLS to encrypt a connection to a DB instance",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html"
+        }
       ],
-      "tags": ["rds", "tls", "encryption-in-transit", "postgresql"],
-      "common_mistakes": ["VPC エンドポイントで TLS 強制と誤解", "クライアント側の証明書検証を省略"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "tls",
+        "encryption-in-transit",
+        "postgresql"
+      ],
+      "common_mistakes": [
+        "VPC エンドポイントで TLS 強制と誤解",
+        "クライアント側の証明書検証を省略"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-004",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "VPC subnet groups",
       "subtopic": "Multi-AZ subnet group",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "RDS DB Subnet Group の構成要件として正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "1 サブネット (1 AZ) のみで作成可能", "is_correct": false, "explanation": "DB Subnet Group は最低 2 AZ にまたがるサブネットを必要とする。"},
-        {"id": "B", "text": "最低 2 AZ にまたがるサブネットが必要 (Multi-AZ・Read Replica の前提)", "is_correct": true, "explanation": "正解。AZ 障害対応のため、サブネットグループには複数 AZ の参加が必須。"},
-        {"id": "C", "text": "全リージョンの全 AZ を含めなければならない", "is_correct": false, "explanation": "全 AZ である必要はなく、最低 2 AZ で十分。"},
-        {"id": "D", "text": "パブリックサブネットでなければならない", "is_correct": false, "explanation": "プライベートが推奨で、公開有無はインスタンスのパブリックアクセシビリティで制御。"}
+        {
+          "id": "A",
+          "text": "パブリックサブネットでなければならない",
+          "is_correct": false,
+          "explanation": "プライベートが推奨で、公開有無はインスタンスのパブリックアクセシビリティで制御。"
+        },
+        {
+          "id": "B",
+          "text": "1 サブネット (1 AZ) のみで作成可能",
+          "is_correct": false,
+          "explanation": "DB Subnet Group は最低 2 AZ にまたがるサブネットを必要とする。"
+        },
+        {
+          "id": "C",
+          "text": "全リージョンの全 AZ を含めなければならない",
+          "is_correct": false,
+          "explanation": "全 AZ である必要はなく、最低 2 AZ で十分。"
+        },
+        {
+          "id": "D",
+          "text": "最低 2 AZ にまたがるサブネットが必要 (Multi-AZ・Read Replica の前提)",
+          "is_correct": true,
+          "explanation": "正解。AZ 障害対応のため、サブネットグループには複数 AZ の参加が必須。"
+        }
       ],
       "explanation": "DB Subnet Group は VPC 内の RDS 配置可能なサブネット集合を定義する。最低 2 AZ で構成し、Multi-AZ Deployment 時にスタンバイの配置場所として使われる。",
       "references": [
-        {"title": "Working with a DB instance in a VPC", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.html"}
+        {
+          "title": "Working with a DB instance in a VPC",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.html"
+        }
       ],
-      "tags": ["rds", "vpc", "subnet-group"],
-      "common_mistakes": ["1 AZ のみのサブネットグループで Multi-AZ できると誤解", "全 AZ 必須と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "vpc",
+        "subnet-group"
+      ],
+      "common_mistakes": [
+        "1 AZ のみのサブネットグループで Multi-AZ できると誤解",
+        "全 AZ 必須と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-005",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Secrets Manager rotation",
       "subtopic": "RDS integration",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Secrets Manager で RDS for MySQL のパスワードを 30 日ごとに自動ローテーションしたい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "Secrets Manager の \"Rotate this secret\" を有効化し、AWS 提供の Lambda ローテーション関数 (single user / multi user) を選び、30 日間隔を設定する", "is_correct": true, "explanation": "正解。Secrets Manager は RDS と統合済みで、テンプレート Lambda がローテーションを実行する。"},
-        {"id": "B", "text": "Lambda 関数を完全自作する", "is_correct": false, "explanation": "AWS 提供のテンプレートで十分対応でき、自作は車輪の再発明。"},
-        {"id": "C", "text": "EventBridge で 30 日ごとに RDS API を直接呼ぶ", "is_correct": false, "explanation": "API 直接呼び出しでパスワード変更しても、参照側のシークレット更新と一貫性確保ができない。"},
-        {"id": "D", "text": "Parameter Store の SecureString に保管", "is_correct": false, "explanation": "Parameter Store にはネイティブな自動ローテーション機能はない (Lambda 自作必要)。"}
+        {
+          "id": "A",
+          "text": "Secrets Manager の \"Rotate this secret\" を有効化し、AWS 提供の Lambda ローテーション関数 (single user / multi user) を選び、30 日間隔を設定する",
+          "is_correct": true,
+          "explanation": "正解。Secrets Manager は RDS と統合済みで、テンプレート Lambda がローテーションを実行する。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda 関数を完全自作する",
+          "is_correct": false,
+          "explanation": "AWS 提供のテンプレートで十分対応でき、自作は車輪の再発明。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge で 30 日ごとに RDS API を直接呼ぶ",
+          "is_correct": false,
+          "explanation": "API 直接呼び出しでパスワード変更しても、参照側のシークレット更新と一貫性確保ができない。"
+        },
+        {
+          "id": "D",
+          "text": "Parameter Store の SecureString に保管",
+          "is_correct": false,
+          "explanation": "Parameter Store にはネイティブな自動ローテーション機能はない (Lambda 自作必要)。"
+        }
       ],
       "explanation": "Secrets Manager は (1) RDS との統合、(2) 自動ローテーション、(3) KMS 暗号化、(4) IAM ベースアクセス制御、を提供する。シークレットローテーション戦略は single user (1 ユーザを書き換え) と multi user (2 ユーザを交互) があり、後者はダウンタイムなし。",
       "references": [
-        {"title": "Rotating secrets for Amazon RDS databases", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-rds.html"}
+        {
+          "title": "Rotating secrets for Amazon RDS databases",
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-rds.html"
+        }
       ],
-      "tags": ["secrets-manager", "rotation", "rds"],
-      "common_mistakes": ["Parameter Store で自動ローテと誤解", "Lambda を一から自作"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "secrets-manager",
+        "rotation",
+        "rds"
+      ],
+      "common_mistakes": [
+        "Parameter Store で自動ローテと誤解",
+        "Lambda を一から自作"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-006",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Aurora cluster encryption",
       "subtopic": "Cluster level",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Aurora MySQL クラスターを暗号化する場合の正しい説明はどれか。",
       "options": [
-        {"id": "A", "text": "暗号化は個々のインスタンス単位で設定する", "is_correct": false, "explanation": "Aurora の暗号化はクラスター単位 (共有ストレージ全体) で設定される。"},
-        {"id": "B", "text": "クラスター単位で暗号化される。共有ストレージ全体・スナップショット・バックアップが対象", "is_correct": true, "explanation": "正解。Aurora は共有ストレージ設計のため、クラスター単位で暗号化を設定する。"},
-        {"id": "C", "text": "Read Replica は別途暗号化キーを指定", "is_correct": false, "explanation": "Aurora Replica は同じクラスターストレージを共有するためキーは同一。"},
-        {"id": "D", "text": "Aurora は暗号化非対応", "is_correct": false, "explanation": "誤り。Aurora は暗号化対応。"}
+        {
+          "id": "A",
+          "text": "Aurora は暗号化非対応",
+          "is_correct": false,
+          "explanation": "誤り。Aurora は暗号化対応。"
+        },
+        {
+          "id": "B",
+          "text": "クラスター単位で暗号化される。共有ストレージ全体・スナップショット・バックアップが対象",
+          "is_correct": true,
+          "explanation": "正解。Aurora は共有ストレージ設計のため、クラスター単位で暗号化を設定する。"
+        },
+        {
+          "id": "C",
+          "text": "Read Replica は別途暗号化キーを指定",
+          "is_correct": false,
+          "explanation": "Aurora Replica は同じクラスターストレージを共有するためキーは同一。"
+        },
+        {
+          "id": "D",
+          "text": "暗号化は個々のインスタンス単位で設定する",
+          "is_correct": false,
+          "explanation": "Aurora の暗号化はクラスター単位 (共有ストレージ全体) で設定される。"
+        }
       ],
       "explanation": "Aurora の暗号化はクラスター作成時に設定し、後から有効化できない (スナップショットコピー経由で切替)。共有ストレージのため設定はクラスター単位。Backup・Snapshot・Read Replica すべて同じ KMS キーで暗号化される。",
       "references": [
-        {"title": "Encrypting an Amazon Aurora DB cluster", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Overview.Encryption.html"}
+        {
+          "title": "Encrypting an Amazon Aurora DB cluster",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Overview.Encryption.html"
+        }
       ],
-      "tags": ["aurora", "encryption", "kms"],
-      "common_mistakes": ["インスタンス単位で暗号化と誤解", "後から暗号化有効化できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "aurora",
+        "encryption",
+        "kms"
+      ],
+      "common_mistakes": [
+        "インスタンス単位で暗号化と誤解",
+        "後から暗号化有効化できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-007",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Audit logging",
       "subtopic": "Aurora MySQL Advanced Auditing",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Aurora MySQL で接続・DML・DDL を監査ログに記録し、CloudWatch Logs に出力したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "クラスターパラメータグループで server_audit_logging=1 と server_audit_events を設定し、ログエクスポートで audit を CloudWatch Logs に出力", "is_correct": true, "explanation": "正解。Aurora MySQL の Advanced Auditing は server_audit_* パラメータで有効化し、CloudWatch Logs エクスポートに連動。"},
-        {"id": "B", "text": "MariaDB Audit Plugin を有効化", "is_correct": false, "explanation": "Aurora MySQL では Advanced Auditing が標準で、別途 Plugin インストールは不要。"},
-        {"id": "C", "text": "Database Activity Streams (DAS) を有効化", "is_correct": false, "explanation": "DAS も監査機能だが Kinesis 経由のリアルタイム配信向け。CloudWatch Logs 出力なら Advanced Auditing。"},
-        {"id": "D", "text": "general_log を有効化", "is_correct": false, "explanation": "全 SQL ログだが性能影響大、専用の監査機能ではない。"}
+        {
+          "id": "A",
+          "text": "MariaDB Audit Plugin を有効化",
+          "is_correct": false,
+          "explanation": "Aurora MySQL では Advanced Auditing が標準で、別途 Plugin インストールは不要。"
+        },
+        {
+          "id": "B",
+          "text": "general_log を有効化",
+          "is_correct": false,
+          "explanation": "全 SQL ログだが性能影響大、専用の監査機能ではない。"
+        },
+        {
+          "id": "C",
+          "text": "クラスターパラメータグループで server_audit_logging=1 と server_audit_events を設定し、ログエクスポートで audit を CloudWatch Logs に出力",
+          "is_correct": true,
+          "explanation": "正解。Aurora MySQL の Advanced Auditing は server_audit_* パラメータで有効化し、CloudWatch Logs エクスポートに連動。"
+        },
+        {
+          "id": "D",
+          "text": "Database Activity Streams (DAS) を有効化",
+          "is_correct": false,
+          "explanation": "DAS も監査機能だが Kinesis 経由のリアルタイム配信向け。CloudWatch Logs 出力なら Advanced Auditing。"
+        }
       ],
       "explanation": "Aurora MySQL は Advanced Auditing が標準提供 (server_audit_*)。リアルタイムストリーム (Kinesis) なら DAS、CloudWatch Logs 中心なら Advanced Auditing と使い分け。",
       "references": [
-        {"title": "Using Advanced Auditing with an Amazon Aurora MySQL DB cluster", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Auditing.html"}
+        {
+          "title": "Using Advanced Auditing with an Amazon Aurora MySQL DB cluster",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Auditing.html"
+        }
       ],
-      "tags": ["aurora", "audit", "advanced-auditing"],
-      "common_mistakes": ["MariaDB Audit Plugin を Aurora MySQL に適用と誤解", "general_log で代替"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "aurora",
+        "audit",
+        "advanced-auditing"
+      ],
+      "common_mistakes": [
+        "MariaDB Audit Plugin を Aurora MySQL に適用と誤解",
+        "general_log で代替"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-008",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "RDS Proxy IAM auth",
       "subtopic": "Lambda integration",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Lambda から Aurora MySQL に接続する際、認証情報をハードコードせず、IAM 経由で安全に認証したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "RDS Proxy で IAM 認証を有効化し、Lambda 実行ロールに rds-db:connect 権限と Secrets Manager 参照権限を付与する", "is_correct": true, "explanation": "正解。RDS Proxy は IAM 認証 + 内部で Secrets Manager を使ってバックエンド DB に接続する。Lambda は IAM トークンで Proxy に接続するためパスワード不要。"},
-        {"id": "B", "text": "Lambda 環境変数にパスワード平文設定", "is_correct": false, "explanation": "セキュリティ違反。"},
-        {"id": "C", "text": "EC2 IAM ロールを Lambda に付ける", "is_correct": false, "explanation": "Lambda は EC2 ではない。Lambda 実行ロールが必要。"},
-        {"id": "D", "text": "Cognito ユーザプールを使う", "is_correct": false, "explanation": "Cognito はエンドユーザ認証で、サービス間認証ではない。"}
+        {
+          "id": "A",
+          "text": "Lambda 環境変数にパスワード平文設定",
+          "is_correct": false,
+          "explanation": "セキュリティ違反。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 IAM ロールを Lambda に付ける",
+          "is_correct": false,
+          "explanation": "Lambda は EC2 ではない。Lambda 実行ロールが必要。"
+        },
+        {
+          "id": "C",
+          "text": "Cognito ユーザプールを使う",
+          "is_correct": false,
+          "explanation": "Cognito はエンドユーザ認証で、サービス間認証ではない。"
+        },
+        {
+          "id": "D",
+          "text": "RDS Proxy で IAM 認証を有効化し、Lambda 実行ロールに rds-db:connect 権限と Secrets Manager 参照権限を付与する",
+          "is_correct": true,
+          "explanation": "正解。RDS Proxy は IAM 認証 + 内部で Secrets Manager を使ってバックエンド DB に接続する。Lambda は IAM トークンで Proxy に接続するためパスワード不要。"
+        }
       ],
       "explanation": "RDS Proxy + IAM 認証 + Secrets Manager の組み合わせは、Lambda の標準的な DB 接続パターン。認証情報が IAM ロールに集約され、自動ローテーションも享受できる。",
       "references": [
-        {"title": "RDS Proxy IAM authentication", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-setup.html#rds-proxy-iam-setup"}
+        {
+          "title": "RDS Proxy IAM authentication",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-setup.html#rds-proxy-iam-setup"
+        }
       ],
-      "tags": ["rds-proxy", "iam", "lambda", "security"],
-      "common_mistakes": ["Cognito で DB 認証", "環境変数に平文"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds-proxy",
+        "iam",
+        "lambda",
+        "security"
+      ],
+      "common_mistakes": [
+        "Cognito で DB 認証",
+        "環境変数に平文"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-009",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Network isolation",
       "subtopic": "Private subnet design",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech 企業の RDS for PostgreSQL を最も安全に隔離したい。最も適切な配置は？",
       "options": [
-        {"id": "A", "text": "プライベートサブネット (NAT 経由のみ Outbound 可、IGW 直結なし) に配置し、SG で App 層からのみアクセス許可", "is_correct": true, "explanation": "正解。プライベートサブネット + 最小許可 SG が標準のセキュアな構成。Inbound はアプリ層 SG ID 参照で限定する。"},
-        {"id": "B", "text": "パブリックサブネットで PubliclyAccessible=true、SG で 0.0.0.0/0 から 5432 を開く", "is_correct": false, "explanation": "公開 DB は重大なアンチパターン。"},
-        {"id": "C", "text": "DMZ サブネットに配置", "is_correct": false, "explanation": "DMZ は外部公開サーバを置く層で DB は置かない。"},
-        {"id": "D", "text": "VPC 外に置き Direct Connect で接続", "is_correct": false, "explanation": "RDS は VPC 内専用サービスで VPC 外には置けない。"}
+        {
+          "id": "A",
+          "text": "プライベートサブネット (NAT 経由のみ Outbound 可、IGW 直結なし) に配置し、SG で App 層からのみアクセス許可",
+          "is_correct": true,
+          "explanation": "正解。プライベートサブネット + 最小許可 SG が標準のセキュアな構成。Inbound はアプリ層 SG ID 参照で限定する。"
+        },
+        {
+          "id": "B",
+          "text": "VPC 外に置き Direct Connect で接続",
+          "is_correct": false,
+          "explanation": "RDS は VPC 内専用サービスで VPC 外には置けない。"
+        },
+        {
+          "id": "C",
+          "text": "パブリックサブネットで PubliclyAccessible=true、SG で 0.0.0.0/0 から 5432 を開く",
+          "is_correct": false,
+          "explanation": "公開 DB は重大なアンチパターン。"
+        },
+        {
+          "id": "D",
+          "text": "DMZ サブネットに配置",
+          "is_correct": false,
+          "explanation": "DMZ は外部公開サーバを置く層で DB は置かない。"
+        }
       ],
       "explanation": "DB はプライベートサブネット配置が基本。インターネットからの直接アクセス不可、アクセスは Bastion / Session Manager / VPN / アプリ層 SG 参照経由のみ。アクセスはセキュリティグループで最小化する。",
       "references": [
-        {"title": "Working with DB subnet groups", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"}
+        {
+          "title": "Working with DB subnet groups",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"
+        }
       ],
-      "tags": ["rds", "vpc", "private-subnet", "fintech"],
-      "common_mistakes": ["パブリックアクセス DB を許容する", "SG を 0.0.0.0/0 で開く"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "vpc",
+        "private-subnet",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "パブリックアクセス DB を許容する",
+        "SG を 0.0.0.0/0 で開く"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-010",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "TDE",
       "subtopic": "SQL Server",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "RDS for SQL Server で個別のデータベース単位に TDE (Transparent Data Encryption) を有効化したい。最も適切な手順は？",
       "options": [
-        {"id": "A", "text": "Option Group で TRANSPARENT_DATA_ENCRYPTION オプションを追加し、SQL Server 上で対象 DB に対し ALTER DATABASE ... SET ENCRYPTION ON を実行", "is_correct": true, "explanation": "正解。RDS SQL Server の TDE は Option Group で機能を有効化した上で、SQL Server 側のコマンドで個別 DB に適用する。"},
-        {"id": "B", "text": "RDS Storage Encryption を有効化すれば自動で TDE になる", "is_correct": false, "explanation": "Storage Encryption (KMS) と SQL Server TDE は別物。重ねて利用できる。"},
-        {"id": "C", "text": "DB パラメータグループで tde=on を設定", "is_correct": false, "explanation": "TDE は Option Group 経由で有効化する。"},
-        {"id": "D", "text": "SQL Server Standard Edition でも TDE は使える", "is_correct": false, "explanation": "SQL Server TDE は Enterprise Edition の機能 (一部の SE はサポートしないバージョンあり)。RDS のエディション制約に注意。"}
+        {
+          "id": "A",
+          "text": "SQL Server Standard Edition でも TDE は使える",
+          "is_correct": false,
+          "explanation": "SQL Server TDE は Enterprise Edition の機能 (一部の SE はサポートしないバージョンあり)。RDS のエディション制約に注意。"
+        },
+        {
+          "id": "B",
+          "text": "Option Group で TRANSPARENT_DATA_ENCRYPTION オプションを追加し、SQL Server 上で対象 DB に対し ALTER DATABASE ... SET ENCRYPTION ON を実行",
+          "is_correct": true,
+          "explanation": "正解。RDS SQL Server の TDE は Option Group で機能を有効化した上で、SQL Server 側のコマンドで個別 DB に適用する。"
+        },
+        {
+          "id": "C",
+          "text": "DB パラメータグループで tde=on を設定",
+          "is_correct": false,
+          "explanation": "TDE は Option Group 経由で有効化する。"
+        },
+        {
+          "id": "D",
+          "text": "RDS Storage Encryption を有効化すれば自動で TDE になる",
+          "is_correct": false,
+          "explanation": "Storage Encryption (KMS) と SQL Server TDE は別物。重ねて利用できる。"
+        }
       ],
       "explanation": "SQL Server TDE は RDS Option Group + SQL Server 内のコマンドで有効化する。AWS 管理ベースの暗号化ヒエラルキーで、ユーザはデータベース暗号化キー (DEK) を作成・適用する。",
       "references": [
-        {"title": "Transparent Data Encryption for SQL Server", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.SQLServer.Options.TDE.html"}
+        {
+          "title": "Transparent Data Encryption for SQL Server",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.SQLServer.Options.TDE.html"
+        }
       ],
-      "tags": ["sql-server", "tde", "option-group"],
-      "common_mistakes": ["Storage Encryption と SQL Server TDE を混同", "パラメータグループで TDE 設定と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "sql-server",
+        "tde",
+        "option-group"
+      ],
+      "common_mistakes": [
+        "Storage Encryption と SQL Server TDE を混同",
+        "パラメータグループで TDE 設定と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-011",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "GuardDuty for RDS",
       "subtopic": "Threat detection",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Aurora MySQL に対する不審なログイン試行・既知の脅威アクターからのアクセスを自動検出したい。最も適切なサービスは？",
       "options": [
-        {"id": "A", "text": "Amazon GuardDuty の RDS Protection を有効化する", "is_correct": true, "explanation": "正解。GuardDuty RDS Protection は Aurora MySQL/PostgreSQL のログイン挙動を分析し、ブルートフォース・既知の悪意あるアクターからのアクセス等を検出する。"},
-        {"id": "B", "text": "AWS WAF で SQL インジェクションをブロック", "is_correct": false, "explanation": "WAF は L7 で、RDS への直接アタッチや認証異常検出はしない。"},
-        {"id": "C", "text": "VPC Flow Logs を Athena で分析", "is_correct": false, "explanation": "ネットワーク層の話で、認証異常の検出には不十分かつ自作の運用負荷が大きい。"},
-        {"id": "D", "text": "Performance Insights のアラート", "is_correct": false, "explanation": "性能監視ツールで、脅威検出ではない。"}
+        {
+          "id": "A",
+          "text": "Performance Insights のアラート",
+          "is_correct": false,
+          "explanation": "性能監視ツールで、脅威検出ではない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS WAF で SQL インジェクションをブロック",
+          "is_correct": false,
+          "explanation": "WAF は L7 で、RDS への直接アタッチや認証異常検出はしない。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon GuardDuty の RDS Protection を有効化する",
+          "is_correct": true,
+          "explanation": "正解。GuardDuty RDS Protection は Aurora MySQL/PostgreSQL のログイン挙動を分析し、ブルートフォース・既知の悪意あるアクターからのアクセス等を検出する。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Flow Logs を Athena で分析",
+          "is_correct": false,
+          "explanation": "ネットワーク層の話で、認証異常の検出には不十分かつ自作の運用負荷が大きい。"
+        }
       ],
       "explanation": "GuardDuty RDS Protection は Aurora の認証ログを分析し、異常なログインパターン (ブルートフォース、既知の悪意 IP からのアクセス、新しい IAM プリンシパル等) を Findings として通知する。Detective や Security Hub と統合可能。",
       "references": [
-        {"title": "Amazon GuardDuty RDS Protection", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/rds-protection.html"}
+        {
+          "title": "Amazon GuardDuty RDS Protection",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/rds-protection.html"
+        }
       ],
-      "tags": ["guardduty", "aurora", "threat-detection"],
-      "common_mistakes": ["WAF が RDS を保護できると誤解", "PI を脅威検出と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "guardduty",
+        "aurora",
+        "threat-detection"
+      ],
+      "common_mistakes": [
+        "WAF が RDS を保護できると誤解",
+        "PI を脅威検出と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-012",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Cross-account access",
       "subtopic": "Encrypted snapshot share",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "本番アカウントで暗号化された RDS スナップショットを開発アカウントに共有して開発用 DB を作りたい。本番アカウントで設定すべきなのは？",
       "options": [
-        {"id": "A", "text": "(1) スナップショットの暗号化キーがカスタマー管理キー (CMK) であること、(2) CMK のキーポリシーで開発アカウントに kms:Decrypt 等を許可、(3) スナップショット共有を開発アカウントへ許可", "is_correct": true, "explanation": "正解。AWS マネージドキー (aws/rds) は共有不可なので CMK 必須。CMK 共有とスナップショット共有の両方が必要。"},
-        {"id": "B", "text": "スナップショット共有のみ許可", "is_correct": false, "explanation": "KMS 鍵を開発アカウントが使えなければ復号不可。"},
-        {"id": "C", "text": "CMK だけを共有", "is_correct": false, "explanation": "スナップショットへのアクセスもないと意味がない。"},
-        {"id": "D", "text": "スナップショットを公開設定にする", "is_correct": false, "explanation": "公開はセキュリティ上極めて危険。アカウント単位の共有が標準。"}
+        {
+          "id": "A",
+          "text": "CMK だけを共有",
+          "is_correct": false,
+          "explanation": "スナップショットへのアクセスもないと意味がない。"
+        },
+        {
+          "id": "B",
+          "text": "スナップショットを公開設定にする",
+          "is_correct": false,
+          "explanation": "公開はセキュリティ上極めて危険。アカウント単位の共有が標準。"
+        },
+        {
+          "id": "C",
+          "text": "スナップショット共有のみ許可",
+          "is_correct": false,
+          "explanation": "KMS 鍵を開発アカウントが使えなければ復号不可。"
+        },
+        {
+          "id": "D",
+          "text": "(1) スナップショットの暗号化キーがカスタマー管理キー (CMK) であること、(2) CMK のキーポリシーで開発アカウントに kms:Decrypt 等を許可、(3) スナップショット共有を開発アカウントへ許可",
+          "is_correct": true,
+          "explanation": "正解。AWS マネージドキー (aws/rds) は共有不可なので CMK 必須。CMK 共有とスナップショット共有の両方が必要。"
+        }
       ],
       "explanation": "暗号化スナップショットのクロスアカウント共有は CMK + スナップショットの両方の共有が必要。AWS マネージドキー (aws/rds) は共有できないため、本番でカスタマー管理キーを使う設計が前提となる。",
       "references": [
-        {"title": "Sharing encrypted snapshots", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html#USER_ShareSnapshot.Encrypted"}
+        {
+          "title": "Sharing encrypted snapshots",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html#USER_ShareSnapshot.Encrypted"
+        }
       ],
-      "tags": ["rds", "snapshot", "kms", "cross-account"],
-      "common_mistakes": ["CMK 共有を忘れる", "スナップショットを公開してしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "snapshot",
+        "kms",
+        "cross-account"
+      ],
+      "common_mistakes": [
+        "CMK 共有を忘れる",
+        "スナップショットを公開してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-013",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Key rotation",
       "subtopic": "KMS automatic rotation",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "RDS の暗号化に使っている KMS カスタマー管理キーをコンプライアンス要件で定期ローテーションしたい。最も適切な方法は？",
       "options": [
-        {"id": "A", "text": "KMS の自動ローテーション (年次) を有効化する", "is_correct": true, "explanation": "正解。KMS CMK は自動ローテーション (年次、Symmetric KMS keyのみ) を提供。透過的に行われ、データの再暗号化は不要 (バッキングキーが切り替わるだけ)。"},
-        {"id": "B", "text": "毎年新しい KMS キーを作成し、全 RDS データを再暗号化する", "is_correct": false, "explanation": "再暗号化は大規模な作業。自動ローテーションで足りる。"},
-        {"id": "C", "text": "RDS 側でパスワードローテーションを有効化", "is_correct": false, "explanation": "DB ユーザのパスワードと KMS キーは別物。"},
-        {"id": "D", "text": "Lambda で API を毎月呼ぶ", "is_correct": false, "explanation": "ネイティブ機能で自動化されているので不要。"}
+        {
+          "id": "A",
+          "text": "KMS の自動ローテーション (年次) を有効化する",
+          "is_correct": true,
+          "explanation": "正解。KMS CMK は自動ローテーション (年次、Symmetric KMS keyのみ) を提供。透過的に行われ、データの再暗号化は不要 (バッキングキーが切り替わるだけ)。"
+        },
+        {
+          "id": "B",
+          "text": "毎年新しい KMS キーを作成し、全 RDS データを再暗号化する",
+          "is_correct": false,
+          "explanation": "再暗号化は大規模な作業。自動ローテーションで足りる。"
+        },
+        {
+          "id": "C",
+          "text": "RDS 側でパスワードローテーションを有効化",
+          "is_correct": false,
+          "explanation": "DB ユーザのパスワードと KMS キーは別物。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で API を毎月呼ぶ",
+          "is_correct": false,
+          "explanation": "ネイティブ機能で自動化されているので不要。"
+        }
       ],
       "explanation": "KMS の自動キーローテーションは Symmetric Customer Managed Key で年次の自動ローテーションをサポート。古いバッキングキーも保持されるため、過去暗号化データの復号に支障なし。コンプライアンス要件には十分。",
       "references": [
-        {"title": "Rotating AWS KMS keys", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"}
+        {
+          "title": "Rotating AWS KMS keys",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"
+        }
       ],
-      "tags": ["kms", "rotation", "compliance"],
-      "common_mistakes": ["全データ再暗号化が必要と誤解", "DB パスワードと KMS キーを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "kms",
+        "rotation",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "全データ再暗号化が必要と誤解",
+        "DB パスワードと KMS キーを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-014",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "DynamoDB encryption",
       "subtopic": "KMS",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "DynamoDB テーブルの保管時暗号化に関する正しい説明はどれか。",
       "options": [
-        {"id": "A", "text": "デフォルトで AWS 所有キーで暗号化されており、AWS マネージドキーまたは CMK に切替可能", "is_correct": true, "explanation": "正解。DynamoDB は常に保管時暗号化されており、3 種のキー (AWS owned / AWS managed / Customer managed) から選択。"},
-        {"id": "B", "text": "デフォルトでは暗号化されておらず、明示的有効化が必要", "is_correct": false, "explanation": "DynamoDB は最初から暗号化されている。"},
-        {"id": "C", "text": "暗号化はオプションで追加課金される", "is_correct": false, "explanation": "AWS owned key の暗号化は追加課金なし。AWS managed / customer managed は KMS 利用料が発生。"},
-        {"id": "D", "text": "暗号化対象外のテーブルが作れる", "is_correct": false, "explanation": "DynamoDB では平文 (暗号化なし) テーブルは作れない。"}
+        {
+          "id": "A",
+          "text": "暗号化はオプションで追加課金される",
+          "is_correct": false,
+          "explanation": "AWS owned key の暗号化は追加課金なし。AWS managed / customer managed は KMS 利用料が発生。"
+        },
+        {
+          "id": "B",
+          "text": "デフォルトで AWS 所有キーで暗号化されており、AWS マネージドキーまたは CMK に切替可能",
+          "is_correct": true,
+          "explanation": "正解。DynamoDB は常に保管時暗号化されており、3 種のキー (AWS owned / AWS managed / Customer managed) から選択。"
+        },
+        {
+          "id": "C",
+          "text": "暗号化対象外のテーブルが作れる",
+          "is_correct": false,
+          "explanation": "DynamoDB では平文 (暗号化なし) テーブルは作れない。"
+        },
+        {
+          "id": "D",
+          "text": "デフォルトでは暗号化されておらず、明示的有効化が必要",
+          "is_correct": false,
+          "explanation": "DynamoDB は最初から暗号化されている。"
+        }
       ],
       "explanation": "DynamoDB は 2018 年以降全テーブルが保管時暗号化され、3 種類のキーから選択可能。AWS 所有キーは無料、AWS マネージドキーと CMK は KMS 課金あり。CMK の利点は監査・アクセス制御の細粒度。",
       "references": [
-        {"title": "DynamoDB encryption at rest", "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html"}
+        {
+          "title": "DynamoDB encryption at rest",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html"
+        }
       ],
-      "tags": ["dynamodb", "encryption", "kms"],
-      "common_mistakes": ["DynamoDB が暗号化なしテーブルを作れると誤解", "暗号化に必ず追加課金と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dynamodb",
+        "encryption",
+        "kms"
+      ],
+      "common_mistakes": [
+        "DynamoDB が暗号化なしテーブルを作れると誤解",
+        "暗号化に必ず追加課金と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-015",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Compliance",
       "subtopic": "HIPAA workload",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "医療系 SaaS が HIPAA 準拠で患者データを Aurora PostgreSQL に格納する。必須となる構成として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "(1) 保管時暗号化 (KMS)、(2) 通信暗号化 (TLS)、(3) BAA 締結、(4) アクセスログ・監査ログ (DAS or PostgreSQL ログ)、(5) 最小権限 IAM/ DB ロール", "is_correct": true, "explanation": "正解。HIPAA 対応の標準セット。BAA (Business Associate Addendum) は AWS と締結する契約。"},
-        {"id": "B", "text": "保管時暗号化のみ", "is_correct": false, "explanation": "HIPAA は保管時・通信時両方の暗号化を要求し、監査も必要。"},
-        {"id": "C", "text": "Multi-AZ 構成のみ", "is_correct": false, "explanation": "Multi-AZ は可用性で HIPAA セキュリティ要件とは別軸。"},
-        {"id": "D", "text": "VPC で隔離するだけで十分", "is_correct": false, "explanation": "ネットワーク隔離だけでは暗号化・監査・契約の要件が抜ける。"}
+        {
+          "id": "A",
+          "text": "保管時暗号化のみ",
+          "is_correct": false,
+          "explanation": "HIPAA は保管時・通信時両方の暗号化を要求し、監査も必要。"
+        },
+        {
+          "id": "B",
+          "text": "Multi-AZ 構成のみ",
+          "is_correct": false,
+          "explanation": "Multi-AZ は可用性で HIPAA セキュリティ要件とは別軸。"
+        },
+        {
+          "id": "C",
+          "text": "(1) 保管時暗号化 (KMS)、(2) 通信暗号化 (TLS)、(3) BAA 締結、(4) アクセスログ・監査ログ (DAS or PostgreSQL ログ)、(5) 最小権限 IAM/ DB ロール",
+          "is_correct": true,
+          "explanation": "正解。HIPAA 対応の標準セット。BAA (Business Associate Addendum) は AWS と締結する契約。"
+        },
+        {
+          "id": "D",
+          "text": "VPC で隔離するだけで十分",
+          "is_correct": false,
+          "explanation": "ネットワーク隔離だけでは暗号化・監査・契約の要件が抜ける。"
+        }
       ],
       "explanation": "HIPAA 準拠は単一の機能ではなく、複数のコントロールの組み合わせ (技術 + 契約)。AWS HIPAA Eligible Service の利用、暗号化 (at rest / in transit)、監査、最小権限、BAA 締結が必須。",
       "references": [
-        {"title": "AWS HIPAA Eligible Services", "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"}
+        {
+          "title": "AWS HIPAA Eligible Services",
+          "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"
+        }
       ],
-      "tags": ["hipaa", "compliance", "healthcare", "aurora"],
-      "common_mistakes": ["BAA 締結を忘れる", "暗号化だけで HIPAA 準拠と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "hipaa",
+        "compliance",
+        "healthcare",
+        "aurora"
+      ],
+      "common_mistakes": [
+        "BAA 締結を忘れる",
+        "暗号化だけで HIPAA 準拠と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-016",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Privilege management",
       "subtopic": "PostgreSQL roles",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "RDS for PostgreSQL でアプリ専用の最小権限ユーザを作りたい。最も適切な手順は？",
       "options": [
-        {"id": "A", "text": "アプリ用 DB ロールを作成し、必要なスキーマ・テーブルへの GRANT/REVOKE を最小権限で設定する。スーパーユーザ rds_superuser には絶対付与しない", "is_correct": true, "explanation": "正解。アプリ用ロールは最小権限の原則 (PoLP) に従い、必要な権限のみ付与する。rds_superuser はマスター管理用で、アプリには絶対付与しない。"},
-        {"id": "B", "text": "マスターユーザの認証情報をアプリで使う", "is_correct": false, "explanation": "最小権限違反。"},
-        {"id": "C", "text": "rds_superuser ロールを付与", "is_correct": false, "explanation": "管理者権限相当で誤った権限分離。"},
-        {"id": "D", "text": "PUBLIC ロールに権限を付ける", "is_correct": false, "explanation": "全ユーザ (PUBLIC) に権限を付ける = 最小権限違反。"}
+        {
+          "id": "A",
+          "text": "rds_superuser ロールを付与",
+          "is_correct": false,
+          "explanation": "管理者権限相当で誤った権限分離。"
+        },
+        {
+          "id": "B",
+          "text": "マスターユーザの認証情報をアプリで使う",
+          "is_correct": false,
+          "explanation": "最小権限違反。"
+        },
+        {
+          "id": "C",
+          "text": "PUBLIC ロールに権限を付ける",
+          "is_correct": false,
+          "explanation": "全ユーザ (PUBLIC) に権限を付ける = 最小権限違反。"
+        },
+        {
+          "id": "D",
+          "text": "アプリ用 DB ロールを作成し、必要なスキーマ・テーブルへの GRANT/REVOKE を最小権限で設定する。スーパーユーザ rds_superuser には絶対付与しない",
+          "is_correct": true,
+          "explanation": "正解。アプリ用ロールは最小権限の原則 (PoLP) に従い、必要な権限のみ付与する。rds_superuser はマスター管理用で、アプリには絶対付与しない。"
+        }
       ],
       "explanation": "最小権限 (Least Privilege) はセキュリティの基本原則。アプリ用ロールには SELECT/INSERT/UPDATE/DELETE を必要なテーブルだけに付与し、DDL や他スキーマへの権限は付けない。マスターユーザは管理用で運用中のアプリには使わない。",
       "references": [
-        {"title": "Master user account privileges", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.MasterAccounts.html"}
+        {
+          "title": "Master user account privileges",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.MasterAccounts.html"
+        }
       ],
-      "tags": ["postgresql", "iam", "least-privilege"],
-      "common_mistakes": ["マスターユーザをアプリで使う", "rds_superuser を不適切に付与"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "postgresql",
+        "iam",
+        "least-privilege"
+      ],
+      "common_mistakes": [
+        "マスターユーザをアプリで使う",
+        "rds_superuser を不適切に付与"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-017",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Compromised credentials",
       "subtopic": "Incident response",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "RDS for MySQL のマスターユーザパスワードが漏洩した可能性がある。最初に取るべき適切な対応は？",
       "options": [
-        {"id": "A", "text": "(1) パスワードを即座にローテーション、(2) 不審なアクセスを CloudTrail / 監査ログで確認、(3) 監査ログ未取得なら今後のため有効化、(4) 必要に応じてアプリの認証情報も更新", "is_correct": true, "explanation": "正解。漏洩時はまず認証情報を無効化 (新パスワード) し、被害状況を監査ログで確認、再発防止策を講じる順序が定石。"},
-        {"id": "B", "text": "RDS インスタンスを削除して新規作成", "is_correct": false, "explanation": "過剰反応で業務影響大。原因究明・対応の手順を踏むべき。"},
-        {"id": "C", "text": "パスワードはそのままセキュリティグループだけ閉じる", "is_correct": false, "explanation": "正規アクセスも遮断され、業務継続性を損なう。漏洩したパスワード自体の無効化が必要。"},
-        {"id": "D", "text": "AWS Backup でリストアする", "is_correct": false, "explanation": "リストアはパスワード漏洩問題と無関係。"}
+        {
+          "id": "A",
+          "text": "(1) パスワードを即座にローテーション、(2) 不審なアクセスを CloudTrail / 監査ログで確認、(3) 監査ログ未取得なら今後のため有効化、(4) 必要に応じてアプリの認証情報も更新",
+          "is_correct": true,
+          "explanation": "正解。漏洩時はまず認証情報を無効化 (新パスワード) し、被害状況を監査ログで確認、再発防止策を講じる順序が定石。"
+        },
+        {
+          "id": "B",
+          "text": "パスワードはそのままセキュリティグループだけ閉じる",
+          "is_correct": false,
+          "explanation": "正規アクセスも遮断され、業務継続性を損なう。漏洩したパスワード自体の無効化が必要。"
+        },
+        {
+          "id": "C",
+          "text": "RDS インスタンスを削除して新規作成",
+          "is_correct": false,
+          "explanation": "過剰反応で業務影響大。原因究明・対応の手順を踏むべき。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Backup でリストアする",
+          "is_correct": false,
+          "explanation": "リストアはパスワード漏洩問題と無関係。"
+        }
       ],
       "explanation": "認証情報漏洩のインシデント対応は (1) Containment: パスワード即時変更、(2) Eradication: 異常アクセスの停止、(3) Recovery: 通常運用復帰、(4) Lessons Learned: 再発防止 (Secrets Manager 自動ローテーション、IAM 認証への移行など)。",
       "references": [
-        {"title": "AWS Security Incident Response", "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/welcome.html"}
+        {
+          "title": "AWS Security Incident Response",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/welcome.html"
+        }
       ],
-      "tags": ["security", "incident-response", "credentials"],
-      "common_mistakes": ["過剰反応で削除", "パスワード変更を後回し"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security",
+        "incident-response",
+        "credentials"
+      ],
+      "common_mistakes": [
+        "過剰反応で削除",
+        "パスワード変更を後回し"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-018",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "VPC endpoints",
       "subtopic": "Private connectivity",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "Lambda から Aurora MySQL に接続する経路をインターネット非経由・閉域にしたい。最も妥当な構成は？",
       "options": [
-        {"id": "A", "text": "Lambda を VPC に配置し、Aurora と同 VPC 内のプライベートサブネットで接続。Secrets Manager / KMS への呼び出しは VPC エンドポイント (Interface Endpoint) 経由", "is_correct": true, "explanation": "正解。Lambda の VPC 統合 + RDS との VPC 内通信 + AWS API への Interface VPC Endpoint で完全閉域。"},
-        {"id": "B", "text": "Lambda を VPC 外に置き、Aurora をパブリックアクセス可能にする", "is_correct": false, "explanation": "閉域要件に反する。"},
-        {"id": "C", "text": "NAT Gateway 経由で AWS API を呼ぶ", "is_correct": false, "explanation": "NAT Gateway はインターネット経由になる (パブリック空間を通る)。閉域要件で不適。"},
-        {"id": "D", "text": "Aurora を VPC エンドポイントで公開", "is_correct": false, "explanation": "Aurora 自体を VPC エンドポイントで公開する仕組みは存在しない (RDS Proxy 経由は別)。"}
+        {
+          "id": "A",
+          "text": "Aurora を VPC エンドポイントで公開",
+          "is_correct": false,
+          "explanation": "Aurora 自体を VPC エンドポイントで公開する仕組みは存在しない (RDS Proxy 経由は別)。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda を VPC に配置し、Aurora と同 VPC 内のプライベートサブネットで接続。Secrets Manager / KMS への呼び出しは VPC エンドポイント (Interface Endpoint) 経由",
+          "is_correct": true,
+          "explanation": "正解。Lambda の VPC 統合 + RDS との VPC 内通信 + AWS API への Interface VPC Endpoint で完全閉域。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda を VPC 外に置き、Aurora をパブリックアクセス可能にする",
+          "is_correct": false,
+          "explanation": "閉域要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "NAT Gateway 経由で AWS API を呼ぶ",
+          "is_correct": false,
+          "explanation": "NAT Gateway はインターネット経由になる (パブリック空間を通る)。閉域要件で不適。"
+        }
       ],
       "explanation": "完全閉域経路は (1) Lambda VPC 統合、(2) RDS と同 VPC・プライベートサブネット、(3) AWS API へは Interface VPC Endpoint、(4) S3 など対応サービスは Gateway VPC Endpoint を組み合わせる。",
       "references": [
-        {"title": "VPC endpoints", "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html"}
+        {
+          "title": "VPC endpoints",
+          "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html"
+        }
       ],
-      "tags": ["vpc-endpoint", "lambda", "private-connectivity"],
-      "common_mistakes": ["NAT Gateway を閉域と誤解", "VPC エンドポイントの種類を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "vpc-endpoint",
+        "lambda",
+        "private-connectivity"
+      ],
+      "common_mistakes": [
+        "NAT Gateway を閉域と誤解",
+        "VPC エンドポイントの種類を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-019",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Database Activity Streams",
       "subtopic": "Real-time audit",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Aurora PostgreSQL の Database Activity Streams (DAS) について最も正確な説明はどれか。",
       "options": [
-        {"id": "A", "text": "アクティビティを Kinesis Data Streams にリアルタイム配信し、KMS 暗号化される。SIEM 統合や監査要件で利用される", "is_correct": true, "explanation": "正解。DAS はリアルタイムアクティビティを KMS 暗号化された Kinesis ストリームに配信し、外部 SIEM への取り込みを可能にする。"},
-        {"id": "B", "text": "S3 にバッチで毎時出力される", "is_correct": false, "explanation": "S3 への直接バッチ出力ではなく、Kinesis 経由のリアルタイムストリーム。"},
-        {"id": "C", "text": "DAS を有効化すると DB が再起動する", "is_correct": false, "explanation": "再起動は不要 (デタッチ時に必要な場合あり)。"},
-        {"id": "D", "text": "DAS は CloudWatch Logs を直接利用する", "is_correct": false, "explanation": "DAS は Kinesis 経由で、CloudWatch Logs ではない。"}
+        {
+          "id": "A",
+          "text": "DAS は CloudWatch Logs を直接利用する",
+          "is_correct": false,
+          "explanation": "DAS は Kinesis 経由で、CloudWatch Logs ではない。"
+        },
+        {
+          "id": "B",
+          "text": "DAS を有効化すると DB が再起動する",
+          "is_correct": false,
+          "explanation": "再起動は不要 (デタッチ時に必要な場合あり)。"
+        },
+        {
+          "id": "C",
+          "text": "アクティビティを Kinesis Data Streams にリアルタイム配信し、KMS 暗号化される。SIEM 統合や監査要件で利用される",
+          "is_correct": true,
+          "explanation": "正解。DAS はリアルタイムアクティビティを KMS 暗号化された Kinesis ストリームに配信し、外部 SIEM への取り込みを可能にする。"
+        },
+        {
+          "id": "D",
+          "text": "S3 にバッチで毎時出力される",
+          "is_correct": false,
+          "explanation": "S3 への直接バッチ出力ではなく、Kinesis 経由のリアルタイムストリーム。"
+        }
       ],
       "explanation": "DAS は Aurora MySQL/PostgreSQL/RDS Oracle で利用可能。Kinesis Data Streams 経由で外部 SIEM に取り込むのが主用途。Async/Sync 2 モードがあり、Sync は性能影響あるが完全捕捉、Async はわずかなロスありで影響小。",
       "references": [
-        {"title": "Database Activity Streams", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html"}
+        {
+          "title": "Database Activity Streams",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html"
+        }
       ],
-      "tags": ["das", "kinesis", "audit"],
-      "common_mistakes": ["DAS が CloudWatch Logs と誤解", "DAS が S3 にバッチ出力と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "das",
+        "kinesis",
+        "audit"
+      ],
+      "common_mistakes": [
+        "DAS が CloudWatch Logs と誤解",
+        "DAS が S3 にバッチ出力と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-020",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Defense in depth",
       "subtopic": "Multiple layers",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "RDS for PostgreSQL に対する Defense in Depth (多層防御) の構成として、最も妥当な層の組み合わせは？",
       "options": [
-        {"id": "A", "text": "(1) ネットワーク: VPC + プライベートサブネット + SG/NACL、(2) IAM: 最小権限ロール + IAM DB 認証 / Secrets Manager、(3) DB エンジン: ロール権限 + 監査ログ、(4) 暗号化: KMS at rest + TLS in transit、(5) 検知: GuardDuty RDS Protection + Security Hub", "is_correct": true, "explanation": "正解。多層防御はネットワーク・IAM・DB・暗号化・検知の各層を独立して強化することで、1 層が破られても他層が防ぐ設計思想。"},
-        {"id": "B", "text": "暗号化のみ強化", "is_correct": false, "explanation": "1 層のみで多層防御にならない。"},
-        {"id": "C", "text": "セキュリティグループのみ強化", "is_correct": false, "explanation": "ネットワーク層だけ。"},
-        {"id": "D", "text": "DB のパスワードを長くするだけ", "is_correct": false, "explanation": "認証強化 1 点のみ。"}
+        {
+          "id": "A",
+          "text": "セキュリティグループのみ強化",
+          "is_correct": false,
+          "explanation": "ネットワーク層だけ。"
+        },
+        {
+          "id": "B",
+          "text": "DB のパスワードを長くするだけ",
+          "is_correct": false,
+          "explanation": "認証強化 1 点のみ。"
+        },
+        {
+          "id": "C",
+          "text": "暗号化のみ強化",
+          "is_correct": false,
+          "explanation": "1 層のみで多層防御にならない。"
+        },
+        {
+          "id": "D",
+          "text": "(1) ネットワーク: VPC + プライベートサブネット + SG/NACL、(2) IAM: 最小権限ロール + IAM DB 認証 / Secrets Manager、(3) DB エンジン: ロール権限 + 監査ログ、(4) 暗号化: KMS at rest + TLS in transit、(5) 検知: GuardDuty RDS Protection + Security Hub",
+          "is_correct": true,
+          "explanation": "正解。多層防御はネットワーク・IAM・DB・暗号化・検知の各層を独立して強化することで、1 層が破られても他層が防ぐ設計思想。"
+        }
       ],
       "explanation": "Defense in Depth は AWS Well-Architected Framework のセキュリティ柱で推奨される設計原則。ネットワーク・ID&アクセス管理・データ保護・検知・インシデント対応の複数層を独立して強化することで、単一障害点をなくす。",
       "references": [
-        {"title": "AWS Well-Architected Framework - Security Pillar", "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"}
+        {
+          "title": "AWS Well-Architected Framework - Security Pillar",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"
+        }
       ],
-      "tags": ["defense-in-depth", "well-architected", "security"],
-      "common_mistakes": ["1 層だけ強化して安心", "層の独立性を意識しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "defense-in-depth",
+        "well-architected",
+        "security"
+      ],
+      "common_mistakes": [
+        "1 層だけ強化して安心",
+        "層の独立性を意識しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-021",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "PII / Data classification",
       "subtopic": "Macie integration",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "RDS スナップショットを S3 にエクスポート (Parquet) し、PII が含まれていないかを継続的に監視したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "RDS スナップショットを S3 へエクスポートし、Amazon Macie で対象バケットの PII 検出ジョブを定期実行する", "is_correct": true, "explanation": "正解。RDS Snapshot Export to S3 (Parquet) → Macie で PII 検出 が S3 上での自動分類の標準パターン。"},
-        {"id": "B", "text": "RDS の DB に直接 Macie を接続", "is_correct": false, "explanation": "Macie は S3 専用で、RDS DB を直接スキャンしない。"},
-        {"id": "C", "text": "AWS Config ルールで PII を検出", "is_correct": false, "explanation": "Config は設定評価でデータ内容の検査機能はない。"},
-        {"id": "D", "text": "GuardDuty で PII を検出", "is_correct": false, "explanation": "GuardDuty は脅威検知で、PII 検出は Macie の役割。"}
+        {
+          "id": "A",
+          "text": "RDS スナップショットを S3 へエクスポートし、Amazon Macie で対象バケットの PII 検出ジョブを定期実行する",
+          "is_correct": true,
+          "explanation": "正解。RDS Snapshot Export to S3 (Parquet) → Macie で PII 検出 が S3 上での自動分類の標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "GuardDuty で PII を検出",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検知で、PII 検出は Macie の役割。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config ルールで PII を検出",
+          "is_correct": false,
+          "explanation": "Config は設定評価でデータ内容の検査機能はない。"
+        },
+        {
+          "id": "D",
+          "text": "RDS の DB に直接 Macie を接続",
+          "is_correct": false,
+          "explanation": "Macie は S3 専用で、RDS DB を直接スキャンしない。"
+        }
       ],
       "explanation": "Macie は S3 オブジェクトを ML ベースで自動分類し PII (氏名・SSN・カード番号等) を検出する専用サービス。RDS のデータを S3 にエクスポートしてスキャンするのが標準。",
       "references": [
-        {"title": "Amazon Macie", "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"}
+        {
+          "title": "Amazon Macie",
+          "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
+        }
       ],
-      "tags": ["macie", "pii", "data-classification"],
-      "common_mistakes": ["Macie が RDS を直接スキャンと誤解", "GuardDuty と Macie の役割を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "macie",
+        "pii",
+        "data-classification"
+      ],
+      "common_mistakes": [
+        "Macie が RDS を直接スキャンと誤解",
+        "GuardDuty と Macie の役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-022",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Aurora cluster IAM auth limits",
       "subtopic": "Connection rate",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Aurora MySQL で IAM データベース認証を本番で使ったところ、ピーク時に \"too many connection attempts\" エラーが出る。最も妥当な原因は？",
       "options": [
-        {"id": "A", "text": "IAM 認証は接続レート制限 (~200 接続/秒/インスタンス) があり、Lambda 大量同時実行で超過した。RDS Proxy 経由で接続プールするのが対処", "is_correct": true, "explanation": "正解。IAM DB 認証は接続レートに制限がある。RDS Proxy 導入で接続プールを使えば、IAM 認証の頻度を減らせる。"},
-        {"id": "B", "text": "IAM 認証は無制限なので、エラーは別原因", "is_correct": false, "explanation": "無制限ではない。レート制限が文書化されている。"},
-        {"id": "C", "text": "Aurora のスペック不足", "is_correct": false, "explanation": "メッセージは IAM 認証の制限。"},
-        {"id": "D", "text": "TLS 接続必須エラー", "is_correct": false, "explanation": "別のエラーメッセージ。"}
+        {
+          "id": "A",
+          "text": "Aurora のスペック不足",
+          "is_correct": false,
+          "explanation": "メッセージは IAM 認証の制限。"
+        },
+        {
+          "id": "B",
+          "text": "IAM 認証は接続レート制限 (~200 接続/秒/インスタンス) があり、Lambda 大量同時実行で超過した。RDS Proxy 経由で接続プールするのが対処",
+          "is_correct": true,
+          "explanation": "正解。IAM DB 認証は接続レートに制限がある。RDS Proxy 導入で接続プールを使えば、IAM 認証の頻度を減らせる。"
+        },
+        {
+          "id": "C",
+          "text": "IAM 認証は無制限なので、エラーは別原因",
+          "is_correct": false,
+          "explanation": "無制限ではない。レート制限が文書化されている。"
+        },
+        {
+          "id": "D",
+          "text": "TLS 接続必須エラー",
+          "is_correct": false,
+          "explanation": "別のエラーメッセージ。"
+        }
       ],
       "explanation": "IAM DB 認証は接続レート制限がある (約 200 接続/秒/RDS インスタンス、ドキュメント参照)。Lambda 大量同時実行のような短命接続パターンでは RDS Proxy + IAM 認証を組み合わせて、Lambda → Proxy は IAM、Proxy → DB は通常認証 (内部) で接続プール効果を享受する。",
       "references": [
-        {"title": "Limitations of IAM database authentication", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"}
+        {
+          "title": "Limitations of IAM database authentication",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"
+        }
       ],
-      "tags": ["iam-auth", "rds-proxy", "rate-limit"],
-      "common_mistakes": ["IAM 認証が無制限と誤解", "RDS Proxy の役割を理解しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "iam-auth",
+        "rds-proxy",
+        "rate-limit"
+      ],
+      "common_mistakes": [
+        "IAM 認証が無制限と誤解",
+        "RDS Proxy の役割を理解しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-023",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Comprehensive security strategy",
       "subtopic": "Evaluation",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "FinTech B2B SaaS のセキュリティ責任者として、Aurora PostgreSQL の総合セキュリティ姿勢を評価する。最も総合的に妥当な戦略は？",
       "options": [
-        {"id": "A", "text": "(1) プライベートサブネット + 厳格な SG、(2) KMS CMK で保管時暗号化、(3) TLS 強制、(4) IAM 認証 + Secrets Manager 自動ローテーション、(5) DAS で監査ログ → SIEM、(6) GuardDuty RDS Protection + Security Hub、(7) AWS Backup の Vault Lock、(8) Macie で PII 検出 (S3 エクスポート時)", "is_correct": true, "explanation": "正解。多層防御 + 認証 + 暗号化 + 監査 + 検知 + バックアップ + データ分類 を網羅し、FinTech レギュレーション (PCI-DSS / SOX) にも対応する完成度の高い設計。"},
-        {"id": "B", "text": "暗号化のみ", "is_correct": false, "explanation": "監査・検知が欠如し、FinTech 要件として不十分。"},
-        {"id": "C", "text": "セキュリティグループのみ", "is_correct": false, "explanation": "他のセキュリティ層が欠落。"},
-        {"id": "D", "text": "全部 IAM ポリシーで制御", "is_correct": false, "explanation": "IAM だけでは DB エンジン内のロール権限・監査・暗号化に対応できない。"}
+        {
+          "id": "A",
+          "text": "全部 IAM ポリシーで制御",
+          "is_correct": false,
+          "explanation": "IAM だけでは DB エンジン内のロール権限・監査・暗号化に対応できない。"
+        },
+        {
+          "id": "B",
+          "text": "暗号化のみ",
+          "is_correct": false,
+          "explanation": "監査・検知が欠如し、FinTech 要件として不十分。"
+        },
+        {
+          "id": "C",
+          "text": "(1) プライベートサブネット + 厳格な SG、(2) KMS CMK で保管時暗号化、(3) TLS 強制、(4) IAM 認証 + Secrets Manager 自動ローテーション、(5) DAS で監査ログ → SIEM、(6) GuardDuty RDS Protection + Security Hub、(7) AWS Backup の Vault Lock、(8) Macie で PII 検出 (S3 エクスポート時)",
+          "is_correct": true,
+          "explanation": "正解。多層防御 + 認証 + 暗号化 + 監査 + 検知 + バックアップ + データ分類 を網羅し、FinTech レギュレーション (PCI-DSS / SOX) にも対応する完成度の高い設計。"
+        },
+        {
+          "id": "D",
+          "text": "セキュリティグループのみ",
+          "is_correct": false,
+          "explanation": "他のセキュリティ層が欠落。"
+        }
       ],
       "explanation": "FinTech のセキュリティ姿勢評価は単一機能で測れない。Well-Architected Security Pillar の全 6 領域 (IAM、検知、インフラ保護、データ保護、インシデント対応、アプリ保護) を網羅し、AWS Audit Manager 等で継続的にコンプライアンス姿勢を確認する。",
       "references": [
-        {"title": "AWS Audit Manager", "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html"}
+        {
+          "title": "AWS Audit Manager",
+          "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html"
+        }
       ],
-      "tags": ["fintech", "comprehensive-security", "evaluation"],
-      "common_mistakes": ["単一層で防御と誤解", "監査・検知の重要性を軽視"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "fintech",
+        "comprehensive-security",
+        "evaluation"
+      ],
+      "common_mistakes": [
+        "単一層で防御と誤解",
+        "監査・検知の重要性を軽視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-024",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Tradeoff analysis",
       "subtopic": "DAS sync vs async",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "Aurora MySQL で DAS を有効化する際、Synchronous モードと Asynchronous モードのトレードオフを評価する。次のうち最も正確な評価は？",
       "options": [
-        {"id": "A", "text": "Sync は性能影響 (最大 5-15%) があるが完全捕捉、Async は性能影響が小さいがイベント欠落の可能性あり。コンプライアンス重視なら Sync、性能重視なら Async", "is_correct": true, "explanation": "正解。Sync は SQL 実行とアクティビティ記録を同期するため遅延あり、Async は非同期でわずかにロスがあるが性能影響が小さい。要件次第。"},
-        {"id": "B", "text": "両者は同じ性能で違いはない", "is_correct": false, "explanation": "明確な性能差がある。"},
-        {"id": "C", "text": "Async モードはイベント欠落しない", "is_correct": false, "explanation": "わずかなロスの可能性が公式文書化されている。"},
-        {"id": "D", "text": "Sync は無料、Async は有料", "is_correct": false, "explanation": "両者ともに同じ Kinesis 課金モデル。"}
+        {
+          "id": "A",
+          "text": "Sync は無料、Async は有料",
+          "is_correct": false,
+          "explanation": "両者ともに同じ Kinesis 課金モデル。"
+        },
+        {
+          "id": "B",
+          "text": "両者は同じ性能で違いはない",
+          "is_correct": false,
+          "explanation": "明確な性能差がある。"
+        },
+        {
+          "id": "C",
+          "text": "Async モードはイベント欠落しない",
+          "is_correct": false,
+          "explanation": "わずかなロスの可能性が公式文書化されている。"
+        },
+        {
+          "id": "D",
+          "text": "Sync は性能影響 (最大 5-15%) があるが完全捕捉、Async は性能影響が小さいがイベント欠落の可能性あり。コンプライアンス重視なら Sync、性能重視なら Async",
+          "is_correct": true,
+          "explanation": "正解。Sync は SQL 実行とアクティビティ記録を同期するため遅延あり、Async は非同期でわずかにロスがあるが性能影響が小さい。要件次第。"
+        }
       ],
       "explanation": "DAS の Sync/Async 選択はコンプライアンス完全性と性能のトレードオフ。SOX/SEC のような証跡完全性要件には Sync、性能影響を抑えたいオブザーバビリティ用途には Async。",
       "references": [
-        {"title": "Database Activity Streams modes", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html"}
+        {
+          "title": "Database Activity Streams modes",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html"
+        }
       ],
-      "tags": ["das", "sync", "async", "tradeoff"],
-      "common_mistakes": ["Sync/Async の違いを知らない", "Async が完全捕捉と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "das",
+        "sync",
+        "async",
+        "tradeoff"
+      ],
+      "common_mistakes": [
+        "Sync/Async の違いを知らない",
+        "Async が完全捕捉と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain5-025",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Database Security", "weight_percent": 18},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Database Security",
+        "weight_percent": 18
+      },
       "topic": "Zero Trust DB design",
       "subtopic": "Holistic architecture",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "医療系 SaaS の患者データを格納する Aurora PostgreSQL クラスターについて、Zero Trust 原則に沿ったセキュリティアーキテクチャを設計せよ。最も総合的に妥当なのは？",
       "options": [
-        {"id": "A", "text": "(1) 全通信 TLS 強制 + クライアント証明書検証、(2) IAM DB 認証 + 一時トークン、(3) RDS Proxy + IAM 統合、(4) KMS CMK で全層暗号化 + 自動ローテーション、(5) DB ロールは PoLP・列レベル暗号化、(6) DAS で全 SQL 監査 → SIEM、(7) GuardDuty RDS Protection で異常検知、(8) ネットワーク: プライベートサブネット + SG + AWS Network Firewall、(9) 定期的な IAM Access Analyzer で過剰権限検出", "is_correct": true, "explanation": "正解。Zero Trust の \"Never trust, always verify\" 原則を、認証・認可・暗号化・監査・継続的検証の各層で実装する完成度の高い設計。"},
-        {"id": "B", "text": "VPN + パスワードのみで十分", "is_correct": false, "explanation": "Zero Trust の対極で、ネットワーク境界に依存する旧来の設計。"},
-        {"id": "C", "text": "セキュリティグループだけ強化", "is_correct": false, "explanation": "境界防御のみで Zero Trust に該当しない。"},
-        {"id": "D", "text": "全部公開して MFA で守る", "is_correct": false, "explanation": "MFA は重要だが、ネットワーク隔離や暗号化が前提。"}
+        {
+          "id": "A",
+          "text": "(1) 全通信 TLS 強制 + クライアント証明書検証、(2) IAM DB 認証 + 一時トークン、(3) RDS Proxy + IAM 統合、(4) KMS CMK で全層暗号化 + 自動ローテーション、(5) DB ロールは PoLP・列レベル暗号化、(6) DAS で全 SQL 監査 → SIEM、(7) GuardDuty RDS Protection で異常検知、(8) ネットワーク: プライベートサブネット + SG + AWS Network Firewall、(9) 定期的な IAM Access Analyzer で過剰権限検出",
+          "is_correct": true,
+          "explanation": "正解。Zero Trust の \"Never trust, always verify\" 原則を、認証・認可・暗号化・監査・継続的検証の各層で実装する完成度の高い設計。"
+        },
+        {
+          "id": "B",
+          "text": "セキュリティグループだけ強化",
+          "is_correct": false,
+          "explanation": "境界防御のみで Zero Trust に該当しない。"
+        },
+        {
+          "id": "C",
+          "text": "VPN + パスワードのみで十分",
+          "is_correct": false,
+          "explanation": "Zero Trust の対極で、ネットワーク境界に依存する旧来の設計。"
+        },
+        {
+          "id": "D",
+          "text": "全部公開して MFA で守る",
+          "is_correct": false,
+          "explanation": "MFA は重要だが、ネットワーク隔離や暗号化が前提。"
+        }
       ],
       "explanation": "Zero Trust は (1) 全アクセス毎の検証、(2) 最小権限、(3) 暗号化前提、(4) 継続的監視、を実装する設計思想。Aurora での実装は IAM 認証・RDS Proxy・KMS・DAS・GuardDuty 等を組み合わせることで実現可能。医療データ HIPAA 要件との親和性も高い。",
       "references": [
-        {"title": "Zero Trust on AWS", "url": "https://aws.amazon.com/security/zero-trust/"},
-        {"title": "AWS HIPAA Eligible Services", "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"}
+        {
+          "title": "Zero Trust on AWS",
+          "url": "https://aws.amazon.com/security/zero-trust/"
+        },
+        {
+          "title": "AWS HIPAA Eligible Services",
+          "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"
+        }
       ],
-      "tags": ["zero-trust", "healthcare", "comprehensive-design"],
-      "common_mistakes": ["境界防御のみで Zero Trust と誤解", "Zero Trust の継続検証性を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "zero-trust",
+        "healthcare",
+        "comprehensive-design"
+      ],
+      "common_mistakes": [
+        "境界防御のみで Zero Trust と誤解",
+        "Zero Trust の継続検証性を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

@@ -15,380 +15,1159 @@
     {
       "id": "aif-c01-domain4-001",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Bias",
       "subtopic": "Training data bias",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "機械学習モデルにおいて、学習データに特定の属性（性別・人種など）が偏って含まれていることで、予測結果が不公平になる現象を何と呼ぶか。",
       "options": [
-        {"id": "A", "text": "確証バイアス（Confirmation Bias）", "is_correct": false, "explanation": "確証バイアスは人間の認知バイアスで、自分の仮説に合う情報のみを集める傾向。学習データの偏り自体を指す言葉ではない。"},
-        {"id": "B", "text": "学習データバイアス（Training Data Bias）", "is_correct": true, "explanation": "正解。学習データの偏り（特定属性の過剰/過少表現）が原因でモデルが不公平な判断をする現象を指す。"},
-        {"id": "C", "text": "ハルシネーション（Hallucination）", "is_correct": false, "explanation": "ハルシネーションは生成AIが事実と異なる内容をもっともらしく生成する現象で、バイアスとは異なる。"},
-        {"id": "D", "text": "オーバーフィッティング（Overfitting）", "is_correct": false, "explanation": "オーバーフィッティングは学習データに過剰に適合し汎化性能が落ちる現象で、公平性の問題ではない。"}
+        {
+          "id": "A",
+          "text": "学習データバイアス（Training Data Bias）",
+          "is_correct": true,
+          "explanation": "正解。学習データの偏り（特定属性の過剰/過少表現）が原因でモデルが不公平な判断をする現象を指す。"
+        },
+        {
+          "id": "B",
+          "text": "オーバーフィッティング（Overfitting）",
+          "is_correct": false,
+          "explanation": "オーバーフィッティングは学習データに過剰に適合し汎化性能が落ちる現象で、公平性の問題ではない。"
+        },
+        {
+          "id": "C",
+          "text": "確証バイアス（Confirmation Bias）",
+          "is_correct": false,
+          "explanation": "確証バイアスは人間の認知バイアスで、自分の仮説に合う情報のみを集める傾向。学習データの偏り自体を指す言葉ではない。"
+        },
+        {
+          "id": "D",
+          "text": "ハルシネーション（Hallucination）",
+          "is_correct": false,
+          "explanation": "ハルシネーションは生成AIが事実と異なる内容をもっともらしく生成する現象で、バイアスとは異なる。"
+        }
       ],
       "explanation": "学習データバイアスは Responsible AI で最も頻繁に議論される問題。例えば顔認識モデルが特定人種に対して精度が低い、採用AIが過去の偏った採用履歴を学習して特定属性を不利に扱う等。SageMaker Clarify はこれを検出するツールとして利用される。",
       "references": [
-        {"title": "What is Responsible AI?", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"},
-        {"title": "Amazon SageMaker Clarify", "url": "https://aws.amazon.com/sagemaker/clarify/"}
+        {
+          "title": "What is Responsible AI?",
+          "url": "https://aws.amazon.com/machine-learning/responsible-ai/"
+        },
+        {
+          "title": "Amazon SageMaker Clarify",
+          "url": "https://aws.amazon.com/sagemaker/clarify/"
+        }
       ],
-      "tags": ["responsible-ai", "bias", "fairness", "training-data"],
-      "common_mistakes": ["バイアスとオーバーフィッティングを混同する", "ハルシネーションを公平性問題と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "responsible-ai",
+        "bias",
+        "fairness",
+        "training-data"
+      ],
+      "common_mistakes": [
+        "バイアスとオーバーフィッティングを混同する",
+        "ハルシネーションを公平性問題と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-002",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Bedrock Guardrails",
       "subtopic": "Content moderation",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Amazon Bedrock で生成AIアプリケーションに対して有害コンテンツのフィルタリング、PII（個人識別情報）のマスキング、トピック制限を実装する機能はどれか。",
       "options": [
-        {"id": "A", "text": "Amazon Bedrock Guardrails", "is_correct": true, "explanation": "正解。Guardrails は Bedrock の安全性機能で、有害コンテンツフィルター、PII マスク、拒否トピック、コンテキスト接地（grounding）チェック等を提供する。"},
-        {"id": "B", "text": "Amazon Bedrock Knowledge Bases", "is_correct": false, "explanation": "Knowledge Bases は RAG のための機能で、ドキュメントを検索基盤として利用する。コンテンツモデレーションは行わない。"},
-        {"id": "C", "text": "Amazon Bedrock Agents", "is_correct": false, "explanation": "Agents はマルチステップタスクを自動実行するためのオーケストレーション機能で、コンテンツフィルタリングは目的ではない。"},
-        {"id": "D", "text": "Amazon Bedrock Model Evaluation", "is_correct": false, "explanation": "Model Evaluation はモデル比較・評価のための機能で、ランタイムでのフィルタリング機能ではない。"}
+        {
+          "id": "A",
+          "text": "Amazon Bedrock Agents",
+          "is_correct": false,
+          "explanation": "Agents はマルチステップタスクを自動実行するためのオーケストレーション機能で、コンテンツフィルタリングは目的ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Bedrock Guardrails",
+          "is_correct": true,
+          "explanation": "正解。Guardrails は Bedrock の安全性機能で、有害コンテンツフィルター、PII マスク、拒否トピック、コンテキスト接地（grounding）チェック等を提供する。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Bedrock Knowledge Bases",
+          "is_correct": false,
+          "explanation": "Knowledge Bases は RAG のための機能で、ドキュメントを検索基盤として利用する。コンテンツモデレーションは行わない。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Bedrock Model Evaluation",
+          "is_correct": false,
+          "explanation": "Model Evaluation はモデル比較・評価のための機能で、ランタイムでのフィルタリング機能ではない。"
+        }
       ],
       "explanation": "Bedrock Guardrails は Responsible AI を実装するための中核機能。アプリケーションに合わせてカスタマイズ可能なポリシー（ヘイト、暴力、性的、不正行為、PII、拒否トピック）を定義し、入力プロンプトと出力応答の両方に適用される。",
       "references": [
-        {"title": "Amazon Bedrock Guardrails", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"}
+        {
+          "title": "Amazon Bedrock Guardrails",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+        }
       ],
-      "tags": ["bedrock", "guardrails", "content-moderation", "safety"],
-      "common_mistakes": ["Guardrails と Knowledge Bases の役割を混同する", "Guardrails が学習段階の機能だと誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bedrock",
+        "guardrails",
+        "content-moderation",
+        "safety"
+      ],
+      "common_mistakes": [
+        "Guardrails と Knowledge Bases の役割を混同する",
+        "Guardrails が学習段階の機能だと誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-003",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "SageMaker Clarify",
       "subtopic": "Bias detection",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "Amazon SageMaker Clarify が提供する主な機能として正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "モデルのトレーニングを高速化する", "is_correct": false, "explanation": "トレーニング高速化は SageMaker Training の分散学習機能等の役割で、Clarify の機能ではない。"},
-        {"id": "B", "text": "学習データとモデル予測のバイアス検出、および特徴量の重要度（説明可能性）分析", "is_correct": true, "explanation": "正解。Clarify は学習前データのバイアス、モデル予測のバイアス、SHAP 値による説明可能性レポートを生成する。"},
-        {"id": "C", "text": "モデルを自動的に複数AZへデプロイする", "is_correct": false, "explanation": "マルチAZデプロイは SageMaker エンドポイントの機能で、Clarify とは無関係。"},
-        {"id": "D", "text": "推論コストを最小化する", "is_correct": false, "explanation": "コスト最適化は Inference Recommender や Serverless Inference の役割で、Clarify とは別。"}
+        {
+          "id": "A",
+          "text": "モデルを自動的に複数AZへデプロイする",
+          "is_correct": false,
+          "explanation": "マルチAZデプロイは SageMaker エンドポイントの機能で、Clarify とは無関係。"
+        },
+        {
+          "id": "B",
+          "text": "推論コストを最小化する",
+          "is_correct": false,
+          "explanation": "コスト最適化は Inference Recommender や Serverless Inference の役割で、Clarify とは別。"
+        },
+        {
+          "id": "C",
+          "text": "学習データとモデル予測のバイアス検出、および特徴量の重要度（説明可能性）分析",
+          "is_correct": true,
+          "explanation": "正解。Clarify は学習前データのバイアス、モデル予測のバイアス、SHAP 値による説明可能性レポートを生成する。"
+        },
+        {
+          "id": "D",
+          "text": "モデルのトレーニングを高速化する",
+          "is_correct": false,
+          "explanation": "トレーニング高速化は SageMaker Training の分散学習機能等の役割で、Clarify の機能ではない。"
+        }
       ],
       "explanation": "SageMaker Clarify は Responsible AI の中核ツール。データセットのクラス不均衡（CI）、ラベル不均衡（DPL）、予測のバイアス（DPPL）等の指標を提供し、SHAP に基づく特徴量重要度で「なぜそう予測したか」を説明する。",
       "references": [
-        {"title": "Amazon SageMaker Clarify", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html"}
+        {
+          "title": "Amazon SageMaker Clarify",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html"
+        }
       ],
-      "tags": ["sagemaker", "clarify", "bias", "explainability", "shap"],
-      "common_mistakes": ["Clarify を性能改善ツールと誤解する", "説明可能性とトレーニング高速化を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "sagemaker",
+        "clarify",
+        "bias",
+        "explainability",
+        "shap"
+      ],
+      "common_mistakes": [
+        "Clarify を性能改善ツールと誤解する",
+        "説明可能性とトレーニング高速化を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-004",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Explainability",
       "subtopic": "SHAP values",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある製造業の不良品判定モデルについて、品質保証チームから「なぜこの製品が不良と判定されたのか個別に説明してほしい」と要求された。SageMaker Clarify を使う場合、どの機能が最も適切か。",
       "options": [
-        {"id": "A", "text": "Pre-training bias metrics（CI、DPL等）", "is_correct": false, "explanation": "学習前バイアス指標はデータセット全体の偏り評価に使うもので、個別予測の説明には使えない。"},
-        {"id": "B", "text": "SHAP（Shapley values）による特徴量重要度の個別予測説明", "is_correct": true, "explanation": "正解。SHAP は1件の予測について、各特徴量がどの程度寄与したかを定量化する手法で、個別の判定理由を説明できる。"},
-        {"id": "C", "text": "Hyperparameter Tuning Job", "is_correct": false, "explanation": "ハイパーパラメータ調整はモデル性能改善のための機能で、説明可能性とは無関係。"},
-        {"id": "D", "text": "Model Monitor の Data Quality 監視", "is_correct": false, "explanation": "Model Monitor は本番運用での入力データの分布ドリフトを監視する機能で、個別予測の理由説明ではない。"}
+        {
+          "id": "A",
+          "text": "Hyperparameter Tuning Job",
+          "is_correct": false,
+          "explanation": "ハイパーパラメータ調整はモデル性能改善のための機能で、説明可能性とは無関係。"
+        },
+        {
+          "id": "B",
+          "text": "Pre-training bias metrics（CI、DPL等）",
+          "is_correct": false,
+          "explanation": "学習前バイアス指標はデータセット全体の偏り評価に使うもので、個別予測の説明には使えない。"
+        },
+        {
+          "id": "C",
+          "text": "Model Monitor の Data Quality 監視",
+          "is_correct": false,
+          "explanation": "Model Monitor は本番運用での入力データの分布ドリフトを監視する機能で、個別予測の理由説明ではない。"
+        },
+        {
+          "id": "D",
+          "text": "SHAP（Shapley values）による特徴量重要度の個別予測説明",
+          "is_correct": true,
+          "explanation": "正解。SHAP は1件の予測について、各特徴量がどの程度寄与したかを定量化する手法で、個別の判定理由を説明できる。"
+        }
       ],
       "explanation": "Clarify は SHAP（Shapley Additive exPlanations）をネイティブサポートし、Global（モデル全体）と Local（個別予測）の両方の説明を生成可能。製造、医療、金融など説明責任が重要な領域で頻繁に使われる。",
       "references": [
-        {"title": "Feature Attributions that Use Shapley Values", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-feature-attribute.html"}
+        {
+          "title": "Feature Attributions that Use Shapley Values",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-feature-attribute.html"
+        }
       ],
-      "tags": ["clarify", "shap", "explainability", "manufacturing"],
-      "common_mistakes": ["Pre-training bias と Local explanation を混同する", "Model Monitor を説明可能性機能と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "clarify",
+        "shap",
+        "explainability",
+        "manufacturing"
+      ],
+      "common_mistakes": [
+        "Pre-training bias と Local explanation を混同する",
+        "Model Monitor を説明可能性機能と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-005",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Fairness",
       "subtopic": "Selection bias",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "あるSaaS企業がチャーン予測モデルを構築するために、過去1年で「アンケートに回答してくれた顧客」のデータだけを使った。この場合に発生しやすいバイアスはどれか。",
       "options": [
-        {"id": "A", "text": "選択バイアス（Selection Bias）", "is_correct": true, "explanation": "正解。アンケート回答者という偏ったサンプルからデータを集めた結果、母集団全体を代表しないバイアスを「選択バイアス」と呼ぶ。"},
-        {"id": "B", "text": "ラベルバイアス（Label Bias）", "is_correct": false, "explanation": "ラベルバイアスは正解ラベル付けの段階で起きる偏りで、サンプル抽出の偏りとは別の概念。"},
-        {"id": "C", "text": "確証バイアス（Confirmation Bias）", "is_correct": false, "explanation": "確証バイアスは人間の認知バイアスで、データ収集の偏りそのものを指す用語ではない。"},
-        {"id": "D", "text": "測定バイアス（Measurement Bias）", "is_correct": false, "explanation": "測定バイアスはセンサーや計測手法に起因する偏りで、本シナリオの抽出方法の偏りとは異なる。"}
+        {
+          "id": "A",
+          "text": "選択バイアス（Selection Bias）",
+          "is_correct": true,
+          "explanation": "正解。アンケート回答者という偏ったサンプルからデータを集めた結果、母集団全体を代表しないバイアスを「選択バイアス」と呼ぶ。"
+        },
+        {
+          "id": "B",
+          "text": "測定バイアス（Measurement Bias）",
+          "is_correct": false,
+          "explanation": "測定バイアスはセンサーや計測手法に起因する偏りで、本シナリオの抽出方法の偏りとは異なる。"
+        },
+        {
+          "id": "C",
+          "text": "ラベルバイアス（Label Bias）",
+          "is_correct": false,
+          "explanation": "ラベルバイアスは正解ラベル付けの段階で起きる偏りで、サンプル抽出の偏りとは別の概念。"
+        },
+        {
+          "id": "D",
+          "text": "確証バイアス（Confirmation Bias）",
+          "is_correct": false,
+          "explanation": "確証バイアスは人間の認知バイアスで、データ収集の偏りそのものを指す用語ではない。"
+        }
       ],
       "explanation": "選択バイアスは、サンプル抽出の段階で母集団を代表しないデータが集まることに起因する。アンケート回答者は元々関与度が高いユーザーに偏りやすく、モデルは「沈黙のチャーン顧客」を見逃す。Responsible AI では、データ収集設計の段階から検討すべき重要な観点。",
       "references": [
-        {"title": "AWS Responsible AI", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"}
+        {
+          "title": "AWS Responsible AI",
+          "url": "https://aws.amazon.com/machine-learning/responsible-ai/"
+        }
       ],
-      "tags": ["bias", "selection-bias", "saas", "fairness"],
-      "common_mistakes": ["選択バイアスとラベルバイアスを混同する", "確証バイアスを技術的偏りと誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bias",
+        "selection-bias",
+        "saas",
+        "fairness"
+      ],
+      "common_mistakes": [
+        "選択バイアスとラベルバイアスを混同する",
+        "確証バイアスを技術的偏りと誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-006",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Privacy",
       "subtopic": "Differential privacy",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "差分プライバシー（Differential Privacy）の基本的な考え方として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "データを完全に削除して個人特定を防ぐ", "is_correct": false, "explanation": "完全削除はデータ匿名化ではなく単なる削除で、差分プライバシーの考え方とは異なる。"},
-        {"id": "B", "text": "集計結果に統計的ノイズを加え、特定個人の有無で結果が大きく変わらないようにする", "is_correct": true, "explanation": "正解。差分プライバシーは数学的な定義を持ち、個人の存在/非存在による出力変化を抑えることでプライバシーを保護する。"},
-        {"id": "C", "text": "データを暗号化して伝送する", "is_correct": false, "explanation": "暗号化は伝送・保管時の機密性を守る手法で、統計分析時の個人推定リスクを下げる差分プライバシーとは別概念。"},
-        {"id": "D", "text": "データへのアクセス権限をIAMで制限する", "is_correct": false, "explanation": "IAM はアクセス制御で、データ自体の集計結果からの個人特定を防ぐ差分プライバシーとは異なる。"}
+        {
+          "id": "A",
+          "text": "データへのアクセス権限をIAMで制限する",
+          "is_correct": false,
+          "explanation": "IAM はアクセス制御で、データ自体の集計結果からの個人特定を防ぐ差分プライバシーとは異なる。"
+        },
+        {
+          "id": "B",
+          "text": "集計結果に統計的ノイズを加え、特定個人の有無で結果が大きく変わらないようにする",
+          "is_correct": true,
+          "explanation": "正解。差分プライバシーは数学的な定義を持ち、個人の存在/非存在による出力変化を抑えることでプライバシーを保護する。"
+        },
+        {
+          "id": "C",
+          "text": "データを完全に削除して個人特定を防ぐ",
+          "is_correct": false,
+          "explanation": "完全削除はデータ匿名化ではなく単なる削除で、差分プライバシーの考え方とは異なる。"
+        },
+        {
+          "id": "D",
+          "text": "データを暗号化して伝送する",
+          "is_correct": false,
+          "explanation": "暗号化は伝送・保管時の機密性を守る手法で、統計分析時の個人推定リスクを下げる差分プライバシーとは別概念。"
+        }
       ],
       "explanation": "差分プライバシーは ε（イプシロン）でプライバシー保護強度を表現する数学的フレームワーク。データから集計値を計算する際にノイズを加え、特定個人がデータセットに含まれていてもそうでなくても、結果がほぼ同じになるよう保証する。Apple、Google、AWS などが導入している。",
       "references": [
-        {"title": "Privacy in Machine Learning", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"}
+        {
+          "title": "Privacy in Machine Learning",
+          "url": "https://aws.amazon.com/machine-learning/responsible-ai/"
+        }
       ],
-      "tags": ["privacy", "differential-privacy", "responsible-ai"],
-      "common_mistakes": ["差分プライバシーと暗号化を混同する", "アクセス制御で個人特定を防げると誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "privacy",
+        "differential-privacy",
+        "responsible-ai"
+      ],
+      "common_mistakes": [
+        "差分プライバシーと暗号化を混同する",
+        "アクセス制御で個人特定を防げると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-007",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Bedrock Guardrails",
       "subtopic": "Denied topics",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある銀行が Bedrock を使ったカスタマーサポートチャットボットを構築している。コンプライアンス上、ボットが「投資アドバイス」「税務アドバイス」を回答しないように制御したい。最も適切な実装は？",
       "options": [
-        {"id": "A", "text": "プロンプトに「投資・税務には答えるな」と毎回書く", "is_correct": false, "explanation": "プロンプト指示だけではユーザの巧妙な回避（プロンプトインジェクション）に弱く、コンプライアンス要件には不十分。"},
-        {"id": "B", "text": "Bedrock Guardrails の Denied Topics 機能で「投資アドバイス」「税務アドバイス」をトピックとして定義する", "is_correct": true, "explanation": "正解。Denied Topics は自然言語で禁止トピックを定義でき、入出力双方で検出して拒否応答に置換できる。"},
-        {"id": "C", "text": "WAF で 'invest' を含むリクエストをブロックする", "is_correct": false, "explanation": "WAF は HTTP リクエストの単純パターン制御で、自然言語の意味的判定はできない。誤検知も多い。"},
-        {"id": "D", "text": "IAM ポリシーで Bedrock InvokeModel を一部ユーザーに制限する", "is_correct": false, "explanation": "IAM はサービス全体のアクセス制御で、応答内容のトピック制限は不可能。"}
+        {
+          "id": "A",
+          "text": "プロンプトに「投資・税務には答えるな」と毎回書く",
+          "is_correct": false,
+          "explanation": "プロンプト指示だけではユーザの巧妙な回避（プロンプトインジェクション）に弱く、コンプライアンス要件には不十分。"
+        },
+        {
+          "id": "B",
+          "text": "IAM ポリシーで Bedrock InvokeModel を一部ユーザーに制限する",
+          "is_correct": false,
+          "explanation": "IAM はサービス全体のアクセス制御で、応答内容のトピック制限は不可能。"
+        },
+        {
+          "id": "C",
+          "text": "Bedrock Guardrails の Denied Topics 機能で「投資アドバイス」「税務アドバイス」をトピックとして定義する",
+          "is_correct": true,
+          "explanation": "正解。Denied Topics は自然言語で禁止トピックを定義でき、入出力双方で検出して拒否応答に置換できる。"
+        },
+        {
+          "id": "D",
+          "text": "WAF で 'invest' を含むリクエストをブロックする",
+          "is_correct": false,
+          "explanation": "WAF は HTTP リクエストの単純パターン制御で、自然言語の意味的判定はできない。誤検知も多い。"
+        }
       ],
       "explanation": "Bedrock Guardrails の Denied Topics は、自然言語で「投資アドバイス」のような抽象トピックを定義し、サンプル発話を与えるとモデルが意味的に判定して拒否する。金融・医療・法務など規制業界でのチャットボット運用に必須の機能。",
       "references": [
-        {"title": "Bedrock Guardrails Denied Topics", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-denied-topics.html"}
+        {
+          "title": "Bedrock Guardrails Denied Topics",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-denied-topics.html"
+        }
       ],
-      "tags": ["bedrock", "guardrails", "denied-topics", "fintech", "compliance"],
-      "common_mistakes": ["プロンプト指示だけで安全と思い込む", "WAF / IAM で意味的制御ができると誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bedrock",
+        "guardrails",
+        "denied-topics",
+        "fintech",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "プロンプト指示だけで安全と思い込む",
+        "WAF / IAM で意味的制御ができると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-008",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "PII protection",
       "subtopic": "Bedrock Guardrails PII filter",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療系SaaS企業が、ユーザがチャットボットへ氏名や保険番号などのPIIを入力してしまうケースに備え、入力PIIをモデルに渡す前にマスクし、応答にもPIIが含まれないようにしたい。最適な構成は？",
       "options": [
-        {"id": "A", "text": "Amazon Comprehend の DetectPiiEntities API を Lambda で呼び、自前マスキング処理を実装する", "is_correct": false, "explanation": "技術的に可能だが、Bedrock 呼び出しごとのカスタム前処理が必要で、運用負荷が高い。Bedrock 単体で完結しない。"},
-        {"id": "B", "text": "Amazon Bedrock Guardrails の Sensitive Information Filter（PII）を有効化し、マスク（ANONYMIZE）またはブロックを設定する", "is_correct": true, "explanation": "正解。Guardrails は Bedrock 呼び出しに統合され、入出力の PII を自動検出し、マスクまたはブロックできる。実装が最小。"},
-        {"id": "C", "text": "Amazon Macie で S3 の PII をスキャンする", "is_correct": false, "explanation": "Macie は S3 上の保存データの PII スキャン用で、Bedrock のリクエスト/レスポンスのリアルタイムフィルタリングはしない。"},
-        {"id": "D", "text": "KMS でリクエスト全体を暗号化する", "is_correct": false, "explanation": "暗号化は機密性を守るが、PII 検出・マスキングは行わない。モデルに渡すには平文化が必要。"}
+        {
+          "id": "A",
+          "text": "KMS でリクエスト全体を暗号化する",
+          "is_correct": false,
+          "explanation": "暗号化は機密性を守るが、PII 検出・マスキングは行わない。モデルに渡すには平文化が必要。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Macie で S3 の PII をスキャンする",
+          "is_correct": false,
+          "explanation": "Macie は S3 上の保存データの PII スキャン用で、Bedrock のリクエスト/レスポンスのリアルタイムフィルタリングはしない。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Comprehend の DetectPiiEntities API を Lambda で呼び、自前マスキング処理を実装する",
+          "is_correct": false,
+          "explanation": "技術的に可能だが、Bedrock 呼び出しごとのカスタム前処理が必要で、運用負荷が高い。Bedrock 単体で完結しない。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Bedrock Guardrails の Sensitive Information Filter（PII）を有効化し、マスク（ANONYMIZE）またはブロックを設定する",
+          "is_correct": true,
+          "explanation": "正解。Guardrails は Bedrock 呼び出しに統合され、入出力の PII を自動検出し、マスクまたはブロックできる。実装が最小。"
+        }
       ],
       "explanation": "Bedrock Guardrails の Sensitive Information Filter は、SSN、クレジットカード番号、メール、電話番号など標準的な PII タイプと、正規表現でカスタム機密データを定義できる。HIPAA 環境では必須レベルの機能。",
       "references": [
-        {"title": "Sensitive Information Filters", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html"}
+        {
+          "title": "Sensitive Information Filters",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html"
+        }
       ],
-      "tags": ["bedrock", "guardrails", "pii", "healthcare", "hipaa"],
-      "common_mistakes": ["Macie をリアルタイムフィルタと誤解する", "暗号化と PII マスキングを混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bedrock",
+        "guardrails",
+        "pii",
+        "healthcare",
+        "hipaa"
+      ],
+      "common_mistakes": [
+        "Macie をリアルタイムフィルタと誤解する",
+        "暗号化と PII マスキングを混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-009",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Human-centered AI",
       "subtopic": "Human-in-the-loop",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある教育SaaS企業が、生成AIによる自動生成された授業フィードバックを生徒に直接送信していたが、不適切表現が一部混入する問題が発生した。Responsible AI の観点で最も適切な改善策は？",
       "options": [
-        {"id": "A", "text": "モデルをより大きなパラメータ数のものに変更する", "is_correct": false, "explanation": "モデルサイズの変更だけで安全性が保証されるわけではなく、根本対策にならない。"},
-        {"id": "B", "text": "Amazon Augmented AI（A2I）等で Human-in-the-Loop を導入し、低信頼度の生成内容は人間レビューを経る", "is_correct": true, "explanation": "正解。教育のような高ステーク領域では人間中心AI（Human-Centered AI）の原則に従い、人間レビュー工程を組み込むのが Responsible AI のベストプラクティス。"},
-        {"id": "C", "text": "全ての応答に「これはAIです」と注記を付けるだけにする", "is_correct": false, "explanation": "透明性向上には寄与するが、不適切表現の混入自体は防げない。"},
-        {"id": "D", "text": "S3 に応答ログを保存する", "is_correct": false, "explanation": "ログ保管は事後監査には有用だが、不適切応答の事前防止策にはならない。"}
+        {
+          "id": "A",
+          "text": "Amazon Augmented AI（A2I）等で Human-in-the-Loop を導入し、低信頼度の生成内容は人間レビューを経る",
+          "is_correct": true,
+          "explanation": "正解。教育のような高ステーク領域では人間中心AI（Human-Centered AI）の原則に従い、人間レビュー工程を組み込むのが Responsible AI のベストプラクティス。"
+        },
+        {
+          "id": "B",
+          "text": "全ての応答に「これはAIです」と注記を付けるだけにする",
+          "is_correct": false,
+          "explanation": "透明性向上には寄与するが、不適切表現の混入自体は防げない。"
+        },
+        {
+          "id": "C",
+          "text": "モデルをより大きなパラメータ数のものに変更する",
+          "is_correct": false,
+          "explanation": "モデルサイズの変更だけで安全性が保証されるわけではなく、根本対策にならない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 に応答ログを保存する",
+          "is_correct": false,
+          "explanation": "ログ保管は事後監査には有用だが、不適切応答の事前防止策にはならない。"
+        }
       ],
       "explanation": "Responsible AI の核心は「人間中心」。特に未成年・医療・法務など影響が大きい領域では、Bedrock Guardrails によるフィルタに加え、A2I による Human-in-the-Loop で人間レビューを組み合わせるのが推奨パターン。",
       "references": [
-        {"title": "Amazon Augmented AI (A2I)", "url": "https://aws.amazon.com/augmented-ai/"},
-        {"title": "AWS Responsible AI", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"}
+        {
+          "title": "Amazon Augmented AI (A2I)",
+          "url": "https://aws.amazon.com/augmented-ai/"
+        },
+        {
+          "title": "AWS Responsible AI",
+          "url": "https://aws.amazon.com/machine-learning/responsible-ai/"
+        }
       ],
-      "tags": ["human-in-the-loop", "a2i", "education", "responsible-ai"],
-      "common_mistakes": ["モデルを大きくすれば安全と誤解する", "ログ保管を予防策と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "human-in-the-loop",
+        "a2i",
+        "education",
+        "responsible-ai"
+      ],
+      "common_mistakes": [
+        "モデルを大きくすれば安全と誤解する",
+        "ログ保管を予防策と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-010",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Bedrock Guardrails",
       "subtopic": "Contextual grounding",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある FinTech 企業が RAG（Retrieval-Augmented Generation）構成で社内ドキュメントを参照する Q&A ボットを運用している。モデルが参照ドキュメントに記載されていない事実をもっともらしく生成する（ハルシネーション）リスクを下げたい。最も適切な機能は？",
       "options": [
-        {"id": "A", "text": "Bedrock Guardrails の Contextual Grounding Check（コンテキスト接地チェック）", "is_correct": true, "explanation": "正解。Contextual Grounding Check は、参照ソース（コンテキスト）に対する応答の Grounding と Relevance を採点し、閾値未満の応答をブロックする。RAG ハルシネーション対策の代表機能。"},
-        {"id": "B", "text": "Bedrock Guardrails の Denied Topics", "is_correct": false, "explanation": "Denied Topics は禁止トピックの拒否で、ハルシネーション（参照外内容の生成）の検出には使えない。"},
-        {"id": "C", "text": "SageMaker Model Monitor", "is_correct": false, "explanation": "Model Monitor は本番運用での入力分布ドリフト等の監視機能で、生成内容の事実性検証は行わない。"},
-        {"id": "D", "text": "CloudWatch Logs Insights によるログ分析", "is_correct": false, "explanation": "事後分析には使えるが、リアルタイムでのハルシネーション抑止はできない。"}
+        {
+          "id": "A",
+          "text": "CloudWatch Logs Insights によるログ分析",
+          "is_correct": false,
+          "explanation": "事後分析には使えるが、リアルタイムでのハルシネーション抑止はできない。"
+        },
+        {
+          "id": "B",
+          "text": "Bedrock Guardrails の Contextual Grounding Check（コンテキスト接地チェック）",
+          "is_correct": true,
+          "explanation": "正解。Contextual Grounding Check は、参照ソース（コンテキスト）に対する応答の Grounding と Relevance を採点し、閾値未満の応答をブロックする。RAG ハルシネーション対策の代表機能。"
+        },
+        {
+          "id": "C",
+          "text": "SageMaker Model Monitor",
+          "is_correct": false,
+          "explanation": "Model Monitor は本番運用での入力分布ドリフト等の監視機能で、生成内容の事実性検証は行わない。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock Guardrails の Denied Topics",
+          "is_correct": false,
+          "explanation": "Denied Topics は禁止トピックの拒否で、ハルシネーション（参照外内容の生成）の検出には使えない。"
+        }
       ],
       "explanation": "Contextual Grounding Check は Bedrock Guardrails の比較的新しい機能で、RAG 用途に特化。Grounding（参照との一貫性）と Relevance（質問との関連性）を 0-1 で採点し、閾値未満の応答を拒否することでハルシネーションを抑制する。",
       "references": [
-        {"title": "Contextual Grounding Check", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html"}
+        {
+          "title": "Contextual Grounding Check",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html"
+        }
       ],
-      "tags": ["bedrock", "guardrails", "rag", "hallucination", "grounding"],
-      "common_mistakes": ["Denied Topics でハルシネーション対策ができると誤解する", "Model Monitor の役割を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "bedrock",
+        "guardrails",
+        "rag",
+        "hallucination",
+        "grounding"
+      ],
+      "common_mistakes": [
+        "Denied Topics でハルシネーション対策ができると誤解する",
+        "Model Monitor の役割を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-011",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Transparency",
       "subtopic": "AI Service Cards",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業の経営者が、社内で利用予定の AWS AI サービス（例: Amazon Rekognition）について、想定ユースケース、性能特性、責任ある使用ガイドラインを把握したい。AWS が提供する文書として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "AWS Service Health Dashboard", "is_correct": false, "explanation": "Service Health Dashboard は AWS サービスの稼働状況を示すダッシュボードで、AI サービスの倫理的特性は記載されていない。"},
-        {"id": "B", "text": "AWS AI Service Card（AI サービスカード）", "is_correct": true, "explanation": "正解。AI Service Card は AWS が公開している透明性ドキュメントで、サービスの基本機能・想定用途・パフォーマンス特性・責任ある使用ベストプラクティスを記載している。"},
-        {"id": "C", "text": "AWS Trusted Advisor のレポート", "is_correct": false, "explanation": "Trusted Advisor はコスト・セキュリティ等の運用助言ツールで、Responsible AI 文書ではない。"},
-        {"id": "D", "text": "AWS Pricing Calculator の出力", "is_correct": false, "explanation": "Pricing Calculator は料金見積で、倫理・透明性とは無関係。"}
+        {
+          "id": "A",
+          "text": "AWS Service Health Dashboard",
+          "is_correct": false,
+          "explanation": "Service Health Dashboard は AWS サービスの稼働状況を示すダッシュボードで、AI サービスの倫理的特性は記載されていない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Pricing Calculator の出力",
+          "is_correct": false,
+          "explanation": "Pricing Calculator は料金見積で、倫理・透明性とは無関係。"
+        },
+        {
+          "id": "C",
+          "text": "AWS AI Service Card（AI サービスカード）",
+          "is_correct": true,
+          "explanation": "正解。AI Service Card は AWS が公開している透明性ドキュメントで、サービスの基本機能・想定用途・パフォーマンス特性・責任ある使用ベストプラクティスを記載している。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Trusted Advisor のレポート",
+          "is_correct": false,
+          "explanation": "Trusted Advisor はコスト・セキュリティ等の運用助言ツールで、Responsible AI 文書ではない。"
+        }
       ],
       "explanation": "AWS AI Service Card は、Rekognition、Textract、Transcribe など主要 AI サービスについて、Responsible AI の観点（用途、制限、パフォーマンス、フェアネスへの考慮等）を解説した公式文書。導入判断や利害関係者への説明に活用できる。",
       "references": [
-        {"title": "AWS AI Service Cards", "url": "https://aws.amazon.com/machine-learning/responsible-machine-learning/aws-ai-service-cards/"}
+        {
+          "title": "AWS AI Service Cards",
+          "url": "https://aws.amazon.com/machine-learning/responsible-machine-learning/aws-ai-service-cards/"
+        }
       ],
-      "tags": ["ai-service-cards", "transparency", "manufacturing", "responsible-ai"],
-      "common_mistakes": ["Trusted Advisor を Responsible AI 文書と誤解する", "Service Health Dashboard と混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ai-service-cards",
+        "transparency",
+        "manufacturing",
+        "responsible-ai"
+      ],
+      "common_mistakes": [
+        "Trusted Advisor を Responsible AI 文書と誤解する",
+        "Service Health Dashboard と混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-012",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Privacy",
       "subtopic": "Macie + S3",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "医療データを取り扱うAIスタートアップが、機械学習用に S3 へ蓄積したデータセットの中に意図せず PII が含まれていないか継続的に監視したい。最も適切なサービス組み合わせは？",
       "options": [
-        {"id": "A", "text": "Amazon Macie + EventBridge + SNS", "is_correct": true, "explanation": "正解。Macie は S3 内の機密データを ML で自動検出し、EventBridge → SNS で通知する標準パターン。"},
-        {"id": "B", "text": "Amazon Comprehend + S3 イベント通知のみ", "is_correct": false, "explanation": "Comprehend で PII 検出は可能だが、大規模 S3 を継続スキャンするための管理機能は Macie ほど整備されていない。"},
-        {"id": "C", "text": "AWS Config + IAM Access Analyzer", "is_correct": false, "explanation": "Config と Access Analyzer は設定とアクセス権限の評価ツールで、データ内容の PII 検出機能はない。"},
-        {"id": "D", "text": "Amazon GuardDuty + AWS WAF", "is_correct": false, "explanation": "GuardDuty は脅威検出、WAF は Web 層防御で、データ内 PII 検出には使えない。"}
+        {
+          "id": "A",
+          "text": "Amazon GuardDuty + AWS WAF",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検出、WAF は Web 層防御で、データ内 PII 検出には使えない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Comprehend + S3 イベント通知のみ",
+          "is_correct": false,
+          "explanation": "Comprehend で PII 検出は可能だが、大規模 S3 を継続スキャンするための管理機能は Macie ほど整備されていない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config + IAM Access Analyzer",
+          "is_correct": false,
+          "explanation": "Config と Access Analyzer は設定とアクセス権限の評価ツールで、データ内容の PII 検出機能はない。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Macie + EventBridge + SNS",
+          "is_correct": true,
+          "explanation": "正解。Macie は S3 内の機密データを ML で自動検出し、EventBridge → SNS で通知する標準パターン。"
+        }
       ],
       "explanation": "Macie は S3 専用の機密データ自動検出サービス。ML モデルでマネージド型・カスタム型の機密データを検出し、Findings は Security Hub・EventBridge と連携できる。HIPAA 環境のデータレイクには標準で組み込むべきサービス。",
       "references": [
-        {"title": "Amazon Macie", "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"}
+        {
+          "title": "Amazon Macie",
+          "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
+        }
       ],
-      "tags": ["macie", "pii", "healthcare", "s3", "privacy"],
-      "common_mistakes": ["GuardDuty で PII 検出ができると誤解する", "Config を内容検査ツールと混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "macie",
+        "pii",
+        "healthcare",
+        "s3",
+        "privacy"
+      ],
+      "common_mistakes": [
+        "GuardDuty で PII 検出ができると誤解する",
+        "Config を内容検査ツールと混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-013",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Bias",
       "subtopic": "Pre-training vs Post-training bias",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ある B2B SaaS 企業が SageMaker Clarify を使って採用スクリーニングモデルを評価したところ、Pre-training bias 指標は許容範囲内だったが、Post-training bias 指標（DPPL）で性別属性に偏りが検出された。考えられる原因として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "学習データそのものに著しい不均衡があるため再収集が必要", "is_correct": false, "explanation": "Pre-training 指標が許容内なら、データ自体の偏りは小さい。原因は学習プロセス側にある可能性が高い。"},
-        {"id": "B", "text": "モデルの学習結果として、許容範囲のデータ偏りが増幅された、もしくは特徴量の交絡で性別属性と相関するパターンが学ばれた", "is_correct": true, "explanation": "正解。Pre-training と Post-training の差は学習プロセスで生じた偏りを示し、相関する代理変数の学習等が原因となりうる。"},
-        {"id": "C", "text": "推論エンドポイントのオートスケーリング設定が誤っている", "is_correct": false, "explanation": "オートスケーリング設定はパフォーマンスに関わるが、バイアス指標とは無関係。"},
-        {"id": "D", "text": "S3 の暗号化キーが KMS の権限を持っていない", "is_correct": false, "explanation": "暗号化と権限の問題はバイアスと関係ない。"}
+        {
+          "id": "A",
+          "text": "モデルの学習結果として、許容範囲のデータ偏りが増幅された、もしくは特徴量の交絡で性別属性と相関するパターンが学ばれた",
+          "is_correct": true,
+          "explanation": "正解。Pre-training と Post-training の差は学習プロセスで生じた偏りを示し、相関する代理変数の学習等が原因となりうる。"
+        },
+        {
+          "id": "B",
+          "text": "S3 の暗号化キーが KMS の権限を持っていない",
+          "is_correct": false,
+          "explanation": "暗号化と権限の問題はバイアスと関係ない。"
+        },
+        {
+          "id": "C",
+          "text": "推論エンドポイントのオートスケーリング設定が誤っている",
+          "is_correct": false,
+          "explanation": "オートスケーリング設定はパフォーマンスに関わるが、バイアス指標とは無関係。"
+        },
+        {
+          "id": "D",
+          "text": "学習データそのものに著しい不均衡があるため再収集が必要",
+          "is_correct": false,
+          "explanation": "Pre-training 指標が許容内なら、データ自体の偏りは小さい。原因は学習プロセス側にある可能性が高い。"
+        }
       ],
       "explanation": "Clarify では Pre-training bias（データ段階）と Post-training bias（学習後の予測段階）を別々に評価する。両者の差から「学習プロセスで増幅された偏り」を特定でき、特徴量選択や正則化の見直しなど次のアクションに繋げられる。",
       "references": [
-        {"title": "SageMaker Clarify Bias Metrics", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-data-bias.html"}
+        {
+          "title": "SageMaker Clarify Bias Metrics",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-data-bias.html"
+        }
       ],
-      "tags": ["clarify", "bias", "post-training", "saas", "fairness"],
-      "common_mistakes": ["Pre と Post-training bias の違いを理解していない", "代理変数による交絡を見落とす"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "clarify",
+        "bias",
+        "post-training",
+        "saas",
+        "fairness"
+      ],
+      "common_mistakes": [
+        "Pre と Post-training bias の違いを理解していない",
+        "代理変数による交絡を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-014",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Governance",
       "subtopic": "AI governance framework",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
-      "stem": "ある中堅製造業（東海地方）が全社的に生成AIを導入することを決定した。法務・情報システム・現場ユーザーの間で「誰が何の責任を持つか」が曖昧になっている。AI ガバナンスの観点で最初に整備すべきものとして最も適切なのは？",
+      "stem": "ある中堅製造業が全社的に生成AIを導入することを決定した。法務・情報システム・現場ユーザーの間で「誰が何の責任を持つか」が曖昧になっている。AI ガバナンスの観点で最初に整備すべきものとして最も適切なのは？",
       "options": [
-        {"id": "A", "text": "Bedrock の最大スループット予約を購入する", "is_correct": false, "explanation": "スループット予約はパフォーマンス・コスト最適化の話で、ガバナンス整備の最初のステップではない。"},
-        {"id": "B", "text": "AI 利用ポリシー（許容ユースケース、禁止用途、データ取り扱いルール、責任所在）を明文化し、関係者間で合意する", "is_correct": true, "explanation": "正解。AI ガバナンスの第一歩はポリシーの明文化と責任所在の合意形成。技術実装より先に行うべき経営的活動。"},
-        {"id": "C", "text": "全ユーザーに無制限の Bedrock アクセス権を付与する", "is_correct": false, "explanation": "無制限権限は最小権限の原則に反し、ガバナンスの真逆。"},
-        {"id": "D", "text": "全ての生成結果を S3 に暗号化保存する", "is_correct": false, "explanation": "ログ保管は監査面では重要だが、最初に整備すべき政策的整理ではない。"}
+        {
+          "id": "A",
+          "text": "Bedrock の最大スループット予約を購入する",
+          "is_correct": false,
+          "explanation": "スループット予約はパフォーマンス・コスト最適化の話で、ガバナンス整備の最初のステップではない。"
+        },
+        {
+          "id": "B",
+          "text": "AI 利用ポリシー（許容ユースケース、禁止用途、データ取り扱いルール、責任所在）を明文化し、関係者間で合意する",
+          "is_correct": true,
+          "explanation": "正解。AI ガバナンスの第一歩はポリシーの明文化と責任所在の合意形成。技術実装より先に行うべき経営的活動。"
+        },
+        {
+          "id": "C",
+          "text": "全ユーザーに無制限の Bedrock アクセス権を付与する",
+          "is_correct": false,
+          "explanation": "無制限権限は最小権限の原則に反し、ガバナンスの真逆。"
+        },
+        {
+          "id": "D",
+          "text": "全ての生成結果を S3 に暗号化保存する",
+          "is_correct": false,
+          "explanation": "ログ保管は監査面では重要だが、最初に整備すべき政策的整理ではない。"
+        }
       ],
       "explanation": "AI ガバナンスは「ポリシー → プロセス → 技術統制」の順で整備する。技術実装に先んじて、AI 利用ポリシー（誰が・何の目的で・どのデータを・どのモデルで使えるか、結果の責任は誰か）を文書化し、ステークホルダー合意を得るのが基本。Bedrock Guardrails や IAM はその後の技術実装。",
       "references": [
-        {"title": "AWS Generative AI Governance", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"}
+        {
+          "title": "AWS Generative AI Governance",
+          "url": "https://aws.amazon.com/machine-learning/responsible-ai/"
+        }
       ],
-      "tags": ["governance", "policy", "manufacturing", "responsible-ai"],
-      "common_mistakes": ["技術実装からガバナンスを始める", "ポリシー策定を後回しにする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "governance",
+        "policy",
+        "manufacturing",
+        "responsible-ai"
+      ],
+      "common_mistakes": [
+        "技術実装からガバナンスを始める",
+        "ポリシー策定を後回しにする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain4-015",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Guidelines for Responsible AI", "weight_percent": 14},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Guidelines for Responsible AI",
+        "weight_percent": 14
+      },
       "topic": "Bias mitigation",
       "subtopic": "Trade-off analysis",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある FinTech 企業が信用スコアリングモデルで「人種属性に対する公平性指標を厳密に揃える」改修を行った結果、全体の予測精度（AUC）が顕著に低下し、ビジネスサイドから不満が出ている。Responsible AI の観点で最も妥当な評価判断は？",
       "options": [
-        {"id": "A", "text": "公平性は重要だが、ビジネス精度を優先し、公平性指標の改修は撤回する", "is_correct": false, "explanation": "規制業界における公平性は法令順守の側面もあり、安易な撤回は法的・レピュテーションリスクを生む。"},
-        {"id": "B", "text": "公平性とビジネス精度はトレードオフであるため、関係者・規制要件を踏まえて閾値を再設計し、両者の許容点を見つけるべき", "is_correct": true, "explanation": "正解。Responsible AI は「絶対的正解」ではなくトレードオフ管理。利害関係者と規制要件に照らした多面的評価で閾値を決めるのが正しい姿勢。"},
-        {"id": "C", "text": "全ての公平性指標を 0 にすることが Responsible AI の目標であり、AUC は無視すべき", "is_correct": false, "explanation": "極端な公平性最適化はモデルの実用性を損ない、結果的に誰にも価値を提供できない。バランスが必要。"},
-        {"id": "D", "text": "Responsible AI は技術的に解決済みの分野なので Clarify を使えば自動で最適化される", "is_correct": false, "explanation": "Clarify は計測ツールで、トレードオフの判断は人間が行う必要がある。自動最適解は存在しない。"}
+        {
+          "id": "A",
+          "text": "全ての公平性指標を 0 にすることが Responsible AI の目標であり、AUC は無視すべき",
+          "is_correct": false,
+          "explanation": "極端な公平性最適化はモデルの実用性を損ない、結果的に誰にも価値を提供できない。バランスが必要。"
+        },
+        {
+          "id": "B",
+          "text": "Responsible AI は技術的に解決済みの分野なので Clarify を使えば自動で最適化される",
+          "is_correct": false,
+          "explanation": "Clarify は計測ツールで、トレードオフの判断は人間が行う必要がある。自動最適解は存在しない。"
+        },
+        {
+          "id": "C",
+          "text": "公平性とビジネス精度はトレードオフであるため、関係者・規制要件を踏まえて閾値を再設計し、両者の許容点を見つけるべき",
+          "is_correct": true,
+          "explanation": "正解。Responsible AI は「絶対的正解」ではなくトレードオフ管理。利害関係者と規制要件に照らした多面的評価で閾値を決めるのが正しい姿勢。"
+        },
+        {
+          "id": "D",
+          "text": "公平性は重要だが、ビジネス精度を優先し、公平性指標の改修は撤回する",
+          "is_correct": false,
+          "explanation": "規制業界における公平性は法令順守の側面もあり、安易な撤回は法的・レピュテーションリスクを生む。"
+        }
       ],
       "explanation": "Responsible AI における公平性は精度・利便性・透明性とのトレードオフ関係にあり、「絶対的最適」ではなく「合意可能な落としどころ」を関係者間で見つけるプロセスとして扱う。経営者・法務・データサイエンス・規制当局の協働が必要。",
       "references": [
-        {"title": "AWS Responsible AI", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"},
-        {"title": "Fairness Measures in SageMaker Clarify", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html"}
+        {
+          "title": "AWS Responsible AI",
+          "url": "https://aws.amazon.com/machine-learning/responsible-ai/"
+        },
+        {
+          "title": "Fairness Measures in SageMaker Clarify",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html"
+        }
       ],
-      "tags": ["fairness", "trade-off", "fintech", "evaluation"],
-      "common_mistakes": ["公平性とビジネス精度を二者択一と捉える", "Responsible AI を自動化された技術で解決可能と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude-opus47", "reviewed": true, "language": "ja"}
+      "tags": [
+        "fairness",
+        "trade-off",
+        "fintech",
+        "evaluation"
+      ],
+      "common_mistakes": [
+        "公平性とビジネス精度を二者択一と捉える",
+        "Responsible AI を自動化された技術で解決可能と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude-opus47",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

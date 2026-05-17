@@ -15,577 +15,1891 @@
     {
       "id": "mla-c01-domain4-001",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Model Monitor",
       "subtopic": "Monitoring Types",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SageMaker Model Monitor が提供する監視タイプはどれか（最も適切なもの1つ）？",
       "options": [
-        {"id": "A", "text": "Data Quality / Model Quality / Bias Drift / Feature Attribution Drift", "is_correct": true, "explanation": "正解。これが Model Monitor の標準4種。"},
-        {"id": "B", "text": "Latency / Throughput / Cost / Availability", "is_correct": false, "explanation": "これは推論サービスのインフラ運用指標。Model Monitor の対象ではない。"},
-        {"id": "C", "text": "CPU / Memory / Disk / Network", "is_correct": false, "explanation": "これはCloudWatch Container Insightsの領分。"},
-        {"id": "D", "text": "Accuracy / Precision / Recall / F1 のみ", "is_correct": false, "explanation": "Model Quality はこれらを含むが、Model Monitor 全体としての分類ではない。"}
+        {
+          "id": "A",
+          "text": "Data Quality / Model Quality / Bias Drift / Feature Attribution Drift",
+          "is_correct": true,
+          "explanation": "正解。これが Model Monitor の標準4種。"
+        },
+        {
+          "id": "B",
+          "text": "Latency / Throughput / Cost / Availability",
+          "is_correct": false,
+          "explanation": "これは推論サービスのインフラ運用指標。Model Monitor の対象ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Accuracy / Precision / Recall / F1 のみ",
+          "is_correct": false,
+          "explanation": "Model Quality はこれらを含むが、Model Monitor 全体としての分類ではない。"
+        },
+        {
+          "id": "D",
+          "text": "CPU / Memory / Disk / Network",
+          "is_correct": false,
+          "explanation": "これはCloudWatch Container Insightsの領分。"
+        }
       ],
       "explanation": "Model Monitor の4種は (1) Data Quality（入力分布監視）、(2) Model Quality（実ラベルとの精度）、(3) Bias Drift（属性別予測偏り）、(4) Feature Attribution Drift（SHAP寄与度の変化）。",
-      "references": [{"title": "Amazon SageMaker Model Monitor", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"}],
-      "tags": ["model-monitor", "drift", "monitoring"],
-      "common_mistakes": ["Model Monitor 対象を CloudWatch のメトリクスと混同", "Bias Drift / Feature Attribution Drift の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Amazon SageMaker Model Monitor",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
+        }
+      ],
+      "tags": [
+        "model-monitor",
+        "drift",
+        "monitoring"
+      ],
+      "common_mistakes": [
+        "Model Monitor 対象を CloudWatch のメトリクスと混同",
+        "Bias Drift / Feature Attribution Drift の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-002",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "IAM",
       "subtopic": "Execution Role",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SageMaker の Training Job や Endpoint が S3 から学習データやモデルアーティファクトを読むために、SageMaker サービスがAssumeする IAM Role を何と呼ぶか？",
       "options": [
-        {"id": "A", "text": "Service-linked Role", "is_correct": false, "explanation": "Service-linked RoleはAWSサービスの内部用途で、ユーザーが定義するExecution Roleとは別。"},
-        {"id": "B", "text": "Execution Role", "is_correct": true, "explanation": "正解。Training Job 作成時等に指定する IAM Role で、SageMaker 内部の各操作（S3 アクセス等）はこのロールで実行される。"},
-        {"id": "C", "text": "Task Role", "is_correct": false, "explanation": "ECS の用語であり、SageMakerでは使わない。"},
-        {"id": "D", "text": "Cross-account Role", "is_correct": false, "explanation": "クロスアカウント用途の総称で、SageMaker特有用語ではない。"}
+        {
+          "id": "A",
+          "text": "Cross-account Role",
+          "is_correct": false,
+          "explanation": "クロスアカウント用途の総称で、SageMaker特有用語ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Execution Role",
+          "is_correct": true,
+          "explanation": "正解。Training Job 作成時等に指定する IAM Role で、SageMaker 内部の各操作（S3 アクセス等）はこのロールで実行される。"
+        },
+        {
+          "id": "C",
+          "text": "Service-linked Role",
+          "is_correct": false,
+          "explanation": "Service-linked RoleはAWSサービスの内部用途で、ユーザーが定義するExecution Roleとは別。"
+        },
+        {
+          "id": "D",
+          "text": "Task Role",
+          "is_correct": false,
+          "explanation": "ECS の用語であり、SageMakerでは使わない。"
+        }
       ],
       "explanation": "Execution Role は SageMaker が学習・推論ジョブで使うIAMロール。S3、ECR、KMS、CloudWatch Logsなどへの権限を集約する。最小権限の原則に従って絞ることが推奨される。",
-      "references": [{"title": "SageMaker Roles", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html"}],
-      "tags": ["iam", "execution-role", "security"],
-      "common_mistakes": ["Service-linked と Execution の役割を混同", "ECSのTask RoleとSageMakerの混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "SageMaker Roles",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "execution-role",
+        "security"
+      ],
+      "common_mistakes": [
+        "Service-linked と Execution の役割を混同",
+        "ECSのTask RoleとSageMakerの混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-003",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "KMS",
       "subtopic": "Encryption Scopes",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SageMaker Training Job で KMS キーを指定して暗号化できるリソースはどれか？",
       "options": [
-        {"id": "A", "text": "S3バケット内のオブジェクトのみ", "is_correct": false, "explanation": "S3だけでなくEBS、SageMaker内部ボリュームなど多くを KMS で暗号化できる。"},
-        {"id": "B", "text": "EBS ボリュームと出力 S3 アーティファクト、Inter-Container Traffic（オプション）", "is_correct": true, "explanation": "正解。学習用 EBS、出力モデルアーティファクトの S3、コンテナ間通信、ノートブック EBS など多層で暗号化を指定できる。"},
-        {"id": "C", "text": "推論レスポンスのみ", "is_correct": false, "explanation": "推論レスポンスの暗号化は HTTPS で行われ、KMS とは別の話。"},
-        {"id": "D", "text": "CloudWatch Logs のみ", "is_correct": false, "explanation": "Logs も暗号化可能だが、SageMakerの主要な暗号化対象はEBS・S3が中心。"}
+        {
+          "id": "A",
+          "text": "推論レスポンスのみ",
+          "is_correct": false,
+          "explanation": "推論レスポンスの暗号化は HTTPS で行われ、KMS とは別の話。"
+        },
+        {
+          "id": "B",
+          "text": "S3バケット内のオブジェクトのみ",
+          "is_correct": false,
+          "explanation": "S3だけでなくEBS、SageMaker内部ボリュームなど多くを KMS で暗号化できる。"
+        },
+        {
+          "id": "C",
+          "text": "EBS ボリュームと出力 S3 アーティファクト、Inter-Container Traffic（オプション）",
+          "is_correct": true,
+          "explanation": "正解。学習用 EBS、出力モデルアーティファクトの S3、コンテナ間通信、ノートブック EBS など多層で暗号化を指定できる。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Logs のみ",
+          "is_correct": false,
+          "explanation": "Logs も暗号化可能だが、SageMakerの主要な暗号化対象はEBS・S3が中心。"
+        }
       ],
       "explanation": "SageMaker は多層で KMS 暗号化を指定可能: (1) Training/Processing/Endpoint の EBS ボリューム（VolumeKmsKey）、(2) 出力 S3（OutputKmsKey）、(3) Inter-Container Encryption、(4) ノートブックの EBS、(5) Endpoint の StorageKmsKey。",
-      "references": [{"title": "Encrypt Data with KMS", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html"}],
-      "tags": ["kms", "encryption", "ebs", "s3"],
-      "common_mistakes": ["S3だけが暗号化対象と思い込む", "Inter-Container Encryption の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Encrypt Data with KMS",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "encryption",
+        "ebs",
+        "s3"
+      ],
+      "common_mistakes": [
+        "S3だけが暗号化対象と思い込む",
+        "Inter-Container Encryption の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-004",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Model Monitor",
       "subtopic": "Data Quality",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "SageMaker Model Monitor の Data Quality 監視で、本番入力の各特徴量がベースラインから逸脱しているかを判定するために最初に必要な手順は？",
       "options": [
-        {"id": "A", "text": "学習データから Baseline ジョブを実行し、特徴量の統計的プロファイル（statistics.json と constraints.json）を生成", "is_correct": true, "explanation": "正解。Data Quality 監視は学習データから生成した baseline と本番データを比較する仕組み。"},
-        {"id": "B", "text": "推論ログを CloudWatch Insights でクエリ", "is_correct": false, "explanation": "比較基準となる baseline がないと逸脱判定ができない。"},
-        {"id": "C", "text": "Endpoint をオートスケール設定", "is_correct": false, "explanation": "オートスケールはData Quality監視と無関係。"},
-        {"id": "D", "text": "VPC エンドポイントを構成", "is_correct": false, "explanation": "VPC構成はネットワーク隔離で、Data Quality監視とは別。"}
+        {
+          "id": "A",
+          "text": "Endpoint をオートスケール設定",
+          "is_correct": false,
+          "explanation": "オートスケールはData Quality監視と無関係。"
+        },
+        {
+          "id": "B",
+          "text": "VPC エンドポイントを構成",
+          "is_correct": false,
+          "explanation": "VPC構成はネットワーク隔離で、Data Quality監視とは別。"
+        },
+        {
+          "id": "C",
+          "text": "推論ログを CloudWatch Insights でクエリ",
+          "is_correct": false,
+          "explanation": "比較基準となる baseline がないと逸脱判定ができない。"
+        },
+        {
+          "id": "D",
+          "text": "学習データから Baseline ジョブを実行し、特徴量の統計的プロファイル（statistics.json と constraints.json）を生成",
+          "is_correct": true,
+          "explanation": "正解。Data Quality 監視は学習データから生成した baseline と本番データを比較する仕組み。"
+        }
       ],
       "explanation": "Data Quality 監視は (1) Data Capture をエンドポイントで有効化、(2) Baseline ジョブで learning data から statistics.json + constraints.json を生成、(3) Monitoring Schedule を作成、というステップ。違反があれば CloudWatch メトリクス・SNS で通知される。",
-      "references": [{"title": "Monitor Data Quality", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html"}],
-      "tags": ["model-monitor", "data-quality", "baseline"],
-      "common_mistakes": ["baseline 作成を省く", "Data Capture を有効化し忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Monitor Data Quality",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html"
+        }
+      ],
+      "tags": [
+        "model-monitor",
+        "data-quality",
+        "baseline"
+      ],
+      "common_mistakes": [
+        "baseline 作成を省く",
+        "Data Capture を有効化し忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-005",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "VPC Mode",
       "subtopic": "Network Isolation",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "FinTech企業がSageMaker Training Jobを完全にVPC内で実行し、インターネットアクセスを禁止したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "Training Job 作成時に `EnableNetworkIsolation=true` と VPCConfig（プライベートサブネット）を指定し、必要なサービスにはVPCエンドポイントを構成", "is_correct": true, "explanation": "正解。Network Isolation はコンテナがアウトバウンドアクセスを持たない設定で、VPCエンドポイント経由でのみAWSサービスに通信する。"},
-        {"id": "B", "text": "NAT Gatewayを設定して全通信をインターネットに通す", "is_correct": false, "explanation": "NAT Gateway は外向き通信を許可するため、要件と矛盾する。"},
-        {"id": "C", "text": "デフォルト設定のままでよい", "is_correct": false, "explanation": "デフォルトはVPC外で実行され、インターネット経由になる。"},
-        {"id": "D", "text": "Public Subnet にデプロイする", "is_correct": false, "explanation": "Public Subnetはインターネット経由通信を意味し、要件と逆。"}
+        {
+          "id": "A",
+          "text": "Training Job 作成時に `EnableNetworkIsolation=true` と VPCConfig（プライベートサブネット）を指定し、必要なサービスにはVPCエンドポイントを構成",
+          "is_correct": true,
+          "explanation": "正解。Network Isolation はコンテナがアウトバウンドアクセスを持たない設定で、VPCエンドポイント経由でのみAWSサービスに通信する。"
+        },
+        {
+          "id": "B",
+          "text": "NAT Gatewayを設定して全通信をインターネットに通す",
+          "is_correct": false,
+          "explanation": "NAT Gateway は外向き通信を許可するため、要件と矛盾する。"
+        },
+        {
+          "id": "C",
+          "text": "Public Subnet にデプロイする",
+          "is_correct": false,
+          "explanation": "Public Subnetはインターネット経由通信を意味し、要件と逆。"
+        },
+        {
+          "id": "D",
+          "text": "デフォルト設定のままでよい",
+          "is_correct": false,
+          "explanation": "デフォルトはVPC外で実行され、インターネット経由になる。"
+        }
       ],
       "explanation": "Network Isolation を有効化するとコンテナはアウトバウンド通信できなくなる。S3・ECR・CloudWatch Logs などはVPCエンドポイント（インターフェース型/Gateway型）経由でアクセス可能にしておく。これが規制業界の標準構成。",
-      "references": [{"title": "Run Training Jobs in a VPC", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html"}],
-      "tags": ["vpc", "network-isolation", "fintech", "compliance"],
-      "common_mistakes": ["Network Isolation と VPC モードの違いを混同", "VPCエンドポイントの構成を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Run Training Jobs in a VPC",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html"
+        }
+      ],
+      "tags": [
+        "vpc",
+        "network-isolation",
+        "fintech",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Network Isolation と VPC モードの違いを混同",
+        "VPCエンドポイントの構成を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-006",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "PrivateLink",
       "subtopic": "VPC Endpoints",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "SageMaker API へのアクセスをパブリックインターネットを経由せずVPC内から行いたい。必要なAWS機能は？",
       "options": [
-        {"id": "A", "text": "AWS PrivateLink によるインターフェース型 VPC エンドポイント（com.amazonaws.<region>.sagemaker.api 等）", "is_correct": true, "explanation": "正解。PrivateLink で SageMaker API/Runtime/Notebook のインターフェース型VPCエンドポイントを構成する。"},
-        {"id": "B", "text": "NAT Gateway", "is_correct": false, "explanation": "NAT Gatewayはインターネット経由通信を経路化するため、要件と逆。"},
-        {"id": "C", "text": "Direct Connect のみ", "is_correct": false, "explanation": "Direct Connectはオンプレ-AWS間専用線で、VPC内アクセスとは別。"},
-        {"id": "D", "text": "Internet Gateway", "is_correct": false, "explanation": "IGWはインターネットアクセスを開く機能で逆。"}
+        {
+          "id": "A",
+          "text": "NAT Gateway",
+          "is_correct": false,
+          "explanation": "NAT Gatewayはインターネット経由通信を経路化するため、要件と逆。"
+        },
+        {
+          "id": "B",
+          "text": "AWS PrivateLink によるインターフェース型 VPC エンドポイント（com.amazonaws.<region>.sagemaker.api 等）",
+          "is_correct": true,
+          "explanation": "正解。PrivateLink で SageMaker API/Runtime/Notebook のインターフェース型VPCエンドポイントを構成する。"
+        },
+        {
+          "id": "C",
+          "text": "Direct Connect のみ",
+          "is_correct": false,
+          "explanation": "Direct Connectはオンプレ-AWS間専用線で、VPC内アクセスとは別。"
+        },
+        {
+          "id": "D",
+          "text": "Internet Gateway",
+          "is_correct": false,
+          "explanation": "IGWはインターネットアクセスを開く機能で逆。"
+        }
       ],
       "explanation": "SageMaker は API（コントロールプレーン）/ Runtime（推論）/ Notebook 各エンドポイントを PrivateLink でVPC内化できる。これによりインターネットを経由せずにAPI呼び出しが可能。HIPAA や FinTech の要件で必須となる。",
-      "references": [{"title": "Connect to SageMaker Within Your VPC", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html"}],
-      "tags": ["privatelink", "vpc-endpoint", "compliance"],
-      "common_mistakes": ["NAT GW で隔離できると誤解", "PrivateLink の対象サービス境界を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Connect to SageMaker Within Your VPC",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html"
+        }
+      ],
+      "tags": [
+        "privatelink",
+        "vpc-endpoint",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "NAT GW で隔離できると誤解",
+        "PrivateLink の対象サービス境界を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-007",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "CloudWatch Metrics",
       "subtopic": "Endpoint Metrics",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "SageMaker Real-time Endpoint で監視すべきCloudWatchメトリクスとして、レイテンシ起因の問題切り分けに最も役立つ組合せは？",
       "options": [
-        {"id": "A", "text": "ModelLatency と OverheadLatency", "is_correct": true, "explanation": "正解。ModelLatencyは推論本体の時間、OverheadLatencyはSageMaker側の処理時間。両者を見ることで原因を切り分けできる。"},
-        {"id": "B", "text": "DiskSpaceUsed と SwapUsage", "is_correct": false, "explanation": "ストレージ系メトリクスはレイテンシの直接指標ではない。"},
-        {"id": "C", "text": "S3 BucketSizeBytes", "is_correct": false, "explanation": "S3メトリクスはエンドポイントレイテンシと無関係。"},
-        {"id": "D", "text": "EC2 NetworkPacketsIn", "is_correct": false, "explanation": "汎用ネットワークメトリクスでは推論レイテンシ要因の特定は困難。"}
+        {
+          "id": "A",
+          "text": "DiskSpaceUsed と SwapUsage",
+          "is_correct": false,
+          "explanation": "ストレージ系メトリクスはレイテンシの直接指標ではない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 BucketSizeBytes",
+          "is_correct": false,
+          "explanation": "S3メトリクスはエンドポイントレイテンシと無関係。"
+        },
+        {
+          "id": "C",
+          "text": "ModelLatency と OverheadLatency",
+          "is_correct": true,
+          "explanation": "正解。ModelLatencyは推論本体の時間、OverheadLatencyはSageMaker側の処理時間。両者を見ることで原因を切り分けできる。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 NetworkPacketsIn",
+          "is_correct": false,
+          "explanation": "汎用ネットワークメトリクスでは推論レイテンシ要因の特定は困難。"
+        }
       ],
       "explanation": "SageMaker Endpoint の主要メトリクス: Invocations、ModelLatency（推論コンテナ内の時間）、OverheadLatency（SageMaker側のオーケストレーション時間）、Invocation4XXErrors/5XXErrors、CPUUtilization。レイテンシ問題は Model か Overhead かで切り分ける。",
-      "references": [{"title": "Monitor SageMaker Endpoints with CloudWatch", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/monitoring-cloudwatch.html"}],
-      "tags": ["cloudwatch", "endpoint", "latency"],
-      "common_mistakes": ["ModelLatency と OverheadLatency の違いを知らない", "ストレージ系で原因切り分け"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Monitor SageMaker Endpoints with CloudWatch",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/monitoring-cloudwatch.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch",
+        "endpoint",
+        "latency"
+      ],
+      "common_mistakes": [
+        "ModelLatency と OverheadLatency の違いを知らない",
+        "ストレージ系で原因切り分け"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-008",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "HIPAA Compliance",
       "subtopic": "Healthcare ML",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "医療系SaaSが、患者画像を扱うMLパイプラインをHIPAA準拠で構築する。最低限必要な対策はどれか？",
       "options": [
-        {"id": "A", "text": "BAAをAWSと締結し、HIPAA Eligible Servicesのみを使用、保管時/転送時の暗号化、CloudTrailによる監査ログ取得", "is_correct": true, "explanation": "正解。HIPAA Eligible Services（SageMakerは含まれる）のみ使用、BAA、暗号化、監査ログがコア要件。"},
-        {"id": "B", "text": "S3 にデータを置けばHIPAA要件を満たす", "is_correct": false, "explanation": "ストレージだけでは不十分。BAAと運用統制が必須。"},
-        {"id": "C", "text": "VPCにデプロイすれば自動でHIPAA準拠", "is_correct": false, "explanation": "VPCは前提のひとつだが、それだけでは準拠とならない。"},
-        {"id": "D", "text": "AWS WAFを有効化すれば足りる", "is_correct": false, "explanation": "WAFはWeb保護で、HIPAA全要件をカバーしない。"}
+        {
+          "id": "A",
+          "text": "S3 にデータを置けばHIPAA要件を満たす",
+          "is_correct": false,
+          "explanation": "ストレージだけでは不十分。BAAと運用統制が必須。"
+        },
+        {
+          "id": "B",
+          "text": "AWS WAFを有効化すれば足りる",
+          "is_correct": false,
+          "explanation": "WAFはWeb保護で、HIPAA全要件をカバーしない。"
+        },
+        {
+          "id": "C",
+          "text": "VPCにデプロイすれば自動でHIPAA準拠",
+          "is_correct": false,
+          "explanation": "VPCは前提のひとつだが、それだけでは準拠とならない。"
+        },
+        {
+          "id": "D",
+          "text": "BAAをAWSと締結し、HIPAA Eligible Servicesのみを使用、保管時/転送時の暗号化、CloudTrailによる監査ログ取得",
+          "is_correct": true,
+          "explanation": "正解。HIPAA Eligible Services（SageMakerは含まれる）のみ使用、BAA、暗号化、監査ログがコア要件。"
+        }
       ],
       "explanation": "HIPAA on AWS は (1) BAA 締結、(2) HIPAA Eligible Services のみ使用、(3) 保管時暗号化（KMS）、(4) 転送時暗号化（TLS）、(5) 監査ログ（CloudTrail）、(6) 最小権限IAM、(7) ネットワーク隔離（VPC/PrivateLink）が標準セット。",
-      "references": [{"title": "AWS HIPAA Compliance", "url": "https://aws.amazon.com/compliance/hipaa-compliance/"}],
-      "tags": ["hipaa", "healthcare", "compliance"],
-      "common_mistakes": ["暗号化だけで準拠と思い込む", "BAA の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS HIPAA Compliance",
+          "url": "https://aws.amazon.com/compliance/hipaa-compliance/"
+        }
+      ],
+      "tags": [
+        "hipaa",
+        "healthcare",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "暗号化だけで準拠と思い込む",
+        "BAA の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-009",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Model Monitor",
       "subtopic": "Model Quality",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "本番モデルの精度を継続監視したい。実ラベルが遅れて取得されるユースケースで、Model Quality 監視を機能させるために必要な仕組みは？",
       "options": [
-        {"id": "A", "text": "Data Capture で推論ログを保存し、後から S3 に Ground Truth を投入する Merge Job を実行する", "is_correct": true, "explanation": "正解。Model Quality Monitor は Ground Truth との結合が必要で、SageMaker は Merge Job 機能を提供する。"},
-        {"id": "B", "text": "Model Monitor が自動でラベルを推測する", "is_correct": false, "explanation": "ラベルの自動推測機能はない。"},
-        {"id": "C", "text": "実ラベルなしでもAccuracyを計算できる", "is_correct": false, "explanation": "実ラベルなしには教師あり評価指標は計算不能。"},
-        {"id": "D", "text": "Endpoint の MetricDefinitions だけで完結", "is_correct": false, "explanation": "MetricDefinitions は学習用で推論監視ではない。"}
+        {
+          "id": "A",
+          "text": "Data Capture で推論ログを保存し、後から S3 に Ground Truth を投入する Merge Job を実行する",
+          "is_correct": true,
+          "explanation": "正解。Model Quality Monitor は Ground Truth との結合が必要で、SageMaker は Merge Job 機能を提供する。"
+        },
+        {
+          "id": "B",
+          "text": "Endpoint の MetricDefinitions だけで完結",
+          "is_correct": false,
+          "explanation": "MetricDefinitions は学習用で推論監視ではない。"
+        },
+        {
+          "id": "C",
+          "text": "実ラベルなしでもAccuracyを計算できる",
+          "is_correct": false,
+          "explanation": "実ラベルなしには教師あり評価指標は計算不能。"
+        },
+        {
+          "id": "D",
+          "text": "Model Monitor が自動でラベルを推測する",
+          "is_correct": false,
+          "explanation": "ラベルの自動推測機能はない。"
+        }
       ],
       "explanation": "Model Quality 監視のフロー: (1) Data Capture を有効化、(2) Ground Truth を S3 に格納、(3) Merge Job で推論ログとラベルを結合、(4) Quality Job で Accuracy/F1/AUC等を比較、(5) baseline と乖離で violation。",
-      "references": [{"title": "Model Quality Monitor", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html"}],
-      "tags": ["model-monitor", "model-quality", "ground-truth"],
-      "common_mistakes": ["Ground Truthなしで精度監視できると誤解", "Merge Job の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Model Quality Monitor",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html"
+        }
+      ],
+      "tags": [
+        "model-monitor",
+        "model-quality",
+        "ground-truth"
+      ],
+      "common_mistakes": [
+        "Ground Truthなしで精度監視できると誤解",
+        "Merge Job の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-010",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "IAM Policy",
       "subtopic": "Least Privilege",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SageMaker Notebook ユーザーが、特定のS3バケット（学習用）のみアクセスでき、他のSageMaker操作はフル可能なポリシーを設計したい。最も推奨されるアプローチは？",
       "options": [
-        {"id": "A", "text": "AmazonSageMakerFullAccess を付与し、S3 アクセスはバケットを限定する明示的 Allow と他バケット Deny で制御", "is_correct": true, "explanation": "正解。SageMaker 操作はマネージドポリシーで賄い、S3アクセスは独立に最小権限化する。"},
-        {"id": "B", "text": "AdministratorAccess を付与し、運用後に絞る", "is_correct": false, "explanation": "最小権限の原則に反する。最初から絞るべき。"},
-        {"id": "C", "text": "SageMaker のすべてのアクションを `*` で許可するインライン", "is_correct": false, "explanation": "S3 制限が抜け漏れて事故の元となる。"},
-        {"id": "D", "text": "S3 のみ deny にする", "is_correct": false, "explanation": "学習用バケットへのアクセスができなくなり要件を満たさない。"}
+        {
+          "id": "A",
+          "text": "S3 のみ deny にする",
+          "is_correct": false,
+          "explanation": "学習用バケットへのアクセスができなくなり要件を満たさない。"
+        },
+        {
+          "id": "B",
+          "text": "AmazonSageMakerFullAccess を付与し、S3 アクセスはバケットを限定する明示的 Allow と他バケット Deny で制御",
+          "is_correct": true,
+          "explanation": "正解。SageMaker 操作はマネージドポリシーで賄い、S3アクセスは独立に最小権限化する。"
+        },
+        {
+          "id": "C",
+          "text": "AdministratorAccess を付与し、運用後に絞る",
+          "is_correct": false,
+          "explanation": "最小権限の原則に反する。最初から絞るべき。"
+        },
+        {
+          "id": "D",
+          "text": "SageMaker のすべてのアクションを `*` で許可するインライン",
+          "is_correct": false,
+          "explanation": "S3 制限が抜け漏れて事故の元となる。"
+        }
       ],
       "explanation": "最小権限IAMの実務ベストプラクティスは、(1) AWS マネージドポリシー（AmazonSageMakerFullAccess）をベースにし、(2) S3バケットなど機密リソースは bucket-name レベルで明示的 Allow/Deny を追加、(3) Condition で IP・MFA・PrincipalOrgID 等を組み合わせる。",
-      "references": [{"title": "SageMaker IAM Policies", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam.html"}],
-      "tags": ["iam", "least-privilege", "s3"],
-      "common_mistakes": ["AdminAccess で実装", "Conditionキーを使わない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "SageMaker IAM Policies",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "least-privilege",
+        "s3"
+      ],
+      "common_mistakes": [
+        "AdminAccess で実装",
+        "Conditionキーを使わない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-011",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Re-training Automation",
       "subtopic": "Continual Training",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Model Monitor のdata drift検知をトリガに、SageMaker Pipelines を再学習用に自動起動したい。最小工数で実装する構成は？",
       "options": [
-        {"id": "A", "text": "Model Monitor の violation を CloudWatch メトリクス → EventBridge ルール → Pipeline 起動に直接ターゲット指定", "is_correct": true, "explanation": "正解。EventBridge は SageMaker Pipelines を直接ターゲットにできる。"},
-        {"id": "B", "text": "Lambda を 5 分ごとに起動して S3 上のレポートを解析", "is_correct": false, "explanation": "ポーリングは無駄が多く、イベント駆動が標準。"},
-        {"id": "C", "text": "SQS にメッセージを入れて Pipelines が拾う", "is_correct": false, "explanation": "Pipelines は SQS から自動的に起動する仕組みを持たない。"},
-        {"id": "D", "text": "CodePipeline を毎日定時実行する", "is_correct": false, "explanation": "drift とは無関係なスケジュールでは無駄な再学習が増える。"}
+        {
+          "id": "A",
+          "text": "CodePipeline を毎日定時実行する",
+          "is_correct": false,
+          "explanation": "drift とは無関係なスケジュールでは無駄な再学習が増える。"
+        },
+        {
+          "id": "B",
+          "text": "SQS にメッセージを入れて Pipelines が拾う",
+          "is_correct": false,
+          "explanation": "Pipelines は SQS から自動的に起動する仕組みを持たない。"
+        },
+        {
+          "id": "C",
+          "text": "Model Monitor の violation を CloudWatch メトリクス → EventBridge ルール → Pipeline 起動に直接ターゲット指定",
+          "is_correct": true,
+          "explanation": "正解。EventBridge は SageMaker Pipelines を直接ターゲットにできる。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda を 5 分ごとに起動して S3 上のレポートを解析",
+          "is_correct": false,
+          "explanation": "ポーリングは無駄が多く、イベント駆動が標準。"
+        }
       ],
       "explanation": "Continual Training の典型構成は『Model Monitor → CloudWatch Alarm → EventBridge → Pipeline』。新規データの取得・前処理・学習・評価・登録までを自動化する。",
-      "references": [{"title": "Schedule Pipelines with EventBridge", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipeline-eventbridge.html"}],
-      "tags": ["eventbridge", "continual-training", "pipelines"],
-      "common_mistakes": ["定時再学習でコストを浪費", "EventBridgeターゲットの存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Schedule Pipelines with EventBridge",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipeline-eventbridge.html"
+        }
+      ],
+      "tags": [
+        "eventbridge",
+        "continual-training",
+        "pipelines"
+      ],
+      "common_mistakes": [
+        "定時再学習でコストを浪費",
+        "EventBridgeターゲットの存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-012",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Cost Optimization",
       "subtopic": "Endpoint",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "夜間トラフィックがほぼゼロで、昼間にスパイクするRealtime Endpointのコストを下げたい。最も効果的な対策は？",
       "options": [
-        {"id": "A", "text": "Application Auto Scaling のスケジュールスケーリングで夜間はインスタンス数を最低限まで減らし、昼間に増やす", "is_correct": true, "explanation": "正解。SageMaker のオートスケールは Schedule Action もサポートし、予測可能なパターンに対応できる。"},
-        {"id": "B", "text": "より大きなインスタンスタイプに変更", "is_correct": false, "explanation": "コスト削減と逆。"},
-        {"id": "C", "text": "全時間帯で Min Capacity を最大に固定", "is_correct": false, "explanation": "夜間も最大稼働でコスト最大化される。"},
-        {"id": "D", "text": "Async に変更", "is_correct": false, "explanation": "応答パターンが変わり、ユーザー要件に影響する。スケジュールスケーリングが先。"}
+        {
+          "id": "A",
+          "text": "全時間帯で Min Capacity を最大に固定",
+          "is_correct": false,
+          "explanation": "夜間も最大稼働でコスト最大化される。"
+        },
+        {
+          "id": "B",
+          "text": "より大きなインスタンスタイプに変更",
+          "is_correct": false,
+          "explanation": "コスト削減と逆。"
+        },
+        {
+          "id": "C",
+          "text": "Async に変更",
+          "is_correct": false,
+          "explanation": "応答パターンが変わり、ユーザー要件に影響する。スケジュールスケーリングが先。"
+        },
+        {
+          "id": "D",
+          "text": "Application Auto Scaling のスケジュールスケーリングで夜間はインスタンス数を最低限まで減らし、昼間に増やす",
+          "is_correct": true,
+          "explanation": "正解。SageMaker のオートスケールは Schedule Action もサポートし、予測可能なパターンに対応できる。"
+        }
       ],
       "explanation": "Application Auto Scaling は (1) Target Tracking、(2) Step Scaling、(3) Scheduled Scaling の3方式。予測可能なトラフィックパターンには Scheduled が最も効果的。Serverless 移行も選択肢だがアプリ側変更が必要。",
-      "references": [{"title": "Scheduled Scaling for SageMaker", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html"}],
-      "tags": ["auto-scaling", "scheduled", "cost"],
-      "common_mistakes": ["Target Tracking のみで夜間コストを放置", "Async/Serverless の検討と混乱"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Scheduled Scaling for SageMaker",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "scheduled",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Target Tracking のみで夜間コストを放置",
+        "Async/Serverless の検討と混乱"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-013",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "GDPR",
       "subtopic": "Data Subject Rights",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "EU顧客向けSaaSで、GDPR の『削除権（消去権）』に対応するため、特定ユーザーの学習データと派生データの削除を実装したい。MLOps として最も妥当な対応は？",
       "options": [
-        {"id": "A", "text": "Feature Store とS3 から該当ユーザーのレコードを削除し、削除後のデータで再学習・再デプロイするパイプラインを整備", "is_correct": true, "explanation": "正解。GDPR削除権は学習データだけでなく、モデルが個人情報を学習している場合の派生影響も検討する必要がある。再学習が一般的解。"},
-        {"id": "B", "text": "Endpoint を停止すれば削除権を満たす", "is_correct": false, "explanation": "停止だけではデータ削除にならない。"},
-        {"id": "C", "text": "学習済みモデルをそのまま維持し、データだけ削除", "is_correct": false, "explanation": "モデルが個人特定可能な特徴を保持している場合、不十分なケースがある。"},
-        {"id": "D", "text": "S3 オブジェクトに versioning をかけ最新版だけ消す", "is_correct": false, "explanation": "古いバージョンが残ると完全削除にならない。"}
+        {
+          "id": "A",
+          "text": "Feature Store とS3 から該当ユーザーのレコードを削除し、削除後のデータで再学習・再デプロイするパイプラインを整備",
+          "is_correct": true,
+          "explanation": "正解。GDPR削除権は学習データだけでなく、モデルが個人情報を学習している場合の派生影響も検討する必要がある。再学習が一般的解。"
+        },
+        {
+          "id": "B",
+          "text": "Endpoint を停止すれば削除権を満たす",
+          "is_correct": false,
+          "explanation": "停止だけではデータ削除にならない。"
+        },
+        {
+          "id": "C",
+          "text": "S3 オブジェクトに versioning をかけ最新版だけ消す",
+          "is_correct": false,
+          "explanation": "古いバージョンが残ると完全削除にならない。"
+        },
+        {
+          "id": "D",
+          "text": "学習済みモデルをそのまま維持し、データだけ削除",
+          "is_correct": false,
+          "explanation": "モデルが個人特定可能な特徴を保持している場合、不十分なケースがある。"
+        }
       ],
       "explanation": "GDPR 削除権では、保存データの削除に加え、AIモデルが個人情報を保持しているかの評価が必要。差分プライバシーや federated learning の活用、もしくは再学習が現実的解。SageMaker Pipelines で再学習を自動化する。",
-      "references": [{"title": "AWS GDPR Compliance", "url": "https://aws.amazon.com/compliance/gdpr-center/"}],
-      "tags": ["gdpr", "compliance", "deletion"],
-      "common_mistakes": ["データ削除のみで足りると誤解", "モデルの再学習を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS GDPR Compliance",
+          "url": "https://aws.amazon.com/compliance/gdpr-center/"
+        }
+      ],
+      "tags": [
+        "gdpr",
+        "compliance",
+        "deletion"
+      ],
+      "common_mistakes": [
+        "データ削除のみで足りると誤解",
+        "モデルの再学習を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-014",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Inter-Container Encryption",
       "subtopic": "Distributed Training Security",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech企業がSageMaker分散学習で、ノード間通信の暗号化を強制したい。設定方法は？",
       "options": [
-        {"id": "A", "text": "Training Job 作成時に `EnableInterContainerTrafficEncryption=true` を指定", "is_correct": true, "explanation": "正解。SageMaker は分散学習のノード間通信を TLS 暗号化するオプションを提供する。"},
-        {"id": "B", "text": "VPC 内であれば自動的に暗号化される", "is_correct": false, "explanation": "VPC内通信はデフォルトでは平文。明示的に暗号化を有効化する必要がある。"},
-        {"id": "C", "text": "S3 暗号化を有効化するだけで足りる", "is_correct": false, "explanation": "S3 と Inter-Container は別レイヤーの暗号化。"},
-        {"id": "D", "text": "Lambda で middleware として暗号化処理を追加", "is_correct": false, "explanation": "そのような構成はSageMakerに存在しない。"}
+        {
+          "id": "A",
+          "text": "S3 暗号化を有効化するだけで足りる",
+          "is_correct": false,
+          "explanation": "S3 と Inter-Container は別レイヤーの暗号化。"
+        },
+        {
+          "id": "B",
+          "text": "Training Job 作成時に `EnableInterContainerTrafficEncryption=true` を指定",
+          "is_correct": true,
+          "explanation": "正解。SageMaker は分散学習のノード間通信を TLS 暗号化するオプションを提供する。"
+        },
+        {
+          "id": "C",
+          "text": "VPC 内であれば自動的に暗号化される",
+          "is_correct": false,
+          "explanation": "VPC内通信はデフォルトでは平文。明示的に暗号化を有効化する必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で middleware として暗号化処理を追加",
+          "is_correct": false,
+          "explanation": "そのような構成はSageMakerに存在しない。"
+        }
       ],
       "explanation": "Inter-Container Traffic Encryption はノード間の TLS 暗号化を有効化する設定。学習時間が若干増えるが、規制業界では強く推奨される。",
-      "references": [{"title": "Inter-Container Traffic Encryption", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html"}],
-      "tags": ["inter-container", "encryption", "distributed", "fintech"],
-      "common_mistakes": ["VPC内通信が自動暗号化と誤解", "S3暗号化だけで足りると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Inter-Container Traffic Encryption",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html"
+        }
+      ],
+      "tags": [
+        "inter-container",
+        "encryption",
+        "distributed",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "VPC内通信が自動暗号化と誤解",
+        "S3暗号化だけで足りると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-015",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Latency Optimization",
       "subtopic": "Inference Acceleration",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "推論レイテンシをコスト効率よく改善したい。CPUインスタンスでは遅く、GPUにすると過剰スペック。中間的な選択肢として最適なのは？",
       "options": [
-        {"id": "A", "text": "AWS Inferentia 系インスタンス（inf1, inf2）を活用し Neuron SDK で最適化", "is_correct": true, "explanation": "正解。InferentiaはGPUより安価で高い推論スループットを出すAWS設計のチップ。"},
-        {"id": "B", "text": "Lambda に切り替える", "is_correct": false, "explanation": "Lambda は GPU 不可で、レイテンシ要件によっては不適。"},
-        {"id": "C", "text": "EFS にモデルを置く", "is_correct": false, "explanation": "ストレージ場所はレイテンシ最適化と直接関係しない。"},
-        {"id": "D", "text": "オートスケールで台数を増やす", "is_correct": false, "explanation": "1リクエストあたりのレイテンシ短縮には台数増加は効かない。"}
+        {
+          "id": "A",
+          "text": "Lambda に切り替える",
+          "is_correct": false,
+          "explanation": "Lambda は GPU 不可で、レイテンシ要件によっては不適。"
+        },
+        {
+          "id": "B",
+          "text": "EFS にモデルを置く",
+          "is_correct": false,
+          "explanation": "ストレージ場所はレイテンシ最適化と直接関係しない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Inferentia 系インスタンス（inf1, inf2）を活用し Neuron SDK で最適化",
+          "is_correct": true,
+          "explanation": "正解。InferentiaはGPUより安価で高い推論スループットを出すAWS設計のチップ。"
+        },
+        {
+          "id": "D",
+          "text": "オートスケールで台数を増やす",
+          "is_correct": false,
+          "explanation": "1リクエストあたりのレイテンシ短縮には台数増加は効かない。"
+        }
       ],
       "explanation": "Inferentia は AWS 設計の推論専用チップで、GPUより安価かつ高スループット。Neuron SDK で TensorFlow/PyTorch モデルをコンパイルする。SageMaker は inf1/inf2 インスタンスをエンドポイントタイプとして選択可能。",
-      "references": [{"title": "AWS Inferentia", "url": "https://aws.amazon.com/machine-learning/inferentia/"}],
-      "tags": ["inferentia", "neuron", "latency", "cost"],
-      "common_mistakes": ["GPU vs CPU の二択しか考えない", "Inferentia の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Inferentia",
+          "url": "https://aws.amazon.com/machine-learning/inferentia/"
+        }
+      ],
+      "tags": [
+        "inferentia",
+        "neuron",
+        "latency",
+        "cost"
+      ],
+      "common_mistakes": [
+        "GPU vs CPU の二択しか考えない",
+        "Inferentia の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-016",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Drift Diagnosis",
       "subtopic": "Root Cause Analysis",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Model Monitor の Data Quality は alert なし。Model Quality はAccuracy 急低下を検知。Bias Drift は alert なし。最も妥当な原因仮説は？",
       "options": [
-        {"id": "A", "text": "ラベル分布が変化（concept drift / label shift）した可能性が高く、特徴量分布は変化していない", "is_correct": true, "explanation": "正解。入力分布は変わっていないが精度が下がっているため、ラベル側の関係性変化が疑われる。"},
-        {"id": "B", "text": "コンテナの CPU 不足", "is_correct": false, "explanation": "CPU不足はレイテンシに影響するが Accuracy には基本影響しない。"},
-        {"id": "C", "text": "S3バケットの権限設定", "is_correct": false, "explanation": "アクセス権限の問題なら推論自体が失敗する。"},
-        {"id": "D", "text": "Endpoint インスタンス数の不足", "is_correct": false, "explanation": "スケール問題は Accuracy 自体には影響しない。"}
+        {
+          "id": "A",
+          "text": "Endpoint インスタンス数の不足",
+          "is_correct": false,
+          "explanation": "スケール問題は Accuracy 自体には影響しない。"
+        },
+        {
+          "id": "B",
+          "text": "S3バケットの権限設定",
+          "is_correct": false,
+          "explanation": "アクセス権限の問題なら推論自体が失敗する。"
+        },
+        {
+          "id": "C",
+          "text": "コンテナの CPU 不足",
+          "is_correct": false,
+          "explanation": "CPU不足はレイテンシに影響するが Accuracy には基本影響しない。"
+        },
+        {
+          "id": "D",
+          "text": "ラベル分布が変化（concept drift / label shift）した可能性が高く、特徴量分布は変化していない",
+          "is_correct": true,
+          "explanation": "正解。入力分布は変わっていないが精度が下がっているため、ラベル側の関係性変化が疑われる。"
+        }
       ],
       "explanation": "ドリフトの種類: (1) covariate shift（入力分布変化、Data Quality で検出）、(2) concept drift（入力→出力の関係変化、Model Quality で検出）、(3) label shift（ラベル分布変化）。Data Quality が静かで Model Quality が悪化なら concept/label drift が疑われる。",
-      "references": [{"title": "Drift Types in SageMaker Model Monitor", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"}],
-      "tags": ["drift", "concept-drift", "diagnosis"],
-      "common_mistakes": ["Data Drift と Concept Drift を混同", "Accuracy低下の原因をインフラに帰着"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Drift Types in SageMaker Model Monitor",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
+        }
+      ],
+      "tags": [
+        "drift",
+        "concept-drift",
+        "diagnosis"
+      ],
+      "common_mistakes": [
+        "Data Drift と Concept Drift を混同",
+        "Accuracy低下の原因をインフラに帰着"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-017",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Cost Allocation",
       "subtopic": "Tagging Strategy",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "B2B SaaSが、ML関連コストを顧客テナント別に按分したい。最も妥当な構成は？",
       "options": [
-        {"id": "A", "text": "Training Job、Endpoint、Pipelinesにテナントごとのタグを付け、Cost Allocation Tag を有効化、Cost Explorerで集計", "is_correct": true, "explanation": "正解。タグは Cost Allocation で集計でき、テナント単位のコスト按分の標準手法。"},
-        {"id": "B", "text": "AWS Organizations で各テナントを別アカウントに分離", "is_correct": false, "explanation": "実現可能だが粒度が粗く、運用コストも高い。Tagの方が柔軟。"},
-        {"id": "C", "text": "CloudWatch メトリクスを集計", "is_correct": false, "explanation": "CloudWatchはコスト管理ツールではない。"},
-        {"id": "D", "text": "S3バケットを分けるだけで足りる", "is_correct": false, "explanation": "学習・推論コストの大部分は計算資源で、ストレージ分離だけでは不十分。"}
+        {
+          "id": "A",
+          "text": "Training Job、Endpoint、Pipelinesにテナントごとのタグを付け、Cost Allocation Tag を有効化、Cost Explorerで集計",
+          "is_correct": true,
+          "explanation": "正解。タグは Cost Allocation で集計でき、テナント単位のコスト按分の標準手法。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch メトリクスを集計",
+          "is_correct": false,
+          "explanation": "CloudWatchはコスト管理ツールではない。"
+        },
+        {
+          "id": "C",
+          "text": "S3バケットを分けるだけで足りる",
+          "is_correct": false,
+          "explanation": "学習・推論コストの大部分は計算資源で、ストレージ分離だけでは不十分。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Organizations で各テナントを別アカウントに分離",
+          "is_correct": false,
+          "explanation": "実現可能だが粒度が粗く、運用コストも高い。Tagの方が柔軟。"
+        }
       ],
       "explanation": "AWSのコスト按分は (1) Cost Allocation Tag を有効化、(2) リソースに統一されたタグキー（例: TenantId）を付与、(3) Cost Explorer や AWS Budgets でタグ別集計、(4) CUR を Athena でクエリ、が標準フロー。",
-      "references": [{"title": "AWS Cost Allocation Tags", "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"}],
-      "tags": ["cost", "tagging", "saas", "multi-tenant"],
-      "common_mistakes": ["タグだけで Cost Allocation が動くと誤解（有効化が必要）", "アカウント分割で全部解決と思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Cost Allocation Tags",
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"
+        }
+      ],
+      "tags": [
+        "cost",
+        "tagging",
+        "saas",
+        "multi-tenant"
+      ],
+      "common_mistakes": [
+        "タグだけで Cost Allocation が動くと誤解（有効化が必要）",
+        "アカウント分割で全部解決と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-018",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "VPC Architecture",
       "subtopic": "Compliance Layer",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "医療系企業がHIPAA準拠でSageMakerを使う際、ネットワーク層の最適構成は？",
       "options": [
-        {"id": "A", "text": "プライベートサブネット + Network Isolation + S3/ECR/CloudWatch Logs/STS の VPC エンドポイント + KMS キーポリシー + Endpoint policy で参加可能なリソースを限定", "is_correct": true, "explanation": "正解。多層防御の標準構成で、HIPAA や金融業界に推奨される。"},
-        {"id": "B", "text": "パブリックサブネット + IGW + デフォルトSG", "is_correct": false, "explanation": "公開状態で重大な情報漏洩リスク。"},
-        {"id": "C", "text": "VPN なし + パブリック S3 バケット", "is_correct": false, "explanation": "公開バケットでHIPAA準拠は不可能。"},
-        {"id": "D", "text": "デフォルト VPC + デフォルトロール", "is_correct": false, "explanation": "最小権限の対極で監査要件を満たさない。"}
+        {
+          "id": "A",
+          "text": "パブリックサブネット + IGW + デフォルトSG",
+          "is_correct": false,
+          "explanation": "公開状態で重大な情報漏洩リスク。"
+        },
+        {
+          "id": "B",
+          "text": "プライベートサブネット + Network Isolation + S3/ECR/CloudWatch Logs/STS の VPC エンドポイント + KMS キーポリシー + Endpoint policy で参加可能なリソースを限定",
+          "is_correct": true,
+          "explanation": "正解。多層防御の標準構成で、HIPAA や金融業界に推奨される。"
+        },
+        {
+          "id": "C",
+          "text": "VPN なし + パブリック S3 バケット",
+          "is_correct": false,
+          "explanation": "公開バケットでHIPAA準拠は不可能。"
+        },
+        {
+          "id": "D",
+          "text": "デフォルト VPC + デフォルトロール",
+          "is_correct": false,
+          "explanation": "最小権限の対極で監査要件を満たさない。"
+        }
       ],
       "explanation": "HIPAA準拠のネットワーク構成は (1) Private Subnet、(2) Network Isolation、(3) PrivateLinkでVPC Endpoint、(4) Endpoint Policy で操作・リソース絞り込み、(5) Security Group/NACL でホワイトリスト、(6) KMSキーポリシーでアクセス制御、を組合せる。",
-      "references": [{"title": "Build Secure ML Workflows on SageMaker", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html"}],
-      "tags": ["vpc", "hipaa", "network", "compliance"],
-      "common_mistakes": ["Endpoint Policy を使わない", "VPC Endpoint を1つだけ作って満足する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Build Secure ML Workflows on SageMaker",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html"
+        }
+      ],
+      "tags": [
+        "vpc",
+        "hipaa",
+        "network",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Endpoint Policy を使わない",
+        "VPC Endpoint を1つだけ作って満足する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-019",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Re-training Trigger Strategy",
       "subtopic": "Trigger Selection",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "再学習トリガとして『定時スケジュール』『データドリフト検出』『精度低下検出』『新規データ量の閾値到達』のいずれを採用すべきかを評価する。最も妥当な判断基準は？",
       "options": [
-        {"id": "A", "text": "ユースケース特性（季節性、データ蓄積速度、ラベル取得遅延、運用コスト）を踏まえ、複数トリガを組合せる", "is_correct": true, "explanation": "正解。単一トリガでは取りこぼしや過剰再学習が起きるため、複数を組合せるのが実務標準。"},
-        {"id": "B", "text": "常に毎日再学習する", "is_correct": false, "explanation": "コスト過大、過学習リスク。"},
-        {"id": "C", "text": "精度低下検出だけで十分", "is_correct": false, "explanation": "ラベル遅延がある場合、検出が遅れる。"},
-        {"id": "D", "text": "データドリフトだけで十分", "is_correct": false, "explanation": "concept drift は検出できないため穴がある。"}
+        {
+          "id": "A",
+          "text": "データドリフトだけで十分",
+          "is_correct": false,
+          "explanation": "concept drift は検出できないため穴がある。"
+        },
+        {
+          "id": "B",
+          "text": "精度低下検出だけで十分",
+          "is_correct": false,
+          "explanation": "ラベル遅延がある場合、検出が遅れる。"
+        },
+        {
+          "id": "C",
+          "text": "ユースケース特性（季節性、データ蓄積速度、ラベル取得遅延、運用コスト）を踏まえ、複数トリガを組合せる",
+          "is_correct": true,
+          "explanation": "正解。単一トリガでは取りこぼしや過剰再学習が起きるため、複数を組合せるのが実務標準。"
+        },
+        {
+          "id": "D",
+          "text": "常に毎日再学習する",
+          "is_correct": false,
+          "explanation": "コスト過大、過学習リスク。"
+        }
       ],
       "explanation": "実務的な再学習トリガ設計は『定時下限（最低保証）+ ドリフト検出 + 精度低下検出 + データ量閾値』の組合せが推奨される。トリガ多重化はコストと検出漏れのトレードオフを最適化する。",
-      "references": [{"title": "Continual Learning on SageMaker", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"}],
-      "tags": ["re-training", "trigger", "mlops"],
-      "common_mistakes": ["1つのトリガですべて賄おうとする", "コスト軽視の毎日再学習"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Continual Learning on SageMaker",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
+        }
+      ],
+      "tags": [
+        "re-training",
+        "trigger",
+        "mlops"
+      ],
+      "common_mistakes": [
+        "1つのトリガですべて賄おうとする",
+        "コスト軽視の毎日再学習"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-020",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Latency vs Cost Trade-off",
       "subtopic": "Architecture Optimization",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Endpointが p50=80ms / p99=600ms / 平均CPU 25% を示す。コスト最適化と p99 短縮を両立する最も効果的な対策は？",
       "options": [
-        {"id": "A", "text": "Inferentia/コンパイル最適化（Neo）でモデルレイテンシを下げ、インスタンス種別を見直してCPU使用率を健全化", "is_correct": true, "explanation": "正解。p99悪化はモデル推論時間の長尾、CPU 25%は過剰スペック。Inferentia/Neoで両方改善できる。"},
-        {"id": "B", "text": "Min Capacity を 10倍にする", "is_correct": false, "explanation": "CPU 25%状態で台数増は更にコスト過剰。"},
-        {"id": "C", "text": "Async に切替", "is_correct": false, "explanation": "Async は同期応答用途を満たさない。"},
-        {"id": "D", "text": "Serverless にして p99 を上げる", "is_correct": false, "explanation": "Serverlessはコールドスタートでp99悪化方向。"}
+        {
+          "id": "A",
+          "text": "Async に切替",
+          "is_correct": false,
+          "explanation": "Async は同期応答用途を満たさない。"
+        },
+        {
+          "id": "B",
+          "text": "Min Capacity を 10倍にする",
+          "is_correct": false,
+          "explanation": "CPU 25%状態で台数増は更にコスト過剰。"
+        },
+        {
+          "id": "C",
+          "text": "Serverless にして p99 を上げる",
+          "is_correct": false,
+          "explanation": "Serverlessはコールドスタートでp99悪化方向。"
+        },
+        {
+          "id": "D",
+          "text": "Inferentia/コンパイル最適化（Neo）でモデルレイテンシを下げ、インスタンス種別を見直してCPU使用率を健全化",
+          "is_correct": true,
+          "explanation": "正解。p99悪化はモデル推論時間の長尾、CPU 25%は過剰スペック。Inferentia/Neoで両方改善できる。"
+        }
       ],
       "explanation": "p99レイテンシ悪化はモデル本体の長尾やGC、データロード等が原因のことが多い。Neoでのモデル最適化、Inferentiaへの移行、small batchの検討、コンテナのwarmup最適化、ドメインに応じた quantization が定番策。",
-      "references": [{"title": "Optimize Inference Performance", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/neo.html"}],
-      "tags": ["latency", "cost", "optimization", "inferentia"],
-      "common_mistakes": ["台数増加で p99 を解こうとする", "CPU使用率を見ずに性能調整"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Optimize Inference Performance",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/neo.html"
+        }
+      ],
+      "tags": [
+        "latency",
+        "cost",
+        "optimization",
+        "inferentia"
+      ],
+      "common_mistakes": [
+        "台数増加で p99 を解こうとする",
+        "CPU使用率を見ずに性能調整"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-021",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Feature Attribution Drift",
       "subtopic": "Diagnosis",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Model Monitor の Feature Attribution Drift がアラートを出した。Data Quality と Model Quality のメトリクスは正常範囲。最も妥当な解釈は？",
       "options": [
-        {"id": "A", "text": "予測値や精度は変わっていないが、各特徴量がモデル予測に与える影響度合いの分布が変化しており、将来的な精度劣化や説明可能性の低下を示唆", "is_correct": true, "explanation": "正解。Feature Attribution Drift は将来の劣化の前兆や、モデルの判断ロジックの変化を示すことがある。"},
-        {"id": "B", "text": "推論レイテンシが悪化している", "is_correct": false, "explanation": "Feature Attribution Drift とレイテンシは独立。"},
-        {"id": "C", "text": "S3バケットが削除された", "is_correct": false, "explanation": "ストレージ問題は別アラートで検出される。"},
-        {"id": "D", "text": "アラートは無視してよい", "is_correct": false, "explanation": "前兆を捉えている可能性があるため早期調査が必要。"}
+        {
+          "id": "A",
+          "text": "予測値や精度は変わっていないが、各特徴量がモデル予測に与える影響度合いの分布が変化しており、将来的な精度劣化や説明可能性の低下を示唆",
+          "is_correct": true,
+          "explanation": "正解。Feature Attribution Drift は将来の劣化の前兆や、モデルの判断ロジックの変化を示すことがある。"
+        },
+        {
+          "id": "B",
+          "text": "推論レイテンシが悪化している",
+          "is_correct": false,
+          "explanation": "Feature Attribution Drift とレイテンシは独立。"
+        },
+        {
+          "id": "C",
+          "text": "アラートは無視してよい",
+          "is_correct": false,
+          "explanation": "前兆を捉えている可能性があるため早期調査が必要。"
+        },
+        {
+          "id": "D",
+          "text": "S3バケットが削除された",
+          "is_correct": false,
+          "explanation": "ストレージ問題は別アラートで検出される。"
+        }
       ],
       "explanation": "Feature Attribution Drift は SHAP 値などの特徴量寄与度がベースラインからどれだけずれたかを評価する。精度低下より早く検出できる先行指標として価値が高い。EUの AI Act の説明可能性監視にも有効。",
-      "references": [{"title": "Monitor Feature Attribution Drift", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-feature-attribution-drift.html"}],
-      "tags": ["feature-attribution", "drift", "explainability"],
-      "common_mistakes": ["Feature Attribution Drift を Data Drift と混同", "アラートを軽視"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Monitor Feature Attribution Drift",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-feature-attribution-drift.html"
+        }
+      ],
+      "tags": [
+        "feature-attribution",
+        "drift",
+        "explainability"
+      ],
+      "common_mistakes": [
+        "Feature Attribution Drift を Data Drift と混同",
+        "アラートを軽視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-022",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Compliance Architecture",
       "subtopic": "Multi-region Strategy",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "GDPR適用のEU顧客データを EU リージョンにとどめる必要があり、本番モデル学習・推論を US でも継続したい。最も妥当な構成は？",
       "options": [
-        {"id": "A", "text": "EU リージョンに学習データを配置し、必要に応じて匿名化・集約後のデータのみ US で学習。推論はリージョンごとに別 Endpoint", "is_correct": true, "explanation": "正解。GDPR の越境データ移転制限を尊重しつつ、必要最小限のデータで多リージョン運用する標準アプローチ。"},
-        {"id": "B", "text": "EUデータをUSのS3にコピーする", "is_correct": false, "explanation": "GDPR違反のリスクが高い。"},
-        {"id": "C", "text": "全データをUSに集約して効率化", "is_correct": false, "explanation": "GDPR要件と矛盾。"},
-        {"id": "D", "text": "リージョンを意識せずデフォルト構成", "is_correct": false, "explanation": "デフォルトで GDPR 準拠にはならない。"}
+        {
+          "id": "A",
+          "text": "全データをUSに集約して効率化",
+          "is_correct": false,
+          "explanation": "GDPR要件と矛盾。"
+        },
+        {
+          "id": "B",
+          "text": "EU リージョンに学習データを配置し、必要に応じて匿名化・集約後のデータのみ US で学習。推論はリージョンごとに別 Endpoint",
+          "is_correct": true,
+          "explanation": "正解。GDPR の越境データ移転制限を尊重しつつ、必要最小限のデータで多リージョン運用する標準アプローチ。"
+        },
+        {
+          "id": "C",
+          "text": "EUデータをUSのS3にコピーする",
+          "is_correct": false,
+          "explanation": "GDPR違反のリスクが高い。"
+        },
+        {
+          "id": "D",
+          "text": "リージョンを意識せずデフォルト構成",
+          "is_correct": false,
+          "explanation": "デフォルトで GDPR 準拠にはならない。"
+        }
       ],
       "explanation": "GDPR では個人データのEU外移転に厳しい要件（標準契約条項、Adequacy Decision など）。実務的には EU リージョンにデータを残し、匿名化済みの集約値や差分プライバシー結果のみ移転する。リージョン別 Endpoint で推論を提供する。",
-      "references": [{"title": "AWS GDPR Compliance", "url": "https://aws.amazon.com/compliance/gdpr-center/"}],
-      "tags": ["gdpr", "multi-region", "compliance"],
-      "common_mistakes": ["データ越境の制約を軽視", "全データを単一リージョンに集約しようとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS GDPR Compliance",
+          "url": "https://aws.amazon.com/compliance/gdpr-center/"
+        }
+      ],
+      "tags": [
+        "gdpr",
+        "multi-region",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "データ越境の制約を軽視",
+        "全データを単一リージョンに集約しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-023",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Holistic Security Evaluation",
       "subtopic": "Architecture Review",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "新規 ML プロダクトのセキュリティアーキテクチャを評価する。次のうち、評価項目として最も妥当な組合せは？",
       "options": [
-        {"id": "A", "text": "(1)IAM最小権限、(2)KMS暗号化（保管時/通信時/Inter-Container）、(3)VPC隔離とPrivateLink、(4)監査ログ（CloudTrail/CloudWatch/Lineage）、(5)コンプラ（HIPAA/GDPR/SOC2/PCI）", "is_correct": true, "explanation": "正解。AWS Well-Architected Framework Security Pillar と ML Security Best Practices に沿った評価軸。"},
-        {"id": "B", "text": "コストとレイテンシだけ", "is_correct": false, "explanation": "セキュリティ評価項目を欠く。"},
-        {"id": "C", "text": "WAFの有無のみ", "is_correct": false, "explanation": "WAFは1要素に過ぎない。"},
-        {"id": "D", "text": "リージョンの選定のみ", "is_correct": false, "explanation": "リージョンはコンプラの一要素であり、全体評価ではない。"}
+        {
+          "id": "A",
+          "text": "リージョンの選定のみ",
+          "is_correct": false,
+          "explanation": "リージョンはコンプラの一要素であり、全体評価ではない。"
+        },
+        {
+          "id": "B",
+          "text": "コストとレイテンシだけ",
+          "is_correct": false,
+          "explanation": "セキュリティ評価項目を欠く。"
+        },
+        {
+          "id": "C",
+          "text": "(1)IAM最小権限、(2)KMS暗号化（保管時/通信時/Inter-Container）、(3)VPC隔離とPrivateLink、(4)監査ログ（CloudTrail/CloudWatch/Lineage）、(5)コンプラ（HIPAA/GDPR/SOC2/PCI）",
+          "is_correct": true,
+          "explanation": "正解。AWS Well-Architected Framework Security Pillar と ML Security Best Practices に沿った評価軸。"
+        },
+        {
+          "id": "D",
+          "text": "WAFの有無のみ",
+          "is_correct": false,
+          "explanation": "WAFは1要素に過ぎない。"
+        }
       ],
       "explanation": "ML セキュリティ評価は『データ・モデル・運用』の三層で考える。データ層は IAM/KMS/暗号化、モデル層は Adversarial Defense と監査、運用層は最小権限・ネットワーク隔離・監査ログ。AWS Well-Architected ML レンズも参照。",
-      "references": [{"title": "AWS Well-Architected ML Lens", "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"}],
-      "tags": ["security", "architecture", "well-architected"],
-      "common_mistakes": ["1軸だけで評価する", "コンプライアンスを後回しにする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Well-Architected ML Lens",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+        }
+      ],
+      "tags": [
+        "security",
+        "architecture",
+        "well-architected"
+      ],
+      "common_mistakes": [
+        "1軸だけで評価する",
+        "コンプライアンスを後回しにする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-024",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Drift Strategy Evaluation",
       "subtopic": "Monitoring Design",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "あるチームが Model Monitor を Data Quality のみで運用している。Bias Drift と Feature Attribution Drift を導入すべきかを判断したい。最も妥当な検討は？",
       "options": [
-        {"id": "A", "text": "規制業界・社会的影響の大きいモデル（融資、医療、雇用）では Bias Drift と Feature Attribution Drift も加え、組織のモデルガバナンス要件と費用対効果で判断", "is_correct": true, "explanation": "正解。監視拡張はコストと監視価値のトレードオフ。リスクの高いユースケースでは必須に近い。"},
-        {"id": "B", "text": "Data Quality だけで十分。追加は不要", "is_correct": false, "explanation": "公平性や説明可能性のリスクを放置することになる。"},
-        {"id": "C", "text": "全てを導入すれば常に最良", "is_correct": false, "explanation": "コストや運用負荷が増えるため、ユースケース次第。"},
-        {"id": "D", "text": "Model Monitor を全廃して人手監視にする", "is_correct": false, "explanation": "退行であり、スケールしない。"}
+        {
+          "id": "A",
+          "text": "Data Quality だけで十分。追加は不要",
+          "is_correct": false,
+          "explanation": "公平性や説明可能性のリスクを放置することになる。"
+        },
+        {
+          "id": "B",
+          "text": "Model Monitor を全廃して人手監視にする",
+          "is_correct": false,
+          "explanation": "退行であり、スケールしない。"
+        },
+        {
+          "id": "C",
+          "text": "全てを導入すれば常に最良",
+          "is_correct": false,
+          "explanation": "コストや運用負荷が増えるため、ユースケース次第。"
+        },
+        {
+          "id": "D",
+          "text": "規制業界・社会的影響の大きいモデル（融資、医療、雇用）では Bias Drift と Feature Attribution Drift も加え、組織のモデルガバナンス要件と費用対効果で判断",
+          "is_correct": true,
+          "explanation": "正解。監視拡張はコストと監視価値のトレードオフ。リスクの高いユースケースでは必須に近い。"
+        }
       ],
       "explanation": "監視戦略は『コスト vs リスク』の評価。低リスクの内部ユースケースは Data Quality のみで足りるが、規制業界（金融・医療・雇用）や社会的影響の大きい AI には Bias と Feature Attribution の監視を導入し、AI Act 等の説明責任要件にも備える。",
-      "references": [{"title": "Model Monitor Best Practices", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"}],
-      "tags": ["model-monitor", "bias", "governance", "evaluation"],
-      "common_mistakes": ["全部入りで導入する", "リスク評価をせず追加判断する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Model Monitor Best Practices",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
+        }
+      ],
+      "tags": [
+        "model-monitor",
+        "bias",
+        "governance",
+        "evaluation"
+      ],
+      "common_mistakes": [
+        "全部入りで導入する",
+        "リスク評価をせず追加判断する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain4-025",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "ML Solution Monitoring, Maintenance, and Security", "weight_percent": 24},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "ML Solution Monitoring, Maintenance, and Security",
+        "weight_percent": 24
+      },
       "topic": "Comprehensive MLOps Security Architecture",
       "subtopic": "Design from Scratch",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "FinTech企業がゼロから ML プラットフォームを設計する。次の要件をすべて満たす全体設計として最も妥当なのは？: (1)PCI DSS / SOC2 / GDPR、(2)Multi-account（Dev/Staging/Prod）、(3)モデル監視と自動再学習、(4)コスト按分、(5)監査追跡。",
       "options": [
-        {"id": "A", "text": "AWS Organizations で 3 アカウント構成、CodeCommit + CodePipeline でクロスアカウント CI/CD、SageMaker Pipelines で ML CI、Model Registry で承認ゲート、Model Monitor + EventBridge で再学習自動化、KMS/PrivateLink/Network Isolation でセキュリティ、CloudTrail + CUR + タグでコスト・監査、Macie で機密データ検出", "is_correct": true, "explanation": "正解。AWS のリファレンスアーキテクチャに沿った包括的設計。"},
-        {"id": "B", "text": "1アカウントで全環境をまとめ、IAMだけで分離", "is_correct": false, "explanation": "PCI DSS/SOC2の隔離要件を満たしにくく、影響範囲が広い。"},
-        {"id": "C", "text": "EC2上にKubeflowを全部自前で構築", "is_correct": false, "explanation": "運用コストが莫大で、AWSマネージドの統制機能を享受できない。"},
-        {"id": "D", "text": "Lambda 関数群と DynamoDB だけで実装", "is_correct": false, "explanation": "ML特有のリネージ・モデル管理・分散学習などをカバーできない。"}
+        {
+          "id": "A",
+          "text": "AWS Organizations で 3 アカウント構成、CodeCommit + CodePipeline でクロスアカウント CI/CD、SageMaker Pipelines で ML CI、Model Registry で承認ゲート、Model Monitor + EventBridge で再学習自動化、KMS/PrivateLink/Network Isolation でセキュリティ、CloudTrail + CUR + タグでコスト・監査、Macie で機密データ検出",
+          "is_correct": true,
+          "explanation": "正解。AWS のリファレンスアーキテクチャに沿った包括的設計。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda 関数群と DynamoDB だけで実装",
+          "is_correct": false,
+          "explanation": "ML特有のリネージ・モデル管理・分散学習などをカバーできない。"
+        },
+        {
+          "id": "C",
+          "text": "1アカウントで全環境をまとめ、IAMだけで分離",
+          "is_correct": false,
+          "explanation": "PCI DSS/SOC2の隔離要件を満たしにくく、影響範囲が広い。"
+        },
+        {
+          "id": "D",
+          "text": "EC2上にKubeflowを全部自前で構築",
+          "is_correct": false,
+          "explanation": "運用コストが莫大で、AWSマネージドの統制機能を享受できない。"
+        }
       ],
       "explanation": "エンタープライズ MLOps プラットフォームは『アカウント分離 + CI/CD + Pipelines + Registry + Monitor + Security + Audit + Cost』を統合する。AWS のML Platform リファレンスアーキテクチャは Multi-account を前提に各層を結合する。タグ運用は最初期から決めるのが要点。",
-      "references": [{"title": "ML Platform Reference Architecture", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/multi-account-model-deployment.html"}, {"title": "Well-Architected ML Lens", "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"}],
-      "tags": ["enterprise", "mlops", "fintech", "compliance", "multi-account"],
-      "common_mistakes": ["1アカウントで済ませる設計", "セキュリティ・コスト・監査を後付けにする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-mla-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "ML Platform Reference Architecture",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/multi-account-model-deployment.html"
+        },
+        {
+          "title": "Well-Architected ML Lens",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+        }
+      ],
+      "tags": [
+        "enterprise",
+        "mlops",
+        "fintech",
+        "compliance",
+        "multi-account"
+      ],
+      "common_mistakes": [
+        "1アカウントで済ませる設計",
+        "セキュリティ・コスト・監査を後付けにする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-mla-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

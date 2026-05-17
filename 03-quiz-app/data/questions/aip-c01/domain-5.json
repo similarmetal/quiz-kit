@@ -15,631 +15,1928 @@
     {
       "id": "aip-c01-domain5-001",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Model Evaluation",
       "subtopic": "評価モードの種類",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Amazon Bedrock Model Evaluation で提供される評価モードはどれか？",
       "options": [
-        {"id": "A", "text": "Automatic（マネージド指標のみ）", "is_correct": false, "explanation": "Automatic は提供されるが、それ『のみ』ではない。"},
-        {"id": "B", "text": "Automatic、Human-based（社内チームレビュー）、LLM-as-a-judge を含む複数モード", "is_correct": true, "explanation": "正解。Bedrock Model Evaluation は Automatic、Human、LLM-as-a-judge の 3 系統を提供する。"},
-        {"id": "C", "text": "Human-based のみ", "is_correct": false, "explanation": "Automatic も提供される。"},
-        {"id": "D", "text": "BLEU 専用", "is_correct": false, "explanation": "BLEU は古典指標の 1 つで、Model Evaluation 全体ではない。"}
+        {
+          "id": "A",
+          "text": "Automatic、Human-based（社内チームレビュー）、LLM-as-a-judge を含む複数モード",
+          "is_correct": true,
+          "explanation": "正解。Bedrock Model Evaluation は Automatic、Human、LLM-as-a-judge の 3 系統を提供する。"
+        },
+        {
+          "id": "B",
+          "text": "BLEU 専用",
+          "is_correct": false,
+          "explanation": "BLEU は古典指標の 1 つで、Model Evaluation 全体ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Human-based のみ",
+          "is_correct": false,
+          "explanation": "Automatic も提供される。"
+        },
+        {
+          "id": "D",
+          "text": "Automatic（マネージド指標のみ）",
+          "is_correct": false,
+          "explanation": "Automatic は提供されるが、それ『のみ』ではない。"
+        }
       ],
       "explanation": "Bedrock Model Evaluation には (1) Automatic（toxicity, accuracy, robustness など組込指標）、(2) Human（社内チームによるラベル付け UI）、(3) LLM-as-a-judge（別 LLM で評価）の 3 モードがある。タスク種別（要約・QA・分類・自由生成）に応じて組み合わせる。",
       "references": [
-        {"title": "Bedrock Model Evaluation overview", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"}
+        {
+          "title": "Bedrock Model Evaluation overview",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"
+        }
       ],
-      "tags": ["model-evaluation", "automatic", "human", "llm-as-judge"],
-      "common_mistakes": ["Automatic だけと思い込む", "BLEU が唯一の指標と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "model-evaluation",
+        "automatic",
+        "human",
+        "llm-as-judge"
+      ],
+      "common_mistakes": [
+        "Automatic だけと思い込む",
+        "BLEU が唯一の指標と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-002",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Guardrails",
       "subtopic": "Guardrails 構成要素",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Amazon Bedrock Guardrails が提供するフィルタの種類として正しい組み合わせはどれか？",
       "options": [
-        {"id": "A", "text": "Content filter, Denied topics, Word filter, Sensitive information filter, Contextual grounding check", "is_correct": true, "explanation": "正解。これらが Bedrock Guardrails の主要 5 機能。"},
-        {"id": "B", "text": "BLEU, ROUGE, BERTScore", "is_correct": false, "explanation": "それらは評価指標で Guardrails ではない。"},
-        {"id": "C", "text": "IAM, KMS, CloudTrail", "is_correct": false, "explanation": "それらは AWS の汎用セキュリティ機能で Guardrails の構成要素ではない。"},
-        {"id": "D", "text": "Knowledge Base のみ", "is_correct": false, "explanation": "KB は別機能。"}
+        {
+          "id": "A",
+          "text": "IAM, KMS, CloudTrail",
+          "is_correct": false,
+          "explanation": "それらは AWS の汎用セキュリティ機能で Guardrails の構成要素ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Content filter, Denied topics, Word filter, Sensitive information filter, Contextual grounding check",
+          "is_correct": true,
+          "explanation": "正解。これらが Bedrock Guardrails の主要 5 機能。"
+        },
+        {
+          "id": "C",
+          "text": "BLEU, ROUGE, BERTScore",
+          "is_correct": false,
+          "explanation": "それらは評価指標で Guardrails ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Knowledge Base のみ",
+          "is_correct": false,
+          "explanation": "KB は別機能。"
+        }
       ],
       "explanation": "Bedrock Guardrails は (1) Content filter（hate/insult/sexual/violence/misconduct/prompt-injection）、(2) Denied topics、(3) Word filter（独自 NG ワード）、(4) Sensitive information filter（PII regex/組込タイプ）、(5) Contextual grounding check（文脈整合性、ハルシネーション抑制）の 5 系統。",
       "references": [
-        {"title": "Guardrails for Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"}
+        {
+          "title": "Guardrails for Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+        }
       ],
-      "tags": ["guardrails", "content-filter", "pii", "contextual-grounding"],
-      "common_mistakes": ["Content filter だけと思う", "Contextual grounding の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "guardrails",
+        "content-filter",
+        "pii",
+        "contextual-grounding"
+      ],
+      "common_mistakes": [
+        "Content filter だけと思う",
+        "Contextual grounding の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-003",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "CloudWatch metrics for Bedrock",
       "subtopic": "標準メトリクスの理解",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Bedrock の運用監視で利用できる CloudWatch メトリクスとして提供されているのはどれか？",
       "options": [
-        {"id": "A", "text": "InvocationLatency, InputTokenCount, OutputTokenCount, Invocations, InvocationClientErrors, InvocationServerErrors, InvocationThrottles", "is_correct": true, "explanation": "正解。これらが Bedrock 標準の CloudWatch メトリクス。"},
-        {"id": "B", "text": "BLEUScore, ROUGEScore", "is_correct": false, "explanation": "BLEU/ROUGE は評価指標で、CloudWatch 標準メトリクスではない。"},
-        {"id": "C", "text": "AccuracyMetric, F1Score", "is_correct": false, "explanation": "それらは Bedrock CloudWatch メトリクスとして提供されない。"},
-        {"id": "D", "text": "DiskIOPS のみ", "is_correct": false, "explanation": "Bedrock はサーバレス推論で DiskIOPS を露出しない。"}
+        {
+          "id": "A",
+          "text": "BLEUScore, ROUGEScore",
+          "is_correct": false,
+          "explanation": "BLEU/ROUGE は評価指標で、CloudWatch 標準メトリクスではない。"
+        },
+        {
+          "id": "B",
+          "text": "DiskIOPS のみ",
+          "is_correct": false,
+          "explanation": "Bedrock はサーバレス推論で DiskIOPS を露出しない。"
+        },
+        {
+          "id": "C",
+          "text": "InvocationLatency, InputTokenCount, OutputTokenCount, Invocations, InvocationClientErrors, InvocationServerErrors, InvocationThrottles",
+          "is_correct": true,
+          "explanation": "正解。これらが Bedrock 標準の CloudWatch メトリクス。"
+        },
+        {
+          "id": "D",
+          "text": "AccuracyMetric, F1Score",
+          "is_correct": false,
+          "explanation": "それらは Bedrock CloudWatch メトリクスとして提供されない。"
+        }
       ],
       "explanation": "Bedrock の CloudWatch メトリクスは推論呼び出しレベルに集中する。InvocationLatency でレイテンシ監視、Input/OutputTokenCount でコスト推計、Throttles でクォータ消費、ClientErrors（4xx）/ServerErrors（5xx）で信頼性監視。品質指標は別途 Model Evaluation や Observability で計測する。",
       "references": [
-        {"title": "Monitor Amazon Bedrock with Amazon CloudWatch", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-cw.html"}
+        {
+          "title": "Monitor Amazon Bedrock with Amazon CloudWatch",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-cw.html"
+        }
       ],
-      "tags": ["cloudwatch", "metrics", "monitoring", "tokens"],
-      "common_mistakes": ["CloudWatch で品質指標まで取れると思い込む", "Throttles を見逃す"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "cloudwatch",
+        "metrics",
+        "monitoring",
+        "tokens"
+      ],
+      "common_mistakes": [
+        "CloudWatch で品質指標まで取れると思い込む",
+        "Throttles を見逃す"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-004",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Contextual Grounding Check",
       "subtopic": "ハルシネーション抑制",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Bedrock Guardrails の Contextual grounding check の役割を最も正確に表現しているのは？",
       "options": [
-        {"id": "A", "text": "提供された参照ソース（grounding source）に対する応答の整合性（grounding score）と関連性（relevance score）を検査し、しきい値未満の応答をブロックまたは加工する", "is_correct": true, "explanation": "正解。grounding score = ソースに含まれるか、relevance = 質問に答えているか、の 2 軸を評価。"},
-        {"id": "B", "text": "ユーザの過去発言を全て暗号化保存する", "is_correct": false, "explanation": "暗号化保存とは無関係。"},
-        {"id": "C", "text": "PII を自動的にマスクする", "is_correct": false, "explanation": "PII マスクは sensitive information filter の役割。"},
-        {"id": "D", "text": "Action Group の入力を検証する", "is_correct": false, "explanation": "入力検証ではなく、出力のソース整合性検査。"}
+        {
+          "id": "A",
+          "text": "ユーザの過去発言を全て暗号化保存する",
+          "is_correct": false,
+          "explanation": "暗号化保存とは無関係。"
+        },
+        {
+          "id": "B",
+          "text": "Action Group の入力を検証する",
+          "is_correct": false,
+          "explanation": "入力検証ではなく、出力のソース整合性検査。"
+        },
+        {
+          "id": "C",
+          "text": "PII を自動的にマスクする",
+          "is_correct": false,
+          "explanation": "PII マスクは sensitive information filter の役割。"
+        },
+        {
+          "id": "D",
+          "text": "提供された参照ソース（grounding source）に対する応答の整合性（grounding score）と関連性（relevance score）を検査し、しきい値未満の応答をブロックまたは加工する",
+          "is_correct": true,
+          "explanation": "正解。grounding score = ソースに含まれるか、relevance = 質問に答えているか、の 2 軸を評価。"
+        }
       ],
       "explanation": "Contextual grounding check は RAG 応答のハルシネーション抑制に特化した機能。RetrieveAndGenerate やアプリ側で渡した grounding source に対し、(1) 応答が source に裏付けられているか（grounding）、(2) ユーザ質問に答えているか（relevance）を 0-1 で採点し、しきい値以下なら応答を遮断/編集する。",
       "references": [
-        {"title": "Contextual grounding check for Guardrails", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html"}
+        {
+          "title": "Contextual grounding check for Guardrails",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html"
+        }
       ],
-      "tags": ["guardrails", "contextual-grounding", "hallucination", "rag"],
-      "common_mistakes": ["PII マスクと混同", "RAG なしでも効くと思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "guardrails",
+        "contextual-grounding",
+        "hallucination",
+        "rag"
+      ],
+      "common_mistakes": [
+        "PII マスクと混同",
+        "RAG なしでも効くと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-005",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "古典評価指標",
       "subtopic": "BLEU / ROUGE / BERTScore の使い分け",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "BLEU・ROUGE・BERTScore の特徴の違いとして正しいのは？",
       "options": [
-        {"id": "A", "text": "BLEU は n-gram precision で機械翻訳評価が起源、ROUGE は n-gram/シーケンス recall で要約評価が起源、BERTScore は埋め込み類似度で意味的類似性を測る", "is_correct": true, "explanation": "正解。BLEU/ROUGE は表層 n-gram 一致、BERTScore は埋め込みの cosine 類似で、語彙が違う言い換えにも強い。"},
-        {"id": "B", "text": "BLEU は recall、ROUGE は precision、BERTScore は F1", "is_correct": false, "explanation": "BLEU は precision 中心、ROUGE は recall 中心。役割が逆。"},
-        {"id": "C", "text": "3 つすべてが同じ指標で、計算方法だけ違う", "is_correct": false, "explanation": "目的・基底とも異なる。"},
-        {"id": "D", "text": "BERTScore は token を数えるだけ", "is_correct": false, "explanation": "埋め込み類似度を計算する指標。"}
+        {
+          "id": "A",
+          "text": "BLEU は n-gram precision で機械翻訳評価が起源、ROUGE は n-gram/シーケンス recall で要約評価が起源、BERTScore は埋め込み類似度で意味的類似性を測る",
+          "is_correct": true,
+          "explanation": "正解。BLEU/ROUGE は表層 n-gram 一致、BERTScore は埋め込みの cosine 類似で、語彙が違う言い換えにも強い。"
+        },
+        {
+          "id": "B",
+          "text": "3 つすべてが同じ指標で、計算方法だけ違う",
+          "is_correct": false,
+          "explanation": "目的・基底とも異なる。"
+        },
+        {
+          "id": "C",
+          "text": "BERTScore は token を数えるだけ",
+          "is_correct": false,
+          "explanation": "埋め込み類似度を計算する指標。"
+        },
+        {
+          "id": "D",
+          "text": "BLEU は recall、ROUGE は precision、BERTScore は F1",
+          "is_correct": false,
+          "explanation": "BLEU は precision 中心、ROUGE は recall 中心。役割が逆。"
+        }
       ],
       "explanation": "BLEU（Papineni 2002）: 機械翻訳の n-gram 一致 precision、brevity penalty 付き。ROUGE（Lin 2004）: 要約評価、n-gram/Longest Common Subsequence の recall 中心。BERTScore（Zhang 2019）: 文埋め込みの token 単位 cosine 類似で、表層が違う意味同等表現に強いが計算コスト高。生成 AI 評価では BERTScore + LLM-as-a-judge の併用が増加。",
       "references": [
-        {"title": "Bedrock Model Evaluation - automatic metrics", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-automatic.html"}
+        {
+          "title": "Bedrock Model Evaluation - automatic metrics",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-automatic.html"
+        }
       ],
-      "tags": ["bleu", "rouge", "bertscore", "evaluation-metrics"],
-      "common_mistakes": ["BLEU と ROUGE の precision/recall を逆に覚える", "BERTScore を表層一致と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "bleu",
+        "rouge",
+        "bertscore",
+        "evaluation-metrics"
+      ],
+      "common_mistakes": [
+        "BLEU と ROUGE の precision/recall を逆に覚える",
+        "BERTScore を表層一致と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-006",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Responsible AI",
       "subtopic": "AWS Responsible AI ピラー",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS が掲げる Responsible AI の中核ピラー（dimensions）として一般的に挙げられるものはどれか？",
       "options": [
-        {"id": "A", "text": "Fairness, Explainability, Privacy & Security, Safety, Controllability, Veracity & Robustness, Governance, Transparency", "is_correct": true, "explanation": "正解。AWS Responsible AI フレームワークが提示する 8 つの中核ピラー。"},
-        {"id": "B", "text": "Latency, Throughput, Cost のみ", "is_correct": false, "explanation": "それらは性能/コスト面で、Responsible AI の論点とは別。"},
-        {"id": "C", "text": "BLEU, ROUGE, F1 score", "is_correct": false, "explanation": "それらは評価指標で AI 倫理ピラーではない。"},
-        {"id": "D", "text": "IAM, KMS のみ", "is_correct": false, "explanation": "セキュリティの一部だが、Responsible AI 全体ではない。"}
+        {
+          "id": "A",
+          "text": "BLEU, ROUGE, F1 score",
+          "is_correct": false,
+          "explanation": "それらは評価指標で AI 倫理ピラーではない。"
+        },
+        {
+          "id": "B",
+          "text": "Fairness, Explainability, Privacy & Security, Safety, Controllability, Veracity & Robustness, Governance, Transparency",
+          "is_correct": true,
+          "explanation": "正解。AWS Responsible AI フレームワークが提示する 8 つの中核ピラー。"
+        },
+        {
+          "id": "C",
+          "text": "IAM, KMS のみ",
+          "is_correct": false,
+          "explanation": "セキュリティの一部だが、Responsible AI 全体ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Latency, Throughput, Cost のみ",
+          "is_correct": false,
+          "explanation": "それらは性能/コスト面で、Responsible AI の論点とは別。"
+        }
       ],
       "explanation": "AWS Responsible AI は 8 ピラー: Fairness（公平性）、Explainability（説明可能性）、Privacy & Security、Safety、Controllability（制御可能性）、Veracity & Robustness（真正性・頑健性）、Governance、Transparency（透明性）。Bedrock Guardrails、Model Evaluation、AI Service Cards などはこれらのピラーを支える具体的な手段。",
       "references": [
-        {"title": "AWS Responsible AI", "url": "https://aws.amazon.com/machine-learning/responsible-ai/"}
+        {
+          "title": "AWS Responsible AI",
+          "url": "https://aws.amazon.com/machine-learning/responsible-ai/"
+        }
       ],
-      "tags": ["responsible-ai", "fairness", "governance", "transparency"],
-      "common_mistakes": ["性能指標と混同", "Fairness しか挙げない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "responsible-ai",
+        "fairness",
+        "governance",
+        "transparency"
+      ],
+      "common_mistakes": [
+        "性能指標と混同",
+        "Fairness しか挙げない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-007",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "コスト管理",
       "subtopic": "Token consumption の最適化",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Bedrock のオンデマンド推論コストは主に何で課金されるか？",
       "options": [
-        {"id": "A", "text": "入力トークン数 × モデル別単価 + 出力トークン数 × モデル別単価（モデル別に input/output で料金が異なる）", "is_correct": true, "explanation": "正解。On-demand は token-based で、入力/出力で別料金、モデルごとに単価が異なる。"},
-        {"id": "B", "text": "リクエスト件数のみ（トークン数は無関係）", "is_correct": false, "explanation": "件数ベースではなくトークンベース。"},
-        {"id": "C", "text": "GPU 時間で課金", "is_correct": false, "explanation": "On-demand では GPU 時間ではなく token で課金。Provisioned Throughput は時間単位課金。"},
-        {"id": "D", "text": "S3 ストレージ容量に比例", "is_correct": false, "explanation": "S3 容量と推論コストは別。"}
+        {
+          "id": "A",
+          "text": "S3 ストレージ容量に比例",
+          "is_correct": false,
+          "explanation": "S3 容量と推論コストは別。"
+        },
+        {
+          "id": "B",
+          "text": "リクエスト件数のみ（トークン数は無関係）",
+          "is_correct": false,
+          "explanation": "件数ベースではなくトークンベース。"
+        },
+        {
+          "id": "C",
+          "text": "入力トークン数 × モデル別単価 + 出力トークン数 × モデル別単価（モデル別に input/output で料金が異なる）",
+          "is_correct": true,
+          "explanation": "正解。On-demand は token-based で、入力/出力で別料金、モデルごとに単価が異なる。"
+        },
+        {
+          "id": "D",
+          "text": "GPU 時間で課金",
+          "is_correct": false,
+          "explanation": "On-demand では GPU 時間ではなく token で課金。Provisioned Throughput は時間単位課金。"
+        }
       ],
       "explanation": "Bedrock のコスト構造: (1) On-demand：入力/出力トークン × モデル別単価、(2) Provisioned Throughput：時間単位（モデルユニット）の予約料、(3) Batch：On-demand より割安だが非同期、(4) Cross-region inference：リージョン分散で同単価、(5) prompt caching でキャッシュヒット入力は割引。出力トークンは入力の 4-5 倍高いことが多く、出力長制御が効果的。",
       "references": [
-        {"title": "Amazon Bedrock pricing", "url": "https://aws.amazon.com/bedrock/pricing/"}
+        {
+          "title": "Amazon Bedrock pricing",
+          "url": "https://aws.amazon.com/bedrock/pricing/"
+        }
       ],
-      "tags": ["cost", "tokens", "pricing", "bedrock"],
-      "common_mistakes": ["件数ベースだと思う", "出力トークンが安いと思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "cost",
+        "tokens",
+        "pricing",
+        "bedrock"
+      ],
+      "common_mistakes": [
+        "件数ベースだと思う",
+        "出力トークンが安いと思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-008",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "観測性",
       "subtopic": "OpenTelemetry / X-Ray の使い分け",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "生成 AI アプリの分散トレースに AWS X-Ray と OpenTelemetry を組み合わせる典型的な構成として正しいのは？",
       "options": [
-        {"id": "A", "text": "アプリは OpenTelemetry SDK でトレースを生成し、AWS Distro for OpenTelemetry（ADOT）コレクタ経由で X-Ray および CloudWatch Logs/Metrics に送る", "is_correct": true, "explanation": "正解。OTEL がベンダ非依存の計装、ADOT が AWS バックエンドへのブリッジ。"},
-        {"id": "B", "text": "OpenTelemetry と X-Ray は競合関係で同時利用は不可", "is_correct": false, "explanation": "ADOT を使えば併用可能。"},
-        {"id": "C", "text": "X-Ray は廃止予定で OpenTelemetry に強制移行", "is_correct": false, "explanation": "そのような廃止計画はない。"},
-        {"id": "D", "text": "OTEL は GenAI 専用で他用途には使えない", "is_correct": false, "explanation": "OTEL は汎用観測規格で、GenAI 専用ではない。"}
+        {
+          "id": "A",
+          "text": "OpenTelemetry と X-Ray は競合関係で同時利用は不可",
+          "is_correct": false,
+          "explanation": "ADOT を使えば併用可能。"
+        },
+        {
+          "id": "B",
+          "text": "X-Ray は廃止予定で OpenTelemetry に強制移行",
+          "is_correct": false,
+          "explanation": "そのような廃止計画はない。"
+        },
+        {
+          "id": "C",
+          "text": "OTEL は GenAI 専用で他用途には使えない",
+          "is_correct": false,
+          "explanation": "OTEL は汎用観測規格で、GenAI 専用ではない。"
+        },
+        {
+          "id": "D",
+          "text": "アプリは OpenTelemetry SDK でトレースを生成し、AWS Distro for OpenTelemetry（ADOT）コレクタ経由で X-Ray および CloudWatch Logs/Metrics に送る",
+          "is_correct": true,
+          "explanation": "正解。OTEL がベンダ非依存の計装、ADOT が AWS バックエンドへのブリッジ。"
+        }
       ],
       "explanation": "観測性スタックは『計装（OpenTelemetry）+ 収集（ADOT Collector）+ バックエンド（X-Ray/CloudWatch、または LangFuse/Langsmith など 3rd party）』の組み合わせが現代的。OTEL の GenAI 拡張規約（semantic conventions for GenAI）により、prompt/completion/token 数等が標準属性で計測できる。AgentCore Observability も OTEL ベース。",
       "references": [
-        {"title": "AWS Distro for OpenTelemetry", "url": "https://aws-otel.github.io/"}
+        {
+          "title": "AWS Distro for OpenTelemetry",
+          "url": "https://aws-otel.github.io/"
+        }
       ],
-      "tags": ["opentelemetry", "x-ray", "observability", "tracing"],
-      "common_mistakes": ["OTEL と X-Ray を競合と誤解", "X-Ray が廃止と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "opentelemetry",
+        "x-ray",
+        "observability",
+        "tracing"
+      ],
+      "common_mistakes": [
+        "OTEL と X-Ray を競合と誤解",
+        "X-Ray が廃止と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-009",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Guardrails",
       "subtopic": "Denied topics の設計",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech の Yengine が顧客向け FAQ Agent で『投資助言（individual investment advice）』を絶対に出力させたくない（規制遵守）。最も適切な実装は？",
       "options": [
-        {"id": "A", "text": "Bedrock Guardrails の Denied topics に『個別の投資助言』を定義し、Definition と Examples を 5 件以上書いて精度を上げる", "is_correct": true, "explanation": "正解。Denied topics は Definition + Examples の品質で精度が決まる。"},
-        {"id": "B", "text": "Word filter に『投資』を登録し全部ブロック", "is_correct": false, "explanation": "正常な投資概念の解説までブロックされ過剰。"},
-        {"id": "C", "text": "Knowledge Base から投資関連ドキュメントを全削除", "is_correct": false, "explanation": "モデル素の知識からも生成し得るため不十分。"},
-        {"id": "D", "text": "プロンプトに『投資助言は禁止』と書くだけ", "is_correct": false, "explanation": "プロンプトインジェクション・誤動作で漏れ得るので Guardrails 併用が標準。"}
+        {
+          "id": "A",
+          "text": "Bedrock Guardrails の Denied topics に『個別の投資助言』を定義し、Definition と Examples を 5 件以上書いて精度を上げる",
+          "is_correct": true,
+          "explanation": "正解。Denied topics は Definition + Examples の品質で精度が決まる。"
+        },
+        {
+          "id": "B",
+          "text": "Word filter に『投資』を登録し全部ブロック",
+          "is_correct": false,
+          "explanation": "正常な投資概念の解説までブロックされ過剰。"
+        },
+        {
+          "id": "C",
+          "text": "プロンプトに『投資助言は禁止』と書くだけ",
+          "is_correct": false,
+          "explanation": "プロンプトインジェクション・誤動作で漏れ得るので Guardrails 併用が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Knowledge Base から投資関連ドキュメントを全削除",
+          "is_correct": false,
+          "explanation": "モデル素の知識からも生成し得るため不十分。"
+        }
       ],
       "explanation": "Denied topics は LLM ベースの分類器で意味的に判定するため、Definition（『個別具体的な金融商品購入推奨』）と多様な Examples（『XX 株を買うべきですか？』『今日の相場で何に投資？』など）を充実させると精度が上がる。Word filter は表層一致のみで言い換えに弱い。",
       "references": [
-        {"title": "Denied topics in Guardrails", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-denied-topics.html"}
+        {
+          "title": "Denied topics in Guardrails",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-denied-topics.html"
+        }
       ],
-      "tags": ["guardrails", "denied-topics", "fintech", "yengine", "compliance"],
-      "common_mistakes": ["Word filter で代用しようとする", "Examples を 1-2 件しか書かない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "guardrails",
+        "denied-topics",
+        "fintech",
+        "yengine",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Word filter で代用しようとする",
+        "Examples を 1-2 件しか書かない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-010",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Model Evaluation",
       "subtopic": "RAG 評価の構築",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "B2B SaaS が Knowledge Base + Bedrock Agent で構築した社内 FAQ システムの『回答品質』を継続的に評価したい。最も適切なのは？",
       "options": [
-        {"id": "A", "text": "Bedrock Model Evaluation の RAG evaluation 機能で Knowledge Base を対象に、Faithfulness, Answer relevance, Context relevance などの指標で LLM-as-a-judge 評価を定期実行", "is_correct": true, "explanation": "正解。Bedrock Model Evaluation は KB 対象の RAG 評価が組み込まれており、ハルシネーションや関連性を計測できる。"},
-        {"id": "B", "text": "CloudWatch の InvocationLatency だけを監視する", "is_correct": false, "explanation": "レイテンシは品質と無関係。"},
-        {"id": "C", "text": "BLEU だけで評価する", "is_correct": false, "explanation": "BLEU は表層 n-gram で、RAG 品質には不十分。"},
-        {"id": "D", "text": "ユーザのアンケートだけに頼る", "is_correct": false, "explanation": "貴重だが頻度が低く、自動評価との併用が標準。"}
+        {
+          "id": "A",
+          "text": "ユーザのアンケートだけに頼る",
+          "is_correct": false,
+          "explanation": "貴重だが頻度が低く、自動評価との併用が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Bedrock Model Evaluation の RAG evaluation 機能で Knowledge Base を対象に、Faithfulness, Answer relevance, Context relevance などの指標で LLM-as-a-judge 評価を定期実行",
+          "is_correct": true,
+          "explanation": "正解。Bedrock Model Evaluation は KB 対象の RAG 評価が組み込まれており、ハルシネーションや関連性を計測できる。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch の InvocationLatency だけを監視する",
+          "is_correct": false,
+          "explanation": "レイテンシは品質と無関係。"
+        },
+        {
+          "id": "D",
+          "text": "BLEU だけで評価する",
+          "is_correct": false,
+          "explanation": "BLEU は表層 n-gram で、RAG 品質には不十分。"
+        }
       ],
       "explanation": "Bedrock Model Evaluation の RAG 評価は、Faithfulness（文脈に忠実か）、Answer Relevance、Context Relevance、Helpfulness 等を LLM-as-a-judge で評価。KB を対象指定でき、定期ジョブとして自動評価できる。アンケート（Human-in-the-loop）と組み合わせると総合的な品質指標になる。",
       "references": [
-        {"title": "RAG evaluation in Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-evaluations.html"}
+        {
+          "title": "RAG evaluation in Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-evaluations.html"
+        }
       ],
-      "tags": ["model-evaluation", "rag", "faithfulness", "saas"],
-      "common_mistakes": ["BLEU だけで品質を測る", "レイテンシ＝品質と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "model-evaluation",
+        "rag",
+        "faithfulness",
+        "saas"
+      ],
+      "common_mistakes": [
+        "BLEU だけで品質を測る",
+        "レイテンシ＝品質と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-011",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "コスト管理",
       "subtopic": "モデル選定によるコスト最適化",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "教育系 SaaS Manabia が、生徒 100 万人の毎日の学習サマリ生成で Claude Opus を使い、月コストが想定の 3 倍になった。品質を大きく落とさずコストを下げる順序として最も妥当なのは？",
       "options": [
-        {"id": "A", "text": "(1) より安価なモデル（Claude Haiku/Nova Lite/Sonnet）でゴールデンセット評価 → 品質維持できれば切替、(2) Prompt caching で繰り返し部分のコスト削減、(3) Batch 推論にできるなら活用、(4) 出力トークン上限で長さ抑制", "is_correct": true, "explanation": "正解。モデル切替が最大インパクトで、prompt caching・batch・出力長抑制の順で効果的。"},
-        {"id": "B", "text": "Provisioned Throughput を即購入して固定費にする", "is_correct": false, "explanation": "高負荷で安定する用途には有効だが、まず適正モデル選定が先。"},
-        {"id": "C", "text": "Knowledge Base を増やすことでコスト削減", "is_correct": false, "explanation": "KB 増は推論コスト削減と逆方向（KB 検索結果の追加でトークン増）。"},
-        {"id": "D", "text": "Guardrails を全部オフにする", "is_correct": false, "explanation": "Guardrails コストは応答品質維持コストの一部で、安全性損失が大きい。"}
+        {
+          "id": "A",
+          "text": "Knowledge Base を増やすことでコスト削減",
+          "is_correct": false,
+          "explanation": "KB 増は推論コスト削減と逆方向（KB 検索結果の追加でトークン増）。"
+        },
+        {
+          "id": "B",
+          "text": "Guardrails を全部オフにする",
+          "is_correct": false,
+          "explanation": "Guardrails コストは応答品質維持コストの一部で、安全性損失が大きい。"
+        },
+        {
+          "id": "C",
+          "text": "(1) より安価なモデル（Claude Haiku/Nova Lite/Sonnet）でゴールデンセット評価 → 品質維持できれば切替、(2) Prompt caching で繰り返し部分のコスト削減、(3) Batch 推論にできるなら活用、(4) 出力トークン上限で長さ抑制",
+          "is_correct": true,
+          "explanation": "正解。モデル切替が最大インパクトで、prompt caching・batch・出力長抑制の順で効果的。"
+        },
+        {
+          "id": "D",
+          "text": "Provisioned Throughput を即購入して固定費にする",
+          "is_correct": false,
+          "explanation": "高負荷で安定する用途には有効だが、まず適正モデル選定が先。"
+        }
       ],
       "explanation": "コスト最適化の順序: (1) モデル選定（一桁レベルの差）、(2) Prompt caching（システムプロンプト・固定文書の入力料金 ~90% 削減）、(3) Batch（オフライン用途で ~50% 割引）、(4) 出力トークン上限・スタイル指示で出力短縮、(5) 高負荷で安定なら Provisioned。Manabia のような大規模バッチ用途では Batch + 軽量モデル + caching が王道。",
       "references": [
-        {"title": "Bedrock cost optimization", "url": "https://aws.amazon.com/bedrock/pricing/"},
-        {"title": "Prompt caching", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html"}
+        {
+          "title": "Bedrock cost optimization",
+          "url": "https://aws.amazon.com/bedrock/pricing/"
+        },
+        {
+          "title": "Prompt caching",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html"
+        }
       ],
-      "tags": ["cost", "model-selection", "prompt-caching", "batch", "education", "manabia"],
-      "common_mistakes": ["即 Provisioned に走る", "Guardrails を切ってコスト削減"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "cost",
+        "model-selection",
+        "prompt-caching",
+        "batch",
+        "education",
+        "manabia"
+      ],
+      "common_mistakes": [
+        "即 Provisioned に走る",
+        "Guardrails を切ってコスト削減"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-012",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "A/B テスト",
       "subtopic": "プロンプト改善の比較評価",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech の Yengine がプロンプトテンプレート v1 と v2 のどちらが優秀か A/B テストしたい。最も統計的に妥当な進め方は？",
       "options": [
-        {"id": "A", "text": "本番トラフィックを乱数で 50/50 に振り分け、CSAT・解決率・トークン量等を双方収集、十分なサンプル数（事前検出力分析で算出）で集計し、有意差を t 検定/χ² 検定で検証", "is_correct": true, "explanation": "正解。標準的なオンライン A/B テスト設計。"},
-        {"id": "B", "text": "v2 を 100% 即時切替して v1 と比較", "is_correct": false, "explanation": "比較対象が消えて A/B にならない。"},
-        {"id": "C", "text": "開発環境で 5 件試して『良さそう』なら採用", "is_correct": false, "explanation": "サンプル不足で偶然差を見誤る。"},
-        {"id": "D", "text": "Guardrails のしきい値を変えるだけ", "is_correct": false, "explanation": "Guardrails 設定変更と A/B テストは別話題。"}
+        {
+          "id": "A",
+          "text": "開発環境で 5 件試して『良さそう』なら採用",
+          "is_correct": false,
+          "explanation": "サンプル不足で偶然差を見誤る。"
+        },
+        {
+          "id": "B",
+          "text": "Guardrails のしきい値を変えるだけ",
+          "is_correct": false,
+          "explanation": "Guardrails 設定変更と A/B テストは別話題。"
+        },
+        {
+          "id": "C",
+          "text": "v2 を 100% 即時切替して v1 と比較",
+          "is_correct": false,
+          "explanation": "比較対象が消えて A/B にならない。"
+        },
+        {
+          "id": "D",
+          "text": "本番トラフィックを乱数で 50/50 に振り分け、CSAT・解決率・トークン量等を双方収集、十分なサンプル数（事前検出力分析で算出）で集計し、有意差を t 検定/χ² 検定で検証",
+          "is_correct": true,
+          "explanation": "正解。標準的なオンライン A/B テスト設計。"
+        }
       ],
       "explanation": "プロンプト・モデル変更の A/B テストは、(1) 仮説と KPI 明確化、(2) サンプル数設計（最小検出効果から逆算）、(3) ランダム割付（ユーザ ID hash など）、(4) ガードレールメトリクス（コスト・レイテンシ）併用、(5) 統計検定で判断、が基本フロー。Bedrock Agent でもエージェント Alias 単位で振り分けできる。",
       "references": [
-        {"title": "Best practices for evaluating LLM applications", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"}
+        {
+          "title": "Best practices for evaluating LLM applications",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"
+        }
       ],
-      "tags": ["a-b-testing", "evaluation", "fintech", "yengine", "statistics"],
-      "common_mistakes": ["少数サンプルで結論", "対照群なしで切り替え"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "a-b-testing",
+        "evaluation",
+        "fintech",
+        "yengine",
+        "statistics"
+      ],
+      "common_mistakes": [
+        "少数サンプルで結論",
+        "対照群なしで切り替え"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-013",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "観測性",
       "subtopic": "LangFuse 風観測ツール",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある SaaS が、プロンプト/応答/トークン/レイテンシをセッション単位でツリー表示し、評価・タグ付けまで行いたい（LangFuse / Langsmith 系の機能）。AWS でマネージドに近い構成は？",
       "options": [
-        {"id": "A", "text": "Bedrock Model Invocation Logging（S3/CloudWatch Logs に prompt/response 全文を保管）+ AgentCore Observability（OTEL ベースのセッション・トレース可視化）の組み合わせ", "is_correct": true, "explanation": "正解。Model Invocation Logging で raw データ、AgentCore Observability で OTEL ベース可視化が AWS マネージドの組合せ。"},
-        {"id": "B", "text": "EC2 に LangFuse OSS を立てる", "is_correct": false, "explanation": "可能だが運用負荷あり。マネージド寄りなら AgentCore Observability を優先。"},
-        {"id": "C", "text": "CloudWatch メトリクスのみで十分", "is_correct": false, "explanation": "メトリクスだけではセッション内のステップ詳細は見られない。"},
-        {"id": "D", "text": "Athena でログを集計するだけ", "is_correct": false, "explanation": "可能だが UI/ツリー表示・評価機能は手作り。"}
+        {
+          "id": "A",
+          "text": "Bedrock Model Invocation Logging（S3/CloudWatch Logs に prompt/response 全文を保管）+ AgentCore Observability（OTEL ベースのセッション・トレース可視化）の組み合わせ",
+          "is_correct": true,
+          "explanation": "正解。Model Invocation Logging で raw データ、AgentCore Observability で OTEL ベース可視化が AWS マネージドの組合せ。"
+        },
+        {
+          "id": "B",
+          "text": "Athena でログを集計するだけ",
+          "is_correct": false,
+          "explanation": "可能だが UI/ツリー表示・評価機能は手作り。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch メトリクスのみで十分",
+          "is_correct": false,
+          "explanation": "メトリクスだけではセッション内のステップ詳細は見られない。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 に LangFuse OSS を立てる",
+          "is_correct": false,
+          "explanation": "可能だが運用負荷あり。マネージド寄りなら AgentCore Observability を優先。"
+        }
       ],
       "explanation": "Bedrock Model Invocation Logging は、Bedrock 呼び出しの raw 入出力を S3/CloudWatch Logs に出力する設定（無償）。AgentCore Observability は OpenTelemetry 互換のトレースを CloudWatch GenAI Observability に集約し、エージェントのステップツリー、token 量、エラー、評価スコアまで可視化する。LangFuse 風機能を AWS マネージドで提供するレイヤ。",
       "references": [
-        {"title": "Bedrock model invocation logging", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html"},
-        {"title": "AgentCore Observability", "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html"}
+        {
+          "title": "Bedrock model invocation logging",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html"
+        },
+        {
+          "title": "AgentCore Observability",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html"
+        }
       ],
-      "tags": ["observability", "logging", "langfuse", "agentcore"],
-      "common_mistakes": ["CloudWatch メトリクスだけで OK と思う", "Model Invocation Logging を有効化しないまま運用"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "observability",
+        "logging",
+        "langfuse",
+        "agentcore"
+      ],
+      "common_mistakes": [
+        "CloudWatch メトリクスだけで OK と思う",
+        "Model Invocation Logging を有効化しないまま運用"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-014",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Guardrails",
       "subtopic": "ApplyGuardrail API の利用",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Bedrock 以外のモデル（OSS LLM や 3rd party）を組み合わせるアプリで、入出力安全性検査だけ Bedrock Guardrails を再利用したい。最適な API は？",
       "options": [
-        {"id": "A", "text": "ApplyGuardrail API を呼び出して、任意のテキストを Guardrail だけに通す", "is_correct": true, "explanation": "正解。ApplyGuardrail はモデル推論と独立して Guardrails 検査だけ実行できる API。"},
-        {"id": "B", "text": "InvokeModel API でしか Guardrails は使えないので、3rd party モデルでは利用不可", "is_correct": false, "explanation": "ApplyGuardrail のおかげで独立利用可能。"},
-        {"id": "C", "text": "Lambda で正規表現マスクを自前実装するしかない", "is_correct": false, "explanation": "ApplyGuardrail を使えば不要。"},
-        {"id": "D", "text": "Knowledge Base 経由で Guardrails を呼ぶ", "is_correct": false, "explanation": "そのような API は提供されない。"}
+        {
+          "id": "A",
+          "text": "Knowledge Base 経由で Guardrails を呼ぶ",
+          "is_correct": false,
+          "explanation": "そのような API は提供されない。"
+        },
+        {
+          "id": "B",
+          "text": "ApplyGuardrail API を呼び出して、任意のテキストを Guardrail だけに通す",
+          "is_correct": true,
+          "explanation": "正解。ApplyGuardrail はモデル推論と独立して Guardrails 検査だけ実行できる API。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で正規表現マスクを自前実装するしかない",
+          "is_correct": false,
+          "explanation": "ApplyGuardrail を使えば不要。"
+        },
+        {
+          "id": "D",
+          "text": "InvokeModel API でしか Guardrails は使えないので、3rd party モデルでは利用不可",
+          "is_correct": false,
+          "explanation": "ApplyGuardrail のおかげで独立利用可能。"
+        }
       ],
       "explanation": "ApplyGuardrail API は、Bedrock モデル呼び出しから切り離して Guardrail 検査だけを実行できる。例えば SageMaker JumpStart の Llama や OpenAI 互換 API の応答を ApplyGuardrail に通して PII anonymize/有害コンテンツ検出を行う構成が可能。マルチモデル戦略でもガバナンスを統一できる。",
       "references": [
-        {"title": "ApplyGuardrail API", "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ApplyGuardrail.html"}
+        {
+          "title": "ApplyGuardrail API",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ApplyGuardrail.html"
+        }
       ],
-      "tags": ["guardrails", "apply-guardrail", "third-party-model", "governance"],
-      "common_mistakes": ["Guardrails が Bedrock モデル限定と誤解", "正規表現で自作"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "guardrails",
+        "apply-guardrail",
+        "third-party-model",
+        "governance"
+      ],
+      "common_mistakes": [
+        "Guardrails が Bedrock モデル限定と誤解",
+        "正規表現で自作"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-015",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "ハルシネーション評価",
       "subtopic": "RAG ハルシネーション計測",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "MediCare（医療系）の RAG システムで、ハルシネーションを定量計測する仕組みとして最も総合的に有効なのは？",
       "options": [
-        {"id": "A", "text": "Bedrock Model Evaluation の RAG evaluation で Faithfulness を主指標に LLM-as-a-judge 採点 + Guardrails Contextual grounding check の grounding score を本番リアルタイム監視 + 医療専門家による定期サンプリングレビュー", "is_correct": true, "explanation": "正解。オフライン評価・オンラインゲート・人間レビューの 3 段階で監視するのが医療業界の標準。"},
-        {"id": "B", "text": "BLEU を毎回計算するだけ", "is_correct": false, "explanation": "BLEU はハルシネーション計測には不適切。"},
-        {"id": "C", "text": "ユーザのフィードバックボタンだけ", "is_correct": false, "explanation": "フィードバックは少数で偏りもある。"},
-        {"id": "D", "text": "CloudWatch Latency でハルシネーションを推定", "is_correct": false, "explanation": "レイテンシと品質は無関係。"}
+        {
+          "id": "A",
+          "text": "BLEU を毎回計算するだけ",
+          "is_correct": false,
+          "explanation": "BLEU はハルシネーション計測には不適切。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Latency でハルシネーションを推定",
+          "is_correct": false,
+          "explanation": "レイテンシと品質は無関係。"
+        },
+        {
+          "id": "C",
+          "text": "Bedrock Model Evaluation の RAG evaluation で Faithfulness を主指標に LLM-as-a-judge 採点 + Guardrails Contextual grounding check の grounding score を本番リアルタイム監視 + 医療専門家による定期サンプリングレビュー",
+          "is_correct": true,
+          "explanation": "正解。オフライン評価・オンラインゲート・人間レビューの 3 段階で監視するのが医療業界の標準。"
+        },
+        {
+          "id": "D",
+          "text": "ユーザのフィードバックボタンだけ",
+          "is_correct": false,
+          "explanation": "フィードバックは少数で偏りもある。"
+        }
       ],
       "explanation": "ハルシネーション抑制は『多層防御』が原則。(1) RAG retrieval 品質を上げる（チャンク・埋め込み・rerank）、(2) Guardrails Contextual grounding でリアルタイムにフィルタ、(3) Bedrock Model Evaluation Faithfulness で定期評価、(4) 人間レビューで自動評価の妥当性検証、(5) 出典付き応答（citation 表示）でユーザ自身に確認させる。医療では人間レビュー必須。",
       "references": [
-        {"title": "RAG evaluation - Faithfulness", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-evaluations.html"}
+        {
+          "title": "RAG evaluation - Faithfulness",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-evaluations.html"
+        }
       ],
-      "tags": ["hallucination", "rag", "healthcare", "medicare", "evaluation"],
-      "common_mistakes": ["BLEU でハルシネーションを測る", "ユーザフィードバックだけで充足と思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "hallucination",
+        "rag",
+        "healthcare",
+        "medicare",
+        "evaluation"
+      ],
+      "common_mistakes": [
+        "BLEU でハルシネーションを測る",
+        "ユーザフィードバックだけで充足と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-016",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Guardrails",
       "subtopic": "PII 検出と医療データ",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "MediCare で患者の問診応答に含まれる住所・氏名・保険証番号を Guardrails で扱うとき、Bedrock 既定 PII タイプにない『日本の保険証番号』のような独自フォーマットへの最適対応は？",
       "options": [
-        {"id": "A", "text": "Guardrails の Sensitive information filter でカスタム正規表現エンティティを定義し、anonymize/block を選択", "is_correct": true, "explanation": "正解。Guardrails は組込タイプに加えて、ユーザ定義の正規表現エンティティを追加できる。"},
-        {"id": "B", "text": "対応できないので Guardrails を使わない", "is_correct": false, "explanation": "正規表現エンティティで対応可能。"},
-        {"id": "C", "text": "全 PII を Block 一択にして応答ごと封じる", "is_correct": false, "explanation": "業務要件を満たせない（応答自体は必要）。"},
-        {"id": "D", "text": "Bedrock とは別に Comprehend カスタムエンティティだけで処理", "is_correct": false, "explanation": "可能だが、Guardrails のカスタム正規表現で同目的を達成でき、応答パイプラインに直結している。"}
+        {
+          "id": "A",
+          "text": "対応できないので Guardrails を使わない",
+          "is_correct": false,
+          "explanation": "正規表現エンティティで対応可能。"
+        },
+        {
+          "id": "B",
+          "text": "全 PII を Block 一択にして応答ごと封じる",
+          "is_correct": false,
+          "explanation": "業務要件を満たせない（応答自体は必要）。"
+        },
+        {
+          "id": "C",
+          "text": "Bedrock とは別に Comprehend カスタムエンティティだけで処理",
+          "is_correct": false,
+          "explanation": "可能だが、Guardrails のカスタム正規表現で同目的を達成でき、応答パイプラインに直結している。"
+        },
+        {
+          "id": "D",
+          "text": "Guardrails の Sensitive information filter でカスタム正規表現エンティティを定義し、anonymize/block を選択",
+          "is_correct": true,
+          "explanation": "正解。Guardrails は組込タイプに加えて、ユーザ定義の正規表現エンティティを追加できる。"
+        }
       ],
       "explanation": "Bedrock Guardrails の Sensitive information filter は、組込 PII タイプ（NAME、EMAIL、PHONE など）に加えて、ユーザ独自の正規表現で『カスタムエンティティ』を定義可能。日本の保険証番号・マイナンバー・社員番号などは正規表現で記述し、anonymize（[INSURANCE_NUMBER] に置換）または block を選べる。",
       "references": [
-        {"title": "Sensitive information filter - regex", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html"}
+        {
+          "title": "Sensitive information filter - regex",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html"
+        }
       ],
-      "tags": ["guardrails", "pii", "regex", "medicare", "healthcare"],
-      "common_mistakes": ["組込タイプしかないと思い込む", "Block 一択で業務要件を破壊"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "guardrails",
+        "pii",
+        "regex",
+        "medicare",
+        "healthcare"
+      ],
+      "common_mistakes": [
+        "組込タイプしかないと思い込む",
+        "Block 一択で業務要件を破壊"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-017",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Model Evaluation",
       "subtopic": "Human evaluation のワークフロー設計",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Tokai Industrial が技術文書要約の品質を社内エキスパートにレビューさせて評価したい。Bedrock Human Evaluation の典型的な構成として正しいのは？",
       "options": [
-        {"id": "A", "text": "評価ジョブで評価指標（accuracy, completeness 等）と評価尺度（Likert / Thumbs / Choice）を定義 → 評価データセット（prompt + 比較応答）を S3 にアップロード → 社内ワークチームに割り当て → 結果を S3 に集約", "is_correct": true, "explanation": "正解。Bedrock Human Evaluation は SageMaker Ground Truth ベースのワークフローで、社内/AWS managed workforce どちらでも実施可。"},
-        {"id": "B", "text": "Excel スプレッドシートを社内に配布して採点", "is_correct": false, "explanation": "可能だがマネージド機能で集約・トラッキングが楽になる。"},
-        {"id": "C", "text": "Mechanical Turk しか使えない", "is_correct": false, "explanation": "社内ワークチーム（private workforce）が選択可能。"},
-        {"id": "D", "text": "Human evaluation は Bedrock では提供されず、SageMaker のみ", "is_correct": false, "explanation": "Bedrock Model Evaluation の Human モードとして提供される。"}
+        {
+          "id": "A",
+          "text": "評価ジョブで評価指標（accuracy, completeness 等）と評価尺度（Likert / Thumbs / Choice）を定義 → 評価データセット（prompt + 比較応答）を S3 にアップロード → 社内ワークチームに割り当て → 結果を S3 に集約",
+          "is_correct": true,
+          "explanation": "正解。Bedrock Human Evaluation は SageMaker Ground Truth ベースのワークフローで、社内/AWS managed workforce どちらでも実施可。"
+        },
+        {
+          "id": "B",
+          "text": "Human evaluation は Bedrock では提供されず、SageMaker のみ",
+          "is_correct": false,
+          "explanation": "Bedrock Model Evaluation の Human モードとして提供される。"
+        },
+        {
+          "id": "C",
+          "text": "Excel スプレッドシートを社内に配布して採点",
+          "is_correct": false,
+          "explanation": "可能だがマネージド機能で集約・トラッキングが楽になる。"
+        },
+        {
+          "id": "D",
+          "text": "Mechanical Turk しか使えない",
+          "is_correct": false,
+          "explanation": "社内ワークチーム（private workforce）が選択可能。"
+        }
       ],
       "explanation": "Bedrock Human Evaluation は SageMaker Ground Truth Private Workforce と統合し、社内ドメインエキスパート（製造・医療・法務等）にラベル付けさせるワークフローを構築できる。指標・尺度・指示文を設計し、ペアワイズ比較・絶対評価のいずれも可能。結果は集約レポートで配信される。",
       "references": [
-        {"title": "Human-based model evaluation in Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-human.html"}
+        {
+          "title": "Human-based model evaluation in Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-human.html"
+        }
       ],
-      "tags": ["model-evaluation", "human-eval", "manufacturing", "tokai-industrial"],
-      "common_mistakes": ["Excel で済ませる", "Mechanical Turk 必須と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "model-evaluation",
+        "human-eval",
+        "manufacturing",
+        "tokai-industrial"
+      ],
+      "common_mistakes": [
+        "Excel で済ませる",
+        "Mechanical Turk 必須と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-018",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "コスト管理",
       "subtopic": "Provisioned Throughput の使いどころ",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "B2B SaaS が午前 9-11 時に集中する大量バッチで ThrottlingException が頻発。コストとレイテンシの観点で最も妥当な対策は？",
       "options": [
-        {"id": "A", "text": "Cross-region inference profile でリージョン分散 + 必要なら Provisioned Throughput を時間枠で購入し、ピーク容量を確保。バッチ可能部分は Batch 推論に逃がす", "is_correct": true, "explanation": "正解。リージョン分散でクォータを分散、ピーク確保には Provisioned、非リアルタイム部分は Batch、で多層構成。"},
-        {"id": "B", "text": "Provisioned Throughput を 1 ヶ月通しで購入する", "is_correct": false, "explanation": "ピーク以外の時間で無駄になり高コスト。"},
-        {"id": "C", "text": "ユーザ全員に on-demand リトライを依頼する", "is_correct": false, "explanation": "UX 悪化。"},
-        {"id": "D", "text": "Knowledge Base を増やせばクォータが増える", "is_correct": false, "explanation": "KB とクォータは無関係。"}
+        {
+          "id": "A",
+          "text": "ユーザ全員に on-demand リトライを依頼する",
+          "is_correct": false,
+          "explanation": "UX 悪化。"
+        },
+        {
+          "id": "B",
+          "text": "Cross-region inference profile でリージョン分散 + 必要なら Provisioned Throughput を時間枠で購入し、ピーク容量を確保。バッチ可能部分は Batch 推論に逃がす",
+          "is_correct": true,
+          "explanation": "正解。リージョン分散でクォータを分散、ピーク確保には Provisioned、非リアルタイム部分は Batch、で多層構成。"
+        },
+        {
+          "id": "C",
+          "text": "Provisioned Throughput を 1 ヶ月通しで購入する",
+          "is_correct": false,
+          "explanation": "ピーク以外の時間で無駄になり高コスト。"
+        },
+        {
+          "id": "D",
+          "text": "Knowledge Base を増やせばクォータが増える",
+          "is_correct": false,
+          "explanation": "KB とクォータは無関係。"
+        }
       ],
       "explanation": "Bedrock のクォータ対策は『分散・予約・オフロード』。(1) Cross-region inference profile（複数リージョンで自動振り分け）、(2) Provisioned Throughput（1 時間/1 ヶ月/6 ヶ月で確保、commit 期間長いほど割安）、(3) Batch 推論（非同期で 50% 割安、SLA は緩い）、(4) Service Quota 増加申請、を要件と予算で組み合わせる。",
       "references": [
-        {"title": "Cross-region inference", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html"},
-        {"title": "Provisioned throughput", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"}
+        {
+          "title": "Cross-region inference",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html"
+        },
+        {
+          "title": "Provisioned throughput",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"
+        }
       ],
-      "tags": ["cost", "provisioned", "cross-region", "batch", "saas"],
-      "common_mistakes": ["Provisioned を常時購入", "クォータ増加申請を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "cost",
+        "provisioned",
+        "cross-region",
+        "batch",
+        "saas"
+      ],
+      "common_mistakes": [
+        "Provisioned を常時購入",
+        "クォータ増加申請を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-019",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Responsible AI",
       "subtopic": "AI Service Card の活用",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "AWS の AI Service Cards（モデル別の説明文書）の主な活用目的として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "モデルの想定用途・制限・公平性評価結果・データに関する設計選択を社内ガバナンス・コンプライアンス文書化の根拠として使う", "is_correct": true, "explanation": "正解。AI Service Card は透明性確保のための公開文書で、内部ガバナンスでも引用される。"},
-        {"id": "B", "text": "モデルのレイテンシ SLA を明確にする契約書", "is_correct": false, "explanation": "SLA 文書ではない。"},
-        {"id": "C", "text": "Fine-tuning 専用のトレーニングデータセット", "is_correct": false, "explanation": "データセットではない。"},
-        {"id": "D", "text": "Bedrock の課金詳細を確認するページ", "is_correct": false, "explanation": "料金ページとは別。"}
+        {
+          "id": "A",
+          "text": "モデルのレイテンシ SLA を明確にする契約書",
+          "is_correct": false,
+          "explanation": "SLA 文書ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Fine-tuning 専用のトレーニングデータセット",
+          "is_correct": false,
+          "explanation": "データセットではない。"
+        },
+        {
+          "id": "C",
+          "text": "モデルの想定用途・制限・公平性評価結果・データに関する設計選択を社内ガバナンス・コンプライアンス文書化の根拠として使う",
+          "is_correct": true,
+          "explanation": "正解。AI Service Card は透明性確保のための公開文書で、内部ガバナンスでも引用される。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock の課金詳細を確認するページ",
+          "is_correct": false,
+          "explanation": "料金ページとは別。"
+        }
       ],
       "explanation": "AI Service Card は、各モデル/サービス（Titan、Rekognition、Comprehend 等）について、想定ユースケース、利用上の留意点、公平性に関する設計選択、データの取り扱いを公開する文書。AI ガバナンスフレームワーク（NIST AI RMF / ISO 42001 等）の Transparency 要件を満たす根拠資料になる。社内承認・モデル選定・監査証跡で活用される。",
       "references": [
-        {"title": "AWS AI Service Cards", "url": "https://aws.amazon.com/machine-learning/responsible-machine-learning/aws-ai-service-cards/"}
+        {
+          "title": "AWS AI Service Cards",
+          "url": "https://aws.amazon.com/machine-learning/responsible-machine-learning/aws-ai-service-cards/"
+        }
       ],
-      "tags": ["responsible-ai", "service-card", "governance", "transparency"],
-      "common_mistakes": ["SLA 文書と勘違い", "AI Service Card を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "responsible-ai",
+        "service-card",
+        "governance",
+        "transparency"
+      ],
+      "common_mistakes": [
+        "SLA 文書と勘違い",
+        "AI Service Card を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-020",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "観測性",
       "subtopic": "GenAI semantic conventions",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "OpenTelemetry の GenAI semantic conventions に従うとき、計装で取得すべき代表的な属性として正しいのは？",
       "options": [
-        {"id": "A", "text": "gen_ai.system, gen_ai.request.model, gen_ai.usage.input_tokens, gen_ai.usage.output_tokens, gen_ai.response.finish_reasons など", "is_correct": true, "explanation": "正解。GenAI semantic conventions が定める代表属性。"},
-        {"id": "B", "text": "http.method と url のみ", "is_correct": false, "explanation": "HTTP 計装の汎用属性で、GenAI 固有ではない。"},
-        {"id": "C", "text": "ec2.instance_id のみ", "is_correct": false, "explanation": "インフラ属性で、LLM 計装には不十分。"},
-        {"id": "D", "text": "規約は存在しないので任意", "is_correct": false, "explanation": "OTEL に GenAI semantic conventions として規約が定義されている。"}
+        {
+          "id": "A",
+          "text": "ec2.instance_id のみ",
+          "is_correct": false,
+          "explanation": "インフラ属性で、LLM 計装には不十分。"
+        },
+        {
+          "id": "B",
+          "text": "規約は存在しないので任意",
+          "is_correct": false,
+          "explanation": "OTEL に GenAI semantic conventions として規約が定義されている。"
+        },
+        {
+          "id": "C",
+          "text": "http.method と url のみ",
+          "is_correct": false,
+          "explanation": "HTTP 計装の汎用属性で、GenAI 固有ではない。"
+        },
+        {
+          "id": "D",
+          "text": "gen_ai.system, gen_ai.request.model, gen_ai.usage.input_tokens, gen_ai.usage.output_tokens, gen_ai.response.finish_reasons など",
+          "is_correct": true,
+          "explanation": "正解。GenAI semantic conventions が定める代表属性。"
+        }
       ],
       "explanation": "OpenTelemetry の GenAI semantic conventions は、LLM 呼び出しの計装属性を標準化する規約。`gen_ai.system`（プロバイダ名 = aws.bedrock）、`gen_ai.request.model`、`gen_ai.usage.input_tokens` / `output_tokens`、`gen_ai.response.finish_reasons`、`gen_ai.operation.name` などが定義される。これに従うと観測ツール間の互換性が確保され、トークン消費可視化が標準化される。",
       "references": [
-        {"title": "OpenTelemetry GenAI semantic conventions", "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/"}
+        {
+          "title": "OpenTelemetry GenAI semantic conventions",
+          "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/"
+        }
       ],
-      "tags": ["opentelemetry", "semantic-conventions", "observability", "tokens"],
-      "common_mistakes": ["HTTP 属性で代用", "規約自体を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "opentelemetry",
+        "semantic-conventions",
+        "observability",
+        "tokens"
+      ],
+      "common_mistakes": [
+        "HTTP 属性で代用",
+        "規約自体を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-021",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Guardrails",
       "subtopic": "Guardrails のバージョン運用",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Bedrock Guardrails の設定（content filter のしきい値）を本番に影響なくチューニングしたい。最も適切な運用パターンは？",
       "options": [
-        {"id": "A", "text": "DRAFT 編集 → 新バージョン発行 → 開発/検証の Bedrock 呼び出しでは新バージョン ID を指定 → 検証 OK で本番アプリの Guardrail バージョン参照を更新（Alias 相当）", "is_correct": true, "explanation": "正解。Guardrails も DRAFT/Version で進化を管理できる。"},
-        {"id": "B", "text": "DRAFT を直接本番で利用", "is_correct": false, "explanation": "DRAFT は変更が即反映されるため、本番には不適。"},
-        {"id": "C", "text": "毎回新規 Guardrail を作って古いものを消す", "is_correct": false, "explanation": "ID が変わり、アプリ側コード変更が必要で誤り。"},
-        {"id": "D", "text": "Guardrails のしきい値変更は不可", "is_correct": false, "explanation": "可能。バージョン管理で安全に行える。"}
+        {
+          "id": "A",
+          "text": "DRAFT 編集 → 新バージョン発行 → 開発/検証の Bedrock 呼び出しでは新バージョン ID を指定 → 検証 OK で本番アプリの Guardrail バージョン参照を更新（Alias 相当）",
+          "is_correct": true,
+          "explanation": "正解。Guardrails も DRAFT/Version で進化を管理できる。"
+        },
+        {
+          "id": "B",
+          "text": "DRAFT を直接本番で利用",
+          "is_correct": false,
+          "explanation": "DRAFT は変更が即反映されるため、本番には不適。"
+        },
+        {
+          "id": "C",
+          "text": "毎回新規 Guardrail を作って古いものを消す",
+          "is_correct": false,
+          "explanation": "ID が変わり、アプリ側コード変更が必要で誤り。"
+        },
+        {
+          "id": "D",
+          "text": "Guardrails のしきい値変更は不可",
+          "is_correct": false,
+          "explanation": "可能。バージョン管理で安全に行える。"
+        }
       ],
       "explanation": "Guardrails も Bedrock Agents 同様に DRAFT/Version の概念がある。DRAFT で設定編集し、検証後に Version として発行、アプリは特定 Version ID で呼ぶ。本番切替もバージョン参照変更で行うため、即時ロールバックも可能。",
       "references": [
-        {"title": "Manage versions of guardrails", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-version.html"}
+        {
+          "title": "Manage versions of guardrails",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-version.html"
+        }
       ],
-      "tags": ["guardrails", "version", "deployment", "governance"],
-      "common_mistakes": ["DRAFT を本番で使う", "Guardrails のバージョン管理を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "guardrails",
+        "version",
+        "deployment",
+        "governance"
+      ],
+      "common_mistakes": [
+        "DRAFT を本番で使う",
+        "Guardrails のバージョン管理を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-022",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "コスト管理",
       "subtopic": "Token attribution と部門按分",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "B2B SaaS が複数プロダクトラインで Bedrock を共有しており、月次でプロダクト別にコストを按分したい。最も実装しやすい方法は？",
       "options": [
-        {"id": "A", "text": "InvokeModel に application inference profile（コストアロケーションタグ付き）を使い、Cost Explorer のタグ別ビューで按分。Model Invocation Logging からアプリ固有 ID を集計してダブルチェック", "is_correct": true, "explanation": "正解。Application inference profile はタグでコスト按分するための機能。"},
-        {"id": "B", "text": "AWS アカウントを完全に分ける", "is_correct": false, "explanation": "可能だが運用負荷が大きい。同一アカウント内なら inference profile が標準。"},
-        {"id": "C", "text": "毎月手動で按分集計", "is_correct": false, "explanation": "再現性・正確性に欠ける。"},
-        {"id": "D", "text": "Knowledge Base 数で按分", "is_correct": false, "explanation": "実トークン消費と無関係。"}
+        {
+          "id": "A",
+          "text": "毎月手動で按分集計",
+          "is_correct": false,
+          "explanation": "再現性・正確性に欠ける。"
+        },
+        {
+          "id": "B",
+          "text": "InvokeModel に application inference profile（コストアロケーションタグ付き）を使い、Cost Explorer のタグ別ビューで按分。Model Invocation Logging からアプリ固有 ID を集計してダブルチェック",
+          "is_correct": true,
+          "explanation": "正解。Application inference profile はタグでコスト按分するための機能。"
+        },
+        {
+          "id": "C",
+          "text": "AWS アカウントを完全に分ける",
+          "is_correct": false,
+          "explanation": "可能だが運用負荷が大きい。同一アカウント内なら inference profile が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Knowledge Base 数で按分",
+          "is_correct": false,
+          "explanation": "実トークン消費と無関係。"
+        }
       ],
       "explanation": "Application inference profile は、特定アプリ/部門用に inference profile を作成し、コストアロケーションタグを付与してコスト追跡できる機能。Cost Explorer/AWS Budgets でタグ別にトークン費用を可視化・按分でき、共通アカウント運用での『部門別請求』を実現する。",
       "references": [
-        {"title": "Application inference profile", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles.html"}
+        {
+          "title": "Application inference profile",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles.html"
+        }
       ],
-      "tags": ["cost", "inference-profile", "tagging", "saas", "chargeback"],
-      "common_mistakes": ["アカウント分離しか方法がないと思う", "Inference profile の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "cost",
+        "inference-profile",
+        "tagging",
+        "saas",
+        "chargeback"
+      ],
+      "common_mistakes": [
+        "アカウント分離しか方法がないと思う",
+        "Inference profile の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-023",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Model Evaluation",
       "subtopic": "LLM-as-a-judge の限界",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "LLM-as-a-judge による自動評価のバイアスや弱点として、研究で広く報告されているものはどれか？",
       "options": [
-        {"id": "A", "text": "Position bias（順序による偏り）、Verbosity bias（長い応答を好む）、Self-preference（同系列モデルの応答を高評価）、未知ドメインでの誤判断", "is_correct": true, "explanation": "正解。LLM-as-a-judge は便利だが、これらバイアスを意識した設計が必要。"},
-        {"id": "B", "text": "全くバイアスがなく完璧", "is_correct": false, "explanation": "多くの研究でバイアスが指摘されている。"},
-        {"id": "C", "text": "BLEU と完全に同等", "is_correct": false, "explanation": "全く別の手法。"},
-        {"id": "D", "text": "LLM-as-a-judge は AWS では使えない", "is_correct": false, "explanation": "Bedrock Model Evaluation で提供されている。"}
+        {
+          "id": "A",
+          "text": "BLEU と完全に同等",
+          "is_correct": false,
+          "explanation": "全く別の手法。"
+        },
+        {
+          "id": "B",
+          "text": "LLM-as-a-judge は AWS では使えない",
+          "is_correct": false,
+          "explanation": "Bedrock Model Evaluation で提供されている。"
+        },
+        {
+          "id": "C",
+          "text": "Position bias（順序による偏り）、Verbosity bias（長い応答を好む）、Self-preference（同系列モデルの応答を高評価）、未知ドメインでの誤判断",
+          "is_correct": true,
+          "explanation": "正解。LLM-as-a-judge は便利だが、これらバイアスを意識した設計が必要。"
+        },
+        {
+          "id": "D",
+          "text": "全くバイアスがなく完璧",
+          "is_correct": false,
+          "explanation": "多くの研究でバイアスが指摘されている。"
+        }
       ],
       "explanation": "Zheng et al. (2023, MT-Bench) などで LLM-as-a-judge のバイアスが体系的に報告された。Position bias（A/B のうち先に提示された方を選びやすい）、Verbosity bias、Self-preference（同社モデル応答に甘い）、専門ドメインでの誤判断、ハック耐性の弱さなど。対策は『順序ランダム化』『複数 judge アンサンブル』『人間サンプリング検証』。",
       "references": [
-        {"title": "MT-Bench paper (Zheng et al.)", "url": "https://arxiv.org/abs/2306.05685"},
-        {"title": "Bedrock LLM-as-a-judge", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-llm-as-judge.html"}
+        {
+          "title": "MT-Bench paper (Zheng et al.)",
+          "url": "https://arxiv.org/abs/2306.05685"
+        },
+        {
+          "title": "Bedrock LLM-as-a-judge",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-llm-as-judge.html"
+        }
       ],
-      "tags": ["llm-as-judge", "bias", "evaluation", "limitations"],
-      "common_mistakes": ["LLM-as-judge を完璧と信じる", "順序ランダム化を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "llm-as-judge",
+        "bias",
+        "evaluation",
+        "limitations"
+      ],
+      "common_mistakes": [
+        "LLM-as-judge を完璧と信じる",
+        "順序ランダム化を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-024",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "Bedrock Guardrails + Model Evaluation",
       "subtopic": "総合ガバナンス選定",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "MediCare の医療相談 LLM システムで、規制対応上の優先度として最も高い『最初に整備すべき』ガバナンス施策はどれか？",
       "options": [
-        {"id": "A", "text": "(1) Bedrock Guardrails（PII anonymize + 医療助言の denied topics + contextual grounding）を全 prompt/response パイプラインに適用、(2) Model Invocation Logging で全入出力を S3 に KMS 暗号化保存し CloudTrail 連携、(3) IAM 最小権限・VPC エンドポイント。これら基盤を先に整備してから RAG・Agent 機能を追加", "is_correct": true, "explanation": "正解。データ保護・監査ログ・安全性検査の 3 点が規制対応のコアで、機能開発に先行すべき。"},
-        {"id": "B", "text": "BLEU の継続評価を最優先で構築", "is_correct": false, "explanation": "規制要件としての優先度が低い。"},
-        {"id": "C", "text": "A/B テスト基盤の構築を最優先", "is_correct": false, "explanation": "重要だが、規制基盤より後。"},
-        {"id": "D", "text": "コスト最適化を最優先", "is_correct": false, "explanation": "コストは規制対応より後位。"}
+        {
+          "id": "A",
+          "text": "コスト最適化を最優先",
+          "is_correct": false,
+          "explanation": "コストは規制対応より後位。"
+        },
+        {
+          "id": "B",
+          "text": "A/B テスト基盤の構築を最優先",
+          "is_correct": false,
+          "explanation": "重要だが、規制基盤より後。"
+        },
+        {
+          "id": "C",
+          "text": "BLEU の継続評価を最優先で構築",
+          "is_correct": false,
+          "explanation": "規制要件としての優先度が低い。"
+        },
+        {
+          "id": "D",
+          "text": "(1) Bedrock Guardrails（PII anonymize + 医療助言の denied topics + contextual grounding）を全 prompt/response パイプラインに適用、(2) Model Invocation Logging で全入出力を S3 に KMS 暗号化保存し CloudTrail 連携、(3) IAM 最小権限・VPC エンドポイント。これら基盤を先に整備してから RAG・Agent 機能を追加",
+          "is_correct": true,
+          "explanation": "正解。データ保護・監査ログ・安全性検査の 3 点が規制対応のコアで、機能開発に先行すべき。"
+        }
       ],
       "explanation": "規制業界では『データ保護・監査・安全性』のガバナンス基盤を先に構築する。具体的には Bedrock Guardrails、Model Invocation Logging、CloudTrail（API 呼び出し追跡）、KMS 暗号化、PrivateLink/VPC エンドポイント、IAM 最小権限。これら基盤の上に機能（RAG・Agent）を構築すれば、後から監査要件で再設計するコストを避けられる。",
       "references": [
-        {"title": "Security and compliance for Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security.html"}
+        {
+          "title": "Security and compliance for Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security.html"
+        }
       ],
-      "tags": ["governance", "compliance", "healthcare", "medicare", "priority"],
-      "common_mistakes": ["BLEU 評価を最優先と勘違い", "ガバナンス基盤を後回し"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "governance",
+        "compliance",
+        "healthcare",
+        "medicare",
+        "priority"
+      ],
+      "common_mistakes": [
+        "BLEU 評価を最優先と勘違い",
+        "ガバナンス基盤を後回し"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain5-025",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "評価・モニタリング・ガバナンス", "weight_percent": 15},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "評価・モニタリング・ガバナンス",
+        "weight_percent": 15
+      },
       "topic": "総合的な評価・監視・ガバナンス設計",
       "subtopic": "Day-2 運用設計",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "B2B SaaS Yengine の本番 RAG + Agent システムに対し、Day-2 運用として『品質・安全性・コスト・SLA』を継続改善する評価/監視/ガバナンスの総合プランを作る。最も統合的な設計案は？",
       "options": [
-        {"id": "A", "text": "(品質) Bedrock Model Evaluation の RAG eval を毎週ジョブ + LLM-as-a-judge 月次 + Human eval 四半期。(安全性) Guardrails Version 管理と ApplyGuardrail で 3rd party モデルも統一。(コスト) Application inference profile + タグ別 Cost Explorer + プロンプトキャッシュ + Batch 推論活用。(SLA/可用性) CloudWatch Alarm（latency/throttle/error）+ AgentCore Observability OTEL トレース + Cross-region inference profile。(変更) Agent/Guardrail/Prompt の DRAFT→Version→Alias 切替の三層 + A/B テスト基盤。(監査) Model Invocation Logging + CloudTrail + S3 + KMS。これらを SRE 文化として運用回帰", "is_correct": true, "explanation": "正解。品質・安全・コスト・SLA・変更管理・監査の 6 軸を AWS マネージド機能で統合した設計。"},
-        {"id": "B", "text": "Guardrails さえあれば全要件を満たす", "is_correct": false, "explanation": "Guardrails は安全性レイヤで、品質・コスト・SLA は別レバーが必要。"},
-        {"id": "C", "text": "CloudWatch Alarm だけで Day-2 運用", "is_correct": false, "explanation": "メトリクス監視のみで、評価・ガバナンスの軸が抜ける。"},
-        {"id": "D", "text": "全自動化されているので運用は不要", "is_correct": false, "explanation": "本番 LLM システムは継続改善が前提。"}
+        {
+          "id": "A",
+          "text": "(品質) Bedrock Model Evaluation の RAG eval を毎週ジョブ + LLM-as-a-judge 月次 + Human eval 四半期。(安全性) Guardrails Version 管理と ApplyGuardrail で 3rd party モデルも統一。(コスト) Application inference profile + タグ別 Cost Explorer + プロンプトキャッシュ + Batch 推論活用。(SLA/可用性) CloudWatch Alarm（latency/throttle/error）+ AgentCore Observability OTEL トレース + Cross-region inference profile。(変更) Agent/Guardrail/Prompt の DRAFT→Version→Alias 切替の三層 + A/B テスト基盤。(監査) Model Invocation Logging + CloudTrail + S3 + KMS。これらを SRE 文化として運用回帰",
+          "is_correct": true,
+          "explanation": "正解。品質・安全・コスト・SLA・変更管理・監査の 6 軸を AWS マネージド機能で統合した設計。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Alarm だけで Day-2 運用",
+          "is_correct": false,
+          "explanation": "メトリクス監視のみで、評価・ガバナンスの軸が抜ける。"
+        },
+        {
+          "id": "C",
+          "text": "Guardrails さえあれば全要件を満たす",
+          "is_correct": false,
+          "explanation": "Guardrails は安全性レイヤで、品質・コスト・SLA は別レバーが必要。"
+        },
+        {
+          "id": "D",
+          "text": "全自動化されているので運用は不要",
+          "is_correct": false,
+          "explanation": "本番 LLM システムは継続改善が前提。"
+        }
       ],
       "explanation": "本番 GenAI システムの Day-2 運用は『複数軸の組合せ』で構成する。品質（自動・人間評価のリズム）、安全性（Guardrails 管理）、コスト（按分・最適化）、SLA（観測・冗長化）、変更管理（バージョン/Alias/ A/B）、監査（ログ/CloudTrail/暗号化）の 6 軸を、それぞれ AWS マネージド機能と運用プロセスで担保。SRE 文化を生成 AI システムにも適用するのが現代的アプローチ。",
       "references": [
-        {"title": "Operating generative AI workloads on AWS", "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/welcome.html"}
+        {
+          "title": "Operating generative AI workloads on AWS",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/welcome.html"
+        }
       ],
-      "tags": ["day-2", "operations", "saas", "yengine", "comprehensive-design"],
-      "common_mistakes": ["Guardrails 万能論", "CloudWatch だけで運用と思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "day-2",
+        "operations",
+        "saas",
+        "yengine",
+        "comprehensive-design"
+      ],
+      "common_mistakes": [
+        "Guardrails 万能論",
+        "CloudWatch だけで運用と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     }
   ]
 }

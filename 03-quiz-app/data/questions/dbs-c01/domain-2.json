@@ -15,630 +15,1919 @@
     {
       "id": "dbs-c01-domain2-001",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "AWS DMS",
       "subtopic": "CDC overview",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS DMS の Change Data Capture (CDC) 機能の主な目的として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "ソースDBのスキーマをターゲットDBに合わせて変換する", "is_correct": false, "explanation": "スキーマ変換は AWS Schema Conversion Tool (SCT) または DMS Schema Conversion の役割であり、CDC ではない。"},
-        {"id": "B", "text": "ソースDBへの変更を継続的にキャプチャしてターゲットDBに反映する", "is_correct": true, "explanation": "正解。CDC はソースの変更ログ (binlog/redo log 等) を読み取り、ターゲットへほぼリアルタイムで継続的に反映する機能。"},
-        {"id": "C", "text": "S3 にバックアップを取得する", "is_correct": false, "explanation": "S3 へのフルロード出力は可能だが、それは CDC ではなくフルロードタスクの機能。"},
-        {"id": "D", "text": "DB エンジン間で SQL クエリを翻訳する", "is_correct": false, "explanation": "クエリ翻訳機能は DMS には存在しない。SCT がコードオブジェクト変換を行う。"}
+        {
+          "id": "A",
+          "text": "ソースDBへの変更を継続的にキャプチャしてターゲットDBに反映する",
+          "is_correct": true,
+          "explanation": "正解。CDC はソースの変更ログ (binlog/redo log 等) を読み取り、ターゲットへほぼリアルタイムで継続的に反映する機能。"
+        },
+        {
+          "id": "B",
+          "text": "DB エンジン間で SQL クエリを翻訳する",
+          "is_correct": false,
+          "explanation": "クエリ翻訳機能は DMS には存在しない。SCT がコードオブジェクト変換を行う。"
+        },
+        {
+          "id": "C",
+          "text": "ソースDBのスキーマをターゲットDBに合わせて変換する",
+          "is_correct": false,
+          "explanation": "スキーマ変換は AWS Schema Conversion Tool (SCT) または DMS Schema Conversion の役割であり、CDC ではない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 にバックアップを取得する",
+          "is_correct": false,
+          "explanation": "S3 へのフルロード出力は可能だが、それは CDC ではなくフルロードタスクの機能。"
+        }
       ],
       "explanation": "AWS DMS は (1) フルロード、(2) フルロード + CDC、(3) CDC のみ の3モードがある。CDC はソース DB のトランザクションログを継続的に読み取り、移行中もダウンタイムを最小化しながらターゲットを同期させる。同種・異種マイグレーションどちらでも利用可能。",
       "references": [
-        {"title": "AWS DMS - How CDC works", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html"}
+        {
+          "title": "AWS DMS - How CDC works",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html"
+        }
       ],
-      "tags": ["dms", "cdc", "migration", "fundamentals"],
-      "common_mistakes": ["CDC とスキーマ変換 (SCT) を混同する", "CDC = バックアップと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dms",
+        "cdc",
+        "migration",
+        "fundamentals"
+      ],
+      "common_mistakes": [
+        "CDC とスキーマ変換 (SCT) を混同する",
+        "CDC = バックアップと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-002",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Schema Conversion Tool",
       "subtopic": "SCT basics",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS Schema Conversion Tool (SCT) が主に行う処理として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "ソース DB のテーブル・ビュー・ストアドプロシージャをターゲット DB エンジン用に変換する", "is_correct": true, "explanation": "正解。SCT はスキーマ・コードオブジェクトの変換を行い、変換できなかった要素はアセスメントレポートに出力する。"},
-        {"id": "B", "text": "テーブルデータを継続的にレプリケートする", "is_correct": false, "explanation": "データのレプリケーションは AWS DMS の役割。SCT はスキーマ変換のみ。"},
-        {"id": "C", "text": "RDS のパラメータグループを自動チューニングする", "is_correct": false, "explanation": "パラメータチューニングは SCT の機能ではない。"},
-        {"id": "D", "text": "Aurora クラスターのフェイルオーバーを自動化する", "is_correct": false, "explanation": "フェイルオーバーは Aurora 自体および RDS の機能で、SCT とは無関係。"}
+        {
+          "id": "A",
+          "text": "テーブルデータを継続的にレプリケートする",
+          "is_correct": false,
+          "explanation": "データのレプリケーションは AWS DMS の役割。SCT はスキーマ変換のみ。"
+        },
+        {
+          "id": "B",
+          "text": "ソース DB のテーブル・ビュー・ストアドプロシージャをターゲット DB エンジン用に変換する",
+          "is_correct": true,
+          "explanation": "正解。SCT はスキーマ・コードオブジェクトの変換を行い、変換できなかった要素はアセスメントレポートに出力する。"
+        },
+        {
+          "id": "C",
+          "text": "RDS のパラメータグループを自動チューニングする",
+          "is_correct": false,
+          "explanation": "パラメータチューニングは SCT の機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora クラスターのフェイルオーバーを自動化する",
+          "is_correct": false,
+          "explanation": "フェイルオーバーは Aurora 自体および RDS の機能で、SCT とは無関係。"
+        }
       ],
       "explanation": "SCT は Oracle → Aurora PostgreSQL、SQL Server → MySQL のような異種マイグレーションでスキーマ・PL/SQL・T-SQL のコードを変換する。データ移行は DMS が担当し、SCT と DMS は組み合わせて使うのが標準パターン。",
       "references": [
-        {"title": "AWS Schema Conversion Tool User Guide", "url": "https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_Welcome.html"}
+        {
+          "title": "AWS Schema Conversion Tool User Guide",
+          "url": "https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_Welcome.html"
+        }
       ],
-      "tags": ["sct", "migration", "heterogeneous", "schema"],
-      "common_mistakes": ["SCT がデータ移行も行うと誤解", "SCT で同種移行が必要だと思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "sct",
+        "migration",
+        "heterogeneous",
+        "schema"
+      ],
+      "common_mistakes": [
+        "SCT がデータ移行も行うと誤解",
+        "SCT で同種移行が必要だと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-003",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Homogeneous migration",
       "subtopic": "MySQL to RDS MySQL",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
-      "stem": "東海地方の製造業がオンプレミスの MySQL 8.0 (約 500GB) を RDS for MySQL に移行したい。最小ダウンタイムが要件。最も適切な手順は？",
+      "stem": "ある製造業がオンプレミスの MySQL 8.0 (約 500GB) を RDS for MySQL に移行したい。最小ダウンタイムが要件。最も適切な手順は？",
       "options": [
-        {"id": "A", "text": "mysqldump でフルダンプを取り、scp で EC2 に送信し、mysql コマンドでインポートする", "is_correct": false, "explanation": "ダウンタイムが大きく、500GB では数時間〜十数時間かかる。最小ダウンタイム要件を満たさない。"},
-        {"id": "B", "text": "AWS DMS でフルロード + CDC を実行し、ターゲットが同期したらアプリの接続先を切り替える", "is_correct": true, "explanation": "正解。フルロードでデータを移行しつつ、CDC で差分を反映することで切り替え時のダウンタイムを最小化できる。同種・異種いずれにも使える DMS の標準パターン。"},
-        {"id": "C", "text": "SCT でスキーマ変換した後 DMS でデータ移行する", "is_correct": false, "explanation": "MySQL → MySQL の同種移行ではスキーマ変換は不要 (mysqldump --no-data 等で十分)。SCT は異種向け。"},
-        {"id": "D", "text": "Aurora MySQL の Snapshot から RDS MySQL を起動する", "is_correct": false, "explanation": "Aurora と RDS for MySQL は別エンジンで、Aurora スナップショットから RDS MySQL を直接起動はできない。"}
+        {
+          "id": "A",
+          "text": "SCT でスキーマ変換した後 DMS でデータ移行する",
+          "is_correct": false,
+          "explanation": "MySQL → MySQL の同種移行ではスキーマ変換は不要 (mysqldump --no-data 等で十分)。SCT は異種向け。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora MySQL の Snapshot から RDS MySQL を起動する",
+          "is_correct": false,
+          "explanation": "Aurora と RDS for MySQL は別エンジンで、Aurora スナップショットから RDS MySQL を直接起動はできない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS DMS でフルロード + CDC を実行し、ターゲットが同期したらアプリの接続先を切り替える",
+          "is_correct": true,
+          "explanation": "正解。フルロードでデータを移行しつつ、CDC で差分を反映することで切り替え時のダウンタイムを最小化できる。同種・異種いずれにも使える DMS の標準パターン。"
+        },
+        {
+          "id": "D",
+          "text": "mysqldump でフルダンプを取り、scp で EC2 に送信し、mysql コマンドでインポートする",
+          "is_correct": false,
+          "explanation": "ダウンタイムが大きく、500GB では数時間〜十数時間かかる。最小ダウンタイム要件を満たさない。"
+        }
       ],
       "explanation": "同種移行 (MySQL → MySQL) では SCT は不要だが、最小ダウンタイム要件があれば DMS のフルロード + CDC が標準解。Aurora と RDS MySQL は内部実装が異なり、スナップショット互換ではない。500GB クラスでは mysqldump 単体は現実的ではない。",
       "references": [
-        {"title": "AWS DMS - Homogeneous data migrations", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_HomogeneousDataMigrations.html"}
+        {
+          "title": "AWS DMS - Homogeneous data migrations",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_HomogeneousDataMigrations.html"
+        }
       ],
-      "tags": ["dms", "homogeneous", "mysql", "minimum-downtime"],
-      "common_mistakes": ["同種移行でも SCT が必須と誤解", "Aurora と RDS MySQL のスナップショット互換性を勘違い"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dms",
+        "homogeneous",
+        "mysql",
+        "minimum-downtime"
+      ],
+      "common_mistakes": [
+        "同種移行でも SCT が必須と誤解",
+        "Aurora と RDS MySQL のスナップショット互換性を勘違い"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-004",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Heterogeneous migration",
       "subtopic": "Oracle to Aurora PostgreSQL",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "FinTech 企業が Oracle 19c (PL/SQL を多用) を Aurora PostgreSQL に移行する。最初に行うべき作業として最も適切なものは？",
       "options": [
-        {"id": "A", "text": "DMS でフルロードを開始する", "is_correct": false, "explanation": "PostgreSQL 側にスキーマと変換された PL/SQL コードがないとデータ移行は失敗する。スキーマ変換が先。"},
-        {"id": "B", "text": "AWS SCT でアセスメントレポートを生成し、変換難易度の高いオブジェクトを把握する", "is_correct": true, "explanation": "正解。異種移行ではまず SCT のアセスメントレポートで自動変換可能率と要修正コードを把握し、計画を立てるのが最初のステップ。"},
-        {"id": "C", "text": "Aurora PostgreSQL に Oracle Compatibility モードで起動する", "is_correct": false, "explanation": "Aurora PostgreSQL に Oracle 互換モードは存在しない (それは別の RDS Custom 等の話)。"},
-        {"id": "D", "text": "Database Migration Service の Premigration Assessment を最初に実行する", "is_correct": false, "explanation": "DMS の Premigration Assessment はタスク設定後の事前チェックで、スキーマ変換戦略の判断には SCT のアセスメントが先。"}
+        {
+          "id": "A",
+          "text": "Database Migration Service の Premigration Assessment を最初に実行する",
+          "is_correct": false,
+          "explanation": "DMS の Premigration Assessment はタスク設定後の事前チェックで、スキーマ変換戦略の判断には SCT のアセスメントが先。"
+        },
+        {
+          "id": "B",
+          "text": "DMS でフルロードを開始する",
+          "is_correct": false,
+          "explanation": "PostgreSQL 側にスキーマと変換された PL/SQL コードがないとデータ移行は失敗する。スキーマ変換が先。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora PostgreSQL に Oracle Compatibility モードで起動する",
+          "is_correct": false,
+          "explanation": "Aurora PostgreSQL に Oracle 互換モードは存在しない (それは別の RDS Custom 等の話)。"
+        },
+        {
+          "id": "D",
+          "text": "AWS SCT でアセスメントレポートを生成し、変換難易度の高いオブジェクトを把握する",
+          "is_correct": true,
+          "explanation": "正解。異種移行ではまず SCT のアセスメントレポートで自動変換可能率と要修正コードを把握し、計画を立てるのが最初のステップ。"
+        }
       ],
       "explanation": "異種移行は (1) SCT アセスメント → (2) スキーマ・コード変換 → (3) DMS でデータ移行 (フルロード + CDC) の順。PL/SQL を多用する Oracle のような場合、自動変換できないコードの工数見積もりが SCT アセスメントレポートで可能になる。",
       "references": [
-        {"title": "AWS SCT - Creating assessment reports", "url": "https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_AssessmentReport.html"}
+        {
+          "title": "AWS SCT - Creating assessment reports",
+          "url": "https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_AssessmentReport.html"
+        }
       ],
-      "tags": ["sct", "heterogeneous", "oracle", "aurora-postgresql", "assessment"],
-      "common_mistakes": ["スキーマ変換をスキップして DMS から開始する", "Aurora PostgreSQL に Oracle 互換があると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "sct",
+        "heterogeneous",
+        "oracle",
+        "aurora-postgresql",
+        "assessment"
+      ],
+      "common_mistakes": [
+        "スキーマ変換をスキップして DMS から開始する",
+        "Aurora PostgreSQL に Oracle 互換があると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-005",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "DMS",
       "subtopic": "Replication instance sizing",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "DMS タスクが大規模な LOB (Large Object) カラムを含むテーブルを移行している。タスクが頻繁にメモリ不足エラーで失敗する。最も効果的な対処は？",
       "options": [
-        {"id": "A", "text": "レプリケーションインスタンスをメモリ最適化 (R系) のより大きいクラスへスケールアップする", "is_correct": true, "explanation": "正解。DMS は LOB を一時的にメモリ上に保持するため、LOB 移行ではメモリ最適化インスタンスが推奨される。"},
-        {"id": "B", "text": "ソース DB を停止する", "is_correct": false, "explanation": "ソース停止は本番影響が大きく、根本解決ではない。"},
-        {"id": "C", "text": "ターゲット側のディスク IOPS を上げる", "is_correct": false, "explanation": "メモリ不足の根本原因はターゲット書き込み性能ではない。"},
-        {"id": "D", "text": "CDC モードに切り替える", "is_correct": false, "explanation": "CDC でも LOB は同様にメモリを使う。モード変更ではメモリ問題は解消しない。"}
+        {
+          "id": "A",
+          "text": "レプリケーションインスタンスをメモリ最適化 (R系) のより大きいクラスへスケールアップする",
+          "is_correct": true,
+          "explanation": "正解。DMS は LOB を一時的にメモリ上に保持するため、LOB 移行ではメモリ最適化インスタンスが推奨される。"
+        },
+        {
+          "id": "B",
+          "text": "ターゲット側のディスク IOPS を上げる",
+          "is_correct": false,
+          "explanation": "メモリ不足の根本原因はターゲット書き込み性能ではない。"
+        },
+        {
+          "id": "C",
+          "text": "CDC モードに切り替える",
+          "is_correct": false,
+          "explanation": "CDC でも LOB は同様にメモリを使う。モード変更ではメモリ問題は解消しない。"
+        },
+        {
+          "id": "D",
+          "text": "ソース DB を停止する",
+          "is_correct": false,
+          "explanation": "ソース停止は本番影響が大きく、根本解決ではない。"
+        }
       ],
       "explanation": "LOB 移行では Limited LOB モード (最大サイズを指定して切り詰め) または Full LOB モード (制限なし、メモリ大量消費) を選択する。Full LOB を使う場合はメモリ最適化インスタンスを推奨。Limited LOB の閾値調整も第二の対処策。",
       "references": [
-        {"title": "AWS DMS - Working with LOBs", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.LOBSupport.html"},
-        {"title": "Best practices for AWS DMS", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.html"}
+        {
+          "title": "AWS DMS - Working with LOBs",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.LOBSupport.html"
+        },
+        {
+          "title": "Best practices for AWS DMS",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.html"
+        }
       ],
-      "tags": ["dms", "lob", "performance", "sizing"],
-      "common_mistakes": ["LOB の挙動を理解せずタスクを起動する", "ターゲット DB の問題と誤解する"],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dms",
+        "lob",
+        "performance",
+        "sizing"
+      ],
+      "common_mistakes": [
+        "LOB の挙動を理解せずタスクを起動する",
+        "ターゲット DB の問題と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-006",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "RDS Blue/Green Deployment",
       "subtopic": "Use case",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "RDS for MySQL を 5.7 から 8.0 にメジャーバージョンアップしたい。本番への影響を最小にしたい。RDS Blue/Green Deployment を使うべき理由として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "ダウンタイムなしでバージョンアップできるから", "is_correct": false, "explanation": "完全ゼロダウンタイムではない。切替時に通常 1 分未満の短いダウンタイムが発生する。"},
-        {"id": "B", "text": "本番と同じ構成のステージングを論理レプリケーションで自動構築し、検証後に1分未満のダウンタイムで切り替えできる", "is_correct": true, "explanation": "正解。Blue/Green は本番 (Blue) のレプリカ (Green) を自動作成し、Green でアップグレード/変更を行ってから素早く切り替えできる。検証時間を確保しつつ切替時間は最短。"},
-        {"id": "C", "text": "切替後も Blue 環境が自動で同期し続ける", "is_correct": false, "explanation": "切替後 Blue は同期を停止する。ロールバックはスナップショットなど別手段が必要。"},
-        {"id": "D", "text": "Blue/Green 切替中はクエリが両環境で重複実行される", "is_correct": false, "explanation": "そのような動作はしない。切替は接続先の付け替え (DNS/エンドポイント) で行われる。"}
+        {
+          "id": "A",
+          "text": "ダウンタイムなしでバージョンアップできるから",
+          "is_correct": false,
+          "explanation": "完全ゼロダウンタイムではない。切替時に通常 1 分未満の短いダウンタイムが発生する。"
+        },
+        {
+          "id": "B",
+          "text": "本番と同じ構成のステージングを論理レプリケーションで自動構築し、検証後に1分未満のダウンタイムで切り替えできる",
+          "is_correct": true,
+          "explanation": "正解。Blue/Green は本番 (Blue) のレプリカ (Green) を自動作成し、Green でアップグレード/変更を行ってから素早く切り替えできる。検証時間を確保しつつ切替時間は最短。"
+        },
+        {
+          "id": "C",
+          "text": "Blue/Green 切替中はクエリが両環境で重複実行される",
+          "is_correct": false,
+          "explanation": "そのような動作はしない。切替は接続先の付け替え (DNS/エンドポイント) で行われる。"
+        },
+        {
+          "id": "D",
+          "text": "切替後も Blue 環境が自動で同期し続ける",
+          "is_correct": false,
+          "explanation": "切替後 Blue は同期を停止する。ロールバックはスナップショットなど別手段が必要。"
+        }
       ],
       "explanation": "RDS Blue/Green Deployment は MySQL/MariaDB/PostgreSQL でメジャーバージョンアップ・パラメータグループ変更・スキーマ変更などのリスク高い操作を、本番のレプリカを Green として作って検証 → 切替で行う仕組み。切替時間は通常1分未満だがゼロではない。",
       "references": [
-        {"title": "Amazon RDS Blue/Green Deployments", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html"}
+        {
+          "title": "Amazon RDS Blue/Green Deployments",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html"
+        }
       ],
-      "tags": ["rds", "blue-green", "upgrade", "deployment"],
-      "common_mistakes": ["完全ゼロダウンタイムだと誤解", "切替後も Blue が自動で生き続けると思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "blue-green",
+        "upgrade",
+        "deployment"
+      ],
+      "common_mistakes": [
+        "完全ゼロダウンタイムだと誤解",
+        "切替後も Blue が自動で生き続けると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-007",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Aurora cluster deployment",
       "subtopic": "Reader endpoints",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Aurora MySQL クラスターに 1 ライター + 3 リーダーがある。アプリは読み取り負荷を 3 リーダーに分散させたい。最も適切な接続方法は？",
       "options": [
-        {"id": "A", "text": "ライターエンドポイントへ全接続を行い、Aurora 側で自動分散させる", "is_correct": false, "explanation": "ライターエンドポイントは常にライターインスタンスに繋がり、リーダーへの分散は行わない。"},
-        {"id": "B", "text": "Reader Endpoint へ接続することで、Aurora が DNS ベースでリーダーをラウンドロビン分散する", "is_correct": true, "explanation": "正解。Reader Endpoint は DNS の TTL ベースでリーダー間に新規接続を分散する標準パターン。"},
-        {"id": "C", "text": "各リーダーのインスタンスエンドポイントをアプリに直接列挙する", "is_correct": false, "explanation": "リーダー追加・削除でアプリ修正が必要になり、運用負荷が高い。Reader Endpoint が推奨。"},
-        {"id": "D", "text": "RDS Proxy 経由でクラスターエンドポイントに接続する", "is_correct": false, "explanation": "RDS Proxy は接続プールに有効だが、読み書き分散は Reader Endpoint または Custom Endpoint が標準。"}
+        {
+          "id": "A",
+          "text": "RDS Proxy 経由でクラスターエンドポイントに接続する",
+          "is_correct": false,
+          "explanation": "RDS Proxy は接続プールに有効だが、読み書き分散は Reader Endpoint または Custom Endpoint が標準。"
+        },
+        {
+          "id": "B",
+          "text": "ライターエンドポイントへ全接続を行い、Aurora 側で自動分散させる",
+          "is_correct": false,
+          "explanation": "ライターエンドポイントは常にライターインスタンスに繋がり、リーダーへの分散は行わない。"
+        },
+        {
+          "id": "C",
+          "text": "Reader Endpoint へ接続することで、Aurora が DNS ベースでリーダーをラウンドロビン分散する",
+          "is_correct": true,
+          "explanation": "正解。Reader Endpoint は DNS の TTL ベースでリーダー間に新規接続を分散する標準パターン。"
+        },
+        {
+          "id": "D",
+          "text": "各リーダーのインスタンスエンドポイントをアプリに直接列挙する",
+          "is_correct": false,
+          "explanation": "リーダー追加・削除でアプリ修正が必要になり、運用負荷が高い。Reader Endpoint が推奨。"
+        }
       ],
       "explanation": "Aurora には Cluster (writer)、Reader、Custom、Instance の 4 種エンドポイントがある。Reader Endpoint は DNS で接続をリーダーに分散するが、確立済み接続は再接続まで分散されない点に注意。コネクションプール毎で再接続が起きるアプリ向き。",
       "references": [
-        {"title": "Amazon Aurora Endpoints", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html"}
+        {
+          "title": "Amazon Aurora Endpoints",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html"
+        }
       ],
-      "tags": ["aurora", "endpoints", "reader", "scaling"],
-      "common_mistakes": ["Reader Endpoint がコネクションレベルで負荷分散すると誤解", "ライターエンドポイントが自動分散すると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "aurora",
+        "endpoints",
+        "reader",
+        "scaling"
+      ],
+      "common_mistakes": [
+        "Reader Endpoint がコネクションレベルで負荷分散すると誤解",
+        "ライターエンドポイントが自動分散すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-008",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "DMS",
       "subtopic": "Validation",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "医療系 SaaS が患者データを Oracle から Aurora PostgreSQL に DMS で移行する。データ整合性の保証が必須。移行後にソースとターゲットの内容が一致していることを確認する最も適切な方法は？",
       "options": [
-        {"id": "A", "text": "DMS タスクの \"Enable validation\" を有効化し、自動検証レポートを確認する", "is_correct": true, "explanation": "正解。DMS のデータ検証 (Validation) はソースとターゲットを自動的に行・列レベルで比較し、不一致を検出する組み込み機能で、コンプライアンス要件にも対応しやすい。"},
-        {"id": "B", "text": "ソースとターゲットでそれぞれ COUNT(*) を実行し件数を比較する", "is_correct": false, "explanation": "件数だけでは行内容の差異 (異種データ型変換時の精度損失等) を検出できない。"},
-        {"id": "C", "text": "両 DB の MD5 ダンプを取って比較する", "is_correct": false, "explanation": "異種DBではバイナリ表現が異なり、単純な MD5 比較は意味をなさない。"},
-        {"id": "D", "text": "Lambda 関数で全行を取得して比較する", "is_correct": false, "explanation": "技術的に可能だが、DMS 標準機能で同等のことが自動でできるため車輪の再発明。"}
+        {
+          "id": "A",
+          "text": "両 DB の MD5 ダンプを取って比較する",
+          "is_correct": false,
+          "explanation": "異種DBではバイナリ表現が異なり、単純な MD5 比較は意味をなさない。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda 関数で全行を取得して比較する",
+          "is_correct": false,
+          "explanation": "技術的に可能だが、DMS 標準機能で同等のことが自動でできるため車輪の再発明。"
+        },
+        {
+          "id": "C",
+          "text": "ソースとターゲットでそれぞれ COUNT(*) を実行し件数を比較する",
+          "is_correct": false,
+          "explanation": "件数だけでは行内容の差異 (異種データ型変換時の精度損失等) を検出できない。"
+        },
+        {
+          "id": "D",
+          "text": "DMS タスクの \"Enable validation\" を有効化し、自動検証レポートを確認する",
+          "is_correct": true,
+          "explanation": "正解。DMS のデータ検証 (Validation) はソースとターゲットを自動的に行・列レベルで比較し、不一致を検出する組み込み機能で、コンプライアンス要件にも対応しやすい。"
+        }
       ],
       "explanation": "DMS の Data Validation は、特に異種マイグレーションで型変換による精度損失や文字コード問題を行レベルで検出する。検証は移行後だけでなく、CDC 進行中も継続的に行えるオプションがある。",
       "references": [
-        {"title": "AWS DMS data validation", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Validating.html"}
+        {
+          "title": "AWS DMS data validation",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Validating.html"
+        }
       ],
-      "tags": ["dms", "validation", "data-integrity", "healthcare"],
-      "common_mistakes": ["COUNT(*) 比較で十分と誤解", "DMS Validation の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dms",
+        "validation",
+        "data-integrity",
+        "healthcare"
+      ],
+      "common_mistakes": [
+        "COUNT(*) 比較で十分と誤解",
+        "DMS Validation の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-009",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Parameter groups",
       "subtopic": "Custom parameter group",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "RDS for MySQL の max_connections をデフォルトより増やしたい。最も適切な手順は？",
       "options": [
-        {"id": "A", "text": "default.mysql8.0 パラメータグループを直接編集する", "is_correct": false, "explanation": "デフォルトパラメータグループは編集不可。カスタムグループの作成が必要。"},
-        {"id": "B", "text": "DB インスタンスに SSH してその場で my.cnf を書き換える", "is_correct": false, "explanation": "RDS は OS への SSH を提供しない。設定変更はパラメータグループ経由のみ。"},
-        {"id": "C", "text": "カスタム DB パラメータグループを作成し、max_connections を変更し、インスタンスに関連付け、必要なら再起動する", "is_correct": true, "explanation": "正解。RDS のパラメータ変更はカスタムパラメータグループで行う。max_connections は dynamic ではなく static パラメータの場合があり、その場合は再起動が必要。"},
-        {"id": "D", "text": "AWS Systems Manager Parameter Store にキーを設定する", "is_correct": false, "explanation": "Parameter Store は設定保管サービスで、RDS パラメータの変更経路ではない。"}
+        {
+          "id": "A",
+          "text": "カスタム DB パラメータグループを作成し、max_connections を変更し、インスタンスに関連付け、必要なら再起動する",
+          "is_correct": true,
+          "explanation": "正解。RDS のパラメータ変更はカスタムパラメータグループで行う。max_connections は dynamic ではなく static パラメータの場合があり、その場合は再起動が必要。"
+        },
+        {
+          "id": "B",
+          "text": "DB インスタンスに SSH してその場で my.cnf を書き換える",
+          "is_correct": false,
+          "explanation": "RDS は OS への SSH を提供しない。設定変更はパラメータグループ経由のみ。"
+        },
+        {
+          "id": "C",
+          "text": "default.mysql8.0 パラメータグループを直接編集する",
+          "is_correct": false,
+          "explanation": "デフォルトパラメータグループは編集不可。カスタムグループの作成が必要。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Systems Manager Parameter Store にキーを設定する",
+          "is_correct": false,
+          "explanation": "Parameter Store は設定保管サービスで、RDS パラメータの変更経路ではない。"
+        }
       ],
       "explanation": "RDS パラメータには dynamic (適用時即座に反映) と static (再起動が必要) があり、max_connections は MySQL では実質 static (式で計算される)。デフォルトパラメータグループはコピーしてカスタム化する設計。",
       "references": [
-        {"title": "Working with parameter groups", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html"}
+        {
+          "title": "Working with parameter groups",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html"
+        }
       ],
-      "tags": ["rds", "parameter-group", "configuration", "mysql"],
-      "common_mistakes": ["デフォルトグループを編集できると誤解", "RDS で SSH できると思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "parameter-group",
+        "configuration",
+        "mysql"
+      ],
+      "common_mistakes": [
+        "デフォルトグループを編集できると誤解",
+        "RDS で SSH できると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-010",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Option groups",
       "subtopic": "Oracle TDE",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "RDS for Oracle Enterprise Edition で TDE (Transparent Data Encryption) を有効化したい。最も適切な手順は？",
       "options": [
-        {"id": "A", "text": "RDS の Storage Encryption を有効化すれば自動的に Oracle TDE になる", "is_correct": false, "explanation": "RDS Storage Encryption (KMS) と Oracle TDE は別物。Storage Encryption はブロックレベル、TDE は表領域・列レベル。"},
-        {"id": "B", "text": "Oracle TDE オプションを含むカスタムオプショングループを作成し、インスタンスに関連付ける", "is_correct": true, "explanation": "正解。RDS for Oracle の TDE は Option Group の TDE オプションで有効化する。Oracle EE/SE2 のライセンスや BYOL 要件あり。"},
-        {"id": "C", "text": "DB パラメータグループで encrypted=true を設定する", "is_correct": false, "explanation": "TDE はパラメータグループ経由ではなくオプショングループ経由で有効化される機能。"},
-        {"id": "D", "text": "AWS KMS のカスタマー管理キーを Oracle インスタンスに直接アタッチする", "is_correct": false, "explanation": "TDE はオプショングループで構成し、内部的にキー管理を行う。直接 KMS キーを 「アタッチ」する操作は存在しない。"}
+        {
+          "id": "A",
+          "text": "DB パラメータグループで encrypted=true を設定する",
+          "is_correct": false,
+          "explanation": "TDE はパラメータグループ経由ではなくオプショングループ経由で有効化される機能。"
+        },
+        {
+          "id": "B",
+          "text": "Oracle TDE オプションを含むカスタムオプショングループを作成し、インスタンスに関連付ける",
+          "is_correct": true,
+          "explanation": "正解。RDS for Oracle の TDE は Option Group の TDE オプションで有効化する。Oracle EE/SE2 のライセンスや BYOL 要件あり。"
+        },
+        {
+          "id": "C",
+          "text": "RDS の Storage Encryption を有効化すれば自動的に Oracle TDE になる",
+          "is_correct": false,
+          "explanation": "RDS Storage Encryption (KMS) と Oracle TDE は別物。Storage Encryption はブロックレベル、TDE は表領域・列レベル。"
+        },
+        {
+          "id": "D",
+          "text": "AWS KMS のカスタマー管理キーを Oracle インスタンスに直接アタッチする",
+          "is_correct": false,
+          "explanation": "TDE はオプショングループで構成し、内部的にキー管理を行う。直接 KMS キーを 「アタッチ」する操作は存在しない。"
+        }
       ],
       "explanation": "RDS Option Group はエンジン固有の機能 (Oracle TDE / Native Network Encryption / SQL Server TDE / MySQL MEMCACHED 等) を有効化する仕組み。Storage Encryption (KMS) と Oracle TDE は重ねて利用でき、コンプライアンス要件で両方使うケースもある。",
       "references": [
-        {"title": "Oracle Transparent Data Encryption", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.Options.AdvSecurity.html"}
+        {
+          "title": "Oracle Transparent Data Encryption",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.Options.AdvSecurity.html"
+        }
       ],
-      "tags": ["rds", "oracle", "tde", "option-group", "encryption"],
-      "common_mistakes": ["Storage Encryption と Oracle TDE を混同", "オプショングループとパラメータグループの役割を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "oracle",
+        "tde",
+        "option-group",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "Storage Encryption と Oracle TDE を混同",
+        "オプショングループとパラメータグループの役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-011",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Snapshots",
       "subtopic": "Cross-region copy",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "東京リージョンの RDS 暗号化済み (KMS CMK) スナップショットを大阪リージョンへコピーしたい。最も正しい手順は？",
       "options": [
-        {"id": "A", "text": "そのままコピーすればソースと同じ KMS CMK が大阪で使える", "is_correct": false, "explanation": "KMS キーはリージョン固定リソース。コピー先で利用する KMS CMK を別途指定する必要がある。"},
-        {"id": "B", "text": "コピー先リージョン (大阪) で利用する KMS CMK を指定してスナップショットコピーを実行する", "is_correct": true, "explanation": "正解。クロスリージョン暗号化スナップショットコピー時は、コピー先リージョンの KMS キーを指定する必要がある。"},
-        {"id": "C", "text": "スナップショットを一旦復号して未暗号化でコピーしてから再暗号化する", "is_correct": false, "explanation": "RDS には平文に戻すコマンドは存在せず、その手順は不適切かつ非推奨。"},
-        {"id": "D", "text": "スナップショットは別アカウントへの共有が必須で、リージョン間の直接コピーはできない", "is_correct": false, "explanation": "誤り。RDS スナップショットのクロスリージョンコピーはネイティブにサポートされている。"}
+        {
+          "id": "A",
+          "text": "スナップショットは別アカウントへの共有が必須で、リージョン間の直接コピーはできない",
+          "is_correct": false,
+          "explanation": "誤り。RDS スナップショットのクロスリージョンコピーはネイティブにサポートされている。"
+        },
+        {
+          "id": "B",
+          "text": "そのままコピーすればソースと同じ KMS CMK が大阪で使える",
+          "is_correct": false,
+          "explanation": "KMS キーはリージョン固定リソース。コピー先で利用する KMS CMK を別途指定する必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "コピー先リージョン (大阪) で利用する KMS CMK を指定してスナップショットコピーを実行する",
+          "is_correct": true,
+          "explanation": "正解。クロスリージョン暗号化スナップショットコピー時は、コピー先リージョンの KMS キーを指定する必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "スナップショットを一旦復号して未暗号化でコピーしてから再暗号化する",
+          "is_correct": false,
+          "explanation": "RDS には平文に戻すコマンドは存在せず、その手順は不適切かつ非推奨。"
+        }
       ],
       "explanation": "RDS スナップショットを別リージョンへコピーする際、ソースが KMS で暗号化されていれば、ターゲットリージョンで利用する CMK を指定する。マルチリージョンキー (MRK) を使うと管理が簡素化される。",
       "references": [
-        {"title": "Copying a DB snapshot", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"}
+        {
+          "title": "Copying a DB snapshot",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"
+        }
       ],
-      "tags": ["rds", "snapshot", "kms", "cross-region", "encryption"],
-      "common_mistakes": ["KMS キーがグローバルだと誤解", "暗号化スナップショットを復号できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "snapshot",
+        "kms",
+        "cross-region",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "KMS キーがグローバルだと誤解",
+        "暗号化スナップショットを復号できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-012",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Aurora deployment",
       "subtopic": "Aurora Serverless v2 use case",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "教育系 SaaS が時間帯で負荷が大きく変動する Aurora PostgreSQL を計画中。普段は低負荷、試験期間中は急激にスパイクする。コストと運用効率を両立したい。最適な構成は？",
       "options": [
-        {"id": "A", "text": "プロビジョンド db.r6g.4xlarge を常時起動", "is_correct": false, "explanation": "ピーク前提の固定サイズはアイドル時のコストが大きい。"},
-        {"id": "B", "text": "Aurora Serverless v2 を最小・最大 ACU で構成し、自動的にスケーリングさせる", "is_correct": true, "explanation": "正解。Serverless v2 は秒単位で 0.5 ACU 単位の細粒度スケーリングが可能で、教育系の急変ワークロードに最適。"},
-        {"id": "C", "text": "EC2 上に PostgreSQL を構築し、Auto Scaling Group で増減する", "is_correct": false, "explanation": "DB を Auto Scaling Group で動的増減することは技術的に困難 (永続データの整合性問題)。"},
-        {"id": "D", "text": "Aurora Serverless v1 を使用する", "is_correct": false, "explanation": "Serverless v1 はスケーリング粒度が粗く、起動時間も大きい。v2 が後継で推奨。新規システムは v2 を選ぶべき。"}
+        {
+          "id": "A",
+          "text": "EC2 上に PostgreSQL を構築し、Auto Scaling Group で増減する",
+          "is_correct": false,
+          "explanation": "DB を Auto Scaling Group で動的増減することは技術的に困難 (永続データの整合性問題)。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora Serverless v1 を使用する",
+          "is_correct": false,
+          "explanation": "Serverless v1 はスケーリング粒度が粗く、起動時間も大きい。v2 が後継で推奨。新規システムは v2 を選ぶべき。"
+        },
+        {
+          "id": "C",
+          "text": "プロビジョンド db.r6g.4xlarge を常時起動",
+          "is_correct": false,
+          "explanation": "ピーク前提の固定サイズはアイドル時のコストが大きい。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora Serverless v2 を最小・最大 ACU で構成し、自動的にスケーリングさせる",
+          "is_correct": true,
+          "explanation": "正解。Serverless v2 は秒単位で 0.5 ACU 単位の細粒度スケーリングが可能で、教育系の急変ワークロードに最適。"
+        }
       ],
       "explanation": "Aurora Serverless v2 はプロビジョンドと同等の互換性を持ちながら ACU で課金され、急激なスケールに対応できる。v1 と比べ起動時間が短く、Multi-AZ や Reader にも対応。可変ワークロードのコスト最適化の標準解。",
       "references": [
-        {"title": "Amazon Aurora Serverless v2", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html"}
+        {
+          "title": "Amazon Aurora Serverless v2",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html"
+        }
       ],
-      "tags": ["aurora", "serverless-v2", "cost", "education"],
-      "common_mistakes": ["Serverless v1 を選ぶ", "プロビジョンドのピーク固定でコスト増を許容"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "aurora",
+        "serverless-v2",
+        "cost",
+        "education"
+      ],
+      "common_mistakes": [
+        "Serverless v1 を選ぶ",
+        "プロビジョンドのピーク固定でコスト増を許容"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-013",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Migration strategy",
       "subtopic": "On-prem SQL Server to Aurora",
       "cognitive_level": "L3-Apply",
       "difficulty": "hard",
       "stem": "オンプレ SQL Server 2016 (1.5TB、ストアドプロシージャ多数) を Aurora MySQL に移行したい。アプリのコード修正コストも抑えたい。最も妥当な進め方は？",
       "options": [
-        {"id": "A", "text": "DMS だけで一気に移行する", "is_correct": false, "explanation": "T-SQL のストアド変換が含まれず、アプリ動作不能になる。"},
-        {"id": "B", "text": "RDS for SQL Server へまず移行 (同種) し、その後アプリ修正の余裕を見ながら Aurora MySQL へ移行する段階アプローチを検討する", "is_correct": true, "explanation": "正解。T-SQL → MySQL は変換難易度が高いため、まず RDS for SQL Server へ移行し、運用の安定とライセンスコストを見ながら Aurora MySQL を計画するのが現実的。SCT アセスメントで難易度を確認した上で判断する。"},
-        {"id": "C", "text": "Aurora PostgreSQL に Babelfish (T-SQL 互換) を導入する", "is_correct": false, "explanation": "Babelfish は Aurora PostgreSQL の T-SQL 互換機能で、Aurora MySQL では使えない。問題の要件は MySQL なので不適合。"},
-        {"id": "D", "text": "全面書き換えで MongoDB に移行する", "is_correct": false, "explanation": "RDBMS から NoSQL への移行はデータモデル全変更を要し、要件 (コスト抑制) と矛盾する。"}
+        {
+          "id": "A",
+          "text": "RDS for SQL Server へまず移行 (同種) し、その後アプリ修正の余裕を見ながら Aurora MySQL へ移行する段階アプローチを検討する",
+          "is_correct": true,
+          "explanation": "正解。T-SQL → MySQL は変換難易度が高いため、まず RDS for SQL Server へ移行し、運用の安定とライセンスコストを見ながら Aurora MySQL を計画するのが現実的。SCT アセスメントで難易度を確認した上で判断する。"
+        },
+        {
+          "id": "B",
+          "text": "DMS だけで一気に移行する",
+          "is_correct": false,
+          "explanation": "T-SQL のストアド変換が含まれず、アプリ動作不能になる。"
+        },
+        {
+          "id": "C",
+          "text": "全面書き換えで MongoDB に移行する",
+          "is_correct": false,
+          "explanation": "RDBMS から NoSQL への移行はデータモデル全変更を要し、要件 (コスト抑制) と矛盾する。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora PostgreSQL に Babelfish (T-SQL 互換) を導入する",
+          "is_correct": false,
+          "explanation": "Babelfish は Aurora PostgreSQL の T-SQL 互換機能で、Aurora MySQL では使えない。問題の要件は MySQL なので不適合。"
+        }
       ],
       "explanation": "異種移行は SCT アセスメントで自動変換率と工数を見積もるのが第一歩。T-SQL ヘビーな環境をいきなり Aurora MySQL にすると工数が爆発するため、段階的アプローチが推奨。Babelfish を使う場合はターゲットを Aurora PostgreSQL にする選択肢もある。",
       "references": [
-        {"title": "Babelfish for Aurora PostgreSQL", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/babelfish.html"},
-        {"title": "AWS SCT migration assessment", "url": "https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_AssessmentReport.html"}
+        {
+          "title": "Babelfish for Aurora PostgreSQL",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/babelfish.html"
+        },
+        {
+          "title": "AWS SCT migration assessment",
+          "url": "https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_AssessmentReport.html"
+        }
       ],
-      "tags": ["migration", "sql-server", "aurora", "babelfish", "strategy"],
-      "common_mistakes": ["Babelfish が MySQL でも使えると誤解", "DMS 単体で異種完全移行できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "migration",
+        "sql-server",
+        "aurora",
+        "babelfish",
+        "strategy"
+      ],
+      "common_mistakes": [
+        "Babelfish が MySQL でも使えると誤解",
+        "DMS 単体で異種完全移行できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-014",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "DMS",
       "subtopic": "Network connectivity",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "オンプレ DB → AWS の移行で、DMS レプリケーションインスタンスからオンプレへの接続経路として機密性とスループットを両立する選択肢は？",
       "options": [
-        {"id": "A", "text": "インターネット経由 (パブリック IP) で平文接続", "is_correct": false, "explanation": "機密性を満たさず、機密医療データなどでは違反になる。"},
-        {"id": "B", "text": "AWS Direct Connect + DMS レプリケーションインスタンスを VPC のプライベートサブネットに配置", "is_correct": true, "explanation": "正解。Direct Connect で専用線接続し、DMS をプライベートサブネットに置けば閉域・高スループットの両立が可能。"},
-        {"id": "C", "text": "Site-to-Site VPN を使い、DMS をパブリックサブネットに配置", "is_correct": false, "explanation": "VPN は機密性は満たすが大量データのスループットが Direct Connect より低い。プライベートサブネット推奨。"},
-        {"id": "D", "text": "Snowball Edge にデータを書き込んで物理輸送", "is_correct": false, "explanation": "Snowball は CDC の継続レプリケーションには向かず、初期ロードのみ。質問の DMS 接続要件には合致しない (DMS は別途必要)。"}
+        {
+          "id": "A",
+          "text": "Site-to-Site VPN を使い、DMS をパブリックサブネットに配置",
+          "is_correct": false,
+          "explanation": "VPN は機密性は満たすが大量データのスループットが Direct Connect より低い。プライベートサブネット推奨。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Direct Connect + DMS レプリケーションインスタンスを VPC のプライベートサブネットに配置",
+          "is_correct": true,
+          "explanation": "正解。Direct Connect で専用線接続し、DMS をプライベートサブネットに置けば閉域・高スループットの両立が可能。"
+        },
+        {
+          "id": "C",
+          "text": "インターネット経由 (パブリック IP) で平文接続",
+          "is_correct": false,
+          "explanation": "機密性を満たさず、機密医療データなどでは違反になる。"
+        },
+        {
+          "id": "D",
+          "text": "Snowball Edge にデータを書き込んで物理輸送",
+          "is_correct": false,
+          "explanation": "Snowball は CDC の継続レプリケーションには向かず、初期ロードのみ。質問の DMS 接続要件には合致しない (DMS は別途必要)。"
+        }
       ],
       "explanation": "大規模かつ継続移行 (CDC) では Direct Connect + プライベートサブネット DMS が標準。VPN は補助的経路。Snowball は超大容量データの初期ロードに利用 (DMS Snowball Edge エージェント)。",
       "references": [
-        {"title": "AWS DMS network configurations", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.VPC.html"}
+        {
+          "title": "AWS DMS network configurations",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.VPC.html"
+        }
       ],
-      "tags": ["dms", "network", "direct-connect", "security"],
-      "common_mistakes": ["パブリック経路で十分と判断する", "Snowball が CDC でも使えると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dms",
+        "network",
+        "direct-connect",
+        "security"
+      ],
+      "common_mistakes": [
+        "パブリック経路で十分と判断する",
+        "Snowball が CDC でも使えると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-015",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Aurora cluster deployment",
       "subtopic": "Global Database",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "B2B SaaS が東京リージョンで Aurora MySQL を運用しているが、リージョン障害時の RPO < 1 秒、RTO < 1 分を目指したい。最適な構成は？",
       "options": [
-        {"id": "A", "text": "Aurora Global Database でセカンダリリージョン (例: 大阪) にレプリケート", "is_correct": true, "explanation": "正解。Aurora Global Database は通常 1 秒未満でクロスリージョンレプリケーションし、災害時はセカンダリへ promote (~1分) 可能。"},
-        {"id": "B", "text": "Multi-AZ 配置で十分", "is_correct": false, "explanation": "Multi-AZ は同一リージョン内の AZ 障害を保護するが、リージョン障害には対応しない。"},
-        {"id": "C", "text": "RDS Read Replica をクロスリージョンに 1 個作る", "is_correct": false, "explanation": "Aurora MySQL のクロスリージョン Read Replica は技術的に可能だが、レプリ遅延が秒〜分単位で Global Database より遅い。"},
-        {"id": "D", "text": "毎日のスナップショットを別リージョンへコピー", "is_correct": false, "explanation": "RPO が最大 24 時間になり要件を満たさない。"}
+        {
+          "id": "A",
+          "text": "RDS Read Replica をクロスリージョンに 1 個作る",
+          "is_correct": false,
+          "explanation": "Aurora MySQL のクロスリージョン Read Replica は技術的に可能だが、レプリ遅延が秒〜分単位で Global Database より遅い。"
+        },
+        {
+          "id": "B",
+          "text": "Multi-AZ 配置で十分",
+          "is_correct": false,
+          "explanation": "Multi-AZ は同一リージョン内の AZ 障害を保護するが、リージョン障害には対応しない。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora Global Database でセカンダリリージョン (例: 大阪) にレプリケート",
+          "is_correct": true,
+          "explanation": "正解。Aurora Global Database は通常 1 秒未満でクロスリージョンレプリケーションし、災害時はセカンダリへ promote (~1分) 可能。"
+        },
+        {
+          "id": "D",
+          "text": "毎日のスナップショットを別リージョンへコピー",
+          "is_correct": false,
+          "explanation": "RPO が最大 24 時間になり要件を満たさない。"
+        }
       ],
       "explanation": "Aurora Global Database は 1 プライマリ + 最大 5 セカンダリリージョン構成で、ストレージレベルレプリケーションにより典型遅延が 1 秒未満。災害時は数十秒〜1分で promote 可能で、地理的災害対策の標準解。",
       "references": [
-        {"title": "Amazon Aurora Global Database", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html"}
+        {
+          "title": "Amazon Aurora Global Database",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html"
+        }
       ],
-      "tags": ["aurora", "global-database", "dr", "rpo-rto"],
-      "common_mistakes": ["Multi-AZ がリージョン障害も保護すると誤解", "クロスリージョン Read Replica と Global Database を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "aurora",
+        "global-database",
+        "dr",
+        "rpo-rto"
+      ],
+      "common_mistakes": [
+        "Multi-AZ がリージョン障害も保護すると誤解",
+        "クロスリージョン Read Replica と Global Database を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-016",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "RDS Snapshot restore",
       "subtopic": "Restore strategies",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "オペレータの誤操作で RDS for PostgreSQL のテーブルが TRUNCATE された。 30 分前の状態に戻したい。本番への影響を最小にしたい手順は？",
       "options": [
-        {"id": "A", "text": "現本番を上書きする形で PITR (Point-in-Time Recovery) を実行する", "is_correct": false, "explanation": "PITR は新インスタンスとして復元される。既存インスタンスを上書きする操作ではない。また、現在投入された他のデータも失われる。"},
-        {"id": "B", "text": "PITR で 30 分前の時点を別インスタンス名で復元し、必要なテーブルだけ pg_dump で抽出して本番に戻す", "is_correct": true, "explanation": "正解。PITR で別インスタンスに復元し、必要分のみコピーすれば、誤TRUNCATE後に行われた他の正常更新は保持される。"},
-        {"id": "C", "text": "本番を停止し、最新のスナップショットから上書き復元する", "is_correct": false, "explanation": "誤 TRUNCATE 後の他更新が失われ、ダウンタイムも発生する。"},
-        {"id": "D", "text": "Aurora Backtrack を実行する", "is_correct": false, "explanation": "Backtrack は Aurora MySQL のみの機能で、RDS for PostgreSQL や Aurora PostgreSQL では使えない。"}
+        {
+          "id": "A",
+          "text": "本番を停止し、最新のスナップショットから上書き復元する",
+          "is_correct": false,
+          "explanation": "誤 TRUNCATE 後の他更新が失われ、ダウンタイムも発生する。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora Backtrack を実行する",
+          "is_correct": false,
+          "explanation": "Backtrack は Aurora MySQL のみの機能で、RDS for PostgreSQL や Aurora PostgreSQL では使えない。"
+        },
+        {
+          "id": "C",
+          "text": "現本番を上書きする形で PITR (Point-in-Time Recovery) を実行する",
+          "is_correct": false,
+          "explanation": "PITR は新インスタンスとして復元される。既存インスタンスを上書きする操作ではない。また、現在投入された他のデータも失われる。"
+        },
+        {
+          "id": "D",
+          "text": "PITR で 30 分前の時点を別インスタンス名で復元し、必要なテーブルだけ pg_dump で抽出して本番に戻す",
+          "is_correct": true,
+          "explanation": "正解。PITR で別インスタンスに復元し、必要分のみコピーすれば、誤TRUNCATE後に行われた他の正常更新は保持される。"
+        }
       ],
       "explanation": "RDS PITR は元インスタンスを上書きせず別インスタンス名で復元する仕組み。これにより一部テーブルのみを救出できる。Backtrack は Aurora MySQL の特殊機能で、引数となる時間内のロールバック (DDL含む) が可能だがエンジン限定。",
       "references": [
-        {"title": "Restoring a DB instance to a specified time", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html"}
+        {
+          "title": "Restoring a DB instance to a specified time",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html"
+        }
       ],
-      "tags": ["rds", "pitr", "restore", "postgresql"],
-      "common_mistakes": ["PITR が既存インスタンスを上書きすると誤解", "Backtrack が PostgreSQL でも使えると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "pitr",
+        "restore",
+        "postgresql"
+      ],
+      "common_mistakes": [
+        "PITR が既存インスタンスを上書きすると誤解",
+        "Backtrack が PostgreSQL でも使えると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-017",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "DMS",
       "subtopic": "Multi-AZ replication instance",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "本番運用でクリティカルな CDC タスクを実行している。レプリケーションインスタンスの単一障害点を排除したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "DMS レプリケーションインスタンスを Multi-AZ で構成する", "is_correct": true, "explanation": "正解。DMS レプリケーションインスタンスには Multi-AZ オプションがあり、スタンバイへの自動フェイルオーバーで継続性を確保できる。"},
-        {"id": "B", "text": "AZ ごとにレプリケーションインスタンスを個別作成し、ロードバランサーで切替", "is_correct": false, "explanation": "DMS インスタンスは ELB と組み合わせる構成ではない。状態を持つため Active/Active も難しい。"},
-        {"id": "C", "text": "Lambda + Step Functions で代替する", "is_correct": false, "explanation": "DMS の CDC を完全代替するには CDC ログ読み出しが必要で実装コストが高すぎる。"},
-        {"id": "D", "text": "Auto Scaling Group で DMS インスタンスを増減", "is_correct": false, "explanation": "DMS インスタンスは ASG で扱える種類のリソースではない。"}
+        {
+          "id": "A",
+          "text": "DMS レプリケーションインスタンスを Multi-AZ で構成する",
+          "is_correct": true,
+          "explanation": "正解。DMS レプリケーションインスタンスには Multi-AZ オプションがあり、スタンバイへの自動フェイルオーバーで継続性を確保できる。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda + Step Functions で代替する",
+          "is_correct": false,
+          "explanation": "DMS の CDC を完全代替するには CDC ログ読み出しが必要で実装コストが高すぎる。"
+        },
+        {
+          "id": "C",
+          "text": "Auto Scaling Group で DMS インスタンスを増減",
+          "is_correct": false,
+          "explanation": "DMS インスタンスは ASG で扱える種類のリソースではない。"
+        },
+        {
+          "id": "D",
+          "text": "AZ ごとにレプリケーションインスタンスを個別作成し、ロードバランサーで切替",
+          "is_correct": false,
+          "explanation": "DMS インスタンスは ELB と組み合わせる構成ではない。状態を持つため Active/Active も難しい。"
+        }
       ],
       "explanation": "DMS レプリケーションインスタンスは Multi-AZ オプションで HA 化できる。ストレージは同期レプリケートされ、フェイルオーバー時は同じエンドポイントを継続利用。重要な本番 CDC タスクの標準構成。",
       "references": [
-        {"title": "AWS DMS Multi-AZ replication instance", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.MultiAZ.html"}
+        {
+          "title": "AWS DMS Multi-AZ replication instance",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.MultiAZ.html"
+        }
       ],
-      "tags": ["dms", "multi-az", "ha", "production"],
-      "common_mistakes": ["DMS には HA オプションがないと思い込む", "ELB で冗長化できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dms",
+        "multi-az",
+        "ha",
+        "production"
+      ],
+      "common_mistakes": [
+        "DMS には HA オプションがないと思い込む",
+        "ELB で冗長化できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-018",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Blue/Green Deployment",
       "subtopic": "Switch failure",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "RDS Blue/Green Deployment の Switchover 中に \"Replica lag too high\" のエラーで切替が失敗した。最も適切な原因と対処は？",
       "options": [
-        {"id": "A", "text": "Blue 側で大量の書き込みが続いており Green が追従できていない。書き込みを抑制してから再度 Switchover を実行する", "is_correct": true, "explanation": "正解。Switchover は Green の binlog/WAL レプリ遅延が小さい (一般に 30秒以内) ことが条件。書き込みを一時抑制するか低負荷時間帯に再実行する。"},
-        {"id": "B", "text": "Green インスタンスのストレージが不足しているため、Blue インスタンスをスケールアップする", "is_correct": false, "explanation": "Blue ではなく Green の問題で、Blue を変えても解決しない。"},
-        {"id": "C", "text": "Blue を停止して強制切替する", "is_correct": false, "explanation": "RDS Blue/Green に強制切替オプションは存在せず、Blue 停止はサービス断を招く。"},
-        {"id": "D", "text": "Blue の DB エンジンを再起動する", "is_correct": false, "explanation": "再起動はレプリ遅延の解消には直結せず、サービス影響もある。"}
+        {
+          "id": "A",
+          "text": "Blue を停止して強制切替する",
+          "is_correct": false,
+          "explanation": "RDS Blue/Green に強制切替オプションは存在せず、Blue 停止はサービス断を招く。"
+        },
+        {
+          "id": "B",
+          "text": "Blue 側で大量の書き込みが続いており Green が追従できていない。書き込みを抑制してから再度 Switchover を実行する",
+          "is_correct": true,
+          "explanation": "正解。Switchover は Green の binlog/WAL レプリ遅延が小さい (一般に 30秒以内) ことが条件。書き込みを一時抑制するか低負荷時間帯に再実行する。"
+        },
+        {
+          "id": "C",
+          "text": "Green インスタンスのストレージが不足しているため、Blue インスタンスをスケールアップする",
+          "is_correct": false,
+          "explanation": "Blue ではなく Green の問題で、Blue を変えても解決しない。"
+        },
+        {
+          "id": "D",
+          "text": "Blue の DB エンジンを再起動する",
+          "is_correct": false,
+          "explanation": "再起動はレプリ遅延の解消には直結せず、サービス影響もある。"
+        }
       ],
       "explanation": "Blue/Green の Switchover は Green が Blue とほぼ同期していることが前提で、過剰な書き込み中は失敗する。書き込み量を一時的に下げる / 低トラフィック時間に切り替える / Green のスペックを上げる、のいずれかが現実的対処。",
       "references": [
-        {"title": "Switching a Blue/Green Deployment", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments-switching.html"}
+        {
+          "title": "Switching a Blue/Green Deployment",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments-switching.html"
+        }
       ],
-      "tags": ["blue-green", "switchover", "replication-lag", "troubleshooting"],
-      "common_mistakes": ["切替失敗時に Blue 側を変更すれば直ると誤解", "強制切替コマンドが存在すると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "blue-green",
+        "switchover",
+        "replication-lag",
+        "troubleshooting"
+      ],
+      "common_mistakes": [
+        "切替失敗時に Blue 側を変更すれば直ると誤解",
+        "強制切替コマンドが存在すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-019",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "DMS",
       "subtopic": "Task failures analysis",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Oracle → Aurora PostgreSQL の DMS タスクが CDC フェーズで停止した。CloudWatch Logs に \"OCI error: ORA-01555: snapshot too old\" が頻出している。原因として最も妥当なのは？",
       "options": [
-        {"id": "A", "text": "Aurora PostgreSQL のディスクが不足している", "is_correct": false, "explanation": "ORA-01555 はソース Oracle 側のエラーで、ターゲットの容量問題ではない。"},
-        {"id": "B", "text": "ソース Oracle の UNDO 表領域不足または UNDO_RETENTION 不足で、CDC が読むべき古いログがすでに上書きされている", "is_correct": true, "explanation": "正解。ORA-01555 は典型的な UNDO 関連エラーで、CDC が遅延すると読み取り対象の古い UNDO セグメントが上書きされ発生する。UNDO_RETENTION 増加と UNDO 表領域拡張で対処。"},
-        {"id": "C", "text": "DMS レプリケーションインスタンスのストレージ不足", "is_correct": false, "explanation": "DMS のストレージ不足は別のエラーメッセージで現れる。ORA-01555 はソース起源。"},
-        {"id": "D", "text": "ターゲット Aurora の vacuum 不足", "is_correct": false, "explanation": "vacuum 不足は別の問題でターゲット側の話。エラーは Oracle 由来。"}
+        {
+          "id": "A",
+          "text": "Aurora PostgreSQL のディスクが不足している",
+          "is_correct": false,
+          "explanation": "ORA-01555 はソース Oracle 側のエラーで、ターゲットの容量問題ではない。"
+        },
+        {
+          "id": "B",
+          "text": "DMS レプリケーションインスタンスのストレージ不足",
+          "is_correct": false,
+          "explanation": "DMS のストレージ不足は別のエラーメッセージで現れる。ORA-01555 はソース起源。"
+        },
+        {
+          "id": "C",
+          "text": "ソース Oracle の UNDO 表領域不足または UNDO_RETENTION 不足で、CDC が読むべき古いログがすでに上書きされている",
+          "is_correct": true,
+          "explanation": "正解。ORA-01555 は典型的な UNDO 関連エラーで、CDC が遅延すると読み取り対象の古い UNDO セグメントが上書きされ発生する。UNDO_RETENTION 増加と UNDO 表領域拡張で対処。"
+        },
+        {
+          "id": "D",
+          "text": "ターゲット Aurora の vacuum 不足",
+          "is_correct": false,
+          "explanation": "vacuum 不足は別の問題でターゲット側の話。エラーは Oracle 由来。"
+        }
       ],
       "explanation": "ORA-01555 (Snapshot too old) は Oracle 古典的問題。DMS CDC が長時間処理する場合、UNDO_RETENTION を CDC 遅延より大きく、UNDO 表領域も AUTOEXTEND ON で十分なサイズが必要。LOB 含む CDC でよく遭遇する。",
       "references": [
-        {"title": "Using an Oracle database as a source for AWS DMS", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html"}
+        {
+          "title": "Using an Oracle database as a source for AWS DMS",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html"
+        }
       ],
-      "tags": ["dms", "oracle", "cdc", "troubleshooting", "undo"],
-      "common_mistakes": ["ターゲット側の問題と誤解", "UNDO の役割を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dms",
+        "oracle",
+        "cdc",
+        "troubleshooting",
+        "undo"
+      ],
+      "common_mistakes": [
+        "ターゲット側の問題と誤解",
+        "UNDO の役割を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-020",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Aurora cluster deployment",
       "subtopic": "Cloning",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "本番 Aurora MySQL クラスター (3TB) のテスト用クローンを高速に複製したい。コストとスピードを最重視する。最適な手段は？",
       "options": [
-        {"id": "A", "text": "スナップショットから新クラスターを復元する", "is_correct": false, "explanation": "復元には数十分〜数時間かかり、ストレージも別途確保される。コスト・スピード両面でクローンに劣る。"},
-        {"id": "B", "text": "Aurora の Database Cloning を使う (copy-on-write)", "is_correct": true, "explanation": "正解。Aurora Cloning は copy-on-write で数分以内に完成し、初期はストレージを共有するためコストも低い。テスト用途に最適。"},
-        {"id": "C", "text": "mysqldump → mysql restore を使う", "is_correct": false, "explanation": "3TB では数時間以上かかり、現実的でない。"},
-        {"id": "D", "text": "クロスリージョンレプリカを作って読み取る", "is_correct": false, "explanation": "テスト用途のためにクロスリージョン構成は過剰。書き込みテストもできない (リードレプリカ)。"}
+        {
+          "id": "A",
+          "text": "クロスリージョンレプリカを作って読み取る",
+          "is_correct": false,
+          "explanation": "テスト用途のためにクロスリージョン構成は過剰。書き込みテストもできない (リードレプリカ)。"
+        },
+        {
+          "id": "B",
+          "text": "スナップショットから新クラスターを復元する",
+          "is_correct": false,
+          "explanation": "復元には数十分〜数時間かかり、ストレージも別途確保される。コスト・スピード両面でクローンに劣る。"
+        },
+        {
+          "id": "C",
+          "text": "mysqldump → mysql restore を使う",
+          "is_correct": false,
+          "explanation": "3TB では数時間以上かかり、現実的でない。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora の Database Cloning を使う (copy-on-write)",
+          "is_correct": true,
+          "explanation": "正解。Aurora Cloning は copy-on-write で数分以内に完成し、初期はストレージを共有するためコストも低い。テスト用途に最適。"
+        }
       ],
       "explanation": "Aurora Database Cloning は内部ストレージレイヤーが copy-on-write でクローンを作るため、サイズに関わらず数分で完成。クローン後の差分のみ追加課金される。テスト・スキーマ変更検証の標準手段。",
       "references": [
-        {"title": "Cloning a database cluster volume for an Aurora DB cluster", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Clone.html"}
+        {
+          "title": "Cloning a database cluster volume for an Aurora DB cluster",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Clone.html"
+        }
       ],
-      "tags": ["aurora", "cloning", "cost", "test"],
-      "common_mistakes": ["クローン = スナップショット復元と思い込む", "Cloning が遅いと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "aurora",
+        "cloning",
+        "cost",
+        "test"
+      ],
+      "common_mistakes": [
+        "クローン = スナップショット復元と思い込む",
+        "Cloning が遅いと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-021",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Migration strategy",
       "subtopic": "Snowball + DMS",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "オンプレ Oracle (50TB) を Aurora PostgreSQL に移行。WAN 帯域が 1Gbps しかなく、ネットワーク経由ではフルロードが現実的でない。最も妥当な戦略は？",
       "options": [
-        {"id": "A", "text": "DMS Snowball Edge エージェントを使い、フルロードは Snowball で物理輸送、CDC はネットワーク経由", "is_correct": true, "explanation": "正解。DMS は Snowball Edge と統合可能で、大容量初期データは物理輸送、その後の差分は CDC でネットワーク同期する標準パターン。"},
-        {"id": "B", "text": "全期間 DMS のフルロード + CDC で実行する", "is_correct": false, "explanation": "1Gbps で 50TB のフルロードは数日かかり、その間に CDC ログが膨大になり破綻リスクあり。"},
-        {"id": "C", "text": "Snowmobile (100PB クラス) を発注", "is_correct": false, "explanation": "50TB は Snowmobile 規模ではなくオーバースペック。Snowball Edge で十分。"},
-        {"id": "D", "text": "オンプレ DB を物理サーバごと AWS に郵送", "is_correct": false, "explanation": "そのようなマネージドサービスは存在しない。"}
+        {
+          "id": "A",
+          "text": "DMS Snowball Edge エージェントを使い、フルロードは Snowball で物理輸送、CDC はネットワーク経由",
+          "is_correct": true,
+          "explanation": "正解。DMS は Snowball Edge と統合可能で、大容量初期データは物理輸送、その後の差分は CDC でネットワーク同期する標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "全期間 DMS のフルロード + CDC で実行する",
+          "is_correct": false,
+          "explanation": "1Gbps で 50TB のフルロードは数日かかり、その間に CDC ログが膨大になり破綻リスクあり。"
+        },
+        {
+          "id": "C",
+          "text": "Snowmobile (100PB クラス) を発注",
+          "is_correct": false,
+          "explanation": "50TB は Snowmobile 規模ではなくオーバースペック。Snowball Edge で十分。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレ DB を物理サーバごと AWS に郵送",
+          "is_correct": false,
+          "explanation": "そのようなマネージドサービスは存在しない。"
+        }
       ],
       "explanation": "DMS は Snowball Edge と統合し、SCT の Data Extraction Agents を併用することで、大容量データを物理輸送 → S3 → DMS が読み込んでターゲットへ流す。CDC は引き続きネットワーク経由で進む。WAN 帯域制約のある大容量移行で標準。",
       "references": [
-        {"title": "Migrating large data stores using AWS DMS and AWS Snowball Edge", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_LargeDBs.html"}
+        {
+          "title": "Migrating large data stores using AWS DMS and AWS Snowball Edge",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_LargeDBs.html"
+        }
       ],
-      "tags": ["dms", "snowball", "large-migration", "strategy"],
-      "common_mistakes": ["Snowmobile を不必要に選ぶ", "CDC 中の WAN 帯域不足を見落とす"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dms",
+        "snowball",
+        "large-migration",
+        "strategy"
+      ],
+      "common_mistakes": [
+        "Snowmobile を不必要に選ぶ",
+        "CDC 中の WAN 帯域不足を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-022",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Snapshot",
       "subtopic": "Cross-account sharing",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "本番アカウントの暗号化済み RDS スナップショットを開発アカウントに共有してテスト DB を作りたい。最も正しい手順は？",
       "options": [
-        {"id": "A", "text": "スナップショットの権限を開発アカウントに共有するだけで利用できる", "is_correct": false, "explanation": "暗号化スナップショットは KMS キー権限も必要。スナップショット権限だけでは復元できない。"},
-        {"id": "B", "text": "暗号化に使った KMS CMK を開発アカウントに共有し、かつスナップショットも共有する。デフォルトサービスキーは共有不可なのでカスタマー管理キー必須", "is_correct": true, "explanation": "正解。クロスアカウント共有では (1) CMK のキーポリシーで開発アカウントに使用権限付与、(2) スナップショット共有、の両方が必要。AWS マネージドキー (aws/rds) は共有できないためカスタマー管理キーで暗号化する必要がある。"},
-        {"id": "C", "text": "スナップショットを一時的に未暗号化に変換してから共有する", "is_correct": false, "explanation": "RDS では暗号化スナップショットを平文に直接変換するコマンドはない。一旦復元して未暗号化スナップショットを取り直すなどの工夫が必要だがセキュリティ的に非推奨。"},
-        {"id": "D", "text": "S3 にエクスポートしてから開発アカウントが S3 経由で利用する", "is_correct": false, "explanation": "S3 export はクエリ用 (Parquet 等) の機能で、別アカウントで RDS 復元する手段ではない。"}
+        {
+          "id": "A",
+          "text": "スナップショットを一時的に未暗号化に変換してから共有する",
+          "is_correct": false,
+          "explanation": "RDS では暗号化スナップショットを平文に直接変換するコマンドはない。一旦復元して未暗号化スナップショットを取り直すなどの工夫が必要だがセキュリティ的に非推奨。"
+        },
+        {
+          "id": "B",
+          "text": "暗号化に使った KMS CMK を開発アカウントに共有し、かつスナップショットも共有する。デフォルトサービスキーは共有不可なのでカスタマー管理キー必須",
+          "is_correct": true,
+          "explanation": "正解。クロスアカウント共有では (1) CMK のキーポリシーで開発アカウントに使用権限付与、(2) スナップショット共有、の両方が必要。AWS マネージドキー (aws/rds) は共有できないためカスタマー管理キーで暗号化する必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "スナップショットの権限を開発アカウントに共有するだけで利用できる",
+          "is_correct": false,
+          "explanation": "暗号化スナップショットは KMS キー権限も必要。スナップショット権限だけでは復元できない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 にエクスポートしてから開発アカウントが S3 経由で利用する",
+          "is_correct": false,
+          "explanation": "S3 export はクエリ用 (Parquet 等) の機能で、別アカウントで RDS 復元する手段ではない。"
+        }
       ],
       "explanation": "暗号化スナップショットのクロスアカウント共有は KMS キーとスナップショット両方の共有が必須。AWS マネージドキー (aws/rds) は共有不可なので、本番でカスタマー管理キーを使う設計が前提となる。",
       "references": [
-        {"title": "Sharing encrypted snapshots", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html#USER_ShareSnapshot.Encrypted"}
+        {
+          "title": "Sharing encrypted snapshots",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html#USER_ShareSnapshot.Encrypted"
+        }
       ],
-      "tags": ["rds", "snapshot", "kms", "cross-account"],
-      "common_mistakes": ["KMS キー共有を忘れる", "AWS マネージドキーで運用していて共有時に詰まる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "rds",
+        "snapshot",
+        "kms",
+        "cross-account"
+      ],
+      "common_mistakes": [
+        "KMS キー共有を忘れる",
+        "AWS マネージドキーで運用していて共有時に詰まる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-023",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Migration validation",
       "subtopic": "Performance and rollback",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "オンプレ MySQL から Aurora MySQL への DMS 移行を行い、Switchover 後にアプリで突発的に高レイテンシ発生。原因切り分けの順序として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "Aurora インスタンスをスケールアップする", "is_correct": false, "explanation": "原因特定前のスケールアップは費用浪費かつ根本解決ではない。"},
-        {"id": "B", "text": "Performance Insights で待機イベントを確認 → スロークエリログ → パラメータグループ差分 → アプリ側のコネクション設定 の順で切り分ける", "is_correct": true, "explanation": "正解。性能問題の原因究明はトップダウン (DB側の待機/クエリ) → ボトムアップ (パラメータ・コネクション) で行うのがセオリー。Performance Insights は最初に見る場所。"},
-        {"id": "C", "text": "DMS Validation を再実行する", "is_correct": false, "explanation": "データ整合性とレイテンシ問題は別軸。"},
-        {"id": "D", "text": "オンプレに即座にロールバックする", "is_correct": false, "explanation": "原因特定なきロールバックは再発の可能性大。"}
+        {
+          "id": "A",
+          "text": "DMS Validation を再実行する",
+          "is_correct": false,
+          "explanation": "データ整合性とレイテンシ問題は別軸。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora インスタンスをスケールアップする",
+          "is_correct": false,
+          "explanation": "原因特定前のスケールアップは費用浪費かつ根本解決ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Performance Insights で待機イベントを確認 → スロークエリログ → パラメータグループ差分 → アプリ側のコネクション設定 の順で切り分ける",
+          "is_correct": true,
+          "explanation": "正解。性能問題の原因究明はトップダウン (DB側の待機/クエリ) → ボトムアップ (パラメータ・コネクション) で行うのがセオリー。Performance Insights は最初に見る場所。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレに即座にロールバックする",
+          "is_correct": false,
+          "explanation": "原因特定なきロールバックは再発の可能性大。"
+        }
       ],
       "explanation": "Aurora 移行後の性能問題は (1) Performance Insights の DB load・top SQL・wait events、(2) スロークエリ・実行計画の差異、(3) パラメータグループ (innodb_buffer_pool_size など) のオンプレとの差、(4) アプリ側のコネクション/プール設定、の順で見るのが定石。",
       "references": [
-        {"title": "Using Amazon RDS Performance Insights", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"}
+        {
+          "title": "Using Amazon RDS Performance Insights",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"
+        }
       ],
-      "tags": ["aurora", "performance", "migration", "troubleshooting"],
-      "common_mistakes": ["原因不明のままスケールアップ", "ロールバックを先に判断"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "aurora",
+        "performance",
+        "migration",
+        "troubleshooting"
+      ],
+      "common_mistakes": [
+        "原因不明のままスケールアップ",
+        "ロールバックを先に判断"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-024",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "Database migration evaluation",
       "subtopic": "Strategy choice",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "FinTech 企業が SQL Server (T-SQL ヘビー、ストアド数千) を AWS へ移行。3 案を比較しているが、ベンダーロックイン・ライセンスコスト・移行工数のバランスを最重視する。最善案を評価せよ。",
       "options": [
-        {"id": "A", "text": "RDS for SQL Server に Lift & Shift。エンジン互換 100% で工数最小、ただしライセンス料は継続発生", "is_correct": false, "explanation": "工数は最小だがライセンスコスト継続でロックイン残存、長期最適性が低い。"},
-        {"id": "B", "text": "Aurora PostgreSQL + Babelfish。T-SQL の多くがそのまま動き、PostgreSQL ライセンスフリーでロックイン軽減。SCT で残りの非互換部を変換", "is_correct": true, "explanation": "正解。Babelfish は T-SQL/TDS プロトコル互換を提供し、アプリ修正を抑えつつ Aurora PostgreSQL のメリット (ライセンスフリー、Serverless v2、Global Database) を享受できる。3 軸のバランスが最良。"},
-        {"id": "C", "text": "DynamoDB へ全面移行", "is_correct": false, "explanation": "RDBMS から NoSQL への大規模変換は工数が桁違いに増え、要件と矛盾。"},
-        {"id": "D", "text": "EC2 上で SQL Server を BYOL する", "is_correct": false, "explanation": "ライセンスは存続し、運用負荷も RDS より大きい。バランス最善ではない。"}
+        {
+          "id": "A",
+          "text": "RDS for SQL Server に Lift & Shift。エンジン互換 100% で工数最小、ただしライセンス料は継続発生",
+          "is_correct": false,
+          "explanation": "工数は最小だがライセンスコスト継続でロックイン残存、長期最適性が低い。"
+        },
+        {
+          "id": "B",
+          "text": "DynamoDB へ全面移行",
+          "is_correct": false,
+          "explanation": "RDBMS から NoSQL への大規模変換は工数が桁違いに増え、要件と矛盾。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上で SQL Server を BYOL する",
+          "is_correct": false,
+          "explanation": "ライセンスは存続し、運用負荷も RDS より大きい。バランス最善ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora PostgreSQL + Babelfish。T-SQL の多くがそのまま動き、PostgreSQL ライセンスフリーでロックイン軽減。SCT で残りの非互換部を変換",
+          "is_correct": true,
+          "explanation": "正解。Babelfish は T-SQL/TDS プロトコル互換を提供し、アプリ修正を抑えつつ Aurora PostgreSQL のメリット (ライセンスフリー、Serverless v2、Global Database) を享受できる。3 軸のバランスが最良。"
+        }
       ],
       "explanation": "SQL Server 移行戦略を 3 軸 (ロックイン・ライセンス・工数) で評価する場合、Babelfish は中間解として最適。Lift & Shift はラクだがライセンス問題、フル書き換えは工数大、Babelfish はその中間で実用性が高い。",
       "references": [
-        {"title": "Babelfish for Aurora PostgreSQL", "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/babelfish.html"}
+        {
+          "title": "Babelfish for Aurora PostgreSQL",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/babelfish.html"
+        }
       ],
-      "tags": ["babelfish", "sql-server", "migration", "evaluation"],
-      "common_mistakes": ["Babelfish の存在を知らずに選択肢を狭める", "ライセンスコストを無視"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "babelfish",
+        "sql-server",
+        "migration",
+        "evaluation"
+      ],
+      "common_mistakes": [
+        "Babelfish の存在を知らずに選択肢を狭める",
+        "ライセンスコストを無視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dbs-c01-domain2-025",
       "version": "1.0",
-      "exam": {"code": "DBS-C01", "name": "AWS Certified Database - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Deployment and Migration", "weight_percent": 20},
+      "exam": {
+        "code": "DBS-C01",
+        "name": "AWS Certified Database - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Deployment and Migration",
+        "weight_percent": 20
+      },
       "topic": "End-to-end migration design",
       "subtopic": "Multi-DB ecosystem",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
-      "stem": "東海地方の製造業が、レガシー基幹システム (Oracle 19c)、レポーティング (Oracle Data Warehouse 8TB)、IoTセンサーログ (オンプレ MongoDB)、社内 KVS (Redis) を AWS に統合移行する。ダウンタイム最小・コスト最適・運用簡素を満たすターゲット構成と移行手段を最も総合的に妥当に組み立てよ。",
+      "stem": "ある製造業が、レガシー基幹システム (Oracle 19c)、レポーティング (Oracle Data Warehouse 8TB)、IoTセンサーログ (オンプレ MongoDB)、社内 KVS (Redis) を AWS に統合移行する。ダウンタイム最小・コスト最適・運用簡素を満たすターゲット構成と移行手段を最も総合的に妥当に組み立てよ。",
       "options": [
-        {"id": "A", "text": "全部を Aurora PostgreSQL に統合", "is_correct": false, "explanation": "ワークロード特性が違うものを単一エンジンに統合するのは不適。DWH やセンサーログの I/O 特性に合わない。"},
-        {"id": "B", "text": "基幹: Aurora PostgreSQL (SCT + DMS、Babelfish 検討)、DWH: Redshift (DMS or Snowball)、IoT: DocumentDB or Timestream (用途に応じて)、KVS: ElastiCache for Redis。各々ベストフィットを選び、DMS/SCT/Native ツールで移行", "is_correct": true, "explanation": "正解。AWS の \"purpose-built database\" 思想に沿い、各ワークロードに最適な専用 DB を選ぶ。Oracle → Aurora、DWH → Redshift、時系列なら Timestream、ドキュメント志向なら DocumentDB、Redis はそのまま ElastiCache、と用途で割り当てる。"},
-        {"id": "C", "text": "全部 DynamoDB", "is_correct": false, "explanation": "RDBMS の JOIN を要するワークロードを DynamoDB に強制すると設計コストが大きい。"},
-        {"id": "D", "text": "EC2 上に旧構成をそのまま再現", "is_correct": false, "explanation": "ライセンス・運用コストが残り、AWS のマネージドベネフィットを得られない。"}
+        {
+          "id": "A",
+          "text": "基幹: Aurora PostgreSQL (SCT + DMS、Babelfish 検討)、DWH: Redshift (DMS or Snowball)、IoT: DocumentDB or Timestream (用途に応じて)、KVS: ElastiCache for Redis。各々ベストフィットを選び、DMS/SCT/Native ツールで移行",
+          "is_correct": true,
+          "explanation": "正解。AWS の \"purpose-built database\" 思想に沿い、各ワークロードに最適な専用 DB を選ぶ。Oracle → Aurora、DWH → Redshift、時系列なら Timestream、ドキュメント志向なら DocumentDB、Redis はそのまま ElastiCache、と用途で割り当てる。"
+        },
+        {
+          "id": "B",
+          "text": "全部を Aurora PostgreSQL に統合",
+          "is_correct": false,
+          "explanation": "ワークロード特性が違うものを単一エンジンに統合するのは不適。DWH やセンサーログの I/O 特性に合わない。"
+        },
+        {
+          "id": "C",
+          "text": "全部 DynamoDB",
+          "is_correct": false,
+          "explanation": "RDBMS の JOIN を要するワークロードを DynamoDB に強制すると設計コストが大きい。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 上に旧構成をそのまま再現",
+          "is_correct": false,
+          "explanation": "ライセンス・運用コストが残り、AWS のマネージドベネフィットを得られない。"
+        }
       ],
       "explanation": "AWS は \"purpose-built database\" を提唱しており、ワークロード特性に応じて専用エンジンを選ぶ設計が推奨される。Oracle 基幹は Aurora PostgreSQL (Babelfish 等)、DWH は Redshift、時系列なら Timestream、ドキュメントは DocumentDB、Redis は ElastiCache。移行手段は SCT/DMS/Native ツールを使い分け、各々で最適な切替戦略 (Blue/Green、CDC、Snowball) を取る。",
       "references": [
-        {"title": "AWS purpose-built databases", "url": "https://aws.amazon.com/products/databases/"},
-        {"title": "AWS Database Migration Service overview", "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"}
+        {
+          "title": "AWS purpose-built databases",
+          "url": "https://aws.amazon.com/products/databases/"
+        },
+        {
+          "title": "AWS Database Migration Service overview",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"
+        }
       ],
-      "tags": ["architecture", "purpose-built", "migration", "manufacturing"],
-      "common_mistakes": ["単一エンジンに無理矢理統合", "全 NoSQL 化など極端な選択"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "architecture",
+        "purpose-built",
+        "migration",
+        "manufacturing"
+      ],
+      "common_mistakes": [
+        "単一エンジンに無理矢理統合",
+        "全 NoSQL 化など極端な選択"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

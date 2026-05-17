@@ -46,15 +46,15 @@
         },
         {
           "id": "C",
-          "text": "=A5*$C$4",
-          "is_correct": false,
-          "explanation": "$C$1 は完全絶対参照（行も列も $）のため、行方向のコピーでも C1 のまま動かない。"
-        },
-        {
-          "id": "D",
           "text": "=$A$5*$C$1",
           "is_correct": false,
           "explanation": "A2 は $ なしの相対参照なので A5 となるが、$ は付かない。"
+        },
+        {
+          "id": "D",
+          "text": "=A5*$C$4",
+          "is_correct": false,
+          "explanation": "$C$1 は完全絶対参照（行も列も $）のため、行方向のコピーでも C1 のまま動かない。"
         }
       ],
       "explanation": "$ 記号は「コピー時に変えない」という固定指示。$A$1 は完全絶対（行列とも固定）、A$1 は行のみ固定、$A1 は列のみ固定、A1 は完全相対。F4 キーで4状態（A1 → $A$1 → A$1 → $A1 → A1）を循環できる。MOS Associate 最頻出概念。",
@@ -112,27 +112,27 @@
       "options": [
         {
           "id": "A",
+          "text": "=IF(A2>=80 AND B2>=0.9, \"合格\", \"不合格\")",
+          "is_correct": false,
+          "explanation": "Excel の数式では AND は関数として AND(条件1, 条件2) の形で書く。SQL のような中置記法は使えない。"
+        },
+        {
+          "id": "B",
           "text": "=IF(AND(A2>=80, B2>=0.9), \"合格\", \"不合格\")",
           "is_correct": true,
           "explanation": "正解。AND で両条件を結合し、両方 TRUE のときのみ「合格」。"
         },
         {
-          "id": "B",
+          "id": "C",
           "text": "=IF(OR(A2>=80, B2>=0.9), \"合格\", \"不合格\")",
           "is_correct": false,
           "explanation": "OR は「いずれかが TRUE」で合格となるため、片方の条件しか満たさなくても合格になる。要件と異なる。"
         },
         {
-          "id": "C",
+          "id": "D",
           "text": "=IF(A2>=80, IF(B2>=0.9, \"合格\"), \"不合格\")",
           "is_correct": false,
           "explanation": "ネストした IF 自体は機能するが、内側 IF の偽値が省略されており、A2>=80 かつ B2<0.9 の場合 FALSE が返る。要件と一致しない。"
-        },
-        {
-          "id": "D",
-          "text": "=IF(A2>=80 AND B2>=0.9, \"合格\", \"不合格\")",
-          "is_correct": false,
-          "explanation": "Excel の数式では AND は関数として AND(条件1, 条件2) の形で書く。SQL のような中置記法は使えない。"
         }
       ],
       "explanation": "複数条件の AND は AND() 関数で表現する。書式は AND(条件1, 条件2, ...)。同様に OR(...)、NOT(...) もある。Excel 2019 以降は IFS や SWITCH も使えるが、AND/OR との組み合わせが MOS Associate の標準。条件式を書く際は「すべて満たす（AND）」と「いずれかを満たす（OR）」を明確に区別すること。",
@@ -190,27 +190,27 @@
       "options": [
         {
           "id": "A",
-          "text": "第4引数を TRUE（近似一致）にしたため、ソート済みでない範囲で誤った結果が返った。FALSE（または 0）にすべき",
-          "is_correct": true,
-          "explanation": "正解。TRUE は範囲が昇順ソートされている前提の近似一致モード。コードのような完全一致が必要な場合は FALSE を指定する。"
-        },
-        {
-          "id": "B",
-          "text": "VLOOKUP は左端列でしか検索できないため、必ず INDEX/MATCH を使うべき",
-          "is_correct": false,
-          "explanation": "左端列の制約は事実だが、本問の検索は1列目（A列）で行っており該当しない。原因は第4引数。"
-        },
-        {
-          "id": "C",
           "text": "範囲が A:C と列全体になっているため計算が遅く、結果が不正確になる",
           "is_correct": false,
           "explanation": "列全体指定は遅くなる可能性があるが、結果が不正確になる原因にはならない。"
         },
         {
-          "id": "D",
+          "id": "B",
           "text": "Excel の VLOOKUP は廃止されており、XLOOKUP しか使えない",
           "is_correct": false,
           "explanation": "VLOOKUP は廃止されておらず、現行 Excel でも利用可能。"
+        },
+        {
+          "id": "C",
+          "text": "第4引数を TRUE（近似一致）にしたため、ソート済みでない範囲で誤った結果が返った。FALSE（または 0）にすべき",
+          "is_correct": true,
+          "explanation": "正解。TRUE は範囲が昇順ソートされている前提の近似一致モード。コードのような完全一致が必要な場合は FALSE を指定する。"
+        },
+        {
+          "id": "D",
+          "text": "VLOOKUP は左端列でしか検索できないため、必ず INDEX/MATCH を使うべき",
+          "is_correct": false,
+          "explanation": "左端列の制約は事実だが、本問の検索は1列目（A列）で行っており該当しない。原因は第4引数。"
         }
       ],
       "explanation": "VLOOKUP の第4引数は最も誤りやすいポイント: TRUE/省略 = 近似一致（範囲は昇順前提）、FALSE/0 = 完全一致。コード・ID 系は必ず FALSE。XLOOKUP は既定で完全一致なのでより安全。VLOOKUP では「左端列以外を検索できない」「列番号で指定するため列追加に弱い」などの制約があり、Microsoft も新規には XLOOKUP を推奨している。",
@@ -272,27 +272,27 @@
       "options": [
         {
           "id": "A",
-          "text": "=SUMIF(A:A, \"営業1課\", B:B)",
-          "is_correct": true,
-          "explanation": "正解。SUMIF(範囲, 条件, 合計範囲) の形式。条件範囲が A 列、条件が \"営業1課\"、合計範囲が B 列。"
+          "text": "=SUM(IF(A:A=\"営業1課\", B:B))",
+          "is_correct": false,
+          "explanation": "従来は配列数式（Ctrl+Shift+Enter）が必要で、Associate レベルでは SUMIF が標準。書式・対応バージョンの観点で SUMIF が適切。"
         },
         {
           "id": "B",
-          "text": "=COUNTIF(A:A, \"営業1課\")",
-          "is_correct": false,
-          "explanation": "COUNTIF は条件を満たすセルの「個数」を返す。合計ではない。"
-        },
-        {
-          "id": "C",
           "text": "=SUMIF(B:B, \"営業1課\", A:A)",
           "is_correct": false,
           "explanation": "範囲と合計範囲が逆。B 列に「営業1課」を探しに行くため何も合計されない。"
         },
         {
-          "id": "D",
-          "text": "=SUM(IF(A:A=\"営業1課\", B:B))",
+          "id": "C",
+          "text": "=COUNTIF(A:A, \"営業1課\")",
           "is_correct": false,
-          "explanation": "従来は配列数式（Ctrl+Shift+Enter）が必要で、Associate レベルでは SUMIF が標準。書式・対応バージョンの観点で SUMIF が適切。"
+          "explanation": "COUNTIF は条件を満たすセルの「個数」を返す。合計ではない。"
+        },
+        {
+          "id": "D",
+          "text": "=SUMIF(A:A, \"営業1課\", B:B)",
+          "is_correct": true,
+          "explanation": "正解。SUMIF(範囲, 条件, 合計範囲) の形式。条件範囲が A 列、条件が \"営業1課\"、合計範囲が B 列。"
         }
       ],
       "explanation": "条件付き集計の代表関数: COUNTIF（条件に一致するセル数）、SUMIF（条件に一致するセルに対応する合計）、AVERAGEIF（条件平均）。複数条件は COUNTIFS / SUMIFS / AVERAGEIFS を使う（条件範囲・条件のペアを複数指定）。SUMIF の引数順序は「範囲, 条件, 合計範囲」で、SUMIFS は「合計範囲, 条件範囲1, 条件1, ...」と先頭が異なる点に注意。",
@@ -356,15 +356,15 @@
         },
         {
           "id": "B",
-          "text": "=CONCAT(A2, \"、\", B2)",
-          "is_correct": false,
-          "explanation": "CONCAT は単純結合で空欄を無視できない。空欄でも区切り「、」が出てしまう。"
-        },
-        {
-          "id": "C",
           "text": "=A2 & \"、\" & B2",
           "is_correct": false,
           "explanation": "& 演算子は CONCAT と同様で空欄をスキップしない。要件を満たさない。"
+        },
+        {
+          "id": "C",
+          "text": "=CONCAT(A2, \"、\", B2)",
+          "is_correct": false,
+          "explanation": "CONCAT は単純結合で空欄を無視できない。空欄でも区切り「、」が出てしまう。"
         },
         {
           "id": "D",
@@ -428,21 +428,21 @@
       "options": [
         {
           "id": "A",
+          "text": "=IF(ISERROR(A2/B2), \"-\", A2/B2)",
+          "is_correct": false,
+          "explanation": "機能的には正しいが、A2/B2 を2回書く必要があり冗長。IFERROR が登場以降、こちらは非推奨。"
+        },
+        {
+          "id": "B",
           "text": "=IFERROR(A2/B2, \"-\")",
           "is_correct": true,
           "explanation": "正解。IFERROR は式がエラーの場合に第2引数を返す。1関数で完結し最も簡潔。"
         },
         {
-          "id": "B",
+          "id": "C",
           "text": "=IF(B2=0, \"-\", A2/B2)",
           "is_correct": false,
           "explanation": "0 のケースは検出するが、B列が空白テキストや非数値の場合の #VALUE! エラーは捕捉できない。IFERROR の方が広く対応。"
-        },
-        {
-          "id": "C",
-          "text": "=IF(ISERROR(A2/B2), \"-\", A2/B2)",
-          "is_correct": false,
-          "explanation": "機能的には正しいが、A2/B2 を2回書く必要があり冗長。IFERROR が登場以降、こちらは非推奨。"
         },
         {
           "id": "D",

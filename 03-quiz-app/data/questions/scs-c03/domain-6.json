@@ -40,9 +40,9 @@
         },
         {
           "id": "B",
-          "text": "対象アカウントのIAMユーザーに直接権限を付与し、複数アカウントに横断的に権限を配布する",
+          "text": "AWSアカウント作成時のCloudTrail有効化など、初期セットアップを自動実行する",
           "is_correct": false,
-          "explanation": "誤り。SCPは権限を付与しない。権限の付与はIAMポリシーやAssume Role経由で行う必要がある。"
+          "explanation": "誤り。それはControl TowerやCloudFormation StackSetsの役割。SCPは設定の自動実行は行わない。"
         },
         {
           "id": "C",
@@ -52,9 +52,9 @@
         },
         {
           "id": "D",
-          "text": "AWSアカウント作成時のCloudTrail有効化など、初期セットアップを自動実行する",
+          "text": "対象アカウントのIAMユーザーに直接権限を付与し、複数アカウントに横断的に権限を配布する",
           "is_correct": false,
-          "explanation": "誤り。それはControl TowerやCloudFormation StackSetsの役割。SCPは設定の自動実行は行わない。"
+          "explanation": "誤り。SCPは権限を付与しない。権限の付与はIAMポリシーやAssume Role経由で行う必要がある。"
         }
       ],
       "explanation": "SCPはOrganizations配下のアカウントで『どのアクションが実行可能か』の上限を設定する。ルートユーザーですらSCPを超える操作はできない。ただし、SCPは権限を付与しないため、IAMポリシーで明示的にAllowする必要がある。2024年に追加されたRCPは、リソース側にガードレールを設定する補完機能で、両者は別概念。",
@@ -112,15 +112,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Mandatory（必須）/ Strongly Recommended（強く推奨）/ Elective（任意）",
-          "is_correct": true,
-          "explanation": "正解。Control Towerはこの3カテゴリでガードレールを提供する。"
+          "text": "Production / Staging / Development（環境別）",
+          "is_correct": false,
+          "explanation": "誤り。これは環境分類であり、ガードレールの分類ではない。"
         },
         {
           "id": "B",
-          "text": "Detective（検出）/ Preventive（予防）/ Corrective（修正）",
-          "is_correct": false,
-          "explanation": "誤り。これはガードレールの『動作の種類』であり、『推奨度の分類』ではない。"
+          "text": "Mandatory（必須）/ Strongly Recommended（強く推奨）/ Elective（任意）",
+          "is_correct": true,
+          "explanation": "正解。Control Towerはこの3カテゴリでガードレールを提供する。"
         },
         {
           "id": "C",
@@ -130,9 +130,9 @@
         },
         {
           "id": "D",
-          "text": "Production / Staging / Development（環境別）",
+          "text": "Detective（検出）/ Preventive（予防）/ Corrective（修正）",
           "is_correct": false,
-          "explanation": "誤り。これは環境分類であり、ガードレールの分類ではない。"
+          "explanation": "誤り。これはガードレールの『動作の種類』であり、『推奨度の分類』ではない。"
         }
       ],
       "explanation": "Control Towerのガードレールは『推奨度』として Mandatory / Strongly Recommended / Elective の3つに分かれる。さらに『動作』としてはPreventive（SCPで強制）とDetective（AWS Configルールで検出）の2種類がある。両者は独立した軸で組み合わさる。",
@@ -188,9 +188,9 @@
       "options": [
         {
           "id": "A",
-          "text": "AWS Artifact から該当する報告書をダウンロードする",
-          "is_correct": true,
-          "explanation": "正解。AWS ArtifactはAWS側のコンプライアンス報告書・契約書を提供する公式ポータル。"
+          "text": "AWSサポートに問い合わせ、Eメールで送付してもらう",
+          "is_correct": false,
+          "explanation": "誤り。Artifactで自分でダウンロードでき、サポート問い合わせは不要。"
         },
         {
           "id": "B",
@@ -200,15 +200,15 @@
         },
         {
           "id": "C",
-          "text": "AWS Trusted Advisorのセキュリティチェック結果をエクスポートする",
-          "is_correct": false,
-          "explanation": "誤り。Trusted Advisorはコスト・パフォーマンス・セキュリティの推奨事項を表示するが、第三者監査報告書は提供しない。"
+          "text": "AWS Artifact から該当する報告書をダウンロードする",
+          "is_correct": true,
+          "explanation": "正解。AWS ArtifactはAWS側のコンプライアンス報告書・契約書を提供する公式ポータル。"
         },
         {
           "id": "D",
-          "text": "AWSサポートに問い合わせ、Eメールで送付してもらう",
+          "text": "AWS Trusted Advisorのセキュリティチェック結果をエクスポートする",
           "is_correct": false,
-          "explanation": "誤り。Artifactで自分でダウンロードでき、サポート問い合わせは不要。"
+          "explanation": "誤り。Trusted Advisorはコスト・パフォーマンス・セキュリティの推奨事項を表示するが、第三者監査報告書は提供しない。"
         }
       ],
       "explanation": "AWS Artifactは、AWS側の第三者監査報告書（SOC 1/2/3、PCI DSS AOC、ISO 27001、HIPAA、FedRAMPなど）と契約書（BAA、DPAなど）を一元的に取得できるポータル。Audit Managerとよく混同されるが、Audit Managerは顧客側のコンプライアンス活動のエビデンス収集ツールで、立場が逆である点に注意。",
@@ -261,31 +261,31 @@
       "subtopic": "RCP vs SCP",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
-      "stem": "東海地方の製造業企業がAWS Organizationsでマルチアカウント環境を運用している。社外の取引先IAMプリンシパル（外部AWSアカウント）が、自社S3バケットにクロスアカウントアクセスする際、特定のVPC Endpointからのみ許可したい。SCPでは制御できなかった理由として最も正確なのはどれか？",
+      "stem": "ある製造業企業がAWS Organizationsでマルチアカウント環境を運用している。社外の取引先IAMプリンシパル（外部AWSアカウント）が、自社S3バケットにクロスアカウントアクセスする際、特定のVPC Endpointからのみ許可したい。SCPでは制御できなかった理由として最も正確なのはどれか？",
       "options": [
         {
           "id": "A",
-          "text": "SCPは『自組織内のIAMプリンシパル』にのみ作用するため、外部AWSアカウントのプリンシパルは制御できない。RCP（Resource Control Policy）が必要",
-          "is_correct": true,
-          "explanation": "正解。SCPは組織内プリンシパル限定。外部プリンシパルからのアクセス制御にはRCPまたはリソースベースポリシーを使う。"
+          "text": "SCPはOrganizationsのRootに適用すると組織全体に強制されすぎ、本番影響が出るため",
+          "is_correct": false,
+          "explanation": "影響範囲の議論は副次的。本質的な制限は『外部プリンシパルに作用しない』点。"
         },
         {
           "id": "B",
-          "text": "SCPはS3バケットを対象にできず、EC2のみ制御するため",
-          "is_correct": false,
-          "explanation": "誤り。SCPはS3を含む大半のサービスを対象にできる。問題はサービスではなくプリンシパルの所属。"
-        },
-        {
-          "id": "C",
           "text": "SCPはVPC EndpointのIDをConditionで使えないため",
           "is_correct": false,
           "explanation": "誤り。SCPはaws:SourceVpceなどのCondition Keyを使える。問題は外部プリンシパルへの作用範囲。"
         },
         {
-          "id": "D",
-          "text": "SCPはOrganizationsのRootに適用すると組織全体に強制されすぎ、本番影響が出るため",
+          "id": "C",
+          "text": "SCPはS3バケットを対象にできず、EC2のみ制御するため",
           "is_correct": false,
-          "explanation": "影響範囲の議論は副次的。本質的な制限は『外部プリンシパルに作用しない』点。"
+          "explanation": "誤り。SCPはS3を含む大半のサービスを対象にできる。問題はサービスではなくプリンシパルの所属。"
+        },
+        {
+          "id": "D",
+          "text": "SCPは『自組織内のIAMプリンシパル』にのみ作用するため、外部AWSアカウントのプリンシパルは制御できない。RCP（Resource Control Policy）が必要",
+          "is_correct": true,
+          "explanation": "正解。SCPは組織内プリンシパル限定。外部プリンシパルからのアクセス制御にはRCPまたはリソースベースポリシーを使う。"
         }
       ],
       "explanation": "SCPの作用対象は『組織内のアカウントに属するIAMプリンシパル』に限定される。外部アカウントから自リソースへのアクセス制御には、2024年GAされたRCP（Resource Control Policy）またはリソースベースポリシー（バケットポリシー等）を使う必要がある。RCPは組織のリソース側に対するガードレールで、SCPの補完概念として理解すること。",
@@ -348,15 +348,15 @@
         },
         {
           "id": "B",
-          "text": "Audit ManagerはAWS側のSOC 2レポートをそのまま提供するため、自社のコンプライアンス活動は不要になる",
-          "is_correct": false,
-          "explanation": "誤り。AWS側のSOC2はArtifact。Audit Managerは『顧客側』のコンプライアンスエビデンス収集ツール。"
-        },
-        {
-          "id": "C",
           "text": "Audit ManagerはCloudFormationテンプレートを生成し、HIPAA対応の構成を自動デプロイする",
           "is_correct": false,
           "explanation": "誤り。エビデンス収集と評価が役割で、構成のデプロイは行わない。デプロイはService CatalogやCloudFormationの役割。"
+        },
+        {
+          "id": "C",
+          "text": "Audit ManagerはAWS側のSOC 2レポートをそのまま提供するため、自社のコンプライアンス活動は不要になる",
+          "is_correct": false,
+          "explanation": "誤り。AWS側のSOC2はArtifact。Audit Managerは『顧客側』のコンプライアンスエビデンス収集ツール。"
         },
         {
           "id": "D",
@@ -419,27 +419,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Control Towerが定義したMandatoryガードレール、IAM Identity Center連携、CloudTrail/Configログの集約Bucketへの送信、ベースラインVPC（オプション）が自動構成される",
-          "is_correct": true,
-          "explanation": "正解。Account Factoryはランディングゾーンベースラインに従って新規アカウントを標準化された状態で払い出す。"
-        },
-        {
-          "id": "B",
-          "text": "アカウント作成のみが行われ、ガードレールやログ設定は手動で個別に有効化する必要がある",
-          "is_correct": false,
-          "explanation": "誤り。Account FactoryはControl Towerランディングゾーン構成を自動適用する。"
-        },
-        {
-          "id": "C",
           "text": "EC2、S3、RDSなどの本番リソースが事前作成された状態でアカウントが払い出される",
           "is_correct": false,
           "explanation": "誤り。Account Factoryはリソースを作成せず、ガバナンス層のみセットアップする。アプリのデプロイはService CatalogやCloudFormationで別途行う。"
         },
         {
-          "id": "D",
+          "id": "B",
+          "text": "Control Towerが定義したMandatoryガードレール、IAM Identity Center連携、CloudTrail/Configログの集約Bucketへの送信、ベースラインVPC（オプション）が自動構成される",
+          "is_correct": true,
+          "explanation": "正解。Account Factoryはランディングゾーンベースラインに従って新規アカウントを標準化された状態で払い出す。"
+        },
+        {
+          "id": "C",
           "text": "アカウントは作成されるが、AWS Organizations配下には自動的に登録されない",
           "is_correct": false,
           "explanation": "誤り。Account FactoryはOrganizations内の指定OUに自動的に配置する。"
+        },
+        {
+          "id": "D",
+          "text": "アカウント作成のみが行われ、ガードレールやログ設定は手動で個別に有効化する必要がある",
+          "is_correct": false,
+          "explanation": "誤り。Account FactoryはControl Towerランディングゾーン構成を自動適用する。"
         }
       ],
       "explanation": "Control TowerのAccount Factoryは、Service Catalog製品として提供される標準化されたアカウントプロビジョニング機能。新規アカウント作成時にOU配置、ガードレール適用、IAM Identity Centerユーザーマッピング、CloudTrail/Configの集約ログ送信などをワンステップで構成する。Account Factory for Terraform（AFT）を使えばGitOps化も可能。",
@@ -496,27 +496,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Launch Constraint を製品に設定し、製品起動時にService Catalog自身がIAMロールを引き受けてリソースを作成する",
-          "is_correct": true,
-          "explanation": "正解。Launch Constraintにより、エンドユーザー（開発者）に権限がなくても、Service CatalogがAssume Roleしてリソースを安全に作成する。"
-        },
-        {
-          "id": "B",
-          "text": "ユーザーにcloudformation:* と必要なリソース作成権限を直接付与する",
-          "is_correct": false,
-          "explanation": "誤り。最小権限原則に反する。Launch Constraintの目的は『開発者に過剰権限を渡さずにデプロイを許可する』こと。"
-        },
-        {
-          "id": "C",
           "text": "Template Constraint で製品のパラメータを制約する",
           "is_correct": false,
           "explanation": "Template Constraintは入力値の制約用。権限委譲の仕組みではない。"
         },
         {
-          "id": "D",
+          "id": "B",
           "text": "Tag Update Constraint でタグを強制する",
           "is_correct": false,
           "explanation": "Tag Update Constraintはタグ管理用。権限委譲とは無関係。"
+        },
+        {
+          "id": "C",
+          "text": "Launch Constraint を製品に設定し、製品起動時にService Catalog自身がIAMロールを引き受けてリソースを作成する",
+          "is_correct": true,
+          "explanation": "正解。Launch Constraintにより、エンドユーザー（開発者）に権限がなくても、Service CatalogがAssume Roleしてリソースを安全に作成する。"
+        },
+        {
+          "id": "D",
+          "text": "ユーザーにcloudformation:* と必要なリソース作成権限を直接付与する",
+          "is_correct": false,
+          "explanation": "誤り。最小権限原則に反する。Launch Constraintの目的は『開発者に過剰権限を渡さずにデプロイを許可する』こと。"
         }
       ],
       "explanation": "Service CatalogのLaunch Constraintは、製品起動時にService Catalogが指定IAMロールをAssume Roleして実行する仕組み。これにより最小権限原則を守りつつ、CloudFormationの実行権限を持たないエンドユーザーにも標準化された製品をデプロイさせられる。Template Constraint（パラメータ制約）、Notification Constraint（イベント通知）と混同しやすいので注意。",
@@ -573,27 +573,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Bedrock Guardrailsで設定されたContent Filterの違反検出",
-          "is_correct": true,
-          "explanation": "正解（=提供されない）。Trusted Advisorは構成ベースのチェックを行うサービスで、ランタイムのコンテンツフィルタ違反検出はBedrock側のCloudWatchメトリクスで対応。"
-        },
-        {
-          "id": "B",
-          "text": "S3 Bucket Permissions（パブリックアクセス可能なバケット検出）",
-          "is_correct": false,
-          "explanation": "提供される。Trusted Advisorの代表的なセキュリティチェック。"
-        },
-        {
-          "id": "C",
           "text": "MFAが設定されていないルートアカウントの検出",
           "is_correct": false,
           "explanation": "提供される。ルートMFAチェックはセキュリティ柱の標準項目。"
         },
         {
-          "id": "D",
+          "id": "B",
           "text": "Security Groupで0.0.0.0/0に対し制限のないポート開放",
           "is_correct": false,
           "explanation": "提供される。Security Group Open Portsチェックがある。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Bucket Permissions（パブリックアクセス可能なバケット検出）",
+          "is_correct": false,
+          "explanation": "提供される。Trusted Advisorの代表的なセキュリティチェック。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock Guardrailsで設定されたContent Filterの違反検出",
+          "is_correct": true,
+          "explanation": "正解（=提供されない）。Trusted Advisorは構成ベースのチェックを行うサービスで、ランタイムのコンテンツフィルタ違反検出はBedrock側のCloudWatchメトリクスで対応。"
         }
       ],
       "explanation": "Trusted Advisorのセキュリティ柱は『構成のベストプラクティス遵守』を判定するチェックを提供する（S3公開バケット、ルートMFA、SG過剰開放、IAMキーローテーション、CloudTrail有効化など）。一方、Bedrock Guardrailsの違反検知のような『ランタイムイベント』はCloudWatchメトリクス、CloudTrailデータイベント、Bedrockログ機能で監視する。サービスの守備範囲を区別すること。",
@@ -655,21 +655,21 @@
         },
         {
           "id": "B",
-          "text": "Tag Policyを適用すれば、非準拠タグが付いたリソースは自動的に削除される",
-          "is_correct": false,
-          "explanation": "誤り。Tag Policyはリソースを削除しない。評価のみ。"
-        },
-        {
-          "id": "C",
           "text": "Tag Policyを適用すると、すべてのリソース作成時にタグが必須となり、未タグはAPIエラーで弾かれる",
           "is_correct": false,
           "explanation": "誤り。Tag Policy単独では作成ブロックしない。SCPが必要。"
         },
         {
-          "id": "D",
+          "id": "C",
           "text": "Tag Policyは特定のIAMユーザーにのみ適用でき、アカウント単位では制御できない",
           "is_correct": false,
           "explanation": "誤り。Tag PolicyはOU/アカウント単位で適用する。"
+        },
+        {
+          "id": "D",
+          "text": "Tag Policyを適用すれば、非準拠タグが付いたリソースは自動的に削除される",
+          "is_correct": false,
+          "explanation": "誤り。Tag Policyはリソースを削除しない。評価のみ。"
         }
       ],
       "explanation": "Tag Policyは、タグキーの大文字小文字、許可される値、対象リソースタイプを定義し、非準拠タグを評価・可視化する。ただし強制ブロックの効果はない。リソース作成時にタグを必須にしたい場合はSCPで aws:RequestTag/<key> や aws:TagKeys のCondition Keyを使う。Tag Policy + SCP の組み合わせがガバナンスの定石。",
@@ -726,27 +726,27 @@
       "options": [
         {
           "id": "A",
-          "text": "本番OUに対し、aws:RequestedRegionが ap-northeast-1 / ap-northeast-3 以外の場合に Deny するSCPを適用。IAM、Organizations、Route53などのグローバルサービスはNotAction で除外",
-          "is_correct": true,
-          "explanation": "正解。リージョン制限SCPはaws:RequestedRegionで判定し、グローバルサービスはNotActionで除外するのが定石。"
-        },
-        {
-          "id": "B",
           "text": "各アカウントのIAMポリシーに対しリージョン制限を追加する",
           "is_correct": false,
           "explanation": "誤り。30アカウント分のIAMポリシー個別管理は運用負荷が高く、漏れも生じやすい。SCPでOU単位に一括設定すべき。"
         },
         {
-          "id": "C",
-          "text": "Control Towerの『Region Deny』ガードレールがあるが、これはMandatoryなので適用されない",
-          "is_correct": false,
-          "explanation": "誤り。Region Denyは『Strongly Recommended/Elective』カテゴリで、明示的に有効化可能。Mandatoryは無効化できないという意味。"
+          "id": "B",
+          "text": "本番OUに対し、aws:RequestedRegionが ap-northeast-1 / ap-northeast-3 以外の場合に Deny するSCPを適用。IAM、Organizations、Route53などのグローバルサービスはNotAction で除外",
+          "is_correct": true,
+          "explanation": "正解。リージョン制限SCPはaws:RequestedRegionで判定し、グローバルサービスはNotActionで除外するのが定石。"
         },
         {
-          "id": "D",
+          "id": "C",
           "text": "VPC Endpointを必須化することでリージョン制限を実現する",
           "is_correct": false,
           "explanation": "誤り。VPC Endpointはネットワークパスの制御で、リソース作成リージョンの制限には機能しない。"
+        },
+        {
+          "id": "D",
+          "text": "Control Towerの『Region Deny』ガードレールがあるが、これはMandatoryなので適用されない",
+          "is_correct": false,
+          "explanation": "誤り。Region Denyは『Strongly Recommended/Elective』カテゴリで、明示的に有効化可能。Mandatoryは無効化できないという意味。"
         }
       ],
       "explanation": "Organizations SCPはaws:RequestedRegion Condition Keyを使ってリージョン制限を実装できる。IAM、Organizations、CloudFront、Route53、Support、Trusted Advisorなどのグローバルサービスは単一リージョンエンドポイントで動作するため、NotActionで除外しないとAPIが動作不能になる。Control TowerにはRegion Denyガードレールが組み込まれており、これも内部的には同様のSCPで実装されている。",
@@ -803,27 +803,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Organizationsの委任管理者でAWS Backupを集中管理し、Backup PolicyをOU単位で適用、Backup Vault Lock（Compliance Mode）を有効化、クロスリージョンコピーを構成",
-          "is_correct": true,
-          "explanation": "正解。Organizations Backup PolicyとAWS Backupの組み合わせがマルチアカウントでのHIPAAバックアップ要件の標準パターン。"
+          "text": "S3 Object Lockを有効にし、すべてのスナップショットをS3にエクスポートする",
+          "is_correct": false,
+          "explanation": "誤り。S3 Object Lockはオブジェクト保護用。EBSやRDSのバックアップは AWS Backup Vault Lockが該当機能。"
         },
         {
           "id": "B",
-          "text": "各アカウントでLambda関数を使ってEBSスナップショットとRDSスナップショットを取得し、S3にコピーする",
-          "is_correct": false,
-          "explanation": "誤り。再実装の手間が大きく、Vault Lockのような改ざん防止機能を別途構築する必要がある。AWS Backupが本機能を提供している。"
-        },
-        {
-          "id": "C",
           "text": "Control TowerのBackup Guardrailを有効化するだけで全要件を満たす",
           "is_correct": false,
           "explanation": "誤り。Control TowerにBackup関連ガードレールはあるが、保持期間や別リージョンコピーといった具体的なバックアッププランはAWS Backupで定義する必要がある。"
         },
         {
+          "id": "C",
+          "text": "Organizationsの委任管理者でAWS Backupを集中管理し、Backup PolicyをOU単位で適用、Backup Vault Lock（Compliance Mode）を有効化、クロスリージョンコピーを構成",
+          "is_correct": true,
+          "explanation": "正解。Organizations Backup PolicyとAWS Backupの組み合わせがマルチアカウントでのHIPAAバックアップ要件の標準パターン。"
+        },
+        {
           "id": "D",
-          "text": "S3 Object Lockを有効にし、すべてのスナップショットをS3にエクスポートする",
+          "text": "各アカウントでLambda関数を使ってEBSスナップショットとRDSスナップショットを取得し、S3にコピーする",
           "is_correct": false,
-          "explanation": "誤り。S3 Object Lockはオブジェクト保護用。EBSやRDSのバックアップは AWS Backup Vault Lockが該当機能。"
+          "explanation": "誤り。再実装の手間が大きく、Vault Lockのような改ざん防止機能を別途構築する必要がある。AWS Backupが本機能を提供している。"
         }
       ],
       "explanation": "AWS Backup Policy（Organizations機能）を使うと、OU単位でバックアッププランを宣言的に適用でき、新規アカウントにも自動展開される。AWS Backup Vault Lock（Compliance Mode）はWORM特性を持ち、設定後はrootユーザーでも保持期間内のバックアップを削除できない。HIPAAやSEC 17a-4等の規制対応に必須の機能。クロスリージョンコピーはバックアッププラン内のコピーアクションで定義する。",
@@ -884,15 +884,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Customizations for AWS Control Tower (CfCT) を導入し、CloudFormationテンプレートとマニフェストファイルでカスタマイズ内容を管理、Account Factoryのライフサイクルイベントで自動展開",
-          "is_correct": true,
-          "explanation": "正解。CfCTはControl Tower公式のカスタマイズフレームワーク。新規アカウント追加時に自動でCloudFormation StackSetsを展開する。"
-        },
-        {
-          "id": "B",
           "text": "新規アカウント払い出し後、運用チームが手動で要件をデプロイする",
           "is_correct": false,
           "explanation": "誤り。手作業はガバナンスの一貫性を損なう。CfCTで自動化すべき。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントにEventBridgeルールを設定し、新規リソース作成時に修正Lambdaを実行する",
+          "is_correct": false,
+          "explanation": "誤り。汎用すぎて『新規アカウントの初期セットアップ』の概念にマッチしない。CfCTがその目的に特化している。"
         },
         {
           "id": "C",
@@ -902,9 +902,9 @@
         },
         {
           "id": "D",
-          "text": "各アカウントにEventBridgeルールを設定し、新規リソース作成時に修正Lambdaを実行する",
-          "is_correct": false,
-          "explanation": "誤り。汎用すぎて『新規アカウントの初期セットアップ』の概念にマッチしない。CfCTがその目的に特化している。"
+          "text": "Customizations for AWS Control Tower (CfCT) を導入し、CloudFormationテンプレートとマニフェストファイルでカスタマイズ内容を管理、Account Factoryのライフサイクルイベントで自動展開",
+          "is_correct": true,
+          "explanation": "正解。CfCTはControl Tower公式のカスタマイズフレームワーク。新規アカウント追加時に自動でCloudFormation StackSetsを展開する。"
         }
       ],
       "explanation": "Customizations for AWS Control Tower (CfCT) は、Control Tower環境に独自のCloudFormation/SCPカスタマイゼーションを追加するためのソリューション。CodePipelineで管理され、Account Factoryのライフサイクルイベントを契機に新規アカウントへStackSetsとしてデプロイする。最近はAccount Factory for Terraform (AFT) も同等の用途で利用可能で、Terraform IaCを好むチームの選択肢となる。",
@@ -967,9 +967,9 @@
         },
         {
           "id": "B",
-          "text": "GuardDutyを一時的に無効化し、コストを抑える",
+          "text": "GuardDuty findingsを Security Hub に集約することでコストが下がる",
           "is_correct": false,
-          "explanation": "誤り。脅威検知が無効になるためセキュリティリスクが大きい。コストよりリスクを優先すべき領域。"
+          "explanation": "誤り。findings集約はコストに影響しない。GuardDuty料金は分析対象データ量で決まる。"
         },
         {
           "id": "C",
@@ -979,9 +979,9 @@
         },
         {
           "id": "D",
-          "text": "GuardDuty findingsを Security Hub に集約することでコストが下がる",
+          "text": "GuardDutyを一時的に無効化し、コストを抑える",
           "is_correct": false,
-          "explanation": "誤り。findings集約はコストに影響しない。GuardDuty料金は分析対象データ量で決まる。"
+          "explanation": "誤り。脅威検知が無効になるためセキュリティリスクが大きい。コストよりリスクを優先すべき領域。"
         }
       ],
       "explanation": "GuardDutyのコストはBase（CloudTrail、VPC Flow Logs、DNS Logs分析）に加えて、S3 Protection、Malware Protection（EBSスキャン）、EKS Protection、RDS Login Events、Lambda Protectionが個別課金。GuardDutyコンソールのUsage Statisticsで内訳が確認でき、不要なプランを無効化することで最大50%以上削減できるケースもある。基本検知を残しつつコスト最適化するのが定石。",
@@ -1038,27 +1038,27 @@
       "options": [
         {
           "id": "A",
-          "text": "AWS License Managerで自己管理ライセンスを定義し、ハードコアやインスタンス数のカウント方法とライセンス数を設定。『ハードリミット』を有効化することで超過時のEC2起動を阻止する",
-          "is_correct": true,
-          "explanation": "正解。License Managerはハードリミット機能で、ライセンス超過時のEC2起動を物理的にブロックする唯一のマネージドソリューション。"
-        },
-        {
-          "id": "B",
           "text": "Service Catalog でSQL Server製品を提供し、起動回数をTagで集計する",
           "is_correct": false,
           "explanation": "誤り。タグ集計ではリアルタイムで起動阻止できない。License Managerのハードリミットがそのために設計された。"
         },
         {
-          "id": "C",
-          "text": "Cost ExplorerでSQL Server EC2のコストを監視し、しきい値超過でアラート",
-          "is_correct": false,
-          "explanation": "誤り。Cost Explorerは事後監視で、ライセンス超過の起動阻止は不可能。"
+          "id": "B",
+          "text": "AWS License Managerで自己管理ライセンスを定義し、ハードコアやインスタンス数のカウント方法とライセンス数を設定。『ハードリミット』を有効化することで超過時のEC2起動を阻止する",
+          "is_correct": true,
+          "explanation": "正解。License Managerはハードリミット機能で、ライセンス超過時のEC2起動を物理的にブロックする唯一のマネージドソリューション。"
         },
         {
-          "id": "D",
+          "id": "C",
           "text": "AWS Configカスタムルールで起動を検知し、Lambdaでインスタンスを停止",
           "is_correct": false,
           "explanation": "誤り。停止までの間にライセンス超過が発生する。License Managerは起動時点で阻止できる。"
+        },
+        {
+          "id": "D",
+          "text": "Cost ExplorerでSQL Server EC2のコストを監視し、しきい値超過でアラート",
+          "is_correct": false,
+          "explanation": "誤り。Cost Explorerは事後監視で、ライセンス超過の起動阻止は不可能。"
         }
       ],
       "explanation": "AWS License Managerは、Microsoft SQL Server、Windows Server、Oracle、SAP等のBYOLライセンスをマネージドで管理する。Self-Managed Licensesを定義し、各種計算ルール（コア、ソケット、インスタンス、vCPU）を構成。ハードリミット有効化により、ライセンス超過時のEC2起動はEC2 APIレベルで拒否される。これによりライセンスコンプライアンス違反を防止できる。",
@@ -1115,27 +1115,27 @@
       "options": [
         {
           "id": "A",
-          "text": "AWS Well-Architected Toolでワークロードを定義し、Security Pillar のレビューを実施。HRI（High Risk Issues）を特定し、改善計画を作成",
-          "is_correct": true,
-          "explanation": "正解。Well-Architected ToolのSecurity Pillarレビューは、AWS推奨のセキュリティ自己評価フレームワーク。"
+          "text": "AWS Inspector で全EC2をスキャンする",
+          "is_correct": false,
+          "explanation": "Inspectorは脆弱性スキャンで、設計姿勢の評価ではない。"
         },
         {
           "id": "B",
-          "text": "AWS Audit Managerで PCI DSS フレームワークを実行する",
-          "is_correct": false,
-          "explanation": "Audit Managerは特定コンプライアンスフレームワーク（PCI、HIPAA等）への準拠評価が目的。設計姿勢の体系的評価にはWell-Architected Toolが適切。"
-        },
-        {
-          "id": "C",
           "text": "AWS Trusted Advisorのセキュリティチェックをすべて確認する",
           "is_correct": false,
           "explanation": "Trusted Advisorは構成チェックの自動評価で、設計レベルのセキュリティ姿勢評価ではない。補完的に使うのは正しいが第一歩としては範囲が狭い。"
         },
         {
+          "id": "C",
+          "text": "AWS Well-Architected Toolでワークロードを定義し、Security Pillar のレビューを実施。HRI（High Risk Issues）を特定し、改善計画を作成",
+          "is_correct": true,
+          "explanation": "正解。Well-Architected ToolのSecurity Pillarレビューは、AWS推奨のセキュリティ自己評価フレームワーク。"
+        },
+        {
           "id": "D",
-          "text": "AWS Inspector で全EC2をスキャンする",
+          "text": "AWS Audit Managerで PCI DSS フレームワークを実行する",
           "is_correct": false,
-          "explanation": "Inspectorは脆弱性スキャンで、設計姿勢の評価ではない。"
+          "explanation": "Audit Managerは特定コンプライアンスフレームワーク（PCI、HIPAA等）への準拠評価が目的。設計姿勢の体系的評価にはWell-Architected Toolが適切。"
         }
       ],
       "explanation": "AWS Well-Architected Frameworkは6つの柱（運用、セキュリティ、信頼性、パフォーマンス、コスト、サステナビリティ）からなる。Well-Architected Toolはこれを質問形式で自己評価させ、改善項目を整理する公式ツール。Security Pillarでは、ID/AC、検出、インフラ・データ保護、インシデント対応、AI/MLセキュリティの観点を網羅。Trusted AdvisorやAudit Managerは『戦術レベルの評価』で、Well-Architected Toolは『戦略レベルの評価』と位置づけが異なる。",
@@ -1192,9 +1192,9 @@
       "options": [
         {
           "id": "A",
-          "text": "IAM Identity Centerのユーザー属性に『team』を設定。Permission Set内で aws:PrincipalTag/team と aws:ResourceTag/team の一致をConditionで強制。Tag Policyで『team』タグを正規化し、SCPでリソース作成時の team タグ未付与を拒否",
-          "is_correct": true,
-          "explanation": "正解。Identity Center属性 + IAM Policy ABAC + Tag Policy + SCPの組み合わせがマルチアカウントABACのベストプラクティス。"
+          "text": "Resource Access Manager（RAM）で各チームにリソースを共有する",
+          "is_correct": false,
+          "explanation": "誤り。RAMは特定リソースのクロスアカウント共有用で、ABAC的な属性ベース制御には適さない。"
         },
         {
           "id": "B",
@@ -1210,9 +1210,9 @@
         },
         {
           "id": "D",
-          "text": "Resource Access Manager（RAM）で各チームにリソースを共有する",
-          "is_correct": false,
-          "explanation": "誤り。RAMは特定リソースのクロスアカウント共有用で、ABAC的な属性ベース制御には適さない。"
+          "text": "IAM Identity Centerのユーザー属性に『team』を設定。Permission Set内で aws:PrincipalTag/team と aws:ResourceTag/team の一致をConditionで強制。Tag Policyで『team』タグを正規化し、SCPでリソース作成時の team タグ未付与を拒否",
+          "is_correct": true,
+          "explanation": "正解。Identity Center属性 + IAM Policy ABAC + Tag Policy + SCPの組み合わせがマルチアカウントABACのベストプラクティス。"
         }
       ],
       "explanation": "ABACのスケール実装には、(1) Identity Center / SAMLでaws:PrincipalTag を発行、(2) IAM ポリシーで aws:PrincipalTag と aws:ResourceTag をConditionで一致させる、(3) Tag Policyでタグの正規化、(4) SCPでタグ強制（aws:RequestTag）の4層構造が定石。これによりロール数を最小化しながら、新規チーム追加時に新規ロールを増やさず属性追加だけで対応できる。FinTechのような規制業界でも監査説明性が高い。",
@@ -1275,21 +1275,21 @@
         },
         {
           "id": "B",
+          "text": "Audit ManagerでHIPAAフレームワークを流用し、必要に応じてリネームする",
+          "is_correct": false,
+          "explanation": "誤り。フレームワーク名のリネームではコントロールマッピングが残り、監査説明性が損なわれる。Custom Frameworkを正規に作るべき。"
+        },
+        {
+          "id": "C",
           "text": "Audit Managerは事前定義フレームワークしかサポートせず、カスタム統制は別ツールで管理が必要",
           "is_correct": false,
           "explanation": "誤り。Audit ManagerはCustom Frameworkを完全サポートする。"
         },
         {
-          "id": "C",
+          "id": "D",
           "text": "AWS LambdaでConfigルール、CloudTrail、Security Hubから手動でエビデンスを収集し、S3に保存する",
           "is_correct": false,
           "explanation": "誤り。Audit Manager Custom Frameworkがこの自動化を提供しているため、再実装は無駄。"
-        },
-        {
-          "id": "D",
-          "text": "Audit ManagerでHIPAAフレームワークを流用し、必要に応じてリネームする",
-          "is_correct": false,
-          "explanation": "誤り。フレームワーク名のリネームではコントロールマッピングが残り、監査説明性が損なわれる。Custom Frameworkを正規に作るべき。"
         }
       ],
       "explanation": "Audit Managerは事前定義フレームワーク（PCI DSS、HIPAA、SOC 2、GDPR、ISO 27001、AWS ベストプラクティスなど）に加え、Custom Frameworkで自社内部統制を定義可能。各コントロールには複数のData Sourceを設定でき、Configルール、API call、CloudTrailイベント、Security Hub findingsを自動的に証拠として継続収集する。手作業のエビデンス収集と比べ大幅な効率化と精度向上が見込める。",
@@ -1346,15 +1346,15 @@
       "options": [
         {
           "id": "A",
-          "text": "CloudWatch Logsで90日保持後にS3へエクスポート、S3ライフサイクルでGlacier Deep Archiveへ移動、S3 Object Lock（Compliance Mode）で7年間保護。クエリはCloudWatch Logs Insights（90日内）+ Athena（古い分はGlacier Restoreが必要）",
-          "is_correct": true,
-          "explanation": "正解。階層化ストレージ + Object Lockがコスト効率と改ざん防止を両立する。"
+          "text": "Security Lakeにすべてのログを取り込み、デフォルト設定で7年保管する",
+          "is_correct": false,
+          "explanation": "Security Lakeは内部でS3を使うが、デフォルト保持期間や階層化、Object Lock構成は明示的設定が必要。提示された要件には設計が必要であり、デフォルトでは満たさない。"
         },
         {
           "id": "B",
-          "text": "CloudWatch Logsに7年間保持し、必要に応じてLogs Insightsでクエリする",
-          "is_correct": false,
-          "explanation": "誤り。CloudWatch Logsの7年保持は非常にコストが高い。古いログはS3 Glacier系に移すべき。"
+          "text": "CloudWatch Logsで90日保持後にS3へエクスポート、S3ライフサイクルでGlacier Deep Archiveへ移動、S3 Object Lock（Compliance Mode）で7年間保護。クエリはCloudWatch Logs Insights（90日内）+ Athena（古い分はGlacier Restoreが必要）",
+          "is_correct": true,
+          "explanation": "正解。階層化ストレージ + Object Lockがコスト効率と改ざん防止を両立する。"
         },
         {
           "id": "C",
@@ -1364,9 +1364,9 @@
         },
         {
           "id": "D",
-          "text": "Security Lakeにすべてのログを取り込み、デフォルト設定で7年保管する",
+          "text": "CloudWatch Logsに7年間保持し、必要に応じてLogs Insightsでクエリする",
           "is_correct": false,
-          "explanation": "Security Lakeは内部でS3を使うが、デフォルト保持期間や階層化、Object Lock構成は明示的設定が必要。提示された要件には設計が必要であり、デフォルトでは満たさない。"
+          "explanation": "誤り。CloudWatch Logsの7年保持は非常にコストが高い。古いログはS3 Glacier系に移すべき。"
         }
       ],
       "explanation": "ログコスト最適化の定石は『ホット層（CloudWatch Logs / OpenSearch / Security Lake）でクエリ、コールド層（S3 Standard-IA → Glacier Flexible Retrieval → Deep Archive）で長期保管』。S3 Object Lock（Compliance Mode）はWORM特性で改ざん防止と削除保護を提供し、SEC 17a-4、HIPAA、PCI DSS等の規制対応で必須となる。Athenaは S3 上の Glacier 以外ストレージを直接クエリでき、Restoreすれば Glacier 階層もクエリ対象に追加できる。",
@@ -1423,33 +1423,33 @@
       "options": [
         {
           "id": "A",
-          "text": "(a)(c) は SCP で aws:RequestedRegion / s3:PublicAccessBlockConfiguration をDenyベースで実装",
-          "is_correct": true,
-          "explanation": "正解。SCPは組織内プリンシパルのアクションを制御する。リージョン制限とS3公開ブロックはSCPの典型用途。"
+          "text": "Backup Policy で(a)(b)(c)(d)すべてを一括実装できる",
+          "is_correct": false,
+          "explanation": "誤り。Backup PolicyはAWS Backup設定の配布専用。アクセス制御の役割は持たない。"
         },
         {
           "id": "B",
-          "text": "(d) は SCP に s:SourceVpce 条件を入れることで、外部AWSアカウントの操作を制御できる",
-          "is_correct": false,
-          "explanation": "誤り。SCPは組織内プリンシパルにしか作用しないため、外部アカウントには無効。RCPまたはバケットポリシーが必要。"
-        },
-        {
-          "id": "C",
-          "text": "(d) は RCP（Resource Control Policy）で aws:SourceVpce 条件を実装する。RCPはリソース側に作用するため外部プリンシパルにも有効",
-          "is_correct": true,
-          "explanation": "正解。RCPは2024年GAされたリソース側ガードレールで、外部アカウントからのアクセスにも作用する。"
-        },
-        {
-          "id": "D",
           "text": "(b) は Tag Policy だけで強制ブロックできるので、SCPは不要",
           "is_correct": false,
           "explanation": "誤り。Tag Policyは評価のみで強制ブロックしない。aws:RequestTag を使ったSCPが必要。"
         },
         {
-          "id": "E",
-          "text": "Backup Policy で(a)(b)(c)(d)すべてを一括実装できる",
+          "id": "C",
+          "text": "(a)(c) は SCP で aws:RequestedRegion / s3:PublicAccessBlockConfiguration をDenyベースで実装",
+          "is_correct": true,
+          "explanation": "正解。SCPは組織内プリンシパルのアクションを制御する。リージョン制限とS3公開ブロックはSCPの典型用途。"
+        },
+        {
+          "id": "D",
+          "text": "(d) は SCP に s:SourceVpce 条件を入れることで、外部AWSアカウントの操作を制御できる",
           "is_correct": false,
-          "explanation": "誤り。Backup PolicyはAWS Backup設定の配布専用。アクセス制御の役割は持たない。"
+          "explanation": "誤り。SCPは組織内プリンシパルにしか作用しないため、外部アカウントには無効。RCPまたはバケットポリシーが必要。"
+        },
+        {
+          "id": "E",
+          "text": "(d) は RCP（Resource Control Policy）で aws:SourceVpce 条件を実装する。RCPはリソース側に作用するため外部プリンシパルにも有効",
+          "is_correct": true,
+          "explanation": "正解。RCPは2024年GAされたリソース側ガードレールで、外部アカウントからのアクセスにも作用する。"
         }
       ],
       "explanation": "Organizations配下のポリシータイプは目的別に使い分ける：(1) SCP=組織内プリンシパルへの権限上限制御、(2) RCP=リソース側のアクセス制御（外部プリンシパルにも作用）、(3) Tag Policy=タグ正規化と評価（強制ブロック不可）、(4) Backup Policy=AWS Backup設定の配布。タグ強制にはSCPの aws:RequestTag を使い、Tag Policyと組み合わせる。MRQ問題のため複数選択（A, C）が正解。",
@@ -1508,9 +1508,9 @@
       "options": [
         {
           "id": "A",
-          "text": "Control Tower外で誰かがアカウントのSCPやConfigルール設定を直接変更した可能性が高い。Control Towerコンソールから『Re-register』または『Repair』を実行し、ベースライン状態に戻す",
-          "is_correct": true,
-          "explanation": "正解。DriftはControl Tower管理外の変更で発生する。Re-register/Repairで再収束させる。"
+          "text": "AWS Configを無効化することでDriftを解消する",
+          "is_correct": false,
+          "explanation": "誤り。Configを無効化すれば検知できなくなるだけで、根本原因は残る。"
         },
         {
           "id": "B",
@@ -1520,15 +1520,15 @@
         },
         {
           "id": "C",
-          "text": "対象OUを削除し、再作成する",
-          "is_correct": false,
-          "explanation": "誤り。Driftの解決にOU削除は不要かつリスクが大きすぎる。Re-registerで対処可能。"
+          "text": "Control Tower外で誰かがアカウントのSCPやConfigルール設定を直接変更した可能性が高い。Control Towerコンソールから『Re-register』または『Repair』を実行し、ベースライン状態に戻す",
+          "is_correct": true,
+          "explanation": "正解。DriftはControl Tower管理外の変更で発生する。Re-register/Repairで再収束させる。"
         },
         {
           "id": "D",
-          "text": "AWS Configを無効化することでDriftを解消する",
+          "text": "対象OUを削除し、再作成する",
           "is_correct": false,
-          "explanation": "誤り。Configを無効化すれば検知できなくなるだけで、根本原因は残る。"
+          "explanation": "誤り。Driftの解決にOU削除は不要かつリスクが大きすぎる。Re-registerで対処可能。"
         }
       ],
       "explanation": "Control TowerのDriftは、ガードレール（SCP）やAccount Factoryで構成された設定がControl Tower外から変更された場合に検出される。代表的な原因は、(1) ベースラインCloudFormationスタックの手動編集、(2) SCPの直接編集、(3) Configルールの無効化、(4) IAM Identity Center設定の手動変更。対処は『Re-register OU』または『Update Landing Zone』で、Control Towerが期待する状態に再収束させる。Driftをそのまま放置するとガバナンスが崩れるため、検出後は原因調査を必須とする。",
@@ -1585,27 +1585,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Control Towerは特定リージョンセットでしかランディングゾーンをデプロイできず、また提供されるVPC構成が組織のネットワーク要件に合わない場合がある。組織独自の拡張要件が強ければCustom Landing Zone（CDK/Terraform）が選択肢に入る",
-          "is_correct": true,
-          "explanation": "正解。Control Towerは標準化が強みだが、特殊な要件への柔軟性は限定的。Custom LZと比較検討すべき。"
+          "text": "Control Towerでは Audit / Log Archive アカウントを作らない設計が標準",
+          "is_correct": false,
+          "explanation": "誤り。Control Towerは Audit と Log Archive の専用アカウントを最初に作るのが標準アーキテクチャ。"
         },
         {
           "id": "B",
-          "text": "Control Towerは10アカウントまでしかサポートしないため不適",
-          "is_correct": false,
-          "explanation": "誤り。Control Tower自体に厳格なアカウント数上限はない（Organizationsの上限に従う）。"
-        },
-        {
-          "id": "C",
           "text": "Control Towerは IAM Identity Center を使わないため独自IDプロバイダ連携ができない",
           "is_correct": false,
           "explanation": "誤り。Control TowerはIAM Identity Centerをデフォルトで使い、外部IDプロバイダ（OktaやEntra ID）も連携可能。"
         },
         {
-          "id": "D",
-          "text": "Control Towerでは Audit / Log Archive アカウントを作らない設計が標準",
+          "id": "C",
+          "text": "Control Towerは10アカウントまでしかサポートしないため不適",
           "is_correct": false,
-          "explanation": "誤り。Control Towerは Audit と Log Archive の専用アカウントを最初に作るのが標準アーキテクチャ。"
+          "explanation": "誤り。Control Tower自体に厳格なアカウント数上限はない（Organizationsの上限に従う）。"
+        },
+        {
+          "id": "D",
+          "text": "Control Towerは特定リージョンセットでしかランディングゾーンをデプロイできず、また提供されるVPC構成が組織のネットワーク要件に合わない場合がある。組織独自の拡張要件が強ければCustom Landing Zone（CDK/Terraform）が選択肢に入る",
+          "is_correct": true,
+          "explanation": "正解。Control Towerは標準化が強みだが、特殊な要件への柔軟性は限定的。Custom LZと比較検討すべき。"
         }
       ],
       "explanation": "Control Towerは標準化されたランディングゾーン（Audit/Log Archive、IAM Identity Center、CloudTrail/Config集約、Mandatoryガードレール）を素早く構築する一方、(1) リージョン拡張に制約あり、(2) 提供されるVPC構成は限定的（Account Factory Network最近強化）、(3) ガードレール内容のカスタマイズ範囲、(4) GovCloudは別リージョンとして扱う必要がある。Custom Landing Zone（CDK/Terraform/AWS Landing Zone Accelerator）は柔軟性が高いが、設計・運用コストが大きく、保守性の責任が顧客側にある。トレードオフを理解した選択が重要。",
@@ -1668,9 +1668,9 @@
         },
         {
           "id": "B",
-          "text": "OUは作らずすべてのアカウントをRoot直下に配置する",
+          "text": "全アカウントを1つのProduction OU配下に置き、SCPですべてを制御する",
           "is_correct": false,
-          "explanation": "誤り。スケールせず、SCP適用範囲も絞れない。"
+          "explanation": "誤り。本番/非本番のリスク差を反映できず、PCI環境の分離もできない。"
         },
         {
           "id": "C",
@@ -1680,9 +1680,9 @@
         },
         {
           "id": "D",
-          "text": "全アカウントを1つのProduction OU配下に置き、SCPですべてを制御する",
+          "text": "OUは作らずすべてのアカウントをRoot直下に配置する",
           "is_correct": false,
-          "explanation": "誤り。本番/非本番のリスク差を反映できず、PCI環境の分離もできない。"
+          "explanation": "誤り。スケールせず、SCP適用範囲も絞れない。"
         }
       ],
       "explanation": "AWS Multi-account strategyでは、機能別/環境別のOU階層を推奨：(1) Security OU（Audit、Log Archive専用）、(2) Infrastructure OU（Network、Shared Services）、(3) Workloads OU（Production / Non-Production / PCI など）、(4) Sandbox OU（実験用）、(5) Suspended OU、(6) Policy Staging OU（SCP検証用）など。業務部署ベースは組織変更に弱く、機能/環境ベースの方が長期的に安定する。PCIなど規制要件のある環境はWorkloads配下のOUとして明確に分離し、専用SCPを適用する。",
@@ -1739,15 +1739,15 @@
       "options": [
         {
           "id": "A",
-          "text": "OrganizationsのサービスポータルとしてService Catalogを有効化し、Portfolio を組織やOU単位で共有する",
-          "is_correct": true,
-          "explanation": "正解。Organization単位の共有は新規アカウント追加時に自動継承され運用効率が高い。"
+          "text": "Resource Access Manager（RAM）でService Catalog製品そのものを共有する",
+          "is_correct": false,
+          "explanation": "誤り。Service Catalog製品の共有は Service Catalog 自体の機能（Portfolio共有）で行う。RAMは別リソースタイプの共有用。"
         },
         {
           "id": "B",
-          "text": "各アカウントへ Portfolio を個別共有する",
-          "is_correct": false,
-          "explanation": "誤り。アカウント増加時に共有作業が発生し、運用負荷が高い。OU/Organization単位を推奨。"
+          "text": "OrganizationsのサービスポータルとしてService Catalogを有効化し、Portfolio を組織やOU単位で共有する",
+          "is_correct": true,
+          "explanation": "正解。Organization単位の共有は新規アカウント追加時に自動継承され運用効率が高い。"
         },
         {
           "id": "C",
@@ -1757,15 +1757,15 @@
         },
         {
           "id": "D",
-          "text": "共有先アカウントのIAMユーザーすべてに servicecatalog:* 権限を付与する",
+          "text": "各アカウントへ Portfolio を個別共有する",
           "is_correct": false,
-          "explanation": "誤り。最小権限原則に反する。Service Catalogアクセスは権限を絞ったロールで運用する。"
+          "explanation": "誤り。アカウント増加時に共有作業が発生し、運用負荷が高い。OU/Organization単位を推奨。"
         },
         {
           "id": "E",
-          "text": "Resource Access Manager（RAM）でService Catalog製品そのものを共有する",
+          "text": "共有先アカウントのIAMユーザーすべてに servicecatalog:* 権限を付与する",
           "is_correct": false,
-          "explanation": "誤り。Service Catalog製品の共有は Service Catalog 自体の機能（Portfolio共有）で行う。RAMは別リソースタイプの共有用。"
+          "explanation": "誤り。最小権限原則に反する。Service Catalogアクセスは権限を絞ったロールで運用する。"
         }
       ],
       "explanation": "Service Catalogのマルチアカウント運用のベストプラクティス：(1) Organizationを使ったPortfolio共有でスケール性を確保、(2) Launch Constraintで共有先ユーザーに過剰権限を持たせずに安全にデプロイ、(3) Tag Update Constraintで運用タグを強制、(4) StackSets Constraintで複数アカウント・リージョンへの一括配布も可能。RAMはVPC Subnet、Transit Gateway、Resolver Rule等の共有に使うが、Service Catalog Portfolioは Service Catalog自身の機能を使う点に注意。",
@@ -1822,9 +1822,9 @@
       "options": [
         {
           "id": "A",
-          "text": "カード会員データ（PAN、CVV、有効期限）の保存範囲の最小化、暗号化、トークン化（必要に応じてStripeやAWS Payment Cryptography使用）",
-          "is_correct": true,
-          "explanation": "正解。データの取り扱いは顧客責任。AWSは基盤の物理セキュリティを提供する。"
+          "text": "AWS の SOC 2 監査の実施",
+          "is_correct": false,
+          "explanation": "誤り。AWS側のSOC 2監査はAWS自身が実施。顧客はArtifactで報告書を取得するだけ。"
         },
         {
           "id": "B",
@@ -1834,15 +1834,15 @@
         },
         {
           "id": "C",
-          "text": "EC2上のOSパッチ適用、アプリの脆弱性管理、WAFルール構成",
+          "text": "カード会員データ（PAN、CVV、有効期限）の保存範囲の最小化、暗号化、トークン化（必要に応じてStripeやAWS Payment Cryptography使用）",
           "is_correct": true,
-          "explanation": "正解。EC2上のOSとアプリは顧客責任。AWSはハイパーバイザー以下を担当。"
+          "explanation": "正解。データの取り扱いは顧客責任。AWSは基盤の物理セキュリティを提供する。"
         },
         {
           "id": "D",
-          "text": "AWS の SOC 2 監査の実施",
-          "is_correct": false,
-          "explanation": "誤り。AWS側のSOC 2監査はAWS自身が実施。顧客はArtifactで報告書を取得するだけ。"
+          "text": "EC2上のOSパッチ適用、アプリの脆弱性管理、WAFルール構成",
+          "is_correct": true,
+          "explanation": "正解。EC2上のOSとアプリは顧客責任。AWSはハイパーバイザー以下を担当。"
         },
         {
           "id": "E",
@@ -1905,33 +1905,33 @@
       "options": [
         {
           "id": "A",
-          "text": "AWS Config Managed Rules / Custom Rulesの評価結果",
-          "is_correct": true,
-          "explanation": "正解。Configはコンプライアンス評価の主要データソース。"
-        },
-        {
-          "id": "B",
-          "text": "AWS CloudTrail のAPI コール記録",
-          "is_correct": true,
-          "explanation": "正解。CloudTrailのAPI操作履歴をエビデンスとして自動収集できる。"
-        },
-        {
-          "id": "C",
           "text": "Microsoft Excelに手動入力したスプレッドシート",
           "is_correct": false,
           "explanation": "誤り。Audit Managerは手動エビデンス（manual evidence）アップロードもサポートするが、これは『自動データソース』ではない。"
         },
         {
-          "id": "D",
+          "id": "B",
+          "text": "AWS Config Managed Rules / Custom Rulesの評価結果",
+          "is_correct": true,
+          "explanation": "正解。Configはコンプライアンス評価の主要データソース。"
+        },
+        {
+          "id": "C",
           "text": "オンプレミスのSyslogサーバ",
           "is_correct": false,
           "explanation": "誤り。Audit ManagerはAWS環境のデータソースを対象とする。オンプレSyslog直接連携はサポート外（CloudWatch経由などの中継が必要）。"
         },
         {
-          "id": "E",
+          "id": "D",
           "text": "AWS Trusted Advisor チェック結果",
           "is_correct": false,
           "explanation": "誤り。Trusted Advisorは現在Audit Managerの自動データソースに直接含まれていない（Security Hub経由で間接的に活用可能）。"
+        },
+        {
+          "id": "E",
+          "text": "AWS CloudTrail のAPI コール記録",
+          "is_correct": true,
+          "explanation": "正解。CloudTrailのAPI操作履歴をエビデンスとして自動収集できる。"
         }
       ],
       "explanation": "AWS Audit Managerが対応する『自動データソース』は主に4種類：(1) AWS Configルール評価結果、(2) AWS Security Hub findings、(3) AWS APIコール（List/Describe系）、(4) AWS CloudTrailイベント。これに加えて手動エビデンスアップロード（PDF、画像、文書）もサポートする。手動とCloudFormation StackSets管理外のサービスを混同しないこと。",
@@ -1989,33 +1989,33 @@
       "options": [
         {
           "id": "A",
-          "text": "Amazon GuardDuty",
-          "is_correct": true,
-          "explanation": "正解。GuardDutyは委任管理者をサポートし、組織全体のfindingsを単一アカウントで管理できる。"
-        },
-        {
-          "id": "B",
-          "text": "AWS Security Hub",
-          "is_correct": true,
-          "explanation": "正解。Security Hubも委任管理者をサポートし、組織全体のfindings集約に一般的。"
-        },
-        {
-          "id": "C",
-          "text": "AWS Identity and Access Management (IAM)",
-          "is_correct": false,
-          "explanation": "誤り。IAMはアカウント単位のサービスで委任管理者の概念はない。組織レベルの統制はOrganizationsのSCPで行う。"
-        },
-        {
-          "id": "D",
           "text": "Amazon EC2",
           "is_correct": false,
           "explanation": "誤り。EC2に委任管理者の概念はない。"
         },
         {
-          "id": "E",
+          "id": "B",
+          "text": "AWS Identity and Access Management (IAM)",
+          "is_correct": false,
+          "explanation": "誤り。IAMはアカウント単位のサービスで委任管理者の概念はない。組織レベルの統制はOrganizationsのSCPで行う。"
+        },
+        {
+          "id": "C",
           "text": "AWS Step Functions",
           "is_correct": false,
           "explanation": "誤り。Step Functionsは委任管理者非対応。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Security Hub",
+          "is_correct": true,
+          "explanation": "正解。Security Hubも委任管理者をサポートし、組織全体のfindings集約に一般的。"
+        },
+        {
+          "id": "E",
+          "text": "Amazon GuardDuty",
+          "is_correct": true,
+          "explanation": "正解。GuardDutyは委任管理者をサポートし、組織全体のfindingsを単一アカウントで管理できる。"
         }
       ],
       "explanation": "Delegated administratorをサポートするサービスは多岐にわたり、代表例として GuardDuty、Security Hub、Macie、Detective、Audit Manager、Config、CloudFormation StackSets、Inspector、IAM Access Analyzer、AWS Backup、CloudTrail（組織トレイル）、AWS Account Management 等がある。委任管理者を使うことで管理アカウントを最小限の操作に留めつつ、別アカウント（多くは『Audit / Security Tooling』アカウント）でセキュリティ集約管理を行える。これがマルチアカウント運用のベストプラクティス。",
@@ -2072,21 +2072,21 @@
       "options": [
         {
           "id": "A",
+          "text": "全アカウントを1つに統合し、IAMポリシーで論理分離する",
+          "is_correct": false,
+          "explanation": "誤り。マルチアカウントの利点（爆発半径の限定、課金分離、規制要件分離）を失う。AWSは逆にマルチアカウントを推奨。"
+        },
+        {
+          "id": "B",
           "text": "Control Towerランディングゾーンを導入し、Mandatory + Strongly Recommended ガードレール、Tag Policyによるオーナーシップ明確化、Audit ManagerでHIPAAフレームワーク評価、Security Hub標準有効化、AWS Config aggregator で全アカウント評価を一元化する",
           "is_correct": true,
           "explanation": "正解。複数の問題（統制一貫性、所有者不明、暗号化検証）を一気に解決する組み合わせ。"
         },
         {
-          "id": "B",
+          "id": "C",
           "text": "セキュリティチームを増員し、各アカウントを手動で月次監査する",
           "is_correct": false,
           "explanation": "誤り。スケールせず、根本原因（自動化と一貫性の欠如）を解決しない。"
-        },
-        {
-          "id": "C",
-          "text": "全アカウントを1つに統合し、IAMポリシーで論理分離する",
-          "is_correct": false,
-          "explanation": "誤り。マルチアカウントの利点（爆発半径の限定、課金分離、規制要件分離）を失う。AWSは逆にマルチアカウントを推奨。"
         },
         {
           "id": "D",
@@ -2149,27 +2149,27 @@
       "options": [
         {
           "id": "A",
-          "text": "クローズ前にCloudTrailログ、Security Hub findings、AWS Configスナップショットなどを長期アーカイブ用バケットへ移送し、関連リソースのバックアップを保管。アカウントを Suspended OU へ一定期間移動し、SCPで操作を厳しく制限。問題なければOrganizationsから退役し、AWS側のアカウントクロージャープロセスを実施",
-          "is_correct": true,
-          "explanation": "正解。AWS推奨の段階的退役プロセス。証拠保全 → 隔離 → 退役の流れが望ましい。"
+          "text": "アカウントクローズはAWSサポートのみが実施可能",
+          "is_correct": false,
+          "explanation": "誤り。Organizations管理者またはアカウントRootが実施可能。サポート問い合わせは不要。"
         },
         {
           "id": "B",
-          "text": "アカウントオーナーにCloseAccount API を即時実行させる",
-          "is_correct": false,
-          "explanation": "誤り。証拠保全と監査ログ保存の機会を失い、コンプライアンス上の問題が残る。"
-        },
-        {
-          "id": "C",
           "text": "アカウントを別のOUへ移動するだけで運用上は十分",
           "is_correct": false,
           "explanation": "誤り。クローズしないままだと不要な攻撃面が残り、API Keyや残存IAMロールが悪用されうる。"
         },
         {
+          "id": "C",
+          "text": "クローズ前にCloudTrailログ、Security Hub findings、AWS Configスナップショットなどを長期アーカイブ用バケットへ移送し、関連リソースのバックアップを保管。アカウントを Suspended OU へ一定期間移動し、SCPで操作を厳しく制限。問題なければOrganizationsから退役し、AWS側のアカウントクロージャープロセスを実施",
+          "is_correct": true,
+          "explanation": "正解。AWS推奨の段階的退役プロセス。証拠保全 → 隔離 → 退役の流れが望ましい。"
+        },
+        {
           "id": "D",
-          "text": "アカウントクローズはAWSサポートのみが実施可能",
+          "text": "アカウントオーナーにCloseAccount API を即時実行させる",
           "is_correct": false,
-          "explanation": "誤り。Organizations管理者またはアカウントRootが実施可能。サポート問い合わせは不要。"
+          "explanation": "誤り。証拠保全と監査ログ保存の機会を失い、コンプライアンス上の問題が残る。"
         }
       ],
       "explanation": "AWSアカウント退役のベストプラクティスは段階的に実施する：(1) 監査ログとリソース状態のスナップショット保存、(2) 必要なバックアップを別アカウントへ複製、(3) Suspended OU への移動とSCPによる操作制限、(4) 90日程度の隔離期間、(5) AWSのCloseAccountプロセス実施。クローズ後も90日間は再開可能で、その後完全削除される。退役時の証拠保全は、SOC 2やGDPRなどの規制でログ保管期間を満たすために重要。",
@@ -2225,27 +2225,27 @@
       "options": [
         {
           "id": "A",
-          "text": "AWSとの Data Processing Addendum (DPA) を AWS Artifact から取得・締結。EUリージョン（eu-central-1 / eu-west-1等）にデータを限定するSCP適用。データ削除はAudit Managerでエビデンス収集、削除実行はLambda+Step Functionsで監査ログを残す",
-          "is_correct": true,
-          "explanation": "正解。GDPR対応はDPA、データレジデンシー（SCP）、削除権（自動化＋ログ）の3要素が中核。"
-        },
-        {
-          "id": "B",
-          "text": "AWSのSOC 2報告書だけ取得すればGDPR準拠は完了する",
-          "is_correct": false,
-          "explanation": "誤り。SOC 2はGDPRと別の枠組み。GDPRは独自のDPAと運用体制が必要。"
-        },
-        {
-          "id": "C",
           "text": "Macieを有効化すればGDPR準拠が自動的に達成される",
           "is_correct": false,
           "explanation": "誤り。Macieは個人データ検出の補助だが、データレジデンシーや削除権は実装しない。"
         },
         {
-          "id": "D",
+          "id": "B",
           "text": "GDPRは欧州法なのでAWSは関与せず、すべて顧客責任で対応",
           "is_correct": false,
           "explanation": "誤り。AWSはサブプロセッサとしてDPAを提供し、共有責任を担う。"
+        },
+        {
+          "id": "C",
+          "text": "AWSのSOC 2報告書だけ取得すればGDPR準拠は完了する",
+          "is_correct": false,
+          "explanation": "誤り。SOC 2はGDPRと別の枠組み。GDPRは独自のDPAと運用体制が必要。"
+        },
+        {
+          "id": "D",
+          "text": "AWSとの Data Processing Addendum (DPA) を AWS Artifact から取得・締結。EUリージョン（eu-central-1 / eu-west-1等）にデータを限定するSCP適用。データ削除はAudit Managerでエビデンス収集、削除実行はLambda+Step Functionsで監査ログを残す",
+          "is_correct": true,
+          "explanation": "正解。GDPR対応はDPA、データレジデンシー（SCP）、削除権（自動化＋ログ）の3要素が中核。"
         }
       ],
       "explanation": "GDPR対応はAWS+顧客の共有責任。AWSはサブプロセッサとしてData Processing Addendum（DPA）をArtifactで提供し、EU標準契約条項（SCC）も含まれる。顧客側はデータレジデンシーをSCPと運用ルールで担保（aws:RequestedRegionでEUリージョン限定）、削除権（GDPR Article 17）への対応では削除APIの実行履歴をCloudTrail+Audit Managerで記録、本人確認プロセスを設計する必要がある。Macieは『どこにPIIがあるか』の発見支援ツールに過ぎず、GDPR準拠を自動達成するわけではない。",
@@ -2302,9 +2302,9 @@
       "options": [
         {
           "id": "A",
-          "text": "AWS Control Tower でランディングゾーンを構築し、最小限のOU（Security / Workloads / Sandbox）から開始。Mandatoryガードレール + Region Deny ガードレール（必要リージョンのみ許可）を初日から有効化",
-          "is_correct": true,
-          "explanation": "正解。小規模でもControl Towerは無料（ベース機能）かつ初期から正しいガバナンスを敷ける。"
+          "text": "CloudHSMを初日から契約し、すべての暗号化に専用HSMを使う",
+          "is_correct": false,
+          "explanation": "誤り。CloudHSMは月額数万円〜のコスト。FIPS 140-2 Level 3が要件でない限り、KMSで十分。HIPAA・PCI DSSもKMSで対応可能。"
         },
         {
           "id": "B",
@@ -2314,9 +2314,9 @@
         },
         {
           "id": "C",
-          "text": "CloudHSMを初日から契約し、すべての暗号化に専用HSMを使う",
+          "text": "AWS Shield Advancedを契約し、DDoS対策を初日から実施",
           "is_correct": false,
-          "explanation": "誤り。CloudHSMは月額数万円〜のコスト。FIPS 140-2 Level 3が要件でない限り、KMSで十分。HIPAA・PCI DSSもKMSで対応可能。"
+          "explanation": "誤り。Shield Advancedは月額3,000USD〜。トラフィックレベルが上がってから検討で十分。"
         },
         {
           "id": "D",
@@ -2326,9 +2326,9 @@
         },
         {
           "id": "E",
-          "text": "AWS Shield Advancedを契約し、DDoS対策を初日から実施",
-          "is_correct": false,
-          "explanation": "誤り。Shield Advancedは月額3,000USD〜。トラフィックレベルが上がってから検討で十分。"
+          "text": "AWS Control Tower でランディングゾーンを構築し、最小限のOU（Security / Workloads / Sandbox）から開始。Mandatoryガードレール + Region Deny ガードレール（必要リージョンのみ許可）を初日から有効化",
+          "is_correct": true,
+          "explanation": "正解。小規模でもControl Towerは無料（ベース機能）かつ初期から正しいガバナンスを敷ける。"
         }
       ],
       "explanation": "ソロ経営者の Day 1 ガバナンス設計では、(1) 後から修正困難な『骨格』に投資する、(2) Day 1 では発生しないコストは避ける、を両立する。Control Towerは2024年以降ベース機能が実質無料で、初日からのマルチアカウント基盤に最適。GuardDuty、Security Hub、IAM Access Analyzer も組織レベルで有効化すべき基盤サービス。一方、CloudHSMやShield Advancedは要件発生時に検討すれば良い。Audit Managerも実際の監査要求が来てから有効化が経済合理的。Day 1 で『高い基盤』を作り、Day N で『高いオプション』を加えるのがベストプラクティス。",

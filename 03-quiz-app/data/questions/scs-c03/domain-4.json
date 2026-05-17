@@ -15,905 +15,2485 @@
     {
       "id": "scs-c03-domain4-001",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Fundamentals",
       "subtopic": "Principal types",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS IAMにおいて、長期間の永続的なアクセスキー（Access Key ID / Secret Access Key）を保持できるプリンシパルはどれか。",
       "options": [
-        {"id": "A", "text": "IAM Role", "is_correct": false, "explanation": "IAM Roleは一時的な認証情報（STSトークン）を発行するためのもので、長期のアクセスキーは保持しない。"},
-        {"id": "B", "text": "IAM User", "is_correct": true, "explanation": "正解。IAM Userのみが長期のアクセスキーを保持できる。ただしベストプラクティスとしてはIAM Identity Center等での一時的認証情報の利用が推奨される。"},
-        {"id": "C", "text": "IAM Group", "is_correct": false, "explanation": "IAM Groupは権限の付与単位であり、それ自体は認証主体ではない。アクセスキーを持たない。"},
-        {"id": "D", "text": "IAM Identity Center user", "is_correct": false, "explanation": "IAM Identity Centerユーザーは一時的なクレデンシャルでAWSにアクセスする。アクセスキーは持たない。"}
+        {
+          "id": "A",
+          "text": "IAM User",
+          "is_correct": true,
+          "explanation": "正解。IAM Userのみが長期のアクセスキーを保持できる。ただしベストプラクティスとしてはIAM Identity Center等での一時的認証情報の利用が推奨される。"
+        },
+        {
+          "id": "B",
+          "text": "IAM Identity Center user",
+          "is_correct": false,
+          "explanation": "IAM Identity Centerユーザーは一時的なクレデンシャルでAWSにアクセスする。アクセスキーは持たない。"
+        },
+        {
+          "id": "C",
+          "text": "IAM Role",
+          "is_correct": false,
+          "explanation": "IAM Roleは一時的な認証情報（STSトークン）を発行するためのもので、長期のアクセスキーは保持しない。"
+        },
+        {
+          "id": "D",
+          "text": "IAM Group",
+          "is_correct": false,
+          "explanation": "IAM Groupは権限の付与単位であり、それ自体は認証主体ではない。アクセスキーを持たない。"
+        }
       ],
       "explanation": "IAMにおいて長期アクセスキーを持てるのはIAM Userのみ。Roleは sts:AssumeRole 経由で一時クレデンシャルを取得する仕組みで、Groupは権限割当のためのコンテナ、IAM Identity CenterユーザーはSAML/OIDC経由でSTS一時トークンを取得する。AWSは長期キーの最小化（IAM Identity Centerやロールへの移行）を強く推奨している。",
       "references": [
-        {"title": "IAM Identities (users, user groups, and roles)", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html"},
-        {"title": "Security best practices in IAM", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"}
+        {
+          "title": "IAM Identities (users, user groups, and roles)",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html"
+        },
+        {
+          "title": "Security best practices in IAM",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
       ],
-      "tags": ["iam", "identity", "access-keys", "principal", "fundamentals"],
+      "tags": [
+        "iam",
+        "identity",
+        "access-keys",
+        "principal",
+        "fundamentals"
+      ],
       "common_mistakes": [
         "IAM Groupがアクセスキーを持つと誤解する",
         "IAM Roleにアクセスキーを発行できると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-002",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Policy Evaluation",
       "subtopic": "Evaluation logic",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある製造業の親アカウントには次の構成がある: (1) Organizations SCPで s3:DeleteBucket をDeny、(2) IAMユーザに s3:* を Allow するアイデンティティベースポリシー、(3) 対象S3バケットのバケットポリシーで当該IAMユーザに s3:DeleteBucket を Allow、(4) IAMユーザに付与された Permission Boundary は s3:GetObject のみを Allow。このユーザは s3:DeleteBucket を実行できるか？",
       "options": [
-        {"id": "A", "text": "実行できる。バケットポリシーの明示的Allowが他の制限を上書きするため。", "is_correct": false, "explanation": "リソースベースポリシーのAllowはSCPやPermission Boundaryによる暗黙的Denyを上書きしない。明示的Denyはどのレイヤであれ常に優先される。"},
-        {"id": "B", "text": "実行できない。SCPで明示的にDenyされているため。", "is_correct": true, "explanation": "正解。SCPの明示的Denyは評価チェーン内の最強のシグナルで、他のすべてのAllowを無効化する。さらにPermission Boundaryでも当該操作は許可されていない。"},
-        {"id": "C", "text": "実行できる。Permission Boundaryはアイデンティティベースポリシーには適用されない。", "is_correct": false, "explanation": "Permission Boundaryはアイデンティティベースポリシーの上限を設定する。boundaryに含まれない権限は実効許可されない。"},
-        {"id": "D", "text": "実行できない。アイデンティティベースポリシーがバケットポリシーと矛盾するため。", "is_correct": false, "explanation": "アイデンティティとリソースベースが両方Allowであれば矛盾はない。アクセスを止めているのは実際にはSCPの明示Denyである。"}
+        {
+          "id": "A",
+          "text": "実行できる。バケットポリシーの明示的Allowが他の制限を上書きするため。",
+          "is_correct": false,
+          "explanation": "リソースベースポリシーのAllowはSCPやPermission Boundaryによる暗黙的Denyを上書きしない。明示的Denyはどのレイヤであれ常に優先される。"
+        },
+        {
+          "id": "B",
+          "text": "実行できない。SCPで明示的にDenyされているため。",
+          "is_correct": true,
+          "explanation": "正解。SCPの明示的Denyは評価チェーン内の最強のシグナルで、他のすべてのAllowを無効化する。さらにPermission Boundaryでも当該操作は許可されていない。"
+        },
+        {
+          "id": "C",
+          "text": "実行できる。Permission Boundaryはアイデンティティベースポリシーには適用されない。",
+          "is_correct": false,
+          "explanation": "Permission Boundaryはアイデンティティベースポリシーの上限を設定する。boundaryに含まれない権限は実効許可されない。"
+        },
+        {
+          "id": "D",
+          "text": "実行できない。アイデンティティベースポリシーがバケットポリシーと矛盾するため。",
+          "is_correct": false,
+          "explanation": "アイデンティティとリソースベースが両方Allowであれば矛盾はない。アクセスを止めているのは実際にはSCPの明示Denyである。"
+        }
       ],
       "explanation": "AWS IAM評価ロジックは「明示的Deny > Organizations(SCP/RCP) > Resource-based > Identity-based + Permission Boundary + Session policy」の順で評価される。明示的Denyはどのレイヤにあっても他の許可を無効化する。本問はSCPの明示Denyにより最初の段階でDeny決定となる。仮にSCPがなくてもPermission Boundaryが s3:DeleteBucket を許可していないため拒否される。",
       "references": [
-        {"title": "Policy evaluation logic", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"},
-        {"title": "Permissions boundaries for IAM entities", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html"}
+        {
+          "title": "Policy evaluation logic",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"
+        },
+        {
+          "title": "Permissions boundaries for IAM entities",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html"
+        }
       ],
-      "tags": ["iam", "policy-evaluation", "scp", "permission-boundary", "deny-precedence"],
+      "tags": [
+        "iam",
+        "policy-evaluation",
+        "scp",
+        "permission-boundary",
+        "deny-precedence"
+      ],
       "common_mistakes": [
         "リソースベースポリシーがSCPを上書きできると誤解する",
         "Permission Boundaryをアイデンティティベースに適用しないと誤解する",
         "明示Denyの優先度を理解していない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-003",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Permission Boundary",
       "subtopic": "Delegation pattern",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるSaaSスタートアップでは、各開発チームが自分のチーム内の開発者用IAMロールを作成・管理することを許可したい。ただし、開発者ロールには本番S3バケット（接頭辞 prod-）へのアクセスを絶対に付与させたくない。最も適切な実装は？",
       "options": [
-        {"id": "A", "text": "チームリーダーに iam:CreateRole 権限と iam:AttachRolePolicy 権限を付与し、本番S3アクセスを禁止するSCPをOU全体に適用する", "is_correct": false, "explanation": "SCPは有効な制御だが、デリゲーションパターンの本質はPermission Boundaryでチームリーダーが作るロールの上限を設定すること。SCP単独ではチームリーダー自身も含めて広く適用される。"},
-        {"id": "B", "text": "チームリーダーに、Permission Boundary（prod-バケットを Deny）の付与を強制する条件付きの iam:CreateRole/iam:PutRolePolicy 権限を付与する", "is_correct": true, "explanation": "正解。これがPermission Boundaryによるデリゲーションパターン。条件 iam:PermissionsBoundary を使い、特定のboundaryを必ず付与しなければロール作成できないように強制する。"},
-        {"id": "C", "text": "本番S3バケットのバケットポリシーで、開発チームのアカウントを Deny する", "is_correct": false, "explanation": "アカウント単位のDenyは粗すぎ、本番運用ロールも巻き込む可能性がある。問題はチームリーダーが新規作成するロールの上限を制限すること。"},
-        {"id": "D", "text": "AWS Configルールで作成された全ロールを監視し、本番アクセスを持つロールを自動削除する", "is_correct": false, "explanation": "事後検知であり、一時的に過剰権限を持つ時間ができてしまう。Permission Boundaryは事前的（preventive）コントロールとして優れている。"}
+        {
+          "id": "A",
+          "text": "本番S3バケットのバケットポリシーで、開発チームのアカウントを Deny する",
+          "is_correct": false,
+          "explanation": "アカウント単位のDenyは粗すぎ、本番運用ロールも巻き込む可能性がある。問題はチームリーダーが新規作成するロールの上限を制限すること。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Configルールで作成された全ロールを監視し、本番アクセスを持つロールを自動削除する",
+          "is_correct": false,
+          "explanation": "事後検知であり、一時的に過剰権限を持つ時間ができてしまう。Permission Boundaryは事前的（preventive）コントロールとして優れている。"
+        },
+        {
+          "id": "C",
+          "text": "チームリーダーに、Permission Boundary（prod-バケットを Deny）の付与を強制する条件付きの iam:CreateRole/iam:PutRolePolicy 権限を付与する",
+          "is_correct": true,
+          "explanation": "正解。これがPermission Boundaryによるデリゲーションパターン。条件 iam:PermissionsBoundary を使い、特定のboundaryを必ず付与しなければロール作成できないように強制する。"
+        },
+        {
+          "id": "D",
+          "text": "チームリーダーに iam:CreateRole 権限と iam:AttachRolePolicy 権限を付与し、本番S3アクセスを禁止するSCPをOU全体に適用する",
+          "is_correct": false,
+          "explanation": "SCPは有効な制御だが、デリゲーションパターンの本質はPermission Boundaryでチームリーダーが作るロールの上限を設定すること。SCP単独ではチームリーダー自身も含めて広く適用される。"
+        }
       ],
       "explanation": "Permission Boundaryによるデリゲーションは、管理者が「自分以下のロール作成権限」を委譲する標準パターン。チームリーダーが iam:CreateRole/iam:PutRolePolicy を実行できる条件として iam:PermissionsBoundary が特定のboundary ARN と一致することを要求することで、作成された下位ロールはそのboundaryを超える権限を持てない。これにより事前統制が実現する。",
       "references": [
-        {"title": "Permissions boundaries for IAM entities", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html"},
-        {"title": "Delegating responsibility to others using IAM", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries-delegate.html"}
+        {
+          "title": "Permissions boundaries for IAM entities",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html"
+        },
+        {
+          "title": "Delegating responsibility to others using IAM",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries-delegate.html"
+        }
       ],
-      "tags": ["iam", "permission-boundary", "delegation", "saas", "preventive-control"],
+      "tags": [
+        "iam",
+        "permission-boundary",
+        "delegation",
+        "saas",
+        "preventive-control"
+      ],
       "common_mistakes": [
         "Permission BoundaryとSCPの使い分けを理解していない",
         "boundaryの付与強制を条件で実現する方法を知らない",
         "事後検知（Config）と事前統制（boundary）の違いを軽視する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-004",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Service Control Policy vs Resource Control Policy",
       "subtopic": "SCP vs RCP",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある医療機関がHIPAA準拠のため、組織内の全アカウントのS3バケットに対し「外部AWSアカウントからの GetObject を一律拒否」したい。組織外プリンシパル（IAMユーザ・ロール）が組織のリソースにアクセスできないようにしたい場合、最も適切なAWSコントロールは？",
       "options": [
-        {"id": "A", "text": "Service Control Policy (SCP) で s3:GetObject を Deny する", "is_correct": false, "explanation": "SCPは組織内のIAMプリンシパル（自組織のユーザ・ロール）が実行するアクションを制限する。組織外のプリンシパルが組織のS3バケットにアクセスする場合、SCPは適用されない。"},
-        {"id": "B", "text": "Resource Control Policy (RCP) で aws:PrincipalOrgID が組織IDと一致しない場合に s3:GetObject を Deny する", "is_correct": true, "explanation": "正解。RCP（2024年導入）はリソース側に適用される組織横断ポリシーで、組織外プリンシパルからのアクセスを一括で阻止できる。aws:PrincipalOrgIDで組織メンバーシップを判定するのが定石。"},
-        {"id": "C", "text": "全S3バケットに同じバケットポリシーを手動付与する", "is_correct": false, "explanation": "技術的には可能だが、新規バケットへの自動適用や運用面で破綻する。RCPなら組織レベルで一元的に強制できる。"},
-        {"id": "D", "text": "AWS WAFで組織外IPからのリクエストをブロックする", "is_correct": false, "explanation": "WAFはL7のリクエストフィルタリングで、IAMプリンシパル概念を持たない。組織外アカウントからの正規API呼び出しをブロックできない。"}
+        {
+          "id": "A",
+          "text": "AWS WAFで組織外IPからのリクエストをブロックする",
+          "is_correct": false,
+          "explanation": "WAFはL7のリクエストフィルタリングで、IAMプリンシパル概念を持たない。組織外アカウントからの正規API呼び出しをブロックできない。"
+        },
+        {
+          "id": "B",
+          "text": "Service Control Policy (SCP) で s3:GetObject を Deny する",
+          "is_correct": false,
+          "explanation": "SCPは組織内のIAMプリンシパル（自組織のユーザ・ロール）が実行するアクションを制限する。組織外のプリンシパルが組織のS3バケットにアクセスする場合、SCPは適用されない。"
+        },
+        {
+          "id": "C",
+          "text": "全S3バケットに同じバケットポリシーを手動付与する",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、新規バケットへの自動適用や運用面で破綻する。RCPなら組織レベルで一元的に強制できる。"
+        },
+        {
+          "id": "D",
+          "text": "Resource Control Policy (RCP) で aws:PrincipalOrgID が組織IDと一致しない場合に s3:GetObject を Deny する",
+          "is_correct": true,
+          "explanation": "正解。RCP（2024年導入）はリソース側に適用される組織横断ポリシーで、組織外プリンシパルからのアクセスを一括で阻止できる。aws:PrincipalOrgIDで組織メンバーシップを判定するのが定石。"
+        }
       ],
       "explanation": "SCPとRCPは2024年に登場した補完的コントロール。SCPは「自組織のプリンシパルが何をできるか」（identityサイド）を制限し、RCPは「自組織のリソースに誰がアクセスできるか」（resourceサイド）を制限する。組織外プリンシパルのアクセスを一律遮断するにはRCPが正解。RCPは現在S3、KMS、SQS、Secrets Manager、STSなどに対応。",
       "references": [
-        {"title": "Resource control policies (RCPs)", "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html"},
-        {"title": "Service control policies (SCPs)", "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html"}
+        {
+          "title": "Resource control policies (RCPs)",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html"
+        },
+        {
+          "title": "Service control policies (SCPs)",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html"
+        }
       ],
-      "tags": ["scp", "rcp", "organizations", "data-perimeter", "compliance"],
+      "tags": [
+        "scp",
+        "rcp",
+        "organizations",
+        "data-perimeter",
+        "compliance"
+      ],
       "common_mistakes": [
         "SCPで外部プリンシパルを制限できると誤解する",
         "RCPの存在自体を知らない",
         "バケットポリシーを大量に手動管理する設計を選ぶ"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-005",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Service Control Policy vs Resource Control Policy",
       "subtopic": "Use case differentiation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "次のうち、Service Control Policy（SCP）ではなくResource Control Policy（RCP）を使うべき要件はどれか。",
       "options": [
-        {"id": "A", "text": "組織内の全IAMユーザがルートアカウントの操作を実行できないようにする", "is_correct": false, "explanation": "これはSCPの典型用途。組織内プリンシパルが何ができるかの制限はSCP。"},
-        {"id": "B", "text": "全アカウントで KMS キーへのアクセスをVPC エンドポイント経由に限定する（外部からのアクセスを含む）", "is_correct": true, "explanation": "正解。RCPはリソース側で強制する。組織外のプリンシパルやVPCエンドポイントを使わないアクセスも含めて制限したい場合、リソースに適用されるRCPが必要。SCPは組織内アイデンティティのみ制御する。"},
-        {"id": "C", "text": "開発OUのメンバーが us-east-1 以外のリージョンを使えないようにする", "is_correct": false, "explanation": "これはSCPの典型用途。組織内アイデンティティの行動制限。"},
-        {"id": "D", "text": "全アカウントで CloudTrail の無効化を禁止する", "is_correct": false, "explanation": "これはSCPの用途。組織メンバーがCloudTrailを止めるのを防ぐ。"}
+        {
+          "id": "A",
+          "text": "全アカウントで KMS キーへのアクセスをVPC エンドポイント経由に限定する（外部からのアクセスを含む）",
+          "is_correct": true,
+          "explanation": "正解。RCPはリソース側で強制する。組織外のプリンシパルやVPCエンドポイントを使わないアクセスも含めて制限したい場合、リソースに適用されるRCPが必要。SCPは組織内アイデンティティのみ制御する。"
+        },
+        {
+          "id": "B",
+          "text": "開発OUのメンバーが us-east-1 以外のリージョンを使えないようにする",
+          "is_correct": false,
+          "explanation": "これはSCPの典型用途。組織内アイデンティティの行動制限。"
+        },
+        {
+          "id": "C",
+          "text": "組織内の全IAMユーザがルートアカウントの操作を実行できないようにする",
+          "is_correct": false,
+          "explanation": "これはSCPの典型用途。組織内プリンシパルが何ができるかの制限はSCP。"
+        },
+        {
+          "id": "D",
+          "text": "全アカウントで CloudTrail の無効化を禁止する",
+          "is_correct": false,
+          "explanation": "これはSCPの用途。組織メンバーがCloudTrailを止めるのを防ぐ。"
+        }
       ],
       "explanation": "SCPとRCPの分業を理解することがSCS-C03の重要トピック。SCP=identityサイド（自組織のプリンシパルの最大権限上限）、RCP=resourceサイド（自組織リソースへのアクセスゲート）。Bは外部プリンシパル含めた制御が必要なのでRCP一択。A/C/DはいずれもアイデンティティベースのコントロールでSCPが正解。",
       "references": [
-        {"title": "Resource control policies (RCPs)", "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html"},
-        {"title": "How RCPs and SCPs work together", "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html"}
+        {
+          "title": "Resource control policies (RCPs)",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html"
+        },
+        {
+          "title": "How RCPs and SCPs work together",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html"
+        }
       ],
-      "tags": ["scp", "rcp", "organizations", "policy-design", "data-perimeter"],
+      "tags": [
+        "scp",
+        "rcp",
+        "organizations",
+        "policy-design",
+        "data-perimeter"
+      ],
       "common_mistakes": [
         "SCPとRCPを同じものと混同する",
         "RCPで組織内アイデンティティの行動を制限しようとする",
         "外部アクセス制御をSCPで実装しようとする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-006",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Identity Center",
       "subtopic": "Permission Sets",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある教育系SaaS企業がAWS Organizations配下で30アカウントを運用中。Active DirectoryのユーザがブラウザからAWSコンソールにシングルサインオンし、各アカウントで職務に応じた権限のみを使えるようにしたい。最も推奨される構成は？",
       "options": [
-        {"id": "A", "text": "各アカウントにIAMユーザを作成し、ADグループからクロスアカウントロールをAssumeRoleするスクリプトを配布する", "is_correct": false, "explanation": "30アカウント分のIAMユーザ管理は運用負荷が高く、長期クレデンシャルのリスクもある。AWSの推奨はIAM Identity Center。"},
-        {"id": "B", "text": "AWS IAM Identity Center を有効化し、AD Connectorで既存ADと統合、Permission Set を作成して各アカウントにマッピングする", "is_correct": true, "explanation": "正解。Identity Center + AD ConnectorはマルチアカウントSSOの標準パターン。Permission Setは複数アカウントに自動展開され、ジョブ機能ベースの権限管理ができる。"},
-        {"id": "C", "text": "Amazon Cognito User Pool にAD連携し、Cognitoから各アカウントのIAMロールをAssumeRoleする", "is_correct": false, "explanation": "Cognitoはアプリケーションのエンドユーザ向け（B2C/B2B2C）。社内のAWSコンソールアクセスはIdentity Centerが正解。"},
-        {"id": "D", "text": "各アカウントでSAML 2.0 federation を個別に設定し、ADFSをIdPとして登録する", "is_correct": false, "explanation": "技術的には可能だが、30アカウントへの個別設定は運用負荷が高い。Identity Centerが組織全体のSSOを一元管理する。"}
+        {
+          "id": "A",
+          "text": "各アカウントでSAML 2.0 federation を個別に設定し、ADFSをIdPとして登録する",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、30アカウントへの個別設定は運用負荷が高い。Identity Centerが組織全体のSSOを一元管理する。"
+        },
+        {
+          "id": "B",
+          "text": "AWS IAM Identity Center を有効化し、AD Connectorで既存ADと統合、Permission Set を作成して各アカウントにマッピングする",
+          "is_correct": true,
+          "explanation": "正解。Identity Center + AD ConnectorはマルチアカウントSSOの標準パターン。Permission Setは複数アカウントに自動展開され、ジョブ機能ベースの権限管理ができる。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Cognito User Pool にAD連携し、Cognitoから各アカウントのIAMロールをAssumeRoleする",
+          "is_correct": false,
+          "explanation": "Cognitoはアプリケーションのエンドユーザ向け（B2C/B2B2C）。社内のAWSコンソールアクセスはIdentity Centerが正解。"
+        },
+        {
+          "id": "D",
+          "text": "各アカウントにIAMユーザを作成し、ADグループからクロスアカウントロールをAssumeRoleするスクリプトを配布する",
+          "is_correct": false,
+          "explanation": "30アカウント分のIAMユーザ管理は運用負荷が高く、長期クレデンシャルのリスクもある。AWSの推奨はIAM Identity Center。"
+        }
       ],
       "explanation": "AWS IAM Identity Center（旧AWS SSO）はマルチアカウント環境のヒューマンアクセスの標準。外部IdP（AD/Okta/Azure AD等）と統合し、Permission Setで複数アカウントに対する権限を一元管理できる。Permission Setは内部的に各アカウントにIAMロールを自動作成し、SAMLアサーションで一時クレデンシャルを発行する。Cognitoはアプリのエンドユーザ向けで用途が異なる。",
       "references": [
-        {"title": "What is IAM Identity Center?", "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html"},
-        {"title": "Permission sets", "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html"}
+        {
+          "title": "What is IAM Identity Center?",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html"
+        },
+        {
+          "title": "Permission sets",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html"
+        }
       ],
-      "tags": ["iam-identity-center", "sso", "multi-account", "active-directory", "permission-sets"],
+      "tags": [
+        "iam-identity-center",
+        "sso",
+        "multi-account",
+        "active-directory",
+        "permission-sets"
+      ],
       "common_mistakes": [
         "CognitoとIdentity Centerの用途を混同する",
         "30アカウント分のSAML個別設定を選んでしまう",
         "IAMユーザでマルチアカウント運用しようとする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-007",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Access Analyzer",
       "subtopic": "External access findings",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるFinTech企業のセキュリティチームは、組織内で意図せず外部アカウントや一般公開されているリソース（S3、KMS、IAM Role、Lambda等）を発見・継続監視したい。最も適切なソリューションは？",
       "options": [
-        {"id": "A", "text": "AWS Config の managed rules（s3-bucket-public-read-prohibited 等）で各リソースタイプを個別チェックする", "is_correct": false, "explanation": "Configルールはリソース個別の設定評価で、一部使えるが組織横断の外部アクセス分析には特化していない。Access Analyzerが包括的。"},
-        {"id": "B", "text": "IAM Access Analyzer を Organization の信頼ゾーンで有効化し、external access findings を継続監視する", "is_correct": true, "explanation": "正解。Access Analyzerは組織を信頼ゾーンとして指定すると、組織外のプリンシパルからアクセス可能なリソースを自動検出する。S3、KMS、IAMロール、Lambda、SQS、Secrets Manager等多数のリソースタイプに対応。"},
-        {"id": "C", "text": "Macie で全S3バケットの公開設定をスキャンする", "is_correct": false, "explanation": "Macieは機密データ検出が主目的。公開設定の検出は限定的で、KMSキーやIAMロールの外部アクセス分析はできない。"},
-        {"id": "D", "text": "Trusted Advisor の S3 Bucket Permissions チェックを参照する", "is_correct": false, "explanation": "Trusted AdvisorはS3公開バケットの簡易チェックのみで、KMSやIAMロールの外部アクセス分析はカバーしない。"}
+        {
+          "id": "A",
+          "text": "Trusted Advisor の S3 Bucket Permissions チェックを参照する",
+          "is_correct": false,
+          "explanation": "Trusted AdvisorはS3公開バケットの簡易チェックのみで、KMSやIAMロールの外部アクセス分析はカバーしない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Config の managed rules（s3-bucket-public-read-prohibited 等）で各リソースタイプを個別チェックする",
+          "is_correct": false,
+          "explanation": "Configルールはリソース個別の設定評価で、一部使えるが組織横断の外部アクセス分析には特化していない。Access Analyzerが包括的。"
+        },
+        {
+          "id": "C",
+          "text": "IAM Access Analyzer を Organization の信頼ゾーンで有効化し、external access findings を継続監視する",
+          "is_correct": true,
+          "explanation": "正解。Access Analyzerは組織を信頼ゾーンとして指定すると、組織外のプリンシパルからアクセス可能なリソースを自動検出する。S3、KMS、IAMロール、Lambda、SQS、Secrets Manager等多数のリソースタイプに対応。"
+        },
+        {
+          "id": "D",
+          "text": "Macie で全S3バケットの公開設定をスキャンする",
+          "is_correct": false,
+          "explanation": "Macieは機密データ検出が主目的。公開設定の検出は限定的で、KMSキーやIAMロールの外部アクセス分析はできない。"
+        }
       ],
       "explanation": "IAM Access Analyzerは組織またはアカウントを「信頼ゾーン」として、その境界外からアクセス可能なリソースを論理ベースの形式検証で検出する。Organization単位で有効化すると組織全体を一括監視できる。サポート対象はS3、KMS、IAM Role、Lambda、SQS、Secrets Manager、SNS、EFS、ECR、RDS Snapshot、EBS Snapshot等。Findingsは EventBridge と連携して自動対応も可能。",
       "references": [
-        {"title": "Using AWS IAM Access Analyzer", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"},
-        {"title": "Access Analyzer findings", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-findings.html"}
+        {
+          "title": "Using AWS IAM Access Analyzer",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+        },
+        {
+          "title": "Access Analyzer findings",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-findings.html"
+        }
       ],
-      "tags": ["access-analyzer", "external-access", "fintech", "data-perimeter", "iam"],
+      "tags": [
+        "access-analyzer",
+        "external-access",
+        "fintech",
+        "data-perimeter",
+        "iam"
+      ],
       "common_mistakes": [
         "Macieで全種類のリソース公開を検出できると誤解する",
         "Configルールだけで包括的監視ができると思う",
         "Access AnalyzerをIAMロールにしか使えないと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-008",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Access Analyzer",
       "subtopic": "Unused access analyzer",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある企業が「最小権限の原則」を継続的に実現するため、組織内でしばらく使われていないIAMロール・ユーザ・アクセスキー・パスワード・許可（権限）を自動検出したい。最も適切な機能は？",
       "options": [
-        {"id": "A", "text": "AWS CloudTrail Insights を使い、不審な挙動を検出する", "is_correct": false, "explanation": "CloudTrail Insightsは異常な操作量の検出で、未使用アクセスの追跡用ではない。"},
-        {"id": "B", "text": "IAM Access Analyzer の unused access analyzer を有効化する", "is_correct": true, "explanation": "正解。2023年に追加された unused access analyzer は、未使用ロール・ユーザ・アクセスキー・パスワード・付与済みだが使われていない権限を継続的に検出する。"},
-        {"id": "C", "text": "AWS Config の iam-user-unused-credentials-check ルールのみで対応する", "is_correct": false, "explanation": "このルールはアクセスキー・パスワード未使用の検出だが、ロールや個別権限の未使用は検出できない。Access Analyzerのほうが包括的。"},
-        {"id": "D", "text": "IAM Credential Report を月次でエクスポートし、手動レビューする", "is_correct": false, "explanation": "Credential Reportはユーザ単位の認証情報状況のみで、ロールや個別権限の未使用は分からない。手動運用は継続的監視に向かない。"}
+        {
+          "id": "A",
+          "text": "AWS CloudTrail Insights を使い、不審な挙動を検出する",
+          "is_correct": false,
+          "explanation": "CloudTrail Insightsは異常な操作量の検出で、未使用アクセスの追跡用ではない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Config の iam-user-unused-credentials-check ルールのみで対応する",
+          "is_correct": false,
+          "explanation": "このルールはアクセスキー・パスワード未使用の検出だが、ロールや個別権限の未使用は検出できない。Access Analyzerのほうが包括的。"
+        },
+        {
+          "id": "C",
+          "text": "IAM Credential Report を月次でエクスポートし、手動レビューする",
+          "is_correct": false,
+          "explanation": "Credential Reportはユーザ単位の認証情報状況のみで、ロールや個別権限の未使用は分からない。手動運用は継続的監視に向かない。"
+        },
+        {
+          "id": "D",
+          "text": "IAM Access Analyzer の unused access analyzer を有効化する",
+          "is_correct": true,
+          "explanation": "正解。2023年に追加された unused access analyzer は、未使用ロール・ユーザ・アクセスキー・パスワード・付与済みだが使われていない権限を継続的に検出する。"
+        }
       ],
       "explanation": "Access Analyzerは大きく3機能に分かれる: (1) external access analyzer（外部アクセス検出）、(2) unused access analyzer（未使用検出）、(3) policy validation/custom checks（ポリシー検証）。unused access analyzer は最小権限の継続的実現に必須で、未使用ロール・ユーザ・アクセスキー・パスワード・個別権限まで分析する。findingsを EventBridge → 自動修復に繋げるのも一般的。",
       "references": [
-        {"title": "Findings for unused access", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-findings-unused.html"},
-        {"title": "IAM Access Analyzer features", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"}
+        {
+          "title": "Findings for unused access",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-findings-unused.html"
+        },
+        {
+          "title": "IAM Access Analyzer features",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+        }
       ],
-      "tags": ["access-analyzer", "unused-access", "least-privilege", "iam", "automation"],
+      "tags": [
+        "access-analyzer",
+        "unused-access",
+        "least-privilege",
+        "iam",
+        "automation"
+      ],
       "common_mistakes": [
         "Access Analyzerをexternal access専用と思い込む",
         "Configルールだけで未使用権限を検出できると誤解する",
         "手動Credential Reportを最適と考える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-009",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "STS",
       "subtopic": "AssumeRole vs AssumeRoleWithSAML vs AssumeRoleWithWebIdentity",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "次のSTS API について、用途の組み合わせとして正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "AssumeRole: SAML IdPからフェデレーション、AssumeRoleWithSAML: 別アカウントからのロール引き受け、AssumeRoleWithWebIdentity: モバイルアプリのCognito連携", "is_correct": false, "explanation": "AssumeRoleとAssumeRoleWithSAMLの説明が逆になっている。"},
-        {"id": "B", "text": "AssumeRole: 既存IAMクレデンシャルでロール引き受け（クロスアカウント等）、AssumeRoleWithSAML: SAML 2.0 IdPからのフェデレーション、AssumeRoleWithWebIdentity: OIDC（Cognito、Google、Facebook等）からのフェデレーション", "is_correct": true, "explanation": "正解。3つのSTS APIは認証元による使い分け。AssumeRoleはAWSクレデンシャルを既に持つ主体（IAMユーザ・他のロール）が別ロールを引き受ける。AssumeRoleWithSAMLは社内ADFS等のSAML IdP、AssumeRoleWithWebIdentityはOIDC（Web/モバイル）。"},
-        {"id": "C", "text": "AssumeRole: ルートアカウント専用、AssumeRoleWithSAML: クロスアカウント、AssumeRoleWithWebIdentity: EC2インスタンスメタデータ", "is_correct": false, "explanation": "EC2インスタンスメタデータはInstance Profile経由で内部的にAssumeRoleが行われ、別APIではない。"},
-        {"id": "D", "text": "AssumeRole: OIDC連携、AssumeRoleWithSAML: モバイルアプリ、AssumeRoleWithWebIdentity: 社内AD連携", "is_correct": false, "explanation": "全てのAPIの用途が誤っている。"}
+        {
+          "id": "A",
+          "text": "AssumeRole: 既存IAMクレデンシャルでロール引き受け（クロスアカウント等）、AssumeRoleWithSAML: SAML 2.0 IdPからのフェデレーション、AssumeRoleWithWebIdentity: OIDC（Cognito、Google、Facebook等）からのフェデレーション",
+          "is_correct": true,
+          "explanation": "正解。3つのSTS APIは認証元による使い分け。AssumeRoleはAWSクレデンシャルを既に持つ主体（IAMユーザ・他のロール）が別ロールを引き受ける。AssumeRoleWithSAMLは社内ADFS等のSAML IdP、AssumeRoleWithWebIdentityはOIDC（Web/モバイル）。"
+        },
+        {
+          "id": "B",
+          "text": "AssumeRole: ルートアカウント専用、AssumeRoleWithSAML: クロスアカウント、AssumeRoleWithWebIdentity: EC2インスタンスメタデータ",
+          "is_correct": false,
+          "explanation": "EC2インスタンスメタデータはInstance Profile経由で内部的にAssumeRoleが行われ、別APIではない。"
+        },
+        {
+          "id": "C",
+          "text": "AssumeRole: OIDC連携、AssumeRoleWithSAML: モバイルアプリ、AssumeRoleWithWebIdentity: 社内AD連携",
+          "is_correct": false,
+          "explanation": "全てのAPIの用途が誤っている。"
+        },
+        {
+          "id": "D",
+          "text": "AssumeRole: SAML IdPからフェデレーション、AssumeRoleWithSAML: 別アカウントからのロール引き受け、AssumeRoleWithWebIdentity: モバイルアプリのCognito連携",
+          "is_correct": false,
+          "explanation": "AssumeRoleとAssumeRoleWithSAMLの説明が逆になっている。"
+        }
       ],
       "explanation": "STS APIの使い分け: AssumeRole=既存AWSアイデンティティから他ロールへの移行（クロスアカウント、Switch Role、サービスロール等）、AssumeRoleWithSAML=SAML 2.0 IdP（ADFS、Okta、Azure AD等）からのフェデレーション、AssumeRoleWithWebIdentity=OIDC IdP（Cognito、Google、GitHub Actions OIDC、Kubernetes IRSA等）からのフェデレーション。GitHub Actions OIDC を使ったCI/CDでは AssumeRoleWithWebIdentity が呼ばれる。",
       "references": [
-        {"title": "AWS STS API Reference", "url": "https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html"},
-        {"title": "AssumeRole API", "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"}
+        {
+          "title": "AWS STS API Reference",
+          "url": "https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html"
+        },
+        {
+          "title": "AssumeRole API",
+          "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"
+        }
       ],
-      "tags": ["sts", "assume-role", "saml", "oidc", "federation"],
+      "tags": [
+        "sts",
+        "assume-role",
+        "saml",
+        "oidc",
+        "federation"
+      ],
       "common_mistakes": [
         "AssumeRoleWithSAMLとAssumeRoleWithWebIdentityを混同する",
         "AssumeRoleはクロスアカウント専用と誤解する",
         "GitHub Actions OIDCでSAMLを使うと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-010",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Cross-account access",
       "subtopic": "External ID",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "あるSaaSベンダがB2B顧客のAWSアカウントに対し AssumeRole で監査読み取り操作を行うサービスを提供している。「混乱した代理人問題（confused deputy）」を防ぐため、ロールの sts:AssumeRole 信頼ポリシーに含めるべき必須要素は？",
       "options": [
-        {"id": "A", "text": "Principal にSaaSベンダの12桁アカウントID、Condition の sts:ExternalId に顧客固有のランダムなシークレット値を要求する", "is_correct": true, "explanation": "正解。External IDは顧客が一意に発行するシークレットで、SaaSベンダが他顧客のExternal IDで誤って／悪意を持って引き受けるのを防ぐ。これがconfused deputy問題の標準対策。"},
-        {"id": "B", "text": "Principal を *(ワイルドカード)、Condition の aws:SourceIp にSaaSベンダのIPレンジを指定", "is_correct": false, "explanation": "Principal: * は危険すぎる。IPベース制限はSaaSベンダがNAT IPを共有していると無効化される。"},
-        {"id": "C", "text": "Principal にSaaSベンダのアカウントID、Condition の aws:RequestTag にテナントIDを指定", "is_correct": false, "explanation": "RequestTagはAPI呼び出しのタグ条件で、AssumeRoleのフェデレーション識別には使わない。External IDが正解。"},
-        {"id": "D", "text": "Principal を SaaSベンダのIAMユーザ、Condition の sts:RoleSessionName に固定値を指定", "is_correct": false, "explanation": "RoleSessionNameは識別ログのためで、悪用防止になるシークレットではない。SessionNameは攻撃者も任意指定できる。"}
+        {
+          "id": "A",
+          "text": "Principal にSaaSベンダのアカウントID、Condition の aws:RequestTag にテナントIDを指定",
+          "is_correct": false,
+          "explanation": "RequestTagはAPI呼び出しのタグ条件で、AssumeRoleのフェデレーション識別には使わない。External IDが正解。"
+        },
+        {
+          "id": "B",
+          "text": "Principal にSaaSベンダの12桁アカウントID、Condition の sts:ExternalId に顧客固有のランダムなシークレット値を要求する",
+          "is_correct": true,
+          "explanation": "正解。External IDは顧客が一意に発行するシークレットで、SaaSベンダが他顧客のExternal IDで誤って／悪意を持って引き受けるのを防ぐ。これがconfused deputy問題の標準対策。"
+        },
+        {
+          "id": "C",
+          "text": "Principal を SaaSベンダのIAMユーザ、Condition の sts:RoleSessionName に固定値を指定",
+          "is_correct": false,
+          "explanation": "RoleSessionNameは識別ログのためで、悪用防止になるシークレットではない。SessionNameは攻撃者も任意指定できる。"
+        },
+        {
+          "id": "D",
+          "text": "Principal を *(ワイルドカード)、Condition の aws:SourceIp にSaaSベンダのIPレンジを指定",
+          "is_correct": false,
+          "explanation": "Principal: * は危険すぎる。IPベース制限はSaaSベンダがNAT IPを共有していると無効化される。"
+        }
       ],
       "explanation": "Confused deputy問題は、SaaS（代理人）が複数顧客のロールを同じプログラムで引き受ける時、悪意ある顧客Aが他顧客BのロールARNを発見してSaaS経由でアクセスを要求する攻撃。External IDは顧客が発行する秘密値で、信頼ポリシーの sts:ExternalId 条件に含めることでSaaS側の設定ミスや悪用を防ぐ。AWS推奨パターン。SaaSベンダ自身が外部からExternalIDを推測できない仕組みが重要。",
       "references": [
-        {"title": "How to use external ID when granting access to your AWS resources", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"},
-        {"title": "The confused deputy problem", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html"}
+        {
+          "title": "How to use external ID when granting access to your AWS resources",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
+        },
+        {
+          "title": "The confused deputy problem",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html"
+        }
       ],
-      "tags": ["sts", "external-id", "cross-account", "confused-deputy", "saas"],
+      "tags": [
+        "sts",
+        "external-id",
+        "cross-account",
+        "confused-deputy",
+        "saas"
+      ],
       "common_mistakes": [
         "External IDを単なる識別子と誤解する（実際はシークレット）",
         "IP制限で代用できると思う",
         "RoleSessionNameをセキュリティ機構と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-011",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Cognito",
       "subtopic": "User Pool vs Identity Pool",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Amazon Cognito の User Pool と Identity Pool（Federated Identities）の主な違いとして正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "User PoolはB2B SaaSのみ、Identity PoolはB2Cのみで使う", "is_correct": false, "explanation": "両者は用途が異なるが、業態（B2B/B2C）で分かれているわけではない。"},
-        {"id": "B", "text": "User Poolはアプリ用のユーザーディレクトリ（認証）、Identity Poolはユーザに対してAWSサービス（S3、DynamoDB等）への一時クレデンシャルを発行（認可）", "is_correct": true, "explanation": "正解。User Pool=認証（ユーザディレクトリ、JWT発行）、Identity Pool=AWSへのフェデレーション認可（IAM一時クレデンシャル発行）。両者を組み合わせて使うことが多い。"},
-        {"id": "C", "text": "User Poolは無料、Identity Poolは有料", "is_correct": false, "explanation": "課金体系の違いだけでは概念的差分を説明できない。両者とも無料枠と有料枠がある。"},
-        {"id": "D", "text": "User PoolはOIDCのみ、Identity PoolはSAMLのみをサポート", "is_correct": false, "explanation": "両者ともOIDC/SAMLをサポートする。プロトコルでの分類は誤り。"}
+        {
+          "id": "A",
+          "text": "User Poolは無料、Identity Poolは有料",
+          "is_correct": false,
+          "explanation": "課金体系の違いだけでは概念的差分を説明できない。両者とも無料枠と有料枠がある。"
+        },
+        {
+          "id": "B",
+          "text": "User PoolはOIDCのみ、Identity PoolはSAMLのみをサポート",
+          "is_correct": false,
+          "explanation": "両者ともOIDC/SAMLをサポートする。プロトコルでの分類は誤り。"
+        },
+        {
+          "id": "C",
+          "text": "User Poolはアプリ用のユーザーディレクトリ（認証）、Identity Poolはユーザに対してAWSサービス（S3、DynamoDB等）への一時クレデンシャルを発行（認可）",
+          "is_correct": true,
+          "explanation": "正解。User Pool=認証（ユーザディレクトリ、JWT発行）、Identity Pool=AWSへのフェデレーション認可（IAM一時クレデンシャル発行）。両者を組み合わせて使うことが多い。"
+        },
+        {
+          "id": "D",
+          "text": "User PoolはB2B SaaSのみ、Identity PoolはB2Cのみで使う",
+          "is_correct": false,
+          "explanation": "両者は用途が異なるが、業態（B2B/B2C）で分かれているわけではない。"
+        }
       ],
       "explanation": "Cognitoの2つのコアコンポーネント: (1) User Poolはマネージドなユーザディレクトリで、ユーザのサインアップ/サインイン、MFA、JWT発行、外部IdPフェデレーションを担う。(2) Identity Pool（Cognito Federated Identities）はそのユーザ（または匿名ユーザ）にIAMロールを割り当てて、AWS APIへの一時クレデンシャルを発行する。例: モバイルアプリでUser Pool認証→Identity PoolでDynamoDBに直接書き込む権限を取得。",
       "references": [
-        {"title": "Amazon Cognito user pools", "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"},
-        {"title": "Amazon Cognito identity pools", "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html"}
+        {
+          "title": "Amazon Cognito user pools",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"
+        },
+        {
+          "title": "Amazon Cognito identity pools",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html"
+        }
       ],
-      "tags": ["cognito", "user-pool", "identity-pool", "authentication", "authorization"],
+      "tags": [
+        "cognito",
+        "user-pool",
+        "identity-pool",
+        "authentication",
+        "authorization"
+      ],
       "common_mistakes": [
         "User PoolとIdentity Poolを同一視する",
         "Identity Pool単独でアプリ認証ができると誤解する",
         "User PoolがAWSへの直接アクセス権を発行できると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-012",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Cognito",
       "subtopic": "ALB integration",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "ある製造業の社内Webアプリ（東海地方拠点）で、社内ADユーザのみがALB配下のWebアプリにアクセスできるようにしたい。アプリ側にOAuth実装を加えたくない。最小実装の構成は？",
+      "stem": "ある製造業の社内Webアプリ（自社拠点）で、社内ADユーザのみがALB配下のWebアプリにアクセスできるようにしたい。アプリ側にOAuth実装を加えたくない。最小実装の構成は？",
       "options": [
-        {"id": "A", "text": "Application Load Balancer の認証アクションで Cognito User Pool を指定し、User PoolにADFS（SAML）をフェデレーションIdPとして設定する", "is_correct": true, "explanation": "正解。ALB の Authenticate Cognito アクションを使うと、認証はALBレイヤで完結し、アプリにOAuth/OIDCコードを追加せずにユーザ情報をHTTPヘッダで受け取れる。"},
-        {"id": "B", "text": "ALBのターゲットグループに直接ADFSを指定する", "is_correct": false, "explanation": "ALBターゲットグループは認証IdPの指定先ではない。認証アクションは別機能。"},
-        {"id": "C", "text": "アプリ自体にOIDCクライアントライブラリを実装し、Cognito User Poolと連携する", "is_correct": false, "explanation": "技術的には可能だが「アプリ側にOAuth実装を加えたくない」という要件に反する。ALB認証アクションのほうが最小実装。"},
-        {"id": "D", "text": "AWS WAF のカスタムルールで認証ヘッダを検証する", "is_correct": false, "explanation": "WAFは認証システムではない。カスタムルールでJWT検証は可能だが、認証フロー自体は別途必要。"}
+        {
+          "id": "A",
+          "text": "ALBのターゲットグループに直接ADFSを指定する",
+          "is_correct": false,
+          "explanation": "ALBターゲットグループは認証IdPの指定先ではない。認証アクションは別機能。"
+        },
+        {
+          "id": "B",
+          "text": "アプリ自体にOIDCクライアントライブラリを実装し、Cognito User Poolと連携する",
+          "is_correct": false,
+          "explanation": "技術的には可能だが「アプリ側にOAuth実装を加えたくない」という要件に反する。ALB認証アクションのほうが最小実装。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAF のカスタムルールで認証ヘッダを検証する",
+          "is_correct": false,
+          "explanation": "WAFは認証システムではない。カスタムルールでJWT検証は可能だが、認証フロー自体は別途必要。"
+        },
+        {
+          "id": "D",
+          "text": "Application Load Balancer の認証アクションで Cognito User Pool を指定し、User PoolにADFS（SAML）をフェデレーションIdPとして設定する",
+          "is_correct": true,
+          "explanation": "正解。ALB の Authenticate Cognito アクションを使うと、認証はALBレイヤで完結し、アプリにOAuth/OIDCコードを追加せずにユーザ情報をHTTPヘッダで受け取れる。"
+        }
       ],
       "explanation": "ALB の認証アクション（Authenticate Cognito / Authenticate OIDC）はマネージド認証機能で、認証フローをALBに任せられる。Cognito User Pool に ADFS を SAML IdPとして登録し、ALBで Authenticate Cognito を設定すると、未認証ユーザは自動的に Cognito hosted UI にリダイレクトされ、認証後に x-amzn-oidc-data ヘッダでユーザ情報がアプリに渡される。アプリ側コード変更最小。",
       "references": [
-        {"title": "Authenticate users using an ALB", "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html"},
-        {"title": "Adding SAML identity providers to a user pool", "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-saml-idp.html"}
+        {
+          "title": "Authenticate users using an ALB",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html"
+        },
+        {
+          "title": "Adding SAML identity providers to a user pool",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-saml-idp.html"
+        }
       ],
-      "tags": ["cognito", "alb", "authentication", "saml", "manufacturing"],
+      "tags": [
+        "cognito",
+        "alb",
+        "authentication",
+        "saml",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "ALB認証アクションの存在を知らず、アプリ側に実装する",
         "ターゲットグループにIdPを設定すると誤解する",
         "WAFを認証ゲートと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-013",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Resource Access Manager (RAM)",
       "subtopic": "Resource sharing",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるエンタープライズ企業がOrganizations配下で「ネットワーク中央管理アカウント」のVPC subnetを開発・本番アカウントに共有したい。各アカウントでVPCを重複して作成したくない。最も適切なAWSサービスは？",
       "options": [
-        {"id": "A", "text": "VPC Peering で各アカウントのVPCを接続する", "is_correct": false, "explanation": "Peeringは別VPC同士の接続で、subnet 共有とは異なる。各アカウントで個別にVPCを作る前提になる。"},
-        {"id": "B", "text": "AWS Resource Access Manager (RAM) でsubnetを組織に共有する", "is_correct": true, "explanation": "正解。RAMはマルチアカウント間でリソースを共有する標準サービス。Subnet を共有するとconsumer アカウントは自分のVPCを作らず、共有subnetで直接EC2/RDS/ECSをデプロイできる（VPC共有パターン）。"},
-        {"id": "C", "text": "Transit Gateway で各VPCを接続する", "is_correct": false, "explanation": "TGWはVPC間ルーティングで、subnet共有ではない。TGW自体もRAMで共有するが、本問のニーズは「同じsubnet を他アカウントで使う」こと。"},
-        {"id": "D", "text": "各アカウントに同じCIDRのVPCを CloudFormation StackSets で展開する", "is_correct": false, "explanation": "重複作成を避けたいという要件に反する。同じCIDR をbalkanizeすると後でTGW接続もできない。"}
+        {
+          "id": "A",
+          "text": "AWS Resource Access Manager (RAM) でsubnetを組織に共有する",
+          "is_correct": true,
+          "explanation": "正解。RAMはマルチアカウント間でリソースを共有する標準サービス。Subnet を共有するとconsumer アカウントは自分のVPCを作らず、共有subnetで直接EC2/RDS/ECSをデプロイできる（VPC共有パターン）。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントに同じCIDRのVPCを CloudFormation StackSets で展開する",
+          "is_correct": false,
+          "explanation": "重複作成を避けたいという要件に反する。同じCIDR をbalkanizeすると後でTGW接続もできない。"
+        },
+        {
+          "id": "C",
+          "text": "VPC Peering で各アカウントのVPCを接続する",
+          "is_correct": false,
+          "explanation": "Peeringは別VPC同士の接続で、subnet 共有とは異なる。各アカウントで個別にVPCを作る前提になる。"
+        },
+        {
+          "id": "D",
+          "text": "Transit Gateway で各VPCを接続する",
+          "is_correct": false,
+          "explanation": "TGWはVPC間ルーティングで、subnet共有ではない。TGW自体もRAMで共有するが、本問のニーズは「同じsubnet を他アカウントで使う」こと。"
+        }
       ],
       "explanation": "AWS Resource Access Manager (RAM) はOrganizations 配下や個別アカウント間でAWSリソースを共有する。代表ユースケース: VPC Subnet（VPC共有）、Transit Gateway、Route 53 Resolver Rules、License Manager、AWS Network Firewall ポリシー、Outposts等。VPC共有パターンは中央集権的ネットワーク管理のベストプラクティスで、共有元アカウント＝Owner、共有先アカウント＝Participantとして役割分担する。",
       "references": [
-        {"title": "What is AWS RAM?", "url": "https://docs.aws.amazon.com/ram/latest/userguide/what-is.html"},
-        {"title": "Sharing your AWS resources", "url": "https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html"}
+        {
+          "title": "What is AWS RAM?",
+          "url": "https://docs.aws.amazon.com/ram/latest/userguide/what-is.html"
+        },
+        {
+          "title": "Sharing your AWS resources",
+          "url": "https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html"
+        }
       ],
-      "tags": ["ram", "resource-sharing", "vpc-sharing", "multi-account", "networking"],
+      "tags": [
+        "ram",
+        "resource-sharing",
+        "vpc-sharing",
+        "multi-account",
+        "networking"
+      ],
       "common_mistakes": [
         "VPC PeeringでSubnet共有ができると誤解する",
         "RAMの存在を知らずStackSetsで重複作成する",
         "TGWとVPC共有の違いを理解していない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-014",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "SCP Strategy",
       "subtopic": "Denylist vs Allowlist",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある企業はOrganizations をデプロイし、SCPを使って権限ガバナンスを設計中。当面は迅速なクラウド利用拡大を優先しつつ、特定の危険な操作（CloudTrail停止、ルートキー削除等）だけは絶対禁止したい。最も適切なSCP戦略は？",
       "options": [
-        {"id": "A", "text": "デフォルトSCP（FullAWSAccess）を維持し、特定のDeny SCPを別途追加する（denylist戦略）", "is_correct": true, "explanation": "正解。FullAWSAccessを残したままDeny SCPで危険操作を局所的に禁止するのがdenylist戦略。導入が早く、新サービス利用にも追従しやすい。"},
-        {"id": "B", "text": "FullAWSAccessを外し、必要なサービスだけをAllowする一枚SCP（allowlist戦略）", "is_correct": false, "explanation": "allowlist は厳格だが、新サービス利用のたびにSCP更新が必要で運用負荷が高い。導入初期や急速拡大期には不向き。"},
-        {"id": "C", "text": "全アカウントでIAMを無効化し、ルートユーザのみを使う", "is_correct": false, "explanation": "ルートユーザの常用は最も非推奨のアンチパターン。"},
-        {"id": "D", "text": "AWS Configルールで監査するだけにし、SCPは使わない", "is_correct": false, "explanation": "Configは事後検知で、危険操作の事前防止にならない。"}
+        {
+          "id": "A",
+          "text": "FullAWSAccessを外し、必要なサービスだけをAllowする一枚SCP（allowlist戦略）",
+          "is_correct": false,
+          "explanation": "allowlist は厳格だが、新サービス利用のたびにSCP更新が必要で運用負荷が高い。導入初期や急速拡大期には不向き。"
+        },
+        {
+          "id": "B",
+          "text": "デフォルトSCP（FullAWSAccess）を維持し、特定のDeny SCPを別途追加する（denylist戦略）",
+          "is_correct": true,
+          "explanation": "正解。FullAWSAccessを残したままDeny SCPで危険操作を局所的に禁止するのがdenylist戦略。導入が早く、新サービス利用にも追従しやすい。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Configルールで監査するだけにし、SCPは使わない",
+          "is_correct": false,
+          "explanation": "Configは事後検知で、危険操作の事前防止にならない。"
+        },
+        {
+          "id": "D",
+          "text": "全アカウントでIAMを無効化し、ルートユーザのみを使う",
+          "is_correct": false,
+          "explanation": "ルートユーザの常用は最も非推奨のアンチパターン。"
+        }
       ],
       "explanation": "SCP戦略にはdenylist（FullAWSAccess+特定Deny）とallowlist（必要なAllowのみ）の2方式がある。denylist=導入容易・新サービス追従可・破壊的操作の防止に効果的。allowlist=厳格な最小権限・高ガバナンス環境向けだが運用負荷高。多くのエンタープライズは「最低限のdenylist（CloudTrail/GuardDuty/IAM操作禁止等）」から始め、成熟度に応じて部分的allowlist（特定OUのリージョン制限等）を追加するハイブリッドを採用。",
       "references": [
-        {"title": "SCP strategies", "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_strategies.html"},
-        {"title": "AWS SCP examples", "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html"}
+        {
+          "title": "SCP strategies",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_strategies.html"
+        },
+        {
+          "title": "AWS SCP examples",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html"
+        }
       ],
-      "tags": ["scp", "organizations", "denylist", "allowlist", "governance"],
+      "tags": [
+        "scp",
+        "organizations",
+        "denylist",
+        "allowlist",
+        "governance"
+      ],
       "common_mistakes": [
         "denylistとallowlistの違いを理解していない",
         "FullAWSAccessを外せば自動的に最小権限になると誤解する",
         "Config だけで危険操作を防げると思う"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-015",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Policy Design",
       "subtopic": "Condition keys",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療系企業が、医療情報を扱うS3バケットへのアクセスを「会社のVPC エンドポイント経由のリクエストに限定」したい。バケットポリシーで使うべきCondition keyの組み合わせとして最も適切なのは？",
       "options": [
-        {"id": "A", "text": "aws:SourceIp で会社の固定IPを指定する", "is_correct": false, "explanation": "VPCエンドポイント経由のリクエストはAWS内部経由のため、会社のIPは表示されない。SourceIpでは要件を満たせない。"},
-        {"id": "B", "text": "aws:SourceVpce が特定のVPCエンドポイントID と一致する条件で許可する", "is_correct": true, "explanation": "正解。aws:SourceVpce はリクエストが特定のVPCエンドポイントから到達したことを確認する条件キー。要件にぴったり合う。aws:SourceVpc も類似だが Endpoint ID 単位の制限が望ましい。"},
-        {"id": "C", "text": "aws:UserAgent でAWS CLI のみ許可する", "is_correct": false, "explanation": "UserAgentはクライアント側で偽装可能で、セキュリティ境界として機能しない。"},
-        {"id": "D", "text": "aws:SecureTransport で HTTPS を強制する", "is_correct": false, "explanation": "SecureTransportはTLS強制であり、VPCエンドポイント経由制限とは別の話。両方併用すべきだが、VPC制限の主役にならない。"}
+        {
+          "id": "A",
+          "text": "aws:SecureTransport で HTTPS を強制する",
+          "is_correct": false,
+          "explanation": "SecureTransportはTLS強制であり、VPCエンドポイント経由制限とは別の話。両方併用すべきだが、VPC制限の主役にならない。"
+        },
+        {
+          "id": "B",
+          "text": "aws:SourceIp で会社の固定IPを指定する",
+          "is_correct": false,
+          "explanation": "VPCエンドポイント経由のリクエストはAWS内部経由のため、会社のIPは表示されない。SourceIpでは要件を満たせない。"
+        },
+        {
+          "id": "C",
+          "text": "aws:SourceVpce が特定のVPCエンドポイントID と一致する条件で許可する",
+          "is_correct": true,
+          "explanation": "正解。aws:SourceVpce はリクエストが特定のVPCエンドポイントから到達したことを確認する条件キー。要件にぴったり合う。aws:SourceVpc も類似だが Endpoint ID 単位の制限が望ましい。"
+        },
+        {
+          "id": "D",
+          "text": "aws:UserAgent でAWS CLI のみ許可する",
+          "is_correct": false,
+          "explanation": "UserAgentはクライアント側で偽装可能で、セキュリティ境界として機能しない。"
+        }
       ],
       "explanation": "VPCエンドポイント経由のアクセスを強制するには aws:SourceVpce（特定VPCエンドポイントID）または aws:SourceVpc（VPC ID）を使う。aws:SourceVpce のほうが粒度が細かい。これらは「データ境界（data perimeter）」の中核条件キー。SourceIp はインターネット経由のリクエストにしか機能しない。VPCエンドポイント経由ではIPが内部のものになるため、IPベース制御は不適切。",
       "references": [
-        {"title": "Restricting access using aws:SourceVpce", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcevpce"},
-        {"title": "Building a data perimeter on AWS", "url": "https://docs.aws.amazon.com/whitepapers/latest/building-a-data-perimeter-on-aws/building-a-data-perimeter-on-aws.html"}
+        {
+          "title": "Restricting access using aws:SourceVpce",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcevpce"
+        },
+        {
+          "title": "Building a data perimeter on AWS",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/building-a-data-perimeter-on-aws/building-a-data-perimeter-on-aws.html"
+        }
       ],
-      "tags": ["iam-policy", "condition-keys", "vpc-endpoint", "data-perimeter", "healthcare"],
+      "tags": [
+        "iam-policy",
+        "condition-keys",
+        "vpc-endpoint",
+        "data-perimeter",
+        "healthcare"
+      ],
       "common_mistakes": [
         "SourceIpでVPCエンドポイント経由のアクセスを制限しようとする",
         "UserAgentをセキュリティ境界と誤解する",
         "SourceVpceとSourceVpcの違いを混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-016",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "MRQ - Cross-account access",
       "subtopic": "Trust and permissions",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "アカウントAのIAMロール（Role-A）を、アカウントBのIAMユーザ（User-B）に AssumeRole させるために必要な構成要素を2つ選べ。（複数選択）",
       "options": [
-        {"id": "A", "text": "Role-Aの信頼ポリシー（Trust Policy）でPrincipalにアカウントBを指定し、sts:AssumeRoleを許可する", "is_correct": true, "explanation": "正解。クロスアカウントAssumeRoleには「ターゲットロールが当該主体を信頼する」明示が必要。これが信頼ポリシーの役割。"},
-        {"id": "B", "text": "User-Bのアイデンティティポリシーで Resource: Role-A の ARN に対する sts:AssumeRole を許可する", "is_correct": true, "explanation": "正解。クロスアカウントは「両端の許可」が必要で、User-B側にも明示的にAssumeRole権限を付与する必要がある。"},
-        {"id": "C", "text": "アカウントAとアカウントB間で VPC Peering を構成する", "is_correct": false, "explanation": "AssumeRoleはコントロールプレーン操作で、ネットワーク接続は不要。"},
-        {"id": "D", "text": "AWS Organizations で両アカウントを同一OUに配置する", "is_correct": false, "explanation": "AssumeRoleはOrganizations 配下でなくても機能する。同一組織は前提条件ではない。"},
-        {"id": "E", "text": "Role-AのPermission Boundaryで User-B を Principal に指定する", "is_correct": false, "explanation": "Permission Boundaryは権限の上限制御で、信頼関係の指定機能ではない。"}
+        {
+          "id": "A",
+          "text": "AWS Organizations で両アカウントを同一OUに配置する",
+          "is_correct": false,
+          "explanation": "AssumeRoleはOrganizations 配下でなくても機能する。同一組織は前提条件ではない。"
+        },
+        {
+          "id": "B",
+          "text": "User-Bのアイデンティティポリシーで Resource: Role-A の ARN に対する sts:AssumeRole を許可する",
+          "is_correct": true,
+          "explanation": "正解。クロスアカウントは「両端の許可」が必要で、User-B側にも明示的にAssumeRole権限を付与する必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "Role-AのPermission Boundaryで User-B を Principal に指定する",
+          "is_correct": false,
+          "explanation": "Permission Boundaryは権限の上限制御で、信頼関係の指定機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Role-Aの信頼ポリシー（Trust Policy）でPrincipalにアカウントBを指定し、sts:AssumeRoleを許可する",
+          "is_correct": true,
+          "explanation": "正解。クロスアカウントAssumeRoleには「ターゲットロールが当該主体を信頼する」明示が必要。これが信頼ポリシーの役割。"
+        },
+        {
+          "id": "E",
+          "text": "アカウントAとアカウントB間で VPC Peering を構成する",
+          "is_correct": false,
+          "explanation": "AssumeRoleはコントロールプレーン操作で、ネットワーク接続は不要。"
+        }
       ],
       "explanation": "クロスアカウントAssumeRoleは「両端の許可」モデル。(1) 引き受けられる側（Role-Aの信頼ポリシー）が「誰に引き受けさせるか」を宣言、(2) 引き受ける側（User-Bのアイデンティティポリシー）が「sts:AssumeRole on Role-A を実行できる」権限を持つ。両方が揃って初めて成立する。VPC接続やOU配置は無関係。",
       "references": [
-        {"title": "Cross-account access using IAM roles", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html"},
-        {"title": "AssumeRole", "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"}
+        {
+          "title": "Cross-account access using IAM roles",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html"
+        },
+        {
+          "title": "AssumeRole",
+          "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"
+        }
       ],
-      "tags": ["sts", "cross-account", "assume-role", "trust-policy", "iam"],
+      "tags": [
+        "sts",
+        "cross-account",
+        "assume-role",
+        "trust-policy",
+        "iam"
+      ],
       "common_mistakes": [
         "片側の許可だけで足りると誤解する",
         "ネットワーク接続が必要と誤解する",
         "Permission Boundaryで信頼関係を表現できると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-017",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Policy",
       "subtopic": "Session policies",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "AssumeRole API の Policy パラメータ（インライン session policy）について、正しい説明はどれか。",
       "options": [
-        {"id": "A", "text": "ロールのアタッチドポリシーで許可されている権限を、当該セッションに限り拡大できる", "is_correct": false, "explanation": "session policyは「縮小」のみで、拡大はできない。ロールが持っていない権限をsession policyで足すことはできない。"},
-        {"id": "B", "text": "ロールのアタッチドポリシーとsession policyの両方で許可されている権限のみが、当該セッションで有効になる", "is_correct": true, "explanation": "正解。Session policyはロールの実効権限を当該セッションに限ってさらに絞り込むためのもの。両ポリシーの「論理積」が実効権限。"},
-        {"id": "C", "text": "session policyはロールの信頼ポリシーを変更できる", "is_correct": false, "explanation": "信頼ポリシーは別概念。session policyは権限ポリシー側のセッションスコープ縮小機能。"},
-        {"id": "D", "text": "session policyは1セッションあたり最大1KBまで", "is_correct": false, "explanation": "実際の上限はインラインで2048文字（または管理ポリシー10個参照）。1KBという数値は誤り。"}
+        {
+          "id": "A",
+          "text": "session policyはロールの信頼ポリシーを変更できる",
+          "is_correct": false,
+          "explanation": "信頼ポリシーは別概念。session policyは権限ポリシー側のセッションスコープ縮小機能。"
+        },
+        {
+          "id": "B",
+          "text": "ロールのアタッチドポリシーで許可されている権限を、当該セッションに限り拡大できる",
+          "is_correct": false,
+          "explanation": "session policyは「縮小」のみで、拡大はできない。ロールが持っていない権限をsession policyで足すことはできない。"
+        },
+        {
+          "id": "C",
+          "text": "session policyは1セッションあたり最大1KBまで",
+          "is_correct": false,
+          "explanation": "実際の上限はインラインで2048文字（または管理ポリシー10個参照）。1KBという数値は誤り。"
+        },
+        {
+          "id": "D",
+          "text": "ロールのアタッチドポリシーとsession policyの両方で許可されている権限のみが、当該セッションで有効になる",
+          "is_correct": true,
+          "explanation": "正解。Session policyはロールの実効権限を当該セッションに限ってさらに絞り込むためのもの。両ポリシーの「論理積」が実効権限。"
+        }
       ],
       "explanation": "Session policyはAssumeRole/AssumeRoleWithSAML/AssumeRoleWithWebIdentity/GetFederationToken等で、当該セッションのみに適用される権限スコープを「縮小」するために使う。実効権限 = ロールのアタッチドポリシー ∩ session policy。SaaSアプリが「ロールの権限の一部だけを下流コンポーネントに渡す」用途で使われる。session policyで権限を拡大することはできない（最小権限原則の補強）。",
       "references": [
-        {"title": "Session policies", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session"},
-        {"title": "Policies and permissions in IAM", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html"}
+        {
+          "title": "Session policies",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session"
+        },
+        {
+          "title": "Policies and permissions in IAM",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html"
+        }
       ],
-      "tags": ["iam-policy", "session-policy", "sts", "least-privilege", "assume-role"],
+      "tags": [
+        "iam-policy",
+        "session-policy",
+        "sts",
+        "least-privilege",
+        "assume-role"
+      ],
       "common_mistakes": [
         "session policyで権限を拡大できると誤解する",
         "session policyを信頼ポリシーと混同する",
         "session policyの論理積動作を理解していない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-018",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Federation",
       "subtopic": "GitHub Actions OIDC",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるSaaSスタートアップでは、GitHub Actions のCI/CDパイプラインからAWSにデプロイしている。長期IAMアクセスキーをGitHub Secretsに保存することをやめたい。最も推奨される構成は？",
       "options": [
-        {"id": "A", "text": "GitHubのOIDC ProviderをIAMに登録し、AssumeRoleWithWebIdentity で短命クレデンシャルを取得する", "is_correct": true, "explanation": "正解。GitHub Actions OIDC連携はAWS推奨パターン。リポジトリやブランチを sub クレームで条件指定すれば、特定リポジトリのみがロールを引き受け可能。シークレット管理不要。"},
-        {"id": "B", "text": "Cognito User Pool にGitHubのOAuthアプリを統合する", "is_correct": false, "explanation": "Cognitoはエンドユーザ認証用。CI/CDパイプラインのAWS認証用途ではない。"},
-        {"id": "C", "text": "GitHub SecretsにIAMアクセスキーを暗号化して保存し、KMSでローテーションする", "is_correct": false, "explanation": "依然として長期キーを保管している。KMSでもキーローテーションの根本問題は解決しない。"},
-        {"id": "D", "text": "GitHubセルフホストランナーをVPC内で起動し、IAMインスタンスプロファイルを利用する", "is_correct": false, "explanation": "技術的には可能だが、セルフホストランナーの運用負荷が新たに発生する。OIDC連携のほうがマネージドで簡潔。"}
+        {
+          "id": "A",
+          "text": "GitHubのOIDC ProviderをIAMに登録し、AssumeRoleWithWebIdentity で短命クレデンシャルを取得する",
+          "is_correct": true,
+          "explanation": "正解。GitHub Actions OIDC連携はAWS推奨パターン。リポジトリやブランチを sub クレームで条件指定すれば、特定リポジトリのみがロールを引き受け可能。シークレット管理不要。"
+        },
+        {
+          "id": "B",
+          "text": "Cognito User Pool にGitHubのOAuthアプリを統合する",
+          "is_correct": false,
+          "explanation": "Cognitoはエンドユーザ認証用。CI/CDパイプラインのAWS認証用途ではない。"
+        },
+        {
+          "id": "C",
+          "text": "GitHubセルフホストランナーをVPC内で起動し、IAMインスタンスプロファイルを利用する",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、セルフホストランナーの運用負荷が新たに発生する。OIDC連携のほうがマネージドで簡潔。"
+        },
+        {
+          "id": "D",
+          "text": "GitHub SecretsにIAMアクセスキーを暗号化して保存し、KMSでローテーションする",
+          "is_correct": false,
+          "explanation": "依然として長期キーを保管している。KMSでもキーローテーションの根本問題は解決しない。"
+        }
       ],
       "explanation": "GitHub Actions OIDC連携: (1) AWSにGitHubの OIDC Provider を登録（token.actions.githubusercontent.com）、(2) IAMロール作成、信頼ポリシーで AssumeRoleWithWebIdentity を許可、Conditionで sub クレーム（repo:org/repo:ref:refs/heads/main 等）を制限、(3) GitHub Actionsで configure-aws-credentials アクションを使う。長期キー保管が不要になり、リポジトリ・ブランチ単位の最小権限が実現。",
       "references": [
-        {"title": "Configuring OpenID Connect in AWS", "url": "https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services"},
-        {"title": "Creating OIDC identity providers", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html"}
+        {
+          "title": "Configuring OpenID Connect in AWS",
+          "url": "https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services"
+        },
+        {
+          "title": "Creating OIDC identity providers",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html"
+        }
       ],
-      "tags": ["oidc", "github-actions", "federation", "saas", "cicd"],
+      "tags": [
+        "oidc",
+        "github-actions",
+        "federation",
+        "saas",
+        "cicd"
+      ],
       "common_mistakes": [
         "OIDC連携の存在を知らず、長期キーを保存し続ける",
         "Cognitoが万能と誤解する",
         "セルフホストランナー運用の負荷を軽視する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-019",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "MRQ - IAM Best Practices",
       "subtopic": "Root account protection",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "AWSルートユーザに関するベストプラクティスとして適切なものを2つ選べ。（複数選択）",
       "options": [
-        {"id": "A", "text": "ルートユーザでハードウェアMFAを有効化する", "is_correct": true, "explanation": "正解。ルートは最強権限のためMFA必須。フィッシング耐性のあるハードウェアMFA（FIDO2/U2F）が推奨される。"},
-        {"id": "B", "text": "日常運用でもルートユーザを使い、IAMユーザを最小限にする", "is_correct": false, "explanation": "逆。ルートは初期設定や限定的な操作（請求情報変更等）にのみ使用し、日常運用にはIAM ロールやIdentity Center を使う。"},
-        {"id": "C", "text": "ルートユーザのアクセスキーを発行し、CI/CDで利用する", "is_correct": false, "explanation": "ルートのアクセスキーは絶対に作成しない。AWSの最重要アンチパターン。"},
-        {"id": "D", "text": "ルートユーザの連絡先メールアドレスを定期的に確認・更新する", "is_correct": true, "explanation": "正解。ルート復旧の唯一手段がメールであり、退職者のアドレスや到達不能アドレスのままだとアカウントロックアウト時に復旧できない。"},
-        {"id": "E", "text": "ルートユーザを毎月削除して再作成する", "is_correct": false, "explanation": "ルートユーザは削除できない（アカウントの一部）。"}
+        {
+          "id": "A",
+          "text": "ルートユーザのアクセスキーを発行し、CI/CDで利用する",
+          "is_correct": false,
+          "explanation": "ルートのアクセスキーは絶対に作成しない。AWSの最重要アンチパターン。"
+        },
+        {
+          "id": "B",
+          "text": "ルートユーザを毎月削除して再作成する",
+          "is_correct": false,
+          "explanation": "ルートユーザは削除できない（アカウントの一部）。"
+        },
+        {
+          "id": "C",
+          "text": "日常運用でもルートユーザを使い、IAMユーザを最小限にする",
+          "is_correct": false,
+          "explanation": "逆。ルートは初期設定や限定的な操作（請求情報変更等）にのみ使用し、日常運用にはIAM ロールやIdentity Center を使う。"
+        },
+        {
+          "id": "D",
+          "text": "ルートユーザの連絡先メールアドレスを定期的に確認・更新する",
+          "is_correct": true,
+          "explanation": "正解。ルート復旧の唯一手段がメールであり、退職者のアドレスや到達不能アドレスのままだとアカウントロックアウト時に復旧できない。"
+        },
+        {
+          "id": "E",
+          "text": "ルートユーザでハードウェアMFAを有効化する",
+          "is_correct": true,
+          "explanation": "正解。ルートは最強権限のためMFA必須。フィッシング耐性のあるハードウェアMFA（FIDO2/U2F）が推奨される。"
+        }
       ],
       "explanation": "ルートアカウントは最強権限のため、AWSの最優先保護対象。ベストプラクティス: (1) ハードウェアMFA有効化、(2) 連絡先メール・電話・住所を最新に保つ、(3) 強力なパスワード、(4) アクセスキー作成しない、(5) Organizations配下でなら『ルート操作Deny SCP』も併用、(6) 通常運用はIAM Identity CenterやIAMロールで行う、(7) ルート使用時はCloudTrailで監視。",
       "references": [
-        {"title": "Securing the root user", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials"},
-        {"title": "Root user tasks", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html"}
+        {
+          "title": "Securing the root user",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials"
+        },
+        {
+          "title": "Root user tasks",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html"
+        }
       ],
-      "tags": ["iam", "root-user", "mfa", "best-practices", "fundamentals"],
+      "tags": [
+        "iam",
+        "root-user",
+        "mfa",
+        "best-practices",
+        "fundamentals"
+      ],
       "common_mistakes": [
         "ルートのアクセスキーを使ってしまう",
         "ルートで日常運用してしまう",
         "ルートメールアドレスを退職者のままにする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-020",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "AWS Directory Service",
       "subtopic": "Directory types",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "次のうち、「オンプレミスの既存Active Directoryと信頼関係を確立し、AWS上のWindowsワークロードに統合認証を提供する」のに最適なAWS Directory Service オプションは？",
       "options": [
-        {"id": "A", "text": "AWS Managed Microsoft AD (AWS Directory Service for Microsoft Active Directory)", "is_correct": true, "explanation": "正解。Managed Microsoft ADはマネージドな本物のActive Directoryで、オンプレADと双方向信頼を構築できる。Windowsワークロード（FSx、RDS for SQL Server等）の認証統合に最適。"},
-        {"id": "B", "text": "Simple AD", "is_correct": false, "explanation": "Simple AD（Samba 4 ベース）は信頼関係を張れない。基本的な小規模用途のみ。"},
-        {"id": "C", "text": "AD Connector", "is_correct": false, "explanation": "AD ConnectorはAWSサービスからオンプレADへリクエストをプロキシする機能で、AD自体を持たない。信頼関係の概念がない。"},
-        {"id": "D", "text": "Cognito User Pool with SAML federation", "is_correct": false, "explanation": "CognitoはWebアプリ向け認証で、Active Directory本体ではない。信頼関係は構築できない。"}
+        {
+          "id": "A",
+          "text": "Simple AD",
+          "is_correct": false,
+          "explanation": "Simple AD（Samba 4 ベース）は信頼関係を張れない。基本的な小規模用途のみ。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Managed Microsoft AD (AWS Directory Service for Microsoft Active Directory)",
+          "is_correct": true,
+          "explanation": "正解。Managed Microsoft ADはマネージドな本物のActive Directoryで、オンプレADと双方向信頼を構築できる。Windowsワークロード（FSx、RDS for SQL Server等）の認証統合に最適。"
+        },
+        {
+          "id": "C",
+          "text": "Cognito User Pool with SAML federation",
+          "is_correct": false,
+          "explanation": "CognitoはWebアプリ向け認証で、Active Directory本体ではない。信頼関係は構築できない。"
+        },
+        {
+          "id": "D",
+          "text": "AD Connector",
+          "is_correct": false,
+          "explanation": "AD ConnectorはAWSサービスからオンプレADへリクエストをプロキシする機能で、AD自体を持たない。信頼関係の概念がない。"
+        }
       ],
       "explanation": "AWS Directory Service の主要3種: (1) AWS Managed Microsoft AD = 真のADインスタンスをAWSで運用、双方向信頼OK、ドメインジョイン可、(2) AD Connector = オンプレADへのプロキシ、AWS側にディレクトリ実体なし、AWS Workspaces等の限定用途、(3) Simple AD = SambaベースのADライク、低コスト・小規模用途、信頼関係不可。オンプレAD連携 + AWS上のWindows ワークロード統合は Managed Microsoft AD が標準解。",
       "references": [
-        {"title": "AWS Managed Microsoft AD", "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html"},
-        {"title": "AWS Directory Service comparison", "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html"}
+        {
+          "title": "AWS Managed Microsoft AD",
+          "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html"
+        },
+        {
+          "title": "AWS Directory Service comparison",
+          "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html"
+        }
       ],
-      "tags": ["directory-service", "active-directory", "managed-microsoft-ad", "ad-connector", "federation"],
+      "tags": [
+        "directory-service",
+        "active-directory",
+        "managed-microsoft-ad",
+        "ad-connector",
+        "federation"
+      ],
       "common_mistakes": [
         "AD Connectorで信頼関係を張れると誤解する",
         "Simple ADを本格用途に使ってしまう",
         "CognitoをActive Directoryと混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-021",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Access Analyzer",
       "subtopic": "Policy validation and custom checks",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "あるFinTech企業のセキュリティチームが、CI/CDパイプラインで「IAMポリシー変更が新たな s3:DeleteBucket 権限を付与しないこと」を自動検証したい。最も適切な機能は？",
       "options": [
-        {"id": "A", "text": "IAM Access Analyzer の custom policy check（CheckAccessNotGranted等のAPI）をパイプラインに組み込む", "is_correct": true, "explanation": "正解。Access Analyzerのcustom policy checks は、提案ポリシーが特定アクション・リソースへのアクセスを「付与しない」「リファレンスポリシーより広くない」ことをCI/CD で検証できる。"},
-        {"id": "B", "text": "AWS Config Rules で本番環境にデプロイ後に検出する", "is_correct": false, "explanation": "Configは事後検知でCI/CDのpre-deploy 検証には適さない。デプロイ後の発見になり、最小権限違反を本番に流す。"},
-        {"id": "C", "text": "IAMポリシーシミュレータをCLIで呼び出す", "is_correct": false, "explanation": "ポリシーシミュレータは特定操作の許可可否確認には使えるが、custom check（プログラマティックにrestrictionを検証）には Access Analyzer の専用APIが正解。"},
-        {"id": "D", "text": "Service Control Policy で全 s3:DeleteBucket をDenyする", "is_correct": false, "explanation": "正当な削除も止めてしまう。問題は「変更がpolicy広げないこと」を検証することで、SCPでの全社禁止とは別の課題。"}
+        {
+          "id": "A",
+          "text": "Service Control Policy で全 s3:DeleteBucket をDenyする",
+          "is_correct": false,
+          "explanation": "正当な削除も止めてしまう。問題は「変更がpolicy広げないこと」を検証することで、SCPでの全社禁止とは別の課題。"
+        },
+        {
+          "id": "B",
+          "text": "IAMポリシーシミュレータをCLIで呼び出す",
+          "is_correct": false,
+          "explanation": "ポリシーシミュレータは特定操作の許可可否確認には使えるが、custom check（プログラマティックにrestrictionを検証）には Access Analyzer の専用APIが正解。"
+        },
+        {
+          "id": "C",
+          "text": "IAM Access Analyzer の custom policy check（CheckAccessNotGranted等のAPI）をパイプラインに組み込む",
+          "is_correct": true,
+          "explanation": "正解。Access Analyzerのcustom policy checks は、提案ポリシーが特定アクション・リソースへのアクセスを「付与しない」「リファレンスポリシーより広くない」ことをCI/CD で検証できる。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config Rules で本番環境にデプロイ後に検出する",
+          "is_correct": false,
+          "explanation": "Configは事後検知でCI/CDのpre-deploy 検証には適さない。デプロイ後の発見になり、最小権限違反を本番に流す。"
+        }
       ],
       "explanation": "Access Analyzerの custom policy checks（2023年以降）は、IAMポリシーCI/CDのシフトレフトを実現する機能。CheckAccessNotGranted（特定アクション・リソースを付与しないか）、CheckNoNewAccess（旧ポリシーより新権限を増やしていないか）、CheckNoPublicAccess（リソースが公開状態にならないか）の3API がある。CodePipeline / CodeBuild / GitHub Actions でポリシー変更時に呼び出すことで、人間レビュー前に自動ガードできる。",
       "references": [
-        {"title": "Custom policy checks", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-custom-policy-checks.html"},
-        {"title": "CheckAccessNotGranted API", "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckAccessNotGranted.html"}
+        {
+          "title": "Custom policy checks",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-custom-policy-checks.html"
+        },
+        {
+          "title": "CheckAccessNotGranted API",
+          "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckAccessNotGranted.html"
+        }
       ],
-      "tags": ["access-analyzer", "policy-validation", "cicd", "shift-left", "fintech"],
+      "tags": [
+        "access-analyzer",
+        "policy-validation",
+        "cicd",
+        "shift-left",
+        "fintech"
+      ],
       "common_mistakes": [
         "Configで事前検証ができると誤解する",
         "ポリシーシミュレータでCI/CD検証する非効率な実装",
         "custom policy check の存在を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-022",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Policy Design",
       "subtopic": "ABAC",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある教育SaaS企業では、開発者数百人が複数プロジェクトのリソースを操作する。プロジェクトごとに個別IAMロールを作るのではなく、「ユーザのprojectタグ = リソースのprojectタグ」のときのみ操作を許可する仕組みを取りたい。最も適切な設計手法は？",
       "options": [
-        {"id": "A", "text": "RBAC（Role-Based Access Control）でプロジェクトごとに個別ロールを定義する", "is_correct": false, "explanation": "プロジェクト数が増えるとロール数も比例して増え、運用が破綻する。要件はまさにRBACから ABAC への移行。"},
-        {"id": "B", "text": "ABAC（Attribute-Based Access Control）でCondition に aws:PrincipalTag/project と aws:ResourceTag/project の一致を要求する", "is_correct": true, "explanation": "正解。ABACではタグ属性ベースで動的に権限を判定する。1つのポリシーで多数のプロジェクトをスケーラブルにカバーできる。Identity Centerでもtag passthrough がサポートされる。"},
-        {"id": "C", "text": "プロジェクトごとに個別Permission Boundaryを作成する", "is_correct": false, "explanation": "Permission Boundaryもプロジェクト数に比例して増え、ABACのスケーラビリティを得られない。"},
-        {"id": "D", "text": "プロジェクトごとに個別アカウントを作成し、SCPで分離する", "is_correct": false, "explanation": "アカウント分離は強い境界だが、プロジェクト数が多い場合は過剰設計。1アカウント内のABAC が想定要件にあう。"}
+        {
+          "id": "A",
+          "text": "RBAC（Role-Based Access Control）でプロジェクトごとに個別ロールを定義する",
+          "is_correct": false,
+          "explanation": "プロジェクト数が増えるとロール数も比例して増え、運用が破綻する。要件はまさにRBACから ABAC への移行。"
+        },
+        {
+          "id": "B",
+          "text": "プロジェクトごとに個別Permission Boundaryを作成する",
+          "is_correct": false,
+          "explanation": "Permission Boundaryもプロジェクト数に比例して増え、ABACのスケーラビリティを得られない。"
+        },
+        {
+          "id": "C",
+          "text": "プロジェクトごとに個別アカウントを作成し、SCPで分離する",
+          "is_correct": false,
+          "explanation": "アカウント分離は強い境界だが、プロジェクト数が多い場合は過剰設計。1アカウント内のABAC が想定要件にあう。"
+        },
+        {
+          "id": "D",
+          "text": "ABAC（Attribute-Based Access Control）でCondition に aws:PrincipalTag/project と aws:ResourceTag/project の一致を要求する",
+          "is_correct": true,
+          "explanation": "正解。ABACではタグ属性ベースで動的に権限を判定する。1つのポリシーで多数のプロジェクトをスケーラブルにカバーできる。Identity Centerでもtag passthrough がサポートされる。"
+        }
       ],
       "explanation": "ABACはタグ属性をポリシー判定に使うAWSの推奨スケーラブル設計。例: Condition: {\"StringEquals\": {\"aws:ResourceTag/project\": \"${aws:PrincipalTag/project}\"}}。プロジェクト数が増えてもポリシーは1つで運用可能。Identity CenterやSAMLフェデレーションで属性をPrincipalTagとして渡す（PrincipalTagsを送信する設定）。注意点はタグ管理の規律（タグがズレると権限が外れる）と、タグ書き換えを iam:TagRole 等で制限することが必須。",
       "references": [
-        {"title": "What is ABAC for AWS?", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_attribute-based-access-control.html"},
-        {"title": "ABAC tutorial", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html"}
+        {
+          "title": "What is ABAC for AWS?",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_attribute-based-access-control.html"
+        },
+        {
+          "title": "ABAC tutorial",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html"
+        }
       ],
-      "tags": ["abac", "rbac", "tags", "scalability", "iam-design"],
+      "tags": [
+        "abac",
+        "rbac",
+        "tags",
+        "scalability",
+        "iam-design"
+      ],
       "common_mistakes": [
         "ロール数が増えても問題ないと考える（運用破綻）",
         "ABACの存在を知らない",
         "タグ書き換え攻撃を考慮しない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-023",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "MRQ - Identity Center",
       "subtopic": "Multi-account access patterns",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "AWS IAM Identity Center の Permission Set について正しい説明を2つ選べ。（複数選択）",
       "options": [
-        {"id": "A", "text": "Permission Setを各アカウントにアサインすると、対応するIAMロールがアカウント内に自動作成される", "is_correct": true, "explanation": "正解。Identity Centerは内部的に各アカウントに AWSReservedSSO_<PermissionSetName>_<hash> 形式のIAMロールを自動作成する。"},
-        {"id": "B", "text": "Permission Setの最大セッション期間を1時間〜12時間で指定できる", "is_correct": true, "explanation": "正解。Permission Set の Session Duration（1〜12時間）で短命クレデンシャルの有効期間を指定できる。"},
-        {"id": "C", "text": "Permission Setは1つのアカウントにのみ割り当て可能である", "is_correct": false, "explanation": "誤り。Permission Set は複数アカウントに割り当てできる（マルチアカウント展開がIdentity Centerの主要価値）。"},
-        {"id": "D", "text": "Permission Set は管理ポリシー（AWS managed/customer managed）とインラインポリシーの両方を含められる", "is_correct": false, "explanation": "やや微妙だが正確には Permission Set は customer managed policy 参照、AWS managed policy 参照、permissions boundary、インラインポリシー全てを含められる。ただしAは正答であり、組み合わせとしてはAB が最良ペア（CDの誤りはより明確）。"},
-        {"id": "E", "text": "Permission Set の変更はリアルタイムで全アカウントのIAMロールに反映される", "is_correct": false, "explanation": "Permission Set を変更すると Identity Center が provisioning タスクを実行するが、リアルタイムではない。プロビジョニングは数秒〜数分かかる。"}
+        {
+          "id": "A",
+          "text": "Permission Setの最大セッション期間を1時間〜12時間で指定できる",
+          "is_correct": true,
+          "explanation": "正解。Permission Set の Session Duration（1〜12時間）で短命クレデンシャルの有効期間を指定できる。"
+        },
+        {
+          "id": "B",
+          "text": "Permission Set の変更はリアルタイムで全アカウントのIAMロールに反映される",
+          "is_correct": false,
+          "explanation": "Permission Set を変更すると Identity Center が provisioning タスクを実行するが、リアルタイムではない。プロビジョニングは数秒〜数分かかる。"
+        },
+        {
+          "id": "C",
+          "text": "Permission Setは1つのアカウントにのみ割り当て可能である",
+          "is_correct": false,
+          "explanation": "誤り。Permission Set は複数アカウントに割り当てできる（マルチアカウント展開がIdentity Centerの主要価値）。"
+        },
+        {
+          "id": "D",
+          "text": "Permission Setを各アカウントにアサインすると、対応するIAMロールがアカウント内に自動作成される",
+          "is_correct": true,
+          "explanation": "正解。Identity Centerは内部的に各アカウントに AWSReservedSSO_<PermissionSetName>_<hash> 形式のIAMロールを自動作成する。"
+        },
+        {
+          "id": "E",
+          "text": "Permission Set は管理ポリシー（AWS managed/customer managed）とインラインポリシーの両方を含められる",
+          "is_correct": false,
+          "explanation": "やや微妙だが正確には Permission Set は customer managed policy 参照、AWS managed policy 参照、permissions boundary、インラインポリシー全てを含められる。ただしAは正答であり、組み合わせとしてはAB が最良ペア（CDの誤りはより明確）。"
+        }
       ],
       "explanation": "Permission Set は Identity Center の中核概念で、複数アカウントに対する権限テンプレートとして機能する。アサインすると各アカウントに AWSReservedSSO_* IAMロールを生成し、SAMLアサーションでこのロールを引き受ける形でアクセスを実現する。Session Duration（1〜12h）、permissions boundary、customer/AWS managed policy 参照、インラインポリシー、relay state（コンソールデフォルト画面）を設定できる。",
       "references": [
-        {"title": "Permission sets", "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html"},
-        {"title": "IAM Identity Center technical sessions", "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/howitworks.html"}
+        {
+          "title": "Permission sets",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html"
+        },
+        {
+          "title": "IAM Identity Center technical sessions",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/howitworks.html"
+        }
       ],
-      "tags": ["iam-identity-center", "permission-set", "sso", "multi-account", "session-duration"],
+      "tags": [
+        "iam-identity-center",
+        "permission-set",
+        "sso",
+        "multi-account",
+        "session-duration"
+      ],
       "common_mistakes": [
         "Permission Setが1アカウント専用と誤解する",
         "Identity Centerが独自プロビジョニング不要と思い込む",
         "Session Durationの上限12時間を知らない"
       ],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-024",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Policy",
       "subtopic": "NotAction and NotResource",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "次のIAMポリシーの効果として正しいものはどれか。\n```\n{\"Effect\":\"Allow\",\"NotAction\":\"iam:*\",\"Resource\":\"*\"}\n```",
       "options": [
-        {"id": "A", "text": "iam:* 以外の全アクションを許可する。iam:* を明示的にDenyする。", "is_correct": false, "explanation": "NotActionはAllowと組み合わせると「指定アクション以外を許可」になるが、iam:* を明示的に Deny するわけではない（暗黙のDenyにはなる）。"},
-        {"id": "B", "text": "iam:* 以外の全アクションを許可する。ただし他のポリシーで iam:* がAllowされている場合は許可される。", "is_correct": true, "explanation": "正解。Allow + NotAction は『指定外のActionを許可』するだけで、iam:* を否定しない。他のIAMポリシー、リソースベースポリシー等で iam:* がAllowされていれば認可される。明示的Denyを意図するなら Effect: Deny + Action: iam:* と書くべき。"},
-        {"id": "C", "text": "iam:* のみを許可する", "is_correct": false, "explanation": "NotAction の意味と逆。Action: iam:* なら正しい。"},
-        {"id": "D", "text": "ポリシー全体が無効になる", "is_correct": false, "explanation": "構文として有効。"}
+        {
+          "id": "A",
+          "text": "iam:* 以外の全アクションを許可する。ただし他のポリシーで iam:* がAllowされている場合は許可される。",
+          "is_correct": true,
+          "explanation": "正解。Allow + NotAction は『指定外のActionを許可』するだけで、iam:* を否定しない。他のIAMポリシー、リソースベースポリシー等で iam:* がAllowされていれば認可される。明示的Denyを意図するなら Effect: Deny + Action: iam:* と書くべき。"
+        },
+        {
+          "id": "B",
+          "text": "iam:* のみを許可する",
+          "is_correct": false,
+          "explanation": "NotAction の意味と逆。Action: iam:* なら正しい。"
+        },
+        {
+          "id": "C",
+          "text": "iam:* 以外の全アクションを許可する。iam:* を明示的にDenyする。",
+          "is_correct": false,
+          "explanation": "NotActionはAllowと組み合わせると「指定アクション以外を許可」になるが、iam:* を明示的に Deny するわけではない（暗黙のDenyにはなる）。"
+        },
+        {
+          "id": "D",
+          "text": "ポリシー全体が無効になる",
+          "is_correct": false,
+          "explanation": "構文として有効。"
+        }
       ],
       "explanation": "NotActionとNotResourceはIAMポリシーの上級機能で、間違えやすい。Effect: Allow + NotAction は「リストされたAction以外を許可」だが、明示Denyではない。Effect: Deny + NotAction は「リストされたAction以外をDeny」（事実上指定Action以外を全Denyして、特定Actionだけを除外）。明示的に何かを禁止したいなら Deny + Action 構文を使うべき。AWS公式は NotAction の使用は限定的にし、可能な限り Action を使うことを推奨。",
       "references": [
-        {"title": "IAM JSON policy elements: NotAction", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html"},
-        {"title": "Policy evaluation logic", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"}
+        {
+          "title": "IAM JSON policy elements: NotAction",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html"
+        },
+        {
+          "title": "Policy evaluation logic",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"
+        }
       ],
-      "tags": ["iam-policy", "notaction", "policy-syntax", "advanced", "evaluation"],
+      "tags": [
+        "iam-policy",
+        "notaction",
+        "policy-syntax",
+        "advanced",
+        "evaluation"
+      ],
       "common_mistakes": [
         "NotActionが明示的Denyを生むと誤解する",
         "Effect: Allow + NotAction の意味を反対に解釈する",
         "明示Denyの代わりにNotActionを使ってしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-025",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "Cognito",
       "subtopic": "MFA and Advanced Security",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるB2C SaaSのCognito User Poolで、ユーザーアカウント乗っ取り（ATO）対策を強化したい。最も効果的な追加機能は？",
       "options": [
-        {"id": "A", "text": "Advanced Security Features（threat protection）を有効化し、漏洩クレデンシャルチェックと適応型MFAを設定する", "is_correct": true, "explanation": "正解。Advanced Security Features（旧 Advanced Security、現 threat protection）は漏洩クレデンシャル検出（既知漏洩DBとの照合）と adaptive MFA（リスクベース認証）を提供する。ATO対策の主役。"},
-        {"id": "B", "text": "User Poolのパスワードポリシーで最低8文字に設定する", "is_correct": false, "explanation": "基本対策ではあるが、ATO対策としては不十分。漏洩済みクレデンシャルや既知パスワードの再利用を検出できない。"},
-        {"id": "C", "text": "AWS WAF でレートリミットを設定する", "is_correct": false, "explanation": "ブルートフォース対策としては有効だが、漏洩クレデンシャル攻撃（既知の有効パスワード）はレートリミットだけでは防げない。"},
-        {"id": "D", "text": "Cognitoのメールベース MFA を必須化する", "is_correct": false, "explanation": "メールMFAは弱いMFA（通信経路の侵害に弱い）。SMS/TOTPの方が一般的に強い。Advanced Security の adaptive MFAでよりリスクベースに適用するのが推奨。"}
+        {
+          "id": "A",
+          "text": "User Poolのパスワードポリシーで最低8文字に設定する",
+          "is_correct": false,
+          "explanation": "基本対策ではあるが、ATO対策としては不十分。漏洩済みクレデンシャルや既知パスワードの再利用を検出できない。"
+        },
+        {
+          "id": "B",
+          "text": "Advanced Security Features（threat protection）を有効化し、漏洩クレデンシャルチェックと適応型MFAを設定する",
+          "is_correct": true,
+          "explanation": "正解。Advanced Security Features（旧 Advanced Security、現 threat protection）は漏洩クレデンシャル検出（既知漏洩DBとの照合）と adaptive MFA（リスクベース認証）を提供する。ATO対策の主役。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAF でレートリミットを設定する",
+          "is_correct": false,
+          "explanation": "ブルートフォース対策としては有効だが、漏洩クレデンシャル攻撃（既知の有効パスワード）はレートリミットだけでは防げない。"
+        },
+        {
+          "id": "D",
+          "text": "Cognitoのメールベース MFA を必須化する",
+          "is_correct": false,
+          "explanation": "メールMFAは弱いMFA（通信経路の侵害に弱い）。SMS/TOTPの方が一般的に強い。Advanced Security の adaptive MFAでよりリスクベースに適用するのが推奨。"
+        }
       ],
       "explanation": "Cognito Advanced Security Features（threat protection、有償オプション）は、(1) Compromised credentials check（HaveIBeenPwned型のDB照合）、(2) Adaptive Authentication（リスクスコアに応じてMFA要求）、(3) サインインフローの異常検知などを提供する。WAFやパスワードポリシーは補完的だが、ATO 対策の中核としてはAdvanced Security が最適。Bedrock等と連携した詐欺検出にも応用される。",
       "references": [
-        {"title": "Adding advanced security features", "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"},
-        {"title": "Threat protection in Cognito", "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"}
+        {
+          "title": "Adding advanced security features",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+        },
+        {
+          "title": "Threat protection in Cognito",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"
+        }
       ],
-      "tags": ["cognito", "advanced-security", "mfa", "ato", "saas"],
+      "tags": [
+        "cognito",
+        "advanced-security",
+        "mfa",
+        "ato",
+        "saas"
+      ],
       "common_mistakes": [
         "Advanced Security の存在を知らない",
         "WAFだけでATOを防げると思う",
         "メールMFAをSMS/TOTPと同等に扱う"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-026",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "EC2 IAM",
       "subtopic": "IMDSv2",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業のEC2フリートで、SSRF攻撃によるIAMロールクレデンシャル盗難を防ぎたい。最も効果的な対策は？",
       "options": [
-        {"id": "A", "text": "EC2インスタンスのメタデータサービスをIMDSv2必須に設定し、hop limitを1にする", "is_correct": true, "explanation": "正解。IMDSv2はトークンベースのセッション認証を要求し、典型的なSSRFのGETベース攻撃を防ぐ。hop limit=1 はコンテナ内からのメタデータアクセス（IPv4 169.254.169.254）を制限する。"},
-        {"id": "B", "text": "EC2のIAMロールを削除して、アプリにアクセスキーを埋め込む", "is_correct": false, "explanation": "長期キー埋め込みはより悪化。IAMロール+IMDSv2が正解。"},
-        {"id": "C", "text": "Security Groupでメタデータエンドポイント（169.254.169.254）への通信を遮断する", "is_correct": false, "explanation": "169.254.169.254はリンクローカルでSGの対象外。SGでは制御できない。"},
-        {"id": "D", "text": "VPC NACLでメタデータエンドポイントをDenyする", "is_correct": false, "explanation": "リンクローカルアドレスはサブネット外通信ではないため NACLでは制御できない。"}
+        {
+          "id": "A",
+          "text": "Security Groupでメタデータエンドポイント（169.254.169.254）への通信を遮断する",
+          "is_correct": false,
+          "explanation": "169.254.169.254はリンクローカルでSGの対象外。SGでは制御できない。"
+        },
+        {
+          "id": "B",
+          "text": "EC2のIAMロールを削除して、アプリにアクセスキーを埋め込む",
+          "is_correct": false,
+          "explanation": "長期キー埋め込みはより悪化。IAMロール+IMDSv2が正解。"
+        },
+        {
+          "id": "C",
+          "text": "EC2インスタンスのメタデータサービスをIMDSv2必須に設定し、hop limitを1にする",
+          "is_correct": true,
+          "explanation": "正解。IMDSv2はトークンベースのセッション認証を要求し、典型的なSSRFのGETベース攻撃を防ぐ。hop limit=1 はコンテナ内からのメタデータアクセス（IPv4 169.254.169.254）を制限する。"
+        },
+        {
+          "id": "D",
+          "text": "VPC NACLでメタデータエンドポイントをDenyする",
+          "is_correct": false,
+          "explanation": "リンクローカルアドレスはサブネット外通信ではないため NACLでは制御できない。"
+        }
       ],
       "explanation": "EC2 IMDSv2 はSSRF経由のクレデンシャル盗難への中核対策。仕組み: PUTでセッショントークン取得（典型的SSRFはGETしか送れない）→ GET時にトークン提示。さらにhttp-put-response-hop-limit=1 でコンテナレイヤからのアクセスを抑制（ECS Fargate ではタスクロール、EKSではIRSA を使うべき）。IMDSv1はレガシー互換のため残るが、新規はIMDSv2必須化が標準。Organizations のSCPで起動時IMDSv2強制も可能。",
       "references": [
-        {"title": "Use IMDSv2", "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html"},
-        {"title": "Defense in depth open firewalls reverse proxies SSRFv2", "url": "https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrfv2-dont-leak-aws-credentials/"}
+        {
+          "title": "Use IMDSv2",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html"
+        },
+        {
+          "title": "Defense in depth open firewalls reverse proxies SSRFv2",
+          "url": "https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrfv2-dont-leak-aws-credentials/"
+        }
       ],
-      "tags": ["ec2", "imdsv2", "ssrf", "iam-role", "manufacturing"],
+      "tags": [
+        "ec2",
+        "imdsv2",
+        "ssrf",
+        "iam-role",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "169.254.169.254をSGやNACLで制御できると誤解する",
         "IMDSv1 のままにして攻撃を受ける",
         "アクセスキー埋め込みに退行する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-027",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "MRQ - SCP and RCP integration",
       "subtopic": "Data perimeter",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "あるFinTech企業の「データ境界（data perimeter）」設計で、(1)組織内アイデンティティが組織内リソースのみアクセスできる、(2)組織内リソースには組織内アイデンティティのみアクセスできる、(3)組織内ネットワーク経由のみ、を強制したい。各要件を実現するAWS機能の組み合わせとして適切なものを2つ選べ。（複数選択）",
       "options": [
-        {"id": "A", "text": "(1)『組織内アイデンティティ→組織内リソースのみ』はSCPで aws:ResourceOrgID 条件を強制する", "is_correct": true, "explanation": "正解。SCPはアイデンティティ側の制限。aws:ResourceOrgIDがリクエスト先リソースの所属組織を表し、自組織と一致する場合のみ許可することで、外部リソースへのアクセス（データ持ち出し）を防げる。"},
-        {"id": "B", "text": "(2)『組織内リソース→組織内アイデンティティのみ』はRCPで aws:PrincipalOrgID 条件を強制する", "is_correct": true, "explanation": "正解。RCPはリソース側の制限。aws:PrincipalOrgID がリクエスト元プリンシパルの組織を表し、自組織のみを許可することで、外部からの予期しないアクセスを防ぐ。"},
-        {"id": "C", "text": "(1)はNACLで実現できる", "is_correct": false, "explanation": "NACLはネットワーク制御で、アイデンティティ・リソース次元の制限はできない。"},
-        {"id": "D", "text": "(2)はIAMポリシーシミュレータで実現できる", "is_correct": false, "explanation": "ポリシーシミュレータは検証ツールで実行時制御ではない。"},
-        {"id": "E", "text": "(3)はSCPで aws:SourceVpc 条件を強制する", "is_correct": false, "explanation": "やや微妙だがSCPでaws:SourceVpc/aws:VpcSourceIp/aws:SourceVpceは制限可能で正しい。ただし問題は最も適切な2つで、A/B が代表的なdata perimeter のSCP/RCP組み合わせ。"}
+        {
+          "id": "A",
+          "text": "(1)『組織内アイデンティティ→組織内リソースのみ』はSCPで aws:ResourceOrgID 条件を強制する",
+          "is_correct": true,
+          "explanation": "正解。SCPはアイデンティティ側の制限。aws:ResourceOrgIDがリクエスト先リソースの所属組織を表し、自組織と一致する場合のみ許可することで、外部リソースへのアクセス（データ持ち出し）を防げる。"
+        },
+        {
+          "id": "B",
+          "text": "(2)はIAMポリシーシミュレータで実現できる",
+          "is_correct": false,
+          "explanation": "ポリシーシミュレータは検証ツールで実行時制御ではない。"
+        },
+        {
+          "id": "C",
+          "text": "(3)はSCPで aws:SourceVpc 条件を強制する",
+          "is_correct": false,
+          "explanation": "やや微妙だがSCPでaws:SourceVpc/aws:VpcSourceIp/aws:SourceVpceは制限可能で正しい。ただし問題は最も適切な2つで、A/B が代表的なdata perimeter のSCP/RCP組み合わせ。"
+        },
+        {
+          "id": "D",
+          "text": "(2)『組織内リソース→組織内アイデンティティのみ』はRCPで aws:PrincipalOrgID 条件を強制する",
+          "is_correct": true,
+          "explanation": "正解。RCPはリソース側の制限。aws:PrincipalOrgID がリクエスト元プリンシパルの組織を表し、自組織のみを許可することで、外部からの予期しないアクセスを防ぐ。"
+        },
+        {
+          "id": "E",
+          "text": "(1)はNACLで実現できる",
+          "is_correct": false,
+          "explanation": "NACLはネットワーク制御で、アイデンティティ・リソース次元の制限はできない。"
+        }
       ],
       "explanation": "AWS Data Perimeter は3軸モデル: identity perimeter（自組織アイデンティティのみ自組織にアクセス）、resource perimeter（自組織リソースには自組織アイデンティティのみ）、network perimeter（自組織ネットワーク経由のみ）。SCP=identity-side、RCP=resource-side、VPC Endpoint policy=network-side が役割分担。aws:ResourceOrgID と aws:PrincipalOrgID は対称関係でデータ境界の中核条件キー。",
       "references": [
-        {"title": "Building a data perimeter on AWS", "url": "https://docs.aws.amazon.com/whitepapers/latest/building-a-data-perimeter-on-aws/building-a-data-perimeter-on-aws.html"},
-        {"title": "Resource control policies", "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html"}
+        {
+          "title": "Building a data perimeter on AWS",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/building-a-data-perimeter-on-aws/building-a-data-perimeter-on-aws.html"
+        },
+        {
+          "title": "Resource control policies",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html"
+        }
       ],
-      "tags": ["data-perimeter", "scp", "rcp", "principal-org-id", "resource-org-id"],
+      "tags": [
+        "data-perimeter",
+        "scp",
+        "rcp",
+        "principal-org-id",
+        "resource-org-id"
+      ],
       "common_mistakes": [
         "SCPだけで全方向制御できると誤解する",
         "aws:ResourceOrgIDとaws:PrincipalOrgIDの方向を混同する",
         "RCPの存在を知らずSCPのみで設計する"
       ],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-028",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "EKS IAM",
       "subtopic": "IRSA / Pod Identity",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるSaaS企業がEKSクラスタを運用中で、PodごとにIAMロールを安全に割り当てたい（ノードロール経由ではなく）。AWS推奨の最新の方式は？",
       "options": [
-        {"id": "A", "text": "EKS Pod Identity（aws-eks-pod-identity-agent）を使う、または OIDC ベースのIRSA を使う", "is_correct": true, "explanation": "正解。Pod Identity は2023年導入の新しい方式で、IRSA（OIDC連携）よりシンプル。Kubernetes ServiceAccount にIAMロールを直接マッピングできる。両方とも本番で利用される標準方式。"},
-        {"id": "B", "text": "全PodにEC2ノードのインスタンスプロファイルの権限を継承させる", "is_correct": false, "explanation": "アンチパターン。最小権限違反で、1Podの侵害が他Podに波及する。"},
-        {"id": "C", "text": "Podごとに異なるEC2ノードグループを作成し、ノードプロファイルで分離する", "is_correct": false, "explanation": "粗粒度かつコスト高。Pod IdentityやIRSAなら同一ノード上で異なるロールを安全に使える。"},
-        {"id": "D", "text": "PodにIAMアクセスキーをsecretとしてマウントする", "is_correct": false, "explanation": "長期キー漏洩リスクが高くアンチパターン。"}
+        {
+          "id": "A",
+          "text": "Podごとに異なるEC2ノードグループを作成し、ノードプロファイルで分離する",
+          "is_correct": false,
+          "explanation": "粗粒度かつコスト高。Pod IdentityやIRSAなら同一ノード上で異なるロールを安全に使える。"
+        },
+        {
+          "id": "B",
+          "text": "全PodにEC2ノードのインスタンスプロファイルの権限を継承させる",
+          "is_correct": false,
+          "explanation": "アンチパターン。最小権限違反で、1Podの侵害が他Podに波及する。"
+        },
+        {
+          "id": "C",
+          "text": "PodにIAMアクセスキーをsecretとしてマウントする",
+          "is_correct": false,
+          "explanation": "長期キー漏洩リスクが高くアンチパターン。"
+        },
+        {
+          "id": "D",
+          "text": "EKS Pod Identity（aws-eks-pod-identity-agent）を使う、または OIDC ベースのIRSA を使う",
+          "is_correct": true,
+          "explanation": "正解。Pod Identity は2023年導入の新しい方式で、IRSA（OIDC連携）よりシンプル。Kubernetes ServiceAccount にIAMロールを直接マッピングできる。両方とも本番で利用される標準方式。"
+        }
       ],
       "explanation": "EKSでPod単位IAMの2方式: (1) IRSA（IAM Roles for Service Accounts）= EKSのOIDCプロバイダをIAMに登録し、ServiceAccount アノテーションでロールARNを指定、AssumeRoleWithWebIdentity で短命クレデンシャル取得。(2) EKS Pod Identity（2023年〜）= aws-eks-pod-identity-agent を使い、より簡単に ServiceAccount→Role マッピング、OIDC設定不要。新規構築は Pod Identity が推奨されつつあるが、IRSAも引き続き有効。",
       "references": [
-        {"title": "EKS Pod Identity", "url": "https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html"},
-        {"title": "IAM roles for service accounts", "url": "https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html"}
+        {
+          "title": "EKS Pod Identity",
+          "url": "https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html"
+        },
+        {
+          "title": "IAM roles for service accounts",
+          "url": "https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html"
+        }
       ],
-      "tags": ["eks", "irsa", "pod-identity", "kubernetes", "saas"],
+      "tags": [
+        "eks",
+        "irsa",
+        "pod-identity",
+        "kubernetes",
+        "saas"
+      ],
       "common_mistakes": [
         "ノードロール権限をPod全体で共有する",
         "Pod Identityの存在を知らない",
         "secretとしてアクセスキーを配布する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-029",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Best Practices",
       "subtopic": "Policy maintenance",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "ある大手保険会社（マルチアカウント、200+ロール）のセキュリティチームが、IAMポリシーの「設計→検証→継続改善」プロセスをエンドツーエンドで設計したい。次のうち最も包括的かつ持続可能な戦略はどれか。",
       "options": [
-        {"id": "A", "text": "全ロールを年に1回マニュアルでレビューし、Excel管理する", "is_correct": false, "explanation": "200+ロール規模では非現実的。マニュアル年次レビューは抜け漏れと運用負荷が大きい。"},
-        {"id": "B", "text": "(設計)Access Analyzer で CloudTrail からポリシー生成、(CI/CD検証)custom policy checks で広すぎる権限をブロック、(継続)unused access analyzer で最小権限を維持、(monitoring)Security Hub で findings 集約、(governance)SCP/RCPで組織レベルガードレール", "is_correct": true, "explanation": "正解。Access Analyzerの3機能（policy generation、custom checks、unused access）+ SCP/RCP + Security Hub の統合運用が現代のIAM ライフサイクル管理のベストプラクティス。"},
-        {"id": "C", "text": "ロール数が多いのでCognito Identity Pool に集約し、IAMロール管理を不要にする", "is_correct": false, "explanation": "Cognito Identity Pool はB2C向けで、社内ガバナンスとは別軸。"},
-        {"id": "D", "text": "全ロールをルートユーザに置き換え、運用を単純化する", "is_correct": false, "explanation": "致命的アンチパターン。最小権限の真逆。"}
+        {
+          "id": "A",
+          "text": "(設計)Access Analyzer で CloudTrail からポリシー生成、(CI/CD検証)custom policy checks で広すぎる権限をブロック、(継続)unused access analyzer で最小権限を維持、(monitoring)Security Hub で findings 集約、(governance)SCP/RCPで組織レベルガードレール",
+          "is_correct": true,
+          "explanation": "正解。Access Analyzerの3機能（policy generation、custom checks、unused access）+ SCP/RCP + Security Hub の統合運用が現代のIAM ライフサイクル管理のベストプラクティス。"
+        },
+        {
+          "id": "B",
+          "text": "ロール数が多いのでCognito Identity Pool に集約し、IAMロール管理を不要にする",
+          "is_correct": false,
+          "explanation": "Cognito Identity Pool はB2C向けで、社内ガバナンスとは別軸。"
+        },
+        {
+          "id": "C",
+          "text": "全ロールを年に1回マニュアルでレビューし、Excel管理する",
+          "is_correct": false,
+          "explanation": "200+ロール規模では非現実的。マニュアル年次レビューは抜け漏れと運用負荷が大きい。"
+        },
+        {
+          "id": "D",
+          "text": "全ロールをルートユーザに置き換え、運用を単純化する",
+          "is_correct": false,
+          "explanation": "致命的アンチパターン。最小権限の真逆。"
+        }
       ],
       "explanation": "現代のIAMライフサイクル: (1) 設計: Access Analyzer policy generation で実際のCloudTrail活動から最小権限ポリシーを生成、(2) 検証: CI/CD で Access Analyzer custom policy checks（CheckAccessNotGranted、CheckNoNewAccess、CheckNoPublicAccess）を実行、(3) 運用監視: unused access analyzerで未使用権限を継続検出、external access analyzer で意図せぬ公開を検出、(4) 集約: Security Hub で findings 一元管理、(5) ガバナンス: SCP/RCP で組織横断ガードレール、Permission Boundary でデリゲーション。これが包括的アプローチ。",
       "references": [
-        {"title": "IAM Access Analyzer features overview", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"},
-        {"title": "Generating policies based on CloudTrail", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-generation.html"}
+        {
+          "title": "IAM Access Analyzer features overview",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+        },
+        {
+          "title": "Generating policies based on CloudTrail",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-generation.html"
+        }
       ],
-      "tags": ["iam-lifecycle", "access-analyzer", "least-privilege", "cicd", "enterprise"],
+      "tags": [
+        "iam-lifecycle",
+        "access-analyzer",
+        "least-privilege",
+        "cicd",
+        "enterprise"
+      ],
       "common_mistakes": [
         "マニュアルレビューに依存する",
         "Access Analyzerの3機能を統合活用しない",
         "SCP/RCP/Boundary/Identity Center を別個に運用してしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "scs-c03-domain4-030",
       "version": "1.0",
-      "exam": {"code": "SCS-C03", "name": "AWS Certified Security - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "Identity and Access Management", "weight_percent": 16},
+      "exam": {
+        "code": "SCS-C03",
+        "name": "AWS Certified Security - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Identity and Access Management",
+        "weight_percent": 16
+      },
       "topic": "IAM Roles Anywhere",
       "subtopic": "On-prem to AWS authentication",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の製造業で、オンプレミスサーバ群からAWSへ認証アクセスしたい。IAMアクセスキーをサーバに配布したくなく、既存のPKI（X.509クライアント証明書）を活用したい。最も適切なAWS機能は？",
+      "stem": "ある製造業で、オンプレミスサーバ群からAWSへ認証アクセスしたい。IAMアクセスキーをサーバに配布したくなく、既存のPKI（X.509クライアント証明書）を活用したい。最も適切なAWS機能は？",
       "options": [
-        {"id": "A", "text": "IAM Roles Anywhere を使い、信頼するCAを登録し、X.509 証明書ベースで一時クレデンシャルを取得する", "is_correct": true, "explanation": "正解。IAM Roles Anywhereはオンプレミス・他クラウド・IoTデバイスがX.509証明書でAWS IAMロールを引き受けるサービス。長期キー配布不要。AWS Private CA や独自CA も利用可能。"},
-        {"id": "B", "text": "各サーバにIAMアクセスキーを配布し、KMS暗号化して管理する", "is_correct": false, "explanation": "依然として長期キーの管理が必要。要件に反する。"},
-        {"id": "C", "text": "AWS Site-to-Site VPN を使えば自動的にAWSロールが使える", "is_correct": false, "explanation": "VPNはネットワーク接続で、認証は別途必要。VPN自体はクレデンシャルを発行しない。"},
-        {"id": "D", "text": "AWS Direct Connect で接続すればIAM 不要", "is_correct": false, "explanation": "Direct Connectもネットワーク層で、IAM認証とは独立。"}
+        {
+          "id": "A",
+          "text": "AWS Direct Connect で接続すればIAM 不要",
+          "is_correct": false,
+          "explanation": "Direct Connectもネットワーク層で、IAM認証とは独立。"
+        },
+        {
+          "id": "B",
+          "text": "IAM Roles Anywhere を使い、信頼するCAを登録し、X.509 証明書ベースで一時クレデンシャルを取得する",
+          "is_correct": true,
+          "explanation": "正解。IAM Roles Anywhereはオンプレミス・他クラウド・IoTデバイスがX.509証明書でAWS IAMロールを引き受けるサービス。長期キー配布不要。AWS Private CA や独自CA も利用可能。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Site-to-Site VPN を使えば自動的にAWSロールが使える",
+          "is_correct": false,
+          "explanation": "VPNはネットワーク接続で、認証は別途必要。VPN自体はクレデンシャルを発行しない。"
+        },
+        {
+          "id": "D",
+          "text": "各サーバにIAMアクセスキーを配布し、KMS暗号化して管理する",
+          "is_correct": false,
+          "explanation": "依然として長期キーの管理が必要。要件に反する。"
+        }
       ],
       "explanation": "IAM Roles Anywhere（2022年導入）はAWS外部のワークロード（オンプレ、他クラウド、IoT）が長期IAMアクセスキーを使わずにAWSにアクセスできるサービス。流れ: (1) Trust Anchor として CA を登録、(2) Profile でロールと session policies を定義、(3) クライアントは aws_signing_helper（または対応SDK）で X.509 証明書を提示、CreateSession API で短命クレデンシャル取得。証明書ローテーションで長期キーリスクを排除。製造業の既存PKI活用に最適。",
       "references": [
-        {"title": "What is IAM Roles Anywhere?", "url": "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html"},
-        {"title": "IAM Roles Anywhere FAQ", "url": "https://aws.amazon.com/iam/roles-anywhere/faqs/"}
+        {
+          "title": "What is IAM Roles Anywhere?",
+          "url": "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html"
+        },
+        {
+          "title": "IAM Roles Anywhere FAQ",
+          "url": "https://aws.amazon.com/iam/roles-anywhere/faqs/"
+        }
       ],
-      "tags": ["iam-roles-anywhere", "x509", "on-premise", "manufacturing", "federation"],
+      "tags": [
+        "iam-roles-anywhere",
+        "x509",
+        "on-premise",
+        "manufacturing",
+        "federation"
+      ],
       "common_mistakes": [
         "VPN/Direct ConnectがIAM認証を提供すると誤解する",
         "IAM Roles Anywhereの存在を知らない",
         "長期キー配布を回避できないと諦める"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

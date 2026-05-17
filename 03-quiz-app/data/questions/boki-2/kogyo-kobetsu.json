@@ -15,692 +15,2253 @@
     {
       "id": "boki-2-kogyo-kobetsu-001",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "原価計算の基礎",
       "subtopic": "個別原価計算の特徴",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "個別原価計算が最も適している生産形態はどれか？",
       "options": [
-        {"id": "A", "text": "同じ製品を大量に連続生産する形態", "is_correct": false, "explanation": "これは総合原価計算の対象。連続大量生産では工程別・組別総合原価計算を用いる。"},
-        {"id": "B", "text": "顧客の注文に応じて特定の仕様で個別に生産する形態", "is_correct": true, "explanation": "正解。受注生産・個別生産では製造指図書ごとに原価を集計する個別原価計算が用いられる。"},
-        {"id": "C", "text": "連続的に発生するサービス業務", "is_correct": false, "explanation": "サービス業の原価計算は別体系。一般的な製品原価計算ではない。"},
-        {"id": "D", "text": "標準規格品を見込みで大量生産する形態", "is_correct": false, "explanation": "これは見込生産で、総合原価計算の典型例である。"}
+        {
+          "id": "A",
+          "text": "顧客の注文に応じて特定の仕様で個別に生産する形態",
+          "is_correct": true,
+          "explanation": "正解。受注生産・個別生産では製造指図書ごとに原価を集計する個別原価計算が用いられる。"
+        },
+        {
+          "id": "B",
+          "text": "標準規格品を見込みで大量生産する形態",
+          "is_correct": false,
+          "explanation": "これは見込生産で、総合原価計算の典型例である。"
+        },
+        {
+          "id": "C",
+          "text": "同じ製品を大量に連続生産する形態",
+          "is_correct": false,
+          "explanation": "これは総合原価計算の対象。連続大量生産では工程別・組別総合原価計算を用いる。"
+        },
+        {
+          "id": "D",
+          "text": "連続的に発生するサービス業務",
+          "is_correct": false,
+          "explanation": "サービス業の原価計算は別体系。一般的な製品原価計算ではない。"
+        }
       ],
       "explanation": "個別原価計算は、造船・建設・特注機械など、顧客ごとに仕様の異なる製品を製造指図書（製造番号）単位で個別に集計する手法である。一方、総合原価計算は同種製品の連続大量生産に用いる。両者の適用区分は受注生産か見込生産（連続生産）かで判断する。",
-      "references": [{"title": "原価計算基準 第二章 一三", "url": ""}],
-      "tags": ["個別原価計算", "原価計算基礎", "受注生産"],
-      "common_mistakes": ["個別原価計算を見込生産にも適用してしまう", "総合原価計算との適用区分を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "原価計算基準 第二章 一三",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "個別原価計算",
+        "原価計算基礎",
+        "受注生産"
+      ],
+      "common_mistakes": [
+        "個別原価計算を見込生産にも適用してしまう",
+        "総合原価計算との適用区分を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-002",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "原価の分類",
       "subtopic": "製造直接費と製造間接費",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "次のうち「製造間接費」に分類されるものはどれか？",
       "options": [
-        {"id": "A", "text": "特定の製造指図書のために購入した主要材料費", "is_correct": false, "explanation": "特定指図書に直接賦課できるため直接材料費。"},
-        {"id": "B", "text": "特定の製造指図書のために働いた直接工の直接作業賃金", "is_correct": false, "explanation": "特定指図書に直接賦課できるため直接労務費。"},
-        {"id": "C", "text": "工場建物の減価償却費", "is_correct": true, "explanation": "正解。工場全体で発生し、特定指図書に直接賦課できないため製造間接費（間接経費）。"},
-        {"id": "D", "text": "特定の製造指図書のために発注した外注加工賃", "is_correct": false, "explanation": "特定指図書のために発生したものであれば直接経費。"}
+        {
+          "id": "A",
+          "text": "特定の製造指図書のために発注した外注加工賃",
+          "is_correct": false,
+          "explanation": "特定指図書のために発生したものであれば直接経費。"
+        },
+        {
+          "id": "B",
+          "text": "工場建物の減価償却費",
+          "is_correct": true,
+          "explanation": "正解。工場全体で発生し、特定指図書に直接賦課できないため製造間接費（間接経費）。"
+        },
+        {
+          "id": "C",
+          "text": "特定の製造指図書のために購入した主要材料費",
+          "is_correct": false,
+          "explanation": "特定指図書に直接賦課できるため直接材料費。"
+        },
+        {
+          "id": "D",
+          "text": "特定の製造指図書のために働いた直接工の直接作業賃金",
+          "is_correct": false,
+          "explanation": "特定指図書に直接賦課できるため直接労務費。"
+        }
       ],
       "explanation": "製造間接費は、特定の製造指図書に直接的に集計できない原価で、間接材料費（補助材料・工場消耗品）、間接労務費（間接工賃金・工場長給料）、間接経費（減価償却費・電力料・賃借料）から成る。これらは配賦基準に基づき各指図書に配賦される。",
-      "references": [{"title": "原価計算基準 第二章 八・九", "url": ""}],
-      "tags": ["原価分類", "製造間接費", "直接費"],
-      "common_mistakes": ["特定指図書のための材料も間接費と思い込む", "工場の固定費を直接費に含めてしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "原価計算基準 第二章 八・九",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "原価分類",
+        "製造間接費",
+        "直接費"
+      ],
+      "common_mistakes": [
+        "特定指図書のための材料も間接費と思い込む",
+        "工場の固定費を直接費に含めてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-003",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "材料費",
       "subtopic": "材料の購入と消費の仕訳",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
-      "stem": "東海地方のある製造業者が、製造指図書 No.101 のために素材 200,000円を倉庫から払い出した。正しい仕訳は？",
+      "stem": "あるある製造業者が、製造指図書 No.101 のために素材 200,000円を倉庫から払い出した。正しい仕訳は？",
       "options": [
-        {"id": "A", "text": "(借)材料 200,000 / (貸)仕掛品 200,000", "is_correct": false, "explanation": "貸借が逆。材料の払出は材料勘定の減少（貸方）、仕掛品（または製造間接費）の増加（借方）。"},
-        {"id": "B", "text": "(借)仕掛品 200,000 / (貸)材料 200,000", "is_correct": true, "explanation": "正解。特定指図書のために消費される素材は直接材料費なので仕掛品勘定へ振替える。"},
-        {"id": "C", "text": "(借)製造間接費 200,000 / (貸)材料 200,000", "is_correct": false, "explanation": "特定指図書のために消費された素材は直接材料費。製造間接費は補助材料・工場消耗品など。"},
-        {"id": "D", "text": "(借)製品 200,000 / (貸)材料 200,000", "is_correct": false, "explanation": "完成前の段階で製品勘定に振替えることはない。完成時に仕掛品から製品へ振替える。"}
+        {
+          "id": "A",
+          "text": "(借)製造間接費 200,000 / (貸)材料 200,000",
+          "is_correct": false,
+          "explanation": "特定指図書のために消費された素材は直接材料費。製造間接費は補助材料・工場消耗品など。"
+        },
+        {
+          "id": "B",
+          "text": "(借)材料 200,000 / (貸)仕掛品 200,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。材料の払出は材料勘定の減少（貸方）、仕掛品（または製造間接費）の増加（借方）。"
+        },
+        {
+          "id": "C",
+          "text": "(借)仕掛品 200,000 / (貸)材料 200,000",
+          "is_correct": true,
+          "explanation": "正解。特定指図書のために消費される素材は直接材料費なので仕掛品勘定へ振替える。"
+        },
+        {
+          "id": "D",
+          "text": "(借)製品 200,000 / (貸)材料 200,000",
+          "is_correct": false,
+          "explanation": "完成前の段階で製品勘定に振替えることはない。完成時に仕掛品から製品へ振替える。"
+        }
       ],
       "explanation": "直接材料費の消費仕訳は (借)仕掛品 / (貸)材料。特定指図書のために消費された主要材料・買入部品は直接材料費として仕掛品勘定へ振替える。一方、補助材料や工場消耗品は (借)製造間接費 / (貸)材料 と仕訳する。",
-      "references": [{"title": "工業簿記 材料費の処理", "url": ""}],
-      "tags": ["材料費", "仕訳", "仕掛品"],
-      "common_mistakes": ["直接材料費を製造間接費にしてしまう", "貸借を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 材料費の処理",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "材料費",
+        "仕訳",
+        "仕掛品"
+      ],
+      "common_mistakes": [
+        "直接材料費を製造間接費にしてしまう",
+        "貸借を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-004",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "材料費",
       "subtopic": "予定消費価格と材料消費価格差異",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある工場では材料の予定消費価格を @500円としている。当月の実際消費数量は400kg、実際消費価格は @520円であった。「材料消費価格差異」の金額と有利・不利の区別は？",
       "options": [
-        {"id": "A", "text": "8,000円の有利差異", "is_correct": false, "explanation": "実際価格が予定より高いので不利差異。符号判断ミス。"},
-        {"id": "B", "text": "8,000円の不利差異", "is_correct": true, "explanation": "正解。(@500 - @520) × 400kg = -8,000円。実際が予定を上回っており不利差異。"},
-        {"id": "C", "text": "10,400円の不利差異", "is_correct": false, "explanation": "@520 × 20 = 10,400 など意味不明な計算。差異は予定と実際の差額×数量で算出する。"},
-        {"id": "D", "text": "差異は発生しない", "is_correct": false, "explanation": "予定価格と実際価格に差があれば必ず差異が生じる。"}
+        {
+          "id": "A",
+          "text": "差異は発生しない",
+          "is_correct": false,
+          "explanation": "予定価格と実際価格に差があれば必ず差異が生じる。"
+        },
+        {
+          "id": "B",
+          "text": "8,000円の有利差異",
+          "is_correct": false,
+          "explanation": "実際価格が予定より高いので不利差異。符号判断ミス。"
+        },
+        {
+          "id": "C",
+          "text": "10,400円の不利差異",
+          "is_correct": false,
+          "explanation": "@520 × 20 = 10,400 など意味不明な計算。差異は予定と実際の差額×数量で算出する。"
+        },
+        {
+          "id": "D",
+          "text": "8,000円の不利差異",
+          "is_correct": true,
+          "explanation": "正解。(@500 - @520) × 400kg = -8,000円。実際が予定を上回っており不利差異。"
+        }
       ],
       "explanation": "材料消費価格差異 =（予定消費価格 - 実際消費価格）× 実際消費数量。本問では (500 - 520) × 400kg = -8,000円。マイナス（実際が予定より高い）は原価が想定より増えているので不利差異。仕訳は (借)材料消費価格差異 8,000 / (貸)材料 8,000 となる。",
-      "references": [{"title": "工業簿記 予定消費価格と差異", "url": ""}],
-      "tags": ["材料費", "予定消費価格", "材料消費価格差異"],
-      "common_mistakes": ["有利・不利の符号を逆にする", "差異の計算式を間違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 予定消費価格と差異",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "材料費",
+        "予定消費価格",
+        "材料消費価格差異"
+      ],
+      "common_mistakes": [
+        "有利・不利の符号を逆にする",
+        "差異の計算式を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-005",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "材料費",
       "subtopic": "棚卸減耗費の処理",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある製造業者の月末に、材料の帳簿棚卸数量100kg、実地棚卸数量98kg、@600円であった。通常生じる棚卸減耗費の処理として正しい仕訳は？",
       "options": [
-        {"id": "A", "text": "(借)製造間接費 1,200 / (貸)材料 1,200", "is_correct": true, "explanation": "正解。通常生じる棚卸減耗費は製造原価（製造間接費）として処理される。(100-98)×600=1,200円。"},
-        {"id": "B", "text": "(借)棚卸減耗損 1,200 / (貸)材料 1,200", "is_correct": false, "explanation": "通常生じる範囲の減耗は工業簿記では「製造間接費」として処理する。「棚卸減耗損」勘定（営業外費用・特別損失）は商業簿記の処理。"},
-        {"id": "C", "text": "(借)仕掛品 1,200 / (貸)材料 1,200", "is_correct": false, "explanation": "特定指図書に直接賦課できないため直接費（仕掛品）にはできない。"},
-        {"id": "D", "text": "減耗は無視し、仕訳不要", "is_correct": false, "explanation": "実地棚卸との差額は適切に処理する必要があり、無視はできない。"}
+        {
+          "id": "A",
+          "text": "(借)製造間接費 1,200 / (貸)材料 1,200",
+          "is_correct": true,
+          "explanation": "正解。通常生じる棚卸減耗費は製造原価（製造間接費）として処理される。(100-98)×600=1,200円。"
+        },
+        {
+          "id": "B",
+          "text": "減耗は無視し、仕訳不要",
+          "is_correct": false,
+          "explanation": "実地棚卸との差額は適切に処理する必要があり、無視はできない。"
+        },
+        {
+          "id": "C",
+          "text": "(借)棚卸減耗損 1,200 / (貸)材料 1,200",
+          "is_correct": false,
+          "explanation": "通常生じる範囲の減耗は工業簿記では「製造間接費」として処理する。「棚卸減耗損」勘定（営業外費用・特別損失）は商業簿記の処理。"
+        },
+        {
+          "id": "D",
+          "text": "(借)仕掛品 1,200 / (貸)材料 1,200",
+          "is_correct": false,
+          "explanation": "特定指図書に直接賦課できないため直接費（仕掛品）にはできない。"
+        }
       ],
       "explanation": "工業簿記における通常生じる棚卸減耗費は、製造活動上避けられないコストとして製造間接費に算入する。仕訳は (借)製造間接費 / (貸)材料。異常な減耗（火災・盗難等）は非原価項目として「棚卸減耗損」（営業外費用または特別損失）で処理する点が異なる。",
-      "references": [{"title": "工業簿記 材料の月末処理", "url": ""}],
-      "tags": ["材料費", "棚卸減耗", "製造間接費"],
-      "common_mistakes": ["通常減耗を商業簿記同様に「棚卸減耗損」勘定で処理してしまう", "異常減耗と通常減耗の区別をしない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 材料の月末処理",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "材料費",
+        "棚卸減耗",
+        "製造間接費"
+      ],
+      "common_mistakes": [
+        "通常減耗を商業簿記同様に「棚卸減耗損」勘定で処理してしまう",
+        "異常減耗と通常減耗の区別をしない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-006",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "労務費",
       "subtopic": "直接工賃金の処理",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある工場の直接工は、当月の直接作業時間が180時間、間接作業時間が20時間であった。賃率は@1,500円。直接工賃金のうち「直接労務費」となる金額は？",
       "options": [
-        {"id": "A", "text": "30,000円", "is_correct": false, "explanation": "間接作業時間20時間×1,500=30,000円。これは間接労務費の額であり、直接労務費ではない。"},
-        {"id": "B", "text": "270,000円", "is_correct": true, "explanation": "正解。180時間×@1,500=270,000円。直接工の直接作業時間部分のみが直接労務費。"},
-        {"id": "C", "text": "300,000円", "is_correct": false, "explanation": "200時間×@1,500=300,000円は直接工賃金の総額。間接作業時間分は間接労務費（製造間接費）。"},
-        {"id": "D", "text": "0円（直接工賃金は全額製造間接費）", "is_correct": false, "explanation": "これは間接工の処理。直接工は作業時間の内訳により直接費・間接費に分かれる。"}
+        {
+          "id": "A",
+          "text": "300,000円",
+          "is_correct": false,
+          "explanation": "200時間×@1,500=300,000円は直接工賃金の総額。間接作業時間分は間接労務費（製造間接費）。"
+        },
+        {
+          "id": "B",
+          "text": "270,000円",
+          "is_correct": true,
+          "explanation": "正解。180時間×@1,500=270,000円。直接工の直接作業時間部分のみが直接労務費。"
+        },
+        {
+          "id": "C",
+          "text": "30,000円",
+          "is_correct": false,
+          "explanation": "間接作業時間20時間×1,500=30,000円。これは間接労務費の額であり、直接労務費ではない。"
+        },
+        {
+          "id": "D",
+          "text": "0円（直接工賃金は全額製造間接費）",
+          "is_correct": false,
+          "explanation": "これは間接工の処理。直接工は作業時間の内訳により直接費・間接費に分かれる。"
+        }
       ],
       "explanation": "直接工の賃金は、直接作業時間分が直接労務費（仕掛品）、間接作業時間（段取・運搬・修繕等）分は間接労務費（製造間接費）として処理する。本問では直接労務費 = 180h×1,500 = 270,000円、間接労務費 = 20h×1,500 = 30,000円。間接工の賃金は全額が間接労務費となる点と区別する必要がある。",
-      "references": [{"title": "工業簿記 労務費の処理", "url": ""}],
-      "tags": ["労務費", "直接工", "直接労務費"],
-      "common_mistakes": ["直接工賃金を全額直接労務費にしてしまう", "間接工と直接工の処理を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 労務費の処理",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "労務費",
+        "直接工",
+        "直接労務費"
+      ],
+      "common_mistakes": [
+        "直接工賃金を全額直接労務費にしてしまう",
+        "間接工と直接工の処理を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-007",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "労務費",
       "subtopic": "賃金の支払と消費の関係",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
-      "stem": "東海地方の機械加工業者で、当月の賃金支払額は500,000円、前月未払賃金80,000円、当月末未払賃金120,000円であった。当月の「賃金消費高」はいくらか？",
+      "stem": "ある機械加工業者で、当月の賃金支払額は500,000円、前月未払賃金80,000円、当月末未払賃金120,000円であった。当月の「賃金消費高」はいくらか？",
       "options": [
-        {"id": "A", "text": "460,000円", "is_correct": false, "explanation": "支払 - 前月未払 - 当月未払 = 500,000-80,000-120,000=300,000としていない。符号の扱いを誤りやすい。"},
-        {"id": "B", "text": "500,000円", "is_correct": false, "explanation": "支払額のみ。賃金は給与計算期間と原価計算期間のずれを考慮する必要がある。"},
-        {"id": "C", "text": "540,000円", "is_correct": true, "explanation": "正解。消費高 = 当月支払 - 前月未払 + 当月未払 = 500,000 - 80,000 + 120,000 = 540,000円。"},
-        {"id": "D", "text": "700,000円", "is_correct": false, "explanation": "未払を両方加算した誤り。前月未払は当月支払で精算済みなので減算する。"}
+        {
+          "id": "A",
+          "text": "500,000円",
+          "is_correct": false,
+          "explanation": "支払額のみ。賃金は給与計算期間と原価計算期間のずれを考慮する必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "460,000円",
+          "is_correct": false,
+          "explanation": "支払 - 前月未払 - 当月未払 = 500,000-80,000-120,000=300,000としていない。符号の扱いを誤りやすい。"
+        },
+        {
+          "id": "C",
+          "text": "540,000円",
+          "is_correct": true,
+          "explanation": "正解。消費高 = 当月支払 - 前月未払 + 当月未払 = 500,000 - 80,000 + 120,000 = 540,000円。"
+        },
+        {
+          "id": "D",
+          "text": "700,000円",
+          "is_correct": false,
+          "explanation": "未払を両方加算した誤り。前月未払は当月支払で精算済みなので減算する。"
+        }
       ],
       "explanation": "賃金は「支払額」と「消費額（発生額）」が異なる。当月消費高 = 当月支払額 - 前月末未払額 + 当月末未払額。前月末未払は当月支払額に含まれているため減算、当月末未払はまだ支払っていないが当月発生したため加算する。本問: 500,000 - 80,000 + 120,000 = 540,000円。",
-      "references": [{"title": "工業簿記 賃金の消費高計算", "url": ""}],
-      "tags": ["労務費", "賃金消費高", "未払賃金"],
-      "common_mistakes": ["前月末・当月末未払の符号を逆にする", "支払額をそのまま消費高にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 賃金の消費高計算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "労務費",
+        "賃金消費高",
+        "未払賃金"
+      ],
+      "common_mistakes": [
+        "前月末・当月末未払の符号を逆にする",
+        "支払額をそのまま消費高にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-008",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "経費",
       "subtopic": "経費の分類",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "次の経費のうち、特定の製造指図書 No.205 の「直接経費」として処理されるものはどれか？",
       "options": [
-        {"id": "A", "text": "工場全体の電力料", "is_correct": false, "explanation": "工場全体で消費する電力は、特定指図書に直接賦課できないため間接経費（製造間接費）。"},
-        {"id": "B", "text": "工場建物の減価償却費", "is_correct": false, "explanation": "工場全体に関係する減価償却費は間接経費。"},
-        {"id": "C", "text": "No.205 製造のために特別に発注した外注加工賃", "is_correct": true, "explanation": "正解。特定指図書のために発生した外注加工賃は直接経費として直接賦課できる。"},
-        {"id": "D", "text": "工場の保険料", "is_correct": false, "explanation": "工場全体に関する保険料は間接経費。"}
+        {
+          "id": "A",
+          "text": "工場全体の電力料",
+          "is_correct": false,
+          "explanation": "工場全体で消費する電力は、特定指図書に直接賦課できないため間接経費（製造間接費）。"
+        },
+        {
+          "id": "B",
+          "text": "工場の保険料",
+          "is_correct": false,
+          "explanation": "工場全体に関する保険料は間接経費。"
+        },
+        {
+          "id": "C",
+          "text": "工場建物の減価償却費",
+          "is_correct": false,
+          "explanation": "工場全体に関係する減価償却費は間接経費。"
+        },
+        {
+          "id": "D",
+          "text": "No.205 製造のために特別に発注した外注加工賃",
+          "is_correct": true,
+          "explanation": "正解。特定指図書のために発生した外注加工賃は直接経費として直接賦課できる。"
+        }
       ],
       "explanation": "経費は形態別では「外注加工賃」「特許権使用料」「電力料」「減価償却費」「保険料」「租税公課」等。このうち特定指図書に直接結びつくもの（外注加工賃・特許権使用料など）は直接経費として仕掛品に直接賦課する。電力料・減価償却費・保険料など工場全体で発生するものは間接経費として製造間接費に集計後、配賦する。",
-      "references": [{"title": "工業簿記 経費の分類", "url": ""}],
-      "tags": ["経費", "直接経費", "外注加工賃"],
-      "common_mistakes": ["経費はすべて間接費と思い込む", "外注加工賃を間接経費に分類する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 経費の分類",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "経費",
+        "直接経費",
+        "外注加工賃"
+      ],
+      "common_mistakes": [
+        "経費はすべて間接費と思い込む",
+        "外注加工賃を間接経費に分類する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-009",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "経費",
       "subtopic": "電力料・水道光熱費の測定基準",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "経費の発生額把握には支払経費・月割経費・測定経費・発生経費の区別がある。「電力料」を当月に正確な使用量で原価算入する場合、どの分類になるか？",
       "options": [
-        {"id": "A", "text": "支払経費（支払額をそのまま当月分とする）", "is_correct": false, "explanation": "支払額そのままでは検針月とのずれにより当月の消費量が反映されない。"},
-        {"id": "B", "text": "月割経費（年額や半年額を月割りする）", "is_correct": false, "explanation": "月割経費は保険料・固定資産税・減価償却費など定期的に発生する経費の処理。"},
-        {"id": "C", "text": "測定経費（メーターで測定した使用量で計算）", "is_correct": true, "explanation": "正解。電力料・ガス代・水道料はメーターによる測定値に単価を乗じて当月発生額を把握する。"},
-        {"id": "D", "text": "発生経費（実際の発生事象で計上）", "is_correct": false, "explanation": "発生経費は棚卸減耗費など、計算により当月発生額を把握する経費。"}
+        {
+          "id": "A",
+          "text": "測定経費（メーターで測定した使用量で計算）",
+          "is_correct": true,
+          "explanation": "正解。電力料・ガス代・水道料はメーターによる測定値に単価を乗じて当月発生額を把握する。"
+        },
+        {
+          "id": "B",
+          "text": "月割経費（年額や半年額を月割りする）",
+          "is_correct": false,
+          "explanation": "月割経費は保険料・固定資産税・減価償却費など定期的に発生する経費の処理。"
+        },
+        {
+          "id": "C",
+          "text": "支払経費（支払額をそのまま当月分とする）",
+          "is_correct": false,
+          "explanation": "支払額そのままでは検針月とのずれにより当月の消費量が反映されない。"
+        },
+        {
+          "id": "D",
+          "text": "発生経費（実際の発生事象で計上）",
+          "is_correct": false,
+          "explanation": "発生経費は棚卸減耗費など、計算により当月発生額を把握する経費。"
+        }
       ],
       "explanation": "経費の月別把握方法は4種類。①支払経費（外注加工賃・修繕料）、②月割経費（減価償却費・保険料・賃借料）、③測定経費（電力料・ガス代・水道料）、④発生経費（棚卸減耗費）。電力料はメーターで「いつから・いつまで・何kWh使ったか」を測定して当月の発生額を算定する点が特徴。",
-      "references": [{"title": "工業簿記 経費の月別計算", "url": ""}],
-      "tags": ["経費", "測定経費", "電力料"],
-      "common_mistakes": ["支払経費と測定経費の区別をしない", "月割経費の対象を誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 経費の月別計算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "経費",
+        "測定経費",
+        "電力料"
+      ],
+      "common_mistakes": [
+        "支払経費と測定経費の区別をしない",
+        "月割経費の対象を誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-010",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "製造間接費配賦",
       "subtopic": "実際配賦",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある工場の当月の製造間接費実際発生額は600,000円、直接作業時間は1,000時間（うちNo.301指図書200時間、No.302指図書300時間、No.303指図書500時間）。直接作業時間を基準に実際配賦する場合、No.301への配賦額は？",
       "options": [
-        {"id": "A", "text": "100,000円", "is_correct": false, "explanation": "300時間分（No.302）の配賦額。指図書を取り違えている。"},
-        {"id": "B", "text": "120,000円", "is_correct": true, "explanation": "正解。実際配賦率 = 600,000÷1,000h = @600円。No.301配賦額 = @600×200h = 120,000円。"},
-        {"id": "C", "text": "200,000円", "is_correct": false, "explanation": "200時間×@1,000などの誤計算。配賦率を間違えている。"},
-        {"id": "D", "text": "300,000円", "is_correct": false, "explanation": "No.303の配賦額。指図書を取り違えている。"}
+        {
+          "id": "A",
+          "text": "100,000円",
+          "is_correct": false,
+          "explanation": "300時間分（No.302）の配賦額。指図書を取り違えている。"
+        },
+        {
+          "id": "B",
+          "text": "120,000円",
+          "is_correct": true,
+          "explanation": "正解。実際配賦率 = 600,000÷1,000h = @600円。No.301配賦額 = @600×200h = 120,000円。"
+        },
+        {
+          "id": "C",
+          "text": "200,000円",
+          "is_correct": false,
+          "explanation": "200時間×@1,000などの誤計算。配賦率を間違えている。"
+        },
+        {
+          "id": "D",
+          "text": "300,000円",
+          "is_correct": false,
+          "explanation": "No.303の配賦額。指図書を取り違えている。"
+        }
       ],
       "explanation": "実際配賦は、月末に集計した実際発生額を実際配賦基準量で割って配賦率を算出し、各指図書の基準量を乗じて配賦する。本問の実際配賦率 = 600,000÷1,000h = @600円。No.301は200時間使用したため200×600=120,000円。実際配賦は月末を待たないと配賦できず、また操業度変動の影響を受ける欠点がある。",
-      "references": [{"title": "工業簿記 実際配賦", "url": ""}],
-      "tags": ["製造間接費", "実際配賦", "配賦率"],
-      "common_mistakes": ["配賦率の計算を間違える", "指図書の作業時間を取り違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 実際配賦",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "製造間接費",
+        "実際配賦",
+        "配賦率"
+      ],
+      "common_mistakes": [
+        "配賦率の計算を間違える",
+        "指図書の作業時間を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-011",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "製造間接費配賦",
       "subtopic": "予定配賦率の算定",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある工場の年間製造間接費予算は7,200,000円、年間予定総直接作業時間は12,000時間である。直接作業時間を配賦基準とした場合の予定配賦率は？",
       "options": [
-        {"id": "A", "text": "@500円", "is_correct": false, "explanation": "6,000,000÷12,000など別の数値で計算した誤り。"},
-        {"id": "B", "text": "@600円", "is_correct": true, "explanation": "正解。予定配賦率 = 年間予算 ÷ 年間予定操業度 = 7,200,000 ÷ 12,000h = @600円/h。"},
-        {"id": "C", "text": "@720円", "is_correct": false, "explanation": "7,200,000÷10,000など分母を間違えた誤り。"},
-        {"id": "D", "text": "@1,000円", "is_correct": false, "explanation": "予算と操業度の桁を取り違えた誤り。"}
+        {
+          "id": "A",
+          "text": "@720円",
+          "is_correct": false,
+          "explanation": "7,200,000÷10,000など分母を間違えた誤り。"
+        },
+        {
+          "id": "B",
+          "text": "@1,000円",
+          "is_correct": false,
+          "explanation": "予算と操業度の桁を取り違えた誤り。"
+        },
+        {
+          "id": "C",
+          "text": "@600円",
+          "is_correct": true,
+          "explanation": "正解。予定配賦率 = 年間予算 ÷ 年間予定操業度 = 7,200,000 ÷ 12,000h = @600円/h。"
+        },
+        {
+          "id": "D",
+          "text": "@500円",
+          "is_correct": false,
+          "explanation": "6,000,000÷12,000など別の数値で計算した誤り。"
+        }
       ],
       "explanation": "予定配賦率 = 製造間接費予算（基準操業度における予算額）÷ 基準操業度。予定配賦により、月末を待たずに配賦額を計算でき、また操業度変動の影響を排除できる。本問では 7,200,000÷12,000h = @600円。月次に直すと予算600,000円÷予定1,000h = @600円と一致する。",
-      "references": [{"title": "工業簿記 予定配賦率", "url": ""}],
-      "tags": ["製造間接費", "予定配賦", "予定配賦率"],
-      "common_mistakes": ["年額と月額を混同する", "分子分母を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 予定配賦率",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "製造間接費",
+        "予定配賦",
+        "予定配賦率"
+      ],
+      "common_mistakes": [
+        "年額と月額を混同する",
+        "分子分母を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-012",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "製造間接費配賦",
       "subtopic": "予定配賦の仕訳",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "予定配賦率@600円/h、当月の各指図書の直接作業時間合計は950時間であった。当月の予定配賦の仕訳として正しいものは？",
       "options": [
-        {"id": "A", "text": "(借)製造間接費 570,000 / (貸)仕掛品 570,000", "is_correct": false, "explanation": "貸借が逆。予定配賦は製造間接費を仕掛品に振替えるため (借)仕掛品 / (貸)製造間接費。"},
-        {"id": "B", "text": "(借)仕掛品 570,000 / (貸)製造間接費 570,000", "is_correct": true, "explanation": "正解。@600×950h=570,000円。製造間接費の予定配賦額を仕掛品勘定に振替える。"},
-        {"id": "C", "text": "(借)仕掛品 600,000 / (貸)製造間接費 600,000", "is_correct": false, "explanation": "実際操業度（950h）ではなく基準操業度（1,000h）で計算してしまった誤り。"},
-        {"id": "D", "text": "仕訳不要（月末まで実際発生額を集計してから配賦する）", "is_correct": false, "explanation": "それは実際配賦の説明。予定配賦は実際操業度が確定すれば月中・月末に配賦仕訳ができる。"}
+        {
+          "id": "A",
+          "text": "(借)仕掛品 600,000 / (貸)製造間接費 600,000",
+          "is_correct": false,
+          "explanation": "実際操業度（950h）ではなく基準操業度（1,000h）で計算してしまった誤り。"
+        },
+        {
+          "id": "B",
+          "text": "仕訳不要（月末まで実際発生額を集計してから配賦する）",
+          "is_correct": false,
+          "explanation": "それは実際配賦の説明。予定配賦は実際操業度が確定すれば月中・月末に配賦仕訳ができる。"
+        },
+        {
+          "id": "C",
+          "text": "(借)製造間接費 570,000 / (貸)仕掛品 570,000",
+          "is_correct": false,
+          "explanation": "貸借が逆。予定配賦は製造間接費を仕掛品に振替えるため (借)仕掛品 / (貸)製造間接費。"
+        },
+        {
+          "id": "D",
+          "text": "(借)仕掛品 570,000 / (貸)製造間接費 570,000",
+          "is_correct": true,
+          "explanation": "正解。@600×950h=570,000円。製造間接費の予定配賦額を仕掛品勘定に振替える。"
+        }
       ],
       "explanation": "予定配賦の仕訳は (借)仕掛品 / (貸)製造間接費。配賦額 = 予定配賦率 × 実際操業度。本問では @600×950h = 570,000円。月末に実際発生額が集計されると、製造間接費勘定の貸方（予定配賦額）と借方（実際発生額）に差が生じ、これが製造間接費配賦差異となる。",
-      "references": [{"title": "工業簿記 予定配賦の仕訳", "url": ""}],
-      "tags": ["製造間接費", "予定配賦", "仕訳"],
-      "common_mistakes": ["貸借を逆にする", "予定配賦額に基準操業度を使う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 予定配賦の仕訳",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "製造間接費",
+        "予定配賦",
+        "仕訳"
+      ],
+      "common_mistakes": [
+        "貸借を逆にする",
+        "予定配賦額に基準操業度を使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-013",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "配賦差異",
       "subtopic": "総差異の有利・不利判定",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある工場の当月製造間接費予定配賦額は570,000円、実際発生額は600,000円であった。製造間接費配賦差異の金額と有利・不利の区別は？",
       "options": [
-        {"id": "A", "text": "30,000円の有利差異", "is_correct": false, "explanation": "予定<実際は実際発生額が予算を超過したため不利差異。"},
-        {"id": "B", "text": "30,000円の不利差異", "is_correct": true, "explanation": "正解。予定配賦570,000 - 実際600,000 = -30,000円。実際が予定を超過したため不利差異。"},
-        {"id": "C", "text": "30,000円の差異だが有利・不利は判定不能", "is_correct": false, "explanation": "配賦差異は予定と実際の大小関係で必ず有利・不利を判定できる。"},
-        {"id": "D", "text": "差異は発生しない", "is_correct": false, "explanation": "予定配賦額と実際発生額に差があれば必ず差異が生じる。"}
+        {
+          "id": "A",
+          "text": "30,000円の不利差異",
+          "is_correct": true,
+          "explanation": "正解。予定配賦570,000 - 実際600,000 = -30,000円。実際が予定を超過したため不利差異。"
+        },
+        {
+          "id": "B",
+          "text": "30,000円の有利差異",
+          "is_correct": false,
+          "explanation": "予定<実際は実際発生額が予算を超過したため不利差異。"
+        },
+        {
+          "id": "C",
+          "text": "差異は発生しない",
+          "is_correct": false,
+          "explanation": "予定配賦額と実際発生額に差があれば必ず差異が生じる。"
+        },
+        {
+          "id": "D",
+          "text": "30,000円の差異だが有利・不利は判定不能",
+          "is_correct": false,
+          "explanation": "配賦差異は予定と実際の大小関係で必ず有利・不利を判定できる。"
+        }
       ],
       "explanation": "製造間接費配賦差異 = 予定配賦額 - 実際発生額。プラスなら有利差異（実際が予算を下回った＝コスト削減）、マイナスなら不利差異（予算超過）。本問は570,000-600,000=-30,000円で不利差異。仕訳は(借)製造間接費配賦差異 30,000 / (貸)製造間接費 30,000。",
-      "references": [{"title": "工業簿記 配賦差異", "url": ""}],
-      "tags": ["製造間接費", "配賦差異", "有利不利"],
-      "common_mistakes": ["有利・不利の符号を逆にする", "差異の方向性の意味を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 配賦差異",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "製造間接費",
+        "配賦差異",
+        "有利不利"
+      ],
+      "common_mistakes": [
+        "有利・不利の符号を逆にする",
+        "差異の方向性の意味を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-014",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "配賦差異",
       "subtopic": "予算差異の計算（公式法変動予算）",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "公式法変動予算で月間製造間接費予算を設定。基準操業度1,000h、変動費率@300円、固定費月額300,000円。当月の実際操業度は950h、実際発生額は600,000円。「予算差異」の金額は？",
       "options": [
-        {"id": "A", "text": "15,000円の不利差異", "is_correct": true, "explanation": "正解。実際操業度における予算許容額 = @300×950 + 300,000 = 585,000円。585,000 - 600,000 = -15,000円で不利差異。"},
-        {"id": "B", "text": "15,000円の有利差異", "is_correct": false, "explanation": "予算許容額より実際発生額が多いため不利差異。符号を逆にした誤り。"},
-        {"id": "C", "text": "30,000円の不利差異", "is_correct": false, "explanation": "総差異30,000円。これは予算差異と操業度差異の合計。"},
-        {"id": "D", "text": "0円", "is_correct": false, "explanation": "予算と実際の差は確実に発生している。"}
+        {
+          "id": "A",
+          "text": "15,000円の有利差異",
+          "is_correct": false,
+          "explanation": "予算許容額より実際発生額が多いため不利差異。符号を逆にした誤り。"
+        },
+        {
+          "id": "B",
+          "text": "15,000円の不利差異",
+          "is_correct": true,
+          "explanation": "正解。実際操業度における予算許容額 = @300×950 + 300,000 = 585,000円。585,000 - 600,000 = -15,000円で不利差異。"
+        },
+        {
+          "id": "C",
+          "text": "30,000円の不利差異",
+          "is_correct": false,
+          "explanation": "総差異30,000円。これは予算差異と操業度差異の合計。"
+        },
+        {
+          "id": "D",
+          "text": "0円",
+          "is_correct": false,
+          "explanation": "予算と実際の差は確実に発生している。"
+        }
       ],
       "explanation": "公式法変動予算における予算差異 = 実際操業度における予算許容額 - 実際発生額。予算許容額 = 変動費率 × 実際操業度 + 月間固定費 = 300×950 + 300,000 = 585,000円。実際発生額600,000円との差は585,000 - 600,000 = -15,000円で不利差異。予算差異は管理可能差異とも呼ばれ、原価管理の中心。",
-      "references": [{"title": "工業簿記 公式法変動予算", "url": ""}],
-      "tags": ["配賦差異", "予算差異", "公式法変動予算"],
-      "common_mistakes": ["予算許容額の計算で固定費を変動費率で按分する", "基準操業度における予算と混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 公式法変動予算",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "配賦差異",
+        "予算差異",
+        "公式法変動予算"
+      ],
+      "common_mistakes": [
+        "予算許容額の計算で固定費を変動費率で按分する",
+        "基準操業度における予算と混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-015",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "配賦差異",
       "subtopic": "操業度差異の計算（公式法変動予算）",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "公式法変動予算で基準操業度1,000h、固定費月額300,000円、固定費率@300円。実際操業度950h。「操業度差異」の金額は？",
       "options": [
-        {"id": "A", "text": "15,000円の不利差異", "is_correct": true, "explanation": "正解。固定費率@300×(950-1,000)= -15,000円。基準操業度に達しなかったため固定費の未配賦が発生し不利差異。"},
-        {"id": "B", "text": "15,000円の有利差異", "is_correct": false, "explanation": "実際操業度が基準を下回ったため固定費の未配賦であり不利差異。"},
-        {"id": "C", "text": "30,000円の不利差異", "is_correct": false, "explanation": "固定費率と変動費率を合計してしまった誤り。操業度差異は固定費率のみで計算。"},
-        {"id": "D", "text": "0円", "is_correct": false, "explanation": "実際操業度と基準操業度に差があれば操業度差異は発生する。"}
+        {
+          "id": "A",
+          "text": "30,000円の不利差異",
+          "is_correct": false,
+          "explanation": "固定費率と変動費率を合計してしまった誤り。操業度差異は固定費率のみで計算。"
+        },
+        {
+          "id": "B",
+          "text": "15,000円の有利差異",
+          "is_correct": false,
+          "explanation": "実際操業度が基準を下回ったため固定費の未配賦であり不利差異。"
+        },
+        {
+          "id": "C",
+          "text": "15,000円の不利差異",
+          "is_correct": true,
+          "explanation": "正解。固定費率@300×(950-1,000)= -15,000円。基準操業度に達しなかったため固定費の未配賦が発生し不利差異。"
+        },
+        {
+          "id": "D",
+          "text": "0円",
+          "is_correct": false,
+          "explanation": "実際操業度と基準操業度に差があれば操業度差異は発生する。"
+        }
       ],
       "explanation": "操業度差異 = 固定費率 ×（実際操業度 - 基準操業度）。固定費は基準操業度を前提に固定費率が設定されるため、実際操業度が下回ると固定費が配賦しきれず、不利差異が出る。本問は @300×(950-1,000) = -15,000円で不利差異。問題14の予算差異と合わせると総差異 -30,000円となる。",
-      "references": [{"title": "工業簿記 操業度差異", "url": ""}],
-      "tags": ["配賦差異", "操業度差異", "固定費"],
-      "common_mistakes": ["変動費率も含めて計算してしまう", "基準操業度と実際操業度の符号を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 操業度差異",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "配賦差異",
+        "操業度差異",
+        "固定費"
+      ],
+      "common_mistakes": [
+        "変動費率も含めて計算してしまう",
+        "基準操業度と実際操業度の符号を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-016",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "配賦差異",
       "subtopic": "差異の会計処理（年度末）",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "通常、製造間接費配賦差異（少額の場合）は会計年度末にどのように処理するか？",
       "options": [
-        {"id": "A", "text": "売上原価に賦課する", "is_correct": true, "explanation": "正解。原則として比較的少額の原価差異は売上原価に賦課する（原価計算基準47）。"},
-        {"id": "B", "text": "次期に繰り越して翌期の製造原価に算入する", "is_correct": false, "explanation": "原則として年度末に解消する。繰越処理は通常行わない。"},
-        {"id": "C", "text": "営業外費用または営業外収益として処理する", "is_correct": false, "explanation": "原価差異は本業のコストであり、営業外項目にはしない。"},
-        {"id": "D", "text": "資本剰余金に振替える", "is_correct": false, "explanation": "原価差異は損益項目であり資本項目ではない。"}
+        {
+          "id": "A",
+          "text": "営業外費用または営業外収益として処理する",
+          "is_correct": false,
+          "explanation": "原価差異は本業のコストであり、営業外項目にはしない。"
+        },
+        {
+          "id": "B",
+          "text": "次期に繰り越して翌期の製造原価に算入する",
+          "is_correct": false,
+          "explanation": "原則として年度末に解消する。繰越処理は通常行わない。"
+        },
+        {
+          "id": "C",
+          "text": "資本剰余金に振替える",
+          "is_correct": false,
+          "explanation": "原価差異は損益項目であり資本項目ではない。"
+        },
+        {
+          "id": "D",
+          "text": "売上原価に賦課する",
+          "is_correct": true,
+          "explanation": "正解。原則として比較的少額の原価差異は売上原価に賦課する（原価計算基準47）。"
+        }
       ],
       "explanation": "原価計算基準47では、原価差異は原則として当年度の売上原価に賦課する。例外的に、多額で正常を逸脱する差異は売上原価・期末仕掛品・期末製品に追加配賦する（ころがし計算法）。月次決算では「製造間接費配賦差異」勘定に繰越し、年度末に売上原価に振替えるのが一般的。",
-      "references": [{"title": "原価計算基準 47", "url": ""}],
-      "tags": ["配賦差異", "売上原価", "年度末処理"],
-      "common_mistakes": ["差異を翌期に繰り越せると思い込む", "営業外項目に振替えてしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "原価計算基準 47",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "配賦差異",
+        "売上原価",
+        "年度末処理"
+      ],
+      "common_mistakes": [
+        "差異を翌期に繰り越せると思い込む",
+        "営業外項目に振替えてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-017",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "部門別計算",
       "subtopic": "部門別計算の意義",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "部門別個別原価計算を採用する主な目的として最も適切なものは？",
       "options": [
-        {"id": "A", "text": "製造間接費の配賦を更に正確にし、かつ原価管理を部門単位で行うため", "is_correct": true, "explanation": "正解。部門別計算は製造原価をより正確に把握するとともに、責任会計（原価責任）の単位を明確にする。"},
-        {"id": "B", "text": "材料費を製造直接費と製造間接費に分類するため", "is_correct": false, "explanation": "材料費の分類は形態別分類で、部門別計算とは別の論点。"},
-        {"id": "C", "text": "総合原価計算を導入する前段階として必須だから", "is_correct": false, "explanation": "総合原価計算でも部門別計算は行われるが、両者に必須の関係はない。"},
-        {"id": "D", "text": "配賦差異を発生させないため", "is_correct": false, "explanation": "予定配賦を行えば部門別計算でも差異は発生する。差異を消すための手法ではない。"}
+        {
+          "id": "A",
+          "text": "製造間接費の配賦を更に正確にし、かつ原価管理を部門単位で行うため",
+          "is_correct": true,
+          "explanation": "正解。部門別計算は製造原価をより正確に把握するとともに、責任会計（原価責任）の単位を明確にする。"
+        },
+        {
+          "id": "B",
+          "text": "総合原価計算を導入する前段階として必須だから",
+          "is_correct": false,
+          "explanation": "総合原価計算でも部門別計算は行われるが、両者に必須の関係はない。"
+        },
+        {
+          "id": "C",
+          "text": "材料費を製造直接費と製造間接費に分類するため",
+          "is_correct": false,
+          "explanation": "材料費の分類は形態別分類で、部門別計算とは別の論点。"
+        },
+        {
+          "id": "D",
+          "text": "配賦差異を発生させないため",
+          "is_correct": false,
+          "explanation": "予定配賦を行えば部門別計算でも差異は発生する。差異を消すための手法ではない。"
+        }
       ],
       "explanation": "部門別個別原価計算の目的は、①工場全体の単一配賦率では生じる配賦の不正確さを部門別配賦率で改善し、②原価発生の責任単位（部門）を明確にして原価管理を強化することにある。製造部門と補助部門に分け、補助部門費を製造部門に配賦し、製造部門から各指図書に配賦する2段階配賦が基本。",
-      "references": [{"title": "原価計算基準 16", "url": ""}],
-      "tags": ["部門別計算", "原価管理", "配賦"],
-      "common_mistakes": ["部門別計算を総合原価計算と関連づけて理解する", "目的を単に正確性のみと考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "原価計算基準 16",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "部門別計算",
+        "原価管理",
+        "配賦"
+      ],
+      "common_mistakes": [
+        "部門別計算を総合原価計算と関連づけて理解する",
+        "目的を単に正確性のみと考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-018",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "部門別計算",
       "subtopic": "直接配賦法",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある工場の補助部門費（動力部門200,000円、修繕部門100,000円）を「直接配賦法」で配賦する。各部門の用役提供割合は次のとおり。動力部: 切削40%、組立40%、修繕20%。修繕部: 切削50%、組立30%、動力20%。切削部門に配賦される補助部門費合計は？",
       "options": [
-        {"id": "A", "text": "85,000円", "is_correct": false, "explanation": "(200,000×0.4) + (100,000×0.5×?) などの誤り。"},
-        {"id": "B", "text": "100,000円", "is_correct": false, "explanation": "200,000×0.4 + 100,000×0.2 などの誤り。割合の選び方を間違えている。"},
-        {"id": "C", "text": "162,500円", "is_correct": true, "explanation": "正解。直接配賦法では補助部門間のサービス授受を無視。動力部: 200,000×40/(40+40)=100,000、修繕部: 100,000×50/(50+30)=62,500。合計162,500円。"},
-        {"id": "D", "text": "180,000円", "is_correct": false, "explanation": "補助部門間相互配賦を行った場合の数値に近い。直接配賦法では補助部門間配賦は無視する。"}
+        {
+          "id": "A",
+          "text": "100,000円",
+          "is_correct": false,
+          "explanation": "200,000×0.4 + 100,000×0.2 などの誤り。割合の選び方を間違えている。"
+        },
+        {
+          "id": "B",
+          "text": "162,500円",
+          "is_correct": true,
+          "explanation": "正解。直接配賦法では補助部門間のサービス授受を無視。動力部: 200,000×40/(40+40)=100,000、修繕部: 100,000×50/(50+30)=62,500。合計162,500円。"
+        },
+        {
+          "id": "C",
+          "text": "180,000円",
+          "is_correct": false,
+          "explanation": "補助部門間相互配賦を行った場合の数値に近い。直接配賦法では補助部門間配賦は無視する。"
+        },
+        {
+          "id": "D",
+          "text": "85,000円",
+          "is_correct": false,
+          "explanation": "(200,000×0.4) + (100,000×0.5×?) などの誤り。"
+        }
       ],
       "explanation": "直接配賦法は、補助部門相互間の用役提供を無視し、補助部門費を製造部門のみに配賦する方法。本問では動力部の修繕部への20%や修繕部の動力部への20%を無視。動力部 200,000を切削40・組立40の比で → 切削100,000。修繕部 100,000を切削50・組立30の比で → 切削62,500。切削合計162,500円。最も簡便だが配賦の正確性は劣る。",
-      "references": [{"title": "工業簿記 直接配賦法", "url": ""}],
-      "tags": ["部門別計算", "直接配賦法", "補助部門費"],
-      "common_mistakes": ["補助部門間の授受も含めて計算してしまう", "比率の分母を全体としてしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 直接配賦法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "部門別計算",
+        "直接配賦法",
+        "補助部門費"
+      ],
+      "common_mistakes": [
+        "補助部門間の授受も含めて計算してしまう",
+        "比率の分母を全体としてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-019",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "部門別計算",
       "subtopic": "相互配賦法（簡便法）",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "簡便法（連立方程式法ではない一般的な相互配賦法）と直接配賦法の違いについて、最も適切な記述は？",
       "options": [
-        {"id": "A", "text": "簡便法では補助部門間の用役授受を1回だけ考慮し、2回目以降は直接配賦法と同様に処理する", "is_correct": true, "explanation": "正解。簡便相互配賦法は第1次配賦で補助部門間も含めて配賦し、第2次配賦は製造部門のみに配賦する2段階処理。"},
-        {"id": "B", "text": "簡便法では補助部門費を全額製造部門に配賦せず、一部を仕掛品に直接振替える", "is_correct": false, "explanation": "そのような処理は規定されていない。"},
-        {"id": "C", "text": "簡便法と直接配賦法の結果は常に同一になる", "is_correct": false, "explanation": "補助部門間の用役授受を考慮するかどうかで結果が異なる。"},
-        {"id": "D", "text": "簡便法では補助部門費を売上原価に直接賦課する", "is_correct": false, "explanation": "売上原価への直接賦課は配賦差異の処理であり、部門費配賦法とは無関係。"}
+        {
+          "id": "A",
+          "text": "簡便法と直接配賦法の結果は常に同一になる",
+          "is_correct": false,
+          "explanation": "補助部門間の用役授受を考慮するかどうかで結果が異なる。"
+        },
+        {
+          "id": "B",
+          "text": "簡便法では補助部門費を売上原価に直接賦課する",
+          "is_correct": false,
+          "explanation": "売上原価への直接賦課は配賦差異の処理であり、部門費配賦法とは無関係。"
+        },
+        {
+          "id": "C",
+          "text": "簡便法では補助部門間の用役授受を1回だけ考慮し、2回目以降は直接配賦法と同様に処理する",
+          "is_correct": true,
+          "explanation": "正解。簡便相互配賦法は第1次配賦で補助部門間も含めて配賦し、第2次配賦は製造部門のみに配賦する2段階処理。"
+        },
+        {
+          "id": "D",
+          "text": "簡便法では補助部門費を全額製造部門に配賦せず、一部を仕掛品に直接振替える",
+          "is_correct": false,
+          "explanation": "そのような処理は規定されていない。"
+        }
       ],
       "explanation": "相互配賦法（簡便法）は2段階で処理する。第1次配賦で補助部門費を全部門（補助部門相互も含む）に配賦し、第2次配賦で第1次配賦により補助部門に再集計された金額を製造部門のみに配賦する（つまり第2次配賦では直接配賦法的に処理）。連立方程式法に比べて簡便だが正確性は劣り、直接配賦法より正確だが処理は煩雑。",
-      "references": [{"title": "工業簿記 相互配賦法", "url": ""}],
-      "tags": ["部門別計算", "相互配賦法", "補助部門費"],
-      "common_mistakes": ["簡便法と連立方程式法を混同する", "第2次配賦の処理を誤る"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 相互配賦法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "部門別計算",
+        "相互配賦法",
+        "補助部門費"
+      ],
+      "common_mistakes": [
+        "簡便法と連立方程式法を混同する",
+        "第2次配賦の処理を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-020",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "部門別計算",
       "subtopic": "階梯式配賦法",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "階梯式配賦法において、補助部門の配賦順位を決める一般的な基準として最も適切なものは？",
       "options": [
-        {"id": "A", "text": "他の補助部門への用役提供数が多い部門を上位（先）にする", "is_correct": true, "explanation": "正解。階梯式配賦法では他の補助部門により多く用役を提供する部門を先に配賦する（同数の場合は部門費の高い方）。"},
-        {"id": "B", "text": "部門費総額が低い部門を上位にする", "is_correct": false, "explanation": "金額の大小ではなく、用役提供の関係で決定する。"},
-        {"id": "C", "text": "発生時期の早い部門を上位にする", "is_correct": false, "explanation": "時期は配賦順位とは無関係。"},
-        {"id": "D", "text": "アルファベット順または番号順", "is_correct": false, "explanation": "形式的な順序ではない。配賦の正確性を高めるための合理的基準が必要。"}
+        {
+          "id": "A",
+          "text": "発生時期の早い部門を上位にする",
+          "is_correct": false,
+          "explanation": "時期は配賦順位とは無関係。"
+        },
+        {
+          "id": "B",
+          "text": "アルファベット順または番号順",
+          "is_correct": false,
+          "explanation": "形式的な順序ではない。配賦の正確性を高めるための合理的基準が必要。"
+        },
+        {
+          "id": "C",
+          "text": "部門費総額が低い部門を上位にする",
+          "is_correct": false,
+          "explanation": "金額の大小ではなく、用役提供の関係で決定する。"
+        },
+        {
+          "id": "D",
+          "text": "他の補助部門への用役提供数が多い部門を上位（先）にする",
+          "is_correct": true,
+          "explanation": "正解。階梯式配賦法では他の補助部門により多く用役を提供する部門を先に配賦する（同数の場合は部門費の高い方）。"
+        }
       ],
       "explanation": "階梯式配賦法では補助部門を「階段状」に並べて順次配賦するが、配賦順位は①他の補助部門への用役提供先の数が多い順（②同数なら部門費の大きい方が先、または用役提供額の大きい方が先）。先に配賦された部門は後の部門から配賦を受けない一方通行。直接配賦法と相互配賦法（連立方程式法）の中間的正確性を持つ。",
-      "references": [{"title": "工業簿記 階梯式配賦法", "url": ""}],
-      "tags": ["部門別計算", "階梯式配賦法", "補助部門"],
-      "common_mistakes": ["金額順で配賦順位を決めてしまう", "配賦順序の決定ルールを覚えていない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 階梯式配賦法",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "部門別計算",
+        "階梯式配賦法",
+        "補助部門"
+      ],
+      "common_mistakes": [
+        "金額順で配賦順位を決めてしまう",
+        "配賦順序の決定ルールを覚えていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-021",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "仕損",
       "subtopic": "補修可能な仕損",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "個別原価計算において、製造指図書 No.405 で発生した仕損品を補修により回復することにした。この補修のために発行する「補修指図書」の原価は最終的にどう処理するか？",
       "options": [
-        {"id": "A", "text": "補修指図書の原価を仕損費とし、元の指図書 No.405 の原価に算入する", "is_correct": true, "explanation": "正解。補修指図書の発生原価をすべて「仕損費」として元の指図書（No.405）に賦課する。"},
-        {"id": "B", "text": "補修指図書の原価は当期の販売費及び一般管理費として処理する", "is_correct": false, "explanation": "仕損は製造活動内で発生したコストであり製造原価。販管費にはしない。"},
-        {"id": "C", "text": "補修指図書の原価は営業外費用として処理する", "is_correct": false, "explanation": "営業外費用ではない。製造原価に算入する。"},
-        {"id": "D", "text": "補修指図書の原価は売上原価に直接賦課する", "is_correct": false, "explanation": "原則は元の指図書に賦課する。直接売上原価への賦課は通常の処理ではない。"}
+        {
+          "id": "A",
+          "text": "補修指図書の原価を仕損費とし、元の指図書 No.405 の原価に算入する",
+          "is_correct": true,
+          "explanation": "正解。補修指図書の発生原価をすべて「仕損費」として元の指図書（No.405）に賦課する。"
+        },
+        {
+          "id": "B",
+          "text": "補修指図書の原価は当期の販売費及び一般管理費として処理する",
+          "is_correct": false,
+          "explanation": "仕損は製造活動内で発生したコストであり製造原価。販管費にはしない。"
+        },
+        {
+          "id": "C",
+          "text": "補修指図書の原価は営業外費用として処理する",
+          "is_correct": false,
+          "explanation": "営業外費用ではない。製造原価に算入する。"
+        },
+        {
+          "id": "D",
+          "text": "補修指図書の原価は売上原価に直接賦課する",
+          "is_correct": false,
+          "explanation": "原則は元の指図書に賦課する。直接売上原価への賦課は通常の処理ではない。"
+        }
       ],
       "explanation": "個別原価計算における仕損が「補修可能な場合」、補修指図書を発行して必要な追加作業の原価を集計し、その合計額を「仕損費」として元の指図書原価に加算する。仕訳例: (借)仕掛品(No.405) / (貸)仕掛品(補修指図書)。これにより最終的な完成品原価には仕損補修コストも含まれる。",
-      "references": [{"title": "工業簿記 仕損費の処理（補修）", "url": ""}],
-      "tags": ["仕損", "補修", "個別原価計算"],
-      "common_mistakes": ["仕損を販管費にしてしまう", "補修指図書を独立した完成品とする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 仕損費の処理（補修）",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "仕損",
+        "補修",
+        "個別原価計算"
+      ],
+      "common_mistakes": [
+        "仕損を販管費にしてしまう",
+        "補修指図書を独立した完成品とする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-022",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "仕損",
       "subtopic": "代品製作の処理",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある製造業者の製造指図書 No.501 (原価600,000円) で全部仕損が発生し、新たに代品製作のため No.501-2 を発行（原価620,000円）。仕損品の評価額は40,000円。「仕損費」の金額は？",
       "options": [
-        {"id": "A", "text": "560,000円", "is_correct": true, "explanation": "正解。全部仕損で代品を製作する場合、旧指図書原価 - 仕損品評価額 = 600,000 - 40,000 = 560,000円が仕損費。"},
-        {"id": "B", "text": "600,000円", "is_correct": false, "explanation": "仕損品評価額40,000円を控除していない誤り。"},
-        {"id": "C", "text": "620,000円", "is_correct": false, "explanation": "代品製作の原価をそのまま仕損費としている誤り。代品製作費は新製品の原価。"},
-        {"id": "D", "text": "1,180,000円", "is_correct": false, "explanation": "旧+新の合算 - 評価額。代品の原価は仕損費ではない。"}
+        {
+          "id": "A",
+          "text": "600,000円",
+          "is_correct": false,
+          "explanation": "仕損品評価額40,000円を控除していない誤り。"
+        },
+        {
+          "id": "B",
+          "text": "560,000円",
+          "is_correct": true,
+          "explanation": "正解。全部仕損で代品を製作する場合、旧指図書原価 - 仕損品評価額 = 600,000 - 40,000 = 560,000円が仕損費。"
+        },
+        {
+          "id": "C",
+          "text": "620,000円",
+          "is_correct": false,
+          "explanation": "代品製作の原価をそのまま仕損費としている誤り。代品製作費は新製品の原価。"
+        },
+        {
+          "id": "D",
+          "text": "1,180,000円",
+          "is_correct": false,
+          "explanation": "旧+新の合算 - 評価額。代品の原価は仕損費ではない。"
+        }
       ],
       "explanation": "全部仕損（旧品が全部だめになり、代品を別の指図書で作る場合）の仕損費 = 旧指図書の原価 - 仕損品の評価額（売却価値・スクラップ価値）。本問では 600,000 - 40,000 = 560,000円。代品（No.501-2）の原価620,000円はそれ自体が新製品の製造原価で、仕損費ではない。仕損費は通常、間接経費（製造間接費）として処理し他の指図書にも配賦する。",
-      "references": [{"title": "工業簿記 全部仕損の処理", "url": ""}],
-      "tags": ["仕損", "代品製作", "全部仕損"],
-      "common_mistakes": ["代品の原価を仕損費としてしまう", "仕損品評価額を控除し忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 全部仕損の処理",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "仕損",
+        "代品製作",
+        "全部仕損"
+      ],
+      "common_mistakes": [
+        "代品の原価を仕損費としてしまう",
+        "仕損品評価額を控除し忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-023",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "仕掛品勘定",
       "subtopic": "仕掛品勘定の流れ",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある工場の仕掛品勘定について、月初仕掛品100,000円、当月直接材料費400,000円、直接労務費300,000円、製造間接費配賦額200,000円、月末仕掛品150,000円であった。当月の「当月製品製造原価」（完成品原価）は？",
       "options": [
-        {"id": "A", "text": "750,000円", "is_correct": false, "explanation": "当月製造費用合計900,000のみで月初仕掛品を加算していない、または月末仕掛品を加算してしまった誤り。"},
-        {"id": "B", "text": "850,000円", "is_correct": true, "explanation": "正解。月初100,000 + 当月製造費用(400+300+200)=900,000 - 月末150,000 = 850,000円。"},
-        {"id": "C", "text": "900,000円", "is_correct": false, "explanation": "当月製造費用合計のみ。月初仕掛品加算と月末仕掛品控除を忘れている。"},
-        {"id": "D", "text": "1,150,000円", "is_correct": false, "explanation": "月末仕掛品を加算した誤り。月末仕掛品は次期繰越なので控除する。"}
+        {
+          "id": "A",
+          "text": "1,150,000円",
+          "is_correct": false,
+          "explanation": "月末仕掛品を加算した誤り。月末仕掛品は次期繰越なので控除する。"
+        },
+        {
+          "id": "B",
+          "text": "900,000円",
+          "is_correct": false,
+          "explanation": "当月製造費用合計のみ。月初仕掛品加算と月末仕掛品控除を忘れている。"
+        },
+        {
+          "id": "C",
+          "text": "850,000円",
+          "is_correct": true,
+          "explanation": "正解。月初100,000 + 当月製造費用(400+300+200)=900,000 - 月末150,000 = 850,000円。"
+        },
+        {
+          "id": "D",
+          "text": "750,000円",
+          "is_correct": false,
+          "explanation": "当月製造費用合計900,000のみで月初仕掛品を加算していない、または月末仕掛品を加算してしまった誤り。"
+        }
       ],
       "explanation": "仕掛品勘定の構造: 借方=月初仕掛品+当月製造費用、貸方=完成品原価+月末仕掛品。完成品原価 = 月初仕掛品 + 当月製造費用 - 月末仕掛品。本問: 100,000 + (400,000+300,000+200,000) - 150,000 = 850,000円。完成時の仕訳は (借)製品 850,000 / (貸)仕掛品 850,000。",
-      "references": [{"title": "工業簿記 仕掛品勘定", "url": ""}],
-      "tags": ["仕掛品", "完成品原価", "勘定連絡"],
-      "common_mistakes": ["月初仕掛品を加算し忘れる", "月末仕掛品を加算してしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 仕掛品勘定",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "仕掛品",
+        "完成品原価",
+        "勘定連絡"
+      ],
+      "common_mistakes": [
+        "月初仕掛品を加算し忘れる",
+        "月末仕掛品を加算してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-024",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "個別原価計算の総合計算",
       "subtopic": "指図書ごとの完成品原価計算",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "あるSaaS企業向けの専用機械を製造中。指図書 No.601 の月初仕掛品80,000円。当月の直接材料費150,000円、直接労務費120,000円。製造間接費は予定配賦率@500円、当月の直接作業時間120h。当月末に完成した。No.601 の完成品原価は？",
       "options": [
-        {"id": "A", "text": "350,000円", "is_correct": false, "explanation": "月初仕掛品を加算し忘れた誤り。150,000+120,000+60,000=330,000+α。"},
-        {"id": "B", "text": "410,000円", "is_correct": true, "explanation": "正解。80,000(月初) + 150,000(DM) + 120,000(DL) + @500×120h(MOH=60,000) = 410,000円。"},
-        {"id": "C", "text": "470,000円", "is_correct": false, "explanation": "製造間接費を別の操業度（@500×140など）で計算した誤り。"},
-        {"id": "D", "text": "330,000円", "is_correct": false, "explanation": "当月製造費用のみで月初仕掛品80,000を加算していない。"}
+        {
+          "id": "A",
+          "text": "350,000円",
+          "is_correct": false,
+          "explanation": "月初仕掛品を加算し忘れた誤り。150,000+120,000+60,000=330,000+α。"
+        },
+        {
+          "id": "B",
+          "text": "330,000円",
+          "is_correct": false,
+          "explanation": "当月製造費用のみで月初仕掛品80,000を加算していない。"
+        },
+        {
+          "id": "C",
+          "text": "470,000円",
+          "is_correct": false,
+          "explanation": "製造間接費を別の操業度（@500×140など）で計算した誤り。"
+        },
+        {
+          "id": "D",
+          "text": "410,000円",
+          "is_correct": true,
+          "explanation": "正解。80,000(月初) + 150,000(DM) + 120,000(DL) + @500×120h(MOH=60,000) = 410,000円。"
+        }
       ],
       "explanation": "個別原価計算では指図書ごとに原価を集計する。No.601の完成品原価 = 月初仕掛品 + 当月直接材料費 + 当月直接労務費 + 当月製造間接費配賦額 = 80,000 + 150,000 + 120,000 + (500×120) = 80,000+150,000+120,000+60,000 = 410,000円。完成時の仕訳: (借)製品 410,000 / (貸)仕掛品 410,000。",
-      "references": [{"title": "工業簿記 指図書別完成品原価", "url": ""}],
-      "tags": ["個別原価計算", "完成品原価", "予定配賦"],
-      "common_mistakes": ["月初仕掛品の加算を忘れる", "予定配賦率の使い方を間違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 指図書別完成品原価",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "個別原価計算",
+        "完成品原価",
+        "予定配賦"
+      ],
+      "common_mistakes": [
+        "月初仕掛品の加算を忘れる",
+        "予定配賦率の使い方を間違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-025",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "製造原価明細書",
       "subtopic": "製造原価明細書の構造",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "製造原価明細書（製造原価報告書）の最終行に表示される金額として最も適切なものは？",
       "options": [
-        {"id": "A", "text": "当期総製造費用", "is_correct": false, "explanation": "総製造費用は当期に発生した製造費用の合計だが、最終行ではない。"},
-        {"id": "B", "text": "当期製品製造原価", "is_correct": true, "explanation": "正解。製造原価明細書の最終行は「当期製品製造原価」（完成品原価）で、損益計算書の売上原価計算へ連動する。"},
-        {"id": "C", "text": "売上原価", "is_correct": false, "explanation": "売上原価は損益計算書で計算される（期首製品+当期製品製造原価-期末製品）。"},
-        {"id": "D", "text": "売上総利益", "is_correct": false, "explanation": "売上総利益は損益計算書の項目で、製造原価明細書には登場しない。"}
+        {
+          "id": "A",
+          "text": "当期製品製造原価",
+          "is_correct": true,
+          "explanation": "正解。製造原価明細書の最終行は「当期製品製造原価」（完成品原価）で、損益計算書の売上原価計算へ連動する。"
+        },
+        {
+          "id": "B",
+          "text": "当期総製造費用",
+          "is_correct": false,
+          "explanation": "総製造費用は当期に発生した製造費用の合計だが、最終行ではない。"
+        },
+        {
+          "id": "C",
+          "text": "売上原価",
+          "is_correct": false,
+          "explanation": "売上原価は損益計算書で計算される（期首製品+当期製品製造原価-期末製品）。"
+        },
+        {
+          "id": "D",
+          "text": "売上総利益",
+          "is_correct": false,
+          "explanation": "売上総利益は損益計算書の項目で、製造原価明細書には登場しない。"
+        }
       ],
       "explanation": "製造原価明細書の構造: ①材料費 ②労務費 ③経費 → 当期総製造費用 + 期首仕掛品 - 期末仕掛品 = 当期製品製造原価。最終行の「当期製品製造原価」が損益計算書の売上原価セクションへ連動し、売上原価 = 期首製品 + 当期製品製造原価 - 期末製品 として計算される。",
-      "references": [{"title": "工業簿記 製造原価明細書", "url": ""}],
-      "tags": ["製造原価明細書", "財務諸表", "完成品原価"],
-      "common_mistakes": ["製造原価明細書と損益計算書の境界を理解していない", "総製造費用と製品製造原価を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.8},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 製造原価明細書",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "製造原価明細書",
+        "財務諸表",
+        "完成品原価"
+      ],
+      "common_mistakes": [
+        "製造原価明細書と損益計算書の境界を理解していない",
+        "総製造費用と製品製造原価を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.8
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-026",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "部門別予定配賦",
       "subtopic": "部門別配賦率の計算",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある工場の年間部門予算 - 切削部:6,000,000円、組立部:3,600,000円。年間予定操業度 - 切削部15,000機械時間、組立部12,000直接作業時間。指図書 No.701 は切削部で20機械時間、組立部で15直接作業時間を要した。No.701 への部門別予定配賦額合計は？",
       "options": [
-        {"id": "A", "text": "8,000円", "is_correct": false, "explanation": "切削部のみの配賦額。組立部の配賦を忘れている。"},
-        {"id": "B", "text": "12,500円", "is_correct": true, "explanation": "正解。切削部率=6,000,000÷15,000=@400。組立部率=3,600,000÷12,000=@300。No.701=400×20+300×15=8,000+4,500=12,500円。"},
-        {"id": "C", "text": "13,000円", "is_correct": false, "explanation": "切削部率を別の値で計算した誤り。"},
-        {"id": "D", "text": "20,500円", "is_correct": false, "explanation": "両部門の配賦基準を取り違えた誤り（時間数を逆に当てた等）。"}
+        {
+          "id": "A",
+          "text": "8,000円",
+          "is_correct": false,
+          "explanation": "切削部のみの配賦額。組立部の配賦を忘れている。"
+        },
+        {
+          "id": "B",
+          "text": "12,500円",
+          "is_correct": true,
+          "explanation": "正解。切削部率=6,000,000÷15,000=@400。組立部率=3,600,000÷12,000=@300。No.701=400×20+300×15=8,000+4,500=12,500円。"
+        },
+        {
+          "id": "C",
+          "text": "20,500円",
+          "is_correct": false,
+          "explanation": "両部門の配賦基準を取り違えた誤り（時間数を逆に当てた等）。"
+        },
+        {
+          "id": "D",
+          "text": "13,000円",
+          "is_correct": false,
+          "explanation": "切削部率を別の値で計算した誤り。"
+        }
       ],
       "explanation": "部門別予定配賦では各製造部門ごとに配賦率を算定し、各指図書の使用基準量を乗じる。切削部配賦率 = 6,000,000÷15,000h = @400円/機械時間。組立部配賦率 = 3,600,000÷12,000h = @300円/直接作業時間。No.701 = 400×20 + 300×15 = 8,000+4,500 = 12,500円。部門ごとに最適な配賦基準（切削=機械時間、組立=作業時間）を選ぶことで配賦の正確性が向上する。",
-      "references": [{"title": "工業簿記 部門別予定配賦", "url": ""}],
-      "tags": ["部門別計算", "予定配賦", "配賦率"],
-      "common_mistakes": ["部門ごとの配賦基準を混同する", "片方の部門の配賦を忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 部門別予定配賦",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "部門別計算",
+        "予定配賦",
+        "配賦率"
+      ],
+      "common_mistakes": [
+        "部門ごとの配賦基準を混同する",
+        "片方の部門の配賦を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-027",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "総合判断",
       "subtopic": "予定配賦と実際配賦の選択",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
-      "stem": "東海地方のFinTech向け特注機器を製造する企業の経営者が、製造間接費の配賦方法として「実際配賦」と「予定配賦」のどちらを採用すべきか検討中。月次決算の迅速化と価格設定の安定性を重視する場合、最も適切な選択は？",
+      "stem": "あるFinTech向け特注機器を製造する企業の経営者が、製造間接費の配賦方法として「実際配賦」と「予定配賦」のどちらを採用すべきか検討中。月次決算の迅速化と価格設定の安定性を重視する場合、最も適切な選択は？",
       "options": [
-        {"id": "A", "text": "実際配賦を採用する。実際発生額そのままを配賦するため最も正確で、月次決算の正確性が向上する", "is_correct": false, "explanation": "実際配賦は月末まで配賦できず月次決算が遅れ、操業度変動により単価がブレるため価格安定性に劣る。"},
-        {"id": "B", "text": "予定配賦を採用する。月中・月末に迅速に配賦でき、操業度変動の影響を排除でき、価格設定が安定する", "is_correct": true, "explanation": "正解。予定配賦は迅速性と単価安定性の両方を満たす。差異は別途分析することで原価管理にも活かせる。"},
-        {"id": "C", "text": "両方を併用する（直接費は実際、間接費は予定）", "is_correct": false, "explanation": "直接費は元来実際で集計されるもの。間接費は実際か予定かの選択。「両方併用」は問題設定に対して的外れ。"},
-        {"id": "D", "text": "配賦自体を行わず、製造間接費はすべて期間費用として処理する", "is_correct": false, "explanation": "それは原価計算ではなく直接原価計算ですらない不適切な処理。GAAP違反。"}
+        {
+          "id": "A",
+          "text": "両方を併用する（直接費は実際、間接費は予定）",
+          "is_correct": false,
+          "explanation": "直接費は元来実際で集計されるもの。間接費は実際か予定かの選択。「両方併用」は問題設定に対して的外れ。"
+        },
+        {
+          "id": "B",
+          "text": "実際配賦を採用する。実際発生額そのままを配賦するため最も正確で、月次決算の正確性が向上する",
+          "is_correct": false,
+          "explanation": "実際配賦は月末まで配賦できず月次決算が遅れ、操業度変動により単価がブレるため価格安定性に劣る。"
+        },
+        {
+          "id": "C",
+          "text": "予定配賦を採用する。月中・月末に迅速に配賦でき、操業度変動の影響を排除でき、価格設定が安定する",
+          "is_correct": true,
+          "explanation": "正解。予定配賦は迅速性と単価安定性の両方を満たす。差異は別途分析することで原価管理にも活かせる。"
+        },
+        {
+          "id": "D",
+          "text": "配賦自体を行わず、製造間接費はすべて期間費用として処理する",
+          "is_correct": false,
+          "explanation": "それは原価計算ではなく直接原価計算ですらない不適切な処理。GAAP違反。"
+        }
       ],
       "explanation": "予定配賦の利点：①月次決算の迅速化（月末を待たずに配賦可能）、②製品単価の安定（操業度変動の影響を排除）、③原価管理の強化（差異分析が可能）。実際配賦は月末まで集計を待つ必要があり、操業度変動で単価が大きくブレる欠点がある。本ケースのように受注生産で見積価格を提示する企業や月次経営管理を重視する企業には予定配賦が適する。",
-      "references": [{"title": "工業簿記 予定配賦と実際配賦の比較", "url": ""}],
-      "tags": ["予定配賦", "実際配賦", "経営判断"],
-      "common_mistakes": ["実際配賦が常に正確で優れていると誤解する", "予定配賦のメリットを単価安定性のみと考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "工業簿記 予定配賦と実際配賦の比較",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "予定配賦",
+        "実際配賦",
+        "経営判断"
+      ],
+      "common_mistakes": [
+        "実際配賦が常に正確で優れていると誤解する",
+        "予定配賦のメリットを単価安定性のみと考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-028",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "総合判断",
       "subtopic": "配賦基準の適切性評価",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある製造業者で従来は「直接作業時間」で製造間接費を配賦していたが、近年自動化が進み機械が大半の作業を行うようになった。配賦の正確性を高めるため、配賦基準を見直す場合最も適切な変更は？",
       "options": [
-        {"id": "A", "text": "「直接材料費」を配賦基準に変更する", "is_correct": false, "explanation": "材料費は機械の稼働とは関係が薄い。製造間接費は機械装置の稼働で発生する割合が大きい場合は機械作業時間が適切。"},
-        {"id": "B", "text": "「機械作業時間（機械運転時間）」を配賦基準に変更する", "is_correct": true, "explanation": "正解。自動化により機械中心の生産になっているため、機械の稼働時間が製造間接費（電力・減価償却など）の発生と最も相関が高い。"},
-        {"id": "C", "text": "「直接労務費」を配賦基準に変更する", "is_correct": false, "explanation": "直接作業時間と本質的に同じで、自動化が進んだ環境では適切でない。"},
-        {"id": "D", "text": "そのまま直接作業時間を維持する", "is_correct": false, "explanation": "自動化で作業時間が減れば、配賦基準として代表性を失い配賦の歪みが大きくなる。"}
+        {
+          "id": "A",
+          "text": "そのまま直接作業時間を維持する",
+          "is_correct": false,
+          "explanation": "自動化で作業時間が減れば、配賦基準として代表性を失い配賦の歪みが大きくなる。"
+        },
+        {
+          "id": "B",
+          "text": "「直接労務費」を配賦基準に変更する",
+          "is_correct": false,
+          "explanation": "直接作業時間と本質的に同じで、自動化が進んだ環境では適切でない。"
+        },
+        {
+          "id": "C",
+          "text": "「直接材料費」を配賦基準に変更する",
+          "is_correct": false,
+          "explanation": "材料費は機械の稼働とは関係が薄い。製造間接費は機械装置の稼働で発生する割合が大きい場合は機械作業時間が適切。"
+        },
+        {
+          "id": "D",
+          "text": "「機械作業時間（機械運転時間）」を配賦基準に変更する",
+          "is_correct": true,
+          "explanation": "正解。自動化により機械中心の生産になっているため、機械の稼働時間が製造間接費（電力・減価償却など）の発生と最も相関が高い。"
+        }
       ],
       "explanation": "配賦基準は製造間接費の発生と相関の高い「原価作用因（cost driver）」を選ぶべき。労働集約的な工程では直接作業時間が適切だが、機械化・自動化が進んだ工程では機械の電力消費・減価償却・修繕費が間接費の主要構成要素となるため、機械作業時間（機械運転時間）を配賦基準にするのが合理的。配賦基準は事業環境に応じて見直す必要がある。",
-      "references": [{"title": "原価計算基準 18", "url": ""}],
-      "tags": ["配賦基準", "経営判断", "配賦の正確性"],
-      "common_mistakes": ["配賦基準は変更不要と思い込む", "材料費基準で全てを配賦できると考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "原価計算基準 18",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "配賦基準",
+        "経営判断",
+        "配賦の正確性"
+      ],
+      "common_mistakes": [
+        "配賦基準は変更不要と思い込む",
+        "材料費基準で全てを配賦できると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-029",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "総合判断",
       "subtopic": "差異分析の実務的意義",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある医療機器メーカーの工場長が「今月は操業度差異が大きな不利差異となった」と報告を受けた。経営判断として、まず最初に検討すべき対応は？",
       "options": [
-        {"id": "A", "text": "ただちに固定費を一律削減する（人員カット、設備売却）", "is_correct": false, "explanation": "操業度差異は受注減・生産計画ミスなどが原因のことも多い。短絡的な固定費削減は中長期的な生産能力を損なう。"},
-        {"id": "B", "text": "操業度差異の原因（受注不足・生産計画・設備稼働率低下）を分析し、需要側施策と稼働率向上を検討する", "is_correct": true, "explanation": "正解。操業度差異は管理不能差異の側面が強いが、原因分析により受注獲得・需要予測精度・設備運用の改善余地が見える。"},
-        {"id": "C", "text": "操業度差異は管理不能差異なので無視する", "is_correct": false, "explanation": "管理不能の側面はあるが完全無視は不適切。原因分析は将来の意思決定に有用。"},
-        {"id": "D", "text": "予算差異と合算して売上原価に振替えて終わりとする", "is_correct": false, "explanation": "それは会計処理の話であって経営判断ではない。経営者として原因分析が先。"}
+        {
+          "id": "A",
+          "text": "操業度差異の原因（受注不足・生産計画・設備稼働率低下）を分析し、需要側施策と稼働率向上を検討する",
+          "is_correct": true,
+          "explanation": "正解。操業度差異は管理不能差異の側面が強いが、原因分析により受注獲得・需要予測精度・設備運用の改善余地が見える。"
+        },
+        {
+          "id": "B",
+          "text": "操業度差異は管理不能差異なので無視する",
+          "is_correct": false,
+          "explanation": "管理不能の側面はあるが完全無視は不適切。原因分析は将来の意思決定に有用。"
+        },
+        {
+          "id": "C",
+          "text": "ただちに固定費を一律削減する（人員カット、設備売却）",
+          "is_correct": false,
+          "explanation": "操業度差異は受注減・生産計画ミスなどが原因のことも多い。短絡的な固定費削減は中長期的な生産能力を損なう。"
+        },
+        {
+          "id": "D",
+          "text": "予算差異と合算して売上原価に振替えて終わりとする",
+          "is_correct": false,
+          "explanation": "それは会計処理の話であって経営判断ではない。経営者として原因分析が先。"
+        }
       ],
       "explanation": "操業度差異は「実際操業度が基準操業度を下回る（または上回る）ことにより生じる固定費の未配賦（過大配賦）」。原因として①需要不足（営業課題）、②計画ミス（基準操業度設定の問題）、③設備故障・段取替長期化などが考えられる。経営者はまず原因を分解し、需要面の施策（営業強化・新製品投入）と供給面の施策（稼働率向上・基準操業度の見直し）を組み合わせる必要がある。",
-      "references": [{"title": "原価管理 操業度差異の分析", "url": ""}],
-      "tags": ["操業度差異", "経営判断", "原価管理"],
-      "common_mistakes": ["操業度差異を即座に固定費削減と結びつける", "管理不能だから分析不要と考える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "原価管理 操業度差異の分析",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "操業度差異",
+        "経営判断",
+        "原価管理"
+      ],
+      "common_mistakes": [
+        "操業度差異を即座に固定費削減と結びつける",
+        "管理不能だから分析不要と考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "boki-2-kogyo-kobetsu-030",
       "version": "1.0",
-      "exam": {"code": "boki-2", "name": "日商簿記2級", "vendor": "JCCI", "year": 2026},
-      "domain": {"id": "kogyo-kobetsu", "name": "工業簿記 - 個別原価計算", "weight_percent": 13},
+      "exam": {
+        "code": "boki-2",
+        "name": "日商簿記2級",
+        "vendor": "JCCI",
+        "year": 2026
+      },
+      "domain": {
+        "id": "kogyo-kobetsu",
+        "name": "工業簿記 - 個別原価計算",
+        "weight_percent": 13
+      },
       "topic": "原価計算システム設計",
       "subtopic": "個別原価計算システムの設計提案",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "教育向け特注電子機器を受注生産する企業が、新たに個別原価計算システムを構築する。当面の月次決算迅速化と将来的な原価管理強化の両立を図るため、基本設計として最も適切な組合せは？",
       "options": [
-        {"id": "A", "text": "材料費・労務費は実際消費価格、製造間接費も実際配賦。差異は発生しないシンプル設計", "is_correct": false, "explanation": "全実際だと月末まで集計待ちが必要で月次決算が遅れる。差異は発生しないがシステムが硬直化し原価管理に活かせない。"},
-        {"id": "B", "text": "材料費は予定消費価格、労務費は予定賃率、製造間接費は部門別予定配賦率を使用。差異分析により原価管理を強化", "is_correct": true, "explanation": "正解。各原価要素で予定価格・予定配賦を導入することで月次決算が迅速化し、各差異（材料消費価格差異・賃率差異・予算差異・操業度差異）の分析で原価管理が強化される。"},
-        {"id": "C", "text": "全要素を概算で配賦し、年度末にまとめて精算", "is_correct": false, "explanation": "月次の原価情報が不正確で経営判断に使えない。"},
-        {"id": "D", "text": "原価計算は行わず、売上から外部支払額を控除した残額を利益とする", "is_correct": false, "explanation": "それは単なる収支計算で原価計算ではない。在庫評価が不可能で会計上も不適切。"}
+        {
+          "id": "A",
+          "text": "材料費・労務費は実際消費価格、製造間接費も実際配賦。差異は発生しないシンプル設計",
+          "is_correct": false,
+          "explanation": "全実際だと月末まで集計待ちが必要で月次決算が遅れる。差異は発生しないがシステムが硬直化し原価管理に活かせない。"
+        },
+        {
+          "id": "B",
+          "text": "材料費は予定消費価格、労務費は予定賃率、製造間接費は部門別予定配賦率を使用。差異分析により原価管理を強化",
+          "is_correct": true,
+          "explanation": "正解。各原価要素で予定価格・予定配賦を導入することで月次決算が迅速化し、各差異（材料消費価格差異・賃率差異・予算差異・操業度差異）の分析で原価管理が強化される。"
+        },
+        {
+          "id": "C",
+          "text": "原価計算は行わず、売上から外部支払額を控除した残額を利益とする",
+          "is_correct": false,
+          "explanation": "それは単なる収支計算で原価計算ではない。在庫評価が不可能で会計上も不適切。"
+        },
+        {
+          "id": "D",
+          "text": "全要素を概算で配賦し、年度末にまとめて精算",
+          "is_correct": false,
+          "explanation": "月次の原価情報が不正確で経営判断に使えない。"
+        }
       ],
       "explanation": "迅速性と原価管理の両立を図る個別原価計算システムの基本設計：①直接材料費は予定消費価格で消費高を即時計算（差異=材料消費価格差異）、②直接労務費は予定賃率を適用（差異=賃率差異）、③製造間接費は部門別予定配賦率で配賦（差異=予算差異・操業度差異）。これにより月中・月末で迅速に指図書別原価が判明し、見積価格との比較・差異分析を通じて改善活動が可能となる。差異の原因分析を通じて材料調達・労務管理・設備運用の各側面でPDCAを回せる。",
-      "references": [{"title": "原価計算基準 4・5・47", "url": ""}],
-      "tags": ["原価計算システム", "予定配賦", "原価管理", "システム設計"],
-      "common_mistakes": ["全実際で正確と思い込む", "予定値の役割を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "原価計算基準 4・5・47",
+          "url": ""
+        }
+      ],
+      "tags": [
+        "原価計算システム",
+        "予定配賦",
+        "原価管理",
+        "システム設計"
+      ],
+      "common_mistakes": [
+        "全実際で正確と思い込む",
+        "予定値の役割を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

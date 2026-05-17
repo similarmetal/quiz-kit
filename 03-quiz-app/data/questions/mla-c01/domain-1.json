@@ -15,892 +15,2458 @@
     {
       "id": "mla-c01-domain1-001",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "SageMaker Feature Store",
       "subtopic": "Online vs Offline Store",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SageMaker Feature Store における Online Store の主な用途として正しいものはどれか？",
       "options": [
-        {"id": "A", "text": "大規模な学習データセットをParquet形式で保存し、バッチ学習に利用する", "is_correct": false, "explanation": "これは Offline Store の役割。Offline Store は S3 上に Parquet で保存され、学習や分析に使われる。"},
-        {"id": "B", "text": "リアルタイム推論時に低レイテンシで特徴量を取得する", "is_correct": true, "explanation": "正解。Online Store は単桁ミリ秒レベルの低レイテンシで特徴量を返すKVSベースのストアで、リアルタイム推論に最適。"},
-        {"id": "C", "text": "モデルのアーティファクトをバージョン管理する", "is_correct": false, "explanation": "モデルアーティファクトの管理は SageMaker Model Registry の役割で、Feature Store の機能ではない。"},
-        {"id": "D", "text": "特徴量の統計量を可視化するダッシュボードを提供する", "is_correct": false, "explanation": "可視化は Data Wrangler や SageMaker Studio の機能であり、Feature Store の Online Store の主目的ではない。"}
+        {
+          "id": "A",
+          "text": "リアルタイム推論時に低レイテンシで特徴量を取得する",
+          "is_correct": true,
+          "explanation": "正解。Online Store は単桁ミリ秒レベルの低レイテンシで特徴量を返すKVSベースのストアで、リアルタイム推論に最適。"
+        },
+        {
+          "id": "B",
+          "text": "モデルのアーティファクトをバージョン管理する",
+          "is_correct": false,
+          "explanation": "モデルアーティファクトの管理は SageMaker Model Registry の役割で、Feature Store の機能ではない。"
+        },
+        {
+          "id": "C",
+          "text": "特徴量の統計量を可視化するダッシュボードを提供する",
+          "is_correct": false,
+          "explanation": "可視化は Data Wrangler や SageMaker Studio の機能であり、Feature Store の Online Store の主目的ではない。"
+        },
+        {
+          "id": "D",
+          "text": "大規模な学習データセットをParquet形式で保存し、バッチ学習に利用する",
+          "is_correct": false,
+          "explanation": "これは Offline Store の役割。Offline Store は S3 上に Parquet で保存され、学習や分析に使われる。"
+        }
       ],
       "explanation": "SageMaker Feature Store は Online Store（低レイテンシ KVS、リアルタイム推論用）と Offline Store（S3 上の Parquet、学習・分析用）の二層構造を持つ。Online は GetRecord API で1ミリ秒オーダーのアクセスが可能。両者は同一の FeatureGroup から自動的に同期される。",
       "references": [
-        {"title": "Amazon SageMaker Feature Store Concepts", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-getting-started.html"}
+        {
+          "title": "Amazon SageMaker Feature Store Concepts",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-getting-started.html"
+        }
       ],
-      "tags": ["feature-store", "online-store", "real-time-inference", "sagemaker", "data-storage"],
+      "tags": [
+        "feature-store",
+        "online-store",
+        "real-time-inference",
+        "sagemaker",
+        "data-storage"
+      ],
       "common_mistakes": [
         "Online Store と Offline Store の用途を逆に覚える",
         "Feature Store がモデル管理も行うと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-002",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "AWS Glue",
       "subtopic": "Data Catalog",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS Glue Data Catalog の主な役割はどれか？",
       "options": [
-        {"id": "A", "text": "S3 や RDS など複数のデータソースに対する統一メタデータリポジトリを提供する", "is_correct": true, "explanation": "正解。Glue Data Catalog は Hive メタストア互換の中央メタデータカタログで、Athena、EMR、Redshift Spectrum などから利用される。"},
-        {"id": "B", "text": "S3 オブジェクトを暗号化する", "is_correct": false, "explanation": "暗号化は KMS や S3 の SSE 機能であり、Data Catalog の役割ではない。"},
-        {"id": "C", "text": "ETL ジョブを Spark クラスタで実行する", "is_correct": false, "explanation": "ETL ジョブの実行は Glue ETL（Glue Jobs）の役割。Data Catalog はあくまでメタデータ管理。"},
-        {"id": "D", "text": "リアルタイムストリーミングデータを取り込む", "is_correct": false, "explanation": "リアルタイム取り込みは Kinesis Data Streams/Firehose の役割であり、Data Catalog の機能ではない。"}
+        {
+          "id": "A",
+          "text": "リアルタイムストリーミングデータを取り込む",
+          "is_correct": false,
+          "explanation": "リアルタイム取り込みは Kinesis Data Streams/Firehose の役割であり、Data Catalog の機能ではない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 や RDS など複数のデータソースに対する統一メタデータリポジトリを提供する",
+          "is_correct": true,
+          "explanation": "正解。Glue Data Catalog は Hive メタストア互換の中央メタデータカタログで、Athena、EMR、Redshift Spectrum などから利用される。"
+        },
+        {
+          "id": "C",
+          "text": "S3 オブジェクトを暗号化する",
+          "is_correct": false,
+          "explanation": "暗号化は KMS や S3 の SSE 機能であり、Data Catalog の役割ではない。"
+        },
+        {
+          "id": "D",
+          "text": "ETL ジョブを Spark クラスタで実行する",
+          "is_correct": false,
+          "explanation": "ETL ジョブの実行は Glue ETL（Glue Jobs）の役割。Data Catalog はあくまでメタデータ管理。"
+        }
       ],
       "explanation": "Glue Data Catalog は AWS の分析サービス全体で共有される中央メタデータストア。テーブルスキーマ、パーティション、データ型、データ位置などを保存し、Athena や EMR から SQL で参照可能にする。Crawler で自動スキーマ推論することもできる。",
       "references": [
-        {"title": "AWS Glue Data Catalog", "url": "https://docs.aws.amazon.com/glue/latest/dg/components-overview.html"}
+        {
+          "title": "AWS Glue Data Catalog",
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/components-overview.html"
+        }
       ],
-      "tags": ["glue", "data-catalog", "metadata", "athena", "etl"],
+      "tags": [
+        "glue",
+        "data-catalog",
+        "metadata",
+        "athena",
+        "etl"
+      ],
       "common_mistakes": [
         "Data Catalog 自体が ETL を実行すると思い込む",
         "Data Catalog がデータそのものを保持していると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-003",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "SageMaker Ground Truth",
       "subtopic": "Labeling workforce types",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "SageMaker Ground Truth が提供するラベリングワークフォースの種類として正しい組み合わせはどれか？",
       "options": [
-        {"id": "A", "text": "Public、Private、Vendor の3種類", "is_correct": false, "explanation": "Public ではなく Mechanical Turk が正しい用語。Public という名称のワークフォースは存在しない。"},
-        {"id": "B", "text": "Mechanical Turk、Private、Vendor の3種類", "is_correct": true, "explanation": "正解。Amazon Mechanical Turk（公開クラウドソーシング）、Private（社内チーム）、Vendor（AWS Marketplace のサードパーティ）の3種類。"},
-        {"id": "C", "text": "Mechanical Turk、Active Learning、Self-Labeling の3種類", "is_correct": false, "explanation": "Active Learning と Self-Labeling は Ground Truth の機能であって、ワークフォースの種類ではない。"},
-        {"id": "D", "text": "AWS Internal、Customer Internal、Open Source の3種類", "is_correct": false, "explanation": "このような名称のワークフォース区分は存在しない。"}
+        {
+          "id": "A",
+          "text": "Public、Private、Vendor の3種類",
+          "is_correct": false,
+          "explanation": "Public ではなく Mechanical Turk が正しい用語。Public という名称のワークフォースは存在しない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Internal、Customer Internal、Open Source の3種類",
+          "is_correct": false,
+          "explanation": "このような名称のワークフォース区分は存在しない。"
+        },
+        {
+          "id": "C",
+          "text": "Mechanical Turk、Private、Vendor の3種類",
+          "is_correct": true,
+          "explanation": "正解。Amazon Mechanical Turk（公開クラウドソーシング）、Private（社内チーム）、Vendor（AWS Marketplace のサードパーティ）の3種類。"
+        },
+        {
+          "id": "D",
+          "text": "Mechanical Turk、Active Learning、Self-Labeling の3種類",
+          "is_correct": false,
+          "explanation": "Active Learning と Self-Labeling は Ground Truth の機能であって、ワークフォースの種類ではない。"
+        }
       ],
       "explanation": "SageMaker Ground Truth は3種類のワークフォースを提供する。Mechanical Turk は最も低コストだが機密データには不適切。Private は社内人員でセキュア、Vendor は専門業者を AWS Marketplace 経由で利用可能。医療データなどの機密情報には Private 推奨。",
       "references": [
-        {"title": "SageMaker Ground Truth Workforces", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html"}
+        {
+          "title": "SageMaker Ground Truth Workforces",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html"
+        }
       ],
-      "tags": ["ground-truth", "labeling", "workforce", "mechanical-turk", "annotation"],
+      "tags": [
+        "ground-truth",
+        "labeling",
+        "workforce",
+        "mechanical-turk",
+        "annotation"
+      ],
       "common_mistakes": [
         "機密データを Mechanical Turk に出してしまう",
         "Active Learning をワークフォースの一種と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-004",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Ingestion",
       "subtopic": "Kinesis Data Streams vs Firehose",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある SaaS 企業がアプリケーションログを ML パイプラインに取り込む際、Kinesis Data Streams と Kinesis Data Firehose の違いとして正しいものはどれか？",
       "options": [
-        {"id": "A", "text": "Data Streams はサーバーレスで配信先設定のみ、Firehose はシャード管理が必要", "is_correct": false, "explanation": "逆。Data Streams がシャード単位の管理、Firehose が完全マネージドの配信サービス。"},
-        {"id": "B", "text": "Data Streams は最大7日（オンデマンドで365日）保持・複数コンシューマ対応、Firehose は配信専用でデータ保持しない", "is_correct": true, "explanation": "正解。Data Streams はストリームバッファとして複数コンシューマで読める。Firehose は S3/Redshift/OpenSearch などへの配信特化で内部バッファのみ。"},
-        {"id": "C", "text": "Firehose のほうがレイテンシが低く、リアルタイム処理に適している", "is_correct": false, "explanation": "逆。Firehose は最低60秒のバッファリングが必要で、リアルタイム性なら Data Streams のほうが優れる。"},
-        {"id": "D", "text": "Data Streams は変換不可、Firehose は Lambda 変換のみ可能", "is_correct": false, "explanation": "Data Streams も Lambda などで変換可能。Firehose の Lambda 変換は機能の1つだが、両者の本質的違いではない。"}
+        {
+          "id": "A",
+          "text": "Firehose のほうがレイテンシが低く、リアルタイム処理に適している",
+          "is_correct": false,
+          "explanation": "逆。Firehose は最低60秒のバッファリングが必要で、リアルタイム性なら Data Streams のほうが優れる。"
+        },
+        {
+          "id": "B",
+          "text": "Data Streams はサーバーレスで配信先設定のみ、Firehose はシャード管理が必要",
+          "is_correct": false,
+          "explanation": "逆。Data Streams がシャード単位の管理、Firehose が完全マネージドの配信サービス。"
+        },
+        {
+          "id": "C",
+          "text": "Data Streams は変換不可、Firehose は Lambda 変換のみ可能",
+          "is_correct": false,
+          "explanation": "Data Streams も Lambda などで変換可能。Firehose の Lambda 変換は機能の1つだが、両者の本質的違いではない。"
+        },
+        {
+          "id": "D",
+          "text": "Data Streams は最大7日（オンデマンドで365日）保持・複数コンシューマ対応、Firehose は配信専用でデータ保持しない",
+          "is_correct": true,
+          "explanation": "正解。Data Streams はストリームバッファとして複数コンシューマで読める。Firehose は S3/Redshift/OpenSearch などへの配信特化で内部バッファのみ。"
+        }
       ],
       "explanation": "Data Streams はシャードベースのストリームバッファで、複数のコンシューマが同じデータを並行して読める。最大365日保持可能。Firehose は S3 などへの配信を完全マネージドで実行するサーバーレスサービスで、最低60秒のバッファリングが入る。リアルタイム性と再生が必要なら Data Streams、シンプルな配信なら Firehose。",
       "references": [
-        {"title": "Amazon Kinesis Data Streams vs Firehose", "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"},
-        {"title": "Amazon Data Firehose", "url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"}
+        {
+          "title": "Amazon Kinesis Data Streams vs Firehose",
+          "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+        },
+        {
+          "title": "Amazon Data Firehose",
+          "url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
+        }
       ],
-      "tags": ["kinesis", "data-streams", "firehose", "ingestion", "saas"],
+      "tags": [
+        "kinesis",
+        "data-streams",
+        "firehose",
+        "ingestion",
+        "saas"
+      ],
       "common_mistakes": [
         "Data Streams と Firehose の役割を混同する",
         "Firehose をリアルタイムストリームと誤解する",
         "Data Streams にコンシューマが1つしか紐づかないと思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-005",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Transformation",
       "subtopic": "Glue DataBrew vs Glue ETL",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Glue DataBrew と AWS Glue ETL Jobs の使い分けとして最も適切な記述はどれか？",
       "options": [
-        {"id": "A", "text": "DataBrew はノーコードでデータ品質確認・前処理、Glue ETL は Spark コードで大規模変換", "is_correct": true, "explanation": "正解。DataBrew は GUI ベースで250以上のビルトイン変換を持ち、データアナリストや初学者向け。Glue ETL は PySpark/Scala でカスタム変換を実装する。"},
-        {"id": "B", "text": "DataBrew はストリーミング専用、Glue ETL はバッチ専用", "is_correct": false, "explanation": "DataBrew はバッチ処理ツール。ストリーミング ETL は Glue Streaming ETL Jobs が担当する。"},
-        {"id": "C", "text": "DataBrew は構造化データ専用、Glue ETL は非構造化データ専用", "is_correct": false, "explanation": "両者とも構造化・半構造化データを扱える。差はインターフェースとカスタマイズ性。"},
-        {"id": "D", "text": "DataBrew は SageMaker Studio 内で動作、Glue ETL は単独 Web UI のみ", "is_correct": false, "explanation": "DataBrew は独立した AWS サービスで Glue コンソールの一部として提供される。SageMaker Studio 内では Data Wrangler が類似機能を提供する。"}
+        {
+          "id": "A",
+          "text": "DataBrew はノーコードでデータ品質確認・前処理、Glue ETL は Spark コードで大規模変換",
+          "is_correct": true,
+          "explanation": "正解。DataBrew は GUI ベースで250以上のビルトイン変換を持ち、データアナリストや初学者向け。Glue ETL は PySpark/Scala でカスタム変換を実装する。"
+        },
+        {
+          "id": "B",
+          "text": "DataBrew はストリーミング専用、Glue ETL はバッチ専用",
+          "is_correct": false,
+          "explanation": "DataBrew はバッチ処理ツール。ストリーミング ETL は Glue Streaming ETL Jobs が担当する。"
+        },
+        {
+          "id": "C",
+          "text": "DataBrew は SageMaker Studio 内で動作、Glue ETL は単独 Web UI のみ",
+          "is_correct": false,
+          "explanation": "DataBrew は独立した AWS サービスで Glue コンソールの一部として提供される。SageMaker Studio 内では Data Wrangler が類似機能を提供する。"
+        },
+        {
+          "id": "D",
+          "text": "DataBrew は構造化データ専用、Glue ETL は非構造化データ専用",
+          "is_correct": false,
+          "explanation": "両者とも構造化・半構造化データを扱える。差はインターフェースとカスタマイズ性。"
+        }
       ],
       "explanation": "DataBrew はノーコードのビジュアルデータ前処理ツールで、データプロファイリング、欠損値補完、外れ値除去、形式変換などをクリック操作で実行できる。Glue ETL Jobs は Spark ベースの本格的 ETL で、ペタバイト級のデータを PySpark/Scala コードで処理する。アナリストは DataBrew、エンジニアは Glue ETL が一般的な使い分け。",
       "references": [
-        {"title": "AWS Glue DataBrew", "url": "https://docs.aws.amazon.com/databrew/latest/dg/what-is.html"},
-        {"title": "AWS Glue ETL Jobs", "url": "https://docs.aws.amazon.com/glue/latest/dg/author-job.html"}
+        {
+          "title": "AWS Glue DataBrew",
+          "url": "https://docs.aws.amazon.com/databrew/latest/dg/what-is.html"
+        },
+        {
+          "title": "AWS Glue ETL Jobs",
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/author-job.html"
+        }
       ],
-      "tags": ["glue", "databrew", "etl", "no-code", "data-preparation"],
+      "tags": [
+        "glue",
+        "databrew",
+        "etl",
+        "no-code",
+        "data-preparation"
+      ],
       "common_mistakes": [
         "DataBrew でペタバイト級の大規模 ETL を試みる",
         "Glue ETL を非エンジニアに使わせようとする",
         "DataBrew と Data Wrangler を混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-006",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Privacy",
       "subtopic": "Amazon Macie",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ある医療系 SaaS が S3 に保存されている DICOM 画像のメタデータと付随する CSV ファイルから PHI（保護対象保健情報）を検出したい。Amazon Macie の特徴として正しいものはどれか？",
       "options": [
-        {"id": "A", "text": "Macie はデータベースの行単位で PHI を検出する", "is_correct": false, "explanation": "Macie はオブジェクトストレージ（S3）専用で、RDS や DynamoDB には対応しない。"},
-        {"id": "B", "text": "Macie は S3 オブジェクトをスキャンし、PII/PHI/認証情報を ML ベースで検出する", "is_correct": true, "explanation": "正解。Macie は S3 専用のデータディスカバリサービスで、マネージド型と自前データ識別子（Custom Data Identifier）に対応。"},
-        {"id": "C", "text": "Macie は VPC フローログから機密情報の流出を検出する", "is_correct": false, "explanation": "VPC フローログ解析は GuardDuty や VPC Flow Log 自体の役割であり、Macie の機能ではない。"},
-        {"id": "D", "text": "Macie はリアルタイムで S3 へのアップロードを検査し、検出時にブロックする", "is_correct": false, "explanation": "Macie は Discovery Job ベースの非同期検査で、アップロード時のブロック機能はない。検出後に通知する仕組み。"}
+        {
+          "id": "A",
+          "text": "Macie はリアルタイムで S3 へのアップロードを検査し、検出時にブロックする",
+          "is_correct": false,
+          "explanation": "Macie は Discovery Job ベースの非同期検査で、アップロード時のブロック機能はない。検出後に通知する仕組み。"
+        },
+        {
+          "id": "B",
+          "text": "Macie は S3 オブジェクトをスキャンし、PII/PHI/認証情報を ML ベースで検出する",
+          "is_correct": true,
+          "explanation": "正解。Macie は S3 専用のデータディスカバリサービスで、マネージド型と自前データ識別子（Custom Data Identifier）に対応。"
+        },
+        {
+          "id": "C",
+          "text": "Macie はデータベースの行単位で PHI を検出する",
+          "is_correct": false,
+          "explanation": "Macie はオブジェクトストレージ（S3）専用で、RDS や DynamoDB には対応しない。"
+        },
+        {
+          "id": "D",
+          "text": "Macie は VPC フローログから機密情報の流出を検出する",
+          "is_correct": false,
+          "explanation": "VPC フローログ解析は GuardDuty や VPC Flow Log 自体の役割であり、Macie の機能ではない。"
+        }
       ],
       "explanation": "Amazon Macie は S3 上の機密データ（PII、PHI、財務情報、認証情報）を機械学習と正規表現で検出する専用サービス。Sensitive Data Discovery Job を構成し、findings を Security Hub や EventBridge で通知できる。HIPAA 対象のデータを扱う医療系では Macie + KMS 暗号化が標準パターン。",
       "references": [
-        {"title": "Amazon Macie Sensitive Data Discovery", "url": "https://docs.aws.amazon.com/macie/latest/user/discovery-jobs.html"},
-        {"title": "Amazon Macie Managed Data Identifiers", "url": "https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html"}
+        {
+          "title": "Amazon Macie Sensitive Data Discovery",
+          "url": "https://docs.aws.amazon.com/macie/latest/user/discovery-jobs.html"
+        },
+        {
+          "title": "Amazon Macie Managed Data Identifiers",
+          "url": "https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html"
+        }
       ],
-      "tags": ["macie", "phi", "pii", "healthcare", "data-privacy"],
+      "tags": [
+        "macie",
+        "phi",
+        "pii",
+        "healthcare",
+        "data-privacy"
+      ],
       "common_mistakes": [
         "Macie が RDS や DynamoDB もスキャンできると誤解する",
         "Macie がアップロード時にリアルタイムブロックすると思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-007",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Feature Engineering",
       "subtopic": "Categorical encoding",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "FinTech のクレジットスコアモデルで、職業（数百種類）というカテゴリ変数をエンコーディングする方法として、決定木系（XGBoost, LightGBM）アルゴリズムに最も適切なのはどれか？",
       "options": [
-        {"id": "A", "text": "One-hot encoding ですべての職業をバイナリ列に展開する", "is_correct": false, "explanation": "数百種類のカテゴリでは次元が爆発し、木の分割が非効率になる。スパースな高次元は決定木に不向き。"},
-        {"id": "B", "text": "Target encoding（カテゴリごとの目的変数平均）または順序的整数エンコーディングを利用する", "is_correct": true, "explanation": "正解。決定木はカテゴリの順序を学習できるため、Target encoding やラベルエンコーディングがメモリ効率と性能の両面で優れる。"},
-        {"id": "C", "text": "MinMaxScaler で 0-1 に正規化する", "is_correct": false, "explanation": "MinMaxScaler は数値変数用。カテゴリ変数には適用できない。"},
-        {"id": "D", "text": "PCA で次元削減してから使う", "is_correct": false, "explanation": "PCA は連続変数用の線形次元削減で、カテゴリ変数のエンコード手法ではない。"}
+        {
+          "id": "A",
+          "text": "One-hot encoding ですべての職業をバイナリ列に展開する",
+          "is_correct": false,
+          "explanation": "数百種類のカテゴリでは次元が爆発し、木の分割が非効率になる。スパースな高次元は決定木に不向き。"
+        },
+        {
+          "id": "B",
+          "text": "PCA で次元削減してから使う",
+          "is_correct": false,
+          "explanation": "PCA は連続変数用の線形次元削減で、カテゴリ変数のエンコード手法ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Target encoding（カテゴリごとの目的変数平均）または順序的整数エンコーディングを利用する",
+          "is_correct": true,
+          "explanation": "正解。決定木はカテゴリの順序を学習できるため、Target encoding やラベルエンコーディングがメモリ効率と性能の両面で優れる。"
+        },
+        {
+          "id": "D",
+          "text": "MinMaxScaler で 0-1 に正規化する",
+          "is_correct": false,
+          "explanation": "MinMaxScaler は数値変数用。カテゴリ変数には適用できない。"
+        }
       ],
       "explanation": "高カーディナリティのカテゴリ変数を決定木系モデルに渡すときは、One-hot よりも Target encoding やラベルエンコーディングが有効。Target encoding はリーク防止のため K-Fold で計算するのがベストプラクティス。SageMaker Data Wrangler にはこれらのトランスフォームがビルトインされている。",
       "references": [
-        {"title": "SageMaker Data Wrangler Transform", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"},
-        {"title": "Feature Engineering for Trees", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html"}
+        {
+          "title": "SageMaker Data Wrangler Transform",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"
+        },
+        {
+          "title": "Feature Engineering for Trees",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html"
+        }
       ],
-      "tags": ["feature-engineering", "encoding", "fintech", "xgboost", "categorical"],
+      "tags": [
+        "feature-engineering",
+        "encoding",
+        "fintech",
+        "xgboost",
+        "categorical"
+      ],
       "common_mistakes": [
         "高カーディナリティに One-hot を機械的に適用する",
         "数値スケーリング手法をカテゴリ変数に使おうとする",
         "Target encoding でデータリークを起こす"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-008",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Augmentation",
       "subtopic": "Image augmentation for medical imaging",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "医療画像（胸部X線）のクラス分類モデルで、肺炎クラスのサンプルが少ない。データ拡張として最も適切でない手法はどれか？",
       "options": [
-        {"id": "A", "text": "わずかな回転（±10度）と水平反転", "is_correct": false, "explanation": "胸部X線では水平反転は左右の構造を学習させるノイズになり得るが軽微な回転は妥当。ただし水平反転は症例によっては許容される場合もあり、選択肢の中では最も弱い問題。"},
-        {"id": "B", "text": "画像の上下反転と180度回転", "is_correct": true, "explanation": "正解（最も適切でない）。胸部X線は解剖学的に上下が決まっているため、上下反転や180度回転は現実にあり得ない画像を生成し、モデル性能を悪化させる。"},
-        {"id": "C", "text": "輝度・コントラストの軽微な調整", "is_correct": false, "explanation": "撮影条件のばらつきを再現するため有効。"},
-        {"id": "D", "text": "ランダムクロップと軽微なスケーリング", "is_correct": false, "explanation": "撮影位置のずれを再現するため一般的に有効。"}
+        {
+          "id": "A",
+          "text": "わずかな回転（±10度）と水平反転",
+          "is_correct": false,
+          "explanation": "胸部X線では水平反転は左右の構造を学習させるノイズになり得るが軽微な回転は妥当。ただし水平反転は症例によっては許容される場合もあり、選択肢の中では最も弱い問題。"
+        },
+        {
+          "id": "B",
+          "text": "輝度・コントラストの軽微な調整",
+          "is_correct": false,
+          "explanation": "撮影条件のばらつきを再現するため有効。"
+        },
+        {
+          "id": "C",
+          "text": "ランダムクロップと軽微なスケーリング",
+          "is_correct": false,
+          "explanation": "撮影位置のずれを再現するため一般的に有効。"
+        },
+        {
+          "id": "D",
+          "text": "画像の上下反転と180度回転",
+          "is_correct": true,
+          "explanation": "正解（最も適切でない）。胸部X線は解剖学的に上下が決まっているため、上下反転や180度回転は現実にあり得ない画像を生成し、モデル性能を悪化させる。"
+        }
       ],
       "explanation": "データ拡張は「現実にあり得る変換」のみを適用するのが原則。医療画像では解剖学的制約を考慮し、不自然な変換（上下反転、180度回転）は避ける。SageMaker のスクリプトモードでは torchvision.transforms や albumentations を使って拡張パイプラインを構築する。SMOTE はテーブルデータ向けで画像には通常使わない。",
       "references": [
-        {"title": "SageMaker Image Classification Algorithm", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/image-classification.html"},
-        {"title": "Data Augmentation Best Practices", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html"}
+        {
+          "title": "SageMaker Image Classification Algorithm",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/image-classification.html"
+        },
+        {
+          "title": "Data Augmentation Best Practices",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html"
+        }
       ],
-      "tags": ["data-augmentation", "image", "healthcare", "imbalance", "domain-knowledge"],
+      "tags": [
+        "data-augmentation",
+        "image",
+        "healthcare",
+        "imbalance",
+        "domain-knowledge"
+      ],
       "common_mistakes": [
         "ドメイン知識を無視して機械的に全変換を適用する",
         "医療画像に SMOTE を使おうとする"
       ],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-009",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Quality",
       "subtopic": "Glue Data Quality / Deequ",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Glue Data Quality の基盤となっているオープンソースライブラリと、その役割の組み合わせとして正しいものはどれか？",
       "options": [
-        {"id": "A", "text": "Apache Hive、SQL ベースの集計", "is_correct": false, "explanation": "Hive は分散 SQL エンジンで、データ品質ライブラリではない。"},
-        {"id": "B", "text": "Deequ（Spark 上で動作するデータ品質チェックライブラリ）", "is_correct": true, "explanation": "正解。Deequ は AWS が開発した OSS で、Spark 上でデータ品質ルール（DQDL）を評価する。Glue Data Quality はこれを基盤としている。"},
-        {"id": "C", "text": "Great Expectations、Python ベースの検証フレームワーク", "is_correct": false, "explanation": "Great Expectations は人気の OSS だが、Glue Data Quality の基盤ではない。"},
-        {"id": "D", "text": "Apache Atlas、メタデータ管理ツール", "is_correct": false, "explanation": "Atlas はデータガバナンス・系統管理ツールで、品質チェックのライブラリではない。"}
+        {
+          "id": "A",
+          "text": "Deequ（Spark 上で動作するデータ品質チェックライブラリ）",
+          "is_correct": true,
+          "explanation": "正解。Deequ は AWS が開発した OSS で、Spark 上でデータ品質ルール（DQDL）を評価する。Glue Data Quality はこれを基盤としている。"
+        },
+        {
+          "id": "B",
+          "text": "Apache Hive、SQL ベースの集計",
+          "is_correct": false,
+          "explanation": "Hive は分散 SQL エンジンで、データ品質ライブラリではない。"
+        },
+        {
+          "id": "C",
+          "text": "Apache Atlas、メタデータ管理ツール",
+          "is_correct": false,
+          "explanation": "Atlas はデータガバナンス・系統管理ツールで、品質チェックのライブラリではない。"
+        },
+        {
+          "id": "D",
+          "text": "Great Expectations、Python ベースの検証フレームワーク",
+          "is_correct": false,
+          "explanation": "Great Expectations は人気の OSS だが、Glue Data Quality の基盤ではない。"
+        }
       ],
       "explanation": "AWS Glue Data Quality は AWS が開発した OSS の Deequ を基盤としており、Spark 上で動作する。DQDL（Data Quality Definition Language）でルールを記述し、Completeness、Uniqueness、Freshness などのチェックを行える。Glue Data Catalog や ETL ジョブと統合され、品質メトリクスを CloudWatch で可視化できる。",
       "references": [
-        {"title": "AWS Glue Data Quality", "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html"},
-        {"title": "Deequ on GitHub", "url": "https://github.com/awslabs/deequ"}
+        {
+          "title": "AWS Glue Data Quality",
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html"
+        },
+        {
+          "title": "Deequ on GitHub",
+          "url": "https://github.com/awslabs/deequ"
+        }
       ],
-      "tags": ["data-quality", "deequ", "glue", "dqdl", "open-source"],
+      "tags": [
+        "data-quality",
+        "deequ",
+        "glue",
+        "dqdl",
+        "open-source"
+      ],
       "common_mistakes": [
         "Great Expectations と Deequ を混同する",
         "Glue Data Quality が Athena ベースだと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-010",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Storage",
       "subtopic": "S3 storage class for ML",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業の IoT データ基盤で、過去2年分のセンサデータ（500TB）を ML モデルの再学習に使用する。アクセス頻度は月1-2回、再学習ジョブ時に全データをスキャンする。最もコスト効率の良い S3 ストレージクラスはどれか？",
       "options": [
-        {"id": "A", "text": "S3 Standard", "is_correct": false, "explanation": "頻繁なアクセス前提のクラスで、月1-2回程度のアクセスではコスト過剰。"},
-        {"id": "B", "text": "S3 Standard-IA（Infrequent Access）", "is_correct": true, "explanation": "正解。低頻度アクセス（月1回以上）で、取り出し時のレイテンシは Standard と同等。再学習ジョブで全スキャンするケースに適合。"},
-        {"id": "C", "text": "S3 Glacier Deep Archive", "is_correct": false, "explanation": "取り出しに最大12時間かかり、ジョブ実行時の即時アクセス要件を満たさない。"},
-        {"id": "D", "text": "S3 Intelligent-Tiering の Archive Access 階層", "is_correct": false, "explanation": "Intelligent-Tiering は自動階層化で便利だが、明確に低頻度パターンが分かっている場合は Standard-IA のほうが安価。さらに Archive Access に落ちると即時取り出しに時間がかかる。"}
+        {
+          "id": "A",
+          "text": "S3 Standard",
+          "is_correct": false,
+          "explanation": "頻繁なアクセス前提のクラスで、月1-2回程度のアクセスではコスト過剰。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Standard-IA（Infrequent Access）",
+          "is_correct": true,
+          "explanation": "正解。低頻度アクセス（月1回以上）で、取り出し時のレイテンシは Standard と同等。再学習ジョブで全スキャンするケースに適合。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Glacier Deep Archive",
+          "is_correct": false,
+          "explanation": "取り出しに最大12時間かかり、ジョブ実行時の即時アクセス要件を満たさない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Intelligent-Tiering の Archive Access 階層",
+          "is_correct": false,
+          "explanation": "Intelligent-Tiering は自動階層化で便利だが、明確に低頻度パターンが分かっている場合は Standard-IA のほうが安価。さらに Archive Access に落ちると即時取り出しに時間がかかる。"
+        }
       ],
       "explanation": "S3 ストレージクラス選択は「アクセス頻度」「取り出しレイテンシ要件」「最低保管期間」で決まる。月1回程度の ML 再学習用アーカイブには Standard-IA が定番。最低保管期間は30日。Glacier は分単位～時間単位の取り出しレイテンシがあり、ジョブの待機時間が問題になる。アクセスパターンが不確実なら Intelligent-Tiering、明確なら IA を直接指定するのがコスト最適。",
       "references": [
-        {"title": "Amazon S3 Storage Classes", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"}
+        {
+          "title": "Amazon S3 Storage Classes",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+        }
       ],
-      "tags": ["s3", "storage-class", "cost-optimization", "manufacturing", "iot"],
+      "tags": [
+        "s3",
+        "storage-class",
+        "cost-optimization",
+        "manufacturing",
+        "iot"
+      ],
       "common_mistakes": [
         "Glacier を即時アクセス用途に選ぶ",
         "アクセス頻度に関係なく Standard を使う",
         "Intelligent-Tiering をすべての場合の最適解と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-011",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "SageMaker Processing",
       "subtopic": "Distributed feature engineering",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SaaS 企業のログ解析チームが、Athena で 200GB の CloudFront ログを集計後、特徴量化して S3 に保存したい。SageMaker 内で完結させたい場合、最も適切な実装は？",
       "options": [
-        {"id": "A", "text": "SageMaker Studio Notebook で pandas を使い、すべてオンメモリで処理する", "is_correct": false, "explanation": "200GB は単一ノードのメモリに乗らず、ノートブックは本番ジョブとして適切でない。"},
-        {"id": "B", "text": "SageMaker Processing Job（PySparkProcessor または ScriptProcessor）で Spark/Python スクリプトを分散実行する", "is_correct": true, "explanation": "正解。Processing Job は専用クラスタでスクリプトを実行し、入力 S3 → 処理 → 出力 S3 のパターンを完全マネージドで提供する。"},
-        {"id": "C", "text": "SageMaker Endpoint をホストして特徴量エンジニアリングロジックを推論として実行する", "is_correct": false, "explanation": "Endpoint はリアルタイム推論用で、バッチ前処理には不適切。"},
-        {"id": "D", "text": "SageMaker Training Job で前処理コードを学習スクリプトとして実行する", "is_correct": false, "explanation": "Training Job は学習ジョブ専用。前処理は Processing Job のほうがメトリクス・I/O 設計が前処理向け。"}
+        {
+          "id": "A",
+          "text": "SageMaker Endpoint をホストして特徴量エンジニアリングロジックを推論として実行する",
+          "is_correct": false,
+          "explanation": "Endpoint はリアルタイム推論用で、バッチ前処理には不適切。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker Studio Notebook で pandas を使い、すべてオンメモリで処理する",
+          "is_correct": false,
+          "explanation": "200GB は単一ノードのメモリに乗らず、ノートブックは本番ジョブとして適切でない。"
+        },
+        {
+          "id": "C",
+          "text": "SageMaker Processing Job（PySparkProcessor または ScriptProcessor）で Spark/Python スクリプトを分散実行する",
+          "is_correct": true,
+          "explanation": "正解。Processing Job は専用クラスタでスクリプトを実行し、入力 S3 → 処理 → 出力 S3 のパターンを完全マネージドで提供する。"
+        },
+        {
+          "id": "D",
+          "text": "SageMaker Training Job で前処理コードを学習スクリプトとして実行する",
+          "is_correct": false,
+          "explanation": "Training Job は学習ジョブ専用。前処理は Processing Job のほうがメトリクス・I/O 設計が前処理向け。"
+        }
       ],
       "explanation": "SageMaker Processing Job はデータ前処理・後処理・モデル評価のための専用ジョブで、ScriptProcessor、PySparkProcessor、SKLearnProcessor などのフレームワーク別プロセッサを提供する。専用クラスタが起動し、入出力 S3 パスは自動マウントされる。Pipelines に組み込んで再現可能なワークフロー化も可能。",
       "references": [
-        {"title": "SageMaker Processing Jobs", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html"},
-        {"title": "PySparkProcessor", "url": "https://sagemaker.readthedocs.io/en/stable/api/training/processing.html"}
+        {
+          "title": "SageMaker Processing Jobs",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html"
+        },
+        {
+          "title": "PySparkProcessor",
+          "url": "https://sagemaker.readthedocs.io/en/stable/api/training/processing.html"
+        }
       ],
-      "tags": ["sagemaker-processing", "spark", "feature-engineering", "saas", "logs"],
+      "tags": [
+        "sagemaker-processing",
+        "spark",
+        "feature-engineering",
+        "saas",
+        "logs"
+      ],
       "common_mistakes": [
         "ノートブック上で大規模処理しようとする",
         "Training Job を前処理に使い続ける",
         "Endpoint をバッチ処理に使う"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-012",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Imbalance",
       "subtopic": "SMOTE for fraud detection",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech 企業の不正取引検出モデルで、不正サンプルが全体の0.3%しかない。最も効果的なクラス不均衡対応の組み合わせはどれか？",
       "options": [
-        {"id": "A", "text": "全サンプルに均等な重みを使い、accuracy を最適化する", "is_correct": false, "explanation": "不均衡データで accuracy を使うと「すべて正常」と予測してしまう。99.7% の精度でも全く役に立たない。"},
-        {"id": "B", "text": "学習データに対して SMOTE で少数クラスをオーバーサンプリングし、PR-AUC や F1 で評価する", "is_correct": true, "explanation": "正解。SMOTE で合成少数サンプルを生成し、不均衡時に意味のある PR-AUC/F1 で評価するのが標準パターン。XGBoost なら scale_pos_weight も併用可。"},
-        {"id": "C", "text": "テストデータも含めて全体をオーバーサンプリングしてから分割する", "is_correct": false, "explanation": "テストデータをオーバーサンプリングするとリーク・評価バイアスが発生する。SMOTE は学習データのみに適用すべき。"},
-        {"id": "D", "text": "多数クラスを完全に除外し、少数クラスのみで学習する", "is_correct": false, "explanation": "1クラスしか残らず分類問題として成立しない。"}
+        {
+          "id": "A",
+          "text": "テストデータも含めて全体をオーバーサンプリングしてから分割する",
+          "is_correct": false,
+          "explanation": "テストデータをオーバーサンプリングするとリーク・評価バイアスが発生する。SMOTE は学習データのみに適用すべき。"
+        },
+        {
+          "id": "B",
+          "text": "多数クラスを完全に除外し、少数クラスのみで学習する",
+          "is_correct": false,
+          "explanation": "1クラスしか残らず分類問題として成立しない。"
+        },
+        {
+          "id": "C",
+          "text": "全サンプルに均等な重みを使い、accuracy を最適化する",
+          "is_correct": false,
+          "explanation": "不均衡データで accuracy を使うと「すべて正常」と予測してしまう。99.7% の精度でも全く役に立たない。"
+        },
+        {
+          "id": "D",
+          "text": "学習データに対して SMOTE で少数クラスをオーバーサンプリングし、PR-AUC や F1 で評価する",
+          "is_correct": true,
+          "explanation": "正解。SMOTE で合成少数サンプルを生成し、不均衡時に意味のある PR-AUC/F1 で評価するのが標準パターン。XGBoost なら scale_pos_weight も併用可。"
+        }
       ],
       "explanation": "クラス不均衡対応の鉄則：(1) 学習データのみにリサンプリング適用、(2) 評価メトリクスは PR-AUC、F1、Recall@Precision など不均衡対応のものを使う、(3) アルゴリズム側のクラス重み（XGBoost の scale_pos_weight、sklearn の class_weight）も活用。SageMaker の組み込み XGBoost や Linear Learner はクラス重みオプションを持つ。",
       "references": [
-        {"title": "SageMaker Linear Learner", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/linear-learner.html"},
-        {"title": "SageMaker XGBoost", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html"}
+        {
+          "title": "SageMaker Linear Learner",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/linear-learner.html"
+        },
+        {
+          "title": "SageMaker XGBoost",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html"
+        }
       ],
-      "tags": ["imbalance", "smote", "fraud", "fintech", "metrics"],
+      "tags": [
+        "imbalance",
+        "smote",
+        "fraud",
+        "fintech",
+        "metrics"
+      ],
       "common_mistakes": [
         "accuracy で不均衡データを評価してしまう",
         "テストデータにも SMOTE を適用してリークさせる",
         "リサンプリングのみで重み付けを忘れる"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-013",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Feature Store",
       "subtopic": "FeatureGroup design",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "製造業の予知保全モデルで、機器ID（device_id）と1分単位のタイムスタンプ（event_time）でセンサ統計量を Feature Store に登録する。FeatureGroup の設計として正しいものはどれか？",
       "options": [
-        {"id": "A", "text": "RecordIdentifier を device_id、EventTime を event_time に指定し、Online/Offline 両方を有効化する", "is_correct": true, "explanation": "正解。最新値での推論アクセスは device_id をキーに行い、Offline で過去履歴を Parquet として学習に使える。"},
-        {"id": "B", "text": "RecordIdentifier を event_time、EventTime を device_id に指定する", "is_correct": false, "explanation": "RecordIdentifier はエンティティを一意に識別する ID（ここでは device_id）であるべき。EventTime は時刻フィールド。"},
-        {"id": "C", "text": "FeatureGroup を機器ごとに作成（数千個）して管理する", "is_correct": false, "explanation": "FeatureGroup は論理的なエンティティタイプ単位で作成する。機器ごとに作るのは設計ミス。"},
-        {"id": "D", "text": "Online ストアのみ有効化し、Offline は使わない（学習データは別途 S3 に保存する）", "is_correct": false, "explanation": "Offline ストアは Feature Store の自動同期で履歴管理ができ、独自運用より優れる。学習・推論で同一の特徴量定義を使えるのが Feature Store の価値。"}
+        {
+          "id": "A",
+          "text": "RecordIdentifier を device_id、EventTime を event_time に指定し、Online/Offline 両方を有効化する",
+          "is_correct": true,
+          "explanation": "正解。最新値での推論アクセスは device_id をキーに行い、Offline で過去履歴を Parquet として学習に使える。"
+        },
+        {
+          "id": "B",
+          "text": "RecordIdentifier を event_time、EventTime を device_id に指定する",
+          "is_correct": false,
+          "explanation": "RecordIdentifier はエンティティを一意に識別する ID（ここでは device_id）であるべき。EventTime は時刻フィールド。"
+        },
+        {
+          "id": "C",
+          "text": "FeatureGroup を機器ごとに作成（数千個）して管理する",
+          "is_correct": false,
+          "explanation": "FeatureGroup は論理的なエンティティタイプ単位で作成する。機器ごとに作るのは設計ミス。"
+        },
+        {
+          "id": "D",
+          "text": "Online ストアのみ有効化し、Offline は使わない（学習データは別途 S3 に保存する）",
+          "is_correct": false,
+          "explanation": "Offline ストアは Feature Store の自動同期で履歴管理ができ、独自運用より優れる。学習・推論で同一の特徴量定義を使えるのが Feature Store の価値。"
+        }
       ],
       "explanation": "FeatureGroup の設計原則：(1) RecordIdentifier はエンティティの主キー（device_id, customer_id 等）、(2) EventTime はレコードの有効時刻、(3) Online/Offline 両方を有効化することで Training/Serving Skew を防げる。製造業の予知保全では device_id ごとの最新統計量を Online から取得し、Offline で時系列学習データを構築するのが定石。",
       "references": [
-        {"title": "Create a Feature Group", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-create-feature-group.html"},
-        {"title": "Feature Store Concepts", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html"}
+        {
+          "title": "Create a Feature Group",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-create-feature-group.html"
+        },
+        {
+          "title": "Feature Store Concepts",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html"
+        }
       ],
-      "tags": ["feature-store", "feature-group", "predictive-maintenance", "manufacturing", "iot"],
+      "tags": [
+        "feature-store",
+        "feature-group",
+        "predictive-maintenance",
+        "manufacturing",
+        "iot"
+      ],
       "common_mistakes": [
         "RecordIdentifier と EventTime の意味を逆にする",
         "エンティティ毎に FeatureGroup を作成する",
         "Offline ストアの価値を理解せず無効化する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-014",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Lineage",
       "subtopic": "SageMaker ML Lineage Tracking",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "コンプライアンス監査のため、ある FinTech 企業は本番モデルが「どの S3 データセット」「どの前処理コード」「どのハイパーパラメータ」で学習されたか追跡可能にしたい。最も適切なソリューションは？",
       "options": [
-        {"id": "A", "text": "S3 のオブジェクトタグに学習メタデータを書き込み、Lambda で監査する", "is_correct": false, "explanation": "S3 タグは制限が厳しく（10タグまで、各128文字）、ML パイプライン全体の系統追跡には不十分。"},
-        {"id": "B", "text": "SageMaker ML Lineage Tracking と SageMaker Pipelines を使い、Artifacts/Trial Components の系統を自動記録する", "is_correct": true, "explanation": "正解。SageMaker は Pipelines 実行時にデータセット、コード、ハイパーパラメータ、モデルアーティファクトの系統を Trial/Artifact として自動追跡する。"},
-        {"id": "C", "text": "CloudTrail のみで全 SageMaker API 呼び出しを記録する", "is_correct": false, "explanation": "CloudTrail は API 監査ログ。データ系統やハイパーパラメータの構造化追跡には適さない。"},
-        {"id": "D", "text": "学習スクリプト内で print 文でメタデータを CloudWatch Logs に出力する", "is_correct": false, "explanation": "ログから手作業で系統を再構築するのは非現実的。構造化されたメタデータストアが必要。"}
+        {
+          "id": "A",
+          "text": "S3 のオブジェクトタグに学習メタデータを書き込み、Lambda で監査する",
+          "is_correct": false,
+          "explanation": "S3 タグは制限が厳しく（10タグまで、各128文字）、ML パイプライン全体の系統追跡には不十分。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker ML Lineage Tracking と SageMaker Pipelines を使い、Artifacts/Trial Components の系統を自動記録する",
+          "is_correct": true,
+          "explanation": "正解。SageMaker は Pipelines 実行時にデータセット、コード、ハイパーパラメータ、モデルアーティファクトの系統を Trial/Artifact として自動追跡する。"
+        },
+        {
+          "id": "C",
+          "text": "学習スクリプト内で print 文でメタデータを CloudWatch Logs に出力する",
+          "is_correct": false,
+          "explanation": "ログから手作業で系統を再構築するのは非現実的。構造化されたメタデータストアが必要。"
+        },
+        {
+          "id": "D",
+          "text": "CloudTrail のみで全 SageMaker API 呼び出しを記録する",
+          "is_correct": false,
+          "explanation": "CloudTrail は API 監査ログ。データ系統やハイパーパラメータの構造化追跡には適さない。"
+        }
       ],
       "explanation": "SageMaker ML Lineage Tracking は学習・前処理・デプロイにわたるアーティファクトの系統グラフを自動構築する。Pipelines 実行ごとに Experiment/Trial/Trial Component が生成され、入力データ、出力モデル、コードのバージョンが紐づく。SageMaker Studio で系統グラフを可視化でき、コンプライアンス監査に直接利用可能。",
       "references": [
-        {"title": "SageMaker ML Lineage Tracking", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html"},
-        {"title": "SageMaker Pipelines", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"}
+        {
+          "title": "SageMaker ML Lineage Tracking",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html"
+        },
+        {
+          "title": "SageMaker Pipelines",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
+        }
       ],
-      "tags": ["lineage", "compliance", "fintech", "pipelines", "audit"],
+      "tags": [
+        "lineage",
+        "compliance",
+        "fintech",
+        "pipelines",
+        "audit"
+      ],
       "common_mistakes": [
         "S3 タグや CloudTrail で系統管理しようとする",
         "DVC を AWS 上で再実装してしまい Lineage Tracking を見落とす"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-015",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Migration",
       "subtopic": "AWS DMS for ML data ingestion",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "オンプレミスの Oracle データベースから日次でトランザクションデータを抽出し、S3 上の Parquet にして ML パイプラインで使いたい。最も実装が簡潔な方法は？",
       "options": [
-        {"id": "A", "text": "AWS Database Migration Service (DMS) で Oracle → S3（Parquet 出力）のレプリケーションタスクを構成し、CDC で差分継続取り込みを行う", "is_correct": true, "explanation": "正解。DMS は S3 を Parquet 出力ターゲットとしてサポートし、フルロード + CDC で初期コピーと継続的差分取り込みが可能。"},
-        {"id": "B", "text": "オンプレ側で cron + sqlplus でCSVを毎日生成し、Snowball で AWS に物理輸送する", "is_correct": false, "explanation": "Snowball は1回のみの大規模物理転送向け。日次運用には不向き。"},
-        {"id": "C", "text": "Glue JDBC コネクタで Oracle に直接アクセスし、毎回フルスキャンする", "is_correct": false, "explanation": "差分取得ができず、Oracle 側に大きな負荷をかけ続ける。CDC が使えない。"},
-        {"id": "D", "text": "Kinesis Data Streams のオンプレエージェントを Oracle に直接接続する", "is_correct": false, "explanation": "Kinesis Agent はファイル/ログのストリーミングが用途で、RDB の CDC には対応しない。"}
+        {
+          "id": "A",
+          "text": "Kinesis Data Streams のオンプレエージェントを Oracle に直接接続する",
+          "is_correct": false,
+          "explanation": "Kinesis Agent はファイル/ログのストリーミングが用途で、RDB の CDC には対応しない。"
+        },
+        {
+          "id": "B",
+          "text": "Glue JDBC コネクタで Oracle に直接アクセスし、毎回フルスキャンする",
+          "is_correct": false,
+          "explanation": "差分取得ができず、Oracle 側に大きな負荷をかけ続ける。CDC が使えない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Database Migration Service (DMS) で Oracle → S3（Parquet 出力）のレプリケーションタスクを構成し、CDC で差分継続取り込みを行う",
+          "is_correct": true,
+          "explanation": "正解。DMS は S3 を Parquet 出力ターゲットとしてサポートし、フルロード + CDC で初期コピーと継続的差分取り込みが可能。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレ側で cron + sqlplus でCSVを毎日生成し、Snowball で AWS に物理輸送する",
+          "is_correct": false,
+          "explanation": "Snowball は1回のみの大規模物理転送向け。日次運用には不向き。"
+        }
       ],
       "explanation": "AWS DMS は RDB ソースから S3、Redshift、別 RDB へのレプリケーションを行うマネージドサービス。S3 ターゲットでは CSV または Parquet を選択でき、CDC（Change Data Capture）でフルロード後の差分を継続的に反映できる。ML 学習用の歴史データレイクには Parquet 出力 + パーティション（年月日）が定番。",
       "references": [
-        {"title": "AWS DMS S3 Target", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"},
-        {"title": "AWS DMS CDC", "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.html"}
+        {
+          "title": "AWS DMS S3 Target",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"
+        },
+        {
+          "title": "AWS DMS CDC",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.html"
+        }
       ],
-      "tags": ["dms", "data-ingestion", "cdc", "parquet", "oracle"],
+      "tags": [
+        "dms",
+        "data-ingestion",
+        "cdc",
+        "parquet",
+        "oracle"
+      ],
       "common_mistakes": [
         "Glue JDBC で毎回フルスキャンする運用にしてしまう",
         "Snowball を継続データ移行に使う",
         "DMS が Parquet 出力できることを知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-016",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Preparation",
       "subtopic": "SageMaker Data Wrangler",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SageMaker Studio 上で SaaS のアプリログ（CSV、200 万行）を可視化しながら欠損値補完・型変換・特徴量結合を行いたい。プロトタイプ後は Pipelines に組み込みたい。最も適切なツールは？",
       "options": [
-        {"id": "A", "text": "SageMaker Data Wrangler でフローを作成し、エクスポート機能で Processing Job または Pipelines にデプロイする", "is_correct": true, "explanation": "正解。Data Wrangler は GUI で前処理フローを構築し、PySpark/Python スクリプトとしてエクスポートして Pipelines に統合できる。"},
-        {"id": "B", "text": "AWS Glue Studio でビジュアル ETL を組み、Pipelines 外で運用する", "is_correct": false, "explanation": "Glue Studio も選択肢だが、SageMaker Studio との統合や ML 向け変換（target leakage 検出など）は Data Wrangler が優れる。"},
-        {"id": "C", "text": "SageMaker Notebook で pandas + matplotlib でアドホック分析する", "is_correct": false, "explanation": "プロトタイプ後の Pipelines 統合まで考えると、フローを GUI で再現可能にできる Data Wrangler が優位。"},
-        {"id": "D", "text": "Athena で SQL 集計し、結果を S3 に保存して終わり", "is_correct": false, "explanation": "Athena は SQL ベースで GUI 可視化や ML 向け変換は限定的。Pipelines 統合手順も自動化されない。"}
+        {
+          "id": "A",
+          "text": "AWS Glue Studio でビジュアル ETL を組み、Pipelines 外で運用する",
+          "is_correct": false,
+          "explanation": "Glue Studio も選択肢だが、SageMaker Studio との統合や ML 向け変換（target leakage 検出など）は Data Wrangler が優れる。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker Notebook で pandas + matplotlib でアドホック分析する",
+          "is_correct": false,
+          "explanation": "プロトタイプ後の Pipelines 統合まで考えると、フローを GUI で再現可能にできる Data Wrangler が優位。"
+        },
+        {
+          "id": "C",
+          "text": "Athena で SQL 集計し、結果を S3 に保存して終わり",
+          "is_correct": false,
+          "explanation": "Athena は SQL ベースで GUI 可視化や ML 向け変換は限定的。Pipelines 統合手順も自動化されない。"
+        },
+        {
+          "id": "D",
+          "text": "SageMaker Data Wrangler でフローを作成し、エクスポート機能で Processing Job または Pipelines にデプロイする",
+          "is_correct": true,
+          "explanation": "正解。Data Wrangler は GUI で前処理フローを構築し、PySpark/Python スクリプトとしてエクスポートして Pipelines に統合できる。"
+        }
       ],
       "explanation": "Data Wrangler は SageMaker Studio 内のビジュアル前処理ツール。300以上のビルトイン変換、target leakage 検出、quick model（ベースラインモデル評価）を提供し、フローをそのまま Processing Job/Pipelines/Feature Store にエクスポートできる。プロトタイプから本番運用への移行が最もスムーズ。",
       "references": [
-        {"title": "SageMaker Data Wrangler", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"},
-        {"title": "Data Wrangler Export", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-data-export.html"}
+        {
+          "title": "SageMaker Data Wrangler",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
+        },
+        {
+          "title": "Data Wrangler Export",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-data-export.html"
+        }
       ],
-      "tags": ["data-wrangler", "saas", "data-preparation", "pipelines", "visualization"],
+      "tags": [
+        "data-wrangler",
+        "saas",
+        "data-preparation",
+        "pipelines",
+        "visualization"
+      ],
       "common_mistakes": [
         "Data Wrangler のエクスポート機能を知らずに毎回再実装する",
         "Glue Studio と Data Wrangler を混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-017",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Encryption",
       "subtopic": "KMS for ML data",
       "cognitive_level": "L3-Apply",
       "difficulty": "hard",
       "stem": "医療系 SaaS の SageMaker トレーニングジョブで、S3 の学習データ・EBS ボリューム・モデルアーティファクト・ノード間通信の全てを暗号化したい。設定として正しい組み合わせはどれか？（MRQ：3つ選択）",
       "options": [
-        {"id": "A", "text": "S3 入出力バケットに SSE-KMS（CMK）を設定する", "is_correct": true, "explanation": "正解。S3 の SSE-KMS で保存時暗号化、キーポリシーでロール許可。"},
-        {"id": "B", "text": "Training Job の VolumeKmsKeyId と OutputDataConfig.KmsKeyId に CMK を指定する", "is_correct": true, "explanation": "正解。EBS ボリューム（学習中の一時ストレージ）と出力モデルアーティファクトの暗号化キーを明示的に指定する。"},
-        {"id": "C", "text": "EnableInterContainerTrafficEncryption=true を設定する（分散学習時のノード間通信を暗号化）", "is_correct": true, "explanation": "正解。マルチノード分散学習時のコンテナ間通信を TLS で暗号化する設定。"},
-        {"id": "D", "text": "SageMaker Endpoint の Auto Scaling 設定を有効化する", "is_correct": false, "explanation": "Auto Scaling は推論エンドポイントのスケール設定で、暗号化とは無関係。Training Job の設問にも合致しない。"},
-        {"id": "E", "text": "SageMaker Notebook Instance のサイズを変更する", "is_correct": false, "explanation": "インスタンスサイズは性能・コストに影響するが暗号化要件とは無関係。"}
+        {
+          "id": "A",
+          "text": "S3 入出力バケットに SSE-KMS（CMK）を設定する",
+          "is_correct": true,
+          "explanation": "正解。S3 の SSE-KMS で保存時暗号化、キーポリシーでロール許可。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker Endpoint の Auto Scaling 設定を有効化する",
+          "is_correct": false,
+          "explanation": "Auto Scaling は推論エンドポイントのスケール設定で、暗号化とは無関係。Training Job の設問にも合致しない。"
+        },
+        {
+          "id": "C",
+          "text": "Training Job の VolumeKmsKeyId と OutputDataConfig.KmsKeyId に CMK を指定する",
+          "is_correct": true,
+          "explanation": "正解。EBS ボリューム（学習中の一時ストレージ）と出力モデルアーティファクトの暗号化キーを明示的に指定する。"
+        },
+        {
+          "id": "D",
+          "text": "SageMaker Notebook Instance のサイズを変更する",
+          "is_correct": false,
+          "explanation": "インスタンスサイズは性能・コストに影響するが暗号化要件とは無関係。"
+        },
+        {
+          "id": "E",
+          "text": "EnableInterContainerTrafficEncryption=true を設定する（分散学習時のノード間通信を暗号化）",
+          "is_correct": true,
+          "explanation": "正解。マルチノード分散学習時のコンテナ間通信を TLS で暗号化する設定。"
+        }
       ],
       "explanation": "SageMaker Training Job における暗号化の3層：(1) S3 入出力データ（SSE-KMS）、(2) EBS ボリュームと出力アーティファクト（VolumeKmsKeyId、OutputDataConfig.KmsKeyId）、(3) ノード間通信（EnableInterContainerTrafficEncryption）。HIPAA や PHI 対応では3つすべてを構成し、IAM ロールに対する KMS キーポリシー許可も必要。VPC モードと組み合わせるのが定石。",
       "references": [
-        {"title": "Protect Data in SageMaker", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-protection.html"},
-        {"title": "SageMaker Inter-Container Traffic Encryption", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html"}
+        {
+          "title": "Protect Data in SageMaker",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-protection.html"
+        },
+        {
+          "title": "SageMaker Inter-Container Traffic Encryption",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html"
+        }
       ],
-      "tags": ["kms", "encryption", "healthcare", "hipaa", "training-job"],
+      "tags": [
+        "kms",
+        "encryption",
+        "healthcare",
+        "hipaa",
+        "training-job"
+      ],
       "common_mistakes": [
         "S3 暗号化だけで万全と考える",
         "EBS ボリュームの暗号化設定を忘れる",
         "ノード間通信の暗号化フラグを知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-018",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Time Series Features",
       "subtopic": "Lag and rolling features",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech の株価予測モデル（日次）で時系列特徴量を生成する。データリーク（target leakage）を避けるための実装として正しいものはどれか？",
       "options": [
-        {"id": "A", "text": "rolling window の集計に未来データも含める", "is_correct": false, "explanation": "未来データを含むとリーク発生。バックテストで見かけ上の精度が出るが本番で破綻する典型例。"},
-        {"id": "B", "text": "shift(1) で前日の特徴量を当日の入力として使い、rolling window は過去のみで計算する", "is_correct": true, "explanation": "正解。t 時点の予測には t-1 までの情報のみを使う。pandas の rolling() はデフォルトで過去 window だが、必ず closed='left' などでリーク回避を確認する。"},
-        {"id": "C", "text": "全期間の平均値で標準化してから時系列分割する", "is_correct": false, "explanation": "テスト期間の情報が学習統計量に混入し、リーク発生。学習期間のみで fit、テスト期間に transform するのが正しい。"},
-        {"id": "D", "text": "ランダムに学習・テスト分割する（time-based split は不要）", "is_correct": false, "explanation": "時系列ではランダム分割は厳禁。未来データで過去を予測する形になり、リークが起きる。time-based split が必須。"}
+        {
+          "id": "A",
+          "text": "shift(1) で前日の特徴量を当日の入力として使い、rolling window は過去のみで計算する",
+          "is_correct": true,
+          "explanation": "正解。t 時点の予測には t-1 までの情報のみを使う。pandas の rolling() はデフォルトで過去 window だが、必ず closed='left' などでリーク回避を確認する。"
+        },
+        {
+          "id": "B",
+          "text": "全期間の平均値で標準化してから時系列分割する",
+          "is_correct": false,
+          "explanation": "テスト期間の情報が学習統計量に混入し、リーク発生。学習期間のみで fit、テスト期間に transform するのが正しい。"
+        },
+        {
+          "id": "C",
+          "text": "rolling window の集計に未来データも含める",
+          "is_correct": false,
+          "explanation": "未来データを含むとリーク発生。バックテストで見かけ上の精度が出るが本番で破綻する典型例。"
+        },
+        {
+          "id": "D",
+          "text": "ランダムに学習・テスト分割する（time-based split は不要）",
+          "is_correct": false,
+          "explanation": "時系列ではランダム分割は厳禁。未来データで過去を予測する形になり、リークが起きる。time-based split が必須。"
+        }
       ],
       "explanation": "時系列リークの典型：(1) 未来情報を含む rolling、(2) ランダム分割、(3) 全期間統計での正規化。SageMaker Data Wrangler には Lag Feature と Rolling Window 変換があり、リーク検出ツールも備える。バックテストでは expanding window や walk-forward validation を用いる。",
       "references": [
-        {"title": "Time Series Features in Data Wrangler", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"},
-        {"title": "SageMaker DeepAR Forecasting", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html"}
+        {
+          "title": "Time Series Features in Data Wrangler",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"
+        },
+        {
+          "title": "SageMaker DeepAR Forecasting",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html"
+        }
       ],
-      "tags": ["time-series", "leakage", "fintech", "feature-engineering", "lag"],
+      "tags": [
+        "time-series",
+        "leakage",
+        "fintech",
+        "feature-engineering",
+        "lag"
+      ],
       "common_mistakes": [
         "rolling window に未来データを含める",
         "全期間の統計量で標準化してリークを起こす",
         "時系列をランダム分割する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-019",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Bias Detection",
       "subtopic": "SageMaker Clarify pre-training bias",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech 企業のローン与信モデルで、学習データ自体に性別バイアスがないか確認したい。SageMaker Clarify が提供する pre-training bias メトリクスとして適切なものはどれか？（MRQ：2つ選択）",
       "options": [
-        {"id": "A", "text": "CI（Class Imbalance）：保護属性のクラス分布の偏り", "is_correct": true, "explanation": "正解。CI は性別などの保護属性のサンプル数比率を見るメトリクス。"},
-        {"id": "B", "text": "DPL（Difference in Proportions of Labels）：保護属性間でのラベル分布の差", "is_correct": true, "explanation": "正解。DPL は保護属性グループ間で正例ラベルの割合に差があるかを測る pre-training メトリクス。"},
-        {"id": "C", "text": "DPPL（Difference in Positive Proportions in Predicted Labels）：予測ラベルの差", "is_correct": false, "explanation": "DPPL は post-training メトリクス（予測結果に対するバイアス）であり、学習データ自体の評価ではない。"},
-        {"id": "D", "text": "Recall Difference：グループ間の Recall 差", "is_correct": false, "explanation": "Recall Difference もモデルの予測結果に基づく post-training メトリクス。"}
+        {
+          "id": "A",
+          "text": "DPL（Difference in Proportions of Labels）：保護属性間でのラベル分布の差",
+          "is_correct": true,
+          "explanation": "正解。DPL は保護属性グループ間で正例ラベルの割合に差があるかを測る pre-training メトリクス。"
+        },
+        {
+          "id": "B",
+          "text": "DPPL（Difference in Positive Proportions in Predicted Labels）：予測ラベルの差",
+          "is_correct": false,
+          "explanation": "DPPL は post-training メトリクス（予測結果に対するバイアス）であり、学習データ自体の評価ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Recall Difference：グループ間の Recall 差",
+          "is_correct": false,
+          "explanation": "Recall Difference もモデルの予測結果に基づく post-training メトリクス。"
+        },
+        {
+          "id": "D",
+          "text": "CI（Class Imbalance）：保護属性のクラス分布の偏り",
+          "is_correct": true,
+          "explanation": "正解。CI は性別などの保護属性のサンプル数比率を見るメトリクス。"
+        }
       ],
       "explanation": "SageMaker Clarify は学習前（pre-training）と学習後（post-training）のバイアスを別々に検出する。pre-training には CI、DPL、KL、JS、Lp、TVD、KS、CDDL の8種があり、データ自体の偏りを見る。学習データの DPL が大きい場合、再サンプリングや再収集を検討する。post-training メトリクスはモデル予測に対する公平性評価。",
       "references": [
-        {"title": "SageMaker Clarify Bias Metrics", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-data-bias.html"},
-        {"title": "SageMaker Clarify Documentation", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-fairness-and-explainability.html"}
+        {
+          "title": "SageMaker Clarify Bias Metrics",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-data-bias.html"
+        },
+        {
+          "title": "SageMaker Clarify Documentation",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-fairness-and-explainability.html"
+        }
       ],
-      "tags": ["clarify", "bias", "fairness", "fintech", "pre-training"],
+      "tags": [
+        "clarify",
+        "bias",
+        "fairness",
+        "fintech",
+        "pre-training"
+      ],
       "common_mistakes": [
         "pre-training と post-training メトリクスを混同する",
         "クラス不均衡だけがバイアスだと考える"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-020",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Lake Governance",
       "subtopic": "Lake Formation permissions",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある製造業の親会社が複数子会社のセンサデータを統合し、各子会社の ML チームには「自社データのみ」アクセスさせたい。さらに「device_serial」列のみマスクして他社にも分析させたい。最も適切な実装は？",
       "options": [
-        {"id": "A", "text": "S3 バケットポリシーで子会社ごとにプレフィックス権限を分け、列マスクは不可と諦める", "is_correct": false, "explanation": "S3 バケットポリシーは prefix レベルまでで、列単位のマスク（cell-level security）は実現できない。"},
-        {"id": "B", "text": "AWS Lake Formation でテーブル/列/行レベルの権限を構成し、データフィルタで「自社のみ」、列フィルタで「device_serial を除外」する", "is_correct": true, "explanation": "正解。Lake Formation は Glue Data Catalog を中心に、Athena/EMR/SageMaker/Redshift Spectrum 横断で row/column/cell レベルのアクセス制御ができる。"},
-        {"id": "C", "text": "全テーブルを子会社ごとに複製し、device_serial を削除した別テーブルを作成する", "is_correct": false, "explanation": "ストレージコストとデータ整合性管理が膨大になる。Lake Formation で論理的に解決すべき。"},
-        {"id": "D", "text": "IAM ポリシーで Athena クエリの WHERE 句を強制する", "is_correct": false, "explanation": "IAM ポリシーで SQL の WHERE 句を強制することはできない。"}
+        {
+          "id": "A",
+          "text": "IAM ポリシーで Athena クエリの WHERE 句を強制する",
+          "is_correct": false,
+          "explanation": "IAM ポリシーで SQL の WHERE 句を強制することはできない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Lake Formation でテーブル/列/行レベルの権限を構成し、データフィルタで「自社のみ」、列フィルタで「device_serial を除外」する",
+          "is_correct": true,
+          "explanation": "正解。Lake Formation は Glue Data Catalog を中心に、Athena/EMR/SageMaker/Redshift Spectrum 横断で row/column/cell レベルのアクセス制御ができる。"
+        },
+        {
+          "id": "C",
+          "text": "全テーブルを子会社ごとに複製し、device_serial を削除した別テーブルを作成する",
+          "is_correct": false,
+          "explanation": "ストレージコストとデータ整合性管理が膨大になる。Lake Formation で論理的に解決すべき。"
+        },
+        {
+          "id": "D",
+          "text": "S3 バケットポリシーで子会社ごとにプレフィックス権限を分け、列マスクは不可と諦める",
+          "is_correct": false,
+          "explanation": "S3 バケットポリシーは prefix レベルまでで、列単位のマスク（cell-level security）は実現できない。"
+        }
       ],
       "explanation": "AWS Lake Formation は Glue Data Catalog 上のデータレイクに対するきめ細かなアクセス制御（FGAC）を提供する。Data Filter で行レベル、列リストでカラムレベル、Cell-level filter で値マスキングを実現できる。Athena、EMR、Redshift Spectrum、SageMaker Data Wrangler などから統一的に適用される。マルチテナントの ML 基盤では必須機能。",
       "references": [
-        {"title": "AWS Lake Formation Fine-Grained Access Control", "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/data-filters-about.html"},
-        {"title": "AWS Lake Formation Documentation", "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html"}
+        {
+          "title": "AWS Lake Formation Fine-Grained Access Control",
+          "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/data-filters-about.html"
+        },
+        {
+          "title": "AWS Lake Formation Documentation",
+          "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html"
+        }
       ],
-      "tags": ["lake-formation", "fgac", "manufacturing", "multi-tenant", "data-governance"],
+      "tags": [
+        "lake-formation",
+        "fgac",
+        "manufacturing",
+        "multi-tenant",
+        "data-governance"
+      ],
       "common_mistakes": [
         "S3 バケットポリシーで列レベル制御しようとする",
         "テーブル複製で論理権限を解決しようとする",
         "Lake Formation の Data Filter 機能を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-021",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Storage Format",
       "subtopic": "Parquet vs CSV for ML",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "SaaS 企業の ML チームが、CSV で 5TB の学習データを保持していたが、SageMaker Training の I/O が遅い。最も効果的かつ追加コストが低い改善策はどれか？",
       "options": [
-        {"id": "A", "text": "EBS ボリュームを gp3 → io2 に変更する", "is_correct": false, "explanation": "I/O ボトルネックの根本原因はファイル形式。EBS を変えても CSV のシーケンシャル読み込み制約は解消しない。コストも増える。"},
-        {"id": "B", "text": "CSV を Parquet（Snappy 圧縮）に変換し、Training Job の InputMode を FastFile または Pipe にする", "is_correct": true, "explanation": "正解。Parquet は列指向で必要列のみ読める上、Snappy 圧縮で I/O 量が大幅に減る。FastFile/Pipe で S3 から直接ストリーミングも可能。"},
-        {"id": "C", "text": "Training インスタンスを m5.xlarge → m5.24xlarge に上げる", "is_correct": false, "explanation": "ファイル形式の問題はインスタンス変更では解決しない。コストが大幅増。"},
-        {"id": "D", "text": "Training Job を Spot Instance にする", "is_correct": false, "explanation": "Spot はコスト削減策で I/O 性能には関係ない。"}
+        {
+          "id": "A",
+          "text": "Training Job を Spot Instance にする",
+          "is_correct": false,
+          "explanation": "Spot はコスト削減策で I/O 性能には関係ない。"
+        },
+        {
+          "id": "B",
+          "text": "Training インスタンスを m5.xlarge → m5.24xlarge に上げる",
+          "is_correct": false,
+          "explanation": "ファイル形式の問題はインスタンス変更では解決しない。コストが大幅増。"
+        },
+        {
+          "id": "C",
+          "text": "CSV を Parquet（Snappy 圧縮）に変換し、Training Job の InputMode を FastFile または Pipe にする",
+          "is_correct": true,
+          "explanation": "正解。Parquet は列指向で必要列のみ読める上、Snappy 圧縮で I/O 量が大幅に減る。FastFile/Pipe で S3 から直接ストリーミングも可能。"
+        },
+        {
+          "id": "D",
+          "text": "EBS ボリュームを gp3 → io2 に変更する",
+          "is_correct": false,
+          "explanation": "I/O ボトルネックの根本原因はファイル形式。EBS を変えても CSV のシーケンシャル読み込み制約は解消しない。コストも増える。"
+        }
       ],
       "explanation": "ML データレイクのベストプラクティスは Parquet + 圧縮 + パーティション。CSV は人間可読だが ML では非効率。SageMaker は CSV/JSON/Parquet/RecordIO を入力でき、InputMode は File（事前ダウンロード）、Pipe（ストリーミング、TF/MXNet 限定）、FastFile（POSIX ファイル風 S3 アクセス）から選択可能。FastFile は近年の推奨で、ダウンロード待ちなしに学習開始できる。",
       "references": [
-        {"title": "SageMaker Training Input Modes", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"},
-        {"title": "Parquet on S3", "url": "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html"}
+        {
+          "title": "SageMaker Training Input Modes",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
+        },
+        {
+          "title": "Parquet on S3",
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html"
+        }
       ],
-      "tags": ["parquet", "csv", "i-o", "fastfile", "saas"],
+      "tags": [
+        "parquet",
+        "csv",
+        "i-o",
+        "fastfile",
+        "saas"
+      ],
       "common_mistakes": [
         "I/O 問題をインスタンスサイズで解決しようとする",
         "Parquet の利点を理解していない",
         "FastFile/Pipe モードの存在を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-022",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Cleaning",
       "subtopic": "Outlier handling",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "製造業の IoT 温度センサデータで、明らかにセンサ故障と思われる外れ値（-9999、99999）と、正常な高負荷時の値（通常50度、最大80度）が混在している。データクリーニング戦略として最も適切なものはどれか？",
       "options": [
-        {"id": "A", "text": "Z-score |z|>3 で機械的に除去する（センサ故障値も高負荷値も同等に外れ値扱い）", "is_correct": false, "explanation": "Z-score だけでは正常な高負荷ピークも誤って除去するリスクがある。ドメインルールとの併用が必要。"},
-        {"id": "B", "text": "ドメインルールで物理的に不可能な値（-9999、99999）を欠損として扱い、その後 IQR や Z-score で統計的外れ値を別途検証する", "is_correct": true, "explanation": "正解。センサ故障値はドメインルールで判定、統計的外れ値は別途分析するのが王道。SageMaker Data Wrangler の outlier handler でも段階的処理が推奨。"},
-        {"id": "C", "text": "すべてそのまま使う（モデルがロバストに学習する）", "is_correct": false, "explanation": "極端な外れ値は勾配を歪め、特に距離ベース・線形モデルで深刻な性能劣化を起こす。"},
-        {"id": "D", "text": "外れ値を含む行をすべて削除する", "is_correct": false, "explanation": "高負荷時の正常値まで失い、貴重な情報が落ちる。値の置換や欠損化のほうが情報保持される。"}
+        {
+          "id": "A",
+          "text": "すべてそのまま使う（モデルがロバストに学習する）",
+          "is_correct": false,
+          "explanation": "極端な外れ値は勾配を歪め、特に距離ベース・線形モデルで深刻な性能劣化を起こす。"
+        },
+        {
+          "id": "B",
+          "text": "Z-score |z|>3 で機械的に除去する（センサ故障値も高負荷値も同等に外れ値扱い）",
+          "is_correct": false,
+          "explanation": "Z-score だけでは正常な高負荷ピークも誤って除去するリスクがある。ドメインルールとの併用が必要。"
+        },
+        {
+          "id": "C",
+          "text": "外れ値を含む行をすべて削除する",
+          "is_correct": false,
+          "explanation": "高負荷時の正常値まで失い、貴重な情報が落ちる。値の置換や欠損化のほうが情報保持される。"
+        },
+        {
+          "id": "D",
+          "text": "ドメインルールで物理的に不可能な値（-9999、99999）を欠損として扱い、その後 IQR や Z-score で統計的外れ値を別途検証する",
+          "is_correct": true,
+          "explanation": "正解。センサ故障値はドメインルールで判定、統計的外れ値は別途分析するのが王道。SageMaker Data Wrangler の outlier handler でも段階的処理が推奨。"
+        }
       ],
       "explanation": "外れ値処理は (1) ドメイン知識による無効値判定（センサエラーコードなど）、(2) 統計的外れ値の検出（IQR、Z-score、Isolation Forest）、(3) 業務的な異常値の保持判断、を段階的に行う。製造業の IoT では「センサ故障」「異常事象」「正常な極値」の3区分が重要で、それぞれ処理が異なる。Glue DataBrew や Data Wrangler の outlier トランスフォームを活用できる。",
       "references": [
-        {"title": "SageMaker Data Wrangler Outlier Handling", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"},
-        {"title": "AWS Glue DataBrew Outliers", "url": "https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html"}
+        {
+          "title": "SageMaker Data Wrangler Outlier Handling",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"
+        },
+        {
+          "title": "AWS Glue DataBrew Outliers",
+          "url": "https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html"
+        }
       ],
-      "tags": ["outliers", "iot", "manufacturing", "data-cleaning", "sensor"],
+      "tags": [
+        "outliers",
+        "iot",
+        "manufacturing",
+        "data-cleaning",
+        "sensor"
+      ],
       "common_mistakes": [
         "Z-score で機械的に除去し正常な極値を失う",
         "外れ値処理をせずモデル性能を悪化させる",
         "ドメイン知識を反映せず統計的処理のみで進める"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-023",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Missing Values",
       "subtopic": "Imputation strategies",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "医療記録の年齢列に5%の欠損がある。患者属性（性別、診療科、病院ID）と相関がある可能性が高い。最も推論精度を維持できる補完戦略はどれか？",
       "options": [
-        {"id": "A", "text": "全体の平均値で補完する", "is_correct": false, "explanation": "平均補完は分散を小さく見積もり、年齢と相関する変数の関係性を破壊する。最も単純だが情報損失が大きい。"},
-        {"id": "B", "text": "他の特徴量（性別、診療科、病院ID）を使って KNN Imputer や Iterative Imputer（MICE）でモデルベース補完する", "is_correct": true, "explanation": "正解。相関のある特徴量から欠損値を予測する補完は、構造を維持しつつ精度を保てる。"},
-        {"id": "C", "text": "欠損行をすべて削除する", "is_correct": false, "explanation": "5% を捨てるのは情報損失。さらに欠損が MNAR（非ランダム）なら系統的バイアスを生む。"},
-        {"id": "D", "text": "0 で補完する", "is_correct": false, "explanation": "0 は「年齢0歳」という有効な値として誤解されモデル性能を悪化させる。欠損フラグなしの 0 補完は厳禁。"}
+        {
+          "id": "A",
+          "text": "他の特徴量（性別、診療科、病院ID）を使って KNN Imputer や Iterative Imputer（MICE）でモデルベース補完する",
+          "is_correct": true,
+          "explanation": "正解。相関のある特徴量から欠損値を予測する補完は、構造を維持しつつ精度を保てる。"
+        },
+        {
+          "id": "B",
+          "text": "欠損行をすべて削除する",
+          "is_correct": false,
+          "explanation": "5% を捨てるのは情報損失。さらに欠損が MNAR（非ランダム）なら系統的バイアスを生む。"
+        },
+        {
+          "id": "C",
+          "text": "0 で補完する",
+          "is_correct": false,
+          "explanation": "0 は「年齢0歳」という有効な値として誤解されモデル性能を悪化させる。欠損フラグなしの 0 補完は厳禁。"
+        },
+        {
+          "id": "D",
+          "text": "全体の平均値で補完する",
+          "is_correct": false,
+          "explanation": "平均補完は分散を小さく見積もり、年齢と相関する変数の関係性を破壊する。最も単純だが情報損失が大きい。"
+        }
       ],
       "explanation": "欠損補完戦略は (1) 平均/中央値/最頻値（単純）、(2) 定数 + 欠損フラグ列（情報保持）、(3) KNN/Iterative Imputer（モデルベース）、(4) 木モデル（XGBoost/LightGBM）にネイティブで欠損を渡す、の選択肢がある。相関構造が重要な医療データでは MICE 等のモデルベース補完が有効。SageMaker Data Wrangler には Mean、Median、Approximate Median、Constant、Custom 補完が用意されている。",
       "references": [
-        {"title": "SageMaker Data Wrangler Missing Values", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"},
-        {"title": "Handling Missing Values in ML", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform-numeric.html"}
+        {
+          "title": "SageMaker Data Wrangler Missing Values",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"
+        },
+        {
+          "title": "Handling Missing Values in ML",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform-numeric.html"
+        }
       ],
-      "tags": ["missing-values", "imputation", "healthcare", "knn-imputer", "data-cleaning"],
+      "tags": [
+        "missing-values",
+        "imputation",
+        "healthcare",
+        "knn-imputer",
+        "data-cleaning"
+      ],
       "common_mistakes": [
         "欠損補完で常に平均値を使う",
         "0 補完で欠損と有効値を混同させる",
         "欠損フラグ列の追加を怠る"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-024",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Streaming Ingestion",
       "subtopic": "Kinesis to ML pipeline",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "製造業の IoT デバイス 50,000 台から 1秒間隔でセンサ値を送信し、(a) リアルタイムで異常検知の特徴量に使い、(b) 過去30日分を S3 上に Parquet で保存して再学習に使いたい。最適なアーキテクチャはどれか？",
       "options": [
-        {"id": "A", "text": "デバイス → Kinesis Data Streams → Managed Service for Apache Flink で集計＆Feature Store Online 書き込み、並行して Firehose → S3（Parquet 変換）でアーカイブ", "is_correct": true, "explanation": "正解。Streams で複数コンシューマ（Flink + Firehose）が並行読み込みでき、リアルタイム処理とアーカイブ要件を同時に満たす。"},
-        {"id": "B", "text": "デバイス → Firehose → S3 のみ。再学習時に過去ログから集計", "is_correct": false, "explanation": "リアルタイム特徴量化ができない。異常検知の即時応答性が損なわれる。"},
-        {"id": "C", "text": "デバイス → SQS → Lambda → S3、別途 Lambda で Feature Store に書き込み", "is_correct": false, "explanation": "SQS は高スループットストリームには不向き（順序保証なし、ファンアウトに別の SNS/SQS 構成が必要）。Kinesis のほうが適切。"},
-        {"id": "D", "text": "デバイス → IoT Core → DynamoDB → DynamoDB Streams → Lambda → S3", "is_correct": false, "explanation": "経路が複雑でコスト高。DynamoDB Streams は変更データキャプチャ用で、大量センサデータのスループットに最適化されていない。"}
+        {
+          "id": "A",
+          "text": "デバイス → Firehose → S3 のみ。再学習時に過去ログから集計",
+          "is_correct": false,
+          "explanation": "リアルタイム特徴量化ができない。異常検知の即時応答性が損なわれる。"
+        },
+        {
+          "id": "B",
+          "text": "デバイス → Kinesis Data Streams → Managed Service for Apache Flink で集計＆Feature Store Online 書き込み、並行して Firehose → S3（Parquet 変換）でアーカイブ",
+          "is_correct": true,
+          "explanation": "正解。Streams で複数コンシューマ（Flink + Firehose）が並行読み込みでき、リアルタイム処理とアーカイブ要件を同時に満たす。"
+        },
+        {
+          "id": "C",
+          "text": "デバイス → IoT Core → DynamoDB → DynamoDB Streams → Lambda → S3",
+          "is_correct": false,
+          "explanation": "経路が複雑でコスト高。DynamoDB Streams は変更データキャプチャ用で、大量センサデータのスループットに最適化されていない。"
+        },
+        {
+          "id": "D",
+          "text": "デバイス → SQS → Lambda → S3、別途 Lambda で Feature Store に書き込み",
+          "is_correct": false,
+          "explanation": "SQS は高スループットストリームには不向き（順序保証なし、ファンアウトに別の SNS/SQS 構成が必要）。Kinesis のほうが適切。"
+        }
       ],
       "explanation": "Kinesis Data Streams は複数のコンシューマで同じストリームを並行処理できる（Enhanced Fan-Out で各最大 2MB/s）。Managed Service for Apache Flink でリアルタイム集計、Firehose で Parquet 変換 + S3 配信、と分岐させるパターンは IoT データレイクの典型。Firehose には Glue テーブル参照による Parquet 変換機能がある。",
       "references": [
-        {"title": "Amazon Managed Service for Apache Flink", "url": "https://docs.aws.amazon.com/managed-flink/latest/java/what-is.html"},
-        {"title": "Kinesis Firehose Format Conversion", "url": "https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html"}
+        {
+          "title": "Amazon Managed Service for Apache Flink",
+          "url": "https://docs.aws.amazon.com/managed-flink/latest/java/what-is.html"
+        },
+        {
+          "title": "Kinesis Firehose Format Conversion",
+          "url": "https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html"
+        }
       ],
-      "tags": ["streaming", "kinesis", "flink", "iot", "manufacturing"],
+      "tags": [
+        "streaming",
+        "kinesis",
+        "flink",
+        "iot",
+        "manufacturing"
+      ],
       "common_mistakes": [
         "Firehose を Streams の代替として使い再生不可になる",
         "SQS を高スループットストリームに使う",
         "Streams のマルチコンシューマ機能を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-025",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Training/Serving Skew",
       "subtopic": "Feature consistency",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "FinTech のチームが、学習時は pandas で計算した特徴量を使い、推論時は同等のロジックを Lambda で再実装した結果、本番モデルの精度が学習時より大幅に低かった。問題の根本原因として最も可能性が高いものはどれか？",
       "options": [
-        {"id": "A", "text": "学習データのサンプル数が不足している", "is_correct": false, "explanation": "症状は本番のみ精度低下なので、学習データ量よりも前処理ロジックの差が原因として濃厚。"},
-        {"id": "B", "text": "学習時と推論時で特徴量計算ロジックが微妙に異なる Training/Serving Skew", "is_correct": true, "explanation": "正解。同じロジックを2箇所で実装すると数値丸め、欠損処理、エンコード辞書などの差が積み重なる。Feature Store で計算結果を共有するか、同じ前処理コードを両方で使うべき。"},
-        {"id": "C", "text": "本番のインスタンスタイプが小さすぎる", "is_correct": false, "explanation": "インスタンスサイズはレイテンシ・スループットに影響するが精度には影響しない。"},
-        {"id": "D", "text": "モデルが過学習している", "is_correct": false, "explanation": "過学習なら学習スコアが高く検証スコアが低い形になる。学習・検証ともに高く本番のみ低いのは前処理の差が典型。"}
+        {
+          "id": "A",
+          "text": "モデルが過学習している",
+          "is_correct": false,
+          "explanation": "過学習なら学習スコアが高く検証スコアが低い形になる。学習・検証ともに高く本番のみ低いのは前処理の差が典型。"
+        },
+        {
+          "id": "B",
+          "text": "本番のインスタンスタイプが小さすぎる",
+          "is_correct": false,
+          "explanation": "インスタンスサイズはレイテンシ・スループットに影響するが精度には影響しない。"
+        },
+        {
+          "id": "C",
+          "text": "学習時と推論時で特徴量計算ロジックが微妙に異なる Training/Serving Skew",
+          "is_correct": true,
+          "explanation": "正解。同じロジックを2箇所で実装すると数値丸め、欠損処理、エンコード辞書などの差が積み重なる。Feature Store で計算結果を共有するか、同じ前処理コードを両方で使うべき。"
+        },
+        {
+          "id": "D",
+          "text": "学習データのサンプル数が不足している",
+          "is_correct": false,
+          "explanation": "症状は本番のみ精度低下なので、学習データ量よりも前処理ロジックの差が原因として濃厚。"
+        }
       ],
       "explanation": "Training/Serving Skew は ML 本番運用で頻発する問題。回避策：(1) SageMaker Feature Store で同じ特徴量を学習・推論両方に提供、(2) 前処理コードを Pipelines の同一 ProcessingStep として再利用、(3) SageMaker Inference Pipeline で前処理コンテナを推論時にも実行、(4) Model Monitor で feature attribution の差を継続監視。",
       "references": [
-        {"title": "SageMaker Feature Store and Skew", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html"},
-        {"title": "SageMaker Inference Pipelines", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipelines.html"}
+        {
+          "title": "SageMaker Feature Store and Skew",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html"
+        },
+        {
+          "title": "SageMaker Inference Pipelines",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipelines.html"
+        }
       ],
-      "tags": ["training-serving-skew", "feature-store", "fintech", "production-ml", "consistency"],
+      "tags": [
+        "training-serving-skew",
+        "feature-store",
+        "fintech",
+        "production-ml",
+        "consistency"
+      ],
       "common_mistakes": [
         "推論側の前処理ロジックを別言語で再実装する",
         "Feature Store による特徴量統一を採用しない",
         "skew を過学習と誤診する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-026",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Versioning",
       "subtopic": "S3 versioning vs DVC vs Lineage",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ML チームが「ある時点の学習データセット」を再現可能にしたい（モデル監査要件）。データは S3 上の Parquet（パーティション付き、計1TB）。最も実用的かつコスト効率が良い方法は？（MRQ：2つ選択）",
       "options": [
-        {"id": "A", "text": "S3 バケットでバージョニングを有効化し、各オブジェクトのバージョン ID を学習メタデータに記録する", "is_correct": true, "explanation": "正解。S3 バージョニングは追加コストが少なく、学習時のオブジェクトバージョン ID を SageMaker Experiments に記録すれば再現可能。"},
-        {"id": "B", "text": "SageMaker Pipelines で Processing/Training の入力データ S3 パスを Trial Component として記録し、Lineage Tracking で系統追跡する", "is_correct": true, "explanation": "正解。Pipelines は入出力アーティファクトを Trial に紐づけ、後から再実行可能なメタデータが自動記録される。"},
-        {"id": "C", "text": "学習のたびに S3 バケット全体を別バケットにフルコピーする", "is_correct": false, "explanation": "1TB のフルコピーをジョブ毎に作るのはストレージコストが膨大。バージョニングや系統追跡で十分。"},
-        {"id": "D", "text": "S3 オブジェクトの ETag のみをログに残し、再現時は ETag が一致するかを確認する", "is_correct": false, "explanation": "ETag は同名上書きされた古いオブジェクトを取り戻せないため、バージョニング無効では再現できない。バージョニング ID と組み合わせるべき。"},
-        {"id": "E", "text": "EBS スナップショットで学習インスタンスの状態を保存する", "is_correct": false, "explanation": "学習データは S3 上にあるため EBS スナップショットでは保護されない。"}
+        {
+          "id": "A",
+          "text": "学習のたびに S3 バケット全体を別バケットにフルコピーする",
+          "is_correct": false,
+          "explanation": "1TB のフルコピーをジョブ毎に作るのはストレージコストが膨大。バージョニングや系統追跡で十分。"
+        },
+        {
+          "id": "B",
+          "text": "S3 バケットでバージョニングを有効化し、各オブジェクトのバージョン ID を学習メタデータに記録する",
+          "is_correct": true,
+          "explanation": "正解。S3 バージョニングは追加コストが少なく、学習時のオブジェクトバージョン ID を SageMaker Experiments に記録すれば再現可能。"
+        },
+        {
+          "id": "C",
+          "text": "S3 オブジェクトの ETag のみをログに残し、再現時は ETag が一致するかを確認する",
+          "is_correct": false,
+          "explanation": "ETag は同名上書きされた古いオブジェクトを取り戻せないため、バージョニング無効では再現できない。バージョニング ID と組み合わせるべき。"
+        },
+        {
+          "id": "D",
+          "text": "SageMaker Pipelines で Processing/Training の入力データ S3 パスを Trial Component として記録し、Lineage Tracking で系統追跡する",
+          "is_correct": true,
+          "explanation": "正解。Pipelines は入出力アーティファクトを Trial に紐づけ、後から再実行可能なメタデータが自動記録される。"
+        },
+        {
+          "id": "E",
+          "text": "EBS スナップショットで学習インスタンスの状態を保存する",
+          "is_correct": false,
+          "explanation": "学習データは S3 上にあるため EBS スナップショットでは保護されない。"
+        }
       ],
       "explanation": "ML データバージョニングの実用解：(1) S3 Versioning + 学習時のバージョン ID 記録、(2) SageMaker Pipelines + Lineage Tracking で再現可能性を担保。フルコピーや DVC 自前運用は実質不要。SageMaker Experiments の Trial Component に入力 S3 URI とバージョン ID をタグとして残すのが定番パターン。",
       "references": [
-        {"title": "S3 Versioning", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"},
-        {"title": "SageMaker Lineage Tracking", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html"}
+        {
+          "title": "S3 Versioning",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"
+        },
+        {
+          "title": "SageMaker Lineage Tracking",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html"
+        }
       ],
-      "tags": ["versioning", "s3", "lineage", "audit", "reproducibility"],
+      "tags": [
+        "versioning",
+        "s3",
+        "lineage",
+        "audit",
+        "reproducibility"
+      ],
       "common_mistakes": [
         "毎回フルコピーしてコスト爆発させる",
         "バージョニング無効で ETag だけに頼る",
         "Lineage Tracking の存在を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-027",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Text Augmentation",
       "subtopic": "NLP data augmentation techniques",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "SaaS チームが日本語のサポート問い合わせを 5 クラスに分類するモデルを学習中。少数クラスのサンプルを増やしたい。最も精度向上が見込める NLP データ拡張手法はどれか？（MRQ：2つ選択）",
       "options": [
-        {"id": "A", "text": "Back Translation（日本語→英語→日本語の逆翻訳でパラフレーズを生成）", "is_correct": true, "explanation": "正解。意味を保ちつつ表現を多様化でき、テキスト分類で実証的に効果が高い手法。"},
-        {"id": "B", "text": "LLM（Bedrock Claude/Titan）でラベルを保ったまま言い換えを生成する", "is_correct": true, "explanation": "正解。Bedrock のような LLM でプロンプトベースのパラフレーズ生成は近年の主流。少数クラスを効率的に増強できる。"},
-        {"id": "C", "text": "ランダムに文字を削除する（character drop）を全文に適用する", "is_correct": false, "explanation": "過度な文字削除は意味を破壊し、本来のラベルと一致しないノイズデータになる。日本語は特に文字単位の変更で意味が変わりやすい。"},
-        {"id": "D", "text": "全クラスを同じ件数になるまで重複コピーする（単純複製）", "is_correct": false, "explanation": "単純複製は学習データに新情報を加えず、過学習を強める。"}
+        {
+          "id": "A",
+          "text": "Back Translation（日本語→英語→日本語の逆翻訳でパラフレーズを生成）",
+          "is_correct": true,
+          "explanation": "正解。意味を保ちつつ表現を多様化でき、テキスト分類で実証的に効果が高い手法。"
+        },
+        {
+          "id": "B",
+          "text": "全クラスを同じ件数になるまで重複コピーする（単純複製）",
+          "is_correct": false,
+          "explanation": "単純複製は学習データに新情報を加えず、過学習を強める。"
+        },
+        {
+          "id": "C",
+          "text": "ランダムに文字を削除する（character drop）を全文に適用する",
+          "is_correct": false,
+          "explanation": "過度な文字削除は意味を破壊し、本来のラベルと一致しないノイズデータになる。日本語は特に文字単位の変更で意味が変わりやすい。"
+        },
+        {
+          "id": "D",
+          "text": "LLM（Bedrock Claude/Titan）でラベルを保ったまま言い換えを生成する",
+          "is_correct": true,
+          "explanation": "正解。Bedrock のような LLM でプロンプトベースのパラフレーズ生成は近年の主流。少数クラスを効率的に増強できる。"
+        }
       ],
       "explanation": "NLP データ拡張の主要手法：(1) Back Translation、(2) LLM パラフレーズ（Bedrock など）、(3) Synonym Replacement、(4) Random Insertion/Swap/Deletion（適度に）、(5) EDA（Easy Data Augmentation）。日本語では形態素単位の置換が必要で、文字単位のランダム操作は副作用が大きい。Bedrock + few-shot プロンプトで少数クラス用のパラフレーズを生成する手法は近年最も効果的。",
       "references": [
-        {"title": "Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"},
-        {"title": "SageMaker NLP Algorithms", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/blazingtext.html"}
+        {
+          "title": "Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+        },
+        {
+          "title": "SageMaker NLP Algorithms",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/blazingtext.html"
+        }
       ],
-      "tags": ["nlp", "augmentation", "back-translation", "saas", "text-classification"],
+      "tags": [
+        "nlp",
+        "augmentation",
+        "back-translation",
+        "saas",
+        "text-classification"
+      ],
       "common_mistakes": [
         "単純複製で水増ししたつもりになる",
         "文字単位ノイズ追加を日本語でも安易に使う",
         "LLM パラフレーズの選択肢を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-028",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Data Quality Evaluation",
       "subtopic": "DataZone vs Glue Data Quality",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "あるグループ会社で、ML 用データレイクのカタログ管理（ビジネスメタデータ、データ製品の発見、サブスクリプション）と、Glue ETL パイプラインの中での自動品質チェックを実装したい。Amazon DataZone と AWS Glue Data Quality の役割をどう使い分けるべきか？",
       "options": [
-        {"id": "A", "text": "DataZone はビジネスメタデータ管理・データ製品カタログ・部門間共有のガバナンス、Glue Data Quality は ETL ジョブ内の技術的品質ルール評価", "is_correct": true, "explanation": "正解。DataZone は組織横断のデータガバナンス・カタログプラットフォーム、Glue Data Quality は ETL パイプライン内の DQDL ルール評価エンジンと、レイヤーが異なる。"},
-        {"id": "B", "text": "両者は同一機能で、DataZone が後継として Glue Data Quality を置き換える", "is_correct": false, "explanation": "両者は補完関係であり置き換えではない。実際には DataZone が Glue Data Quality のスコアを取り込んでビジネス側に表示する統合がある。"},
-        {"id": "C", "text": "DataZone は ETL 実行用、Glue Data Quality はカタログ管理用", "is_correct": false, "explanation": "役割が逆。DataZone はガバナンス、Glue Data Quality は ETL 内の品質チェック。"},
-        {"id": "D", "text": "Glue Data Quality は ML 専用、DataZone は分析データ専用", "is_correct": false, "explanation": "両者ともワークロード非依存で、ML/分析どちらにも適用できる。"}
+        {
+          "id": "A",
+          "text": "両者は同一機能で、DataZone が後継として Glue Data Quality を置き換える",
+          "is_correct": false,
+          "explanation": "両者は補完関係であり置き換えではない。実際には DataZone が Glue Data Quality のスコアを取り込んでビジネス側に表示する統合がある。"
+        },
+        {
+          "id": "B",
+          "text": "Glue Data Quality は ML 専用、DataZone は分析データ専用",
+          "is_correct": false,
+          "explanation": "両者ともワークロード非依存で、ML/分析どちらにも適用できる。"
+        },
+        {
+          "id": "C",
+          "text": "DataZone は ETL 実行用、Glue Data Quality はカタログ管理用",
+          "is_correct": false,
+          "explanation": "役割が逆。DataZone はガバナンス、Glue Data Quality は ETL 内の品質チェック。"
+        },
+        {
+          "id": "D",
+          "text": "DataZone はビジネスメタデータ管理・データ製品カタログ・部門間共有のガバナンス、Glue Data Quality は ETL ジョブ内の技術的品質ルール評価",
+          "is_correct": true,
+          "explanation": "正解。DataZone は組織横断のデータガバナンス・カタログプラットフォーム、Glue Data Quality は ETL パイプライン内の DQDL ルール評価エンジンと、レイヤーが異なる。"
+        }
       ],
       "explanation": "DataZone はビジネスメタデータ、データ製品カタログ、データ消費者と生産者を結ぶサブスクリプション、Lake Formation 連携によるアクセスガバナンスを担う組織レベルプラットフォーム。Glue Data Quality は ETL ジョブ実行時に DQDL（Completeness、Uniqueness、Freshness 等）でデータを評価するエンジン。両者は補完的で、Glue Data Quality のスコアが DataZone のデータ製品プロファイルに表示される統合が AWS の推奨アーキテクチャ。",
       "references": [
-        {"title": "Amazon DataZone", "url": "https://docs.aws.amazon.com/datazone/latest/userguide/what-is-datazone.html"},
-        {"title": "AWS Glue Data Quality", "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html"}
+        {
+          "title": "Amazon DataZone",
+          "url": "https://docs.aws.amazon.com/datazone/latest/userguide/what-is-datazone.html"
+        },
+        {
+          "title": "AWS Glue Data Quality",
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html"
+        }
       ],
-      "tags": ["datazone", "data-quality", "governance", "data-mesh", "evaluation"],
+      "tags": [
+        "datazone",
+        "data-quality",
+        "governance",
+        "data-mesh",
+        "evaluation"
+      ],
       "common_mistakes": [
         "DataZone と Glue Data Quality を競合・代替関係と誤解する",
         "ガバナンスと技術品質チェックの違いを把握しない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-029",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "Architecture Decision",
       "subtopic": "EMR vs Glue ETL vs Processing Job",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "FinTech 企業の ML チームが日次1TB のトランザクションログから特徴量を生成する。要件: (1) Spark コードベースで複雑な集計、(2) 既存 Hadoop エコシステム（HBase、Hive UDF）の流用必須、(3) コスト最適化のため夜間バッチで実行。最適なサービス選択はどれか？",
       "options": [
-        {"id": "A", "text": "Amazon EMR（EMR Serverless または Spot 利用の EC2 クラスタ）で既存 Hadoop エコシステムを活用", "is_correct": true, "explanation": "正解。Hive UDF、HBase など Hadoop エコシステム前提なら EMR が最適。EMR Serverless または Spot 活用でコスト最適化可能。"},
-        {"id": "B", "text": "AWS Glue ETL（Spark ジョブ）に書き換える", "is_correct": false, "explanation": "Glue は Spark ベースだが、HBase や Hive UDF など独自エコシステム流用には適合しない。書き換えコストが大きい。"},
-        {"id": "C", "text": "SageMaker Processing Job（PySparkProcessor）で実行する", "is_correct": false, "explanation": "Processing Job は前処理向きだが、HBase 連携などフル Hadoop エコシステムには不向き。"},
-        {"id": "D", "text": "Lambda + Step Functions で並列処理する", "is_correct": false, "explanation": "Lambda は15分・10GB メモリの上限があり、1TB の Spark 処理には全く不適切。"}
+        {
+          "id": "A",
+          "text": "Amazon EMR（EMR Serverless または Spot 利用の EC2 クラスタ）で既存 Hadoop エコシステムを活用",
+          "is_correct": true,
+          "explanation": "正解。Hive UDF、HBase など Hadoop エコシステム前提なら EMR が最適。EMR Serverless または Spot 活用でコスト最適化可能。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker Processing Job（PySparkProcessor）で実行する",
+          "is_correct": false,
+          "explanation": "Processing Job は前処理向きだが、HBase 連携などフル Hadoop エコシステムには不向き。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Glue ETL（Spark ジョブ）に書き換える",
+          "is_correct": false,
+          "explanation": "Glue は Spark ベースだが、HBase や Hive UDF など独自エコシステム流用には適合しない。書き換えコストが大きい。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda + Step Functions で並列処理する",
+          "is_correct": false,
+          "explanation": "Lambda は15分・10GB メモリの上限があり、1TB の Spark 処理には全く不適切。"
+        }
       ],
       "explanation": "Spark/Hadoop ワークロードの選択軸：(1) 既存 Hadoop エコシステム流用（HBase、Hive UDF、Presto など）→ EMR、(2) 純 Spark で軽量に運用 → Glue ETL、(3) ML 前処理に近接 → Processing Job、(4) 完全マネージドの SQL 集計 → Athena。EMR には EMR on EC2、EMR on EKS、EMR Serverless の3形態があり、夜間バッチには Spot Instance 併用または Serverless がコスト最適。",
       "references": [
-        {"title": "Amazon EMR Documentation", "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"},
-        {"title": "EMR Serverless", "url": "https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html"}
+        {
+          "title": "Amazon EMR Documentation",
+          "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
+        },
+        {
+          "title": "EMR Serverless",
+          "url": "https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html"
+        }
       ],
-      "tags": ["emr", "spark", "hadoop", "fintech", "architecture"],
+      "tags": [
+        "emr",
+        "spark",
+        "hadoop",
+        "fintech",
+        "architecture"
+      ],
       "common_mistakes": [
         "Glue ETL で既存 Hadoop エコシステムを置き換えようとする",
         "Lambda で大規模 Spark 処理しようとする",
         "EMR Serverless / Spot 併用のコスト最適化を知らない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "mla-c01-domain1-030",
       "version": "1.0",
-      "exam": {"code": "MLA-C01", "name": "AWS Certified Machine Learning Engineer - Associate", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Data Preparation for ML", "weight_percent": 28},
+      "exam": {
+        "code": "MLA-C01",
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Data Preparation for ML",
+        "weight_percent": 28
+      },
       "topic": "End-to-End Data Pipeline Design",
       "subtopic": "Compliant healthcare ML pipeline",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "医療系 SaaS で、HIPAA 準拠の胸部X線分類モデル基盤を設計する。要件: (1) DICOM 画像と CSV メタデータを安全に取り込み、(2) PHI を自動検出し redaction 後に学習データセット化、(3) ラベル付けは社内放射線科医のみ、(4) 学習データの監査追跡可能、(5) 複数子会社で共有しつつ部門ごとアクセス制御。最も適切なアーキテクチャ要素の組み合わせは？（MRQ：3つ選択）",
       "options": [
-        {"id": "A", "text": "S3（SSE-KMS）+ Macie で取り込み時に PHI を検出、redaction 後に学習用バケットに移動", "is_correct": true, "explanation": "正解。Macie で PHI 検出、KMS で暗号化、redaction 後の専用バケットでアクセス制限が HIPAA パターン。"},
-        {"id": "B", "text": "SageMaker Ground Truth Private Workforce（社内ユーザのみ）で DICOM ラベリング、AWS Lake Formation で部門ごとのカラム/行レベル制御", "is_correct": true, "explanation": "正解。Mechanical Turk は機密データ不可。Private Workforce + Lake Formation FGAC が標準。"},
-        {"id": "C", "text": "SageMaker Pipelines + ML Lineage Tracking で前処理～学習までの全工程を記録、CloudTrail で API 監査", "is_correct": true, "explanation": "正解。HIPAA 監査要件を満たすには Pipelines による再現性 + Lineage Tracking + CloudTrail の組み合わせが必要。"},
-        {"id": "D", "text": "SageMaker Notebook Instance を Public IP で起動し、誰でもアクセス可能にする", "is_correct": false, "explanation": "HIPAA 違反。VPC 配下、Network Isolation、IAM ベースのアクセス制御が必須。"},
-        {"id": "E", "text": "学習データを Mechanical Turk Public Workforce にラベリング委託する", "is_correct": false, "explanation": "Mechanical Turk は不特定多数の作業者で機密データ・PHI 取扱い不可。HIPAA 違反。"}
+        {
+          "id": "A",
+          "text": "SageMaker Pipelines + ML Lineage Tracking で前処理～学習までの全工程を記録、CloudTrail で API 監査",
+          "is_correct": true,
+          "explanation": "正解。HIPAA 監査要件を満たすには Pipelines による再現性 + Lineage Tracking + CloudTrail の組み合わせが必要。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker Ground Truth Private Workforce（社内ユーザのみ）で DICOM ラベリング、AWS Lake Formation で部門ごとのカラム/行レベル制御",
+          "is_correct": true,
+          "explanation": "正解。Mechanical Turk は機密データ不可。Private Workforce + Lake Formation FGAC が標準。"
+        },
+        {
+          "id": "C",
+          "text": "学習データを Mechanical Turk Public Workforce にラベリング委託する",
+          "is_correct": false,
+          "explanation": "Mechanical Turk は不特定多数の作業者で機密データ・PHI 取扱い不可。HIPAA 違反。"
+        },
+        {
+          "id": "D",
+          "text": "SageMaker Notebook Instance を Public IP で起動し、誰でもアクセス可能にする",
+          "is_correct": false,
+          "explanation": "HIPAA 違反。VPC 配下、Network Isolation、IAM ベースのアクセス制御が必須。"
+        },
+        {
+          "id": "E",
+          "text": "S3（SSE-KMS）+ Macie で取り込み時に PHI を検出、redaction 後に学習用バケットに移動",
+          "is_correct": true,
+          "explanation": "正解。Macie で PHI 検出、KMS で暗号化、redaction 後の専用バケットでアクセス制限が HIPAA パターン。"
+        }
       ],
       "explanation": "HIPAA 準拠 ML パイプラインの設計原則：(1) 暗号化（SSE-KMS、CMK 顧客管理）、(2) PHI 自動検出（Macie）、(3) アクセス制御（Lake Formation FGAC + IAM + VPC）、(4) ラベリングは Private Workforce、(5) 監査（Lineage Tracking + CloudTrail + Pipelines）、(6) ネットワーク分離（VPC Endpoint、Network Isolation）。AWS BAA 対象サービスのみ使用すること。複数子会社共有では Lake Formation の cross-account access 機能と DataZone を組み合わせる。",
       "references": [
-        {"title": "HIPAA Eligible Services on AWS", "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"},
-        {"title": "Build Secure ML on SageMaker", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/security.html"},
-        {"title": "AWS Lake Formation Cross-Account", "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/cross-account-permissions.html"}
+        {
+          "title": "HIPAA Eligible Services on AWS",
+          "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"
+        },
+        {
+          "title": "Build Secure ML on SageMaker",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/security.html"
+        },
+        {
+          "title": "AWS Lake Formation Cross-Account",
+          "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/cross-account-permissions.html"
+        }
       ],
-      "tags": ["hipaa", "healthcare", "architecture", "ground-truth", "lake-formation"],
+      "tags": [
+        "hipaa",
+        "healthcare",
+        "architecture",
+        "ground-truth",
+        "lake-formation"
+      ],
       "common_mistakes": [
         "Mechanical Turk に PHI データを送る",
         "Notebook を Public IP で起動する",
         "Lineage Tracking を組み込まず監査要件を満たせない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

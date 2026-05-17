@@ -15,753 +15,2285 @@
     {
       "id": "shindanshi-1-unei-001",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "生産方式",
       "subtopic": "生産形態の分類",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "受注生産（個別生産）の特徴として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "標準化された製品を大量に作り、在庫から販売する方式である", "is_correct": false, "explanation": "これは見込生産（計画生産）の特徴。受注生産は注文を受けてから生産する。"},
-        {"id": "B", "text": "顧客の注文を受けてから生産を開始し、仕様が個別に異なる場合が多い", "is_correct": true, "explanation": "正解。受注生産は顧客仕様に応じた個別対応が中心で、製品の多様性が高い。"},
-        {"id": "C", "text": "需要予測に基づいて事前に生産計画を立て、在庫を持つ方式である", "is_correct": false, "explanation": "これは見込生産の特徴。受注生産は需要予測ではなく実際の受注に基づく。"},
-        {"id": "D", "text": "コンベヤラインで連続的に同一製品を流す方式である", "is_correct": false, "explanation": "これはライン生産（連続生産）方式の特徴で、受注生産とは別の分類軸。"}
+        {
+          "id": "A",
+          "text": "顧客の注文を受けてから生産を開始し、仕様が個別に異なる場合が多い",
+          "is_correct": true,
+          "explanation": "正解。受注生産は顧客仕様に応じた個別対応が中心で、製品の多様性が高い。"
+        },
+        {
+          "id": "B",
+          "text": "標準化された製品を大量に作り、在庫から販売する方式である",
+          "is_correct": false,
+          "explanation": "これは見込生産（計画生産）の特徴。受注生産は注文を受けてから生産する。"
+        },
+        {
+          "id": "C",
+          "text": "需要予測に基づいて事前に生産計画を立て、在庫を持つ方式である",
+          "is_correct": false,
+          "explanation": "これは見込生産の特徴。受注生産は需要予測ではなく実際の受注に基づく。"
+        },
+        {
+          "id": "D",
+          "text": "コンベヤラインで連続的に同一製品を流す方式である",
+          "is_correct": false,
+          "explanation": "これはライン生産（連続生産）方式の特徴で、受注生産とは別の分類軸。"
+        }
       ],
       "explanation": "生産は注文の受け方で「受注生産」と「見込生産」に、品種・量で「個別生産」「ロット生産」「連続生産」に分類される。受注生産は顧客仕様に応えるため多品種少量となりやすく、見込生産は需要予測に基づく在庫型である。",
       "references": [
-        {"title": "JIS Z 8141 生産管理用語", "url": "https://www.jisc.go.jp/"}
+        {
+          "title": "JIS Z 8141 生産管理用語",
+          "url": "https://www.jisc.go.jp/"
+        }
       ],
-      "tags": ["生産方式", "受注生産", "見込生産", "基礎"],
-      "common_mistakes": ["受注生産=ライン生産と混同", "受注生産=多品種少量と一対一対応と決めつけ"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "生産方式",
+        "受注生産",
+        "見込生産",
+        "基礎"
+      ],
+      "common_mistakes": [
+        "受注生産=ライン生産と混同",
+        "受注生産=多品種少量と一対一対応と決めつけ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-002",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "QC7つ道具",
       "subtopic": "パレート図",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "QC7つ道具のうち「パレート図」の主たる用途として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "原因と結果の関係を体系的に図示し、問題の要因を整理する", "is_correct": false, "explanation": "これは特性要因図（フィッシュボーン）の用途。"},
-        {"id": "C", "text": "2つの変量の相関関係を視覚的に把握する", "is_correct": false, "explanation": "これは散布図の用途。"},
-        {"id": "B", "text": "不適合項目を件数の多い順に棒グラフで並べ、累積比率を折れ線で示すことで重点項目を特定する", "is_correct": true, "explanation": "正解。パレート図は重点指向（80:20の法則）で改善対象を絞り込むための図。"},
-        {"id": "D", "text": "工程が統計的管理状態にあるかを判定する", "is_correct": false, "explanation": "これは管理図の用途。UCL/LCLを用いて工程変動を評価する。"}
+        {
+          "id": "A",
+          "text": "2つの変量の相関関係を視覚的に把握する",
+          "is_correct": false,
+          "explanation": "これは散布図の用途。"
+        },
+        {
+          "id": "B",
+          "text": "不適合項目を件数の多い順に棒グラフで並べ、累積比率を折れ線で示すことで重点項目を特定する",
+          "is_correct": true,
+          "explanation": "正解。パレート図は重点指向（80:20の法則）で改善対象を絞り込むための図。"
+        },
+        {
+          "id": "C",
+          "text": "工程が統計的管理状態にあるかを判定する",
+          "is_correct": false,
+          "explanation": "これは管理図の用途。UCL/LCLを用いて工程変動を評価する。"
+        },
+        {
+          "id": "D",
+          "text": "原因と結果の関係を体系的に図示し、問題の要因を整理する",
+          "is_correct": false,
+          "explanation": "これは特性要因図（フィッシュボーン）の用途。"
+        }
       ],
       "explanation": "QC7つ道具はパレート図、特性要因図、ヒストグラム、管理図、散布図、チェックシート、層別（またはグラフ）。パレート図は不良項目を頻度順に並べることで「少数の重要項目」を可視化し、重点改善の判断材料とする。",
       "references": [
-        {"title": "日本品質管理学会 QC7つ道具", "url": "https://www.jsqc.org/"}
+        {
+          "title": "日本品質管理学会 QC7つ道具",
+          "url": "https://www.jsqc.org/"
+        }
       ],
-      "tags": ["QC7つ道具", "パレート図", "重点指向", "品質管理"],
-      "common_mistakes": ["パレート図と特性要因図の混同", "パレート図に累積比率折れ線を含めることを忘れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "QC7つ道具",
+        "パレート図",
+        "重点指向",
+        "品質管理"
+      ],
+      "common_mistakes": [
+        "パレート図と特性要因図の混同",
+        "パレート図に累積比率折れ線を含めることを忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-003",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "JANコード",
       "subtopic": "識別コード体系",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "JAN（Japanese Article Number）コードに関する記述として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "製造日と賞味期限を表すために使用される国内独自の規格である", "is_correct": false, "explanation": "JANは商品識別コードであり、日付情報そのものを表すものではない。"},
-        {"id": "B", "text": "国際的にはEAN/GTINと整合し、商品を一意に識別するためのバーコード規格である", "is_correct": true, "explanation": "正解。JANは国際的にはEAN（GS1標準）と互換で、世界中の商品識別に使われるGTINの一部である。"},
-        {"id": "C", "text": "店舗内のオペレーションだけで使われる、企業独自に付番できるインストアコードのみを指す", "is_correct": false, "explanation": "JANは標準タイプ（13桁/8桁）が原則で、企業独自付番のインストアコードはJANとは別物。"},
-        {"id": "D", "text": "RFIDタグの規格で、無線で読み取りを行う", "is_correct": false, "explanation": "JANはバーコード規格。RFIDとは異なる読み取り方式。"}
+        {
+          "id": "A",
+          "text": "店舗内のオペレーションだけで使われる、企業独自に付番できるインストアコードのみを指す",
+          "is_correct": false,
+          "explanation": "JANは標準タイプ（13桁/8桁）が原則で、企業独自付番のインストアコードはJANとは別物。"
+        },
+        {
+          "id": "B",
+          "text": "RFIDタグの規格で、無線で読み取りを行う",
+          "is_correct": false,
+          "explanation": "JANはバーコード規格。RFIDとは異なる読み取り方式。"
+        },
+        {
+          "id": "C",
+          "text": "国際的にはEAN/GTINと整合し、商品を一意に識別するためのバーコード規格である",
+          "is_correct": true,
+          "explanation": "正解。JANは国際的にはEAN（GS1標準）と互換で、世界中の商品識別に使われるGTINの一部である。"
+        },
+        {
+          "id": "D",
+          "text": "製造日と賞味期限を表すために使用される国内独自の規格である",
+          "is_correct": false,
+          "explanation": "JANは商品識別コードであり、日付情報そのものを表すものではない。"
+        }
       ],
       "explanation": "JANコードはGS1の管理する国際標準GTINの日本での呼称で、13桁標準タイプ・8桁短縮タイプがある。先頭の国コード（日本は45/49）に続き、メーカーコード・商品アイテムコード・チェックデジットで構成される。POSの基本データ。",
       "references": [
-        {"title": "GS1 Japan JANコードの基本", "url": "https://www.gs1jp.org/code/jan/about_jan.html"}
+        {
+          "title": "GS1 Japan JANコードの基本",
+          "url": "https://www.gs1jp.org/code/jan/about_jan.html"
+        }
       ],
-      "tags": ["JAN", "GTIN", "バーコード", "POS"],
-      "common_mistakes": ["JANとインストアコードの混同", "JAN=日本独自で世界では使えないという誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "JAN",
+        "GTIN",
+        "バーコード",
+        "POS"
+      ],
+      "common_mistakes": [
+        "JANとインストアコードの混同",
+        "JAN=日本独自で世界では使えないという誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-004",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "IE手法",
       "subtopic": "ワークサンプリング",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "IE手法における「ワークサンプリング法」の特徴として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "ストップウォッチで作業を連続観測し、各要素作業の標準時間を算出する", "is_correct": false, "explanation": "これは時間研究（タイムスタディ）の特徴。ワークサンプリングはランダム瞬間観測。"},
-        {"id": "B", "text": "ランダムな時刻に作業者の状態を瞬間観測し、観測比率から各作業の時間構成比を推定する", "is_correct": true, "explanation": "正解。ワークサンプリングは統計的標本調査の考え方を作業観測に応用したもの。"},
-        {"id": "C", "text": "作業を映像で記録し、コマ送りで微小動作を分析する", "is_correct": false, "explanation": "これはメモモーション・微動作分析（サーブリッグ分析）の特徴。"},
-        {"id": "D", "text": "PTS法のように、あらかじめ定められた要素時間値を組み合わせて標準時間を求める", "is_correct": false, "explanation": "PTS法（MTM等）の説明。ワークサンプリングは観測法に分類される。"}
+        {
+          "id": "A",
+          "text": "PTS法のように、あらかじめ定められた要素時間値を組み合わせて標準時間を求める",
+          "is_correct": false,
+          "explanation": "PTS法（MTM等）の説明。ワークサンプリングは観測法に分類される。"
+        },
+        {
+          "id": "B",
+          "text": "作業を映像で記録し、コマ送りで微小動作を分析する",
+          "is_correct": false,
+          "explanation": "これはメモモーション・微動作分析（サーブリッグ分析）の特徴。"
+        },
+        {
+          "id": "C",
+          "text": "ストップウォッチで作業を連続観測し、各要素作業の標準時間を算出する",
+          "is_correct": false,
+          "explanation": "これは時間研究（タイムスタディ）の特徴。ワークサンプリングはランダム瞬間観測。"
+        },
+        {
+          "id": "D",
+          "text": "ランダムな時刻に作業者の状態を瞬間観測し、観測比率から各作業の時間構成比を推定する",
+          "is_correct": true,
+          "explanation": "正解。ワークサンプリングは統計的標本調査の考え方を作業観測に応用したもの。"
+        }
       ],
       "explanation": "ワークサンプリングはRP（Ratio Delay Study）として知られ、多くの作業者・長時間の観測でも比較的少ない労力で稼働率を推定できる。観測回数Nは必要精度から統計的に決定する。連続観測の時間研究と対比して理解する。",
       "references": [
-        {"title": "日本IE協会 ワークサンプリング", "url": "https://www.j-ie.com/"}
+        {
+          "title": "日本IE協会 ワークサンプリング",
+          "url": "https://www.j-ie.com/"
+        }
       ],
-      "tags": ["IE", "ワークサンプリング", "稼働分析", "標本調査"],
-      "common_mistakes": ["連続観測の時間研究と混同", "PTS法と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "IE",
+        "ワークサンプリング",
+        "稼働分析",
+        "標本調査"
+      ],
+      "common_mistakes": [
+        "連続観測の時間研究と混同",
+        "PTS法と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-005",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "PDCA",
       "subtopic": "デミングサイクル",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "PDCAサイクルにおける「C（Check）」フェーズの本質的な役割として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "目標と実績の差異を分析し、計画と実行に対するフィードバックを得る", "is_correct": true, "explanation": "正解。Checkは計画値と実績値の比較・乖離分析を通じて、次のActへつなぐ評価フェーズ。"},
-        {"id": "B", "text": "新たな目標値を設定し、達成手段を立案する", "is_correct": false, "explanation": "これはP（Plan）フェーズの活動。"},
-        {"id": "C", "text": "決定された計画に基づき、現場で作業を実行する", "is_correct": false, "explanation": "これはD（Do）フェーズの活動。"},
-        {"id": "D", "text": "標準化を行い、改善内容を組織的に定着させる", "is_correct": false, "explanation": "これはA（Act）フェーズの活動。標準化と是正処置はActに含まれる。"}
+        {
+          "id": "A",
+          "text": "目標と実績の差異を分析し、計画と実行に対するフィードバックを得る",
+          "is_correct": true,
+          "explanation": "正解。Checkは計画値と実績値の比較・乖離分析を通じて、次のActへつなぐ評価フェーズ。"
+        },
+        {
+          "id": "B",
+          "text": "決定された計画に基づき、現場で作業を実行する",
+          "is_correct": false,
+          "explanation": "これはD（Do）フェーズの活動。"
+        },
+        {
+          "id": "C",
+          "text": "標準化を行い、改善内容を組織的に定着させる",
+          "is_correct": false,
+          "explanation": "これはA（Act）フェーズの活動。標準化と是正処置はActに含まれる。"
+        },
+        {
+          "id": "D",
+          "text": "新たな目標値を設定し、達成手段を立案する",
+          "is_correct": false,
+          "explanation": "これはP（Plan）フェーズの活動。"
+        }
       ],
       "explanation": "PDCAはデミングが提唱した管理サイクル。Checkは「実績を測り計画と比較する」フェーズで、ここで得られた知見をAct（標準化・改善）に活かして次のPlanに連動させる。Checkを軽視するとPDCAは形骸化する。",
       "references": [
-        {"title": "日本品質管理学会 PDCAの基礎", "url": "https://www.jsqc.org/"}
+        {
+          "title": "日本品質管理学会 PDCAの基礎",
+          "url": "https://www.jsqc.org/"
+        }
       ],
-      "tags": ["PDCA", "管理サイクル", "デミング"],
-      "common_mistakes": ["CheckとActの境界が曖昧", "標準化をCheckに含めてしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "PDCA",
+        "管理サイクル",
+        "デミング"
+      ],
+      "common_mistakes": [
+        "CheckとActの境界が曖昧",
+        "標準化をCheckに含めてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-006",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "工程管理",
       "subtopic": "PERT・クリティカルパス",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "PERT（Program Evaluation and Review Technique）における「クリティカルパス」の説明として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "ネットワーク上で最も短い経路で、最小所要時間を示す", "is_correct": false, "explanation": "逆。クリティカルパスはネットワーク上の最長経路で、これがプロジェクト全体の所要時間となる。"},
-        {"id": "B", "text": "全余裕時間（トータルフロート）が0の作業の連なりで、プロジェクト全体の所要時間を決定する経路である", "is_correct": true, "explanation": "正解。CPは余裕がなく、ここの遅れがそのまま全体の遅延に直結する。"},
-        {"id": "C", "text": "最も多くの資源を消費する作業の経路である", "is_correct": false, "explanation": "資源量と経路長は別概念。CPは「時間的に余裕のない経路」であって資源消費量とは関係ない。"},
-        {"id": "D", "text": "並行して実行できる作業のうち、最も人員が必要な経路である", "is_correct": false, "explanation": "人員数とCPは直接関係しない。CPはあくまで時間的観点。"}
+        {
+          "id": "A",
+          "text": "最も多くの資源を消費する作業の経路である",
+          "is_correct": false,
+          "explanation": "資源量と経路長は別概念。CPは「時間的に余裕のない経路」であって資源消費量とは関係ない。"
+        },
+        {
+          "id": "B",
+          "text": "全余裕時間（トータルフロート）が0の作業の連なりで、プロジェクト全体の所要時間を決定する経路である",
+          "is_correct": true,
+          "explanation": "正解。CPは余裕がなく、ここの遅れがそのまま全体の遅延に直結する。"
+        },
+        {
+          "id": "C",
+          "text": "ネットワーク上で最も短い経路で、最小所要時間を示す",
+          "is_correct": false,
+          "explanation": "逆。クリティカルパスはネットワーク上の最長経路で、これがプロジェクト全体の所要時間となる。"
+        },
+        {
+          "id": "D",
+          "text": "並行して実行できる作業のうち、最も人員が必要な経路である",
+          "is_correct": false,
+          "explanation": "人員数とCPは直接関係しない。CPはあくまで時間的観点。"
+        }
       ],
       "explanation": "PERTでは各作業を矢線で表し、最早結合点時刻（ES）と最遅結合点時刻（LF）を計算する。総余裕時間が0の作業がクリティカルパス上にあり、そこがプロジェクトの所要日数を決める。CP上の作業を短縮するとプロジェクト全体が短縮できる。",
       "references": [
-        {"title": "日本プロジェクトマネジメント協会 PERT・CPM", "url": "https://www.pmaj.or.jp/"}
+        {
+          "title": "日本プロジェクトマネジメント協会 PERT・CPM",
+          "url": "https://www.pmaj.or.jp/"
+        }
       ],
-      "tags": ["PERT", "クリティカルパス", "工程管理", "プロジェクト管理"],
-      "common_mistakes": ["最短経路と最長経路を取り違える", "CPと最大資源経路を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "PERT",
+        "クリティカルパス",
+        "工程管理",
+        "プロジェクト管理"
+      ],
+      "common_mistakes": [
+        "最短経路と最長経路を取り違える",
+        "CPと最大資源経路を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-007",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "在庫管理",
       "subtopic": "ABC分析",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "在庫管理におけるABC分析の使い方として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "発注リードタイムの長さで品目を3区分し、配送ルートを最適化する", "is_correct": false, "explanation": "ABC分析はリードタイム区分ではなく、金額または使用量による重要度区分。"},
-        {"id": "B", "text": "金額や使用量を基準に品目をA・B・Cの重要度に層別し、管理労力を配分する", "is_correct": true, "explanation": "正解。パレートの法則を在庫品目に適用し、重要度に応じて管理水準を変える手法。"},
-        {"id": "C", "text": "需要の季節変動を3区分し、安全在庫の水準を季節別に決める", "is_correct": false, "explanation": "ABC分析は重要度区分の手法であり、季節性の分析手法ではない。"},
-        {"id": "D", "text": "倉庫の保管エリアを3区分し、在庫滞留時間を短縮する", "is_correct": false, "explanation": "倉庫レイアウトの工夫は別の管理手法。ABC分析は品目の重要度区分が本質。"}
+        {
+          "id": "A",
+          "text": "需要の季節変動を3区分し、安全在庫の水準を季節別に決める",
+          "is_correct": false,
+          "explanation": "ABC分析は重要度区分の手法であり、季節性の分析手法ではない。"
+        },
+        {
+          "id": "B",
+          "text": "倉庫の保管エリアを3区分し、在庫滞留時間を短縮する",
+          "is_correct": false,
+          "explanation": "倉庫レイアウトの工夫は別の管理手法。ABC分析は品目の重要度区分が本質。"
+        },
+        {
+          "id": "C",
+          "text": "金額や使用量を基準に品目をA・B・Cの重要度に層別し、管理労力を配分する",
+          "is_correct": true,
+          "explanation": "正解。パレートの法則を在庫品目に適用し、重要度に応じて管理水準を変える手法。"
+        },
+        {
+          "id": "D",
+          "text": "発注リードタイムの長さで品目を3区分し、配送ルートを最適化する",
+          "is_correct": false,
+          "explanation": "ABC分析はリードタイム区分ではなく、金額または使用量による重要度区分。"
+        }
       ],
       "explanation": "ABC分析はパレート図の応用で、Aランク品目（金額構成比70-80%程度を占める少数品目）には厳格な管理（定期発注・実在庫管理）を、Cランクには簡易管理（ダブルビン法等）を適用するなど、管理コストを重要度に応じて配分する考え方。",
       "references": [
-        {"title": "JIS Z 8141 生産管理用語 在庫管理", "url": "https://www.jisc.go.jp/"}
+        {
+          "title": "JIS Z 8141 生産管理用語 在庫管理",
+          "url": "https://www.jisc.go.jp/"
+        }
       ],
-      "tags": ["在庫管理", "ABC分析", "パレート", "重点指向"],
-      "common_mistakes": ["ABC分析を需要変動分析と混同", "全品目を同じ管理水準にしてしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "在庫管理",
+        "ABC分析",
+        "パレート",
+        "重点指向"
+      ],
+      "common_mistakes": [
+        "ABC分析を需要変動分析と混同",
+        "全品目を同じ管理水準にしてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-008",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "TPS",
       "subtopic": "かんばん方式",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "トヨタ生産方式（TPS）における「かんばん方式」の本質として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "前工程が後工程の使用予定数量を予測し、押し出すように供給する仕組み", "is_correct": false, "explanation": "これはプッシュ方式の説明。かんばんは後工程引き取りのプル方式。"},
-        {"id": "B", "text": "後工程が必要な部品を必要な分だけ前工程から引き取り、その情報を伝達する仕組み", "is_correct": true, "explanation": "正解。かんばんは「後工程引取り」の情報伝達ツールで、JITを実現するための具体手段。"},
-        {"id": "C", "text": "受注時点で全工程の生産指示を一括で出す中央集権型のMRP方式である", "is_correct": false, "explanation": "MRPはプッシュ型の生産管理手法で、かんばんとは対照的な発想。"},
-        {"id": "D", "text": "サプライヤーへの長期内示を発行し、計画変更を防ぐ仕組みである", "is_correct": false, "explanation": "内示と確定発注はTPSにもあるが、かんばん自体は内示制度ではない。"}
+        {
+          "id": "A",
+          "text": "受注時点で全工程の生産指示を一括で出す中央集権型のMRP方式である",
+          "is_correct": false,
+          "explanation": "MRPはプッシュ型の生産管理手法で、かんばんとは対照的な発想。"
+        },
+        {
+          "id": "B",
+          "text": "サプライヤーへの長期内示を発行し、計画変更を防ぐ仕組みである",
+          "is_correct": false,
+          "explanation": "内示と確定発注はTPSにもあるが、かんばん自体は内示制度ではない。"
+        },
+        {
+          "id": "C",
+          "text": "前工程が後工程の使用予定数量を予測し、押し出すように供給する仕組み",
+          "is_correct": false,
+          "explanation": "これはプッシュ方式の説明。かんばんは後工程引き取りのプル方式。"
+        },
+        {
+          "id": "D",
+          "text": "後工程が必要な部品を必要な分だけ前工程から引き取り、その情報を伝達する仕組み",
+          "is_correct": true,
+          "explanation": "正解。かんばんは「後工程引取り」の情報伝達ツールで、JITを実現するための具体手段。"
+        }
       ],
       "explanation": "かんばんはTPSの「ジャストインタイム」を支える情報伝達カードで、後工程が必要分だけ前工程から引き取る「プル方式」を実現する。これにより中間在庫と作りすぎのムダを削減できる。引き取りかんばん・仕掛けかんばんの2種類が基本。",
       "references": [
-        {"title": "トヨタ生産方式の解説", "url": "https://global.toyota/jp/company/vision-and-philosophy/production-system/"}
+        {
+          "title": "トヨタ生産方式の解説",
+          "url": "https://global.toyota/jp/company/vision-and-philosophy/production-system/"
+        }
       ],
-      "tags": ["TPS", "かんばん", "JIT", "プル方式"],
-      "common_mistakes": ["かんばん=単なる現品票と理解", "プッシュとプルの方向を取り違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "TPS",
+        "かんばん",
+        "JIT",
+        "プル方式"
+      ],
+      "common_mistakes": [
+        "かんばん=単なる現品票と理解",
+        "プッシュとプルの方向を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-009",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "設備保全",
       "subtopic": "TPMの保全種類",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "設備保全に関する記述として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "事後保全（BM）は故障してから修理する方式で、近代的なTPMでは一切採用されない", "is_correct": false, "explanation": "停止コストが小さく予防コストが大きい設備では、事後保全が経済合理的な場合もある。一切採用されないわけではない。"},
-        {"id": "B", "text": "予防保全（PM）には、時間基準保全（TBM）と状態基準保全（CBM）が含まれる", "is_correct": true, "explanation": "正解。PMは故障前に計画的に行う保全で、定期実施のTBMと劣化状態を診断して実施するCBMがある。"},
-        {"id": "C", "text": "改良保全（CM）は劣化を予測して部品交換を行う活動で、PMの一種である", "is_correct": false, "explanation": "改良保全（CM）は設備自体を改良して故障しにくくする活動で、PMとは別の保全。"},
-        {"id": "D", "text": "保全予防（MP）は故障後に再発防止策を講じる活動である", "is_correct": false, "explanation": "MPは設備の設計・購入段階で保全しやすく作る活動で、故障後の再発防止ではない。"}
+        {
+          "id": "A",
+          "text": "予防保全（PM）には、時間基準保全（TBM）と状態基準保全（CBM）が含まれる",
+          "is_correct": true,
+          "explanation": "正解。PMは故障前に計画的に行う保全で、定期実施のTBMと劣化状態を診断して実施するCBMがある。"
+        },
+        {
+          "id": "B",
+          "text": "事後保全（BM）は故障してから修理する方式で、近代的なTPMでは一切採用されない",
+          "is_correct": false,
+          "explanation": "停止コストが小さく予防コストが大きい設備では、事後保全が経済合理的な場合もある。一切採用されないわけではない。"
+        },
+        {
+          "id": "C",
+          "text": "保全予防（MP）は故障後に再発防止策を講じる活動である",
+          "is_correct": false,
+          "explanation": "MPは設備の設計・購入段階で保全しやすく作る活動で、故障後の再発防止ではない。"
+        },
+        {
+          "id": "D",
+          "text": "改良保全（CM）は劣化を予測して部品交換を行う活動で、PMの一種である",
+          "is_correct": false,
+          "explanation": "改良保全（CM）は設備自体を改良して故障しにくくする活動で、PMとは別の保全。"
+        }
       ],
       "explanation": "保全活動はBM（事後保全）、PM（予防保全：TBM/CBM）、CM（改良保全）、MP（保全予防）の4区分が基本。TPMは全員参加でこれらを統合的に運用する考え方。CBMはセンサー・IoTの普及で近年重要度が増している。",
       "references": [
-        {"title": "日本プラントメンテナンス協会 TPM", "url": "https://www.jipm.or.jp/"}
+        {
+          "title": "日本プラントメンテナンス協会 TPM",
+          "url": "https://www.jipm.or.jp/"
+        }
       ],
-      "tags": ["TPM", "保全", "TBM", "CBM"],
-      "common_mistakes": ["改良保全を予防保全と混同", "MPの意味を取り違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "TPM",
+        "保全",
+        "TBM",
+        "CBM"
+      ],
+      "common_mistakes": [
+        "改良保全を予防保全と混同",
+        "MPの意味を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-010",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "ハフモデル",
       "subtopic": "商圏分析",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "小売店舗の商圏分析に用いられる「修正ハフモデル」の前提として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "店舗への来店確率は、店舗売場面積に比例し、消費者からの距離（時間）の累乗に反比例する", "is_correct": true, "explanation": "正解。修正ハフモデルは「魅力度＝面積」「抵抗＝距離の累乗」で来店確率を計算する。"},
-        {"id": "B", "text": "店舗への来店確率は、店舗の品揃え数のみで決まり、距離は影響しない", "is_correct": false, "explanation": "距離（時間距離）の影響を計算するのがハフモデルの本質。"},
-        {"id": "C", "text": "商圏は半径800mの円で固定され、それ以外の地域からの来店は無視する", "is_correct": false, "explanation": "ライリーの法則のような決定論的境界線とは異なり、ハフモデルは確率モデル。"},
-        {"id": "D", "text": "店舗間競合は考慮せず、自店単独の引力のみを評価する", "is_correct": false, "explanation": "ハフモデルの分母は「全競合店の引力合計」で、競合を必ず考慮する。"}
+        {
+          "id": "A",
+          "text": "商圏は半径800mの円で固定され、それ以外の地域からの来店は無視する",
+          "is_correct": false,
+          "explanation": "ライリーの法則のような決定論的境界線とは異なり、ハフモデルは確率モデル。"
+        },
+        {
+          "id": "B",
+          "text": "店舗への来店確率は、店舗売場面積に比例し、消費者からの距離（時間）の累乗に反比例する",
+          "is_correct": true,
+          "explanation": "正解。修正ハフモデルは「魅力度＝面積」「抵抗＝距離の累乗」で来店確率を計算する。"
+        },
+        {
+          "id": "C",
+          "text": "店舗間競合は考慮せず、自店単独の引力のみを評価する",
+          "is_correct": false,
+          "explanation": "ハフモデルの分母は「全競合店の引力合計」で、競合を必ず考慮する。"
+        },
+        {
+          "id": "D",
+          "text": "店舗への来店確率は、店舗の品揃え数のみで決まり、距離は影響しない",
+          "is_correct": false,
+          "explanation": "距離（時間距離）の影響を計算するのがハフモデルの本質。"
+        }
       ],
       "explanation": "ハフモデルは消費者の店舗選択を確率的に表現するモデルで、店舗の魅力度（売場面積等）に比例し、距離の累乗（通常2乗）に反比例する。修正ハフモデルでは経済産業省が提示した距離パラメータを用いて、競合店との引力分配を計算する。出店判断やドミナント戦略で活用される。",
       "references": [
-        {"title": "経済産業省 大規模小売店舗立地法 ハフモデル", "url": "https://www.meti.go.jp/policy/distribution/"}
+        {
+          "title": "経済産業省 大規模小売店舗立地法 ハフモデル",
+          "url": "https://www.meti.go.jp/policy/distribution/"
+        }
       ],
-      "tags": ["ハフモデル", "商圏", "立地", "確率モデル"],
-      "common_mistakes": ["ライリーの法則と混同", "距離の影響を無視するモデルと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ハフモデル",
+        "商圏",
+        "立地",
+        "確率モデル"
+      ],
+      "common_mistakes": [
+        "ライリーの法則と混同",
+        "距離の影響を無視するモデルと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-011",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "EDI",
       "subtopic": "流通情報システム",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "EDI（Electronic Data Interchange）の主な目的として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "店頭での顧客アンケート結果をリアルタイムに集計する", "is_correct": false, "explanation": "これはCRMやアンケート集計システムの目的でEDIではない。"},
-        {"id": "B", "text": "企業間の受発注・出荷・請求などの取引文書を、合意した標準フォーマットでコンピュータ間で交換する", "is_correct": true, "explanation": "正解。EDIは企業間取引文書のオンライン交換による効率化が目的。"},
-        {"id": "C", "text": "社内文書を電子化して稟議を回す業務を支援する", "is_correct": false, "explanation": "これはワークフロー・社内文書管理であってEDIではない。"},
-        {"id": "D", "text": "顧客の購買履歴を蓄積し、レコメンドを行う", "is_correct": false, "explanation": "これはレコメンドエンジンやデータマイニングの目的。"}
+        {
+          "id": "A",
+          "text": "店頭での顧客アンケート結果をリアルタイムに集計する",
+          "is_correct": false,
+          "explanation": "これはCRMやアンケート集計システムの目的でEDIではない。"
+        },
+        {
+          "id": "B",
+          "text": "顧客の購買履歴を蓄積し、レコメンドを行う",
+          "is_correct": false,
+          "explanation": "これはレコメンドエンジンやデータマイニングの目的。"
+        },
+        {
+          "id": "C",
+          "text": "企業間の受発注・出荷・請求などの取引文書を、合意した標準フォーマットでコンピュータ間で交換する",
+          "is_correct": true,
+          "explanation": "正解。EDIは企業間取引文書のオンライン交換による効率化が目的。"
+        },
+        {
+          "id": "D",
+          "text": "社内文書を電子化して稟議を回す業務を支援する",
+          "is_correct": false,
+          "explanation": "これはワークフロー・社内文書管理であってEDIではない。"
+        }
       ],
       "explanation": "EDIは標準化された電文（EDIFACT、JEDICOS、流通BMS等）で企業間の取引文書を電子的に交換する仕組み。FAXや紙伝票を不要にし、リードタイム短縮・転記ミス削減・コスト削減を実現する。インターネットEDIへの移行（流通BMS等）が進んでいる。",
       "references": [
-        {"title": "GS1 Japan 流通BMS", "url": "https://www.gs1jp.org/"}
+        {
+          "title": "GS1 Japan 流通BMS",
+          "url": "https://www.gs1jp.org/"
+        }
       ],
-      "tags": ["EDI", "B2B", "標準化", "流通BMS"],
-      "common_mistakes": ["EDIを社内文書システムと誤解", "EDIとEC（B2C）を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "EDI",
+        "B2B",
+        "標準化",
+        "流通BMS"
+      ],
+      "common_mistakes": [
+        "EDIを社内文書システムと誤解",
+        "EDIとEC（B2C）を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-012",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "EOQ",
       "subtopic": "経済的発注量",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業の年間需要量が10,000個、1回あたり発注費用が2,000円、1個あたり年間在庫保管費が100円であるとき、EOQ（経済的発注量）として最も近い値はどれか。",
       "options": [
-        {"id": "A", "text": "200個", "is_correct": false, "explanation": "計算誤り。EOQ＝√(2DS/H)＝√(2×10000×2000/100)＝√400000≒632。200個は過小。"},
-        {"id": "B", "text": "632個", "is_correct": true, "explanation": "正解。EOQ＝√(2×10000×2000/100)＝√400000≒632.5≒632個。"},
-        {"id": "C", "text": "1,000個", "is_correct": false, "explanation": "DSのみを用いて平方根を取らずに計算した誤りなど。EOQ式の適用ミス。"},
-        {"id": "D", "text": "1,414個", "is_correct": false, "explanation": "保管費を10円と誤った場合の値。Hが100円なので正しい計算はおおよそ632。"}
+        {
+          "id": "A",
+          "text": "1,000個",
+          "is_correct": false,
+          "explanation": "DSのみを用いて平方根を取らずに計算した誤りなど。EOQ式の適用ミス。"
+        },
+        {
+          "id": "B",
+          "text": "200個",
+          "is_correct": false,
+          "explanation": "計算誤り。EOQ＝√(2DS/H)＝√(2×10000×2000/100)＝√400000≒632。200個は過小。"
+        },
+        {
+          "id": "C",
+          "text": "1,414個",
+          "is_correct": false,
+          "explanation": "保管費を10円と誤った場合の値。Hが100円なので正しい計算はおおよそ632。"
+        },
+        {
+          "id": "D",
+          "text": "632個",
+          "is_correct": true,
+          "explanation": "正解。EOQ＝√(2×10000×2000/100)＝√400000≒632.5≒632個。"
+        }
       ],
       "explanation": "EOQ（Economic Order Quantity）はWilson式 Q*＝√(2DS/H) で計算する。D=年間需要、S=1回あたり発注費、H=1個あたり年間保管費。発注費と保管費の合計コストを最小化する発注ロットサイズで、定量発注方式の発注量設定の基本となる。",
       "references": [
-        {"title": "JIS Z 8141 発注方式", "url": "https://www.jisc.go.jp/"}
+        {
+          "title": "JIS Z 8141 発注方式",
+          "url": "https://www.jisc.go.jp/"
+        }
       ],
-      "tags": ["EOQ", "Wilson式", "在庫管理", "計算"],
-      "common_mistakes": ["平方根を取り忘れる", "分子分母を取り違える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "EOQ",
+        "Wilson式",
+        "在庫管理",
+        "計算"
+      ],
+      "common_mistakes": [
+        "平方根を取り忘れる",
+        "分子分母を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-013",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "発注方式",
       "subtopic": "定量発注と定期発注",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の機械部品メーカーがABC分析でAランクと判定された主要部品の発注方式を検討している。需要が比較的安定しているが金額が大きく、欠品が許されない。最も適切な発注方式はどれか。",
+      "stem": "ある機械部品メーカーがABC分析でAランクと判定された主要部品の発注方式を検討している。需要が比較的安定しているが金額が大きく、欠品が許されない。最も適切な発注方式はどれか。",
       "options": [
-        {"id": "A", "text": "ダブルビン法（簡易な二棚法）で運用する", "is_correct": false, "explanation": "ダブルビン法は管理が容易だがCランク向け。Aランク品目には精度不足。"},
-        {"id": "B", "text": "発注点をROP＝平均需要×LT＋安全在庫として、発注量はEOQで一定とする定量発注方式", "is_correct": true, "explanation": "正解。需要が安定し金額が大きいAランクには、実在庫管理しROPで発注する定量発注が一般的に適合する。"},
-        {"id": "C", "text": "需要予測を行わず、過去の経験で大量にまとめ発注する", "is_correct": false, "explanation": "金額の大きいAランクで経験頼みの大量発注は過剰在庫リスクが高く、不適切。"},
-        {"id": "D", "text": "発注量を毎回需要予測から再計算するMRPは使わず、すべて目分量で発注する", "is_correct": false, "explanation": "目分量はAランクの管理水準に合わない。"}
+        {
+          "id": "A",
+          "text": "発注点をROP＝平均需要×LT＋安全在庫として、発注量はEOQで一定とする定量発注方式",
+          "is_correct": true,
+          "explanation": "正解。需要が安定し金額が大きいAランクには、実在庫管理しROPで発注する定量発注が一般的に適合する。"
+        },
+        {
+          "id": "B",
+          "text": "発注量を毎回需要予測から再計算するMRPは使わず、すべて目分量で発注する",
+          "is_correct": false,
+          "explanation": "目分量はAランクの管理水準に合わない。"
+        },
+        {
+          "id": "C",
+          "text": "ダブルビン法（簡易な二棚法）で運用する",
+          "is_correct": false,
+          "explanation": "ダブルビン法は管理が容易だがCランク向け。Aランク品目には精度不足。"
+        },
+        {
+          "id": "D",
+          "text": "需要予測を行わず、過去の経験で大量にまとめ発注する",
+          "is_correct": false,
+          "explanation": "金額の大きいAランクで経験頼みの大量発注は過剰在庫リスクが高く、不適切。"
+        }
       ],
       "explanation": "Aランク品目は金額構成比が高いため、実在庫を継続把握する定量発注（または高度な定期発注）が適する。需要が安定していればEOQが活きる。Cランクなど低額・低重要度の品目はダブルビン法等の簡易管理に切り替えて管理工数を削減するのがABC分析の趣旨。",
       "references": [
-        {"title": "JIS Z 8141 在庫管理", "url": "https://www.jisc.go.jp/"}
+        {
+          "title": "JIS Z 8141 在庫管理",
+          "url": "https://www.jisc.go.jp/"
+        }
       ],
-      "tags": ["定量発注", "ABC分析", "ROP", "EOQ"],
-      "common_mistakes": ["AランクにダブルビンなどCランク向け簡易方式を当てる", "需要安定性とランクを無関係に扱う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "定量発注",
+        "ABC分析",
+        "ROP",
+        "EOQ"
+      ],
+      "common_mistakes": [
+        "AランクにダブルビンなどCランク向け簡易方式を当てる",
+        "需要安定性とランクを無関係に扱う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-014",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "工程管理",
       "subtopic": "ガントチャート",
       "cognitive_level": "L3-Apply",
       "difficulty": "easy",
       "stem": "ある中小製造業がガントチャートを工程管理に導入した。ガントチャートが特に優れている点として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "作業間の依存関係（先行・後続）を厳密に表現できる", "is_correct": false, "explanation": "依存関係の表現はPERT/CPMの強み。ガントチャートは依存関係表現が弱い。"},
-        {"id": "B", "text": "各作業の予定と実績を時間軸上の棒で並べて、進捗の遅れを直感的に把握できる", "is_correct": true, "explanation": "正解。ガントチャートは予定と実績の比較・進捗可視化に強い。"},
-        {"id": "C", "text": "クリティカルパスを自動的に特定できる", "is_correct": false, "explanation": "CPの特定はPERT/CPMの計算で行う。ガントチャート単体ではCPは出ない。"},
-        {"id": "D", "text": "資源平準化（リソースレベリング）を厳密な最適化計算で行える", "is_correct": false, "explanation": "資源平準化はガントを補助的に使えるが、最適化計算自体はチャートの機能ではない。"}
+        {
+          "id": "A",
+          "text": "作業間の依存関係（先行・後続）を厳密に表現できる",
+          "is_correct": false,
+          "explanation": "依存関係の表現はPERT/CPMの強み。ガントチャートは依存関係表現が弱い。"
+        },
+        {
+          "id": "B",
+          "text": "各作業の予定と実績を時間軸上の棒で並べて、進捗の遅れを直感的に把握できる",
+          "is_correct": true,
+          "explanation": "正解。ガントチャートは予定と実績の比較・進捗可視化に強い。"
+        },
+        {
+          "id": "C",
+          "text": "クリティカルパスを自動的に特定できる",
+          "is_correct": false,
+          "explanation": "CPの特定はPERT/CPMの計算で行う。ガントチャート単体ではCPは出ない。"
+        },
+        {
+          "id": "D",
+          "text": "資源平準化（リソースレベリング）を厳密な最適化計算で行える",
+          "is_correct": false,
+          "explanation": "資源平準化はガントを補助的に使えるが、最適化計算自体はチャートの機能ではない。"
+        }
       ],
       "explanation": "ガントチャートはHenry Ganttが考案した時間軸の棒グラフで、進捗管理・予実比較に強い反面、作業間依存関係の表現に弱い。複雑な依存関係を持つプロジェクトではPERT/CPMと併用するのが一般的。中小規模の工程管理ではガント単体でも十分実務に耐える。",
       "references": [
-        {"title": "JIS Z 8141 工程管理", "url": "https://www.jisc.go.jp/"}
+        {
+          "title": "JIS Z 8141 工程管理",
+          "url": "https://www.jisc.go.jp/"
+        }
       ],
-      "tags": ["ガントチャート", "工程管理", "進捗管理"],
-      "common_mistakes": ["ガントとPERTの強み弱みを混同", "ガントでCPを直接読めると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ガントチャート",
+        "工程管理",
+        "進捗管理"
+      ],
+      "common_mistakes": [
+        "ガントとPERTの強み弱みを混同",
+        "ガントでCPを直接読めると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-015",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "ライン生産",
       "subtopic": "ラインバランシング",
       "cognitive_level": "L3-Apply",
       "difficulty": "hard",
       "stem": "あるライン生産工程でサイクルタイム60秒、各作業ステーションの作業時間合計が240秒、ステーション数が5である。このラインの編成効率（ラインバランス効率）として最も近い値はどれか。",
       "options": [
-        {"id": "A", "text": "60%", "is_correct": false, "explanation": "計算誤り。編成効率＝作業時間合計／(ステーション数×サイクルタイム)＝240/(5×60)＝80%。"},
-        {"id": "B", "text": "70%", "is_correct": false, "explanation": "計算誤り。240/300＝80%が正しい。"},
-        {"id": "C", "text": "80%", "is_correct": true, "explanation": "正解。編成効率＝240/(5×60)＝240/300＝0.8＝80%。バランスロスは20%。"},
-        {"id": "D", "text": "100%", "is_correct": false, "explanation": "ロスがゼロの完全バランス時のみ100%。実態として240/300＝80%なので不正解。"}
+        {
+          "id": "A",
+          "text": "100%",
+          "is_correct": false,
+          "explanation": "ロスがゼロの完全バランス時のみ100%。実態として240/300＝80%なので不正解。"
+        },
+        {
+          "id": "B",
+          "text": "60%",
+          "is_correct": false,
+          "explanation": "計算誤り。編成効率＝作業時間合計／(ステーション数×サイクルタイム)＝240/(5×60)＝80%。"
+        },
+        {
+          "id": "C",
+          "text": "80%",
+          "is_correct": true,
+          "explanation": "正解。編成効率＝240/(5×60)＝240/300＝0.8＝80%。バランスロスは20%。"
+        },
+        {
+          "id": "D",
+          "text": "70%",
+          "is_correct": false,
+          "explanation": "計算誤り。240/300＝80%が正しい。"
+        }
       ],
       "explanation": "ライン編成効率＝Σ作業時間／(ステーション数×サイクルタイム)。残りはバランスロスで、ピッチダイアグラムを用いて作業の再配分（ラインバランシング）を行うことで効率を改善する。サイクルタイムは需要レート（タクト）から決定されることが多い。",
       "references": [
-        {"title": "JIS Z 8141 生産管理用語", "url": "https://www.jisc.go.jp/"}
+        {
+          "title": "JIS Z 8141 生産管理用語",
+          "url": "https://www.jisc.go.jp/"
+        }
       ],
-      "tags": ["ライン生産", "編成効率", "ラインバランシング", "計算"],
-      "common_mistakes": ["分母にステーション数を掛けるのを忘れる", "サイクルタイムと作業時間平均を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ライン生産",
+        "編成効率",
+        "ラインバランシング",
+        "計算"
+      ],
+      "common_mistakes": [
+        "分母にステーション数を掛けるのを忘れる",
+        "サイクルタイムと作業時間平均を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-016",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "六シグマ",
       "subtopic": "DMAIC",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "シックスシグマのDMAICサイクルにおいて、特定された原因に対する対策案を立案・試行検証するフェーズはどれか。",
       "options": [
-        {"id": "A", "text": "Define（定義）", "is_correct": false, "explanation": "Defineは課題・スコープ・顧客要求の定義フェーズ。対策立案ではない。"},
-        {"id": "B", "text": "Measure（測定）", "is_correct": false, "explanation": "Measureは現状データの収集・測定フェーズ。"},
-        {"id": "C", "text": "Improve（改善）", "is_correct": true, "explanation": "正解。Analyzeで特定した原因に対し、改善案を立案・実験検証するのがImprove。"},
-        {"id": "D", "text": "Control（管理）", "is_correct": false, "explanation": "Controlは改善後の状態を維持するための標準化・管理体制構築フェーズ。"}
+        {
+          "id": "A",
+          "text": "Measure（測定）",
+          "is_correct": false,
+          "explanation": "Measureは現状データの収集・測定フェーズ。"
+        },
+        {
+          "id": "B",
+          "text": "Define（定義）",
+          "is_correct": false,
+          "explanation": "Defineは課題・スコープ・顧客要求の定義フェーズ。対策立案ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Control（管理）",
+          "is_correct": false,
+          "explanation": "Controlは改善後の状態を維持するための標準化・管理体制構築フェーズ。"
+        },
+        {
+          "id": "D",
+          "text": "Improve（改善）",
+          "is_correct": true,
+          "explanation": "正解。Analyzeで特定した原因に対し、改善案を立案・実験検証するのがImprove。"
+        }
       ],
       "explanation": "DMAIC（Define-Measure-Analyze-Improve-Control）はシックスシグマの問題解決フレーム。Improveでは仮説検証実験（DOEなど）を通じて対策の効果を確認し、Controlで管理図やマニュアルを通じて成果を定着させる。",
       "references": [
-        {"title": "ASQ Six Sigma DMAIC", "url": "https://asq.org/quality-resources/six-sigma"}
+        {
+          "title": "ASQ Six Sigma DMAIC",
+          "url": "https://asq.org/quality-resources/six-sigma"
+        }
       ],
-      "tags": ["シックスシグマ", "DMAIC", "品質管理"],
-      "common_mistakes": ["AnalyzeとImproveの境界を曖昧にする", "ImproveとControlを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "シックスシグマ",
+        "DMAIC",
+        "品質管理"
+      ],
+      "common_mistakes": [
+        "AnalyzeとImproveの境界を曖昧にする",
+        "ImproveとControlを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-017",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "ISO9001",
       "subtopic": "品質マネジメントシステム",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ISO9001（品質マネジメントシステム）の特徴として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "製品ごとに性能基準を定めた製品認証規格である", "is_correct": false, "explanation": "ISO9001は製品認証ではなくマネジメントシステム認証。製品性能を直接定義しない。"},
-        {"id": "B", "text": "プロセスアプローチとPDCAに基づく品質マネジメントシステムの要求事項を定めた国際規格である", "is_correct": true, "explanation": "正解。プロセスアプローチ・リスクベース思考・PDCAが基本骨格。"},
-        {"id": "C", "text": "環境マネジメントシステムを規定した規格で、CO2排出基準を定めている", "is_correct": false, "explanation": "それはISO14001の範疇。9001は品質マネジメント。"},
-        {"id": "D", "text": "情報セキュリティのマネジメント要求事項を定めた規格である", "is_correct": false, "explanation": "それはISO/IEC27001。9001は品質マネジメント。"}
+        {
+          "id": "A",
+          "text": "プロセスアプローチとPDCAに基づく品質マネジメントシステムの要求事項を定めた国際規格である",
+          "is_correct": true,
+          "explanation": "正解。プロセスアプローチ・リスクベース思考・PDCAが基本骨格。"
+        },
+        {
+          "id": "B",
+          "text": "情報セキュリティのマネジメント要求事項を定めた規格である",
+          "is_correct": false,
+          "explanation": "それはISO/IEC27001。9001は品質マネジメント。"
+        },
+        {
+          "id": "C",
+          "text": "環境マネジメントシステムを規定した規格で、CO2排出基準を定めている",
+          "is_correct": false,
+          "explanation": "それはISO14001の範疇。9001は品質マネジメント。"
+        },
+        {
+          "id": "D",
+          "text": "製品ごとに性能基準を定めた製品認証規格である",
+          "is_correct": false,
+          "explanation": "ISO9001は製品認証ではなくマネジメントシステム認証。製品性能を直接定義しない。"
+        }
       ],
       "explanation": "ISO9001はQMSの国際規格で、顧客満足の継続的向上を目的に、組織のプロセスを定義しPDCAで運用・改善することを要求する。2015年版以降はリスクベース思考が明示的に取り入れられている。製品そのものの品質を保証するのではなく、品質を生む仕組みを保証する点に注意。",
       "references": [
-        {"title": "ISO 9001 品質マネジメントシステム", "url": "https://www.iso.org/iso-9001-quality-management.html"}
+        {
+          "title": "ISO 9001 品質マネジメントシステム",
+          "url": "https://www.iso.org/iso-9001-quality-management.html"
+        }
       ],
-      "tags": ["ISO9001", "QMS", "PDCA", "プロセスアプローチ"],
-      "common_mistakes": ["製品認証と勘違いする", "ISO14001/27001と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ISO9001",
+        "QMS",
+        "PDCA",
+        "プロセスアプローチ"
+      ],
+      "common_mistakes": [
+        "製品認証と勘違いする",
+        "ISO14001/27001と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-018",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "TQM",
       "subtopic": "全社的品質管理",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "TQM（Total Quality Management）の特徴として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "品質保証部門のみが品質責任を負う、専門組織主導の活動である", "is_correct": false, "explanation": "TQMはむしろ全部門・全階層が品質に関わる「全員参加」が本質。"},
-        {"id": "B", "text": "経営トップから現場までの全部門・全階層が、顧客視点の品質を継続的に向上させる経営手法である", "is_correct": true, "explanation": "正解。TQMは全社的・継続的・顧客志向の3点が核。"},
-        {"id": "C", "text": "事後検査で不良品を発見・除去することに専念する活動である", "is_correct": false, "explanation": "TQMは検査依存ではなく、源流での品質作り込みを重視する。"},
-        {"id": "D", "text": "ISO9001の認証取得を最終ゴールとする外部認証主体の活動である", "is_correct": false, "explanation": "ISO認証は手段であり、TQMの目的ではない。"}
+        {
+          "id": "A",
+          "text": "品質保証部門のみが品質責任を負う、専門組織主導の活動である",
+          "is_correct": false,
+          "explanation": "TQMはむしろ全部門・全階層が品質に関わる「全員参加」が本質。"
+        },
+        {
+          "id": "B",
+          "text": "経営トップから現場までの全部門・全階層が、顧客視点の品質を継続的に向上させる経営手法である",
+          "is_correct": true,
+          "explanation": "正解。TQMは全社的・継続的・顧客志向の3点が核。"
+        },
+        {
+          "id": "C",
+          "text": "事後検査で不良品を発見・除去することに専念する活動である",
+          "is_correct": false,
+          "explanation": "TQMは検査依存ではなく、源流での品質作り込みを重視する。"
+        },
+        {
+          "id": "D",
+          "text": "ISO9001の認証取得を最終ゴールとする外部認証主体の活動である",
+          "is_correct": false,
+          "explanation": "ISO認証は手段であり、TQMの目的ではない。"
+        }
       ],
       "explanation": "TQMは日本発祥のTQC（全社的品質管理）が国際的に発展した経営手法。「顧客指向」「全員参加」「継続的改善（カイゼン）」を3本柱とし、QCサークルや方針管理を活用して全社で品質経営を推進する。デミング賞の評価軸でもある。",
       "references": [
-        {"title": "日本品質管理学会 TQM", "url": "https://www.jsqc.org/"}
+        {
+          "title": "日本品質管理学会 TQM",
+          "url": "https://www.jsqc.org/"
+        }
       ],
-      "tags": ["TQM", "全員参加", "継続的改善", "顧客志向"],
-      "common_mistakes": ["TQMを検査主義と誤解", "TQMをISO取得と同一視"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "TQM",
+        "全員参加",
+        "継続的改善",
+        "顧客志向"
+      ],
+      "common_mistakes": [
+        "TQMを検査主義と誤解",
+        "TQMをISO取得と同一視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-019",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "POSシステム",
       "subtopic": "活用",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "ある食品スーパー（東海地方のドミナント展開）が、POSデータをマーチャンダイジングに活用したい。POSデータの特性として最も適切な記述はどれか。",
+      "stem": "ある食品スーパー（ドミナント展開）が、POSデータをマーチャンダイジングに活用したい。POSデータの特性として最も適切な記述はどれか。",
       "options": [
-        {"id": "A", "text": "誰が買ったか（顧客属性）まで自動的に把握できる", "is_correct": false, "explanation": "POS単独では顧客属性は分からない。FSP（会員カード）と連動して初めて取得できる。"},
-        {"id": "B", "text": "何が・いつ・いくつ・いくらで売れたかをアイテム単位で集計できる、単品管理の基礎データである", "is_correct": true, "explanation": "正解。POSの本質は単品（SKU）レベルの販売実績把握による意思決定支援。"},
-        {"id": "C", "text": "店舗在庫の盗難・紛失（ロス）まで自動的に記録される", "is_correct": false, "explanation": "POSは販売記録。棚卸しと突き合わせなければロスは把握できない。"},
-        {"id": "D", "text": "競合他店の販売データも自動収集できる", "is_correct": false, "explanation": "POSは自店データのみ。競合データの取得は別途必要。"}
+        {
+          "id": "A",
+          "text": "誰が買ったか（顧客属性）まで自動的に把握できる",
+          "is_correct": false,
+          "explanation": "POS単独では顧客属性は分からない。FSP（会員カード）と連動して初めて取得できる。"
+        },
+        {
+          "id": "B",
+          "text": "競合他店の販売データも自動収集できる",
+          "is_correct": false,
+          "explanation": "POSは自店データのみ。競合データの取得は別途必要。"
+        },
+        {
+          "id": "C",
+          "text": "何が・いつ・いくつ・いくらで売れたかをアイテム単位で集計できる、単品管理の基礎データである",
+          "is_correct": true,
+          "explanation": "正解。POSの本質は単品（SKU）レベルの販売実績把握による意思決定支援。"
+        },
+        {
+          "id": "D",
+          "text": "店舗在庫の盗難・紛失（ロス）まで自動的に記録される",
+          "is_correct": false,
+          "explanation": "POSは販売記録。棚卸しと突き合わせなければロスは把握できない。"
+        }
       ],
       "explanation": "POS（Point of Sales）は販売時点情報管理システムで、JANコードを通じて単品レベルの販売実績を即時把握できる。これによりABC分析、棚割の見直し、欠品防止、発注精度向上などのマーチャンダイジング高度化が可能になる。顧客属性把握にはFSP（ロイヤルティプログラム）の併用が必要。",
       "references": [
-        {"title": "経済産業省 流通情報システム化", "url": "https://www.meti.go.jp/policy/distribution/"}
+        {
+          "title": "経済産業省 流通情報システム化",
+          "url": "https://www.meti.go.jp/policy/distribution/"
+        }
       ],
-      "tags": ["POS", "単品管理", "マーチャンダイジング", "FSP"],
-      "common_mistakes": ["POSだけで顧客属性が取れると誤解", "POSがロスも自動記録すると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "POS",
+        "単品管理",
+        "マーチャンダイジング",
+        "FSP"
+      ],
+      "common_mistakes": [
+        "POSだけで顧客属性が取れると誤解",
+        "POSがロスも自動記録すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-020",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "店舗設計",
       "subtopic": "売場レイアウト",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "セルフサービス型のスーパーマーケットの売場レイアウトに関する記述として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "高頻度購買品（牛乳・パン等）を入口正面に集中配置し、客動線を短くする", "is_correct": false, "explanation": "高頻度品は店内奥や対角線上に分散配置し、店内回遊を促すのが定石。入口集中はワンストップで帰られてしまう。"},
-        {"id": "B", "text": "高頻度購買品を店内の異なる位置に分散配置することで店内回遊を促し、ついで買いの機会を作る", "is_correct": true, "explanation": "正解。マグネット商品を分散配置することで動線を伸ばし買上点数を増やすのが基本戦略。"},
-        {"id": "C", "text": "売れ筋を店内最奥にのみまとめて配置し、レジ近辺は通路だけにする", "is_correct": false, "explanation": "「最奥にのみ」は極端。レジ近辺はレジ前商品（ゴンドラエンド・関連購買）の重要ゾーン。"},
-        {"id": "D", "text": "通路幅は固定値が義務付けられており、店ごとの工夫の余地はない", "is_correct": false, "explanation": "通路幅は法令上の最低限を満たせば店舗特性で設計可能。義務固定ではない。"}
+        {
+          "id": "A",
+          "text": "売れ筋を店内最奥にのみまとめて配置し、レジ近辺は通路だけにする",
+          "is_correct": false,
+          "explanation": "「最奥にのみ」は極端。レジ近辺はレジ前商品（ゴンドラエンド・関連購買）の重要ゾーン。"
+        },
+        {
+          "id": "B",
+          "text": "高頻度購買品（牛乳・パン等）を入口正面に集中配置し、客動線を短くする",
+          "is_correct": false,
+          "explanation": "高頻度品は店内奥や対角線上に分散配置し、店内回遊を促すのが定石。入口集中はワンストップで帰られてしまう。"
+        },
+        {
+          "id": "C",
+          "text": "通路幅は固定値が義務付けられており、店ごとの工夫の余地はない",
+          "is_correct": false,
+          "explanation": "通路幅は法令上の最低限を満たせば店舗特性で設計可能。義務固定ではない。"
+        },
+        {
+          "id": "D",
+          "text": "高頻度購買品を店内の異なる位置に分散配置することで店内回遊を促し、ついで買いの機会を作る",
+          "is_correct": true,
+          "explanation": "正解。マグネット商品を分散配置することで動線を伸ばし買上点数を増やすのが基本戦略。"
+        }
       ],
       "explanation": "セルフサービス型店舗ではマグネット商品（高頻度購買品・特売品）を売場の異なる位置に分散配置することで、客動線を意図的に長くし、買上点数（ピックアップ数）を増やす。レイアウトはワンウェイコントロール型・対面販売型などのフォーマットに応じて設計される。",
       "references": [
-        {"title": "日本リテイリングセンター 店舗レイアウト", "url": "https://www.nrc-japan.com/"}
+        {
+          "title": "日本リテイリングセンター 店舗レイアウト",
+          "url": "https://www.nrc-japan.com/"
+        }
       ],
-      "tags": ["店舗設計", "売場レイアウト", "マグネット", "客動線"],
-      "common_mistakes": ["高頻度品を入口集中して動線を短縮するのが効率的と誤解", "レジ近辺の関連購買機会を軽視"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "店舗設計",
+        "売場レイアウト",
+        "マグネット",
+        "客動線"
+      ],
+      "common_mistakes": [
+        "高頻度品を入口集中して動線を短縮するのが効率的と誤解",
+        "レジ近辺の関連購買機会を軽視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-021",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "価格設定",
       "subtopic": "ロスリーダー",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "小売店が「ロスリーダー」として特定商品を原価割れ近い価格で販売する戦略の意図と注意点として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "全商品を一律に安く売るEDLP戦略の同義語であり、関連購買は考慮しない", "is_correct": false, "explanation": "EDLPは恒常低価格戦略でロスリーダーとは別概念。ロスリーダーは特定品の集客目的。"},
-        {"id": "B", "text": "集客の強い目玉商品を安く提示し、来店した顧客の関連購買・ついで買いで全体収益を確保する戦略であり、不当廉売規制（独禁法）への留意が必要", "is_correct": true, "explanation": "正解。集客効果と全体マージン確保が狙いだが、競争阻害目的の不当廉売は独禁法上問題となる。"},
-        {"id": "C", "text": "在庫過多商品を投売りで処分する活動と同じで、戦略的意図は持たない", "is_correct": false, "explanation": "在庫処分（マークダウン）はロスリーダー戦略とは異なる。ロスリーダーは事前に意図された集客戦術。"},
-        {"id": "D", "text": "PB商品の価格を高めに設定し、利益率を押し上げる戦略である", "is_correct": false, "explanation": "PBの価格戦略とは別概念。ロスリーダーはNB特売の典型。"}
+        {
+          "id": "A",
+          "text": "集客の強い目玉商品を安く提示し、来店した顧客の関連購買・ついで買いで全体収益を確保する戦略であり、不当廉売規制（独禁法）への留意が必要",
+          "is_correct": true,
+          "explanation": "正解。集客効果と全体マージン確保が狙いだが、競争阻害目的の不当廉売は独禁法上問題となる。"
+        },
+        {
+          "id": "B",
+          "text": "PB商品の価格を高めに設定し、利益率を押し上げる戦略である",
+          "is_correct": false,
+          "explanation": "PBの価格戦略とは別概念。ロスリーダーはNB特売の典型。"
+        },
+        {
+          "id": "C",
+          "text": "在庫過多商品を投売りで処分する活動と同じで、戦略的意図は持たない",
+          "is_correct": false,
+          "explanation": "在庫処分（マークダウン）はロスリーダー戦略とは異なる。ロスリーダーは事前に意図された集客戦術。"
+        },
+        {
+          "id": "D",
+          "text": "全商品を一律に安く売るEDLP戦略の同義語であり、関連購買は考慮しない",
+          "is_correct": false,
+          "explanation": "EDLPは恒常低価格戦略でロスリーダーとは別概念。ロスリーダーは特定品の集客目的。"
+        }
       ],
       "explanation": "ロスリーダーは特定商品を低利益または原価割れ近い価格に設定し、来店動機を作って関連購買・全体マージンで利益を確保する戦略。一方で、競争事業者排除を目的とした不当廉売は独占禁止法・景品表示法上の問題となるため、運用には注意が必要。",
       "references": [
-        {"title": "公正取引委員会 不当廉売", "url": "https://www.jftc.go.jp/dk/guideline/unyoukijun/futoren.html"}
+        {
+          "title": "公正取引委員会 不当廉売",
+          "url": "https://www.jftc.go.jp/dk/guideline/unyoukijun/futoren.html"
+        }
       ],
-      "tags": ["価格設定", "ロスリーダー", "独禁法", "関連購買"],
-      "common_mistakes": ["EDLPと同一視", "在庫処分のマークダウンと同一視"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "価格設定",
+        "ロスリーダー",
+        "独禁法",
+        "関連購買"
+      ],
+      "common_mistakes": [
+        "EDLPと同一視",
+        "在庫処分のマークダウンと同一視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-022",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "在庫管理",
       "subtopic": "安全在庫",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある製造業で、需要のばらつき（標準偏差）を一定としたまま、リードタイムが2倍になった。安全在庫（サービス率一定）はおよそ何倍になるか。",
       "options": [
-        {"id": "A", "text": "1倍（変わらない）", "is_correct": false, "explanation": "リードタイム延長で需要変動の累積が増えるため、安全在庫は増加する。"},
-        {"id": "B", "text": "√2倍（約1.41倍）", "is_correct": true, "explanation": "正解。安全在庫＝安全係数×σ×√LT。σが一定でLTが2倍なら√2倍となる。"},
-        {"id": "C", "text": "2倍", "is_correct": false, "explanation": "LTに比例（1乗）と誤った場合の値。実際は√LTに比例する。"},
-        {"id": "D", "text": "4倍", "is_correct": false, "explanation": "LTの2乗で増えるという誤解。正しくは√LTに比例。"}
+        {
+          "id": "A",
+          "text": "4倍",
+          "is_correct": false,
+          "explanation": "LTの2乗で増えるという誤解。正しくは√LTに比例。"
+        },
+        {
+          "id": "B",
+          "text": "√2倍（約1.41倍）",
+          "is_correct": true,
+          "explanation": "正解。安全在庫＝安全係数×σ×√LT。σが一定でLTが2倍なら√2倍となる。"
+        },
+        {
+          "id": "C",
+          "text": "1倍（変わらない）",
+          "is_correct": false,
+          "explanation": "リードタイム延長で需要変動の累積が増えるため、安全在庫は増加する。"
+        },
+        {
+          "id": "D",
+          "text": "2倍",
+          "is_correct": false,
+          "explanation": "LTに比例（1乗）と誤った場合の値。実際は√LTに比例する。"
+        }
       ],
       "explanation": "安全在庫の標準式は SS＝Z×σd×√LT（Zは安全係数、σdは需要の標準偏差、LTはリードタイム）。需要変動の累積は分散がLTに比例するため、標準偏差は√LTに比例する。LT短縮は安全在庫削減の強力なレバーであり、サプライチェーン改善で重視される所以である。",
       "references": [
-        {"title": "JIS Z 8141 在庫管理", "url": "https://www.jisc.go.jp/"}
+        {
+          "title": "JIS Z 8141 在庫管理",
+          "url": "https://www.jisc.go.jp/"
+        }
       ],
-      "tags": ["安全在庫", "リードタイム", "計算", "在庫管理"],
-      "common_mistakes": ["LTに線形比例と誤る", "LT短縮の効果を過小評価"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "安全在庫",
+        "リードタイム",
+        "計算",
+        "在庫管理"
+      ],
+      "common_mistakes": [
+        "LTに線形比例と誤る",
+        "LT短縮の効果を過小評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-023",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "TPS",
       "subtopic": "7つのムダ",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "TPSにおける「7つのムダ」のうち、他のムダの根源と位置づけられ、最も削減すべきとされるムダはどれか。",
       "options": [
-        {"id": "A", "text": "運搬のムダ", "is_correct": false, "explanation": "運搬のムダは重要だが、最も根源的とまでは位置付けられない。"},
-        {"id": "B", "text": "つくりすぎのムダ（過剰生産）", "is_correct": true, "explanation": "正解。つくりすぎは在庫・運搬・手直し等の他のムダを誘発するため最大の悪と位置づけられる。"},
-        {"id": "C", "text": "手待ちのムダ", "is_correct": false, "explanation": "手待ちのムダも7つのムダの一つだが、根源とは位置付けられない。"},
-        {"id": "D", "text": "動作のムダ", "is_correct": false, "explanation": "動作のムダはIE的改善対象。根源ムダはつくりすぎとされる。"}
+        {
+          "id": "A",
+          "text": "運搬のムダ",
+          "is_correct": false,
+          "explanation": "運搬のムダは重要だが、最も根源的とまでは位置付けられない。"
+        },
+        {
+          "id": "B",
+          "text": "動作のムダ",
+          "is_correct": false,
+          "explanation": "動作のムダはIE的改善対象。根源ムダはつくりすぎとされる。"
+        },
+        {
+          "id": "C",
+          "text": "つくりすぎのムダ（過剰生産）",
+          "is_correct": true,
+          "explanation": "正解。つくりすぎは在庫・運搬・手直し等の他のムダを誘発するため最大の悪と位置づけられる。"
+        },
+        {
+          "id": "D",
+          "text": "手待ちのムダ",
+          "is_correct": false,
+          "explanation": "手待ちのムダも7つのムダの一つだが、根源とは位置付けられない。"
+        }
       ],
       "explanation": "TPSでは7つのムダ（つくりすぎ・手待ち・運搬・加工そのもの・在庫・動作・不良/手直し）の中で、特に「つくりすぎのムダ」は他のムダ（在庫・運搬・手直し発生機会）を誘発する根源とされる。これがJITとプル生産（かんばん）が追求される本質的理由である。",
       "references": [
-        {"title": "トヨタ生産方式 7つのムダ", "url": "https://global.toyota/jp/company/vision-and-philosophy/production-system/"}
+        {
+          "title": "トヨタ生産方式 7つのムダ",
+          "url": "https://global.toyota/jp/company/vision-and-philosophy/production-system/"
+        }
       ],
-      "tags": ["TPS", "7つのムダ", "つくりすぎ", "JIT"],
-      "common_mistakes": ["在庫のムダを根源と取り違える", "動作のムダを最重要と誤る"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "TPS",
+        "7つのムダ",
+        "つくりすぎ",
+        "JIT"
+      ],
+      "common_mistakes": [
+        "在庫のムダを根源と取り違える",
+        "動作のムダを最重要と誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-024",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "物流管理",
       "subtopic": "DC・TC",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "物流センターのうち、入荷した商品を在庫保管せず、仕分け・積み替えを行って即時出荷する形態の名称として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "DC（Distribution Center / 在庫型物流センター）", "is_correct": false, "explanation": "DCは在庫を保管しピッキングして出荷する形態で、即時通過型ではない。"},
-        {"id": "B", "text": "TC（Transfer Center / 通過型物流センター）", "is_correct": true, "explanation": "正解。TCは在庫を持たず仕分け・クロスドックで通過させる形態。"},
-        {"id": "C", "text": "PC（Process Center / 加工型物流センター）", "is_correct": false, "explanation": "PCは加工機能を備えた物流センター。通過型の同義ではない。"},
-        {"id": "D", "text": "FC（Fulfillment Center / 通販物流センター）", "is_correct": false, "explanation": "FCは通販向けピッキングを行う物流拠点で、在庫型に近い。"}
+        {
+          "id": "A",
+          "text": "DC（Distribution Center / 在庫型物流センター）",
+          "is_correct": false,
+          "explanation": "DCは在庫を保管しピッキングして出荷する形態で、即時通過型ではない。"
+        },
+        {
+          "id": "B",
+          "text": "FC（Fulfillment Center / 通販物流センター）",
+          "is_correct": false,
+          "explanation": "FCは通販向けピッキングを行う物流拠点で、在庫型に近い。"
+        },
+        {
+          "id": "C",
+          "text": "PC（Process Center / 加工型物流センター）",
+          "is_correct": false,
+          "explanation": "PCは加工機能を備えた物流センター。通過型の同義ではない。"
+        },
+        {
+          "id": "D",
+          "text": "TC（Transfer Center / 通過型物流センター）",
+          "is_correct": true,
+          "explanation": "正解。TCは在庫を持たず仕分け・クロスドックで通過させる形態。"
+        }
       ],
       "explanation": "物流センターはDC（在庫型）、TC（通過型・クロスドック）、PC（流通加工型）、FC（フルフィルメント型）等に分類される。TCは在庫を持たないためサイクルタイムが短く、コンビニや特売対応で多用される。チェーン本部の発注情報とTCの仕分けは流通BMSなどEDIで連携する。",
       "references": [
-        {"title": "日本ロジスティクスシステム協会 物流センター類型", "url": "https://www.logistics.or.jp/"}
+        {
+          "title": "日本ロジスティクスシステム協会 物流センター類型",
+          "url": "https://www.logistics.or.jp/"
+        }
       ],
-      "tags": ["物流", "TC", "DC", "クロスドック"],
-      "common_mistakes": ["DCとTCの違いを取り違える", "FCをTCと混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "物流",
+        "TC",
+        "DC",
+        "クロスドック"
+      ],
+      "common_mistakes": [
+        "DCとTCの違いを取り違える",
+        "FCをTCと混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-025",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "SCM",
       "subtopic": "ブルウィップ効果",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "サプライチェーンの上流ほど需要変動が増幅される「ブルウィップ効果」を抑制する施策として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "各層が独自に需要予測し、互いに情報を遮断する", "is_correct": false, "explanation": "情報遮断は局所最適化を招き、ブルウィップを悪化させる。"},
-        {"id": "B", "text": "POSデータなど最終需要情報を上流まで共有し、CPFR等で需要予測と発注計画を協調させる", "is_correct": true, "explanation": "正解。情報共有と協調計画はブルウィップ抑制の王道。"},
-        {"id": "C", "text": "発注ロットをできる限り大きくして発注頻度を下げる", "is_correct": false, "explanation": "大ロット少頻度はバッチ効果でブルウィップを増幅する。"},
-        {"id": "D", "text": "プロモーションによる短期的な需要増を頻繁に仕掛ける", "is_correct": false, "explanation": "頻繁なプロモは価格変動効果でブルウィップを増幅させる典型要因。"}
+        {
+          "id": "A",
+          "text": "POSデータなど最終需要情報を上流まで共有し、CPFR等で需要予測と発注計画を協調させる",
+          "is_correct": true,
+          "explanation": "正解。情報共有と協調計画はブルウィップ抑制の王道。"
+        },
+        {
+          "id": "B",
+          "text": "プロモーションによる短期的な需要増を頻繁に仕掛ける",
+          "is_correct": false,
+          "explanation": "頻繁なプロモは価格変動効果でブルウィップを増幅させる典型要因。"
+        },
+        {
+          "id": "C",
+          "text": "発注ロットをできる限り大きくして発注頻度を下げる",
+          "is_correct": false,
+          "explanation": "大ロット少頻度はバッチ効果でブルウィップを増幅する。"
+        },
+        {
+          "id": "D",
+          "text": "各層が独自に需要予測し、互いに情報を遮断する",
+          "is_correct": false,
+          "explanation": "情報遮断は局所最適化を招き、ブルウィップを悪化させる。"
+        }
       ],
       "explanation": "ブルウィップ効果（鞭効果）は上流ほど需要変動が増幅される現象で、原因は需要予測の独立化・大ロット発注・価格プロモ・配給ゲーム等。対策は情報共有（POS・在庫情報）、CPFR、VMI、EDIによる発注小ロット化、EDLPによる需要平準化など。SCM最適化の基礎概念。",
       "references": [
-        {"title": "Lee, Padmanabhan, Whang ブルウィップ効果", "url": "https://hbr.org/1997/05/the-bullwhip-effect-in-supply-chains"}
+        {
+          "title": "Lee, Padmanabhan, Whang ブルウィップ効果",
+          "url": "https://hbr.org/1997/05/the-bullwhip-effect-in-supply-chains"
+        }
       ],
-      "tags": ["SCM", "ブルウィップ", "情報共有", "CPFR"],
-      "common_mistakes": ["情報遮断による独立予測を最適と誤解", "大ロットがコスト最適と単純化"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "SCM",
+        "ブルウィップ",
+        "情報共有",
+        "CPFR"
+      ],
+      "common_mistakes": [
+        "情報遮断による独立予測を最適と誤解",
+        "大ロットがコスト最適と単純化"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-026",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "マーチャンダイジング",
       "subtopic": "商品構成",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "小売業のマーチャンダイジングにおける「品揃えの幅」と「品揃えの深さ」の関係として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "幅と深さは独立に最大化すべきで、トレードオフは存在しない", "is_correct": false, "explanation": "売場面積・在庫資金は有限であり、幅と深さは典型的なトレードオフ関係にある。"},
-        {"id": "B", "text": "限られた経営資源の下で幅と深さはトレードオフ関係にあり、業態ポジショニング（GMS・SM・専門店等）に応じてバランスを設計する", "is_correct": true, "explanation": "正解。ターゲット顧客と業態に応じて幅広浅型・狭深型のいずれを選ぶか戦略決定する。"},
-        {"id": "C", "text": "専門店は幅広浅型を選ぶのが定石である", "is_correct": false, "explanation": "専門店は逆に「狭深型」を選ぶのが定石。"},
-        {"id": "D", "text": "総合スーパー（GMS）は狭深型を選ぶのが定石である", "is_correct": false, "explanation": "GMSは幅広浅～中深型を選ぶ。狭深型は専門店の典型。"}
+        {
+          "id": "A",
+          "text": "専門店は幅広浅型を選ぶのが定石である",
+          "is_correct": false,
+          "explanation": "専門店は逆に「狭深型」を選ぶのが定石。"
+        },
+        {
+          "id": "B",
+          "text": "限られた経営資源の下で幅と深さはトレードオフ関係にあり、業態ポジショニング（GMS・SM・専門店等）に応じてバランスを設計する",
+          "is_correct": true,
+          "explanation": "正解。ターゲット顧客と業態に応じて幅広浅型・狭深型のいずれを選ぶか戦略決定する。"
+        },
+        {
+          "id": "C",
+          "text": "総合スーパー（GMS）は狭深型を選ぶのが定石である",
+          "is_correct": false,
+          "explanation": "GMSは幅広浅～中深型を選ぶ。狭深型は専門店の典型。"
+        },
+        {
+          "id": "D",
+          "text": "幅と深さは独立に最大化すべきで、トレードオフは存在しない",
+          "is_correct": false,
+          "explanation": "売場面積・在庫資金は有限であり、幅と深さは典型的なトレードオフ関係にある。"
+        }
       ],
       "explanation": "品揃えの幅（カテゴリーの数）と深さ（カテゴリー内のSKU数）はトレードオフ。専門店は狭深型でカテゴリーキラーを目指し、総合スーパーは幅広型でワンストップ性を訴求するなど、業態戦略と整合させる必要がある。カテゴリーマネジメントの基礎概念。",
       "references": [
-        {"title": "日本リテイリングセンター 商品政策", "url": "https://www.nrc-japan.com/"}
+        {
+          "title": "日本リテイリングセンター 商品政策",
+          "url": "https://www.nrc-japan.com/"
+        }
       ],
-      "tags": ["マーチャンダイジング", "品揃え", "業態", "カテゴリーマネジメント"],
-      "common_mistakes": ["専門店とGMSの幅深バランスを逆にする", "幅と深さを独立変数と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "マーチャンダイジング",
+        "品揃え",
+        "業態",
+        "カテゴリーマネジメント"
+      ],
+      "common_mistakes": [
+        "専門店とGMSの幅深バランスを逆にする",
+        "幅と深さを独立変数と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-027",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "QC手法",
       "subtopic": "工程能力指数",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある工程の規格幅が±6、データの標準偏差が2、平均は規格中心と一致している。工程能力指数Cpの値として最も近いものはどれか。",
       "options": [
-        {"id": "A", "text": "0.5（工程能力不足）", "is_correct": false, "explanation": "計算誤り。Cp＝規格幅/(6σ)＝12/(6×2)＝1.0。"},
-        {"id": "B", "text": "1.0（最低限の能力あり）", "is_correct": true, "explanation": "正解。Cp＝(USL−LSL)/(6σ)＝12/12＝1.0。一般に1.33以上が望ましい。"},
-        {"id": "C", "text": "1.5", "is_correct": false, "explanation": "規格幅または標準偏差を取り違えた誤計算。"},
-        {"id": "D", "text": "3.0", "is_correct": false, "explanation": "規格幅12をσ=2でそのまま割った誤計算。6σで割る必要がある。"}
+        {
+          "id": "A",
+          "text": "0.5（工程能力不足）",
+          "is_correct": false,
+          "explanation": "計算誤り。Cp＝規格幅/(6σ)＝12/(6×2)＝1.0。"
+        },
+        {
+          "id": "B",
+          "text": "1.5",
+          "is_correct": false,
+          "explanation": "規格幅または標準偏差を取り違えた誤計算。"
+        },
+        {
+          "id": "C",
+          "text": "1.0（最低限の能力あり）",
+          "is_correct": true,
+          "explanation": "正解。Cp＝(USL−LSL)/(6σ)＝12/12＝1.0。一般に1.33以上が望ましい。"
+        },
+        {
+          "id": "D",
+          "text": "3.0",
+          "is_correct": false,
+          "explanation": "規格幅12をσ=2でそのまま割った誤計算。6σで割る必要がある。"
+        }
       ],
       "explanation": "工程能力指数Cp＝(USL−LSL)/(6σ)で計算する。Cp=1.0は規格幅と6σ幅が一致した最低限の状態（およそ0.27%が規格外）。実務では1.33以上を目標とし、平均ずれを反映するCpkも併用する。Cpは平均が規格中心という前提に注意。",
       "references": [
-        {"title": "JIS Z 8101 統計的品質管理用語", "url": "https://www.jisc.go.jp/"}
+        {
+          "title": "JIS Z 8101 統計的品質管理用語",
+          "url": "https://www.jisc.go.jp/"
+        }
       ],
-      "tags": ["工程能力", "Cp", "計算", "品質管理"],
-      "common_mistakes": ["6σで割るのを忘れる（σで直接割る）", "CpとCpkを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "工程能力",
+        "Cp",
+        "計算",
+        "品質管理"
+      ],
+      "common_mistakes": [
+        "6σで割るのを忘れる（σで直接割る）",
+        "CpとCpkを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-028",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "販売促進",
       "subtopic": "FSP・CRM",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ある中堅スーパーがFSP（Frequent Shoppers Program）を活用したCRM施策を強化したい。FSPの本質的な価値として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "全顧客に均一の割引を提供することで、店舗の集客力を高める", "is_correct": false, "explanation": "全顧客均一割引はマスプロモーションでありFSPの本質ではない。FSPは顧客選別が肝。"},
-        {"id": "B", "text": "個客IDで購買履歴を蓄積し、優良顧客を識別してパーソナライズした特典・コミュニケーションを提供することで、ロイヤルティとLTVを高める", "is_correct": true, "explanation": "正解。FSPの本質は個客識別とロイヤルティ向上、LTV最大化。"},
-        {"id": "C", "text": "新規顧客の獲得を最優先し、既存顧客への配分は最小化する", "is_correct": false, "explanation": "FSPは既存優良顧客の囲い込みが本筋。新規獲得は別施策と組み合わせる。"},
-        {"id": "D", "text": "POSデータと連動させずに、紙のスタンプカードのみで運用する", "is_correct": false, "explanation": "POS連動でこそ顧客×商品×時系列分析が可能になる。紙スタンプは初歩段階。"}
+        {
+          "id": "A",
+          "text": "POSデータと連動させずに、紙のスタンプカードのみで運用する",
+          "is_correct": false,
+          "explanation": "POS連動でこそ顧客×商品×時系列分析が可能になる。紙スタンプは初歩段階。"
+        },
+        {
+          "id": "B",
+          "text": "新規顧客の獲得を最優先し、既存顧客への配分は最小化する",
+          "is_correct": false,
+          "explanation": "FSPは既存優良顧客の囲い込みが本筋。新規獲得は別施策と組み合わせる。"
+        },
+        {
+          "id": "C",
+          "text": "全顧客に均一の割引を提供することで、店舗の集客力を高める",
+          "is_correct": false,
+          "explanation": "全顧客均一割引はマスプロモーションでありFSPの本質ではない。FSPは顧客選別が肝。"
+        },
+        {
+          "id": "D",
+          "text": "個客IDで購買履歴を蓄積し、優良顧客を識別してパーソナライズした特典・コミュニケーションを提供することで、ロイヤルティとLTVを高める",
+          "is_correct": true,
+          "explanation": "正解。FSPの本質は個客識別とロイヤルティ向上、LTV最大化。"
+        }
       ],
       "explanation": "FSPはPOS+顧客IDで購買履歴を蓄積し、RFM分析等で顧客を層別、優良顧客に厚く特典を配分してロイヤルティとLTVを高める仕組み。マスプロモから個客マーケへの移行を可能にする。CRMの実装基盤としても機能する。",
       "references": [
-        {"title": "日本リテイリングセンター FSP", "url": "https://www.nrc-japan.com/"}
+        {
+          "title": "日本リテイリングセンター FSP",
+          "url": "https://www.nrc-japan.com/"
+        }
       ],
-      "tags": ["FSP", "CRM", "LTV", "RFM"],
-      "common_mistakes": ["FSPを全顧客均一割引と誤解", "POS連動の重要性を見落とす"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "FSP",
+        "CRM",
+        "LTV",
+        "RFM"
+      ],
+      "common_mistakes": [
+        "FSPを全顧客均一割引と誤解",
+        "POS連動の重要性を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-029",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "生産方式の選択",
       "subtopic": "戦略的判断",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
-      "stem": "東海地方の中堅機械部品メーカーが、これまで個別受注生産（少量・多品種）で対応してきた製品群について、需要が安定し量産化が見込めるカテゴリが現れた。経営者として、生産方式を再設計するときに優先すべき判断軸として最も適切なものはどれか。",
+      "stem": "ある中堅機械部品メーカーが、これまで個別受注生産（少量・多品種）で対応してきた製品群について、需要が安定し量産化が見込めるカテゴリが現れた。経営者として、生産方式を再設計するときに優先すべき判断軸として最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "原価低減のためすべての製品を即座にライン生産に統一し、個別生産を全廃する", "is_correct": false, "explanation": "需要安定品と多品種少量品を一律にライン化するのは過剰最適化で、柔軟性を失う。"},
-        {"id": "B", "text": "需要量・需要安定性・製品多様性に応じて、ライン生産・セル生産・個別生産をハイブリッド配置し、製品ライフサイクルでの方式移行も計画する", "is_correct": true, "explanation": "正解。製品特性ごとの最適生産方式を組み合わせ、需要変化に応じて移行可能な設計が経営判断として妥当。"},
-        {"id": "C", "text": "現状の個別生産を維持し、量産化は外注一本化する", "is_correct": false, "explanation": "外注一本化は技術ノウハウ流出と利益機会逸失のリスクがあり、戦略判断として安易。"},
-        {"id": "D", "text": "投資判断を避けるため、設備投資は当面行わず手作業中心で対応する", "is_correct": false, "explanation": "需要安定の好機を逃し、競合に量産能力で先行されるリスクが高い。"}
+        {
+          "id": "A",
+          "text": "需要量・需要安定性・製品多様性に応じて、ライン生産・セル生産・個別生産をハイブリッド配置し、製品ライフサイクルでの方式移行も計画する",
+          "is_correct": true,
+          "explanation": "正解。製品特性ごとの最適生産方式を組み合わせ、需要変化に応じて移行可能な設計が経営判断として妥当。"
+        },
+        {
+          "id": "B",
+          "text": "投資判断を避けるため、設備投資は当面行わず手作業中心で対応する",
+          "is_correct": false,
+          "explanation": "需要安定の好機を逃し、競合に量産能力で先行されるリスクが高い。"
+        },
+        {
+          "id": "C",
+          "text": "現状の個別生産を維持し、量産化は外注一本化する",
+          "is_correct": false,
+          "explanation": "外注一本化は技術ノウハウ流出と利益機会逸失のリスクがあり、戦略判断として安易。"
+        },
+        {
+          "id": "D",
+          "text": "原価低減のためすべての製品を即座にライン生産に統一し、個別生産を全廃する",
+          "is_correct": false,
+          "explanation": "需要安定品と多品種少量品を一律にライン化するのは過剰最適化で、柔軟性を失う。"
+        }
       ],
       "explanation": "生産方式は需要量×需要安定性×製品多様性のマトリクスで判断する。安定大量品はライン、中ロット多品種はセル、変動極端品は個別と使い分け、製品ライフサイクルの段階に応じて移行できる柔軟設計が望ましい。中小製造業の競争力は、この生産方式ポートフォリオ設計力にある。",
       "references": [
-        {"title": "日本IE協会 生産方式の選択", "url": "https://www.j-ie.com/"}
+        {
+          "title": "日本IE協会 生産方式の選択",
+          "url": "https://www.j-ie.com/"
+        }
       ],
-      "tags": ["生産方式", "経営判断", "セル生産", "ライン生産"],
-      "common_mistakes": ["全製品の一律ライン化を最適と誤解", "外注依存で技術ノウハウを失うリスクを過小評価"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "生産方式",
+        "経営判断",
+        "セル生産",
+        "ライン生産"
+      ],
+      "common_mistakes": [
+        "全製品の一律ライン化を最適と誤解",
+        "外注依存で技術ノウハウを失うリスクを過小評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "shindanshi-1-unei-030",
       "version": "1.0",
-      "exam": {"code": "shindanshi-1", "name": "中小企業診断士 1次試験", "vendor": "J-SMECA", "year": 2026},
-      "domain": {"id": "unei", "name": "運営管理", "weight_percent": 15},
+      "exam": {
+        "code": "shindanshi-1",
+        "name": "中小企業診断士 1次試験",
+        "vendor": "J-SMECA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "unei",
+        "name": "運営管理",
+        "weight_percent": 15
+      },
       "topic": "店舗運営の総合設計",
       "subtopic": "DX時代の運営戦略",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
-      "stem": "東海地方で5店舗を展開する地域スーパー（B2C食品）が、人手不足と競合EC（オンラインスーパー）からの圧力に直面している。経営者は、限られた投資余力で運営力を底上げする「運営DX戦略」を策定したい。最も整合性が高く実行優先度の高い施策の組み合わせはどれか。",
+      "stem": "国内で5店舗を展開する地域スーパー（B2C食品）が、人手不足と競合EC（オンラインスーパー）からの圧力に直面している。経営者は、限られた投資余力で運営力を底上げする「運営DX戦略」を策定したい。最も整合性が高く実行優先度の高い施策の組み合わせはどれか。",
       "options": [
-        {"id": "A", "text": "POS+FSP（顧客ID）整備によるカテゴリーマネジメント高度化、需要予測連動の自動発注（在庫圧縮）、店舗作業のIE的見直しと省人化機器導入、ピックアップ拠点としてのリアル店舗活用（OMO）を一体で推進", "is_correct": true, "explanation": "正解。データ基盤整備・需要予測・現場省人化・OMO化を整合的に組み合わせるのが地域スーパーの王道DX戦略。"},
-        {"id": "B", "text": "全店舗を即時無人店舗化し、人件費を一気にゼロにする", "is_correct": false, "explanation": "現状技術と顧客受容性を考えると一足飛びすぎてリスク過大。段階的省人化が現実解。"},
-        {"id": "C", "text": "SNS広告を最大化して新規顧客獲得のみに資源を集中する", "is_correct": false, "explanation": "新規偏重はLTV観点で非効率。既存ロイヤル顧客の維持・深掘りが地域スーパーの基本。"},
-        {"id": "D", "text": "POSやFSPなどデータ整備を後回しにし、まずECサイトだけを大規模に立ち上げる", "is_correct": false, "explanation": "データ基盤なしのEC単発投資は競合に劣後する。データ・店舗・ECの三位一体が肝。"}
+        {
+          "id": "A",
+          "text": "SNS広告を最大化して新規顧客獲得のみに資源を集中する",
+          "is_correct": false,
+          "explanation": "新規偏重はLTV観点で非効率。既存ロイヤル顧客の維持・深掘りが地域スーパーの基本。"
+        },
+        {
+          "id": "B",
+          "text": "POS+FSP（顧客ID）整備によるカテゴリーマネジメント高度化、需要予測連動の自動発注（在庫圧縮）、店舗作業のIE的見直しと省人化機器導入、ピックアップ拠点としてのリアル店舗活用（OMO）を一体で推進",
+          "is_correct": true,
+          "explanation": "正解。データ基盤整備・需要予測・現場省人化・OMO化を整合的に組み合わせるのが地域スーパーの王道DX戦略。"
+        },
+        {
+          "id": "C",
+          "text": "全店舗を即時無人店舗化し、人件費を一気にゼロにする",
+          "is_correct": false,
+          "explanation": "現状技術と顧客受容性を考えると一足飛びすぎてリスク過大。段階的省人化が現実解。"
+        },
+        {
+          "id": "D",
+          "text": "POSやFSPなどデータ整備を後回しにし、まずECサイトだけを大規模に立ち上げる",
+          "is_correct": false,
+          "explanation": "データ基盤なしのEC単発投資は競合に劣後する。データ・店舗・ECの三位一体が肝。"
+        }
       ],
       "explanation": "地域スーパーのDXは、POS・FSPによる個客データ基盤、需要予測と自動発注によるロス削減、IE的省人化、店舗をピックアップ拠点とするOMO（Online Merges with Offline）化、を整合的に進めるのが王道。単発投資ではなく、データ→現場→チャネル拡張の流れで設計することが、限られた経営資源で最大効果を出す経営者判断となる。",
       "references": [
-        {"title": "経済産業省 流通DX", "url": "https://www.meti.go.jp/policy/distribution/"},
-        {"title": "中小企業庁 中小サービス事業者の生産性向上のためのガイドライン", "url": "https://www.chusho.meti.go.jp/keiei/seisansei/"}
+        {
+          "title": "経済産業省 流通DX",
+          "url": "https://www.meti.go.jp/policy/distribution/"
+        },
+        {
+          "title": "中小企業庁 中小サービス事業者の生産性向上のためのガイドライン",
+          "url": "https://www.chusho.meti.go.jp/keiei/seisansei/"
+        }
       ],
-      "tags": ["DX", "店舗運営", "OMO", "経営戦略", "運営管理"],
-      "common_mistakes": ["DX=ECサイトと矮小化", "データ基盤を整えずに先進施策に飛びつく", "段階的展開ではなく一括無人化を志向"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-seed", "reviewed": true, "language": "ja"}
+      "tags": [
+        "DX",
+        "店舗運営",
+        "OMO",
+        "経営戦略",
+        "運営管理"
+      ],
+      "common_mistakes": [
+        "DX=ECサイトと矮小化",
+        "データ基盤を整えずに先進施策に飛びつく",
+        "段階的展開ではなく一括無人化を志向"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-seed",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

@@ -675,11 +675,37 @@ code {
   border-bottom-color: var(--accent);
 }
 
+.quiz-multi-hint {
+  margin: 4px 0 16px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-faint);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-deep, var(--accent));
+}
+
 .quiz-actions {
   display: flex;
   gap: 12px;
   margin-top: 24px;
   flex-wrap: wrap;
+}
+
+.quiz-submit-btn {
+  font-family: inherit;
+}
+.quiz-submit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.quiz-submit-btn:disabled:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: none;
 }
 
 /* Quality rating buttons (study-friendly: clear color coding) */

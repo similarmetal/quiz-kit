@@ -15,711 +15,1933 @@
     {
       "id": "aif-c01-domain2-001",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Foundation Models",
       "subtopic": "定義と特徴",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Foundation Model（基盤モデル）の最も基本的な特徴として正しい説明はどれか？",
       "options": [
-        {"id": "A", "text": "特定の単一タスク（例: 顔認識のみ）を実行するために最適化された小規模モデル", "is_correct": false, "explanation": "これは従来の特化型モデル（narrow AI）の説明。Foundation Model はその対極にある。"},
-        {"id": "B", "text": "大量かつ多様なデータで事前学習され、さまざまな下流タスクに適応可能な大規模モデル", "is_correct": true, "explanation": "正解。Foundation Model は広範な事前学習の上に、ファインチューニングやプロンプトで多様なタスクへ適応できる汎用的な基盤として機能する。"},
-        {"id": "C", "text": "学習せずに事前定義されたルールベースで動作するシステム", "is_correct": false, "explanation": "ルールベースシステムは AI の古典的アプローチで、Foundation Model（深層学習ベース）とは異なる。"},
-        {"id": "D", "text": "推論時にラベル付きデータを必要とする教師あり学習専用のモデル", "is_correct": false, "explanation": "推論時にラベル付きデータは不要。また Foundation Model は自己教師あり学習で事前学習されることが多い。"}
+        {
+          "id": "A",
+          "text": "大量かつ多様なデータで事前学習され、さまざまな下流タスクに適応可能な大規模モデル",
+          "is_correct": true,
+          "explanation": "正解。Foundation Model は広範な事前学習の上に、ファインチューニングやプロンプトで多様なタスクへ適応できる汎用的な基盤として機能する。"
+        },
+        {
+          "id": "B",
+          "text": "学習せずに事前定義されたルールベースで動作するシステム",
+          "is_correct": false,
+          "explanation": "ルールベースシステムは AI の古典的アプローチで、Foundation Model（深層学習ベース）とは異なる。"
+        },
+        {
+          "id": "C",
+          "text": "推論時にラベル付きデータを必要とする教師あり学習専用のモデル",
+          "is_correct": false,
+          "explanation": "推論時にラベル付きデータは不要。また Foundation Model は自己教師あり学習で事前学習されることが多い。"
+        },
+        {
+          "id": "D",
+          "text": "特定の単一タスク（例: 顔認識のみ）を実行するために最適化された小規模モデル",
+          "is_correct": false,
+          "explanation": "これは従来の特化型モデル（narrow AI）の説明。Foundation Model はその対極にある。"
+        }
       ],
       "explanation": "Foundation Model は、テキスト・画像・音声などの大量データで事前学習された大規模モデルで、テキスト生成、要約、分類、画像生成など多様なタスクに適応できる。Amazon Bedrock では Anthropic Claude、Meta Llama、Amazon Titan などの基盤モデルが提供される。",
       "references": [
-        {"title": "What is a Foundation Model?", "url": "https://aws.amazon.com/what-is/foundation-models/"},
-        {"title": "Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"}
+        {
+          "title": "What is a Foundation Model?",
+          "url": "https://aws.amazon.com/what-is/foundation-models/"
+        },
+        {
+          "title": "Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+        }
       ],
-      "tags": ["foundation-model", "generative-ai", "basics", "bedrock"],
+      "tags": [
+        "foundation-model",
+        "generative-ai",
+        "basics",
+        "bedrock"
+      ],
       "common_mistakes": [
         "Foundation Model = 特定タスク用モデルだと誤解する",
         "大規模 = 必ず教師ありと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-002",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "LLM",
       "subtopic": "大規模言語モデルの定義",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "LLM（大規模言語モデル）の説明として最も正確なのはどれか？",
       "options": [
-        {"id": "A", "text": "数値の予測のみを行う統計モデル", "is_correct": false, "explanation": "数値予測は回帰モデルの役割。LLM は自然言語のシーケンス生成に特化している。"},
-        {"id": "B", "text": "膨大なテキストで事前学習され、自然言語の理解・生成を行うニューラルネットワークモデル", "is_correct": true, "explanation": "正解。LLM は大規模なテキストコーパスで学習され、次のトークンを予測する形で言語を生成する。"},
-        {"id": "C", "text": "画像のピクセル単位の分類のみを行うモデル", "is_correct": false, "explanation": "これは画像セグメンテーションモデルの説明。LLM は言語が対象。"},
-        {"id": "D", "text": "ハードコードされたルールで応答する初期のチャットボット", "is_correct": false, "explanation": "ルールベースのチャットボット（ELIZA など）は LLM とは異なり、学習を行わない。"}
+        {
+          "id": "A",
+          "text": "画像のピクセル単位の分類のみを行うモデル",
+          "is_correct": false,
+          "explanation": "これは画像セグメンテーションモデルの説明。LLM は言語が対象。"
+        },
+        {
+          "id": "B",
+          "text": "膨大なテキストで事前学習され、自然言語の理解・生成を行うニューラルネットワークモデル",
+          "is_correct": true,
+          "explanation": "正解。LLM は大規模なテキストコーパスで学習され、次のトークンを予測する形で言語を生成する。"
+        },
+        {
+          "id": "C",
+          "text": "ハードコードされたルールで応答する初期のチャットボット",
+          "is_correct": false,
+          "explanation": "ルールベースのチャットボット（ELIZA など）は LLM とは異なり、学習を行わない。"
+        },
+        {
+          "id": "D",
+          "text": "数値の予測のみを行う統計モデル",
+          "is_correct": false,
+          "explanation": "数値予測は回帰モデルの役割。LLM は自然言語のシーケンス生成に特化している。"
+        }
       ],
       "explanation": "LLM (Large Language Model) は、Transformer をベースとした数十億〜数千億パラメータの言語モデルで、テキスト生成・要約・翻訳・QA などを行える。Amazon Bedrock 上で Claude、Llama、Titan などの LLM を API 経由で利用できる。",
       "references": [
-        {"title": "What are Large Language Models (LLM)?", "url": "https://aws.amazon.com/what-is/large-language-model/"}
+        {
+          "title": "What are Large Language Models (LLM)?",
+          "url": "https://aws.amazon.com/what-is/large-language-model/"
+        }
       ],
-      "tags": ["llm", "generative-ai", "basics"],
+      "tags": [
+        "llm",
+        "generative-ai",
+        "basics"
+      ],
       "common_mistakes": [
         "LLM = 単なるチャットボットと誤解する",
         "LLM が画像処理用と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-003",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Transformer",
       "subtopic": "Self-Attention",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Transformer アーキテクチャの中核となる仕組みはどれか？",
       "options": [
-        {"id": "A", "text": "畳み込み演算（Convolution）", "is_correct": false, "explanation": "畳み込み演算は CNN（画像認識）の中核で、Transformer の特徴ではない。"},
-        {"id": "B", "text": "Self-Attention 機構", "is_correct": true, "explanation": "正解。Self-Attention は入力シーケンス内の各トークン間の関連性を計算する仕組みで、Transformer の根幹をなす。"},
-        {"id": "C", "text": "再帰結合（Recurrence）", "is_correct": false, "explanation": "再帰結合は RNN/LSTM の特徴。Transformer は再帰を排除して並列処理を実現した。"},
-        {"id": "D", "text": "決定木の分岐", "is_correct": false, "explanation": "決定木は古典的機械学習の手法で、Transformer とは無関係。"}
+        {
+          "id": "A",
+          "text": "再帰結合（Recurrence）",
+          "is_correct": false,
+          "explanation": "再帰結合は RNN/LSTM の特徴。Transformer は再帰を排除して並列処理を実現した。"
+        },
+        {
+          "id": "B",
+          "text": "決定木の分岐",
+          "is_correct": false,
+          "explanation": "決定木は古典的機械学習の手法で、Transformer とは無関係。"
+        },
+        {
+          "id": "C",
+          "text": "Self-Attention 機構",
+          "is_correct": true,
+          "explanation": "正解。Self-Attention は入力シーケンス内の各トークン間の関連性を計算する仕組みで、Transformer の根幹をなす。"
+        },
+        {
+          "id": "D",
+          "text": "畳み込み演算（Convolution）",
+          "is_correct": false,
+          "explanation": "畳み込み演算は CNN（画像認識）の中核で、Transformer の特徴ではない。"
+        }
       ],
       "explanation": "Transformer は 2017年の論文「Attention Is All You Need」で提案されたアーキテクチャ。Self-Attention により系列内の長距離依存を効率的に捉え、並列学習が可能になった。GPT、Claude、Llama、Titan など現代の LLM の基盤。",
       "references": [
-        {"title": "Transformers in Machine Learning", "url": "https://aws.amazon.com/what-is/transformers-in-artificial-intelligence/"}
+        {
+          "title": "Transformers in Machine Learning",
+          "url": "https://aws.amazon.com/what-is/transformers-in-artificial-intelligence/"
+        }
       ],
-      "tags": ["transformer", "self-attention", "architecture"],
+      "tags": [
+        "transformer",
+        "self-attention",
+        "architecture"
+      ],
       "common_mistakes": [
         "Transformer も RNN ベースだと誤解する",
         "CNN が Transformer の中核だと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-004",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Tokenization",
       "subtopic": "Subword tokenization",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ある SaaS 企業のエンジニアが LLM のトークン課金について上長に説明している。「トークン」とは何かを最も正確に説明しているのはどれか？",
       "options": [
-        {"id": "A", "text": "テキストを単語、サブワード、または文字単位に分割した最小処理単位", "is_correct": true, "explanation": "正解。多くの LLM はサブワード分割（BPE など）を使い、単語より細かい単位でテキストを表現する。料金も入出力トークン数で決まることが多い。"},
-        {"id": "B", "text": "ユーザー認証に使われるセキュリティ識別子", "is_correct": false, "explanation": "これは認証トークン（OAuth など）。LLM のトークンとは別概念。"},
-        {"id": "C", "text": "1リクエスト = 1トークンとして数えられる API 呼び出しの単位", "is_correct": false, "explanation": "リクエスト数とトークン数は別。1リクエストに数千トークンが含まれることが普通。"},
-        {"id": "D", "text": "学習に使うラベル付きデータの 1 件のレコード", "is_correct": false, "explanation": "学習データレコードはサンプルやエポックの単位で、トークンとは別の概念。"}
+        {
+          "id": "A",
+          "text": "ユーザー認証に使われるセキュリティ識別子",
+          "is_correct": false,
+          "explanation": "これは認証トークン（OAuth など）。LLM のトークンとは別概念。"
+        },
+        {
+          "id": "B",
+          "text": "1リクエスト = 1トークンとして数えられる API 呼び出しの単位",
+          "is_correct": false,
+          "explanation": "リクエスト数とトークン数は別。1リクエストに数千トークンが含まれることが普通。"
+        },
+        {
+          "id": "C",
+          "text": "学習に使うラベル付きデータの 1 件のレコード",
+          "is_correct": false,
+          "explanation": "学習データレコードはサンプルやエポックの単位で、トークンとは別の概念。"
+        },
+        {
+          "id": "D",
+          "text": "テキストを単語、サブワード、または文字単位に分割した最小処理単位",
+          "is_correct": true,
+          "explanation": "正解。多くの LLM はサブワード分割（BPE など）を使い、単語より細かい単位でテキストを表現する。料金も入出力トークン数で決まることが多い。"
+        }
       ],
       "explanation": "トークンは LLM がテキストを処理する最小単位。サブワード分割により、未知語にも頑健に対応できる（例: 「unbelievable」が「un」「believ」「able」に分解される）。Bedrock を含む多くの LLM サービスは入出力トークン数で課金され、英語では約 4文字 = 1トークン、日本語では文字単位に近い分割になる。",
       "references": [
-        {"title": "Amazon Bedrock pricing", "url": "https://aws.amazon.com/bedrock/pricing/"}
+        {
+          "title": "Amazon Bedrock pricing",
+          "url": "https://aws.amazon.com/bedrock/pricing/"
+        }
       ],
-      "tags": ["tokenization", "subword", "pricing", "llm"],
+      "tags": [
+        "tokenization",
+        "subword",
+        "pricing",
+        "llm"
+      ],
       "common_mistakes": [
         "トークン = 単語と誤解する（実際はサブワード）",
         "認証トークンと混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-005",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Embeddings",
       "subtopic": "ベクトル表現",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ある教育系 SaaS が、教材コンテンツの「意味的な類似度」を計算したい。最も適切なアプローチはどれか？",
       "options": [
-        {"id": "A", "text": "全コンテンツを SHA-256 でハッシュ化して比較する", "is_correct": false, "explanation": "ハッシュ化は完全一致のみを判定し、意味的類似性は捉えられない。"},
-        {"id": "B", "text": "Embedding モデルでコンテンツをベクトル化し、コサイン類似度を計算する", "is_correct": true, "explanation": "正解。Amazon Titan Embeddings や Cohere Embed などで意味的に近いコンテンツが近いベクトルになるよう変換し、コサイン類似度で類似度を測れる。"},
-        {"id": "C", "text": "正規表現で共通単語を抽出し、件数を比較する", "is_correct": false, "explanation": "表層的な単語の一致しか見られず、同義語や言い換えに弱い。"},
-        {"id": "D", "text": "ファイルサイズを比較する", "is_correct": false, "explanation": "ファイルサイズは内容の意味と無関係。"}
+        {
+          "id": "A",
+          "text": "Embedding モデルでコンテンツをベクトル化し、コサイン類似度を計算する",
+          "is_correct": true,
+          "explanation": "正解。Amazon Titan Embeddings や Cohere Embed などで意味的に近いコンテンツが近いベクトルになるよう変換し、コサイン類似度で類似度を測れる。"
+        },
+        {
+          "id": "B",
+          "text": "全コンテンツを SHA-256 でハッシュ化して比較する",
+          "is_correct": false,
+          "explanation": "ハッシュ化は完全一致のみを判定し、意味的類似性は捉えられない。"
+        },
+        {
+          "id": "C",
+          "text": "ファイルサイズを比較する",
+          "is_correct": false,
+          "explanation": "ファイルサイズは内容の意味と無関係。"
+        },
+        {
+          "id": "D",
+          "text": "正規表現で共通単語を抽出し、件数を比較する",
+          "is_correct": false,
+          "explanation": "表層的な単語の一致しか見られず、同義語や言い換えに弱い。"
+        }
       ],
       "explanation": "Embedding はテキストや画像を高次元ベクトル（例: 1024次元）に変換する技術。意味が近いものは近いベクトルにマッピングされ、検索・推薦・クラスタリング・RAG の中核技術として使われる。Amazon Bedrock では Titan Embeddings v2 や Cohere Embed が利用可能。",
       "references": [
-        {"title": "Amazon Titan Embeddings", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html"}
+        {
+          "title": "Amazon Titan Embeddings",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html"
+        }
       ],
-      "tags": ["embeddings", "vector", "similarity", "titan"],
+      "tags": [
+        "embeddings",
+        "vector",
+        "similarity",
+        "titan"
+      ],
       "common_mistakes": [
         "Embedding を単なるハッシュと混同する",
         "コサイン類似度ではなく単純一致で十分と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-006",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Inference Parameters",
       "subtopic": "Temperature",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "ある医療系 SaaS が、診療マニュアルの要約を Claude on Bedrock で生成している。出力の決定的（毎回ほぼ同じ）かつ事実重視にするには temperature をどう設定すべきか？",
       "options": [
-        {"id": "A", "text": "1.0 など高い値に設定する", "is_correct": false, "explanation": "高い temperature はランダム性を上げ、創造性が増す代わりに事実が揺れる。医療マニュアルには不向き。"},
-        {"id": "B", "text": "0 に近い低い値に設定する", "is_correct": true, "explanation": "正解。低い temperature は確率の高いトークンを優先し、決定的で一貫した出力になる。要約や事実回答に適する。"},
-        {"id": "C", "text": "temperature は出力には影響しないので任意で良い", "is_correct": false, "explanation": "temperature は最も影響の大きい推論パラメータの一つで、出力に直接効く。"},
-        {"id": "D", "text": "temperature を負の値に設定する", "is_correct": false, "explanation": "Bedrock を含む多くのプロバイダで temperature は 0 以上の値を取る。負の値は無効。"}
+        {
+          "id": "A",
+          "text": "temperature を負の値に設定する",
+          "is_correct": false,
+          "explanation": "Bedrock を含む多くのプロバイダで temperature は 0 以上の値を取る。負の値は無効。"
+        },
+        {
+          "id": "B",
+          "text": "0 に近い低い値に設定する",
+          "is_correct": true,
+          "explanation": "正解。低い temperature は確率の高いトークンを優先し、決定的で一貫した出力になる。要約や事実回答に適する。"
+        },
+        {
+          "id": "C",
+          "text": "temperature は出力には影響しないので任意で良い",
+          "is_correct": false,
+          "explanation": "temperature は最も影響の大きい推論パラメータの一つで、出力に直接効く。"
+        },
+        {
+          "id": "D",
+          "text": "1.0 など高い値に設定する",
+          "is_correct": false,
+          "explanation": "高い temperature はランダム性を上げ、創造性が増す代わりに事実が揺れる。医療マニュアルには不向き。"
+        }
       ],
       "explanation": "temperature はトークンの確率分布の尖りを調整するパラメータ。0 に近いほど決定的（同じ入力で同じ出力に近づく）、高いほど多様性が増す。事実重視・要約・コード生成は低め、ブレスト・小説生成は高めが目安。",
       "references": [
-        {"title": "Inference parameters in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"}
+        {
+          "title": "Inference parameters in Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"
+        }
       ],
-      "tags": ["temperature", "inference-parameters", "bedrock", "healthcare"],
+      "tags": [
+        "temperature",
+        "inference-parameters",
+        "bedrock",
+        "healthcare"
+      ],
       "common_mistakes": [
         "temperature を上げれば「賢く」なると誤解する",
         "事実重視のタスクで高 temperature を使ってしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-007",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Inference Parameters",
       "subtopic": "Top-p / Top-k",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "推論パラメータ top-p（nucleus sampling）の働きを最も正しく説明しているのはどれか？",
       "options": [
-        {"id": "A", "text": "出力するトークンの最大数を制限する", "is_correct": false, "explanation": "出力トークンの最大数は max_tokens / max_output_tokens の役割。"},
-        {"id": "B", "text": "次トークンの累積確率が p に達するまでの上位候補からサンプリングする", "is_correct": true, "explanation": "正解。top-p=0.9 ならば確率の高い順に累積 0.9 になる候補からサンプリングする。低い値ほど決定的になる。"},
-        {"id": "C", "text": "プロンプトの冒頭から p 文字だけを読む", "is_correct": false, "explanation": "プロンプトの読み取り範囲はコンテキストウィンドウで決まり、top-p とは無関係。"},
-        {"id": "D", "text": "学習時のドロップアウト率を制御する", "is_correct": false, "explanation": "ドロップアウトは学習時の正則化手法で、推論パラメータではない。"}
+        {
+          "id": "A",
+          "text": "出力するトークンの最大数を制限する",
+          "is_correct": false,
+          "explanation": "出力トークンの最大数は max_tokens / max_output_tokens の役割。"
+        },
+        {
+          "id": "B",
+          "text": "プロンプトの冒頭から p 文字だけを読む",
+          "is_correct": false,
+          "explanation": "プロンプトの読み取り範囲はコンテキストウィンドウで決まり、top-p とは無関係。"
+        },
+        {
+          "id": "C",
+          "text": "次トークンの累積確率が p に達するまでの上位候補からサンプリングする",
+          "is_correct": true,
+          "explanation": "正解。top-p=0.9 ならば確率の高い順に累積 0.9 になる候補からサンプリングする。低い値ほど決定的になる。"
+        },
+        {
+          "id": "D",
+          "text": "学習時のドロップアウト率を制御する",
+          "is_correct": false,
+          "explanation": "ドロップアウトは学習時の正則化手法で、推論パラメータではない。"
+        }
       ],
       "explanation": "top-p（nucleus sampling）は、累積確率 p に達するまでの上位トークン集合からサンプリングする手法。top-k（上位 k 個固定）と並ぶサンプリング戦略で、temperature と組み合わせて出力の多様性を制御する。一般に top-p と temperature は片方を固定する運用が推奨される。",
       "references": [
-        {"title": "Inference parameters in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"}
+        {
+          "title": "Inference parameters in Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"
+        }
       ],
-      "tags": ["top-p", "nucleus-sampling", "inference-parameters"],
+      "tags": [
+        "top-p",
+        "nucleus-sampling",
+        "inference-parameters"
+      ],
       "common_mistakes": [
         "top-p と max_tokens を混同する",
         "top-p と top-k を同じものだと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-008",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Inference Parameters",
       "subtopic": "Max tokens",
       "cognitive_level": "L3-Apply",
       "difficulty": "easy",
       "stem": "あるメディア企業が記事要約 API を Bedrock 上で構築している。要約は 200 字程度に収め、コストを最小化したい。どのパラメータをどう設定すべきか？",
       "options": [
-        {"id": "A", "text": "temperature を高く設定する", "is_correct": false, "explanation": "temperature は多様性に影響するが、出力長やコストの直接制御にはならない。"},
-        {"id": "B", "text": "max_tokens（出力トークン上限）を適切に小さく設定する", "is_correct": true, "explanation": "正解。max_tokens は出力長の上限を制限し、長すぎる応答による課金を防ぐ。要約タスクでは必須の制御。"},
-        {"id": "C", "text": "top-k を 1 に固定する", "is_correct": false, "explanation": "top-k=1（greedy）は決定的にするが、出力長やコストの直接制御にはならない。"},
-        {"id": "D", "text": "stop sequences のみで制御し max_tokens は省略する", "is_correct": false, "explanation": "stop sequences は補助的に使えるが、最大長の保証にはならず、暴走時にコストが膨らむ。"}
+        {
+          "id": "A",
+          "text": "top-k を 1 に固定する",
+          "is_correct": false,
+          "explanation": "top-k=1（greedy）は決定的にするが、出力長やコストの直接制御にはならない。"
+        },
+        {
+          "id": "B",
+          "text": "stop sequences のみで制御し max_tokens は省略する",
+          "is_correct": false,
+          "explanation": "stop sequences は補助的に使えるが、最大長の保証にはならず、暴走時にコストが膨らむ。"
+        },
+        {
+          "id": "C",
+          "text": "temperature を高く設定する",
+          "is_correct": false,
+          "explanation": "temperature は多様性に影響するが、出力長やコストの直接制御にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "max_tokens（出力トークン上限）を適切に小さく設定する",
+          "is_correct": true,
+          "explanation": "正解。max_tokens は出力長の上限を制限し、長すぎる応答による課金を防ぐ。要約タスクでは必須の制御。"
+        }
       ],
       "explanation": "max_tokens（モデルにより max_tokens_to_sample / maxTokenCount などの名称）は出力トークンの上限を指定するパラメータ。Bedrock の課金は入出力トークン量で決まるため、想定より長い出力を防ぐためのコスト管理にも重要。",
       "references": [
-        {"title": "Inference parameters in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"},
-        {"title": "Amazon Bedrock pricing", "url": "https://aws.amazon.com/bedrock/pricing/"}
+        {
+          "title": "Inference parameters in Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"
+        },
+        {
+          "title": "Amazon Bedrock pricing",
+          "url": "https://aws.amazon.com/bedrock/pricing/"
+        }
       ],
-      "tags": ["max-tokens", "cost-optimization", "summarization", "media"],
+      "tags": [
+        "max-tokens",
+        "cost-optimization",
+        "summarization",
+        "media"
+      ],
       "common_mistakes": [
         "max_tokens を未指定でデプロイし、想定外コストを出す",
         "temperature でコストを下げられると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-009",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Prompt Engineering",
       "subtopic": "Zero-shot / Few-shot",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療系 SaaS が、患者問診票の症状記述を「軽症 / 中等症 / 重症」のいずれかに自動分類したい。LLM への入力に分類例を 3 件含めるアプローチは何と呼ばれるか？",
       "options": [
-        {"id": "A", "text": "Zero-shot prompting", "is_correct": false, "explanation": "Zero-shot は例を提示せずタスクの説明のみで実行する手法。例を 3 件含めるのは Zero-shot ではない。"},
-        {"id": "B", "text": "Few-shot prompting", "is_correct": true, "explanation": "正解。プロンプトに少数（数件〜十数件）の例を含めることで、モデルに望ましい入出力パターンを示す手法を Few-shot prompting と呼ぶ。"},
-        {"id": "C", "text": "Fine-tuning", "is_correct": false, "explanation": "Fine-tuning はモデルの重みそのものを学習で更新する手法。プロンプト内の例提示とは異なる。"},
-        {"id": "D", "text": "Chain-of-Thought prompting", "is_correct": false, "explanation": "CoT は中間推論ステップを引き出す手法で、例の提示の有無とは別概念（例提示と組み合わせ可）。"}
+        {
+          "id": "A",
+          "text": "Few-shot prompting",
+          "is_correct": true,
+          "explanation": "正解。プロンプトに少数（数件〜十数件）の例を含めることで、モデルに望ましい入出力パターンを示す手法を Few-shot prompting と呼ぶ。"
+        },
+        {
+          "id": "B",
+          "text": "Fine-tuning",
+          "is_correct": false,
+          "explanation": "Fine-tuning はモデルの重みそのものを学習で更新する手法。プロンプト内の例提示とは異なる。"
+        },
+        {
+          "id": "C",
+          "text": "Zero-shot prompting",
+          "is_correct": false,
+          "explanation": "Zero-shot は例を提示せずタスクの説明のみで実行する手法。例を 3 件含めるのは Zero-shot ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Chain-of-Thought prompting",
+          "is_correct": false,
+          "explanation": "CoT は中間推論ステップを引き出す手法で、例の提示の有無とは別概念（例提示と組み合わせ可）。"
+        }
       ],
       "explanation": "Few-shot prompting は、プロンプトに数件の入出力例を含めることでモデルにタスクパターンを教える手法。例ゼロは Zero-shot、1件は One-shot と呼ばれる。Fine-tuning と異なりモデル重みは変えず、即座にタスクへ適応できるのが利点。",
       "references": [
-        {"title": "Prompt engineering guidelines", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"}
+        {
+          "title": "Prompt engineering guidelines",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+        }
       ],
-      "tags": ["few-shot", "prompt-engineering", "classification", "healthcare"],
+      "tags": [
+        "few-shot",
+        "prompt-engineering",
+        "classification",
+        "healthcare"
+      ],
       "common_mistakes": [
         "Few-shot と Fine-tuning を混同する",
         "例提示があるのに Zero-shot と呼ぶ"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-010",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Prompt Engineering",
       "subtopic": "Chain-of-Thought",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある教育 SaaS が小学生向けの算数文章題ソルバーを開発している。LLM の正答率が低いため、推論過程を段階的に書かせるプロンプトに変更したい。これは何と呼ばれる手法か？",
       "options": [
-        {"id": "A", "text": "Retrieval-Augmented Generation (RAG)", "is_correct": false, "explanation": "RAG は外部知識を検索して文脈に注入する手法。推論過程の段階化とは目的が異なる。"},
-        {"id": "B", "text": "Chain-of-Thought (CoT) prompting", "is_correct": true, "explanation": "正解。「ステップごとに考えてから答えて」のように中間推論を出力させる手法を Chain-of-Thought と呼ぶ。算数や論理問題で精度向上が報告されている。"},
-        {"id": "C", "text": "Reinforcement Learning from Human Feedback (RLHF)", "is_correct": false, "explanation": "RLHF はモデル学習時のアラインメント手法。プロンプト工夫とは別レイヤ。"},
-        {"id": "D", "text": "Quantization（量子化）", "is_correct": false, "explanation": "量子化はモデルの重みを低精度化して推論を高速・軽量化する手法で、推論過程の表現とは無関係。"}
+        {
+          "id": "A",
+          "text": "Reinforcement Learning from Human Feedback (RLHF)",
+          "is_correct": false,
+          "explanation": "RLHF はモデル学習時のアラインメント手法。プロンプト工夫とは別レイヤ。"
+        },
+        {
+          "id": "B",
+          "text": "Chain-of-Thought (CoT) prompting",
+          "is_correct": true,
+          "explanation": "正解。「ステップごとに考えてから答えて」のように中間推論を出力させる手法を Chain-of-Thought と呼ぶ。算数や論理問題で精度向上が報告されている。"
+        },
+        {
+          "id": "C",
+          "text": "Retrieval-Augmented Generation (RAG)",
+          "is_correct": false,
+          "explanation": "RAG は外部知識を検索して文脈に注入する手法。推論過程の段階化とは目的が異なる。"
+        },
+        {
+          "id": "D",
+          "text": "Quantization（量子化）",
+          "is_correct": false,
+          "explanation": "量子化はモデルの重みを低精度化して推論を高速・軽量化する手法で、推論過程の表現とは無関係。"
+        }
       ],
       "explanation": "Chain-of-Thought（CoT）は、最終回答の前に思考過程を生成させることで、特に多段推論を要するタスク（算数、論理、計画）で精度を向上させる手法。「step by step で考えて」のような指示や、CoT 例を Few-shot で示すことで誘発できる。",
       "references": [
-        {"title": "Prompt engineering guidelines (Amazon Bedrock)", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"}
+        {
+          "title": "Prompt engineering guidelines (Amazon Bedrock)",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+        }
       ],
-      "tags": ["chain-of-thought", "cot", "prompt-engineering", "education"],
+      "tags": [
+        "chain-of-thought",
+        "cot",
+        "prompt-engineering",
+        "education"
+      ],
       "common_mistakes": [
         "CoT と RAG を混同する",
         "CoT を学習手法だと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-011",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Hallucination",
       "subtopic": "定義",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "生成 AI における「ハルシネーション（hallucination）」とは何か？",
       "options": [
-        {"id": "A", "text": "学習データの量が不足してエラーで応答が止まる現象", "is_correct": false, "explanation": "学習データ不足は性能低下の原因にはなるが、応答停止はハルシネーションの定義ではない。"},
-        {"id": "B", "text": "モデルが事実と異なる情報を、もっともらしい形で生成してしまう現象", "is_correct": true, "explanation": "正解。ハルシネーションは事実に基づかない出力をモデルが自信ありげに生成する現象で、生成 AI の代表的なリスク。"},
-        {"id": "C", "text": "モデルが入力プロンプトを完全に拒否する現象", "is_correct": false, "explanation": "これは Refusal や安全フィルタリングの結果で、ハルシネーションとは別。"},
-        {"id": "D", "text": "GPU 不足で推論が遅延する現象", "is_correct": false, "explanation": "これはレイテンシ・キャパシティの問題で、出力内容の正確性とは無関係。"}
+        {
+          "id": "A",
+          "text": "モデルが入力プロンプトを完全に拒否する現象",
+          "is_correct": false,
+          "explanation": "これは Refusal や安全フィルタリングの結果で、ハルシネーションとは別。"
+        },
+        {
+          "id": "B",
+          "text": "学習データの量が不足してエラーで応答が止まる現象",
+          "is_correct": false,
+          "explanation": "学習データ不足は性能低下の原因にはなるが、応答停止はハルシネーションの定義ではない。"
+        },
+        {
+          "id": "C",
+          "text": "モデルが事実と異なる情報を、もっともらしい形で生成してしまう現象",
+          "is_correct": true,
+          "explanation": "正解。ハルシネーションは事実に基づかない出力をモデルが自信ありげに生成する現象で、生成 AI の代表的なリスク。"
+        },
+        {
+          "id": "D",
+          "text": "GPU 不足で推論が遅延する現象",
+          "is_correct": false,
+          "explanation": "これはレイテンシ・キャパシティの問題で、出力内容の正確性とは無関係。"
+        }
       ],
       "explanation": "ハルシネーションは、LLM が学習データの統計的パターンに基づき「ありそう」な答えを生成するため、根拠のない情報をでっち上げる現象。緩和策として RAG（外部知識参照）、Guardrails、引用付き応答、人間レビューなどがある。",
       "references": [
-        {"title": "Reducing hallucinations with Amazon Bedrock", "url": "https://aws.amazon.com/bedrock/knowledge-bases/"}
+        {
+          "title": "Reducing hallucinations with Amazon Bedrock",
+          "url": "https://aws.amazon.com/bedrock/knowledge-bases/"
+        }
       ],
-      "tags": ["hallucination", "risks", "generative-ai"],
+      "tags": [
+        "hallucination",
+        "risks",
+        "generative-ai"
+      ],
       "common_mistakes": [
         "ハルシネーション = システムエラーと誤解する",
         "高 temperature だけが原因と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-012",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Hallucination",
       "subtopic": "緩和策",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療系 SaaS が社内 FAQ ボットの「事実と異なる回答」を減らしたい。社内文書を信頼ソースとして利用できる場合、最も効果的な緩和策はどれか？",
       "options": [
-        {"id": "A", "text": "temperature をさらに上げて多様な答えを得る", "is_correct": false, "explanation": "temperature を上げると揺らぎが増え、ハルシネーションの傾向が悪化することが多い。"},
-        {"id": "B", "text": "Retrieval-Augmented Generation (RAG) を導入し、社内文書を検索して根拠とともに回答させる", "is_correct": true, "explanation": "正解。RAG は信頼できる文書を検索し、その内容に基づいて回答させる手法で、ハルシネーション緩和の代表的アプローチ。Amazon Bedrock Knowledge Bases で実現可能。"},
-        {"id": "C", "text": "max_tokens を最大値まで上げる", "is_correct": false, "explanation": "max_tokens は出力長の上限。事実性とは関係がない。"},
-        {"id": "D", "text": "プロンプトに「絶対に間違えないで」と書く", "is_correct": false, "explanation": "強い指示文だけでは事実性は保証されない。根拠提示の仕組みが必要。"}
+        {
+          "id": "A",
+          "text": "プロンプトに「絶対に間違えないで」と書く",
+          "is_correct": false,
+          "explanation": "強い指示文だけでは事実性は保証されない。根拠提示の仕組みが必要。"
+        },
+        {
+          "id": "B",
+          "text": "temperature をさらに上げて多様な答えを得る",
+          "is_correct": false,
+          "explanation": "temperature を上げると揺らぎが増え、ハルシネーションの傾向が悪化することが多い。"
+        },
+        {
+          "id": "C",
+          "text": "max_tokens を最大値まで上げる",
+          "is_correct": false,
+          "explanation": "max_tokens は出力長の上限。事実性とは関係がない。"
+        },
+        {
+          "id": "D",
+          "text": "Retrieval-Augmented Generation (RAG) を導入し、社内文書を検索して根拠とともに回答させる",
+          "is_correct": true,
+          "explanation": "正解。RAG は信頼できる文書を検索し、その内容に基づいて回答させる手法で、ハルシネーション緩和の代表的アプローチ。Amazon Bedrock Knowledge Bases で実現可能。"
+        }
       ],
       "explanation": "RAG（Retrieval-Augmented Generation）は、ベクトル DB に保存した信頼ソースを検索してプロンプトに注入する手法。Amazon Bedrock Knowledge Bases、OpenSearch Serverless、Aurora pgvector などで実装される。Guardrails for Bedrock との併用でさらに安全性を高められる。",
       "references": [
-        {"title": "Amazon Bedrock Knowledge Bases", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"},
-        {"title": "Guardrails for Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"}
+        {
+          "title": "Amazon Bedrock Knowledge Bases",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
+        },
+        {
+          "title": "Guardrails for Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+        }
       ],
-      "tags": ["rag", "hallucination", "knowledge-base", "healthcare"],
+      "tags": [
+        "rag",
+        "hallucination",
+        "knowledge-base",
+        "healthcare"
+      ],
       "common_mistakes": [
         "プロンプト文言だけで事実性を保証できると考える",
         "temperature の上下で事実性が直接制御できると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-013",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Amazon Bedrock",
       "subtopic": "サービス概要",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "Amazon Bedrock の最も的確な説明はどれか？",
       "options": [
-        {"id": "A", "text": "AWS が提供する単一の独自 LLM をホストするサービス", "is_correct": false, "explanation": "Bedrock は単一モデルではなく、複数ベンダーの基盤モデルを提供するマネージドサービス。"},
-        {"id": "B", "text": "複数の基盤モデル（Anthropic、Meta、Amazon、Mistral、Cohere など）を統一 API で利用できるフルマネージドサービス", "is_correct": true, "explanation": "正解。Bedrock は複数プロバイダの FM をサーバーレスで利用でき、Knowledge Bases、Agents、Guardrails などの周辺機能も提供する。"},
-        {"id": "C", "text": "GPU クラスタを自分で運用してモデルをトレーニングするサービス", "is_correct": false, "explanation": "それは SageMaker Training や EC2 + GPU の世界。Bedrock はモデル運用の抽象化が目的。"},
-        {"id": "D", "text": "オンプレミス専用の AI ソフトウェア", "is_correct": false, "explanation": "Bedrock は AWS クラウドのフルマネージドサービス。"}
+        {
+          "id": "A",
+          "text": "複数の基盤モデル（Anthropic、Meta、Amazon、Mistral、Cohere など）を統一 API で利用できるフルマネージドサービス",
+          "is_correct": true,
+          "explanation": "正解。Bedrock は複数プロバイダの FM をサーバーレスで利用でき、Knowledge Bases、Agents、Guardrails などの周辺機能も提供する。"
+        },
+        {
+          "id": "B",
+          "text": "GPU クラスタを自分で運用してモデルをトレーニングするサービス",
+          "is_correct": false,
+          "explanation": "それは SageMaker Training や EC2 + GPU の世界。Bedrock はモデル運用の抽象化が目的。"
+        },
+        {
+          "id": "C",
+          "text": "AWS が提供する単一の独自 LLM をホストするサービス",
+          "is_correct": false,
+          "explanation": "Bedrock は単一モデルではなく、複数ベンダーの基盤モデルを提供するマネージドサービス。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレミス専用の AI ソフトウェア",
+          "is_correct": false,
+          "explanation": "Bedrock は AWS クラウドのフルマネージドサービス。"
+        }
       ],
       "explanation": "Amazon Bedrock は複数ベンダーの基盤モデルを単一 API で呼び出せるフルマネージドサービス。インフラ管理不要で、Knowledge Bases（RAG）、Agents（ツール利用）、Guardrails（安全制御）、Model Customization（ファインチューニング/継続事前学習）などが統合されている。",
       "references": [
-        {"title": "What is Amazon Bedrock?", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"}
+        {
+          "title": "What is Amazon Bedrock?",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+        }
       ],
-      "tags": ["bedrock", "managed-service", "foundation-models"],
+      "tags": [
+        "bedrock",
+        "managed-service",
+        "foundation-models"
+      ],
       "common_mistakes": [
         "Bedrock = 自社モデルのみと誤解する",
         "Bedrock と SageMaker の役割を混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-014",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Amazon Q",
       "subtopic": "Q Business vs Q Developer",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある SaaS 企業の経営企画部が、SharePoint・Slack・Confluence にまたがる社内ドキュメントを横断検索・要約できるアシスタントを導入したい。最も適したサービスは？",
       "options": [
-        {"id": "A", "text": "Amazon Q Developer", "is_correct": false, "explanation": "Q Developer は IDE 内でのコード補完・解説・テスト生成など開発者向けのアシスタント。社内文書横断検索の用途ではない。"},
-        {"id": "B", "text": "Amazon Q Business", "is_correct": true, "explanation": "正解。Q Business は社内の SaaS データソース（SharePoint、Slack、Confluence、S3、Salesforce 等）を横断接続し、自然言語で検索・要約・回答できるエンタープライズアシスタント。"},
-        {"id": "C", "text": "Amazon Polly", "is_correct": false, "explanation": "Polly はテキストから音声を合成するサービス。文書検索の用途ではない。"},
-        {"id": "D", "text": "Amazon Translate", "is_correct": false, "explanation": "Translate は機械翻訳サービス。横断検索・要約は提供しない。"}
+        {
+          "id": "A",
+          "text": "Amazon Translate",
+          "is_correct": false,
+          "explanation": "Translate は機械翻訳サービス。横断検索・要約は提供しない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Q Business",
+          "is_correct": true,
+          "explanation": "正解。Q Business は社内の SaaS データソース（SharePoint、Slack、Confluence、S3、Salesforce 等）を横断接続し、自然言語で検索・要約・回答できるエンタープライズアシスタント。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Q Developer",
+          "is_correct": false,
+          "explanation": "Q Developer は IDE 内でのコード補完・解説・テスト生成など開発者向けのアシスタント。社内文書横断検索の用途ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Polly",
+          "is_correct": false,
+          "explanation": "Polly はテキストから音声を合成するサービス。文書検索の用途ではない。"
+        }
       ],
       "explanation": "Amazon Q Business は組織内データに接続するエンタープライズ生成 AI アシスタント。一方 Amazon Q Developer は IDE / CLI / コンソール内で開発支援を提供する。両者を混同しやすいので役割を明確に押さえる。",
       "references": [
-        {"title": "What is Amazon Q Business?", "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html"},
-        {"title": "What is Amazon Q Developer?", "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html"}
+        {
+          "title": "What is Amazon Q Business?",
+          "url": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html"
+        },
+        {
+          "title": "What is Amazon Q Developer?",
+          "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html"
+        }
       ],
-      "tags": ["amazon-q", "q-business", "enterprise-search", "saas"],
+      "tags": [
+        "amazon-q",
+        "q-business",
+        "enterprise-search",
+        "saas"
+      ],
       "common_mistakes": [
         "Q Business と Q Developer を取り違える",
         "Q が単なるコード補完だと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-015",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Multimodal AI",
       "subtopic": "ユースケース",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるメディア企業が、商品画像をアップロードすると自動的にキャプションを生成し、SNS 投稿文を作成したい。最も適切な AI アプローチはどれか？",
       "options": [
-        {"id": "A", "text": "テキスト専用 LLM のみで、画像のファイル名から推測してキャプションを生成する", "is_correct": false, "explanation": "ファイル名は内容を反映しないため、品質が極めて低い。マルチモーダル理解が必要。"},
-        {"id": "B", "text": "画像とテキストを両方扱えるマルチモーダル基盤モデル（例: Anthropic Claude のマルチモーダル機能）を使う", "is_correct": true, "explanation": "正解。画像理解とテキスト生成を 1 モデルで行えるマルチモーダル FM が最適。Bedrock 上で Claude マルチモーダル、Amazon Nova、Titan Multimodal Embeddings などが利用可能。"},
-        {"id": "C", "text": "Polly で画像から音声を生成する", "is_correct": false, "explanation": "Polly は TTS（テキスト→音声）。画像入力には対応しない。"},
-        {"id": "D", "text": "Macie で画像内の PII を検出して投稿文に使う", "is_correct": false, "explanation": "Macie は S3 上の機密データ検出ツール。キャプション生成の用途ではない。"}
+        {
+          "id": "A",
+          "text": "Macie で画像内の PII を検出して投稿文に使う",
+          "is_correct": false,
+          "explanation": "Macie は S3 上の機密データ検出ツール。キャプション生成の用途ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Polly で画像から音声を生成する",
+          "is_correct": false,
+          "explanation": "Polly は TTS（テキスト→音声）。画像入力には対応しない。"
+        },
+        {
+          "id": "C",
+          "text": "画像とテキストを両方扱えるマルチモーダル基盤モデル（例: Anthropic Claude のマルチモーダル機能）を使う",
+          "is_correct": true,
+          "explanation": "正解。画像理解とテキスト生成を 1 モデルで行えるマルチモーダル FM が最適。Bedrock 上で Claude マルチモーダル、Amazon Nova、Titan Multimodal Embeddings などが利用可能。"
+        },
+        {
+          "id": "D",
+          "text": "テキスト専用 LLM のみで、画像のファイル名から推測してキャプションを生成する",
+          "is_correct": false,
+          "explanation": "ファイル名は内容を反映しないため、品質が極めて低い。マルチモーダル理解が必要。"
+        }
       ],
       "explanation": "マルチモーダル AI はテキスト・画像・音声・動画など複数モダリティを扱うモデル。商品画像説明、ドキュメント理解（OCR 込み）、画像検索、動画要約などに使われる。Amazon Bedrock では Claude、Amazon Nova、Titan Multimodal Embeddings などが提供されている。",
       "references": [
-        {"title": "Amazon Bedrock supported foundation models", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html"}
+        {
+          "title": "Amazon Bedrock supported foundation models",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html"
+        }
       ],
-      "tags": ["multimodal", "image-understanding", "media", "bedrock"],
+      "tags": [
+        "multimodal",
+        "image-understanding",
+        "media",
+        "bedrock"
+      ],
       "common_mistakes": [
         "マルチモーダルモデルの存在を忘れ、複数モデルを組み合わせて自作する",
         "Polly や Macie をキャプション生成に使えると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-016",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Image Generation",
       "subtopic": "Use cases",
       "cognitive_level": "L3-Apply",
       "difficulty": "easy",
       "stem": "ある SaaS のマーケティングチームが、ブログ記事用のオリジナルイラストを大量に生成したい。Bedrock 上で利用すべき適切なモデルカテゴリは？",
       "options": [
-        {"id": "A", "text": "Embedding モデル", "is_correct": false, "explanation": "Embedding はベクトル表現を作るモデルで、画像生成は行わない。"},
-        {"id": "B", "text": "テキスト→画像生成モデル（例: Amazon Titan Image Generator、Stability AI 系）", "is_correct": true, "explanation": "正解。テキストプロンプトから画像を生成するモデルが用途に合致する。Bedrock では Titan Image Generator や Stability AI 製モデルが選択可能。"},
-        {"id": "C", "text": "音声合成（TTS）モデル", "is_correct": false, "explanation": "TTS はテキスト→音声で、画像生成は対象外。"},
-        {"id": "D", "text": "音声認識（ASR）モデル", "is_correct": false, "explanation": "ASR は音声→テキスト。画像生成と無関係。"}
+        {
+          "id": "A",
+          "text": "音声合成（TTS）モデル",
+          "is_correct": false,
+          "explanation": "TTS はテキスト→音声で、画像生成は対象外。"
+        },
+        {
+          "id": "B",
+          "text": "音声認識（ASR）モデル",
+          "is_correct": false,
+          "explanation": "ASR は音声→テキスト。画像生成と無関係。"
+        },
+        {
+          "id": "C",
+          "text": "Embedding モデル",
+          "is_correct": false,
+          "explanation": "Embedding はベクトル表現を作るモデルで、画像生成は行わない。"
+        },
+        {
+          "id": "D",
+          "text": "テキスト→画像生成モデル（例: Amazon Titan Image Generator、Stability AI 系）",
+          "is_correct": true,
+          "explanation": "正解。テキストプロンプトから画像を生成するモデルが用途に合致する。Bedrock では Titan Image Generator や Stability AI 製モデルが選択可能。"
+        }
       ],
       "explanation": "テキスト→画像生成モデルは拡散モデル（Diffusion Models）等をベースに、自然言語の説明から画像を生成する。Bedrock では Amazon Titan Image Generator、Amazon Nova Canvas、Stability AI などが利用可能。商用利用時は規約・著作権・透かしポリシーに注意。",
       "references": [
-        {"title": "Amazon Titan Image Generator", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-image-models.html"}
+        {
+          "title": "Amazon Titan Image Generator",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-image-models.html"
+        }
       ],
-      "tags": ["image-generation", "titan", "diffusion", "marketing"],
+      "tags": [
+        "image-generation",
+        "titan",
+        "diffusion",
+        "marketing"
+      ],
       "common_mistakes": [
         "画像生成と画像分類モデルを混同する",
         "Polly で画像が生成できると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-017",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Customization",
       "subtopic": "Prompt vs RAG vs Fine-tuning",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ある教育 SaaS が、最新カリキュラム（毎月更新）に基づいた質問応答ボットを構築したい。学校ごとに異なる教材も参照させる必要がある。最も適切なカスタマイズ手法は？",
       "options": [
-        {"id": "A", "text": "毎月モデルを Fine-tuning し直す", "is_correct": false, "explanation": "Fine-tuning は学習データの準備・コスト・運用負荷が高く、頻繁な更新には不向き。最新性の保証も難しい。"},
-        {"id": "B", "text": "Retrieval-Augmented Generation (RAG) を採用し、最新カリキュラム文書をベクトル DB に格納して検索させる", "is_correct": true, "explanation": "正解。RAG は文書を更新するだけで最新情報を反映でき、学校別の名前空間で教材分離も可能。頻繁更新かつ参照ソース型の用途に最適。"},
-        {"id": "C", "text": "プロンプトに毎回全カリキュラムを貼り付ける", "is_correct": false, "explanation": "コンテキスト長を超えやすく、コストも肥大化する。スケールしない。"},
-        {"id": "D", "text": "Continued Pre-training をリアルタイムで行う", "is_correct": false, "explanation": "継続事前学習はさらに重い処理で、リアルタイム反映には不適。"}
+        {
+          "id": "A",
+          "text": "Retrieval-Augmented Generation (RAG) を採用し、最新カリキュラム文書をベクトル DB に格納して検索させる",
+          "is_correct": true,
+          "explanation": "正解。RAG は文書を更新するだけで最新情報を反映でき、学校別の名前空間で教材分離も可能。頻繁更新かつ参照ソース型の用途に最適。"
+        },
+        {
+          "id": "B",
+          "text": "毎月モデルを Fine-tuning し直す",
+          "is_correct": false,
+          "explanation": "Fine-tuning は学習データの準備・コスト・運用負荷が高く、頻繁な更新には不向き。最新性の保証も難しい。"
+        },
+        {
+          "id": "C",
+          "text": "Continued Pre-training をリアルタイムで行う",
+          "is_correct": false,
+          "explanation": "継続事前学習はさらに重い処理で、リアルタイム反映には不適。"
+        },
+        {
+          "id": "D",
+          "text": "プロンプトに毎回全カリキュラムを貼り付ける",
+          "is_correct": false,
+          "explanation": "コンテキスト長を超えやすく、コストも肥大化する。スケールしない。"
+        }
       ],
       "explanation": "AWS が推奨するカスタマイズの意思決定順は: Prompt Engineering → RAG → Fine-tuning → Continued Pre-training。最新性が重要、参照ソースが頻繁更新される用途では RAG が最適解。Fine-tuning はモデルの「振る舞い」を変えたいケースに向く。",
       "references": [
-        {"title": "Customize your model in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"},
-        {"title": "Knowledge Bases for Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"}
+        {
+          "title": "Customize your model in Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"
+        },
+        {
+          "title": "Knowledge Bases for Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
+        }
       ],
-      "tags": ["rag", "fine-tuning", "customization", "decision-making", "education"],
+      "tags": [
+        "rag",
+        "fine-tuning",
+        "customization",
+        "decision-making",
+        "education"
+      ],
       "common_mistakes": [
         "最新情報反映に Fine-tuning を選んでしまう",
         "Continued Pre-training と Fine-tuning を混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-018",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Customization",
       "subtopic": "Fine-tuning の適用判断",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ある医療系 SaaS は、社内独自の文体・略語・カルテフォーマットに合わせて出力を整えたい。社内ガイドラインに沿った数千件の入出力ペアが用意できる。最も適したカスタマイズ手法は？",
       "options": [
-        {"id": "A", "text": "Prompt Engineering のみで対応する", "is_correct": false, "explanation": "プロンプトでも一部の文体は誘導できるが、固有の文体・フォーマットを安定して再現するには限界がある。"},
-        {"id": "B", "text": "Fine-tuning（ラベル付きペアで微調整）", "is_correct": true, "explanation": "正解。出力スタイル・フォーマットを安定して再現したい用途で、十分なラベル付きデータがある場合は Fine-tuning が最適。Bedrock の Custom Models で利用可能。"},
-        {"id": "C", "text": "RAG（Retrieval-Augmented Generation）", "is_correct": false, "explanation": "RAG は知識補強が主目的で、文体やフォーマットの恒常的変更には不向き。"},
-        {"id": "D", "text": "Guardrails のみで対応", "is_correct": false, "explanation": "Guardrails は禁則ワードや有害コンテンツのフィルタが主目的で、文体学習はできない。"}
+        {
+          "id": "A",
+          "text": "Guardrails のみで対応",
+          "is_correct": false,
+          "explanation": "Guardrails は禁則ワードや有害コンテンツのフィルタが主目的で、文体学習はできない。"
+        },
+        {
+          "id": "B",
+          "text": "Fine-tuning（ラベル付きペアで微調整）",
+          "is_correct": true,
+          "explanation": "正解。出力スタイル・フォーマットを安定して再現したい用途で、十分なラベル付きデータがある場合は Fine-tuning が最適。Bedrock の Custom Models で利用可能。"
+        },
+        {
+          "id": "C",
+          "text": "Prompt Engineering のみで対応する",
+          "is_correct": false,
+          "explanation": "プロンプトでも一部の文体は誘導できるが、固有の文体・フォーマットを安定して再現するには限界がある。"
+        },
+        {
+          "id": "D",
+          "text": "RAG（Retrieval-Augmented Generation）",
+          "is_correct": false,
+          "explanation": "RAG は知識補強が主目的で、文体やフォーマットの恒常的変更には不向き。"
+        }
       ],
       "explanation": "Fine-tuning は、特定タスクや出力スタイル（社内文体、業界固有のフォーマット）の再現に向く。RAG と異なり、知識を増やすのでなくモデルの振る舞い自体を変える。Bedrock では一部モデルで Fine-tuning ジョブをマネージドに実行できる。",
       "references": [
-        {"title": "Custom models in Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"}
+        {
+          "title": "Custom models in Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"
+        }
       ],
-      "tags": ["fine-tuning", "customization", "style", "healthcare"],
+      "tags": [
+        "fine-tuning",
+        "customization",
+        "style",
+        "healthcare"
+      ],
       "common_mistakes": [
         "文体カスタマイズを RAG で実現しようとする",
         "Guardrails をカスタマイズ手法と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-019",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Use Cases",
       "subtopic": "コード生成",
       "cognitive_level": "L3-Apply",
       "difficulty": "easy",
       "stem": "ある SaaS 企業の開発チームが、IDE 内で関数やテストを補完してくれるアシスタントを導入したい。最も適切な AWS サービスは？",
       "options": [
-        {"id": "A", "text": "Amazon Q Developer", "is_correct": true, "explanation": "正解。Q Developer は IDE / CLI に統合され、コード補完、説明、テスト生成、リファクタリングなど開発支援に特化したアシスタント。"},
-        {"id": "B", "text": "Amazon Q Business", "is_correct": false, "explanation": "Q Business は社内データ横断検索向けで、IDE 統合のコード補完は提供しない。"},
-        {"id": "C", "text": "Amazon Translate", "is_correct": false, "explanation": "Translate は機械翻訳サービスで、コード補完機能はない。"},
-        {"id": "D", "text": "Amazon Lex", "is_correct": false, "explanation": "Lex は対話型ボット構築サービス。コード補完用ではない。"}
+        {
+          "id": "A",
+          "text": "Amazon Translate",
+          "is_correct": false,
+          "explanation": "Translate は機械翻訳サービスで、コード補完機能はない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Lex",
+          "is_correct": false,
+          "explanation": "Lex は対話型ボット構築サービス。コード補完用ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Q Developer",
+          "is_correct": true,
+          "explanation": "正解。Q Developer は IDE / CLI に統合され、コード補完、説明、テスト生成、リファクタリングなど開発支援に特化したアシスタント。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Q Business",
+          "is_correct": false,
+          "explanation": "Q Business は社内データ横断検索向けで、IDE 統合のコード補完は提供しない。"
+        }
       ],
       "explanation": "Amazon Q Developer は、Visual Studio Code、JetBrains、AWS CLI、AWS コンソールなどに統合され、リアルタイムのコード補完、コード説明、ユニットテスト生成、AWS リソース運用支援を提供する。",
       "references": [
-        {"title": "Amazon Q Developer", "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html"}
+        {
+          "title": "Amazon Q Developer",
+          "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html"
+        }
       ],
-      "tags": ["q-developer", "code-generation", "saas"],
+      "tags": [
+        "q-developer",
+        "code-generation",
+        "saas"
+      ],
       "common_mistakes": [
         "Q Business をコード補完に使えると誤解する",
         "Lex で IDE 統合できると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-020",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Use Cases",
       "subtopic": "翻訳",
       "cognitive_level": "L3-Apply",
       "difficulty": "easy",
       "stem": "あるメディア企業が、自社の英語記事を 10 言語に翻訳したい。コストが安く、定型的な翻訳に強い AWS サービスを選ぶならどれか？",
       "options": [
-        {"id": "A", "text": "Amazon Translate", "is_correct": true, "explanation": "正解。Translate はリアルタイム/バッチ翻訳に特化したマネージドサービスで、定型的な翻訳に対しコスト効率が高い。"},
-        {"id": "B", "text": "Amazon Polly", "is_correct": false, "explanation": "Polly は TTS（テキスト→音声）。翻訳は提供しない。"},
-        {"id": "C", "text": "Amazon Rekognition", "is_correct": false, "explanation": "Rekognition は画像・動画分析サービス。テキスト翻訳の用途ではない。"},
-        {"id": "D", "text": "Amazon Comprehend", "is_correct": false, "explanation": "Comprehend は言語の感情/エンティティ抽出など NLP 分析。翻訳ではない。"}
+        {
+          "id": "A",
+          "text": "Amazon Polly",
+          "is_correct": false,
+          "explanation": "Polly は TTS（テキスト→音声）。翻訳は提供しない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Comprehend",
+          "is_correct": false,
+          "explanation": "Comprehend は言語の感情/エンティティ抽出など NLP 分析。翻訳ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Rekognition",
+          "is_correct": false,
+          "explanation": "Rekognition は画像・動画分析サービス。テキスト翻訳の用途ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Translate",
+          "is_correct": true,
+          "explanation": "正解。Translate はリアルタイム/バッチ翻訳に特化したマネージドサービスで、定型的な翻訳に対しコスト効率が高い。"
+        }
       ],
       "explanation": "Amazon Translate は機械翻訳に特化したマネージドサービスで、ニューラル機械翻訳モデルを使い 75 以上の言語間翻訳をサポート。LLM での翻訳もできるが、定型ワークロードでは Translate のほうが安価で高速。",
       "references": [
-        {"title": "What is Amazon Translate?", "url": "https://docs.aws.amazon.com/translate/latest/dg/what-is.html"}
+        {
+          "title": "What is Amazon Translate?",
+          "url": "https://docs.aws.amazon.com/translate/latest/dg/what-is.html"
+        }
       ],
-      "tags": ["translate", "use-case", "media", "nlp"],
+      "tags": [
+        "translate",
+        "use-case",
+        "media",
+        "nlp"
+      ],
       "common_mistakes": [
         "Polly や Rekognition で翻訳できると誤解する",
         "翻訳には常に LLM が最適と思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-021",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Copyright & Ethics",
       "subtopic": "学習データの著作権",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "ある SaaS が生成 AI を製品に組み込むにあたり、出力に著作権上のリスクが少ないアプローチとして適切なのはどれか？",
       "options": [
-        {"id": "A", "text": "クローラで Web 全体から無差別にスクレイピングしたデータでファインチューニングする", "is_correct": false, "explanation": "ライセンス未確認のデータ利用は著作権・利用規約違反のリスクが高い。"},
-        {"id": "B", "text": "ライセンスを確認した自社データや許諾済みデータセットでファインチューニングし、Bedrock 等の補償ポリシー（Indemnification）が適用される FM を利用する", "is_correct": true, "explanation": "正解。AWS は対象 FM の出力に対し IP 補償（Indemnification）を提供する場合があり、これと自社データの権利確認を組み合わせるのがリスク低減の基本。"},
-        {"id": "C", "text": "他社の商用画像生成モデルの出力をそのまま再販する", "is_correct": false, "explanation": "ライセンス・利用規約により再販が制限される場合が多く、安全とは言えない。"},
-        {"id": "D", "text": "規約を読まずに、見つけたモデルをすべて商用利用する", "is_correct": false, "explanation": "ライセンス未確認の商用利用は法的リスクが高い。"}
+        {
+          "id": "A",
+          "text": "ライセンスを確認した自社データや許諾済みデータセットでファインチューニングし、Bedrock 等の補償ポリシー（Indemnification）が適用される FM を利用する",
+          "is_correct": true,
+          "explanation": "正解。AWS は対象 FM の出力に対し IP 補償（Indemnification）を提供する場合があり、これと自社データの権利確認を組み合わせるのがリスク低減の基本。"
+        },
+        {
+          "id": "B",
+          "text": "他社の商用画像生成モデルの出力をそのまま再販する",
+          "is_correct": false,
+          "explanation": "ライセンス・利用規約により再販が制限される場合が多く、安全とは言えない。"
+        },
+        {
+          "id": "C",
+          "text": "クローラで Web 全体から無差別にスクレイピングしたデータでファインチューニングする",
+          "is_correct": false,
+          "explanation": "ライセンス未確認のデータ利用は著作権・利用規約違反のリスクが高い。"
+        },
+        {
+          "id": "D",
+          "text": "規約を読まずに、見つけたモデルをすべて商用利用する",
+          "is_correct": false,
+          "explanation": "ライセンス未確認の商用利用は法的リスクが高い。"
+        }
       ],
       "explanation": "生成 AI 利用では、学習データの権利、出力の権利、第三者の権利侵害（特に画像）の 3 観点でリスク評価が必要。AWS は Bedrock の対象 FM について IP Indemnification を提供（条件あり）。Guardrails や利用規約準拠と合わせて運用すべき。",
       "references": [
-        {"title": "AWS Service Terms (Bedrock IP indemnification)", "url": "https://aws.amazon.com/service-terms/"},
-        {"title": "Generative AI on AWS", "url": "https://aws.amazon.com/generative-ai/"}
+        {
+          "title": "AWS Service Terms (Bedrock IP indemnification)",
+          "url": "https://aws.amazon.com/service-terms/"
+        },
+        {
+          "title": "Generative AI on AWS",
+          "url": "https://aws.amazon.com/generative-ai/"
+        }
       ],
-      "tags": ["copyright", "ethics", "indemnification", "compliance"],
+      "tags": [
+        "copyright",
+        "ethics",
+        "indemnification",
+        "compliance"
+      ],
       "common_mistakes": [
         "「公開されている」 = 「自由に学習データに使える」と誤解する",
         "AWS の補償ポリシーが全モデル無条件に効くと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-022",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Generative AI Use Cases",
       "subtopic": "適用判断",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "次のうち、生成 AI（LLM）よりも従来型 ML（教師あり学習）が一般的に適しているユースケースはどれか？",
       "options": [
-        {"id": "A", "text": "コールセンターの数百万件の通話ログから将来の解約確率を予測する", "is_correct": true, "explanation": "正解。確率値の数値予測（churn prediction）は構造化データに対する教師あり学習の典型タスクで、SageMaker などで XGBoost 等のモデルを使うほうが精度・コストともに優れる。"},
-        {"id": "B", "text": "問い合わせ文書の自由記述回答を要約する", "is_correct": false, "explanation": "自由記述の要約は LLM の得意領域。"},
-        {"id": "C", "text": "社内 FAQ ボットを作る", "is_correct": false, "explanation": "RAG + LLM が定石的な構成。"},
-        {"id": "D", "text": "メールから返信下書きを生成する", "is_correct": false, "explanation": "自由文生成は LLM の典型ユースケース。"}
+        {
+          "id": "A",
+          "text": "問い合わせ文書の自由記述回答を要約する",
+          "is_correct": false,
+          "explanation": "自由記述の要約は LLM の得意領域。"
+        },
+        {
+          "id": "B",
+          "text": "コールセンターの数百万件の通話ログから将来の解約確率を予測する",
+          "is_correct": true,
+          "explanation": "正解。確率値の数値予測（churn prediction）は構造化データに対する教師あり学習の典型タスクで、SageMaker などで XGBoost 等のモデルを使うほうが精度・コストともに優れる。"
+        },
+        {
+          "id": "C",
+          "text": "メールから返信下書きを生成する",
+          "is_correct": false,
+          "explanation": "自由文生成は LLM の典型ユースケース。"
+        },
+        {
+          "id": "D",
+          "text": "社内 FAQ ボットを作る",
+          "is_correct": false,
+          "explanation": "RAG + LLM が定石的な構成。"
+        }
       ],
       "explanation": "生成 AI は自由文生成・要約・QA が得意。一方、構造化データから数値や確率を予測するタスクは従来型 ML（決定木、勾配ブースティング、線形モデル等）のほうが安価かつ高精度なことが多い。タスク特性で使い分ける視点が重要。",
       "references": [
-        {"title": "When to use Generative AI", "url": "https://aws.amazon.com/generative-ai/"}
+        {
+          "title": "When to use Generative AI",
+          "url": "https://aws.amazon.com/generative-ai/"
+        }
       ],
-      "tags": ["use-case", "ml-vs-genai", "decision", "fintech"],
+      "tags": [
+        "use-case",
+        "ml-vs-genai",
+        "decision",
+        "fintech"
+      ],
       "common_mistakes": [
         "「すべてのタスクは LLM で解ける」と過大評価する",
         "数値予測タスクで LLM を選ぶ"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-023",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Context Window",
       "subtopic": "概念",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "LLM の「コンテキストウィンドウ（context window）」が示すものとして最も正しいのはどれか？",
       "options": [
-        {"id": "A", "text": "1回のリクエストでモデルが処理できるトークン数の上限（入力 + 出力）", "is_correct": true, "explanation": "正解。コンテキストウィンドウは入力と出力を合わせた処理可能なトークン数の上限で、モデルごとに異なる（数千〜数百万トークン）。"},
-        {"id": "B", "text": "学習時のバッチサイズ", "is_correct": false, "explanation": "バッチサイズは学習時のハイパーパラメータで、推論時のトークン上限とは別物。"},
-        {"id": "C", "text": "モデルが保持できるユーザー数", "is_correct": false, "explanation": "ユーザー数は AWS 側のスケーリング/クォータの話で、コンテキストウィンドウとは無関係。"},
-        {"id": "D", "text": "GPU メモリの量", "is_correct": false, "explanation": "GPU メモリはコンテキスト長に影響するインフラ要因だが、context window 自体の定義ではない。"}
+        {
+          "id": "A",
+          "text": "GPU メモリの量",
+          "is_correct": false,
+          "explanation": "GPU メモリはコンテキスト長に影響するインフラ要因だが、context window 自体の定義ではない。"
+        },
+        {
+          "id": "B",
+          "text": "学習時のバッチサイズ",
+          "is_correct": false,
+          "explanation": "バッチサイズは学習時のハイパーパラメータで、推論時のトークン上限とは別物。"
+        },
+        {
+          "id": "C",
+          "text": "1回のリクエストでモデルが処理できるトークン数の上限（入力 + 出力）",
+          "is_correct": true,
+          "explanation": "正解。コンテキストウィンドウは入力と出力を合わせた処理可能なトークン数の上限で、モデルごとに異なる（数千〜数百万トークン）。"
+        },
+        {
+          "id": "D",
+          "text": "モデルが保持できるユーザー数",
+          "is_correct": false,
+          "explanation": "ユーザー数は AWS 側のスケーリング/クォータの話で、コンテキストウィンドウとは無関係。"
+        }
       ],
       "explanation": "コンテキストウィンドウは、プロンプト・履歴・出力を含めて 1 リクエストで扱えるトークン数の上限。長いほど大きな文書や履歴を扱えるが、入力トークン数に応じて課金が増える。RAG はコンテキストウィンドウ制約への現実的な対処にもなる。",
       "references": [
-        {"title": "Amazon Bedrock model overview", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html"}
+        {
+          "title": "Amazon Bedrock model overview",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html"
+        }
       ],
-      "tags": ["context-window", "tokens", "limits"],
+      "tags": [
+        "context-window",
+        "tokens",
+        "limits"
+      ],
       "common_mistakes": [
         "context window と max_tokens（出力上限）を混同する",
         "コンテキスト長 = 学習データ量と誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-024",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Bedrock Architecture",
       "subtopic": "Agents / Knowledge Bases / Guardrails",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある SaaS が、社内文書を参照しながら API を呼び出して業務を実行できる AI アシスタントを Bedrock 上に構築したい。さらに不適切な発言や PII 漏洩を防ぎたい。最も適切な構成評価はどれか？",
       "options": [
-        {"id": "A", "text": "Knowledge Bases（社内文書の RAG） + Agents（ツール / API 呼び出し） + Guardrails（出力制御）の組み合わせ", "is_correct": true, "explanation": "正解。Bedrock Knowledge Bases で社内知識検索、Agents でツール実行（API 呼び出し）、Guardrails で有害発言や PII を制御する組み合わせは、AWS 推奨の典型構成。"},
-        {"id": "B", "text": "Bedrock の InvokeModel API を 1 回呼ぶだけで、自動で全部やってくれる", "is_correct": false, "explanation": "InvokeModel は単純な FM 呼び出しのみ。RAG・ツール実行・ガードレールは別構成が必要。"},
-        {"id": "C", "text": "Lambda で全機能を 0 から自作する", "is_correct": false, "explanation": "技術的には可能だが、Bedrock のマネージド機能を捨てて自作するのは運用コスト・品質の両面で不合理。"},
-        {"id": "D", "text": "Knowledge Bases だけ使えば、API 呼び出しもガードレールも不要", "is_correct": false, "explanation": "Knowledge Bases は RAG のみ提供。API 呼び出しや出力制御は別機能（Agents、Guardrails）が必要。"}
+        {
+          "id": "A",
+          "text": "Lambda で全機能を 0 から自作する",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、Bedrock のマネージド機能を捨てて自作するのは運用コスト・品質の両面で不合理。"
+        },
+        {
+          "id": "B",
+          "text": "Knowledge Bases だけ使えば、API 呼び出しもガードレールも不要",
+          "is_correct": false,
+          "explanation": "Knowledge Bases は RAG のみ提供。API 呼び出しや出力制御は別機能（Agents、Guardrails）が必要。"
+        },
+        {
+          "id": "C",
+          "text": "Bedrock の InvokeModel API を 1 回呼ぶだけで、自動で全部やってくれる",
+          "is_correct": false,
+          "explanation": "InvokeModel は単純な FM 呼び出しのみ。RAG・ツール実行・ガードレールは別構成が必要。"
+        },
+        {
+          "id": "D",
+          "text": "Knowledge Bases（社内文書の RAG） + Agents（ツール / API 呼び出し） + Guardrails（出力制御）の組み合わせ",
+          "is_correct": true,
+          "explanation": "正解。Bedrock Knowledge Bases で社内知識検索、Agents でツール実行（API 呼び出し）、Guardrails で有害発言や PII を制御する組み合わせは、AWS 推奨の典型構成。"
+        }
       ],
       "explanation": "Bedrock のエンタープライズ生成 AI 構成では、Knowledge Bases（RAG）、Agents（ツール / API 連携）、Guardrails（コンテンツ・PII フィルタ）の 3 機能を組み合わせるのが定石。各機能の役割分担を理解することが重要。",
       "references": [
-        {"title": "Amazon Bedrock Agents", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"},
-        {"title": "Amazon Bedrock Guardrails", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"},
-        {"title": "Amazon Bedrock Knowledge Bases", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"}
+        {
+          "title": "Amazon Bedrock Agents",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+        },
+        {
+          "title": "Amazon Bedrock Guardrails",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+        },
+        {
+          "title": "Amazon Bedrock Knowledge Bases",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
+        }
       ],
-      "tags": ["bedrock", "agents", "knowledge-bases", "guardrails", "architecture"],
+      "tags": [
+        "bedrock",
+        "agents",
+        "knowledge-bases",
+        "guardrails",
+        "architecture"
+      ],
       "common_mistakes": [
         "Knowledge Bases だけで API 実行もできると誤解する",
         "Guardrails の役割を Agents に持たせようとする"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain2-025",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Fundamentals of Generative AI", "weight_percent": 24},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Fundamentals of Generative AI",
+        "weight_percent": 24
+      },
       "topic": "Prompt Engineering",
       "subtopic": "プロンプト設計",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "ある教育 SaaS の PdM が、「中学生向けの数学解説ボット」のシステムプロンプトを設計している。次のうち、Practitioner レベルで AWS が推奨するプロンプト設計の原則として最も妥当な組み合わせはどれか？",
       "options": [
-        {"id": "A", "text": "役割（あなたは中学数学の家庭教師です）、対象（中学2年生）、出力形式（手順を箇条書き）、制約（専門用語を使わない、必要なら例を出す）を明示し、必要なら few-shot 例を添える", "is_correct": true, "explanation": "正解。役割・対象・形式・制約を明示し、必要に応じて few-shot 例を加えるのは AWS 推奨のプロンプト設計原則に合致する。"},
-        {"id": "B", "text": "とにかく「賢く答えて」とだけ書き、詳細は LLM の判断に任せる", "is_correct": false, "explanation": "曖昧なプロンプトは出力品質が安定しない。明示的な制約と形式指定が望ましい。"},
-        {"id": "C", "text": "毎回 temperature=2.0 にしてランダムに答えさせる", "is_correct": false, "explanation": "教育用途で揺らぎが大きい設定は不適切。事実性・安定性を優先すべき。"},
-        {"id": "D", "text": "ユーザー入力をそのままシステムプロンプトに連結し、信頼境界を持たせない", "is_correct": false, "explanation": "プロンプトインジェクションの温床。AWS は信頼境界の分離と Guardrails 利用を推奨する。"}
+        {
+          "id": "A",
+          "text": "役割（あなたは中学数学の家庭教師です）、対象（中学2年生）、出力形式（手順を箇条書き）、制約（専門用語を使わない、必要なら例を出す）を明示し、必要なら few-shot 例を添える",
+          "is_correct": true,
+          "explanation": "正解。役割・対象・形式・制約を明示し、必要に応じて few-shot 例を加えるのは AWS 推奨のプロンプト設計原則に合致する。"
+        },
+        {
+          "id": "B",
+          "text": "とにかく「賢く答えて」とだけ書き、詳細は LLM の判断に任せる",
+          "is_correct": false,
+          "explanation": "曖昧なプロンプトは出力品質が安定しない。明示的な制約と形式指定が望ましい。"
+        },
+        {
+          "id": "C",
+          "text": "ユーザー入力をそのままシステムプロンプトに連結し、信頼境界を持たせない",
+          "is_correct": false,
+          "explanation": "プロンプトインジェクションの温床。AWS は信頼境界の分離と Guardrails 利用を推奨する。"
+        },
+        {
+          "id": "D",
+          "text": "毎回 temperature=2.0 にしてランダムに答えさせる",
+          "is_correct": false,
+          "explanation": "教育用途で揺らぎが大きい設定は不適切。事実性・安定性を優先すべき。"
+        }
       ],
       "explanation": "AWS が推奨するプロンプト設計の基本要素は、役割定義・対象者・タスク・出力形式・制約・例示の組み合わせ。曖昧表現を避け、信頼境界を分離し、Guardrails で安全性を担保する。教育・医療など影響度の高いユースケースほど明示的な設計が重要。",
       "references": [
-        {"title": "Prompt engineering guidelines for Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"},
-        {"title": "Guardrails for Amazon Bedrock", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"}
+        {
+          "title": "Prompt engineering guidelines for Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+        },
+        {
+          "title": "Guardrails for Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+        }
       ],
-      "tags": ["prompt-engineering", "design", "education", "best-practice"],
+      "tags": [
+        "prompt-engineering",
+        "design",
+        "education",
+        "best-practice"
+      ],
       "common_mistakes": [
         "プロンプトを曖昧にしたまま LLM の精度に頼る",
         "プロンプトインジェクション対策を考慮しない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

@@ -15,565 +15,1547 @@
     {
       "id": "aif-c01-domain1-001",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "AI vs ML vs DL",
       "subtopic": "概念の階層関係",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AI（人工知能）、ML（機械学習）、DL（ディープラーニング）の関係を最も正確に表しているものはどれか？",
       "options": [
-        {"id": "A", "text": "AI ⊃ ML ⊃ DL（AIが最も広く、DLはMLの一部）", "is_correct": true, "explanation": "正解。AIは最も広い概念であり、その中にデータからパターンを学ぶMLが含まれ、さらにその中で多層ニューラルネットワークを使うDLが包含される。"},
-        {"id": "B", "text": "DL ⊃ ML ⊃ AI（DLが最も広い概念）", "is_correct": false, "explanation": "包含関係が逆。DLはMLの一手法に過ぎない。"},
-        {"id": "C", "text": "AI、ML、DLは互いに独立した別分野である", "is_correct": false, "explanation": "互いに独立ではなく、入れ子の包含関係にある。"},
-        {"id": "D", "text": "ML ⊃ AI ⊃ DL（MLが最も広い）", "is_correct": false, "explanation": "AIがMLよりも広い概念であるため、包含関係が誤り。"}
+        {
+          "id": "A",
+          "text": "AI ⊃ ML ⊃ DL（AIが最も広く、DLはMLの一部）",
+          "is_correct": true,
+          "explanation": "正解。AIは最も広い概念であり、その中にデータからパターンを学ぶMLが含まれ、さらにその中で多層ニューラルネットワークを使うDLが包含される。"
+        },
+        {
+          "id": "B",
+          "text": "DL ⊃ ML ⊃ AI（DLが最も広い概念）",
+          "is_correct": false,
+          "explanation": "包含関係が逆。DLはMLの一手法に過ぎない。"
+        },
+        {
+          "id": "C",
+          "text": "ML ⊃ AI ⊃ DL（MLが最も広い）",
+          "is_correct": false,
+          "explanation": "AIがMLよりも広い概念であるため、包含関係が誤り。"
+        },
+        {
+          "id": "D",
+          "text": "AI、ML、DLは互いに独立した別分野である",
+          "is_correct": false,
+          "explanation": "互いに独立ではなく、入れ子の包含関係にある。"
+        }
       ],
       "explanation": "AI（人工知能）は人間の知的振る舞いを再現する広範な分野であり、その中の一手法としてML（機械学習）がある。MLはデータから自動でパターンを学ぶ手法群であり、そのうち多層ニューラルネットワークを用いるものがDL（ディープラーニング）である。AIF-C01では、この階層構造を確実に理解しておくことが基礎となる。",
       "references": [
-        {"title": "What is Artificial Intelligence (AI)?", "url": "https://aws.amazon.com/what-is/artificial-intelligence/"},
-        {"title": "What is Machine Learning?", "url": "https://aws.amazon.com/what-is/machine-learning/"}
+        {
+          "title": "What is Artificial Intelligence (AI)?",
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/"
+        },
+        {
+          "title": "What is Machine Learning?",
+          "url": "https://aws.amazon.com/what-is/machine-learning/"
+        }
       ],
-      "tags": ["ai", "ml", "dl", "fundamentals", "concepts"],
+      "tags": [
+        "ai",
+        "ml",
+        "dl",
+        "fundamentals",
+        "concepts"
+      ],
       "common_mistakes": [
         "AI と ML を同じものと考える",
         "DL を ML と独立した別技術と誤認する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-002",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "ML 三類型",
       "subtopic": "教師あり学習の定義",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "教師あり学習（Supervised Learning）の定義として最も適切なものはどれか？",
       "options": [
-        {"id": "A", "text": "ラベルなしのデータからクラスタや次元削減のような構造を発見する手法", "is_correct": false, "explanation": "これは教師なし学習の定義。ラベルがない点が特徴。"},
-        {"id": "B", "text": "入力データと正解ラベルのペアからモデルを学習し、未知のデータに対して予測する手法", "is_correct": true, "explanation": "正解。入力Xと正解Y のペア（labeled data）から f(X) → Y を学ぶのが教師あり学習。分類と回帰が代表的タスク。"},
-        {"id": "C", "text": "環境との相互作用を通じて報酬を最大化する行動を学習する手法", "is_correct": false, "explanation": "これは強化学習の定義。エージェントと報酬の概念がある。"},
-        {"id": "D", "text": "事前学習済みモデルを別タスクに転用する手法", "is_correct": false, "explanation": "これは転移学習（Transfer Learning）の定義であり、学習パラダイムの三類型とは別の概念。"}
+        {
+          "id": "A",
+          "text": "環境との相互作用を通じて報酬を最大化する行動を学習する手法",
+          "is_correct": false,
+          "explanation": "これは強化学習の定義。エージェントと報酬の概念がある。"
+        },
+        {
+          "id": "B",
+          "text": "入力データと正解ラベルのペアからモデルを学習し、未知のデータに対して予測する手法",
+          "is_correct": true,
+          "explanation": "正解。入力Xと正解Y のペア（labeled data）から f(X) → Y を学ぶのが教師あり学習。分類と回帰が代表的タスク。"
+        },
+        {
+          "id": "C",
+          "text": "事前学習済みモデルを別タスクに転用する手法",
+          "is_correct": false,
+          "explanation": "これは転移学習（Transfer Learning）の定義であり、学習パラダイムの三類型とは別の概念。"
+        },
+        {
+          "id": "D",
+          "text": "ラベルなしのデータからクラスタや次元削減のような構造を発見する手法",
+          "is_correct": false,
+          "explanation": "これは教師なし学習の定義。ラベルがない点が特徴。"
+        }
       ],
       "explanation": "ML は大別して、教師あり学習（labeled data）、教師なし学習（unlabeled data）、強化学習（報酬ベース）の3類型に分類される。教師あり学習はメールスパム判定、住宅価格予測など、入力と正解のペアが用意できるタスクで使われる。",
       "references": [
-        {"title": "Types of Machine Learning", "url": "https://aws.amazon.com/what-is/machine-learning/"}
+        {
+          "title": "Types of Machine Learning",
+          "url": "https://aws.amazon.com/what-is/machine-learning/"
+        }
       ],
-      "tags": ["supervised-learning", "ml-types", "fundamentals", "classification", "regression"],
+      "tags": [
+        "supervised-learning",
+        "ml-types",
+        "fundamentals",
+        "classification",
+        "regression"
+      ],
       "common_mistakes": [
         "教師なし学習と教師あり学習を混同する",
         "転移学習を独立した三類型の一つと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-003",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "AWS AI サービス",
       "subtopic": "音声合成サービス",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "テキストを自然な音声に変換するAWS のマネージドサービスはどれか？",
       "options": [
-        {"id": "A", "text": "Amazon Transcribe", "is_correct": false, "explanation": "Transcribe は音声→テキスト変換（STT: Speech-to-Text）であり、方向が逆。"},
-        {"id": "B", "text": "Amazon Comprehend", "is_correct": false, "explanation": "Comprehend は自然言語理解（感情分析、エンティティ抽出など）で、音声生成は行わない。"},
-        {"id": "C", "text": "Amazon Polly", "is_correct": true, "explanation": "正解。Polly はテキストを自然な音声に変換するTTS（Text-to-Speech）サービス。多言語・多話者・ニューラル音声に対応。"},
-        {"id": "D", "text": "Amazon Translate", "is_correct": false, "explanation": "Translate はテキスト同士の言語翻訳サービスで、音声生成は行わない。"}
+        {
+          "id": "A",
+          "text": "Amazon Comprehend",
+          "is_correct": false,
+          "explanation": "Comprehend は自然言語理解（感情分析、エンティティ抽出など）で、音声生成は行わない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Translate",
+          "is_correct": false,
+          "explanation": "Translate はテキスト同士の言語翻訳サービスで、音声生成は行わない。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Polly",
+          "is_correct": true,
+          "explanation": "正解。Polly はテキストを自然な音声に変換するTTS（Text-to-Speech）サービス。多言語・多話者・ニューラル音声に対応。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Transcribe",
+          "is_correct": false,
+          "explanation": "Transcribe は音声→テキスト変換（STT: Speech-to-Text）であり、方向が逆。"
+        }
       ],
       "explanation": "Amazon Polly は深層学習を使ったTTS（Text-to-Speech）サービス。教育コンテンツ、IVR、アクセシビリティ対応などで使われる。混同しやすい組み合わせは Transcribe（STT）⇔ Polly（TTS）の方向の違い。",
       "references": [
-        {"title": "What Is Amazon Polly?", "url": "https://docs.aws.amazon.com/polly/latest/dg/what-is.html"}
+        {
+          "title": "What Is Amazon Polly?",
+          "url": "https://docs.aws.amazon.com/polly/latest/dg/what-is.html"
+        }
       ],
-      "tags": ["polly", "tts", "ai-services", "speech", "fundamentals"],
+      "tags": [
+        "polly",
+        "tts",
+        "ai-services",
+        "speech",
+        "fundamentals"
+      ],
       "common_mistakes": [
         "Transcribe と Polly の方向を逆に覚える",
         "Comprehend で音声生成できると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-004",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "ML 三類型",
       "subtopic": "教師なし学習の典型タスク",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "教師なし学習に最も該当するタスクはどれか？",
       "options": [
-        {"id": "A", "text": "過去の住宅取引データから、新規物件の販売価格を予測する", "is_correct": false, "explanation": "正解ラベル（価格）がある回帰タスクであり、教師あり学習。"},
-        {"id": "B", "text": "顧客の購買履歴をもとに、似た傾向を持つ顧客グループを自動的に発見する", "is_correct": true, "explanation": "正解。事前にラベル付けされたグループはなく、データから類似性に基づいてクラスタを発見するクラスタリングは教師なし学習の代表例。"},
-        {"id": "C", "text": "ロボットアームが試行錯誤を繰り返してボールを掴む方法を学ぶ", "is_correct": false, "explanation": "報酬ベースの行動学習であり、強化学習。"},
-        {"id": "D", "text": "メール本文をスパムか否かに分類する", "is_correct": false, "explanation": "スパムか否かのラベル付き訓練データから学ぶ分類タスクで、教師あり学習。"}
+        {
+          "id": "A",
+          "text": "過去の住宅取引データから、新規物件の販売価格を予測する",
+          "is_correct": false,
+          "explanation": "正解ラベル（価格）がある回帰タスクであり、教師あり学習。"
+        },
+        {
+          "id": "B",
+          "text": "ロボットアームが試行錯誤を繰り返してボールを掴む方法を学ぶ",
+          "is_correct": false,
+          "explanation": "報酬ベースの行動学習であり、強化学習。"
+        },
+        {
+          "id": "C",
+          "text": "メール本文をスパムか否かに分類する",
+          "is_correct": false,
+          "explanation": "スパムか否かのラベル付き訓練データから学ぶ分類タスクで、教師あり学習。"
+        },
+        {
+          "id": "D",
+          "text": "顧客の購買履歴をもとに、似た傾向を持つ顧客グループを自動的に発見する",
+          "is_correct": true,
+          "explanation": "正解。事前にラベル付けされたグループはなく、データから類似性に基づいてクラスタを発見するクラスタリングは教師なし学習の代表例。"
+        }
       ],
       "explanation": "教師なし学習は正解ラベルなしにデータの構造を見つける手法。代表例はクラスタリング（顧客セグメンテーション、異常検知）と次元削減（PCAなど）。Bは典型的な顧客セグメンテーションタスク。",
       "references": [
-        {"title": "Unsupervised learning", "url": "https://aws.amazon.com/what-is/unsupervised-learning/"}
+        {
+          "title": "Unsupervised learning",
+          "url": "https://aws.amazon.com/what-is/unsupervised-learning/"
+        }
       ],
-      "tags": ["unsupervised-learning", "clustering", "ml-types", "fundamentals"],
+      "tags": [
+        "unsupervised-learning",
+        "clustering",
+        "ml-types",
+        "fundamentals"
+      ],
       "common_mistakes": [
         "クラスタリングと分類を混同する",
         "ラベル有無で類型を判定できないと思い込む"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-005",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "ニューラルネットワーク",
       "subtopic": "活性化関数の役割",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ニューラルネットワークにおいて活性化関数（Activation Function）が果たす最も重要な役割はどれか？",
       "options": [
-        {"id": "A", "text": "学習データのラベル誤りを自動修正する", "is_correct": false, "explanation": "活性化関数はデータラベル修正を行わない。データ品質はデータ準備フェーズで対応する。"},
-        {"id": "B", "text": "ネットワークに非線形性を導入し、複雑なパターンを表現できるようにする", "is_correct": true, "explanation": "正解。ReLU・Sigmoid・Tanh などの活性化関数は、線形変換のみでは表現できない非線形な関係を学習可能にする。"},
-        {"id": "C", "text": "重みパラメータの数を削減し、モデルを軽量化する", "is_correct": false, "explanation": "それはプルーニングや量子化などのモデル圧縮技術の役割。"},
-        {"id": "D", "text": "学習率を自動的にスケジューリングする", "is_correct": false, "explanation": "それはオプティマイザのスケジューラやadaptive optimizer（Adamなど）の役割。"}
+        {
+          "id": "A",
+          "text": "ネットワークに非線形性を導入し、複雑なパターンを表現できるようにする",
+          "is_correct": true,
+          "explanation": "正解。ReLU・Sigmoid・Tanh などの活性化関数は、線形変換のみでは表現できない非線形な関係を学習可能にする。"
+        },
+        {
+          "id": "B",
+          "text": "学習データのラベル誤りを自動修正する",
+          "is_correct": false,
+          "explanation": "活性化関数はデータラベル修正を行わない。データ品質はデータ準備フェーズで対応する。"
+        },
+        {
+          "id": "C",
+          "text": "学習率を自動的にスケジューリングする",
+          "is_correct": false,
+          "explanation": "それはオプティマイザのスケジューラやadaptive optimizer（Adamなど）の役割。"
+        },
+        {
+          "id": "D",
+          "text": "重みパラメータの数を削減し、モデルを軽量化する",
+          "is_correct": false,
+          "explanation": "それはプルーニングや量子化などのモデル圧縮技術の役割。"
+        }
       ],
       "explanation": "ニューラルネットワークは線形変換（行列積）の積み重ねだけでは線形モデルしか表現できない。活性化関数（ReLU, Sigmoid, Tanh など）を挟むことで非線形変換が可能となり、画像・言語・音声のような複雑なデータパターンを学習できる。",
       "references": [
-        {"title": "Deep Learning on AWS", "url": "https://aws.amazon.com/deep-learning/"}
+        {
+          "title": "Deep Learning on AWS",
+          "url": "https://aws.amazon.com/deep-learning/"
+        }
       ],
-      "tags": ["neural-network", "activation-function", "deep-learning", "fundamentals"],
+      "tags": [
+        "neural-network",
+        "activation-function",
+        "deep-learning",
+        "fundamentals"
+      ],
       "common_mistakes": [
         "活性化関数を単なる正規化と誤解する",
         "線形モデルでも複雑な分類ができると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-006",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "過学習と未学習",
       "subtopic": "過学習の定義",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "「訓練データに対する精度は非常に高いが、検証データに対する精度が著しく低い」状態を表す用語はどれか？",
       "options": [
-        {"id": "A", "text": "未学習（Underfitting）", "is_correct": false, "explanation": "未学習は訓練データに対しても精度が低い状態。モデルが単純すぎる。"},
-        {"id": "B", "text": "過学習（Overfitting）", "is_correct": true, "explanation": "正解。訓練データのノイズまで覚え込み、汎化性能が失われた状態を過学習という。"},
-        {"id": "C", "text": "データリーク（Data Leakage）", "is_correct": false, "explanation": "データリークはテスト情報が訓練に混入する別の問題で、しばしば訓練・検証ともに不自然に高精度になる。"},
-        {"id": "D", "text": "勾配消失（Vanishing Gradient）", "is_correct": false, "explanation": "勾配消失は深層NNで勾配が0付近に近づき学習が進まない問題で、訓練精度自体が伸びない。"}
+        {
+          "id": "A",
+          "text": "未学習（Underfitting）",
+          "is_correct": false,
+          "explanation": "未学習は訓練データに対しても精度が低い状態。モデルが単純すぎる。"
+        },
+        {
+          "id": "B",
+          "text": "過学習（Overfitting）",
+          "is_correct": true,
+          "explanation": "正解。訓練データのノイズまで覚え込み、汎化性能が失われた状態を過学習という。"
+        },
+        {
+          "id": "C",
+          "text": "勾配消失（Vanishing Gradient）",
+          "is_correct": false,
+          "explanation": "勾配消失は深層NNで勾配が0付近に近づき学習が進まない問題で、訓練精度自体が伸びない。"
+        },
+        {
+          "id": "D",
+          "text": "データリーク（Data Leakage）",
+          "is_correct": false,
+          "explanation": "データリークはテスト情報が訓練に混入する別の問題で、しばしば訓練・検証ともに不自然に高精度になる。"
+        }
       ],
       "explanation": "過学習は訓練データに過剰適合し、未知データへの汎化が失われる現象。対策には正則化（L1/L2）、ドロップアウト、データ拡張、より多くのデータ、モデルの簡素化、早期停止（Early Stopping）などがある。",
       "references": [
-        {"title": "Model Fit: Underfitting vs. Overfitting", "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/model-fit-underfitting-vs-overfitting.html"}
+        {
+          "title": "Model Fit: Underfitting vs. Overfitting",
+          "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/model-fit-underfitting-vs-overfitting.html"
+        }
       ],
-      "tags": ["overfitting", "generalization", "regularization", "fundamentals"],
+      "tags": [
+        "overfitting",
+        "generalization",
+        "regularization",
+        "fundamentals"
+      ],
       "common_mistakes": [
         "訓練精度の高さだけを見てモデル品質を判断する",
         "過学習と未学習の判別が曖昧"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-007",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "評価指標",
       "subtopic": "回帰モデルの評価指標",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "回帰モデル（連続値を予測するモデル）の評価指標として一般的に使われるものはどれか？",
       "options": [
-        {"id": "A", "text": "精度（Accuracy）と F1 スコア", "is_correct": false, "explanation": "AccuracyとF1は分類タスク用の指標。連続値予測の評価には使わない。"},
-        {"id": "B", "text": "RMSE、MAE、決定係数（R²）", "is_correct": true, "explanation": "正解。RMSE（二乗平均平方根誤差）・MAE（平均絶対誤差）・R²（決定係数）は回帰の代表的な評価指標。"},
-        {"id": "C", "text": "ROC曲線とAUC", "is_correct": false, "explanation": "ROC/AUCは2値分類の閾値全範囲での性能を評価する指標で、回帰には使わない。"},
-        {"id": "D", "text": "混同行列（Confusion Matrix）", "is_correct": false, "explanation": "混同行列は分類結果のクラス別正誤を集計するもので、連続値予測には使えない。"}
+        {
+          "id": "A",
+          "text": "精度（Accuracy）と F1 スコア",
+          "is_correct": false,
+          "explanation": "AccuracyとF1は分類タスク用の指標。連続値予測の評価には使わない。"
+        },
+        {
+          "id": "B",
+          "text": "混同行列（Confusion Matrix）",
+          "is_correct": false,
+          "explanation": "混同行列は分類結果のクラス別正誤を集計するもので、連続値予測には使えない。"
+        },
+        {
+          "id": "C",
+          "text": "RMSE、MAE、決定係数（R²）",
+          "is_correct": true,
+          "explanation": "正解。RMSE（二乗平均平方根誤差）・MAE（平均絶対誤差）・R²（決定係数）は回帰の代表的な評価指標。"
+        },
+        {
+          "id": "D",
+          "text": "ROC曲線とAUC",
+          "is_correct": false,
+          "explanation": "ROC/AUCは2値分類の閾値全範囲での性能を評価する指標で、回帰には使わない。"
+        }
       ],
       "explanation": "回帰タスクでは予測値と実測値の差（残差）を集約した指標を使う。RMSE は二乗誤差の平方根（外れ値に敏感）、MAE は絶対誤差の平均（外れ値にロバスト）、R² は分散の説明割合（1に近いほど良好）。分類のAccuracy/F1/AUC とは目的が異なる。",
       "references": [
-        {"title": "Evaluating Your Model", "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/evaluating_models.html"}
+        {
+          "title": "Evaluating Your Model",
+          "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/evaluating_models.html"
+        }
       ],
-      "tags": ["regression", "evaluation-metrics", "rmse", "mae", "r-squared"],
+      "tags": [
+        "regression",
+        "evaluation-metrics",
+        "rmse",
+        "mae",
+        "r-squared"
+      ],
       "common_mistakes": [
         "AccuracyやAUCを回帰モデルにも使ってしまう",
         "RMSEとMAEの違い（外れ値感度）を意識しない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-008",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "データ準備",
       "subtopic": "データ分割",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "機械学習プロジェクトでデータを「訓練・検証・テスト」の3つに分割する主目的はどれか？",
       "options": [
-        {"id": "A", "text": "訓練を高速化するためにデータを並列処理しやすくする", "is_correct": false, "explanation": "並列化はデータ分割の主目的ではない。Sharding は別の概念。"},
-        {"id": "B", "text": "ハイパーパラメータ調整と、未知データへの汎化性能評価を独立して行うため", "is_correct": true, "explanation": "正解。検証セットでハイパーパラメータを調整し、テストセットは最終評価のみに使うことで、汎化性能を信頼性高く測定できる。"},
-        {"id": "C", "text": "データ容量を3分の1に圧縮し、ストレージコストを削減するため", "is_correct": false, "explanation": "圧縮ではなく、独立した目的で使う3つのサブセットに「分ける」だけ。容量は変わらない。"},
-        {"id": "D", "text": "ラベル付け作業を3チームに分担するため", "is_correct": false, "explanation": "アノテーション作業の分担とは無関係。"}
+        {
+          "id": "A",
+          "text": "ラベル付け作業を3チームに分担するため",
+          "is_correct": false,
+          "explanation": "アノテーション作業の分担とは無関係。"
+        },
+        {
+          "id": "B",
+          "text": "訓練を高速化するためにデータを並列処理しやすくする",
+          "is_correct": false,
+          "explanation": "並列化はデータ分割の主目的ではない。Sharding は別の概念。"
+        },
+        {
+          "id": "C",
+          "text": "データ容量を3分の1に圧縮し、ストレージコストを削減するため",
+          "is_correct": false,
+          "explanation": "圧縮ではなく、独立した目的で使う3つのサブセットに「分ける」だけ。容量は変わらない。"
+        },
+        {
+          "id": "D",
+          "text": "ハイパーパラメータ調整と、未知データへの汎化性能評価を独立して行うため",
+          "is_correct": true,
+          "explanation": "正解。検証セットでハイパーパラメータを調整し、テストセットは最終評価のみに使うことで、汎化性能を信頼性高く測定できる。"
+        }
       ],
       "explanation": "適切なデータ分割は汎化性能の正しい評価の前提。訓練セットでモデル学習、検証セット（Validation）でハイパーパラメータ調整、テストセットで最終的な未知データ性能を測定する。テストセットを開発中に何度も使うとリーク／過適応が起きる。",
       "references": [
-        {"title": "Splitting Your Data", "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/splitting-the-data-into-training-and-evaluation-data.html"}
+        {
+          "title": "Splitting Your Data",
+          "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/splitting-the-data-into-training-and-evaluation-data.html"
+        }
       ],
-      "tags": ["data-splitting", "validation", "test-set", "ml-workflow", "fundamentals"],
+      "tags": [
+        "data-splitting",
+        "validation",
+        "test-set",
+        "ml-workflow",
+        "fundamentals"
+      ],
       "common_mistakes": [
         "テストセットでハイパーパラメータ調整をしてしまう",
         "検証とテストの役割の違いを理解していない"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-009",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "AWS AI サービス",
       "subtopic": "サービスのユースケース対応",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "Amazon Comprehend が提供する主な機能はどれか？",
       "options": [
-        {"id": "A", "text": "画像内の物体検出と顔認識", "is_correct": false, "explanation": "それはAmazon Rekognition の機能。Comprehend は画像処理を行わない。"},
-        {"id": "B", "text": "テキストの感情分析、エンティティ抽出、トピック分類などの自然言語処理", "is_correct": true, "explanation": "正解。Comprehend はテキストデータの感情、エンティティ、キーフレーズ、言語、構文、トピックを抽出するNLPサービス。"},
-        {"id": "C", "text": "時系列データに基づく将来需要の予測", "is_correct": false, "explanation": "それはAmazon Forecast の機能。"},
-        {"id": "D", "text": "ユーザの行動履歴からパーソナライズされた推薦", "is_correct": false, "explanation": "それはAmazon Personalize の機能。"}
+        {
+          "id": "A",
+          "text": "テキストの感情分析、エンティティ抽出、トピック分類などの自然言語処理",
+          "is_correct": true,
+          "explanation": "正解。Comprehend はテキストデータの感情、エンティティ、キーフレーズ、言語、構文、トピックを抽出するNLPサービス。"
+        },
+        {
+          "id": "B",
+          "text": "時系列データに基づく将来需要の予測",
+          "is_correct": false,
+          "explanation": "それはAmazon Forecast の機能。"
+        },
+        {
+          "id": "C",
+          "text": "画像内の物体検出と顔認識",
+          "is_correct": false,
+          "explanation": "それはAmazon Rekognition の機能。Comprehend は画像処理を行わない。"
+        },
+        {
+          "id": "D",
+          "text": "ユーザの行動履歴からパーソナライズされた推薦",
+          "is_correct": false,
+          "explanation": "それはAmazon Personalize の機能。"
+        }
       ],
       "explanation": "Amazon Comprehend は事前学習済みのNLPサービスで、感情分析・エンティティ認識（人名・組織名・場所など）・キーフレーズ抽出・言語検出・トピックモデリングを提供する。医療向け Comprehend Medical も別途存在する。",
       "references": [
-        {"title": "What Is Amazon Comprehend?", "url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html"}
+        {
+          "title": "What Is Amazon Comprehend?",
+          "url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html"
+        }
       ],
-      "tags": ["comprehend", "nlp", "ai-services", "sentiment-analysis", "fundamentals"],
+      "tags": [
+        "comprehend",
+        "nlp",
+        "ai-services",
+        "sentiment-analysis",
+        "fundamentals"
+      ],
       "common_mistakes": [
         "Comprehend と Translate の役割を混同する",
         "Rekognition でテキスト分析できると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-010",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "AWS AI サービス選定",
       "subtopic": "ユースケース → サービス",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の製造業企業が、過去5年分の月次出荷数データから、今後12ヶ月の出荷数を予測したい。MLの専門家を雇わず、最も短期間で実装したい。最適なAWSサービスはどれか？",
+      "stem": "ある製造業企業が、過去5年分の月次出荷数データから、今後12ヶ月の出荷数を予測したい。MLの専門家を雇わず、最も短期間で実装したい。最適なAWSサービスはどれか？",
       "options": [
-        {"id": "A", "text": "Amazon SageMaker でカスタムLSTMモデルを学習する", "is_correct": false, "explanation": "実装可能だが、MLの専門知識と数週間〜数ヶ月の開発が必要。要件「短期間・専門家不要」に合わない。"},
-        {"id": "B", "text": "Amazon Forecast に時系列データを投入し、自動的に最適モデルを選択させる", "is_correct": true, "explanation": "正解。Forecast はマネージドな時系列予測サービスで、自動MLによりモデル選択・学習を行う。専門家不要で短期間に立ち上げ可能。"},
-        {"id": "C", "text": "Amazon Personalize で出荷量を推薦項目として扱う", "is_correct": false, "explanation": "Personalize はユーザ→アイテムの推薦システム用であり、時系列予測には適さない。"},
-        {"id": "D", "text": "Amazon Comprehend で月次レポート文書を分析する", "is_correct": false, "explanation": "Comprehend はテキスト分析サービス。数値の時系列予測には使えない。"}
+        {
+          "id": "A",
+          "text": "Amazon Comprehend で月次レポート文書を分析する",
+          "is_correct": false,
+          "explanation": "Comprehend はテキスト分析サービス。数値の時系列予測には使えない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Forecast に時系列データを投入し、自動的に最適モデルを選択させる",
+          "is_correct": true,
+          "explanation": "正解。Forecast はマネージドな時系列予測サービスで、自動MLによりモデル選択・学習を行う。専門家不要で短期間に立ち上げ可能。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Personalize で出荷量を推薦項目として扱う",
+          "is_correct": false,
+          "explanation": "Personalize はユーザ→アイテムの推薦システム用であり、時系列予測には適さない。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon SageMaker でカスタムLSTMモデルを学習する",
+          "is_correct": false,
+          "explanation": "実装可能だが、MLの専門知識と数週間〜数ヶ月の開発が必要。要件「短期間・専門家不要」に合わない。"
+        }
       ],
       "explanation": "Amazon Forecast は時系列予測専用のマネージドサービス（注: 2024年以降新規利用は推奨されず、SageMaker Canvasへの移行が案内されている）。AIF-C01 試験範囲では、各 AI サービスの「適切な用途」を選べることが重要。需要予測=Forecast、推薦=Personalize、テキスト=Comprehend、音声=Transcribe/Polly、画像=Rekognition と覚える。",
       "references": [
-        {"title": "What Is Amazon Forecast?", "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"}
+        {
+          "title": "What Is Amazon Forecast?",
+          "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"
+        }
       ],
-      "tags": ["forecast", "time-series", "use-case-selection", "manufacturing", "ai-services"],
+      "tags": [
+        "forecast",
+        "time-series",
+        "use-case-selection",
+        "manufacturing",
+        "ai-services"
+      ],
       "common_mistakes": [
         "あらゆる予測タスクに SageMaker をフルスクラッチで使おうとする",
         "Personalize を時系列予測に流用してしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-011",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "AWS AI サービス選定",
       "subtopic": "ECサイトの推薦",
       "cognitive_level": "L3-Apply",
       "difficulty": "easy",
       "stem": "あるSaaSスタートアップが運営するECサイトで、ユーザの閲覧・購入履歴から個人別の商品推薦機能を実装したい。最も適切なAWSサービスはどれか？",
       "options": [
-        {"id": "A", "text": "Amazon Personalize", "is_correct": true, "explanation": "正解。Personalize は Amazon.com で使われている推薦技術をマネージド化したサービスで、ユーザ→アイテム推薦が短期間で実装できる。"},
-        {"id": "B", "text": "Amazon Rekognition", "is_correct": false, "explanation": "Rekognition は画像・動画分析サービス。推薦には使わない。"},
-        {"id": "C", "text": "Amazon Translate", "is_correct": false, "explanation": "Translate は翻訳サービス。"},
-        {"id": "D", "text": "Amazon Lex", "is_correct": false, "explanation": "Lex は会話型ボット構築サービス。推薦システムではない。"}
+        {
+          "id": "A",
+          "text": "Amazon Lex",
+          "is_correct": false,
+          "explanation": "Lex は会話型ボット構築サービス。推薦システムではない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Rekognition",
+          "is_correct": false,
+          "explanation": "Rekognition は画像・動画分析サービス。推薦には使わない。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Personalize",
+          "is_correct": true,
+          "explanation": "正解。Personalize は Amazon.com で使われている推薦技術をマネージド化したサービスで、ユーザ→アイテム推薦が短期間で実装できる。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Translate",
+          "is_correct": false,
+          "explanation": "Translate は翻訳サービス。"
+        }
       ],
       "explanation": "Amazon Personalize はユーザの行動データ・アイテムメタデータから個別推薦を生成するマネージドサービス。ECの「あなたへのおすすめ」「よく一緒に買われています」「次に視聴」などのレコメンドに対応する。",
       "references": [
-        {"title": "What Is Amazon Personalize?", "url": "https://docs.aws.amazon.com/personalize/latest/dg/what-is-personalize.html"}
+        {
+          "title": "What Is Amazon Personalize?",
+          "url": "https://docs.aws.amazon.com/personalize/latest/dg/what-is-personalize.html"
+        }
       ],
-      "tags": ["personalize", "recommendation", "use-case-selection", "saas", "ai-services"],
+      "tags": [
+        "personalize",
+        "recommendation",
+        "use-case-selection",
+        "saas",
+        "ai-services"
+      ],
       "common_mistakes": [
         "推薦タスクに Comprehend や SageMaker を使おうとする",
         "Lex（会話ボット）と Personalize を混同する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-012",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "データ準備",
       "subtopic": "欠損値処理",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "顧客の年収データに10%の欠損値があり、欠損行を削除するとデータ量が減りすぎてモデル精度が下がることが分かった。最も適切な対応はどれか？",
       "options": [
-        {"id": "A", "text": "欠損値を文字列「unknown」で置換する", "is_correct": false, "explanation": "数値カラムに文字列を入れると型不整合となり、ほとんどのモデルで学習できない。"},
-        {"id": "B", "text": "平均値・中央値・回帰モデルなどでの補完（imputation）を行う", "is_correct": true, "explanation": "正解。欠損行を削除する代わりに、統計値や予測モデルで欠損を補完するのが定石。中央値は外れ値にロバスト、回帰補完はより精緻。"},
-        {"id": "C", "text": "全ての値を 0 に置換する", "is_correct": false, "explanation": "0 は意味のある値（年収0）と区別できなくなり、分布が大きく歪む。"},
-        {"id": "D", "text": "欠損値が一つでもあるカラムを丸ごと削除する", "is_correct": false, "explanation": "重要な特徴量を失う可能性が高く、10%程度の欠損ではカラム削除は過剰。"}
+        {
+          "id": "A",
+          "text": "全ての値を 0 に置換する",
+          "is_correct": false,
+          "explanation": "0 は意味のある値（年収0）と区別できなくなり、分布が大きく歪む。"
+        },
+        {
+          "id": "B",
+          "text": "欠損値を文字列「unknown」で置換する",
+          "is_correct": false,
+          "explanation": "数値カラムに文字列を入れると型不整合となり、ほとんどのモデルで学習できない。"
+        },
+        {
+          "id": "C",
+          "text": "欠損値が一つでもあるカラムを丸ごと削除する",
+          "is_correct": false,
+          "explanation": "重要な特徴量を失う可能性が高く、10%程度の欠損ではカラム削除は過剰。"
+        },
+        {
+          "id": "D",
+          "text": "平均値・中央値・回帰モデルなどでの補完（imputation）を行う",
+          "is_correct": true,
+          "explanation": "正解。欠損行を削除する代わりに、統計値や予測モデルで欠損を補完するのが定石。中央値は外れ値にロバスト、回帰補完はより精緻。"
+        }
       ],
       "explanation": "欠損値処理の代表的アプローチは（1）行削除（欠損が少なければ）、（2）統計値補完（平均・中央値・最頻値）、（3）モデル補完（kNN、回帰）、（4）欠損フラグ追加。10%欠損は削除すると損失が大きく、補完が定石。SageMaker Data Wrangler や Glue DataBrew などで GUI でも実施可能。",
       "references": [
-        {"title": "Handle Missing Values with SageMaker Data Wrangler", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"}
+        {
+          "title": "Handle Missing Values with SageMaker Data Wrangler",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html"
+        }
       ],
-      "tags": ["data-preparation", "missing-values", "imputation", "feature-engineering"],
+      "tags": [
+        "data-preparation",
+        "missing-values",
+        "imputation",
+        "feature-engineering"
+      ],
       "common_mistakes": [
         "欠損値をすべて0で置換してしまう",
         "数値カラムに文字列を混入させる"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-013",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "評価指標",
       "subtopic": "クラス不均衡時の指標選択",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある医療スタートアップが、希少疾患（陽性割合 1%）を検出する分類モデルを構築している。「陽性を見逃さないこと」が最も重要である。評価指標として最も重視すべきものはどれか？",
       "options": [
-        {"id": "A", "text": "Accuracy（精度）", "is_correct": false, "explanation": "陽性 1% の不均衡データでは、全部「陰性」と予測しても Accuracy 99% になる。指標として誤解を招く。"},
-        {"id": "B", "text": "Recall（再現率／感度）", "is_correct": true, "explanation": "正解。Recall = TP / (TP + FN) で、陽性のうち見逃さずに検出できた割合。「見逃しを最小化」したい場面で最重要。"},
-        {"id": "C", "text": "Precision（適合率）", "is_correct": false, "explanation": "Precision は「陽性と予測した中で実際に陽性だった割合」で、誤検出を減らしたい場合に重要。本問は見逃し最小化が優先のためRecall。"},
-        {"id": "D", "text": "Specificity（特異度）", "is_correct": false, "explanation": "Specificity は陰性を陰性と判定する割合で、本問の優先事項とは異なる。"}
+        {
+          "id": "A",
+          "text": "Recall（再現率／感度）",
+          "is_correct": true,
+          "explanation": "正解。Recall = TP / (TP + FN) で、陽性のうち見逃さずに検出できた割合。「見逃しを最小化」したい場面で最重要。"
+        },
+        {
+          "id": "B",
+          "text": "Accuracy（精度）",
+          "is_correct": false,
+          "explanation": "陽性 1% の不均衡データでは、全部「陰性」と予測しても Accuracy 99% になる。指標として誤解を招く。"
+        },
+        {
+          "id": "C",
+          "text": "Specificity（特異度）",
+          "is_correct": false,
+          "explanation": "Specificity は陰性を陰性と判定する割合で、本問の優先事項とは異なる。"
+        },
+        {
+          "id": "D",
+          "text": "Precision（適合率）",
+          "is_correct": false,
+          "explanation": "Precision は「陽性と予測した中で実際に陽性だった割合」で、誤検出を減らしたい場合に重要。本問は見逃し最小化が優先のためRecall。"
+        }
       ],
       "explanation": "クラス不均衡時にAccuracyだけ見ると判断を誤る。「陽性を見逃さない」要件のときはRecallを優先、「誤検出を減らしたい」ときはPrecisionを優先する。両者のバランスは F1 スコアで取り、閾値を変えた挙動は ROC AUC や PR AUC で確認する。",
       "references": [
-        {"title": "Multiclass Model Insights", "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/multiclass-model-insights.html"}
+        {
+          "title": "Multiclass Model Insights",
+          "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/multiclass-model-insights.html"
+        }
       ],
-      "tags": ["evaluation-metrics", "recall", "precision", "imbalanced-data", "healthcare"],
+      "tags": [
+        "evaluation-metrics",
+        "recall",
+        "precision",
+        "imbalanced-data",
+        "healthcare"
+      ],
       "common_mistakes": [
         "不均衡データでもAccuracyを最重要視する",
         "RecallとPrecisionの使い分け基準が曖昧"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-014",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "ML 三類型",
       "subtopic": "強化学習のユースケース",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "次の4つのユースケースのうち、強化学習（Reinforcement Learning）が最も適しているのはどれか？",
       "options": [
-        {"id": "A", "text": "クレジットカードの不正利用検出", "is_correct": false, "explanation": "ラベル付き履歴から学ぶ教師あり学習（分類）が一般的。"},
-        {"id": "B", "text": "画像にタグを付ける", "is_correct": false, "explanation": "ラベル付き画像から学ぶ教師あり学習（分類）。"},
-        {"id": "C", "text": "ロボット倉庫における自律ロボットのピッキング経路最適化", "is_correct": true, "explanation": "正解。環境（倉庫）と相互作用しながら、報酬（時間最小化、衝突回避）を最大化する行動方針を学ぶ典型的な強化学習タスク。"},
-        {"id": "D", "text": "顧客のレビュー文の感情分析", "is_correct": false, "explanation": "Comprehend など教師ありの自然言語処理タスク。"}
+        {
+          "id": "A",
+          "text": "顧客のレビュー文の感情分析",
+          "is_correct": false,
+          "explanation": "Comprehend など教師ありの自然言語処理タスク。"
+        },
+        {
+          "id": "B",
+          "text": "ロボット倉庫における自律ロボットのピッキング経路最適化",
+          "is_correct": true,
+          "explanation": "正解。環境（倉庫）と相互作用しながら、報酬（時間最小化、衝突回避）を最大化する行動方針を学ぶ典型的な強化学習タスク。"
+        },
+        {
+          "id": "C",
+          "text": "クレジットカードの不正利用検出",
+          "is_correct": false,
+          "explanation": "ラベル付き履歴から学ぶ教師あり学習（分類）が一般的。"
+        },
+        {
+          "id": "D",
+          "text": "画像にタグを付ける",
+          "is_correct": false,
+          "explanation": "ラベル付き画像から学ぶ教師あり学習（分類）。"
+        }
       ],
       "explanation": "強化学習はエージェントが環境と相互作用しつつ報酬を最大化する行動方針（ポリシー）を学ぶ。ロボット制御、ゲームAI、リソース配分、自動運転、レコメンドの一部などが典型例。AWS には学習者向けに AWS DeepRacer がある。",
       "references": [
-        {"title": "What is Reinforcement Learning?", "url": "https://aws.amazon.com/what-is/reinforcement-learning/"}
+        {
+          "title": "What is Reinforcement Learning?",
+          "url": "https://aws.amazon.com/what-is/reinforcement-learning/"
+        }
       ],
-      "tags": ["reinforcement-learning", "ml-types", "robotics", "use-case-selection"],
+      "tags": [
+        "reinforcement-learning",
+        "ml-types",
+        "robotics",
+        "use-case-selection"
+      ],
       "common_mistakes": [
         "あらゆる最適化タスクに強化学習を使えると思う",
         "ラベル付きデータがある場合でも強化学習を選んでしまう"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-015",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "AWS AI サービス選定",
       "subtopic": "コンタクトセンター文字起こし",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある教育系SaaS企業が、英語の録音講義を自動的に文字起こしし、さらに要約・キーフレーズ抽出を行いたい。最小限の組み合わせとして適切なAWSサービスはどれか？",
       "options": [
-        {"id": "A", "text": "Polly でテキスト化、Comprehend で分析", "is_correct": false, "explanation": "Polly はTTS（テキスト→音声）であり、文字起こしには使えない。方向が逆。"},
-        {"id": "B", "text": "Transcribe で文字起こし、Comprehend で要約・キーフレーズ抽出", "is_correct": true, "explanation": "正解。Transcribe（音声→テキスト）と Comprehend（NLP）の組み合わせは音声分析の標準パターン。"},
-        {"id": "C", "text": "Rekognition で映像認識、Translate で翻訳", "is_correct": false, "explanation": "Rekognition は画像・動画認識で文字起こしは行わない（ただしテキスト検出機能はあるが、音声データには非対応）。"},
-        {"id": "D", "text": "SageMaker で音声認識モデルをゼロから学習する", "is_correct": false, "explanation": "実装可能だが「最小限の組み合わせ」要件に反する。マネージドサービスの活用が望ましい。"}
+        {
+          "id": "A",
+          "text": "Polly でテキスト化、Comprehend で分析",
+          "is_correct": false,
+          "explanation": "Polly はTTS（テキスト→音声）であり、文字起こしには使えない。方向が逆。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker で音声認識モデルをゼロから学習する",
+          "is_correct": false,
+          "explanation": "実装可能だが「最小限の組み合わせ」要件に反する。マネージドサービスの活用が望ましい。"
+        },
+        {
+          "id": "C",
+          "text": "Transcribe で文字起こし、Comprehend で要約・キーフレーズ抽出",
+          "is_correct": true,
+          "explanation": "正解。Transcribe（音声→テキスト）と Comprehend（NLP）の組み合わせは音声分析の標準パターン。"
+        },
+        {
+          "id": "D",
+          "text": "Rekognition で映像認識、Translate で翻訳",
+          "is_correct": false,
+          "explanation": "Rekognition は画像・動画認識で文字起こしは行わない（ただしテキスト検出機能はあるが、音声データには非対応）。"
+        }
       ],
       "explanation": "音声→テキスト→分析のパイプラインは、Transcribe + Comprehend が標準的構成。Transcribe は多言語、話者分離、医療版（Transcribe Medical）にも対応。Comprehend は感情分析・キーフレーズ・エンティティ抽出に対応する。",
       "references": [
-        {"title": "Amazon Transcribe", "url": "https://aws.amazon.com/transcribe/"},
-        {"title": "Amazon Comprehend", "url": "https://aws.amazon.com/comprehend/"}
+        {
+          "title": "Amazon Transcribe",
+          "url": "https://aws.amazon.com/transcribe/"
+        },
+        {
+          "title": "Amazon Comprehend",
+          "url": "https://aws.amazon.com/comprehend/"
+        }
       ],
-      "tags": ["transcribe", "comprehend", "use-case-selection", "education", "ai-services"],
+      "tags": [
+        "transcribe",
+        "comprehend",
+        "use-case-selection",
+        "education",
+        "ai-services"
+      ],
       "common_mistakes": [
         "Polly と Transcribe の方向を逆にする",
         "全部 SageMaker で自作したくなる"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-016",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "バイアスとバリアンス",
       "subtopic": "高バイアスの兆候と対策",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "あるモデルの訓練データ精度が60%、検証データ精度が59%である。問題と最適な対策の組み合わせとして最も適切なのはどれか？",
       "options": [
-        {"id": "A", "text": "過学習が起きているため、ドロップアウト・正則化を強める", "is_correct": false, "explanation": "訓練と検証の差が小さいため過学習ではない。両方とも低いのは別の問題。"},
-        {"id": "B", "text": "未学習（高バイアス）が起きているため、モデル容量を増やす・特徴量を追加する", "is_correct": true, "explanation": "正解。訓練・検証ともに精度が低くほぼ同等であるのは典型的な高バイアス（未学習）。モデル能力不足が主因。複雑なモデル、より多くの特徴量、訓練エポック増加が対策。"},
-        {"id": "C", "text": "データリークがあるため、特徴量からテスト情報を排除する", "is_correct": false, "explanation": "データリークがあると訓練・検証ともに不自然に高精度になる。本問は逆に両方低い。"},
-        {"id": "D", "text": "ハイパーパラメータ調整が不要なほど良好な状態である", "is_correct": false, "explanation": "両精度が低いため良好な状態ではない。改善の余地が大きい。"}
+        {
+          "id": "A",
+          "text": "過学習が起きているため、ドロップアウト・正則化を強める",
+          "is_correct": false,
+          "explanation": "訓練と検証の差が小さいため過学習ではない。両方とも低いのは別の問題。"
+        },
+        {
+          "id": "B",
+          "text": "データリークがあるため、特徴量からテスト情報を排除する",
+          "is_correct": false,
+          "explanation": "データリークがあると訓練・検証ともに不自然に高精度になる。本問は逆に両方低い。"
+        },
+        {
+          "id": "C",
+          "text": "ハイパーパラメータ調整が不要なほど良好な状態である",
+          "is_correct": false,
+          "explanation": "両精度が低いため良好な状態ではない。改善の余地が大きい。"
+        },
+        {
+          "id": "D",
+          "text": "未学習（高バイアス）が起きているため、モデル容量を増やす・特徴量を追加する",
+          "is_correct": true,
+          "explanation": "正解。訓練・検証ともに精度が低くほぼ同等であるのは典型的な高バイアス（未学習）。モデル能力不足が主因。複雑なモデル、より多くの特徴量、訓練エポック増加が対策。"
+        }
       ],
       "explanation": "バイアス・バリアンスのトレードオフは MLの基本概念。訓練・検証ともに低 = 高バイアス（未学習）／訓練高・検証低 = 高バリアンス（過学習）／両方高 = 良好。対策は逆向き：高バイアスにはモデル拡大、高バリアンスには正則化・データ増加。",
       "references": [
-        {"title": "Bias-Variance Tradeoff", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-bias-detect-pretraining-bias.html"}
+        {
+          "title": "Bias-Variance Tradeoff",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-bias-detect-pretraining-bias.html"
+        }
       ],
-      "tags": ["bias-variance", "underfitting", "model-selection", "diagnostics"],
+      "tags": [
+        "bias-variance",
+        "underfitting",
+        "model-selection",
+        "diagnostics"
+      ],
       "common_mistakes": [
         "精度が低い＝過学習と短絡する",
         "バイアスとバリアンスの兆候の違いが曖昧"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-017",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "正則化",
       "subtopic": "L1 vs L2 vs Dropout",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある FinTech 企業が信用スコアモデルを構築している。特徴量が500以上あり、その多くがスコアにほとんど影響しないと予想される。「自動的に重要でない特徴量の重みを0にして特徴量選択を行う」効果が最も期待できる正則化はどれか？",
       "options": [
-        {"id": "A", "text": "L1 正則化（Lasso）", "is_correct": true, "explanation": "正解。L1正則化は重みの絶対値の和をペナルティとし、不要な重みを正確に0にする「スパース性」を生む。これが暗黙的な特徴量選択になる。"},
-        {"id": "B", "text": "L2 正則化（Ridge）", "is_correct": false, "explanation": "L2は重みの二乗和をペナルティとし、重みを小さくはするが、ぴったり0にはしない。特徴量選択には不向き。"},
-        {"id": "C", "text": "Dropout", "is_correct": false, "explanation": "Dropoutは学習時にランダムにニューロンを無効化するNN固有の手法であり、特徴量選択ではない。"},
-        {"id": "D", "text": "Early Stopping", "is_correct": false, "explanation": "Early Stoppingは過学習前に学習を止める手法で、特徴量選択効果はない。"}
+        {
+          "id": "A",
+          "text": "L1 正則化（Lasso）",
+          "is_correct": true,
+          "explanation": "正解。L1正則化は重みの絶対値の和をペナルティとし、不要な重みを正確に0にする「スパース性」を生む。これが暗黙的な特徴量選択になる。"
+        },
+        {
+          "id": "B",
+          "text": "Early Stopping",
+          "is_correct": false,
+          "explanation": "Early Stoppingは過学習前に学習を止める手法で、特徴量選択効果はない。"
+        },
+        {
+          "id": "C",
+          "text": "L2 正則化（Ridge）",
+          "is_correct": false,
+          "explanation": "L2は重みの二乗和をペナルティとし、重みを小さくはするが、ぴったり0にはしない。特徴量選択には不向き。"
+        },
+        {
+          "id": "D",
+          "text": "Dropout",
+          "is_correct": false,
+          "explanation": "Dropoutは学習時にランダムにニューロンを無効化するNN固有の手法であり、特徴量選択ではない。"
+        }
       ],
       "explanation": "L1正則化（Lasso）は重みの一部を0にする性質を持ち、無関係な特徴量を自動的に除去する効果がある。L2（Ridge）は重みを小さくするが0にはしない。両者を組み合わせたElastic Netも一般的。Dropout・Early Stoppingは過学習防止には有効だが特徴量選択ではない。",
       "references": [
-        {"title": "Regularization in Machine Learning", "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/training-parameters1.html"}
+        {
+          "title": "Regularization in Machine Learning",
+          "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/training-parameters1.html"
+        }
       ],
-      "tags": ["regularization", "l1", "l2", "feature-selection", "fintech"],
+      "tags": [
+        "regularization",
+        "l1",
+        "l2",
+        "feature-selection",
+        "fintech"
+      ],
       "common_mistakes": [
         "L1 と L2 の違い（スパース性）を混同する",
         "Dropout を特徴量選択に使えると誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-018",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "AWS AI/ML サービス階層",
       "subtopic": "SageMaker vs AI Services",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "Amazon SageMaker と AI Services（Rekognition、Comprehend など）の使い分けに関する説明として最も正確なものはどれか？",
       "options": [
-        {"id": "A", "text": "SageMaker は無料、AI Services は有料である", "is_correct": false, "explanation": "両方とも従量課金。料金体系は機能ごとに異なるが、無料・有料の二分は誤り。"},
-        {"id": "B", "text": "AI Services は事前学習済みモデルをAPIで提供しMLの専門知識が不要、SageMaker は独自モデルの構築・学習・デプロイを行うフレームワーク", "is_correct": true, "explanation": "正解。AI Services は事前学習済みのマネージドAPI（NLP、Vision、Speechなど）。SageMaker は独自データでモデル構築・学習・運用する開発者向けプラットフォーム。"},
-        {"id": "C", "text": "両者の機能は完全に重複しており、どちらを使っても結果は同じである", "is_correct": false, "explanation": "重複部分は限定的。AI Services は汎用的タスク、SageMaker は固有要件のあるカスタムMLに向く。"},
-        {"id": "D", "text": "SageMaker は推論専用、AI Services は学習専用である", "is_correct": false, "explanation": "両者とも学習・推論に対応。SageMaker は特に学習・運用全体をカバーする。"}
+        {
+          "id": "A",
+          "text": "SageMaker は推論専用、AI Services は学習専用である",
+          "is_correct": false,
+          "explanation": "両者とも学習・推論に対応。SageMaker は特に学習・運用全体をカバーする。"
+        },
+        {
+          "id": "B",
+          "text": "AI Services は事前学習済みモデルをAPIで提供しMLの専門知識が不要、SageMaker は独自モデルの構築・学習・デプロイを行うフレームワーク",
+          "is_correct": true,
+          "explanation": "正解。AI Services は事前学習済みのマネージドAPI（NLP、Vision、Speechなど）。SageMaker は独自データでモデル構築・学習・運用する開発者向けプラットフォーム。"
+        },
+        {
+          "id": "C",
+          "text": "SageMaker は無料、AI Services は有料である",
+          "is_correct": false,
+          "explanation": "両方とも従量課金。料金体系は機能ごとに異なるが、無料・有料の二分は誤り。"
+        },
+        {
+          "id": "D",
+          "text": "両者の機能は完全に重複しており、どちらを使っても結果は同じである",
+          "is_correct": false,
+          "explanation": "重複部分は限定的。AI Services は汎用的タスク、SageMaker は固有要件のあるカスタムMLに向く。"
+        }
       ],
       "explanation": "AWS の ML スタックは3層：（1）AI Services（API完結のマネージド機能：Rekognition、Comprehend、Translate、Polly、Transcribe、Personalize、Forecast）、（2）SageMaker（モデル構築・学習・デプロイのプラットフォーム）、（3）ML Frameworks（EC2上でのTensorFlow、PyTorch等）。ユースケースに応じて層を選ぶことが重要。",
       "references": [
-        {"title": "AWS Machine Learning Stack", "url": "https://aws.amazon.com/machine-learning/"}
+        {
+          "title": "AWS Machine Learning Stack",
+          "url": "https://aws.amazon.com/machine-learning/"
+        }
       ],
-      "tags": ["sagemaker", "ai-services", "ml-stack", "service-comparison"],
+      "tags": [
+        "sagemaker",
+        "ai-services",
+        "ml-stack",
+        "service-comparison"
+      ],
       "common_mistakes": [
         "AI Services と SageMaker を同一視する",
         "AI Services にも学習が必要だと誤解する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-019",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "評価とビジネス判断",
       "subtopic": "メトリクス選定の妥当性評価",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある医療スタートアップが「がん検出モデル」を開発し、評価指標として『Accuracy 99%』を社外プレゼンで強調している。データセットは陽性割合 0.5%。CTOであるあなたはこの主張をどう評価すべきか？",
       "options": [
-        {"id": "A", "text": "99%は十分高い数字であり、そのまま強調して良い", "is_correct": false, "explanation": "クラス不均衡なデータでは「全部陰性」と予測するだけでも 99.5% 取れる。Accuracy だけでは無意味な数字になる。"},
-        {"id": "B", "text": "Accuracy はクラス不均衡時に誤解を招く。Recall・Precision・F1・PR AUC を併記し、特に「見逃し率」を明示すべき", "is_correct": true, "explanation": "正解。陽性 0.5% の不均衡では Accuracy はベースライン（99.5%）と区別できない。医療では見逃しが致命的なため Recall 中心の指標と混同行列を提示すべき。"},
-        {"id": "C", "text": "問題はモデルではなくマーケティング表現にあるので、メトリクスではなくPR文を直すだけで良い", "is_correct": false, "explanation": "メトリクス選定そのものが不適切であり、技術的にも修正が必要。マーケティング修正だけでは虚偽の説明と変わらない。"},
-        {"id": "D", "text": "Accuracy は最も標準的な指標なので、業界慣習通りで問題ない", "is_correct": false, "explanation": "業界慣習として Accuracy だけで医療AIを評価することはなく、FDA・薬機ガイドラインでも Sensitivity（=Recall）/Specificity の提示が一般的。"}
+        {
+          "id": "A",
+          "text": "問題はモデルではなくマーケティング表現にあるので、メトリクスではなくPR文を直すだけで良い",
+          "is_correct": false,
+          "explanation": "メトリクス選定そのものが不適切であり、技術的にも修正が必要。マーケティング修正だけでは虚偽の説明と変わらない。"
+        },
+        {
+          "id": "B",
+          "text": "Accuracy は最も標準的な指標なので、業界慣習通りで問題ない",
+          "is_correct": false,
+          "explanation": "業界慣習として Accuracy だけで医療AIを評価することはなく、FDA・薬機ガイドラインでも Sensitivity（=Recall）/Specificity の提示が一般的。"
+        },
+        {
+          "id": "C",
+          "text": "Accuracy はクラス不均衡時に誤解を招く。Recall・Precision・F1・PR AUC を併記し、特に「見逃し率」を明示すべき",
+          "is_correct": true,
+          "explanation": "正解。陽性 0.5% の不均衡では Accuracy はベースライン（99.5%）と区別できない。医療では見逃しが致命的なため Recall 中心の指標と混同行列を提示すべき。"
+        },
+        {
+          "id": "D",
+          "text": "99%は十分高い数字であり、そのまま強調して良い",
+          "is_correct": false,
+          "explanation": "クラス不均衡なデータでは「全部陰性」と予測するだけでも 99.5% 取れる。Accuracy だけでは無意味な数字になる。"
+        }
       ],
       "explanation": "本問は技術判断＋ビジネス判断の融合。クラス不均衡時に Accuracy だけを強調するのは Foundational AI Practitioner として避けるべき行為であり、Recall（感度）・Precision・F1・PR AUC・混同行列・必要に応じて閾値曲線を提示するのが妥当。医療領域では特に「見逃し」のコストが高い点が決定的。",
       "references": [
-        {"title": "Bias and Performance Metrics in SageMaker Clarify", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html"}
+        {
+          "title": "Bias and Performance Metrics in SageMaker Clarify",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html"
+        }
       ],
-      "tags": ["evaluation-metrics", "ethics", "imbalanced-data", "healthcare", "evaluation"],
+      "tags": [
+        "evaluation-metrics",
+        "ethics",
+        "imbalanced-data",
+        "healthcare",
+        "evaluation"
+      ],
       "common_mistakes": [
         "Accuracyを万能と思い込む",
         "クラス不均衡時の指標選択を怠る"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "aif-c01-domain1-020",
       "version": "1.0",
-      "exam": {"code": "AIF-C01", "name": "AWS Certified AI Practitioner", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-1", "name": "Fundamentals of AI and ML", "weight_percent": 20},
+      "exam": {
+        "code": "AIF-C01",
+        "name": "AWS Certified AI Practitioner",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Fundamentals of AI and ML",
+        "weight_percent": 20
+      },
       "topic": "ML パイプライン設計",
       "subtopic": "エンドツーエンドのワークフロー設計",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
-      "stem": "東海地方の中堅製造業が、IoTセンサーから取得する設備データを使って「異常検知（故障予兆）」のMLパイプラインを新規構築する。データチームは2名、ML経験は浅い。まず最初に設計すべきパイプラインの大枠として最も適切なのはどれか？",
+      "stem": "ある中堅製造業が、IoTセンサーから取得する設備データを使って「異常検知（故障予兆）」のMLパイプラインを新規構築する。データチームは2名、ML経験は浅い。まず最初に設計すべきパイプラインの大枠として最も適切なのはどれか？",
       "options": [
-        {"id": "A", "text": "（1）データ収集（IoT→S3）→（2）データ前処理（Glue/SageMaker Data Wrangler）→（3）モデル選定・学習（SageMaker Built-in Random Cut Forest など）→（4）評価（不均衡データ向け指標）→（5）デプロイ（SageMaker Endpoint）→（6）監視（Model Monitor で再学習トリガ）", "is_correct": true, "explanation": "正解。データ収集→前処理→学習→評価→デプロイ→監視のエンドツーエンドパイプラインは、AWS ベストプラクティスに沿った標準的な設計。特に運用後のドリフト監視と再学習が重要。"},
-        {"id": "B", "text": "Bedrock で大規模言語モデルにIoT数値を直接プロンプトとして投入し、異常を判定させる", "is_correct": false, "explanation": "LLMは数値時系列の異常検知に最適化されておらず、コスト・精度ともに不適切。専用ML（Random Cut Forest 等）が標準。"},
-        {"id": "C", "text": "事前にモデルを決め打ちでデプロイし、後からデータ収集と前処理を考える", "is_correct": false, "explanation": "データ理解なくモデルを決めるのは典型的な失敗パターン。データ駆動で設計すべき。"},
-        {"id": "D", "text": "ML 監視は不要であり、一度デプロイすれば永続的に同じ精度を保てる", "is_correct": false, "explanation": "本番データのドリフトでモデル性能は経時劣化する。Model Monitor 等での監視と再学習サイクルが必須。"}
+        {
+          "id": "A",
+          "text": "Bedrock で大規模言語モデルにIoT数値を直接プロンプトとして投入し、異常を判定させる",
+          "is_correct": false,
+          "explanation": "LLMは数値時系列の異常検知に最適化されておらず、コスト・精度ともに不適切。専用ML（Random Cut Forest 等）が標準。"
+        },
+        {
+          "id": "B",
+          "text": "ML 監視は不要であり、一度デプロイすれば永続的に同じ精度を保てる",
+          "is_correct": false,
+          "explanation": "本番データのドリフトでモデル性能は経時劣化する。Model Monitor 等での監視と再学習サイクルが必須。"
+        },
+        {
+          "id": "C",
+          "text": "事前にモデルを決め打ちでデプロイし、後からデータ収集と前処理を考える",
+          "is_correct": false,
+          "explanation": "データ理解なくモデルを決めるのは典型的な失敗パターン。データ駆動で設計すべき。"
+        },
+        {
+          "id": "D",
+          "text": "（1）データ収集（IoT→S3）→（2）データ前処理（Glue/SageMaker Data Wrangler）→（3）モデル選定・学習（SageMaker Built-in Random Cut Forest など）→（4）評価（不均衡データ向け指標）→（5）デプロイ（SageMaker Endpoint）→（6）監視（Model Monitor で再学習トリガ）",
+          "is_correct": true,
+          "explanation": "正解。データ収集→前処理→学習→評価→デプロイ→監視のエンドツーエンドパイプラインは、AWS ベストプラクティスに沿った標準的な設計。特に運用後のドリフト監視と再学習が重要。"
+        }
       ],
       "explanation": "ML パイプラインの設計ではデータ→学習→デプロイ→監視のサイクルを必ず含める。IoT 異常検知であれば SageMaker の Random Cut Forest（RCF）アルゴリズムや Lookout for Equipment（産業設備向けマネージド異常検知サービス）が候補となる。ML経験が浅いチームではマネージドサービスを優先するのが現実的。",
       "references": [
-        {"title": "Amazon Lookout for Equipment", "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/what-is.html"},
-        {"title": "Amazon SageMaker Random Cut Forest", "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html"}
+        {
+          "title": "Amazon Lookout for Equipment",
+          "url": "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/what-is.html"
+        },
+        {
+          "title": "Amazon SageMaker Random Cut Forest",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html"
+        }
       ],
-      "tags": ["ml-pipeline", "anomaly-detection", "iot", "manufacturing", "design"],
+      "tags": [
+        "ml-pipeline",
+        "anomaly-detection",
+        "iot",
+        "manufacturing",
+        "design"
+      ],
       "common_mistakes": [
         "ML 監視（モニタリング）を運用設計に含めない",
         "数値時系列タスクに LLM を流用する"
       ],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

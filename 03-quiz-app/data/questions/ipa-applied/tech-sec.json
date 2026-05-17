@@ -15,577 +15,1921 @@
     {
       "id": "ipa-applied-tech-sec-001",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "暗号技術",
       "subtopic": "共通鍵暗号と公開鍵暗号",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "公開鍵暗号方式の特徴として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "暗号化と復号で同じ鍵を使用するため、鍵配送問題が発生しない", "is_correct": false, "explanation": "これは共通鍵暗号方式の説明であり、共通鍵方式こそが鍵配送問題を抱える。"},
-        {"id": "B", "text": "暗号化と復号で異なる鍵（公開鍵と秘密鍵）を使用し、公開鍵は広く配布できる", "is_correct": true, "explanation": "正解。公開鍵暗号（非対称暗号）は鍵ペアを用い、公開鍵を公開しても秘密鍵が漏れない限り安全である。"},
-        {"id": "C", "text": "共通鍵暗号より処理速度が速いため、大容量データの暗号化に向く", "is_correct": false, "explanation": "逆である。公開鍵暗号は計算量が大きく低速で、通常は共通鍵の配送やデジタル署名に使われる。"},
-        {"id": "D", "text": "ハッシュ関数の一種で、メッセージから固定長の値を生成する", "is_correct": false, "explanation": "ハッシュ関数とは別物。公開鍵暗号は可逆な暗号方式である。"}
+        {
+          "id": "A",
+          "text": "暗号化と復号で異なる鍵（公開鍵と秘密鍵）を使用し、公開鍵は広く配布できる",
+          "is_correct": true,
+          "explanation": "正解。公開鍵暗号（非対称暗号）は鍵ペアを用い、公開鍵を公開しても秘密鍵が漏れない限り安全である。"
+        },
+        {
+          "id": "B",
+          "text": "共通鍵暗号より処理速度が速いため、大容量データの暗号化に向く",
+          "is_correct": false,
+          "explanation": "逆である。公開鍵暗号は計算量が大きく低速で、通常は共通鍵の配送やデジタル署名に使われる。"
+        },
+        {
+          "id": "C",
+          "text": "暗号化と復号で同じ鍵を使用するため、鍵配送問題が発生しない",
+          "is_correct": false,
+          "explanation": "これは共通鍵暗号方式の説明であり、共通鍵方式こそが鍵配送問題を抱える。"
+        },
+        {
+          "id": "D",
+          "text": "ハッシュ関数の一種で、メッセージから固定長の値を生成する",
+          "is_correct": false,
+          "explanation": "ハッシュ関数とは別物。公開鍵暗号は可逆な暗号方式である。"
+        }
       ],
       "explanation": "公開鍵暗号は1976年Diffie-Hellmanにより提唱された非対称暗号で、公開鍵と秘密鍵のペアを用いる。RSA、楕円曲線暗号(ECC)が代表例。鍵配送問題の解決とデジタル署名が可能だが処理は重い。実務ではTLSのように、公開鍵で共通鍵を交換し、本体通信は共通鍵(AES等)で行うハイブリッド方式が一般的。",
-      "references": [{"title": "IPA 情報セキュリティ 暗号", "url": "https://www.ipa.go.jp/security/crypto/"}],
-      "tags": ["暗号", "公開鍵", "RSA", "基礎"],
-      "common_mistakes": ["公開鍵暗号のほうが速いと誤解する", "公開鍵を秘密に保管しなければと思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 情報セキュリティ 暗号",
+          "url": "https://www.ipa.go.jp/security/crypto/"
+        }
+      ],
+      "tags": [
+        "暗号",
+        "公開鍵",
+        "RSA",
+        "基礎"
+      ],
+      "common_mistakes": [
+        "公開鍵暗号のほうが速いと誤解する",
+        "公開鍵を秘密に保管しなければと思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-002",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "暗号技術",
       "subtopic": "ハッシュ関数",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "暗号学的ハッシュ関数に求められる「衝突困難性（衝突耐性）」とは何か。",
       "options": [
-        {"id": "A", "text": "ハッシュ値から元のメッセージを推測することが計算的に困難であること", "is_correct": false, "explanation": "これは「原像計算困難性（一方向性）」の定義である。"},
-        {"id": "B", "text": "あるメッセージMに対し、同じハッシュ値を持つ別のメッセージM'を見つけることが計算的に困難であること", "is_correct": false, "explanation": "これは「第二原像計算困難性（弱衝突耐性）」の定義であり、衝突困難性とは区別される。"},
-        {"id": "C", "text": "同じハッシュ値を持つ任意の2つの異なるメッセージのペア(M,M')を見つけることが計算的に困難であること", "is_correct": true, "explanation": "正解。衝突困難性（強衝突耐性）は任意のペアを見つけることへの困難性で、誕生日攻撃に対する耐性を意味する。"},
-        {"id": "D", "text": "入力長によらず常に同じ長さのハッシュ値を出力すること", "is_correct": false, "explanation": "これは「固定長出力」というハッシュ関数の基本性質であり、暗号学的安全性の要件ではない。"}
+        {
+          "id": "A",
+          "text": "あるメッセージMに対し、同じハッシュ値を持つ別のメッセージM'を見つけることが計算的に困難であること",
+          "is_correct": false,
+          "explanation": "これは「第二原像計算困難性（弱衝突耐性）」の定義であり、衝突困難性とは区別される。"
+        },
+        {
+          "id": "B",
+          "text": "同じハッシュ値を持つ任意の2つの異なるメッセージのペア(M,M')を見つけることが計算的に困難であること",
+          "is_correct": true,
+          "explanation": "正解。衝突困難性（強衝突耐性）は任意のペアを見つけることへの困難性で、誕生日攻撃に対する耐性を意味する。"
+        },
+        {
+          "id": "C",
+          "text": "ハッシュ値から元のメッセージを推測することが計算的に困難であること",
+          "is_correct": false,
+          "explanation": "これは「原像計算困難性（一方向性）」の定義である。"
+        },
+        {
+          "id": "D",
+          "text": "入力長によらず常に同じ長さのハッシュ値を出力すること",
+          "is_correct": false,
+          "explanation": "これは「固定長出力」というハッシュ関数の基本性質であり、暗号学的安全性の要件ではない。"
+        }
       ],
       "explanation": "暗号学的ハッシュには3つの安全性要件がある。①原像計算困難性（一方向性）、②第二原像計算困難性（弱衝突耐性）、③衝突困難性（強衝突耐性）。誕生日攻撃により出力長nのハッシュは2^(n/2)程度の計算量で衝突発見可能なため、SHA-256では128bit相当の安全性となる。MD5/SHA-1は衝突攻撃が成立しているため非推奨。",
-      "references": [{"title": "CRYPTREC暗号リスト", "url": "https://www.cryptrec.go.jp/list.html"}],
-      "tags": ["ハッシュ", "SHA-256", "衝突耐性", "誕生日攻撃"],
-      "common_mistakes": ["弱衝突耐性と強衝突耐性を混同する", "MD5/SHA-1がまだ安全と思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CRYPTREC暗号リスト",
+          "url": "https://www.cryptrec.go.jp/list.html"
+        }
+      ],
+      "tags": [
+        "ハッシュ",
+        "SHA-256",
+        "衝突耐性",
+        "誕生日攻撃"
+      ],
+      "common_mistakes": [
+        "弱衝突耐性と強衝突耐性を混同する",
+        "MD5/SHA-1がまだ安全と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-003",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "暗号技術",
       "subtopic": "デジタル署名",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "ある製造業企業（東海地方）が取引先と契約書を電子化したい。送信者が確実に本人であり、かつ契約書が改ざんされていないことを受信者側で検証できる仕組みを実装したい。最も適切な方式はどれか。",
+      "stem": "ある製造業企業が取引先と契約書を電子化したい。送信者が確実に本人であり、かつ契約書が改ざんされていないことを受信者側で検証できる仕組みを実装したい。最も適切な方式はどれか。",
       "options": [
-        {"id": "A", "text": "送信者は契約書を共通鍵で暗号化し、その共通鍵を受信者の公開鍵で暗号化して送る", "is_correct": false, "explanation": "これはハイブリッド暗号で機密性は確保できるが、本人性（否認防止）と完全性の検証はできない。"},
-        {"id": "B", "text": "送信者は契約書のハッシュ値を自身の秘密鍵で暗号化（署名）し、契約書と一緒に送る。受信者は送信者の公開鍵で署名を検証する", "is_correct": true, "explanation": "正解。これがデジタル署名の標準手順。秘密鍵は本人しか持たないため本人性が、ハッシュ比較で完全性が確認できる。"},
-        {"id": "C", "text": "送信者は契約書を自身の公開鍵で暗号化し、受信者が秘密鍵で復号する", "is_correct": false, "explanation": "受信者の秘密鍵で復号するためには受信者の公開鍵で暗号化する必要があり、この記述自体が誤り。また機密性のみで署名にはならない。"},
-        {"id": "D", "text": "送信者と受信者が事前共有した共通鍵でMACを生成し付与する", "is_correct": false, "explanation": "MACは完全性とメッセージ認証は保証するが、共通鍵は両者が持つため第三者に対する否認防止にはならない。"}
+        {
+          "id": "A",
+          "text": "送信者は契約書を共通鍵で暗号化し、その共通鍵を受信者の公開鍵で暗号化して送る",
+          "is_correct": false,
+          "explanation": "これはハイブリッド暗号で機密性は確保できるが、本人性（否認防止）と完全性の検証はできない。"
+        },
+        {
+          "id": "B",
+          "text": "送信者と受信者が事前共有した共通鍵でMACを生成し付与する",
+          "is_correct": false,
+          "explanation": "MACは完全性とメッセージ認証は保証するが、共通鍵は両者が持つため第三者に対する否認防止にはならない。"
+        },
+        {
+          "id": "C",
+          "text": "送信者は契約書のハッシュ値を自身の秘密鍵で暗号化（署名）し、契約書と一緒に送る。受信者は送信者の公開鍵で署名を検証する",
+          "is_correct": true,
+          "explanation": "正解。これがデジタル署名の標準手順。秘密鍵は本人しか持たないため本人性が、ハッシュ比較で完全性が確認できる。"
+        },
+        {
+          "id": "D",
+          "text": "送信者は契約書を自身の公開鍵で暗号化し、受信者が秘密鍵で復号する",
+          "is_correct": false,
+          "explanation": "受信者の秘密鍵で復号するためには受信者の公開鍵で暗号化する必要があり、この記述自体が誤り。また機密性のみで署名にはならない。"
+        }
       ],
       "explanation": "デジタル署名は「ハッシュ関数」と「公開鍵暗号」を組合せ、本人性・完全性・否認防止の3要素を提供する。送信者の秘密鍵で署名するため、本人しか署名できず（否認防止）、公開鍵で検証可能。RSA署名、ECDSA、EdDSAが代表例。電子契約サービス（CloudSign等）の根幹技術。",
-      "references": [{"title": "IPA 電子署名・認証", "url": "https://www.ipa.go.jp/security/pki/"}],
-      "tags": ["デジタル署名", "公開鍵", "完全性", "否認防止"],
-      "common_mistakes": ["MACとデジタル署名を同一視する", "署名は受信者の鍵で行うと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 電子署名・認証",
+          "url": "https://www.ipa.go.jp/security/pki/"
+        }
+      ],
+      "tags": [
+        "デジタル署名",
+        "公開鍵",
+        "完全性",
+        "否認防止"
+      ],
+      "common_mistakes": [
+        "MACとデジタル署名を同一視する",
+        "署名は受信者の鍵で行うと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-004",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "PKI",
       "subtopic": "認証局と証明書失効",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるSaaS企業がTLS証明書を運用している。証明書の秘密鍵が漏洩した可能性が判明した。クライアント（ブラウザ）が「失効済み証明書」を確実に検出できるようにするための仕組みとして、最もリアルタイム性が高いものはどれか。",
       "options": [
-        {"id": "A", "text": "CRL (Certificate Revocation List) をCAから定期取得する", "is_correct": false, "explanation": "CRLは失効リストの一括配布方式で、更新間隔が数時間〜1日のため、漏洩直後の検出は遅れる。"},
-        {"id": "B", "text": "OCSP (Online Certificate Status Protocol) を使ってCAに個別に問い合わせる", "is_correct": true, "explanation": "正解。OCSPは証明書ごとにCAへリアルタイム問い合わせを行うため、CRLより即時性が高い。OCSPステープリングで負荷軽減も可能。"},
-        {"id": "C", "text": "証明書の有効期限を短く設定する", "is_correct": false, "explanation": "Let's Encryptのように短期証明書を発行する手法はあるが、漏洩した瞬間からの「即時失効」とは別の話。"},
-        {"id": "D", "text": "クライアント側のルート証明書を毎日更新する", "is_correct": false, "explanation": "ルート証明書はCA自体の信頼基盤であり、個別証明書の失効通知メカニズムではない。"}
+        {
+          "id": "A",
+          "text": "証明書の有効期限を短く設定する",
+          "is_correct": false,
+          "explanation": "Let's Encryptのように短期証明書を発行する手法はあるが、漏洩した瞬間からの「即時失効」とは別の話。"
+        },
+        {
+          "id": "B",
+          "text": "クライアント側のルート証明書を毎日更新する",
+          "is_correct": false,
+          "explanation": "ルート証明書はCA自体の信頼基盤であり、個別証明書の失効通知メカニズムではない。"
+        },
+        {
+          "id": "C",
+          "text": "CRL (Certificate Revocation List) をCAから定期取得する",
+          "is_correct": false,
+          "explanation": "CRLは失効リストの一括配布方式で、更新間隔が数時間〜1日のため、漏洩直後の検出は遅れる。"
+        },
+        {
+          "id": "D",
+          "text": "OCSP (Online Certificate Status Protocol) を使ってCAに個別に問い合わせる",
+          "is_correct": true,
+          "explanation": "正解。OCSPは証明書ごとにCAへリアルタイム問い合わせを行うため、CRLより即時性が高い。OCSPステープリングで負荷軽減も可能。"
+        }
       ],
       "explanation": "PKIにおける証明書失効確認には主にCRLとOCSPがある。CRLはCAが定期発行する失効リストで配布が容易だが即時性に欠ける。OCSPはオンライン問い合わせ方式でリアルタイム性が高く、OCSPステープリングではTLSサーバが署名済みOCSPレスポンスをハンドシェイクで提示することで負荷分散とプライバシ保護を両立する。",
-      "references": [{"title": "IPA PKI関連技術解説", "url": "https://www.ipa.go.jp/security/pki/"}],
-      "tags": ["PKI", "OCSP", "CRL", "TLS", "失効"],
-      "common_mistakes": ["CRLの更新がリアルタイムだと誤解", "OCSPステープリングの仕組みを理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA PKI関連技術解説",
+          "url": "https://www.ipa.go.jp/security/pki/"
+        }
+      ],
+      "tags": [
+        "PKI",
+        "OCSP",
+        "CRL",
+        "TLS",
+        "失効"
+      ],
+      "common_mistakes": [
+        "CRLの更新がリアルタイムだと誤解",
+        "OCSPステープリングの仕組みを理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-005",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "TLS",
       "subtopic": "TLS 1.3とハンドシェイク",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "TLS 1.3がTLS 1.2と比較して優れている点として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "RSA鍵交換をサポートし、互換性が向上した", "is_correct": false, "explanation": "逆である。TLS 1.3ではRSA鍵交換は廃止され、PFS（前方秘匿性）を持つDHE/ECDHEのみが許可される。"},
-        {"id": "B", "text": "ハンドシェイクを1-RTT（さらに0-RTT再開）に短縮し、脆弱な暗号スイートを廃止した", "is_correct": true, "explanation": "正解。TLS 1.3はFull Handshakeを2-RTTから1-RTTに削減し、CBCモード・RC4・MD5などの脆弱なアルゴリズムを除外した。"},
-        {"id": "C", "text": "暗号化を強化するため、すべての通信をUDPベースで実装した", "is_correct": false, "explanation": "TLSはTCP上で動作する。UDPベースの類似プロトコルはDTLSやQUICであり、TLS 1.3そのものではない。"},
-        {"id": "D", "text": "証明書を不要にして処理を高速化した", "is_correct": false, "explanation": "TLS 1.3でも公開鍵証明書は必要。サーバ認証の根幹である。"}
+        {
+          "id": "A",
+          "text": "ハンドシェイクを1-RTT（さらに0-RTT再開）に短縮し、脆弱な暗号スイートを廃止した",
+          "is_correct": true,
+          "explanation": "正解。TLS 1.3はFull Handshakeを2-RTTから1-RTTに削減し、CBCモード・RC4・MD5などの脆弱なアルゴリズムを除外した。"
+        },
+        {
+          "id": "B",
+          "text": "証明書を不要にして処理を高速化した",
+          "is_correct": false,
+          "explanation": "TLS 1.3でも公開鍵証明書は必要。サーバ認証の根幹である。"
+        },
+        {
+          "id": "C",
+          "text": "RSA鍵交換をサポートし、互換性が向上した",
+          "is_correct": false,
+          "explanation": "逆である。TLS 1.3ではRSA鍵交換は廃止され、PFS（前方秘匿性）を持つDHE/ECDHEのみが許可される。"
+        },
+        {
+          "id": "D",
+          "text": "暗号化を強化するため、すべての通信をUDPベースで実装した",
+          "is_correct": false,
+          "explanation": "TLSはTCP上で動作する。UDPベースの類似プロトコルはDTLSやQUICであり、TLS 1.3そのものではない。"
+        }
       ],
       "explanation": "TLS 1.3 (RFC 8446, 2018年)は大幅な簡素化と安全性向上を実現。①ハンドシェイク短縮（1-RTT/0-RTT）、②AEAD暗号スイートのみ、③RSA鍵交換廃止でPFS必須、④SNI暗号化（ESNI/ECH）への進化、⑤再ネゴシエーション廃止、などが主要変更点。0-RTTはリプレイ攻撃のリスクがあるためべき等処理に限定すべき。",
-      "references": [{"title": "RFC 8446 TLS 1.3", "url": "https://datatracker.ietf.org/doc/html/rfc8446"}],
-      "tags": ["TLS", "TLS1.3", "PFS", "ハンドシェイク"],
-      "common_mistakes": ["TLS 1.3でRSA鍵交換が残っていると誤解", "QUICとTLSを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "RFC 8446 TLS 1.3",
+          "url": "https://datatracker.ietf.org/doc/html/rfc8446"
+        }
+      ],
+      "tags": [
+        "TLS",
+        "TLS1.3",
+        "PFS",
+        "ハンドシェイク"
+      ],
+      "common_mistakes": [
+        "TLS 1.3でRSA鍵交換が残っていると誤解",
+        "QUICとTLSを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-006",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "認証技術",
       "subtopic": "多要素認証",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "多要素認証(MFA)で組合わせるべき「要素」の組合せとして最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "パスワードと、秘密の質問の答え", "is_correct": false, "explanation": "両方とも「知識情報」に属するため、多要素ではなく多段階認証である。"},
-        {"id": "B", "text": "パスワードと、ハードウェアトークンが生成するワンタイムパスワード", "is_correct": true, "explanation": "正解。「知識情報（パスワード）」と「所持情報（トークン）」の2要素であり、MFAの要件を満たす。"},
-        {"id": "C", "text": "登録済みのIPアドレスと、登録済みのMACアドレス", "is_correct": false, "explanation": "両方ともデバイスの属性で、「要素」の異なる組合せとは言えず、また偽装も比較的容易。"},
-        {"id": "D", "text": "8文字以上のパスワードと、12文字以上のパスワード", "is_correct": false, "explanation": "両方とも知識情報。長さを増やしても要素は1つ。"}
+        {
+          "id": "A",
+          "text": "登録済みのIPアドレスと、登録済みのMACアドレス",
+          "is_correct": false,
+          "explanation": "両方ともデバイスの属性で、「要素」の異なる組合せとは言えず、また偽装も比較的容易。"
+        },
+        {
+          "id": "B",
+          "text": "パスワードと、ハードウェアトークンが生成するワンタイムパスワード",
+          "is_correct": true,
+          "explanation": "正解。「知識情報（パスワード）」と「所持情報（トークン）」の2要素であり、MFAの要件を満たす。"
+        },
+        {
+          "id": "C",
+          "text": "パスワードと、秘密の質問の答え",
+          "is_correct": false,
+          "explanation": "両方とも「知識情報」に属するため、多要素ではなく多段階認証である。"
+        },
+        {
+          "id": "D",
+          "text": "8文字以上のパスワードと、12文字以上のパスワード",
+          "is_correct": false,
+          "explanation": "両方とも知識情報。長さを増やしても要素は1つ。"
+        }
       ],
       "explanation": "認証の3要素は ①知識情報（What you know：パスワード、PIN、秘密の質問）、②所持情報（What you have：トークン、スマートカード、スマートフォン）、③生体情報（What you are：指紋、顔、虹彩）。MFAは異なる要素から最低2つを組合わせる。同一要素を複数使うのは「多段階認証」であり、MFAの安全性向上効果は低い。",
-      "references": [{"title": "IPA 多要素認証", "url": "https://www.ipa.go.jp/security/anshin/measures/mfa.html"}],
-      "tags": ["MFA", "多要素認証", "認証要素"],
-      "common_mistakes": ["パスワード+秘密の質問をMFAだと思い込む", "多要素と多段階を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 多要素認証",
+          "url": "https://www.ipa.go.jp/security/anshin/measures/mfa.html"
+        }
+      ],
+      "tags": [
+        "MFA",
+        "多要素認証",
+        "認証要素"
+      ],
+      "common_mistakes": [
+        "パスワード+秘密の質問をMFAだと思い込む",
+        "多要素と多段階を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-007",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "認証技術",
       "subtopic": "SAML / OAuth / OpenID Connect",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "あるB2B SaaS企業が、企業顧客向けにSSOを提供することになった。「企業の社内IdP（Active Directory Federation Services等）から認証情報を受け取り、SaaS側でユーザを認可する」用途で、もっとも一般的に使われる仕組みはどれか。",
       "options": [
-        {"id": "A", "text": "OAuth 2.0 (Authorization Code Grant)", "is_correct": false, "explanation": "OAuth 2.0は認可フレームワークであり、認証そのものを目的とした仕様ではない。SSOには別途プロファイル（OIDC等）が必要。"},
-        {"id": "B", "text": "SAML 2.0", "is_correct": true, "explanation": "正解。SAML 2.0はXMLベースの認証アサーション交換規格で、エンタープライズSSO（社内IdP連携）の事実上の標準である。"},
-        {"id": "C", "text": "Basic認証", "is_correct": false, "explanation": "Basic認証はHTTPの単純なクレデンシャル送信方式で、SSOやIdP連携の仕組みを持たない。"},
-        {"id": "D", "text": "Kerberos（社外SaaS向けに直接使用）", "is_correct": false, "explanation": "Kerberosは社内ネットワーク内のSSOには有効だが、インターネット越しのSaaSでは現実的でない。"}
+        {
+          "id": "A",
+          "text": "Basic認証",
+          "is_correct": false,
+          "explanation": "Basic認証はHTTPの単純なクレデンシャル送信方式で、SSOやIdP連携の仕組みを持たない。"
+        },
+        {
+          "id": "B",
+          "text": "OAuth 2.0 (Authorization Code Grant)",
+          "is_correct": false,
+          "explanation": "OAuth 2.0は認可フレームワークであり、認証そのものを目的とした仕様ではない。SSOには別途プロファイル（OIDC等）が必要。"
+        },
+        {
+          "id": "C",
+          "text": "SAML 2.0",
+          "is_correct": true,
+          "explanation": "正解。SAML 2.0はXMLベースの認証アサーション交換規格で、エンタープライズSSO（社内IdP連携）の事実上の標準である。"
+        },
+        {
+          "id": "D",
+          "text": "Kerberos（社外SaaS向けに直接使用）",
+          "is_correct": false,
+          "explanation": "Kerberosは社内ネットワーク内のSSOには有効だが、インターネット越しのSaaSでは現実的でない。"
+        }
       ],
       "explanation": "B2B SaaSのエンタープライズSSOでは、SAML 2.0が依然として標準。XMLのSAMLアサーション（署名付き）をIdPからSPへPOSTで渡すフローが典型。一方コンシューマ向けや新しいAPIでは、OAuth 2.0+OpenID Connect (OIDC) がモバイル・SPA含む幅広い用途で主流。OIDCはOAuth 2.0の上に認証層（IDトークン=JWT）を追加した規格。",
-      "references": [{"title": "OASIS SAML 2.0", "url": "https://www.oasis-open.org/standard/saml/"}, {"title": "IPA OpenID解説", "url": "https://www.ipa.go.jp/"}],
-      "tags": ["SAML", "OAuth", "OIDC", "SSO", "IdP"],
-      "common_mistakes": ["OAuthとOIDCを同一視", "OAuthが認証用途と誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "OASIS SAML 2.0",
+          "url": "https://www.oasis-open.org/standard/saml/"
+        },
+        {
+          "title": "IPA OpenID解説",
+          "url": "https://www.ipa.go.jp/"
+        }
+      ],
+      "tags": [
+        "SAML",
+        "OAuth",
+        "OIDC",
+        "SSO",
+        "IdP"
+      ],
+      "common_mistakes": [
+        "OAuthとOIDCを同一視",
+        "OAuthが認証用途と誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-008",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "認証技術",
       "subtopic": "生体認証",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "生体認証システムの精度評価指標で、本人を誤って拒否してしまう率を示すものはどれか。",
       "options": [
-        {"id": "A", "text": "FAR (False Acceptance Rate)", "is_correct": false, "explanation": "FARは他人受入率（他人を本人と誤認する率）であり、設問とは逆である。"},
-        {"id": "B", "text": "FRR (False Rejection Rate)", "is_correct": true, "explanation": "正解。FRRは本人拒否率で、登録された本人を誤って拒否する率を示す。"},
-        {"id": "C", "text": "EER (Equal Error Rate)", "is_correct": false, "explanation": "EERはFARとFRRが等しくなる点で、システム全体の精度比較に使われる総合指標。"},
-        {"id": "D", "text": "FTE (Failure To Enroll)", "is_correct": false, "explanation": "FTEは登録自体ができない率で、本人拒否とは異なる。"}
+        {
+          "id": "A",
+          "text": "FAR (False Acceptance Rate)",
+          "is_correct": false,
+          "explanation": "FARは他人受入率（他人を本人と誤認する率）であり、設問とは逆である。"
+        },
+        {
+          "id": "B",
+          "text": "FTE (Failure To Enroll)",
+          "is_correct": false,
+          "explanation": "FTEは登録自体ができない率で、本人拒否とは異なる。"
+        },
+        {
+          "id": "C",
+          "text": "EER (Equal Error Rate)",
+          "is_correct": false,
+          "explanation": "EERはFARとFRRが等しくなる点で、システム全体の精度比較に使われる総合指標。"
+        },
+        {
+          "id": "D",
+          "text": "FRR (False Rejection Rate)",
+          "is_correct": true,
+          "explanation": "正解。FRRは本人拒否率で、登録された本人を誤って拒否する率を示す。"
+        }
       ],
       "explanation": "生体認証評価では FAR/FRR/EER/FTE の4指標が中心。FARを下げると（厳しい判定）FRRが上がるトレードオフがある。EERは交差点で性能比較に便利。指紋認証の典型値はFAR 0.001%、FRR 1%程度。スマホ顔認証など高セキュア用途ではFARを優先し、決済等ではFRRも考慮する。",
-      "references": [{"title": "IPA バイオメトリクス認証", "url": "https://www.ipa.go.jp/"}],
-      "tags": ["生体認証", "FAR", "FRR", "EER"],
-      "common_mistakes": ["FARとFRRを混同する", "FREEを答えてしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA バイオメトリクス認証",
+          "url": "https://www.ipa.go.jp/"
+        }
+      ],
+      "tags": [
+        "生体認証",
+        "FAR",
+        "FRR",
+        "EER"
+      ],
+      "common_mistakes": [
+        "FARとFRRを混同する",
+        "FREEを答えてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-009",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "ネットワークセキュリティ",
       "subtopic": "WAF / IDS / IPS",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある教育系SaaS企業がWebアプリケーションへのSQLインジェクションやXSSなどのアプリケーション層攻撃を防ぎたい。最も適切なソリューションはどれか。",
       "options": [
-        {"id": "A", "text": "ステートフル・パケットフィルタリング型ファイアウォール", "is_correct": false, "explanation": "ステートフルFWはL3/L4レベルの制御で、HTTPリクエストの中身を解析しないため、SQLi/XSSは検出できない。"},
-        {"id": "B", "text": "WAF (Web Application Firewall)", "is_correct": true, "explanation": "正解。WAFはHTTP/HTTPSペイロードを解析し、OWASP Top 10のようなWebアプリケーション層攻撃を検知・防御する。"},
-        {"id": "C", "text": "アンチウイルスソフトウェア（クライアント側）", "is_correct": false, "explanation": "AVソフトはマルウェア検出が主目的で、Webアプリのリクエスト検査機能は持たない。"},
-        {"id": "D", "text": "DLP (Data Loss Prevention)", "is_correct": false, "explanation": "DLPは機密データの外部流出防止であり、外部からの攻撃検知用途ではない。"}
+        {
+          "id": "A",
+          "text": "WAF (Web Application Firewall)",
+          "is_correct": true,
+          "explanation": "正解。WAFはHTTP/HTTPSペイロードを解析し、OWASP Top 10のようなWebアプリケーション層攻撃を検知・防御する。"
+        },
+        {
+          "id": "B",
+          "text": "ステートフル・パケットフィルタリング型ファイアウォール",
+          "is_correct": false,
+          "explanation": "ステートフルFWはL3/L4レベルの制御で、HTTPリクエストの中身を解析しないため、SQLi/XSSは検出できない。"
+        },
+        {
+          "id": "C",
+          "text": "DLP (Data Loss Prevention)",
+          "is_correct": false,
+          "explanation": "DLPは機密データの外部流出防止であり、外部からの攻撃検知用途ではない。"
+        },
+        {
+          "id": "D",
+          "text": "アンチウイルスソフトウェア（クライアント側）",
+          "is_correct": false,
+          "explanation": "AVソフトはマルウェア検出が主目的で、Webアプリのリクエスト検査機能は持たない。"
+        }
       ],
       "explanation": "OSI各層の防御: L3/L4はFW、L7はWAF。SQLi/XSS/CSRFなどのアプリケーション層攻撃にはWAFが必要。WAFはシグネチャ型（既知攻撃パターン）と振る舞い型（異常検知）があり、AWS WAF、Cloudflare、Akamai等で提供。IDSは検知のみ、IPSは遮断も行うが、Web攻撃に特化するならWAFを選ぶ。",
-      "references": [{"title": "IPA セキュアウェブサイト構築", "url": "https://www.ipa.go.jp/security/vuln/websecurity.html"}],
-      "tags": ["WAF", "FW", "OSI", "SQLi", "XSS"],
-      "common_mistakes": ["FWだけでアプリ層攻撃も防げると誤解", "WAFとIPSの役割を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA セキュアウェブサイト構築",
+          "url": "https://www.ipa.go.jp/security/vuln/websecurity.html"
+        }
+      ],
+      "tags": [
+        "WAF",
+        "FW",
+        "OSI",
+        "SQLi",
+        "XSS"
+      ],
+      "common_mistakes": [
+        "FWだけでアプリ層攻撃も防げると誤解",
+        "WAFとIPSの役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-010",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "ネットワークセキュリティ",
       "subtopic": "DMZ / セグメンテーション",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある製造業企業がインターネット公開Webサーバを設置する際、内部LANから直接Webサーバを公開しないようにネットワーク設計したい。最も一般的な設計はどれか。",
       "options": [
-        {"id": "A", "text": "Webサーバを内部LANに置き、ファイアウォールでポート80/443のみ通す", "is_correct": false, "explanation": "Webサーバが侵害された場合、内部LANに直接アクセスできてしまう（ピボット攻撃）。"},
-        {"id": "B", "text": "Webサーバを「DMZ」セグメントに置き、外部から DMZ への通信と DMZ から内部LANへの通信を別ルールで制御する", "is_correct": true, "explanation": "正解。DMZ (DeMilitarized Zone) は公開セグメントで、外部・内部LAN双方からファイアウォールで隔離される。"},
-        {"id": "C", "text": "Webサーバをインターネット側に置き、内部LANとは無線LANで接続する", "is_correct": false, "explanation": "無線LANは伝送路の話で、セグメント分離やアクセス制御の代替にはならない。"},
-        {"id": "D", "text": "Webサーバと内部LANを単一スイッチに接続し、VLAN分離する", "is_correct": false, "explanation": "VLAN自体は有効だが、ファイアウォールによる経路制御がない場合、L3レベルでの侵入対策が不足する。"}
+        {
+          "id": "A",
+          "text": "Webサーバを内部LANに置き、ファイアウォールでポート80/443のみ通す",
+          "is_correct": false,
+          "explanation": "Webサーバが侵害された場合、内部LANに直接アクセスできてしまう（ピボット攻撃）。"
+        },
+        {
+          "id": "B",
+          "text": "Webサーバを「DMZ」セグメントに置き、外部から DMZ への通信と DMZ から内部LANへの通信を別ルールで制御する",
+          "is_correct": true,
+          "explanation": "正解。DMZ (DeMilitarized Zone) は公開セグメントで、外部・内部LAN双方からファイアウォールで隔離される。"
+        },
+        {
+          "id": "C",
+          "text": "Webサーバをインターネット側に置き、内部LANとは無線LANで接続する",
+          "is_correct": false,
+          "explanation": "無線LANは伝送路の話で、セグメント分離やアクセス制御の代替にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "Webサーバと内部LANを単一スイッチに接続し、VLAN分離する",
+          "is_correct": false,
+          "explanation": "VLAN自体は有効だが、ファイアウォールによる経路制御がない場合、L3レベルでの侵入対策が不足する。"
+        }
       ],
       "explanation": "DMZ (非武装地帯) は、インターネット公開サーバを置く隔離セグメント。典型的にはFWで外部 - DMZ - 内部LAN の3セグメントを分離し、外部からはDMZの公開ポートのみ、DMZから内部LANへは限定的な通信のみ許可する。これにより公開サーバが侵害されても、内部への被害を限定できる（多層防御）。",
-      "references": [{"title": "IPA ネットワークセキュリティ", "url": "https://www.ipa.go.jp/security/"}],
-      "tags": ["DMZ", "FW", "ネットワーク設計", "多層防御"],
-      "common_mistakes": ["VLAN分離だけで充分と誤解", "DMZの役割を曖昧に理解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA ネットワークセキュリティ",
+          "url": "https://www.ipa.go.jp/security/"
+        }
+      ],
+      "tags": [
+        "DMZ",
+        "FW",
+        "ネットワーク設計",
+        "多層防御"
+      ],
+      "common_mistakes": [
+        "VLAN分離だけで充分と誤解",
+        "DMZの役割を曖昧に理解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-011",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "マルウェア",
       "subtopic": "ランサムウェア対策",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある医療法人がランサムウェア対策を強化することになった。「感染後でも事業継続できる」ために最も重要な対策はどれか。",
       "options": [
-        {"id": "A", "text": "アンチウイルスソフトウェアの定義ファイルを毎日更新する", "is_correct": false, "explanation": "感染予防の基本だが、未知のランサムウェア（ゼロデイ）には効きにくく、感染「後」の事業継続には直接寄与しない。"},
-        {"id": "B", "text": "オフライン保管またはイミュータブル（書込不可）バックアップを定期取得し、リストア手順を訓練する", "is_correct": true, "explanation": "正解。ランサムウェア対策の核心は「攻撃者がアクセスできない場所」へのバックアップ。3-2-1ルール+イミュータブル化が現代の標準。"},
-        {"id": "C", "text": "メールフィルタを強化してフィッシングメールを自動削除する", "is_correct": false, "explanation": "侵入経路の制限としては有効だが、感染してしまった場合の回復手段にはならない。"},
-        {"id": "D", "text": "全社員にランサムウェアに関する啓発教育を実施する", "is_correct": false, "explanation": "重要だが、感染後の復旧能力（事業継続）を直接支える対策ではない。"}
+        {
+          "id": "A",
+          "text": "アンチウイルスソフトウェアの定義ファイルを毎日更新する",
+          "is_correct": false,
+          "explanation": "感染予防の基本だが、未知のランサムウェア（ゼロデイ）には効きにくく、感染「後」の事業継続には直接寄与しない。"
+        },
+        {
+          "id": "B",
+          "text": "メールフィルタを強化してフィッシングメールを自動削除する",
+          "is_correct": false,
+          "explanation": "侵入経路の制限としては有効だが、感染してしまった場合の回復手段にはならない。"
+        },
+        {
+          "id": "C",
+          "text": "オフライン保管またはイミュータブル（書込不可）バックアップを定期取得し、リストア手順を訓練する",
+          "is_correct": true,
+          "explanation": "正解。ランサムウェア対策の核心は「攻撃者がアクセスできない場所」へのバックアップ。3-2-1ルール+イミュータブル化が現代の標準。"
+        },
+        {
+          "id": "D",
+          "text": "全社員にランサムウェアに関する啓発教育を実施する",
+          "is_correct": false,
+          "explanation": "重要だが、感染後の復旧能力（事業継続）を直接支える対策ではない。"
+        }
       ],
       "explanation": "ランサムウェア対策は「予防」「検知」「復旧」の3層。事業継続(BCP)の観点では「復旧能力」が決定的に重要。バックアップ自体が暗号化されてしまわないよう、エアギャップ・WORM/イミュータブル領域・別アカウント保管が必須。3-2-1ルール（3つのコピー、2種類のメディア、1つはオフサイト）+リストア訓練が定石。医療データはNISTのSP800-66やHIPAA相当の取扱いが推奨される。",
-      "references": [{"title": "IPA ランサムウェア対策", "url": "https://www.ipa.go.jp/security/anshin/ransom_attack.html"}],
-      "tags": ["ランサムウェア", "BCP", "バックアップ", "イミュータブル"],
-      "common_mistakes": ["AVソフト+教育で十分と思い込む", "バックアップが攻撃対象になることを想定しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA ランサムウェア対策",
+          "url": "https://www.ipa.go.jp/security/anshin/ransom_attack.html"
+        }
+      ],
+      "tags": [
+        "ランサムウェア",
+        "BCP",
+        "バックアップ",
+        "イミュータブル"
+      ],
+      "common_mistakes": [
+        "AVソフト+教育で十分と思い込む",
+        "バックアップが攻撃対象になることを想定しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-012",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "マルウェア",
       "subtopic": "マルウェアの種類",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "「ワーム」と「ウイルス」の主な違いとして、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "ワームは自己増殖機能を持たず、ウイルスは持つ", "is_correct": false, "explanation": "逆である。ワームは独立して自己増殖する。"},
-        {"id": "B", "text": "ワームは宿主ファイルを必要とせず単体で増殖でき、ウイルスは他のファイルに寄生して増殖する", "is_correct": true, "explanation": "正解。これがワームとウイルスの古典的な定義の違い。"},
-        {"id": "C", "text": "ワームは合法ソフトウェアであり、ウイルスは違法である", "is_correct": false, "explanation": "両方とも不正プログラムで、刑法168条の2（不正指令電磁的記録）の対象になる。"},
-        {"id": "D", "text": "ワームはネットワークでのみ動作し、ウイルスはスタンドアロン環境でのみ動作する", "is_correct": false, "explanation": "両方ともネットワーク・ローカル両方で動作しうる。"}
+        {
+          "id": "A",
+          "text": "ワームは自己増殖機能を持たず、ウイルスは持つ",
+          "is_correct": false,
+          "explanation": "逆である。ワームは独立して自己増殖する。"
+        },
+        {
+          "id": "B",
+          "text": "ワームは合法ソフトウェアであり、ウイルスは違法である",
+          "is_correct": false,
+          "explanation": "両方とも不正プログラムで、刑法168条の2（不正指令電磁的記録）の対象になる。"
+        },
+        {
+          "id": "C",
+          "text": "ワームはネットワークでのみ動作し、ウイルスはスタンドアロン環境でのみ動作する",
+          "is_correct": false,
+          "explanation": "両方ともネットワーク・ローカル両方で動作しうる。"
+        },
+        {
+          "id": "D",
+          "text": "ワームは宿主ファイルを必要とせず単体で増殖でき、ウイルスは他のファイルに寄生して増殖する",
+          "is_correct": true,
+          "explanation": "正解。これがワームとウイルスの古典的な定義の違い。"
+        }
       ],
       "explanation": "古典的分類: ①ウイルス（既存ファイルに寄生）、②ワーム（独立で自己増殖、ネットワーク経由）、③トロイの木馬（無害を装い侵入、自己増殖なし）、④ボット（C&Cサーバから命令を受ける）、⑤ランサムウェア（暗号化して身代金要求）、⑥ルートキット（管理者権限を奪い隠蔽）。現代のマルウェアは複数特性を持つ複合型が多い。",
-      "references": [{"title": "IPA コンピュータウイルス対策", "url": "https://www.ipa.go.jp/security/anshin/measures/virus.html"}],
-      "tags": ["マルウェア", "ワーム", "ウイルス", "基礎"],
-      "common_mistakes": ["ウイルスとワームを同一視", "トロイは増殖すると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA コンピュータウイルス対策",
+          "url": "https://www.ipa.go.jp/security/anshin/measures/virus.html"
+        }
+      ],
+      "tags": [
+        "マルウェア",
+        "ワーム",
+        "ウイルス",
+        "基礎"
+      ],
+      "common_mistakes": [
+        "ウイルスとワームを同一視",
+        "トロイは増殖すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-013",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "サイバー攻撃",
       "subtopic": "クロスサイトスクリプティング (XSS)",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるWebアプリケーションの掲示板機能に投稿されたユーザ入力が、エスケープされずにHTMLとしてそのまま表示されている。攻撃者は<script>タグを投稿し、閲覧者のセッションクッキーを盗む攻撃を行った。この攻撃の名称と、最も基本的な対策の組合せはどれか。",
       "options": [
-        {"id": "A", "text": "SQLインジェクション / プレースホルダ（パラメータバインド）の使用", "is_correct": false, "explanation": "攻撃名が誤り。SQLインジェクションはDB問合せに不正SQLを混入する攻撃。"},
-        {"id": "B", "text": "格納型XSS / 出力時のHTMLエスケープ（< → &lt; など）", "is_correct": true, "explanation": "正解。投稿内容がDB等に格納され他ユーザに表示される「Stored XSS」で、対策は出力時の文脈に応じたエスケープ。"},
-        {"id": "C", "text": "CSRF / セッションIDの再発行", "is_correct": false, "explanation": "CSRFは正規ユーザの権限を悪用する別カテゴリの攻撃。"},
-        {"id": "D", "text": "ディレクトリトラバーサル / パスのホワイトリスト検証", "is_correct": false, "explanation": "ディレクトリトラバーサルはファイルパス操作の攻撃で、本問のシナリオには該当しない。"}
+        {
+          "id": "A",
+          "text": "格納型XSS / 出力時のHTMLエスケープ（< → &lt; など）",
+          "is_correct": true,
+          "explanation": "正解。投稿内容がDB等に格納され他ユーザに表示される「Stored XSS」で、対策は出力時の文脈に応じたエスケープ。"
+        },
+        {
+          "id": "B",
+          "text": "SQLインジェクション / プレースホルダ（パラメータバインド）の使用",
+          "is_correct": false,
+          "explanation": "攻撃名が誤り。SQLインジェクションはDB問合せに不正SQLを混入する攻撃。"
+        },
+        {
+          "id": "C",
+          "text": "ディレクトリトラバーサル / パスのホワイトリスト検証",
+          "is_correct": false,
+          "explanation": "ディレクトリトラバーサルはファイルパス操作の攻撃で、本問のシナリオには該当しない。"
+        },
+        {
+          "id": "D",
+          "text": "CSRF / セッションIDの再発行",
+          "is_correct": false,
+          "explanation": "CSRFは正規ユーザの権限を悪用する別カテゴリの攻撃。"
+        }
       ],
       "explanation": "XSSは反射型(Reflected)、格納型(Stored)、DOM型の3種類。本問は投稿が永続化される格納型。基本対策は「出力時のエスケープ」（コンテキストごと: HTML, 属性, JS, URL）。さらにContent-Security-Policy(CSP)、HttpOnly Cookie、入力検証を組合わせた多層防御が現代の標準。OWASP Top 10の常連項目。",
-      "references": [{"title": "IPA 安全なウェブサイトの作り方 - XSS", "url": "https://www.ipa.go.jp/security/vuln/websecurity.html"}],
-      "tags": ["XSS", "Webセキュリティ", "OWASP", "エスケープ"],
-      "common_mistakes": ["入力時のフィルタだけで対策完了と誤解", "CSP不要と思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 安全なウェブサイトの作り方 - XSS",
+          "url": "https://www.ipa.go.jp/security/vuln/websecurity.html"
+        }
+      ],
+      "tags": [
+        "XSS",
+        "Webセキュリティ",
+        "OWASP",
+        "エスケープ"
+      ],
+      "common_mistakes": [
+        "入力時のフィルタだけで対策完了と誤解",
+        "CSP不要と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-014",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "サイバー攻撃",
       "subtopic": "CSRF",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "CSRF (クロスサイトリクエストフォージェリ) 攻撃に対する根本的な対策として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "HTTPSを強制する (HSTSヘッダの設定)", "is_correct": false, "explanation": "通信路の盗聴対策にはなるが、CSRFは正規ユーザのブラウザから送信されるため別問題。"},
-        {"id": "B", "text": "重要操作のリクエストにCSRFトークンを含め、サーバ側で検証する（またはSameSite Cookie 属性を設定する）", "is_correct": true, "explanation": "正解。攻撃者が知り得ないトークンを毎回検証することで、第三者サイトからの偽造リクエストを拒否できる。SameSite=Lax/Strictも有効。"},
-        {"id": "C", "text": "入力値をHTMLエスケープする", "is_correct": false, "explanation": "これはXSS対策。CSRFには無効。"},
-        {"id": "D", "text": "SQL文をプレースホルダで実装する", "is_correct": false, "explanation": "これはSQLインジェクション対策。CSRFには無効。"}
+        {
+          "id": "A",
+          "text": "SQL文をプレースホルダで実装する",
+          "is_correct": false,
+          "explanation": "これはSQLインジェクション対策。CSRFには無効。"
+        },
+        {
+          "id": "B",
+          "text": "重要操作のリクエストにCSRFトークンを含め、サーバ側で検証する（またはSameSite Cookie 属性を設定する）",
+          "is_correct": true,
+          "explanation": "正解。攻撃者が知り得ないトークンを毎回検証することで、第三者サイトからの偽造リクエストを拒否できる。SameSite=Lax/Strictも有効。"
+        },
+        {
+          "id": "C",
+          "text": "HTTPSを強制する (HSTSヘッダの設定)",
+          "is_correct": false,
+          "explanation": "通信路の盗聴対策にはなるが、CSRFは正規ユーザのブラウザから送信されるため別問題。"
+        },
+        {
+          "id": "D",
+          "text": "入力値をHTMLエスケープする",
+          "is_correct": false,
+          "explanation": "これはXSS対策。CSRFには無効。"
+        }
       ],
       "explanation": "CSRFは認証済みユーザのブラウザを利用して意図しないリクエストを送信させる攻撃。対策はトークンベース（CSRFトークン、Synchronizer Token Pattern）+ Cookie の SameSite 属性設定 + 重要操作前の再認証。Refererヘッダ検証は補助的だが過信は禁物（プロキシでReferer削除されることがある）。",
-      "references": [{"title": "IPA 安全なウェブサイトの作り方 - CSRF", "url": "https://www.ipa.go.jp/security/vuln/websecurity.html"}],
-      "tags": ["CSRF", "Webセキュリティ", "SameSite", "OWASP"],
-      "common_mistakes": ["XSS対策とCSRF対策を同一視", "HTTPSでCSRFも防げると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 安全なウェブサイトの作り方 - CSRF",
+          "url": "https://www.ipa.go.jp/security/vuln/websecurity.html"
+        }
+      ],
+      "tags": [
+        "CSRF",
+        "Webセキュリティ",
+        "SameSite",
+        "OWASP"
+      ],
+      "common_mistakes": [
+        "XSS対策とCSRF対策を同一視",
+        "HTTPSでCSRFも防げると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-015",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "サイバー攻撃",
       "subtopic": "DDoS",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "あるFinTech企業のWebサイトが、複数のIoT機器（ボット）から同時にトラフィックを受けて応答困難になった。これに該当する攻撃と、有効な対策の組合せはどれか。",
       "options": [
-        {"id": "A", "text": "DoS攻撃 / 単一IPからのアクセスをブロックする", "is_correct": false, "explanation": "DoS（単一発生源）ではなく、複数の発生源（ボットネット）からの分散型DoSであるDDoSが正しい。"},
-        {"id": "B", "text": "DDoS攻撃 / CDN/Anti-DDoSサービスを前段に配置し、トラフィックを吸収・フィルタする", "is_correct": true, "explanation": "正解。DDoSは多数の感染端末からの分散攻撃で、CDN（CloudFront、Akamai）やAWS Shield、Cloudflareなどで吸収するのが定石。"},
-        {"id": "C", "text": "標的型攻撃 / メールフィルタを強化する", "is_correct": false, "explanation": "標的型攻撃（APT）は特定組織への執拗な侵入を狙うもので、本問のトラフィック飽和とは別。"},
-        {"id": "D", "text": "ゼロデイ攻撃 / OSパッチを最新にする", "is_correct": false, "explanation": "ゼロデイは未知脆弱性を突く攻撃で、ボットネットからのトラフィック攻撃そのものを指す用語ではない。"}
+        {
+          "id": "A",
+          "text": "DoS攻撃 / 単一IPからのアクセスをブロックする",
+          "is_correct": false,
+          "explanation": "DoS（単一発生源）ではなく、複数の発生源（ボットネット）からの分散型DoSであるDDoSが正しい。"
+        },
+        {
+          "id": "B",
+          "text": "標的型攻撃 / メールフィルタを強化する",
+          "is_correct": false,
+          "explanation": "標的型攻撃（APT）は特定組織への執拗な侵入を狙うもので、本問のトラフィック飽和とは別。"
+        },
+        {
+          "id": "C",
+          "text": "DDoS攻撃 / CDN/Anti-DDoSサービスを前段に配置し、トラフィックを吸収・フィルタする",
+          "is_correct": true,
+          "explanation": "正解。DDoSは多数の感染端末からの分散攻撃で、CDN（CloudFront、Akamai）やAWS Shield、Cloudflareなどで吸収するのが定石。"
+        },
+        {
+          "id": "D",
+          "text": "ゼロデイ攻撃 / OSパッチを最新にする",
+          "is_correct": false,
+          "explanation": "ゼロデイは未知脆弱性を突く攻撃で、ボットネットからのトラフィック攻撃そのものを指す用語ではない。"
+        }
       ],
       "explanation": "DDoS (Distributed Denial of Service) は、IoTボットネット (Mirai系等) や反射攻撃を使ってリソースを枯渇させる攻撃。L3/L4型（SYN flood、UDP flood）とL7型（HTTP flood、Slowloris）がある。対策は「前段に巨大なバッファを置く」発想で、AWS Shield Advanced/Cloudflare/Akamai 等の専門サービスが有効。Anycastで分散吸収する。",
-      "references": [{"title": "IPA DDoS攻撃対策", "url": "https://www.ipa.go.jp/security/"}],
-      "tags": ["DDoS", "ボットネット", "CDN", "Anti-DDoS"],
-      "common_mistakes": ["DoSとDDoSの違いを曖昧にする", "標的型攻撃とDDoSを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA DDoS攻撃対策",
+          "url": "https://www.ipa.go.jp/security/"
+        }
+      ],
+      "tags": [
+        "DDoS",
+        "ボットネット",
+        "CDN",
+        "Anti-DDoS"
+      ],
+      "common_mistakes": [
+        "DoSとDDoSの違いを曖昧にする",
+        "標的型攻撃とDDoSを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-016",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "サイバー攻撃",
       "subtopic": "サプライチェーン攻撃",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "近年、ソフトウェアサプライチェーン攻撃（OSSパッケージへの悪意あるコード混入、アップデートサーバ侵害等）が増加している。組織がこの攻撃カテゴリへの対策として導入を検討すべきもののうち、もっとも効果的なものはどれか。",
       "options": [
-        {"id": "A", "text": "SBOM (Software Bill of Materials) を生成・管理し、依存ライブラリの既知脆弱性を継続的にスキャンする", "is_correct": true, "explanation": "正解。SBOMは利用するOSS等の構成リストで、CVE登録時に影響範囲を即座に特定できる。米国大統領令14028以降、デファクトとなりつつある。"},
-        {"id": "B", "text": "全社員のメールパスワードを毎月変更する", "is_correct": false, "explanation": "サプライチェーン攻撃はソフトウェア供給経路の問題で、社内パスワード管理だけでは防げない。"},
-        {"id": "C", "text": "ファイアウォールのログを毎週確認する", "is_correct": false, "explanation": "侵害後検知の補助にはなるが、サプライチェーン攻撃そのものへの予防策にはならない。"},
-        {"id": "D", "text": "オフィスへの入退室管理を強化する", "is_correct": false, "explanation": "物理セキュリティであり、デジタルなサプライチェーン攻撃には無関係。"}
+        {
+          "id": "A",
+          "text": "オフィスへの入退室管理を強化する",
+          "is_correct": false,
+          "explanation": "物理セキュリティであり、デジタルなサプライチェーン攻撃には無関係。"
+        },
+        {
+          "id": "B",
+          "text": "全社員のメールパスワードを毎月変更する",
+          "is_correct": false,
+          "explanation": "サプライチェーン攻撃はソフトウェア供給経路の問題で、社内パスワード管理だけでは防げない。"
+        },
+        {
+          "id": "C",
+          "text": "ファイアウォールのログを毎週確認する",
+          "is_correct": false,
+          "explanation": "侵害後検知の補助にはなるが、サプライチェーン攻撃そのものへの予防策にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "SBOM (Software Bill of Materials) を生成・管理し、依存ライブラリの既知脆弱性を継続的にスキャンする",
+          "is_correct": true,
+          "explanation": "正解。SBOMは利用するOSS等の構成リストで、CVE登録時に影響範囲を即座に特定できる。米国大統領令14028以降、デファクトとなりつつある。"
+        }
       ],
       "explanation": "ソフトウェアサプライチェーン攻撃の代表例: SolarWinds事件 (2020)、xz-utils backdoor (2024)、各種npm/pypi typosquatting。対策として ①SBOM管理 (SPDX/CycloneDX形式)、②依存性スキャン (Dependabot, Snyk, Trivy)、③ビルドの再現性確保 (SLSA framework)、④コード署名検証 が推奨される。日本でも経産省・IPAがSBOM導入手引きを公開。",
-      "references": [{"title": "経産省 ソフトウェア管理に向けたSBOM活用", "url": "https://www.meti.go.jp/policy/mono_info_service/joho/conference/sbom.html"}, {"title": "IPA SBOM対応", "url": "https://www.ipa.go.jp/"}],
-      "tags": ["SBOM", "サプライチェーン", "OSS", "SLSA", "脆弱性管理"],
-      "common_mistakes": ["SBOMを単なる文書と誤解", "サプライチェーン攻撃を無視"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "経産省 ソフトウェア管理に向けたSBOM活用",
+          "url": "https://www.meti.go.jp/policy/mono_info_service/joho/conference/sbom.html"
+        },
+        {
+          "title": "IPA SBOM対応",
+          "url": "https://www.ipa.go.jp/"
+        }
+      ],
+      "tags": [
+        "SBOM",
+        "サプライチェーン",
+        "OSS",
+        "SLSA",
+        "脆弱性管理"
+      ],
+      "common_mistakes": [
+        "SBOMを単なる文書と誤解",
+        "サプライチェーン攻撃を無視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-017",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "セキュアプログラミング",
       "subtopic": "SQLインジェクション対策",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SQLインジェクション攻撃を根本的に防ぐ実装方法として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "プレースホルダ（バインド変数）を使用したパラメータ化クエリでSQLを構築する", "is_correct": true, "explanation": "正解。クエリ構造とデータを分離し、ユーザ入力を文字列連結しないため、SQL文の改変を根本的に防止できる。"},
-        {"id": "B", "text": "ユーザ入力からシングルクォート(')をすべて除去する", "is_correct": false, "explanation": "ブラックリスト方式は不完全で、エンコード回避や別文字（バックスラッシュ等）での迂回が可能。"},
-        {"id": "C", "text": "DBへの接続を SSL/TLSで暗号化する", "is_correct": false, "explanation": "通信経路の暗号化はあくまで盗聴対策。アプリ側のSQL構築には関係しない。"},
-        {"id": "D", "text": "Webサーバの実行ユーザを root にする", "is_correct": false, "explanation": "むしろ最小権限の原則に反する。SQL注入が成功した時の被害を増大させてしまう。"}
+        {
+          "id": "A",
+          "text": "プレースホルダ（バインド変数）を使用したパラメータ化クエリでSQLを構築する",
+          "is_correct": true,
+          "explanation": "正解。クエリ構造とデータを分離し、ユーザ入力を文字列連結しないため、SQL文の改変を根本的に防止できる。"
+        },
+        {
+          "id": "B",
+          "text": "ユーザ入力からシングルクォート(')をすべて除去する",
+          "is_correct": false,
+          "explanation": "ブラックリスト方式は不完全で、エンコード回避や別文字（バックスラッシュ等）での迂回が可能。"
+        },
+        {
+          "id": "C",
+          "text": "Webサーバの実行ユーザを root にする",
+          "is_correct": false,
+          "explanation": "むしろ最小権限の原則に反する。SQL注入が成功した時の被害を増大させてしまう。"
+        },
+        {
+          "id": "D",
+          "text": "DBへの接続を SSL/TLSで暗号化する",
+          "is_correct": false,
+          "explanation": "通信経路の暗号化はあくまで盗聴対策。アプリ側のSQL構築には関係しない。"
+        }
       ],
       "explanation": "SQLインジェクション対策の鉄則は「文字列連結でSQLを組み立てない」こと。プレースホルダ（PHP の PDO、Java のPreparedStatement、Pythonの? バインド等）を使えば、ユーザ入力はデータとして扱われSQL構造を変更できない。補完策: DBユーザの最小権限、エラーメッセージの抑制、WAF。IPA「安全なウェブサイトの作り方」の最重要項目。",
-      "references": [{"title": "IPA 安全なウェブサイトの作り方 - SQLインジェクション", "url": "https://www.ipa.go.jp/security/vuln/websecurity.html"}],
-      "tags": ["SQLi", "プレースホルダ", "セキュアコーディング", "OWASP"],
-      "common_mistakes": ["クォート除去で十分と誤解", "ORM使えば自動で安全と過信"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IPA 安全なウェブサイトの作り方 - SQLインジェクション",
+          "url": "https://www.ipa.go.jp/security/vuln/websecurity.html"
+        }
+      ],
+      "tags": [
+        "SQLi",
+        "プレースホルダ",
+        "セキュアコーディング",
+        "OWASP"
+      ],
+      "common_mistakes": [
+        "クォート除去で十分と誤解",
+        "ORM使えば自動で安全と過信"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-018",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "情報セキュリティマネジメント",
       "subtopic": "CIA / 情報セキュリティ三要素",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "情報セキュリティの三要素 (CIA) のうち、「認可された利用者が必要な時に情報やシステムにアクセスできること」を表すのはどれか。",
       "options": [
-        {"id": "A", "text": "Confidentiality（機密性）", "is_correct": false, "explanation": "機密性は認可者のみが情報にアクセスできることを保証する性質。"},
-        {"id": "B", "text": "Integrity（完全性）", "is_correct": false, "explanation": "完全性は情報が改ざんされず正確であることを保証する性質。"},
-        {"id": "C", "text": "Availability（可用性）", "is_correct": true, "explanation": "正解。可用性は必要時に利用できる状態を維持する性質。DoS攻撃やシステム障害は可用性への脅威。"},
-        {"id": "D", "text": "Accountability（責任追跡性）", "is_correct": false, "explanation": "責任追跡性はJIS Q 27000の拡張要素で、誰が何をしたかを追跡できる性質。CIAの三要素には含まれない。"}
+        {
+          "id": "A",
+          "text": "Integrity（完全性）",
+          "is_correct": false,
+          "explanation": "完全性は情報が改ざんされず正確であることを保証する性質。"
+        },
+        {
+          "id": "B",
+          "text": "Availability（可用性）",
+          "is_correct": true,
+          "explanation": "正解。可用性は必要時に利用できる状態を維持する性質。DoS攻撃やシステム障害は可用性への脅威。"
+        },
+        {
+          "id": "C",
+          "text": "Accountability（責任追跡性）",
+          "is_correct": false,
+          "explanation": "責任追跡性はJIS Q 27000の拡張要素で、誰が何をしたかを追跡できる性質。CIAの三要素には含まれない。"
+        },
+        {
+          "id": "D",
+          "text": "Confidentiality（機密性）",
+          "is_correct": false,
+          "explanation": "機密性は認可者のみが情報にアクセスできることを保証する性質。"
+        }
       ],
       "explanation": "情報セキュリティ三要素 (CIA): ①Confidentiality（機密性）= アクセス制御、②Integrity（完全性）= 改ざん防止、③Availability（可用性）= 利用可能性。JIS Q 27000ではこれに加えて真正性、責任追跡性、否認防止、信頼性の4要素を加えた7要素モデルがある。設問では可用性が正解。",
-      "references": [{"title": "JIS Q 27000:2019", "url": "https://www.jisc.go.jp/"}, {"title": "IPA 情報セキュリティ管理基準", "url": "https://www.ipa.go.jp/"}],
-      "tags": ["CIA", "ISMS", "可用性", "基礎"],
-      "common_mistakes": ["CIAのIをIdentityと混同", "三要素と七要素の関係を理解していない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "JIS Q 27000:2019",
+          "url": "https://www.jisc.go.jp/"
+        },
+        {
+          "title": "IPA 情報セキュリティ管理基準",
+          "url": "https://www.ipa.go.jp/"
+        }
+      ],
+      "tags": [
+        "CIA",
+        "ISMS",
+        "可用性",
+        "基礎"
+      ],
+      "common_mistakes": [
+        "CIAのIをIdentityと混同",
+        "三要素と七要素の関係を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-019",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "情報セキュリティマネジメント",
       "subtopic": "リスクアセスメント",
       "cognitive_level": "L4-Analyze",
       "difficulty": "medium",
       "stem": "あるSaaS企業がリスクアセスメントを実施した結果、リスク値（影響度×発生可能性）が中程度の脅威「サイバー保険でカバーする」と決定した。これはJIS Q 31000のリスク対応のうち、何にあたるか。",
       "options": [
-        {"id": "A", "text": "リスク低減（リスクの発生確率や影響度を下げる）", "is_correct": false, "explanation": "リスク低減は技術的対策やプロセス改善で発生確率を下げる対応。"},
-        {"id": "B", "text": "リスク移転（リスクを第三者に転嫁する）", "is_correct": true, "explanation": "正解。サイバー保険は典型的なリスク移転の手段で、損害発生時に金銭的負担を保険会社に転嫁する。"},
-        {"id": "C", "text": "リスク回避（リスクを生む活動自体を中止する）", "is_correct": false, "explanation": "回避はサービス自体を止めるなど、活動を行わないこと。"},
-        {"id": "D", "text": "リスク受容（リスクを認識した上で対策を行わない）", "is_correct": false, "explanation": "受容はリスクをそのまま受け入れる対応で、保険加入のような積極的な対応とは別。"}
+        {
+          "id": "A",
+          "text": "リスク回避（リスクを生む活動自体を中止する）",
+          "is_correct": false,
+          "explanation": "回避はサービス自体を止めるなど、活動を行わないこと。"
+        },
+        {
+          "id": "B",
+          "text": "リスク低減（リスクの発生確率や影響度を下げる）",
+          "is_correct": false,
+          "explanation": "リスク低減は技術的対策やプロセス改善で発生確率を下げる対応。"
+        },
+        {
+          "id": "C",
+          "text": "リスク移転（リスクを第三者に転嫁する）",
+          "is_correct": true,
+          "explanation": "正解。サイバー保険は典型的なリスク移転の手段で、損害発生時に金銭的負担を保険会社に転嫁する。"
+        },
+        {
+          "id": "D",
+          "text": "リスク受容（リスクを認識した上で対策を行わない）",
+          "is_correct": false,
+          "explanation": "受容はリスクをそのまま受け入れる対応で、保険加入のような積極的な対応とは別。"
+        }
       ],
       "explanation": "JIS Q 31000におけるリスク対応の4類型: ①低減（Mitigation: 技術対策で確率/影響を下げる）、②移転（Transfer: 保険、アウトソース）、③回避（Avoidance: 活動中止）、④受容（Acceptance: 残存リスクを受け入れる）。サイバー保険は移転の代表例。実務では、対策コスト>残存リスク影響の場合に受容や移転を選ぶ判断もありうる。",
-      "references": [{"title": "JIS Q 31000:2019 リスクマネジメント", "url": "https://www.jisc.go.jp/"}],
-      "tags": ["リスクアセスメント", "リスク対応", "サイバー保険", "ISMS"],
-      "common_mistakes": ["移転と受容を混同", "保険加入をリスク低減と誤分類"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "JIS Q 31000:2019 リスクマネジメント",
+          "url": "https://www.jisc.go.jp/"
+        }
+      ],
+      "tags": [
+        "リスクアセスメント",
+        "リスク対応",
+        "サイバー保険",
+        "ISMS"
+      ],
+      "common_mistakes": [
+        "移転と受容を混同",
+        "保険加入をリスク低減と誤分類"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-020",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "情報セキュリティマネジメント",
       "subtopic": "ISO/IEC 27001 / ISMS",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ISO/IEC 27001（JIS Q 27001）の特徴として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "クラウドサービスの監査基準を定めた規格である", "is_correct": false, "explanation": "クラウド固有はISO/IEC 27017（クラウド向け管理策）等。27001はISMS全般の規格である。"},
-        {"id": "B", "text": "情報セキュリティマネジメントシステム(ISMS)の要求事項を規定した認証取得可能な国際規格である", "is_correct": true, "explanation": "正解。27001はISMSのPDCA運用とリスクマネジメントを定めた国際規格で、認証取得が可能。"},
-        {"id": "C", "text": "個人情報保護法に基づく国内法である", "is_correct": false, "explanation": "法令ではなく、国際標準化機構(ISO)の規格である。"},
-        {"id": "D", "text": "暗号アルゴリズムの仕様を規定した規格である", "is_correct": false, "explanation": "暗号仕様はISO/IEC 18033やCRYPTRECなど別の規格。"}
+        {
+          "id": "A",
+          "text": "クラウドサービスの監査基準を定めた規格である",
+          "is_correct": false,
+          "explanation": "クラウド固有はISO/IEC 27017（クラウド向け管理策）等。27001はISMS全般の規格である。"
+        },
+        {
+          "id": "B",
+          "text": "暗号アルゴリズムの仕様を規定した規格である",
+          "is_correct": false,
+          "explanation": "暗号仕様はISO/IEC 18033やCRYPTRECなど別の規格。"
+        },
+        {
+          "id": "C",
+          "text": "個人情報保護法に基づく国内法である",
+          "is_correct": false,
+          "explanation": "法令ではなく、国際標準化機構(ISO)の規格である。"
+        },
+        {
+          "id": "D",
+          "text": "情報セキュリティマネジメントシステム(ISMS)の要求事項を規定した認証取得可能な国際規格である",
+          "is_correct": true,
+          "explanation": "正解。27001はISMSのPDCA運用とリスクマネジメントを定めた国際規格で、認証取得が可能。"
+        }
       ],
       "explanation": "ISMS関連の国際規格群: 27001（要求事項、認証規格）、27002（管理策のガイドライン）、27017（クラウドサービス向け）、27018（クラウドのPII保護）、27701（プライバシ管理）。日本ではJIPDECが認証機関を認定。Pマークが個人情報単独に対し、ISMSは情報資産全般を対象とする。SaaS企業が顧客から提示を求められる代表的な認証。",
-      "references": [{"title": "JIPDEC ISMS適合性評価制度", "url": "https://isms.jp/"}],
-      "tags": ["ISMS", "ISO27001", "JIPDEC", "認証"],
-      "common_mistakes": ["ISMSとPマークを混同", "27001と27002の役割を曖昧に理解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "JIPDEC ISMS適合性評価制度",
+          "url": "https://isms.jp/"
+        }
+      ],
+      "tags": [
+        "ISMS",
+        "ISO27001",
+        "JIPDEC",
+        "認証"
+      ],
+      "common_mistakes": [
+        "ISMSとPマークを混同",
+        "27001と27002の役割を曖昧に理解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-021",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "セキュリティ法令",
       "subtopic": "不正アクセス禁止法",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "「不正アクセス行為の禁止等に関する法律」(不正アクセス禁止法) で禁止されている行為として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "公開Webサイトを通常のブラウザで閲覧する", "is_correct": false, "explanation": "認証を経ない公開サイトの通常閲覧は対象外。"},
-        {"id": "B", "text": "他人のIDとパスワードを無断で使用してWebサービスにログインする", "is_correct": true, "explanation": "正解。3条1号「他人の識別符号を入力してアクセス制御機能を回避する」行為に該当する。"},
-        {"id": "C", "text": "自社の社員が業務でサーバへ正規にログインする", "is_correct": false, "explanation": "正規の権限による正当なアクセスは対象外。"},
-        {"id": "D", "text": "自分のパスワードを家族に教える", "is_correct": false, "explanation": "推奨はされないが、法律違反ではない（5条のID等不正取得とは別）。"}
+        {
+          "id": "A",
+          "text": "他人のIDとパスワードを無断で使用してWebサービスにログインする",
+          "is_correct": true,
+          "explanation": "正解。3条1号「他人の識別符号を入力してアクセス制御機能を回避する」行為に該当する。"
+        },
+        {
+          "id": "B",
+          "text": "自社の社員が業務でサーバへ正規にログインする",
+          "is_correct": false,
+          "explanation": "正規の権限による正当なアクセスは対象外。"
+        },
+        {
+          "id": "C",
+          "text": "自分のパスワードを家族に教える",
+          "is_correct": false,
+          "explanation": "推奨はされないが、法律違反ではない（5条のID等不正取得とは別）。"
+        },
+        {
+          "id": "D",
+          "text": "公開Webサイトを通常のブラウザで閲覧する",
+          "is_correct": false,
+          "explanation": "認証を経ない公開サイトの通常閲覧は対象外。"
+        }
       ],
       "explanation": "不正アクセス禁止法（平成11年法律128号）の主な禁止行為: ①不正アクセス行為（3条）、②不正アクセス助長行為（5条: ID等の提供）、③識別符号の不正取得・保管（4条、6条）、④フィッシング行為（7条）。違反は3年以下の懲役または100万円以下の罰金。被害がなくても行為自体が処罰対象（未遂的）。情報セキュリティの基本法令。",
-      "references": [{"title": "警察庁 不正アクセス禁止法", "url": "https://www.npa.go.jp/cyber/legislation/"}],
-      "tags": ["不正アクセス禁止法", "法令", "コンプライアンス"],
-      "common_mistakes": ["被害発生があって初めて違反だと誤解", "他人のID使用なら必ず違法と過剰解釈"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "警察庁 不正アクセス禁止法",
+          "url": "https://www.npa.go.jp/cyber/legislation/"
+        }
+      ],
+      "tags": [
+        "不正アクセス禁止法",
+        "法令",
+        "コンプライアンス"
+      ],
+      "common_mistakes": [
+        "被害発生があって初めて違反だと誤解",
+        "他人のID使用なら必ず違法と過剰解釈"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-022",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "インシデント対応",
       "subtopic": "CSIRT / SOC",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "CSIRT (Computer Security Incident Response Team) の主な役割として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "新規システム開発のコーディング・テストを実施する", "is_correct": false, "explanation": "それは開発チームの役割。CSIRTはセキュリティ事象に特化する。"},
-        {"id": "B", "text": "セキュリティインシデントの検知・対応・復旧および外部との連携を組織横断的に実施する", "is_correct": true, "explanation": "正解。CSIRTは事案対応のためのチームで、内部対応とJPCERT/CC等の外部連携が中心。"},
-        {"id": "C", "text": "営業活動を行い顧客を獲得する", "is_correct": false, "explanation": "営業部門の役割。"},
-        {"id": "D", "text": "従業員の人事評価を行う", "is_correct": false, "explanation": "人事部門の役割。"}
+        {
+          "id": "A",
+          "text": "従業員の人事評価を行う",
+          "is_correct": false,
+          "explanation": "人事部門の役割。"
+        },
+        {
+          "id": "B",
+          "text": "セキュリティインシデントの検知・対応・復旧および外部との連携を組織横断的に実施する",
+          "is_correct": true,
+          "explanation": "正解。CSIRTは事案対応のためのチームで、内部対応とJPCERT/CC等の外部連携が中心。"
+        },
+        {
+          "id": "C",
+          "text": "新規システム開発のコーディング・テストを実施する",
+          "is_correct": false,
+          "explanation": "それは開発チームの役割。CSIRTはセキュリティ事象に特化する。"
+        },
+        {
+          "id": "D",
+          "text": "営業活動を行い顧客を獲得する",
+          "is_correct": false,
+          "explanation": "営業部門の役割。"
+        }
       ],
       "explanation": "CSIRTはインシデント対応に特化したチームで、PSIRT（製品向け）、SOC（24時間監視運用、検知重視）と役割分担される。CSIRTの典型業務: インシデント受付、トリアージ、封じ込め、根絶、復旧、教訓化、外部連携（JPCERT/CC、警察、取引先）。日本では日本シーサート協議会(NCA)が業界横断でCSIRT間連携を促進している。",
-      "references": [{"title": "JPCERT/CC CSIRTガイド", "url": "https://www.jpcert.or.jp/csirt_material/"}],
-      "tags": ["CSIRT", "SOC", "インシデント対応", "JPCERT"],
-      "common_mistakes": ["CSIRTとSOCの役割分担を理解していない", "CSIRTを単なる兼務組織と軽視"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "JPCERT/CC CSIRTガイド",
+          "url": "https://www.jpcert.or.jp/csirt_material/"
+        }
+      ],
+      "tags": [
+        "CSIRT",
+        "SOC",
+        "インシデント対応",
+        "JPCERT"
+      ],
+      "common_mistakes": [
+        "CSIRTとSOCの役割分担を理解していない",
+        "CSIRTを単なる兼務組織と軽視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-023",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "ゼロトラスト",
       "subtopic": "ゼロトラストアーキテクチャ",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ゼロトラスト・アーキテクチャ（NIST SP 800-207）の基本原則として、最も適切なものはどれか。",
       "options": [
-        {"id": "A", "text": "社内ネットワーク内のトラフィックは信頼し、外部からの通信のみ厳しく検査する", "is_correct": false, "explanation": "これは従来の境界型（ペリメータ型）防御の発想で、ゼロトラストの「ネットワーク場所による信頼を排除」と真逆。"},
-        {"id": "B", "text": "アクセスごとにユーザ・デバイス・コンテキストを継続的に検証し、最小権限で動的にアクセスを許可する", "is_correct": true, "explanation": "正解。「Never Trust, Always Verify」の原則。場所に依存せず、毎回認証・認可を行う。"},
-        {"id": "C", "text": "VPN接続を強制することで、社外からのアクセスを安全にする", "is_correct": false, "explanation": "VPNは境界型の延長で、接続後はネットワーク内の信頼が前提となるためゼロトラストとは異なる思想。"},
-        {"id": "D", "text": "全データを単一のクラウドプロバイダーに集約することで管理を簡素化する", "is_correct": false, "explanation": "クラウド集約はベンダーロックインの問題で、ゼロトラストの本質ではない。"}
+        {
+          "id": "A",
+          "text": "VPN接続を強制することで、社外からのアクセスを安全にする",
+          "is_correct": false,
+          "explanation": "VPNは境界型の延長で、接続後はネットワーク内の信頼が前提となるためゼロトラストとは異なる思想。"
+        },
+        {
+          "id": "B",
+          "text": "社内ネットワーク内のトラフィックは信頼し、外部からの通信のみ厳しく検査する",
+          "is_correct": false,
+          "explanation": "これは従来の境界型（ペリメータ型）防御の発想で、ゼロトラストの「ネットワーク場所による信頼を排除」と真逆。"
+        },
+        {
+          "id": "C",
+          "text": "アクセスごとにユーザ・デバイス・コンテキストを継続的に検証し、最小権限で動的にアクセスを許可する",
+          "is_correct": true,
+          "explanation": "正解。「Never Trust, Always Verify」の原則。場所に依存せず、毎回認証・認可を行う。"
+        },
+        {
+          "id": "D",
+          "text": "全データを単一のクラウドプロバイダーに集約することで管理を簡素化する",
+          "is_correct": false,
+          "explanation": "クラウド集約はベンダーロックインの問題で、ゼロトラストの本質ではない。"
+        }
       ],
       "explanation": "ゼロトラスト (NIST SP 800-207) の7原則: ①全てのリソースをデータソースとサービスとみなす、②ネットワーク場所に依存しない通信保護、③セッションごとに認可、④動的ポリシー（ID、デバイス姿勢、行動）、⑤資産の整合性監視、⑥認証認可は厳格・動的、⑦観測情報の収集と改善。実装例: BeyondCorp（Google）、CASB、SDP、SASE。クラウド時代の標準アプローチ。",
-      "references": [{"title": "NIST SP 800-207 Zero Trust Architecture", "url": "https://csrc.nist.gov/publications/detail/sp/800-207/final"}],
-      "tags": ["ゼロトラスト", "NIST", "SASE", "BeyondCorp"],
-      "common_mistakes": ["ゼロトラスト=製品と誤解（思想・アーキテクチャ）", "VPNを使えばゼロトラストになると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "NIST SP 800-207 Zero Trust Architecture",
+          "url": "https://csrc.nist.gov/publications/detail/sp/800-207/final"
+        }
+      ],
+      "tags": [
+        "ゼロトラスト",
+        "NIST",
+        "SASE",
+        "BeyondCorp"
+      ],
+      "common_mistakes": [
+        "ゼロトラスト=製品と誤解（思想・アーキテクチャ）",
+        "VPNを使えばゼロトラストになると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-024",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "クラウドセキュリティ",
       "subtopic": "責任共有モデル",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "あるFinTech企業がIaaS（例: AWS EC2）上で自社アプリケーションを運用している。このとき、クラウドプロバイダーと顧客企業の「責任共有モデル」における顧客側の責任範囲として、最も適切な組合せはどれか。",
       "options": [
-        {"id": "A", "text": "データセンターの物理セキュリティ、ハイパーバイザーの脆弱性管理", "is_correct": false, "explanation": "これらは IaaS においてクラウドプロバイダー側の責任である。"},
-        {"id": "B", "text": "ゲストOSのパッチ管理、アプリケーションコード、IAM設定、データ暗号化", "is_correct": true, "explanation": "正解。IaaSではVMより上の層は顧客責任。OSパッチ、アプリ、ID・データの保護を顧客が担う。"},
-        {"id": "C", "text": "電源設備の冗長化、ハードウェアの保守", "is_correct": false, "explanation": "物理インフラはクラウドプロバイダーの責任範囲。"},
-        {"id": "D", "text": "リージョン間のネットワーク基盤、グローバルバックボーンの運用", "is_correct": false, "explanation": "クラウドプロバイダーの責任範囲。"}
+        {
+          "id": "A",
+          "text": "リージョン間のネットワーク基盤、グローバルバックボーンの運用",
+          "is_correct": false,
+          "explanation": "クラウドプロバイダーの責任範囲。"
+        },
+        {
+          "id": "B",
+          "text": "電源設備の冗長化、ハードウェアの保守",
+          "is_correct": false,
+          "explanation": "物理インフラはクラウドプロバイダーの責任範囲。"
+        },
+        {
+          "id": "C",
+          "text": "データセンターの物理セキュリティ、ハイパーバイザーの脆弱性管理",
+          "is_correct": false,
+          "explanation": "これらは IaaS においてクラウドプロバイダー側の責任である。"
+        },
+        {
+          "id": "D",
+          "text": "ゲストOSのパッチ管理、アプリケーションコード、IAM設定、データ暗号化",
+          "is_correct": true,
+          "explanation": "正解。IaaSではVMより上の層は顧客責任。OSパッチ、アプリ、ID・データの保護を顧客が担う。"
+        }
       ],
       "explanation": "責任共有モデル（AWSの例）: ①プロバイダー責任=クラウド「の」セキュリティ（物理、ハイパーバイザー、ネットワーク基盤）、②顧客責任=クラウド「内の」セキュリティ（OS、アプリ、IAM、データ、暗号化、設定）。SaaSではOS・アプリも提供者側、PaaSでは中間。誤解されがちな「設定ミスによる情報漏洩」（S3公開設定等）は完全に顧客責任。",
-      "references": [{"title": "AWS 責任共有モデル", "url": "https://aws.amazon.com/jp/compliance/shared-responsibility-model/"}],
-      "tags": ["責任共有モデル", "クラウド", "IaaS", "FinTech"],
-      "common_mistakes": ["クラウド使えばセキュリティもプロバイダーが見ると誤解", "S3設定ミスはAWS責任と誤認"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS 責任共有モデル",
+          "url": "https://aws.amazon.com/jp/compliance/shared-responsibility-model/"
+        }
+      ],
+      "tags": [
+        "責任共有モデル",
+        "クラウド",
+        "IaaS",
+        "FinTech"
+      ],
+      "common_mistakes": [
+        "クラウド使えばセキュリティもプロバイダーが見ると誤解",
+        "S3設定ミスはAWS責任と誤認"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ipa-applied-tech-sec-025",
       "version": "1.0",
-      "exam": {"code": "ipa-applied", "name": "応用情報技術者試験", "vendor": "IPA", "year": 2026},
-      "domain": {"id": "tech-sec", "name": "テクノロジ - セキュリティ", "weight_percent": 18},
+      "exam": {
+        "code": "ipa-applied",
+        "name": "応用情報技術者試験",
+        "vendor": "IPA",
+        "year": 2026
+      },
+      "domain": {
+        "id": "tech-sec",
+        "name": "テクノロジ - セキュリティ",
+        "weight_percent": 18
+      },
       "topic": "セキュリティ設計",
       "subtopic": "セキュア・バイ・デザイン",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "ある教育系SaaSスタートアップが、児童・生徒の個人情報を扱う新サービスを設計する。「セキュア・バイ・デザイン」と「プライバシー・バイ・デザイン」の原則を踏まえた設計方針として、最も適切な組合せはどれか。",
       "options": [
-        {"id": "A", "text": "リリース後にセキュリティ脆弱性が見つかったら都度パッチを当てる方針で、初期は機能優先で開発する", "is_correct": false, "explanation": "後付けセキュリティ（Bolt-on）は手戻りコストが高く、両原則と真逆である。"},
-        {"id": "B", "text": "設計段階から脅威モデリング (STRIDE等) を実施、最小権限・最小データ収集・暗号化のデフォルト有効・ログによる監査を組み込み、DPIA（影響評価）を反復実施する", "is_correct": true, "explanation": "正解。設計初期にセキュリティとプライバシーを組み込む（Built-in）。STRIDE脅威モデリング、データ最小化、デフォルトセキュア、影響評価が両原則の核。"},
-        {"id": "C", "text": "全データを平文保存し、利便性を優先する。暗号化は法的要請が出てから検討", "is_correct": false, "explanation": "未成年の個人情報を平文保存することは個人情報保護法および児童保護の観点で重大なリスク。"},
-        {"id": "D", "text": "外部のWAFのみを導入すれば、アプリ自体のセキュリティ設計は不要", "is_correct": false, "explanation": "WAFは多層防御の一要素にすぎず、根本的な設計品質を代替できない（多層防御の誤用）。"}
+        {
+          "id": "A",
+          "text": "設計段階から脅威モデリング (STRIDE等) を実施、最小権限・最小データ収集・暗号化のデフォルト有効・ログによる監査を組み込み、DPIA（影響評価）を反復実施する",
+          "is_correct": true,
+          "explanation": "正解。設計初期にセキュリティとプライバシーを組み込む（Built-in）。STRIDE脅威モデリング、データ最小化、デフォルトセキュア、影響評価が両原則の核。"
+        },
+        {
+          "id": "B",
+          "text": "外部のWAFのみを導入すれば、アプリ自体のセキュリティ設計は不要",
+          "is_correct": false,
+          "explanation": "WAFは多層防御の一要素にすぎず、根本的な設計品質を代替できない（多層防御の誤用）。"
+        },
+        {
+          "id": "C",
+          "text": "全データを平文保存し、利便性を優先する。暗号化は法的要請が出てから検討",
+          "is_correct": false,
+          "explanation": "未成年の個人情報を平文保存することは個人情報保護法および児童保護の観点で重大なリスク。"
+        },
+        {
+          "id": "D",
+          "text": "リリース後にセキュリティ脆弱性が見つかったら都度パッチを当てる方針で、初期は機能優先で開発する",
+          "is_correct": false,
+          "explanation": "後付けセキュリティ（Bolt-on）は手戻りコストが高く、両原則と真逆である。"
+        }
       ],
       "explanation": "セキュア・バイ・デザイン (CISA推奨) は「最初からセキュアに作る」、プライバシー・バイ・デザイン (Cavoukian, 7原則) は「事前対応・デフォルトでプライバシー・組み込み・全機能性・最初から終わりまで・可視性透明性・利用者中心」。実装には脅威モデリング(STRIDE/PASTA)、DPIA、データ最小化、デフォルト暗号化、最小権限、ログ監査が組合さる。子どものデータは特に高リスクで、こども家庭庁・個人情報保護委員会のガイダンスも踏まえる必要がある。",
-      "references": [{"title": "CISA Secure by Design", "url": "https://www.cisa.gov/securebydesign"}, {"title": "個人情報保護委員会", "url": "https://www.ppc.go.jp/"}],
-      "tags": ["セキュアバイデザイン", "プライバシーバイデザイン", "STRIDE", "DPIA", "教育"],
-      "common_mistakes": ["WAF等の境界防御だけで安全と過信", "プライバシーは法務だけの問題と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-code-batch-v1", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "CISA Secure by Design",
+          "url": "https://www.cisa.gov/securebydesign"
+        },
+        {
+          "title": "個人情報保護委員会",
+          "url": "https://www.ppc.go.jp/"
+        }
+      ],
+      "tags": [
+        "セキュアバイデザイン",
+        "プライバシーバイデザイン",
+        "STRIDE",
+        "DPIA",
+        "教育"
+      ],
+      "common_mistakes": [
+        "WAF等の境界防御だけで安全と過信",
+        "プライバシーは法務だけの問題と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-code-batch-v1",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

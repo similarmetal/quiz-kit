@@ -15,752 +15,2290 @@
     {
       "id": "ans-c01-domain2-001",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "VPC Implementation",
       "subtopic": "CIDR planning",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "VPCに割り当てられる最大のCIDRブロックサイズ（プレフィックス長）は次のうちどれか。",
       "options": [
-        {"id": "A", "text": "/8", "is_correct": false, "explanation": "/8 は VPC の CIDR としてはサポートされない。AWS の上限は /16 ブロックまで。"},
-        {"id": "B", "text": "/16", "is_correct": true, "explanation": "正解。VPC の primary CIDR は最大 /16（65,536 IP）まで指定できる。"},
-        {"id": "C", "text": "/20", "is_correct": false, "explanation": "/20 は許容範囲だが「最大」ではない。サブネットレベルでは妥当な値。"},
-        {"id": "D", "text": "/28", "is_correct": false, "explanation": "/28 は VPC の最小 CIDR サイズ（16 IP）であり最大ではない。"}
+        {
+          "id": "A",
+          "text": "/16",
+          "is_correct": true,
+          "explanation": "正解。VPC の primary CIDR は最大 /16（65,536 IP）まで指定できる。"
+        },
+        {
+          "id": "B",
+          "text": "/20",
+          "is_correct": false,
+          "explanation": "/20 は許容範囲だが「最大」ではない。サブネットレベルでは妥当な値。"
+        },
+        {
+          "id": "C",
+          "text": "/8",
+          "is_correct": false,
+          "explanation": "/8 は VPC の CIDR としてはサポートされない。AWS の上限は /16 ブロックまで。"
+        },
+        {
+          "id": "D",
+          "text": "/28",
+          "is_correct": false,
+          "explanation": "/28 は VPC の最小 CIDR サイズ（16 IP）であり最大ではない。"
+        }
       ],
       "explanation": "VPC のプライマリ CIDR ブロックは /16（65,536 IP）が最大、/28（16 IP）が最小。Secondary CIDR を追加することで実質的な拡張が可能。RFC1918 私有アドレス範囲（10.0.0.0/8、172.16.0.0/12、192.168.0.0/16）からの選択が推奨される。",
       "references": [
-        {"title": "VPC sizing", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html#vpc-sizing-ipv4"}
+        {
+          "title": "VPC sizing",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html#vpc-sizing-ipv4"
+        }
       ],
-      "tags": ["vpc", "cidr", "ipv4", "subnet"],
-      "common_mistakes": ["/8 が使えると誤解する", "最小サイズと最大サイズを混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "vpc",
+        "cidr",
+        "ipv4",
+        "subnet"
+      ],
+      "common_mistakes": [
+        "/8 が使えると誤解する",
+        "最小サイズと最大サイズを混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-002",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "IPAM",
       "subtopic": "IP allocation tracking",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS IPAM (IP Address Manager) の主要な機能として正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "EC2 インスタンスのインベントリ管理", "is_correct": false, "explanation": "それは Systems Manager Inventory の役割。IPAM は IP に特化。"},
-        {"id": "B", "text": "VPC、サブネット、Elastic IP の IP アドレス使用状況を追跡・割り当てする", "is_correct": true, "explanation": "正解。IPAM は組織全体で IP プールを階層管理し、自動割り当て・モニタリングを行う。"},
-        {"id": "C", "text": "DNS レコードの自動生成", "is_correct": false, "explanation": "DNS 機能は Route 53 の領域。IPAM は IP のみ。"},
-        {"id": "D", "text": "BGP ルーティングの管理", "is_correct": false, "explanation": "BGP は Direct Connect / VPN / Transit Gateway の領域で、IPAM の機能ではない。"}
+        {
+          "id": "A",
+          "text": "BGP ルーティングの管理",
+          "is_correct": false,
+          "explanation": "BGP は Direct Connect / VPN / Transit Gateway の領域で、IPAM の機能ではない。"
+        },
+        {
+          "id": "B",
+          "text": "VPC、サブネット、Elastic IP の IP アドレス使用状況を追跡・割り当てする",
+          "is_correct": true,
+          "explanation": "正解。IPAM は組織全体で IP プールを階層管理し、自動割り当て・モニタリングを行う。"
+        },
+        {
+          "id": "C",
+          "text": "DNS レコードの自動生成",
+          "is_correct": false,
+          "explanation": "DNS 機能は Route 53 の領域。IPAM は IP のみ。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 インスタンスのインベントリ管理",
+          "is_correct": false,
+          "explanation": "それは Systems Manager Inventory の役割。IPAM は IP に特化。"
+        }
       ],
       "explanation": "AWS IPAM は IP アドレスのプランニング・割り当て・追跡を中央管理するサービス。AWS Organizations と統合してマルチアカウント環境のIPプールを階層的に管理できる。重複 CIDR 防止、コンプライアンスモニタリング、自動 CIDR 割り当てを提供。",
       "references": [
-        {"title": "What is IPAM?", "url": "https://docs.aws.amazon.com/vpc/latest/ipam/what-it-is-ipam.html"}
+        {
+          "title": "What is IPAM?",
+          "url": "https://docs.aws.amazon.com/vpc/latest/ipam/what-it-is-ipam.html"
+        }
       ],
-      "tags": ["ipam", "ip-management", "organizations", "vpc"],
-      "common_mistakes": ["IPAM を Systems Manager と混同する", "DNS 機能があると誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ipam",
+        "ip-management",
+        "organizations",
+        "vpc"
+      ],
+      "common_mistakes": [
+        "IPAM を Systems Manager と混同する",
+        "DNS 機能があると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-003",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Direct Connect",
       "subtopic": "MACsec",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Direct Connect で MACsec をサポートするポート速度として正しいものはどれか。",
       "options": [
-        {"id": "A", "text": "1 Gbps", "is_correct": false, "explanation": "1 Gbps ポートは MACsec をサポートしない。"},
-        {"id": "B", "text": "10 Gbps と 100 Gbps", "is_correct": true, "explanation": "正解。MACsec は専用接続の 10 Gbps / 100 Gbps ポートで利用可能。"},
-        {"id": "C", "text": "全速度", "is_correct": false, "explanation": "1 Gbps は対応外なので「全速度」は誤り。"},
-        {"id": "D", "text": "ホスト型接続のみ", "is_correct": false, "explanation": "MACsec は専用 (dedicated) 接続でのみ利用でき、ホスト型 (hosted) では利用できない。"}
+        {
+          "id": "A",
+          "text": "ホスト型接続のみ",
+          "is_correct": false,
+          "explanation": "MACsec は専用 (dedicated) 接続でのみ利用でき、ホスト型 (hosted) では利用できない。"
+        },
+        {
+          "id": "B",
+          "text": "1 Gbps",
+          "is_correct": false,
+          "explanation": "1 Gbps ポートは MACsec をサポートしない。"
+        },
+        {
+          "id": "C",
+          "text": "10 Gbps と 100 Gbps",
+          "is_correct": true,
+          "explanation": "正解。MACsec は専用接続の 10 Gbps / 100 Gbps ポートで利用可能。"
+        },
+        {
+          "id": "D",
+          "text": "全速度",
+          "is_correct": false,
+          "explanation": "1 Gbps は対応外なので「全速度」は誤り。"
+        }
       ],
       "explanation": "MACsec (IEEE 802.1AE) は Direct Connect の dedicated connection の 10 Gbps および 100 Gbps ポートで利用可能。レイヤー2 の暗号化により物理ファイバ盗聴を防ぐ。CKN/CAK の事前共有鍵が必要で、対応ロケーションも限定される。",
       "references": [
-        {"title": "MAC Security", "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/MACsec.html"}
+        {
+          "title": "MAC Security",
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/MACsec.html"
+        }
       ],
-      "tags": ["direct-connect", "macsec", "encryption", "layer2"],
-      "common_mistakes": ["1 Gbps でも MACsec が使えると誤解", "ホスト型でも対応と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "direct-connect",
+        "macsec",
+        "encryption",
+        "layer2"
+      ],
+      "common_mistakes": [
+        "1 Gbps でも MACsec が使えると誤解",
+        "ホスト型でも対応と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-004",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Transit Gateway",
       "subtopic": "Route propagation",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Transit Gateway のルートテーブルに「Propagation」を有効化することの効果として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "Attachment から学習したルートが自動的にこのルートテーブルに追加される", "is_correct": true, "explanation": "正解。Propagation 有効時、VPC や VPN/DX の attachment からルートが自動学習される。"},
-        {"id": "B", "text": "Attachment にトラフィックを転送する許可になる", "is_correct": false, "explanation": "それは Association の役割（どのルートテーブルを使うか決定）。Propagation はルート学習。"},
-        {"id": "C", "text": "VPC 内のすべてのリソースに静的ルートが追加される", "is_correct": false, "explanation": "TGW のルートテーブルは VPC 内ルートテーブルとは別物。VPC 側は別途設定が必要。"},
-        {"id": "D", "text": "Direct Connect Gateway との BGP セッションが確立する", "is_correct": false, "explanation": "BGP セッション確立は Propagation 機能とは別の DX 設定。"}
+        {
+          "id": "A",
+          "text": "VPC 内のすべてのリソースに静的ルートが追加される",
+          "is_correct": false,
+          "explanation": "TGW のルートテーブルは VPC 内ルートテーブルとは別物。VPC 側は別途設定が必要。"
+        },
+        {
+          "id": "B",
+          "text": "Attachment にトラフィックを転送する許可になる",
+          "is_correct": false,
+          "explanation": "それは Association の役割（どのルートテーブルを使うか決定）。Propagation はルート学習。"
+        },
+        {
+          "id": "C",
+          "text": "Direct Connect Gateway との BGP セッションが確立する",
+          "is_correct": false,
+          "explanation": "BGP セッション確立は Propagation 機能とは別の DX 設定。"
+        },
+        {
+          "id": "D",
+          "text": "Attachment から学習したルートが自動的にこのルートテーブルに追加される",
+          "is_correct": true,
+          "explanation": "正解。Propagation 有効時、VPC や VPN/DX の attachment からルートが自動学習される。"
+        }
       ],
       "explanation": "Transit Gateway のルートテーブルには Association（どのテーブルを使うか）と Propagation（どこからルート学習するか）の2つの概念がある。Propagation 有効時、attachment からルート（VPC CIDR、BGP advertised routes）が自動追加される。静的ルートを使えば Propagation を無効にした制御も可能。",
       "references": [
-        {"title": "Transit Gateway route tables", "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html"}
+        {
+          "title": "Transit Gateway route tables",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html"
+        }
       ],
-      "tags": ["transit-gateway", "route-table", "propagation", "association"],
-      "common_mistakes": ["Association と Propagation を混同する", "VPC ルートテーブルと TGW ルートテーブルを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "transit-gateway",
+        "route-table",
+        "propagation",
+        "association"
+      ],
+      "common_mistakes": [
+        "Association と Propagation を混同する",
+        "VPC ルートテーブルと TGW ルートテーブルを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-005",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Site-to-Site VPN",
       "subtopic": "Accelerated VPN",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Accelerated Site-to-Site VPN の特徴として最も正確なのはどれか。",
       "options": [
-        {"id": "A", "text": "AWS Global Accelerator を使ってトラフィックを最寄りの AWS エッジロケーションへ運ぶ", "is_correct": true, "explanation": "正解。Global Accelerator のエニーキャスト IP で最寄り PoP に取り込み、AWS バックボーンで VPC へ。"},
-        {"id": "B", "text": "VPN 帯域幅が 10 Gbps まで拡張される", "is_correct": false, "explanation": "Accelerated VPN でも単一トンネル帯域は約 1.25 Gbps が上限。Global Accelerator は速度より経路最適化。"},
-        {"id": "C", "text": "VPN を Direct Connect に置き換える", "is_correct": false, "explanation": "Direct Connect の代替ではない。インターネット経由の VPN を高速化するだけ。"},
-        {"id": "D", "text": "BGP を不要にする", "is_correct": false, "explanation": "Accelerated VPN でも BGP 動的ルーティングは利用される。"}
+        {
+          "id": "A",
+          "text": "AWS Global Accelerator を使ってトラフィックを最寄りの AWS エッジロケーションへ運ぶ",
+          "is_correct": true,
+          "explanation": "正解。Global Accelerator のエニーキャスト IP で最寄り PoP に取り込み、AWS バックボーンで VPC へ。"
+        },
+        {
+          "id": "B",
+          "text": "BGP を不要にする",
+          "is_correct": false,
+          "explanation": "Accelerated VPN でも BGP 動的ルーティングは利用される。"
+        },
+        {
+          "id": "C",
+          "text": "VPN を Direct Connect に置き換える",
+          "is_correct": false,
+          "explanation": "Direct Connect の代替ではない。インターネット経由の VPN を高速化するだけ。"
+        },
+        {
+          "id": "D",
+          "text": "VPN 帯域幅が 10 Gbps まで拡張される",
+          "is_correct": false,
+          "explanation": "Accelerated VPN でも単一トンネル帯域は約 1.25 Gbps が上限。Global Accelerator は速度より経路最適化。"
+        }
       ],
       "explanation": "Accelerated Site-to-Site VPN は AWS Global Accelerator を VPN トンネルの前段として使い、ユーザートラフィックを最寄りのエッジロケーションで取り込み、AWS バックボーンを使って VPC（Transit Gateway）まで届ける。インターネットの揺らぎを最小化し、海外拠点との VPN 安定性を向上させる。",
       "references": [
-        {"title": "Accelerated Site-to-Site VPN", "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/accelerated-vpn.html"}
+        {
+          "title": "Accelerated Site-to-Site VPN",
+          "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/accelerated-vpn.html"
+        }
       ],
-      "tags": ["site-to-site-vpn", "global-accelerator", "accelerated-vpn", "performance"],
-      "common_mistakes": ["帯域幅が拡張されると誤解", "Direct Connect の代替と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "site-to-site-vpn",
+        "global-accelerator",
+        "accelerated-vpn",
+        "performance"
+      ],
+      "common_mistakes": [
+        "帯域幅が拡張されると誤解",
+        "Direct Connect の代替と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-006",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "VPC Endpoints",
       "subtopic": "Interface vs Gateway",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Gateway 型 VPC エンドポイントが利用可能な AWS サービスはどれか。",
       "options": [
-        {"id": "A", "text": "Amazon S3 と Amazon DynamoDB", "is_correct": true, "explanation": "正解。Gateway エンドポイントは S3 と DynamoDB の2つだけ。料金無料でルートテーブル経由。"},
-        {"id": "C", "text": "Amazon S3 と Amazon RDS", "is_correct": false, "explanation": "RDS は Interface エンドポイント（PrivateLink）。"},
-        {"id": "B", "text": "Amazon SNS と Amazon SQS", "is_correct": false, "explanation": "SNS/SQS は Interface 型のみ。"},
-        {"id": "D", "text": "AWS Lambda と AWS Step Functions", "is_correct": false, "explanation": "Lambda/Step Functions は Interface 型のみ。"}
+        {
+          "id": "A",
+          "text": "Amazon S3 と Amazon RDS",
+          "is_correct": false,
+          "explanation": "RDS は Interface エンドポイント（PrivateLink）。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon S3 と Amazon DynamoDB",
+          "is_correct": true,
+          "explanation": "正解。Gateway エンドポイントは S3 と DynamoDB の2つだけ。料金無料でルートテーブル経由。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon SNS と Amazon SQS",
+          "is_correct": false,
+          "explanation": "SNS/SQS は Interface 型のみ。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Lambda と AWS Step Functions",
+          "is_correct": false,
+          "explanation": "Lambda/Step Functions は Interface 型のみ。"
+        }
       ],
       "explanation": "Gateway 型 VPC エンドポイントは S3 と DynamoDB のみ。ルートテーブルにプレフィックスリスト経由でルートを追加し、無料で利用できる。それ以外のすべての AWS サービスは Interface 型（PrivateLink ベース、ENI と DNS、時間課金）になる。S3 は両方に対応する。",
       "references": [
-        {"title": "Gateway endpoints", "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"}
+        {
+          "title": "Gateway endpoints",
+          "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+        }
       ],
-      "tags": ["vpc-endpoint", "gateway-endpoint", "s3", "dynamodb", "privatelink"],
-      "common_mistakes": ["全サービスで Gateway 型が使えると誤解", "S3 は Gateway のみと誤解（Interface も使える）"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "vpc-endpoint",
+        "gateway-endpoint",
+        "s3",
+        "dynamodb",
+        "privatelink"
+      ],
+      "common_mistakes": [
+        "全サービスで Gateway 型が使えると誤解",
+        "S3 は Gateway のみと誤解（Interface も使える）"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-007",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Route 53 Resolver",
       "subtopic": "Inbound vs Outbound endpoints",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Route 53 Resolver Inbound エンドポイントの主な用途として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "オンプレミスから AWS のプライベートホストゾーンを解決させる", "is_correct": true, "explanation": "正解。Inbound はオンプレ DNS から VPC 内 Route 53 への問い合わせの入口。"},
-        {"id": "B", "text": "VPC 内から外部 DNS（オンプレミス DNS）を解決させる", "is_correct": false, "explanation": "それは Outbound エンドポイントの役割。"},
-        {"id": "C", "text": "VPC 内のインスタンスに静的 IP を割り当てる", "is_correct": false, "explanation": "DNS の話で、IP 割り当てとは無関係。"},
-        {"id": "D", "text": "DNS Firewall ルールを適用する", "is_correct": false, "explanation": "DNS Firewall は別機能。Inbound エンドポイントとは独立。"}
+        {
+          "id": "A",
+          "text": "DNS Firewall ルールを適用する",
+          "is_correct": false,
+          "explanation": "DNS Firewall は別機能。Inbound エンドポイントとは独立。"
+        },
+        {
+          "id": "B",
+          "text": "VPC 内のインスタンスに静的 IP を割り当てる",
+          "is_correct": false,
+          "explanation": "DNS の話で、IP 割り当てとは無関係。"
+        },
+        {
+          "id": "C",
+          "text": "オンプレミスから AWS のプライベートホストゾーンを解決させる",
+          "is_correct": true,
+          "explanation": "正解。Inbound はオンプレ DNS から VPC 内 Route 53 への問い合わせの入口。"
+        },
+        {
+          "id": "D",
+          "text": "VPC 内から外部 DNS（オンプレミス DNS）を解決させる",
+          "is_correct": false,
+          "explanation": "それは Outbound エンドポイントの役割。"
+        }
       ],
       "explanation": "Route 53 Resolver には Inbound と Outbound の2種類のエンドポイントがある。Inbound はオンプレ→AWS の問い合わせを受ける（オンプレが AWS のプライベートゾーンを解決できる）。Outbound はAWS→オンプレへ問い合わせを送出する（VPC が社内 DNS を解決できる）。両方を組み合わせてハイブリッド DNS を構築する。",
       "references": [
-        {"title": "Resolver endpoints", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-endpoints.html"}
+        {
+          "title": "Resolver endpoints",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-endpoints.html"
+        }
       ],
-      "tags": ["route53-resolver", "hybrid-dns", "inbound-endpoint", "outbound-endpoint"],
-      "common_mistakes": ["Inbound と Outbound の方向を逆に覚える", "DNS Firewall と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "route53-resolver",
+        "hybrid-dns",
+        "inbound-endpoint",
+        "outbound-endpoint"
+      ],
+      "common_mistakes": [
+        "Inbound と Outbound の方向を逆に覚える",
+        "DNS Firewall と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-008",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Cloud WAN",
       "subtopic": "Core network and segments",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Cloud WAN の Core Network Policy における「Segment」の概念として最も正確なのはどれか。",
       "options": [
-        {"id": "A", "text": "ネットワークを論理的に分離するためのルーティングドメイン（VRF 相当）", "is_correct": true, "explanation": "正解。Segment は独立したルーティングテーブルを持ち、isolate / share-with で接続を制御する。"},
-        {"id": "B", "text": "物理的なリージョン境界", "is_correct": false, "explanation": "Segment はリージョン横断で展開できる論理概念。物理境界ではない。"},
-        {"id": "C", "text": "AWS アカウントの単位", "is_correct": false, "explanation": "Segment はアカウントとは独立した論理ルーティング単位。"},
-        {"id": "D", "text": "Direct Connect の VLAN", "is_correct": false, "explanation": "DX VLAN は別概念。Cloud WAN の Segment は VRF に近い。"}
+        {
+          "id": "A",
+          "text": "AWS アカウントの単位",
+          "is_correct": false,
+          "explanation": "Segment はアカウントとは独立した論理ルーティング単位。"
+        },
+        {
+          "id": "B",
+          "text": "Direct Connect の VLAN",
+          "is_correct": false,
+          "explanation": "DX VLAN は別概念。Cloud WAN の Segment は VRF に近い。"
+        },
+        {
+          "id": "C",
+          "text": "物理的なリージョン境界",
+          "is_correct": false,
+          "explanation": "Segment はリージョン横断で展開できる論理概念。物理境界ではない。"
+        },
+        {
+          "id": "D",
+          "text": "ネットワークを論理的に分離するためのルーティングドメイン（VRF 相当）",
+          "is_correct": true,
+          "explanation": "正解。Segment は独立したルーティングテーブルを持ち、isolate / share-with で接続を制御する。"
+        }
       ],
       "explanation": "AWS Cloud WAN の Segment は独立したルーティングテーブルを持つ論理ネットワーク（伝統的な VRF に相当）。Core Network Policy で Segment 間の隔離、共有、共有先を宣言的に定義する。production / dev / shared-services のような区分や、PCI 隔離ゾーンなどの実装に使う。",
       "references": [
-        {"title": "Cloud WAN segments", "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-segments.html"}
+        {
+          "title": "Cloud WAN segments",
+          "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-segments.html"
+        }
       ],
-      "tags": ["cloud-wan", "segment", "vrf", "core-network-policy"],
-      "common_mistakes": ["Segment をリージョンと混同する", "Transit Gateway と同等と思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloud-wan",
+        "segment",
+        "vrf",
+        "core-network-policy"
+      ],
+      "common_mistakes": [
+        "Segment をリージョンと混同する",
+        "Transit Gateway と同等と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-009",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "VPC Lattice",
       "subtopic": "Service network",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Amazon VPC Lattice の主な目的として最も正確なのはどれか。",
       "options": [
-        {"id": "A", "text": "アプリケーション層（Layer 7）でサービス間通信を統一管理する", "is_correct": true, "explanation": "正解。VPC Lattice は HTTP/gRPC ベースのサービスメッシュ。VPC・アカウント横断でサービスを共有可能。"},
-        {"id": "B", "text": "VPC 間の Layer 2 ブリッジを構築する", "is_correct": false, "explanation": "AWS は L2 ブリッジを提供しない。Lattice は L7。"},
-        {"id": "C", "text": "BGP 経路を集約する", "is_correct": false, "explanation": "BGP の領域は Transit Gateway / DX。Lattice は L7 サービス検出と認可。"},
-        {"id": "D", "text": "S3 へのプライベートアクセスを提供する", "is_correct": false, "explanation": "それは VPC エンドポイントの役割。Lattice はサービス間通信。"}
+        {
+          "id": "A",
+          "text": "アプリケーション層（Layer 7）でサービス間通信を統一管理する",
+          "is_correct": true,
+          "explanation": "正解。VPC Lattice は HTTP/gRPC ベースのサービスメッシュ。VPC・アカウント横断でサービスを共有可能。"
+        },
+        {
+          "id": "B",
+          "text": "BGP 経路を集約する",
+          "is_correct": false,
+          "explanation": "BGP の領域は Transit Gateway / DX。Lattice は L7 サービス検出と認可。"
+        },
+        {
+          "id": "C",
+          "text": "S3 へのプライベートアクセスを提供する",
+          "is_correct": false,
+          "explanation": "それは VPC エンドポイントの役割。Lattice はサービス間通信。"
+        },
+        {
+          "id": "D",
+          "text": "VPC 間の Layer 2 ブリッジを構築する",
+          "is_correct": false,
+          "explanation": "AWS は L2 ブリッジを提供しない。Lattice は L7。"
+        }
       ],
       "explanation": "VPC Lattice は L7（HTTP/HTTPS/gRPC）でサービス間通信を抽象化するアプリケーションネットワーキングサービス。Service Network、Service、Listener、Target Group の階層で構成され、IAM 認証、加重ルーティング、VPC・アカウント横断の共有が可能。EKS のサービスメッシュ代替にもなる。",
       "references": [
-        {"title": "What is VPC Lattice?", "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/what-is-vpc-lattice.html"}
+        {
+          "title": "What is VPC Lattice?",
+          "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/what-is-vpc-lattice.html"
+        }
       ],
-      "tags": ["vpc-lattice", "service-mesh", "layer7", "iam-auth"],
-      "common_mistakes": ["L2/L3 機能と誤解", "VPC エンドポイントと混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "vpc-lattice",
+        "service-mesh",
+        "layer7",
+        "iam-auth"
+      ],
+      "common_mistakes": [
+        "L2/L3 機能と誤解",
+        "VPC エンドポイントと混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-010",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Transit Gateway",
       "subtopic": "Inter-region peering",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の製造業企業が、東京リージョンと大阪リージョンに展開する VPC 群を相互接続したい。各リージョンに既に Transit Gateway がある。最も適切な実装は？",
+      "stem": "ある製造業企業が、東京リージョンと大阪リージョンに展開する VPC 群を相互接続したい。各リージョンに既に Transit Gateway がある。最も適切な実装は？",
       "options": [
-        {"id": "A", "text": "両リージョンの TGW を inter-region peering attachment で接続し、双方向のスタティックルートを設定する", "is_correct": true, "explanation": "正解。TGW Peering は AWS バックボーン経由の暗号化された接続で、ルートは静的のみ追加可能（BGP 不要）。"},
-        {"id": "B", "text": "東京 TGW から大阪のすべての VPC に個別 VPC Peering を張る", "is_correct": false, "explanation": "VPC Peering は推移しないため、ルーティングが煩雑。50以上のVPCがあると非現実的。"},
-        {"id": "C", "text": "両 TGW の間に Site-to-Site VPN を張る", "is_correct": false, "explanation": "技術的に可能でも、TGW Peering より遅延・帯域・暗号化全てで不利。インターネット経由になる。"},
-        {"id": "D", "text": "Direct Connect Gateway を経由して両 TGW を接続する", "is_correct": false, "explanation": "DX Gateway は AWS とオンプレ間の概念。リージョン間 TGW 接続には使えない。"}
+        {
+          "id": "A",
+          "text": "両 TGW の間に Site-to-Site VPN を張る",
+          "is_correct": false,
+          "explanation": "技術的に可能でも、TGW Peering より遅延・帯域・暗号化全てで不利。インターネット経由になる。"
+        },
+        {
+          "id": "B",
+          "text": "両リージョンの TGW を inter-region peering attachment で接続し、双方向のスタティックルートを設定する",
+          "is_correct": true,
+          "explanation": "正解。TGW Peering は AWS バックボーン経由の暗号化された接続で、ルートは静的のみ追加可能（BGP 不要）。"
+        },
+        {
+          "id": "C",
+          "text": "東京 TGW から大阪のすべての VPC に個別 VPC Peering を張る",
+          "is_correct": false,
+          "explanation": "VPC Peering は推移しないため、ルーティングが煩雑。50以上のVPCがあると非現実的。"
+        },
+        {
+          "id": "D",
+          "text": "Direct Connect Gateway を経由して両 TGW を接続する",
+          "is_correct": false,
+          "explanation": "DX Gateway は AWS とオンプレ間の概念。リージョン間 TGW 接続には使えない。"
+        }
       ],
       "explanation": "TGW Inter-region peering は AWS バックボーン経由で2つのリージョンの TGW を接続する最適解。トラフィックは自動暗号化、ルートは静的（BGP なし）、最大帯域は AWS 側でスケール。Cloud WAN を使えばさらに宣言的に管理できる。",
       "references": [
-        {"title": "Transit gateway peering attachments", "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html"}
+        {
+          "title": "Transit gateway peering attachments",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html"
+        }
       ],
-      "tags": ["transit-gateway", "peering", "multi-region", "backbone"],
-      "common_mistakes": ["TGW Peering で BGP が使えると誤解", "DX Gateway をリージョン間接続に使えると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "transit-gateway",
+        "peering",
+        "multi-region",
+        "backbone"
+      ],
+      "common_mistakes": [
+        "TGW Peering で BGP が使えると誤解",
+        "DX Gateway をリージョン間接続に使えると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-011",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Direct Connect",
       "subtopic": "LAG",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "金融SaaS企業が東京 DX ロケーションで 10 Gbps × 2本の Dedicated Connection を契約している。これらを集約して帯域・冗長性を高めたい。最も簡潔な構成は？",
       "options": [
-        {"id": "A", "text": "Link Aggregation Group (LAG) を作成し、2本の Connection を集約する", "is_correct": true, "explanation": "正解。LAG (LACP) で複数ポートを単一論理リンクに束ね、合計帯域確保と片肺耐性が得られる。"},
-        {"id": "B", "text": "2本それぞれに個別 VIF を作成し、ECMP で分散させる", "is_correct": false, "explanation": "ECMP も帯域確保には使えるが、LAG のほうが単一エンドポイントとして簡潔。VIF管理も少なくて済む。"},
-        {"id": "C", "text": "VPN over Direct Connect でフェイルオーバーを構成する", "is_correct": false, "explanation": "VPN over DX は暗号化目的。帯域集約とは関係ない。"},
-        {"id": "D", "text": "Direct Connect Gateway を使って自動冗長化する", "is_correct": false, "explanation": "DX Gateway はマルチアカウント/マルチリージョン接続用で、ポート集約機能はない。"}
+        {
+          "id": "A",
+          "text": "VPN over Direct Connect でフェイルオーバーを構成する",
+          "is_correct": false,
+          "explanation": "VPN over DX は暗号化目的。帯域集約とは関係ない。"
+        },
+        {
+          "id": "B",
+          "text": "Direct Connect Gateway を使って自動冗長化する",
+          "is_correct": false,
+          "explanation": "DX Gateway はマルチアカウント/マルチリージョン接続用で、ポート集約機能はない。"
+        },
+        {
+          "id": "C",
+          "text": "Link Aggregation Group (LAG) を作成し、2本の Connection を集約する",
+          "is_correct": true,
+          "explanation": "正解。LAG (LACP) で複数ポートを単一論理リンクに束ね、合計帯域確保と片肺耐性が得られる。"
+        },
+        {
+          "id": "D",
+          "text": "2本それぞれに個別 VIF を作成し、ECMP で分散させる",
+          "is_correct": false,
+          "explanation": "ECMP も帯域確保には使えるが、LAG のほうが単一エンドポイントとして簡潔。VIF管理も少なくて済む。"
+        }
       ],
       "explanation": "Link Aggregation Group (LAG) は LACP を使って複数の DX Connection を単一論理接続に束ねる機能。同一エンドデバイス・同一帯域で揃える必要がある（例: 10G×4 まで、最大 100G×2）。1本障害でも残ポートで継続可能。VIF は LAG 単位で作成する。",
       "references": [
-        {"title": "Link aggregation groups", "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/lags.html"}
+        {
+          "title": "Link aggregation groups",
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/lags.html"
+        }
       ],
-      "tags": ["direct-connect", "lag", "lacp", "redundancy"],
-      "common_mistakes": ["ECMP と LAG を混同する", "DX Gateway で集約できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "direct-connect",
+        "lag",
+        "lacp",
+        "redundancy"
+      ],
+      "common_mistakes": [
+        "ECMP と LAG を混同する",
+        "DX Gateway で集約できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-012",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "BGP",
       "subtopic": "AS_PATH prepending",
       "cognitive_level": "L3-Apply",
       "difficulty": "hard",
       "stem": "B2B SaaS企業が DX を東京と大阪の2拠点で冗長化している。通常時は東京経由を優先したいが、BGP では両経路がアクティブに使われている。AWS 側で東京を優先させたい。最も適切な対処は？",
       "options": [
-        {"id": "A", "text": "大阪側の BGP advertisement で AS_PATH prepending を行い、AWS から見たパスを長くする", "is_correct": true, "explanation": "正解。BGP の path 選択ルール（短い AS_PATH 優先）を利用して、大阪を意図的に長く見せ、AWS 側に東京優先を学習させる。"},
-        {"id": "B", "text": "AWS 側で Local Preference を設定する", "is_correct": false, "explanation": "Local Preference は AS 内部の指標で、AWS の BGP では顧客側で直接操作できない（一部 community で表現）。"},
-        {"id": "C", "text": "東京の BGP で MED を低く設定する", "is_correct": false, "explanation": "MED は AS 間で使えるがプロバイダ間で尊重されないこともあり、AWS では AS_PATH ほど確実ではない。"},
-        {"id": "D", "text": "東京側で more specific route を広告する", "is_correct": true, "explanation": "正解候補だが厳密には「最も適切」は AS_PATH prepending のほうが運用的に明確。Longer prefix 優先は別パターン。"}
+        {
+          "id": "A",
+          "text": "東京側で more specific route を広告する",
+          "is_correct": false,
+          "explanation": "more specific route の広告でも経路は変えられるが、本問が問う「最も適切」な対処は運用的に明確な AS_PATH prepending であり、これは最適解ではない。"
+        },
+        {
+          "id": "B",
+          "text": "東京の BGP で MED を低く設定する",
+          "is_correct": false,
+          "explanation": "MED は AS 間で使えるがプロバイダ間で尊重されないこともあり、AWS では AS_PATH ほど確実ではない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS 側で Local Preference を設定する",
+          "is_correct": false,
+          "explanation": "Local Preference は AS 内部の指標で、AWS の BGP では顧客側で直接操作できない（一部 community で表現）。"
+        },
+        {
+          "id": "D",
+          "text": "大阪側の BGP advertisement で AS_PATH prepending を行い、AWS から見たパスを長くする",
+          "is_correct": true,
+          "explanation": "正解。BGP の path 選択ルール（短い AS_PATH 優先）を利用して、大阪を意図的に長く見せ、AWS 側に東京優先を学習させる。"
+        }
       ],
       "explanation": "AWS DX 環境で経路優先を制御する手法は主に3つ：(1) Longer prefix（最も具体的なルートが優先）、(2) AS_PATH prepending（パスを長く見せて低優先化）、(3) BGP community（AWS 用 community で local pref を間接設定）。AS_PATH prepending は最も汎用的で、待機側 (大阪) に prepend をかけて active 側 (東京) を優先させる。",
       "references": [
-        {"title": "Routing policies and BGP communities", "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/routing-and-bgp.html"}
+        {
+          "title": "Routing policies and BGP communities",
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/routing-and-bgp.html"
+        }
       ],
-      "tags": ["bgp", "as-path-prepending", "direct-connect", "active-passive"],
-      "common_mistakes": ["AWS の Local Preference を直接操作できると誤解", "Longer prefix と AS_PATH prepending の使い分けを混同"],
-      "quality_score": {"stem_clarity": 4, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja", "note": "D も成立し得るため、ただし最も推奨されるのは A"}
+      "tags": [
+        "bgp",
+        "as-path-prepending",
+        "direct-connect",
+        "active-passive"
+      ],
+      "common_mistakes": [
+        "AWS の Local Preference を直接操作できると誤解",
+        "Longer prefix と AS_PATH prepending の使い分けを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 4,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja",
+        "note": "D も成立し得るため、ただし最も推奨されるのは A"
+      }
     },
     {
       "id": "ans-c01-domain2-013",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "AWS Verified Access",
       "subtopic": "Zero trust app access",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "医療系企業がリモートワーカに社内 Web アプリへの安全なアクセスを提供したい。VPN クライアントの配布を避け、ID プロバイダと組み合わせたゼロトラストアクセスを実現したい。最適な AWS サービスは？",
       "options": [
-        {"id": "A", "text": "AWS Verified Access", "is_correct": true, "explanation": "正解。Verified Access は VPN レス、ID + デバイス信号ベースの L7 アクセス制御を提供。"},
-        {"id": "B", "text": "AWS Client VPN", "is_correct": false, "explanation": "Client VPN はクライアント配布が必要で、ゼロトラストではなくネットワーク到達性の付与。"},
-        {"id": "C", "text": "AWS WAF", "is_correct": false, "explanation": "WAF は Web 層の防御だがアクセス制御ポリシー（ID/デバイス）の機能はない。"},
-        {"id": "D", "text": "AWS Site-to-Site VPN", "is_correct": false, "explanation": "Site-to-Site は拠点間 VPN でリモートユーザ向きではない。"}
+        {
+          "id": "A",
+          "text": "AWS Verified Access",
+          "is_correct": true,
+          "explanation": "正解。Verified Access は VPN レス、ID + デバイス信号ベースの L7 アクセス制御を提供。"
+        },
+        {
+          "id": "B",
+          "text": "AWS WAF",
+          "is_correct": false,
+          "explanation": "WAF は Web 層の防御だがアクセス制御ポリシー（ID/デバイス）の機能はない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Site-to-Site VPN",
+          "is_correct": false,
+          "explanation": "Site-to-Site は拠点間 VPN でリモートユーザ向きではない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Client VPN",
+          "is_correct": false,
+          "explanation": "Client VPN はクライアント配布が必要で、ゼロトラストではなくネットワーク到達性の付与。"
+        }
       ],
       "explanation": "AWS Verified Access はゼロトラストアプリケーションアクセスを提供。OIDC 連携 (Okta、Microsoft Entra ID 等) でユーザ認証、Jamf や CrowdStrike 等で デバイス信号を取り込み、Cedar ポリシー言語で「誰が・何を・どこから」できるかを宣言的に制御する。VPN クライアント不要。",
       "references": [
-        {"title": "What is AWS Verified Access?", "url": "https://docs.aws.amazon.com/verified-access/latest/ug/what-is-verified-access.html"}
+        {
+          "title": "What is AWS Verified Access?",
+          "url": "https://docs.aws.amazon.com/verified-access/latest/ug/what-is-verified-access.html"
+        }
       ],
-      "tags": ["verified-access", "zero-trust", "remote-access", "identity"],
-      "common_mistakes": ["Client VPN を Zero Trust と誤解", "WAF で同等の制御ができると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "verified-access",
+        "zero-trust",
+        "remote-access",
+        "identity"
+      ],
+      "common_mistakes": [
+        "Client VPN を Zero Trust と誤解",
+        "WAF で同等の制御ができると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-014",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "PrivateLink",
       "subtopic": "Cross-account service",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "SaaS プロバイダ A 社が顧客 B 社に対して、自社の API を顧客 VPC 内からプライベートに使わせたい。インターネットを通さず、両社の VPC CIDR が重複していても動作する必要がある。最適な構成は？",
       "options": [
-        {"id": "A", "text": "A 社が NLB を持つ Endpoint Service を公開し、B 社が Interface VPC Endpoint を作成する（PrivateLink）", "is_correct": true, "explanation": "正解。PrivateLink はプロバイダ NLB を ENI (DNS) として消費側 VPC 内に投影するため、CIDR 重複でも動作。"},
-        {"id": "B", "text": "両社の VPC を VPC Peering で接続する", "is_correct": false, "explanation": "VPC Peering は CIDR 重複不可。SaaS 多顧客モデルで現実的でない。"},
-        {"id": "C", "text": "Transit Gateway で両社の VPC を接続する", "is_correct": false, "explanation": "TGW も CIDR 重複は同様に問題。テナント分離も難しい。"},
-        {"id": "D", "text": "Direct Connect で両社のオンプレを接続する", "is_correct": false, "explanation": "両社が AWS 上にあるなら DX は不適切。"}
+        {
+          "id": "A",
+          "text": "Transit Gateway で両社の VPC を接続する",
+          "is_correct": false,
+          "explanation": "TGW も CIDR 重複は同様に問題。テナント分離も難しい。"
+        },
+        {
+          "id": "B",
+          "text": "A 社が NLB を持つ Endpoint Service を公開し、B 社が Interface VPC Endpoint を作成する（PrivateLink）",
+          "is_correct": true,
+          "explanation": "正解。PrivateLink はプロバイダ NLB を ENI (DNS) として消費側 VPC 内に投影するため、CIDR 重複でも動作。"
+        },
+        {
+          "id": "C",
+          "text": "Direct Connect で両社のオンプレを接続する",
+          "is_correct": false,
+          "explanation": "両社が AWS 上にあるなら DX は不適切。"
+        },
+        {
+          "id": "D",
+          "text": "両社の VPC を VPC Peering で接続する",
+          "is_correct": false,
+          "explanation": "VPC Peering は CIDR 重複不可。SaaS 多顧客モデルで現実的でない。"
+        }
       ],
       "explanation": "AWS PrivateLink (VPC Endpoint Service) は SaaS プロバイダにとって理想的。プロバイダ側で NLB をターゲットとした Endpoint Service を作成し、消費側は Interface Endpoint をプロビジョニングする。両 VPC の CIDR が重複しても、消費側 ENI 経由でアクセスするため衝突しない。多テナント SaaS の標準パターン。",
       "references": [
-        {"title": "Share your services through AWS PrivateLink", "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html"}
+        {
+          "title": "Share your services through AWS PrivateLink",
+          "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html"
+        }
       ],
-      "tags": ["privatelink", "endpoint-service", "saas", "cidr-overlap"],
-      "common_mistakes": ["VPC Peering / TGW で CIDR 重複が解決すると誤解", "PrivateLink の方向（プロバイダ・コンシューマ）を逆に覚える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "privatelink",
+        "endpoint-service",
+        "saas",
+        "cidr-overlap"
+      ],
+      "common_mistakes": [
+        "VPC Peering / TGW で CIDR 重複が解決すると誤解",
+        "PrivateLink の方向（プロバイダ・コンシューマ）を逆に覚える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-015",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "VPC Subnets",
       "subtopic": "Multi-AZ design",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "教育系 SaaS が東京リージョンに高可用な3層アーキテクチャを構築する。サブネット設計として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "3つの AZ（ap-northeast-1a/c/d）に Public/Private App/Private DB の3種類サブネットをそれぞれ配置（計9サブネット）", "is_correct": true, "explanation": "正解。3-AZ × 3-tier で AZ 障害耐性とセグメント分離を両立。RDS Multi-AZ も活かせる。"},
-        {"id": "B", "text": "1つの AZ に Public/Private/DB の3サブネットを配置", "is_correct": false, "explanation": "AZ 障害でサービス全停止。HA 要件を満たさない。"},
-        {"id": "C", "text": "2つの AZ に Public + Private のみ配置（DB は Public 側）", "is_correct": false, "explanation": "DB を Public サブネットに置くのはセキュリティアンチパターン。"},
-        {"id": "D", "text": "AZ ごとに別 VPC を作って VPC Peering で接続", "is_correct": false, "explanation": "AZ ごとに VPC は不要に複雑。1 VPC に複数 AZ サブネットが標準。"}
+        {
+          "id": "A",
+          "text": "1つの AZ に Public/Private/DB の3サブネットを配置",
+          "is_correct": false,
+          "explanation": "AZ 障害でサービス全停止。HA 要件を満たさない。"
+        },
+        {
+          "id": "B",
+          "text": "2つの AZ に Public + Private のみ配置（DB は Public 側）",
+          "is_correct": false,
+          "explanation": "DB を Public サブネットに置くのはセキュリティアンチパターン。"
+        },
+        {
+          "id": "C",
+          "text": "3つの AZ（ap-northeast-1a/c/d）に Public/Private App/Private DB の3種類サブネットをそれぞれ配置（計9サブネット）",
+          "is_correct": true,
+          "explanation": "正解。3-AZ × 3-tier で AZ 障害耐性とセグメント分離を両立。RDS Multi-AZ も活かせる。"
+        },
+        {
+          "id": "D",
+          "text": "AZ ごとに別 VPC を作って VPC Peering で接続",
+          "is_correct": false,
+          "explanation": "AZ ごとに VPC は不要に複雑。1 VPC に複数 AZ サブネットが標準。"
+        }
       ],
       "explanation": "高可用 3-tier 設計では VPC を1つ作り、複数 AZ に Public（ALB/NAT）、Private App（EC2/EKS）、Private DB（RDS）の3層サブネットを各 AZ に配置するのが標準。3 AZ にすればクオラム取得や RDS Multi-AZ Cluster (3 AZ) も活用できる。",
       "references": [
-        {"title": "VPC subnets", "url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html"}
+        {
+          "title": "VPC subnets",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html"
+        }
       ],
-      "tags": ["vpc", "subnet", "multi-az", "3-tier", "high-availability"],
-      "common_mistakes": ["DB を Public サブネットに置く", "AZ ごとに VPC を分ける"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "vpc",
+        "subnet",
+        "multi-az",
+        "3-tier",
+        "high-availability"
+      ],
+      "common_mistakes": [
+        "DB を Public サブネットに置く",
+        "AZ ごとに VPC を分ける"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-016",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Site-to-Site VPN",
       "subtopic": "BGP configuration",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "オンプレと AWS を Site-to-Site VPN で接続する際、ダイナミックルーティング (BGP) を選択する利点として最も適切なのはどれか。",
       "options": [
-        {"id": "A", "text": "プレフィックス追加・削除が自動で反映され、フェイルオーバーも BGP keepalive 失敗で迅速に行える", "is_correct": true, "explanation": "正解。動的ルーティングで運用変更とフェイルオーバーが自動化される。"},
-        {"id": "B", "text": "暗号化アルゴリズムが強化される", "is_correct": false, "explanation": "暗号化はルーティング選択と独立。IKE/IPsec パラメータの話。"},
-        {"id": "C", "text": "VPN 帯域が10倍になる", "is_correct": false, "explanation": "BGP は経路選択の話で帯域とは無関係。"},
-        {"id": "D", "text": "MACsec が利用可能になる", "is_correct": false, "explanation": "MACsec は DX の概念で VPN とは無関係。"}
+        {
+          "id": "A",
+          "text": "MACsec が利用可能になる",
+          "is_correct": false,
+          "explanation": "MACsec は DX の概念で VPN とは無関係。"
+        },
+        {
+          "id": "B",
+          "text": "暗号化アルゴリズムが強化される",
+          "is_correct": false,
+          "explanation": "暗号化はルーティング選択と独立。IKE/IPsec パラメータの話。"
+        },
+        {
+          "id": "C",
+          "text": "VPN 帯域が10倍になる",
+          "is_correct": false,
+          "explanation": "BGP は経路選択の話で帯域とは無関係。"
+        },
+        {
+          "id": "D",
+          "text": "プレフィックス追加・削除が自動で反映され、フェイルオーバーも BGP keepalive 失敗で迅速に行える",
+          "is_correct": true,
+          "explanation": "正解。動的ルーティングで運用変更とフェイルオーバーが自動化される。"
+        }
       ],
       "explanation": "Site-to-Site VPN のダイナミックルーティング (BGP) は、オンプレ側の経路追加・削除を自動同期し、トンネル障害時には BGP keepalive のタイムアウトで30秒〜数分でフェイルオーバーする。スタティックは設定が単純だが、変更や2本目トンネル運用には不向き。プロダクションは BGP 推奨。",
       "references": [
-        {"title": "Site-to-Site VPN routing options", "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNRoutingTypes.html"}
+        {
+          "title": "Site-to-Site VPN routing options",
+          "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNRoutingTypes.html"
+        }
       ],
-      "tags": ["site-to-site-vpn", "bgp", "dynamic-routing", "failover"],
-      "common_mistakes": ["BGP が暗号化を強化すると誤解", "BGP で帯域が増えると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "site-to-site-vpn",
+        "bgp",
+        "dynamic-routing",
+        "failover"
+      ],
+      "common_mistakes": [
+        "BGP が暗号化を強化すると誤解",
+        "BGP で帯域が増えると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-017",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Direct Connect",
       "subtopic": "Public vs Private vs Transit VIF",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "オンプレから複数の VPC（Transit Gateway 経由）と Amazon S3 のパブリックエンドポイントの両方に Direct Connect 経由でアクセスしたい。必要な VIF（Virtual Interface）構成として最適なのはどれか。",
       "options": [
-        {"id": "A", "text": "Transit VIF を1本（TGW 接続用）と Public VIF を1本（S3用）作成する", "is_correct": true, "explanation": "正解。Transit VIF は TGW、Public VIF は AWS パブリックサービスへ。役割が異なるので2本必要。"},
-        {"id": "B", "text": "Private VIF を1本だけ作成する", "is_correct": false, "explanation": "Private VIF は単一 VPC 接続用。S3 パブリックには使えず、TGW にも使えない。"},
-        {"id": "C", "text": "Public VIF を1本だけ作成する", "is_correct": false, "explanation": "Public VIF は VPC 内リソースには到達できない（パブリックサービスのみ）。"},
-        {"id": "D", "text": "Transit VIF だけを1本作成する", "is_correct": false, "explanation": "Transit VIF は S3 パブリックエンドポイントには到達できない。"}
+        {
+          "id": "A",
+          "text": "Transit VIF を1本（TGW 接続用）と Public VIF を1本（S3用）作成する",
+          "is_correct": true,
+          "explanation": "正解。Transit VIF は TGW、Public VIF は AWS パブリックサービスへ。役割が異なるので2本必要。"
+        },
+        {
+          "id": "B",
+          "text": "Transit VIF だけを1本作成する",
+          "is_correct": false,
+          "explanation": "Transit VIF は S3 パブリックエンドポイントには到達できない。"
+        },
+        {
+          "id": "C",
+          "text": "Public VIF を1本だけ作成する",
+          "is_correct": false,
+          "explanation": "Public VIF は VPC 内リソースには到達できない（パブリックサービスのみ）。"
+        },
+        {
+          "id": "D",
+          "text": "Private VIF を1本だけ作成する",
+          "is_correct": false,
+          "explanation": "Private VIF は単一 VPC 接続用。S3 パブリックには使えず、TGW にも使えない。"
+        }
       ],
       "explanation": "DX の VIF タイプ：(1) Private VIF=単一 VPC、(2) Transit VIF=Direct Connect Gateway 経由 TGW、(3) Public VIF=AWS のパブリックサービス（S3、DynamoDB のパブリックEP、API GW など）。要件次第で複数の VIF を1本の DX 上に同居できる（VLAN タグで区切る）。",
       "references": [
-        {"title": "AWS Direct Connect virtual interfaces", "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/WorkingWithVirtualInterfaces.html"}
+        {
+          "title": "AWS Direct Connect virtual interfaces",
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/WorkingWithVirtualInterfaces.html"
+        }
       ],
-      "tags": ["direct-connect", "vif", "transit-vif", "public-vif"],
-      "common_mistakes": ["Private VIF で TGW 接続できると誤解", "Public VIF で VPC 内に到達できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "direct-connect",
+        "vif",
+        "transit-vif",
+        "public-vif"
+      ],
+      "common_mistakes": [
+        "Private VIF で TGW 接続できると誤解",
+        "Public VIF で VPC 内に到達できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-018",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "IPAM",
       "subtopic": "Cross-account allocation",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "AWS Organizations で 80 アカウント運用する企業が、各アカウントが新規 VPC 作成時に重複しない CIDR を自動取得できるようにしたい。最適な構成は？",
       "options": [
-        {"id": "A", "text": "IPAM のトップレベルプール (10.0.0.0/8) → リージョン別プール → アカウント割当プールの階層を作り、共有する", "is_correct": true, "explanation": "正解。IPAM の階層プールを RAM で各アカウントに共有することで、自動 CIDR 配布と重複防止を両立。"},
-        {"id": "B", "text": "各アカウントで手動で CIDR を選び、Confluence に台帳を書く", "is_correct": false, "explanation": "ヒューマンエラーとスケール問題。80アカウントで運用破綻。"},
-        {"id": "C", "text": "各アカウントで /16 を勝手に取り、TGW で繋ぐ", "is_correct": false, "explanation": "TGW は重複 CIDR を自動解決しない。事前防止が必要。"},
-        {"id": "D", "text": "AWS Config ルールで /28 サブネットを強制する", "is_correct": false, "explanation": "Config はガバナンスツールであって、IP プール管理機能はない。"}
+        {
+          "id": "A",
+          "text": "各アカウントで手動で CIDR を選び、Confluence に台帳を書く",
+          "is_correct": false,
+          "explanation": "ヒューマンエラーとスケール問題。80アカウントで運用破綻。"
+        },
+        {
+          "id": "B",
+          "text": "IPAM のトップレベルプール (10.0.0.0/8) → リージョン別プール → アカウント割当プールの階層を作り、共有する",
+          "is_correct": true,
+          "explanation": "正解。IPAM の階層プールを RAM で各アカウントに共有することで、自動 CIDR 配布と重複防止を両立。"
+        },
+        {
+          "id": "C",
+          "text": "各アカウントで /16 を勝手に取り、TGW で繋ぐ",
+          "is_correct": false,
+          "explanation": "TGW は重複 CIDR を自動解決しない。事前防止が必要。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config ルールで /28 サブネットを強制する",
+          "is_correct": false,
+          "explanation": "Config はガバナンスツールであって、IP プール管理機能はない。"
+        }
       ],
       "explanation": "IPAM の真価は階層プールとマルチアカウント共有にある。トップレベルプールから地域・OU・アカウント単位のサブプールに分け、AWS RAM で共有して各アカウントに「許可された CIDR」を自動割当する。VPC 作成時に IPAM プール参照すれば、重複なく自動取得できる。",
       "references": [
-        {"title": "Tutorial: Plan VPC IP address provisioning", "url": "https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-share-pool-with-org.html"}
+        {
+          "title": "Tutorial: Plan VPC IP address provisioning",
+          "url": "https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-share-pool-with-org.html"
+        }
       ],
-      "tags": ["ipam", "multi-account", "ram", "cidr-allocation"],
-      "common_mistakes": ["手動 Excel 台帳で運用しようとする", "TGW で重複 CIDR が解決すると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "ipam",
+        "multi-account",
+        "ram",
+        "cidr-allocation"
+      ],
+      "common_mistakes": [
+        "手動 Excel 台帳で運用しようとする",
+        "TGW で重複 CIDR が解決すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-019",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Cloud WAN",
       "subtopic": "Migration from TGW",
       "cognitive_level": "L3-Apply",
       "difficulty": "hard",
       "stem": "既存の TGW ハブアンドスポーク（東京・大阪）を運用する企業が Cloud WAN への移行を検討している。Cloud WAN を採用する最大の利点として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "グローバルなネットワークポリシーを宣言的 (Core Network Policy) に管理でき、リージョン横断のセグメント設計と運用が一貫する", "is_correct": true, "explanation": "正解。Cloud WAN の中核価値は宣言的ポリシーとマルチリージョン一元管理。"},
-        {"id": "B", "text": "TGW より帯域が高い", "is_correct": false, "explanation": "Cloud WAN 内部でも CNE (Core Network Edge) は TGW 同等の特性。帯域差ではなく管理性が違い。"},
-        {"id": "C", "text": "VPC Peering と完全互換になる", "is_correct": false, "explanation": "互換性の話ではない。"},
-        {"id": "D", "text": "BGP 設定が一切不要になる", "is_correct": false, "explanation": "オンプレ接続には依然として BGP/VPN/DX が必要。"}
+        {
+          "id": "A",
+          "text": "VPC Peering と完全互換になる",
+          "is_correct": false,
+          "explanation": "互換性の話ではない。"
+        },
+        {
+          "id": "B",
+          "text": "BGP 設定が一切不要になる",
+          "is_correct": false,
+          "explanation": "オンプレ接続には依然として BGP/VPN/DX が必要。"
+        },
+        {
+          "id": "C",
+          "text": "グローバルなネットワークポリシーを宣言的 (Core Network Policy) に管理でき、リージョン横断のセグメント設計と運用が一貫する",
+          "is_correct": true,
+          "explanation": "正解。Cloud WAN の中核価値は宣言的ポリシーとマルチリージョン一元管理。"
+        },
+        {
+          "id": "D",
+          "text": "TGW より帯域が高い",
+          "is_correct": false,
+          "explanation": "Cloud WAN 内部でも CNE (Core Network Edge) は TGW 同等の特性。帯域差ではなく管理性が違い。"
+        }
       ],
       "explanation": "Cloud WAN は Core Network Policy（JSON）で全リージョンの接続性とセグメンテーションを宣言的に定義し、AWS が自動的にエッジノード（CNE）を全リージョンに展開する。TGW は各リージョン手動構築・peering 管理が必要。Cloud WAN の真価はポリシードリブン運用とマルチリージョン一貫性。",
       "references": [
-        {"title": "Cloud WAN vs Transit Gateway", "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html"}
+        {
+          "title": "Cloud WAN vs Transit Gateway",
+          "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html"
+        }
       ],
-      "tags": ["cloud-wan", "transit-gateway", "migration", "policy-driven"],
-      "common_mistakes": ["Cloud WAN は単に高速 TGW と誤解", "BGP が不要になると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloud-wan",
+        "transit-gateway",
+        "migration",
+        "policy-driven"
+      ],
+      "common_mistakes": [
+        "Cloud WAN は単に高速 TGW と誤解",
+        "BGP が不要になると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-020",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Verified Access",
       "subtopic": "Trust providers",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "AWS Verified Access のトラストプロバイダ設計について、最も正確な記述はどれか。",
       "options": [
-        {"id": "A", "text": "ID（OIDC）とデバイス（Jamf/CrowdStrike等）の両方を組み合わせて多次元のアクセス判定が可能", "is_correct": true, "explanation": "正解。複数トラストプロバイダを組み合わせ、Cedar ポリシーで条件評価する。"},
-        {"id": "B", "text": "OIDC のみが利用可能", "is_correct": false, "explanation": "デバイストラストも利用できる。"},
-        {"id": "C", "text": "Active Directory との連携には必ず Directory Service が必要", "is_correct": false, "explanation": "OIDC 経由で AD/Entra ID と連携できる（IdP 経由）。"},
-        {"id": "D", "text": "デバイスポスチャは利用できない", "is_correct": false, "explanation": "Jamf, CrowdStrike Falcon, Trellix MVISION 等のデバイスポスチャと連携可能。"}
+        {
+          "id": "A",
+          "text": "OIDC のみが利用可能",
+          "is_correct": false,
+          "explanation": "デバイストラストも利用できる。"
+        },
+        {
+          "id": "B",
+          "text": "Active Directory との連携には必ず Directory Service が必要",
+          "is_correct": false,
+          "explanation": "OIDC 経由で AD/Entra ID と連携できる（IdP 経由）。"
+        },
+        {
+          "id": "C",
+          "text": "デバイスポスチャは利用できない",
+          "is_correct": false,
+          "explanation": "Jamf, CrowdStrike Falcon, Trellix MVISION 等のデバイスポスチャと連携可能。"
+        },
+        {
+          "id": "D",
+          "text": "ID（OIDC）とデバイス（Jamf/CrowdStrike等）の両方を組み合わせて多次元のアクセス判定が可能",
+          "is_correct": true,
+          "explanation": "正解。複数トラストプロバイダを組み合わせ、Cedar ポリシーで条件評価する。"
+        }
       ],
       "explanation": "Verified Access のトラストプロバイダは2種類：Identity Trust Provider (OIDC IdP) と Device Trust Provider (Jamf, CrowdStrike, JumpCloud 等)。Cedar ポリシーで両方の属性（user.email, device.compliance 等）を組み合わせた条件式を書け、ゼロトラスト的な認可を実現。",
       "references": [
-        {"title": "Trust providers in Verified Access", "url": "https://docs.aws.amazon.com/verified-access/latest/ug/trust-providers.html"}
+        {
+          "title": "Trust providers in Verified Access",
+          "url": "https://docs.aws.amazon.com/verified-access/latest/ug/trust-providers.html"
+        }
       ],
-      "tags": ["verified-access", "trust-provider", "oidc", "device-posture", "cedar"],
-      "common_mistakes": ["デバイスポスチャ非対応と誤解", "OIDC 専用だと誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "verified-access",
+        "trust-provider",
+        "oidc",
+        "device-posture",
+        "cedar"
+      ],
+      "common_mistakes": [
+        "デバイスポスチャ非対応と誤解",
+        "OIDC 専用だと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-021",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Hybrid DNS",
       "subtopic": "Resolver rules",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
-      "stem": "東海地方の製造業 X 社が、社内 AD 統合ドメイン `corp.example.local` をオンプレ DNS で運用している。AWS 側 VPC から `corp.example.local` を解決させたいが、AWS のすべての DNS 解決を社内 DNS に転送したくない。最適な構成は？",
+      "stem": "ある製造業 X 社が、社内 AD 統合ドメイン `corp.example.local` をオンプレ DNS で運用している。AWS 側 VPC から `corp.example.local` を解決させたいが、AWS のすべての DNS 解決を社内 DNS に転送したくない。最適な構成は？",
       "options": [
-        {"id": "A", "text": "Outbound Resolver エンドポイントを作成し、`corp.example.local` のドメインに対する Resolver Rule を作って社内 DNS にフォワードする", "is_correct": true, "explanation": "正解。Resolver Rule で特定ドメインのみ条件付きフォワードする標準パターン。"},
-        {"id": "B", "text": "VPC の DHCP Option Set で社内 DNS サーバを指定する", "is_correct": false, "explanation": "全 DNS が社内 DNS に行ってしまい、AWS 内部解決（amazonaws.com 等）が壊れる。"},
-        {"id": "C", "text": "Inbound Resolver エンドポイントを作成して社内 DNS にフォワードする", "is_correct": false, "explanation": "Inbound はオンプレ→AWS 方向。逆向き。"},
-        {"id": "D", "text": "Route 53 Private Hosted Zone で `corp.example.local` を AWS 側に作る", "is_correct": false, "explanation": "それは AWS で新規ゾーンを作るだけで、オンプレの正本データを参照しない。"}
+        {
+          "id": "A",
+          "text": "Outbound Resolver エンドポイントを作成し、`corp.example.local` のドメインに対する Resolver Rule を作って社内 DNS にフォワードする",
+          "is_correct": true,
+          "explanation": "正解。Resolver Rule で特定ドメインのみ条件付きフォワードする標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "VPC の DHCP Option Set で社内 DNS サーバを指定する",
+          "is_correct": false,
+          "explanation": "全 DNS が社内 DNS に行ってしまい、AWS 内部解決（amazonaws.com 等）が壊れる。"
+        },
+        {
+          "id": "C",
+          "text": "Inbound Resolver エンドポイントを作成して社内 DNS にフォワードする",
+          "is_correct": false,
+          "explanation": "Inbound はオンプレ→AWS 方向。逆向き。"
+        },
+        {
+          "id": "D",
+          "text": "Route 53 Private Hosted Zone で `corp.example.local` を AWS 側に作る",
+          "is_correct": false,
+          "explanation": "それは AWS で新規ゾーンを作るだけで、オンプレの正本データを参照しない。"
+        }
       ],
       "explanation": "Outbound Resolver エンドポイント + Resolver Rule（条件付きフォワーディング）が標準解。Rule にドメイン名と転送先を指定し、VPC または Resolver にアタッチすると、そのドメインのクエリだけが社内 DNS へ送られる。他は AWS のリゾルバが処理する。",
       "references": [
-        {"title": "Forwarding outbound DNS queries", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-rules-managing.html"}
+        {
+          "title": "Forwarding outbound DNS queries",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-rules-managing.html"
+        }
       ],
-      "tags": ["hybrid-dns", "resolver-rules", "outbound-endpoint", "conditional-forwarding"],
-      "common_mistakes": ["DHCP Option Set ですべて社内 DNS にしてしまう", "Inbound と Outbound の方向を逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "hybrid-dns",
+        "resolver-rules",
+        "outbound-endpoint",
+        "conditional-forwarding"
+      ],
+      "common_mistakes": [
+        "DHCP Option Set ですべて社内 DNS にしてしまう",
+        "Inbound と Outbound の方向を逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-022",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Transit Gateway",
       "subtopic": "Route table segmentation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある企業が Transit Gateway で本番 VPC 群と開発 VPC 群を完全分離したい。共有サービス VPC は両方からアクセスを許可したい。TGW のルートテーブル設計として最適なのはどれか。",
       "options": [
-        {"id": "A", "text": "Prod RT と Dev RT を作成。Prod VPC は Prod RT に Associate、Dev VPC は Dev RT に Associate。共有 VPC は両 RT で Propagate", "is_correct": true, "explanation": "正解。Association で「使うテーブル」、Propagation で「学べるルート」を制御し、Prod/Dev 間は遮断、共有はアクセス可能となる。"},
-        {"id": "B", "text": "全 VPC を1つのデフォルト RT に Associate しセキュリティグループで分離", "is_correct": false, "explanation": "全 VPC が相互到達可能になる。L3 分離されない。"},
-        {"id": "C", "text": "VPC Peering で個別接続する", "is_correct": false, "explanation": "TGW を持つ前提に反する。スケールしない。"},
-        {"id": "D", "text": "Cloud WAN セグメントは TGW では不可能", "is_correct": false, "explanation": "TGW でも複数ルートテーブルでセグメンテーション可能。"}
+        {
+          "id": "A",
+          "text": "全 VPC を1つのデフォルト RT に Associate しセキュリティグループで分離",
+          "is_correct": false,
+          "explanation": "全 VPC が相互到達可能になる。L3 分離されない。"
+        },
+        {
+          "id": "B",
+          "text": "Prod RT と Dev RT を作成。Prod VPC は Prod RT に Associate、Dev VPC は Dev RT に Associate。共有 VPC は両 RT で Propagate",
+          "is_correct": true,
+          "explanation": "正解。Association で「使うテーブル」、Propagation で「学べるルート」を制御し、Prod/Dev 間は遮断、共有はアクセス可能となる。"
+        },
+        {
+          "id": "C",
+          "text": "Cloud WAN セグメントは TGW では不可能",
+          "is_correct": false,
+          "explanation": "TGW でも複数ルートテーブルでセグメンテーション可能。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Peering で個別接続する",
+          "is_correct": false,
+          "explanation": "TGW を持つ前提に反する。スケールしない。"
+        }
       ],
       "explanation": "TGW のセグメンテーションは「複数ルートテーブル + Association/Propagation の組み合わせ」で実現。各 attachment は1つの RT に Association（送信時のテーブル）し、複数 RT に Propagation（経路を学習させる先）する。Prod/Dev は別 RT で隔離、共有 VPC のルートを両 RT に Propagation することで部分的接続を実装する。",
       "references": [
-        {"title": "Example: Isolated VPCs with shared services", "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-isolated-shared.html"}
+        {
+          "title": "Example: Isolated VPCs with shared services",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-isolated-shared.html"
+        }
       ],
-      "tags": ["transit-gateway", "segmentation", "route-table", "shared-services"],
-      "common_mistakes": ["デフォルト RT 1つで分離できると誤解", "Association と Propagation の働きを逆にする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "transit-gateway",
+        "segmentation",
+        "route-table",
+        "shared-services"
+      ],
+      "common_mistakes": [
+        "デフォルト RT 1つで分離できると誤解",
+        "Association と Propagation の働きを逆にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-023",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Direct Connect Resiliency",
       "subtopic": "Maximum Resiliency",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "金融機関が AWS が定義する「Maximum Resiliency」レベルの DX 構成を実装したい。要件として正しいのはどれか。",
       "options": [
-        {"id": "A", "text": "2つの異なる DX ロケーション、それぞれ別デバイス、別キャリアで合計4本以上の接続を構成する", "is_correct": true, "explanation": "正解。Maximum Resiliency は2拠点 × 各拠点で別 DX デバイス（ポート）冗長を要求する。"},
-        {"id": "B", "text": "1つの DX ロケーションで2本のポートを契約する", "is_correct": false, "explanation": "それは High Resiliency にも届かない。同一拠点での障害に弱い。"},
-        {"id": "C", "text": "1本の DX と1本の VPN で冗長化する", "is_correct": false, "explanation": "Development and test レベル相当。本番 Maximum 要件ではない。"},
-        {"id": "D", "text": "DX Gateway を使えば自動的に Maximum Resiliency になる", "is_correct": false, "explanation": "DX Gateway は接続を集約するだけ。物理冗長性とは別。"}
+        {
+          "id": "A",
+          "text": "DX Gateway を使えば自動的に Maximum Resiliency になる",
+          "is_correct": false,
+          "explanation": "DX Gateway は接続を集約するだけ。物理冗長性とは別。"
+        },
+        {
+          "id": "B",
+          "text": "1本の DX と1本の VPN で冗長化する",
+          "is_correct": false,
+          "explanation": "Development and test レベル相当。本番 Maximum 要件ではない。"
+        },
+        {
+          "id": "C",
+          "text": "2つの異なる DX ロケーション、それぞれ別デバイス、別キャリアで合計4本以上の接続を構成する",
+          "is_correct": true,
+          "explanation": "正解。Maximum Resiliency は2拠点 × 各拠点で別 DX デバイス（ポート）冗長を要求する。"
+        },
+        {
+          "id": "D",
+          "text": "1つの DX ロケーションで2本のポートを契約する",
+          "is_correct": false,
+          "explanation": "それは High Resiliency にも届かない。同一拠点での障害に弱い。"
+        }
       ],
       "explanation": "AWS の DX Resiliency Recommendation：(1) Development and Test=単一接続、(2) High Resiliency=2 ロケーション × 各1本（または同拠点別デバイス）、(3) Maximum Resiliency=2 ロケーション × 各拠点別デバイス。クリティカルな金融・医療では Maximum を採用し、SLA 99.99% を狙う。",
       "references": [
-        {"title": "AWS Direct Connect Resiliency Recommendations", "url": "https://aws.amazon.com/directconnect/resiliency-recommendation/"}
+        {
+          "title": "AWS Direct Connect Resiliency Recommendations",
+          "url": "https://aws.amazon.com/directconnect/resiliency-recommendation/"
+        }
       ],
-      "tags": ["direct-connect", "resiliency", "high-availability", "sla"],
-      "common_mistakes": ["DX Gateway で物理冗長性が確保されると誤解", "1拠点冗長で十分と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "direct-connect",
+        "resiliency",
+        "high-availability",
+        "sla"
+      ],
+      "common_mistakes": [
+        "DX Gateway で物理冗長性が確保されると誤解",
+        "1拠点冗長で十分と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-024",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "VPC Lattice",
       "subtopic": "Auth policies",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "EKS 上の SaaS が VPC Lattice でサービス間通信を管理している。「サービス A は B とは通信可能、C とは不可」を最も実装しやすい方法は？",
       "options": [
-        {"id": "A", "text": "Service Network の Auth Policy で IAM プリンシパル（A の Pod ロール）から B への action のみ Allow", "is_correct": true, "explanation": "正解。Lattice の Auth Policy は IAM ベースで宣言的にサービス間認可を書ける。"},
-        {"id": "B", "text": "VPC のセキュリティグループで Pod の IP ベースで制御", "is_correct": false, "explanation": "Pod IP は変動するため信頼境界として弱い。Lattice は L7 でのほうが適切。"},
-        {"id": "C", "text": "NACL でサブネット単位に許可", "is_correct": false, "explanation": "NACL はステートレスで L3/4。サービス単位の細かい制御に不向き。"},
-        {"id": "D", "text": "AWS WAF でアプリケーションリクエストをフィルタする", "is_correct": false, "explanation": "WAF は外部からの攻撃防御目的で、内部サービスメッシュの認可制御には合わない。"}
+        {
+          "id": "A",
+          "text": "AWS WAF でアプリケーションリクエストをフィルタする",
+          "is_correct": false,
+          "explanation": "WAF は外部からの攻撃防御目的で、内部サービスメッシュの認可制御には合わない。"
+        },
+        {
+          "id": "B",
+          "text": "NACL でサブネット単位に許可",
+          "is_correct": false,
+          "explanation": "NACL はステートレスで L3/4。サービス単位の細かい制御に不向き。"
+        },
+        {
+          "id": "C",
+          "text": "VPC のセキュリティグループで Pod の IP ベースで制御",
+          "is_correct": false,
+          "explanation": "Pod IP は変動するため信頼境界として弱い。Lattice は L7 でのほうが適切。"
+        },
+        {
+          "id": "D",
+          "text": "Service Network の Auth Policy で IAM プリンシパル（A の Pod ロール）から B への action のみ Allow",
+          "is_correct": true,
+          "explanation": "正解。Lattice の Auth Policy は IAM ベースで宣言的にサービス間認可を書ける。"
+        }
       ],
       "explanation": "VPC Lattice の Auth Policy は IAM ベースの宣言的認可。Service Network レベルとサービスレベルの2層で記述でき、IAM プリンシパル（ロール）と HTTP メソッド・パスを条件に Allow/Deny を表現できる。EKS Pod の IRSA (IAM Roles for Service Accounts) と組み合わせることで Pod 単位で認可制御が可能。",
       "references": [
-        {"title": "Auth policies in VPC Lattice", "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html"}
+        {
+          "title": "Auth policies in VPC Lattice",
+          "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html"
+        }
       ],
-      "tags": ["vpc-lattice", "auth-policy", "iam", "eks", "service-mesh"],
-      "common_mistakes": ["IP ベースの SG で十分と誤解", "WAF の役割と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "vpc-lattice",
+        "auth-policy",
+        "iam",
+        "eks",
+        "service-mesh"
+      ],
+      "common_mistakes": [
+        "IP ベースの SG で十分と誤解",
+        "WAF の役割と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-025",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Route 53 Resolver DNSSEC",
       "subtopic": "Validation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある政府系機関が VPC 内のすべての DNS 解決で DNSSEC バリデーションを強制したい。最も適切な実装は？",
       "options": [
-        {"id": "A", "text": "Route 53 Resolver の DNSSEC validation を VPC 単位で有効化する", "is_correct": true, "explanation": "正解。Resolver の DNSSEC validation を有効化すると、署名されていない・無効な応答は SERVFAIL で拒否される。"},
-        {"id": "B", "text": "オンプレに DNSSEC 検証 DNS サーバを置き、すべての VPC からそこへ転送", "is_correct": false, "explanation": "技術的には可能だが、AWS ネイティブで簡単に有効化できるのに迂回するのはオーバーエンジニアリング。"},
-        {"id": "C", "text": "DNS Firewall でブロックリストを構成", "is_correct": false, "explanation": "DNS Firewall はブラックリスト/ホワイトリスト用で DNSSEC 検証ではない。"},
-        {"id": "D", "text": "Route 53 のホストゾーン側で DNSSEC signing を有効化", "is_correct": false, "explanation": "Signing は権威側の話で、VPC 内のクエリ検証は別。Resolver 側の validation 設定が必要。"}
+        {
+          "id": "A",
+          "text": "Route 53 Resolver の DNSSEC validation を VPC 単位で有効化する",
+          "is_correct": true,
+          "explanation": "正解。Resolver の DNSSEC validation を有効化すると、署名されていない・無効な応答は SERVFAIL で拒否される。"
+        },
+        {
+          "id": "B",
+          "text": "オンプレに DNSSEC 検証 DNS サーバを置き、すべての VPC からそこへ転送",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、AWS ネイティブで簡単に有効化できるのに迂回するのはオーバーエンジニアリング。"
+        },
+        {
+          "id": "C",
+          "text": "DNS Firewall でブロックリストを構成",
+          "is_correct": false,
+          "explanation": "DNS Firewall はブラックリスト/ホワイトリスト用で DNSSEC 検証ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Route 53 のホストゾーン側で DNSSEC signing を有効化",
+          "is_correct": false,
+          "explanation": "Signing は権威側の話で、VPC 内のクエリ検証は別。Resolver 側の validation 設定が必要。"
+        }
       ],
       "explanation": "Route 53 Resolver は VPC 単位で DNSSEC validation を有効化できる。これにより、署名検証に失敗した DNS 応答は SERVFAIL になり、DNS スプーフィングへの耐性が向上する。Signing（権威側）と Validation（再帰側）は別概念で、両方を組み合わせるとエンドツーエンドの DNSSEC が成立する。",
       "references": [
-        {"title": "DNSSEC validation in Resolver", "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dnssec-validation.html"}
+        {
+          "title": "DNSSEC validation in Resolver",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dnssec-validation.html"
+        }
       ],
-      "tags": ["dnssec", "route53-resolver", "validation", "compliance"],
-      "common_mistakes": ["Signing と Validation を混同する", "DNS Firewall で DNSSEC 検証できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "dnssec",
+        "route53-resolver",
+        "validation",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Signing と Validation を混同する",
+        "DNS Firewall で DNSSEC 検証できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-026",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "PrivateLink",
       "subtopic": "Endpoint policy",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "FinTech企業が S3 への通信を Interface VPC Endpoint 経由のみに限定し、特定バケットへのアクセスのみ許可したい。複数の対策を組み合わせる。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "(1) S3 Interface Endpoint を作成、(2) Endpoint policy で特定バケットのみ許可、(3) S3 バケットポリシーで `aws:sourceVpce` 条件で当該 VPCE 経由のみ許可", "is_correct": true, "explanation": "正解。多層防御：エンドポイント側と S3 側の両面で制御することで、誤った経路や不要な権限を防ぐ。"},
-        {"id": "B", "text": "S3 のパブリックアクセスをブロックすれば十分", "is_correct": false, "explanation": "パブリックブロックは公開遮断であり、別経路（VPC エンドポイント以外）の許可制御にはならない。"},
-        {"id": "C", "text": "VPC のサブネットを Private にすれば S3 アクセスは VPCE 経由になる", "is_correct": false, "explanation": "Private サブネット + NAT の場合、S3 へインターネット経由でも到達できてしまう。VPCE 強制にならない。"},
-        {"id": "D", "text": "IAM ポリシーで S3 アクセスを特定 IAM ロールに限る", "is_correct": false, "explanation": "プリンシパル制御だけで経路制御にならない。VPCE 経由強制には bucket policy 条件が必要。"}
+        {
+          "id": "A",
+          "text": "IAM ポリシーで S3 アクセスを特定 IAM ロールに限る",
+          "is_correct": false,
+          "explanation": "プリンシパル制御だけで経路制御にならない。VPCE 経由強制には bucket policy 条件が必要。"
+        },
+        {
+          "id": "B",
+          "text": "(1) S3 Interface Endpoint を作成、(2) Endpoint policy で特定バケットのみ許可、(3) S3 バケットポリシーで `aws:sourceVpce` 条件で当該 VPCE 経由のみ許可",
+          "is_correct": true,
+          "explanation": "正解。多層防御：エンドポイント側と S3 側の両面で制御することで、誤った経路や不要な権限を防ぐ。"
+        },
+        {
+          "id": "C",
+          "text": "VPC のサブネットを Private にすれば S3 アクセスは VPCE 経由になる",
+          "is_correct": false,
+          "explanation": "Private サブネット + NAT の場合、S3 へインターネット経由でも到達できてしまう。VPCE 強制にならない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 のパブリックアクセスをブロックすれば十分",
+          "is_correct": false,
+          "explanation": "パブリックブロックは公開遮断であり、別経路（VPC エンドポイント以外）の許可制御にはならない。"
+        }
       ],
       "explanation": "S3 アクセスを VPC Endpoint 経由に強制する標準パターン：(1) Interface または Gateway Endpoint を作る、(2) Endpoint Policy で許可するバケット/操作を絞る、(3) バケットポリシーで `aws:sourceVpce` または `aws:sourceVpc` の Condition を使い、特定 VPCE 経由以外を Deny する。多層で防御することでデータ流出経路を最小化。",
       "references": [
-        {"title": "Controlling access to S3 from a VPC", "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies-vpc-endpoint.html"}
+        {
+          "title": "Controlling access to S3 from a VPC",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies-vpc-endpoint.html"
+        }
       ],
-      "tags": ["privatelink", "s3", "endpoint-policy", "bucket-policy", "fintech"],
-      "common_mistakes": ["パブリックブロックで VPCE 強制ができると誤解", "IAM ポリシーだけで経路制御できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "privatelink",
+        "s3",
+        "endpoint-policy",
+        "bucket-policy",
+        "fintech"
+      ],
+      "common_mistakes": [
+        "パブリックブロックで VPCE 強制ができると誤解",
+        "IAM ポリシーだけで経路制御できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-027",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Site-to-Site VPN",
       "subtopic": "Tunnel monitoring and ECMP",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Site-to-Site VPN で TGW にアタッチした2本のトンネルがある。両方を Active-Active で帯域を最大化したい。必要な構成は？",
       "options": [
-        {"id": "A", "text": "TGW VPN attachment で ECMP を有効化し、両端 (オンプレ機器) も同等の BGP 経路を広告するように設定", "is_correct": true, "explanation": "正解。TGW の VPN attachment は ECMP 設定により2本のトンネルを Active-Active 利用できる。両側で同等経路を広告することが必要。"},
-        {"id": "B", "text": "Virtual Private Gateway (VGW) に2本の VPN を張れば自動 Active-Active になる", "is_correct": false, "explanation": "VGW では ECMP は使えない。VGW の2トンネルは Active-Standby。"},
-        {"id": "C", "text": "1本のトンネルだけ使い、帯域は AWS 側で自動増強される", "is_correct": false, "explanation": "VPN トンネルは約 1.25 Gbps が上限。自動増強しない。"},
-        {"id": "D", "text": "Static routing にしないと Active-Active にならない", "is_correct": false, "explanation": "むしろ ECMP には BGP（同等経路の比較）が前提。"}
+        {
+          "id": "A",
+          "text": "Static routing にしないと Active-Active にならない",
+          "is_correct": false,
+          "explanation": "むしろ ECMP には BGP（同等経路の比較）が前提。"
+        },
+        {
+          "id": "B",
+          "text": "Virtual Private Gateway (VGW) に2本の VPN を張れば自動 Active-Active になる",
+          "is_correct": false,
+          "explanation": "VGW では ECMP は使えない。VGW の2トンネルは Active-Standby。"
+        },
+        {
+          "id": "C",
+          "text": "TGW VPN attachment で ECMP を有効化し、両端 (オンプレ機器) も同等の BGP 経路を広告するように設定",
+          "is_correct": true,
+          "explanation": "正解。TGW の VPN attachment は ECMP 設定により2本のトンネルを Active-Active 利用できる。両側で同等経路を広告することが必要。"
+        },
+        {
+          "id": "D",
+          "text": "1本のトンネルだけ使い、帯域は AWS 側で自動増強される",
+          "is_correct": false,
+          "explanation": "VPN トンネルは約 1.25 Gbps が上限。自動増強しない。"
+        }
       ],
       "explanation": "Site-to-Site VPN の Active-Active 化は TGW の VPN attachment + ECMP が標準。VGW 接続では ECMP は不可で Active-Standby のみ。BGP で両トンネルから同じプレフィックスを同じ AS_PATH 長で広告することで TGW がフローを分散する。帯域は最大 4.5 Gbps（複数 attachment まで含めて）まで拡張可能。",
       "references": [
-        {"title": "ECMP for Site-to-Site VPN with TGW", "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/SetUpVPNConnections.html"}
+        {
+          "title": "ECMP for Site-to-Site VPN with TGW",
+          "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/SetUpVPNConnections.html"
+        }
       ],
-      "tags": ["site-to-site-vpn", "ecmp", "transit-gateway", "active-active"],
-      "common_mistakes": ["VGW で ECMP できると誤解", "Active-Active には Static が必要と誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "site-to-site-vpn",
+        "ecmp",
+        "transit-gateway",
+        "active-active"
+      ],
+      "common_mistakes": [
+        "VGW で ECMP できると誤解",
+        "Active-Active には Static が必要と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-028",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Cloud WAN + TGW",
       "subtopic": "Coexistence",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "ある企業が既存の TGW 環境を維持しつつ、新規リージョンを Cloud WAN で展開したい。両者の連携設計を評価する。最も適切なアプローチは？",
       "options": [
-        {"id": "A", "text": "既存 TGW と Cloud WAN を attachment で接続し、TGW のセグメンテーションと Cloud WAN セグメントをマップしながら段階移行する", "is_correct": true, "explanation": "正解。Cloud WAN は TGW を attachment として受け入れる。共存させながら新規ワークロードを Cloud WAN へ移すのが現実的。"},
-        {"id": "B", "text": "Cloud WAN を採用するなら全 TGW を即時廃止する必要がある", "is_correct": false, "explanation": "段階移行可能。即時廃止は不要。"},
-        {"id": "C", "text": "TGW と Cloud WAN は併用できないため、片方を選ばなければならない", "is_correct": false, "explanation": "事実誤認。連携可能。"},
-        {"id": "D", "text": "VPC を一旦 Peering でフラットにしてから Cloud WAN へ移す", "is_correct": false, "explanation": "Peering 化は退行で、複雑性とリスクが増える。"}
+        {
+          "id": "A",
+          "text": "TGW と Cloud WAN は併用できないため、片方を選ばなければならない",
+          "is_correct": false,
+          "explanation": "事実誤認。連携可能。"
+        },
+        {
+          "id": "B",
+          "text": "Cloud WAN を採用するなら全 TGW を即時廃止する必要がある",
+          "is_correct": false,
+          "explanation": "段階移行可能。即時廃止は不要。"
+        },
+        {
+          "id": "C",
+          "text": "VPC を一旦 Peering でフラットにしてから Cloud WAN へ移す",
+          "is_correct": false,
+          "explanation": "Peering 化は退行で、複雑性とリスクが増える。"
+        },
+        {
+          "id": "D",
+          "text": "既存 TGW と Cloud WAN を attachment で接続し、TGW のセグメンテーションと Cloud WAN セグメントをマップしながら段階移行する",
+          "is_correct": true,
+          "explanation": "正解。Cloud WAN は TGW を attachment として受け入れる。共存させながら新規ワークロードを Cloud WAN へ移すのが現実的。"
+        }
       ],
       "explanation": "Cloud WAN は既存の TGW を attachment として受け入れる設計になっている。これにより既存 TGW の運用を継続しつつ新規リージョン・ワークロードを Cloud WAN で展開し、Core Network Policy へ段階移行できる。完全リプレース前提だと現実的でないが、共存パターンを取れば移行リスクが下がる。",
       "references": [
-        {"title": "Cloud WAN with Transit Gateway", "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-transit-gateway.html"}
+        {
+          "title": "Cloud WAN with Transit Gateway",
+          "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-transit-gateway.html"
+        }
       ],
-      "tags": ["cloud-wan", "transit-gateway", "migration", "coexistence"],
-      "common_mistakes": ["Cloud WAN と TGW は排他と誤解", "Peering 経由の移行を考えてしまう"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "cloud-wan",
+        "transit-gateway",
+        "migration",
+        "coexistence"
+      ],
+      "common_mistakes": [
+        "Cloud WAN と TGW は排他と誤解",
+        "Peering 経由の移行を考えてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-029",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Transit Gateway Connect",
       "subtopic": "SD-WAN integration",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "SD-WAN ベンダの仮想アプライアンスを EC2 上に展開し、TGW と高速・冗長に統合したい。最適な手法は？",
       "options": [
-        {"id": "A", "text": "TGW Connect attachment を使用し、GRE トンネル + BGP でアプライアンスと接続する", "is_correct": true, "explanation": "正解。Connect attachment は IPsec VPN より高帯域（最大 5 Gbps × 4 = 20 Gbps）で SD-WAN との統合に最適。"},
-        {"id": "B", "text": "通常の Site-to-Site VPN でアプライアンスへ接続", "is_correct": false, "explanation": "VPN は 1.25 Gbps 制限。SD-WAN ベンダの仮想アプライアンスとは Connect が標準。"},
-        {"id": "C", "text": "VPC Peering でアプライアンス VPC と本番 VPC を直接接続", "is_correct": false, "explanation": "Peering は推移しないため SD-WAN ハブとして機能しない。"},
-        {"id": "D", "text": "Direct Connect VIF をアプライアンスに直接接続", "is_correct": false, "explanation": "DX VIF は AWS 側のサービスへ接続するもの。VPC 内 EC2 アプライアンスへ直接 VIF は付けられない。"}
+        {
+          "id": "A",
+          "text": "TGW Connect attachment を使用し、GRE トンネル + BGP でアプライアンスと接続する",
+          "is_correct": true,
+          "explanation": "正解。Connect attachment は IPsec VPN より高帯域（最大 5 Gbps × 4 = 20 Gbps）で SD-WAN との統合に最適。"
+        },
+        {
+          "id": "B",
+          "text": "通常の Site-to-Site VPN でアプライアンスへ接続",
+          "is_correct": false,
+          "explanation": "VPN は 1.25 Gbps 制限。SD-WAN ベンダの仮想アプライアンスとは Connect が標準。"
+        },
+        {
+          "id": "C",
+          "text": "Direct Connect VIF をアプライアンスに直接接続",
+          "is_correct": false,
+          "explanation": "DX VIF は AWS 側のサービスへ接続するもの。VPC 内 EC2 アプライアンスへ直接 VIF は付けられない。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Peering でアプライアンス VPC と本番 VPC を直接接続",
+          "is_correct": false,
+          "explanation": "Peering は推移しないため SD-WAN ハブとして機能しない。"
+        }
       ],
       "explanation": "TGW Connect は SD-WAN や 3rd party ネットワーク仮想アプライアンス (NVA) を高帯域で TGW に接続する専用 attachment。GRE トンネル上で BGP を動かし、IPsec の暗号化オーバーヘッドなしに最大 5 Gbps × 4 ECMP=約 20 Gbps を確保。Cisco, Aviatrix, Palo Alto 等が公式サポート。",
       "references": [
-        {"title": "Transit Gateway Connect attachments", "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html"}
+        {
+          "title": "Transit Gateway Connect attachments",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html"
+        }
       ],
-      "tags": ["transit-gateway-connect", "sd-wan", "gre", "nva"],
-      "common_mistakes": ["Site-to-Site VPN で十分と誤解", "DX VIF を EC2 に直接接続できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "transit-gateway-connect",
+        "sd-wan",
+        "gre",
+        "nva"
+      ],
+      "common_mistakes": [
+        "Site-to-Site VPN で十分と誤解",
+        "DX VIF を EC2 に直接接続できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "ans-c01-domain2-030",
       "version": "1.0",
-      "exam": {"code": "ANS-C01", "name": "AWS Certified Advanced Networking - Specialty", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-2", "name": "Network Implementation", "weight_percent": 26},
+      "exam": {
+        "code": "ANS-C01",
+        "name": "AWS Certified Advanced Networking - Specialty",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Network Implementation",
+        "weight_percent": 26
+      },
       "topic": "Multi-region hybrid",
       "subtopic": "End-to-end design",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
-      "stem": "東海地方の製造 X 社は、東京・大阪・米バージニアにシステムを展開する。東京拠点工場（オンプレ）→3リージョンの VPC へ低遅延 + 暗号化 + マルチパス冗長 + 重複 CIDR 排除 + ガバナンスを満たすデザインを構築する。最も適切な複合アーキテクチャは？",
+      "stem": "ある製造 X 社は、東京・大阪・米バージニアにシステムを展開する。東京拠点工場（オンプレ）→3リージョンの VPC へ低遅延 + 暗号化 + マルチパス冗長 + 重複 CIDR 排除 + ガバナンスを満たすデザインを構築する。最も適切な複合アーキテクチャは？",
       "options": [
-        {"id": "A", "text": "DX × 2 (Maximum Resiliency) → DX Gateway → Cloud WAN（多リージョン Core Network Policy + Segment）+ MACsec 暗号化 + IPAM で全リージョン CIDR 一元管理 + Network Manager で可視化", "is_correct": true, "explanation": "正解。要件すべて（低遅延=DX、暗号化=MACsec、冗長=Max Resiliency、CIDR 排除=IPAM、ガバナンス=Cloud WAN policy + Network Manager）を組み合わせる総合解。"},
-        {"id": "B", "text": "拠点 → Site-to-Site VPN × 1 → 各リージョン TGW → VPC Peering でリージョン間接続", "is_correct": false, "explanation": "VPN は遅延高、Peering は管理難、CIDR 重複防止なし。要件多く未充足。"},
-        {"id": "C", "text": "拠点 → Internet → 各 VPC のパブリック ALB へ直接接続", "is_correct": false, "explanation": "暗号化はTLS頼みでネットワーク冗長性なし。エンタープライズ要件未充足。"},
-        {"id": "D", "text": "拠点 → DX × 1 → 単一リージョン VPC → そこから各リージョンに Lambda で同期", "is_correct": false, "explanation": "DX 単一は冗長性NG。Lambda 同期はネットワーク設計でなくアプリ層回避策。"}
+        {
+          "id": "A",
+          "text": "拠点 → DX × 1 → 単一リージョン VPC → そこから各リージョンに Lambda で同期",
+          "is_correct": false,
+          "explanation": "DX 単一は冗長性NG。Lambda 同期はネットワーク設計でなくアプリ層回避策。"
+        },
+        {
+          "id": "B",
+          "text": "DX × 2 (Maximum Resiliency) → DX Gateway → Cloud WAN（多リージョン Core Network Policy + Segment）+ MACsec 暗号化 + IPAM で全リージョン CIDR 一元管理 + Network Manager で可視化",
+          "is_correct": true,
+          "explanation": "正解。要件すべて（低遅延=DX、暗号化=MACsec、冗長=Max Resiliency、CIDR 排除=IPAM、ガバナンス=Cloud WAN policy + Network Manager）を組み合わせる総合解。"
+        },
+        {
+          "id": "C",
+          "text": "拠点 → Site-to-Site VPN × 1 → 各リージョン TGW → VPC Peering でリージョン間接続",
+          "is_correct": false,
+          "explanation": "VPN は遅延高、Peering は管理難、CIDR 重複防止なし。要件多く未充足。"
+        },
+        {
+          "id": "D",
+          "text": "拠点 → Internet → 各 VPC のパブリック ALB へ直接接続",
+          "is_correct": false,
+          "explanation": "暗号化はTLS頼みでネットワーク冗長性なし。エンタープライズ要件未充足。"
+        }
       ],
       "explanation": "総合設計問題。本問は L6-Create レベルで、複数要件を満たすためのコンポーネント組合せ判断を問う。(1) Maximum Resiliency DX で物理冗長 + 低遅延、(2) MACsec で物理層暗号、(3) Cloud WAN でグローバル一貫性とセグメント、(4) IPAM で CIDR 重複排除、(5) Network Manager で可視性。これら全てを束ねる選択肢が A。",
       "references": [
-        {"title": "Hybrid networking with AWS", "url": "https://docs.aws.amazon.com/whitepapers/latest/hybrid-connectivity/hybrid-connectivity.html"}
+        {
+          "title": "Hybrid networking with AWS",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/hybrid-connectivity/hybrid-connectivity.html"
+        }
       ],
-      "tags": ["multi-region", "hybrid", "cloud-wan", "ipam", "macsec", "design"],
-      "common_mistakes": ["VPN だけで全要件を満たせると誤解", "Peering で多リージョンを管理できると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": true, "language": "ja"}
+      "tags": [
+        "multi-region",
+        "hybrid",
+        "cloud-wan",
+        "ipam",
+        "macsec",
+        "design"
+      ],
+      "common_mistakes": [
+        "VPN だけで全要件を満たせると誤解",
+        "Peering で多リージョンを管理できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

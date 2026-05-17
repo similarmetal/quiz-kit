@@ -15,582 +15,1915 @@
     {
       "id": "dop-c02-domain6-001",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "IAM",
       "subtopic": "Roles for service vs user",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS の CodeBuild プロジェクトが S3 や Secrets Manager にアクセスする場合、最も適切な IAM 構成は？",
       "options": [
-        {"id": "A", "text": "Service Role（CodeBuild が引き受ける IAM Role）に必要最小限のポリシーをアタッチする", "is_correct": true, "explanation": "正解。AWS サービスは IAM Role 経由でリソースにアクセスする。長期キーは使わない。"},
-        {"id": "B", "text": "IAM User の Access Key を環境変数に直書きする", "is_correct": false, "explanation": "セキュリティアンチパターン。漏洩リスクが極めて高い。"},
-        {"id": "C", "text": "Root アカウントの認証情報を使う", "is_correct": false, "explanation": "Root 利用は厳禁。MFA 付きの Root も日常運用には使わない。"},
-        {"id": "D", "text": "IAM Group に CodeBuild を所属させる", "is_correct": false, "explanation": "サービスは Group に所属しない。"}
+        {
+          "id": "A",
+          "text": "Service Role（CodeBuild が引き受ける IAM Role）に必要最小限のポリシーをアタッチする",
+          "is_correct": true,
+          "explanation": "正解。AWS サービスは IAM Role 経由でリソースにアクセスする。長期キーは使わない。"
+        },
+        {
+          "id": "B",
+          "text": "Root アカウントの認証情報を使う",
+          "is_correct": false,
+          "explanation": "Root 利用は厳禁。MFA 付きの Root も日常運用には使わない。"
+        },
+        {
+          "id": "C",
+          "text": "IAM User の Access Key を環境変数に直書きする",
+          "is_correct": false,
+          "explanation": "セキュリティアンチパターン。漏洩リスクが極めて高い。"
+        },
+        {
+          "id": "D",
+          "text": "IAM Group に CodeBuild を所属させる",
+          "is_correct": false,
+          "explanation": "サービスは Group に所属しない。"
+        }
       ],
       "explanation": "AWS サービスはサービスごとに「Service Role」を引き受けることでリソースにアクセスする。CodeBuild、CodePipeline、Lambda、Step Functions、すべて同様。長期 Access Key は最小化が原則で、サービス間アクセスでは特に避ける。",
-      "references": [{"title": "IAM service roles", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html"}],
-      "tags": ["iam", "service-role", "least-privilege", "codebuild"],
-      "common_mistakes": ["Access Key を環境変数に直書きする", "Root 認証情報を使う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IAM service roles",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "service-role",
+        "least-privilege",
+        "codebuild"
+      ],
+      "common_mistakes": [
+        "Access Key を環境変数に直書きする",
+        "Root 認証情報を使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-002",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "KMS",
       "subtopic": "Customer managed keys",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS KMS の Customer Managed Key（CMK）の自動キーローテーション期間として正しいのは？",
       "options": [
-        {"id": "A", "text": "1 年（または任意の 90〜2,560 日に設定可能）", "is_correct": true, "explanation": "正解。デフォルトは 1 年（365 日）。最近のアップデートで 90〜2560 日の任意期間に設定可能になった。"},
-        {"id": "B", "text": "30 日固定", "is_correct": false, "explanation": "30 日固定ではない。"},
-        {"id": "C", "text": "ローテーションは存在しない", "is_correct": false, "explanation": "自動ローテーションが提供される。"},
-        {"id": "D", "text": "5 年固定", "is_correct": false, "explanation": "デフォルト 1 年。"}
+        {
+          "id": "A",
+          "text": "ローテーションは存在しない",
+          "is_correct": false,
+          "explanation": "自動ローテーションが提供される。"
+        },
+        {
+          "id": "B",
+          "text": "1 年（または任意の 90〜2,560 日に設定可能）",
+          "is_correct": true,
+          "explanation": "正解。デフォルトは 1 年（365 日）。最近のアップデートで 90〜2560 日の任意期間に設定可能になった。"
+        },
+        {
+          "id": "C",
+          "text": "30 日固定",
+          "is_correct": false,
+          "explanation": "30 日固定ではない。"
+        },
+        {
+          "id": "D",
+          "text": "5 年固定",
+          "is_correct": false,
+          "explanation": "デフォルト 1 年。"
+        }
       ],
       "explanation": "KMS CMK（Symmetric）の自動ローテーションはデフォルト 1 年で、90〜2560 日の任意期間に設定可能（マルチリージョンキーを含む）。古いキー材料は維持されるため、過去暗号化データの復号は引き続き可能。手動ローテーションは新キーを作成して alias を切り替える方式。",
-      "references": [{"title": "Rotating AWS KMS keys", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"}],
-      "tags": ["kms", "key-rotation", "cmk", "encryption"],
-      "common_mistakes": ["自動ローテーションがないと思う", "AWS Managed Key と CMK のローテーションの違いを混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Rotating AWS KMS keys",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "key-rotation",
+        "cmk",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "自動ローテーションがないと思う",
+        "AWS Managed Key と CMK のローテーションの違いを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-003",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Secrets Manager",
       "subtopic": "Rotation",
       "cognitive_level": "L2-Understand",
       "difficulty": "easy",
       "stem": "AWS Secrets Manager のシークレット自動ローテーションの仕組みとして正しいのは？",
       "options": [
-        {"id": "A", "text": "Lambda Rotation Function を呼び出して 4 ステップ（createSecret/setSecret/testSecret/finishSecret）でローテーションする", "is_correct": true, "explanation": "正解。RDS など主要 DB には AWS 提供のテンプレートがある。"},
-        {"id": "B", "text": "ローテーションは手動 API のみ", "is_correct": false, "explanation": "スケジュールでの自動ローテーションが提供される。"},
-        {"id": "C", "text": "Parameter Store と機能は同じ", "is_correct": false, "explanation": "Parameter Store にネイティブな自動ローテーションはない。"},
-        {"id": "D", "text": "KMS の自動ローテーションを Secrets Manager は再利用する", "is_correct": false, "explanation": "KMS の鍵ローテーションとはレイヤーが異なる。"}
+        {
+          "id": "A",
+          "text": "KMS の自動ローテーションを Secrets Manager は再利用する",
+          "is_correct": false,
+          "explanation": "KMS の鍵ローテーションとはレイヤーが異なる。"
+        },
+        {
+          "id": "B",
+          "text": "ローテーションは手動 API のみ",
+          "is_correct": false,
+          "explanation": "スケジュールでの自動ローテーションが提供される。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda Rotation Function を呼び出して 4 ステップ（createSecret/setSecret/testSecret/finishSecret）でローテーションする",
+          "is_correct": true,
+          "explanation": "正解。RDS など主要 DB には AWS 提供のテンプレートがある。"
+        },
+        {
+          "id": "D",
+          "text": "Parameter Store と機能は同じ",
+          "is_correct": false,
+          "explanation": "Parameter Store にネイティブな自動ローテーションはない。"
+        }
       ],
       "explanation": "Secrets Manager はスケジュールベースの自動ローテーションを提供。Lambda Rotation Function が 4 ステップで実施: (1) createSecret = 新シークレット生成、(2) setSecret = 対象サービスへ反映、(3) testSecret = 検証、(4) finishSecret = AWSCURRENT へラベル付け。RDS / Redshift / DocumentDB のテンプレートが提供。",
-      "references": [{"title": "Rotating your AWS Secrets Manager secrets", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html"}],
-      "tags": ["secrets-manager", "rotation", "lambda", "rds"],
-      "common_mistakes": ["Parameter Store と Secrets Manager を混同", "4 ステップローテーションのフローを覚えていない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Rotating your AWS Secrets Manager secrets",
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html"
+        }
+      ],
+      "tags": [
+        "secrets-manager",
+        "rotation",
+        "lambda",
+        "rds"
+      ],
+      "common_mistakes": [
+        "Parameter Store と Secrets Manager を混同",
+        "4 ステップローテーションのフローを覚えていない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-004",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "ECR",
       "subtopic": "Image scanning",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "ECR の Image Scanning には Basic と Enhanced（Inspector 統合）がある。Enhanced の主な利点は？",
       "options": [
-        {"id": "A", "text": "OS パッケージ＋アプリ言語ライブラリ依存（Python/Java/Node.js など）の脆弱性を継続的に再評価し、Severity の更新を反映する", "is_correct": true, "explanation": "正解。Inspector v2 統合により言語ライブラリ脆弱性も検出、Continuous Scan で過去イメージも再評価される。"},
-        {"id": "B", "text": "イメージサイズを縮小する", "is_correct": false, "explanation": "サイズ縮小機能ではない。"},
-        {"id": "C", "text": "ECR Replication を有効化する", "is_correct": false, "explanation": "別機能。"},
-        {"id": "D", "text": "Basic と機能差はなく価格だけ違う", "is_correct": false, "explanation": "機能差は明確にある。"}
+        {
+          "id": "A",
+          "text": "ECR Replication を有効化する",
+          "is_correct": false,
+          "explanation": "別機能。"
+        },
+        {
+          "id": "B",
+          "text": "イメージサイズを縮小する",
+          "is_correct": false,
+          "explanation": "サイズ縮小機能ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Basic と機能差はなく価格だけ違う",
+          "is_correct": false,
+          "explanation": "機能差は明確にある。"
+        },
+        {
+          "id": "D",
+          "text": "OS パッケージ＋アプリ言語ライブラリ依存（Python/Java/Node.js など）の脆弱性を継続的に再評価し、Severity の更新を反映する",
+          "is_correct": true,
+          "explanation": "正解。Inspector v2 統合により言語ライブラリ脆弱性も検出、Continuous Scan で過去イメージも再評価される。"
+        }
       ],
       "explanation": "ECR Basic Scanning は Clair ベースで OS パッケージ脆弱性を Push 時に 1 回スキャン。Enhanced（Inspector v2 統合）は OS + 言語ライブラリ依存を継続スキャンし、findings を Security Hub へ統合、Severity 更新も反映。production 利用には Enhanced が推奨。",
-      "references": [{"title": "Image scanning in Amazon ECR", "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html"}],
-      "tags": ["ecr", "inspector", "container-security", "vulnerability-scan"],
-      "common_mistakes": ["Basic と Enhanced の機能差を理解しない", "言語ライブラリ脆弱性が Basic で検出されると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Image scanning in Amazon ECR",
+          "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html"
+        }
+      ],
+      "tags": [
+        "ecr",
+        "inspector",
+        "container-security",
+        "vulnerability-scan"
+      ],
+      "common_mistakes": [
+        "Basic と Enhanced の機能差を理解しない",
+        "言語ライブラリ脆弱性が Basic で検出されると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-005",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Parameter Store vs Secrets Manager",
       "subtopic": "Tradeoffs",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Parameter Store SecureString と Secrets Manager の使い分けとして最も正しい記述は？",
       "options": [
-        {"id": "A", "text": "Secrets Manager は自動ローテーション・クロスアカウント参照・タグベースのアクセス制御に強く、Parameter Store SecureString は無料で軽量。クレデンシャルでローテーションが必要なら Secrets Manager", "is_correct": true, "explanation": "正解。これが本質的な使い分け。"},
-        {"id": "B", "text": "Parameter Store は廃止された", "is_correct": false, "explanation": "現役のサービス。"},
-        {"id": "C", "text": "Secrets Manager は無料", "is_correct": false, "explanation": "シークレット数 + API 呼び出しに対して課金される。"},
-        {"id": "D", "text": "両者は完全に同じ機能", "is_correct": false, "explanation": "違いは明確。"}
+        {
+          "id": "A",
+          "text": "Secrets Manager は自動ローテーション・クロスアカウント参照・タグベースのアクセス制御に強く、Parameter Store SecureString は無料で軽量。クレデンシャルでローテーションが必要なら Secrets Manager",
+          "is_correct": true,
+          "explanation": "正解。これが本質的な使い分け。"
+        },
+        {
+          "id": "B",
+          "text": "両者は完全に同じ機能",
+          "is_correct": false,
+          "explanation": "違いは明確。"
+        },
+        {
+          "id": "C",
+          "text": "Parameter Store は廃止された",
+          "is_correct": false,
+          "explanation": "現役のサービス。"
+        },
+        {
+          "id": "D",
+          "text": "Secrets Manager は無料",
+          "is_correct": false,
+          "explanation": "シークレット数 + API 呼び出しに対して課金される。"
+        }
       ],
       "explanation": "Parameter Store SecureString: 無料、最大 8KB（Advanced）、KMS 暗号化、自動ローテーションなし、設定値全般向き。Secrets Manager: 有償、自動ローテーション、リソースポリシー、JSON 構造化、クレデンシャル向き。コストとローテーション要件で選択。",
-      "references": [{"title": "Choosing between Secrets Manager and Parameter Store", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"}],
-      "tags": ["secrets-manager", "parameter-store", "rotation", "cost-comparison"],
-      "common_mistakes": ["Secrets Manager が無料と誤解", "ローテーションが Parameter Store でも標準提供と思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Choosing between Secrets Manager and Parameter Store",
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
+        }
+      ],
+      "tags": [
+        "secrets-manager",
+        "parameter-store",
+        "rotation",
+        "cost-comparison"
+      ],
+      "common_mistakes": [
+        "Secrets Manager が無料と誤解",
+        "ローテーションが Parameter Store でも標準提供と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-006",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Audit Manager",
       "subtopic": "Frameworks",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Audit Manager の主目的として最も正しいのは？",
       "options": [
-        {"id": "A", "text": "監査要件（PCI DSS / HIPAA / SOC2 等）に対するエビデンスを継続的に収集・整理し、レポート化する", "is_correct": true, "explanation": "正解。Audit Manager は事前定義された Framework から関連 AWS API ログ／Config 評価／Security Hub findings 等を自動収集する。"},
-        {"id": "B", "text": "リアルタイムに違反を予防する", "is_correct": false, "explanation": "予防は SCP / IAM / CFN Hooks の領域。"},
-        {"id": "C", "text": "EC2 のパッチ適用を自動化", "is_correct": false, "explanation": "Patch Manager の領域。"},
-        {"id": "D", "text": "GuardDuty findings を要約する", "is_correct": false, "explanation": "GuardDuty 単独機能ではない。"}
+        {
+          "id": "A",
+          "text": "リアルタイムに違反を予防する",
+          "is_correct": false,
+          "explanation": "予防は SCP / IAM / CFN Hooks の領域。"
+        },
+        {
+          "id": "B",
+          "text": "監査要件（PCI DSS / HIPAA / SOC2 等）に対するエビデンスを継続的に収集・整理し、レポート化する",
+          "is_correct": true,
+          "explanation": "正解。Audit Manager は事前定義された Framework から関連 AWS API ログ／Config 評価／Security Hub findings 等を自動収集する。"
+        },
+        {
+          "id": "C",
+          "text": "GuardDuty findings を要約する",
+          "is_correct": false,
+          "explanation": "GuardDuty 単独機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 のパッチ適用を自動化",
+          "is_correct": false,
+          "explanation": "Patch Manager の領域。"
+        }
       ],
       "explanation": "AWS Audit Manager は監査エビデンス収集を自動化。Framework（PCI DSS、HIPAA、SOC2、AWS Best Practices 等）を選択、Assessment を作成すると、Config Rule 結果・CloudTrail ログ・Security Hub findings を自動収集してエビデンスとして組織。手動エビデンスもアップロード可能。",
-      "references": [{"title": "AWS Audit Manager", "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html"}],
-      "tags": ["audit-manager", "compliance", "evidence-collection", "framework"],
-      "common_mistakes": ["Audit Manager が予防コントロールと誤解", "Config と Audit Manager の役割を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Audit Manager",
+          "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "audit-manager",
+        "compliance",
+        "evidence-collection",
+        "framework"
+      ],
+      "common_mistakes": [
+        "Audit Manager が予防コントロールと誤解",
+        "Config と Audit Manager の役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-007",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Security Hub",
       "subtopic": "Standards and findings",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Security Hub の主機能として正しいのは？",
       "options": [
-        {"id": "A", "text": "GuardDuty / Inspector / Macie / Config / IAM Access Analyzer 等の findings を ASFF 形式で集約し、CIS / PCI DSS / AWS FSBP 等のセキュリティ標準で評価する", "is_correct": true, "explanation": "正解。Security Hub は集約とベースライン評価の両方を提供。"},
-        {"id": "B", "text": "脅威検出のみ", "is_correct": false, "explanation": "脅威検出は GuardDuty。"},
-        {"id": "C", "text": "暗号化キー管理", "is_correct": false, "explanation": "KMS の領域。"},
-        {"id": "D", "text": "セキュリティパッチ適用", "is_correct": false, "explanation": "Patch Manager の領域。"}
+        {
+          "id": "A",
+          "text": "暗号化キー管理",
+          "is_correct": false,
+          "explanation": "KMS の領域。"
+        },
+        {
+          "id": "B",
+          "text": "脅威検出のみ",
+          "is_correct": false,
+          "explanation": "脅威検出は GuardDuty。"
+        },
+        {
+          "id": "C",
+          "text": "GuardDuty / Inspector / Macie / Config / IAM Access Analyzer 等の findings を ASFF 形式で集約し、CIS / PCI DSS / AWS FSBP 等のセキュリティ標準で評価する",
+          "is_correct": true,
+          "explanation": "正解。Security Hub は集約とベースライン評価の両方を提供。"
+        },
+        {
+          "id": "D",
+          "text": "セキュリティパッチ適用",
+          "is_correct": false,
+          "explanation": "Patch Manager の領域。"
+        }
       ],
       "explanation": "Security Hub は (1) 多サービス findings の AWS Security Finding Format (ASFF) 集約、(2) CIS AWS Benchmarks、PCI DSS、AWS Foundational Security Best Practices 等のセキュリティ標準評価、(3) Organizations 連携の組織横断ビュー、(4) 自動化（EventBridge）。",
-      "references": [{"title": "AWS Security Hub", "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"}],
-      "tags": ["security-hub", "asff", "compliance-standards", "aggregation"],
-      "common_mistakes": ["Security Hub が GuardDuty を置き換えると誤解", "ASFF の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Security Hub",
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+        }
+      ],
+      "tags": [
+        "security-hub",
+        "asff",
+        "compliance-standards",
+        "aggregation"
+      ],
+      "common_mistakes": [
+        "Security Hub が GuardDuty を置き換えると誤解",
+        "ASFF の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-008",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "IAM",
       "subtopic": "OIDC for GitHub Actions",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "GitHub Actions から AWS にデプロイするのに、長期 Access Key を使わずに認証したい。最も推奨される方式は？",
       "options": [
-        {"id": "A", "text": "GitHub OIDC Provider を IAM に登録し、Repository / Branch を Condition にした IAM Role を AssumeRoleWithWebIdentity させる", "is_correct": true, "explanation": "正解。短命の STS トークンを Workflow 単位で取得でき、長期キー漏洩リスクを排除。"},
-        {"id": "B", "text": "IAM User の Access Key を GitHub Secrets に保存", "is_correct": false, "explanation": "長期キー方式は漏洩リスク高、廃止候補。"},
-        {"id": "C", "text": "Public IAM Role に AssumeRole なしで権限付与", "is_correct": false, "explanation": "Trust Policy 不在で機能しない／巨大な脆弱性。"},
-        {"id": "D", "text": "Cognito 経由で GitHub を連携", "is_correct": false, "explanation": "Cognito はエンドユーザ認証で、CI/CD 認証には不適切。"}
+        {
+          "id": "A",
+          "text": "Public IAM Role に AssumeRole なしで権限付与",
+          "is_correct": false,
+          "explanation": "Trust Policy 不在で機能しない／巨大な脆弱性。"
+        },
+        {
+          "id": "B",
+          "text": "IAM User の Access Key を GitHub Secrets に保存",
+          "is_correct": false,
+          "explanation": "長期キー方式は漏洩リスク高、廃止候補。"
+        },
+        {
+          "id": "C",
+          "text": "Cognito 経由で GitHub を連携",
+          "is_correct": false,
+          "explanation": "Cognito はエンドユーザ認証で、CI/CD 認証には不適切。"
+        },
+        {
+          "id": "D",
+          "text": "GitHub OIDC Provider を IAM に登録し、Repository / Branch を Condition にした IAM Role を AssumeRoleWithWebIdentity させる",
+          "is_correct": true,
+          "explanation": "正解。短命の STS トークンを Workflow 単位で取得でき、長期キー漏洩リスクを排除。"
+        }
       ],
       "explanation": "GitHub Actions OIDC: GitHub OIDC Provider を IAM に作成し、Trust Policy で `repo:org/repo:ref:refs/heads/main` 等の Subject Claim 制約を入れる。Workflow 内で aws-actions/configure-aws-credentials が一時クレデンシャルを取得。ベストプラクティス。",
-      "references": [{"title": "Configuring OpenID Connect in Amazon Web Services", "url": "https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services"}],
-      "tags": ["iam", "oidc", "github-actions", "ci-cd-security"],
-      "common_mistakes": ["長期 Access Key を Secrets に置く", "Trust Policy の Condition を緩めすぎる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Configuring OpenID Connect in Amazon Web Services",
+          "url": "https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services"
+        }
+      ],
+      "tags": [
+        "iam",
+        "oidc",
+        "github-actions",
+        "ci-cd-security"
+      ],
+      "common_mistakes": [
+        "長期 Access Key を Secrets に置く",
+        "Trust Policy の Condition を緩めすぎる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-009",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "CodeBuild",
       "subtopic": "Secrets in build",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "CodeBuild の Buildspec から Secrets Manager のシークレットを安全に参照したい。最も推奨される方法は？",
       "options": [
-        {"id": "A", "text": "buildspec の `env.secrets-manager` で参照、または環境変数の type を `SECRETS_MANAGER` にし、IAM Role に最小 secretsmanager:GetSecretValue を付与", "is_correct": true, "explanation": "正解。CodeBuild のネイティブ統合で、シークレットはビルドログに表示されない（マスクされる）。"},
-        {"id": "B", "text": "buildspec の plain env に直書き", "is_correct": false, "explanation": "ログ漏洩のリスク。"},
-        {"id": "C", "text": "S3 の暗号化テキストファイルから sed で抜き出す", "is_correct": false, "explanation": "再発明で、ログマスキングの保証もない。"},
-        {"id": "D", "text": "ローカル CodeBuild で実行して Secrets を不要にする", "is_correct": false, "explanation": "本質的解決でない。"}
+        {
+          "id": "A",
+          "text": "buildspec の `env.secrets-manager` で参照、または環境変数の type を `SECRETS_MANAGER` にし、IAM Role に最小 secretsmanager:GetSecretValue を付与",
+          "is_correct": true,
+          "explanation": "正解。CodeBuild のネイティブ統合で、シークレットはビルドログに表示されない（マスクされる）。"
+        },
+        {
+          "id": "B",
+          "text": "buildspec の plain env に直書き",
+          "is_correct": false,
+          "explanation": "ログ漏洩のリスク。"
+        },
+        {
+          "id": "C",
+          "text": "S3 の暗号化テキストファイルから sed で抜き出す",
+          "is_correct": false,
+          "explanation": "再発明で、ログマスキングの保証もない。"
+        },
+        {
+          "id": "D",
+          "text": "ローカル CodeBuild で実行して Secrets を不要にする",
+          "is_correct": false,
+          "explanation": "本質的解決でない。"
+        }
       ],
       "explanation": "CodeBuild は (1) buildspec.yml の `env.secrets-manager` ブロック、(2) Project の Environment Variables `type: SECRETS_MANAGER` の二方法でシークレット参照可能。値はビルドログに自動マスクされる。Parameter Store も同様にサポート。",
-      "references": [{"title": "Build environment compute types", "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html"}],
-      "tags": ["codebuild", "secrets-manager", "buildspec", "ci-cd-security"],
-      "common_mistakes": ["plain env 変数にシークレットを直書き", "ログマスキングを意識しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Build environment compute types",
+          "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html"
+        }
+      ],
+      "tags": [
+        "codebuild",
+        "secrets-manager",
+        "buildspec",
+        "ci-cd-security"
+      ],
+      "common_mistakes": [
+        "plain env 変数にシークレットを直書き",
+        "ログマスキングを意識しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-010",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "IAM",
       "subtopic": "Permission boundaries",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある SaaS の DevOps チームが「開発者が自由に IAM Role を作成できるが、その作成 Role の権限は最大でも所定範囲に制限したい」と求めている。最適な仕組みは？",
       "options": [
-        {"id": "A", "text": "Permission Boundary を IAM Policy として定義し、Role 作成 IAM Policy で `iam:PermissionsBoundary` 条件を強制する", "is_correct": true, "explanation": "正解。Permission Boundary は権限の上限を定義する仕組みで、委譲シナリオに必須。"},
-        {"id": "B", "text": "SCP で全 IAM 操作を禁止", "is_correct": false, "explanation": "委譲できなくなる。"},
-        {"id": "C", "text": "IAM Role を全部一元管理者が作成", "is_correct": false, "explanation": "ボトルネックで、開発スピードを損ねる。"},
-        {"id": "D", "text": "MFA で防御", "is_correct": false, "explanation": "MFA は認証で、権限の上限制御ではない。"}
+        {
+          "id": "A",
+          "text": "MFA で防御",
+          "is_correct": false,
+          "explanation": "MFA は認証で、権限の上限制御ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Permission Boundary を IAM Policy として定義し、Role 作成 IAM Policy で `iam:PermissionsBoundary` 条件を強制する",
+          "is_correct": true,
+          "explanation": "正解。Permission Boundary は権限の上限を定義する仕組みで、委譲シナリオに必須。"
+        },
+        {
+          "id": "C",
+          "text": "IAM Role を全部一元管理者が作成",
+          "is_correct": false,
+          "explanation": "ボトルネックで、開発スピードを損ねる。"
+        },
+        {
+          "id": "D",
+          "text": "SCP で全 IAM 操作を禁止",
+          "is_correct": false,
+          "explanation": "委譲できなくなる。"
+        }
       ],
       "explanation": "Permission Boundary は IAM Entity（User/Role）の最大権限の上限を定義する。実効権限は Identity Policy ∩ Permission Boundary。委譲（Role 作成権限を一般開発者に渡す）シナリオで、作成 Role の権限を制限するのに必須。Boundary 自体の付け替えを防ぐ Condition も忘れずに。",
-      "references": [{"title": "Permissions boundaries for IAM entities", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html"}],
-      "tags": ["iam", "permission-boundary", "delegation", "least-privilege"],
-      "common_mistakes": ["Permission Boundary と Identity Policy の関係を理解しない", "SCP で代替できると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Permissions boundaries for IAM entities",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "permission-boundary",
+        "delegation",
+        "least-privilege"
+      ],
+      "common_mistakes": [
+        "Permission Boundary と Identity Policy の関係を理解しない",
+        "SCP で代替できると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-011",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "CodePipeline",
       "subtopic": "Cross-account deploy",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Tools アカウントの CodePipeline から Prod アカウントの CloudFormation スタックを更新したい。最も適切な IAM 構成は？",
       "options": [
-        {"id": "A", "text": "Prod 側で Pipeline 用 IAM Role を作成、Tools の Pipeline Service Role に AssumeRole を許可、Pipeline の Action で Role ARN を指定", "is_correct": true, "explanation": "正解。Cross-account デプロイの定石。KMS Key の共有、S3 Artifact Bucket Policy も必要。"},
-        {"id": "B", "text": "Prod アカウントの Root Access Key を Tools の環境変数に書く", "is_correct": false, "explanation": "致命的なアンチパターン。"},
-        {"id": "C", "text": "Tools 側で Prod のリソースを直接操作", "is_correct": false, "explanation": "Tools が Prod のリソースを直接持てない。"},
-        {"id": "D", "text": "CodePipeline は cross-account デプロイ不可", "is_correct": false, "explanation": "可能。"}
+        {
+          "id": "A",
+          "text": "Tools 側で Prod のリソースを直接操作",
+          "is_correct": false,
+          "explanation": "Tools が Prod のリソースを直接持てない。"
+        },
+        {
+          "id": "B",
+          "text": "Prod アカウントの Root Access Key を Tools の環境変数に書く",
+          "is_correct": false,
+          "explanation": "致命的なアンチパターン。"
+        },
+        {
+          "id": "C",
+          "text": "Prod 側で Pipeline 用 IAM Role を作成、Tools の Pipeline Service Role に AssumeRole を許可、Pipeline の Action で Role ARN を指定",
+          "is_correct": true,
+          "explanation": "正解。Cross-account デプロイの定石。KMS Key の共有、S3 Artifact Bucket Policy も必要。"
+        },
+        {
+          "id": "D",
+          "text": "CodePipeline は cross-account デプロイ不可",
+          "is_correct": false,
+          "explanation": "可能。"
+        }
       ],
       "explanation": "Cross-account CodePipeline: (1) Prod 側に Cross-account IAM Role（CFN/Lambda/etc 操作）、(2) Tools の Pipeline Service Role に sts:AssumeRole を Allow、(3) Tools の Artifact S3 Bucket Policy で Prod の Role を Allow、(4) Tools の KMS Key Policy で Prod の Role に Decrypt 許可。これらすべて揃って動作する。",
-      "references": [{"title": "Create a pipeline in AWS CodePipeline that uses resources from another AWS account", "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create-cross-account.html"}],
-      "tags": ["codepipeline", "cross-account", "iam-role", "cfn-stack"],
-      "common_mistakes": ["KMS Key Policy / S3 Bucket Policy を忘れる", "Root 認証情報を使う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Create a pipeline in AWS CodePipeline that uses resources from another AWS account",
+          "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create-cross-account.html"
+        }
+      ],
+      "tags": [
+        "codepipeline",
+        "cross-account",
+        "iam-role",
+        "cfn-stack"
+      ],
+      "common_mistakes": [
+        "KMS Key Policy / S3 Bucket Policy を忘れる",
+        "Root 認証情報を使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-012",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Inspector",
       "subtopic": "EC2 / ECR / Lambda scanning",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Amazon Inspector v2 が継続的にスキャンする対象として正しいのは？",
       "options": [
-        {"id": "A", "text": "EC2、ECR コンテナイメージ、Lambda 関数（コードと依存）", "is_correct": true, "explanation": "正解。これら 3 種類が現行 Inspector v2 の対象。"},
-        {"id": "B", "text": "S3 オブジェクトのみ", "is_correct": false, "explanation": "S3 のデータスキャンは Macie の領域。"},
-        {"id": "C", "text": "RDS インスタンスのみ", "is_correct": false, "explanation": "Inspector の対象ではない。"},
-        {"id": "D", "text": "VPC ネットワーク経路のみ", "is_correct": false, "explanation": "それは Reachability Analyzer / Network Access Analyzer。"}
+        {
+          "id": "A",
+          "text": "S3 オブジェクトのみ",
+          "is_correct": false,
+          "explanation": "S3 のデータスキャンは Macie の領域。"
+        },
+        {
+          "id": "B",
+          "text": "VPC ネットワーク経路のみ",
+          "is_correct": false,
+          "explanation": "それは Reachability Analyzer / Network Access Analyzer。"
+        },
+        {
+          "id": "C",
+          "text": "RDS インスタンスのみ",
+          "is_correct": false,
+          "explanation": "Inspector の対象ではない。"
+        },
+        {
+          "id": "D",
+          "text": "EC2、ECR コンテナイメージ、Lambda 関数（コードと依存）",
+          "is_correct": true,
+          "explanation": "正解。これら 3 種類が現行 Inspector v2 の対象。"
+        }
       ],
       "explanation": "Inspector v2 の対象: (1) EC2（OS パッケージ脆弱性、SSM Agent 経由）、(2) ECR コンテナイメージ（OS + 言語ライブラリ依存）、(3) Lambda 関数（コードと layer の言語ライブラリ依存）。Organizations 連携で組織全体の継続スキャンが可能。",
-      "references": [{"title": "Amazon Inspector", "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"}],
-      "tags": ["inspector", "vulnerability-scan", "ec2", "ecr", "lambda"],
-      "common_mistakes": ["Inspector v1 / v2 の違いを意識しない", "S3 / RDS が対象と思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Amazon Inspector",
+          "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"
+        }
+      ],
+      "tags": [
+        "inspector",
+        "vulnerability-scan",
+        "ec2",
+        "ecr",
+        "lambda"
+      ],
+      "common_mistakes": [
+        "Inspector v1 / v2 の違いを意識しない",
+        "S3 / RDS が対象と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-013",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Compliance as Code",
       "subtopic": "Custom Config Rule with Lambda",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "「全ての RDS は KMS 暗号化されており、かつ SnapshotRetentionPeriod が 7 日以上である」という独自要件を Config で評価したい。最小実装は？",
       "options": [
-        {"id": "A", "text": "Custom Config Rule を Lambda（または Custom Policy / Guard）で実装、評価範囲を AWS::RDS::DBInstance に限定", "is_correct": true, "explanation": "正解。標準ルールでカバーされない複合条件は Custom Rule で実装。Guard / Lambda の双方が選択肢。"},
-        {"id": "B", "text": "Trusted Advisor で代替", "is_correct": false, "explanation": "Trusted Advisor は固定ベースラインで、独自要件は表現できない。"},
-        {"id": "C", "text": "AWS Config では実現不可", "is_correct": false, "explanation": "Custom Rule で実現可能。"},
-        {"id": "D", "text": "GuardDuty で評価", "is_correct": false, "explanation": "GuardDuty は脅威検出。"}
+        {
+          "id": "A",
+          "text": "Custom Config Rule を Lambda（または Custom Policy / Guard）で実装、評価範囲を AWS::RDS::DBInstance に限定",
+          "is_correct": true,
+          "explanation": "正解。標準ルールでカバーされない複合条件は Custom Rule で実装。Guard / Lambda の双方が選択肢。"
+        },
+        {
+          "id": "B",
+          "text": "GuardDuty で評価",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検出。"
+        },
+        {
+          "id": "C",
+          "text": "Trusted Advisor で代替",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は固定ベースラインで、独自要件は表現できない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config では実現不可",
+          "is_correct": false,
+          "explanation": "Custom Rule で実現可能。"
+        }
       ],
       "explanation": "Custom Config Rule（Lambda or Custom Policy / Guard）は AWS Config が対象リソースの設定変更を検知して評価ロジックを呼び出す。複合条件（暗号化 AND 保持期間）も自由に実装できる。Conformance Pack に組み込めば組織展開も可能。",
-      "references": [{"title": "AWS Config Custom Rules", "url": "https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html"}],
-      "tags": ["aws-config", "custom-rule", "compliance-as-code", "rds"],
-      "common_mistakes": ["Trusted Advisor で代替できると誤解", "Conformance Pack の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Config Custom Rules",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html"
+        }
+      ],
+      "tags": [
+        "aws-config",
+        "custom-rule",
+        "compliance-as-code",
+        "rds"
+      ],
+      "common_mistakes": [
+        "Trusted Advisor で代替できると誤解",
+        "Conformance Pack の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-014",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "KMS",
       "subtopic": "Multi-Region keys",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "あるグローバル SaaS が DynamoDB Global Tables / S3 Cross-Region Replication で複製したオブジェクトを、各リージョンのアプリから低レイテンシで暗号化／復号したい。最適な KMS 構成は？",
       "options": [
-        {"id": "A", "text": "Multi-Region Key（同じ Key Material をリージョン間で共有）を使う", "is_correct": true, "explanation": "正解。MRK は同一の鍵 ID とマテリアルをリージョン横断で持つ特殊 KMS Key で、各リージョンのアプリがローカル KMS で暗号化／復号できる。"},
-        {"id": "B", "text": "リージョンごとに別 KMS Key を作り、Lambda で再暗号化", "is_correct": false, "explanation": "Re-encryption コストとレイテンシ／鍵管理の複雑度が高い。"},
-        {"id": "C", "text": "AWS Managed Key を使う", "is_correct": false, "explanation": "AWS Managed Key は他リージョンに複製されない。"},
-        {"id": "D", "text": "KMS は使わず Envelope Encryption 自作", "is_correct": false, "explanation": "再発明。"}
+        {
+          "id": "A",
+          "text": "AWS Managed Key を使う",
+          "is_correct": false,
+          "explanation": "AWS Managed Key は他リージョンに複製されない。"
+        },
+        {
+          "id": "B",
+          "text": "Multi-Region Key（同じ Key Material をリージョン間で共有）を使う",
+          "is_correct": true,
+          "explanation": "正解。MRK は同一の鍵 ID とマテリアルをリージョン横断で持つ特殊 KMS Key で、各リージョンのアプリがローカル KMS で暗号化／復号できる。"
+        },
+        {
+          "id": "C",
+          "text": "リージョンごとに別 KMS Key を作り、Lambda で再暗号化",
+          "is_correct": false,
+          "explanation": "Re-encryption コストとレイテンシ／鍵管理の複雑度が高い。"
+        },
+        {
+          "id": "D",
+          "text": "KMS は使わず Envelope Encryption 自作",
+          "is_correct": false,
+          "explanation": "再発明。"
+        }
       ],
       "explanation": "Multi-Region Key (MRK) は同じ Key ID と Key Material をリージョン間で複製する KMS の機能。クロスリージョンレプリケーション（DDB Global Tables、S3 Replication 等）で各リージョンが「自リージョンの KMS で復号」できる利点が大きい。鍵ローテーションも同期される。",
-      "references": [{"title": "Multi-Region keys in AWS KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html"}],
-      "tags": ["kms", "multi-region-key", "global-tables", "cross-region-replication"],
-      "common_mistakes": ["AWS Managed Key で MRK 動作と思う", "Lambda で再暗号化する案を選ぶ"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Multi-Region keys in AWS KMS",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "multi-region-key",
+        "global-tables",
+        "cross-region-replication"
+      ],
+      "common_mistakes": [
+        "AWS Managed Key で MRK 動作と思う",
+        "Lambda で再暗号化する案を選ぶ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-015",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Security Hub",
       "subtopic": "CI/CD integration",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "CodePipeline の品質ゲートとして、ビルドアーティファクトの ECR イメージに Critical 脆弱性が無いことを保証したい。Security Hub と Inspector を活用した推奨構成は？",
       "options": [
-        {"id": "A", "text": "ECR Enhanced Scanning（Inspector 統合）で検査、findings を Security Hub に集約、Pipeline の Lambda Action で Severity≥Critical の有無を判定し成功／失敗を返す", "is_correct": true, "explanation": "正解。継続スキャン結果を Security Hub から Pipeline ステージで参照する標準パターン。"},
-        {"id": "B", "text": "Pipeline 内で `docker scan` を毎回実行", "is_correct": false, "explanation": "再発明で、ECR Enhanced のメリット（継続スキャン）を活かさない。"},
-        {"id": "C", "text": "Inspector で対象外なので不可能", "is_correct": false, "explanation": "ECR は Inspector v2 の対象。"},
-        {"id": "D", "text": "Pipeline の前段で人間レビュー", "is_correct": false, "explanation": "自動化の趣旨と逆行。"}
+        {
+          "id": "A",
+          "text": "Inspector で対象外なので不可能",
+          "is_correct": false,
+          "explanation": "ECR は Inspector v2 の対象。"
+        },
+        {
+          "id": "B",
+          "text": "Pipeline の前段で人間レビュー",
+          "is_correct": false,
+          "explanation": "自動化の趣旨と逆行。"
+        },
+        {
+          "id": "C",
+          "text": "ECR Enhanced Scanning（Inspector 統合）で検査、findings を Security Hub に集約、Pipeline の Lambda Action で Severity≥Critical の有無を判定し成功／失敗を返す",
+          "is_correct": true,
+          "explanation": "正解。継続スキャン結果を Security Hub から Pipeline ステージで参照する標準パターン。"
+        },
+        {
+          "id": "D",
+          "text": "Pipeline 内で `docker scan` を毎回実行",
+          "is_correct": false,
+          "explanation": "再発明で、ECR Enhanced のメリット（継続スキャン）を活かさない。"
+        }
       ],
       "explanation": "ECR Enhanced Scanning（Inspector v2）は push 時 + 継続的に findings を生成、Security Hub に転送される。Pipeline の Lambda Action や Manual Approval を Lambda で代替して、Security Hub から該当イメージの findings を Severity 別に集計、しきい値超なら失敗を返す実装が標準。",
-      "references": [{"title": "Image scanning with Amazon Inspector", "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning-enhanced.html"}],
-      "tags": ["security-hub", "inspector", "ecr", "ci-cd", "quality-gate"],
-      "common_mistakes": ["docker scan で済ませる", "継続スキャン結果を活用せず push 時のみで判定"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Image scanning with Amazon Inspector",
+          "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning-enhanced.html"
+        }
+      ],
+      "tags": [
+        "security-hub",
+        "inspector",
+        "ecr",
+        "ci-cd",
+        "quality-gate"
+      ],
+      "common_mistakes": [
+        "docker scan で済ませる",
+        "継続スキャン結果を活用せず push 時のみで判定"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-016",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "IAM",
       "subtopic": "Role chaining",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "IAM Role Chaining について最も正しい記述はどれか？",
       "options": [
-        {"id": "A", "text": "ある Role を AssumeRole で引き受けた一時クレデンシャルでさらに別 Role を AssumeRole すること。デフォルトのセッション有効期間は最大 1 時間に短縮される", "is_correct": true, "explanation": "正解。Role chaining ではセッション最大長は 1 時間に制限される（明示的に MaxSessionDuration を指定しても）。"},
-        {"id": "B", "text": "Role chaining は AWS では禁止されている", "is_correct": false, "explanation": "禁止ではないが制約がある。"},
-        {"id": "C", "text": "Role chaining でセッション期間が伸びる", "is_correct": false, "explanation": "むしろ制限される。"},
-        {"id": "D", "text": "Cross-account では Role chaining 不可", "is_correct": false, "explanation": "Cross-account でも可能。"}
+        {
+          "id": "A",
+          "text": "Cross-account では Role chaining 不可",
+          "is_correct": false,
+          "explanation": "Cross-account でも可能。"
+        },
+        {
+          "id": "B",
+          "text": "Role chaining でセッション期間が伸びる",
+          "is_correct": false,
+          "explanation": "むしろ制限される。"
+        },
+        {
+          "id": "C",
+          "text": "Role chaining は AWS では禁止されている",
+          "is_correct": false,
+          "explanation": "禁止ではないが制約がある。"
+        },
+        {
+          "id": "D",
+          "text": "ある Role を AssumeRole で引き受けた一時クレデンシャルでさらに別 Role を AssumeRole すること。デフォルトのセッション有効期間は最大 1 時間に短縮される",
+          "is_correct": true,
+          "explanation": "正解。Role chaining ではセッション最大長は 1 時間に制限される（明示的に MaxSessionDuration を指定しても）。"
+        }
       ],
       "explanation": "Role Chaining: 既に AssumeRole で取得した一時クレデンシャルから、さらに別の Role を AssumeRole すること。セッション最大長は 1 時間（チェーン中）に制限される。よく見る痕: cross-account で複数アカウントを経由する CI/CD、エンドユーザ → SSO → サービス Role など。長時間処理では再 AssumeRole を仕掛ける必要あり。",
-      "references": [{"title": "IAM role session duration", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use-role-chaining"}],
-      "tags": ["iam", "role-chaining", "session-duration", "sts"],
-      "common_mistakes": ["Role chaining でも MaxSessionDuration が効くと誤解", "1 時間制限を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IAM role session duration",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use-role-chaining"
+        }
+      ],
+      "tags": [
+        "iam",
+        "role-chaining",
+        "session-duration",
+        "sts"
+      ],
+      "common_mistakes": [
+        "Role chaining でも MaxSessionDuration が効くと誤解",
+        "1 時間制限を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-017",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "KMS",
       "subtopic": "Grants vs Key policy",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "KMS Grant と Key Policy の違いとして最も正しい記述は？",
       "options": [
-        {"id": "A", "text": "Key Policy は鍵の主要なアクセス制御単位（IAM や grant の前提）、Grant は短期間・特定オペレーションへの委任で AWS サービスが内部で使うことが多く、API でのプログラム的付与が容易", "is_correct": true, "explanation": "正解。両者は補完関係で、Grant はサービス連携で多用される。"},
-        {"id": "B", "text": "Grant と Key Policy は同じもの", "is_correct": false, "explanation": "別概念。"},
-        {"id": "C", "text": "Grant は Key Policy に勝つ", "is_correct": false, "explanation": "Key Policy が大本の権限制御で、Grant も Key Policy と整合的に動作。"},
-        {"id": "D", "text": "Grant は廃止された", "is_correct": false, "explanation": "現役の機能。"}
+        {
+          "id": "A",
+          "text": "Key Policy は鍵の主要なアクセス制御単位（IAM や grant の前提）、Grant は短期間・特定オペレーションへの委任で AWS サービスが内部で使うことが多く、API でのプログラム的付与が容易",
+          "is_correct": true,
+          "explanation": "正解。両者は補完関係で、Grant はサービス連携で多用される。"
+        },
+        {
+          "id": "B",
+          "text": "Grant は Key Policy に勝つ",
+          "is_correct": false,
+          "explanation": "Key Policy が大本の権限制御で、Grant も Key Policy と整合的に動作。"
+        },
+        {
+          "id": "C",
+          "text": "Grant と Key Policy は同じもの",
+          "is_correct": false,
+          "explanation": "別概念。"
+        },
+        {
+          "id": "D",
+          "text": "Grant は廃止された",
+          "is_correct": false,
+          "explanation": "現役の機能。"
+        }
       ],
       "explanation": "KMS の権限制御階層: (1) Key Policy（必須、鍵の所有を表現）、(2) IAM Policy（Key Policy が許可した範囲で IAM 主体に細かく付与）、(3) Grant（特定オペレーション・有限の Grantee に Key Policy 経由で動的付与、API で操作）、(4) VPC Endpoint Policy。Grant は短期・サービス間連携でよく使われる。",
-      "references": [{"title": "Grants in AWS KMS", "url": "https://docs.aws.amazon.com/kms/latest/developerguide/grants.html"}],
-      "tags": ["kms", "grants", "key-policy", "iam"],
-      "common_mistakes": ["Grant と Key Policy を混同", "Grant が Key Policy をバイパスすると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Grants in AWS KMS",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/grants.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "grants",
+        "key-policy",
+        "iam"
+      ],
+      "common_mistakes": [
+        "Grant と Key Policy を混同",
+        "Grant が Key Policy をバイパスすると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-018",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "IAM Access Analyzer",
       "subtopic": "Findings types",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "IAM Access Analyzer が検出する典型的な findings の種類として正しいのは？",
       "options": [
-        {"id": "A", "text": "External Access（外部 Principal にリソースを開示）、Unused Access（過剰権限・未使用 Role / Permission）、Custom Policy Check（CI/CD でのポリシー検証）、Validate Policy（構文検証）", "is_correct": true, "explanation": "正解。Access Analyzer は External / Unused の二大解析と、ポリシー検証機能を提供。"},
-        {"id": "B", "text": "脅威検出のみ", "is_correct": false, "explanation": "それは GuardDuty。"},
-        {"id": "C", "text": "S3 のデータ内 PII のみ", "is_correct": false, "explanation": "それは Macie。"},
-        {"id": "D", "text": "EC2 OS パッチのみ", "is_correct": false, "explanation": "Patch Manager / Inspector の領域。"}
+        {
+          "id": "A",
+          "text": "S3 のデータ内 PII のみ",
+          "is_correct": false,
+          "explanation": "それは Macie。"
+        },
+        {
+          "id": "B",
+          "text": "External Access（外部 Principal にリソースを開示）、Unused Access（過剰権限・未使用 Role / Permission）、Custom Policy Check（CI/CD でのポリシー検証）、Validate Policy（構文検証）",
+          "is_correct": true,
+          "explanation": "正解。Access Analyzer は External / Unused の二大解析と、ポリシー検証機能を提供。"
+        },
+        {
+          "id": "C",
+          "text": "脅威検出のみ",
+          "is_correct": false,
+          "explanation": "それは GuardDuty。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 OS パッチのみ",
+          "is_correct": false,
+          "explanation": "Patch Manager / Inspector の領域。"
+        }
       ],
       "explanation": "IAM Access Analyzer: (1) External Access Analyzer = リソースが外部にアクセス可能かを意味論的に解析、(2) Unused Access Analyzer = 過剰権限・未使用 Role を可視化、(3) Custom Policy Check = CI/CD でポリシー変更が許容範囲を逸脱しないか検証、(4) Policy Validation = 構文・ベストプラクティス検証、(5) Policy Generation = CloudTrail から Policy 自動生成。",
-      "references": [{"title": "IAM Access Analyzer", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"}],
-      "tags": ["access-analyzer", "iam", "external-access", "unused-access"],
-      "common_mistakes": ["Access Analyzer を GuardDuty / Macie と混同", "Unused Access の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "IAM Access Analyzer",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+        }
+      ],
+      "tags": [
+        "access-analyzer",
+        "iam",
+        "external-access",
+        "unused-access"
+      ],
+      "common_mistakes": [
+        "Access Analyzer を GuardDuty / Macie と混同",
+        "Unused Access の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-019",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "CodePipeline",
       "subtopic": "Manual approval and policy gates",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Production デプロイ前に「IAM Access Analyzer の Custom Policy Check で新規 Role が許容権限を超えていないか」を CI/CD でブロッキング検証したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "Pipeline の Stage に CodeBuild または Lambda Action を追加し、`access-analyzer:CheckNoNewAccess` / `CheckAccessNotGranted` API を呼び出して結果でゲート", "is_correct": true, "explanation": "正解。Custom Policy Check は CI/CD のための API で、ポリシー差分や禁則の検証に使う。"},
-        {"id": "B", "text": "Pipeline の最後段で Access Analyzer を見るだけ", "is_correct": false, "explanation": "Production にデプロイ後の検出になり、ブロッキングにならない。"},
-        {"id": "C", "text": "IAM Access Analyzer は CI/CD で使えない", "is_correct": false, "explanation": "Custom Policy Check は CI/CD 用途で提供。"},
-        {"id": "D", "text": "Manual Approval だけで人間が確認", "is_correct": false, "explanation": "属人的で抜けやすい。"}
+        {
+          "id": "A",
+          "text": "Manual Approval だけで人間が確認",
+          "is_correct": false,
+          "explanation": "属人的で抜けやすい。"
+        },
+        {
+          "id": "B",
+          "text": "Pipeline の最後段で Access Analyzer を見るだけ",
+          "is_correct": false,
+          "explanation": "Production にデプロイ後の検出になり、ブロッキングにならない。"
+        },
+        {
+          "id": "C",
+          "text": "Pipeline の Stage に CodeBuild または Lambda Action を追加し、`access-analyzer:CheckNoNewAccess` / `CheckAccessNotGranted` API を呼び出して結果でゲート",
+          "is_correct": true,
+          "explanation": "正解。Custom Policy Check は CI/CD のための API で、ポリシー差分や禁則の検証に使う。"
+        },
+        {
+          "id": "D",
+          "text": "IAM Access Analyzer は CI/CD で使えない",
+          "is_correct": false,
+          "explanation": "Custom Policy Check は CI/CD 用途で提供。"
+        }
       ],
       "explanation": "IAM Access Analyzer の Custom Policy Check は CI/CD のために設計された API。`CheckNoNewAccess`（ポリシー変更が新たな権限を増やしていないか）、`CheckAccessNotGranted`（特定アクション／リソースへのアクセスを禁止）など。Pipeline Stage で CodeBuild が呼び出してゲート判定する構成が標準。",
-      "references": [{"title": "Custom policy checks", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-custom-policy-checks.html"}],
-      "tags": ["access-analyzer", "custom-policy-check", "ci-cd", "policy-gate"],
-      "common_mistakes": ["Custom Policy Check の存在を知らない", "Manual Approval で代替できると思う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Custom policy checks",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-custom-policy-checks.html"
+        }
+      ],
+      "tags": [
+        "access-analyzer",
+        "custom-policy-check",
+        "ci-cd",
+        "policy-gate"
+      ],
+      "common_mistakes": [
+        "Custom Policy Check の存在を知らない",
+        "Manual Approval で代替できると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-020",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Compliance as Code",
       "subtopic": "Conformance Pack design",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Conformance Pack を設計するときに「ガードレール（preventive）と検出（detective）の役割を整理せよ」と求められた。最も正しい整理は？",
       "options": [
-        {"id": "A", "text": "Preventive は SCP / IAM / CFN Hooks / Stack Policy で違反操作を阻止。Detective は AWS Config Rules / Conformance Pack / Security Hub で違反状態を検出・修復。両者を補完的に組み合わせる", "is_correct": true, "explanation": "正解。Preventive と Detective は別レイヤーで、両者の組み合わせが最強。"},
-        {"id": "B", "text": "Preventive だけで全部解決する", "is_correct": false, "explanation": "Preventive で全パターンを表現するのは現実的でない。"},
-        {"id": "C", "text": "Detective だけで全部解決する", "is_correct": false, "explanation": "違反が一旦は発生する。"},
-        {"id": "D", "text": "Conformance Pack に Preventive 機能はない", "is_correct": false, "explanation": "Conformance Pack 自体は Detective + Remediation だが、Preventive レイヤーは別仕組みと連携する想定。"}
+        {
+          "id": "A",
+          "text": "Preventive だけで全部解決する",
+          "is_correct": false,
+          "explanation": "Preventive で全パターンを表現するのは現実的でない。"
+        },
+        {
+          "id": "B",
+          "text": "Detective だけで全部解決する",
+          "is_correct": false,
+          "explanation": "違反が一旦は発生する。"
+        },
+        {
+          "id": "C",
+          "text": "Conformance Pack に Preventive 機能はない",
+          "is_correct": false,
+          "explanation": "Conformance Pack 自体は Detective + Remediation だが、Preventive レイヤーは別仕組みと連携する想定。"
+        },
+        {
+          "id": "D",
+          "text": "Preventive は SCP / IAM / CFN Hooks / Stack Policy で違反操作を阻止。Detective は AWS Config Rules / Conformance Pack / Security Hub で違反状態を検出・修復。両者を補完的に組み合わせる",
+          "is_correct": true,
+          "explanation": "正解。Preventive と Detective は別レイヤーで、両者の組み合わせが最強。"
+        }
       ],
       "explanation": "AWS のガバナンス構成は Preventive（SCP / IAM Boundary / CFN Hooks / Stack Policy / VPC Endpoint Policy）と Detective（Config / Security Hub / GuardDuty / IAM Access Analyzer）の二層構造。Conformance Pack は Detective + Auto-Remediation の枠組みで、Preventive 層と組み合わせて使う。L4 の構造理解問題。",
-      "references": [{"title": "AWS Config Conformance Packs", "url": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html"}],
-      "tags": ["compliance-as-code", "conformance-pack", "preventive", "detective", "guardrails"],
-      "common_mistakes": ["Preventive と Detective を区別せず混同", "Conformance Pack で Preventive まで担えると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Config Conformance Packs",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html"
+        }
+      ],
+      "tags": [
+        "compliance-as-code",
+        "conformance-pack",
+        "preventive",
+        "detective",
+        "guardrails"
+      ],
+      "common_mistakes": [
+        "Preventive と Detective を区別せず混同",
+        "Conformance Pack で Preventive まで担えると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-021",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Audit Manager",
       "subtopic": "Custom framework",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Audit Manager で「自社独自の内部統制（架空 SOC 風）」を実装したい。最も正しい手順は？",
       "options": [
-        {"id": "A", "text": "Custom Framework を作成し、各 Control に手動エビデンスや AWS データソース（Config Rule、CloudTrail event、Security Hub control 等）を関連付ける", "is_correct": true, "explanation": "正解。Custom Framework が独自統制を体系化する仕組み。"},
-        {"id": "B", "text": "Custom Framework は作れない", "is_correct": false, "explanation": "提供されている。"},
-        {"id": "C", "text": "Lambda で代替", "is_correct": false, "explanation": "Audit Manager の機能を再発明。"},
-        {"id": "D", "text": "Conformance Pack で代替", "is_correct": false, "explanation": "Conformance Pack はコンプライアンス評価のルール集で、エビデンス収集とレポートには Audit Manager のほうが適切。"}
+        {
+          "id": "A",
+          "text": "Custom Framework を作成し、各 Control に手動エビデンスや AWS データソース（Config Rule、CloudTrail event、Security Hub control 等）を関連付ける",
+          "is_correct": true,
+          "explanation": "正解。Custom Framework が独自統制を体系化する仕組み。"
+        },
+        {
+          "id": "B",
+          "text": "Conformance Pack で代替",
+          "is_correct": false,
+          "explanation": "Conformance Pack はコンプライアンス評価のルール集で、エビデンス収集とレポートには Audit Manager のほうが適切。"
+        },
+        {
+          "id": "C",
+          "text": "Custom Framework は作れない",
+          "is_correct": false,
+          "explanation": "提供されている。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で代替",
+          "is_correct": false,
+          "explanation": "Audit Manager の機能を再発明。"
+        }
       ],
       "explanation": "Audit Manager Custom Framework は組織独自の Control Set / Control をモデル化する。各 Control に「Evidence Source」を関連付けると、AWS Config 評価、CloudTrail イベント、Security Hub コントロール、手動アップロードなどから自動収集される。監査人提出の Assessment Report を生成可能。",
-      "references": [{"title": "Custom frameworks in AWS Audit Manager", "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/custom-frameworks.html"}],
-      "tags": ["audit-manager", "custom-framework", "evidence", "internal-control"],
-      "common_mistakes": ["Conformance Pack で全部できると誤解", "Custom Framework の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Custom frameworks in AWS Audit Manager",
+          "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/custom-frameworks.html"
+        }
+      ],
+      "tags": [
+        "audit-manager",
+        "custom-framework",
+        "evidence",
+        "internal-control"
+      ],
+      "common_mistakes": [
+        "Conformance Pack で全部できると誤解",
+        "Custom Framework の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-022",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Security in CI/CD",
       "subtopic": "SBOM and signing",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある架空 FinTech 企業 Tachi Bank が SBOM（Software Bill of Materials）と Signature をコンテナデプロイで強制したい。AWS のサポートする組み合わせとして最も適切なのは？",
       "options": [
-        {"id": "A", "text": "AWS Signer でコンテナイメージに署名、ECR で署名情報を保管。EKS / Kubernetes Admission Webhook（または Pod Security Standards / Sigstore）で署名検証して未署名のデプロイをブロック", "is_correct": true, "explanation": "正解。AWS Signer + Sigstore / Kyverno など Admission Controller の組み合わせが現実的。SBOM は Inspector または syft 等で生成。"},
-        {"id": "B", "text": "Lambda で全部書く", "is_correct": false, "explanation": "再発明で運用負担が高い。"},
-        {"id": "C", "text": "Kubernetes 自体に署名検証はない", "is_correct": false, "explanation": "Admission Webhook で検証可能。"},
-        {"id": "D", "text": "ECR のみで署名強制可能", "is_correct": false, "explanation": "ECR はリポジトリレベルの署名を保管・管理するが、デプロイ時のブロックは Admission レイヤーが必要。"}
+        {
+          "id": "A",
+          "text": "Lambda で全部書く",
+          "is_correct": false,
+          "explanation": "再発明で運用負担が高い。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Signer でコンテナイメージに署名、ECR で署名情報を保管。EKS / Kubernetes Admission Webhook（または Pod Security Standards / Sigstore）で署名検証して未署名のデプロイをブロック",
+          "is_correct": true,
+          "explanation": "正解。AWS Signer + Sigstore / Kyverno など Admission Controller の組み合わせが現実的。SBOM は Inspector または syft 等で生成。"
+        },
+        {
+          "id": "C",
+          "text": "Kubernetes 自体に署名検証はない",
+          "is_correct": false,
+          "explanation": "Admission Webhook で検証可能。"
+        },
+        {
+          "id": "D",
+          "text": "ECR のみで署名強制可能",
+          "is_correct": false,
+          "explanation": "ECR はリポジトリレベルの署名を保管・管理するが、デプロイ時のブロックは Admission レイヤーが必要。"
+        }
       ],
       "explanation": "Supply Chain Security: (1) AWS Signer / Notary v2 でイメージ署名、(2) ECR が署名情報を保持、(3) EKS / K8s では Admission Webhook（Kyverno、Gatekeeper、Connaisseur 等）で検証してブロック、(4) SBOM 生成は Inspector / syft、(5) GitHub Actions OIDC で keyless signing も可能。多層防御で本番投入を保証。",
-      "references": [{"title": "AWS Signer", "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html"}],
-      "tags": ["aws-signer", "sbom", "supply-chain", "container-security", "ecr"],
-      "common_mistakes": ["ECR だけで署名強制できると思う", "Admission Webhook の必要性を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Signer",
+          "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html"
+        }
+      ],
+      "tags": [
+        "aws-signer",
+        "sbom",
+        "supply-chain",
+        "container-security",
+        "ecr"
+      ],
+      "common_mistakes": [
+        "ECR だけで署名強制できると思う",
+        "Admission Webhook の必要性を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-023",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "IAM",
       "subtopic": "Least privilege via CloudTrail",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "「過剰権限を最小化したい」というセキュリティ要件に対し、最も実用的なアプローチの組み合わせは？",
       "options": [
-        {"id": "A", "text": "(1) IAM Access Analyzer Unused Access で未使用権限を特定、(2) Policy Generation で CloudTrail 履歴から最小ポリシー生成、(3) Custom Policy Check で CI/CD ガード、(4) Permission Boundary で上限設定", "is_correct": true, "explanation": "正解。これらは IAM 最小権限の運用化に必要な四要素。"},
-        {"id": "B", "text": "AdministratorAccess を全員に付与し、SCP で制限", "is_correct": false, "explanation": "最小権限の原則に反する。"},
-        {"id": "C", "text": "IAM User の Access Key を共有", "is_correct": false, "explanation": "セキュリティアンチパターン。"},
-        {"id": "D", "text": "全部 Console で目視レビュー", "is_correct": false, "explanation": "属人的でスケールしない。"}
+        {
+          "id": "A",
+          "text": "IAM User の Access Key を共有",
+          "is_correct": false,
+          "explanation": "セキュリティアンチパターン。"
+        },
+        {
+          "id": "B",
+          "text": "AdministratorAccess を全員に付与し、SCP で制限",
+          "is_correct": false,
+          "explanation": "最小権限の原則に反する。"
+        },
+        {
+          "id": "C",
+          "text": "(1) IAM Access Analyzer Unused Access で未使用権限を特定、(2) Policy Generation で CloudTrail 履歴から最小ポリシー生成、(3) Custom Policy Check で CI/CD ガード、(4) Permission Boundary で上限設定",
+          "is_correct": true,
+          "explanation": "正解。これらは IAM 最小権限の運用化に必要な四要素。"
+        },
+        {
+          "id": "D",
+          "text": "全部 Console で目視レビュー",
+          "is_correct": false,
+          "explanation": "属人的でスケールしない。"
+        }
       ],
       "explanation": "最小権限の運用化: (1) Unused Access で未使用 Role/Permission を可視化、(2) IAM Access Analyzer Policy Generation で CloudTrail 履歴から最小ポリシーを自動生成、(3) Custom Policy Check で CI/CD ゲート、(4) Permission Boundary で委譲時の上限制御。L5 の評価力を問う問題。",
       "references": [
-        {"title": "IAM Access Analyzer policy generation", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-generation.html"},
-        {"title": "Unused Access in IAM Access Analyzer", "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"}
+        {
+          "title": "IAM Access Analyzer policy generation",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-generation.html"
+        },
+        {
+          "title": "Unused Access in IAM Access Analyzer",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+        }
       ],
-      "tags": ["iam", "least-privilege", "access-analyzer", "policy-generation", "permission-boundary"],
-      "common_mistakes": ["AdministratorAccess を Everywhere に", "目視レビューで運用しようとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "iam",
+        "least-privilege",
+        "access-analyzer",
+        "policy-generation",
+        "permission-boundary"
+      ],
+      "common_mistakes": [
+        "AdministratorAccess を Everywhere に",
+        "目視レビューで運用しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-024",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Security tooling selection",
       "subtopic": "Scanning vs runtime vs compliance",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "「コンテナワークロードのセキュリティ」を強化したい。AWS の以下のサービスを組み合わせる際の役割整理として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "ECR Enhanced Scanning（イメージ脆弱性）、GuardDuty for EKS（実行時脅威）、Inspector v2（OS + 依存）、Security Hub（findings 集約）、IAM Roles for Service Accounts（IRSA、Pod 単位の最小権限）", "is_correct": true, "explanation": "正解。コンテナのセキュリティは多層構造で、各サービスが補完関係にある。"},
-        {"id": "B", "text": "全部 GuardDuty で完結", "is_correct": false, "explanation": "GuardDuty は実行時の脅威検出に特化し、脆弱性スキャンや権限管理は別サービス。"},
-        {"id": "C", "text": "Inspector だけ使う", "is_correct": false, "explanation": "実行時脅威検出が抜ける。"},
-        {"id": "D", "text": "AWS の責任なのでユーザは何もしない", "is_correct": false, "explanation": "責任共有モデルでユーザ責任の領域。"}
+        {
+          "id": "A",
+          "text": "全部 GuardDuty で完結",
+          "is_correct": false,
+          "explanation": "GuardDuty は実行時の脅威検出に特化し、脆弱性スキャンや権限管理は別サービス。"
+        },
+        {
+          "id": "B",
+          "text": "Inspector だけ使う",
+          "is_correct": false,
+          "explanation": "実行時脅威検出が抜ける。"
+        },
+        {
+          "id": "C",
+          "text": "AWS の責任なのでユーザは何もしない",
+          "is_correct": false,
+          "explanation": "責任共有モデルでユーザ責任の領域。"
+        },
+        {
+          "id": "D",
+          "text": "ECR Enhanced Scanning（イメージ脆弱性）、GuardDuty for EKS（実行時脅威）、Inspector v2（OS + 依存）、Security Hub（findings 集約）、IAM Roles for Service Accounts（IRSA、Pod 単位の最小権限）",
+          "is_correct": true,
+          "explanation": "正解。コンテナのセキュリティは多層構造で、各サービスが補完関係にある。"
+        }
       ],
       "explanation": "コンテナセキュリティの多層構造: (1) ビルド時 = ECR Enhanced Scanning + AWS Signer、(2) ランタイム = GuardDuty for EKS（K8s Audit Logs 解析）+ Runtime Monitoring（Falco-style）、(3) 設定 = AWS Config + Conformance Pack、(4) IAM = IRSA / Pod Identity、(5) 集約 = Security Hub。L5 の評価／設計力。",
-      "references": [{"title": "Amazon GuardDuty for EKS", "url": "https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html"}],
-      "tags": ["container-security", "ecr", "guardduty-eks", "inspector", "irsa", "security-hub"],
-      "common_mistakes": ["GuardDuty のみで万能と誤解", "IRSA の必要性を認識しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Amazon GuardDuty for EKS",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html"
+        }
+      ],
+      "tags": [
+        "container-security",
+        "ecr",
+        "guardduty-eks",
+        "inspector",
+        "irsa",
+        "security-hub"
+      ],
+      "common_mistakes": [
+        "GuardDuty のみで万能と誤解",
+        "IRSA の必要性を認識しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain6-025",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-6", "name": "Security and Compliance", "weight_percent": 17},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-6",
+        "name": "Security and Compliance",
+        "weight_percent": 17
+      },
       "topic": "Security and compliance design",
       "subtopic": "End-to-end DevSecOps",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "国内 FinTech 企業 Sakigake Capital（架空）の DevOps チームから「DevSecOps をゼロから設計してほしい。CI/CD・ランタイム・コンプライアンス・監査まで包括的に」と依頼された。最も実践的な設計は？",
       "options": [
-        {"id": "A", "text": "(1) IaC (CDK + cfn-guard / Hooks) でガードレール強制、(2) CI で SAST / SCA / Secret Scan / Inspector、(3) ECR Enhanced + AWS Signer、(4) GitHub OIDC で短命クレデンシャル、(5) Pipeline で Custom Policy Check、(6) ランタイムは GuardDuty / Inspector / Macie、(7) 統合は Security Hub、(8) 監査は Audit Manager + Conformance Pack、(9) 自動修復は SSM Automation + Incident Manager", "is_correct": true, "explanation": "正解。Shift-Left（左へ）と Defense-in-Depth（縦深防御）両方を満たす包括設計。L6 創造力。"},
-        {"id": "B", "text": "本番にデプロイしてから WAF を入れる", "is_correct": false, "explanation": "Shift-Left ができていない。"},
-        {"id": "C", "text": "全部 Manual Approval で人間レビュー", "is_correct": false, "explanation": "自動化と統制を欠く。"},
-        {"id": "D", "text": "Audit は年 1 回外部監査人に丸投げ", "is_correct": false, "explanation": "継続的監査が不在。"}
+        {
+          "id": "A",
+          "text": "(1) IaC (CDK + cfn-guard / Hooks) でガードレール強制、(2) CI で SAST / SCA / Secret Scan / Inspector、(3) ECR Enhanced + AWS Signer、(4) GitHub OIDC で短命クレデンシャル、(5) Pipeline で Custom Policy Check、(6) ランタイムは GuardDuty / Inspector / Macie、(7) 統合は Security Hub、(8) 監査は Audit Manager + Conformance Pack、(9) 自動修復は SSM Automation + Incident Manager",
+          "is_correct": true,
+          "explanation": "正解。Shift-Left（左へ）と Defense-in-Depth（縦深防御）両方を満たす包括設計。L6 創造力。"
+        },
+        {
+          "id": "B",
+          "text": "全部 Manual Approval で人間レビュー",
+          "is_correct": false,
+          "explanation": "自動化と統制を欠く。"
+        },
+        {
+          "id": "C",
+          "text": "Audit は年 1 回外部監査人に丸投げ",
+          "is_correct": false,
+          "explanation": "継続的監査が不在。"
+        },
+        {
+          "id": "D",
+          "text": "本番にデプロイしてから WAF を入れる",
+          "is_correct": false,
+          "explanation": "Shift-Left ができていない。"
+        }
       ],
       "explanation": "DevSecOps の包括設計は、(1) Shift-Left（CI 段階で静的解析・脆弱性・秘密検知）、(2) ガードレール（IaC + CFN Hooks + SCP）、(3) 認証（OIDC / IRSA）、(4) ランタイム検出（GuardDuty / Inspector / Macie）、(5) 集約（Security Hub）、(6) 監査エビデンス（Audit Manager + Conformance Pack）、(7) 自動修復（SSM / Incident Manager）。FinTech の規制（PCI DSS / 金商法 / FISC）対応の典型構成。L6 の設計力。",
       "references": [
-        {"title": "AWS Well-Architected Framework: Security Pillar", "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"}
+        {
+          "title": "AWS Well-Architected Framework: Security Pillar",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"
+        }
       ],
-      "tags": ["devsecops", "design", "shift-left", "defense-in-depth", "fintech", "compliance"],
-      "common_mistakes": ["Shift-Left ができておらず本番後対処になる", "Audit Manager や Custom Policy Check の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "devsecops",
+        "design",
+        "shift-left",
+        "defense-in-depth",
+        "fintech",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Shift-Left ができておらず本番後対処になる",
+        "Audit Manager や Custom Policy Check の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }

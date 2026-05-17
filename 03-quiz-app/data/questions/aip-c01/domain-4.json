@@ -15,752 +15,2286 @@
     {
       "id": "aip-c01-domain4-001",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Bedrock Agents",
       "subtopic": "Action Group の基本概念",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Amazon Bedrock Agents の Action Group について正しい説明はどれか？",
       "options": [
-        {"id": "A", "text": "Action Group は Knowledge Base に保存されたドキュメントの集合である", "is_correct": false, "explanation": "Knowledge Base はドキュメント検索用で、Action Group とは別の機能。Action Group は外部処理を呼ぶ仕組み。"},
-        {"id": "B", "text": "Action Group は Lambda 関数または OpenAPI スキーマで定義された、エージェントが呼び出せる外部処理の集合である", "is_correct": true, "explanation": "正解。Action Group はエージェントが LLM の判断に基づいて呼び出す『道具（tool）』を束ねた単位。Lambda か Return Of Control 経由でアプリ側に渡す方式が選べる。"},
-        {"id": "C", "text": "Action Group はエージェントの会話履歴を保存するセッションストアである", "is_correct": false, "explanation": "会話履歴は Agent Memory（または DynamoDB セッションストア）の役割で、Action Group とは異なる。"},
-        {"id": "D", "text": "Action Group はモデルへの入力プロンプトのテンプレート集である", "is_correct": false, "explanation": "プロンプトテンプレートは Advanced Prompts 機能で、Action Group ではない。"}
+        {
+          "id": "A",
+          "text": "Action Group は Lambda 関数または OpenAPI スキーマで定義された、エージェントが呼び出せる外部処理の集合である",
+          "is_correct": true,
+          "explanation": "正解。Action Group はエージェントが LLM の判断に基づいて呼び出す『道具（tool）』を束ねた単位。Lambda か Return Of Control 経由でアプリ側に渡す方式が選べる。"
+        },
+        {
+          "id": "B",
+          "text": "Action Group はモデルへの入力プロンプトのテンプレート集である",
+          "is_correct": false,
+          "explanation": "プロンプトテンプレートは Advanced Prompts 機能で、Action Group ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Action Group はエージェントの会話履歴を保存するセッションストアである",
+          "is_correct": false,
+          "explanation": "会話履歴は Agent Memory（または DynamoDB セッションストア）の役割で、Action Group とは異なる。"
+        },
+        {
+          "id": "D",
+          "text": "Action Group は Knowledge Base に保存されたドキュメントの集合である",
+          "is_correct": false,
+          "explanation": "Knowledge Base はドキュメント検索用で、Action Group とは別の機能。Action Group は外部処理を呼ぶ仕組み。"
+        }
       ],
       "explanation": "Bedrock Agents の Action Group は、エージェントが外部システムに対して実行する『関数（Function）』のグループ。各関数は Lambda で実装するか、OpenAPI スキーマで定義して Return of Control（RoC）でクライアントに処理を委ねる。LLM が Action Group の説明文を読んで、ユーザの依頼に対してどの関数を呼ぶか判断する。",
       "references": [
-        {"title": "Bedrock Agents - Action groups", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-action-create.html"}
+        {
+          "title": "Bedrock Agents - Action groups",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-action-create.html"
+        }
       ],
-      "tags": ["bedrock-agents", "action-group", "lambda", "function-calling"],
-      "common_mistakes": ["Action Group と Knowledge Base を混同する", "Action Group が会話履歴を持つと誤解する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "bedrock-agents",
+        "action-group",
+        "lambda",
+        "function-calling"
+      ],
+      "common_mistakes": [
+        "Action Group と Knowledge Base を混同する",
+        "Action Group が会話履歴を持つと誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-002",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "ReAct パターン",
       "subtopic": "ReAct の基本概念",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "ReAct（Reasoning + Acting）パターンの本質的な特徴はどれか？",
       "options": [
-        {"id": "A", "text": "推論（Thought）と行動（Action）を交互に繰り返し、観察（Observation）結果に基づき次の判断を行う", "is_correct": true, "explanation": "正解。ReAct は Yao et al. (2022) の論文で提唱されたパターン。Thought → Action → Observation のループで、外部ツールを使いながら段階的に問題を解く。"},
-        {"id": "B", "text": "複数のモデルを並列実行して結果を多数決で決める", "is_correct": false, "explanation": "これはアンサンブル/Self-Consistency の説明で ReAct ではない。"},
-        {"id": "C", "text": "ユーザの入力を再構成して RAG で関連文書を検索する", "is_correct": false, "explanation": "これは Query Rewriting/RAG の説明で ReAct ではない。"},
-        {"id": "D", "text": "Fine-tuning で事前にエージェントの行動を学習させる手法である", "is_correct": false, "explanation": "ReAct はプロンプティング手法で、Fine-tuning は不要。"}
+        {
+          "id": "A",
+          "text": "Fine-tuning で事前にエージェントの行動を学習させる手法である",
+          "is_correct": false,
+          "explanation": "ReAct はプロンプティング手法で、Fine-tuning は不要。"
+        },
+        {
+          "id": "B",
+          "text": "推論（Thought）と行動（Action）を交互に繰り返し、観察（Observation）結果に基づき次の判断を行う",
+          "is_correct": true,
+          "explanation": "正解。ReAct は Yao et al. (2022) の論文で提唱されたパターン。Thought → Action → Observation のループで、外部ツールを使いながら段階的に問題を解く。"
+        },
+        {
+          "id": "C",
+          "text": "複数のモデルを並列実行して結果を多数決で決める",
+          "is_correct": false,
+          "explanation": "これはアンサンブル/Self-Consistency の説明で ReAct ではない。"
+        },
+        {
+          "id": "D",
+          "text": "ユーザの入力を再構成して RAG で関連文書を検索する",
+          "is_correct": false,
+          "explanation": "これは Query Rewriting/RAG の説明で ReAct ではない。"
+        }
       ],
       "explanation": "ReAct は LLM に『思考の連鎖』と『道具の使用』を組み合わせさせる代表的パターン。Bedrock Agents は内部的にこの ReAct ループを実装している。Thought（次に何をすべきか考える）→ Action（道具を呼ぶ）→ Observation（結果を観察）→ さらに Thought…と続き、最終回答に到達する。",
       "references": [
-        {"title": "Bedrock Agents - How agents work", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-how.html"}
+        {
+          "title": "Bedrock Agents - How agents work",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-how.html"
+        }
       ],
-      "tags": ["react", "reasoning", "agent-pattern", "bedrock-agents"],
-      "common_mistakes": ["ReAct を Fine-tuning 手法と誤解する", "Self-Consistency と混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 4, "overall": 4.5},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "react",
+        "reasoning",
+        "agent-pattern",
+        "bedrock-agents"
+      ],
+      "common_mistakes": [
+        "ReAct を Fine-tuning 手法と誤解する",
+        "Self-Consistency と混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-003",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Agent Memory",
       "subtopic": "Short-term と Long-term の区別",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "Bedrock Agents におけるメモリ機能の short-term memory と long-term memory の違いについて正しいのは？",
       "options": [
-        {"id": "A", "text": "両者は同じ機能で、保存期間だけが違う", "is_correct": false, "explanation": "保存期間だけでなく、スコープと取得方法が根本的に違う。"},
-        {"id": "B", "text": "Short-term は単一セッション内の会話履歴、long-term はセッションを跨ぐサマリ・嗜好情報として保持される", "is_correct": true, "explanation": "正解。Short-term は session ID 内のコンテキストとして自動付与され、long-term はセッション終了後に要約され、同一ユーザの将来のセッションで参照される。"},
-        {"id": "C", "text": "Short-term は S3 に保存され、long-term は DynamoDB に保存される", "is_correct": false, "explanation": "ストレージは Bedrock 側でマネージドされており、ユーザがバックエンドを意識する必要はない。"},
-        {"id": "D", "text": "Short-term は埋め込みベクトル、long-term は生テキストとして保存される", "is_correct": false, "explanation": "保存形式の説明として正しくない。"}
+        {
+          "id": "A",
+          "text": "両者は同じ機能で、保存期間だけが違う",
+          "is_correct": false,
+          "explanation": "保存期間だけでなく、スコープと取得方法が根本的に違う。"
+        },
+        {
+          "id": "B",
+          "text": "Short-term は埋め込みベクトル、long-term は生テキストとして保存される",
+          "is_correct": false,
+          "explanation": "保存形式の説明として正しくない。"
+        },
+        {
+          "id": "C",
+          "text": "Short-term は単一セッション内の会話履歴、long-term はセッションを跨ぐサマリ・嗜好情報として保持される",
+          "is_correct": true,
+          "explanation": "正解。Short-term は session ID 内のコンテキストとして自動付与され、long-term はセッション終了後に要約され、同一ユーザの将来のセッションで参照される。"
+        },
+        {
+          "id": "D",
+          "text": "Short-term は S3 に保存され、long-term は DynamoDB に保存される",
+          "is_correct": false,
+          "explanation": "ストレージは Bedrock 側でマネージドされており、ユーザがバックエンドを意識する必要はない。"
+        }
       ],
       "explanation": "Bedrock Agents Memory は 2024 年末以降の機能で、short-term は同一セッション内の対話コンテキスト、long-term はセッションを跨ぐユーザ嗜好や過去サマリの保持を担う。memoryId をユーザ単位で割り当てれば、複数セッションを通じて『○○さんはマンゴーが好き』『前回はトラブル X を相談』といった文脈を引き継げる。",
       "references": [
-        {"title": "Configure memory for Bedrock Agents", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-memory.html"}
+        {
+          "title": "Configure memory for Bedrock Agents",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-memory.html"
+        }
       ],
-      "tags": ["agent-memory", "short-term", "long-term", "bedrock-agents"],
-      "common_mistakes": ["short-term と long-term をストレージ実装の違いだと勘違いする", "memoryId と sessionId を混同する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agent-memory",
+        "short-term",
+        "long-term",
+        "bedrock-agents"
+      ],
+      "common_mistakes": [
+        "short-term と long-term をストレージ実装の違いだと勘違いする",
+        "memoryId と sessionId を混同する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-004",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Bedrock Agents",
       "subtopic": "Knowledge Base 統合の仕組み",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Bedrock Agents に Knowledge Base を関連付けたとき、エージェントは内部でどのように Knowledge Base を利用するか？",
       "options": [
-        {"id": "A", "text": "ユーザ入力を毎回必ず Knowledge Base に検索する", "is_correct": false, "explanation": "毎回必ず検索するわけではなく、エージェントが必要と判断した時にだけ呼ばれる。"},
-        {"id": "B", "text": "エージェントは Knowledge Base を一種の『道具（retrieve action）』とみなし、必要と判断した時のみクエリを発行して結果をコンテキストに加える", "is_correct": true, "explanation": "正解。エージェントは Knowledge Base を検索アクションとして扱い、ユーザ質問に応じて呼ぶか判断する。Action Group と並列に位置づけられる。"},
-        {"id": "C", "text": "Knowledge Base のドキュメント全文をエージェントの初期プロンプトに埋め込む", "is_correct": false, "explanation": "全文埋め込みではコンテキスト長を超える。RAG の本質はオンデマンド検索。"},
-        {"id": "D", "text": "Knowledge Base はエージェントから独立して動作し、結果はユーザが手動で付与する", "is_correct": false, "explanation": "統合する目的はエージェントが自律的に検索することなので、手動は誤り。"}
+        {
+          "id": "A",
+          "text": "Knowledge Base はエージェントから独立して動作し、結果はユーザが手動で付与する",
+          "is_correct": false,
+          "explanation": "統合する目的はエージェントが自律的に検索することなので、手動は誤り。"
+        },
+        {
+          "id": "B",
+          "text": "ユーザ入力を毎回必ず Knowledge Base に検索する",
+          "is_correct": false,
+          "explanation": "毎回必ず検索するわけではなく、エージェントが必要と判断した時にだけ呼ばれる。"
+        },
+        {
+          "id": "C",
+          "text": "Knowledge Base のドキュメント全文をエージェントの初期プロンプトに埋め込む",
+          "is_correct": false,
+          "explanation": "全文埋め込みではコンテキスト長を超える。RAG の本質はオンデマンド検索。"
+        },
+        {
+          "id": "D",
+          "text": "エージェントは Knowledge Base を一種の『道具（retrieve action）』とみなし、必要と判断した時のみクエリを発行して結果をコンテキストに加える",
+          "is_correct": true,
+          "explanation": "正解。エージェントは Knowledge Base を検索アクションとして扱い、ユーザ質問に応じて呼ぶか判断する。Action Group と並列に位置づけられる。"
+        }
       ],
       "explanation": "Bedrock Agents は Knowledge Base を Action Group と類似の道具として扱い、ReAct ループの中で『この質問に答えるには KB 検索が必要だ』と判断したときだけ retrieve を呼ぶ。説明文（KB description）が判断の鍵で、適切に書かないと使われなかったり過剰に呼ばれたりする。",
       "references": [
-        {"title": "Associate a knowledge base with an agent", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-kb-add.html"}
+        {
+          "title": "Associate a knowledge base with an agent",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-kb-add.html"
+        }
       ],
-      "tags": ["bedrock-agents", "knowledge-base", "rag", "tool-use"],
-      "common_mistakes": ["毎回 KB が必ず呼ばれると思い込む", "KB の description を空欄/曖昧にして使われない事故"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "bedrock-agents",
+        "knowledge-base",
+        "rag",
+        "tool-use"
+      ],
+      "common_mistakes": [
+        "毎回 KB が必ず呼ばれると思い込む",
+        "KB の description を空欄/曖昧にして使われない事故"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-005",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Function Calling / Tool Use API",
       "subtopic": "Tool Use と Bedrock Agents の関係",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Amazon Bedrock の Converse API に含まれる Tool Use（旧 Function Calling）と、Bedrock Agents の関係について正しい説明はどれか？",
       "options": [
-        {"id": "A", "text": "Bedrock Agents は Tool Use を内部で利用しているマネージドサービスで、開発者は ReAct ループや tool 呼び出し管理を自前実装せずに済む", "is_correct": true, "explanation": "正解。Tool Use は Converse API レベルの低レベル機能で、Bedrock Agents はその上に ReAct ループ・メモリ・KB 統合などをマネージドで提供する。"},
-        {"id": "B", "text": "Tool Use と Bedrock Agents は競合する独立した機能で、片方しか使えない", "is_correct": false, "explanation": "両者は階層が違い、補完的。"},
-        {"id": "C", "text": "Tool Use はテキスト生成専用で、外部 API 呼び出しはできない", "is_correct": false, "explanation": "Tool Use の主目的こそが外部 API/関数呼び出し。"},
-        {"id": "D", "text": "Bedrock Agents は Tool Use 非対応モデル専用の機能である", "is_correct": false, "explanation": "Agents は Tool Use 対応モデル（Claude, Nova 等）を内部で使う。"}
+        {
+          "id": "A",
+          "text": "Bedrock Agents は Tool Use を内部で利用しているマネージドサービスで、開発者は ReAct ループや tool 呼び出し管理を自前実装せずに済む",
+          "is_correct": true,
+          "explanation": "正解。Tool Use は Converse API レベルの低レベル機能で、Bedrock Agents はその上に ReAct ループ・メモリ・KB 統合などをマネージドで提供する。"
+        },
+        {
+          "id": "B",
+          "text": "Bedrock Agents は Tool Use 非対応モデル専用の機能である",
+          "is_correct": false,
+          "explanation": "Agents は Tool Use 対応モデル（Claude, Nova 等）を内部で使う。"
+        },
+        {
+          "id": "C",
+          "text": "Tool Use と Bedrock Agents は競合する独立した機能で、片方しか使えない",
+          "is_correct": false,
+          "explanation": "両者は階層が違い、補完的。"
+        },
+        {
+          "id": "D",
+          "text": "Tool Use はテキスト生成専用で、外部 API 呼び出しはできない",
+          "is_correct": false,
+          "explanation": "Tool Use の主目的こそが外部 API/関数呼び出し。"
+        }
       ],
       "explanation": "Tool Use は Converse API で個々の API 呼び出しレベルで提供される機能。一方 Bedrock Agents はその上に『ReAct ループのオーケストレーション』『Action Group 定義』『Knowledge Base 統合』『Memory』などを乗せたマネージドサービス。柔軟性なら直接 Tool Use、運用負荷削減なら Agents、と使い分ける。",
       "references": [
-        {"title": "Use a tool to complete an Amazon Bedrock model response", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html"}
+        {
+          "title": "Use a tool to complete an Amazon Bedrock model response",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html"
+        }
       ],
-      "tags": ["tool-use", "function-calling", "bedrock-agents", "converse-api"],
-      "common_mistakes": ["Tool Use と Agents を競合機能と誤解", "Tool Use は Claude 専用と思い込む"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "tool-use",
+        "function-calling",
+        "bedrock-agents",
+        "converse-api"
+      ],
+      "common_mistakes": [
+        "Tool Use と Agents を競合機能と誤解",
+        "Tool Use は Claude 専用と思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-006",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Multi-agent Orchestration",
       "subtopic": "Supervisor / Collaborator パターン",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Bedrock Multi-Agent Collaboration（マルチエージェント機能）における『Supervisor Agent』の役割を正しく説明しているのはどれか？",
       "options": [
-        {"id": "A", "text": "Supervisor はユーザを認証する IAM 役割を担うエージェントである", "is_correct": false, "explanation": "認証ではなくエージェント間のオーケストレーションが Supervisor の役割。"},
-        {"id": "B", "text": "Supervisor は子エージェント（collaborators）の能力を理解し、ユーザのタスクを適切な子エージェントに振り分け、結果を統合する", "is_correct": true, "explanation": "正解。Supervisor は LLM ベースのオーケストレータで、各 collaborator の説明文を読んで適切に委譲する。"},
-        {"id": "C", "text": "Supervisor は子エージェントの出力を必ず人間にレビューさせる承認ゲートである", "is_correct": false, "explanation": "それは Human-in-the-loop の話で Supervisor の機能ではない。"},
-        {"id": "D", "text": "Supervisor は Knowledge Base のインデックスを管理する裏方プロセスである", "is_correct": false, "explanation": "KB 管理ではなくエージェントオーケストレーション。"}
+        {
+          "id": "A",
+          "text": "Supervisor は子エージェントの出力を必ず人間にレビューさせる承認ゲートである",
+          "is_correct": false,
+          "explanation": "それは Human-in-the-loop の話で Supervisor の機能ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Supervisor は子エージェント（collaborators）の能力を理解し、ユーザのタスクを適切な子エージェントに振り分け、結果を統合する",
+          "is_correct": true,
+          "explanation": "正解。Supervisor は LLM ベースのオーケストレータで、各 collaborator の説明文を読んで適切に委譲する。"
+        },
+        {
+          "id": "C",
+          "text": "Supervisor はユーザを認証する IAM 役割を担うエージェントである",
+          "is_correct": false,
+          "explanation": "認証ではなくエージェント間のオーケストレーションが Supervisor の役割。"
+        },
+        {
+          "id": "D",
+          "text": "Supervisor は Knowledge Base のインデックスを管理する裏方プロセスである",
+          "is_correct": false,
+          "explanation": "KB 管理ではなくエージェントオーケストレーション。"
+        }
       ],
       "explanation": "Bedrock Multi-Agent Collaboration は、複数の専門特化エージェント（例：請求エージェント、技術サポートエージェント）を 1 つの Supervisor がまとめる構成。Supervisor は collaborator description を頼りに『この質問は誰に振るか』を判断する。Supervisor 自身も LLM で動くため、collaborator の役割記述が品質を左右する。",
       "references": [
-        {"title": "Bedrock multi-agent collaboration", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html"}
+        {
+          "title": "Bedrock multi-agent collaboration",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html"
+        }
       ],
-      "tags": ["multi-agent", "supervisor", "collaboration", "orchestration"],
-      "common_mistakes": ["Supervisor を IAM/認証コンポーネントと混同", "collaborator の description を簡素にして振り分けが破綻する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "multi-agent",
+        "supervisor",
+        "collaboration",
+        "orchestration"
+      ],
+      "common_mistakes": [
+        "Supervisor を IAM/認証コンポーネントと混同",
+        "collaborator の description を簡素にして振り分けが破綻する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-007",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "AgentCore",
       "subtopic": "AgentCore の位置づけ",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Amazon Bedrock AgentCore（2025 年に GA したエージェント実行基盤）に関する説明として最も正確なのはどれか？",
       "options": [
-        {"id": "A", "text": "AgentCore は Bedrock Agents を完全に置き換える後継サービスで、既存の Bedrock Agents は利用不可になる", "is_correct": false, "explanation": "AgentCore は併存する基盤で、Bedrock Agents 単体機能は引き続き利用可能。"},
-        {"id": "B", "text": "AgentCore はフレームワーク非依存（LangGraph, CrewAI, Strands 等）でエージェントを本番稼働させるためのマネージド実行・観測基盤で、Runtime, Memory, Identity, Gateway, Observability などの構成要素を持つ", "is_correct": true, "explanation": "正解。AgentCore は Re:Invent 2024 でプレビュー、2025 年に GA となった『エージェント運用基盤』。任意のフレームワークで書いたエージェントを安全にスケール実行できる。"},
-        {"id": "C", "text": "AgentCore は SageMaker のホスティング機能をリブランドしただけで機能差はない", "is_correct": false, "explanation": "SageMaker Hosting とは別物で、エージェント特有のメモリ・観測機能を持つ。"},
-        {"id": "D", "text": "AgentCore はオンプレミス専用で AWS マネージドサービスではない", "is_correct": false, "explanation": "AWS マネージドサービスとして提供。"}
+        {
+          "id": "A",
+          "text": "AgentCore は SageMaker のホスティング機能をリブランドしただけで機能差はない",
+          "is_correct": false,
+          "explanation": "SageMaker Hosting とは別物で、エージェント特有のメモリ・観測機能を持つ。"
+        },
+        {
+          "id": "B",
+          "text": "AgentCore は Bedrock Agents を完全に置き換える後継サービスで、既存の Bedrock Agents は利用不可になる",
+          "is_correct": false,
+          "explanation": "AgentCore は併存する基盤で、Bedrock Agents 単体機能は引き続き利用可能。"
+        },
+        {
+          "id": "C",
+          "text": "AgentCore はフレームワーク非依存（LangGraph, CrewAI, Strands 等）でエージェントを本番稼働させるためのマネージド実行・観測基盤で、Runtime, Memory, Identity, Gateway, Observability などの構成要素を持つ",
+          "is_correct": true,
+          "explanation": "正解。AgentCore は Re:Invent 2024 でプレビュー、2025 年に GA となった『エージェント運用基盤』。任意のフレームワークで書いたエージェントを安全にスケール実行できる。"
+        },
+        {
+          "id": "D",
+          "text": "AgentCore はオンプレミス専用で AWS マネージドサービスではない",
+          "is_correct": false,
+          "explanation": "AWS マネージドサービスとして提供。"
+        }
       ],
       "explanation": "AgentCore は『Bedrock Agents（マネージド統合）』『SageMaker（モデル提供）』とは別レイヤで、自作エージェントを本番運用するためのプラットフォーム。Runtime（コンテナ実行）、Memory（短期・長期）、Identity（OAuth/権限委譲）、Gateway（MCP/Tool 統合）、Browser/Code Interpreter Tool、Observability（OTEL）が中核コンポーネント。",
       "references": [
-        {"title": "Amazon Bedrock AgentCore", "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-agentcore.html"}
+        {
+          "title": "Amazon Bedrock AgentCore",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-agentcore.html"
+        }
       ],
-      "tags": ["agentcore", "runtime", "managed-platform", "framework-agnostic"],
-      "common_mistakes": ["AgentCore = Bedrock Agents の単純な後継と誤解", "SageMaker Hosting と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agentcore",
+        "runtime",
+        "managed-platform",
+        "framework-agnostic"
+      ],
+      "common_mistakes": [
+        "AgentCore = Bedrock Agents の単純な後継と誤解",
+        "SageMaker Hosting と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-008",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Agent Guardrails",
       "subtopic": "Guardrails のエージェントへの適用",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Bedrock Guardrails をエージェントに適用したとき、入出力の検査はいつ実施されるか？",
       "options": [
-        {"id": "A", "text": "Guardrails はユーザの最初の入力と、エージェント最終応答の 2 箇所のみで検査される", "is_correct": true, "explanation": "正解。Bedrock Agents に Guardrails を関連付けると、入力と最終出力に対して安全性・PII・拒否トピック等のチェックが行われる。"},
-        {"id": "B", "text": "Guardrails は Action Group の関数の戻り値も含め、ループ中の全ての中間生成テキストに毎回適用される", "is_correct": false, "explanation": "中間 Action 戻り値全部には適用されない。負荷とコスト面でも不適切。"},
-        {"id": "C", "text": "Guardrails は Knowledge Base のインデックス作成時にのみ適用される", "is_correct": false, "explanation": "それは KB のフィルタ機能で Guardrails の主用途ではない。"},
-        {"id": "D", "text": "Guardrails はモデルの埋め込みベクトルに対して機械学習的に介入する", "is_correct": false, "explanation": "埋め込みレベルの介入ではなく、テキスト分類器ベース。"}
+        {
+          "id": "A",
+          "text": "Guardrails はモデルの埋め込みベクトルに対して機械学習的に介入する",
+          "is_correct": false,
+          "explanation": "埋め込みレベルの介入ではなく、テキスト分類器ベース。"
+        },
+        {
+          "id": "B",
+          "text": "Guardrails は Action Group の関数の戻り値も含め、ループ中の全ての中間生成テキストに毎回適用される",
+          "is_correct": false,
+          "explanation": "中間 Action 戻り値全部には適用されない。負荷とコスト面でも不適切。"
+        },
+        {
+          "id": "C",
+          "text": "Guardrails は Knowledge Base のインデックス作成時にのみ適用される",
+          "is_correct": false,
+          "explanation": "それは KB のフィルタ機能で Guardrails の主用途ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Guardrails はユーザの最初の入力と、エージェント最終応答の 2 箇所のみで検査される",
+          "is_correct": true,
+          "explanation": "正解。Bedrock Agents に Guardrails を関連付けると、入力と最終出力に対して安全性・PII・拒否トピック等のチェックが行われる。"
+        }
       ],
       "explanation": "Bedrock Agents に Guardrails を関連付けると、ユーザ入力（ジェイルブレイク試行・拒否トピック検出）と最終応答（PII マスク・有害コンテンツ・contextual grounding）の検査が行われる。中間ステップの Tool 応答そのものには適用されないため、ツール側で別途バリデーションが必要なケースがある。",
       "references": [
-        {"title": "Use guardrails with agents", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-guardrails.html"}
+        {
+          "title": "Use guardrails with agents",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-guardrails.html"
+        }
       ],
-      "tags": ["guardrails", "bedrock-agents", "safety", "pii"],
-      "common_mistakes": ["Guardrails が全中間ステップに適用されると思い込む", "Tool 応答のバリデーションを Guardrails に依存する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "guardrails",
+        "bedrock-agents",
+        "safety",
+        "pii"
+      ],
+      "common_mistakes": [
+        "Guardrails が全中間ステップに適用されると思い込む",
+        "Tool 応答のバリデーションを Guardrails に依存する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-009",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Bedrock Agents",
       "subtopic": "Action Group 設計",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Action Group の Function Schema（Function details）に書く `description` フィールドの意義として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "API Gateway 用のドキュメンテーション生成に使われる", "is_correct": false, "explanation": "API Gateway 用ではなく、エージェント LLM の判断材料。"},
-        {"id": "B", "text": "LLM がどの関数をいつ呼ぶか判断するための主要シグナルとなり、品質が agent 性能を直接左右する", "is_correct": true, "explanation": "正解。description は LLM が読むため、自然言語で『何をする関数か』『いつ使うか』を明確にすべき。"},
-        {"id": "C", "text": "CloudWatch Logs のフィルタ条件に使用される", "is_correct": false, "explanation": "観測用途ではなく、LLM への指示。"},
-        {"id": "D", "text": "オプション項目で、空でも性能に影響しない", "is_correct": false, "explanation": "むしろ最重要項目で、空にすると LLM が呼び出し判断できない。"}
+        {
+          "id": "A",
+          "text": "LLM がどの関数をいつ呼ぶか判断するための主要シグナルとなり、品質が agent 性能を直接左右する",
+          "is_correct": true,
+          "explanation": "正解。description は LLM が読むため、自然言語で『何をする関数か』『いつ使うか』を明確にすべき。"
+        },
+        {
+          "id": "B",
+          "text": "API Gateway 用のドキュメンテーション生成に使われる",
+          "is_correct": false,
+          "explanation": "API Gateway 用ではなく、エージェント LLM の判断材料。"
+        },
+        {
+          "id": "C",
+          "text": "オプション項目で、空でも性能に影響しない",
+          "is_correct": false,
+          "explanation": "むしろ最重要項目で、空にすると LLM が呼び出し判断できない。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Logs のフィルタ条件に使用される",
+          "is_correct": false,
+          "explanation": "観測用途ではなく、LLM への指示。"
+        }
       ],
       "explanation": "Bedrock Agents の Function Schema における description は、LLM が『この関数をいつ・どんな引数で呼ぶか』判断する根拠。OpenAPI スキーマ方式・Function details 方式どちらでも description の質が agent 全体の挙動を決める。引数 description も同様で、曖昧だと誤った値が渡されやすい。",
       "references": [
-        {"title": "Define function details for action groups", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-action-function.html"}
+        {
+          "title": "Define function details for action groups",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-action-function.html"
+        }
       ],
-      "tags": ["action-group", "function-schema", "description", "prompt-engineering"],
-      "common_mistakes": ["description を一行コメントで済ませる", "LLM が読む文書だと意識せず内部仕様だけ書く"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "action-group",
+        "function-schema",
+        "description",
+        "prompt-engineering"
+      ],
+      "common_mistakes": [
+        "description を一行コメントで済ませる",
+        "LLM が読む文書だと意識せず内部仕様だけ書く"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-010",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "外部 API 連携",
       "subtopic": "Lambda 経由の API 呼び出し",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "Bedrock Agent から外部 SaaS API（社内発注システム）を呼ぶ構成として推奨される一般的なパターンは？",
       "options": [
-        {"id": "A", "text": "Action Group の Lambda 関数内で SaaS API へリクエストし、戻り値を整形してエージェントに返す", "is_correct": true, "explanation": "正解。Lambda が外部呼び出しのアダプタ層になり、認証情報を Secrets Manager から取得し、エラーハンドリングを実装できる。"},
-        {"id": "B", "text": "Bedrock モデルから直接 HTTPS リクエストを送らせる", "is_correct": false, "explanation": "LLM は HTTP 通信を直接実行しない。Action 経由が必須。"},
-        {"id": "C", "text": "ユーザブラウザ JavaScript から SaaS API を呼び、結果をエージェントに貼り付ける", "is_correct": false, "explanation": "エージェント自律実行ではなくなり、CORS や資格情報露出のリスクもある。"},
-        {"id": "D", "text": "Knowledge Base に SaaS API のレスポンスサンプルを保存しておく", "is_correct": false, "explanation": "リアルタイム呼び出しの代替にならない。"}
+        {
+          "id": "A",
+          "text": "Knowledge Base に SaaS API のレスポンスサンプルを保存しておく",
+          "is_correct": false,
+          "explanation": "リアルタイム呼び出しの代替にならない。"
+        },
+        {
+          "id": "B",
+          "text": "Action Group の Lambda 関数内で SaaS API へリクエストし、戻り値を整形してエージェントに返す",
+          "is_correct": true,
+          "explanation": "正解。Lambda が外部呼び出しのアダプタ層になり、認証情報を Secrets Manager から取得し、エラーハンドリングを実装できる。"
+        },
+        {
+          "id": "C",
+          "text": "Bedrock モデルから直接 HTTPS リクエストを送らせる",
+          "is_correct": false,
+          "explanation": "LLM は HTTP 通信を直接実行しない。Action 経由が必須。"
+        },
+        {
+          "id": "D",
+          "text": "ユーザブラウザ JavaScript から SaaS API を呼び、結果をエージェントに貼り付ける",
+          "is_correct": false,
+          "explanation": "エージェント自律実行ではなくなり、CORS や資格情報露出のリスクもある。"
+        }
       ],
       "explanation": "Bedrock Agent からの外部 API 連携は Lambda（Action Group）経由が標準。Lambda 関数内で Secrets Manager から認証情報を取得し、SaaS API を呼び、JSON 結果をスキーマ通りに返す。エラー時は Lambda で 200 + エラー JSON を返すと、エージェントが文脈に応じてリトライ/別アクションを選択できる。",
       "references": [
-        {"title": "Configure Lambda functions for action groups", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-lambda.html"}
+        {
+          "title": "Configure Lambda functions for action groups",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-lambda.html"
+        }
       ],
-      "tags": ["lambda", "external-api", "secrets-manager", "action-group"],
-      "common_mistakes": ["LLM が直接 HTTP 呼び出すと誤解", "認証情報を Lambda 環境変数に平文で持つ"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "lambda",
+        "external-api",
+        "secrets-manager",
+        "action-group"
+      ],
+      "common_mistakes": [
+        "LLM が直接 HTTP 呼び出すと誤解",
+        "認証情報を Lambda 環境変数に平文で持つ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-011",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Bedrock Agents",
       "subtopic": "Return of Control の実装判断",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
-      "stem": "東海地方の製造業 Tokai Industrial が、社内の生産管理システム（オンプレ、外部公開なし）と連携する Bedrock Agent を構築している。生産管理システムへの API 呼び出しを社内ネットワーク経由で実行したい。最も適切な構成は？",
+      "stem": "ある製造業 Tokai Industrial が、社内の生産管理システム（オンプレ、外部公開なし）と連携する Bedrock Agent を構築している。生産管理システムへの API 呼び出しを社内ネットワーク経由で実行したい。最も適切な構成は？",
       "options": [
-        {"id": "A", "text": "Action Group を Return of Control（RoC）方式で定義し、社内ホストのアプリが API リクエストを受け取って、自社内ネットワーク経由で生産管理システムを呼び、結果を Agent に返す", "is_correct": true, "explanation": "正解。RoC は Lambda の代わりにクライアントアプリが function 実行を担うため、オンプレ・閉域網経由の呼び出しに最適。"},
-        {"id": "B", "text": "Lambda 関数を VPC 内に配置し、Direct Connect/VPN 経由で社内システムにアクセスする", "is_correct": false, "explanation": "技術的には可能だが、Direct Connect/VPN 設備とコストが必要。条件次第では選ぶが、外部公開なしのオンプレを最短で繋ぐなら RoC が筋。"},
-        {"id": "C", "text": "生産管理システムを丸ごと Knowledge Base にコピーする", "is_correct": false, "explanation": "リアルタイム性が失われ、書き込み操作も不可。"},
-        {"id": "D", "text": "Bedrock Agent をオンプレに移植する", "is_correct": false, "explanation": "Bedrock はマネージドサービスでオンプレ移植不可。"}
+        {
+          "id": "A",
+          "text": "Lambda 関数を VPC 内に配置し、Direct Connect/VPN 経由で社内システムにアクセスする",
+          "is_correct": false,
+          "explanation": "技術的には可能だが、Direct Connect/VPN 設備とコストが必要。条件次第では選ぶが、外部公開なしのオンプレを最短で繋ぐなら RoC が筋。"
+        },
+        {
+          "id": "B",
+          "text": "生産管理システムを丸ごと Knowledge Base にコピーする",
+          "is_correct": false,
+          "explanation": "リアルタイム性が失われ、書き込み操作も不可。"
+        },
+        {
+          "id": "C",
+          "text": "Action Group を Return of Control（RoC）方式で定義し、社内ホストのアプリが API リクエストを受け取って、自社内ネットワーク経由で生産管理システムを呼び、結果を Agent に返す",
+          "is_correct": true,
+          "explanation": "正解。RoC は Lambda の代わりにクライアントアプリが function 実行を担うため、オンプレ・閉域網経由の呼び出しに最適。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock Agent をオンプレに移植する",
+          "is_correct": false,
+          "explanation": "Bedrock はマネージドサービスでオンプレ移植不可。"
+        }
       ],
       "explanation": "Return of Control（RoC）は、Action Group の関数実行を Lambda ではなくクライアントアプリ側に委ねる方式。オンプレ・閉域網・複雑な認証が必要な場面、もしくは長時間処理（Lambda 制限超過）に有効。Agent からは『この関数とこの引数で実行してね』と要求が返り、アプリ側が結果を InvokeAgent で返送する。",
       "references": [
-        {"title": "Return control to the agent developer", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html"}
+        {
+          "title": "Return control to the agent developer",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html"
+        }
       ],
-      "tags": ["return-of-control", "on-premise", "manufacturing", "tokai-industrial"],
-      "common_mistakes": ["全ケースで Lambda が最適と思い込む", "RoC の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "return-of-control",
+        "on-premise",
+        "manufacturing",
+        "tokai-industrial"
+      ],
+      "common_mistakes": [
+        "全ケースで Lambda が最適と思い込む",
+        "RoC の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-012",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Bedrock Agents",
       "subtopic": "Knowledge Base 統合",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "B2B SaaS のカスタマーサクセスチームが、製品マニュアル（KB-A）と契約・料金ポリシー（KB-B）の 2 つの Knowledge Base を持つ Bedrock Agent を運用している。料金に関する質問で誤って製品マニュアルを参照する事象が頻発。改善策として最も効果的なのは？",
       "options": [
-        {"id": "A", "text": "両 KB の description を、想定質問と扱う情報の境界が明確になるよう書き直す", "is_correct": true, "explanation": "正解。エージェントは KB description で『どっちを使うか』判断する。曖昧な記述だと誤選択が起きる。"},
-        {"id": "B", "text": "両 KB を 1 つに統合する", "is_correct": false, "explanation": "統合すると料金検索時に製品マニュアルもヒットしてしまい問題が悪化する可能性が高い。"},
-        {"id": "C", "text": "Bedrock のモデルを Claude Sonnet から Haiku に変更する", "is_correct": false, "explanation": "むしろ判断力の劣るモデルに変えると誤選択が増える可能性が高い。"},
-        {"id": "D", "text": "Guardrails の denied topic に『料金』を追加する", "is_correct": false, "explanation": "料金質問自体は許可したいので、denied topic は逆効果。"}
+        {
+          "id": "A",
+          "text": "Bedrock のモデルを Claude Sonnet から Haiku に変更する",
+          "is_correct": false,
+          "explanation": "むしろ判断力の劣るモデルに変えると誤選択が増える可能性が高い。"
+        },
+        {
+          "id": "B",
+          "text": "両 KB を 1 つに統合する",
+          "is_correct": false,
+          "explanation": "統合すると料金検索時に製品マニュアルもヒットしてしまい問題が悪化する可能性が高い。"
+        },
+        {
+          "id": "C",
+          "text": "Guardrails の denied topic に『料金』を追加する",
+          "is_correct": false,
+          "explanation": "料金質問自体は許可したいので、denied topic は逆効果。"
+        },
+        {
+          "id": "D",
+          "text": "両 KB の description を、想定質問と扱う情報の境界が明確になるよう書き直す",
+          "is_correct": true,
+          "explanation": "正解。エージェントは KB description で『どっちを使うか』判断する。曖昧な記述だと誤選択が起きる。"
+        }
       ],
       "explanation": "複数 Knowledge Base を持つエージェントでは、各 KB の description が振り分けの根拠になる。例えば KB-A description: 『製品の機能・操作手順・トラブルシューティングに関する情報。料金や契約については扱わない。』、KB-B description: 『料金プラン・契約条件・割引・解約に関する情報のみ。』のように排他的に書くと精度が改善する。",
       "references": [
-        {"title": "Best practices for knowledge base description", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-kb-add.html"}
+        {
+          "title": "Best practices for knowledge base description",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-kb-add.html"
+        }
       ],
-      "tags": ["knowledge-base", "saas", "description", "multi-kb"],
-      "common_mistakes": ["モデルを下げるのが解と思い込む", "KB を機械的に統合する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "knowledge-base",
+        "saas",
+        "description",
+        "multi-kb"
+      ],
+      "common_mistakes": [
+        "モデルを下げるのが解と思い込む",
+        "KB を機械的に統合する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-013",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Tool Use API",
       "subtopic": "Function Calling 実装",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech のスタートアップ Yengine が、Claude on Bedrock の Tool Use を直接使ってチャット UI を実装している。Tool Use のループ実装で、必ず行うべき処理として最も重要なのは？",
       "options": [
-        {"id": "A", "text": "モデルの応答に `tool_use` ブロックがあれば、対応するローカル関数を実行し、`tool_result` ブロックで Converse API を再呼び出しする", "is_correct": true, "explanation": "正解。Tool Use は『モデルが要求 → アプリが実行 → 結果を返して再呼び出し』のループ。ストップ理由 tool_use を検知して処理する必要がある。"},
-        {"id": "B", "text": "tool_use ブロックを無視して、最終テキストだけをユーザに表示する", "is_correct": false, "explanation": "tool_use を無視すると関数が実行されず、モデルの意図が達成されない。"},
-        {"id": "C", "text": "Tool 定義は最初の 1 回だけ送り、以降のターンでは再送しない", "is_correct": false, "explanation": "Converse API はステートレス。各リクエストに tools を含める必要がある。"},
-        {"id": "D", "text": "tool_result は次セッションまで遅延させる", "is_correct": false, "explanation": "同一セッション内で即座に返さないとモデルが応答を完成できない。"}
+        {
+          "id": "A",
+          "text": "モデルの応答に `tool_use` ブロックがあれば、対応するローカル関数を実行し、`tool_result` ブロックで Converse API を再呼び出しする",
+          "is_correct": true,
+          "explanation": "正解。Tool Use は『モデルが要求 → アプリが実行 → 結果を返して再呼び出し』のループ。ストップ理由 tool_use を検知して処理する必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "tool_use ブロックを無視して、最終テキストだけをユーザに表示する",
+          "is_correct": false,
+          "explanation": "tool_use を無視すると関数が実行されず、モデルの意図が達成されない。"
+        },
+        {
+          "id": "C",
+          "text": "Tool 定義は最初の 1 回だけ送り、以降のターンでは再送しない",
+          "is_correct": false,
+          "explanation": "Converse API はステートレス。各リクエストに tools を含める必要がある。"
+        },
+        {
+          "id": "D",
+          "text": "tool_result は次セッションまで遅延させる",
+          "is_correct": false,
+          "explanation": "同一セッション内で即座に返さないとモデルが応答を完成できない。"
+        }
       ],
       "explanation": "Bedrock Converse API の Tool Use では、モデルが返す stop_reason が `tool_use` の場合、`content` に含まれる tool_use ブロック（name, input）を読み、ローカルで関数を実行し、`tool_result`（toolUseId, content）を user メッセージとして次の Converse 呼び出しに含める。これを stop_reason が `end_turn` になるまで繰り返す。",
       "references": [
-        {"title": "Tool use with the Converse API", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html"}
+        {
+          "title": "Tool use with the Converse API",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html"
+        }
       ],
-      "tags": ["tool-use", "converse-api", "fintech", "yengine", "claude"],
-      "common_mistakes": ["stop_reason を見ずに毎回最終応答だと扱う", "tools を初回しか渡さない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "tool-use",
+        "converse-api",
+        "fintech",
+        "yengine",
+        "claude"
+      ],
+      "common_mistakes": [
+        "stop_reason を見ずに毎回最終応答だと扱う",
+        "tools を初回しか渡さない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-014",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Agent Memory",
       "subtopic": "Long-term memory の運用",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "教育系 SaaS Manabia の学習コーチ Bedrock Agent で、生徒ごとに学習履歴・苦手単元・好みの説明スタイルを覚えさせたい。実装方針として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "Bedrock Agent の Memory を有効化し、生徒 ID を `memoryId` として指定して呼び出す。長期記憶要約は AWS が自動生成する", "is_correct": true, "explanation": "正解。memoryId を生徒単位にすれば、過去セッションの要約が自動付与される。"},
-        {"id": "B", "text": "毎セッション、過去の全会話ログを生のままプロンプトに貼り付ける", "is_correct": false, "explanation": "コンテキスト長を圧迫し、コストも上がる。要約された long-term memory を使うべき。"},
-        {"id": "C", "text": "Knowledge Base に生徒の発言を保存し、毎回 RAG する", "is_correct": false, "explanation": "KB は不変知識向けで、頻繁更新の個人ログには不向き。"},
-        {"id": "D", "text": "DynamoDB に過去の発言を保存し、Lambda で取得してプロンプトに貼り付ける（Memory 機能は使わない）", "is_correct": false, "explanation": "自前でも可能だが、Bedrock Agents のマネージド Memory がある以上、運用負荷増。"}
+        {
+          "id": "A",
+          "text": "Knowledge Base に生徒の発言を保存し、毎回 RAG する",
+          "is_correct": false,
+          "explanation": "KB は不変知識向けで、頻繁更新の個人ログには不向き。"
+        },
+        {
+          "id": "B",
+          "text": "Bedrock Agent の Memory を有効化し、生徒 ID を `memoryId` として指定して呼び出す。長期記憶要約は AWS が自動生成する",
+          "is_correct": true,
+          "explanation": "正解。memoryId を生徒単位にすれば、過去セッションの要約が自動付与される。"
+        },
+        {
+          "id": "C",
+          "text": "毎セッション、過去の全会話ログを生のままプロンプトに貼り付ける",
+          "is_correct": false,
+          "explanation": "コンテキスト長を圧迫し、コストも上がる。要約された long-term memory を使うべき。"
+        },
+        {
+          "id": "D",
+          "text": "DynamoDB に過去の発言を保存し、Lambda で取得してプロンプトに貼り付ける（Memory 機能は使わない）",
+          "is_correct": false,
+          "explanation": "自前でも可能だが、Bedrock Agents のマネージド Memory がある以上、運用負荷増。"
+        }
       ],
       "explanation": "Bedrock Agents の Long-term Memory は、セッション終了時に会話を要約してユーザ単位で保存する。次回以降のセッションで関連サマリが自動コンテキスト付与される。memoryId はユーザを識別する任意の文字列で、Manabia なら生徒 ID を渡す。保存期間（最大 30/90/180 日）も設定可能。",
       "references": [
-        {"title": "Bedrock Agents Memory configuration", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-memory.html"}
+        {
+          "title": "Bedrock Agents Memory configuration",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-memory.html"
+        }
       ],
-      "tags": ["agent-memory", "education", "manabia", "long-term-memory"],
-      "common_mistakes": ["全会話ログを生でプロンプトに貼る", "Knowledge Base で個人ログを管理する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agent-memory",
+        "education",
+        "manabia",
+        "long-term-memory"
+      ],
+      "common_mistakes": [
+        "全会話ログを生でプロンプトに貼る",
+        "Knowledge Base で個人ログを管理する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-015",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Multi-agent Orchestration",
       "subtopic": "エージェント分割の判断",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "B2B SaaS の総合サポート bot で、技術サポート・請求・営業相談・契約変更の 4 機能を 1 エージェントに詰め込んでいたが、Action Group が増え description の競合が発生し、誤呼び出しが増加。改善策として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "Bedrock Multi-Agent Collaboration で 4 つの専門 collaborator に分解し、Supervisor が振り分ける構成にする", "is_correct": true, "explanation": "正解。専門特化したエージェントごとにツール群とプロンプトを最適化でき、Supervisor が責務分離して呼び出す。"},
-        {"id": "B", "text": "4 機能をすべて 1 つの巨大な Lambda 関数に統合する", "is_correct": false, "explanation": "原因は Action Group/description 数ではなく、責務分離の欠如。Lambda 統合は無意味。"},
-        {"id": "C", "text": "Knowledge Base を 1 つに統合する", "is_correct": false, "explanation": "問題は Action 競合で、KB の問題ではない。"},
-        {"id": "D", "text": "モデルを Nova Lite から Nova Pro に変えるだけにする", "is_correct": false, "explanation": "モデル能力で多少改善するが、根本解決ではない。"}
+        {
+          "id": "A",
+          "text": "モデルを Nova Lite から Nova Pro に変えるだけにする",
+          "is_correct": false,
+          "explanation": "モデル能力で多少改善するが、根本解決ではない。"
+        },
+        {
+          "id": "B",
+          "text": "4 機能をすべて 1 つの巨大な Lambda 関数に統合する",
+          "is_correct": false,
+          "explanation": "原因は Action Group/description 数ではなく、責務分離の欠如。Lambda 統合は無意味。"
+        },
+        {
+          "id": "C",
+          "text": "Bedrock Multi-Agent Collaboration で 4 つの専門 collaborator に分解し、Supervisor が振り分ける構成にする",
+          "is_correct": true,
+          "explanation": "正解。専門特化したエージェントごとにツール群とプロンプトを最適化でき、Supervisor が責務分離して呼び出す。"
+        },
+        {
+          "id": "D",
+          "text": "Knowledge Base を 1 つに統合する",
+          "is_correct": false,
+          "explanation": "問題は Action 競合で、KB の問題ではない。"
+        }
       ],
       "explanation": "1 エージェントに多目的 Action Group を詰めると、description の混雑で LLM の判断力が劣化する。Multi-Agent Collaboration では、collaborator ごとにシステムプロンプト・ツール・KB を専門化し、Supervisor が collaborator description で振り分ける。責務分離の観点でマイクロサービス化に類似する設計。",
       "references": [
-        {"title": "Multi-agent collaboration overview", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html"}
+        {
+          "title": "Multi-agent collaboration overview",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html"
+        }
       ],
-      "tags": ["multi-agent", "supervisor", "saas", "responsibility-separation"],
-      "common_mistakes": ["モデルアップグレードで全部解決すると思い込む", "1 エージェントに無限に Action 追加する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "multi-agent",
+        "supervisor",
+        "saas",
+        "responsibility-separation"
+      ],
+      "common_mistakes": [
+        "モデルアップグレードで全部解決すると思い込む",
+        "1 エージェントに無限に Action 追加する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-016",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "AgentCore",
       "subtopic": "AgentCore Runtime の利用",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある SaaS 企業が LangGraph で書かれたエージェントを本番運用したい。要件: 自動スケール、セッション分離、AWS マネージドの観測性。最も少ない作り込みで満たす方法は？",
       "options": [
-        {"id": "A", "text": "AgentCore Runtime にコンテナをデプロイし、AgentCore Memory・Identity・Observability を組み合わせる", "is_correct": true, "explanation": "正解。AgentCore Runtime は『任意フレームワーク × マネージド実行』を実現するために設計されている。"},
-        {"id": "B", "text": "EC2 にエージェントをホストし、Auto Scaling と CloudWatch Agent を自分で構成する", "is_correct": false, "explanation": "実現可能だが、AgentCore に比べ作り込みが多い。"},
-        {"id": "C", "text": "Bedrock Agents に LangGraph をそのままインポートする", "is_correct": false, "explanation": "Bedrock Agents は独自仕様で、LangGraph をそのまま動かす機能はない。"},
-        {"id": "D", "text": "SageMaker Endpoint にエージェントをデプロイする", "is_correct": false, "explanation": "SageMaker Endpoint はモデル推論用でエージェント実行基盤ではない。"}
+        {
+          "id": "A",
+          "text": "Bedrock Agents に LangGraph をそのままインポートする",
+          "is_correct": false,
+          "explanation": "Bedrock Agents は独自仕様で、LangGraph をそのまま動かす機能はない。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker Endpoint にエージェントをデプロイする",
+          "is_correct": false,
+          "explanation": "SageMaker Endpoint はモデル推論用でエージェント実行基盤ではない。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 にエージェントをホストし、Auto Scaling と CloudWatch Agent を自分で構成する",
+          "is_correct": false,
+          "explanation": "実現可能だが、AgentCore に比べ作り込みが多い。"
+        },
+        {
+          "id": "D",
+          "text": "AgentCore Runtime にコンテナをデプロイし、AgentCore Memory・Identity・Observability を組み合わせる",
+          "is_correct": true,
+          "explanation": "正解。AgentCore Runtime は『任意フレームワーク × マネージド実行』を実現するために設計されている。"
+        }
       ],
       "explanation": "AgentCore Runtime はフレームワーク非依存で、LangGraph・CrewAI・Strands・自作のいずれでも動かせる。HTTPS エンドポイント・セッション分離（マイクロ VM）・自動スケール・OTEL 観測（AgentCore Observability）が標準提供。本番運用に必要な周辺機能を組み合わせるだけで完成する。",
       "references": [
-        {"title": "AgentCore Runtime", "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime.html"}
+        {
+          "title": "AgentCore Runtime",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime.html"
+        }
       ],
-      "tags": ["agentcore", "runtime", "langgraph", "framework-agnostic"],
-      "common_mistakes": ["LangGraph を Bedrock Agents で動かそうとする", "EC2 自前で全部構築"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agentcore",
+        "runtime",
+        "langgraph",
+        "framework-agnostic"
+      ],
+      "common_mistakes": [
+        "LangGraph を Bedrock Agents で動かそうとする",
+        "EC2 自前で全部構築"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-017",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Bedrock Agents",
       "subtopic": "Advanced Prompts（プロンプト上書き）",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Bedrock Agent の挙動が想定と違うため、特定ステップ（pre-processing, orchestration, knowledge-base-response-generation, post-processing）のプロンプトを微調整したい。最適な方法は？",
       "options": [
-        {"id": "A", "text": "Advanced Prompts でステップごとのデフォルトテンプレートを上書きする", "is_correct": true, "explanation": "正解。Advanced Prompts は agent ライフサイクルの 4 ステップそれぞれに対し、システムプロンプトの上書きを許容する。"},
-        {"id": "B", "text": "Action Group を増やしてプロンプトを間接的に変える", "is_correct": false, "explanation": "Action Group は外部処理の追加で、プロンプトの上書きにはならない。"},
-        {"id": "C", "text": "Knowledge Base のメタデータでプロンプトを記述する", "is_correct": false, "explanation": "KB メタデータはフィルタ用で、プロンプト変更には使えない。"},
-        {"id": "D", "text": "Guardrails でプロンプトを書き換える", "is_correct": false, "explanation": "Guardrails は安全性フィルタで、システムプロンプトの編集機能はない。"}
+        {
+          "id": "A",
+          "text": "Advanced Prompts でステップごとのデフォルトテンプレートを上書きする",
+          "is_correct": true,
+          "explanation": "正解。Advanced Prompts は agent ライフサイクルの 4 ステップそれぞれに対し、システムプロンプトの上書きを許容する。"
+        },
+        {
+          "id": "B",
+          "text": "Action Group を増やしてプロンプトを間接的に変える",
+          "is_correct": false,
+          "explanation": "Action Group は外部処理の追加で、プロンプトの上書きにはならない。"
+        },
+        {
+          "id": "C",
+          "text": "Guardrails でプロンプトを書き換える",
+          "is_correct": false,
+          "explanation": "Guardrails は安全性フィルタで、システムプロンプトの編集機能はない。"
+        },
+        {
+          "id": "D",
+          "text": "Knowledge Base のメタデータでプロンプトを記述する",
+          "is_correct": false,
+          "explanation": "KB メタデータはフィルタ用で、プロンプト変更には使えない。"
+        }
       ],
       "explanation": "Bedrock Agents には 4 ステップの内部プロンプトテンプレート（Pre-processing でユーザ入力を分類、Orchestration で ReAct ループ、KB Response Generation で KB 結果を返答化、Post-processing で最終整形）があり、Advanced Prompts でそれぞれ上書き可能。挙動チューニングの主要レバー。",
       "references": [
-        {"title": "Advanced prompts in Bedrock Agents", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-advanced-prompts.html"}
+        {
+          "title": "Advanced prompts in Bedrock Agents",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-advanced-prompts.html"
+        }
       ],
-      "tags": ["advanced-prompts", "orchestration", "bedrock-agents", "tuning"],
-      "common_mistakes": ["Advanced Prompts の存在を知らず Action Group を増やす", "Guardrails でプロンプトを変更しようとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "advanced-prompts",
+        "orchestration",
+        "bedrock-agents",
+        "tuning"
+      ],
+      "common_mistakes": [
+        "Advanced Prompts の存在を知らず Action Group を増やす",
+        "Guardrails でプロンプトを変更しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-018",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "外部 API 連携",
       "subtopic": "認証情報の管理",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "医療系プラットフォーム MediCare（プライバシー重視）が Bedrock Agent から電子カルテ API を呼ぶ Lambda Action Group を実装する。API キー管理として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "AWS Secrets Manager に保管し、Lambda 実行時に取得・キャッシュする。Lambda 実行ロールには `secretsmanager:GetSecretValue` を必要最小権限で付与", "is_correct": true, "explanation": "正解。Secrets Manager は自動ローテーション・KMS 暗号化・最小権限アクセスをサポートし、医療業界の要件にも合致。"},
-        {"id": "B", "text": "Lambda 環境変数に平文で格納する", "is_correct": false, "explanation": "監査ログから漏洩、IAM 設定ミスで露出する等のリスクが高い。"},
-        {"id": "C", "text": "Bedrock Agent の説明文に記載する", "is_correct": false, "explanation": "プロンプトに直接書くと外部公開リスクが極めて高い。最悪。"},
-        {"id": "D", "text": "S3 に JSON で置き、パブリック ACL を許可", "is_correct": false, "explanation": "セキュリティ事故の典型例。"}
+        {
+          "id": "A",
+          "text": "Bedrock Agent の説明文に記載する",
+          "is_correct": false,
+          "explanation": "プロンプトに直接書くと外部公開リスクが極めて高い。最悪。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Secrets Manager に保管し、Lambda 実行時に取得・キャッシュする。Lambda 実行ロールには `secretsmanager:GetSecretValue` を必要最小権限で付与",
+          "is_correct": true,
+          "explanation": "正解。Secrets Manager は自動ローテーション・KMS 暗号化・最小権限アクセスをサポートし、医療業界の要件にも合致。"
+        },
+        {
+          "id": "C",
+          "text": "S3 に JSON で置き、パブリック ACL を許可",
+          "is_correct": false,
+          "explanation": "セキュリティ事故の典型例。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda 環境変数に平文で格納する",
+          "is_correct": false,
+          "explanation": "監査ログから漏洩、IAM 設定ミスで露出する等のリスクが高い。"
+        }
       ],
       "explanation": "医療データのような機密性の高い API キーは Secrets Manager に保管し、Lambda 実行ロールから IAM 経由で参照する。KMS で暗号化、CloudTrail で取得ログ、ローテーションで定期更新が標準。プロンプトや環境変数に書くのは絶対に避ける。",
       "references": [
-        {"title": "Using Secrets Manager with Lambda", "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/lambda-functions.html"}
+        {
+          "title": "Using Secrets Manager with Lambda",
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/lambda-functions.html"
+        }
       ],
-      "tags": ["secrets-manager", "healthcare", "medicare", "security"],
-      "common_mistakes": ["環境変数に平文格納", "プロンプトに API キーを記述"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "secrets-manager",
+        "healthcare",
+        "medicare",
+        "security"
+      ],
+      "common_mistakes": [
+        "環境変数に平文格納",
+        "プロンプトに API キーを記述"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-019",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Agent Guardrails",
       "subtopic": "PII フィルタの設計",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "FinTech の Yengine が顧客サポート Agent で、社員側の応答にはマスクせず、ユーザ向け応答にだけ電話番号・口座番号を自動マスクしたい。Guardrails 設定として最適なのは？",
       "options": [
-        {"id": "A", "text": "Output filter（responses）で PII を検出し、`PHONE` と `ACCOUNT_NUMBER`（or 同等カスタムタイプ）を `ANONYMIZE` 動作にする", "is_correct": true, "explanation": "正解。Guardrails の sensitive information filter は出力時にエンティティを置換でき、PII タイプごとに block/anonymize を選べる。"},
-        {"id": "B", "text": "Input filter で全 PII を block する", "is_correct": false, "explanation": "ユーザが自分の情報を入力する場面はブロックすべきでない。"},
-        {"id": "C", "text": "Knowledge Base のチャンクから PII を事前削除する", "is_correct": false, "explanation": "KB 由来 PII はカバーできるが、モデル出力が KB 外で生成する PII は防げない。"},
-        {"id": "D", "text": "Lambda で正規表現マスクを自前実装する", "is_correct": false, "explanation": "可能だが、Guardrails のマネージド機能を使うべき。検出精度・運用負荷で劣る。"}
+        {
+          "id": "A",
+          "text": "Lambda で正規表現マスクを自前実装する",
+          "is_correct": false,
+          "explanation": "可能だが、Guardrails のマネージド機能を使うべき。検出精度・運用負荷で劣る。"
+        },
+        {
+          "id": "B",
+          "text": "Knowledge Base のチャンクから PII を事前削除する",
+          "is_correct": false,
+          "explanation": "KB 由来 PII はカバーできるが、モデル出力が KB 外で生成する PII は防げない。"
+        },
+        {
+          "id": "C",
+          "text": "Output filter（responses）で PII を検出し、`PHONE` と `ACCOUNT_NUMBER`（or 同等カスタムタイプ）を `ANONYMIZE` 動作にする",
+          "is_correct": true,
+          "explanation": "正解。Guardrails の sensitive information filter は出力時にエンティティを置換でき、PII タイプごとに block/anonymize を選べる。"
+        },
+        {
+          "id": "D",
+          "text": "Input filter で全 PII を block する",
+          "is_correct": false,
+          "explanation": "ユーザが自分の情報を入力する場面はブロックすべきでない。"
+        }
       ],
       "explanation": "Bedrock Guardrails の sensitive information filter は、PII 検出を input/output 別に設定でき、`BLOCK`（応答自体を遮断）か `ANONYMIZE`（[PHONE] のような置換）を選べる。FinTech のケースでは output 側で anonymize、社員バックエンドツール出力には別 Guardrail を当てない、という制御が可能。",
       "references": [
-        {"title": "Sensitive information filter for Guardrails", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html"}
+        {
+          "title": "Sensitive information filter for Guardrails",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html"
+        }
       ],
-      "tags": ["guardrails", "pii", "fintech", "yengine", "anonymize"],
-      "common_mistakes": ["Input/output の区別を意識しない", "正規表現で自前実装"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "guardrails",
+        "pii",
+        "fintech",
+        "yengine",
+        "anonymize"
+      ],
+      "common_mistakes": [
+        "Input/output の区別を意識しない",
+        "正規表現で自前実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-020",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Function Calling / Tool Use API",
       "subtopic": "Parallel tool use",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Tokai Industrial の生産管理 Agent が、ある製品の在庫照会 + 仕入先稼働状況 + 過去 3 ヶ月の発注実績の 3 種別データを 1 質問で必要とする。レイテンシを下げる構成として最も効果的なのは？",
       "options": [
-        {"id": "A", "text": "Claude（または Nova）の parallel tool use を有効化し、3 つの tool を同時呼び出しさせる。アプリは並列に Lambda を実行して結果をまとめて返す", "is_correct": true, "explanation": "正解。parallel tool use は、モデルが 1 ターンで複数の独立 tool を要求できる機能。アプリ側で並列実行してまとめて返す。"},
-        {"id": "B", "text": "tool を 1 つに統合し、1 度の Lambda 内で 3 種別データを順次取得する", "is_correct": false, "explanation": "順次なら時間が掛かる。Lambda 内並列は実装可能だが、責務凝集が悪く拡張性も低い。"},
-        {"id": "C", "text": "ReAct の thought ステップを増やして 3 ターンで取得する", "is_correct": false, "explanation": "ターンが増えてレイテンシが悪化。"},
-        {"id": "D", "text": "Bedrock の同期推論 API を非同期 API に変える", "is_correct": false, "explanation": "Async は長時間ジョブ向けで、レスポンス時間短縮にはならない。"}
+        {
+          "id": "A",
+          "text": "Bedrock の同期推論 API を非同期 API に変える",
+          "is_correct": false,
+          "explanation": "Async は長時間ジョブ向けで、レスポンス時間短縮にはならない。"
+        },
+        {
+          "id": "B",
+          "text": "tool を 1 つに統合し、1 度の Lambda 内で 3 種別データを順次取得する",
+          "is_correct": false,
+          "explanation": "順次なら時間が掛かる。Lambda 内並列は実装可能だが、責務凝集が悪く拡張性も低い。"
+        },
+        {
+          "id": "C",
+          "text": "ReAct の thought ステップを増やして 3 ターンで取得する",
+          "is_correct": false,
+          "explanation": "ターンが増えてレイテンシが悪化。"
+        },
+        {
+          "id": "D",
+          "text": "Claude（または Nova）の parallel tool use を有効化し、3 つの tool を同時呼び出しさせる。アプリは並列に Lambda を実行して結果をまとめて返す",
+          "is_correct": true,
+          "explanation": "正解。parallel tool use は、モデルが 1 ターンで複数の独立 tool を要求できる機能。アプリ側で並列実行してまとめて返す。"
+        }
       ],
       "explanation": "Anthropic Claude や Amazon Nova の Tool Use では、独立に実行可能な複数 tool を 1 ターンで要求できる（parallel tool use）。アプリは tool_use ブロックを並列実行し、tool_result を 1 メッセージにまとめて返す。これによりラウンドトリップを削減でき、製造業のリアルタイム照会のような遅延制約に有効。",
       "references": [
-        {"title": "Parallel tool use", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html"}
+        {
+          "title": "Parallel tool use",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html"
+        }
       ],
-      "tags": ["parallel-tool-use", "manufacturing", "tokai-industrial", "latency"],
-      "common_mistakes": ["逐次 ReAct で済ませてレイテンシ悪化", "tool 統合で責務が膨れる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "parallel-tool-use",
+        "manufacturing",
+        "tokai-industrial",
+        "latency"
+      ],
+      "common_mistakes": [
+        "逐次 ReAct で済ませてレイテンシ悪化",
+        "tool 統合で責務が膨れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-021",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "ReAct パターン",
       "subtopic": "ループ脱出と無限ループ防止",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "自作 Tool Use ループが特定の質問で無限ループに陥り、tool 呼び出しが 30 回を超えた事例が観測された。最も効果的かつ堅牢な防御策は？",
       "options": [
-        {"id": "A", "text": "アプリ側で最大ループ数（例 8 回）と累積 token 上限を設定し、超過時はループを強制終了して人間に引き継ぐエスカレーション処理を入れる", "is_correct": true, "explanation": "正解。Bedrock Agents には組み込みの max iterations 制限があるが、自作の場合は明示的に上限を設けるのがベストプラクティス。"},
-        {"id": "B", "text": "モデルを Sonnet から Opus に変えるだけ", "is_correct": false, "explanation": "高性能モデルでも無限ループは起き得る。プロセス制御で守るべき。"},
-        {"id": "C", "text": "Lambda タイムアウトを 15 分にすれば解決", "is_correct": false, "explanation": "ループ自体が止まらないので延命するだけ。"},
-        {"id": "D", "text": "Guardrails の denied topic に『無限ループ』を追加", "is_correct": false, "explanation": "Guardrails はテキスト分類で、ループ制御の機能ではない。"}
+        {
+          "id": "A",
+          "text": "アプリ側で最大ループ数（例 8 回）と累積 token 上限を設定し、超過時はループを強制終了して人間に引き継ぐエスカレーション処理を入れる",
+          "is_correct": true,
+          "explanation": "正解。Bedrock Agents には組み込みの max iterations 制限があるが、自作の場合は明示的に上限を設けるのがベストプラクティス。"
+        },
+        {
+          "id": "B",
+          "text": "Guardrails の denied topic に『無限ループ』を追加",
+          "is_correct": false,
+          "explanation": "Guardrails はテキスト分類で、ループ制御の機能ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda タイムアウトを 15 分にすれば解決",
+          "is_correct": false,
+          "explanation": "ループ自体が止まらないので延命するだけ。"
+        },
+        {
+          "id": "D",
+          "text": "モデルを Sonnet から Opus に変えるだけ",
+          "is_correct": false,
+          "explanation": "高性能モデルでも無限ループは起き得る。プロセス制御で守るべき。"
+        }
       ],
       "explanation": "エージェントのループ制御は『最大反復数』『累積トークン上限』『時間上限』の 3 階層で守るのが定石。Bedrock Agents は max iteration をプロンプト・設定で制御できるが、自作の場合はアプリ側で count を持ち、超過時に safe-fail する。観測（CloudWatch）でも tool 呼び出し回数のメトリクスを取り、しきい値で警告すべき。",
       "references": [
-        {"title": "Bedrock Agents iteration limits", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-create.html"}
+        {
+          "title": "Bedrock Agents iteration limits",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-create.html"
+        }
       ],
-      "tags": ["react", "loop-prevention", "tool-use", "reliability"],
-      "common_mistakes": ["モデルアップグレードで解決と思い込む", "Lambda タイムアウト延長で誤魔化す"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "react",
+        "loop-prevention",
+        "tool-use",
+        "reliability"
+      ],
+      "common_mistakes": [
+        "モデルアップグレードで解決と思い込む",
+        "Lambda タイムアウト延長で誤魔化す"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-022",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Bedrock Agents",
       "subtopic": "Lambda vs Return of Control の選択",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Bedrock Agent の Action Group 実装方式を Lambda にすべきか Return of Control（RoC）にすべきかを判断する基準として最も適切な比較は？",
       "options": [
-        {"id": "A", "text": "Lambda は AWS マネージド非同期実行に向き、RoC はクライアント側で完結する処理（人間承認・長時間処理・社内ネットワーク・既存アプリ統合）に向く", "is_correct": true, "explanation": "正解。Lambda は AWS 内完結のサーバレス処理に向き、RoC は『Agent 外』に処理委譲するパターンに向く。"},
-        {"id": "B", "text": "Lambda は無料、RoC は有料なのでコストで選ぶ", "is_correct": false, "explanation": "両者ともコスト構造はあるが、選択基準は機能面。"},
-        {"id": "C", "text": "Lambda は同期、RoC は非同期と決まっている", "is_correct": false, "explanation": "Lambda も同期（最大 15 分）、RoC も同期的な制御戻し。"},
-        {"id": "D", "text": "Lambda は Knowledge Base 連携必須、RoC は不要", "is_correct": false, "explanation": "両者とも KB 連携と独立。"}
+        {
+          "id": "A",
+          "text": "Lambda は無料、RoC は有料なのでコストで選ぶ",
+          "is_correct": false,
+          "explanation": "両者ともコスト構造はあるが、選択基準は機能面。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda は AWS マネージド非同期実行に向き、RoC はクライアント側で完結する処理（人間承認・長時間処理・社内ネットワーク・既存アプリ統合）に向く",
+          "is_correct": true,
+          "explanation": "正解。Lambda は AWS 内完結のサーバレス処理に向き、RoC は『Agent 外』に処理委譲するパターンに向く。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda は同期、RoC は非同期と決まっている",
+          "is_correct": false,
+          "explanation": "Lambda も同期（最大 15 分）、RoC も同期的な制御戻し。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda は Knowledge Base 連携必須、RoC は不要",
+          "is_correct": false,
+          "explanation": "両者とも KB 連携と独立。"
+        }
       ],
       "explanation": "Lambda 方式: AWS 内 API・サーバレス処理向け。RoC 方式: ① 人間承認（金額大きい操作）② 長時間処理（Lambda 15 分超）③ オンプレ・閉域 ④ 既存クライアントアプリのコード再利用。両者を混在させ、Action Group ごとに最適方式を選べる。",
       "references": [
-        {"title": "Bedrock Agents - Lambda vs RoC", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-action-create.html"}
+        {
+          "title": "Bedrock Agents - Lambda vs RoC",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-action-create.html"
+        }
       ],
-      "tags": ["lambda", "return-of-control", "design-decision", "bedrock-agents"],
-      "common_mistakes": ["どちらかしか選べないと思い込む", "RoC の存在を知らずに全部 Lambda で書く"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "lambda",
+        "return-of-control",
+        "design-decision",
+        "bedrock-agents"
+      ],
+      "common_mistakes": [
+        "どちらかしか選べないと思い込む",
+        "RoC の存在を知らずに全部 Lambda で書く"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-023",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "AgentCore",
       "subtopic": "AgentCore Identity と権限委譲",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "AgentCore Identity を使って、エージェントが Google Drive や Salesforce などサードパーティ SaaS に対しユーザの代理でアクセスする構成を実装したい。最も適切な記述は？",
       "options": [
-        {"id": "A", "text": "AgentCore Identity の Outbound Identity 機能で OAuth2 トークンをユーザ単位に発行・保管し、エージェントが当該トークンで API を叩く", "is_correct": true, "explanation": "正解。AgentCore Identity は Cognito/Workforce IdP 等と統合し、エンドユーザ代理の OAuth トークンを安全に保管・更新する。"},
-        {"id": "B", "text": "ユーザのパスワードを Bedrock Agent のプロンプトに渡して API 呼び出しさせる", "is_correct": false, "explanation": "重大なセキュリティ違反。"},
-        {"id": "C", "text": "全ユーザ共通のサービスアカウントを使う", "is_correct": false, "explanation": "個別ユーザの代理にならず、最小権限原則違反。"},
-        {"id": "D", "text": "ユーザ自身に手動でトークンを毎回貼り付けさせる", "is_correct": false, "explanation": "UX が極端に悪く、自動化の意義を失う。"}
+        {
+          "id": "A",
+          "text": "全ユーザ共通のサービスアカウントを使う",
+          "is_correct": false,
+          "explanation": "個別ユーザの代理にならず、最小権限原則違反。"
+        },
+        {
+          "id": "B",
+          "text": "ユーザのパスワードを Bedrock Agent のプロンプトに渡して API 呼び出しさせる",
+          "is_correct": false,
+          "explanation": "重大なセキュリティ違反。"
+        },
+        {
+          "id": "C",
+          "text": "AgentCore Identity の Outbound Identity 機能で OAuth2 トークンをユーザ単位に発行・保管し、エージェントが当該トークンで API を叩く",
+          "is_correct": true,
+          "explanation": "正解。AgentCore Identity は Cognito/Workforce IdP 等と統合し、エンドユーザ代理の OAuth トークンを安全に保管・更新する。"
+        },
+        {
+          "id": "D",
+          "text": "ユーザ自身に手動でトークンを毎回貼り付けさせる",
+          "is_correct": false,
+          "explanation": "UX が極端に悪く、自動化の意義を失う。"
+        }
       ],
       "explanation": "AgentCore Identity は、Inbound（エージェント呼び出し時のユーザ認証）と Outbound（エージェントから外部サービスへの権限委譲）の 2 方向を扱う。Outbound では OAuth2 / API キーを Vault に安全保管し、リフレッシュトークン管理・スコープ最小化を支援。",
       "references": [
-        {"title": "AgentCore Identity", "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html"}
+        {
+          "title": "AgentCore Identity",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html"
+        }
       ],
-      "tags": ["agentcore", "identity", "oauth", "delegation"],
-      "common_mistakes": ["共有サービスアカウントで済ませる", "ユーザ資格情報を平文プロンプトに含める"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agentcore",
+        "identity",
+        "oauth",
+        "delegation"
+      ],
+      "common_mistakes": [
+        "共有サービスアカウントで済ませる",
+        "ユーザ資格情報を平文プロンプトに含める"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-024",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Multi-agent Orchestration",
       "subtopic": "Routing classification の精度低下",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Multi-agent Supervisor が特定の質問群で誤った collaborator に振り分け、再質問が増加。Supervisor 動作のチューニングとして最も的を射ているのは？",
       "options": [
-        {"id": "A", "text": "誤分類が起きるシナリオを集めて、各 collaborator description に明示的な含む/含まない条件と例文を追加し、Supervisor の Advanced Prompt にもガイダンスを足す", "is_correct": true, "explanation": "正解。Supervisor は collaborator description を主な根拠に振り分けるため、対象シナリオの境界を明示するのが効果的。"},
-        {"id": "B", "text": "Supervisor を Bedrock Agents から外し、Step Functions の手書きルーターに置き換える", "is_correct": false, "explanation": "選択肢としてはあるが、まず description チューニングで解決するのが原則。"},
-        {"id": "C", "text": "Knowledge Base を増やして RAG で振り分けさせる", "is_correct": false, "explanation": "Routing は KB ではなく LLM の判断ロジックの問題。"},
-        {"id": "D", "text": "Guardrails で誤分類質問をブロックする", "is_correct": false, "explanation": "ブロックは要件未達。"}
+        {
+          "id": "A",
+          "text": "Supervisor を Bedrock Agents から外し、Step Functions の手書きルーターに置き換える",
+          "is_correct": false,
+          "explanation": "選択肢としてはあるが、まず description チューニングで解決するのが原則。"
+        },
+        {
+          "id": "B",
+          "text": "Knowledge Base を増やして RAG で振り分けさせる",
+          "is_correct": false,
+          "explanation": "Routing は KB ではなく LLM の判断ロジックの問題。"
+        },
+        {
+          "id": "C",
+          "text": "Guardrails で誤分類質問をブロックする",
+          "is_correct": false,
+          "explanation": "ブロックは要件未達。"
+        },
+        {
+          "id": "D",
+          "text": "誤分類が起きるシナリオを集めて、各 collaborator description に明示的な含む/含まない条件と例文を追加し、Supervisor の Advanced Prompt にもガイダンスを足す",
+          "is_correct": true,
+          "explanation": "正解。Supervisor は collaborator description を主な根拠に振り分けるため、対象シナリオの境界を明示するのが効果的。"
+        }
       ],
       "explanation": "Multi-agent ルーティング精度は collaborator description の質が支配的。境界を明示し（『この collaborator は X を扱う。Y は扱わない（Y は別 collaborator が担当）』）、誤分類されがちな例を Few-shot で Supervisor advanced prompt に追加する。さらに Routing Classifier 動作モード（v2 では分類専用 LLM 経路）を活用する選択肢もある。",
       "references": [
-        {"title": "Multi-agent collaboration tuning", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html"}
+        {
+          "title": "Multi-agent collaboration tuning",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html"
+        }
       ],
-      "tags": ["multi-agent", "routing", "supervisor", "classification"],
-      "common_mistakes": ["LLM 任せの description で済ませる", "RAG で routing を解決しようとする"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "multi-agent",
+        "routing",
+        "supervisor",
+        "classification"
+      ],
+      "common_mistakes": [
+        "LLM 任せの description で済ませる",
+        "RAG で routing を解決しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-025",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "外部 API 連携",
       "subtopic": "冪等性と副作用",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "決済を実行する Action Group を Bedrock Agent が ReAct ループ内で 2 回呼んでしまい、二重課金が発生した事故が起きた。再発防止策として最も効果的なのは？",
       "options": [
-        {"id": "A", "text": "決済 API を冪等キー（idempotency key）対応で実装し、Lambda 側でリクエスト ID を発行して同一キーの再実行を抑止する。同時に Action description で『この関数は副作用があり、同じ目的で複数回呼ぶな』と明示する", "is_correct": true, "explanation": "正解。冪等性は API 設計の原則で、エージェントの再試行や誤呼び出しを安全に許容する。"},
-        {"id": "B", "text": "ReAct ループを諦めてシングルターンに変える", "is_correct": false, "explanation": "機能要件を満たせなくなる。"},
-        {"id": "C", "text": "決済結果をモデルに伝えない", "is_correct": false, "explanation": "結果を伝えないと文脈喪失で逆に再呼び出し誘発。"},
-        {"id": "D", "text": "Knowledge Base に過去決済履歴を入れて、モデルに『重複しないように』と指示する", "is_correct": false, "explanation": "確率的に防げないので、重要な金銭処理には不適切。"}
+        {
+          "id": "A",
+          "text": "決済 API を冪等キー（idempotency key）対応で実装し、Lambda 側でリクエスト ID を発行して同一キーの再実行を抑止する。同時に Action description で『この関数は副作用があり、同じ目的で複数回呼ぶな』と明示する",
+          "is_correct": true,
+          "explanation": "正解。冪等性は API 設計の原則で、エージェントの再試行や誤呼び出しを安全に許容する。"
+        },
+        {
+          "id": "B",
+          "text": "Knowledge Base に過去決済履歴を入れて、モデルに『重複しないように』と指示する",
+          "is_correct": false,
+          "explanation": "確率的に防げないので、重要な金銭処理には不適切。"
+        },
+        {
+          "id": "C",
+          "text": "決済結果をモデルに伝えない",
+          "is_correct": false,
+          "explanation": "結果を伝えないと文脈喪失で逆に再呼び出し誘発。"
+        },
+        {
+          "id": "D",
+          "text": "ReAct ループを諦めてシングルターンに変える",
+          "is_correct": false,
+          "explanation": "機能要件を満たせなくなる。"
+        }
       ],
       "explanation": "副作用のある Action（決済・予約・データ書込）は『冪等キー設計』が鉄則。クライアントが UUID を発行し、サーバ側でキーごとに最初の結果を保存・以降は同じ結果を返す。これにより LLM の不確実性を吸収できる。description で副作用性を明示するのは補助策。Human-in-the-loop（実行前ユーザ確認）も併用が望ましい。",
       "references": [
-        {"title": "Idempotency in API design - AWS Well-Architected", "url": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"}
+        {
+          "title": "Idempotency in API design - AWS Well-Architected",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
+        }
       ],
-      "tags": ["idempotency", "side-effect", "payment", "reliability"],
-      "common_mistakes": ["プロンプトで重複防止できると思う", "二重実行はモデルが偉ければ起きないと油断"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "idempotency",
+        "side-effect",
+        "payment",
+        "reliability"
+      ],
+      "common_mistakes": [
+        "プロンプトで重複防止できると思う",
+        "二重実行はモデルが偉ければ起きないと油断"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-026",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Agent Memory",
       "subtopic": "個人情報保持の設計",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "MediCare の医療相談 Agent で、Bedrock Agents の long-term memory を使うかどうか検討中。患者識別子・症状・服薬情報を含む可能性がある。最も適切な判断は？",
       "options": [
-        {"id": "A", "text": "long-term memory を有効化する前に、メモリに保存される要約に PII が含まれない設計にする（または保存対象を匿名化トークンに限定）。Guardrails の sensitive information filter とメモリ保持期間最小化で対処", "is_correct": true, "explanation": "正解。便利だが規制上の慎重さが必要。匿名化・期間最小化・Guardrails 連携が標準アプローチ。"},
-        {"id": "B", "text": "便利なので無検証で long-term memory を有効化する", "is_correct": false, "explanation": "医療データの規制（HIPAA 等）違反リスクが高い。"},
-        {"id": "C", "text": "long-term memory は医療業界では絶対使えない", "is_correct": false, "explanation": "適切な制御を入れれば利用可能。"},
-        {"id": "D", "text": "memory の要約結果はクライアントが管理できないので何も対策できない", "is_correct": false, "explanation": "実際にはメモリ ID 単位の削除・保持期間制御・Guardrails 適用などの統制手段がある。"}
+        {
+          "id": "A",
+          "text": "long-term memory は医療業界では絶対使えない",
+          "is_correct": false,
+          "explanation": "適切な制御を入れれば利用可能。"
+        },
+        {
+          "id": "B",
+          "text": "long-term memory を有効化する前に、メモリに保存される要約に PII が含まれない設計にする（または保存対象を匿名化トークンに限定）。Guardrails の sensitive information filter とメモリ保持期間最小化で対処",
+          "is_correct": true,
+          "explanation": "正解。便利だが規制上の慎重さが必要。匿名化・期間最小化・Guardrails 連携が標準アプローチ。"
+        },
+        {
+          "id": "C",
+          "text": "memory の要約結果はクライアントが管理できないので何も対策できない",
+          "is_correct": false,
+          "explanation": "実際にはメモリ ID 単位の削除・保持期間制御・Guardrails 適用などの統制手段がある。"
+        },
+        {
+          "id": "D",
+          "text": "便利なので無検証で long-term memory を有効化する",
+          "is_correct": false,
+          "explanation": "医療データの規制（HIPAA 等）違反リスクが高い。"
+        }
       ],
       "explanation": "Bedrock Agents の long-term memory は便利だが、保存される要約に PII が含まれ得る。医療業界では HIPAA 適合のため、(1) 入力前に匿名化、(2) Guardrails で PII anonymize を有効化、(3) memory 保持期間を最小化（30 日 等）、(4) ユーザ削除リクエストへの対応 API を整備、が標準セット。",
       "references": [
-        {"title": "Bedrock Agents memory and HIPAA considerations", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-memory.html"}
+        {
+          "title": "Bedrock Agents memory and HIPAA considerations",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-memory.html"
+        }
       ],
-      "tags": ["agent-memory", "healthcare", "medicare", "hipaa", "privacy"],
-      "common_mistakes": ["医療では絶対使えないと諦める", "無検証で有効化する"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agent-memory",
+        "healthcare",
+        "medicare",
+        "hipaa",
+        "privacy"
+      ],
+      "common_mistakes": [
+        "医療では絶対使えないと諦める",
+        "無検証で有効化する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-027",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "AgentCore",
       "subtopic": "AgentCore Gateway / MCP",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある SaaS 企業が、社内に既にある REST API 群（OpenAPI 3.0 で記述）を、複数チームのエージェント（Bedrock Agents・LangGraph・自作）から MCP（Model Context Protocol）で利用可能にしたい。最も適切なアプローチは？",
       "options": [
-        {"id": "A", "text": "AgentCore Gateway に OpenAPI スキーマを取り込み、自動的に MCP ツールとして公開する。各エージェントは MCP クライアントとして接続するだけで利用可能になる", "is_correct": true, "explanation": "正解。AgentCore Gateway は OpenAPI/Smithy/Lambda を MCP サーバ化するためのマネージドサービス。"},
-        {"id": "B", "text": "各エージェントに個別に Action Group / tool を実装する", "is_correct": false, "explanation": "DRY 違反でメンテ負荷が膨大。"},
-        {"id": "C", "text": "API Gateway で全 API を公開する", "is_correct": false, "explanation": "API 公開と MCP ツール化は別。MCP 化は Gateway の役目。"},
-        {"id": "D", "text": "EventBridge にイベント連携する", "is_correct": false, "explanation": "イベント連携と Tool 公開は別の概念。"}
+        {
+          "id": "A",
+          "text": "EventBridge にイベント連携する",
+          "is_correct": false,
+          "explanation": "イベント連携と Tool 公開は別の概念。"
+        },
+        {
+          "id": "B",
+          "text": "各エージェントに個別に Action Group / tool を実装する",
+          "is_correct": false,
+          "explanation": "DRY 違反でメンテ負荷が膨大。"
+        },
+        {
+          "id": "C",
+          "text": "AgentCore Gateway に OpenAPI スキーマを取り込み、自動的に MCP ツールとして公開する。各エージェントは MCP クライアントとして接続するだけで利用可能になる",
+          "is_correct": true,
+          "explanation": "正解。AgentCore Gateway は OpenAPI/Smithy/Lambda を MCP サーバ化するためのマネージドサービス。"
+        },
+        {
+          "id": "D",
+          "text": "API Gateway で全 API を公開する",
+          "is_correct": false,
+          "explanation": "API 公開と MCP ツール化は別。MCP 化は Gateway の役目。"
+        }
       ],
       "explanation": "AgentCore Gateway は、既存 REST API（OpenAPI 3.0）・Smithy 定義・Lambda 関数・GraphQL を、MCP（Model Context Protocol）サーバとしてラップする。これにより、複数エージェント・複数フレームワーク間で統一的にツール群を共有できる。MCP は OAuth/認証統合と監査機能も持つ。",
       "references": [
-        {"title": "AgentCore Gateway", "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html"}
+        {
+          "title": "AgentCore Gateway",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html"
+        }
       ],
-      "tags": ["agentcore", "gateway", "mcp", "openapi"],
-      "common_mistakes": ["各エージェントに個別実装", "API Gateway を MCP と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agentcore",
+        "gateway",
+        "mcp",
+        "openapi"
+      ],
+      "common_mistakes": [
+        "各エージェントに個別実装",
+        "API Gateway を MCP と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-028",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Bedrock Agents",
       "subtopic": "本番運用バージョン管理",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "B2B SaaS の本番 Bedrock Agent でプロンプト・Action 構成変更を頻繁に行いたいが、本番ユーザに影響を出したくない。最も妥当な運用設計は？",
       "options": [
-        {"id": "A", "text": "Agent Version と Alias を活用し、本番アプリは固定 Alias を参照、新版テストは別 Alias でカナリア配信。検証後に Alias の参照先 Version を切替", "is_correct": true, "explanation": "正解。Bedrock Agents の Version/Alias 機構は、本番安定性とイテレーション速度を両立する標準パターン。"},
-        {"id": "B", "text": "DRAFT 版のまま本番運用する", "is_correct": false, "explanation": "DRAFT は変更が即反映され本番には不適切。"},
-        {"id": "C", "text": "本番用と検証用に別の AWS アカウントで完全分離するだけ", "is_correct": false, "explanation": "アカウント分離は補完的だが、単体では Alias と同等の段階的切替を提供しない。"},
-        {"id": "D", "text": "Agent を毎回作り直す", "is_correct": false, "explanation": "Agent ID が変わり、アプリ側コードも変更が必要で運用負荷が大きい。"}
+        {
+          "id": "A",
+          "text": "DRAFT 版のまま本番運用する",
+          "is_correct": false,
+          "explanation": "DRAFT は変更が即反映され本番には不適切。"
+        },
+        {
+          "id": "B",
+          "text": "本番用と検証用に別の AWS アカウントで完全分離するだけ",
+          "is_correct": false,
+          "explanation": "アカウント分離は補完的だが、単体では Alias と同等の段階的切替を提供しない。"
+        },
+        {
+          "id": "C",
+          "text": "Agent を毎回作り直す",
+          "is_correct": false,
+          "explanation": "Agent ID が変わり、アプリ側コードも変更が必要で運用負荷が大きい。"
+        },
+        {
+          "id": "D",
+          "text": "Agent Version と Alias を活用し、本番アプリは固定 Alias を参照、新版テストは別 Alias でカナリア配信。検証後に Alias の参照先 Version を切替",
+          "is_correct": true,
+          "explanation": "正解。Bedrock Agents の Version/Alias 機構は、本番安定性とイテレーション速度を両立する標準パターン。"
+        }
       ],
       "explanation": "Bedrock Agents は DRAFT/Version/Alias の 3 階層を持つ。本番アプリは Alias（例：`prod`）を呼び、Alias は特定 Version を指す。新変更は DRAFT で開発 → 別 Alias（例：`canary`）に紐付けて部分公開 → 検証 OK で `prod` Alias を新 Version に向け直す。これにより instant rollback も可能。",
       "references": [
-        {"title": "Deploy a Bedrock agent with versions and aliases", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-deploy.html"}
+        {
+          "title": "Deploy a Bedrock agent with versions and aliases",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-deploy.html"
+        }
       ],
-      "tags": ["agent-version", "alias", "deployment", "canary"],
-      "common_mistakes": ["DRAFT を本番で使う", "Alias 機能を知らずに毎回 Agent ID を変える"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agent-version",
+        "alias",
+        "deployment",
+        "canary"
+      ],
+      "common_mistakes": [
+        "DRAFT を本番で使う",
+        "Alias 機能を知らずに毎回 Agent ID を変える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-029",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "Multi-agent Orchestration",
       "subtopic": "Bedrock Agents vs AgentCore vs 自作",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "FinTech の Yengine が、自社マルチエージェント基盤を選定中。要件: 高度なグラフ的フロー（条件分岐・ループ・人手承認）、強い観測性、特定ベンダーロックインを避けたい。最適解は？",
       "options": [
-        {"id": "A", "text": "LangGraph などフレームワークでフロー実装し、AgentCore Runtime でホスト、AgentCore Observability/Memory/Identity を組み合わせる", "is_correct": true, "explanation": "正解。フレームワーク自由度を保ちつつ、運用基盤を AWS マネージドに委ねるバランスが良い。"},
-        {"id": "B", "text": "Bedrock Agents Multi-Agent Collaboration を使う", "is_correct": false, "explanation": "Multi-agent は強力だが、複雑なグラフフロー・条件分岐の自由度では LangGraph 等に劣る。"},
-        {"id": "C", "text": "EC2 上に LangGraph をデプロイし、観測も自前構築する", "is_correct": false, "explanation": "可能だが、運用負荷が大きく要件の『強い観測性』を満たすコストが高い。"},
-        {"id": "D", "text": "Step Functions のみで全部書く", "is_correct": false, "explanation": "LLM 連携はできるが、エージェント特有の機能（メモリ・MCP ツール統合）は別途要実装。"}
+        {
+          "id": "A",
+          "text": "LangGraph などフレームワークでフロー実装し、AgentCore Runtime でホスト、AgentCore Observability/Memory/Identity を組み合わせる",
+          "is_correct": true,
+          "explanation": "正解。フレームワーク自由度を保ちつつ、運用基盤を AWS マネージドに委ねるバランスが良い。"
+        },
+        {
+          "id": "B",
+          "text": "Bedrock Agents Multi-Agent Collaboration を使う",
+          "is_correct": false,
+          "explanation": "Multi-agent は強力だが、複雑なグラフフロー・条件分岐の自由度では LangGraph 等に劣る。"
+        },
+        {
+          "id": "C",
+          "text": "Step Functions のみで全部書く",
+          "is_correct": false,
+          "explanation": "LLM 連携はできるが、エージェント特有の機能（メモリ・MCP ツール統合）は別途要実装。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 上に LangGraph をデプロイし、観測も自前構築する",
+          "is_correct": false,
+          "explanation": "可能だが、運用負荷が大きく要件の『強い観測性』を満たすコストが高い。"
+        }
       ],
       "explanation": "選定基準は『フロー柔軟性』と『運用負荷』。Bedrock Agents Multi-Agent はマネージド性高だが、複雑なステートマシン的フローは AgentCore + LangGraph/Strands が有利。AgentCore は framework-agnostic 設計で、ロックインを避けつつ Memory/Identity/Observability/Gateway をマネージドで使える。",
       "references": [
-        {"title": "Choosing between Bedrock Agents and AgentCore", "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/choosing.html"}
+        {
+          "title": "Choosing between Bedrock Agents and AgentCore",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/choosing.html"
+        }
       ],
-      "tags": ["agentcore", "framework-selection", "fintech", "yengine", "lock-in"],
-      "common_mistakes": ["Bedrock Agents で何でも解決すると思い込む", "Step Functions で十分と過小評価"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agentcore",
+        "framework-selection",
+        "fintech",
+        "yengine",
+        "lock-in"
+      ],
+      "common_mistakes": [
+        "Bedrock Agents で何でも解決すると思い込む",
+        "Step Functions で十分と過小評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     },
     {
       "id": "aip-c01-domain4-030",
       "version": "1.0",
-      "exam": {"code": "AIP-C01", "name": "AWS Certified Generative AI Developer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-4", "name": "エージェント開発", "weight_percent": 20},
+      "exam": {
+        "code": "AIP-C01",
+        "name": "AWS Certified Generative AI Developer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "エージェント開発",
+        "weight_percent": 20
+      },
       "topic": "AgentCore + Multi-agent",
       "subtopic": "新規エージェント基盤の総合設計",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "Tokai Industrial が新規エージェント基盤を構築する。要件: (1) 工場現場（オンプレ）の機械稼働データ照会、(2) 過去保守記録の RAG（Bedrock KB）、(3) 発注作業（人手承認必須）、(4) 会話履歴の長期保持、(5) 監査ログ・OTEL 観測、(6) 段階的なリリース管理。最も総合的かつ実装可能な設計案は？",
       "options": [
-        {"id": "A", "text": "AgentCore Runtime に LangGraph で書いた Supervisor を配置し、(1) は AgentCore Gateway 経由 MCP（オンプレ Edge エージェント連携）、(2) は Bedrock Knowledge Base 検索ツール、(3) は Step Functions で承認フロー（RoC 相当）、(4) は AgentCore Memory（長期）、(5) は AgentCore Observability + OpenTelemetry、(6) は Runtime endpoint のバージョン Alias。Guardrails と Identity（OAuth）を全段に適用", "is_correct": true, "explanation": "正解。AgentCore の各構成要素と既存 AWS サービスを役割分担で組み合わせ、要件全てを満たす。"},
-        {"id": "B", "text": "Bedrock Agents 1 つに Action Group を詰め込み、Knowledge Base を 1 つ繋ぐだけ", "is_correct": false, "explanation": "オンプレ連携・人手承認・OTEL・段階リリース管理など要件の半数以上を満たせない。"},
-        {"id": "C", "text": "EC2 上に独自実装し、全部自作する", "is_correct": false, "explanation": "技術的可能だが、運用負荷とセキュリティ実装の作り込みコストが膨大。"},
-        {"id": "D", "text": "SageMaker Notebook で動かしたエージェントを本番として使う", "is_correct": false, "explanation": "Notebook は本番運用に適さない。"}
+        {
+          "id": "A",
+          "text": "EC2 上に独自実装し、全部自作する",
+          "is_correct": false,
+          "explanation": "技術的可能だが、運用負荷とセキュリティ実装の作り込みコストが膨大。"
+        },
+        {
+          "id": "B",
+          "text": "AgentCore Runtime に LangGraph で書いた Supervisor を配置し、(1) は AgentCore Gateway 経由 MCP（オンプレ Edge エージェント連携）、(2) は Bedrock Knowledge Base 検索ツール、(3) は Step Functions で承認フロー（RoC 相当）、(4) は AgentCore Memory（長期）、(5) は AgentCore Observability + OpenTelemetry、(6) は Runtime endpoint のバージョン Alias。Guardrails と Identity（OAuth）を全段に適用",
+          "is_correct": true,
+          "explanation": "正解。AgentCore の各構成要素と既存 AWS サービスを役割分担で組み合わせ、要件全てを満たす。"
+        },
+        {
+          "id": "C",
+          "text": "SageMaker Notebook で動かしたエージェントを本番として使う",
+          "is_correct": false,
+          "explanation": "Notebook は本番運用に適さない。"
+        },
+        {
+          "id": "D",
+          "text": "Bedrock Agents 1 つに Action Group を詰め込み、Knowledge Base を 1 つ繋ぐだけ",
+          "is_correct": false,
+          "explanation": "オンプレ連携・人手承認・OTEL・段階リリース管理など要件の半数以上を満たせない。"
+        }
       ],
       "explanation": "総合設計は『要件 → AWS マネージド構成要素のマッピング』が肝。AgentCore Runtime（実行）+ Memory（長期記憶）+ Identity（OAuth/SaaS 接続）+ Gateway（MCP 化）+ Observability（OTEL）+ Browser/Code Interpreter Tool。これに Bedrock Knowledge Base、Step Functions（承認フロー）、Bedrock Guardrails を組み合わせると、製造業の現実要件をマネージドで満たせる。",
       "references": [
-        {"title": "AgentCore architecture overview", "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/architecture.html"}
+        {
+          "title": "AgentCore architecture overview",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/architecture.html"
+        }
       ],
-      "tags": ["agentcore", "manufacturing", "tokai-industrial", "comprehensive-design"],
-      "common_mistakes": ["Bedrock Agents 1 つで全要件を満たそうとする", "全自作でスコープを膨らませる"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "claude-opus-4-7", "reviewed": false, "language": "ja"}
+      "tags": [
+        "agentcore",
+        "manufacturing",
+        "tokai-industrial",
+        "comprehensive-design"
+      ],
+      "common_mistakes": [
+        "Bedrock Agents 1 つで全要件を満たそうとする",
+        "全自作でスコープを膨らませる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
     }
   ]
 }

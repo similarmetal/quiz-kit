@@ -15,469 +15,1530 @@
     {
       "id": "dop-c02-domain5-001",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "AWS Health",
       "subtopic": "Personal Health Dashboard",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS Health（Personal Health Dashboard）が提供する情報として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "アカウントに影響する AWS のサービスイベント・スケジュール変更・セキュリティ通知", "is_correct": true, "explanation": "正解。AWS Health はアカウント固有の影響イベントを通知する。"},
-        {"id": "B", "text": "全アカウント共通の Service Health のみで、個別影響は分からない", "is_correct": false, "explanation": "それは Service Health Dashboard / Status Page の話で、Personal Health Dashboard は個別影響を示す。"},
-        {"id": "C", "text": "GuardDuty findings を表示する", "is_correct": false, "explanation": "別サービス。"},
-        {"id": "D", "text": "請求情報を集計する", "is_correct": false, "explanation": "Cost Explorer / Billing が担当。"}
+        {
+          "id": "A",
+          "text": "アカウントに影響する AWS のサービスイベント・スケジュール変更・セキュリティ通知",
+          "is_correct": true,
+          "explanation": "正解。AWS Health はアカウント固有の影響イベントを通知する。"
+        },
+        {
+          "id": "B",
+          "text": "請求情報を集計する",
+          "is_correct": false,
+          "explanation": "Cost Explorer / Billing が担当。"
+        },
+        {
+          "id": "C",
+          "text": "全アカウント共通の Service Health のみで、個別影響は分からない",
+          "is_correct": false,
+          "explanation": "それは Service Health Dashboard / Status Page の話で、Personal Health Dashboard は個別影響を示す。"
+        },
+        {
+          "id": "D",
+          "text": "GuardDuty findings を表示する",
+          "is_correct": false,
+          "explanation": "別サービス。"
+        }
       ],
       "explanation": "AWS Health（旧 Personal Health Dashboard）は、自アカウントに影響するイベント（障害、メンテナンス、セキュリティ通知、リソース廃止予定など）を表示する。AWS Health API / EventBridge と連携して自動化できる。",
-      "references": [{"title": "AWS Health", "url": "https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html"}],
-      "tags": ["aws-health", "personal-health-dashboard", "service-events"],
-      "common_mistakes": ["Status Page と Personal Health Dashboard を混同", "AWS Health で全アカウント共通障害だけ見ると誤解"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Health",
+          "url": "https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html"
+        }
+      ],
+      "tags": [
+        "aws-health",
+        "personal-health-dashboard",
+        "service-events"
+      ],
+      "common_mistakes": [
+        "Status Page と Personal Health Dashboard を混同",
+        "AWS Health で全アカウント共通障害だけ見ると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-002",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Systems Manager",
       "subtopic": "Incident Manager basics",
       "cognitive_level": "L1-Remember",
       "difficulty": "easy",
       "stem": "AWS Systems Manager Incident Manager が提供する主要機能はどれか？",
       "options": [
-        {"id": "A", "text": "オンコール ローテーション、エスカレーション計画、Response Plan、Runbook 連携、ポストインシデント分析", "is_correct": true, "explanation": "正解。インシデント対応のライフサイクルをカバー。"},
-        {"id": "B", "text": "EC2 のパッチ適用のみ", "is_correct": false, "explanation": "Patch Manager と混同。"},
-        {"id": "C", "text": "コスト最適化のみ", "is_correct": false, "explanation": "Cost Explorer / Compute Optimizer の領域。"},
-        {"id": "D", "text": "セキュリティスキャンのみ", "is_correct": false, "explanation": "Inspector / Security Hub の領域。"}
+        {
+          "id": "A",
+          "text": "EC2 のパッチ適用のみ",
+          "is_correct": false,
+          "explanation": "Patch Manager と混同。"
+        },
+        {
+          "id": "B",
+          "text": "オンコール ローテーション、エスカレーション計画、Response Plan、Runbook 連携、ポストインシデント分析",
+          "is_correct": true,
+          "explanation": "正解。インシデント対応のライフサイクルをカバー。"
+        },
+        {
+          "id": "C",
+          "text": "セキュリティスキャンのみ",
+          "is_correct": false,
+          "explanation": "Inspector / Security Hub の領域。"
+        },
+        {
+          "id": "D",
+          "text": "コスト最適化のみ",
+          "is_correct": false,
+          "explanation": "Cost Explorer / Compute Optimizer の領域。"
+        }
       ],
       "explanation": "Incident Manager は AWS マネージドのインシデント対応サービス。オンコール ローテーション、エスカレーション、Response Plan（チャンネル・ランブック・関係者を束ねる定義）、SSM Automation との連携、ポストインシデント レビュー（Timeline）まで提供。",
-      "references": [{"title": "AWS Systems Manager Incident Manager", "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/what-is-incident-manager.html"}],
-      "tags": ["incident-manager", "systems-manager", "on-call", "runbook"],
-      "common_mistakes": ["Incident Manager と OpsCenter を混同", "Patch Manager と混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Systems Manager Incident Manager",
+          "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/what-is-incident-manager.html"
+        }
+      ],
+      "tags": [
+        "incident-manager",
+        "systems-manager",
+        "on-call",
+        "runbook"
+      ],
+      "common_mistakes": [
+        "Incident Manager と OpsCenter を混同",
+        "Patch Manager と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-003",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "EventBridge",
       "subtopic": "Health event automation",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Health のイベント（例: EC2 の必須メンテナンス）を自動的に Slack 通知＋チケット起票したい。最も簡潔な構成は？",
       "options": [
-        {"id": "A", "text": "EventBridge で AWS Health Event をルール化し、ターゲットに Lambda（Slack 通知）と SNS / Webhook（チケット起票）を設定", "is_correct": true, "explanation": "正解。AWS Health は EventBridge にイベントを発行するため、純粋なイベント駆動で連携できる。"},
-        {"id": "B", "text": "毎時 Lambda で AWS Health API をポーリング", "is_correct": false, "explanation": "ポーリング不要。EventBridge にネイティブ統合がある。"},
-        {"id": "C", "text": "S3 に AWS Health がログを書くので、それを監視", "is_correct": false, "explanation": "AWS Health は S3 に直接ログを書かない。"},
-        {"id": "D", "text": "GuardDuty で AWS Health を取得", "is_correct": false, "explanation": "GuardDuty は脅威検出。"}
+        {
+          "id": "A",
+          "text": "毎時 Lambda で AWS Health API をポーリング",
+          "is_correct": false,
+          "explanation": "ポーリング不要。EventBridge にネイティブ統合がある。"
+        },
+        {
+          "id": "B",
+          "text": "GuardDuty で AWS Health を取得",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検出。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge で AWS Health Event をルール化し、ターゲットに Lambda（Slack 通知）と SNS / Webhook（チケット起票）を設定",
+          "is_correct": true,
+          "explanation": "正解。AWS Health は EventBridge にイベントを発行するため、純粋なイベント駆動で連携できる。"
+        },
+        {
+          "id": "D",
+          "text": "S3 に AWS Health がログを書くので、それを監視",
+          "is_correct": false,
+          "explanation": "AWS Health は S3 に直接ログを書かない。"
+        }
       ],
       "explanation": "AWS Health は EventBridge にスケジュール／障害／セキュリティ通知などをイベントとして配信する。`source = aws.health` でルール化し、Lambda / SNS / Step Functions などへ配信できる。手動運用ゼロでアラート＆起票を自動化可能。",
-      "references": [{"title": "Monitoring AWS Health events with EventBridge", "url": "https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html"}],
-      "tags": ["aws-health", "eventbridge", "slack", "automation"],
-      "common_mistakes": ["AWS Health API をポーリングする", "AWS Health と GuardDuty を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Monitoring AWS Health events with EventBridge",
+          "url": "https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html"
+        }
+      ],
+      "tags": [
+        "aws-health",
+        "eventbridge",
+        "slack",
+        "automation"
+      ],
+      "common_mistakes": [
+        "AWS Health API をポーリングする",
+        "AWS Health と GuardDuty を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-004",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Systems Manager",
       "subtopic": "OpsCenter",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "AWS Systems Manager OpsCenter が解決する課題として最も適切なのは？",
       "options": [
-        {"id": "A", "text": "AWS 横断のオペレーション課題（OpsItem）を集約して可視化・トリアージし、Runbook と連携した解決まで一元管理する", "is_correct": true, "explanation": "正解。OpsItem は CloudWatch / Config / Trusted Advisor / Health などのイベントから自動生成可能で、対応プロセスを統合する。"},
-        {"id": "B", "text": "EC2 のパッチ管理に特化", "is_correct": false, "explanation": "それは Patch Manager。"},
-        {"id": "C", "text": "請求アラートの管理", "is_correct": false, "explanation": "別領域。"},
-        {"id": "D", "text": "コンテナ脆弱性スキャン", "is_correct": false, "explanation": "Inspector の領域。"}
+        {
+          "id": "A",
+          "text": "EC2 のパッチ管理に特化",
+          "is_correct": false,
+          "explanation": "それは Patch Manager。"
+        },
+        {
+          "id": "B",
+          "text": "請求アラートの管理",
+          "is_correct": false,
+          "explanation": "別領域。"
+        },
+        {
+          "id": "C",
+          "text": "コンテナ脆弱性スキャン",
+          "is_correct": false,
+          "explanation": "Inspector の領域。"
+        },
+        {
+          "id": "D",
+          "text": "AWS 横断のオペレーション課題（OpsItem）を集約して可視化・トリアージし、Runbook と連携した解決まで一元管理する",
+          "is_correct": true,
+          "explanation": "正解。OpsItem は CloudWatch / Config / Trusted Advisor / Health などのイベントから自動生成可能で、対応プロセスを統合する。"
+        }
       ],
       "explanation": "OpsCenter は OpsItem（運用課題チケット）を中心に、関連リソース／メトリクス／ログ／Runbook をひとつに束ねる UI を提供。CloudWatch Alarm、Config 非準拠、AWS Health などから OpsItem を自動生成可能。Runbook 起動・履歴管理を統合。",
-      "references": [{"title": "AWS Systems Manager OpsCenter", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html"}],
-      "tags": ["systems-manager", "opscenter", "opsitem", "runbook"],
-      "common_mistakes": ["OpsCenter と Incident Manager の役割を混同", "OpsItem の自動生成ソースを知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Systems Manager OpsCenter",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html"
+        }
+      ],
+      "tags": [
+        "systems-manager",
+        "opscenter",
+        "opsitem",
+        "runbook"
+      ],
+      "common_mistakes": [
+        "OpsCenter と Incident Manager の役割を混同",
+        "OpsItem の自動生成ソースを知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-005",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "EventBridge",
       "subtopic": "Dead-letter queue",
       "cognitive_level": "L2-Understand",
       "difficulty": "medium",
       "stem": "EventBridge でターゲット呼び出しに失敗したイベントを失わないようにしたい。標準的な仕組みは？",
       "options": [
-        {"id": "A", "text": "EventBridge Rule の Target に DLQ（SQS）を指定し、リトライ回数や最大イベント有効期間も設定する", "is_correct": true, "explanation": "正解。EventBridge は Target ごとに DLQ と Retry Policy（最大リトライ・最大イベント有効期間）を設定できる。"},
-        {"id": "B", "text": "Lambda 内で例外を握りつぶす", "is_correct": false, "explanation": "失敗が見えなくなり監視できない。"},
-        {"id": "C", "text": "Step Functions で全イベントを永続化", "is_correct": false, "explanation": "DLQ のほうが標準。"},
-        {"id": "D", "text": "EventBridge には DLQ 機能はない", "is_correct": false, "explanation": "Target Configuration で DLQ をサポート。"}
+        {
+          "id": "A",
+          "text": "EventBridge Rule の Target に DLQ（SQS）を指定し、リトライ回数や最大イベント有効期間も設定する",
+          "is_correct": true,
+          "explanation": "正解。EventBridge は Target ごとに DLQ と Retry Policy（最大リトライ・最大イベント有効期間）を設定できる。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridge には DLQ 機能はない",
+          "is_correct": false,
+          "explanation": "Target Configuration で DLQ をサポート。"
+        },
+        {
+          "id": "C",
+          "text": "Step Functions で全イベントを永続化",
+          "is_correct": false,
+          "explanation": "DLQ のほうが標準。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda 内で例外を握りつぶす",
+          "is_correct": false,
+          "explanation": "失敗が見えなくなり監視できない。"
+        }
       ],
       "explanation": "EventBridge は Target ごとに Retry Policy（Maximum Retry Attempts、Maximum Event Age）と DLQ（SQS）を設定できる。失敗したイベントは DLQ に送られ、後から手動／自動で再処理できる。冪等性を意識した設計が前提。",
-      "references": [{"title": "Using dead-letter queues in EventBridge", "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-dlq.html"}],
-      "tags": ["eventbridge", "dlq", "retry-policy", "reliability"],
-      "common_mistakes": ["DLQ の存在を知らずイベントを失う", "Lambda 内で例外を握りつぶす"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Using dead-letter queues in EventBridge",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-dlq.html"
+        }
+      ],
+      "tags": [
+        "eventbridge",
+        "dlq",
+        "retry-policy",
+        "reliability"
+      ],
+      "common_mistakes": [
+        "DLQ の存在を知らずイベントを失う",
+        "Lambda 内で例外を握りつぶす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-006",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "SSM Automation",
       "subtopic": "Runbook",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある教育系 SaaS で「特定エラーログを検出したら EC2 を自動再起動し、Slack にレポートを送る」運用を自動化したい。SSM の標準機能を使った最小実装は？",
       "options": [
-        {"id": "A", "text": "CloudWatch Logs Metric Filter でアラーム化 → EventBridge → SSM Automation Document（aws:executeAwsApi で EC2 reboot、aws:invokeLambdaFunction で Slack 通知）", "is_correct": true, "explanation": "正解。SSM Automation の各ステップで AWS API 呼び出しや Lambda 呼び出しが可能で、ログにも残る。"},
-        {"id": "B", "text": "Lambda 一個で全部書く", "is_correct": false, "explanation": "可能だがランブックの可視化・履歴・分岐に弱い。"},
-        {"id": "C", "text": "Step Functions で書く", "is_correct": false, "explanation": "やりすぎ。Automation のほうがランブック向き。"},
-        {"id": "D", "text": "Run Command で 1 ステップだけ", "is_correct": false, "explanation": "Run Command はインスタンス上のコマンド実行で、API 系統制御には Automation。"}
+        {
+          "id": "A",
+          "text": "Lambda 一個で全部書く",
+          "is_correct": false,
+          "explanation": "可能だがランブックの可視化・履歴・分岐に弱い。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Logs Metric Filter でアラーム化 → EventBridge → SSM Automation Document（aws:executeAwsApi で EC2 reboot、aws:invokeLambdaFunction で Slack 通知）",
+          "is_correct": true,
+          "explanation": "正解。SSM Automation の各ステップで AWS API 呼び出しや Lambda 呼び出しが可能で、ログにも残る。"
+        },
+        {
+          "id": "C",
+          "text": "Run Command で 1 ステップだけ",
+          "is_correct": false,
+          "explanation": "Run Command はインスタンス上のコマンド実行で、API 系統制御には Automation。"
+        },
+        {
+          "id": "D",
+          "text": "Step Functions で書く",
+          "is_correct": false,
+          "explanation": "やりすぎ。Automation のほうがランブック向き。"
+        }
       ],
       "explanation": "SSM Automation Document は YAML/JSON でステップを定義（aws:executeAwsApi、aws:invokeLambdaFunction、aws:approve、aws:branch など）。複数 AWS API を組み合わせるランブックの記述に向き、実行履歴とパラメータが永続化される。承認ステップで人間判断を挟むことも可能。",
-      "references": [{"title": "AWS Systems Manager Automation", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html"}],
-      "tags": ["ssm-automation", "runbook", "eventbridge", "remediation"],
-      "common_mistakes": ["全部 Lambda で書きランブック化しない", "Run Command と Automation の役割を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Systems Manager Automation",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html"
+        }
+      ],
+      "tags": [
+        "ssm-automation",
+        "runbook",
+        "eventbridge",
+        "remediation"
+      ],
+      "common_mistakes": [
+        "全部 Lambda で書きランブック化しない",
+        "Run Command と Automation の役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-007",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Step Functions",
       "subtopic": "Orchestration",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "ある FinTech 企業のインシデント対応で「複数の AWS API・Lambda・人間承認を含む 30 分以上のフロー」を可視化・再実行可能にしたい。最も適切なサービスは？",
       "options": [
-        {"id": "A", "text": "AWS Step Functions（Standard Workflow）。各ステートを ASL で定義し、Wait For Callback で人間承認を待つ", "is_correct": true, "explanation": "正解。Step Functions Standard は最大 1 年実行可能でビジュアライザがあり、長時間ワークフローの定石。"},
-        {"id": "B", "text": "Lambda の単一関数で全部書く", "is_correct": false, "explanation": "Lambda は最大 15 分実行制限があり、長時間ワークフローには不適切。"},
-        {"id": "C", "text": "EventBridge ルール 1 つで済ませる", "is_correct": false, "explanation": "ワークフローは EventBridge 単独では表現できない。"},
-        {"id": "D", "text": "SQS で処理を継続", "is_correct": false, "explanation": "メッセージング基盤で、ワークフロー記述ではない。"}
+        {
+          "id": "A",
+          "text": "SQS で処理を継続",
+          "is_correct": false,
+          "explanation": "メッセージング基盤で、ワークフロー記述ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda の単一関数で全部書く",
+          "is_correct": false,
+          "explanation": "Lambda は最大 15 分実行制限があり、長時間ワークフローには不適切。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Step Functions（Standard Workflow）。各ステートを ASL で定義し、Wait For Callback で人間承認を待つ",
+          "is_correct": true,
+          "explanation": "正解。Step Functions Standard は最大 1 年実行可能でビジュアライザがあり、長時間ワークフローの定石。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge ルール 1 つで済ませる",
+          "is_correct": false,
+          "explanation": "ワークフローは EventBridge 単独では表現できない。"
+        }
       ],
       "explanation": "Step Functions は ASL（Amazon States Language）でワークフローを記述し、Visual Editor で可視化。Standard（最大 1 年、安価／低スループット）と Express（高スループット／短時間）を選べる。Wait For Callback Token で人間承認や外部応答を待てる。",
-      "references": [{"title": "AWS Step Functions", "url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"}],
-      "tags": ["step-functions", "orchestration", "asl", "incident-response"],
-      "common_mistakes": ["Lambda 単独で長時間ワークフローを書く", "Standard と Express の選択を誤る"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "AWS Step Functions",
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+        }
+      ],
+      "tags": [
+        "step-functions",
+        "orchestration",
+        "asl",
+        "incident-response"
+      ],
+      "common_mistakes": [
+        "Lambda 単独で長時間ワークフローを書く",
+        "Standard と Express の選択を誤る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-008",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Auto-remediation",
       "subtopic": "Config + Lambda + SSM",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Security Hub の findings で重大度 Critical を検出したら自動で SSM Automation Document を実行して修復したい。最も推奨される構成は？",
       "options": [
-        {"id": "A", "text": "Security Hub findings を EventBridge で受け、SeverityLabel=CRITICAL でフィルタし SSM Automation Document をターゲットに設定", "is_correct": true, "explanation": "正解。Security Hub は EventBridge にイベント発行する。EventBridge ルールでフィルタし SSM Automation を直接ターゲットにできる。"},
-        {"id": "B", "text": "Lambda で findings をポーリング", "is_correct": false, "explanation": "EventBridge ネイティブ統合がある。"},
-        {"id": "C", "text": "Config Rule で代替", "is_correct": false, "explanation": "別系統で findings 連携にはならない。"},
-        {"id": "D", "text": "GuardDuty に修復機能を持たせる", "is_correct": false, "explanation": "GuardDuty 自体には修復機能はない。"}
+        {
+          "id": "A",
+          "text": "Config Rule で代替",
+          "is_correct": false,
+          "explanation": "別系統で findings 連携にはならない。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda で findings をポーリング",
+          "is_correct": false,
+          "explanation": "EventBridge ネイティブ統合がある。"
+        },
+        {
+          "id": "C",
+          "text": "GuardDuty に修復機能を持たせる",
+          "is_correct": false,
+          "explanation": "GuardDuty 自体には修復機能はない。"
+        },
+        {
+          "id": "D",
+          "text": "Security Hub findings を EventBridge で受け、SeverityLabel=CRITICAL でフィルタし SSM Automation Document をターゲットに設定",
+          "is_correct": true,
+          "explanation": "正解。Security Hub は EventBridge にイベント発行する。EventBridge ルールでフィルタし SSM Automation を直接ターゲットにできる。"
+        }
       ],
       "explanation": "Security Hub は集約された findings を EventBridge にイベントとして発行する。EventBridge ルールで `detail.findings[*].Severity.Label` などをフィルタし、SSM Automation / Lambda / Step Functions などへ配信する設計が標準。",
       "references": [
-        {"title": "Automated response and remediation in Security Hub", "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cwe-integration.html"}
+        {
+          "title": "Automated response and remediation in Security Hub",
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cwe-integration.html"
+        }
       ],
-      "tags": ["security-hub", "eventbridge", "ssm-automation", "auto-remediation"],
-      "common_mistakes": ["Security Hub の EventBridge 統合を知らない", "ポーリングで実装"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "security-hub",
+        "eventbridge",
+        "ssm-automation",
+        "auto-remediation"
+      ],
+      "common_mistakes": [
+        "Security Hub の EventBridge 統合を知らない",
+        "ポーリングで実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-009",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Incident Manager",
       "subtopic": "Response Plan with runbooks",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Incident Manager で「特定 CloudWatch アラーム発火 → 自動でインシデント起票 → オンコールにエスカレーション → ランブックを起動」を実現したい構成は？",
       "options": [
-        {"id": "A", "text": "CloudWatch Alarm に Incident Manager Response Plan を関連付け、Response Plan に Engagement（連絡先）と Runbook（SSM Automation）を含める", "is_correct": true, "explanation": "正解。Response Plan を Alarm のアクションに指定する標準パターン。"},
-        {"id": "B", "text": "EventBridge から SNS だけで完結する", "is_correct": false, "explanation": "オンコールローテーション・エスカレーション・タイムラインを Incident Manager は提供する。"},
-        {"id": "C", "text": "Slack ボットを書いて全部代替", "is_correct": false, "explanation": "再発明で監査・履歴も貧弱。"},
-        {"id": "D", "text": "Incident Manager は Alarm から起動できない", "is_correct": false, "explanation": "ネイティブに起動できる。"}
+        {
+          "id": "A",
+          "text": "CloudWatch Alarm に Incident Manager Response Plan を関連付け、Response Plan に Engagement（連絡先）と Runbook（SSM Automation）を含める",
+          "is_correct": true,
+          "explanation": "正解。Response Plan を Alarm のアクションに指定する標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridge から SNS だけで完結する",
+          "is_correct": false,
+          "explanation": "オンコールローテーション・エスカレーション・タイムラインを Incident Manager は提供する。"
+        },
+        {
+          "id": "C",
+          "text": "Slack ボットを書いて全部代替",
+          "is_correct": false,
+          "explanation": "再発明で監査・履歴も貧弱。"
+        },
+        {
+          "id": "D",
+          "text": "Incident Manager は Alarm から起動できない",
+          "is_correct": false,
+          "explanation": "ネイティブに起動できる。"
+        }
       ],
       "explanation": "Incident Manager の Response Plan は (1) Engagement Plan（連絡先・エスカレーション順）、(2) Chat Channel、(3) Runbook（SSM Automation）、(4) Tags / Title / Impact を束ねる定義。CloudWatch Alarm のアクションや EventBridge から起動可能。タイムラインに通信・操作が記録される。",
-      "references": [{"title": "Incident Manager Response Plan", "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/response-plans.html"}],
-      "tags": ["incident-manager", "response-plan", "runbook", "on-call"],
-      "common_mistakes": ["SNS で済ませエスカレーションが弱くなる", "Response Plan の構成要素を理解しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Incident Manager Response Plan",
+          "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/response-plans.html"
+        }
+      ],
+      "tags": [
+        "incident-manager",
+        "response-plan",
+        "runbook",
+        "on-call"
+      ],
+      "common_mistakes": [
+        "SNS で済ませエスカレーションが弱くなる",
+        "Response Plan の構成要素を理解しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-010",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "EventBridge",
       "subtopic": "Cross-account event routing",
       "cognitive_level": "L3-Apply",
       "difficulty": "medium",
       "stem": "Organizations 配下の各メンバーアカウントで発生した GuardDuty findings を、セキュリティ集中アカウントの EventBus に集約したい。最小設定で実現する方法は？",
       "options": [
-        {"id": "A", "text": "メンバーアカウント側のルールで集中アカウントの EventBus をターゲットに指定し、集中側 EventBus のリソースポリシーで PutEvents を許可", "is_correct": true, "explanation": "正解。EventBridge は cross-account ターゲットをサポートし、IAM と EventBus Resource Policy で双方向の信頼を結ぶ。"},
-        {"id": "B", "text": "S3 経由で集約", "is_correct": false, "explanation": "EventBridge ネイティブの方が即時性がある。"},
-        {"id": "C", "text": "Step Functions を中継", "is_correct": false, "explanation": "オーバーヘッド大。"},
-        {"id": "D", "text": "メンバーアカウントの IAM ロールを集中アカウントが直接引き受け", "is_correct": false, "explanation": "EventBridge の cross-account 配信のメカニズムではない。"}
+        {
+          "id": "A",
+          "text": "メンバーアカウントの IAM ロールを集中アカウントが直接引き受け",
+          "is_correct": false,
+          "explanation": "EventBridge の cross-account 配信のメカニズムではない。"
+        },
+        {
+          "id": "B",
+          "text": "メンバーアカウント側のルールで集中アカウントの EventBus をターゲットに指定し、集中側 EventBus のリソースポリシーで PutEvents を許可",
+          "is_correct": true,
+          "explanation": "正解。EventBridge は cross-account ターゲットをサポートし、IAM と EventBus Resource Policy で双方向の信頼を結ぶ。"
+        },
+        {
+          "id": "C",
+          "text": "Step Functions を中継",
+          "is_correct": false,
+          "explanation": "オーバーヘッド大。"
+        },
+        {
+          "id": "D",
+          "text": "S3 経由で集約",
+          "is_correct": false,
+          "explanation": "EventBridge ネイティブの方が即時性がある。"
+        }
       ],
       "explanation": "EventBridge cross-account 配信: ソース側ルールのターゲットに別アカウントの EventBus ARN を指定し、ソース側 IAM Role に events:PutEvents 権限、ターゲット側 EventBus にリソースポリシーで送信元 Principal を許可。これでイベントが直接ルーティングされる。",
-      "references": [{"title": "Sending and receiving events between AWS accounts", "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html"}],
-      "tags": ["eventbridge", "cross-account", "guardduty", "security-hub"],
-      "common_mistakes": ["EventBridge cross-account の双方向設定を片側だけ実施", "S3 で集約しようとして即時性を失う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Sending and receiving events between AWS accounts",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html"
+        }
+      ],
+      "tags": [
+        "eventbridge",
+        "cross-account",
+        "guardduty",
+        "security-hub"
+      ],
+      "common_mistakes": [
+        "EventBridge cross-account の双方向設定を片側だけ実施",
+        "S3 で集約しようとして即時性を失う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-011",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "OpsCenter",
       "subtopic": "OpsItem auto-creation",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "ある SaaS の運用チームが「Config 非準拠を OpsCenter に自動起票し、関連リソース・メトリクス・ランブックをひとまとめにしたい」と話している。最も推奨される構成は？",
       "options": [
-        {"id": "A", "text": "Config Rule の非準拠イベントを EventBridge で受け、OpsItem を `ssm:CreateOpsItem` で作成。OpsItem の Operational Data に関連リソース ARN を紐付け、Runbook（SSM Automation）を関連付ける", "is_correct": true, "explanation": "正解。EventBridge ターゲットの SSM-CreateOpsItem ビルトインや Lambda 経由で OpsItem を生成、Operational Data や Related Resources を組み込み Runbook に連動できる。"},
-        {"id": "B", "text": "Lambda で Slack に投げてチケットを Jira で起票するだけ", "is_correct": false, "explanation": "OpsCenter の統合管理機能（関連リソース・履歴・ランブック連携）を活用していない。"},
-        {"id": "C", "text": "CloudWatch ダッシュボードに表示", "is_correct": false, "explanation": "ダッシュボードはチケット管理ではない。"},
-        {"id": "D", "text": "GuardDuty findings から自動起票するしかない", "is_correct": false, "explanation": "Config からも起票可能。"}
+        {
+          "id": "A",
+          "text": "Lambda で Slack に投げてチケットを Jira で起票するだけ",
+          "is_correct": false,
+          "explanation": "OpsCenter の統合管理機能（関連リソース・履歴・ランブック連携）を活用していない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch ダッシュボードに表示",
+          "is_correct": false,
+          "explanation": "ダッシュボードはチケット管理ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Config Rule の非準拠イベントを EventBridge で受け、OpsItem を `ssm:CreateOpsItem` で作成。OpsItem の Operational Data に関連リソース ARN を紐付け、Runbook（SSM Automation）を関連付ける",
+          "is_correct": true,
+          "explanation": "正解。EventBridge ターゲットの SSM-CreateOpsItem ビルトインや Lambda 経由で OpsItem を生成、Operational Data や Related Resources を組み込み Runbook に連動できる。"
+        },
+        {
+          "id": "D",
+          "text": "GuardDuty findings から自動起票するしかない",
+          "is_correct": false,
+          "explanation": "Config からも起票可能。"
+        }
       ],
       "explanation": "OpsCenter は OpsItem に Related Resources、Operational Data、Runbook、Categories を紐付け可能。EventBridge から自動生成し、運用課題を可視化・追跡できる。Config / Health / Security Hub / CloudWatch などからの統合起票が標準パターン。",
-      "references": [{"title": "Setting up OpsCenter to start managing OpsItems", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html"}],
-      "tags": ["opscenter", "opsitem", "config-rules", "eventbridge", "runbook"],
-      "common_mistakes": ["OpsCenter を Slack 通知に置き換えて統合管理を失う", "Operational Data の活用を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Setting up OpsCenter to start managing OpsItems",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html"
+        }
+      ],
+      "tags": [
+        "opscenter",
+        "opsitem",
+        "config-rules",
+        "eventbridge",
+        "runbook"
+      ],
+      "common_mistakes": [
+        "OpsCenter を Slack 通知に置き換えて統合管理を失う",
+        "Operational Data の活用を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-012",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "SSM Automation",
       "subtopic": "Approval steps and human-in-the-loop",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "本番 RDS の自動修復ランブックには「人間承認」を組み込みたい。SSM Automation で実装する最も適切な方法は？",
       "options": [
-        {"id": "A", "text": "`aws:approve` ステップを挿入し、承認者を SNS / IAM で指定。承認まで Automation は Pending 状態で待機する", "is_correct": true, "explanation": "正解。aws:approve は Automation Document にネイティブな人間承認ステップ。"},
-        {"id": "B", "text": "Lambda を sleep ループで待たせる", "is_correct": false, "explanation": "Lambda の最大実行時間内に終わらない。"},
-        {"id": "C", "text": "Step Functions の Wait State だけで承認できる", "is_correct": false, "explanation": "Wait は単に時間を待つだけで、承認 UI を提供しない。"},
-        {"id": "D", "text": "Run Command で承認", "is_correct": false, "explanation": "Run Command は OS 上のコマンド実行で承認機能はない。"}
+        {
+          "id": "A",
+          "text": "Run Command で承認",
+          "is_correct": false,
+          "explanation": "Run Command は OS 上のコマンド実行で承認機能はない。"
+        },
+        {
+          "id": "B",
+          "text": "Step Functions の Wait State だけで承認できる",
+          "is_correct": false,
+          "explanation": "Wait は単に時間を待つだけで、承認 UI を提供しない。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda を sleep ループで待たせる",
+          "is_correct": false,
+          "explanation": "Lambda の最大実行時間内に終わらない。"
+        },
+        {
+          "id": "D",
+          "text": "`aws:approve` ステップを挿入し、承認者を SNS / IAM で指定。承認まで Automation は Pending 状態で待機する",
+          "is_correct": true,
+          "explanation": "正解。aws:approve は Automation Document にネイティブな人間承認ステップ。"
+        }
       ],
       "explanation": "aws:approve ステップは SSM Automation の human-in-the-loop メカニズム。承認者 IAM 主体を指定し、SNS で通知。承認者はコンソールまたは API（SendAutomationSignal）で Approve / Reject を返答する。本番修復・破壊的操作の前段に配置する。",
-      "references": [{"title": "aws:approve – Pause an automation for manual approval", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html"}],
-      "tags": ["ssm-automation", "approval", "human-in-the-loop", "runbook"],
-      "common_mistakes": ["Lambda sleep で承認待ちを実装", "Step Functions Wait と aws:approve を混同"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "aws:approve – Pause an automation for manual approval",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html"
+        }
+      ],
+      "tags": [
+        "ssm-automation",
+        "approval",
+        "human-in-the-loop",
+        "runbook"
+      ],
+      "common_mistakes": [
+        "Lambda sleep で承認待ちを実装",
+        "Step Functions Wait と aws:approve を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-013",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Step Functions",
       "subtopic": "Standard vs Express",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Step Functions の Standard と Express Workflow の使い分けとして最も正確な記述は？",
       "options": [
-        {"id": "A", "text": "Standard は実行履歴 90 日保持・最大 1 年・厳密 1 回（Exactly-once）。Express は最大 5 分・高 TPS・少なくとも 1 回（At-least-once）でストリーム集計や IoT 向け", "is_correct": true, "explanation": "正解。これが本質的な使い分け。"},
-        {"id": "B", "text": "両者は機能差なく価格だけ違う", "is_correct": false, "explanation": "実行特性・価格・履歴保持などが大きく異なる。"},
-        {"id": "C", "text": "Express は永続実行に向く", "is_correct": false, "explanation": "Express は 5 分まで。"},
-        {"id": "D", "text": "Standard は CloudWatch Logs に履歴を残せない", "is_correct": false, "explanation": "両者とも CloudWatch Logs 連携が可能。"}
+        {
+          "id": "A",
+          "text": "Standard は実行履歴 90 日保持・最大 1 年・厳密 1 回（Exactly-once）。Express は最大 5 分・高 TPS・少なくとも 1 回（At-least-once）でストリーム集計や IoT 向け",
+          "is_correct": true,
+          "explanation": "正解。これが本質的な使い分け。"
+        },
+        {
+          "id": "B",
+          "text": "Express は永続実行に向く",
+          "is_correct": false,
+          "explanation": "Express は 5 分まで。"
+        },
+        {
+          "id": "C",
+          "text": "両者は機能差なく価格だけ違う",
+          "is_correct": false,
+          "explanation": "実行特性・価格・履歴保持などが大きく異なる。"
+        },
+        {
+          "id": "D",
+          "text": "Standard は CloudWatch Logs に履歴を残せない",
+          "is_correct": false,
+          "explanation": "両者とも CloudWatch Logs 連携が可能。"
+        }
       ],
       "explanation": "Standard Workflow: 厳密 1 回、最大 1 年、実行ごと課金（State Transitions）、履歴 90 日。Express Workflow: 最低 1 回（または Synchronous）、最大 5 分、Duration + Memory 課金、低レイテンシ高 TPS、CloudWatch Logs ベースの監査。長時間ビジネスフローは Standard、ストリーム処理は Express、と使い分け。",
-      "references": [{"title": "Standard vs. Express Workflows", "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html"}],
-      "tags": ["step-functions", "standard", "express", "throughput"],
-      "common_mistakes": ["Express で 1 時間以上のフローを実行しようとする", "Standard を高 TPS シナリオに使う"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Standard vs. Express Workflows",
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html"
+        }
+      ],
+      "tags": [
+        "step-functions",
+        "standard",
+        "express",
+        "throughput"
+      ],
+      "common_mistakes": [
+        "Express で 1 時間以上のフローを実行しようとする",
+        "Standard を高 TPS シナリオに使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-014",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "EventBridge",
       "subtopic": "Schema discovery",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "EventBridge Schema Registry / Schema Discovery の主目的は？",
       "options": [
-        {"id": "A", "text": "Bus に流れるイベントの構造を自動発見し、IDE 用のコード（バインディング）を生成・配布する", "is_correct": true, "explanation": "正解。Schema Registry は Discovery と Code Bindings（Java/Python/TS など）を提供。"},
-        {"id": "B", "text": "イベントを暗号化する", "is_correct": false, "explanation": "暗号化は別機能（KMS で Bus を暗号化可能）。"},
-        {"id": "C", "text": "イベントをデータレイクに保存する", "is_correct": false, "explanation": "保存は別経路。"},
-        {"id": "D", "text": "Bus 間でイベントをコピーする", "is_correct": false, "explanation": "コピーは別概念。"}
+        {
+          "id": "A",
+          "text": "イベントを暗号化する",
+          "is_correct": false,
+          "explanation": "暗号化は別機能（KMS で Bus を暗号化可能）。"
+        },
+        {
+          "id": "B",
+          "text": "Bus に流れるイベントの構造を自動発見し、IDE 用のコード（バインディング）を生成・配布する",
+          "is_correct": true,
+          "explanation": "正解。Schema Registry は Discovery と Code Bindings（Java/Python/TS など）を提供。"
+        },
+        {
+          "id": "C",
+          "text": "イベントをデータレイクに保存する",
+          "is_correct": false,
+          "explanation": "保存は別経路。"
+        },
+        {
+          "id": "D",
+          "text": "Bus 間でイベントをコピーする",
+          "is_correct": false,
+          "explanation": "コピーは別概念。"
+        }
       ],
       "explanation": "EventBridge Schema Registry は (1) Discovery（流れる JSON から自動でスキーマ抽出）、(2) Versioning（スキーマの版管理）、(3) Code Bindings（言語別の型コード生成）を提供。開発者がイベント駆動開発を型安全に行うための基盤。",
-      "references": [{"title": "EventBridge schema registry", "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema-registry.html"}],
-      "tags": ["eventbridge", "schema-registry", "code-bindings", "developer-experience"],
-      "common_mistakes": ["Schema Registry の機能を暗号化と誤解", "Code Bindings の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "EventBridge schema registry",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema-registry.html"
+        }
+      ],
+      "tags": [
+        "eventbridge",
+        "schema-registry",
+        "code-bindings",
+        "developer-experience"
+      ],
+      "common_mistakes": [
+        "Schema Registry の機能を暗号化と誤解",
+        "Code Bindings の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-015",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Incident Manager",
       "subtopic": "PIA post-incident analysis",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Incident Manager の Post-Incident Analysis（PIA）機能で得られる代表的な成果物は？",
       "options": [
-        {"id": "A", "text": "タイムライン、対応履歴、関係者、メトリクスを束ねた構造化テンプレート（Why happened / What done / Action items）", "is_correct": true, "explanation": "正解。AWS は PIA テンプレートを提供しており、Action items の追跡で改善ループを回せる。"},
-        {"id": "B", "text": "EC2 のスナップショット", "is_correct": false, "explanation": "PIA は分析ドキュメントで、スナップショットではない。"},
-        {"id": "C", "text": "GuardDuty findings の集約", "is_correct": false, "explanation": "別機能。"},
-        {"id": "D", "text": "AWS Health の通知", "is_correct": false, "explanation": "別機能。"}
+        {
+          "id": "A",
+          "text": "GuardDuty findings の集約",
+          "is_correct": false,
+          "explanation": "別機能。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 のスナップショット",
+          "is_correct": false,
+          "explanation": "PIA は分析ドキュメントで、スナップショットではない。"
+        },
+        {
+          "id": "C",
+          "text": "タイムライン、対応履歴、関係者、メトリクスを束ねた構造化テンプレート（Why happened / What done / Action items）",
+          "is_correct": true,
+          "explanation": "正解。AWS は PIA テンプレートを提供しており、Action items の追跡で改善ループを回せる。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Health の通知",
+          "is_correct": false,
+          "explanation": "別機能。"
+        }
       ],
       "explanation": "Post-Incident Analysis (PIA) は Incident Manager の機能で、インシデント終了後にタイムライン・関係者・メトリクスを集約し、構造化テンプレート（要約・原因・対応・行動項目）を生成。継続的改善（ポストモーテム文化）の枠組みを提供する。",
-      "references": [{"title": "Performing post-incident analyses", "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/post-incident-analysis.html"}],
-      "tags": ["incident-manager", "post-incident-analysis", "postmortem", "action-items"],
-      "common_mistakes": ["PIA を単なるレポートだと思う", "Action Items の追跡機能を活用しない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Performing post-incident analyses",
+          "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/post-incident-analysis.html"
+        }
+      ],
+      "tags": [
+        "incident-manager",
+        "post-incident-analysis",
+        "postmortem",
+        "action-items"
+      ],
+      "common_mistakes": [
+        "PIA を単なるレポートだと思う",
+        "Action Items の追跡機能を活用しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-016",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Step Functions",
       "subtopic": "Error handling",
       "cognitive_level": "L4-Analyze",
       "difficulty": "hard",
       "stem": "Step Functions の Standard Workflow におけるエラーハンドリングのベストプラクティスとして最も適切なのは？",
       "options": [
-        {"id": "A", "text": "各 Task に Retry（IntervalSeconds, MaxAttempts, BackoffRate）と Catch（ErrorEquals → 別ステート遷移）を設定する", "is_correct": true, "explanation": "正解。Retry/Catch を Task ごとに記述するのが標準。"},
-        {"id": "B", "text": "全部 try/catch を Lambda 内に書く", "is_correct": false, "explanation": "ASL の Retry/Catch を活用しないと再実行や状態遷移が表現できない。"},
-        {"id": "C", "text": "Step Functions にはエラーハンドリングがない", "is_correct": false, "explanation": "誤り。Retry/Catch がネイティブにある。"},
-        {"id": "D", "text": "エラーは無視する", "is_correct": false, "explanation": "本番運用ではあり得ない。"}
+        {
+          "id": "A",
+          "text": "エラーは無視する",
+          "is_correct": false,
+          "explanation": "本番運用ではあり得ない。"
+        },
+        {
+          "id": "B",
+          "text": "Step Functions にはエラーハンドリングがない",
+          "is_correct": false,
+          "explanation": "誤り。Retry/Catch がネイティブにある。"
+        },
+        {
+          "id": "C",
+          "text": "全部 try/catch を Lambda 内に書く",
+          "is_correct": false,
+          "explanation": "ASL の Retry/Catch を活用しないと再実行や状態遷移が表現できない。"
+        },
+        {
+          "id": "D",
+          "text": "各 Task に Retry（IntervalSeconds, MaxAttempts, BackoffRate）と Catch（ErrorEquals → 別ステート遷移）を設定する",
+          "is_correct": true,
+          "explanation": "正解。Retry/Catch を Task ごとに記述するのが標準。"
+        }
       ],
       "explanation": "ASL の Retry は (IntervalSeconds, MaxAttempts, BackoffRate, ErrorEquals) で再試行戦略を定義。Catch は ErrorEquals → ResultPath → Next で例外時の遷移を定義。両者を組み合わせて、回復可能エラーは Retry、不可避エラーは Catch で別フローへ、と分岐する。",
-      "references": [{"title": "Error handling in Step Functions", "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html"}],
-      "tags": ["step-functions", "error-handling", "retry", "catch"],
-      "common_mistakes": ["Retry の BackoffRate を理解しない", "Catch を ErrorEquals 一致でしか書けない（States.ALL を知らない）"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Error handling in Step Functions",
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html"
+        }
+      ],
+      "tags": [
+        "step-functions",
+        "error-handling",
+        "retry",
+        "catch"
+      ],
+      "common_mistakes": [
+        "Retry の BackoffRate を理解しない",
+        "Catch を ErrorEquals 一致でしか書けない（States.ALL を知らない）"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-017",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Auto-remediation",
       "subtopic": "Choosing the right tool",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "「自動修復」の実装手段が複数ある（Config Remediation Action、EventBridge → Lambda、SSM Automation、Step Functions、Incident Manager Runbook）。次のうち、評価基準として最も適切なのはどれか？",
       "options": [
-        {"id": "A", "text": "(1) ロジックの複雑度（単純 → Config Remediation、複雑 → Step Functions）、(2) 監査・履歴の必要性（強い → SSM Automation/Incident Manager）、(3) 人間承認の有無、(4) 起動トリガー（Compliance / Event / Alarm）、(5) リトライと並列性、を組み合わせて選ぶ", "is_correct": true, "explanation": "正解。評価軸は単一ではなく、ロジック複雑度、監査要件、人間関与、トリガー、再試行・並列性の総合判断が必要。"},
-        {"id": "B", "text": "常に Lambda で書くのが正解", "is_correct": false, "explanation": "Lambda 単独は履歴・承認・並列制御が貧弱。"},
-        {"id": "C", "text": "コストだけで選ぶべき", "is_correct": false, "explanation": "監査・運用品質を無視する評価は不適切。"},
-        {"id": "D", "text": "全部同じなのでどれを選んでもよい", "is_correct": false, "explanation": "用途別に最適解がある。"}
+        {
+          "id": "A",
+          "text": "(1) ロジックの複雑度（単純 → Config Remediation、複雑 → Step Functions）、(2) 監査・履歴の必要性（強い → SSM Automation/Incident Manager）、(3) 人間承認の有無、(4) 起動トリガー（Compliance / Event / Alarm）、(5) リトライと並列性、を組み合わせて選ぶ",
+          "is_correct": true,
+          "explanation": "正解。評価軸は単一ではなく、ロジック複雑度、監査要件、人間関与、トリガー、再試行・並列性の総合判断が必要。"
+        },
+        {
+          "id": "B",
+          "text": "常に Lambda で書くのが正解",
+          "is_correct": false,
+          "explanation": "Lambda 単独は履歴・承認・並列制御が貧弱。"
+        },
+        {
+          "id": "C",
+          "text": "全部同じなのでどれを選んでもよい",
+          "is_correct": false,
+          "explanation": "用途別に最適解がある。"
+        },
+        {
+          "id": "D",
+          "text": "コストだけで選ぶべき",
+          "is_correct": false,
+          "explanation": "監査・運用品質を無視する評価は不適切。"
+        }
       ],
       "explanation": "自動修復の手段は粒度・監査・人間関与によって最適解が異なる。Config Remediation は宣言的・コンプライアンス起動向き。SSM Automation は AWS API 中心の手続き的ランブック。Step Functions は長時間・複雑分岐。Incident Manager は人＋ランブック統合の本格的なインシデント対応に。Lambda は短い処理に。設計判断（L5）を問う問題。",
       "references": [
-        {"title": "AWS Config Remediation Actions", "url": "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"},
-        {"title": "AWS Systems Manager Automation", "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html"}
+        {
+          "title": "AWS Config Remediation Actions",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"
+        },
+        {
+          "title": "AWS Systems Manager Automation",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html"
+        }
       ],
-      "tags": ["auto-remediation", "evaluation", "ssm-automation", "step-functions", "config", "incident-manager"],
-      "common_mistakes": ["どれでも同じと考える", "Lambda 単独で全部実装"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "auto-remediation",
+        "evaluation",
+        "ssm-automation",
+        "step-functions",
+        "config",
+        "incident-manager"
+      ],
+      "common_mistakes": [
+        "どれでも同じと考える",
+        "Lambda 単独で全部実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-018",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "EventBridge",
       "subtopic": "Input transformer and dedup",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "EventBridge ルールで複数のターゲットへ別形式の入力を渡したい。また同じイベントが多重発火するのを軽減したい。最も適切な手段の組み合わせは？",
       "options": [
-        {"id": "A", "text": "Input Path / Input Transformer でターゲットごとに整形、ターゲット側 Lambda で `idempotency token`（イベント ID）に基づく重複排除", "is_correct": true, "explanation": "正解。EventBridge は Input Transformer をターゲット単位で持ち、idempotency はターゲット側で実装するのが定石。"},
-        {"id": "B", "text": "EventBridge 自身が完全な重複排除を保証する", "is_correct": false, "explanation": "EventBridge は最低 1 回配信であり完全な dedup 保証はしない。"},
-        {"id": "C", "text": "全ターゲットを同じ JSON で受け取らせるしかない", "is_correct": false, "explanation": "Input Transformer でターゲットごとに変換可能。"},
-        {"id": "D", "text": "重複は SQS FIFO だけが解決する", "is_correct": false, "explanation": "SQS FIFO は dedup ID を備えるが、EventBridge ターゲットによっては別途対応が必要。"}
+        {
+          "id": "A",
+          "text": "全ターゲットを同じ JSON で受け取らせるしかない",
+          "is_correct": false,
+          "explanation": "Input Transformer でターゲットごとに変換可能。"
+        },
+        {
+          "id": "B",
+          "text": "Input Path / Input Transformer でターゲットごとに整形、ターゲット側 Lambda で `idempotency token`（イベント ID）に基づく重複排除",
+          "is_correct": true,
+          "explanation": "正解。EventBridge は Input Transformer をターゲット単位で持ち、idempotency はターゲット側で実装するのが定石。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge 自身が完全な重複排除を保証する",
+          "is_correct": false,
+          "explanation": "EventBridge は最低 1 回配信であり完全な dedup 保証はしない。"
+        },
+        {
+          "id": "D",
+          "text": "重複は SQS FIFO だけが解決する",
+          "is_correct": false,
+          "explanation": "SQS FIFO は dedup ID を備えるが、EventBridge ターゲットによっては別途対応が必要。"
+        }
       ],
       "explanation": "EventBridge は最低 1 回配信のため、ターゲット側でイベント ID をキーにした冪等処理が必要（DynamoDB 条件付き書き込みなど）。ターゲットごとに Input Transformer / Input Path を使い、必要な形に整形する。",
-      "references": [{"title": "EventBridge input transformation", "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-transform-target-input.html"}],
-      "tags": ["eventbridge", "input-transformer", "idempotency", "at-least-once"],
-      "common_mistakes": ["EventBridge が exactly-once と誤解", "Input Transformer の存在を知らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "EventBridge input transformation",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-transform-target-input.html"
+        }
+      ],
+      "tags": [
+        "eventbridge",
+        "input-transformer",
+        "idempotency",
+        "at-least-once"
+      ],
+      "common_mistakes": [
+        "EventBridge が exactly-once と誤解",
+        "Input Transformer の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-019",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Auto-remediation",
       "subtopic": "Anti-patterns",
       "cognitive_level": "L5-Evaluate",
       "difficulty": "hard",
       "stem": "「セキュリティアラートで自動修復」を行う際の典型的なアンチパターンとして最も警戒すべきものは？",
       "options": [
-        {"id": "A", "text": "破壊的アクション（インスタンス terminate、KMS Key 削除、IAM Role 削除）を承認・ガード無しで自動実行する", "is_correct": true, "explanation": "正解。誤検知での連鎖事故を防ぐため、破壊的アクションには必ず人間承認や Dry-Run、Blast Radius 制限を組み込む。"},
-        {"id": "B", "text": "EventBridge で受けて Lambda を起動する", "is_correct": false, "explanation": "それ自体はアンチパターンではない。"},
-        {"id": "C", "text": "SSM Automation を使う", "is_correct": false, "explanation": "むしろ推奨手段。"},
-        {"id": "D", "text": "CloudWatch Alarm を作る", "is_correct": false, "explanation": "監視自体はベストプラクティス。"}
+        {
+          "id": "A",
+          "text": "EventBridge で受けて Lambda を起動する",
+          "is_correct": false,
+          "explanation": "それ自体はアンチパターンではない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Alarm を作る",
+          "is_correct": false,
+          "explanation": "監視自体はベストプラクティス。"
+        },
+        {
+          "id": "C",
+          "text": "破壊的アクション（インスタンス terminate、KMS Key 削除、IAM Role 削除）を承認・ガード無しで自動実行する",
+          "is_correct": true,
+          "explanation": "正解。誤検知での連鎖事故を防ぐため、破壊的アクションには必ず人間承認や Dry-Run、Blast Radius 制限を組み込む。"
+        },
+        {
+          "id": "D",
+          "text": "SSM Automation を使う",
+          "is_correct": false,
+          "explanation": "むしろ推奨手段。"
+        }
       ],
       "explanation": "自動修復のアンチパターン: (1) 破壊的アクションを無条件自動化、(2) 修復のリトライポリシー無し、(3) 範囲制限（タグ/環境）なし、(4) 監査ログ無し、(5) 失敗時通知無し、(6) 冪等性無し。Production の修復には Dry-Run、人間承認、Blast Radius 制御を必ず組み込む。L5 の評価力を問う問題。",
-      "references": [{"title": "Best practices for runbooks", "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/runbooks.html"}],
-      "tags": ["auto-remediation", "anti-patterns", "blast-radius", "human-in-the-loop"],
-      "common_mistakes": ["人間承認なしで terminate を自動化", "誤検知の影響を過小評価"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 4, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 4.75},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "references": [
+        {
+          "title": "Best practices for runbooks",
+          "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/runbooks.html"
+        }
+      ],
+      "tags": [
+        "auto-remediation",
+        "anti-patterns",
+        "blast-radius",
+        "human-in-the-loop"
+      ],
+      "common_mistakes": [
+        "人間承認なしで terminate を自動化",
+        "誤検知の影響を過小評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     },
     {
       "id": "dop-c02-domain5-020",
       "version": "1.0",
-      "exam": {"code": "DOP-C02", "name": "AWS Certified DevOps Engineer - Professional", "vendor": "AWS", "year": 2026},
-      "domain": {"id": "domain-5", "name": "Incident and Event Response", "weight_percent": 14},
+      "exam": {
+        "code": "DOP-C02",
+        "name": "AWS Certified DevOps Engineer - Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-5",
+        "name": "Incident and Event Response",
+        "weight_percent": 14
+      },
       "topic": "Incident response design",
       "subtopic": "End-to-end design",
       "cognitive_level": "L6-Create",
       "difficulty": "hard",
       "stem": "「マルチアカウント SaaS で、CloudWatch / Security Hub / GuardDuty / AWS Health のイベントを統合してインシデント対応を自動化したい」と相談された。最も実践的な End-to-End 設計は？",
       "options": [
-        {"id": "A", "text": "(1) 各ソースを EventBridge で集中アカウントの Bus へクロスアカウント送信、(2) ルールで重大度フィルタ、(3) 軽い修復は SSM Automation、(4) 高重要度は Incident Manager Response Plan で人間 + Runbook 起動、(5) OpsCenter に OpsItem として履歴集約、(6) PIA で振り返り、(7) FIS で継続的検証", "is_correct": true, "explanation": "正解。階層化された自動化と人間関与、振り返りまで含む包括設計。L6 の設計力を問う。"},
-        {"id": "B", "text": "全部 Slack に投げて人が対応", "is_correct": false, "explanation": "自動化と統制がない。"},
-        {"id": "C", "text": "GuardDuty 単体で完結する", "is_correct": false, "explanation": "他の検出ソースを取りこぼす。"},
-        {"id": "D", "text": "全部 SCP で予防し、検出は不要", "is_correct": false, "explanation": "予防だけでは検出 / 対応 / 改善のループにならない。"}
+        {
+          "id": "A",
+          "text": "GuardDuty 単体で完結する",
+          "is_correct": false,
+          "explanation": "他の検出ソースを取りこぼす。"
+        },
+        {
+          "id": "B",
+          "text": "全部 SCP で予防し、検出は不要",
+          "is_correct": false,
+          "explanation": "予防だけでは検出 / 対応 / 改善のループにならない。"
+        },
+        {
+          "id": "C",
+          "text": "全部 Slack に投げて人が対応",
+          "is_correct": false,
+          "explanation": "自動化と統制がない。"
+        },
+        {
+          "id": "D",
+          "text": "(1) 各ソースを EventBridge で集中アカウントの Bus へクロスアカウント送信、(2) ルールで重大度フィルタ、(3) 軽い修復は SSM Automation、(4) 高重要度は Incident Manager Response Plan で人間 + Runbook 起動、(5) OpsCenter に OpsItem として履歴集約、(6) PIA で振り返り、(7) FIS で継続的検証",
+          "is_correct": true,
+          "explanation": "正解。階層化された自動化と人間関与、振り返りまで含む包括設計。L6 の設計力を問う。"
+        }
       ],
       "explanation": "包括的なインシデント対応設計は (1) 検出（CloudWatch / Security Hub / GuardDuty / Health）を EventBridge に集約、(2) 重大度別に修復経路を分岐（軽 = SSM Automation、重 = Incident Manager + 人間）、(3) OpsCenter で記録・追跡、(4) PIA で振り返り、(5) FIS で継続検証。L6 の創造的設計力。",
       "references": [
-        {"title": "AWS Cloud Adoption Framework: Operations perspective", "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/operations-perspective.html"}
+        {
+          "title": "AWS Cloud Adoption Framework: Operations perspective",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/operations-perspective.html"
+        }
       ],
-      "tags": ["incident-response", "design", "eventbridge", "incident-manager", "opscenter", "fis"],
-      "common_mistakes": ["検出ソースを 1 つに絞ってしまう", "PIA で振り返らずループが回らない"],
-      "quality_score": {"stem_clarity": 5, "distractor_plausibility": 5, "cognitive_level_match": 5, "explanation_completeness": 5, "overall": 5.0},
-      "metadata": {"created_at": "2026-04-30T00:00:00Z", "created_by": "kit-claude", "reviewed": true, "language": "ja"}
+      "tags": [
+        "incident-response",
+        "design",
+        "eventbridge",
+        "incident-manager",
+        "opscenter",
+        "fis"
+      ],
+      "common_mistakes": [
+        "検出ソースを 1 つに絞ってしまう",
+        "PIA で振り返らずループが回らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-04-30T00:00:00Z",
+        "created_by": "kit-claude",
+        "reviewed": true,
+        "language": "ja"
+      }
     }
   ]
 }
