@@ -499,20 +499,50 @@ const QuizApp = (() => {
 
   // 正解開示・解説表示・自己評価ボタン描画（単一/複数で共通）。
   function revealAndExplain(q, chosenSet, isCorrect) {
+    const isMulti = currentSession.isMulti;
     document.querySelectorAll('.quiz-option').forEach(el => {
       const oid = el.dataset.optionId;
       const opt = q.options.find(o => o.id === oid);
       el.classList.remove('selected');
-      if (opt.is_correct) {
+      const chosen = chosenSet.has(oid);
+      let tagText = '', tagCls = '';
+      if (opt.is_correct && chosen) {
         el.classList.add('correct', 'show-explain');
-      } else if (chosenSet.has(oid)) {
+        tagText = '✓ あなたの選択・正解'; tagCls = 'tag-correct';
+      } else if (opt.is_correct && !chosen) {
+        // 正解なのに選ばなかった → 見落としを明示（緑一色で「合っていた」に見える誤読を防ぐ）
+        el.classList.add('correct', 'missed', 'show-explain');
+        tagText = '● 正解（あなたは未選択）'; tagCls = 'tag-missed';
+      } else if (!opt.is_correct && chosen) {
         el.classList.add('incorrect', 'show-explain');
+        tagText = '✗ あなたの選択・不正解'; tagCls = 'tag-incorrect';
       } else {
         el.classList.add('show-explain');
+      }
+      if (tagText) {
+        const t = document.createElement('div');
+        t.className = 'quiz-option-tag ' + tagCls;
+        t.textContent = tagText;
+        const txt = el.querySelector('.quiz-option-text');
+        if (txt) txt.prepend(t);
       }
     });
 
     const explainEl = document.getElementById('quiz-explanation');
+
+    // 合否を大きく明示。複数選択は「選択数 / 正解数」も出して過不足を可視化。
+    const correctCount = q.options.filter(o => o.is_correct).length;
+    const verdict = document.createElement('div');
+    verdict.className = 'quiz-verdict ' + (isCorrect ? 'ok' : 'ng');
+    verdict.textContent = isCorrect ? '✓ 正解' : '✗ 不正解';
+    if (isMulti) {
+      const sub = document.createElement('span');
+      sub.className = 'quiz-verdict-sub';
+      sub.textContent = `選択 ${chosenSet.size} / 正解 ${correctCount}（過不足なく一致で正解）`;
+      verdict.appendChild(sub);
+    }
+    explainEl.insertBefore(verdict, explainEl.firstChild);
+
     document.getElementById('quiz-explanation-text').textContent = q.explanation || '';
 
     const refsEl = document.getElementById('quiz-references');
@@ -545,7 +575,7 @@ const QuizApp = (() => {
     actionsEl.innerHTML = `
       <div style="width:100%;">
         <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;">
-          ${isCorrect ? '✓ 正解' : '✗ 不正解'} - 自己評価を選んでください
+          自己評価を選んでください
         </p>
         <div class="quality-rating">
           <div class="quality-btn q-0" data-q="0">忘れていた</div>

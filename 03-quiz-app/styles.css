@@ -629,6 +629,54 @@ code {
   background: var(--red-soft);
   border-color: var(--red);
 }
+/* 正解だが未選択（見落とし）。緑一色で「合っていた」と誤読されないよう破線＋警告色で強調 */
+.quiz-option.correct.missed {
+  border-style: dashed;
+  border-color: var(--yellow, #c08a00);
+  background: var(--yellow-faint, rgba(255, 196, 0, 0.10));
+}
+.quiz-option.correct.missed .quiz-option-id {
+  color: var(--yellow, #c08a00);
+  background: var(--yellow-faint, rgba(255, 196, 0, 0.14));
+  border-color: var(--yellow, #c08a00);
+}
+
+/* 各選択肢に「あなたの選択／正解（未選択）」を明示するタグ */
+.quiz-option-tag {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.quiz-option-tag.tag-correct   { color: var(--green); background: var(--green-faint); }
+.quiz-option-tag.tag-incorrect { color: var(--red);   background: var(--red-faint); }
+.quiz-option-tag.tag-missed    { color: var(--yellow, #c08a00); background: var(--yellow-faint, rgba(255, 196, 0, 0.16)); }
+
+/* 合否バナー（見落とせない大きさで明示） */
+.quiz-verdict {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.quiz-verdict.ok { color: var(--green); background: var(--green-faint); border: 1.5px solid var(--green); }
+.quiz-verdict.ng { color: var(--red);   background: var(--red-faint);   border: 1.5px solid var(--red); }
+.quiz-verdict-sub {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
 .quiz-option-text { flex: 1; color: var(--text); }
 .quiz-option-explain {
   margin-top: 12px;
