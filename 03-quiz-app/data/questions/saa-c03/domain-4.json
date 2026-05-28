@@ -1,0 +1,3019 @@
+{
+  "exam_code": "SAA-C03",
+  "exam_name": "AWS Certified Solutions Architect – Associate",
+  "version": "2026.04",
+  "total_questions": 40,
+  "domains": [
+    {
+      "id": "domain-4",
+      "name": "Design Cost-Optimized Architectures",
+      "weight_percent": 20,
+      "question_count": 40
+    }
+  ],
+  "questions": [
+    {
+      "id": "saa-c03-domain4-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "EC2 Purchase Options",
+      "subtopic": "Savings Plans vs Reserved Instances",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "本番 EC2 を 3 年間 24 時間稼働させる予定だが、将来インスタンスタイプを変更する可能性が高い。最もコスト効率と柔軟性のバランスが取れた購入オプションはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Standard Reserved Instance (3 年・全額前払い) で最大割引を確保する",
+          "is_correct": false,
+          "explanation": "最大割引だがインスタンスタイプ変更は不可。柔軟性要件に反する。"
+        },
+        {
+          "id": "B",
+          "text": "Compute Savings Plans (3 年) を購入し、EC2/Fargate/Lambda 全般に適用する",
+          "is_correct": true,
+          "explanation": "正解。Compute SP はインスタンスファミリー・リージョン・OS・テナンシー問わず適用され、最大の柔軟性。"
+        },
+        {
+          "id": "C",
+          "text": "On-Demand のままで運用し、毎月支払う",
+          "is_correct": false,
+          "explanation": "コスト最適化要件に反する。長期稼働なら割引購入オプションを使うべき。"
+        },
+        {
+          "id": "D",
+          "text": "Spot Instance のみで運用し、中断リスクを許容する",
+          "is_correct": false,
+          "explanation": "本番 24 時間稼働で Spot 中断は許容できない。Spot は中断耐性ありの処理向け。"
+        }
+      ],
+      "explanation": "EC2 購入オプション割引率順 (3 年全額前払い): Standard RI (最大 72%, 柔軟性低) > Compute SP (66%, 最大柔軟) > EC2 Instance SP (72%, 中柔軟、特定ファミリー固定) > Convertible RI (54%, ファミリー変更可) > On-Demand。柔軟性と割引のトレードオフを理解する。",
+      "references": [
+        {
+          "title": "AWS Savings Plans",
+          "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html"
+        }
+      ],
+      "tags": [
+        "ec2",
+        "savings-plans",
+        "reserved-instance",
+        "cost"
+      ],
+      "common_mistakes": [
+        "RI と SP の柔軟性差を理解していない",
+        "全シナリオで Standard RI が最適と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Spot Instances",
+      "subtopic": "Use case selection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "バッチ機械学習トレーニングジョブを 1 日 4-8 時間実行する。途中中断されてもチェックポイントから再開できる設計になっている。最もコスト効率の良い EC2 購入方式はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "On-Demand で運用し、いつでも実行できる確実性を優先する",
+          "is_correct": false,
+          "explanation": "中断耐性があるため Spot で大幅コスト削減できる場面で On-Demand は割高。"
+        },
+        {
+          "id": "B",
+          "text": "Spot Instance を活用し、最大 90% の割引を得る",
+          "is_correct": true,
+          "explanation": "正解。Spot は中断耐性ありの ML トレーニング・Big Data バッチ・CI/CD・ステートレス処理に最適。"
+        },
+        {
+          "id": "C",
+          "text": "3 年 Reserved Instance を購入し、長期契約で割引を得る",
+          "is_correct": false,
+          "explanation": "1 日 4-8 時間のバッチには稼働時間が短すぎる。RI は常時稼働に向く。"
+        },
+        {
+          "id": "D",
+          "text": "Dedicated Host を購入し、専有環境で実行する",
+          "is_correct": false,
+          "explanation": "Dedicated Host は BYOL ライセンス要件用で最も高い。ML バッチには不適。"
+        }
+      ],
+      "explanation": "Spot Instance は AWS の余剰キャパシティを最大 90% 割引で提供。2 分前の中断通知 + チェックポイント設計で活用。ML トレーニング、Big Data 処理、CI/CD ワーカー、ステートレス Web 層、Render Farm などが定番ユースケース。",
+      "references": [
+        {
+          "title": "Amazon EC2 Spot Instances",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"
+        }
+      ],
+      "tags": [
+        "spot",
+        "ec2",
+        "ml-training",
+        "cost"
+      ],
+      "common_mistakes": [
+        "中断耐性のあるワークロードで Spot を使わない",
+        "Spot を本番 24 時間 Web に使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Savings Plans",
+      "subtopic": "Compute SP vs EC2 Instance SP",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）Compute Savings Plans と EC2 Instance Savings Plans の違いとして正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Compute SP は EC2 / Fargate / Lambda に幅広く適用される (リージョン・OS・ファミリー問わず)",
+          "is_correct": true,
+          "explanation": "正解。Compute SP は最も柔軟で、サービス・リージョン・OS 横断で適用。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 Instance SP は特定のインスタンスファミリー + リージョンに固定だが割引率が高い",
+          "is_correct": true,
+          "explanation": "正解。EC2 Instance SP は柔軟性を犠牲にして Compute SP より高い割引 (最大 72%) を提供。"
+        },
+        {
+          "id": "C",
+          "text": "Compute SP は Compute Optimizer の使用が必須",
+          "is_correct": false,
+          "explanation": "両者とも Compute Optimizer は不要。独立した購入オプション。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 Instance SP は Lambda にも適用される",
+          "is_correct": false,
+          "explanation": "EC2 Instance SP は EC2 専用。Lambda は Compute SP のみ対象。"
+        }
+      ],
+      "explanation": "Savings Plans 2 種: Compute SP (最大 66% 割引・EC2/Fargate/Lambda 全般・最大柔軟)、EC2 Instance SP (最大 72% 割引・特定インスタンスファミリー + リージョン固定・柔軟性低)。柔軟性 vs 割引率のトレードオフで選ぶ。",
+      "references": [
+        {
+          "title": "Types of Savings Plans",
+          "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/sp-overview.html#sp-types"
+        }
+      ],
+      "tags": [
+        "savings-plans",
+        "compute-sp",
+        "ec2-instance-sp"
+      ],
+      "common_mistakes": [
+        "両 SP の適用範囲を取り違える",
+        "EC2 Instance SP が Lambda にも効くと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-004",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "EC2 Spot Fleet",
+      "subtopic": "Diversification",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Spot Instance で 100 vCPU の計算能力を 24 時間維持したい。Spot の中断リスクを最小化したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Spot Fleet で複数インスタンスタイプ + 複数 AZ にダイバーシファイし、容量戦略を Capacity Optimized にする",
+          "is_correct": true,
+          "explanation": "正解。複数プールへの分散と Capacity Optimized 戦略で中断率を最小化する標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "単一インスタンスタイプ + 単一 AZ で Spot を確保し、価格を最小化する",
+          "is_correct": false,
+          "explanation": "単一プールに集中すると中断リスクが高い。価格急騰時に一斉中断する。"
+        },
+        {
+          "id": "C",
+          "text": "Spot 価格上限を On-Demand 価格の 50% に設定し、価格急騰時に中断させる",
+          "is_correct": false,
+          "explanation": "価格上限設定で中断頻度はむしろ増える。Capacity Optimized で容量重視。"
+        },
+        {
+          "id": "D",
+          "text": "Spot ではなく Reserved Instance を購入し、中断リスクを完全排除する",
+          "is_correct": false,
+          "explanation": "Spot 利用前提を変える。要件 (Spot で中断最小) に対する直接的解ではない。"
+        }
+      ],
+      "explanation": "Spot Fleet は複数インスタンスタイプ・複数 AZ・複数価格をまたいで Spot 容量を確保するサービス。Allocation Strategy: Capacity Optimized (中断率最小化)、Price Capacity Optimized (価格と容量バランス)、Lowest Price (最安、中断率は高め)。本番志向は Capacity Optimized。",
+      "references": [
+        {
+          "title": "Spot Fleet allocation strategies",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html"
+        }
+      ],
+      "tags": [
+        "spot-fleet",
+        "diversification",
+        "capacity-optimized"
+      ],
+      "common_mistakes": [
+        "単一プールに Spot 集中させる",
+        "価格上限設定で中断回避できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-005",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Compute Optimizer",
+      "subtopic": "Right-sizing recommendations",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "本番運用中の EC2 が過剰スペックで、ダウンサイズ余地がないか定量的に分析したい。最も適切な AWS サービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cost Explorer の Rightsizing Recommendations を使う",
+          "is_correct": false,
+          "explanation": "Cost Explorer にも Rightsizing 機能はあるが、Compute Optimizer の方が機械学習で精度が高く、より広範囲をカバー。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch メトリクスを目視確認し、CPU 使用率の低いインスタンスを探す",
+          "is_correct": false,
+          "explanation": "手動分析で網羅性に欠ける。Compute Optimizer が機械学習で全インスタンス自動分析。"
+        },
+        {
+          "id": "C",
+          "text": "Trusted Advisor の Idle Load Balancer チェックを利用する",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は無料枠で限定的な指摘 (アイドル LB / 未使用 EIP 等)。EC2 右サイズは Compute Optimizer。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Compute Optimizer を使い、機械学習ベースの右サイズ化推奨を受ける",
+          "is_correct": true,
+          "explanation": "正解。Compute Optimizer は EC2/EBS/Lambda/ECS Fargate/RDS の利用率を分析し、最適サイズを推奨する。"
+        }
+      ],
+      "explanation": "AWS Compute Optimizer は機械学習で利用率データを分析し、EC2 / EBS / Lambda / ECS Fargate / RDS / Auto Scaling Group の最適サイズを推奨する無料サービス。Over-provisioned / Under-provisioned / Optimized を判定し、コスト削減見込みも提示。",
+      "references": [
+        {
+          "title": "AWS Compute Optimizer",
+          "url": "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html"
+        }
+      ],
+      "tags": [
+        "compute-optimizer",
+        "right-sizing",
+        "ml"
+      ],
+      "common_mistakes": [
+        "手動で CloudWatch を見て判断",
+        "Trusted Advisor で右サイズ化できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-006",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Dedicated Host",
+      "subtopic": "BYOL use case",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Windows Server のソケット単位ライセンスをオンプレから AWS へ持ち込む (BYOL) 必要がある。最も適切な EC2 オプションはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "通常の On-Demand EC2 (Shared Tenancy) で起動する",
+          "is_correct": false,
+          "explanation": "Shared Tenancy では BYOL ライセンス要件 (物理ソケット・物理コア基準) を満たせない。"
+        },
+        {
+          "id": "B",
+          "text": "Dedicated Instance を起動し、専有 EC2 で実行する",
+          "is_correct": false,
+          "explanation": "Dedicated Instance は専有ハードウェアだが、ソケット単位のライセンス追跡には Dedicated Host が必要。"
+        },
+        {
+          "id": "C",
+          "text": "Spot Instance を BYOL ライセンスで起動する",
+          "is_correct": false,
+          "explanation": "Spot は中断あり + BYOL の物理可視性なし。ライセンス要件に合わない。"
+        },
+        {
+          "id": "D",
+          "text": "Dedicated Host を購入し、物理サーバーを専有して BYOL ライセンスを使う",
+          "is_correct": true,
+          "explanation": "正解。Dedicated Host は物理サーバー単位の可視性を提供し、ソケット/コア単位の BYOL ライセンスを満たせる。"
+        }
+      ],
+      "explanation": "Dedicated Host: 物理サーバー全体を顧客専有、ソケット/コアが可視で BYOL (Windows Server, SQL Server, Oracle 等) ライセンスに対応。Dedicated Instance: 専有ハードウェアだが物理レベルは見えず、コンプライアンス専有目的。通常 EC2 は Shared Tenancy。",
+      "references": [
+        {
+          "title": "Amazon EC2 Dedicated Hosts",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html"
+        }
+      ],
+      "tags": [
+        "dedicated-host",
+        "byol",
+        "license"
+      ],
+      "common_mistakes": [
+        "Dedicated Instance と Dedicated Host を混同",
+        "Shared Tenancy で BYOL 可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-007",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Lambda Cost Optimization",
+      "subtopic": "Graviton / Memory tuning",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Lambda 関数のコストを下げたい。実行時間とメモリの両方が課金対象。最も効果的な改善策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "メモリを最小の 128MB に固定し、実行時間が伸びてもコストを下げる",
+          "is_correct": false,
+          "explanation": "メモリ削減で実行時間が伸びると総コストはむしろ増えることが多い。Power Tuning で最適点を探すべき。"
+        },
+        {
+          "id": "B",
+          "text": "Provisioned Concurrency を全関数に有効化する",
+          "is_correct": false,
+          "explanation": "Provisioned Concurrency は追加コスト発生。コスト削減目的では使わない (コールドスタート対策が目的)。"
+        },
+        {
+          "id": "C",
+          "text": "arm64 (Graviton) アーキテクチャに切り替え、約 20% のコストカット + 性能向上を得る",
+          "is_correct": true,
+          "explanation": "正解。Graviton は x86_64 比で約 20% コスト削減 + 性能向上で、互換アプリなら最初の最適化。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda の代わりに EC2 で常時起動し、長時間処理を統合する",
+          "is_correct": false,
+          "explanation": "Lambda の従量課金から常時課金へ切替えはアイドル時間がコストになる。Lambda コスト最適化の解ではない。"
+        }
+      ],
+      "explanation": "Lambda コスト最適化の主要手段: ①arm64 (Graviton) で約 20% カット、②AWS Lambda Power Tuning でメモリと実行時間の最適点を探す、③不要な VPC ENI 待ちを削減、④Provisioned Concurrency は必要最小限に。メモリ過小は逆効果なので Power Tuning で正解値を見つける。",
+      "references": [
+        {
+          "title": "Lambda Graviton",
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html"
+        }
+      ],
+      "tags": [
+        "lambda",
+        "graviton",
+        "cost"
+      ],
+      "common_mistakes": [
+        "メモリ最小化でコストが下がると誤解",
+        "Provisioned Concurrency をコスト削減目的に使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-008",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Container Cost",
+      "subtopic": "Fargate Spot",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ECS Fargate で動くバッチタスクのコストをさらに下げたい。タスクが中断されてもリトライで対応可能な設計。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda に切り替え、サーバレス料金体系を活用する",
+          "is_correct": false,
+          "explanation": "コンテナアプリの Lambda 化は大規模な書き換えが必要。アーキ変更前提なら別判断。"
+        },
+        {
+          "id": "B",
+          "text": "Fargate のタスクサイズを最小 (0.25 vCPU/0.5GB) に固定する",
+          "is_correct": false,
+          "explanation": "ワークロードが処理できないサイズに無理矢理下げると性能や信頼性が落ちる。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 launch type に変更し、Reserved Instance を購入する",
+          "is_correct": false,
+          "explanation": "Fargate の管理レス利点を捨てる。設問は『Fargate でさらに』なので Fargate Spot が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "Fargate Spot を Capacity Provider として設定し、最大 70% 割引を活用する",
+          "is_correct": true,
+          "explanation": "正解。Fargate Spot は EC2 Spot 相当のコンテナ版で、中断耐性ありのバッチに最適。"
+        }
+      ],
+      "explanation": "Fargate Spot は ECS Fargate の Spot 価格版で最大 70% 割引。Capacity Provider Strategy で Fargate (On-Demand) と Fargate Spot の比率を指定可能 (例: 25:75)。中断耐性ありバッチ・ステートレス Web 層・CI/CD に最適。",
+      "references": [
+        {
+          "title": "Fargate Spot",
+          "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html"
+        }
+      ],
+      "tags": [
+        "fargate",
+        "spot",
+        "container",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Fargate Spot の存在を知らない",
+        "タスクサイズを無理に小さくする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-009",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "S3 Storage Lens",
+      "subtopic": "Cost visibility",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "組織内 100 個以上の S3 バケット全体でストレージ使用量・アクセス傾向・コスト最適化機会を可視化したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Cost Explorer で S3 サービス全体のコスト推移だけを確認する",
+          "is_correct": false,
+          "explanation": "Cost Explorer は金額視点で、バケット別の利用パターン詳細は出せない。"
+        },
+        {
+          "id": "B",
+          "text": "各バケットの S3 Inventory を取得し、Excel で集計する",
+          "is_correct": false,
+          "explanation": "可能だが運用負荷大。Storage Lens がマネージドで提供。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Storage Lens を組織全体で有効化し、ダッシュボードで分析する",
+          "is_correct": true,
+          "explanation": "正解。Storage Lens は S3 全バケット横断のメトリクス・推奨を提供する S3 専用分析サービス。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で全バケットの ListObject を毎日実行し、サイズ集計する",
+          "is_correct": false,
+          "explanation": "実装可能だがマネージドの Storage Lens を再実装する無駄。"
+        }
+      ],
+      "explanation": "S3 Storage Lens は組織レベルで全 S3 バケットの使用量・アクセス傾向・コスト最適化機会を可視化するマネージドサービス。無料層 (14 日保持) と Advanced (15 ヶ月保持 + 推奨アクション + Prefix-level メトリクス) がある。",
+      "references": [
+        {
+          "title": "S3 Storage Lens",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "storage-lens",
+        "visibility"
+      ],
+      "common_mistakes": [
+        "Cost Explorer で S3 詳細分析できると誤解",
+        "S3 Inventory で代替しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-010",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "S3 Multipart Upload",
+      "subtopic": "Incomplete upload cleanup",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "S3 のストレージコストが想定より高い。調査すると未完了のマルチパートアップロード断片が大量に蓄積していた。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda で毎日 ListMultipartUploads + AbortMultipartUpload を呼んで削除する",
+          "is_correct": false,
+          "explanation": "自前実装で運用負荷大。Lifecycle ルールが標準。"
+        },
+        {
+          "id": "B",
+          "text": "バケット全体を削除して作り直す",
+          "is_correct": false,
+          "explanation": "正常オブジェクトも失う。破壊的で本末転倒。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Lifecycle ルールで『未完了マルチパートを 7 日後に Abort』を設定する",
+          "is_correct": true,
+          "explanation": "正解。Lifecycle ルールは未完了マルチパート断片の自動削除をマネージドで提供。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Versioning を無効化して、断片を消す",
+          "is_correct": false,
+          "explanation": "Versioning とマルチパート断片は別概念。Versioning 無効化では断片は削除されない。"
+        }
+      ],
+      "explanation": "S3 Multipart Upload は大容量ファイル分割アップロード機能だが、Complete または Abort されないと断片がストレージとして残り課金される。Lifecycle ルールで『AbortIncompleteMultipartUpload (DaysAfterInitiation: 7)』設定が定番の予防策。",
+      "references": [
+        {
+          "title": "Lifecycle for incomplete multipart uploads",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpu-abort-incomplete-mpu-lifecycle-config.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "multipart-upload",
+        "lifecycle",
+        "cost"
+      ],
+      "common_mistakes": [
+        "未完了マルチパート断片の存在を知らない",
+        "Versioning と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-011",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "S3 Requester Pays",
+      "subtopic": "Bandwidth cost transfer",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オープンデータセットを S3 で公開し、ダウンロード料金は利用者側に負担させたい (バケット所有者は保管料金のみ)。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 バケットを Public 設定にし、CloudFront で配信する",
+          "is_correct": false,
+          "explanation": "CloudFront のデータ転送料金もバケット所有者負担になる。要件に反する。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda で毎ダウンロードに対し利用者に請求書を発行する",
+          "is_correct": false,
+          "explanation": "請求機構を自前構築する無理。AWS ネイティブの Requester Pays がある。"
+        },
+        {
+          "id": "C",
+          "text": "Requester Pays バケットを有効化し、利用者の AWS アカウントに転送料金を請求する",
+          "is_correct": true,
+          "explanation": "正解。Requester Pays バケットは要求者 (アクセス側) に料金を請求する S3 機能。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Transfer Acceleration を有効化して料金を分散する",
+          "is_correct": false,
+          "explanation": "Transfer Acceleration は高速化機能で料金分担とは無関係。"
+        }
+      ],
+      "explanation": "Requester Pays バケットは、データ転送・リクエスト料金を要求者 (アクセスする AWS アカウント) に請求する仕組み。オープンデータ・大量配信データの転送料金負担を分散する標準パターン。バケット所有者は保管料金のみ負担。",
+      "references": [
+        {
+          "title": "Requester Pays buckets",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "requester-pays",
+        "data-distribution"
+      ],
+      "common_mistakes": [
+        "CloudFront でも料金を分担できると誤解",
+        "Requester Pays の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-012",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "S3 One Zone-IA",
+      "subtopic": "Cost vs durability",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "S3 で別ソースから再生成可能な中間データ (キャッシュ的) を保管したい。アクセスは月に数回程度で、AZ 障害時に再生成できれば十分。最もコスト効率のよいクラスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Standard で 11 9 耐久性・3 AZ 保管にする",
+          "is_correct": false,
+          "explanation": "再生成可能なら 3 AZ 耐久性は過剰。コスト最適化に反する。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Standard-IA でアクセス頻度低用の 3 AZ クラスにする",
+          "is_correct": false,
+          "explanation": "3 AZ 必須要件があれば適切だが、設問は『AZ 障害時再生成 OK』で One Zone-IA が安い。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Glacier Deep Archive で最安に保管する",
+          "is_correct": false,
+          "explanation": "Deep Archive は取り出しに 12 時間以上かかる。月数回アクセスには不適。"
+        },
+        {
+          "id": "D",
+          "text": "S3 One Zone-IA で 1 AZ 保管にし、Standard-IA より約 20% 安く運用する",
+          "is_correct": true,
+          "explanation": "正解。再生成可能・低頻度アクセス・1 AZ 許容の三条件で One Zone-IA が最適。"
+        }
+      ],
+      "explanation": "S3 One Zone-IA: アクセス頻度低 + 1 AZ 保管 (再生成可能データ向け) + Standard-IA より約 20% 安価。Standard-IA は 3 AZ 耐久。Glacier 系は数分〜時間の取り出し遅延あり。再生成可能 + 月数回アクセス → One Zone-IA が定番。",
+      "references": [
+        {
+          "title": "S3 One Zone-IA",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html#sc-infreq-data-access"
+        }
+      ],
+      "tags": [
+        "s3",
+        "one-zone-ia",
+        "cost"
+      ],
+      "common_mistakes": [
+        "再生成可能データに Standard を使い続ける",
+        "Deep Archive を月次アクセスに使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-013",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Aurora",
+      "subtopic": "I/O Optimized",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL クラスターで、月次の I/O 料金がインスタンス料金の 40% を超えている。コスト最適化したい。最も適切な検討項目はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora の Read Replica を増設し、Primary の I/O 負荷を読み取り側に分散する構成にする",
+          "is_correct": false,
+          "explanation": "Read Replica は読み取りスケール用。Aurora は I/O 課金の単位が『リクエスト数』で Read Replica 増加が直接の解にならない。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora I/O Optimized 構成に切り替え、I/O 料金を撤廃する代わりにインスタンス料金が上がるが総額を下げる",
+          "is_correct": true,
+          "explanation": "正解。Aurora I/O Optimized は I/O 課金なし + インスタンス料金約 30% 増の代替プラン。I/O 重い場合は総額が下がる。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora から DynamoDB に移行し、I/O 課金体系を撤廃して全体コストを下げる",
+          "is_correct": false,
+          "explanation": "アーキ変更が大きすぎる。Aurora 内で I/O Optimized 切替が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora のインスタンスサイズを最小化し、結果的に I/O 処理能力も抑えて課金を減らす",
+          "is_correct": false,
+          "explanation": "インスタンスサイズと I/O 料金は独立。性能低下するだけ。"
+        }
+      ],
+      "explanation": "Aurora の料金体系: ①Aurora Standard (基本料金低 + I/O 課金あり、I/O 軽め向け) ②Aurora I/O Optimized (基本料金約 30% 高 + I/O 課金なし、I/O 重め向け)。I/O 料金がインスタンス料金の 25% を超えるなら I/O Optimized 切替の検討余地あり。",
+      "references": [
+        {
+          "title": "Aurora I/O Optimized",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-storage-configurations.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "io-optimized",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Aurora の 2 料金プランの存在を知らない",
+        "Read Replica で I/O 課金が減ると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-014",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "RDS Reserved Instance",
+      "subtopic": "Long-term commitment",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS MySQL を 3 年間 24/7 稼働させる確定計画がある。最大のコスト削減を得るための購入方式はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "On-Demand のまま運用し、月額料金で支払う",
+          "is_correct": false,
+          "explanation": "On-Demand は最も割高。長期確定なら RI 一択。"
+        },
+        {
+          "id": "B",
+          "text": "RDS Reserved Instance を 3 年・全額前払いで購入する",
+          "is_correct": true,
+          "explanation": "正解。3 年全額前払い RI は最大割引 (~70%) で長期稼働に最適。"
+        },
+        {
+          "id": "C",
+          "text": "RDS Reserved Instance を 1 年で繰り返し購入する",
+          "is_correct": false,
+          "explanation": "1 年 RI は割引率が低い (~40%)。3 年確定なら 3 年 RI が安い。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora Serverless v2 に切り替え、自動スケーリングに任せる",
+          "is_correct": false,
+          "explanation": "24/7 高稼働の常時負荷では Serverless は割高になる。RI が向く。"
+        }
+      ],
+      "explanation": "RDS Reserved Instance は 1 年 or 3 年契約で大幅割引。3 年全額前払いで最大 ~70% 割引。Aurora にも Reserved Instance あり (購入時 Aurora 専用)。Compute と異なり Savings Plans は RDS には適用されない (2026 年時点)。",
+      "references": [
+        {
+          "title": "RDS Reserved Instances",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "reserved-instance",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Compute SP が RDS にも効くと誤解",
+        "1 年 RI を繰り返す効率を過大評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-015",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "DynamoDB",
+      "subtopic": "Reserved Capacity",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DynamoDB プロビジョン型キャパシティで、安定して 1,000 WCU / 5,000 RCU を 24 時間使う想定。コストを最大限下げたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "On-Demand モードに変更し、AWS が自動でスケールするのに任せる",
+          "is_correct": false,
+          "explanation": "安定高負荷では On-Demand は割高。Provisioned + Reserved Capacity が最安。"
+        },
+        {
+          "id": "B",
+          "text": "DynamoDB Streams を有効化し、不要書き込みを抑制する",
+          "is_correct": false,
+          "explanation": "Streams は変更通知で、書き込み料金には影響しない。"
+        },
+        {
+          "id": "C",
+          "text": "On-Demand + Application Auto Scaling を組み合わせる",
+          "is_correct": false,
+          "explanation": "On-Demand は Auto Scaling 概念がない (常時 = リクエスト課金)。組合せ自体が成立しない。"
+        },
+        {
+          "id": "D",
+          "text": "Provisioned + Reserved Capacity を 1 年・全額前払いで購入する",
+          "is_correct": true,
+          "explanation": "正解。安定負荷には Provisioned + Reserved が最大割引 (最大 76% カット)。"
+        }
+      ],
+      "explanation": "DynamoDB のコスト最適化: 安定高負荷 → Provisioned + Reserved Capacity (1 年 or 3 年、最大 76% カット)。変動・予測不能 → On-Demand。Application Auto Scaling は Provisioned 用で予測可能変動向け。",
+      "references": [
+        {
+          "title": "DynamoDB Reserved Capacity",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/reservedcapacity.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "reserved-capacity",
+        "cost"
+      ],
+      "common_mistakes": [
+        "安定高負荷で On-Demand を選んで割高化",
+        "Streams で料金が減ると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-016",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Aurora Serverless v2",
+      "subtopic": "Variable workload cost",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "社内分析用 DB で、平日日中だけ使われ、夜間・休日はゼロ近いトラフィック。Aurora 採用が決まっている。最もコスト効率の良い設計はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora Serverless v2 で 0.5-16 ACU の範囲で自動スケーリングする",
+          "is_correct": true,
+          "explanation": "正解。Serverless v2 は秒単位 ACU 課金で、ゼロ近い時間帯のコストを劇的削減。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora プロビジョン型を r6g.xlarge で常時起動する",
+          "is_correct": false,
+          "explanation": "夜間休日にもインスタンス料金が発生。変動負荷には Serverless が適切。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora プロビジョン型を毎晩停止・毎朝起動する cron を組む",
+          "is_correct": false,
+          "explanation": "Aurora の停止は最大 7 日間限定で、休日含む長期停止には不向き。Serverless が標準。"
+        },
+        {
+          "id": "D",
+          "text": "RDS for MySQL に切り替えてダウンサイズする",
+          "is_correct": false,
+          "explanation": "Aurora 採用が決定済みなので置き換えは要件外。"
+        }
+      ],
+      "explanation": "Aurora Serverless v2 は ACU (Aurora Capacity Unit) で秒単位課金。0.5〜128 ACU の範囲で連続スケール。変動負荷・低頻度負荷・SaaS マルチテナント・開発環境に最適。プロビジョン型と同等機能 (Multi-AZ / Global / RDS Proxy 等) を保つ。",
+      "references": [
+        {
+          "title": "Aurora Serverless v2",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "serverless-v2",
+        "variable-workload",
+        "cost"
+      ],
+      "common_mistakes": [
+        "変動負荷でもプロビジョン型を選ぶ",
+        "Aurora 停止運用の制約を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-017",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "NAT Gateway Alternatives",
+      "subtopic": "VPC Endpoint vs NAT",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "プライベートサブネットの EC2 が S3 と DynamoDB へ大量のリクエストを行っており、NAT Gateway のデータ処理料金が月数万 USD かかっている。最も効果的なコスト最適化はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "NAT Gateway を Bandwidth 上限まで増設して負荷分散する",
+          "is_correct": false,
+          "explanation": "増設はコスト増加。NAT 不要にすることが本質的解。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 に Elastic IP を付与し、Internet Gateway で直接通信させる",
+          "is_correct": false,
+          "explanation": "プライベートサブネット要件に反する + 公開化のセキュリティリスク増。"
+        },
+        {
+          "id": "C",
+          "text": "S3 と DynamoDB の Gateway VPC Endpoint を作成し、NAT Gateway 経由を回避する",
+          "is_correct": true,
+          "explanation": "正解。Gateway Endpoint は追加料金なし + AWS バックボーン経由で NAT 料金を完全に削減する。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 を Public Subnet に移してパブリック IP で通信する",
+          "is_correct": false,
+          "explanation": "セキュリティ要件 (プライベート維持) に反する。Endpoint が直接的解。"
+        }
+      ],
+      "explanation": "NAT Gateway は 1 GB あたり $0.045 のデータ処理料金 + 時間料金。S3/DynamoDB への大量アクセスは Gateway VPC Endpoint (追加料金なし) でルートテーブル経由に回避できる。それ以外の AWS サービスは Interface Endpoint (PrivateLink、時間 + データ料金あり) を検討。",
+      "references": [
+        {
+          "title": "Gateway VPC endpoints",
+          "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+        }
+      ],
+      "tags": [
+        "vpc-endpoint",
+        "nat-gateway",
+        "cost"
+      ],
+      "common_mistakes": [
+        "S3/DynamoDB に Interface Endpoint を使う",
+        "NAT 増設で対応しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-018",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Inter-AZ Traffic",
+      "subtopic": "Cross-AZ data transfer cost",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Multi-AZ アプリの月次 AWS 請求で『EC2 リージョン内データ転送』料金が想定外に高い。EC2 → RDS の通信が AZ をまたいでいることが原因。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cross-Zone Load Balancing を有効化して通信を分散する",
+          "is_correct": false,
+          "explanation": "ALB の Cross-Zone は料金無料だが、NLB は AZ 跨ぎ料金を増やす。設問のような ELB は出てこない構成では AZ 配置最適化が先。"
+        },
+        {
+          "id": "B",
+          "text": "RDS と EC2 を同一 AZ に配置するように Subnet を見直し、AZ 跨ぎ通信を減らす",
+          "is_correct": true,
+          "explanation": "正解。AZ 跨ぎは $0.01/GB かかる。アプリ内で AZ-Affinity を持たせるのが直接的削減策。"
+        },
+        {
+          "id": "C",
+          "text": "RDS を Multi-AZ から Single-AZ に変更してコストを下げる",
+          "is_correct": false,
+          "explanation": "可用性低下と引き換え。HA を捨ててまでの削減は通常推奨されない。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Peering を同一 VPC 内に張る",
+          "is_correct": false,
+          "explanation": "VPC Peering は同一 VPC 内では使えない。"
+        }
+      ],
+      "explanation": "AWS データ転送料金: 同一 AZ 内・プライベート IP = 無料、AZ 跨ぎ = $0.01/GB (in/out 両方)、リージョン跨ぎ = $0.02-0.09/GB、インターネット送信 = $0.09/GB-。コスト最適化は AZ Affinity 設計、Gateway Endpoint 活用、CloudFront キャッシュで egress 削減。",
+      "references": [
+        {
+          "title": "EC2 data transfer pricing",
+          "url": "https://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer"
+        }
+      ],
+      "tags": [
+        "data-transfer",
+        "inter-az",
+        "cost"
+      ],
+      "common_mistakes": [
+        "AZ 跨ぎ料金の存在を知らない",
+        "可用性を捨てる Single-AZ 化を選ぶ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-019",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "CloudFront",
+      "subtopic": "Egress cost reduction",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "公開 Web サイトの S3 からのデータ転送 (Egress) 料金が高い。最も効果的なコスト削減策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 を Public Bucket 化し、利用者からは Direct Connect 経由のみアクセスさせる構成にする",
+          "is_correct": false,
+          "explanation": "公開 Web ユーザの大半は Direct Connect を持たない。意味をなさない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Transfer Acceleration をバケットに有効化し、グローバル転送経路を最適化する",
+          "is_correct": false,
+          "explanation": "Transfer Acceleration は アップロード 高速化用で追加料金あり。Egress 削減ではない。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Lifecycle ルールで全データを Glacier Deep Archive に移行してストレージ料金を削減する",
+          "is_correct": false,
+          "explanation": "アクセス頻度が高い公開 Web では取り出し料金が逆に増える。要件に合わない。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFront 経由で配信し、CloudFront から AWS Origin への転送無料 + CloudFront のキャッシュで Origin 配信量を減らす",
+          "is_correct": true,
+          "explanation": "正解。CloudFront は AWS Origin (S3/EC2 等) との通信が無料 + キャッシュヒットで Origin 配信量も減らす二重効果。"
+        }
+      ],
+      "explanation": "公開 Web の Egress 削減は CloudFront 必須。CloudFront → エンドユーザ転送料金は S3 直接転送より安く ($0.085/GB- 階層別、S3 は $0.09/GB-)、AWS Origin との往復は無料、キャッシュヒットで Origin 負荷も削減。さらに CloudFront Security Savings Bundle で更に割引可能。",
+      "references": [
+        {
+          "title": "CloudFront pricing",
+          "url": "https://aws.amazon.com/cloudfront/pricing/"
+        }
+      ],
+      "tags": [
+        "cloudfront",
+        "egress",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Transfer Acceleration を Egress 削減と誤解",
+        "Glacier 移行を公開コンテンツに使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-020",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Data Transfer Pricing",
+      "subtopic": "Cross-region cost",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）AWS のデータ転送料金に関する説明として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "同一 AZ 内のプライベート IP 間通信は基本的に無料",
+          "is_correct": true,
+          "explanation": "正解。同一 AZ 内・プライベート IP 経由は無料の基本ルール。"
+        },
+        {
+          "id": "B",
+          "text": "AWS リージョンから インターネットへの送信 (Egress) は GB あたり課金される",
+          "is_correct": true,
+          "explanation": "正解。Egress は $0.09/GB- が基本 (最初の 100GB/月は無料、CloudFront 経由はやや安め)。"
+        },
+        {
+          "id": "C",
+          "text": "AZ 跨ぎのプライベート IP 通信は無料",
+          "is_correct": false,
+          "explanation": "AZ 跨ぎは $0.01/GB (in/out 両方) かかる。"
+        },
+        {
+          "id": "D",
+          "text": "リージョン跨ぎ通信は同一リージョン内通信より安い",
+          "is_correct": false,
+          "explanation": "リージョン跨ぎは $0.02-0.09/GB で同一リージョン内よりむしろ高い。"
+        }
+      ],
+      "explanation": "AWS データ転送料金の階層: 同一 AZ プライベート IP = 無料、AZ 跨ぎ = $0.01/GB (双方向)、リージョン跨ぎ = $0.02/GB-、Egress (インターネット) = $0.09/GB-。コスト最適化の基本知識として必須。",
+      "references": [
+        {
+          "title": "AWS data transfer pricing",
+          "url": "https://aws.amazon.com/blogs/architecture/overview-of-data-transfer-costs-for-common-architectures/"
+        }
+      ],
+      "tags": [
+        "data-transfer",
+        "pricing"
+      ],
+      "common_mistakes": [
+        "AZ 跨ぎが無料と誤解",
+        "リージョン跨ぎが同一リージョン内より安いと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-021",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Direct Connect",
+      "subtopic": "High volume egress",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレと AWS 間で月 100TB のデータ転送が発生しており、Egress 料金が高額になっている。最も効果的な改善策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Direct Connect を契約し、Egress 料金を Direct Connect の専用料金 (約 1/4) に置き換える",
+          "is_correct": true,
+          "explanation": "正解。Direct Connect 経由の Egress は標準 Egress より大幅に安く、大容量転送ほど投資回収が早い。"
+        },
+        {
+          "id": "B",
+          "text": "Site-to-Site VPN を冗長化し、トンネル数を 4 本に増やして並列転送スループットを稼ぐ",
+          "is_correct": false,
+          "explanation": "VPN もインターネット経由で Egress 料金は変わらない。コスト削減策ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Snowball Edge を毎月手動で物理輸送し、定常的なデータ転送パイプラインの代替とする",
+          "is_correct": false,
+          "explanation": "定常的な月次転送には不向き。継続接続なら Direct Connect。"
+        },
+        {
+          "id": "D",
+          "text": "AWS S3 Transfer Acceleration でオンプレからの S3 アップロードを高速化して料金を圧縮",
+          "is_correct": false,
+          "explanation": "Transfer Acceleration はアップロード高速化 + 追加料金あり。Egress 削減ではない。"
+        }
+      ],
+      "explanation": "Direct Connect は専用線で AWS リージョンに接続。データ転送料金は Egress 標準の約 1/4 (リージョンによる)。月次転送量が一定規模 (TB レベル) を超えると、Direct Connect の月額固定料 + 専用回線料金を含めても標準 Egress より安くなる損益分岐点を超える。",
+      "references": [
+        {
+          "title": "AWS Direct Connect pricing",
+          "url": "https://aws.amazon.com/directconnect/pricing/"
+        }
+      ],
+      "tags": [
+        "direct-connect",
+        "egress",
+        "cost"
+      ],
+      "common_mistakes": [
+        "VPN がコスト削減になると誤解",
+        "Snowball を定常転送用と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-022",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Cost Explorer",
+      "subtopic": "Cost analysis",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "過去 12 ヶ月の AWS 利用料金をサービス別・タグ別・アカウント別に分析し、未来 12 ヶ月の予測も得たい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Budgets で予算と実績を比較する",
+          "is_correct": false,
+          "explanation": "Budgets は予算管理用でアラート発火が役割。詳細分析は Cost Explorer。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Trusted Advisor で過去のコスト推移を確認する",
+          "is_correct": false,
+          "explanation": "Trusted Advisor はベストプラクティスチェックで履歴分析機能はない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Cost Explorer で詳細分析と機械学習ベース予測を行う",
+          "is_correct": true,
+          "explanation": "正解。Cost Explorer はサービス別・タグ別・アカウント別の分析と最大 12 ヶ月の予測を提供。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch メトリクスから手動でコスト集計する",
+          "is_correct": false,
+          "explanation": "Billing メトリクスはあるが、サービス別詳細分析は Cost Explorer が標準。"
+        }
+      ],
+      "explanation": "AWS Cost Explorer は過去 12 ヶ月の詳細分析・将来予測・Reserved Instance/Savings Plans のカバレッジ分析・Rightsizing 推奨を提供するマネージドサービス。Cost Allocation Tags と組み合わせると部門別・プロジェクト別の分析も可能。",
+      "references": [
+        {
+          "title": "AWS Cost Explorer",
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
+        }
+      ],
+      "tags": [
+        "cost-explorer",
+        "analysis",
+        "forecast"
+      ],
+      "common_mistakes": [
+        "Budgets と Cost Explorer の役割を混同",
+        "Trusted Advisor で詳細分析できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-023",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "AWS Budgets",
+      "subtopic": "Budget actions",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "月次予算 10,000 USD を超えそうな場合、自動的に開発環境の EC2 を停止して支出を抑えたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Budgets で予算アラート + Budget Actions で SCP / IAM ポリシー適用や EC2 停止を自動実行する",
+          "is_correct": true,
+          "explanation": "正解。Budget Actions は予算超過時に自動対応 (停止、SCP 適用、IAM 制限) を実行するネイティブ機能。"
+        },
+        {
+          "id": "B",
+          "text": "Cost Explorer で日次に手動チェックし、超過時に管理者が停止する",
+          "is_correct": false,
+          "explanation": "手動は遅れと漏れが発生。Budget Actions で自動化する。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で毎時 Cost Explorer API を呼び、閾値超過で自前停止スクリプトを動かす",
+          "is_correct": false,
+          "explanation": "実装可能だが Budget Actions マネージドの再実装で運用負荷。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Billing メトリクスで予算を監視し、Alarm から SNS 通知のみ送る",
+          "is_correct": false,
+          "explanation": "通知のみで自動停止にならない。Budget Actions が直接的解。"
+        }
+      ],
+      "explanation": "AWS Budgets はコスト・使用量・SP/RI カバレッジの予算管理機能。Budget Actions は予算超過時の自動アクション (IAM ポリシー / SCP 適用、EC2/RDS 停止) を実行する拡張機能。予算統制を自動化する。",
+      "references": [
+        {
+          "title": "AWS Budgets Actions",
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-controls.html"
+        }
+      ],
+      "tags": [
+        "budgets",
+        "budget-actions",
+        "automation"
+      ],
+      "common_mistakes": [
+        "手動運用で対応する",
+        "Budget Actions の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-024",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Trusted Advisor",
+      "subtopic": "Cost optimization checks",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "アイドル状態の ELB、未使用の EIP、ダウンサイズ可能な EC2、未使用 EBS など、典型的なコスト無駄を自動検出してくれる AWS サービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Cost Explorer の Resource Optimization レポート",
+          "is_correct": false,
+          "explanation": "一部機能はあるが、Trusted Advisor が定番の典型チェック群を提供する。"
+        },
+        {
+          "id": "B",
+          "text": "AWS CloudTrail の使用量レポート",
+          "is_correct": false,
+          "explanation": "CloudTrail は API 監査で、コスト最適化チェック機能はない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config の Compliance ルールセット",
+          "is_correct": false,
+          "explanation": "Config は設定評価でコスト無駄チェックは範囲外。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Trusted Advisor の Cost Optimization チェック",
+          "is_correct": true,
+          "explanation": "正解。Trusted Advisor はアイドルリソース・未使用 EIP・低利用 EC2 等の典型チェックを提供する標準サービス。"
+        }
+      ],
+      "explanation": "AWS Trusted Advisor は コスト最適化 / セキュリティ / 耐障害性 / パフォーマンス / サービス制限 の 5 カテゴリでベストプラクティスをチェック。Business / Enterprise サポートで全チェックが利用可能、Basic / Developer は基本セット (Cost 含む) のみ。",
+      "references": [
+        {
+          "title": "AWS Trusted Advisor",
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+        }
+      ],
+      "tags": [
+        "trusted-advisor",
+        "cost-optimization"
+      ],
+      "common_mistakes": [
+        "Trusted Advisor の役割を知らない",
+        "Config と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-025",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Cost Allocation Tags",
+      "subtopic": "Department billing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AWS アカウントを 1 つ共有する複数部門で、それぞれの利用料金を分離して可視化したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "部門ごとに AWS アカウントを分割し、Organizations 統合請求で各アカウント請求を集約する",
+          "is_correct": false,
+          "explanation": "強力な解だが大きな構成変更を要する。タグ運用で完結する場合の方が低コスト。"
+        },
+        {
+          "id": "B",
+          "text": "Cost Allocation Tags (例: Department) を有効化し、Cost Explorer でタグ別フィルタリングする",
+          "is_correct": true,
+          "explanation": "正解。Cost Allocation Tags + Cost Explorer は単一アカウント内の部門別コスト可視化の標準。"
+        },
+        {
+          "id": "C",
+          "text": "Cost Explorer の Linked Account フィルタで請求アカウント単位の部門別分離を実現する",
+          "is_correct": false,
+          "explanation": "1 アカウント内では Linked Account 分離はできない。タグが直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Trusted Advisor で部門別のベストプラクティスチェック結果を集計し請求と紐付ける",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は部門タグ別のコスト集計は提供しない。"
+        }
+      ],
+      "explanation": "Cost Allocation Tags は AWS リソースに付けるタグをコスト分析の軸として使う機能。AWS が生成するタグ (Cost Center 等) と顧客定義タグの両方を Billing 画面で有効化 → Cost Explorer / Cost & Usage Report でフィルタ可能。",
+      "references": [
+        {
+          "title": "Using cost allocation tags",
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"
+        }
+      ],
+      "tags": [
+        "cost-allocation-tags",
+        "chargeback"
+      ],
+      "common_mistakes": [
+        "タグ管理を Cost Explorer で活かさない",
+        "アカウント分割で過剰に対応する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-026",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Cost Anomaly Detection",
+      "subtopic": "Unexpected spike detection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "コストの想定外スパイク (例: 攻撃や設定ミスでの異常請求) を機械学習で自動検出し、早期通知したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudWatch Billing メトリクスでアラームを 100 個以上作る",
+          "is_correct": false,
+          "explanation": "サービス × アカウント × 期間で組み合わせ爆発し、ML 検出の方が効率的。"
+        },
+        {
+          "id": "B",
+          "text": "Budgets で予算閾値を細かく設定し、超過時に通知する",
+          "is_correct": false,
+          "explanation": "予算ベースの静的閾値で、スパイクの早期発見は遅れがち。ML 検出の方が早い。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Cost Anomaly Detection で機械学習ベースの異常検出 + アラート通知を有効化する",
+          "is_correct": true,
+          "explanation": "正解。Cost Anomaly Detection は ML ベースで過去パターンから逸脱したコスト変動を自動検知する。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Trusted Advisor で異常コストを定期確認する",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は ベストプラクティス チェックで、リアルタイム異常検出機能はない。"
+        }
+      ],
+      "explanation": "AWS Cost Anomaly Detection は機械学習で過去のコストパターンを学習し、想定外スパイクを自動検出。検出時に SNS / Email で通知。サービス別・タグ別・アカウント別にモニタを設定可能。攻撃や設定ミスの早期発見に有効。",
+      "references": [
+        {
+          "title": "AWS Cost Anomaly Detection",
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/getting-started-ad.html"
+        }
+      ],
+      "tags": [
+        "cost-anomaly-detection",
+        "ml",
+        "alert"
+      ],
+      "common_mistakes": [
+        "静的予算閾値で全異常を捉えられると誤解",
+        "Trusted Advisor を異常検出に使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-027",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "S3 Intelligent-Tiering",
+      "subtopic": "Object size considerations",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "数百万件の小オブジェクト (各 10KB 未満) を S3 で保管する。アクセス頻度が予測しづらい。S3 Intelligent-Tiering をそのまま使う前にチェックすべきことは何か。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Intelligent-Tiering は 128KB 未満のオブジェクトを階層化対象外とし、常に Frequent Access 料金で課金される",
+          "is_correct": true,
+          "explanation": "正解。小オブジェクトは Intelligent-Tiering の自動階層化対象外で、コスト削減効果が限定される。"
+        },
+        {
+          "id": "B",
+          "text": "Intelligent-Tiering の最小保管期間 30 日を全オブジェクトが遵守する必要がある制約",
+          "is_correct": false,
+          "explanation": "Intelligent-Tiering 自体には最小保管期間制約はない (Glacier 系階層への移動時に発生)。"
+        },
+        {
+          "id": "C",
+          "text": "Intelligent-Tiering を有効化するためには S3 Versioning も同時に有効化する必要がある",
+          "is_correct": false,
+          "explanation": "Versioning は前提ではない。Intelligent-Tiering は独立機能。"
+        },
+        {
+          "id": "D",
+          "text": "Intelligent-Tiering はリージョンごとに月次最小利用量の制約があり、未達分は割増請求される",
+          "is_correct": false,
+          "explanation": "そのような制約は存在しない。"
+        }
+      ],
+      "explanation": "S3 Intelligent-Tiering は 128KB 未満のオブジェクトを自動階層化の対象外とし、常に Frequent Access 料金で課金。さらにオブジェクトあたり監視料金 ($0.0025/1,000) も発生。極小オブジェクト大量保管では Intelligent-Tiering より Standard or Lifecycle の方が安いことが多い。",
+      "references": [
+        {
+          "title": "S3 Intelligent-Tiering object size",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "intelligent-tiering",
+        "small-object"
+      ],
+      "common_mistakes": [
+        "小オブジェクトでも Intelligent-Tiering が効くと誤解",
+        "監視料金の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-028",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "EBS Snapshot",
+      "subtopic": "Snapshot lifecycle",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "EBS スナップショットが累積し、ストレージ料金が想定より高くなっている。古いスナップショットを自動削除して整理したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda で全スナップショットの作成日時を確認し、30 日超を毎日削除する",
+          "is_correct": false,
+          "explanation": "自前実装で運用負荷大。Data Lifecycle Manager がマネージドで標準。"
+        },
+        {
+          "id": "B",
+          "text": "EBS Snapshot Archive Tier に移行し、削除しないままコストを下げる",
+          "is_correct": false,
+          "explanation": "Archive Tier はコスト削減になるが、長期保管目的。整理 (削除) の目的とは別。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Backup でも代替可能だが、DLM の方が EBS 専用で軽量",
+          "is_correct": false,
+          "explanation": "AWS Backup でも管理可能だが、設問の『最も適切』なら EBS 専用の DLM か AWS Backup どちらも候補。AWS Backup が組織全体管理に強い。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Data Lifecycle Manager (DLM) でスナップショット作成 + 保持ポリシーを宣言的に設定する",
+          "is_correct": true,
+          "explanation": "正解。DLM はスナップショット・AMI のライフサイクル管理 (作成スケジュール + 保持数) をマネージド提供する標準。"
+        }
+      ],
+      "explanation": "EBS スナップショットのライフサイクル管理: Amazon Data Lifecycle Manager (DLM) はスナップショット・AMI 作成スケジュール + 保持数を宣言的に設定。AWS Backup でも管理可能で組織全体ポリシー強制が必要なら AWS Backup。EBS Snapshot Archive は長期保管用 (取り出しに 24-72h)。",
+      "references": [
+        {
+          "title": "Amazon Data Lifecycle Manager",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html"
+        }
+      ],
+      "tags": [
+        "ebs-snapshot",
+        "dlm",
+        "lifecycle"
+      ],
+      "common_mistakes": [
+        "Lambda で自前ライフサイクル管理する",
+        "DLM の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-029",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Cost optimization with scaling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "夜間や週末はトラフィックがほぼゼロになる Web アプリで、EC2 コストを最大限下げたい。スケールゼロにしても朝にアクセス遅延を出さない範囲で最適化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Auto Scaling Group を解除し、運用担当者が毎晩手動で EC2 インスタンスを停止する",
+          "is_correct": false,
+          "explanation": "手動運用は漏れ + ヒューマンエラー。Scheduled Scaling で自動化すべき。"
+        },
+        {
+          "id": "B",
+          "text": "Auto Scaling Group の Minimum を常時 2 で固定維持し、安全側に倒した運用にする",
+          "is_correct": false,
+          "explanation": "夜間のゼロ トラフィック時も 2 台稼働し続け、コスト最適化に反する。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 を 3 年 Reserved Instance で購入し、夜間も含めて常時稼働させる構成にする",
+          "is_correct": false,
+          "explanation": "RI は購入済み枠に常時課金。夜間稼働が無駄になる。"
+        },
+        {
+          "id": "D",
+          "text": "Auto Scaling Group の Minimum を 0 にし、Scheduled Scaling で平日朝に Min を 2 へ引き上げる",
+          "is_correct": true,
+          "explanation": "正解。Scheduled Scaling で時間帯ごとに最低台数を変更し、夜間ゼロを実現する標準パターン。"
+        }
+      ],
+      "explanation": "Auto Scaling Group の Scheduled Scaling は時刻ベースで Minimum / Maximum / Desired を変更する機能。週次パターンを宣言的に定義可能。予測可能な周期負荷 (営業時間アプリ等) のコスト最適化に有効。Target Tracking と組み合わせれば最低台数 + 動的増減のハイブリッド。",
+      "references": [
+        {
+          "title": "Scheduled scaling for Amazon EC2 Auto Scaling",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scheduled-scaling.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "scheduled-scaling",
+        "cost"
+      ],
+      "common_mistakes": [
+        "最低台数を常時固定にする",
+        "手動運用に頼る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-030",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Serverless Adoption",
+      "subtopic": "Lambda vs always-on EC2",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "リクエスト数が少なく (1 日 数千回)、各処理が 1 秒以内に終わる軽量 API を運用したい。コスト最小化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fargate で 24 時間稼働するコンテナで運用する",
+          "is_correct": false,
+          "explanation": "Fargate は 0.25 vCPU でも常時課金。低頻度には不向き。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 t3.nano を常時起動し、低価格な Burstable インスタンスで運用する",
+          "is_correct": false,
+          "explanation": "t3.nano でも月数 USD かかる。Lambda 無料枠の方が圧倒的に安い。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda + API Gateway で構築し、リクエスト単位課金で実質ゼロ運用コストに近づける",
+          "is_correct": true,
+          "explanation": "正解。低頻度リクエストでは Lambda がほぼ無料 (月 100 万リクエスト無料枠)。EC2 常時稼働より圧倒的に安い。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 Spot を使い、コストを最小化する",
+          "is_correct": false,
+          "explanation": "Spot 中断が API 応答性を損なう。低頻度 API には Lambda が直接的。"
+        }
+      ],
+      "explanation": "サーバレス (Lambda + API Gateway) の最大メリットは『使った分だけ課金』。月 100 万リクエスト + 400,000 GB-秒の無料枠があり、低頻度 API ならほぼ無料運用可能。常時稼働 EC2/Fargate と比べて劇的なコスト削減。",
+      "references": [
+        {
+          "title": "Lambda pricing",
+          "url": "https://aws.amazon.com/lambda/pricing/"
+        }
+      ],
+      "tags": [
+        "lambda",
+        "serverless",
+        "cost"
+      ],
+      "common_mistakes": [
+        "低頻度ワークロードでも EC2 を選ぶ",
+        "Lambda 無料枠を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-031",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "VPC Endpoint",
+      "subtopic": "Interface Endpoint cost vs NAT",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "プライベートサブネットの EC2 が AWS Systems Manager や Secrets Manager と大量通信し、NAT Gateway 経由のデータ転送料金が高い。Interface Endpoint で置き換える際の判断基準として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Interface Endpoint も時間 + データ処理料金がかかるため、NAT Gateway 経由トラフィック量との損益分岐点を計算する",
+          "is_correct": true,
+          "explanation": "正解。Interface Endpoint は時間 + データ料金が発生するため、NAT 経由量との損益分岐点を見極める。"
+        },
+        {
+          "id": "B",
+          "text": "Interface Endpoint はすべて追加料金なしで、NAT 削減なら常に有利",
+          "is_correct": false,
+          "explanation": "Interface Endpoint は時間 + データ料金あり (Gateway Endpoint と違う)。"
+        },
+        {
+          "id": "C",
+          "text": "NAT Gateway より常に高くなるため、Interface Endpoint は使うべきではない",
+          "is_correct": false,
+          "explanation": "ケースバイケース。トラフィック量により Interface Endpoint の方が安くなる場面もある。"
+        },
+        {
+          "id": "D",
+          "text": "Interface Endpoint は同一 AZ 内通信のみで、AZ 跨ぎでは使えない",
+          "is_correct": false,
+          "explanation": "Interface Endpoint は AZ ごとに ENI を作成し、AZ 跨ぎ通信も可能。"
+        }
+      ],
+      "explanation": "Interface Endpoint 料金: $0.01/時間 × AZ × エンドポイント + $0.01/GB データ処理。NAT Gateway 料金: $0.045/時間 + $0.045/GB データ処理。トラフィック多いと Interface Endpoint の方が安くなる。Gateway Endpoint (S3/DynamoDB のみ) は完全無料なので最優先。",
+      "references": [
+        {
+          "title": "VPC endpoint pricing",
+          "url": "https://aws.amazon.com/privatelink/pricing/"
+        }
+      ],
+      "tags": [
+        "vpc-endpoint",
+        "interface-endpoint",
+        "nat-gateway",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Interface Endpoint が無料だと誤解",
+        "NAT Gateway より常に高いと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-032",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "S3 Lifecycle",
+      "subtopic": "Multi-tier transition",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ログを S3 に 1 年保管。最初 30 日は頻繁参照、その後はほぼ参照なし、1 年で削除でよい。最もコスト最適なライフサイクル構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Standard クラスのまま 1 年保管し、Lifecycle で 1 年後に DeleteObject する設定にする",
+          "is_correct": false,
+          "explanation": "30 日以降の長期保管に Standard は割高。階層化が必要。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Intelligent-Tiering で 1 年保管し、AWS の自動階層化判定にすべて任せる",
+          "is_correct": false,
+          "explanation": "アクセスパターンが明確で予測可能なので Lifecycle の方が監視料金もなく安い。"
+        },
+        {
+          "id": "C",
+          "text": "Lifecycle で Standard → Standard-IA (30 日) → Glacier Flexible Retrieval (90 日) → 削除 (365 日)",
+          "is_correct": true,
+          "explanation": "正解。アクセスパターンが明確なログには時系列の階層移行 + 自動削除が最適。"
+        },
+        {
+          "id": "D",
+          "text": "1 年後に削除する Lambda を毎日 EventBridge スケジュールで起動して個別削除する",
+          "is_correct": false,
+          "explanation": "Lifecycle で自動削除設定可能。Lambda 自前実装は無駄。"
+        }
+      ],
+      "explanation": "S3 Lifecycle は ストレージクラス移行 + 期限切れ削除 を宣言的に設定。Intelligent-Tiering と違い監視料金不要で、アクセスパターン予測可能なら最安。最低保管期間 (Standard-IA: 30 日、Glacier 系: 90 日) に注意して設計。",
+      "references": [
+        {
+          "title": "S3 Lifecycle examples",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-configuration-examples.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "lifecycle",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Intelligent-Tiering を全シナリオで第一選択",
+        "削除を Lambda で実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-033",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "RDS Stop / Aurora Pause",
+      "subtopic": "Dev environment cost",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "開発用 RDS for MySQL で、平日業務時間のみ使い夜間・週末は止めたい。RDS の停止運用に関する正しい説明はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "RDS の停止は最大 7 日まで可能で、超過すると自動的に起動される",
+          "is_correct": true,
+          "explanation": "正解。RDS 停止は最大 7 日。自動起動を避けるなら EventBridge スケジュール + 再停止スクリプト or Aurora Serverless v2 を検討。"
+        },
+        {
+          "id": "B",
+          "text": "RDS は無期限に停止状態で保持でき、課金もゼロになる",
+          "is_correct": false,
+          "explanation": "最大 7 日制約があり、ストレージ料金は停止中も発生する。"
+        },
+        {
+          "id": "C",
+          "text": "RDS は Multi-AZ 構成では停止できないため、Single-AZ に変更が必要",
+          "is_correct": false,
+          "explanation": "Multi-AZ でも停止可能 (現在の RDS 仕様)。"
+        },
+        {
+          "id": "D",
+          "text": "RDS Stop はリージョン跨ぎコピーが必要で運用が複雑",
+          "is_correct": false,
+          "explanation": "Stop に コピー は不要。単純な停止操作で機能する。"
+        }
+      ],
+      "explanation": "RDS Stop は最大 7 日で自動再起動する。回避策: ①EventBridge スケジュール + Lambda で再停止、②Aurora Serverless v2 で自動スケーリングに切替、③開発環境を毎晩スナップショット取得 → 削除 → 朝復元 (時間長い)。Aurora は元々 Serverless v2 の自動 ACU 縮小が標準化。",
+      "references": [
+        {
+          "title": "Stopping an Amazon RDS DB instance temporarily",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "stop",
+        "dev-environment"
+      ],
+      "common_mistakes": [
+        "RDS が無期限停止可能と誤解",
+        "Multi-AZ では停止できないと思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-034",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "EBS Snapshot Archive",
+      "subtopic": "Long-term cheap storage",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "コンプライアンス用に EBS スナップショットを 7 年保管する義務がある。月次取得して保管している。最もコスト効率の良い方法はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "通常の EBS スナップショット (Standard Tier) として 7 年間そのまま保管し続ける",
+          "is_correct": false,
+          "explanation": "Standard Tier はアクセス可能だが料金が継続発生。長期保管には Archive Tier が安い。"
+        },
+        {
+          "id": "B",
+          "text": "EBS Snapshot Archive Tier に移行し、約 75% コスト削減する (取り出しに 24-72 時間かかる)",
+          "is_correct": true,
+          "explanation": "正解。Archive Tier は長期保管 (90 日以上) で大幅コスト削減、復元時間は許容できる。"
+        },
+        {
+          "id": "C",
+          "text": "スナップショットを AMI 経由で S3 にエクスポートし Glacier Deep Archive に長期保管する",
+          "is_correct": false,
+          "explanation": "EBS は AMI 経由なら S3 へエクスポート可能だが手順が複雑。Archive Tier がネイティブで簡単。"
+        },
+        {
+          "id": "D",
+          "text": "スナップショットを毎月削除し、復元が必要になったタイミングで再取得する運用にする",
+          "is_correct": false,
+          "explanation": "コンプライアンス要件 (7 年保管義務) に反する。"
+        }
+      ],
+      "explanation": "EBS Snapshot 2 Tier: Standard Tier (即時アクセス可能、$0.05/GB-月) と Archive Tier (90 日以上保管前提、$0.0125/GB-月、復元 24-72 時間)。コンプライアンス長期保管には Archive Tier が約 75% 削減で標準解。最低 90 日保管 + 復元時に再取り出し料金。",
+      "references": [
+        {
+          "title": "EBS Snapshot Archive",
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-archive.html"
+        }
+      ],
+      "tags": [
+        "ebs-snapshot",
+        "archive-tier",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Archive Tier の存在を知らない",
+        "S3 経由エクスポートで複雑化"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-035",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Reserved Instance Marketplace",
+      "subtopic": "Unused RI resale",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "購入した EC2 Reserved Instance のうち、使わなくなったものを処分してコスト負担を減らしたい。最も適切な方法はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Support に連絡して全額返金してもらう",
+          "is_correct": false,
+          "explanation": "RI は基本的に AWS から返金されない。Marketplace で売却が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Reserved Instance Marketplace で他の AWS 顧客に売却する",
+          "is_correct": true,
+          "explanation": "正解。RI Marketplace は不要 RI を他の AWS 顧客に売却できる標準機能 (1 ヶ月以上経過した RI のみ)。"
+        },
+        {
+          "id": "C",
+          "text": "RI は購入後の変更不可なので、期限まで使い続けるしかない",
+          "is_correct": false,
+          "explanation": "事実誤認。Convertible RI は変更可能、Standard RI でも Marketplace で売却可能。"
+        },
+        {
+          "id": "D",
+          "text": "Cost Explorer の Adjust Reservations 機能でキャンセルする",
+          "is_correct": false,
+          "explanation": "そのような機能は存在しない。RI Marketplace で売却が正しい。"
+        }
+      ],
+      "explanation": "Reserved Instance Marketplace は不要 RI を他 AWS 顧客に売却する仕組み (1 ヶ月以上保有後のみ、銀行口座登録必要)。Convertible RI なら別タイプへ変更も可能。買い手は本来より安く RI を購入できるメリット。",
+      "references": [
+        {
+          "title": "RI Marketplace",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"
+        }
+      ],
+      "tags": [
+        "reserved-instance",
+        "marketplace"
+      ],
+      "common_mistakes": [
+        "RI 返金可能と誤解",
+        "RI Marketplace の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-036",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "S3 Transfer Cost",
+      "subtopic": "VPC Endpoint for S3",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "プライベートサブネットの EC2 が S3 へ大量にアップロードする構成で、NAT Gateway のデータ処理料金が月数万 USD かかっている。S3 Gateway Endpoint 利用時の料金変化として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gateway Endpoint は時間料金 ($0.01/時間) のみかかる",
+          "is_correct": false,
+          "explanation": "Gateway Endpoint は完全無料。時間料金がかかるのは Interface Endpoint。"
+        },
+        {
+          "id": "B",
+          "text": "Gateway Endpoint は時間料金もデータ料金もかからず、NAT 経由を完全に削減できる",
+          "is_correct": true,
+          "explanation": "正解。Gateway Endpoint は S3/DynamoDB 専用で完全無料。NAT 経由を回避することで両方のコストを削減。"
+        },
+        {
+          "id": "C",
+          "text": "Gateway Endpoint は データ処理料金 ($0.01/GB) のみかかる",
+          "is_correct": false,
+          "explanation": "Gateway Endpoint は完全無料 (S3/DynamoDB に限る)。"
+        },
+        {
+          "id": "D",
+          "text": "Gateway Endpoint と NAT Gateway は併用しないとアクセスできない",
+          "is_correct": false,
+          "explanation": "Gateway Endpoint があれば NAT 不要 (S3/DynamoDB のみへのアクセスなら)。"
+        }
+      ],
+      "explanation": "VPC Endpoint 種別と料金: Gateway Endpoint (S3/DynamoDB のみ、完全無料)、Interface Endpoint (PrivateLink、$0.01/時間 × AZ + $0.01/GB)。S3/DynamoDB トラフィックは必ず Gateway Endpoint を優先するのがコスト最適化の鉄則。",
+      "references": [
+        {
+          "title": "Gateway VPC endpoint pricing",
+          "url": "https://aws.amazon.com/privatelink/pricing/"
+        }
+      ],
+      "tags": [
+        "vpc-endpoint",
+        "s3",
+        "gateway-endpoint",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Gateway Endpoint が有料と誤解",
+        "Interface Endpoint と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-037",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "AWS Organizations",
+      "subtopic": "Consolidated billing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）AWS Organizations の統合請求 (Consolidated Billing) の利点として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "複数アカウントの利用量を合算することで、ボリュームディスカウント (S3・データ転送等) の階層に到達しやすくなる",
+          "is_correct": true,
+          "explanation": "正解。S3 ストレージ、データ転送等のボリューム料金が組織全体で合算され、各アカウントの単独より安くなる。"
+        },
+        {
+          "id": "B",
+          "text": "あるアカウントの未使用 Reserved Instance や Savings Plans が他アカウントに自動適用される",
+          "is_correct": true,
+          "explanation": "正解。RI/SP の余剰枠は組織内の他アカウントに共有適用される (RI Sharing/SP Sharing が有効な場合)。"
+        },
+        {
+          "id": "C",
+          "text": "請求が統合されることで、アカウントごとの IAM 権限も自動的に統一管理される",
+          "is_correct": false,
+          "explanation": "請求と IAM は別概念。IAM は各アカウントで独立管理。"
+        },
+        {
+          "id": "D",
+          "text": "Organizations 配下のアカウント間データ転送は統合請求により自動的に無料となる",
+          "is_correct": false,
+          "explanation": "請求統合とデータ転送料金は別問題。AZ 跨ぎ・リージョン跨ぎ料金は同じ。"
+        }
+      ],
+      "explanation": "AWS Organizations の Consolidated Billing 利点: ①ボリュームディスカウント合算 (S3/データ転送/CloudFront 等)、②RI/SP 共有 (組織内アカウントで余剰枠を融通)、③単一支払いで運用負荷削減。注意: アカウント間データ転送料金は変わらず、IAM も独立。",
+      "references": [
+        {
+          "title": "AWS Organizations consolidated billing",
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "consolidated-billing",
+        "ri-sharing"
+      ],
+      "common_mistakes": [
+        "請求統合で IAM も統一されると誤解",
+        "アカウント間データ転送が無料になると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-038",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Lambda Power Tuning",
+      "subtopic": "Memory optimization",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Lambda 関数のメモリ設定が現在 512MB で、実行時間とコストのバランスがよく分からない。データに基づいて最適化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Lambda Power Tuning ツール (Step Functions ベース) で複数メモリ設定を計測し最適点を特定する",
+          "is_correct": true,
+          "explanation": "正解。Power Tuning は 128MB〜10GB で実測し『コスト最小』『速度最大』『バランス』の最適点を返す標準ツール。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda のメモリ設定を最小の 128MB に下げ、実行時間が伸びても月次コストを下げる",
+          "is_correct": false,
+          "explanation": "メモリ削減で実行時間が伸びると総コスト増の可能性。データ計測が先。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda のメモリ設定を最大の 10,240MB に上げ、CPU を最大化して実行時間を短くする",
+          "is_correct": false,
+          "explanation": "大きすぎても効果が頭打ちで割高。実測が必要。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda の Provisioned Concurrency を有効化し、メモリ最適化の代わりに常時起動状態にする",
+          "is_correct": false,
+          "explanation": "Provisioned はコールドスタート対策で、メモリ最適化とは別。"
+        }
+      ],
+      "explanation": "AWS Lambda Power Tuning は Step Functions で動作するオープンソースツールで、複数メモリ設定で実関数を実行 → 実行時間 × コスト × 視覚化を提供。Lambda はメモリと vCPU が連動 (1,792MB で 1 vCPU)、CPU バウンドなら大きめが速くて安くなることも。",
+      "references": [
+        {
+          "title": "AWS Lambda Power Tuning",
+          "url": "https://docs.aws.amazon.com/lambda/latest/operatorguide/profile-functions.html"
+        }
+      ],
+      "tags": [
+        "lambda",
+        "power-tuning",
+        "memory"
+      ],
+      "common_mistakes": [
+        "勘でメモリ削減/増加する",
+        "Provisioned Concurrency で全問題解決と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-039",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Cost Optimization Strategy",
+      "subtopic": "Well-Architected Cost Pillar",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "全社規模のクラウドコスト最適化プログラムを始めるとき、Well-Architected Framework の Cost Optimization Pillar に基づく最初のアプローチとして最も推奨されるのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cost Allocation Tags を全リソースに付与し、可視化基盤を整える",
+          "is_correct": true,
+          "explanation": "正解。タグ付け + 可視化基盤 (Cost Explorer / Storage Lens / Compute Optimizer) なしには最適化判断ができない。最初の投資先。"
+        },
+        {
+          "id": "B",
+          "text": "全 EC2 を即時 Spot Instance に切り替えてコスト 70% カットを試みる",
+          "is_correct": false,
+          "explanation": "可視化なしの直接的削減は本番影響リスク大。まず可視化から始めるべき。"
+        },
+        {
+          "id": "C",
+          "text": "Reserved Instance を 3 年で大量購入し、確定割引を得る",
+          "is_correct": false,
+          "explanation": "利用パターン把握なしの長期契約は無駄になりやすい。可視化が先。"
+        },
+        {
+          "id": "D",
+          "text": "全アカウントを 1 つに統合して請求を一本化する",
+          "is_correct": false,
+          "explanation": "統合は別の有効施策だが、可視化なしの構成変更は逆効果になる可能性。"
+        }
+      ],
+      "explanation": "Well-Architected Cost Optimization Pillar の 5 領域: ①Practice Cloud Financial Management (体制・教育)、②Expenditure and Usage Awareness (可視化 / タグ / レポート)、③Cost-Effective Resources (右サイズ / 購入オプション)、④Manage Demand and Supply (Auto Scaling / Serverless)、⑤Optimize Over Time (継続改善)。可視化が全ての出発点。",
+      "references": [
+        {
+          "title": "AWS Well-Architected Cost Optimization",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html"
+        }
+      ],
+      "tags": [
+        "well-architected",
+        "cost-pillar",
+        "strategy"
+      ],
+      "common_mistakes": [
+        "可視化なしで直接削減を急ぐ",
+        "Spot や RI で全部解決と考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain4-040",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Design Cost-Optimized Architectures",
+        "weight_percent": 20
+      },
+      "topic": "Compute Selection",
+      "subtopic": "Total cost of ownership",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）コンピュートサービスのコスト最適化選択として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "予測不能な変動負荷 + 短時間処理 → Lambda が運用コスト含めて最安になることが多い",
+          "is_correct": true,
+          "explanation": "正解。Lambda は使った分課金 + 運用ゼロで、低頻度・変動負荷では最安。"
+        },
+        {
+          "id": "B",
+          "text": "中断耐性ありの大規模バッチ処理 → EC2 Spot or Fargate Spot で最大 90% 割引が現実的",
+          "is_correct": true,
+          "explanation": "正解。Spot は中断耐性ありの処理で大幅コスト削減の標準解。"
+        },
+        {
+          "id": "C",
+          "text": "24/7 安定稼働ワークロードは常に On-Demand が最適",
+          "is_correct": false,
+          "explanation": "24/7 稼働なら Savings Plans / Reserved Instance で大幅割引できる。On-Demand は最悪選択。"
+        },
+        {
+          "id": "D",
+          "text": "アプリ規模に関わらず常に EC2 を選ぶべき (Lambda/Fargate は機能制限が多すぎる)",
+          "is_correct": false,
+          "explanation": "適材適所が重要。サーバレス採用で運用負荷大幅削減 + 低頻度ワークロードのコスト劇的削減が可能。"
+        }
+      ],
+      "explanation": "コンピュート選択のコスト軸: 低頻度・短時間 → Lambda (実質無料運用)、中断耐性あり → Spot/Fargate Spot (最大 90% 割引)、24/7 安定 → On-Demand + Savings Plans (66-72% 割引)、変動 → Aurora Serverless v2 (DB)、On-Demand + Auto Scaling。要件に応じた組み合わせが TCO 最適化の鍵。",
+      "references": [
+        {
+          "title": "AWS compute cost optimization",
+          "url": "https://aws.amazon.com/aws-cost-management/aws-cost-optimization/"
+        }
+      ],
+      "tags": [
+        "compute",
+        "cost-optimization",
+        "tco"
+      ],
+      "common_mistakes": [
+        "全シナリオで On-Demand or EC2 を選ぶ",
+        "Spot/Lambda の適用範囲を限定的に捉える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}
