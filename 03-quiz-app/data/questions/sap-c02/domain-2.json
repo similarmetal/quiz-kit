@@ -1,0 +1,3747 @@
+{
+  "exam_code": "SAP-C02",
+  "exam_name": "AWS Certified Solutions Architect – Professional",
+  "version": "2026.04",
+  "total_questions": 50,
+  "domains": [
+    {
+      "id": "domain-2",
+      "name": "Design for New Solutions",
+      "weight_percent": 29,
+      "question_count": 50
+    }
+  ],
+  "questions": [
+    {
+      "id": "sap-c02-domain2-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "CloudFormation StackSets",
+      "subtopic": "Multi-region deployment",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下 50 アカウント・10 リージョンに統一の VPC・IAM 基盤を Infrastructure as Code でデプロイし、テンプレート更新時は全環境を 1 操作で同期したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CodePipeline で 50 アカウント × 10 リージョン分のステージを構築し、CloudFormation Deploy アクションで個別実行する",
+          "is_correct": false,
+          "explanation": "500 ステージのパイプラインは非現実的。StackSets が直接的解。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFormation StackSets を Service-Managed Permission で作成し、Auto-deployment + ターゲットに OU・リージョンを指定する",
+          "is_correct": true,
+          "explanation": "正解。StackSets は複数アカウント × 複数リージョンの統一デプロイの標準機能。"
+        },
+        {
+          "id": "C",
+          "text": "各アカウント管理者に同一 CloudFormation テンプレートを配布し、リージョンごとに手動デプロイさせる",
+          "is_correct": false,
+          "explanation": "手動運用で更新同期が困難。StackSets で集中管理が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Terraform Cloud を導入し、CloudFormation を捨てて全環境を Terraform で書き直す",
+          "is_correct": false,
+          "explanation": "選択肢としてあり得るが既存 CFN 資産を捨てる必要があり、StackSets で目的達成可能。"
+        }
+      ],
+      "explanation": "CloudFormation StackSets (Service-Managed) は Organizations 統合 + Auto-deployment で新規アカウント自動展開を提供。マルチアカウント・マルチリージョン IaC の AWS ネイティブ標準。",
+      "references": [
+        {
+          "title": "CloudFormation StackSets",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"
+        }
+      ],
+      "tags": [
+        "stacksets",
+        "iac",
+        "multi-account"
+      ],
+      "common_mistakes": [
+        "CodePipeline で全環境を順次デプロイ",
+        "Terraform で再実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "AWS CDK",
+      "subtopic": "Construct hierarchy",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AWS CDK でマイクロサービスインフラを TypeScript で書く際、再利用可能な高レベル抽象を作成しチーム横断で共有したい。最も適切なアプローチはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFormation テンプレートを YAML で書いて GitHub に置き、各チームで複製する",
+          "is_correct": false,
+          "explanation": "CDK 活用の文脈と矛盾。複製で更新追随が困難。"
+        },
+        {
+          "id": "B",
+          "text": "L3 Pattern Construct (Construct Library) を作成し、npm パッケージとして公開して各チームに配布する",
+          "is_correct": true,
+          "explanation": "正解。L3 Pattern は複数 L2 Construct を組み合わせた高レベル抽象で、再利用・共有に最適。"
+        },
+        {
+          "id": "C",
+          "text": "L1 Construct (CFN リソース 1:1 ラッパー) だけを使い、抽象化しない",
+          "is_correct": false,
+          "explanation": "L1 は最低レベルラッパーで、再利用可能な高レベル抽象にならない。"
+        },
+        {
+          "id": "D",
+          "text": "Terraform Module を作成し、CDK は使わない",
+          "is_correct": false,
+          "explanation": "CDK 採用の前提に反する。CDK のレイヤモデル (L1/L2/L3) を活用すべき。"
+        }
+      ],
+      "explanation": "CDK Construct Levels: L1 (CFN リソース 1:1)、L2 (CDK チームの抽象、デフォルト値あり)、L3/Pattern (複数 L2 + ベストプラクティス組合せ)。L3 を npm パッケージ化してチーム横断共有が組織標準パターン。",
+      "references": [
+        {
+          "title": "CDK Construct levels",
+          "url": "https://docs.aws.amazon.com/cdk/v2/guide/constructs.html"
+        }
+      ],
+      "tags": [
+        "cdk",
+        "construct",
+        "iac"
+      ],
+      "common_mistakes": [
+        "L1 で抽象化を諦める",
+        "Terraform に逃げる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Step Functions",
+      "subtopic": "Distributed Map for big data",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "S3 に保管された 100 万件の小さな JSON ファイルを Lambda で並列処理し、結果を別 S3 バケットに集約したい。Step Functions の通常 Map では並列度 40 が上限で時間がかかる。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda を SQS でトリガし、自前で並列度制御する",
+          "is_correct": false,
+          "explanation": "並列度・順序制御・失敗ハンドリングを自前実装する負荷大。Distributed Map がマネージド。"
+        },
+        {
+          "id": "B",
+          "text": "Step Functions 通常 Map で並列度を上げるため複数ステートマシンに分割する",
+          "is_correct": false,
+          "explanation": "通常 Map の上限を回避するために手動分割は複雑。Distributed Map が標準解。"
+        },
+        {
+          "id": "C",
+          "text": "EMR クラスタを起動して Spark でファイル処理し、結果を S3 に出力する",
+          "is_correct": false,
+          "explanation": "Spark クラスタ管理が必要。Lambda + Distributed Map のサーバレス構成が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "Step Functions Distributed Map で 10,000 並列まで拡張、S3 オブジェクトを子ワークフローに分配する",
+          "is_correct": true,
+          "explanation": "正解。Distributed Map は最大 10,000 並列で大規模並列処理を提供する Step Functions の機能。"
+        }
+      ],
+      "explanation": "Step Functions Distributed Map は 2022 年新規。最大 10,000 並列、S3 オブジェクト直接イテレーション、子ワークフロー実行、CSV/JSON マニフェスト対応。大規模並列バッチ処理 (例: 100 万ファイルのリプレイ・再処理) の標準。",
+      "references": [
+        {
+          "title": "Step Functions Distributed Map",
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-asl-use-map-state-distributed.html"
+        }
+      ],
+      "tags": [
+        "step-functions",
+        "distributed-map",
+        "parallel"
+      ],
+      "common_mistakes": [
+        "通常 Map の上限を知らない",
+        "EMR/Spark に逃げる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-004",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "EventBridge Pipes",
+      "subtopic": "Source-to-target integration",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "DynamoDB Streams → 変換 → Lambda → SQS というデータパイプラインを構築したい。Lambda コードを最小化したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EventBridge Pipes でソース (DynamoDB Stream) + Enrichment (Lambda or 不要) + Filter + Target (SQS) を 1 つのパイプとして宣言的に定義する",
+          "is_correct": true,
+          "explanation": "正解。Pipes は Source-to-Target 統合をマネージドで提供し、グルーコードを大幅削減する 2022 年新規機能。"
+        },
+        {
+          "id": "B",
+          "text": "DynamoDB Streams トリガで Lambda を起動し、Lambda 内で SQS SendMessage する",
+          "is_correct": false,
+          "explanation": "従来パターンで動くが、フィルタリング・エラーハンドリング・観測性を全て Lambda で実装する必要。"
+        },
+        {
+          "id": "C",
+          "text": "Step Functions ステートマシンで DynamoDB Stream を Polling し、SQS にメッセージ送信する",
+          "is_correct": false,
+          "explanation": "Step Functions は Stream の継続消費に向かない。Pipes が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "Kinesis Data Streams を間に挟み、Firehose で SQS に配信する",
+          "is_correct": false,
+          "explanation": "Firehose の Target に SQS はない。アーキ自体が成立しない。"
+        }
+      ],
+      "explanation": "EventBridge Pipes は Source (DynamoDB Stream/Kinesis/SQS/MSK 等) → 任意 Enrichment (Lambda) → Filter → Target (SNS/SQS/Lambda/EventBus/Step Functions 等) の point-to-point 統合をマネージドで提供。Lambda グルーコードの大幅削減。",
+      "references": [
+        {
+          "title": "Amazon EventBridge Pipes",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html"
+        }
+      ],
+      "tags": [
+        "eventbridge-pipes",
+        "integration"
+      ],
+      "common_mistakes": [
+        "Lambda 自前実装を続ける",
+        "Step Functions で Stream を polling する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-005",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "EKS",
+      "subtopic": "Service mesh selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "EKS 上の数十マイクロサービス間で mTLS 通信、トラフィック制御、可視化を実現したい。AWS マネージドで運用負荷を最小化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ALB の Path-based ルーティングで各サービスを公開し、Service Mesh は使わない",
+          "is_correct": false,
+          "explanation": "mTLS・きめ細かい制御・観測性 を実現できない。Service Mesh が必要な要件。"
+        },
+        {
+          "id": "B",
+          "text": "Istio をクラスタにインストールし、Service Mesh を自前運用する",
+          "is_correct": false,
+          "explanation": "強力だが Istio の Control Plane 運用負荷大。マネージドの VPC Lattice が要件 (運用負荷最小) に直接的。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon VPC Lattice を採用し、AWS マネージドのサービス間通信レイヤで mTLS・認可・観測性を提供する",
+          "is_correct": true,
+          "explanation": "正解。VPC Lattice は 2023 年 GA の AWS マネージドサービス間通信レイヤで、運用負荷最小。"
+        },
+        {
+          "id": "D",
+          "text": "AWS App Mesh で対応する",
+          "is_correct": false,
+          "explanation": "App Mesh は 2026 年 9 月でサポート終了予定。新規構築では VPC Lattice が標準。"
+        }
+      ],
+      "explanation": "AWS VPC Lattice は EKS/ECS/Lambda/EC2 を統合するサービス間通信レイヤ。mTLS、IAM ベース認可、トラフィック制御、観測性をマネージド提供。App Mesh の後継的な位置づけ。",
+      "references": [
+        {
+          "title": "Amazon VPC Lattice",
+          "url": "https://docs.aws.amazon.com/vpc-lattice/latest/ug/what-is-vpc-lattice.html"
+        }
+      ],
+      "tags": [
+        "vpc-lattice",
+        "service-mesh",
+        "eks"
+      ],
+      "common_mistakes": [
+        "App Mesh を新規採用",
+        "Istio で全部解決と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-006",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Aurora Global Database",
+      "subtopic": "Active-passive multi-region",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "東京リージョンに Aurora MySQL クラスターを運用中。リージョン障害時の RTO 1 分・RPO 数秒の DR が必要で、グローバル展開も視野にある。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora Global Database で東京 Primary + 大阪 Secondary 構成、Managed Failover で 1 分以内に切替",
+          "is_correct": true,
+          "explanation": "正解。Aurora Global Database は RTO 1 分以内・RPO 1 秒未満を提供する標準解。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora Read Replica を大阪リージョンに作成し、障害時に手動 Promote する",
+          "is_correct": false,
+          "explanation": "Promote は数分かかり RTO 1 分要件に届かない。Global Database が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora を Multi-AZ で運用し、リージョン障害は DRS で対応する",
+          "is_correct": false,
+          "explanation": "DRS は EC2 ベースで Aurora の置換にはならない。Global Database が標準。"
+        },
+        {
+          "id": "D",
+          "text": "東京 Aurora から大阪 Aurora へ DMS で継続レプリケーションする",
+          "is_correct": false,
+          "explanation": "DMS は移行用で常時 DR 用ではない。Aurora Global Database が直接的。"
+        }
+      ],
+      "explanation": "Aurora Global Database は専用ストレージ層レプリケーションで RPO 1 秒未満 (典型 100ms 未満)、Managed Failover で RTO 1 分以内、最大 5 セカンダリリージョン対応。グローバル DR の標準サービス。",
+      "references": [
+        {
+          "title": "Aurora Global Database",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html"
+        }
+      ],
+      "tags": [
+        "aurora-global",
+        "dr",
+        "multi-region"
+      ],
+      "common_mistakes": [
+        "Read Replica + Promote で 1 分 RTO 達成できると誤解",
+        "DMS を DR 用に使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-007",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "DynamoDB Global Tables",
+      "subtopic": "Active-active write",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）グローバル B2C アプリのデータ層を選定する。複数リージョン同時書き込み + 低レイテンシ要件。正しい設計を 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DynamoDB Global Tables を採用、各リージョンでローカル書き込み可能、Last Writer Wins で衝突解決",
+          "is_correct": true,
+          "explanation": "正解。Global Tables はマルチマスター書き込みの標準解。"
+        },
+        {
+          "id": "B",
+          "text": "アプリ側で衝突を許容できる設計 (べき等性・コンフリクト解決ロジック) を組み込む",
+          "is_correct": true,
+          "explanation": "正解。Last Writer Wins では古い書き込みが消える可能性があるため、アプリでもべき等性・コンフリクト処理を設計する必要。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora Global Database で 5 リージョン全てを Active 構成にする",
+          "is_correct": false,
+          "explanation": "Aurora Global は基本シングルマスター。マルチマスター書き込みには不向き。"
+        },
+        {
+          "id": "D",
+          "text": "Strong Consistency が全リージョンで保証されるため、アプリは衝突を考慮不要",
+          "is_correct": false,
+          "explanation": "Global Tables は結果整合性 + Last Writer Wins。Strong Consistency ではない。"
+        }
+      ],
+      "explanation": "Global B2C のマルチリージョンライト要件は DynamoDB Global Tables が標準。アクティブ・アクティブだが結果整合性 + LWW なので、アプリ側のべき等性 + コンフリクト処理の設計責任あり。Aurora はシングルマスターで要件外。",
+      "references": [
+        {
+          "title": "DynamoDB Global Tables",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"
+        }
+      ],
+      "tags": [
+        "dynamodb-global",
+        "multi-master",
+        "consistency"
+      ],
+      "common_mistakes": [
+        "Aurora Global を multi-master と誤解",
+        "Global Tables を Strong Consistency と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-008",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "S3 Multi-Region Access Points",
+      "subtopic": "Global S3 endpoint",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "S3 バケットを複数リージョンに展開し、グローバルユーザに最寄りリージョンで読み書きさせ、リージョン障害時は自動フェイルオーバしたい。最も適切な機能はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFront ディストリビューションを複数 S3 オリジンで構成し Origin Failover を使う",
+          "is_correct": false,
+          "explanation": "Origin Failover は読み取り用で書き込みには非対応。MRAP は読み書き両対応。"
+        },
+        {
+          "id": "B",
+          "text": "Route 53 Latency-based ルーティングで各リージョン S3 を登録する",
+          "is_correct": false,
+          "explanation": "DNS ベースで TTL キャッシュ + S3 エンドポイント直接公開で MRAP の機能には及ばない。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Multi-Region Access Points (MRAP) を作成し、グローバルエンドポイント経由でアクセスする",
+          "is_correct": true,
+          "explanation": "正解。MRAP は複数リージョン S3 への単一グローバルエンドポイント + 自動ルーティング + フェイルオーバを提供。"
+        },
+        {
+          "id": "D",
+          "text": "Cross-Region Replication で全リージョンに同期し、アプリ側で接続先を切替える",
+          "is_correct": false,
+          "explanation": "アプリ側ロジックが必要で透過性なし。MRAP がマネージド。"
+        }
+      ],
+      "explanation": "S3 Multi-Region Access Points は複数 S3 バケットへの単一エンドポイントを提供。Active-Active 構成 + AWS Global Accelerator 経由ルーティング + 自動フェイルオーバ。グローバル S3 アクセスの標準。",
+      "references": [
+        {
+          "title": "S3 Multi-Region Access Points",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html"
+        }
+      ],
+      "tags": [
+        "s3-mrap",
+        "multi-region"
+      ],
+      "common_mistakes": [
+        "Route 53 で MRAP の代替と誤解",
+        "CloudFront Origin Failover を書き込みに使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-009",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "AWS Config",
+      "subtopic": "Compliance automation",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Organizations 配下全アカウントで CIS AWS Foundations Benchmark に準拠した設定を維持し、違反時に自動修復したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Security Hub の CIS 標準だけを有効化し、Config Rule は使わない",
+          "is_correct": false,
+          "explanation": "Security Hub の CIS チェックは検出のみで自動修復機能を持たない。Config が必要。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウント管理者に CIS チェックリストを配布し、月次レビューさせる",
+          "is_correct": false,
+          "explanation": "手動運用で漏れ必至。自動化が必要。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config Conformance Pack (CIS) を組織配下にデプロイし、Auto Remediation で違反を自動修復する",
+          "is_correct": true,
+          "explanation": "正解。Conformance Pack + Auto Remediation はマルチアカウント・コンプライアンス維持の標準。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で毎日全アカウントの設定をスキャンし、自前修復スクリプトを動かす",
+          "is_correct": false,
+          "explanation": "Conformance Pack のマネージド機能を再実装する無駄。"
+        }
+      ],
+      "explanation": "AWS Config Conformance Pack はコンプライアンスルールセットを 1 アクションで組織配下にデプロイ。CIS, PCI-DSS, HIPAA, NIST, AWS FSBP 等のテンプレートあり。Auto Remediation (SSM Automation 統合) で違反自動修復。",
+      "references": [
+        {
+          "title": "Config Conformance Packs",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html"
+        }
+      ],
+      "tags": [
+        "config",
+        "conformance-pack",
+        "cis"
+      ],
+      "common_mistakes": [
+        "Security Hub だけで修復可能と誤解",
+        "Lambda で再実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-010",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "AWS Backup",
+      "subtopic": "Cross-account vault",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ランサムウェア攻撃に備え、本番アカウントのバックアップを別 AWS アカウントの Vault に保管し、本番アカウント侵害時でも復旧可能にしたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "本番アカウント内で AWS Backup の保持期間を最大化する",
+          "is_correct": false,
+          "explanation": "侵害アカウント内のバックアップは攻撃者に削除されるリスク。別アカウント分離が必須。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Backup の Cross-Account Copy で別アカウント Vault にコピーし、Vault Lock (Compliance Mode) で改ざん不能にする",
+          "is_correct": true,
+          "explanation": "正解。Cross-Account Copy + Vault Lock はランサムウェア対策の標準。"
+        },
+        {
+          "id": "C",
+          "text": "S3 CRR で別リージョンに複製する",
+          "is_correct": false,
+          "explanation": "リージョン分離はあるがアカウント分離なし。攻撃者は同一アカウント内で削除可能。"
+        },
+        {
+          "id": "D",
+          "text": "EBS Snapshot を Manual に取って AWS Backup は使わない",
+          "is_correct": false,
+          "explanation": "手動運用 + Vault Lock 効果なし。Cross-Account + Lock が標準パターン。"
+        }
+      ],
+      "explanation": "AWS Backup Cross-Account Copy で別アカウント (Backup Account) に隔離 + Vault Lock Compliance Mode で root も削除不能。ランサムウェア対策の Defense in Depth の標準。Organizations 統合で組織全体ポリシー強制。",
+      "references": [
+        {
+          "title": "AWS Backup cross-account",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/manage-cross-account.html"
+        }
+      ],
+      "tags": [
+        "aws-backup",
+        "cross-account",
+        "ransomware"
+      ],
+      "common_mistakes": [
+        "同一アカウント内のバックアップだけで安全と誤解",
+        "Vault Lock の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-011",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Lambda",
+      "subtopic": "Provisioned Concurrency at scale",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ピーク時 10,000 同時実行が必要な API バックエンド Lambda で、コールドスタート遅延 (3-5 秒) を排除しつつコストを最小化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Provisioned Concurrency を Application Auto Scaling と組み合わせ、時間帯ごとに必要量を自動調整する",
+          "is_correct": true,
+          "explanation": "正解。固定値ではなくスケジュール+ターゲット追跡で必要量だけ確保しコスト最適化する標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "Provisioned Concurrency を常時 10,000 で固定する",
+          "is_correct": false,
+          "explanation": "ピーク時以外も常時課金で割高。Auto Scaling で必要時のみが正解。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda を諦めて ECS Fargate に移行する",
+          "is_correct": false,
+          "explanation": "API バックエンドで Lambda の特性 (イベント駆動) を活かせる。Provisioned Concurrency で対応可能。"
+        },
+        {
+          "id": "D",
+          "text": "ALB の前段で warming リクエストを毎分送り続ける",
+          "is_correct": false,
+          "explanation": "古典的ハック。Provisioned Concurrency の方が信頼性高くマネージド。"
+        }
+      ],
+      "explanation": "Lambda Provisioned Concurrency は環境を起動済みに保つ機能で Cold Start 排除。Application Auto Scaling と組合せ、CloudWatch メトリクス (ProvisionedConcurrencyUtilization) や Scheduled Scaling で時間帯別調整、コスト最適化。",
+      "references": [
+        {
+          "title": "Lambda Provisioned Concurrency",
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html"
+        }
+      ],
+      "tags": [
+        "lambda",
+        "provisioned-concurrency",
+        "auto-scaling"
+      ],
+      "common_mistakes": [
+        "Provisioned Concurrency を固定値で常時確保",
+        "warming hack を継続使用"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-012",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "ECS Anywhere",
+      "subtopic": "On-premises container",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ DC でも ECS タスクを動かし、AWS の ECS と統一管理したい (コントロールプレーンは AWS)。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Outposts を導入し、オンプレで Fargate を動かす",
+          "is_correct": false,
+          "explanation": "Outposts は AWS ハードウェア持ち込みで既存オンプレ機材を活用しない。ECS Anywhere が軽量。"
+        },
+        {
+          "id": "B",
+          "text": "オンプレに独立した Kubernetes クラスタを構築する",
+          "is_correct": false,
+          "explanation": "ECS 統一管理要件に反する。ECS Anywhere が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "ECS Anywhere でオンプレサーバを ECS の External Capacity Provider として登録する",
+          "is_correct": true,
+          "explanation": "正解。ECS Anywhere はオンプレ/別クラウドの仮想/物理サーバを ECS で管理する標準機能。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレと AWS の VPC を Site-to-Site VPN で接続し、AWS 上 ECS だけで運用する",
+          "is_correct": false,
+          "explanation": "オンプレ側で ECS タスク実行する要件を満たさない。"
+        }
+      ],
+      "explanation": "ECS Anywhere は ECS の Control Plane を AWS、Data Plane (実行ノード) をオンプレ/別クラウドにする構成。SSM Agent + ECS Agent でノード登録、Capacity Provider として利用。既存オンプレ機材活用しつつ AWS の運用統合を実現。",
+      "references": [
+        {
+          "title": "ECS Anywhere",
+          "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-anywhere.html"
+        }
+      ],
+      "tags": [
+        "ecs-anywhere",
+        "hybrid",
+        "container"
+      ],
+      "common_mistakes": [
+        "EKS Anywhere と混同 (別物)",
+        "Outposts を ECS Anywhere の代替と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-013",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "AWS App Runner",
+      "subtopic": "Container-to-URL",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "コンテナアプリを GitHub にコミットしたら自動ビルド・自動デプロイ・自動 HTTPS 公開される完全マネージド環境で運用したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS App Runner で GitHub リポジトリ連携し、ビルド + デプロイ + ALB + HTTPS まで自動化する",
+          "is_correct": true,
+          "explanation": "正解。App Runner はソースコード → 本番 URL までマネージドな PaaS 的サービス。"
+        },
+        {
+          "id": "B",
+          "text": "ECS Fargate + CodePipeline + ALB を組み合わせ手動構築する",
+          "is_correct": false,
+          "explanation": "実現可能だが構成が複雑。App Runner の方が運用負荷最小。"
+        },
+        {
+          "id": "C",
+          "text": "Elastic Beanstalk Docker 環境で同じ構成を実現する",
+          "is_correct": false,
+          "explanation": "Beanstalk は AMI ベースで App Runner ほど即時 PaaS 的ではない。"
+        },
+        {
+          "id": "D",
+          "text": "EKS + Argo CD で GitOps パイプラインを構築する",
+          "is_correct": false,
+          "explanation": "強力だが運用負荷が大きい。要件 (完全マネージド) に合わない。"
+        }
+      ],
+      "explanation": "AWS App Runner は コンテナソース → URL までフルマネージドな PaaS。GitHub 連携自動デプロイ、HTTPS、Auto Scaling、VPC 統合。Heroku 的なシンプルさ。小〜中規模 Web/API の運用負荷最小化に最適。",
+      "references": [
+        {
+          "title": "AWS App Runner",
+          "url": "https://docs.aws.amazon.com/apprunner/latest/dg/what-is-apprunner.html"
+        }
+      ],
+      "tags": [
+        "app-runner",
+        "paas"
+      ],
+      "common_mistakes": [
+        "シンプル要件で ECS + 全部入り構成を選ぶ",
+        "App Runner の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-014",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "EKS Fargate",
+      "subtopic": "Pod-level isolation",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "マルチテナント SaaS の EKS クラスタで、テナントごとに Pod を別ホストで完全隔離したい (kernel 共有禁止)。EC2 ノードのキャパシティ管理は避けたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "namespace の Resource Quota だけで隔離する",
+          "is_correct": false,
+          "explanation": "リソース上限制御のみで物理隔離なし。要件未達。"
+        },
+        {
+          "id": "B",
+          "text": "ノードグループをテナント別に分け、taint で Pod を分離する",
+          "is_correct": false,
+          "explanation": "EC2 ノード管理が必要で要件に反する。Fargate Profile が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "Pod Security Policy で隔離する",
+          "is_correct": false,
+          "explanation": "Kernel レベル隔離は提供しない (同一ホスト共有)。"
+        },
+        {
+          "id": "D",
+          "text": "EKS Fargate Profile を テナント別 Namespace にマッピングし、各 Pod が独立 microVM で実行されるようにする",
+          "is_correct": true,
+          "explanation": "正解。Fargate は Firecracker microVM で Pod ごとに完全隔離、EC2 ノード管理不要。"
+        }
+      ],
+      "explanation": "EKS Fargate Profile は Namespace + Label に基づき Pod を Fargate (Firecracker microVM) で実行する仕組み。Pod ごとに独立した microVM で kernel 隔離、EC2 ノード管理不要。マルチテナント SaaS で各テナント Pod を完全隔離する標準解。",
+      "references": [
+        {
+          "title": "EKS Fargate Profile",
+          "url": "https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html"
+        }
+      ],
+      "tags": [
+        "eks-fargate",
+        "multi-tenant",
+        "isolation"
+      ],
+      "common_mistakes": [
+        "PSP/Namespace 制御で kernel 隔離可能と誤解",
+        "EC2 ノードを使い続ける"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-015",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "AppSync",
+      "subtopic": "GraphQL API",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "モバイルアプリで複数のバックエンドデータソース (DynamoDB / Lambda / RDS) から GraphQL で柔軟にデータ取得し、リアルタイム同期も実現したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ALB + Lambda で GraphQL サーバを自前実装し、WebSocket でリアルタイム実装する",
+          "is_correct": false,
+          "explanation": "実装可能だが Subscriptions + 認証 + 認可を全部自作で運用負荷大。AppSync が標準。"
+        },
+        {
+          "id": "B",
+          "text": "API Gateway HTTP API で REST 風 GraphQL エンドポイントを実装する",
+          "is_correct": false,
+          "explanation": "REST 用で GraphQL ネイティブサポートはない。リアルタイム機能もない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS AppSync で GraphQL スキーマ定義 + Resolver で複数データソース統合 + Subscriptions でリアルタイム同期",
+          "is_correct": true,
+          "explanation": "正解。AppSync はマネージド GraphQL で複数データソース + Subscriptions リアルタイム配信を統合提供。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge で GraphQL イベントを配信する",
+          "is_correct": false,
+          "explanation": "EventBridge は GraphQL API ではない。アーキテクチャ的に整合しない。"
+        }
+      ],
+      "explanation": "AWS AppSync は GraphQL マネージドサービス。Resolver で DynamoDB/Lambda/HTTP/RDS/OpenSearch 等の複数データソースを統合、Subscriptions で WebSocket リアルタイム同期、Cognito/IAM/API Key 認証統合。モバイル/Web リアルタイムアプリ標準。",
+      "references": [
+        {
+          "title": "AWS AppSync",
+          "url": "https://docs.aws.amazon.com/appsync/latest/devguide/welcome.html"
+        }
+      ],
+      "tags": [
+        "appsync",
+        "graphql",
+        "realtime"
+      ],
+      "common_mistakes": [
+        "API Gateway で GraphQL 代替と思う",
+        "GraphQL を REST で実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-016",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Deployment Strategy",
+      "subtopic": "Blue/Green vs Canary",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）ECS / Lambda のデプロイ戦略の選択として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Canary は 10% を新版・90% を旧版で開始、メトリクス OK なら段階的に切替える方式",
+          "is_correct": true,
+          "explanation": "正解。Canary は段階的トラフィックシフトで本番影響を最小化する標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "Blue/Green は旧環境と新環境を並行稼働し、Router (ALB/CodeDeploy) で 1 ステップで切替える方式",
+          "is_correct": true,
+          "explanation": "正解。Blue/Green は瞬時切替 + 即時ロールバック可能の標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "Rolling Update は新旧並行稼働なしで安全性が最も高い",
+          "is_correct": false,
+          "explanation": "Rolling は順次置換で新旧並行稼働あり。安全性は Blue/Green の方が高い。"
+        },
+        {
+          "id": "D",
+          "text": "Canary と Blue/Green は同じ意味で交換可能",
+          "is_correct": false,
+          "explanation": "Canary = 段階的・Blue/Green = 1 ステップ切替で挙動が異なる。"
+        }
+      ],
+      "explanation": "デプロイ戦略: Rolling (順次置換、シンプル)、Blue/Green (旧新並行 + 一気切替、即時ロールバック)、Canary (段階的トラフィックシフト、メトリクス監視)。CodeDeploy で全種類サポート。Lambda は Alias + Weighted で Canary 実装が標準。",
+      "references": [
+        {
+          "title": "AWS CodeDeploy deployment configurations",
+          "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html"
+        }
+      ],
+      "tags": [
+        "deployment",
+        "canary",
+        "blue-green"
+      ],
+      "common_mistakes": [
+        "Rolling と Blue/Green を取り違える",
+        "Canary と Blue/Green を同一視する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-017",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "RDS Proxy",
+      "subtopic": "Connection pooling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Lambda が大量に RDS for MySQL へ接続し、DB の max_connections 上限を超えるエラーが頻発している。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "RDS Proxy を Lambda と RDS の間に挟み、コネクションプーリングで上限を保護する",
+          "is_correct": true,
+          "explanation": "正解。RDS Proxy は接続プーリング + フェイルオーバ高速化 + 認証統合をマネージド提供する標準解。"
+        },
+        {
+          "id": "B",
+          "text": "RDS インスタンスサイズを上げて max_connections を増やす",
+          "is_correct": false,
+          "explanation": "対症療法でコスト増。Lambda の接続爆発は構造的問題、Proxy で吸収するのが本質。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda 側で接続キャッシュを実装し、Init 時に 1 回だけ接続する",
+          "is_correct": false,
+          "explanation": "Lambda の Cold Start ごとに新規接続、Concurrency 分の接続が必要で根本解決しない。"
+        },
+        {
+          "id": "D",
+          "text": "RDS から DynamoDB に移行する",
+          "is_correct": false,
+          "explanation": "アーキ変更が大きい。RDS Proxy で問題解決可能。"
+        }
+      ],
+      "explanation": "Amazon RDS Proxy は RDS/Aurora 向けマネージドコネクションプーラー。Lambda 大量起動による接続爆発、フェイルオーバ高速化 (~30s → ~5s)、Secrets Manager 統合認証、IAM 認証統合等を提供。サーバレス + RDS の組合せで必須。",
+      "references": [
+        {
+          "title": "Amazon RDS Proxy",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html"
+        }
+      ],
+      "tags": [
+        "rds-proxy",
+        "lambda",
+        "connection-pool"
+      ],
+      "common_mistakes": [
+        "インスタンスサイズ増で max_connections を稼ぐ",
+        "Lambda の接続キャッシュで対応"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-018",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Kinesis Data Analytics",
+      "subtopic": "Real-time stream processing",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Kinesis Data Streams のイベントをリアルタイムで集計 (1 分ごとのウィンドウ集計) し、結果を OpenSearch に保存して可視化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kinesis Firehose で OpenSearch に直接配信し、OpenSearch 側で集計する",
+          "is_correct": false,
+          "explanation": "Firehose は配信のみで Stream 処理機能なし。OpenSearch の集計はクエリ時で Real-time とは異なる。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda コンシューマで毎イベントごとに集計値を再計算する",
+          "is_correct": false,
+          "explanation": "Time Window 集計を自前実装する負荷大。Flink が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Managed Service for Apache Flink (旧 KDA Flink) で Stream 処理 + Time Window 集計 + OpenSearch 出力する",
+          "is_correct": true,
+          "explanation": "正解。Managed Flink は Stream 処理 + Time Window 集計の標準。マネージドで運用負荷最小。"
+        },
+        {
+          "id": "D",
+          "text": "EMR Spark Streaming クラスタで処理する",
+          "is_correct": false,
+          "explanation": "強力だがクラスタ管理が必要。Managed Flink がマネージドで標準。"
+        }
+      ],
+      "explanation": "Amazon Managed Service for Apache Flink (旧 Kinesis Data Analytics for Flink) は Stream 処理のマネージドサービス。Time Window 集計、Stateful 処理、複数 Source → 複数 Sink (OpenSearch/S3/Kinesis 等)。Apache Flink を運用なしで使えるのが利点。",
+      "references": [
+        {
+          "title": "Managed Service for Apache Flink",
+          "url": "https://docs.aws.amazon.com/managed-flink/latest/java/what-is.html"
+        }
+      ],
+      "tags": [
+        "kinesis",
+        "flink",
+        "stream-processing"
+      ],
+      "common_mistakes": [
+        "Lambda で時間窓集計を自前実装",
+        "Firehose と Stream 処理を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-019",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "AWS Wavelength",
+      "subtopic": "5G edge",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "5G モバイルアプリで超低レイテンシ (10ms 以下) を実現するため、AWS リソースを通信キャリアの 5G ネットワークエッジに配置したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Outposts を顧客 DC に設置する",
+          "is_correct": false,
+          "explanation": "Outposts は顧客 DC で 5G キャリアエッジではない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Local Zone に EC2 を配置する",
+          "is_correct": false,
+          "explanation": "Local Zone は主要都市の AWS データセンターで 5G エッジではない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Wavelength Zone に EC2 を配置し、5G ネットワーク内でアプリ実行する",
+          "is_correct": true,
+          "explanation": "正解。Wavelength は通信キャリア (KDDI/Verizon 等) の 5G データセンター内に AWS リソースを置く。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFront のエッジロケーションを使う",
+          "is_correct": false,
+          "explanation": "CloudFront は CDN で コンピュート実行用ではない。"
+        }
+      ],
+      "explanation": "AWS Wavelength は通信キャリアの 5G モバイルネットワーク内に AWS リソースを配置するサービス。5G デバイス ↔ アプリ間のレイテンシを 10ms 以下に。AR/VR、ゲーミング、自動運転、産業用 IoT 等の超低レイテンシ用途向け。",
+      "references": [
+        {
+          "title": "AWS Wavelength",
+          "url": "https://docs.aws.amazon.com/wavelength/latest/developerguide/what-is-wavelength.html"
+        }
+      ],
+      "tags": [
+        "wavelength",
+        "5g",
+        "edge"
+      ],
+      "common_mistakes": [
+        "Local Zone / Outposts / CloudFront と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-020",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "S3 Object Lambda",
+      "subtopic": "Inline transformation",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "S3 オブジェクトを取得する API で、ユーザによって PII を一部マスクして返すなど取得時にデータ変換したい。S3 オブジェクト自体は変えたくない。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFront Functions で S3 オブジェクトを変換する",
+          "is_correct": false,
+          "explanation": "CloudFront Functions は HTTP ヘッダ/URL 変換用でオブジェクト本体変換は不可。"
+        },
+        {
+          "id": "B",
+          "text": "S3 オブジェクト取得 → Lambda → 加工 → クライアント返却 を API Gateway で自前構築",
+          "is_correct": false,
+          "explanation": "Object Lambda が同等処理をマネージドで提供。再実装は無駄。"
+        },
+        {
+          "id": "C",
+          "text": "オブジェクトを複数バージョンで保存し、ユーザ別に取得先を変える",
+          "is_correct": false,
+          "explanation": "オブジェクト数爆発。Inline 変換が本質的解。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Object Lambda で Access Point + Lambda Transform を構成し、取得時に Lambda で変換する",
+          "is_correct": true,
+          "explanation": "正解。Object Lambda はオブジェクト取得時の Inline 変換をマネージド提供する標準機能。"
+        }
+      ],
+      "explanation": "S3 Object Lambda は S3 Access Point に Lambda 関数を関連付け、GetObject 時に Lambda が呼ばれ、戻り値を加工してクライアントへ返却。PII マスキング、形式変換、リダクション、画像リサイズ等の用途で標準。",
+      "references": [
+        {
+          "title": "S3 Object Lambda",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html"
+        }
+      ],
+      "tags": [
+        "s3-object-lambda",
+        "transformation"
+      ],
+      "common_mistakes": [
+        "API Gateway + Lambda で自前構築",
+        "CloudFront Functions の機能範囲を誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-021",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Redshift",
+      "subtopic": "Cross-account data sharing",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Redshift クラスタのデータを別 AWS アカウントの分析チームと共有したい。データのコピーは避けたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "API Gateway で Redshift クエリを公開し、別アカウントから REST で取得させる",
+          "is_correct": false,
+          "explanation": "アーキテクチャ複雑化。Data Sharing が分析ワークロードの標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "Redshift から S3 へ UNLOAD し、別アカウントへバケットコピーする",
+          "is_correct": false,
+          "explanation": "コピーが発生 + 鮮度遅延。Data Sharing が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "DMS で別アカウントの Redshift にデータ複製する",
+          "is_correct": false,
+          "explanation": "コピーが発生。Data Sharing で live 共有が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Redshift Data Sharing でクラスタを Producer、別アカウントを Consumer として登録し、live shared data でクエリを許可する",
+          "is_correct": true,
+          "explanation": "正解。Data Sharing はコピーなしでクラスタ間データ共有を提供する Redshift ネイティブ機能。"
+        }
+      ],
+      "explanation": "Redshift Data Sharing は クラスタ間 / 別アカウント間 / 別リージョン間でデータをコピーせず共有する機能。Producer (データ提供) + Consumer (利用) のモデル。Datashare object + Grant で粒度制御。RA3 インスタンスタイプ必要。",
+      "references": [
+        {
+          "title": "Redshift Data Sharing",
+          "url": "https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html"
+        }
+      ],
+      "tags": [
+        "redshift",
+        "data-sharing"
+      ],
+      "common_mistakes": [
+        "UNLOAD/DMS でデータコピーする",
+        "Data Sharing の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-022",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Lake Formation",
+      "subtopic": "Data lake governance",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "S3 ベースのデータレイクで、テーブル・行・列レベルの細粒度アクセス制御を Athena / Redshift Spectrum / EMR / Glue から統一適用したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各エンジン (Athena/Redshift/EMR) で個別アクセス制御を実装し維持する",
+          "is_correct": false,
+          "explanation": "個別実装で整合性維持困難。Lake Formation で統一が標準。"
+        },
+        {
+          "id": "B",
+          "text": "S3 バケットポリシー + IAM ポリシーで列単位アクセス制御を実装する",
+          "is_correct": false,
+          "explanation": "S3/IAM は オブジェクト粒度。列・行レベル制御は Lake Formation が必要。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Lake Formation で データレイクメタデータ + 細粒度ポリシーを集中管理し、全エンジンから統一適用する",
+          "is_correct": true,
+          "explanation": "正解。Lake Formation はテーブル/列/行/タグレベルのアクセス制御を Glue Catalog 統合で全エンジン共通提供。"
+        },
+        {
+          "id": "D",
+          "text": "Glue Crawler を細かく分けてテーブル粒度で分離する",
+          "is_correct": false,
+          "explanation": "Crawler 分離は メタデータ作成の話で、アクセス制御機能ではない。"
+        }
+      ],
+      "explanation": "AWS Lake Formation はデータレイク (S3 + Glue Catalog) の集中ガバナンス。テーブル/列/行/タグレベルの細粒度ポリシーを Athena/Redshift Spectrum/EMR/Glue/QuickSight に統一適用、Cross-account 共有も対応。データレイクの ABAC 実装基盤。",
+      "references": [
+        {
+          "title": "AWS Lake Formation",
+          "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html"
+        }
+      ],
+      "tags": [
+        "lake-formation",
+        "data-lake",
+        "governance"
+      ],
+      "common_mistakes": [
+        "S3/IAM で列単位制御可能と誤解",
+        "各エンジン個別で実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-023",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "DataSync",
+      "subtopic": "Onprem-to-AWS sync",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ NFS サーバから S3 へ 50TB のデータを毎日同期し、変更分のみを効率的に転送したい。AWS マネージドで運用負荷を最小にしたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Transfer Acceleration を有効化し、aws s3 sync コマンドを cron で実行する",
+          "is_correct": false,
+          "explanation": "aws s3 sync は単純で差分検出が遅い。DataSync の方が効率的。"
+        },
+        {
+          "id": "B",
+          "text": "AWS DataSync エージェントをオンプレに配置し、NFS Source → S3 Target で差分同期スケジュールを設定する",
+          "is_correct": true,
+          "explanation": "正解。DataSync は差分同期 + 暗号化 + 整合性検証 + スケジュールを統合提供する標準サービス。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Snowball Edge を毎日輸送する",
+          "is_correct": false,
+          "explanation": "物理輸送は初期移行用。継続同期には不向き。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 上に rsync を構築し、自前で同期する",
+          "is_correct": false,
+          "explanation": "OSS で実装可能だが運用負荷大。マネージドの DataSync が標準。"
+        }
+      ],
+      "explanation": "AWS DataSync はオンプレ ↔ AWS 間の差分同期サービス。NFS/SMB/HDFS/S3/EFS/FSx を Source/Target に、エージェント経由で AWS API リクエストの 10 倍速転送、暗号化、整合性検証、スケジュール、CloudWatch メトリクス。継続同期の標準。",
+      "references": [
+        {
+          "title": "AWS DataSync",
+          "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+        }
+      ],
+      "tags": [
+        "datasync",
+        "hybrid",
+        "sync"
+      ],
+      "common_mistakes": [
+        "aws s3 sync で大規模差分処理",
+        "Snowball を継続同期に使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-024",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Outposts",
+      "subtopic": "On-premises AWS hardware",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "金融顧客が法規制でデータを国内 DC 内に保管する必要があり、かつ AWS マネージドサービス (EC2/RDS/EKS) を使いたい。自前 DC との接続レイテンシは ms 未満を要求。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Local Zone を使う",
+          "is_correct": false,
+          "explanation": "Local Zone は主要都市の AWS データセンターで顧客 DC 内ではない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Direct Connect を 100Gbps で構築し、最寄り AWS リージョンを使う",
+          "is_correct": false,
+          "explanation": "データは AWS リージョンに格納される。国内 DC 内保管要件を満たさない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Outposts を顧客 DC に設置し、AWS リソースを DC 内で運用する",
+          "is_correct": true,
+          "explanation": "正解。Outposts は AWS ハードウェアを顧客 DC に設置し、AWS マネージドサービスを DC 内で提供。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレ自前で OpenStack を構築し、AWS API 互換 OSS で代替する",
+          "is_correct": false,
+          "explanation": "AWS マネージドサービスを使いたい要件に反する。"
+        }
+      ],
+      "explanation": "AWS Outposts は AWS ハードウェアを顧客 DC に設置し、AWS マネージドサービス (EC2/EBS/S3/RDS/EKS/ECS 等) を DC 内で提供。データレジデンシ要件、ms 未満接続要件、レガシーシステム共存が必要なときの解。",
+      "references": [
+        {
+          "title": "AWS Outposts",
+          "url": "https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html"
+        }
+      ],
+      "tags": [
+        "outposts",
+        "data-residency"
+      ],
+      "common_mistakes": [
+        "Direct Connect で要件達成と誤解",
+        "Local Zone と Outposts を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-025",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Step Functions Express",
+      "subtopic": "High-frequency workflow",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "IoT デバイスから 100,000 イベント/秒のイベントを受信し、各イベントごとに数百 ms のワークフロー (Lambda × 3 + DynamoDB Put) を実行したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Step Functions Standard Workflow で状態遷移ごとに課金される構成にする",
+          "is_correct": false,
+          "explanation": "Standard は長時間・低頻度用。100,000/s では状態遷移課金が爆発する。"
+        },
+        {
+          "id": "B",
+          "text": "Step Functions Express Workflow + EventBridge トリガで実行時間 + メモリ課金を活用する",
+          "is_correct": true,
+          "explanation": "正解。Express は短時間・高頻度処理向け課金体系で、Standard より圧倒的に安価。"
+        },
+        {
+          "id": "C",
+          "text": "各イベントを直接 Lambda で処理し、Step Functions を使わない",
+          "is_correct": false,
+          "explanation": "複数 Lambda + DynamoDB のオーケストレーションが必要。Step Functions で宣言化が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Kinesis Data Analytics で全部処理する",
+          "is_correct": false,
+          "explanation": "Stream 処理エンジンで、Lambda + DB ワークフローの実行には不向き。"
+        }
+      ],
+      "explanation": "Step Functions 2 種: Standard (最大 1 年、状態遷移課金、低頻度向け)、Express (最大 5 分、実行時間 + メモリ課金、高頻度向け 100,000/s+)。IoT イベント駆動、ストリーム加工、API 統合に Express。",
+      "references": [
+        {
+          "title": "Step Functions Standard vs Express",
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html"
+        }
+      ],
+      "tags": [
+        "step-functions",
+        "express",
+        "iot"
+      ],
+      "common_mistakes": [
+        "高頻度処理に Standard を選んでコスト爆発",
+        "Step Functions を諦めて Lambda 単体に逃げる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-026",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "AWS Resilience Hub",
+      "subtopic": "Resilience assessment",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "本番アプリの可用性を定量的に評価し、RTO/RPO 目標と現状のギャップを把握、改善推奨を得たい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Trusted Advisor で耐障害性チェックを行う",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は限定的なベストプラクティスチェックで、定量的 RTO/RPO 評価機能なし。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Resilience Hub でアプリ定義 + Resilience Policy (RTO/RPO 目標) + 評価実行で改善推奨を得る",
+          "is_correct": true,
+          "explanation": "正解。Resilience Hub は AWS リソース構成を分析し、RTO/RPO ギャップと改善案を提示する標準サービス。"
+        },
+        {
+          "id": "C",
+          "text": "Well-Architected Tool でレビューを実施する",
+          "is_correct": false,
+          "explanation": "WA Tool は質問ベースの定性評価。定量分析は Resilience Hub が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch メトリクスから手動で可用性を計算する",
+          "is_correct": false,
+          "explanation": "手作業で網羅性なし。マネージドの Resilience Hub が標準。"
+        }
+      ],
+      "explanation": "AWS Resilience Hub はアプリ可用性の定量評価サービス。CloudFormation/Resource Group でアプリ定義、Resilience Policy で RTO/RPO 目標設定、Assessment で現状分析 + ギャップ抽出 + 改善推奨。FIS (Fault Injection Service) で実カオステストも統合可能。",
+      "references": [
+        {
+          "title": "AWS Resilience Hub",
+          "url": "https://docs.aws.amazon.com/resilience-hub/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "resilience-hub",
+        "rto-rpo"
+      ],
+      "common_mistakes": [
+        "Trusted Advisor で可用性評価可能と誤解",
+        "WA Tool と Resilience Hub の役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-027",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Fault Injection Service",
+      "subtopic": "Chaos engineering",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "本番アプリの耐障害性を実証するため、計画的に AZ 障害・EC2 終了・API スロットリングを発生させてアプリ挙動を検証したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "本番環境を意図的に長時間停止して回復確認する",
+          "is_correct": false,
+          "explanation": "計画的・制御された注入が要件。長時間停止はリスク大。FIS の制御注入が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Chaos Monkey を EC2 にインストールし、自前運用する",
+          "is_correct": false,
+          "explanation": "OSS で実装可能だが運用負荷大 + AWS リソース統合限定。FIS の方が標準。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Fault Injection Service (FIS) で Experiment Template を定義し、AZ 障害・EC2 終了・API スロットリング等の Fault を計画的に注入する",
+          "is_correct": true,
+          "explanation": "正解。FIS は AWS マネージドのカオスエンジニアリングサービスで Experiment 定義・ロールバック自動化を提供。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で EC2 を Random Kill するスクリプトを動かす",
+          "is_correct": false,
+          "explanation": "FIS の Experiment 定義 + ロールバック自動化を再実装する無駄。"
+        }
+      ],
+      "explanation": "AWS Fault Injection Service (FIS) はマネージドカオスエンジニアリング。Experiment Template で複数 Fault Action (StopInstance, ThrottleAPI, NetworkLoss 等) と Stop Condition (CloudWatch アラーム検知で自動ロールバック) を宣言。Resilience Hub と連携。",
+      "references": [
+        {
+          "title": "AWS FIS",
+          "url": "https://docs.aws.amazon.com/fis/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "fis",
+        "chaos-engineering"
+      ],
+      "common_mistakes": [
+        "Chaos Monkey 自前運用",
+        "本番を無制御に停止する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-028",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Macie",
+      "subtopic": "Sensitive data discovery at scale",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Organizations 配下 100 アカウントの全 S3 バケットから PII / クレジットカード / 健康情報を自動検出し、結果を Security アカウントで一元監視したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "GuardDuty で機密データ検出する",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検知で機密データ検出機能はない (Macie の役割)。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントで個別に Macie を有効化し、findings を Email で集約する",
+          "is_correct": false,
+          "explanation": "分散管理で運用負荷大。Delegated Administrator で集中管理が標準。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で全 S3 オブジェクトを取得し、正規表現で PII 検出する自前スクリプト",
+          "is_correct": false,
+          "explanation": "Macie の機械学習 + 100+ ビルトイン検出器を再実装は無理。"
+        },
+        {
+          "id": "D",
+          "text": "Macie を Organizations Delegated Administrator (Security アカウント) として組織全体有効化し、自動 Job + findings 集約する",
+          "is_correct": true,
+          "explanation": "正解。Macie + Delegated Administrator は組織横断 S3 機密データ管理の標準。"
+        }
+      ],
+      "explanation": "Amazon Macie は S3 内 PII/PCI/PHI を機械学習で自動検出するマネージドサービス。Organizations 統合 + Delegated Administrator で Security/Audit アカウントから組織横断管理。100+ ビルトイン Managed Data Identifier + Custom Data Identifier。",
+      "references": [
+        {
+          "title": "Amazon Macie multi-account",
+          "url": "https://docs.aws.amazon.com/macie/latest/user/macie-organizations.html"
+        }
+      ],
+      "tags": [
+        "macie",
+        "organizations",
+        "pii"
+      ],
+      "common_mistakes": [
+        "各アカウント個別管理",
+        "GuardDuty と Macie を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-029",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Cost Allocation Tags",
+      "subtopic": "Multi-account chargeback",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下で部署別チャージバックレポートを月次で自動生成したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cost Allocation Tags を Tag Policy で強制 + Cost and Usage Report (CUR) を Athena で部署別集計 + QuickSight で可視化",
+          "is_correct": true,
+          "explanation": "正解。CUR + Athena + QuickSight はマルチアカウント FinOps の標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "Cost Explorer の月次レポートをスクリーンショットして部署に配布する",
+          "is_correct": false,
+          "explanation": "手動運用で自動化要件に反する。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Trusted Advisor のコスト最適化レポートを部署別に分割する",
+          "is_correct": false,
+          "explanation": "Trusted Advisor はベストプラクティスチェックで部署別請求集計はない。"
+        },
+        {
+          "id": "D",
+          "text": "各アカウントを独立 Payer Account にして請求を分離する",
+          "is_correct": false,
+          "explanation": "統合請求のボリュームディスカウント・RI 共有を失う。タグベース集計が標準。"
+        }
+      ],
+      "explanation": "FinOps 標準: Cost and Usage Report (CUR) を S3 出力 → Athena でクエリ可能化 → QuickSight ダッシュボードで部署/プロジェクト別チャージバック。Cost Allocation Tags を Organizations Tag Policy で強制し命名統一。",
+      "references": [
+        {
+          "title": "AWS Cost and Usage Report",
+          "url": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
+        }
+      ],
+      "tags": [
+        "cur",
+        "athena",
+        "chargeback",
+        "finops"
+      ],
+      "common_mistakes": [
+        "手動レポート運用",
+        "Payer Account を分割する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-030",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Edge Compute",
+      "subtopic": "CloudFront Functions vs Lambda@Edge",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "CloudFront 経由のリクエストで、エッジでの認証トークン検証 (JWT) + ヘッダ書き換え を超低レイテンシ・低コストで実行したい。実行時間は ms 未満。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda@Edge (Node.js) で同等処理を実装する",
+          "is_correct": false,
+          "explanation": "Lambda@Edge は ms 単位 + 高コスト。軽量処理には Functions が直接的解。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFront Functions (JavaScript ES5) で JWT 検証 + ヘッダ書き換えをサブミリ秒で実行する",
+          "is_correct": true,
+          "explanation": "正解。CloudFront Functions はサブミリ秒・低コストで軽量処理向け。"
+        },
+        {
+          "id": "C",
+          "text": "ALB の前段で Cognito 認証フローを使う",
+          "is_correct": false,
+          "explanation": "Origin 到達後の認証で、エッジで止められない。Functions が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "API Gateway Lambda Authorizer で検証する",
+          "is_correct": false,
+          "explanation": "Origin の API Gateway で実行され、エッジ即時処理にならない。"
+        }
+      ],
+      "explanation": "CloudFront Functions: JS ES5、サブミリ秒、$0.10/1M リクエスト、軽量処理 (URL リライト、ヘッダ操作、認証) 専用。Lambda@Edge: Node.js/Python、ms 単位、より高機能 + 高コスト。JWT 検証程度なら Functions、複雑な処理は Lambda@Edge。",
+      "references": [
+        {
+          "title": "CloudFront Functions vs Lambda@Edge",
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html"
+        }
+      ],
+      "tags": [
+        "cloudfront-functions",
+        "lambda-edge"
+      ],
+      "common_mistakes": [
+        "軽量処理にも Lambda@Edge を選ぶ",
+        "認証を Origin 側で実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-031",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "MQ vs MSK vs SQS",
+      "subtopic": "Messaging selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "既存オンプレ Java アプリが ActiveMQ JMS で通信している。AWS 移行する際、アプリのメッセージング層コードを変更したくない。",
+      "options": [
+        {
+          "id": "A",
+          "text": "SQS に切り替え、Java アプリの JMS コードを SQS SDK に書き換える",
+          "is_correct": false,
+          "explanation": "アプリ無変更要件に反する。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon MQ (ActiveMQ Broker) を採用し、JMS プロトコル互換でアプリ無変更で移行する",
+          "is_correct": true,
+          "explanation": "正解。Amazon MQ は ActiveMQ/RabbitMQ をマネージド提供し、既存 JMS/AMQP/MQTT/STOMP アプリを無変更で動かせる。"
+        },
+        {
+          "id": "C",
+          "text": "MSK (Kafka) に切り替え、メッセージング層を再設計する",
+          "is_correct": false,
+          "explanation": "Kafka は別の Pub/Sub モデルで JMS 互換ではない。アプリ書き換え必須。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 上に自前で ActiveMQ をインストールし運用する",
+          "is_correct": false,
+          "explanation": "実装可能だがマネージドの Amazon MQ で同等運用負荷削減できる。"
+        }
+      ],
+      "explanation": "Amazon MQ は ActiveMQ / RabbitMQ をマネージド提供。JMS / AMQP / MQTT / STOMP / OpenWire プロトコル互換で既存メッセージングアプリの Lift-and-Shift 移行が容易。SQS/MSK は AWS ネイティブで新規構築向け、MQ はレガシー互換用。",
+      "references": [
+        {
+          "title": "Amazon MQ",
+          "url": "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html"
+        }
+      ],
+      "tags": [
+        "amazon-mq",
+        "activemq",
+        "migration"
+      ],
+      "common_mistakes": [
+        "JMS アプリを SQS/MSK に書き換える",
+        "EC2 自前運用を続ける"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-032",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Aurora Serverless v2 Reader",
+      "subtopic": "Mixed workload",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Aurora MySQL クラスターで Writer は高負荷で予測可能な r6g.4xlarge、Reader は変動の大きい分析クエリを受ける。Reader 側だけ Serverless v2 で自動スケーリングしたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora と Aurora Serverless v2 を別クラスタとして 2 つ立てる",
+          "is_correct": false,
+          "explanation": "データ共有不可で同期コスト発生。Aurora は 1 クラスタで混在可能。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora クラスター全体を Serverless v2 にする",
+          "is_correct": false,
+          "explanation": "Writer 側の予測可能高負荷では Provisioned の方がコスト効率 + 性能予測可能。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora クラスター全体を Provisioned r6g.4xlarge にする",
+          "is_correct": false,
+          "explanation": "Reader 側の変動負荷に対応できず、Provisioned 最大値で常時課金され割高。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora クラスターを Mixed Configuration: Writer = Provisioned r6g.4xlarge、Reader = Serverless v2 ACU で構成する",
+          "is_correct": true,
+          "explanation": "正解。Aurora は Writer/Reader でインスタンスタイプを混在可能、Serverless v2 と Provisioned 共存も対応。"
+        }
+      ],
+      "explanation": "Aurora は 1 クラスタ内で Writer と Reader それぞれ Provisioned / Serverless v2 を選択可能。安定 Writer (Provisioned) + 変動 Reader (Serverless v2) のミックス構成で性能予測可能性 + コスト最適化を両立。",
+      "references": [
+        {
+          "title": "Aurora Mixed Configuration",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "serverless-v2",
+        "mixed"
+      ],
+      "common_mistakes": [
+        "クラスタ全体を片方に統一する",
+        "別クラスタで分離する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-033",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Aurora Zero-ETL",
+      "subtopic": "Analytics integration",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL のトランザクションデータを Redshift で分析したい。データパイプライン (DMS/CDC) の構築・運用は避けたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora と Redshift を Federated Query で接続する",
+          "is_correct": false,
+          "explanation": "Federated Query は読取り時に Aurora を都度クエリ、性能・スケールに制約あり。"
+        },
+        {
+          "id": "B",
+          "text": "DMS で Aurora → Redshift CDC レプリケーションを構築する",
+          "is_correct": false,
+          "explanation": "Zero-ETL より構築・運用コストが高い。Zero-ETL が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora から S3 へ Snapshot Export し、Redshift Spectrum でクエリする",
+          "is_correct": false,
+          "explanation": "Snapshot は一時的でリアルタイム性なし。Zero-ETL は near real-time。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora Zero-ETL Integration を有効化し、Aurora → Redshift にデータ自動レプリケーションする",
+          "is_correct": true,
+          "explanation": "正解。Zero-ETL Integration は Aurora ↔ Redshift をマネージドで自動同期する 2023 年新機能。"
+        }
+      ],
+      "explanation": "Aurora Zero-ETL Integration は Aurora MySQL/PostgreSQL → Redshift の near real-time レプリケーションをマネージド提供。DMS/CDC 不要、数秒遅延、トランザクション完全性保証。OLTP + OLAP の組合せパターンの標準。",
+      "references": [
+        {
+          "title": "Aurora Zero-ETL",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "zero-etl",
+        "redshift"
+      ],
+      "common_mistakes": [
+        "DMS を新規構築で選ぶ",
+        "Zero-ETL の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-034",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Lake Formation Cross-Account",
+      "subtopic": "Data sharing",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）Lake Formation でデータレイクを別アカウントの分析チームと共有する場合の正しい設計を 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lake Formation の Cross-Account Data Sharing でテーブル粒度 + 列・行レベルアクセス権を直接付与する",
+          "is_correct": true,
+          "explanation": "正解。Lake Formation は AWS RAM を介してテーブル/列/行レベルのクロスアカウント共有を提供。"
+        },
+        {
+          "id": "B",
+          "text": "Receiving 側アカウントで Resource Link を作成し、Athena/Glue から共有テーブルとして参照する",
+          "is_correct": true,
+          "explanation": "正解。Resource Link は共有テーブルへの参照を別アカウントの Glue Data Catalog に作成する標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "S3 バケットポリシーだけで列レベル制御まで実現できる",
+          "is_correct": false,
+          "explanation": "S3 はオブジェクト単位で列・行レベル制御は Lake Formation 必須。"
+        },
+        {
+          "id": "D",
+          "text": "Glue Data Catalog のクロスアカウント共有は Lake Formation なしで列レベル制御可能",
+          "is_correct": false,
+          "explanation": "Glue Catalog 単体ではテーブル粒度まで。列・行は Lake Formation 経由。"
+        }
+      ],
+      "explanation": "Lake Formation Cross-Account Data Sharing: Granting Account で Grant 実行 → AWS RAM 経由でリソース共有 → Receiving Account で Resource Link 作成 → Athena/Glue/EMR から透過アクセス。S3/Glue 単体では列・行レベル制御は不可、Lake Formation が必須。",
+      "references": [
+        {
+          "title": "Lake Formation cross-account",
+          "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/cross-account-permissions.html"
+        }
+      ],
+      "tags": [
+        "lake-formation",
+        "cross-account",
+        "data-sharing"
+      ],
+      "common_mistakes": [
+        "S3/IAM で列レベル制御可能と誤解",
+        "Resource Link の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-035",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "EventBridge Scheduler",
+      "subtopic": "Cron at scale",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "1 億件のスケジュール (各ユーザ別の通知タイミング) を秒精度で実行したい。EventBridge Rules では Rule 数の上限に当たる。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Step Functions Wait State で 1 億ワークフローを並行待機する",
+          "is_correct": false,
+          "explanation": "Wait State は 1 ワークフロー単位で 1 億並行は非現実的。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridge Rules を 1 億件作成し個別管理する",
+          "is_correct": false,
+          "explanation": "Rules は数千上限で、大規模スケジュール用ではない。Scheduler が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "DynamoDB に schedule_time をストアし、Lambda を 1 分ごとに polling 起動する",
+          "is_correct": false,
+          "explanation": "Polling は遅延 + コスト。Scheduler のマネージド機能を使う。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge Scheduler を使い、1 億スケジュールを 1 つの Schedule Group で管理し Lambda にデリバリする",
+          "is_correct": true,
+          "explanation": "正解。Scheduler は 1 アカウントあたり数億スケジュール対応の Cron/Rate/One-time スケジューラ。"
+        }
+      ],
+      "explanation": "Amazon EventBridge Scheduler は 2022 年新規。1 アカウントあたり数億のスケジュール対応、Cron/Rate/One-time、200+ AWS サービスへのデリバリ、Schedule Group で論理分離。EventBridge Rules (数千上限・Pattern Match) と用途が違う。",
+      "references": [
+        {
+          "title": "EventBridge Scheduler",
+          "url": "https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html"
+        }
+      ],
+      "tags": [
+        "eventbridge-scheduler",
+        "cron"
+      ],
+      "common_mistakes": [
+        "EventBridge Rules で 1 億件管理を試みる",
+        "Lambda polling で実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-036",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Auto Scaling for Spot diversity",
+      "subtopic": "Capacity Rebalance",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Spot Instance ASG で中断率を下げ、中断通知 2 分前に新インスタンスを起動して切替えたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Spot Fleet を使うが Capacity Rebalance は ASG 専用で Fleet では使えない",
+          "is_correct": false,
+          "explanation": "事実誤認。Spot Fleet にも Capacity Rebalance がある。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridge で Spot 中断通知を受け、Lambda で別インスタンス起動する",
+          "is_correct": false,
+          "explanation": "Capacity Rebalance がマネージドで提供する処理を自前実装する無駄。"
+        },
+        {
+          "id": "C",
+          "text": "Spot ではなく On-Demand に切替えて中断リスクを排除する",
+          "is_correct": false,
+          "explanation": "コスト目的で Spot 採用しているはず。Capacity Rebalance で中断耐性向上が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "Auto Scaling Group の Capacity Rebalance を有効化し、Spot 中断通知前に新インスタンス起動 + Lifecycle Hook でグレースフル終了",
+          "is_correct": true,
+          "explanation": "正解。Capacity Rebalance は EC2 Rebalance Recommendation を活用した予防的置換機能。"
+        }
+      ],
+      "explanation": "Auto Scaling Group / Spot Fleet の Capacity Rebalance は EC2 Rebalance Recommendation (中断通知 2 分前より早い予兆) を受けて新インスタンス起動 + Lifecycle Hook で旧インスタンスをグレースフル終了。中断率を下げる予防的機能。",
+      "references": [
+        {
+          "title": "Capacity Rebalance",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "spot",
+        "capacity-rebalance"
+      ],
+      "common_mistakes": [
+        "Lambda で自前実装",
+        "On-Demand に逃げる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-037",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Aurora I/O Optimized",
+      "subtopic": "Storage cost optimization",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL クラスターで I/O 料金がインスタンス料金の 40% を占めている。コスト最適化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora I/O Optimized 構成に切り替え、I/O 課金を撤廃しインスタンス料金 + 30% で総額を下げる",
+          "is_correct": true,
+          "explanation": "正解。I/O Optimized は I/O 重いワークロードで総額を下げる代替プラン。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora Reader を追加して I/O を分散する",
+          "is_correct": false,
+          "explanation": "Reader 追加は読み取りスケール用で I/O 料金は変わらない。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora インスタンスサイズを下げて I/O 上限も下げる",
+          "is_correct": false,
+          "explanation": "性能低下するだけで I/O 料金単価は同じ。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora から RDS for MySQL に戻して I/O 課金を撤廃する",
+          "is_correct": false,
+          "explanation": "アーキ変更が大きい。I/O Optimized 切替で済む。"
+        }
+      ],
+      "explanation": "Aurora 2 料金プラン: ①Standard (低基本料 + I/O 課金、I/O 軽め向け) ②I/O Optimized (基本料 +30% + I/O 課金なし、I/O 重め向け)。I/O 料金がインスタンス料金の 25% を超えるなら I/O Optimized 切替の検討余地。",
+      "references": [
+        {
+          "title": "Aurora I/O Optimized",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-storage-configurations.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "io-optimized",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Aurora の 2 料金プランを知らない",
+        "Reader 追加で I/O 料金を減らせると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-038",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Elemental MediaConvert",
+      "subtopic": "Video transcoding",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "動画配信サービスで、アップロードされた MP4 を ABR (Adaptive Bitrate) HLS / DASH 形式に変換し、CDN 配信したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda で 15 分以内に小ファイル単位変換する",
+          "is_correct": false,
+          "explanation": "Lambda の 15 分制限で長尺動画変換は無理。MediaConvert が標準。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 GPU インスタンスで FFmpeg を自前運用する",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大。MediaConvert がマネージド提供。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Elemental MediaConvert + S3 + CloudFront で ABR 変換 + 配信パイプラインを構築する",
+          "is_correct": true,
+          "explanation": "正解。MediaConvert は ABR 動画変換のマネージドサービスで AWS Media Services の標準。"
+        },
+        {
+          "id": "D",
+          "text": "MediaLive で動画変換する",
+          "is_correct": false,
+          "explanation": "MediaLive はライブストリーミング用で VOD 変換は MediaConvert。"
+        }
+      ],
+      "explanation": "AWS Elemental Media Services: MediaConvert (VOD ファイル変換)、MediaLive (ライブストリーミングエンコード)、MediaPackage (パッケージング/DRM)、MediaTailor (広告挿入)、MediaStore (低レイテンシ動画ストレージ)。VOD パイプラインは MediaConvert + S3 + CloudFront が定石。",
+      "references": [
+        {
+          "title": "AWS Elemental MediaConvert",
+          "url": "https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html"
+        }
+      ],
+      "tags": [
+        "mediaconvert",
+        "video",
+        "abr"
+      ],
+      "common_mistakes": [
+        "FFmpeg 自前運用",
+        "MediaLive と MediaConvert を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-039",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "DynamoDB Streams + Kinesis",
+      "subtopic": "Change capture",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "DynamoDB の全変更を 24 時間以上の保持期間で複数コンシューマに配信したい。標準 Streams (24 時間) では不足。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DynamoDB Kinesis Data Streams 統合を有効化し、Kinesis 側で 1 年保持 + 複数コンシューマ並列処理する",
+          "is_correct": true,
+          "explanation": "正解。DynamoDB → Kinesis 統合で Kinesis の長期保持と Enhanced Fan-out を活用できる。"
+        },
+        {
+          "id": "B",
+          "text": "DynamoDB Streams の保持期間を 7 日に延長する",
+          "is_correct": false,
+          "explanation": "DynamoDB Streams は 24 時間固定で延長不可。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で DynamoDB Stream イベントを別 DynamoDB テーブルに保存して履歴化する",
+          "is_correct": false,
+          "explanation": "保存コスト + 自前実装。Kinesis 統合が標準。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge Pipes で DynamoDB Stream を 24 時間以上保持する",
+          "is_correct": false,
+          "explanation": "Pipes は中継機能で保持機能なし。Kinesis 統合が直接的。"
+        }
+      ],
+      "explanation": "DynamoDB Kinesis Data Streams 統合は変更データキャプチャ (CDC) を Kinesis に直接配信。Kinesis 側で最大 1 年保持 + Enhanced Fan-out で複数コンシューマ並列 + Lambda/Firehose/Flink 統合。標準 Streams (24h) を超える要件向け。",
+      "references": [
+        {
+          "title": "DynamoDB Kinesis Streams integration",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/kds.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "kinesis",
+        "cdc"
+      ],
+      "common_mistakes": [
+        "標準 Streams を延長できると誤解",
+        "自前で履歴保存を実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-040",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Bedrock",
+      "subtopic": "Foundation model integration",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アプリで Claude / Llama / Stable Diffusion 等の基盤モデルを使いたい。モデルホスティングは AWS マネージドで運用負荷を最小化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "外部 API (OpenAI 等) を直接呼び出し、AWS リソースは使わない",
+          "is_correct": false,
+          "explanation": "AWS マネージド要件に反する + AWS リソース連携困難。"
+        },
+        {
+          "id": "B",
+          "text": "SageMaker で各モデルを自前デプロイし、エンドポイント管理する",
+          "is_correct": false,
+          "explanation": "可能だが運用負荷大。Bedrock がマネージド統合。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 GPU インスタンスで HuggingFace モデルを自前ホスティングする",
+          "is_correct": false,
+          "explanation": "運用負荷最大。マネージドの Bedrock が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Bedrock で複数 Foundation Model を統一 API でアクセスし、Guardrails + Agents + Knowledge Base を組合せる",
+          "is_correct": true,
+          "explanation": "正解。Bedrock は複数 FM プロバイダ統合の Serverless 生成 AI プラットフォーム。"
+        }
+      ],
+      "explanation": "Amazon Bedrock は Serverless 生成 AI プラットフォーム。Anthropic Claude / Meta Llama / Stability AI / Cohere / Amazon Titan 等を統一 API で利用。Guardrails (安全制御)、Agents (Tool 使用)、Knowledge Bases (RAG) を統合提供。生成 AI 統合の標準。",
+      "references": [
+        {
+          "title": "Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+        }
+      ],
+      "tags": [
+        "bedrock",
+        "generative-ai"
+      ],
+      "common_mistakes": [
+        "SageMaker で全部自前",
+        "外部 API 直接呼び出し"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-041",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Aurora Limitless Database",
+      "subtopic": "Horizontal scaling",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Aurora PostgreSQL で単一クラスタの書き込みスループット上限に到達。シャーディングなしで水平スケールしたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora Limitless Database を採用し、自動シャーディングで書き込みを水平スケールする",
+          "is_correct": true,
+          "explanation": "正解。Aurora Limitless Database は 2023 年発表の自動シャーディング機能で SQL 互換性を保ちつつ水平スケール。"
+        },
+        {
+          "id": "B",
+          "text": "アプリ層で手動シャーディングを実装する",
+          "is_correct": false,
+          "explanation": "実装・運用負荷大。Limitless で透過的に解決可能。"
+        },
+        {
+          "id": "C",
+          "text": "DynamoDB に移行する",
+          "is_correct": false,
+          "explanation": "アーキ変更が大きい。Aurora の延長線上の Limitless が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora インスタンスサイズを最大化する",
+          "is_correct": false,
+          "explanation": "垂直スケールの限界。水平スケールが要件。"
+        }
+      ],
+      "explanation": "Aurora Limitless Database (2023 年プレビュー、2024 年 GA) は自動シャーディングで Aurora の書き込みスループットを水平スケール。SQL/トランザクション互換性を保ちつつ、シャードキー指定で分散。OLTP の極端スケール要件への解。",
+      "references": [
+        {
+          "title": "Aurora Limitless Database",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-limitless.html"
+        }
+      ],
+      "tags": [
+        "aurora-limitless",
+        "sharding"
+      ],
+      "common_mistakes": [
+        "手動シャーディングを実装",
+        "DynamoDB へ過剰移行"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-042",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "ECS Service Connect",
+      "subtopic": "Service-to-service mesh",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ECS タスク間で名前解決 + ロードバランシング + 観測性を、ALB を介さず軽量に実現したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ECS Service Connect で内部サービスメッシュを構成し、Cloud Map + Envoy proxy で透過接続する",
+          "is_correct": true,
+          "explanation": "正解。Service Connect は ECS ネイティブの軽量サービスメッシュ機能で 2022 年 GA。"
+        },
+        {
+          "id": "B",
+          "text": "AWS App Mesh をデプロイする",
+          "is_correct": false,
+          "explanation": "App Mesh は廃止予定。Service Connect が後継的位置づけ。"
+        },
+        {
+          "id": "C",
+          "text": "各タスク間に NLB を挟む",
+          "is_correct": false,
+          "explanation": "NLB 料金 + 設定複雑化。Service Connect が軽量。"
+        },
+        {
+          "id": "D",
+          "text": "Istio を ECS にインストールする",
+          "is_correct": false,
+          "explanation": "Istio は Kubernetes 専用。ECS では動かない。"
+        }
+      ],
+      "explanation": "ECS Service Connect は ECS ネイティブのサービスメッシュ機能。Cloud Map で内部名前解決、Envoy Proxy サイドカーで負荷分散・観測性提供。ALB なしで軽量タスク間通信を実現。App Mesh は廃止予定で Service Connect が新標準。",
+      "references": [
+        {
+          "title": "ECS Service Connect",
+          "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html"
+        }
+      ],
+      "tags": [
+        "ecs",
+        "service-connect"
+      ],
+      "common_mistakes": [
+        "App Mesh を新規採用する",
+        "Istio を ECS で使おうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-043",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "OpenSearch Serverless",
+      "subtopic": "Variable workload",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "全文検索 / ログ分析で OpenSearch を採用する際、トラフィック予測が困難な新規 SaaS で運用負荷とコストを最小化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "OpenSearch Provisioned で最大ノード数を確保する",
+          "is_correct": false,
+          "explanation": "予測不能負荷に対し過剰プロビジョン or 不足が発生。Serverless が直接的。"
+        },
+        {
+          "id": "B",
+          "text": "OpenSearch Serverless で OCU (OpenSearch Compute Unit) 自動スケーリングを利用する",
+          "is_correct": true,
+          "explanation": "正解。OpenSearch Serverless は容量管理不要 + 使った分だけ課金の変動負荷向け構成。"
+        },
+        {
+          "id": "C",
+          "text": "Elasticsearch を EC2 で自前運用する",
+          "is_correct": false,
+          "explanation": "運用負荷最大。マネージドの Serverless が要件 (運用負荷最小) に合う。"
+        },
+        {
+          "id": "D",
+          "text": "Athena + S3 で代替する",
+          "is_correct": false,
+          "explanation": "Athena はクエリ用で全文検索性能は OpenSearch に劣る。"
+        }
+      ],
+      "explanation": "Amazon OpenSearch Serverless は容量管理不要、OCU (OpenSearch Compute Unit) 自動スケーリング、Indexing と Search で別 OCU プール。変動負荷・新規 SaaS・運用負荷最小要件に最適。Provisioned は予測可能高負荷向け。",
+      "references": [
+        {
+          "title": "OpenSearch Serverless",
+          "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html"
+        }
+      ],
+      "tags": [
+        "opensearch",
+        "serverless"
+      ],
+      "common_mistakes": [
+        "予測不能負荷で Provisioned を選ぶ",
+        "EC2 自前運用"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-044",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Trade-off Analysis",
+      "subtopic": "Cost vs RTO",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）アーキテクチャ設計のトレードオフとして適切な原則を 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "RTO を厳しくするほどコストが上昇する (Backup&Restore → Pilot Light → Warm Standby → Active-Active の順)",
+          "is_correct": true,
+          "explanation": "正解。低 RTO は常時稼働リソース増加でコスト上昇するトレードオフ。"
+        },
+        {
+          "id": "B",
+          "text": "セキュリティと運用負荷はトレードオフ関係にあり、厳格化は運用負荷を増やす",
+          "is_correct": true,
+          "explanation": "正解。Zero Trust / 最小権限 / 多要素認証等は安全だが運用工数を増やすトレードオフ。"
+        },
+        {
+          "id": "C",
+          "text": "性能 (Performance) はコストと無関係に独立して向上できる",
+          "is_correct": false,
+          "explanation": "性能向上は通常コスト増加を伴う。Compute Optimizer 等で効率化はあるが基本トレードオフ。"
+        },
+        {
+          "id": "D",
+          "text": "可用性は技術選択だけで決まり、ビジネス要件は考慮不要",
+          "is_correct": false,
+          "explanation": "可用性は ビジネスの RTO/RPO 要件 と SLA で決まる。技術単独判断ではない。"
+        }
+      ],
+      "explanation": "アーキテクチャの主要トレードオフ: コスト ↔ 性能、コスト ↔ 可用性 (RTO)、セキュリティ ↔ 運用負荷、整合性 ↔ レイテンシ (CAP)、柔軟性 ↔ 割引率 (SP)。Well-Architected Framework は 6 Pillar (Operational/Security/Reliability/Performance/Cost/Sustainability) で評価。",
+      "references": [
+        {
+          "title": "AWS Well-Architected Framework",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html"
+        }
+      ],
+      "tags": [
+        "trade-off",
+        "well-architected"
+      ],
+      "common_mistakes": [
+        "性能向上がコストフリーと誤解",
+        "可用性をビジネス要件と切り離す"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-045",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Container Image Scanning",
+      "subtopic": "ECR vulnerability scan",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ECR に push されたコンテナイメージの CVE 脆弱性を自動スキャンし、CI/CD で高深刻度脆弱性検出時にデプロイをブロックしたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ECR Basic Scanning だけを有効化し、結果を月次レビューする",
+          "is_correct": false,
+          "explanation": "Basic は push 時 1 回スキャンで継続性なし。Enhanced が継続スキャン。"
+        },
+        {
+          "id": "B",
+          "text": "ECR Enhanced Scanning (Amazon Inspector 統合) を有効化し、EventBridge → Lambda でデプロイブロック判定する",
+          "is_correct": true,
+          "explanation": "正解。Enhanced Scanning は Inspector の CVE DB を使った継続スキャン、EventBridge 連携で CI/CD ブロック可能。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上に Trivy を構築し、CI/CD パイプラインで自前スキャンする",
+          "is_correct": false,
+          "explanation": "可能だが運用負荷大。Inspector 統合が標準。"
+        },
+        {
+          "id": "D",
+          "text": "GuardDuty Runtime Monitoring でコンテナ脆弱性を検知する",
+          "is_correct": false,
+          "explanation": "GuardDuty Runtime は実行時の異常挙動検知。CVE スキャンは Inspector の役割。"
+        }
+      ],
+      "explanation": "ECR Enhanced Scanning は Amazon Inspector 統合の継続 CVE スキャン (push 後も新規 CVE 公開時に再評価)。Basic Scanning は push 時 1 回のみ。EventBridge で finding イベントを受け Lambda / Step Functions で CI/CD ブロック判定する標準パターン。",
+      "references": [
+        {
+          "title": "ECR Enhanced Scanning",
+          "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning-enhanced.html"
+        }
+      ],
+      "tags": [
+        "ecr",
+        "inspector",
+        "scanning"
+      ],
+      "common_mistakes": [
+        "Basic Scanning で十分と誤解",
+        "Trivy 自前運用"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-046",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Hybrid Compute",
+      "subtopic": "ECS Anywhere vs EKS Anywhere",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "オンプレで Kubernetes アプリを動かし、コンソール + GitOps + クラスタ管理を AWS から統合操作したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ECS Anywhere をオンプレに展開する",
+          "is_correct": false,
+          "explanation": "ECS Anywhere は ECS (タスク) 用で Kubernetes アプリは動かない。"
+        },
+        {
+          "id": "B",
+          "text": "EKS Anywhere をオンプレに展開し、EKS Connector で AWS コンソール統合する",
+          "is_correct": true,
+          "explanation": "正解。EKS Anywhere はオンプレ Kubernetes ディストリビューションで EKS Connector で AWS 統合。"
+        },
+        {
+          "id": "C",
+          "text": "EKS クラスタを AWS 上に立て、Site-to-Site VPN でオンプレ EC2 を Worker Node に追加する",
+          "is_correct": false,
+          "explanation": "Worker Node の追加は可能だが Control Plane が AWS なのでオンプレ完結ではない。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレに kops で Kubernetes を構築し、AWS とは独立運用する",
+          "is_correct": false,
+          "explanation": "AWS 統合管理要件に反する。EKS Anywhere + EKS Connector が直接的。"
+        }
+      ],
+      "explanation": "ECS Anywhere (ECS タスクをオンプレで実行、Control Plane は AWS) と EKS Anywhere (オンプレ完結 Kubernetes ディストリビューション) は別物。Kubernetes はバージョン互換性が重要で EKS Anywhere は AWS 公式 K8s ディストリ。EKS Connector で AWS コンソールから可視化。",
+      "references": [
+        {
+          "title": "EKS Anywhere",
+          "url": "https://anywhere.eks.amazonaws.com/"
+        }
+      ],
+      "tags": [
+        "eks-anywhere",
+        "hybrid"
+      ],
+      "common_mistakes": [
+        "ECS Anywhere と EKS Anywhere を混同",
+        "EKS Connector の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-047",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Application Composer",
+      "subtopic": "Serverless visual design",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "サーバレスアプリ (Lambda + API Gateway + DynamoDB + EventBridge) を視覚的に設計し、SAM テンプレートを自動生成したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Application Composer で Drag-and-drop UI で構成 + SAM/CloudFormation テンプレート自動生成",
+          "is_correct": true,
+          "explanation": "正解。Application Composer はサーバレスアプリのビジュアル設計ツールで SAM/CFN 出力対応。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFormation Designer で JSON テンプレートを手動編集する",
+          "is_correct": false,
+          "explanation": "Designer は旧来 UI で操作性に劣る。Application Composer が新標準。"
+        },
+        {
+          "id": "C",
+          "text": "AWS CDK だけで全部書く",
+          "is_correct": false,
+          "explanation": "CDK は強力だが視覚的設計は提供しない。Application Composer の方が要件に合う。"
+        },
+        {
+          "id": "D",
+          "text": "Lucid Chart で図を書き、テンプレートは別途手動作成する",
+          "is_correct": false,
+          "explanation": "図とコード分離で同期保てない。Application Composer が両方統合。"
+        }
+      ],
+      "explanation": "AWS Application Composer は サーバレスアプリ向けの視覚的設計ツール (2022 年 GA)。Drag-and-drop で Lambda/API Gateway/DynamoDB/EventBridge/SQS/SNS 等を配置 → SAM テンプレート自動生成、双方向同期。VSCode 拡張も提供。",
+      "references": [
+        {
+          "title": "AWS Application Composer",
+          "url": "https://docs.aws.amazon.com/application-composer/latest/dg/what-is-composer.html"
+        }
+      ],
+      "tags": [
+        "application-composer",
+        "serverless"
+      ],
+      "common_mistakes": [
+        "CloudFormation Designer を新規で使う",
+        "図とコードを分離"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-048",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "WAF Bot Control",
+      "subtopic": "Bot management",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "公開 EC サイトでスクレイピング Bot や Credential Stuffing 攻撃を検知して遮断したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS WAF Bot Control Managed Rule Group + Targeted Bot Mitigation で Bot を検知・遮断する",
+          "is_correct": true,
+          "explanation": "正解。AWS WAF Bot Control は Bot 検知 (Common/Targeted) + JavaScript Challenge + CAPTCHA を統合提供する標準。"
+        },
+        {
+          "id": "B",
+          "text": "WAF の rate-based ルールだけで対応する",
+          "is_correct": false,
+          "explanation": "シンプルなレート制限のみで高度な Bot 検知 (Fingerprinting/Behavioral) ができない。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda@Edge で User-Agent をブラックリスト判定する",
+          "is_correct": false,
+          "explanation": "User-Agent は容易に偽装可能。Bot Control の機械学習ベース検知が必要。"
+        },
+        {
+          "id": "D",
+          "text": "Shield Advanced で Bot を遮断する",
+          "is_correct": false,
+          "explanation": "Shield は DDoS 対策で Bot Mitigation は WAF Bot Control の役割。"
+        }
+      ],
+      "explanation": "AWS WAF Bot Control は機械学習ベースの Bot 検知。Common (汎用 Bot) と Targeted (高度な Bot、Credential Stuffing 等) の 2 レベル。JavaScript Challenge / CAPTCHA で正規ユーザは通し Bot だけ遮断。EC サイト・金融サイト等の標準。",
+      "references": [
+        {
+          "title": "AWS WAF Bot Control",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html"
+        }
+      ],
+      "tags": [
+        "waf",
+        "bot-control"
+      ],
+      "common_mistakes": [
+        "Rate-based だけで Bot 対策できると誤解",
+        "User-Agent ブラックリストで対応"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-049",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "AWS Backup Restore Testing",
+      "subtopic": "Recovery validation",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "バックアップを定期的に取得しているが、実際に復元できるかを毎月自動検証したい (Untested バックアップは無意味)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Resilience Hub で復元検証する",
+          "is_correct": false,
+          "explanation": "Resilience Hub は可用性評価。バックアップ復元検証は AWS Backup Restore Testing の役割。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda で毎月手動復元スクリプトを動かす",
+          "is_correct": false,
+          "explanation": "自前実装で運用負荷大。Restore Testing がマネージド。"
+        },
+        {
+          "id": "C",
+          "text": "バックアップ取得時の整合性チェックだけで十分",
+          "is_correct": false,
+          "explanation": "整合性チェックは取得時のみ。実復元検証は別。Restore Testing が必要。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Backup Restore Testing で月次の Restore Test Plan を定義し、自動復元 + 検証する",
+          "is_correct": true,
+          "explanation": "正解。Restore Testing は 2023 年 GA の機能で バックアップの実復元可能性を継続検証する。"
+        }
+      ],
+      "explanation": "AWS Backup Restore Testing (2023 年 GA) は月次・週次等のスケジュールでバックアップを実際に復元し検証する機能。隔離された Restore Vault に復元 → 検証 → 自動削除。コンプライアンス監査でも証跡として使える。",
+      "references": [
+        {
+          "title": "AWS Backup Restore Testing",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing.html"
+        }
+      ],
+      "tags": [
+        "aws-backup",
+        "restore-testing"
+      ],
+      "common_mistakes": [
+        "整合性チェックで復元可能性も検証可能と誤解",
+        "Lambda で自前検証"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain2-050",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design for New Solutions",
+        "weight_percent": 29
+      },
+      "topic": "Architecture Selection",
+      "subtopic": "Final synthesis",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）グローバル B2C アプリの新規設計で、低レイテンシ・高可用性・コンプライアンス (EU 内データ保管必須) を全て満たす設計要素として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DynamoDB Global Tables を EU リージョン + US/Asia リージョンで構成、EU ユーザのデータは EU リージョンに優先保管しアプリ側でリージョン制御する",
+          "is_correct": true,
+          "explanation": "正解。Global Tables のマルチリージョン + アプリ側ルーティングで EU 内データ保管要件を満たせる。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFront + Route 53 Geolocation でユーザを最寄りリージョンに振り、レイテンシを最小化する",
+          "is_correct": true,
+          "explanation": "正解。CloudFront + Geolocation はグローバル低レイテンシ + 地理制御の標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "全データを US-East-1 に集約し、シンプルさを優先する",
+          "is_correct": false,
+          "explanation": "EU 内データ保管要件に反する + グローバルレイテンシも悪い。"
+        },
+        {
+          "id": "D",
+          "text": "可用性は Route 53 だけで十分で、データ層は単一リージョンでよい",
+          "is_correct": false,
+          "explanation": "DNS フェイルオーバだけでは AZ/リージョン障害時のデータ可用性は保てない。"
+        }
+      ],
+      "explanation": "グローバル B2C 設計の総合パターン: ①データ層 = DynamoDB Global Tables (マルチリージョン書き込み + 地理保管制御)、②配信層 = CloudFront + Route 53 Geolocation/Latency、③可用性 = Multi-AZ + Multi-Region 構成、④コンプライアンス = リージョン選択 + KMS リージョナルキー。Pro 試験頻出の総合判断。",
+      "references": [
+        {
+          "title": "AWS multi-region architecture",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-fundamentals/welcome.html"
+        }
+      ],
+      "tags": [
+        "multi-region",
+        "global-b2c",
+        "architecture"
+      ],
+      "common_mistakes": [
+        "要件複合判断が苦手 (1 要件で他を犠牲にする)",
+        "DNS だけで可用性を担保しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}

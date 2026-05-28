@@ -1,0 +1,2215 @@
+{
+  "exam_code": "SAP-C02",
+  "exam_name": "AWS Certified Solutions Architect – Professional",
+  "version": "2026.04",
+  "total_questions": 30,
+  "domains": [
+    {
+      "id": "domain-4",
+      "name": "Accelerate Workload Migration and Modernization",
+      "weight_percent": 20,
+      "question_count": 30
+    }
+  ],
+  "questions": [
+    {
+      "id": "sap-c02-domain4-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "MGN",
+      "subtopic": "Lift-and-shift migration",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ Windows Server 100 台を AWS にダウンタイム最小で移行 (Lift-and-Shift) したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DataSync で OS ファイルを同期",
+          "is_correct": false,
+          "explanation": "DataSync はファイル同期で OS イメージ移行ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Snowball Edge を 100 台分使って物理輸送",
+          "is_correct": false,
+          "explanation": "Snowball は大容量データ転送用でサーバ移行用ではない。MGN が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Application Migration Service (MGN) で継続ブロックレベルレプリケーション + カットオーバー",
+          "is_correct": true,
+          "explanation": "正解。MGN は CloudEndure 後継の Lift-and-Shift 移行ツールで継続レプリ + 数分カットオーバ。"
+        },
+        {
+          "id": "D",
+          "text": "各サーバを AMI 化して手動で複製",
+          "is_correct": false,
+          "explanation": "100 台手動は非現実的。MGN がマネージドで標準。"
+        }
+      ],
+      "explanation": "AWS Application Migration Service (旧 CloudEndure Migration、MGN) はオンプレ・別クラウドのサーバを AWS に Lift-and-Shift 移行する標準サービス。継続ブロックレベルレプリケーション + テストインスタンス起動 + 数分カットオーバ。Windows / Linux 対応。",
+      "references": [
+        {
+          "title": "AWS MGN",
+          "url": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-application-migration-service.html"
+        }
+      ],
+      "tags": [
+        "mgn",
+        "migration"
+      ],
+      "common_mistakes": [
+        "DataSync をサーバ移行と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "DMS",
+      "subtopic": "Database migration",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ Oracle DB から Aurora PostgreSQL へ、ダウンタイム最小 + スキーマ自動変換で移行したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "オンプレで dump → S3 → Aurora pg_restore",
+          "is_correct": false,
+          "explanation": "ダウンタイム長 + スキーマ変換は自前。DMS + SCT が標準。"
+        },
+        {
+          "id": "B",
+          "text": "AWS DMS で継続レプリケーション + Schema Conversion Tool (SCT) でスキーマ変換",
+          "is_correct": true,
+          "explanation": "正解。DMS + SCT はエンジン変更を伴う DB 移行の標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora Read Replica として Oracle DB を設定",
+          "is_correct": false,
+          "explanation": "Aurora Read Replica は異エンジン対応外。"
+        },
+        {
+          "id": "D",
+          "text": "DataSync で DB ファイルを同期",
+          "is_correct": false,
+          "explanation": "DataSync は DB エンジン理解しない。DMS が直接的。"
+        }
+      ],
+      "explanation": "AWS DMS (Database Migration Service) はオンプレ → AWS、AWS → AWS の DB 移行サービス。SCT でスキーマ自動変換 (Oracle → PostgreSQL 等)、DMS で初期コピー + CDC 継続レプリ。切替時にアプリ接続先変更で数分ダウンタイム。",
+      "references": [
+        {
+          "title": "AWS DMS",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"
+        }
+      ],
+      "tags": [
+        "dms",
+        "sct",
+        "migration"
+      ],
+      "common_mistakes": [
+        "Aurora Read Replica で異エンジン対応可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Snowball Edge",
+      "subtopic": "Petabyte-scale offline transfer",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレに 500TB のデータがあり、Internet 帯域 1Gbps では数ヶ月かかる。AWS へ最速転送したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DataSync で帯域いっぱい転送する",
+          "is_correct": false,
+          "explanation": "1Gbps では 500TB に約 46 日かかる。Snowball が圧倒的に速い。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Snowball Edge を複数台手配し、物理輸送 (1 週間以内に AWS 到着) する",
+          "is_correct": true,
+          "explanation": "正解。500TB スケールは物理輸送の方が圧倒的に速い。"
+        },
+        {
+          "id": "C",
+          "text": "Direct Connect 10Gbps を契約",
+          "is_correct": false,
+          "explanation": "DX 契約に数週間 + 月額固定料金。一回限り 500TB なら Snowball が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Transfer Acceleration で高速化",
+          "is_correct": false,
+          "explanation": "Transfer Acceleration もインターネット経由で根本的高速化にならない。"
+        }
+      ],
+      "explanation": "AWS Snow Family: Snowcone (8TB)、Snowball Edge Storage Optimized (80TB+)、Snowball Edge Compute Optimized (40TB+)、Snowmobile (100PB+、トラック輸送)。100TB+ の一括移行は物理輸送が経済的・時間的に有利。",
+      "references": [
+        {
+          "title": "AWS Snow Family",
+          "url": "https://docs.aws.amazon.com/snowball/latest/ug/whatissnowball.html"
+        }
+      ],
+      "tags": [
+        "snowball",
+        "snow-family"
+      ],
+      "common_mistakes": [
+        "大容量転送に DataSync を選ぶ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-004",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Migration Hub",
+      "subtopic": "Migration tracking",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "1,000 台規模のサーバ移行プロジェクトで、各サーバの移行進捗 (Discovery / Planning / Migration / Validation) を中央コンソールで可視化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "JIRA で各サーバを Ticket 管理",
+          "is_correct": false,
+          "explanation": "ツール統合なしで重複作業。Migration Hub と JIRA を併用が現実的。"
+        },
+        {
+          "id": "B",
+          "text": "Excel で各サーバの状況を手動追跡",
+          "is_correct": false,
+          "explanation": "1,000 台手動は破綻。Migration Hub がマネージド。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch ダッシュボードを自前構築",
+          "is_correct": false,
+          "explanation": "Migration Hub の機能を再実装する無駄。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Migration Hub で全 AWS 移行ツール (MGN/DMS/SMS 等) の進捗を一元可視化する",
+          "is_correct": true,
+          "explanation": "正解。Migration Hub は移行プロジェクト全体の中央ダッシュボード。"
+        }
+      ],
+      "explanation": "AWS Migration Hub は移行プロジェクトの中央ダッシュボード。Discovery Service / MGN / DMS / SMS / Application Discovery Service の進捗を統合表示。アプリケーション単位での移行進捗追跡。",
+      "references": [
+        {
+          "title": "AWS Migration Hub",
+          "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html"
+        }
+      ],
+      "tags": [
+        "migration-hub"
+      ],
+      "common_mistakes": [
+        "手動追跡で大規模移行を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-005",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "App2Container",
+      "subtopic": "Containerize legacy apps",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレの .NET / Java レガシーアプリをコンテナ化して ECS にデプロイしたい。アプリ自体は変更したくない。",
+      "options": [
+        {
+          "id": "A",
+          "text": "アプリを Lambda に書き換える",
+          "is_correct": false,
+          "explanation": "アプリ変更要件に反する。"
+        },
+        {
+          "id": "B",
+          "text": "手動で Dockerfile を書いて Docker Build",
+          "is_correct": false,
+          "explanation": "可能だがアプリ知識 + 試行錯誤が必要。App2Container がマネージドで効率的。"
+        },
+        {
+          "id": "C",
+          "text": "AWS App2Container でレガシーアプリをコンテナイメージ化 + ECS タスク定義生成",
+          "is_correct": true,
+          "explanation": "正解。App2Container はレガシー .NET/Java アプリをコンテナ化するマネージドツール。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 で動かし続け、コンテナ化を諦める",
+          "is_correct": false,
+          "explanation": "要件 (コンテナ化) に反する。"
+        }
+      ],
+      "explanation": "AWS App2Container はオンプレ .NET (Windows) / Java (Linux) アプリを自動分析 → コンテナイメージ生成 → ECS / EKS / App Runner タスク定義生成までを行うツール。レガシーアプリの近代化を加速。",
+      "references": [
+        {
+          "title": "AWS App2Container",
+          "url": "https://docs.aws.amazon.com/app2container/latest/UserGuide/what-is-a2c.html"
+        }
+      ],
+      "tags": [
+        "app2container",
+        "modernization"
+      ],
+      "common_mistakes": [
+        "全部手動で Dockerfile を書く"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-006",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Application Discovery",
+      "subtopic": "On-premises inventory",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ DC のサーバ依存関係・利用率・ネットワーク通信を可視化し、移行計画策定に使いたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Application Discovery Service の Agent / Agentless Connector でサーバ情報自動収集",
+          "is_correct": true,
+          "explanation": "正解。ADS はオンプレ環境の自動 Discovery で移行計画策定の標準ツール。"
+        },
+        {
+          "id": "B",
+          "text": "オンプレ管理者にスプレッドシートで全情報を手動収集させる",
+          "is_correct": false,
+          "explanation": "手動は漏れ + 工数大。ADS で自動化が標準。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch でオンプレを監視",
+          "is_correct": false,
+          "explanation": "CloudWatch Agent を入れる必要 + Discovery 用途ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で SNMP polling 自前実装",
+          "is_correct": false,
+          "explanation": "ADS のマネージド機能を再実装。"
+        }
+      ],
+      "explanation": "AWS Application Discovery Service はオンプレサーバの自動 Discovery (Agent or Agentless Connector)。CPU/Memory 利用率、プロセス、ネットワーク接続、TCP/UDP ポート、依存関係を収集。Migration Hub と統合し移行計画策定に活用。",
+      "references": [
+        {
+          "title": "AWS Application Discovery Service",
+          "url": "https://docs.aws.amazon.com/application-discovery/latest/userguide/what-is-appdiscovery.html"
+        }
+      ],
+      "tags": [
+        "discovery"
+      ],
+      "common_mistakes": [
+        "手動 Discovery で大規模 DC を扱う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-007",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Mainframe Modernization",
+      "subtopic": "COBOL migration",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "メインフレーム上の COBOL バッチ業務を AWS に移行・近代化したい。再ホスト or 再アーキテクチャ両アプローチを評価できる環境が欲しい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Mainframe Modernization (Micro Focus / BluAge) で Replatform (再ホスト) と Refactor (Java 変換) を統合提供",
+          "is_correct": true,
+          "explanation": "正解。AWS Mainframe Modernization は COBOL → クラウド移行の専用マネージドサービス。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 上に Hercules (IBM z/Architecture エミュレータ) を立てて運用",
+          "is_correct": false,
+          "explanation": "Hercules は教育用エミュレータで本番非対応。マネージドサービスが標準。"
+        },
+        {
+          "id": "C",
+          "text": "COBOL を Lambda 関数に書き換える",
+          "is_correct": false,
+          "explanation": "Mainframe Modernization Refactor 機能で自動変換が可能。手動より効率的。"
+        },
+        {
+          "id": "D",
+          "text": "メインフレームを温存しデータだけ AWS にミラーリング",
+          "is_correct": false,
+          "explanation": "近代化要件に反する。"
+        }
+      ],
+      "explanation": "AWS Mainframe Modernization は メインフレーム移行の専用マネージドサービス。Micro Focus (Replatform: 再ホスト) と BluAge (Refactor: COBOL → Java 自動変換) の 2 経路を提供。Mainframe Workload Discovery / Analyzer で移行計画策定支援。",
+      "references": [
+        {
+          "title": "AWS Mainframe Modernization",
+          "url": "https://docs.aws.amazon.com/m2/latest/userguide/what-is-m2.html"
+        }
+      ],
+      "tags": [
+        "mainframe"
+      ],
+      "common_mistakes": [
+        "Hercules で本番運用",
+        "COBOL を Lambda で手動書換"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-008",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Migration Strategy 7R",
+      "subtopic": "Pattern selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）AWS の 7R 移行戦略について正しい説明を 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rehost (Lift-and-Shift): 既存アプリを最小変更で AWS EC2 へ移動 (MGN で実装)",
+          "is_correct": true,
+          "explanation": "正解。Rehost は最速・最小変更の移行で MGN が標準ツール。"
+        },
+        {
+          "id": "B",
+          "text": "Refactor: アプリをサーバレス・コンテナへ書き換えクラウドネイティブ化",
+          "is_correct": true,
+          "explanation": "正解。Refactor は最も近代化が進む戦略で時間・コストが大きい。"
+        },
+        {
+          "id": "C",
+          "text": "Retain (Revisit) はサポート終了アプリを廃止する戦略",
+          "is_correct": false,
+          "explanation": "Retire が廃止戦略。Retain は『移行せずオンプレに残す』戦略。"
+        },
+        {
+          "id": "D",
+          "text": "Repurchase は OSS に書き換える戦略",
+          "is_correct": false,
+          "explanation": "Repurchase は SaaS 製品に乗り換える戦略 (例: 社内 CRM → Salesforce)。"
+        }
+      ],
+      "explanation": "AWS 7R 移行戦略: Rehost (Lift-and-Shift)、Replatform (Lift-Tinker-and-Shift、軽い最適化)、Refactor (Re-architect、近代化)、Repurchase (SaaS 移行)、Retire (廃止)、Retain (オンプレ残す)、Relocate (VMware Cloud on AWS 等のホスト先変更)。各戦略のコスト / 期間 / 効果トレードオフ。",
+      "references": [
+        {
+          "title": "AWS 7R migration strategies",
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-retiring-applications/apg-gloss.html"
+        }
+      ],
+      "tags": [
+        "7r",
+        "migration-strategy"
+      ],
+      "common_mistakes": [
+        "Retain と Retire を混同",
+        "Repurchase と Refactor を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-009",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "DataSync",
+      "subtopic": "Continuous file sync",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ NFS サーバから S3 へ 50TB のデータを毎日同期し、変更分のみ効率転送したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Transfer Acceleration + aws s3 sync を cron 実行",
+          "is_correct": false,
+          "explanation": "aws s3 sync は差分検出が遅い。DataSync がより効率的。"
+        },
+        {
+          "id": "B",
+          "text": "AWS DataSync エージェントをオンプレに配置 + NFS Source → S3 Target で差分同期スケジュール",
+          "is_correct": true,
+          "explanation": "正解。DataSync は差分同期 + 暗号化 + 整合性検証 + スケジュールを統合提供する標準。"
+        },
+        {
+          "id": "C",
+          "text": "Snowball Edge を毎日輸送",
+          "is_correct": false,
+          "explanation": "物理輸送は初期移行用で継続同期には不向き。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 上に rsync を構築",
+          "is_correct": false,
+          "explanation": "OSS 自前運用は負荷大。DataSync がマネージド。"
+        }
+      ],
+      "explanation": "AWS DataSync はオンプレ ↔ AWS 間の継続差分同期。NFS/SMB/HDFS/S3/EFS/FSx を Source/Target にエージェント経由で AWS API リクエストの 10 倍速転送 + 暗号化 + 整合性検証 + スケジュール + CloudWatch メトリクス。継続同期の標準。",
+      "references": [
+        {
+          "title": "AWS DataSync",
+          "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+        }
+      ],
+      "tags": [
+        "datasync"
+      ],
+      "common_mistakes": [
+        "aws s3 sync で大規模差分処理"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-010",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Storage Gateway",
+      "subtopic": "Hybrid storage",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレシステムから AWS の S3 を NFS マウントとして使い、頻繁アクセスファイルはローカルキャッシュ、コールドは S3 で保管したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EC2 自前 NFS + S3 同期",
+          "is_correct": false,
+          "explanation": "自前構築で運用負荷大。"
+        },
+        {
+          "id": "B",
+          "text": "DataSync で 1 日 1 回 S3 と同期",
+          "is_correct": false,
+          "explanation": "DataSync は同期で NFS マウント機能はない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS S3 File Gateway をオンプレに設置、NFS/SMB マウント + ローカルキャッシュ + S3 バックエンド",
+          "is_correct": true,
+          "explanation": "正解。File Gateway は S3 を NFS/SMB として透過公開する標準。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Snowcone を恒常設置",
+          "is_correct": false,
+          "explanation": "Snowcone は携帯型エッジで恒常 NFS マウント用ではない。"
+        }
+      ],
+      "explanation": "AWS Storage Gateway 3 種: S3 File Gateway (NFS/SMB → S3、キャッシュ)、Volume Gateway (iSCSI ブロック)、Tape Gateway (仮想テープ、バックアップ移行)。オンプレ ↔ クラウドのハイブリッドストレージ統合の標準。",
+      "references": [
+        {
+          "title": "Storage Gateway",
+          "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html"
+        }
+      ],
+      "tags": [
+        "storage-gateway",
+        "file-gateway"
+      ],
+      "common_mistakes": [
+        "DataSync で NFS マウント可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-011",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "AWS Transfer Family",
+      "subtopic": "SFTP managed service",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "外部パートナーから SFTP プロトコルで日次ファイル受信し、S3 に自動格納したい。EC2 自前管理は避けたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "API Gateway で REST 受信",
+          "is_correct": false,
+          "explanation": "SFTP プロトコル要件に反する。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 に OpenSSH SFTP サーバを構築",
+          "is_correct": false,
+          "explanation": "自前構築で運用負荷大。Transfer Family がマネージド。"
+        },
+        {
+          "id": "C",
+          "text": "S3 を Public 公開し外部からアップロード許可",
+          "is_correct": false,
+          "explanation": "SFTP 要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Transfer Family (SFTP) を構成し、S3 を Backend に設定",
+          "is_correct": true,
+          "explanation": "正解。Transfer Family は SFTP/FTPS/FTP のマネージド受信エンドポイントで S3/EFS バックエンド対応。"
+        }
+      ],
+      "explanation": "AWS Transfer Family は SFTP / FTPS / FTP / AS2 のマネージド受信エンドポイント。バックエンドに S3 / EFS。Identity Provider (Custom Lambda / Directory Service)、CloudFront 経由 PrivateLink 公開。EC2 自前 SFTP 運用を不要にする標準。",
+      "references": [
+        {
+          "title": "AWS Transfer Family",
+          "url": "https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html"
+        }
+      ],
+      "tags": [
+        "transfer-family",
+        "sftp"
+      ],
+      "common_mistakes": [
+        "EC2 自前 SFTP 運用を続ける"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-012",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "VMware Cloud on AWS",
+      "subtopic": "VMware migration",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ VMware vSphere 環境を AWS に移行するが、vMotion / vSAN / NSX 等の VMware ネイティブ機能を維持したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EC2 上に ESXi をネスト構築",
+          "is_correct": false,
+          "explanation": "サポート外 + パフォーマンス低下。VMware Cloud on AWS が公式解。"
+        },
+        {
+          "id": "B",
+          "text": "VMware Cloud on AWS を採用し、vSphere / vSAN / NSX をネイティブ実行 + 既存 VM を HCX で移行",
+          "is_correct": true,
+          "explanation": "正解。VMware Cloud on AWS は AWS インフラ上で完全な VMware スタックを提供。"
+        },
+        {
+          "id": "C",
+          "text": "全 VM を MGN で EC2 に再ホストし VMware 機能を諦める",
+          "is_correct": false,
+          "explanation": "VMware 機能維持要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレ VMware から AWS S3 へ vmdk ファイル転送のみ",
+          "is_correct": false,
+          "explanation": "vmdk 転送だけでは VM 起動不可。"
+        }
+      ],
+      "explanation": "VMware Cloud on AWS は VMware と AWS の共同サービスで、AWS インフラ上で完全な VMware vSphere/vSAN/NSX を実行。オンプレ VMware からの HCX (Hybrid Cloud Extension) で vMotion 移行。VMware スキル維持 + AWS ネイティブサービス連携の両立。",
+      "references": [
+        {
+          "title": "VMware Cloud on AWS",
+          "url": "https://aws.amazon.com/vmware/"
+        }
+      ],
+      "tags": [
+        "vmware",
+        "hcx"
+      ],
+      "common_mistakes": [
+        "ESXi ネスト構築",
+        "VMware 機能を諦める"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-013",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Database Refactor",
+      "subtopic": "Oracle to PostgreSQL",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "オンプレ Oracle DB から Aurora PostgreSQL へ Refactor 移行。PL/SQL ストアド数百本の自動変換 + 手動修正の支援が欲しい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Oracle のままで Aurora ではなく RDS for Oracle を選ぶ",
+          "is_correct": false,
+          "explanation": "Refactor 要件 (PostgreSQL 移行) に反する。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda Functions に PL/SQL を全部書き換え",
+          "is_correct": false,
+          "explanation": "PL/SQL → Lambda 書換は規模次第で非現実的。SCT で自動化が標準。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Schema Conversion Tool (SCT) で 自動変換 + 変換不可箇所のレポート + AWS DMS で データ移行",
+          "is_correct": true,
+          "explanation": "正解。SCT は スキーマ + ストアド変換 + 互換性レポート提供、DMS はデータ移行担当の分業が標準。"
+        },
+        {
+          "id": "D",
+          "text": "手動で PL/SQL を 1 本ずつ PostgreSQL に書き換え",
+          "is_correct": false,
+          "explanation": "数百本手動は時間・ヒューマンエラーで困難。SCT が標準。"
+        }
+      ],
+      "explanation": "AWS SCT (Schema Conversion Tool) はソース DB (Oracle / SQL Server / Sybase / MySQL / DB2 等) から ターゲット DB (Aurora / RDS / Redshift) へのスキーマ + ストアド + ビュー変換ツール。Action Items で変換不可箇所をレポート、手動修正を支援。DMS でデータ移行と分業。",
+      "references": [
+        {
+          "title": "AWS SCT",
+          "url": "https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_Welcome.html"
+        }
+      ],
+      "tags": [
+        "sct",
+        "refactor"
+      ],
+      "common_mistakes": [
+        "全部手動書換",
+        "Refactor 要件を諦める"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-014",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Outposts",
+      "subtopic": "Hybrid extension",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "金融顧客がデータレジデンシ要件でオンプレ DC 内に AWS マネージドサービス (EC2/RDS/EKS) を実行する必要がある。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Outposts を顧客 DC に設置し、AWS リソースを DC 内で運用 + AWS マネージドサービス API でアクセス",
+          "is_correct": true,
+          "explanation": "正解。Outposts は AWS ハードウェアを顧客 DC に設置し AWS サービスを DC 内で提供。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Local Zone を使う",
+          "is_correct": false,
+          "explanation": "Local Zone は主要都市の AWS DC で顧客 DC 内ではない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Direct Connect 100Gbps + リージョン",
+          "is_correct": false,
+          "explanation": "データはリージョンに保管。データレジデンシ要件未達。"
+        },
+        {
+          "id": "D",
+          "text": "オンプレに自前 Kubernetes + 互換 API",
+          "is_correct": false,
+          "explanation": "AWS マネージド要件に反する。"
+        }
+      ],
+      "explanation": "AWS Outposts は AWS ハードウェアを顧客 DC に設置し AWS マネージドサービス (EC2/EBS/S3/RDS/EKS/ECS) を DC 内で提供。データレジデンシ + ms 未満接続 + レガシーシステム共存要件で標準解。Local Zone は AWS 主要都市 DC で別物。",
+      "references": [
+        {
+          "title": "AWS Outposts",
+          "url": "https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html"
+        }
+      ],
+      "tags": [
+        "outposts",
+        "hybrid"
+      ],
+      "common_mistakes": [
+        "Local Zone と Outposts を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-015",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Refactor Spaces",
+      "subtopic": "Strangler Fig pattern",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "モノリス Java アプリを段階的にマイクロサービス化したい。Strangler Fig パターンで既存モノリスを残しつつ機能単位で切り出したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "一気にモノリスを書き換え",
+          "is_correct": false,
+          "explanation": "Big Bang は失敗リスク大。Strangler Fig 段階的が標準。"
+        },
+        {
+          "id": "B",
+          "text": "ALB Path-routing で手動振り分けを構築",
+          "is_correct": false,
+          "explanation": "可能だが Refactor Spaces はサービス定義 + ルーティング + 観測性を統合提供。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Migration Hub Refactor Spaces で Application + Service 定義し、ルーティングを段階的に新サービスへ切替える",
+          "is_correct": true,
+          "explanation": "正解。Refactor Spaces は Strangler Fig 移行の専用マネージドサービスで段階的切替を支援。"
+        },
+        {
+          "id": "D",
+          "text": "モノリスを Lambda に丸ごと包む",
+          "is_correct": false,
+          "explanation": "Strangler Fig パターンの趣旨に反する。"
+        }
+      ],
+      "explanation": "AWS Migration Hub Refactor Spaces は Strangler Fig パターン (モノリスからマイクロサービスへの段階的切出) の専用ツール。Application / Environment / Service 定義 + ALB / API Gateway ルーティング自動化 + Cross-account ネットワーク構成。リスク低い段階的近代化を実現。",
+      "references": [
+        {
+          "title": "Migration Hub Refactor Spaces",
+          "url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/what-is-mhub-refactor-spaces.html"
+        }
+      ],
+      "tags": [
+        "refactor-spaces",
+        "strangler-fig"
+      ],
+      "common_mistakes": [
+        "Big Bang 書換",
+        "ALB だけで Strangler Fig 実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-016",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Cloud WAN for Migration",
+      "subtopic": "Global network setup",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "10 リージョン跨ぎの新規 AWS ネットワーク基盤を構築し、SD-WAN 統合 + 宣言的セグメント定義をしたい (TGW Peering メッシュは複雑すぎる)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "VPC Peering を全 VPC 間で構築",
+          "is_correct": false,
+          "explanation": "リージョン跨ぎ + 数百 VPC で管理破綻。"
+        },
+        {
+          "id": "B",
+          "text": "10 リージョンに TGW + Full Mesh Peering (45 接続)",
+          "is_correct": false,
+          "explanation": "Peering 数爆発で管理破綻。Cloud WAN が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "Direct Connect Gateway をハブとして使う",
+          "is_correct": false,
+          "explanation": "DX Gateway はオンプレ接続用で VPC 間集約管理ではない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Cloud WAN でグローバルネットワーク + Network Policy で宣言的セグメント定義 + SD-WAN 統合",
+          "is_correct": true,
+          "explanation": "正解。Cloud WAN は複数リージョン VPC・SD-WAN・VPN の統一管理を JSON Policy で提供。"
+        }
+      ],
+      "explanation": "AWS Cloud WAN は 2022 年 GA。Core Network Policy (JSON) で複数リージョンの VPC・SD-WAN・VPN を統合管理。TGW Peering メッシュより宣言的管理 + スケーラビリティ大幅向上。新規グローバルネットワークの第一選択。",
+      "references": [
+        {
+          "title": "AWS Cloud WAN",
+          "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html"
+        }
+      ],
+      "tags": [
+        "cloud-wan"
+      ],
+      "common_mistakes": [
+        "TGW Peering で 10 リージョン捌こうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-017",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Database Refactor",
+      "subtopic": "DocumentDB / Babelfish",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "オンプレ SQL Server をアプリ無変更で AWS の PostgreSQL ベース DB に移行したい (T-SQL 互換性が必要)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "アプリの全 T-SQL クエリを PostgreSQL 構文に書き換える",
+          "is_correct": false,
+          "explanation": "アプリ無変更要件に反する。Babelfish が直接的解。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora PostgreSQL with Babelfish for Aurora を採用し、T-SQL/TDS プロトコル互換性を活用する",
+          "is_correct": true,
+          "explanation": "正解。Babelfish は SQL Server T-SQL 互換性を Aurora PostgreSQL で提供する標準解。"
+        },
+        {
+          "id": "C",
+          "text": "RDS for SQL Server に Lift-and-Shift",
+          "is_correct": false,
+          "explanation": "PostgreSQL ベース要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "DocumentDB に移行する (MongoDB 互換)",
+          "is_correct": false,
+          "explanation": "DocumentDB は MongoDB 互換で SQL Server 互換ではない。"
+        }
+      ],
+      "explanation": "Babelfish for Aurora PostgreSQL は SQL Server T-SQL + TDS プロトコル互換レイヤを Aurora PostgreSQL に追加。アプリは SQL Server クライアントのまま接続可能。Oracle/SQL Server 等のレガシーアプリの低リスク Refactor 移行を実現。",
+      "references": [
+        {
+          "title": "Babelfish for Aurora",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/babelfish.html"
+        }
+      ],
+      "tags": [
+        "babelfish",
+        "refactor"
+      ],
+      "common_mistakes": [
+        "DocumentDB を SQL Server 互換と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-018",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Wavelength / Local Zone",
+      "subtopic": "Edge selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）AWS のエッジコンピュートサービスの使い分けとして正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Local Zone は主要都市の AWS データセンターで、最寄りリージョンより低レイテンシでアプリ実行可能",
+          "is_correct": true,
+          "explanation": "正解。Local Zone は AWS DC を主要都市に配置する形態。"
+        },
+        {
+          "id": "B",
+          "text": "Wavelength は通信キャリアの 5G ネットワーク内に AWS リソースを配置、10ms 未満レイテンシで 5G デバイス向け",
+          "is_correct": true,
+          "explanation": "正解。Wavelength は 5G 用エッジで AR/VR/ゲーミング/自動運転向け。"
+        },
+        {
+          "id": "C",
+          "text": "Outposts は AWS 主要都市の DC で運用される",
+          "is_correct": false,
+          "explanation": "Outposts は顧客 DC に AWS ハードウェアを置く。AWS DC ではない。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFront はコンピュート実行用エッジ",
+          "is_correct": false,
+          "explanation": "CloudFront は CDN で軽量実行 (CloudFront Functions / Lambda@Edge) のみ。本格コンピュートは別。"
+        }
+      ],
+      "explanation": "AWS エッジコンピュート: Outposts (顧客 DC、フル AWS スタック)、Local Zone (AWS 主要都市 DC、低レイテンシ)、Wavelength (5G キャリア DC、超低レイテンシ)、CloudFront (CDN、軽量 Functions)。用途とレイテンシ要件で使い分け。",
+      "references": [
+        {
+          "title": "AWS edge services",
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/edge-locations/"
+        }
+      ],
+      "tags": [
+        "local-zone",
+        "wavelength",
+        "outposts"
+      ],
+      "common_mistakes": [
+        "Outposts と Local Zone の設置場所を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-019",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Migration Evaluator",
+      "subtopic": "TCO assessment",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ → AWS 移行の TCO (総コスト) を定量評価し、経営層への提案資料を作成したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Migration Evaluator (旧 TSO Logic) でオンプレ環境を分析し AWS コスト比較レポート生成",
+          "is_correct": true,
+          "explanation": "正解。Migration Evaluator はオンプレ → AWS の TCO 自動分析サービス。"
+        },
+        {
+          "id": "B",
+          "text": "Excel で各サーバの予想コストを手動試算",
+          "is_correct": false,
+          "explanation": "手動で 100+ サーバ評価は困難 + 不正確。マネージドツールが標準。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Cost Explorer で現在の AWS コストだけ確認",
+          "is_correct": false,
+          "explanation": "現状コストでオンプレ → AWS の TCO 比較にならない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Pricing Calculator を 1 サーバずつ手動入力",
+          "is_correct": false,
+          "explanation": "大規模環境では非現実的。Migration Evaluator が自動分析。"
+        }
+      ],
+      "explanation": "AWS Migration Evaluator (旧 TSO Logic) は オンプレ環境を Discovery エージェントで分析し、AWS への移行 TCO + ROI を自動レポート化。経営層への提案資料・移行案件正当化に標準利用。SAR (Strategic Assessment Report) と Quick Insights あり。",
+      "references": [
+        {
+          "title": "AWS Migration Evaluator",
+          "url": "https://aws.amazon.com/migration-evaluator/"
+        }
+      ],
+      "tags": [
+        "migration-evaluator",
+        "tco"
+      ],
+      "common_mistakes": [
+        "手動試算で大規模 TCO 評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-020",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Application Migration Phases",
+      "subtopic": "Wave planning",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "1,500 サーバの大規模移行で、依存関係を考慮した Wave (移行波) 計画を立てたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 サーバずつ毎週移行 (Wave なし)",
+          "is_correct": false,
+          "explanation": "30 年かかる。Wave で並列実行が現実的。"
+        },
+        {
+          "id": "B",
+          "text": "全 1,500 サーバを 1 度に移行する (Big Bang)",
+          "is_correct": false,
+          "explanation": "リスク・調整コスト大。Wave 分割が標準。"
+        },
+        {
+          "id": "C",
+          "text": "Application Discovery Service で依存関係グラフ生成 → Migration Hub Strategy Recommendations で Wave 提案",
+          "is_correct": true,
+          "explanation": "正解。AWS は依存分析 + Wave 計画支援を Migration Hub で統合提供。"
+        },
+        {
+          "id": "D",
+          "text": "アプリ間依存を無視してアルファベット順で移行",
+          "is_correct": false,
+          "explanation": "依存関係を破壊しダウンタイム発生。依存分析必須。"
+        }
+      ],
+      "explanation": "大規模移行の Wave 計画: Discovery (ADS で自動 Inventory + 依存関係) → Strategy (Migration Hub Strategy Recommendations で 7R 戦略提案) → Wave Planning (依存関係を尊重した移行順序) → Execution (MGN/DMS で実行) → Validation。AWS Migration Hub が中央コンソール。",
+      "references": [
+        {
+          "title": "Migration Hub Strategy Recommendations",
+          "url": "https://docs.aws.amazon.com/migrationhub-strategy/latest/userguide/what-is-migration-hub-strategy.html"
+        }
+      ],
+      "tags": [
+        "wave-planning",
+        "migration-hub"
+      ],
+      "common_mistakes": [
+        "Big Bang 移行",
+        "依存関係を無視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-021",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Lambda Modernization",
+      "subtopic": "Stateless function",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "オンプレ Java バッチ (1 ファイル処理 5 分以内) を AWS で Refactor (Re-architect) する場合、最もクラウドネイティブな選択は。",
+      "options": [
+        {
+          "id": "A",
+          "text": "オンプレで動かし続ける",
+          "is_correct": false,
+          "explanation": "Refactor 要件に反する。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 で Java バッチを cron 実行",
+          "is_correct": false,
+          "explanation": "サーバ管理が必要でクラウドネイティブではない。Lambda が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "ECS Fargate で 24 時間コンテナを動かす",
+          "is_correct": false,
+          "explanation": "イベント駆動・短時間処理に Fargate 24h は過剰。Lambda が安価。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda (Java) + S3 トリガで各ファイル処理 + Step Functions で並列オーケストレーション",
+          "is_correct": true,
+          "explanation": "正解。Lambda 5 分制限内 + イベント駆動でクラウドネイティブ。"
+        }
+      ],
+      "explanation": "Java バッチの近代化: Lambda (短時間・サーバレス・自動スケール)、Fargate (長時間コンテナ)、Batch (HPC バッチ)、Glue (ETL バッチ) から要件に応じて選択。5 分以内・イベント駆動なら Lambda が最もクラウドネイティブ。",
+      "references": [
+        {
+          "title": "AWS Lambda use cases",
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/services-lambda.html"
+        }
+      ],
+      "tags": [
+        "lambda",
+        "modernization"
+      ],
+      "common_mistakes": [
+        "EC2 cron でクラウドネイティブと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-022",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "DataSync for AD-Migration",
+      "subtopic": "Active Directory replication",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ AD (corp.example.com) を AWS Managed Microsoft AD に移行したい。アプリの AD 認証は中断せず段階移行したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Managed Microsoft AD と オンプレ AD で 双方向信頼を構成し、段階的にユーザ移行する",
+          "is_correct": true,
+          "explanation": "正解。Trust 関係 + 段階移行は AD 移行の標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "オンプレ AD を一気に停止し AWS Managed AD に切替える",
+          "is_correct": false,
+          "explanation": "ダウンタイム + ユーザ影響大。段階移行が標準。"
+        },
+        {
+          "id": "C",
+          "text": "AD Connector でオンプレ AD をプロキシし続け、永遠に AWS Managed AD は使わない",
+          "is_correct": false,
+          "explanation": "AD 移行要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "DataSync で AD データベースをコピー",
+          "is_correct": false,
+          "explanation": "DataSync は AD 同期機能ではない。Trust が標準。"
+        }
+      ],
+      "explanation": "AD 移行: AWS Managed Microsoft AD と オンプレ AD で 双方向 Trust 構成 → ユーザ・グループを段階的にコピー or AD Migration Tool 利用 → アプリの認証先を段階切替 → 完了後にオンプレ AD 廃止。",
+      "references": [
+        {
+          "title": "Managed AD trust",
+          "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/setup_trust.html"
+        }
+      ],
+      "tags": [
+        "active-directory",
+        "trust"
+      ],
+      "common_mistakes": [
+        "一気切替で大規模ダウンタイム発生"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-023",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "SaaS Boundary",
+      "subtopic": "Tenant isolation models",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "新規 B2B SaaS で各テナントのデータ分離モデルを選択したい (Silo / Pool / Bridge)。低コストかつ運用しやすいモデルは。",
+      "options": [
+        {
+          "id": "A",
+          "text": "テナント分離は不要",
+          "is_correct": false,
+          "explanation": "B2B SaaS で他テナントデータ漏洩は致命的。最低限の論理分離は必須。"
+        },
+        {
+          "id": "B",
+          "text": "Silo モデル (テナントごとに完全独立 DB/インフラ)",
+          "is_correct": false,
+          "explanation": "強い隔離だがテナント数 × インフラコスト爆発。要件 (低コスト) に反する。"
+        },
+        {
+          "id": "C",
+          "text": "Bridge モデル (一部リソース共有 + 一部分離)",
+          "is_correct": false,
+          "explanation": "中間案で柔軟だが設計複雑化。シンプル要件なら Pool。"
+        },
+        {
+          "id": "D",
+          "text": "Pool モデル (全テナント共用 DB/インフラ、Row-level / Tag-level でテナント識別)",
+          "is_correct": true,
+          "explanation": "正解。Pool は最も低コスト・運用容易だがテナント隔離は論理レベル。中小 SaaS の標準。"
+        }
+      ],
+      "explanation": "SaaS Tenant Isolation Models: Silo (完全独立、強隔離、高コスト)、Pool (共有、低コスト、論理隔離)、Bridge (一部共有)、Pod (テナントグループ単位)。要件に応じてトレードオフ。Pool は Cognito + DynamoDB Row-level + Lake Formation 行列レベル等で実装。",
+      "references": [
+        {
+          "title": "SaaS Lens (Well-Architected)",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/welcome.html"
+        }
+      ],
+      "tags": [
+        "saas",
+        "tenant-isolation"
+      ],
+      "common_mistakes": [
+        "全シナリオで Silo を選び過剰コスト",
+        "テナント分離を諦める"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-024",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Direct Connect Migration",
+      "subtopic": "Bandwidth uplift",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレと AWS 間で月 100TB データ転送、Egress 料金が高い。Direct Connect に切替で長期コスト削減したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "VPN を冗長化し Egress 料金は VPN 経由で安くなる",
+          "is_correct": false,
+          "explanation": "VPN もインターネット経由で Egress 料金は同じ。"
+        },
+        {
+          "id": "B",
+          "text": "Direct Connect 専用線契約、Egress 料金が標準の約 1/4 に削減される",
+          "is_correct": true,
+          "explanation": "正解。DX 経由の Egress は標準より大幅安、大容量転送で投資回収が早い。"
+        },
+        {
+          "id": "C",
+          "text": "Snowball Edge を毎月輸送",
+          "is_correct": false,
+          "explanation": "継続的な月次転送に物理輸送は不向き。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Transfer Acceleration で対応",
+          "is_correct": false,
+          "explanation": "Acceleration はアップロード高速化 + 追加料金。Egress 削減ではない。"
+        }
+      ],
+      "explanation": "Direct Connect は専用線で AWS リージョン接続、Egress 料金が標準の約 1/4 (例: $0.02/GB vs $0.09/GB)。月 TB レベルで月額固定料金 + 専用回線料を含めても損益分岐点を超えコスト削減。VPN はインターネット経由なので Egress 同価格。",
+      "references": [
+        {
+          "title": "Direct Connect pricing",
+          "url": "https://aws.amazon.com/directconnect/pricing/"
+        }
+      ],
+      "tags": [
+        "direct-connect",
+        "egress"
+      ],
+      "common_mistakes": [
+        "VPN で Egress 料金が安くなると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-025",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "EKS Migration",
+      "subtopic": "From self-managed K8s",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "オンプレで自前運用していた Kubernetes クラスタを AWS に移行し、Control Plane 管理から解放されたい。Worker Node 構成は維持したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "オンプレ K8s をそのまま AWS EC2 に Lift-and-Shift",
+          "is_correct": false,
+          "explanation": "Control Plane 管理が残る。EKS にすべき。"
+        },
+        {
+          "id": "B",
+          "text": "EKS Cluster を新規作成し、kubectl で全 Manifest を新クラスタにデプロイ、データは Velero で移行",
+          "is_correct": true,
+          "explanation": "正解。EKS は AWS マネージド K8s Control Plane で、Manifest 移行 + Velero データ移行が標準。"
+        },
+        {
+          "id": "C",
+          "text": "ECS に書き換える",
+          "is_correct": false,
+          "explanation": "K8s リソースを ECS 形式に変換する作業が大規模。EKS が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda に書き換える",
+          "is_correct": false,
+          "explanation": "K8s コンテナ → Lambda は大規模再設計。EKS が標準。"
+        }
+      ],
+      "explanation": "オンプレ K8s → AWS 移行: EKS が標準解。Control Plane は AWS マネージド、Worker Node は EC2/Fargate 選択可。Manifest は kubectl apply 互換、データ移行は Velero (バックアップ/リストア)、ネットワーク・Ingress は AWS Load Balancer Controller で AWS LB と統合。",
+      "references": [
+        {
+          "title": "EKS migration",
+          "url": "https://docs.aws.amazon.com/eks/latest/userguide/migration.html"
+        }
+      ],
+      "tags": [
+        "eks",
+        "kubernetes"
+      ],
+      "common_mistakes": [
+        "K8s を ECS に書換",
+        "Lift-and-Shift で Control Plane 管理を残す"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-026",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Hybrid DNS for Migration",
+      "subtopic": "Cutover DNS",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アプリのオンプレ → AWS 切替時に DNS で段階的にトラフィックを移したい (10% → 50% → 100%)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Route 53 Weighted ルーティングでオンプレ 90/AWS 10 → 50/50 → 0/100 に段階変更",
+          "is_correct": true,
+          "explanation": "正解。Route 53 Weighted ルーティングは段階的トラフィック移行の標準。"
+        },
+        {
+          "id": "B",
+          "text": "Route 53 Failover でオンプレ Primary → AWS Secondary で完全切替",
+          "is_correct": false,
+          "explanation": "Failover は障害切替で割合制御不可。"
+        },
+        {
+          "id": "C",
+          "text": "オンプレ DNS を停止して 100% AWS に切替える",
+          "is_correct": false,
+          "explanation": "段階移行要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "Latency-based ルーティング",
+          "is_correct": false,
+          "explanation": "Latency は経路最適化で割合制御ではない。"
+        }
+      ],
+      "explanation": "段階的 DNS 切替: Route 53 Weighted ルーティングで オンプレ:AWS の重みを徐々に変更 (90:10 → 50:50 → 0:100)。ロールバック容易、リスク最小。各段階でメトリクス検証する Canary パターン。",
+      "references": [
+        {
+          "title": "Route 53 Weighted routing",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "weighted",
+        "cutover"
+      ],
+      "common_mistakes": [
+        "Failover で段階移行を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-027",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "DMS Continuous Replication",
+      "subtopic": "Zero-downtime migration",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "オンプレ MySQL → Aurora MySQL に移行、ダウンタイム 5 分以内が要求される。DMS でどう実現するか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DMS で Full Load + CDC (Change Data Capture) を併用、Aurora を実本番に切替時に最終差分を吸収して 5 分以内のダウンタイムで完了",
+          "is_correct": true,
+          "explanation": "正解。Full Load + CDC は ゼロダウンタイム DB 移行の標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "Full Load のみ実行し、転送中はアプリを長時間停止",
+          "is_correct": false,
+          "explanation": "100GB+ で長時間ダウンタイム。CDC で継続レプリが必要。"
+        },
+        {
+          "id": "C",
+          "text": "DMS は使わず mysqldump で 1 回コピー",
+          "is_correct": false,
+          "explanation": "dump 期間のダウンタイムが長い。DMS の CDC が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora を MySQL Read Replica に直接設定",
+          "is_correct": false,
+          "explanation": "オンプレ MySQL からの Aurora Read Replica は可能 (Binlog 経由) だが ゼロダウンタイム切替は別工夫が必要。DMS のほうが標準。"
+        }
+      ],
+      "explanation": "DMS のゼロダウンタイム移行: ①Full Load (既存データ初期コピー)、②CDC (Binlog/WAL ベース継続レプリ)、③アプリの DB 接続先を切替 (DNS or アプリ設定)、④最終差分を CDC で吸収。ダウンタイム = 接続切替の数秒〜数分。",
+      "references": [
+        {
+          "title": "DMS continuous replication",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html"
+        }
+      ],
+      "tags": [
+        "dms",
+        "cdc",
+        "zero-downtime"
+      ],
+      "common_mistakes": [
+        "Full Load のみで長時間ダウンタイム"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-028",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "SaaS Cost Optimization",
+      "subtopic": "Tenant cost visibility",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）B2B SaaS で各テナントの AWS リソース使用量・コストを追跡し、テナント別請求 (Chargeback) を実現する要素として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "全 AWS リソースに TenantID タグを必須付与し、Cost Allocation Tags で集計可能化する",
+          "is_correct": true,
+          "explanation": "正解。タグベース集計は SaaS マルチテナント FinOps の基礎。"
+        },
+        {
+          "id": "B",
+          "text": "Cost and Usage Report (CUR) を Athena/QuickSight で TenantID 別集計 + 各テナントへ請求書送付",
+          "is_correct": true,
+          "explanation": "正解。CUR + Athena + QuickSight は詳細チャージバックの標準パイプライン。"
+        },
+        {
+          "id": "C",
+          "text": "テナントごとに別 AWS アカウントを発行する",
+          "is_correct": false,
+          "explanation": "テナント数次第でアカウント爆発。Pool モデルではタグ集計が現実的。"
+        },
+        {
+          "id": "D",
+          "text": "コスト追跡は AWS の責任なので顧客側で何もしなくてよい",
+          "is_correct": false,
+          "explanation": "Chargeback は顧客側責任。AWS は集計ツールを提供するのみ。"
+        }
+      ],
+      "explanation": "SaaS マルチテナントの Chargeback: ①TenantID タグ強制 (Tag Policy + SCP)、②Cost Allocation Tags 有効化、③CUR で詳細データ取得、④Athena で TenantID 別集計、⑤QuickSight で可視化 + テナント別レポート送付。Pool モデルでは必須プロセス。",
+      "references": [
+        {
+          "title": "SaaS cost allocation",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/cost-optimization.html"
+        }
+      ],
+      "tags": [
+        "saas",
+        "chargeback"
+      ],
+      "common_mistakes": [
+        "全テナントに別アカウント"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-029",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Migration Acceleration Program",
+      "subtopic": "Funding model",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "大規模 AWS 移行プロジェクトを開始する企業が、AWS から技術 + 資金支援を受けたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Marketplace で移行ツールを購入",
+          "is_correct": false,
+          "explanation": "ツール購入で資金支援とは別。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Support Business プランで対応",
+          "is_correct": false,
+          "explanation": "Support は技術支援のみで移行特化 Credit はない。MAP が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Activate (スタートアップ向け) を活用",
+          "is_correct": false,
+          "explanation": "Activate はスタートアップ向け Credit。エンタープライズ移行は MAP。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Migration Acceleration Program (MAP) に申込み、Assessment + Mobilize + Migrate の 3 フェーズで技術 + Credit 支援を受ける",
+          "is_correct": true,
+          "explanation": "正解。MAP は AWS 公式の大規模移行支援プログラムで Credit + 技術支援を提供。"
+        }
+      ],
+      "explanation": "AWS Migration Acceleration Program (MAP) はエンタープライズ大規模移行向け公式支援プログラム。Assess (TCO/移行戦略策定) → Mobilize (技術検証/教育) → Migrate (実行) の 3 フェーズで AWS Credit + AWS Professional Services or Partner サポートを提供。営業経由で申込。",
+      "references": [
+        {
+          "title": "AWS Migration Acceleration Program",
+          "url": "https://aws.amazon.com/migration-acceleration-program/"
+        }
+      ],
+      "tags": [
+        "map",
+        "migration-funding"
+      ],
+      "common_mistakes": [
+        "Support と MAP を混同",
+        "Activate を企業移行に使おうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain4-030",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-4",
+        "name": "Accelerate Workload Migration and Modernization",
+        "weight_percent": 20
+      },
+      "topic": "Final Synthesis",
+      "subtopic": "Migration + Modernization combo",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）大規模 AWS 移行 + 近代化プロジェクトの成功要因として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Discovery → Strategy (7R 選択) → Wave Planning → Execution → Validation の段階的アプローチを徹底",
+          "is_correct": true,
+          "explanation": "正解。段階的アプローチで リスク制御 + 確実な進捗を実現する標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "Lift-and-Shift で素早く AWS に上げてから、優先度の高いアプリから Refactor で近代化する 2 段階戦略",
+          "is_correct": true,
+          "explanation": "正解。Lift-then-Optimize は時間制約とコスト最適化のバランス解。"
+        },
+        {
+          "id": "C",
+          "text": "全アプリを Big Bang で一気に Refactor して時間短縮",
+          "is_correct": false,
+          "explanation": "リスク・調整コスト爆発。段階的アプローチが標準。"
+        },
+        {
+          "id": "D",
+          "text": "技術選定だけ重視しビジネス側との調整は不要",
+          "is_correct": false,
+          "explanation": "移行は技術 + ビジネス両面が成功要因。Stakeholder 調整必須。"
+        }
+      ],
+      "explanation": "AWS 移行成功の鉄則: ①段階的アプローチ (Discovery → Strategy → Wave → Execute → Validate)、②Lift-then-Optimize (まず AWS に上げて、その後 Refactor)、③Stakeholder 調整 (ビジネス・運用・セキュリティ・法務)、④MAP 等の AWS 支援活用、⑤計画的 Validation + Rollback 設計。Big Bang は失敗確率が極めて高い。",
+      "references": [
+        {
+          "title": "AWS prescriptive guidance for migration",
+          "url": "https://aws.amazon.com/prescriptive-guidance/"
+        }
+      ],
+      "tags": [
+        "migration",
+        "strategy"
+      ],
+      "common_mistakes": [
+        "Big Bang 移行",
+        "技術だけ重視"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2949 @@
+{
+  "exam_code": "SAP-C02",
+  "exam_name": "AWS Certified Solutions Architect – Professional",
+  "version": "2026.04",
+  "total_questions": 40,
+  "domains": [
+    {
+      "id": "domain-3",
+      "name": "Continuous Improvement for Existing Solutions",
+      "weight_percent": 25,
+      "question_count": 40
+    }
+  ],
+  "questions": [
+    {
+      "id": "sap-c02-domain3-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "CloudWatch",
+      "subtopic": "Anomaly Detection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "本番アプリのメトリクスに季節性 (日次・週次パターン) があり、静的しきい値ではアラート過剰 or 見逃しが起きる。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudWatch Anomaly Detection で機械学習ベースの動的しきい値アラームを作成する",
+          "is_correct": true,
+          "explanation": "正解。Anomaly Detection は ML で正常パターンを学習し動的しきい値で異常検知する標準機能。"
+        },
+        {
+          "id": "B",
+          "text": "静的しきい値を時間帯別に 24 個作成して切替える",
+          "is_correct": false,
+          "explanation": "運用負荷大 + 週次パターンに対応困難。Anomaly Detection が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で過去 30 日メトリクス取得 + 統計計算する自前検知",
+          "is_correct": false,
+          "explanation": "Anomaly Detection の再実装で運用負荷大。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Logs Insights でログ分析だけで対応",
+          "is_correct": false,
+          "explanation": "メトリクス異常検知の文脈と異なる。"
+        }
+      ],
+      "explanation": "CloudWatch Anomaly Detection は機械学習でメトリクスの正常パターンを学習し、上下バンド外を異常としてアラート。季節性 (日次・週次・月次) 自動考慮、Standard Deviation 設定で感度調整。静的しきい値の置き換え標準。",
+      "references": [
+        {
+          "title": "CloudWatch Anomaly Detection",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch",
+        "anomaly-detection"
+      ],
+      "common_mistakes": [
+        "静的しきい値で季節性対応を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "X-Ray",
+      "subtopic": "Distributed tracing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "マイクロサービス間のレイテンシ問題を、サービス境界をまたいでエンドツーエンドで追跡したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda Insights で個別関数のパフォーマンスだけ確認する",
+          "is_correct": false,
+          "explanation": "Lambda 単体メトリクスでサービス間トレースは追えない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Logs を全マイクロサービスで集約し、Logs Insights で時系列分析する",
+          "is_correct": false,
+          "explanation": "ログだけでは分散トレースの因果関係追跡が困難。X-Ray が標準。"
+        },
+        {
+          "id": "C",
+          "text": "AWS X-Ray SDK でアプリ計装、Service Map でトポロジ + 高遅延箇所を可視化する",
+          "is_correct": true,
+          "explanation": "正解。X-Ray は AWS マネージドの分散トレーシングで Service Map とリクエストフローを提供。"
+        },
+        {
+          "id": "D",
+          "text": "Datadog APM を導入して X-Ray の代替とする",
+          "is_correct": false,
+          "explanation": "サードパーティで可能だが AWS マネージドの X-Ray が直接的解。"
+        }
+      ],
+      "explanation": "AWS X-Ray は分散トレーシングのマネージドサービス。Trace ID を伝播してマイクロサービス間のリクエスト追跡、Service Map、Latency Distribution、Annotation/Metadata。OpenTelemetry SDK 経由でも利用可能。",
+      "references": [
+        {
+          "title": "AWS X-Ray",
+          "url": "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"
+        }
+      ],
+      "tags": [
+        "x-ray",
+        "tracing"
+      ],
+      "common_mistakes": [
+        "ログだけで分散トレースを試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Systems Manager",
+      "subtopic": "Patch Manager",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "数百台の EC2 (Win/Linux 混在) で OS パッチを毎週金曜深夜に一斉適用し、適用前後で稼働確認したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各 EC2 に cron で yum update / Windows Update を個別設定する",
+          "is_correct": false,
+          "explanation": "個別管理で適用漏れ + 検証なし。SSM が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Systems Manager Patch Manager で Baseline + Maintenance Window + Health Check を構成し自動適用する",
+          "is_correct": true,
+          "explanation": "正解。SSM Patch Manager は OS パッチの計画適用 + 検証を統合提供する標準。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 を全部再作成して最新 AMI に置き換える",
+          "is_correct": false,
+          "explanation": "Stateful アプリで再作成は副作用大。パッチ管理が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "Inspector で脆弱性検出のみ行い、パッチは手動",
+          "is_correct": false,
+          "explanation": "検出のみで適用ない。Patch Manager で自動化が標準。"
+        }
+      ],
+      "explanation": "AWS Systems Manager Patch Manager は OS パッチ自動化。Patch Baseline で対象パッチ定義、Maintenance Window でスケジュール、Patch Group でタグベース対象選択、Compliance Report で適用状況可視化。Windows/Linux 混在環境の標準。",
+      "references": [
+        {
+          "title": "SSM Patch Manager",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-patch.html"
+        }
+      ],
+      "tags": [
+        "ssm",
+        "patch-manager"
+      ],
+      "common_mistakes": [
+        "個別 cron で運用",
+        "AMI 再作成で対応"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-004",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "SSM Incident Manager",
+      "subtopic": "Incident response automation",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "本番障害発生時にオンコール担当者の自動呼び出し + Runbook 自動実行 + ポストモーテム生成を統合管理したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Systems Manager Incident Manager で Response Plan + Escalation + Runbook 自動実行を統合する",
+          "is_correct": true,
+          "explanation": "正解。Incident Manager は PagerDuty 的なオンコール管理 + Runbook + 事後分析の AWS マネージドサービス。"
+        },
+        {
+          "id": "B",
+          "text": "PagerDuty を別途契約し、Lambda で AWS リソース操作を連携する",
+          "is_correct": false,
+          "explanation": "可能だが AWS ネイティブの Incident Manager が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Alarm からメール通知だけで対応する",
+          "is_correct": false,
+          "explanation": "通知のみで Runbook 自動実行や Escalation はない。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で全インシデント対応を自前実装する",
+          "is_correct": false,
+          "explanation": "Incident Manager のマネージド機能を再実装する無駄。"
+        }
+      ],
+      "explanation": "AWS Systems Manager Incident Manager はインシデント管理のマネージドサービス。Response Plan (Contact / Escalation / Runbook)、Chat Channel (Slack/Chime)、自動 Runbook 実行、事後分析テンプレート。AWS ネイティブで他 AWS サービスと統合容易。",
+      "references": [
+        {
+          "title": "SSM Incident Manager",
+          "url": "https://docs.aws.amazon.com/incident-manager/latest/userguide/what-is-incident-manager.html"
+        }
+      ],
+      "tags": [
+        "ssm",
+        "incident-manager"
+      ],
+      "common_mistakes": [
+        "CloudWatch 通知だけで十分と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-005",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Predictive scaling",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "EC コマースで毎朝 9 時の急峻なトラフィック増があり、Target Tracking では起動間に合わず接続エラーが発生する。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda で毎朝 8 時に Desired Capacity を増やす自前スクリプト",
+          "is_correct": false,
+          "explanation": "Scheduled/Predictive Scaling の再実装で無駄。"
+        },
+        {
+          "id": "B",
+          "text": "Target Tracking の目標 CPU を 30% に下げて常時余裕を持たせる",
+          "is_correct": false,
+          "explanation": "常時過剰プロビジョンでコスト増。Predictive が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "Predictive Scaling を有効化し、過去 14 日パターンから事前にスケールアウトする",
+          "is_correct": true,
+          "explanation": "正解。Predictive Scaling は ML で周期負荷を学習し急増前にスケールアウトする標準解。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 を最大インスタンスサイズに変更し台数を 1 台に減らす",
+          "is_correct": false,
+          "explanation": "垂直スケールの限界 + 単一インスタンス障害リスク。"
+        }
+      ],
+      "explanation": "Predictive Scaling は CloudWatch メトリクスから過去 14 日の日次/週次パターンを学習し、最大 48 時間先までの容量計画を生成。Target Tracking と組合せでベース + 動的応答を両立。Scheduled は完全固定時刻向け。",
+      "references": [
+        {
+          "title": "Predictive Scaling",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "predictive"
+      ],
+      "common_mistakes": [
+        "Target Tracking だけで急峻負荷対応"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-006",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Compute Optimizer",
+      "subtopic": "Multi-resource recommendations",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "本番環境で EC2 / EBS / Lambda / ECS Fargate / RDS の右サイズ化機会を一括分析したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudWatch メトリクスを目視で確認し手動判断する",
+          "is_correct": false,
+          "explanation": "規模が大きいと網羅できない。Compute Optimizer が自動分析。"
+        },
+        {
+          "id": "B",
+          "text": "Trusted Advisor の Cost Optimization チェックだけで対応する",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は限定的なチェックで全リソースタイプの ML 分析は提供しない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Compute Optimizer を組織横断で有効化し、ML ベース推奨を全リソースタイプで取得する",
+          "is_correct": true,
+          "explanation": "正解。Compute Optimizer は EC2/EBS/Lambda/Fargate/RDS/ASG 全対応の ML ベース右サイズ化推奨。"
+        },
+        {
+          "id": "D",
+          "text": "Cost Explorer の Rightsizing Recommendations だけで十分",
+          "is_correct": false,
+          "explanation": "Cost Explorer も提供するが Compute Optimizer の方が ML 精度が高く対応範囲も広い。"
+        }
+      ],
+      "explanation": "AWS Compute Optimizer は EC2 / EBS / Lambda / ECS Fargate / RDS / ASG の ML ベース右サイズ化推奨を提供する無料サービス。Over-provisioned / Under-provisioned / Optimized 判定 + 削減見込み金額。Organizations 横断有効化で組織分析。",
+      "references": [
+        {
+          "title": "AWS Compute Optimizer",
+          "url": "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html"
+        }
+      ],
+      "tags": [
+        "compute-optimizer",
+        "right-sizing"
+      ],
+      "common_mistakes": [
+        "Trusted Advisor だけで全部分析できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-007",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "ElastiCache",
+      "subtopic": "Read-through caching",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "RDS の読み取り負荷が高く、頻繁にクエリされるデータをキャッシュしてレイテンシ低減 + DB 負荷削減したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "RDS Read Replica を 5 個追加する",
+          "is_correct": false,
+          "explanation": "DB 負荷削減になるが ElastiCache の方がレイテンシ・コスト両面で有利。"
+        },
+        {
+          "id": "B",
+          "text": "RDS インスタンスサイズを 2 倍にアップグレードする",
+          "is_correct": false,
+          "explanation": "対症療法でコスト増。キャッシュ層追加が本質的解。"
+        },
+        {
+          "id": "C",
+          "text": "ElastiCache for Redis を前段に置き、Cache-Aside パターンで実装する",
+          "is_correct": true,
+          "explanation": "正解。ElastiCache は読み取り高速化 + DB 負荷削減の標準的キャッシュ層。Cache-Aside がアプリ実装の定石。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora Serverless v2 に変更する",
+          "is_correct": false,
+          "explanation": "アーキ変更が大きい + キャッシュ機能はない。ElastiCache が直接的。"
+        }
+      ],
+      "explanation": "ElastiCache (Redis/Memcached) は読み取り高速化 + DB 負荷削減の標準。Cache-Aside (アプリ責任、シンプル)、Write-Through (書込時更新、整合性高)、Write-Behind (非同期、低レイテンシ)。TTL 設定で陳腐化制御。",
+      "references": [
+        {
+          "title": "ElastiCache caching strategies",
+          "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Strategies.html"
+        }
+      ],
+      "tags": [
+        "elasticache",
+        "caching"
+      ],
+      "common_mistakes": [
+        "DB インスタンスサイズ増加だけで対応"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-008",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Aurora Read Replica Auto Scaling",
+      "subtopic": "Read scale",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL の Read 負荷が時間帯で大きく変動。Reader インスタンス数を自動増減してコスト最適化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Application Auto Scaling for Aurora で Reader 数を CPU 使用率/接続数 Target Tracking",
+          "is_correct": true,
+          "explanation": "正解。Aurora Auto Scaling は Reader 数を Target Tracking で自動増減する標準機能。"
+        },
+        {
+          "id": "B",
+          "text": "Reader インスタンスを最大想定数で常時起動",
+          "is_correct": false,
+          "explanation": "夜間低負荷時もコスト発生。Auto Scaling が標準。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora Serverless v2 に変えて Reader 概念を撤廃",
+          "is_correct": false,
+          "explanation": "アーキ変更が大きい。Reader 数自動化が要件への直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で 1 時間ごとに Create/Delete DBInstance",
+          "is_correct": false,
+          "explanation": "マネージドの Aurora Auto Scaling を再実装する無駄。"
+        }
+      ],
+      "explanation": "Aurora Auto Scaling (Application Auto Scaling) は Reader を Target Tracking で自動増減。CPU 使用率 / DatabaseConnections 等を目標値に。最大 15 Reader まで自動拡張。新規 Reader は数分で利用可能。",
+      "references": [
+        {
+          "title": "Aurora Auto Scaling",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Integrating.AutoScaling.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "auto-scaling"
+      ],
+      "common_mistakes": [
+        "最大数を常時起動",
+        "Lambda で自前実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-009",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Shield Advanced",
+      "subtopic": "DDoS protection upgrade",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "金融顧客の Web アプリが標的型 DDoS 攻撃を受け、24/7 専門サポート + L7 軽減 + コスト保護が必要。",
+      "options": [
+        {
+          "id": "A",
+          "text": "WAF Rate-based ルールだけで対応する",
+          "is_correct": false,
+          "explanation": "DDoS 軽減には不足。Shield Advanced の WAF 統合が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Shield Standard (無料) だけで L3/L4 対応する",
+          "is_correct": false,
+          "explanation": "L7 攻撃や標的型に対応できず、コスト保護もない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Shield Advanced を契約し、Shield Response Team (SRT) + L7 Mitigation + Cost Protection を活用する",
+          "is_correct": true,
+          "explanation": "正解。Shield Advanced は L3-L7 全方位 DDoS 対策 + 専門サポート + コスト保護の標準。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFront のキャッシュで攻撃を吸収する",
+          "is_correct": false,
+          "explanation": "緩和になるが標的型 + 専門サポートには Shield Advanced 必須。"
+        }
+      ],
+      "explanation": "AWS Shield Advanced は月 $3,000 + 各サービス料金。L3-L7 包括的 DDoS 対策、Shield Response Team 24/7、cost protection (攻撃由来料金の credit)、Global Threat Intelligence、AWS Firewall Manager 統合。金融・政府・大規模 Web 向け。",
+      "references": [
+        {
+          "title": "AWS Shield Advanced",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html"
+        }
+      ],
+      "tags": [
+        "shield-advanced",
+        "ddos"
+      ],
+      "common_mistakes": [
+        "Shield Standard で標的型対応可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-010",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Savings Plans Coverage",
+      "subtopic": "Coverage analysis",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Savings Plans 購入を最適化したい。過去使用量から購入推奨を取得し、現在の Coverage 率も可視化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda で過去 1 年の請求書を解析し自前推奨する",
+          "is_correct": false,
+          "explanation": "マネージド機能の再実装。Cost Explorer が直接的。"
+        },
+        {
+          "id": "B",
+          "text": "Trusted Advisor で SP 推奨を確認する",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は SP 推奨機能を持たない (RI には簡易チェックあり)。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Cost and Usage Report を Athena で集計し自前分析する",
+          "is_correct": false,
+          "explanation": "Cost Explorer 機能を再実装する無駄。"
+        },
+        {
+          "id": "D",
+          "text": "Cost Explorer の Savings Plans Recommendations + Coverage Report を確認、Compute SP を 3 年/全額前払いで購入",
+          "is_correct": true,
+          "explanation": "正解。Cost Explorer は SP 購入推奨 + 既存 SP のカバレッジ分析を提供する標準機能。"
+        }
+      ],
+      "explanation": "Cost Explorer Savings Plans Recommendations は過去使用量から最適 SP 購入を推奨 (1年/3年 × 全額/部分/前払いなし)。Coverage Report で既存 SP の活用率可視化。Compute SP (最大柔軟) と EC2 Instance SP (最大割引) を要件で使い分け。",
+      "references": [
+        {
+          "title": "Cost Explorer SP Recommendations",
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/sp-recommendations.html"
+        }
+      ],
+      "tags": [
+        "savings-plans",
+        "cost-explorer"
+      ],
+      "common_mistakes": [
+        "Trusted Advisor で SP 分析できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-011",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "License Manager",
+      "subtopic": "BYOL tracking",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Windows Server / SQL Server の BYOL ライセンス使用状況を、コア数・ソケット数で正確に追跡しコンプライアンス違反を防ぎたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudTrail で EC2 起動イベントを記録するだけ",
+          "is_correct": false,
+          "explanation": "起動記録のみでライセンス消費量自動追跡なし。License Manager が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Excel スプレッドシートで月次に手動追跡する",
+          "is_correct": false,
+          "explanation": "Stateful 追跡で手動運用は破綻必至。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config Rule で起動済み EC2 を毎日チェックする",
+          "is_correct": false,
+          "explanation": "Config はリソース構成評価で、ライセンス追跡機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS License Manager で License Configuration 定義 + 使用状況自動追跡 + Dedicated Host 統合する",
+          "is_correct": true,
+          "explanation": "正解。License Manager は BYOL ライセンス追跡 + コンプライアンス自動化の標準マネージドサービス。"
+        }
+      ],
+      "explanation": "AWS License Manager は BYOL (Windows/SQL Server/Oracle 等) のライセンス管理。License Configuration で消費単位 (vCPU/コア/ソケット/インスタンス) 定義、消費自動追跡、上限超過時アラート/拒否、Dedicated Host 統合。コンプライアンス監査対応必須。",
+      "references": [
+        {
+          "title": "AWS License Manager",
+          "url": "https://docs.aws.amazon.com/license-manager/latest/userguide/license-manager.html"
+        }
+      ],
+      "tags": [
+        "license-manager",
+        "byol"
+      ],
+      "common_mistakes": [
+        "手動追跡で BYOL 管理を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-012",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Auto Recovery",
+      "subtopic": "EC2 hardware failure",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Single AZ で稼働している EC2 がハードウェア障害で停止しても同じインスタンス ID + EIP で自動復旧したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Multi-AZ にして DRS で別 AZ に複製する",
+          "is_correct": false,
+          "explanation": "DRS は別アーキ。同 AZ HW 障害には Auto Recovery が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Auto Scaling Group に入れ、Health Check 失敗時に置換する",
+          "is_correct": false,
+          "explanation": "ID と EIP が変わる。要件 (同 ID + EIP) に反する。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Backup でスナップショットから手動復元する",
+          "is_correct": false,
+          "explanation": "手動復元で時間がかかる。Auto Recovery が自動。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 Auto Recovery を CloudWatch Alarm で構成 (StatusCheckFailed_System) し、同 ID で別 HW に自動移動する",
+          "is_correct": true,
+          "explanation": "正解。Auto Recovery はインスタンス ID/EIP/メタデータ保持の標準復旧機能。"
+        }
+      ],
+      "explanation": "EC2 Auto Recovery は CloudWatch Alarm (StatusCheckFailed_System) で別ハードウェアに自動移動。インスタンス ID / EIP / IP / メタデータ保持。Nitro 系インスタンスで自動 (デフォルト ON)、それ以前は手動構成。AZ 障害には Multi-AZ 設計が別途必要。",
+      "references": [
+        {
+          "title": "EC2 Auto Recovery",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html"
+        }
+      ],
+      "tags": [
+        "ec2",
+        "auto-recovery"
+      ],
+      "common_mistakes": [
+        "Auto Scaling と Auto Recovery を混同 (ID 保持差)"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-013",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "RDS Performance Insights",
+      "subtopic": "DB performance diagnostics",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "RDS の遅いクエリを特定し、SQL 単位 + Wait Event 単位で原因分析したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DB Engine のスローログだけで対応",
+          "is_correct": false,
+          "explanation": "スローログは閾値超のみ。Performance Insights の方が網羅的。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch メトリクスで CPU/Memory だけ確認する",
+          "is_correct": false,
+          "explanation": "リソース利用率だけで SQL 単位の特定不可。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上に Datadog APM を立て自前分析",
+          "is_correct": false,
+          "explanation": "RDS ネイティブの Performance Insights が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "RDS Performance Insights を有効化、ダッシュボードで Top SQL + Wait Event を確認する",
+          "is_correct": true,
+          "explanation": "正解。Performance Insights は RDS の SQL レベル + Wait Event レベル性能分析の標準。"
+        }
+      ],
+      "explanation": "RDS Performance Insights は SQL 単位 + Wait Event 単位の性能分析を視覚化する RDS 専用ダッシュボード。AAS (Average Active Sessions) 主要指標、過去 7 日 (デフォルト)〜2 年 (有償) 保持。MySQL/PostgreSQL/Oracle/SQL Server/MariaDB 対応。",
+      "references": [
+        {
+          "title": "RDS Performance Insights",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "performance-insights"
+      ],
+      "common_mistakes": [
+        "CloudWatch だけで SQL 特定可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-014",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "CloudWatch Container Insights",
+      "subtopic": "EKS/ECS monitoring",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ECS / EKS のコンテナレベルで CPU / メモリ / ネットワーク / ディスクメトリクスを収集・可視化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各 Pod に Prometheus Exporter を組込み、Grafana で表示",
+          "is_correct": false,
+          "explanation": "AMP/AMG で同等可能だが Container Insights の方がマネージドでシンプル。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch Container Insights を有効化、CloudWatch ダッシュボードでクラスタ/ノード/Pod 別に確認する",
+          "is_correct": true,
+          "explanation": "正解。Container Insights は ECS/EKS 専用のコンテナレベル監視を統合提供する標準機能。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Agent を全 Pod にサイドカー配置し自前メトリクス送信",
+          "is_correct": false,
+          "explanation": "Container Insights がエージェント込みで提供する標準を再実装。"
+        },
+        {
+          "id": "D",
+          "text": "EKS Control Plane Log だけで対応",
+          "is_correct": false,
+          "explanation": "Control Plane Log は API 監査用でメトリクスではない。"
+        }
+      ],
+      "explanation": "CloudWatch Container Insights は ECS / EKS / Fargate のコンテナレベルメトリクス + Performance Monitoring を統合提供。クラスタ/サービス/タスク/Pod/コンテナの 5 階層可視化、ログ統合、X-Ray 連携。AMP (Managed Prometheus) も別オプション。",
+      "references": [
+        {
+          "title": "CloudWatch Container Insights",
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html"
+        }
+      ],
+      "tags": [
+        "cloudwatch",
+        "container-insights"
+      ],
+      "common_mistakes": [
+        "Prometheus 自前構築",
+        "Control Plane Log とメトリクスを混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-015",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "S3 Storage Lens",
+      "subtopic": "Cost analysis at scale",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下 100+ アカウントの全 S3 バケットで、使用量・アクセス傾向・コスト最適化機会を可視化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各バケットの S3 Inventory を Athena で集計する",
+          "is_correct": false,
+          "explanation": "可能だが自前実装で運用負荷。Storage Lens がマネージド。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Storage Lens を Organizations Delegated Administrator で組織全体有効化し、Advanced Tier で 15 ヶ月メトリクス保持",
+          "is_correct": true,
+          "explanation": "正解。Storage Lens は S3 専用の組織横断ダッシュボード + 推奨アクションの標準。"
+        },
+        {
+          "id": "C",
+          "text": "Cost Explorer の S3 サービス全体コストだけ確認",
+          "is_correct": false,
+          "explanation": "金額視点でバケット別利用パターン詳細は出せない。"
+        },
+        {
+          "id": "D",
+          "text": "Trusted Advisor の S3 チェックだけで対応",
+          "is_correct": false,
+          "explanation": "Trusted Advisor は限定的なチェックで全バケット横断分析はない。"
+        }
+      ],
+      "explanation": "S3 Storage Lens は全 S3 バケットの使用量・アクセス傾向・コスト最適化機会を組織レベルで可視化する S3 専用サービス。無料 (14 日保持) と Advanced ($0.20/M オブジェクト/月で 15 ヶ月保持 + 推奨アクション + Prefix-level メトリクス)。",
+      "references": [
+        {
+          "title": "S3 Storage Lens",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "storage-lens"
+      ],
+      "common_mistakes": [
+        "S3 Inventory で自前集計",
+        "Cost Explorer で詳細分析できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-016",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "WAF Managed Rules",
+      "subtopic": "OWASP protection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "既存 ALB の前段で OWASP Top 10 系の攻撃 (SQLi/XSS) を低運用負荷で防御したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EC2 上に商用 WAF アプライアンスを立てる",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大。マネージドの WAF が直接的。"
+        },
+        {
+          "id": "B",
+          "text": "Security Group で 80/443 を絞る",
+          "is_correct": false,
+          "explanation": "L4 制御で HTTP ペイロード解析できない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAF を ALB に関連付け、AWS Managed Rule Group (Core Rule Set / SQLi / Known Bad Inputs) を有効化",
+          "is_correct": true,
+          "explanation": "正解。AWS Managed Rules は OWASP 系の脅威に対するルールを継続メンテで運用負荷最小。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFront キャッシュで攻撃を吸収",
+          "is_correct": false,
+          "explanation": "キャッシュ可能なら緩和になるが SQLi/XSS の検知遮断は WAF の役割。"
+        }
+      ],
+      "explanation": "AWS WAF Managed Rule Group は AWS Core Rule Set / SQL Database / Known Bad Inputs / Linux/PHP/Windows / WordPress / IP Reputation / Anonymous IP / Bot Control 等の継続メンテルールセット。ALB / CloudFront / API Gateway / AppSync / App Runner に関連付け可能。",
+      "references": [
+        {
+          "title": "AWS WAF Managed Rules",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups.html"
+        }
+      ],
+      "tags": [
+        "waf",
+        "owasp"
+      ],
+      "common_mistakes": [
+        "Security Group で L7 攻撃を防げると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-017",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "GuardDuty",
+      "subtopic": "Threat detection multi-account",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下 60 アカウントで脅威検知を中央 Security アカウントから一元管理し、新規アカウント追加時も自動有効化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudTrail Insights だけで脅威検知する",
+          "is_correct": false,
+          "explanation": "Insights は CloudTrail の異常検知だけで、ネットワーク・DNS・EKS 検知はない。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントで GuardDuty を個別有効化し、Security Hub で集約する",
+          "is_correct": false,
+          "explanation": "個別有効化 + 新規アカウント自動化なし。Delegated Administrator が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で各アカウントの GuardDuty 状態を巡回しチェック",
+          "is_correct": false,
+          "explanation": "自前実装でマネージドの再実装。"
+        },
+        {
+          "id": "D",
+          "text": "Security アカウントを GuardDuty Delegated Administrator として登録し、組織全体自動有効化を構成する",
+          "is_correct": true,
+          "explanation": "正解。Delegated Administrator は組織配下の自動有効化 + findings 集中管理を提供する。"
+        }
+      ],
+      "explanation": "GuardDuty + Organizations Delegated Administrator は脅威検知の組織標準パターン。Delegated Administrator 1 アカウントから全組織管理、新規アカウント自動有効化、findings 集中表示、Protection 機能 (S3/EKS/Lambda/RDS/Malware) も組織レベル設定。",
+      "references": [
+        {
+          "title": "GuardDuty multi-account",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html"
+        }
+      ],
+      "tags": [
+        "guardduty",
+        "organizations"
+      ],
+      "common_mistakes": [
+        "個別有効化で組織管理"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-018",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "S3 Lifecycle Optimization",
+      "subtopic": "Storage class transition",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "既存 S3 バケットでアクセス頻度が予測しづらいデータが混在。コスト最適化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "全データを Glacier Deep Archive に移動する",
+          "is_correct": false,
+          "explanation": "アクセス頻度高なら取り出し料金で逆にコスト増。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Intelligent-Tiering に切替え (Lifecycle で既存オブジェクトも移行)、自動階層化に任せる",
+          "is_correct": true,
+          "explanation": "正解。Intelligent-Tiering は予測困難パターンで運用負荷最小のコスト最適化標準。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Standard のまま、Lifecycle ルールを 30 日後 IA / 90 日後 Glacier に設定",
+          "is_correct": false,
+          "explanation": "アクセスパターン明確なら Lifecycle、予測困難なら Intelligent-Tiering が標準。"
+        },
+        {
+          "id": "D",
+          "text": "アプリ側で使用頻度を判定し別バケットに振り分ける",
+          "is_correct": false,
+          "explanation": "アプリ実装が必要。Intelligent-Tiering で自動化が標準。"
+        }
+      ],
+      "explanation": "S3 Intelligent-Tiering はアクセスパターン監視 + 自動階層化 (Frequent / Infrequent / Archive Instant / Archive / Deep Archive)。予測困難パターンに最適。$0.0025/1,000 オブジェクト/月の監視料金あり、極小オブジェクト大量保管では別検討。",
+      "references": [
+        {
+          "title": "S3 Intelligent-Tiering",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "intelligent-tiering"
+      ],
+      "common_mistakes": [
+        "全データを Deep Archive に移行する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-019",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Trusted Advisor",
+      "subtopic": "Best practices",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アカウントのセキュリティ・コスト・性能・耐障害性のベストプラクティス遵守状況を 1 画面で確認したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Config Conformance Pack で全部評価する",
+          "is_correct": false,
+          "explanation": "Config はカスタム評価可能だが Trusted Advisor の標準チェックが手早い。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch ダッシュボードを自前構築する",
+          "is_correct": false,
+          "explanation": "Trusted Advisor のチェック群を自前で実装する無駄。"
+        },
+        {
+          "id": "C",
+          "text": "Security Hub だけで全カテゴリを確認",
+          "is_correct": false,
+          "explanation": "Security Hub はセキュリティ専門。コスト/性能/耐障害性は Trusted Advisor。"
+        },
+        {
+          "id": "D",
+          "text": "Trusted Advisor の 5 カテゴリ (Cost/Security/Fault Tolerance/Performance/Service Limits) を確認",
+          "is_correct": true,
+          "explanation": "正解。Trusted Advisor は AWS ベストプラクティス遵守状況の標準ダッシュボード。"
+        }
+      ],
+      "explanation": "AWS Trusted Advisor は 5 カテゴリ (Cost Optimization / Security / Fault Tolerance / Performance / Service Limits) のベストプラクティスチェック。Business/Enterprise Support で全チェック利用可、Basic/Developer は基本セットのみ。",
+      "references": [
+        {
+          "title": "AWS Trusted Advisor",
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+        }
+      ],
+      "tags": [
+        "trusted-advisor"
+      ],
+      "common_mistakes": [
+        "Security Hub で全カテゴリ対応と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-020",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Security Hub",
+      "subtopic": "Findings aggregation",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "GuardDuty / Inspector / Macie / IAM Access Analyzer / Config の findings を一画面集約 + CIS/PCI-DSS ベンチマーク評価したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Security Hub を Organizations Delegated Administrator で組織全体有効化",
+          "is_correct": true,
+          "explanation": "正解。Security Hub は他セキュリティサービスの findings 集約 + ベンチマーク評価の中央ハブ。"
+        },
+        {
+          "id": "B",
+          "text": "各サービスの findings を Lambda で集約しダッシュボード自作",
+          "is_correct": false,
+          "explanation": "Security Hub の機能を再実装する無駄。"
+        },
+        {
+          "id": "C",
+          "text": "Detective だけで全 findings を確認",
+          "is_correct": false,
+          "explanation": "Detective は調査 (Investigation) 用で集約用ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Trusted Advisor の Security カテゴリだけで対応",
+          "is_correct": false,
+          "explanation": "限定的なチェックで他サービス findings 集約はない。"
+        }
+      ],
+      "explanation": "AWS Security Hub は GuardDuty/Inspector/Macie/IAM AA/Config 等の findings を ASFF 形式で集約 + CIS AWS FB / AWS FSBP / PCI-DSS 等のベンチマーク評価。Organizations 統合で組織レベル管理、3rd party (Palo Alto/CrowdStrike 等) 統合可能。",
+      "references": [
+        {
+          "title": "AWS Security Hub",
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+        }
+      ],
+      "tags": [
+        "security-hub",
+        "organizations"
+      ],
+      "common_mistakes": [
+        "Detective と Security Hub の役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-021",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "AWS Config Aggregator",
+      "subtopic": "Multi-account config",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Organizations 配下全アカウント・全リージョンの Config データを中央 Audit アカウントで一元クエリしたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Security Hub で Config 違反を確認するだけ",
+          "is_correct": false,
+          "explanation": "Security Hub は findings 集約。Config データの直接クエリは Aggregator。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントから Config データを S3 へ手動エクスポートし集約",
+          "is_correct": false,
+          "explanation": "Aggregator のマネージド機能を再実装。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config Aggregator を Organizations 統合で中央アカウントに作成、全アカウント・全リージョン Config データを集約クエリ",
+          "is_correct": true,
+          "explanation": "正解。Config Aggregator は組織横断 Config データの一元クエリを提供する標準。"
+        },
+        {
+          "id": "D",
+          "text": "CloudTrail Lake で Config イベントをクエリ",
+          "is_correct": false,
+          "explanation": "Trail Lake は CloudTrail イベント用。Config データクエリは別。"
+        }
+      ],
+      "explanation": "AWS Config Aggregator は複数アカウント・リージョンの Config データを 1 つの View で集約クエリ。Organizations 統合 (Org Aggregator) で全アカウント自動含有、Authorization Aggregator (個別アカウント信頼) も別オプション。Advanced Query で SQL ライクに検索。",
+      "references": [
+        {
+          "title": "Config Aggregator",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/aggregate-data.html"
+        }
+      ],
+      "tags": [
+        "config",
+        "aggregator"
+      ],
+      "common_mistakes": [
+        "Security Hub と Config Aggregator の役割を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-022",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Caching Strategy",
+      "subtopic": "Multi-tier caching",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）読み取り重視 Web アプリで適切なキャッシュ層配置を 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFront でエッジキャッシュ、Origin (ALB/S3) への負荷を削減",
+          "is_correct": true,
+          "explanation": "正解。CloudFront はエッジ層の最初のキャッシュ層で標準。"
+        },
+        {
+          "id": "B",
+          "text": "ElastiCache for Redis を DB 前段に置き、頻繁クエリ結果をキャッシュ",
+          "is_correct": true,
+          "explanation": "正解。ElastiCache は アプリ↔DB の中間キャッシュ層で読み取り高速化の標準。"
+        },
+        {
+          "id": "C",
+          "text": "DB の auto_increment を無効化することでキャッシュ効率を上げる",
+          "is_correct": false,
+          "explanation": "auto_increment とキャッシュは無関係。"
+        },
+        {
+          "id": "D",
+          "text": "S3 にすべてのデータを保管すれば自動的にキャッシュされる",
+          "is_correct": false,
+          "explanation": "S3 は自動キャッシュ機能を持たない。CloudFront でキャッシュが必要。"
+        }
+      ],
+      "explanation": "マルチティアキャッシュ: Edge (CloudFront)、Application (Local memory / ElastiCache)、Database (RDS Proxy / DAX)。Read-heavy なら全層キャッシュで Origin 負荷を段階的に削減。Cache-Aside / Write-Through / Write-Behind の各戦略を要件に応じて選択。",
+      "references": [
+        {
+          "title": "AWS caching strategies",
+          "url": "https://aws.amazon.com/caching/"
+        }
+      ],
+      "tags": [
+        "caching",
+        "cloudfront",
+        "elasticache"
+      ],
+      "common_mistakes": [
+        "単一層キャッシュで十分と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-023",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Cost Anomaly Detection",
+      "subtopic": "Unexpected cost spike",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "想定外のコストスパイク (攻撃や設定ミス) を ML で早期検知し、SNS 通知したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Cost Anomaly Detection で Monitor + Subscription を設定し SNS 通知する",
+          "is_correct": true,
+          "explanation": "正解。Cost Anomaly Detection は ML ベース異常検知 + アラート通知の標準。"
+        },
+        {
+          "id": "B",
+          "text": "Budgets で固定閾値を細かく設定",
+          "is_correct": false,
+          "explanation": "静的閾値で ML 動的検知に劣る。Anomaly Detection が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Billing メトリクスで 100 個アラーム作成",
+          "is_correct": false,
+          "explanation": "組合せ爆発。ML 検知の方が効率的。"
+        },
+        {
+          "id": "D",
+          "text": "Trusted Advisor で月次にコスト確認",
+          "is_correct": false,
+          "explanation": "ベストプラクティスチェックで異常スパイク検知機能はない。"
+        }
+      ],
+      "explanation": "AWS Cost Anomaly Detection は ML で過去コストパターン学習 + 異常逸脱検知。Monitor (AWS Service / Linked Account / Cost Category / Cost Allocation Tag) + Subscription (Email/SNS) でアラート通知。設定ミス・攻撃・想定外利用の早期発見。",
+      "references": [
+        {
+          "title": "AWS Cost Anomaly Detection",
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/getting-started-ad.html"
+        }
+      ],
+      "tags": [
+        "cost-anomaly-detection"
+      ],
+      "common_mistakes": [
+        "静的閾値で異常検知を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-024",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "DynamoDB Hot Partition",
+      "subtopic": "Partition key redesign",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "DynamoDB で特定パーティションへの書込が集中し ProvisionedThroughputExceeded が頻発、テーブル全体 WCU は余裕がある。",
+      "options": [
+        {
+          "id": "A",
+          "text": "GSI を追加してリクエストを別パーティションに振り分け",
+          "is_correct": false,
+          "explanation": "GSI は読み取りパターン拡張で、書込 Hot Partition の根本解ではない。"
+        },
+        {
+          "id": "B",
+          "text": "テーブル全体 WCU を 10 倍に増やす",
+          "is_correct": false,
+          "explanation": "Hot Partition は単一パーティション 1,000 WCU 上限。テーブル全体 WCU 増は解決しない。"
+        },
+        {
+          "id": "C",
+          "text": "On-Demand に切替えれば自動解決",
+          "is_correct": false,
+          "explanation": "On-Demand でも単一パーティション 1,000 WCU 上限は残る。"
+        },
+        {
+          "id": "D",
+          "text": "パーティションキーにランダム接尾辞を追加してカーディナリティを上げ、書込を分散する",
+          "is_correct": true,
+          "explanation": "正解。Hot Partition はキー設計問題でランダム接尾辞・複合キーで分散するのが標準。"
+        }
+      ],
+      "explanation": "DynamoDB は内部パーティション分割され単一パーティション 1,000 WCU/3,000 RCU 上限 (Adaptive Capacity で一部緩和)。Hot Partition は同一キー集中書込が原因。ランダム接尾辞・複合キー・Write Sharding で根本解決。",
+      "references": [
+        {
+          "title": "DynamoDB partition key design",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "hot-partition"
+      ],
+      "common_mistakes": [
+        "WCU 増だけで対応",
+        "On-Demand で全部解決と過信"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-025",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Network Firewall",
+      "subtopic": "Egress filtering",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "VPC エグレストラフィックを許可ドメインリストに基づき制御したい (*.example.com のみ許可)。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Security Group outbound で IP レンジ絞る",
+          "is_correct": false,
+          "explanation": "IP では SaaS の動的 IP に追従不能。ドメイン単位制御は Network Firewall。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Network Firewall ステートフルルール (Suricata) で SNI/ドメインフィルタする",
+          "is_correct": true,
+          "explanation": "正解。Network Firewall は VPC 単位の L3-L7 フィルタを提供する標準。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAF を VPC エグレスに適用",
+          "is_correct": false,
+          "explanation": "WAF は ALB/CloudFront/API GW 前段専用、VPC エグレスフィルタには使えない。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 に Squid プロキシ自前構築",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大。マネージドの Network Firewall が標準。"
+        }
+      ],
+      "explanation": "AWS Network Firewall は VPC エグレス/イングレス L3-L7 マネージドファイアウォール。Suricata 互換ステートフルルールで SNI ベースドメインフィルタ、IDS/IPS 機能、Centralized Inspection VPC パターンの基幹サービス。",
+      "references": [
+        {
+          "title": "AWS Network Firewall",
+          "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+        }
+      ],
+      "tags": [
+        "network-firewall",
+        "egress"
+      ],
+      "common_mistakes": [
+        "WAF でエグレスフィルタ可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-026",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Route 53 Resolver DNS Firewall",
+      "subtopic": "DNS-level threat block",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "VPC 内からマルウェア C&C ドメインへの DNS 解決をブロックしたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Security Group でドメインを deny",
+          "is_correct": false,
+          "explanation": "Security Group は L4 で ドメイン制御不可。"
+        },
+        {
+          "id": "B",
+          "text": "Route 53 Resolver DNS Firewall で AWS Managed Domain List (Malware) を Block ポリシー設定",
+          "is_correct": true,
+          "explanation": "正解。Resolver DNS Firewall は AWS Managed Domain List + 顧客リストで DNS 単位フィルタの標準。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAF で DNS をブロック",
+          "is_correct": false,
+          "explanation": "WAF は HTTP/HTTPS 用で DNS には適用不可。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Flow Logs で事後検知",
+          "is_correct": false,
+          "explanation": "検知のみで予防にならない。"
+        }
+      ],
+      "explanation": "Route 53 Resolver DNS Firewall は VPC の DNS クエリに対するフィルタリング。AWS Managed Domain List (Malware/AbusedTLDs/BotnetC&C 等) と顧客カスタムリストで Block/Allow/Alert 設定。GuardDuty DNS findings と組合せで効果的。",
+      "references": [
+        {
+          "title": "Route 53 Resolver DNS Firewall",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall.html"
+        }
+      ],
+      "tags": [
+        "dns-firewall",
+        "malware"
+      ],
+      "common_mistakes": [
+        "WAF で DNS フィルタ可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-027",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "S3 Intelligent-Tiering Caveat",
+      "subtopic": "Small object exclusion",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "数百万件の小オブジェクト (各 10KB 未満) を S3 Intelligent-Tiering で保管したが、期待したコスト削減効果が出ない。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Intelligent-Tiering は 128KB 未満を Frequent Access 固定で扱うため、小オブジェクトには効果薄。Standard or Standard-IA を使うべき",
+          "is_correct": true,
+          "explanation": "正解。Intelligent-Tiering の重要制約を理解し別クラスを選ぶのが正しい。"
+        },
+        {
+          "id": "B",
+          "text": "Intelligent-Tiering の最小保管期間 30 日を待てば自動的に効果が出る",
+          "is_correct": false,
+          "explanation": "Intelligent-Tiering 自体には最小保管期間はない (Glacier 階層移動時に発生)。"
+        },
+        {
+          "id": "C",
+          "text": "オブジェクトを連結して大ファイル化すれば効果が出る",
+          "is_correct": false,
+          "explanation": "アクセス単位を破壊する設計変更で本末転倒。"
+        },
+        {
+          "id": "D",
+          "text": "Glacier Deep Archive へ移動して最安にする",
+          "is_correct": false,
+          "explanation": "頻繁アクセスなら取り出し料金で逆に高くなる。"
+        }
+      ],
+      "explanation": "S3 Intelligent-Tiering は 128KB 未満オブジェクトを自動階層化対象外 (常時 Frequent 料金) + オブジェクト 1,000 個あたり $0.0025/月の監視料金。極小オブジェクト大量保管では Standard or Standard-IA + Lifecycle が安いことが多い。",
+      "references": [
+        {
+          "title": "Intelligent-Tiering object size",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "intelligent-tiering"
+      ],
+      "common_mistakes": [
+        "小オブジェクトでも Intelligent-Tiering 効果ありと思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-028",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Cost Categories",
+      "subtopic": "Multi-tenant cost",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "1 つの AWS アカウント内で SaaS の複数テナントが共存。テナント別 (テナント ID タグ) のコスト集計レポートを月次自動生成したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "QuickSight だけで集計",
+          "is_correct": false,
+          "explanation": "可視化ツールでコスト集計用ではない。"
+        },
+        {
+          "id": "B",
+          "text": "テナントごとに別 AWS アカウントを発行する",
+          "is_correct": false,
+          "explanation": "アカウント分離は強力だが大規模設計変更。タグ + Cost Categories で簡潔解決可能。"
+        },
+        {
+          "id": "C",
+          "text": "Cost and Usage Report を Excel で手動集計",
+          "is_correct": false,
+          "explanation": "自動化要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "Cost Allocation Tags 有効化 + Cost Categories でテナント別分類 + Cost Explorer でレポート",
+          "is_correct": true,
+          "explanation": "正解。Cost Categories はビジネス次元 (テナント・部署・プロジェクト) で柔軟に再分類する標準機能。"
+        }
+      ],
+      "explanation": "AWS Cost Categories は タグ / アカウント / 利用サービス / 料金タイプ等を組合せ、ビジネス次元 (Product, Team, Environment) で再分類する機能。Cost Explorer / Budgets / CUR で利用可能。シングルアカウント内のマルチテナント FinOps で必須。",
+      "references": [
+        {
+          "title": "AWS Cost Categories",
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html"
+        }
+      ],
+      "tags": [
+        "cost-categories",
+        "multi-tenant"
+      ],
+      "common_mistakes": [
+        "タグだけで全部解決と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-029",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "S3 Server-Side Encryption Default",
+      "subtopic": "Encryption at rest mandate",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "組織内全 S3 オブジェクトの SSE 暗号化を例外なく強制したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Macie で機密データ検出のみ",
+          "is_correct": false,
+          "explanation": "Macie は機密データ検出で暗号化強制機能ではない。"
+        },
+        {
+          "id": "B",
+          "text": "各バケットの Default Encryption だけ設定",
+          "is_correct": false,
+          "explanation": "新規バケット作成漏れで例外発生リスク。SCP で予防的強制が必要。"
+        },
+        {
+          "id": "C",
+          "text": "Config Rule で違反を検知し、Lambda で自動修復",
+          "is_correct": false,
+          "explanation": "事後対応で一時的に暗号化なしオブジェクトが存在。予防的 SCP が正解。"
+        },
+        {
+          "id": "D",
+          "text": "SCP で s3:PutObject に Condition (s3:x-amz-server-side-encryption が指定なしを Deny) を組織配下で強制",
+          "is_correct": true,
+          "explanation": "正解。SCP で組織横断強制 + S3 Bucket Policy で個別バケット強制の二段構えが標準。"
+        }
+      ],
+      "explanation": "全 S3 暗号化強制の標準パターン: SCP で組織配下の s3:PutObject に Condition (暗号化指定なしを Deny) + 各バケットの Default Encryption ON。AWS 2023 年以降は新規バケットのデフォルト暗号化が自動 ON だが SCP で全例外を予防。",
+      "references": [
+        {
+          "title": "Enforcing S3 encryption",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "scp",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "Default Encryption だけで完全強制と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-030",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "WAF Custom Rule",
+      "subtopic": "Specific attack pattern",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "特定の攻撃パターン (User-Agent + URL + ペイロード組合せ) を AWS Managed Rules ではカバーできない。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Security Group で IP リストを継続更新",
+          "is_correct": false,
+          "explanation": "L4 で複合 L7 パターン検出不可。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda@Edge で全リクエストを検査する",
+          "is_correct": false,
+          "explanation": "Lambda 自前実装で運用負荷大。WAF Custom Rule が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "WAF Custom Rule (Rule Builder or JSON) で複合条件 Match Statement を定義する",
+          "is_correct": true,
+          "explanation": "正解。Custom Rule は AWS Managed Rules で対応できない特定パターン対策の標準。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Shield Advanced を契約する",
+          "is_correct": false,
+          "explanation": "Shield は DDoS 対策で特定攻撃パターンマッチは WAF Custom Rule。"
+        }
+      ],
+      "explanation": "AWS WAF Custom Rule は Rule Builder (UI) or JSON で複合条件マッチ + アクション (Allow/Block/Count/Captcha/Challenge) を定義。AWS Managed Rules でカバーできない独自攻撃パターン対策に。Rate-based 統合や Label を使った段階的判定も可能。",
+      "references": [
+        {
+          "title": "WAF Custom Rules",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statements.html"
+        }
+      ],
+      "tags": [
+        "waf",
+        "custom-rule"
+      ],
+      "common_mistakes": [
+        "Managed Rules だけで全攻撃カバー可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-031",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Warm pool for fast scale",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アプリ起動に 5 分以上かかる重い EC2 で、スケールアウト時の応答遅延を最小化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Warm Pool で停止/Hibernated インスタンスを事前確保し、起動時間を短縮する",
+          "is_correct": true,
+          "explanation": "正解。Warm Pool は重い起動アプリの応答性改善の標準機能。"
+        },
+        {
+          "id": "B",
+          "text": "Target Tracking のクールダウンを 0 秒に設定",
+          "is_correct": false,
+          "explanation": "クールダウン 0 でも AMI 起動時間は変わらず。"
+        },
+        {
+          "id": "C",
+          "text": "Instance Refresh で常時更新",
+          "is_correct": false,
+          "explanation": "Refresh は AMI 更新時のローリング置換で起動高速化機能ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Auto Scaling を諦め固定台数で運用",
+          "is_correct": false,
+          "explanation": "Auto Scaling 利点を捨てる。Warm Pool で問題解決可能。"
+        }
+      ],
+      "explanation": "Auto Scaling Warm Pool は停止 (Stopped、EBS 料金のみ) or Hibernated 状態でインスタンスを保持し、スケールアウト時の起動を高速化。InService への遷移時間を 5 分 → 数十秒に短縮可能。重い AMI を使うアプリで標準。",
+      "references": [
+        {
+          "title": "Warm Pools",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "warm-pool"
+      ],
+      "common_mistakes": [
+        "クールダウン 0 で起動時間が短くなると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-032",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "API Gateway Caching",
+      "subtopic": "Response cache",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "API Gateway 経由の REST API で同一クエリパラメータのリクエストが頻発、Backend Lambda の負荷とコストが高い。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda 内部でキャッシュ実装",
+          "is_correct": false,
+          "explanation": "Lambda は実行ごとに環境がリセットされる場合あり。API Gateway Cache が直接的。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFront を API Gateway 前段に置きキャッシュする",
+          "is_correct": false,
+          "explanation": "可能だが API Gateway 内蔵 Cache の方が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "API Gateway Cache (Stage Level Cache) を有効化し TTL を 300 秒に設定する",
+          "is_correct": true,
+          "explanation": "正解。API Gateway Cache はステージ単位で REST API の応答キャッシュを提供する標準機能。"
+        },
+        {
+          "id": "D",
+          "text": "DynamoDB に Lambda 結果を保存し次回参照",
+          "is_correct": false,
+          "explanation": "実装可能だが API Gateway Cache でシンプル解決可能。"
+        }
+      ],
+      "explanation": "API Gateway Cache は REST API のステージ単位レスポンスキャッシュ。0.5 GB - 237 GB のキャッシュサイズ + TTL 設定、クエリパラメータ / ヘッダをキャッシュキーに含めるカスタマイズ可。Backend Lambda 呼出回数を削減 + レイテンシ短縮 + コスト削減。",
+      "references": [
+        {
+          "title": "API Gateway Cache",
+          "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html"
+        }
+      ],
+      "tags": [
+        "api-gateway",
+        "cache"
+      ],
+      "common_mistakes": [
+        "Lambda 内部キャッシュで対応"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-033",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "ElastiCache Sizing",
+      "subtopic": "Memory pressure",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Redis ElastiCache で SwapUsage > 0 と Evictions が急増、キャッシュヒット率も低下。最も適切な対応はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ノードのメモリサイズを大きいタイプにスケールアップ + maxmemory-policy 確認",
+          "is_correct": true,
+          "explanation": "正解。Swap + Eviction はメモリ不足の指標。スケールアップ + Eviction Policy 最適化が標準対応。"
+        },
+        {
+          "id": "B",
+          "text": "Replication Group を増設して読み取り分散",
+          "is_correct": false,
+          "explanation": "読み取り分散は別の問題。メモリ不足には垂直スケール or Cluster Mode が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "TTL を 0 (無限) に設定",
+          "is_correct": false,
+          "explanation": "Eviction が増えるだけで逆効果。"
+        },
+        {
+          "id": "D",
+          "text": "ElastiCache を諦めて DAX に切替える",
+          "is_correct": false,
+          "explanation": "DAX は DynamoDB 専用キャッシュ。Redis 機能 (Pub/Sub・データ型) を失う。"
+        }
+      ],
+      "explanation": "Redis ElastiCache のメモリ枯渇: SwapUsage > 0 + Evictions 急増は典型サイン。対応は ①ノードサイズ拡大 ②Cluster Mode Enabled で水平分散 ③maxmemory-policy 最適化 (allkeys-lru など) ④TTL 短縮で Eviction 削減。",
+      "references": [
+        {
+          "title": "ElastiCache memory management",
+          "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.WhichShouldIMonitor.html"
+        }
+      ],
+      "tags": [
+        "elasticache",
+        "memory"
+      ],
+      "common_mistakes": [
+        "読み取り分散で対応",
+        "TTL 無限で対応"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-034",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "AWS Backup Audit Manager",
+      "subtopic": "Backup compliance",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Organizations 配下全アカウントで『全 EBS は週次バックアップ + 35 日保持』のコンプライアンスを継続確認したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda で全 EBS スナップショット日付を毎日チェック",
+          "is_correct": false,
+          "explanation": "Backup Audit Manager のマネージド機能を再実装。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Backup Audit Manager で Framework + Control を設定し継続準拠確認 + レポート生成",
+          "is_correct": true,
+          "explanation": "正解。Backup Audit Manager はバックアップ準拠状況の継続評価の標準機能。"
+        },
+        {
+          "id": "C",
+          "text": "Trusted Advisor の Backup チェックで対応",
+          "is_correct": false,
+          "explanation": "Trusted Advisor に AWS Backup ポリシー準拠チェック機能はない。"
+        },
+        {
+          "id": "D",
+          "text": "Config Rule で snapshot 数だけ確認",
+          "is_correct": false,
+          "explanation": "Backup Audit Manager の方が AWS Backup 統合で詳細評価可能。"
+        }
+      ],
+      "explanation": "AWS Backup Audit Manager は AWS Backup のコンプライアンス継続評価 + レポート生成機能。Control (例: バックアップ頻度・保持期間・暗号化・コピー先) を Framework 化し、リソースの準拠状況を SOC/HIPAA/GDPR 監査用に証跡化。",
+      "references": [
+        {
+          "title": "AWS Backup Audit Manager",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/aws-backup-audit-manager.html"
+        }
+      ],
+      "tags": [
+        "aws-backup",
+        "audit"
+      ],
+      "common_mistakes": [
+        "Lambda で自前監査"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-035",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "RDS Storage Auto Scaling",
+      "subtopic": "Disk fill prevention",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS のストレージ使用量が急増しディスクフル直前。手動増設を避けたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ストレージタイプを gp2 から io2 に変更",
+          "is_correct": false,
+          "explanation": "性能タイプ変更で容量問題は解決しない。"
+        },
+        {
+          "id": "B",
+          "text": "RDS Storage Auto Scaling を有効化し、上限まで自動拡張する",
+          "is_correct": true,
+          "explanation": "正解。Storage Auto Scaling はディスク使用率上昇時に自動拡張するマネージド機能。"
+        },
+        {
+          "id": "C",
+          "text": "古いデータを手動削除",
+          "is_correct": false,
+          "explanation": "短期対応で根本解ではない。Auto Scaling が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Multi-AZ を無効化してストレージ料金を半減",
+          "is_correct": false,
+          "explanation": "可用性低下と引換え。容量問題の解ではない。"
+        }
+      ],
+      "explanation": "RDS Storage Auto Scaling は ディスク使用率 > 90% で自動的にストレージ拡張 (Max まで)。ダウンタイムなし、変更後 6 時間以内 or 10% 増のいずれか後で再評価。手動運用不要のシンプル機能。",
+      "references": [
+        {
+          "title": "RDS Storage Auto Scaling",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+        }
+      ],
+      "tags": [
+        "rds",
+        "storage-auto-scaling"
+      ],
+      "common_mistakes": [
+        "ストレージタイプ変更で容量問題と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-036",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "VPC Flow Logs Optimization",
+      "subtopic": "Cost vs visibility",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "本番 VPC の Flow Logs を CloudWatch Logs に全件記録しているがログ料金が月数万 USD。コスト削減しつつ監査・トラブルシュート機能は維持したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Flow Logs を無効化し代わりに GuardDuty に頼る",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検知で生 Flow Logs のクエリ不可。証跡として残らない。"
+        },
+        {
+          "id": "B",
+          "text": "VPC Flow Logs を S3 に出力し Parquet 形式 + パーティション化、Athena でクエリ",
+          "is_correct": true,
+          "explanation": "正解。S3 + Parquet で保存料金大幅削減 + Athena でクエリ可能性維持。"
+        },
+        {
+          "id": "C",
+          "text": "サンプリングで 10% だけ記録",
+          "is_correct": false,
+          "explanation": "サンプリングで欠落、監査・トラブルシュート時に必要な情報を失う。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Logs の保持期間を 1 日に短縮",
+          "is_correct": false,
+          "explanation": "監査要件に不足。S3 で長期低コスト保管が標準。"
+        }
+      ],
+      "explanation": "VPC Flow Logs 出力先: CloudWatch Logs (即時 Insights クエリ、料金高め) / S3 (Parquet + Snappy 圧縮 + パーティション、Athena クエリ、保存料金安) / Firehose / Kinesis。コスト最適化は S3 Parquet + Athena が定石。",
+      "references": [
+        {
+          "title": "VPC Flow Logs publishing to S3",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html"
+        }
+      ],
+      "tags": [
+        "vpc-flow-logs",
+        "athena",
+        "cost"
+      ],
+      "common_mistakes": [
+        "GuardDuty で生ログ代替と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-037",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "EBS Performance Tuning",
+      "subtopic": "IOPS bottleneck",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "EC2 上の RDBMS でディスク IOPS がボトルネック。EBS gp3 で 3,000 IOPS だが 20,000 IOPS 必要。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EBS gp3 の Provisioned IOPS オプションで 20,000 IOPS を独立指定する (ボリュームサイズと無関係)",
+          "is_correct": true,
+          "explanation": "正解。gp3 はベース 3,000 IOPS + 追加 IOPS / Throughput を独立指定可能。"
+        },
+        {
+          "id": "B",
+          "text": "gp3 ボリュームサイズを 10 倍にして IOPS を稼ぐ",
+          "is_correct": false,
+          "explanation": "gp2 の挙動。gp3 は サイズと IOPS が独立。"
+        },
+        {
+          "id": "C",
+          "text": "io2 Block Express に切替える (~256K IOPS 対応)",
+          "is_correct": false,
+          "explanation": "選択肢になり得るがコスト高。20K IOPS なら gp3 で十分。"
+        },
+        {
+          "id": "D",
+          "text": "EBS を諦め Instance Store を使う",
+          "is_correct": false,
+          "explanation": "Instance Store は再起動で消失。RDBMS データには不向き。"
+        }
+      ],
+      "explanation": "EBS gp3 は ベース 3,000 IOPS + 125 MB/s 含む、最大 16,000 IOPS + 1,000 MB/s まで独立指定可能 + gp2 より 20% 安。20K 超は io2 / io2 Block Express (最大 256K IOPS) を検討。サイズと IOPS が独立する点が gp2 から最大の改善。",
+      "references": [
+        {
+          "title": "EBS gp3",
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/general-purpose.html"
+        }
+      ],
+      "tags": [
+        "ebs",
+        "gp3",
+        "iops"
+      ],
+      "common_mistakes": [
+        "gp2 の挙動と混同",
+        "io2 を全シナリオで選ぶ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-038",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Spot Instance with Interruption Handling",
+      "subtopic": "Resilient Spot architecture",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）EC2 Spot Instance で中断耐性を高める設計として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Spot Fleet で複数インスタンスタイプ・複数 AZ にダイバーシファイし Capacity Optimized 戦略を選ぶ",
+          "is_correct": true,
+          "explanation": "正解。プール分散 + Capacity Optimized で中断率最小化が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Capacity Rebalance を有効化し、Rebalance Recommendation 受信時に予防的置換する",
+          "is_correct": true,
+          "explanation": "正解。Capacity Rebalance で 2 分中断通知前に予防対応する標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "Spot 価格上限を On-Demand 価格の 50% に設定",
+          "is_correct": false,
+          "explanation": "価格上限で中断頻度が増えるだけ。Capacity Optimized で容量重視が正解。"
+        },
+        {
+          "id": "D",
+          "text": "単一インスタンスタイプ・単一 AZ で安定運用",
+          "is_correct": false,
+          "explanation": "プール集中で中断率最大化。ダイバーシフィケーションが必要。"
+        }
+      ],
+      "explanation": "Spot 耐性設計の要諦: ①ダイバーシフィケーション (複数タイプ × 複数 AZ × 複数プール)、②Allocation Strategy = Capacity Optimized、③Capacity Rebalance 有効化、④Lifecycle Hook でグレースフル退避、⑤チェックポイント・冪等性アプリ設計。",
+      "references": [
+        {
+          "title": "Spot Instance best practices",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html"
+        }
+      ],
+      "tags": [
+        "spot",
+        "diversification",
+        "capacity-rebalance"
+      ],
+      "common_mistakes": [
+        "価格上限設定で中断回避できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-039",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Saving Plans Sharing",
+      "subtopic": "Cross-account benefits",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下で Savings Plans を購入。あるアカウントで余った SP を他アカウントの未カバー利用に自動適用したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Organizations 管理アカウントで RI/SP Sharing を有効化し、組織全体で余剰共有する",
+          "is_correct": true,
+          "explanation": "正解。RI/SP Sharing は組織内アカウント間の余剰枠融通の標準機能 (デフォルト ON)。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントで個別に SP を購入する",
+          "is_correct": false,
+          "explanation": "個別購入は柔軟性失う。Sharing で組織で活用が標準。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で SP 余剰を検知し別アカウントに移管",
+          "is_correct": false,
+          "explanation": "SP は移管不可。Sharing で自動共有が機能。"
+        },
+        {
+          "id": "D",
+          "text": "Cost Explorer で余剰検知し手動再購入",
+          "is_correct": false,
+          "explanation": "余剰を解消する手段ではなく現状把握だけ。"
+        }
+      ],
+      "explanation": "AWS Organizations は RI Sharing と SP Sharing がデフォルト有効。あるアカウントで余った RI/SP は他アカウントの未カバー利用に自動適用 (組織内最適化)。Management Account で Sharing 設定を切替可能。アカウント単位で OFF にもできる。",
+      "references": [
+        {
+          "title": "Organizations RI/SP sharing",
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ri-discount-sharing.html"
+        }
+      ],
+      "tags": [
+        "savings-plans",
+        "organizations",
+        "sharing"
+      ],
+      "common_mistakes": [
+        "SP が移管可能と誤解",
+        "Sharing の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain3-040",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Continuous Improvement for Existing Solutions",
+        "weight_percent": 25
+      },
+      "topic": "Multi-Pillar Improvement",
+      "subtopic": "Well-Architected Review",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）既存本番アプリの継続改善で Well-Architected Framework の 6 Pillar をバランス評価する原則として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 Pillar (例: Cost) だけを優先するとセキュリティ・可用性のトレードオフ犠牲が発生するため、6 Pillar 横断評価が必要",
+          "is_correct": true,
+          "explanation": "正解。Single Pillar 最適化はトレードオフ犠牲を生む。Well-Architected の本質。"
+        },
+        {
+          "id": "B",
+          "text": "Well-Architected Tool で定期レビュー (年次以上) + High/Medium Risk 項目を計画的解消する",
+          "is_correct": true,
+          "explanation": "正解。WA Tool で継続レビュー + リスク管理は WAF 推奨の標準プロセス。"
+        },
+        {
+          "id": "C",
+          "text": "Well-Architected は新規構築時の 1 回評価で十分",
+          "is_correct": false,
+          "explanation": "WAF は継続改善ツールで定期レビューが推奨。"
+        },
+        {
+          "id": "D",
+          "text": "6 Pillar はすべて同じ重要度で評価する必要がある",
+          "is_correct": false,
+          "explanation": "業務要件に応じて Pillar の重要度は変わる。バランス評価だが等重とは限らない。"
+        }
+      ],
+      "explanation": "Well-Architected Framework 6 Pillar: Operational Excellence / Security / Reliability / Performance Efficiency / Cost Optimization / Sustainability。Trusted Advisor / Compute Optimizer / Cost Explorer / Resilience Hub / Security Hub 等のツール群と WA Tool で継続的に評価・改善。",
+      "references": [
+        {
+          "title": "AWS Well-Architected Framework",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html"
+        }
+      ],
+      "tags": [
+        "well-architected",
+        "continuous-improvement"
+      ],
+      "common_mistakes": [
+        "Pillar 単独最適化",
+        "WAF を一回評価と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}
