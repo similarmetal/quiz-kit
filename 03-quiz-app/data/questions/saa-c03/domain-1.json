@@ -110,7 +110,7 @@
       "options": [
         {
           "id": "A",
-          "text": "委譲先に AdministratorAccess を付与し信頼関係で制御する",
+          "text": "委譲先 IAM ユーザに AdministratorAccess を直接付与し、信頼関係ポリシーでのみ AssumeRole 元アカウントを制御する",
           "is_correct": false,
           "explanation": "管理者権限の委譲は最小権限に反する。信頼関係は誰が引き受けられるかを決めるだけで、ロール作成の上限制御にはならない。"
         },
@@ -122,13 +122,13 @@
         },
         {
           "id": "C",
-          "text": "サービスコントロールポリシー (SCP) で個別ロールの権限を直接定義する",
+          "text": "AWS Organizations の SCP で、委譲先が作成する個別ロールごとに許可される API リストをハードコード列挙する",
           "is_correct": false,
           "explanation": "SCP はアカウント全体の上限であり、新規ロール毎の境界を強制するのに直接は使わない。Permission Boundary が適切。"
         },
         {
           "id": "D",
-          "text": "AWS Config ルールで管理者権限ロールを検知し自動削除する",
+          "text": "AWS Config の Custom ルールで AdministratorAccess を持つロールを継続検知し、Auto Remediation で自動削除する",
           "is_correct": false,
           "explanation": "検知・削除は事後対応で、作成自体を防げない。予防的コントロールが望ましい。"
         }
@@ -186,19 +186,19 @@
       "options": [
         {
           "id": "A",
-          "text": "アカウント A のユーザに、アカウント B の S3 へアクセスする IAM アクセスキーを共有する",
+          "text": "アカウント A のユーザに、アカウント B の S3 バケットアクセス権を持つ IAM の長期アクセスキーを払い出し、Slack 等で共有する",
           "is_correct": false,
           "explanation": "長期キー共有はキー漏洩・監査困難・ローテーション困難で非推奨。"
         },
         {
           "id": "B",
-          "text": "アカウント A から VPC Peering を張れば自動的にアクセスできる",
+          "text": "アカウント A と B の VPC 間で VPC Peering を張れば S3 へクロスアカウントで自動的にアクセスできるようになる",
           "is_correct": false,
           "explanation": "VPC Peering はネットワーク層の接続で、S3 への認可は別。S3 はパブリックエンドポイントを持つ。"
         },
         {
           "id": "C",
-          "text": "S3 バケットを Public 公開し、アクセスログで監視する",
+          "text": "S3 バケットを Public 公開設定にして匿名アクセスを許可し、CloudTrail でアクセスログを継続監視する",
           "is_correct": false,
           "explanation": "公開は機密漏洩。要件は別アカウントからのアクセスであって匿名公開ではない。"
         },
@@ -338,7 +338,7 @@
       "options": [
         {
           "id": "A",
-          "text": "VPC Peering を社内ネットワークと張る",
+          "text": "社内オフィスのオンプレ VPC と AWS VPC の間で VPC Peering を張り、社内 IP からの通信だけを通す",
           "is_correct": false,
           "explanation": "S3 はパブリックエンドポイントを持つため、Peering だけでは IP 制約にならない。"
         },
@@ -350,13 +350,13 @@
         },
         {
           "id": "C",
-          "text": "EC2 上にリバースプロキシを立て、社内 IP からのみ通す",
+          "text": "EC2 上にリバースプロキシを構築し、社内 IP からの HTTP リクエストだけを S3 にプロキシするように制御する",
           "is_correct": false,
           "explanation": "実装可能だが運用負荷が大きい。バケットポリシーで宣言的に書ける。"
         },
         {
           "id": "D",
-          "text": "S3 オブジェクトを KMS で暗号化する",
+          "text": "S3 バケット内オブジェクトを KMS で暗号化し、復号権限を社内 IAM ユーザにのみ付与する",
           "is_correct": false,
           "explanation": "暗号化は IP 制約とは別軸の対策。"
         }
@@ -414,7 +414,7 @@
       "options": [
         {
           "id": "A",
-          "text": "各アカウントで IAM ユーザを発行し、社員に共有する",
+          "text": "各アカウントで 200 人分の IAM ユーザを発行し、コンソール URL と初期パスワードを社員に個別配布する",
           "is_correct": false,
           "explanation": "アカウント数 × 人数の IAM ユーザ管理は非現実的。スケールしない。"
         },
@@ -426,13 +426,13 @@
         },
         {
           "id": "C",
-          "text": "Amazon Cognito User Pool に全社員を登録する",
+          "text": "Amazon Cognito User Pool に全社員 200 人を登録し、各アカウントの IAM Role に Cognito Identity Pool 経由でマッピングする",
           "is_correct": false,
           "explanation": "Cognito は顧客 (B2C) 向け ID 基盤。社員 SSO は IAM Identity Center が標準。"
         },
         {
           "id": "D",
-          "text": "各アカウントで個別に SAML フェデレーションを設定する",
+          "text": "各アカウントで個別に SAML 2.0 フェデレーションを設定し、社員ごとに使うアカウントへ毎回ログインし直す",
           "is_correct": false,
           "explanation": "実装可能だが管理が分散する。IAM Identity Center が集中管理の標準解。"
         }
@@ -566,19 +566,19 @@
       "options": [
         {
           "id": "A",
-          "text": "各アカウントの IAM ユーザに deny ポリシーを個別に付与する",
+          "text": "各アカウントの IAM ユーザ/ロールに『非許可リージョンの ec2:RunInstances を Deny』する個別ポリシーを付与する",
           "is_correct": false,
           "explanation": "個別管理は漏れと運用負荷が大きい。組織レベルで一括強制すべき。"
         },
         {
           "id": "B",
-          "text": "AWS Config ルールで起動後に検知し自動停止する",
+          "text": "AWS Config の Custom ルールで非許可リージョンでの EC2 起動を検知し、Auto Remediation で起動直後に自動停止する",
           "is_correct": false,
           "explanation": "事後対応のため一時的に起動できてしまう。予防的コントロールが望ましい。"
         },
         {
           "id": "C",
-          "text": "CloudTrail のイベントセレクタで非許可リージョンを記録しない設定にする",
+          "text": "CloudTrail のイベントセレクタを変更し、非許可リージョンでの起動イベントを記録しない設定にする",
           "is_correct": false,
           "explanation": "CloudTrail は監査ログ。起動を防ぐ仕組みではない。"
         },
@@ -642,19 +642,19 @@
       "options": [
         {
           "id": "A",
-          "text": "AWS が完全に管理する AWS Managed Key (aws/s3 等) を使う",
+          "text": "AWS が完全に管理する AWS Managed Key (alias/aws/s3 等) を使い、ローテーション設定は AWS 既定値に任せる",
           "is_correct": false,
           "explanation": "AWS Managed Key はキーポリシー編集や手動ローテーション・無効化が顧客にはできない。"
         },
         {
           "id": "B",
-          "text": "EC2 インスタンス内の OpenSSL で暗号化し KMS を使わない",
+          "text": "EC2 インスタンス内で OpenSSL によりアプリ層で暗号化し、鍵管理は別途自前で行う",
           "is_correct": false,
           "explanation": "アプリ側で実装すると鍵管理を自前で行うことになり、要件「ローテーション・無効化を顧客側で管理」の意図と外れる（KMS を使う前提の問題）。"
         },
         {
           "id": "C",
-          "text": "AWS Owned Key を選択する",
+          "text": "AWS Owned Key を選択し、AWS 内部で透過的にローテーションされる仕組みに任せる",
           "is_correct": false,
           "explanation": "AWS Owned Key は顧客から見えない内部キー。制御不可。"
         },
@@ -718,13 +718,13 @@
       "options": [
         {
           "id": "A",
-          "text": "東京の CMK を大阪リージョンへエクスポートする",
+          "text": "東京の CMK のキー素材をエクスポートし、大阪リージョンに同じ素材でインポートして同等性を保つ",
           "is_correct": false,
           "explanation": "KMS のキー素材を外へエクスポートする運用は通常行わず、要件にも合わない。"
         },
         {
           "id": "B",
-          "text": "Lambda で東京 KMS を呼び出し、大阪から復号する",
+          "text": "大阪リージョンのアプリから東京リージョンの KMS を直接呼び出し、リージョン跨ぎで復号を行う",
           "is_correct": false,
           "explanation": "リージョン跨ぎ呼び出しで動くが遅延・コスト・障害耐性で不利。Multi-Region Key が設計上の解。"
         },
@@ -736,7 +736,7 @@
         },
         {
           "id": "D",
-          "text": "暗号文を一度復号して大阪 CMK で再暗号化するパイプラインを組む",
+          "text": "東京で一度復号した暗号文を大阪の CMK で再暗号化するパイプラインを Lambda + Step Functions で組む",
           "is_correct": false,
           "explanation": "「再暗号化せずに」という要件に反する。"
         }
@@ -794,25 +794,25 @@
       "options": [
         {
           "id": "A",
-          "text": "AWS KMS Customer Managed Key (CMK) のみ",
+          "text": "AWS KMS の Customer Managed Key (CMK) のみを使用し、AWS マネージドな共有 HSM 上で鍵素材を保管する",
           "is_correct": false,
           "explanation": "KMS の HSM は FIPS 140-2 Level 3 認定 (Level 2/Level 3 のハイブリッド) だがマルチテナント。シングルテナント要件には足りない。"
         },
         {
           "id": "B",
-          "text": "AWS CloudHSM",
+          "text": "AWS CloudHSM を VPC 内に展開し、専有 HSM クラスタとして FIPS 140-2 Level 3 認証のシングルテナント環境を構成する",
           "is_correct": true,
           "explanation": "正解。CloudHSM は FIPS 140-2 Level 3 認定の専用 HSM を顧客 VPC に提供。シングルテナント要件に応える。"
         },
         {
           "id": "C",
-          "text": "S3 のクライアントサイド暗号化",
+          "text": "S3 オブジェクトをクライアントサイドで AES-256 暗号化し、鍵をアプリ側で OpenSSL で生成・管理する",
           "is_correct": false,
           "explanation": "暗号化方式の話で、HSM の置き場所要件には答えない。"
         },
         {
           "id": "D",
-          "text": "AWS Secrets Manager",
+          "text": "AWS Secrets Manager に鍵素材を保管し、KMS で保護されたシークレットとしてアプリから都度参照する",
           "is_correct": false,
           "explanation": "Secrets Manager は KMS で保護されるシークレット管理。HSM 自体の要件には対応しない。"
         }
@@ -1098,19 +1098,19 @@
       "options": [
         {
           "id": "A",
-          "text": "API Gateway を Public エンドポイントで公開する",
+          "text": "Amazon API Gateway を Edge-optimized のパブリックエンドポイントで公開し、API Key と Usage Plan で顧客を識別する",
           "is_correct": false,
           "explanation": "インターネット経由になる。閉域接続要件に合わない。"
         },
         {
           "id": "B",
-          "text": "Site-to-Site VPN を全顧客と個別に張る",
+          "text": "契約顧客ごとに Site-to-Site VPN を個別に張り、BGP で経路広告して閉域接続を提供する",
           "is_correct": false,
           "explanation": "VPN は実装可能だがコスト・運用負荷が大きい。PrivateLink が SaaS API 公開のベストプラクティス。"
         },
         {
           "id": "C",
-          "text": "顧客に VPC Peering を依頼する",
+          "text": "契約顧客ごとに VPC Peering を依頼し、CIDR 重複が起きないよう顧客側にも要請してメッシュ接続を構築する",
           "is_correct": false,
           "explanation": "Peering は IP 重複不可・1:1 接続で多数顧客にスケールしない。マルチテナント SaaS には不向き。"
         },
@@ -1250,19 +1250,19 @@
       "options": [
         {
           "id": "A",
-          "text": "CloudFront のキャッシュで攻撃を吸収する",
+          "text": "CloudFront のキャッシュをアグレッシブに設定し、悪意あるリクエストもキャッシュヒットさせて吸収する",
           "is_correct": false,
           "explanation": "キャッシュは攻撃軽減効果はあるが、SQLi/XSS の検知・遮断は WAF の役割。"
         },
         {
           "id": "B",
-          "text": "Security Group で 80/443 を絞る",
+          "text": "Security Group で 80/443 ポートのインバウンドを必要最小限の送信元 IP に絞り、L7 攻撃も同時にブロックする",
           "is_correct": false,
           "explanation": "L4 制御のみで、HTTP ペイロードの解析はできない。"
         },
         {
           "id": "C",
-          "text": "EC2 上に WAF アプライアンスを立てる",
+          "text": "EC2 上に商用 WAF アプライアンスをデプロイし、ALB の前段に置いて HTTP トラフィックを検査する",
           "is_correct": false,
           "explanation": "実装可能だが運用負荷大・スケール困難。マネージドの AWS WAF が望ましい。"
         },
@@ -1402,7 +1402,7 @@
       "options": [
         {
           "id": "A",
-          "text": "S3 を Static Website Hosting にし、Public 公開する",
+          "text": "S3 を Static Website Hosting モードで有効化し、バケットを Public 公開してインターネット経由で直接配信する",
           "is_correct": false,
           "explanation": "Public 公開は要件に反する (直接アクセスを禁止したい)。"
         },
@@ -1414,13 +1414,13 @@
         },
         {
           "id": "C",
-          "text": "CloudFront に Origin Access Identity (OAI) を設定する",
+          "text": "CloudFront に旧式の Origin Access Identity (OAI) を設定し、S3 バケットポリシーで OAI からのみ許可する",
           "is_correct": false,
           "explanation": "OAI は旧方式で機能制限あり。新規構築は OAC が推奨。"
         },
         {
           "id": "D",
-          "text": "CloudFront から S3 へ HTTPS で接続する設定だけで十分",
+          "text": "CloudFront から S3 オリジンへの接続を HTTPS のみに強制し、転送経路の暗号化で代替する",
           "is_correct": false,
           "explanation": "通信路の暗号化だけでは S3 への直接アクセスは塞げない。バケットポリシーで CloudFront 以外を Deny する必要がある。"
         }
@@ -1471,63 +1471,63 @@
         "weight_percent": 30
       },
       "topic": "GuardDuty",
-      "subtopic": "Threat detection scope",
-      "cognitive_level": "L2-Understand",
-      "difficulty": "easy",
-      "stem": "GuardDuty がデフォルトで分析対象とするデータソースとして正しいものはどれか。",
+      "subtopic": "Multi-account threat detection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "AWS Organizations 配下 30 アカウントを運用するある企業で、セキュリティチームは脅威検知 findings を中央アカウントで一元的に確認したい。さらに新規アカウントが追加されたときも自動的に脅威検知が有効化される必要がある。最も適切な構成はどれか。",
       "options": [
         {
           "id": "A",
-          "text": "EBS スナップショットの中身",
+          "text": "各アカウントの IAM ユーザに GuardDuty コンソール権限を渡し、週次で担当者が findings をエクスポートして共有する",
           "is_correct": false,
-          "explanation": "EBS スナップショットの中身は GuardDuty Malware Protection (オプション) で対応。デフォルトデータソースではない。"
+          "explanation": "手作業運用は 30 アカウントでスケールせず、リアルタイム対応も不可能。Delegated Administrator で自動化すべき。"
         },
         {
           "id": "B",
-          "text": "S3 オブジェクトの内容スキャン",
+          "text": "各アカウントで GuardDuty を個別有効化し、findings は Security Hub の組織機能でクロスアカウント集約に任せる",
           "is_correct": false,
-          "explanation": "S3 オブジェクト内容のスキャンは Macie の役割。GuardDuty S3 Protection は API 呼び出しパターンの異常検知。"
+          "explanation": "Security Hub は集約に使えるが、GuardDuty 有効化自体は別途。新規アカウント自動有効化の要件も満たさず運用負荷が残る。"
         },
         {
           "id": "C",
-          "text": "アプリケーションログ (CloudWatch Logs)",
+          "text": "中央アカウントから Lambda で各アカウントの API を叩いて findings を S3 に集約する自動化を独自に組む",
           "is_correct": false,
-          "explanation": "アプリログは GuardDuty の標準データソースではない。"
+          "explanation": "技術的には可能だが新規アカウント検知・GuardDuty 有効化・findings 取得を全て自作する負荷が大きい。マネージドの Delegated Administrator が正解。"
         },
         {
           "id": "D",
-          "text": "VPC Flow Logs、DNS ログ、CloudTrail 管理イベント",
+          "text": "中央アカウントを GuardDuty の Delegated Administrator として登録し、組織全体で自動有効化を構成する",
           "is_correct": true,
-          "explanation": "正解。GuardDuty はこの 3 つを基本データソースとして消費する (顧客が個別に有効化する必要なし)。"
+          "explanation": "正解。Delegated Administrator により組織配下の自動有効化・findings 集中表示・設定一括更新を 1 アカウントから実施できる。"
         }
       ],
-      "explanation": "GuardDuty は基本データソースとして VPC Flow Logs / DNS ログ / CloudTrail を消費。追加機能として S3 Protection / EKS Protection / Malware Protection / RDS Protection / Lambda Protection 等がある。",
+      "explanation": "AWS Organizations + GuardDuty の Delegated Administrator パターンは、マルチアカウント脅威検知の標準解。新規アカウントへの自動有効化・findings の集中表示・設定の組織レベル更新がマネージドで実現できる。",
       "references": [
         {
-          "title": "Amazon GuardDuty data sources",
-          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html"
+          "title": "Managing GuardDuty accounts with AWS Organizations",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html"
         }
       ],
       "tags": [
         "guardduty",
-        "vpc-flow-logs",
-        "cloudtrail",
-        "dns"
+        "organizations",
+        "delegated-administrator",
+        "multi-account"
       ],
       "common_mistakes": [
-        "GuardDuty が S3 の中身をスキャンすると思い込む",
-        "アプリログまで分析対象だと考える"
+        "Security Hub で GuardDuty も有効化できると誤解",
+        "新規アカウント自動有効化の要件を見落とす"
       ],
       "quality_score": {
         "stem_clarity": 5,
-        "distractor_plausibility": 4,
+        "distractor_plausibility": 5,
         "cognitive_level_match": 5,
-        "explanation_completeness": 4,
-        "overall": 4.5
+        "explanation_completeness": 5,
+        "overall": 5.0
       },
       "metadata": {
         "created_at": "2026-05-28T00:00:00Z",
-        "created_by": "claude-opus-4-7",
+        "created_by": "claude-opus-4-7-quality-pass",
         "reviewed": false,
         "language": "ja"
       }
@@ -1775,63 +1775,63 @@
         "weight_percent": 30
       },
       "topic": "ACM",
-      "subtopic": "Certificate provisioning",
-      "cognitive_level": "L2-Understand",
-      "difficulty": "easy",
-      "stem": "ALB に TLS 証明書を導入し、自動更新したい。最もシンプルな構成はどれか。",
+      "subtopic": "Private CA for internal endpoints",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "VPC 内部の社内 API を ALB 経由で公開し、TLS 証明書を導入したい。ドメインは社内 DNS でのみ解決され、公開インターネットからのドメイン検証は通せない。最も適切な選択はどれか。",
       "options": [
         {
           "id": "A",
-          "text": "自己署名証明書を ALB にアップロードする",
+          "text": "ACM Public 証明書を発行し、Route 53 Public Hosted Zone での DNS 検証で取得して ALB にアタッチする",
           "is_correct": false,
-          "explanation": "自己署名はブラウザ警告が出る。公開サイトでは使えない。"
+          "explanation": "Public 証明書は公開検証可能なドメイン (公開 DNS で名前解決できる) でしか発行できない。社内専用ドメインには不適。"
         },
         {
           "id": "B",
-          "text": "Let's Encrypt の証明書を EC2 に置き、cron で更新する",
+          "text": "自己署名証明書を作成し、社内全クライアントの信頼ストアに事前配布してから ALB にアップロードする",
           "is_correct": false,
-          "explanation": "実装可能だが運用負荷大。ALB と統合する ACM がシンプル。"
+          "explanation": "技術的には可能だが、クライアント数が増えると配布・更新が破綻する。Private CA で組織の信頼チェーンを一本化するのが標準。"
         },
         {
           "id": "C",
-          "text": "商用 CA から購入し、ALB に手動アップロードする",
+          "text": "Let's Encrypt 証明書を EC2 ベースの Nginx に置き、ALB の代わりに使用して内部公開する",
           "is_correct": false,
-          "explanation": "更新が手動になる。"
+          "explanation": "Let's Encrypt も公開検証が前提で、内部ドメインには直接使えない。さらに ALB を捨てると運用負荷が増す。"
         },
         {
           "id": "D",
-          "text": "AWS Certificate Manager (ACM) で公開ドメインの証明書を発行し、ALB にアタッチする",
+          "text": "AWS Private CA (旧 ACM Private CA) で内部用プライベート CA を立て、ACM 経由でプライベート証明書を発行し ALB にアタッチする",
           "is_correct": true,
-          "explanation": "正解。ACM 公開証明書は無料・自動更新・主要 AWS サービス (ALB/CloudFront/API Gateway) に統合済み。"
+          "explanation": "正解。Private CA はオンプレ/VPC 内部ドメイン向け証明書発行の標準解。発行後 ACM 統合で ALB に直接アタッチできる。"
         }
       ],
-      "explanation": "ACM 公開証明書は ALB / CloudFront / API Gateway / App Runner で無料利用でき、自動更新される (DNS 検証推奨)。EC2 のような ACM 非統合サービスには ACM Private CA かサードパーティ証明書を別途検討。",
+      "explanation": "ACM Public は公開 DNS で検証できるドメインに限定される。社内ドメイン・閉域 API の TLS には AWS Private CA でプライベート証明書を発行し、ACM 統合で ALB / API Gateway / CloudFront へアタッチする。Private CA は有料 ($400/月の CA + 証明書発行料) なので、コスト比較も SAA で問われる。",
       "references": [
         {
-          "title": "AWS Certificate Manager",
-          "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"
+          "title": "AWS Private Certificate Authority",
+          "url": "https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html"
         }
       ],
       "tags": [
         "acm",
-        "alb",
-        "tls",
-        "certificate"
+        "private-ca",
+        "internal-tls",
+        "alb"
       ],
       "common_mistakes": [
-        "ACM が EC2 で直接使えると誤解",
-        "Let's Encrypt 自動更新の運用コストを過小評価"
+        "Public 証明書を内部ドメインに発行できると誤解",
+        "自己署名で大規模クライアントを捌こうとする"
       ],
       "quality_score": {
         "stem_clarity": 5,
-        "distractor_plausibility": 4,
+        "distractor_plausibility": 5,
         "cognitive_level_match": 5,
-        "explanation_completeness": 4,
-        "overall": 4.5
+        "explanation_completeness": 5,
+        "overall": 5.0
       },
       "metadata": {
         "created_at": "2026-05-28T00:00:00Z",
-        "created_by": "claude-opus-4-7",
+        "created_by": "claude-opus-4-7-quality-pass",
         "reviewed": false,
         "language": "ja"
       }
@@ -1858,7 +1858,7 @@
       "options": [
         {
           "id": "A",
-          "text": "CloudTrail で VPC イベントを記録する",
+          "text": "CloudTrail で VPC 関連 API イベント (CreateSubnet 等) を記録するだけで通信内容の証跡として十分とする",
           "is_correct": false,
           "explanation": "CloudTrail は API 呼び出し記録。データプレーンの通信メタデータは取れない。"
         },
@@ -1870,13 +1870,13 @@
         },
         {
           "id": "C",
-          "text": "GuardDuty を有効化する",
+          "text": "Amazon GuardDuty を有効化し、通信メタデータの代わりに脅威検知 findings を生ログ代用として保管する",
           "is_correct": false,
           "explanation": "GuardDuty は脅威検知 (アラート) で、生の Flow ログを継続保管する用途ではない。"
         },
         {
           "id": "D",
-          "text": "Inspector でネットワークスキャンする",
+          "text": "Amazon Inspector でネットワーク到達性スキャンを定期実行し、結果を通信記録の代わりに保管する",
           "is_correct": false,
           "explanation": "Inspector は脆弱性スキャン。通信メタデータの記録ではない。"
         }
@@ -2010,7 +2010,7 @@
       "options": [
         {
           "id": "A",
-          "text": "AWS Secrets Manager に 50 個のシークレットとして保管する",
+          "text": "AWS Secrets Manager に 50 個分のシークレットとして保管し、自動ローテーションは無効化したままで使用する",
           "is_correct": false,
           "explanation": "Secrets Manager はシークレット 1 個 $0.40/月 + API リクエスト課金。ローテーション不要要件には過剰コスト。"
         },
@@ -2022,13 +2022,13 @@
         },
         {
           "id": "C",
-          "text": "S3 バケットに JSON で平文保管する",
+          "text": "S3 バケットに JSON で平文保管し、バケットポリシーで読み取り権限を絞ることで保護する",
           "is_correct": false,
           "explanation": "平文保管はセキュリティ要件に反する。"
         },
         {
           "id": "D",
-          "text": "DynamoDB に保管する",
+          "text": "DynamoDB テーブルにキー値ペアで保管し、IAM ポリシーで GetItem 権限を制御する",
           "is_correct": false,
           "explanation": "シークレット管理用途には Parameter Store / Secrets Manager が標準。DynamoDB は汎用 KV で運用設計が別途必要。"
         }
@@ -2079,62 +2079,63 @@
         "weight_percent": 30
       },
       "topic": "KMS",
-      "subtopic": "Automatic key rotation",
-      "cognitive_level": "L1-Remember",
-      "difficulty": "easy",
-      "stem": "KMS の Customer Managed Key (対称キー) で自動ローテーションを有効化したとき、デフォルトのローテーション間隔として正しいものはどれか。",
+      "subtopic": "Automatic rotation impact",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある S3 バケットを暗号化する KMS Customer Managed Key で、自動ローテーションを今日から有効化した。1 年後にローテーションが発生した直後の動作として正しいものはどれか。",
       "options": [
         {
           "id": "A",
-          "text": "365 日 (1 年)",
+          "text": "新規オブジェクトは新しいキー素材で暗号化され、ローテーション前の暗号文は古いキー素材で透過的に復号される",
           "is_correct": true,
-          "explanation": "正解。デフォルトは 1 年 (365 日)。2022 年以降はカスタム間隔 (90〜2,560 日) も指定可能。"
+          "explanation": "正解。KMS は同一キー ID 下で複数キー素材を保持し、暗号化は新素材・復号は適切な素材で透過処理する。"
         },
         {
           "id": "B",
-          "text": "90 日",
+          "text": "ローテーション以前にバケットに保存されたオブジェクトはすべて新キー素材で再暗号化される",
           "is_correct": false,
-          "explanation": "90 日ではない。"
+          "explanation": "再暗号化は行われない。古い暗号文は古いキー素材で復号され続ける。データ全体を新キーで再暗号化するには ReEncrypt 操作を顧客側で実装する必要がある。"
         },
         {
           "id": "C",
-          "text": "30 日",
+          "text": "アプリケーション側で新しいキー ARN を再取得し、設定を更新する必要がある",
           "is_correct": false,
-          "explanation": "30 日ではない。デフォルトは年次。"
+          "explanation": "キー ARN は変わらない。同じ ARN で内部のキー素材だけ更新されるため、アプリ側の変更は不要。"
         },
         {
           "id": "D",
-          "text": "3 年",
+          "text": "ローテーション処理中は数分間、当該キーへの暗号化・復号操作がブロックされる",
           "is_correct": false,
-          "explanation": "3 年ではない。"
+          "explanation": "KMS の自動ローテーションは無停止で実行される。可用性影響はない。"
         }
       ],
-      "explanation": "KMS 対称 CMK の自動ローテーション間隔は標準で 1 年。古いキー素材は復号用に保持され、新しい素材で暗号化される。非対称 CMK は自動ローテーション非対応。",
+      "explanation": "KMS 自動ローテーションは『新規暗号化は新素材、既存暗号文は古い素材で透過復号』。データを物理的に新キーで再暗号化したいなら ReEncrypt API か S3 Batch Operations での再書き込みが必要。キー ARN とアプリ設定は不変なので運用変更は不要。",
       "references": [
         {
-          "title": "Rotating AWS KMS keys",
-          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"
+          "title": "How automatic key rotation works",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-how-it-works"
         }
       ],
       "tags": [
         "kms",
         "rotation",
-        "symmetric-key"
+        "re-encryption",
+        "transparent"
       ],
       "common_mistakes": [
-        "90 日や 30 日と覚えている",
-        "非対称 CMK でも自動ローテーション可能だと誤解"
+        "既存データも自動で再暗号化されると誤解",
+        "ローテーションで ARN が変わると思い込む"
       ],
       "quality_score": {
         "stem_clarity": 5,
-        "distractor_plausibility": 4,
+        "distractor_plausibility": 5,
         "cognitive_level_match": 5,
-        "explanation_completeness": 4,
-        "overall": 4.5
+        "explanation_completeness": 5,
+        "overall": 5.0
       },
       "metadata": {
         "created_at": "2026-05-28T00:00:00Z",
-        "created_by": "claude-opus-4-7",
+        "created_by": "claude-opus-4-7-quality-pass",
         "reviewed": false,
         "language": "ja"
       }
@@ -2237,7 +2238,7 @@
       "options": [
         {
           "id": "A",
-          "text": "S3 Versioning だけで対応する",
+          "text": "S3 Versioning のみを有効化し、削除されても旧バージョンが残るためそれを WORM の代替とする",
           "is_correct": false,
           "explanation": "Versioning は履歴を残せるが、削除自体は可能。WORM 要件には不十分。"
         },
@@ -2249,13 +2250,13 @@
         },
         {
           "id": "C",
-          "text": "S3 Lifecycle で Glacier に移し、7 年後削除に設定する",
+          "text": "S3 Lifecycle で 1 日後に Glacier へ移行し、7 年後に Lifecycle で自動削除する設定にする",
           "is_correct": false,
           "explanation": "保管階層の話で、削除不可性は提供しない。"
         },
         {
           "id": "D",
-          "text": "S3 バケットポリシーで Deny す:Delete を書く",
+          "text": "S3 バケットポリシーで s3:DeleteObject を Deny する明示拒否を書いて運用する",
           "is_correct": false,
           "explanation": "ポリシーは変更可能。WORM 規制では仕組みとして削除不能であることが必要。"
         }
@@ -2389,7 +2390,7 @@
       "options": [
         {
           "id": "A",
-          "text": "Security Group の outbound で IP レンジを絞る",
+          "text": "Security Group のアウトバウンドルールで通信先 IP レンジを許可リストに記載し、SaaS の固定 IP を都度追加する",
           "is_correct": false,
           "explanation": "ドメイン単位の制御は IP では困難 (CDN や SaaS の IP は流動的)。"
         },
@@ -2401,13 +2402,13 @@
         },
         {
           "id": "C",
-          "text": "AWS WAF を適用する",
+          "text": "AWS WAF を VPC のエグレスポイントに適用し、HTTP/HTTPS のドメイン単位フィルタリングを構成する",
           "is_correct": false,
           "explanation": "WAF は ALB/CloudFront/API GW の前段 (インバウンド)。VPC エグレスフィルタには使えない。"
         },
         {
           "id": "D",
-          "text": "EC2 上にプロキシを建てて全通信を経由させる",
+          "text": "EC2 上に Squid プロキシを建てて全アウトバウンド通信を経由させ、ACL でドメイン制御する",
           "is_correct": false,
           "explanation": "実装可能だが運用負荷大。マネージドの Network Firewall がよい。"
         }
@@ -2762,63 +2763,63 @@
         "weight_percent": 30
       },
       "topic": "KMS",
-      "subtopic": "Envelope encryption",
-      "cognitive_level": "L2-Understand",
-      "difficulty": "medium",
-      "stem": "KMS のエンベロープ暗号化の説明として正しいものはどれか。",
+      "subtopic": "Data Key Caching for high TPS",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "1 ファイル 数 KB の小ファイルを毎秒 5,000 件、自前のアプリ暗号化を保ったまま S3 にアップロードするバッチが、KMS の GenerateDataKey TPS 上限に達してスロットルされた。アプリ側暗号強度を保ちつつ最も効果的に解消する策はどれか。",
       "options": [
         {
           "id": "A",
-          "text": "データ暗号化キー (DEK) でデータを暗号化し、その DEK をマスターキー (KEK) で暗号化する 2 段階暗号化",
+          "text": "AWS Encryption SDK の Data Key Caching を有効にし、1 個の DEK で複数オブジェクトを暗号化して KMS 呼び出し回数を削減する",
           "is_correct": true,
-          "explanation": "正解。DEK でデータ暗号化、KEK で DEK 暗号化することで大容量データを効率よく扱える。"
+          "explanation": "正解。DEK Caching は TPS 圧縮の標準解で、1 DEK あたりの利用上限 (バイト数・メッセージ数・寿命) を設定して安全性を保てる。"
         },
         {
           "id": "B",
-          "text": "データを KMS マスターキーで直接暗号化するため大容量データに最適",
+          "text": "同一リージョン内に KMS キーを 10 個複製作成し、ラウンドロビンでリクエストを分散させて TPS を 10 倍に拡張する",
           "is_correct": false,
-          "explanation": "KMS で直接暗号化できるのは 4KB 以下。大容量はエンベロープ方式 (DEK + KEK) で処理。"
+          "explanation": "KMS の TPS 制限はアカウント/リージョン単位の合計に近いため、キーを増やしても効果は限定的。Service Quotas で増枠申請するか、Caching で根本的に呼び出し回数を減らす方が正攻法。"
         },
         {
           "id": "C",
-          "text": "KMS と CloudHSM 両方を使う冗長暗号化",
+          "text": "オブジェクト 1 個ごとに専用の Customer Managed Key を新規作成して暗号化する",
           "is_correct": false,
-          "explanation": "冗長化の話ではない。"
+          "explanation": "毎秒 5,000 個のキー作成は CreateKey API の上限を超え、キー管理コストも爆発する。設計として破綻している。"
         },
         {
           "id": "D",
-          "text": "公開鍵と秘密鍵のペアでハイブリッド暗号化する",
+          "text": "KMS の代わりに Secrets Manager に DEK を平文で保管し、毎回 GetSecretValue で取得して使用する",
           "is_correct": false,
-          "explanation": "対称キーの 2 段階暗号化 (KMS デフォルト) を指す。非対称ハイブリッドの説明ではない。"
+          "explanation": "DEK を平文保管はエンベロープ暗号化の前提を崩す。Secrets Manager は API 課金もあり、KMS スロットル問題の解にはならない。"
         }
       ],
-      "explanation": "エンベロープ暗号化: GenerateDataKey で DEK を取得 → DEK の平文版でデータ暗号化 → DEK の暗号文版 (KEK で暗号化済み) をデータと一緒に保管 → 復号時は KMS Decrypt で DEK 復元 → DEK でデータ復号。S3 SSE-KMS、EBS、Aurora 暗号化等の内部で使われる。",
+      "explanation": "高 TPS な暗号化処理は AWS Encryption SDK の Data Key Caching で対処するのが標準。Caching ポリシーで『1 DEK あたり N バイトまで / M メッセージまで / T 秒まで』を制限し、再生成を促す。KMS 制限自体を Service Quotas で増枠する選択肢も実務的だが、根本対策は呼び出し回数の削減。",
       "references": [
         {
-          "title": "AWS KMS envelope encryption",
-          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#enveloping"
+          "title": "AWS Encryption SDK - Data key caching",
+          "url": "https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/data-key-caching.html"
         }
       ],
       "tags": [
         "kms",
-        "envelope-encryption",
-        "dek",
-        "kek"
+        "encryption-sdk",
+        "data-key-caching",
+        "high-tps"
       ],
       "common_mistakes": [
-        "KMS で大容量データを直接暗号化できると誤解",
-        "DEK と KEK の関係が曖昧"
+        "KMS キーを増やせば TPS が増えると誤解",
+        "DEK を平文保管する設計に手を出す"
       ],
       "quality_score": {
         "stem_clarity": 5,
-        "distractor_plausibility": 4,
+        "distractor_plausibility": 5,
         "cognitive_level_match": 5,
         "explanation_completeness": 5,
-        "overall": 4.75
+        "overall": 5.0
       },
       "metadata": {
         "created_at": "2026-05-28T00:00:00Z",
-        "created_by": "claude-opus-4-7",
+        "created_by": "claude-opus-4-7-quality-pass",
         "reviewed": false,
         "language": "ja"
       }
@@ -2996,13 +2997,13 @@
       "options": [
         {
           "id": "A",
-          "text": "IAM ユーザを 1 ユーザにつき 1 つ発行する",
+          "text": "全エンドユーザに対して個別の IAM ユーザを 1 ユーザ 1 アカウント発行し、アクセスキーをアプリ内に保管させる",
           "is_correct": false,
           "explanation": "B2C スケール (数万〜数百万) に IAM は不向き。"
         },
         {
           "id": "B",
-          "text": "AWS IAM Identity Center を使う",
+          "text": "AWS IAM Identity Center を使い、Permission Set でモバイルアプリのエンドユーザに AWS アカウントへのアクセスを割り当てる",
           "is_correct": false,
           "explanation": "Identity Center は社員 (workforce) SSO 向け。B2C には Cognito。"
         },
@@ -3014,7 +3015,7 @@
         },
         {
           "id": "D",
-          "text": "Amazon SES でメール認証を実装する",
+          "text": "Amazon SES でメール認証 (確認コード送信) を実装し、SES の送受信ログを認証セッションとして利用する",
           "is_correct": false,
           "explanation": "SES はメール配信。サインアップ/認証基盤ではない。"
         }
@@ -3154,19 +3155,19 @@
         },
         {
           "id": "B",
-          "text": "プライベートサブネット内に NAT インスタンスを EC2 で自作する",
+          "text": "プライベートサブネット内に t3.micro 等の EC2 を立てて NAT インスタンスとして自前構築し、SNAT を有効化する",
           "is_correct": false,
           "explanation": "可用性・スループット・運用負荷で NAT Gateway に劣る。"
         },
         {
           "id": "C",
-          "text": "プライベートサブネットの EC2 にパブリック IP を割り当てる",
+          "text": "プライベートサブネットの EC2 にパブリック IP (Elastic IP) を割り当て、IGW 経由でインターネット接続させる",
           "is_correct": false,
           "explanation": "プライベートサブネットには IGW へのルートがないため、パブリック IP を付けてもインターネットへ出られない。"
         },
         {
           "id": "D",
-          "text": "Internet Gateway をプライベートサブネットへ直接ルートする",
+          "text": "プライベートサブネットのルートテーブルから 0.0.0.0/0 を Internet Gateway に直接ルートする設定を追加する",
           "is_correct": false,
           "explanation": "IGW へのルートを持つサブネットはパブリックサブネットになる。要件の「プライベート維持」に反する。"
         }
@@ -3224,19 +3225,19 @@
       "options": [
         {
           "id": "A",
-          "text": "VPC Flow Logs で事後検知する",
+          "text": "VPC Flow Logs を Athena で定期クエリし、悪意ドメインへの通信を事後検知して個別対応する",
           "is_correct": false,
           "explanation": "検知のみで予防的ブロックではない。"
         },
         {
           "id": "B",
-          "text": "Security Group でドメインを deny する",
+          "text": "Security Group のアウトバウンドルールで宛先ドメインを文字列指定して deny を書き、悪意あるドメインを遮断する",
           "is_correct": false,
           "explanation": "SG はドメイン単位制御不可。"
         },
         {
           "id": "C",
-          "text": "AWS WAF で DNS をブロックする",
+          "text": "AWS WAF を VPC レベルに適用し、HTTP ホストヘッダの値で悪意ドメインへの通信をブロックする",
           "is_correct": false,
           "explanation": "WAF は HTTP/HTTPS 用。DNS には適用できない。"
         },
@@ -3300,19 +3301,19 @@
       "options": [
         {
           "id": "A",
-          "text": "Cognito を使う",
+          "text": "Amazon Cognito User Pool に IAM ユーザを移行し、Cognito の MFA 機能で AWS マネジメントコンソールへの認証を行わせる",
           "is_correct": false,
           "explanation": "Cognito は B2C 向け。IAM ユーザの MFA 強制は IAM ポリシーで行う。"
         },
         {
           "id": "B",
-          "text": "ログイン画面に MFA 必須の注意書きを出す",
+          "text": "AWS コンソールのログイン画面に『MFA 必須』の注意書きを掲示し、ユーザに自主的な設定を促す運用とする",
           "is_correct": false,
           "explanation": "通知のみで強制力なし。"
         },
         {
           "id": "C",
-          "text": "MFA 設定済みユーザだけを CloudTrail で監視する",
+          "text": "MFA を設定済みのユーザだけを CloudTrail でフィルタ監視し、未設定ユーザを発見次第個別に督促する",
           "is_correct": false,
           "explanation": "検知のみで予防にならない。"
         },
@@ -3369,63 +3370,63 @@
         "weight_percent": 30
       },
       "topic": "EBS",
-      "subtopic": "Encryption at rest",
-      "cognitive_level": "L2-Understand",
-      "difficulty": "easy",
-      "stem": "EC2 で使う EBS ボリュームを暗号化する方法として正しいのはどれか。",
+      "subtopic": "Encrypting existing unencrypted volume",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "稼働中の EC2 にアタッチされた『暗号化なし』の EBS データボリュームを、データを保持したまま暗号化済みに変換したい。最も適切な手順はどれか。",
       "options": [
         {
           "id": "A",
-          "text": "EBS 暗号化を有効化し、KMS キー (デフォルト or 顧客指定 CMK) を選ぶ",
+          "text": "ボリュームのスナップショットを取得 → コピー時に Encrypt オプションと KMS キーを指定 → 暗号化済みスナップショットから新ボリュームを作成 → 元ボリュームをデタッチして新ボリュームをアタッチする",
           "is_correct": true,
-          "explanation": "正解。EBS 暗号化は KMS 統合で透過的に有効化できる。スナップショット・複製先 AMI も暗号化される。"
+          "explanation": "正解。EBS は in-place 暗号化を持たないため、スナップショットコピー時に暗号化を有効化する手順が標準。"
         },
         {
           "id": "B",
-          "text": "OS 内で dm-crypt を手動構成する",
+          "text": "EBS の『Encrypt Volume Now』API を呼び出し、ボリュームを in-place で暗号化する",
           "is_correct": false,
-          "explanation": "実装可能だが運用負荷大。AWS ネイティブの EBS 暗号化が標準。"
+          "explanation": "そのような API は存在しない。EBS は in-place 暗号化に対応していない。"
         },
         {
           "id": "C",
-          "text": "EBS は暗号化できないので S3 に置く",
+          "text": "ボリュームをデタッチし、暗号化フラグを true に変更してから再アタッチする",
           "is_correct": false,
-          "explanation": "EBS は暗号化可能。事実誤認。"
+          "explanation": "暗号化属性はボリューム作成時にのみ設定可能。既存ボリュームの属性変更はできない。"
         },
         {
           "id": "D",
-          "text": "暗号化はインスタンスタイプを変更すれば自動で有効になる",
+          "text": "アカウントの EBS Default Encryption を ON にすれば、既存の暗号化なしボリュームも自動的に暗号化される",
           "is_correct": false,
-          "explanation": "暗号化は EBS の設定で、インスタンスタイプ依存ではない。"
+          "explanation": "Default Encryption は『今後新規作成されるボリューム』に対する設定で、既存ボリュームには影響しない。"
         }
       ],
-      "explanation": "EBS 暗号化は KMS 統合で透過的に動作。スナップショット・スナップショット由来 AMI・コピー先もすべて暗号化が引き継がれる。アカウント・リージョン単位で「EBS 暗号化を常に有効」設定を ON にできる (Default Encryption)。",
+      "explanation": "EBS は in-place 暗号化を持たない。既存ボリュームを暗号化するには『スナップショット取得 → 暗号化コピー → 新ボリューム作成 → 切替』のスナップショット経由パターンが唯一の方法。Default Encryption は新規ボリュームにのみ作用。",
       "references": [
         {
-          "title": "Amazon EBS encryption",
-          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/EBSEncryption.html"
+          "title": "Encrypt an unencrypted EBS volume",
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/EBSEncryption.html#encryption-parameters"
         }
       ],
       "tags": [
         "ebs",
         "encryption",
-        "kms",
-        "at-rest"
+        "snapshot",
+        "migration"
       ],
       "common_mistakes": [
-        "OS 内で自前暗号化する",
-        "EBS 暗号化の存在を知らない"
+        "in-place 暗号化 API があると誤解",
+        "Default Encryption で既存ボリュームも対象になると思い込む"
       ],
       "quality_score": {
         "stem_clarity": 5,
-        "distractor_plausibility": 3,
+        "distractor_plausibility": 5,
         "cognitive_level_match": 5,
-        "explanation_completeness": 4,
-        "overall": 4.25
+        "explanation_completeness": 5,
+        "overall": 5.0
       },
       "metadata": {
         "created_at": "2026-05-28T00:00:00Z",
-        "created_by": "claude-opus-4-7",
+        "created_by": "claude-opus-4-7-quality-pass",
         "reviewed": false,
         "language": "ja"
       }
@@ -3540,13 +3541,13 @@
         },
         {
           "id": "C",
-          "text": "各 VPC に NAT Gateway を個別配置して TGW で接続する",
+          "text": "20 個の各 VPC にそれぞれ NAT Gateway を個別配置し、Transit Gateway で接続して中央管理だけ集約する",
           "is_correct": false,
           "explanation": "NAT を集約せず分散したまま。要件 (集約・コスト削減) に反する。"
         },
         {
           "id": "D",
-          "text": "VPC Peering の Full Mesh で接続する",
+          "text": "20 個の VPC を VPC Peering の Full Mesh で接続し、エグレス VPC への経路を Peering 経由で取る",
           "is_correct": false,
           "explanation": "Peering Full Mesh は管理困難 (20 × 19 / 2 = 190 ペア)。TGW がスケール解。"
         }
@@ -3604,13 +3605,13 @@
       "options": [
         {
           "id": "A",
-          "text": "API Gateway で API Key を発行する",
+          "text": "API Gateway で顧客ごとに API Key を発行し、Usage Plan でスロットリングと識別を行う",
           "is_correct": false,
           "explanation": "API Key は識別・スロットリング用で認可ではない。OAuth 標準フローに従うなら Cognito が適切。"
         },
         {
           "id": "B",
-          "text": "IAM ユーザを顧客分発行しアクセスキーを渡す",
+          "text": "B2B 顧客分の IAM ユーザを発行し、それぞれにアクセスキーを払い出して長期クレデンシャルとして渡す",
           "is_correct": false,
           "explanation": "IAM ユーザを大量発行するパターンはスケールしない。"
         },
@@ -3622,7 +3623,7 @@
         },
         {
           "id": "D",
-          "text": "Cognito Identity Pool だけを使う",
+          "text": "Amazon Cognito Identity Pool だけを使い、無認証ロールで一時クレデンシャルを発行する",
           "is_correct": false,
           "explanation": "Identity Pool は AWS リソースアクセス用のクレデンシャル発行。OAuth トークン発行は User Pool。"
         }
@@ -3686,19 +3687,19 @@
         },
         {
           "id": "B",
-          "text": "アカウント A の KMS キーポリシーで、アカウント B のロールに Decrypt を許可する",
+          "text": "アカウント A の KMS キーポリシーでアカウント B のロールに kms:Decrypt を許可するだけで設定完了とする",
           "is_correct": false,
           "explanation": "キーポリシーだけでなく、アカウント B 側の IAM ロールにも kms:Decrypt 権限が必要 (両側必要)。"
         },
         {
           "id": "C",
-          "text": "アカウント B のロールに kms:Decrypt を付与するだけ",
+          "text": "アカウント B のロールに kms:Decrypt と s3:GetObject を付与するだけで、A 側 KMS キーポリシーは触らない",
           "is_correct": false,
           "explanation": "アカウント A の KMS キーポリシーで委任が許可されていないと使えない。"
         },
         {
           "id": "D",
-          "text": "アカウント A の S3 バケットポリシーだけを設定する",
+          "text": "アカウント A の S3 バケットポリシーだけを設定し、アカウント B のプリンシパルに GetObject を許可する",
           "is_correct": false,
           "explanation": "S3 の認可はできても KMS の認可は別途必要。"
         }
@@ -3832,19 +3833,19 @@
       "options": [
         {
           "id": "A",
-          "text": "アカウント ID を 1 つずつ Principal に列挙する",
+          "text": "S3 バケットポリシーの Principal にアカウント ID を 1 つずつ列挙し、組織にアカウントが追加されるたびに更新する",
           "is_correct": false,
           "explanation": "アカウントが追加されるたびに更新が必要で運用負荷大。"
         },
         {
           "id": "B",
-          "text": "GuardDuty で組織外アクセスを検出する",
+          "text": "GuardDuty で組織外アカウントからの S3 アクセスを検出し、発生時に通知を受けて手動で対応する",
           "is_correct": false,
           "explanation": "検知のみで予防にならない。"
         },
         {
           "id": "C",
-          "text": "VPC Endpoint Policy だけで対応する",
+          "text": "S3 バケットへのアクセスを VPC Endpoint Policy だけで制御し、VPC からの呼び出しのみ許可する設定にする",
           "is_correct": false,
           "explanation": "Endpoint Policy は VPC 内部からの呼び出しだけ。組織外の呼び出しを塞ぐには適さない。"
         },
@@ -3914,19 +3915,19 @@
         },
         {
           "id": "B",
-          "text": "Node の Instance Profile を共有する",
+          "text": "EKS ワーカーノードの EC2 Instance Profile を強い権限で構成し、その権限を Node 上の全 Pod で共有する",
           "is_correct": false,
           "explanation": "Node 上の全 Pod が同じ権限を持ち、Pod ごとの最小権限が実現できない。"
         },
         {
           "id": "C",
-          "text": "Pod 内に IAM アクセスキーを Secret として保管する",
+          "text": "IAM アクセスキーを Kubernetes Secret として作成し、Pod の環境変数や Volume Mount として注入する",
           "is_correct": false,
           "explanation": "アクセスキー直接埋め込みは要件で避けたい対象。"
         },
         {
           "id": "D",
-          "text": "EKS には IAM 統合機能がないので CLI から手動で発行する",
+          "text": "EKS は IAM と統合できないため、運用者が AWS CLI から個別に短期クレデンシャルを発行して Pod 内に注入する",
           "is_correct": false,
           "explanation": "事実誤認。IRSA や EKS Pod Identity が用意されている。"
         }
@@ -4002,9 +4003,9 @@
         },
         {
           "id": "D",
-          "text": "Internet Gateway がエフェメラルポートを変換するため不要",
+          "text": "Public Subnet のルートテーブルから NAT Gateway へのルートが欠落しており、戻り通信が VPC 外へ抜けている",
           "is_correct": false,
-          "explanation": "IGW にポート変換機能はない。"
+          "explanation": "ALB は Public Subnet にあるため戻り通信は IGW を使い、NAT GW のルート欠落は無関係。問題は NACL のステートレス特性。"
         }
       ],
       "explanation": "NACL はステートレスなので、443 で受けて戻すときの送信元ポート (クライアントのエフェメラルポート 1024-65535) のアウトバウンドを明示許可する必要がある。逆方向も同じ罠がある (アウトバウンド 443 のみ許可だとインバウンドにエフェメラルポート許可が必要)。SG はステートフルなので自動許可される。",
@@ -4078,9 +4079,9 @@
         },
         {
           "id": "D",
-          "text": "Email でファイル本体を添付して送る",
+          "text": "S3 バケットを CloudFront 経由で公開し、リファラ条件のついた WAF ルールで社外を絞る",
           "is_correct": false,
-          "explanation": "メールサイズ・セキュリティ・追跡不能で不適切。"
+          "explanation": "CloudFront + WAF でフィルタは可能だが、リファラはクライアント側で詐称可能・1 時間限定の要件にも合わない。Pre-signed URL が標準。"
         }
       ],
       "explanation": "S3 Pre-signed URL は SDK / CLI で発行する時限付き署名 URL。発行者の IAM 権限が URL に紐付けられ、有効期限内はその URL でアクセス可能。一時的な公開・受け渡し用途の標準解。",
@@ -4135,7 +4136,7 @@
       "options": [
         {
           "id": "A",
-          "text": "各サービスの個別バックアップ機能を個別に設定する",
+          "text": "各サービス (EC2/EBS/RDS/DynamoDB/EFS) のネイティブ・バックアップ機能をそれぞれ個別に設定し、組織全体ポリシーは運用ルールで担保する",
           "is_correct": false,
           "explanation": "運用負荷が大きく、一元的なポリシー強制ができない。"
         },
@@ -4147,15 +4148,15 @@
         },
         {
           "id": "C",
-          "text": "Lambda で各サービスのスナップショットスクリプトを書く",
+          "text": "Lambda で各サービスの CreateSnapshot 等の API を順次呼ぶスクリプトを書き、EventBridge スケジュールで日次実行する",
           "is_correct": false,
           "explanation": "AWS Backup で標準提供されている処理を自作するのは無駄。"
         },
         {
           "id": "D",
-          "text": "S3 にすべてのデータを定期コピーする",
+          "text": "各サービスの API でスナップショット取得スクリプトを書き、Step Functions と EventBridge で日次オーケストレーションする",
           "is_correct": false,
-          "explanation": "サービス特性 (RDS のスナップショット、EFS の整合性等) を考慮しない素朴な方法は適さない。"
+          "explanation": "実装可能だがメンテ・サービス追加時の改修・ポリシー一括変更が大変。AWS Backup の Backup Plan + Organizations 統合が標準。"
         }
       ],
       "explanation": "AWS Backup は EBS / EC2 (AMI) / RDS / DynamoDB / EFS / FSx / Storage Gateway / S3 / Aurora 等を一元的にバックアップ管理。Backup Policy と Organizations 統合で組織全体に強制可能。Backup Vault Lock で WORM 保管も対応。",
@@ -4211,7 +4212,7 @@
       "options": [
         {
           "id": "A",
-          "text": "NAT Gateway を使う",
+          "text": "NAT Gateway をデュアルスタック構成にし、IPv6 アウトバウンドにも対応させて 1 本で処理する",
           "is_correct": false,
           "explanation": "NAT Gateway は IPv4 専用。IPv6 には適用できない。"
         },
@@ -4223,13 +4224,13 @@
         },
         {
           "id": "C",
-          "text": "Internet Gateway を直接ルートする",
+          "text": "Internet Gateway をルートテーブルに直接追加し、Security Group のインバウンドルールだけで内向き通信を遮断する",
           "is_correct": false,
           "explanation": "IGW は双方向通信を許可するため、インバウンドも通る。要件に反する。"
         },
         {
           "id": "D",
-          "text": "VPC Endpoint を使う",
+          "text": "VPC Endpoint を IPv6 用に作成し、AWS サービス向けではなく汎用 IPv6 インターネットアクセス用として使う",
           "is_correct": false,
           "explanation": "VPC Endpoint は AWS サービス向けで、汎用 IPv6 インターネットアクセスではない。"
         }
@@ -4286,19 +4287,19 @@
       "options": [
         {
           "id": "A",
-          "text": "Lambda で属性チェックを毎回行う",
+          "text": "Permission Set ごとに Department 名をハードコードした IAM ポリシーを 部署数 × ロール数 だけ事前作成し配布する",
           "is_correct": false,
-          "explanation": "Lambda 認可は AWS のネイティブ ABAC を再実装することになり無駄。"
+          "explanation": "部署 × ロールの組み合わせ爆発で運用破綻。新規部署追加・ロール変更ごとに Permission Set 更新が必要。ABAC で 1 Permission Set に集約すべき。"
         },
         {
           "id": "B",
-          "text": "Department 数 × ロール数だけ Permission Set を作成する",
+          "text": "Department × ロール の組み合わせ数分だけ IAM Identity Center の Permission Set を作成し、各社員に手動で割当する",
           "is_correct": false,
           "explanation": "組み合わせ爆発で運用破綻。ABAC で集約すべき。"
         },
         {
           "id": "C",
-          "text": "各社員に IAM ユーザを発行しタグで管理する",
+          "text": "全社員に対して各アカウントで個別の IAM ユーザを発行し、ユーザ自体にタグを付与してリソースタグと一致で判定する",
           "is_correct": false,
           "explanation": "IAM ユーザ発行はワークフォース管理として非推奨。"
         },
@@ -4374,15 +4375,15 @@
         },
         {
           "id": "C",
-          "text": "VPC Peering で接続すれば認証不要",
+          "text": "Secrets Manager に RDS マスタパスワードを保管し、アプリは毎回 GetSecretValue で取得して接続する",
           "is_correct": false,
-          "explanation": "ネットワーク到達性は認可ではない。"
+          "explanation": "Secrets Manager + 自動ローテーションは別の有効解だが、要件『IAM 認証で接続したい (パスワード管理を不要に)』に対しては IAM database authentication が直接的な解。"
         },
         {
           "id": "D",
-          "text": "Cognito を RDS に接続する",
+          "text": "AWS IAM Identity Center を RDS の SSO プロバイダとして直接設定し、社員 ID で DB 接続させる",
           "is_correct": false,
-          "explanation": "Cognito は RDS と直接統合されていない。"
+          "explanation": "IAM Identity Center は RDS との直接統合を持たない。RDS の IAM 認証は IAM プリンシパル (ロール) ベース。"
         }
       ],
       "explanation": "RDS IAM 認証は MySQL / PostgreSQL でサポート。アプリ側で IAM SDK で短期トークンを生成し、それをパスワードとして DB 接続する。パスワード保管・ローテーションを不要にする方式。コネクション数や接続レイテンシに制限あり、大量接続用途では Secrets Manager + 通常ユーザの方が良い場合も。",
