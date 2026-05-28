@@ -1,0 +1,4571 @@
+{
+  "exam_code": "SAA-C03",
+  "exam_name": "AWS Certified Solutions Architect – Associate",
+  "version": "2026.04",
+  "total_questions": 60,
+  "domains": [
+    {
+      "id": "domain-1",
+      "name": "Design Secure Architectures",
+      "weight_percent": 30,
+      "question_count": 60
+    }
+  ],
+  "questions": [
+    {
+      "id": "saa-c03-domain1-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM",
+      "subtopic": "Roles for EC2",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "ある SaaS 企業の EC2 上で動くアプリが S3 バケットに書き込む必要がある。アクセスキーを EC2 内に置かずに権限を付与したい。最も適切な方法はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "IAM ユーザを作成しアクセスキーを EC2 のユーザデータで配布する",
+          "is_correct": false,
+          "explanation": "アクセスキーをインスタンス内に保管する設計はキー漏洩リスクが高く、ローテーションも煩雑。EC2 では IAM ロールを使う。"
+        },
+        {
+          "id": "B",
+          "text": "アプリケーション設定ファイルに長期アクセスキーを暗号化して埋め込む",
+          "is_correct": false,
+          "explanation": "暗号化してもキーがインスタンス内に存在する時点で漏洩リスクと運用負荷が残る。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 インスタンスに IAM ロールをアタッチし、必要な S3 権限を付与する",
+          "is_correct": true,
+          "explanation": "正解。IAM ロールを使えば EC2 メタデータサービス経由で一時クレデンシャルが自動配布・自動ローテーションされる。"
+        },
+        {
+          "id": "D",
+          "text": "S3 バケットポリシーで匿名アクセスを許可する",
+          "is_correct": false,
+          "explanation": "匿名公開はデータ漏洩。バケットポリシーで認可するにしてもプリンシパルを限定すべき。"
+        }
+      ],
+      "explanation": "EC2 から AWS サービスにアクセスするときは IAM ロール（Instance Profile）が標準解。EC2 メタデータサービス v2 (IMDSv2) 経由で一時クレデンシャルを取得でき、自動ローテーションされる。",
+      "references": [
+        {
+          "title": "IAM roles for Amazon EC2",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "ec2",
+        "instance-profile",
+        "credentials"
+      ],
+      "common_mistakes": [
+        "EC2 にアクセスキーを置く運用を続ける",
+        "IAM ユーザと IAM ロールの違いを理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM Policy",
+      "subtopic": "Permission boundary",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "開発者にプロジェクト用 IAM ロール作成権限を委譲したいが、作成されるロールが管理者権限を持たないように上限を強制したい。最も適切な仕組みはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "委譲先に AdministratorAccess を付与し信頼関係で制御する",
+          "is_correct": false,
+          "explanation": "管理者権限の委譲は最小権限に反する。信頼関係は誰が引き受けられるかを決めるだけで、ロール作成の上限制御にはならない。"
+        },
+        {
+          "id": "B",
+          "text": "委譲先 IAM ポリシーに iam:CreateRole を許可し、iam:PermissionsBoundary 条件でバウンダリ添付を強制する",
+          "is_correct": true,
+          "explanation": "正解。Permission Boundary を必須化することで、作成されるロールの実効権限の上限を確定できる。"
+        },
+        {
+          "id": "C",
+          "text": "サービスコントロールポリシー (SCP) で個別ロールの権限を直接定義する",
+          "is_correct": false,
+          "explanation": "SCP はアカウント全体の上限であり、新規ロール毎の境界を強制するのに直接は使わない。Permission Boundary が適切。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config ルールで管理者権限ロールを検知し自動削除する",
+          "is_correct": false,
+          "explanation": "検知・削除は事後対応で、作成自体を防げない。予防的コントロールが望ましい。"
+        }
+      ],
+      "explanation": "Permission Boundary は IAM プリンシパルの実効権限上限を定義するポリシー。委譲シナリオで、委譲先が作成する IAM エンティティに必ず特定の境界を付ける条件 (iam:PermissionsBoundary) を付けることで、権限昇格を予防できる。",
+      "references": [
+        {
+          "title": "Permissions boundaries for IAM entities",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "permission-boundary",
+        "delegation",
+        "least-privilege"
+      ],
+      "common_mistakes": [
+        "Permission Boundary と SCP を混同する",
+        "信頼関係で権限制限できると誤解する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "STS",
+      "subtopic": "Cross-account assume role",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるアカウント A のユーザが、別アカウント B にある S3 バケットへ読み書きする必要がある。最も推奨される構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "アカウント A のユーザに、アカウント B の S3 へアクセスする IAM アクセスキーを共有する",
+          "is_correct": false,
+          "explanation": "長期キー共有はキー漏洩・監査困難・ローテーション困難で非推奨。"
+        },
+        {
+          "id": "B",
+          "text": "アカウント A から VPC Peering を張れば自動的にアクセスできる",
+          "is_correct": false,
+          "explanation": "VPC Peering はネットワーク層の接続で、S3 への認可は別。S3 はパブリックエンドポイントを持つ。"
+        },
+        {
+          "id": "C",
+          "text": "S3 バケットを Public 公開し、アクセスログで監視する",
+          "is_correct": false,
+          "explanation": "公開は機密漏洩。要件は別アカウントからのアクセスであって匿名公開ではない。"
+        },
+        {
+          "id": "D",
+          "text": "アカウント B にクロスアカウント IAM ロールを作成し、信頼ポリシーでアカウント A を許可し、アカウント A のユーザに AssumeRole 権限を付与する",
+          "is_correct": true,
+          "explanation": "正解。一時クレデンシャル方式でクロスアカウントアクセスを実現する標準パターン。"
+        }
+      ],
+      "explanation": "クロスアカウントアクセスは IAM ロール + AssumeRole + 一時クレデンシャルが標準解。リソース側 (アカウント B) に信頼関係を、呼び出し側 (アカウント A) に sts:AssumeRole 権限を設定する。",
+      "references": [
+        {
+          "title": "Cross-account access using IAM roles",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "sts",
+        "cross-account",
+        "assume-role"
+      ],
+      "common_mistakes": [
+        "長期アクセスキーを共有する",
+        "VPC Peering でクロスアカウント権限がもらえると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-004",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM Access Analyzer",
+      "subtopic": "External access detection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "セキュリティチームが、S3・IAM ロール・KMS キー等が組織外からアクセス可能になっていないか継続的に検出したい。最小の運用負荷で実現するサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "IAM Access Analyzer の external access を有効化する",
+          "is_correct": true,
+          "explanation": "正解。Access Analyzer はリソースベースポリシーを解析し、組織または信頼境界外からアクセス可能なリソースを自動検出する。"
+        },
+        {
+          "id": "B",
+          "text": "AWS CloudTrail で API 呼び出しをすべて記録し SIEM で分析する",
+          "is_correct": false,
+          "explanation": "CloudTrail は呼び出し記録のみ。誰がアクセス可能かのポリシー解析はしない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Macie で全 S3 バケットをスキャンする",
+          "is_correct": false,
+          "explanation": "Macie は機密データ検出。ポリシーによる外部公開検出は範疇外。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で全 S3 バケットポリシーを取得・解析する自作スクリプトを動かす",
+          "is_correct": false,
+          "explanation": "自作は運用負荷が大きい。マネージドサービスがあるので使うべき。"
+        }
+      ],
+      "explanation": "IAM Access Analyzer は、リソースベースポリシー（S3、IAM ロール信頼ポリシー、KMS キーポリシー、SQS、Lambda、Secrets Manager 等）を形式的に解析し、信頼境界（アカウント or AWS Organizations）の外から参照できるリソースを検出する。",
+      "references": [
+        {
+          "title": "IAM Access Analyzer",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "access-analyzer",
+        "external-access",
+        "detection"
+      ],
+      "common_mistakes": [
+        "CloudTrail で誰でも外部公開検出できると誤解",
+        "Macie の役割を広く捉えすぎる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-005",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM Policy",
+      "subtopic": "Condition keys",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある社内アプリの S3 バケットを、社内オフィスの固定 IP からの呼び出しに限定したい。最小の運用変更で実現する方法はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "VPC Peering を社内ネットワークと張る",
+          "is_correct": false,
+          "explanation": "S3 はパブリックエンドポイントを持つため、Peering だけでは IP 制約にならない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 バケットポリシーに aws:SourceIp 条件を付け、許可レンジを社内 IP に限定する",
+          "is_correct": true,
+          "explanation": "正解。aws:SourceIp 条件で呼び出し元 IP を制約できる。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上にリバースプロキシを立て、社内 IP からのみ通す",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷が大きい。バケットポリシーで宣言的に書ける。"
+        },
+        {
+          "id": "D",
+          "text": "S3 オブジェクトを KMS で暗号化する",
+          "is_correct": false,
+          "explanation": "暗号化は IP 制約とは別軸の対策。"
+        }
+      ],
+      "explanation": "S3 への呼び出し元制限は、バケットポリシーの Condition に aws:SourceIp を入れる。VPC 内部からの呼び出しに限るなら aws:SourceVpc / aws:SourceVpce、組織内呼び出しに限るなら aws:PrincipalOrgID を使う。",
+      "references": [
+        {
+          "title": "S3 bucket policy examples",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "iam",
+        "condition-key",
+        "source-ip"
+      ],
+      "common_mistakes": [
+        "VPC Peering で S3 アクセス IP を絞れると誤解",
+        "ネットワーク層と IAM 層の責務を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-006",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM Identity Center",
+      "subtopic": "Workforce SSO",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "社員 200 名が利用するマルチアカウント環境。社内 IdP (例: Microsoft Entra ID) を信頼してアカウント横断のシングルサインオンを実現したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各アカウントで IAM ユーザを発行し、社員に共有する",
+          "is_correct": false,
+          "explanation": "アカウント数 × 人数の IAM ユーザ管理は非現実的。スケールしない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS IAM Identity Center を有効化し、社内 IdP を SAML で連携、Permission Sets でアカウント・ロールを割り当てる",
+          "is_correct": true,
+          "explanation": "正解。複数アカウント・複数ロールを一括管理するワークフォース SSO の標準解。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Cognito User Pool に全社員を登録する",
+          "is_correct": false,
+          "explanation": "Cognito は顧客 (B2C) 向け ID 基盤。社員 SSO は IAM Identity Center が標準。"
+        },
+        {
+          "id": "D",
+          "text": "各アカウントで個別に SAML フェデレーションを設定する",
+          "is_correct": false,
+          "explanation": "実装可能だが管理が分散する。IAM Identity Center が集中管理の標準解。"
+        }
+      ],
+      "explanation": "AWS IAM Identity Center は社員 (workforce) 向けの集中 SSO。社内 IdP (Entra ID, Okta 等) と SAML / SCIM 連携し、Permission Sets で「どのアカウント × どのロール」を割り当てるかを中央管理する。",
+      "references": [
+        {
+          "title": "AWS IAM Identity Center",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "iam-identity-center",
+        "sso",
+        "saml",
+        "workforce"
+      ],
+      "common_mistakes": [
+        "社員向けに Cognito を選ぶ",
+        "アカウント毎に IAM ユーザを発行する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-007",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Cognito",
+      "subtopic": "User Pool vs Identity Pool",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）あるモバイルアプリで、エンドユーザのサインアップ・ログインを管理し、ログイン後に AWS リソース (S3) にアクセスする一時クレデンシャルを発行したい。Cognito の各機能の役割として正しいものを2つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cognito User Pool は、サインアップ・ログイン・MFA 等のユーザディレクトリ機能を提供する",
+          "is_correct": true,
+          "explanation": "正解。User Pool は ID プロバイダ (認証) の役割。"
+        },
+        {
+          "id": "B",
+          "text": "Cognito Identity Pool は、認証済みユーザに AWS リソースの一時クレデンシャル (STS) を発行する",
+          "is_correct": true,
+          "explanation": "正解。Identity Pool は AWS クレデンシャルブローカ (認可) の役割。"
+        },
+        {
+          "id": "C",
+          "text": "User Pool だけで AWS リソースへの IAM クレデンシャルが直接発行される",
+          "is_correct": false,
+          "explanation": "User Pool は ID トークンと OAuth トークンは出すが、AWS リソース用 IAM クレデンシャルは Identity Pool 経由。"
+        },
+        {
+          "id": "D",
+          "text": "Identity Pool はサインアップ画面・パスワード管理を提供する",
+          "is_correct": false,
+          "explanation": "Identity Pool は認証はせず、外部 IdP の結果から AWS クレデンシャルへ交換する役割。"
+        }
+      ],
+      "explanation": "Cognito は 2 機能の組み合わせ。User Pool は「誰か」を確認する認証ディレクトリ、Identity Pool は「何が許可されているか」を AWS 上で表現する一時クレデンシャル発行器。両方をセットで使うことが多い。",
+      "references": [
+        {
+          "title": "Amazon Cognito - User Pools vs Identity Pools",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html"
+        }
+      ],
+      "tags": [
+        "cognito",
+        "user-pool",
+        "identity-pool",
+        "mobile"
+      ],
+      "common_mistakes": [
+        "User Pool で AWS リソースに直接アクセスできると誤解",
+        "Identity Pool に認証機能があると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-008",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "AWS Organizations",
+      "subtopic": "SCP",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "あるエンタープライズ企業が組織配下の全アカウントで、特定リージョン以外での EC2 起動を禁止したい。最も適切な仕組みはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各アカウントの IAM ユーザに deny ポリシーを個別に付与する",
+          "is_correct": false,
+          "explanation": "個別管理は漏れと運用負荷が大きい。組織レベルで一括強制すべき。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Config ルールで起動後に検知し自動停止する",
+          "is_correct": false,
+          "explanation": "事後対応のため一時的に起動できてしまう。予防的コントロールが望ましい。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail のイベントセレクタで非許可リージョンを記録しない設定にする",
+          "is_correct": false,
+          "explanation": "CloudTrail は監査ログ。起動を防ぐ仕組みではない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Organizations の SCP (Service Control Policy) で、許可リージョン以外を Deny する",
+          "is_correct": true,
+          "explanation": "正解。SCP は組織配下の全アカウントの API 上限を予防的に強制する。"
+        }
+      ],
+      "explanation": "SCP は AWS Organizations 配下の全アカウントの IAM プリンシパルが実行できる API の上限を定義するガードレール。リージョン制限、特定サービスの禁止、ルートユーザの権限制限などに使う。SCP 自体は権限を付与しない（許可は IAM ポリシー側で別途必要）。",
+      "references": [
+        {
+          "title": "Service control policies (SCPs)",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "scp",
+        "guardrail",
+        "preventive-control"
+      ],
+      "common_mistakes": [
+        "SCP だけで権限付与できると誤解",
+        "Config ルールの事後対応で十分だと考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-009",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "KMS",
+      "subtopic": "Customer managed key",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "ある企業のコンプライアンス要件で、暗号化キーのローテーション・利用記録・無効化を顧客側で管理する必要がある。最も適した KMS の構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS が完全に管理する AWS Managed Key (aws/s3 等) を使う",
+          "is_correct": false,
+          "explanation": "AWS Managed Key はキーポリシー編集や手動ローテーション・無効化が顧客にはできない。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 インスタンス内の OpenSSL で暗号化し KMS を使わない",
+          "is_correct": false,
+          "explanation": "アプリ側で実装すると鍵管理を自前で行うことになり、要件「ローテーション・無効化を顧客側で管理」の意図と外れる（KMS を使う前提の問題）。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Owned Key を選択する",
+          "is_correct": false,
+          "explanation": "AWS Owned Key は顧客から見えない内部キー。制御不可。"
+        },
+        {
+          "id": "D",
+          "text": "Customer Managed Key (CMK) を作成し、キーポリシー・ローテーション・無効化を顧客側で運用する",
+          "is_correct": true,
+          "explanation": "正解。CMK は顧客がライフサイクル・ポリシー・利用ログ (CloudTrail) を制御できる。"
+        }
+      ],
+      "explanation": "KMS には 3 種類のキー: AWS Owned (顧客非可視) / AWS Managed (顧客アカウント可視・ポリシー編集不可) / Customer Managed (CMK、完全制御)。コンプライアンスで顧客制御が必須なら CMK が標準解。",
+      "references": [
+        {
+          "title": "AWS KMS - Customer keys and AWS keys",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-mgmt"
+        }
+      ],
+      "tags": [
+        "kms",
+        "cmk",
+        "compliance",
+        "key-management"
+      ],
+      "common_mistakes": [
+        "AWS Managed Key で十分だと思う",
+        "AWS Owned Key と Customer Managed Key の区別が曖昧"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-010",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "KMS",
+      "subtopic": "Multi-Region Keys",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DR 構成で、東京リージョンで暗号化した DynamoDB バックアップを大阪リージョンで復号する必要がある。アプリ側で再暗号化せずに復号したい。最も適した KMS 構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "東京の CMK を大阪リージョンへエクスポートする",
+          "is_correct": false,
+          "explanation": "KMS のキー素材を外へエクスポートする運用は通常行わず、要件にも合わない。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda で東京 KMS を呼び出し、大阪から復号する",
+          "is_correct": false,
+          "explanation": "リージョン跨ぎ呼び出しで動くが遅延・コスト・障害耐性で不利。Multi-Region Key が設計上の解。"
+        },
+        {
+          "id": "C",
+          "text": "KMS Multi-Region Key を作成し、東京 (primary) と大阪 (replica) を関連付ける",
+          "is_correct": true,
+          "explanation": "正解。Multi-Region Key は別リージョンの replica が同一のキー素材を保持するため、相互に復号可能。"
+        },
+        {
+          "id": "D",
+          "text": "暗号文を一度復号して大阪 CMK で再暗号化するパイプラインを組む",
+          "is_correct": false,
+          "explanation": "「再暗号化せずに」という要件に反する。"
+        }
+      ],
+      "explanation": "Multi-Region Key は同じキー ID とキー素材を複数リージョンで利用できる KMS の機能。一方のリージョンで暗号化した暗号文を他リージョンで復号できる。DR・グローバル DB バックアップで重要。",
+      "references": [
+        {
+          "title": "AWS KMS Multi-Region Keys",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "multi-region-key",
+        "dr",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "リージョン跨ぎ KMS 呼び出しで対応する",
+        "キー素材のエクスポート運用を考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-011",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "KMS",
+      "subtopic": "CloudHSM vs KMS",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "金融系のコンプライアンスで、暗号鍵を FIPS 140-2 Level 3 認証のシングルテナント HSM に格納する義務がある。AWS でこの要件を満たすサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS KMS Customer Managed Key (CMK) のみ",
+          "is_correct": false,
+          "explanation": "KMS の HSM は FIPS 140-2 Level 3 認定 (Level 2/Level 3 のハイブリッド) だがマルチテナント。シングルテナント要件には足りない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS CloudHSM",
+          "is_correct": true,
+          "explanation": "正解。CloudHSM は FIPS 140-2 Level 3 認定の専用 HSM を顧客 VPC に提供。シングルテナント要件に応える。"
+        },
+        {
+          "id": "C",
+          "text": "S3 のクライアントサイド暗号化",
+          "is_correct": false,
+          "explanation": "暗号化方式の話で、HSM の置き場所要件には答えない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Secrets Manager",
+          "is_correct": false,
+          "explanation": "Secrets Manager は KMS で保護されるシークレット管理。HSM 自体の要件には対応しない。"
+        }
+      ],
+      "explanation": "KMS と CloudHSM の使い分け: KMS は AWS マネージド・低コスト・サービス統合が広い (デフォルトはここ)。CloudHSM は顧客専用 HSM・FIPS 140-2 Level 3・キー素材を顧客が完全所有・PKI ルートCA など特定要件向け。",
+      "references": [
+        {
+          "title": "AWS CloudHSM FAQs",
+          "url": "https://aws.amazon.com/cloudhsm/faqs/"
+        }
+      ],
+      "tags": [
+        "cloudhsm",
+        "kms",
+        "fips-140-2",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "KMS で Level 3 シングルテナントが満たせると誤解",
+        "Secrets Manager と HSM 要件を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-012",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Secrets Manager",
+      "subtopic": "Auto rotation",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS for PostgreSQL のマスタパスワードを 30 日ごとに自動ローテーションし、アプリは常に最新値を取得したい。最も運用負荷が少ない構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Secrets Manager に DB クレデンシャルを保管し、RDS との自動ローテーションを有効化する",
+          "is_correct": true,
+          "explanation": "正解。Secrets Manager は RDS 標準ユーザに対する Lambda ローテーションテンプレートを提供する。"
+        },
+        {
+          "id": "B",
+          "text": "SSM Parameter Store の SecureString に DB パスワードを保管する",
+          "is_correct": false,
+          "explanation": "Parameter Store は自動ローテーション機能を持たない (DB ローテーションは Secrets Manager の領域)。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 のユーザデータでパスワードを cron 起動シェルから更新する",
+          "is_correct": false,
+          "explanation": "自前実装で運用負荷大・原子性なし。Secrets Manager のマネージドローテーションを使うべき。"
+        },
+        {
+          "id": "D",
+          "text": "RDS マスタパスワードはコンソールから手動で月次ローテーションする",
+          "is_correct": false,
+          "explanation": "ヒューマンエラーと運用負荷。自動化が要件。"
+        }
+      ],
+      "explanation": "Secrets Manager は AWS Lambda を使ってシークレットを自動ローテーションする仕組みを提供し、RDS / DocumentDB / Redshift にはマネージドローテーションテンプレートがある。Parameter Store SecureString はシンプルな保管用途で、ローテーション機能はない。",
+      "references": [
+        {
+          "title": "Rotate AWS Secrets Manager secrets",
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html"
+        }
+      ],
+      "tags": [
+        "secrets-manager",
+        "rds",
+        "rotation",
+        "credentials"
+      ],
+      "common_mistakes": [
+        "Parameter Store でも自動ローテーション可能と誤解",
+        "手動ローテーションで充足できると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-013",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "VPC Security",
+      "subtopic": "Security Group vs NACL",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Security Group (SG) と Network ACL (NACL) の違いとして正しい説明はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "SG は許可・拒否の両方を書ける、NACL は許可のみ",
+          "is_correct": false,
+          "explanation": "逆。SG は許可のみ、NACL は許可と拒否を両方書ける。"
+        },
+        {
+          "id": "B",
+          "text": "SG はサブネット単位、NACL は ENI 単位で適用される",
+          "is_correct": false,
+          "explanation": "逆。SG は ENI 単位、NACL はサブネット単位。"
+        },
+        {
+          "id": "C",
+          "text": "SG はステートフル、NACL はステートレス",
+          "is_correct": true,
+          "explanation": "正解。SG は戻り通信が自動許可、NACL は戻り通信用ルールも明示が必要。"
+        },
+        {
+          "id": "D",
+          "text": "SG はリージョン跨ぎ、NACL はリージョン内のみ",
+          "is_correct": false,
+          "explanation": "両方とも VPC 内のリソース。"
+        }
+      ],
+      "explanation": "違いを暗記するときは「SG: Stateful, ENI 単位, 許可のみ」「NACL: Stateless, サブネット単位, 許可+拒否」と覚える。エフェメラルポートの戻り通信は SG では自動許可、NACL ではアウトバウンドで明示許可が必要。",
+      "references": [
+        {
+          "title": "Compare security groups and network ACLs",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-best-practices.html"
+        }
+      ],
+      "tags": [
+        "vpc",
+        "security-group",
+        "nacl",
+        "stateful"
+      ],
+      "common_mistakes": [
+        "どちらがステートフルか曖昧",
+        "適用単位 (ENI vs サブネット) を逆に覚える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-014",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "VPC Endpoint",
+      "subtopic": "Gateway vs Interface endpoint",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "プライベートサブネットの EC2 から S3 と DynamoDB へインターネットを経由せずアクセスしたい。コストを最小化しつつ実現する組み合わせはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "NAT Gateway を作成し EC2 から S3/DynamoDB へ抜ける",
+          "is_correct": false,
+          "explanation": "インターネット経由となり、要件 (経由しない) を満たさない。NAT Gateway 料金もかかる。"
+        },
+        {
+          "id": "B",
+          "text": "S3・DynamoDB に Interface VPC Endpoint (PrivateLink) を作成する",
+          "is_correct": false,
+          "explanation": "技術的に可能 (S3 は対応、DynamoDB は限定対応) だが Interface Endpoint は時間課金とデータ処理料金がかかり高い。Gateway 型のほうが安い。"
+        },
+        {
+          "id": "C",
+          "text": "S3・DynamoDB の Gateway VPC Endpoint を作成する",
+          "is_correct": true,
+          "explanation": "正解。S3 と DynamoDB は Gateway 型 VPC Endpoint をサポートし、追加料金なしでルートテーブル経由で接続できる。"
+        },
+        {
+          "id": "D",
+          "text": "VPN 接続で S3 のリージョンに直接抜ける",
+          "is_correct": false,
+          "explanation": "VPN は AWS リージョンへの専用回線。S3 への閉域アクセスは VPC Endpoint が標準。"
+        }
+      ],
+      "explanation": "Gateway VPC Endpoint は S3 と DynamoDB の 2 サービス専用で追加料金なし。それ以外の AWS サービスは Interface Endpoint (PrivateLink) を使う (こちらは時間+データ課金)。コスト最適化を問われたら Gateway を優先。",
+      "references": [
+        {
+          "title": "Gateway VPC endpoints",
+          "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+        }
+      ],
+      "tags": [
+        "vpc-endpoint",
+        "s3",
+        "dynamodb",
+        "cost-optimization"
+      ],
+      "common_mistakes": [
+        "S3/DynamoDB に Interface Endpoint を選んで高コスト化",
+        "NAT Gateway で代替する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-015",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "PrivateLink",
+      "subtopic": "Service publication",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "SaaS 企業が自社の API を、契約顧客の VPC からインターネットを経由せず利用させたい。最も適切な仕組みはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "API Gateway を Public エンドポイントで公開する",
+          "is_correct": false,
+          "explanation": "インターネット経由になる。閉域接続要件に合わない。"
+        },
+        {
+          "id": "B",
+          "text": "Site-to-Site VPN を全顧客と個別に張る",
+          "is_correct": false,
+          "explanation": "VPN は実装可能だがコスト・運用負荷が大きい。PrivateLink が SaaS API 公開のベストプラクティス。"
+        },
+        {
+          "id": "C",
+          "text": "顧客に VPC Peering を依頼する",
+          "is_correct": false,
+          "explanation": "Peering は IP 重複不可・1:1 接続で多数顧客にスケールしない。マルチテナント SaaS には不向き。"
+        },
+        {
+          "id": "D",
+          "text": "NLB の前段に AWS PrivateLink Endpoint Service を作り、顧客 VPC に Interface Endpoint を作ってもらう",
+          "is_correct": true,
+          "explanation": "正解。PrivateLink はサービス提供者側に NLB + Endpoint Service、消費者側に Interface Endpoint を作る標準パターン。"
+        }
+      ],
+      "explanation": "PrivateLink (Endpoint Service) は SaaS API の閉域提供パターン。提供者側 NLB + Endpoint Service、消費者側 Interface Endpoint で、IP 重複可・1 対多にスケール可・トラフィックは AWS バックボーンを流れる。",
+      "references": [
+        {
+          "title": "Share your services through AWS PrivateLink",
+          "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html"
+        }
+      ],
+      "tags": [
+        "privatelink",
+        "saas",
+        "endpoint-service",
+        "nlb"
+      ],
+      "common_mistakes": [
+        "VPC Peering で SaaS を提供する",
+        "API Gateway 公開で済むと考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-016",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Bastion",
+      "subtopic": "Session Manager",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "プライベートサブネットの EC2 へ運用者がアクセスする。Bastion ホスト・SSH キー配布・インバウンド 22 番開放を避けたい。最も適切な方法はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bastion を Public Subnet に置き、SSH キーをチームで共有する",
+          "is_correct": false,
+          "explanation": "Bastion 運用・SSH キー配布・22 開放のいずれも要件で避けたい対象。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 にパブリック IP を付与し SSH で直接接続する",
+          "is_correct": false,
+          "explanation": "プライベートサブネット要件に反する。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Systems Manager Session Manager を使い、IAM 権限ベースでシェルアクセスする",
+          "is_correct": true,
+          "explanation": "正解。Session Manager は IAM ベース認証、SSH 不要、22 開放不要、操作ログは CloudTrail/S3/CloudWatch Logs に記録される。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Peering で運用者の自宅 PC を VPC に直結する",
+          "is_correct": false,
+          "explanation": "自宅 PC は VPC ではないため Peering 不可。VPN かオフィスからのリモート接続なら別途検討。"
+        }
+      ],
+      "explanation": "Session Manager は SSM Agent 経由で EC2/オンプレ/コンテナへシェル接続する仕組み。IAM ポリシーで認可、22 番開放不要、操作ログ記録あり。Bastion 運用と SSH キー管理を不要にする現代的なベストプラクティス。",
+      "references": [
+        {
+          "title": "AWS Systems Manager Session Manager",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html"
+        }
+      ],
+      "tags": [
+        "systems-manager",
+        "session-manager",
+        "ssh",
+        "bastion"
+      ],
+      "common_mistakes": [
+        "Bastion を運用し続ける",
+        "SSH キー配布を維持する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-017",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "WAF",
+      "subtopic": "Managed rules",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ALB の前段で SQL インジェクション・XSS・OWASP Top 10 系の攻撃を低運用負荷で防御したい。最も適切な方法はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFront のキャッシュで攻撃を吸収する",
+          "is_correct": false,
+          "explanation": "キャッシュは攻撃軽減効果はあるが、SQLi/XSS の検知・遮断は WAF の役割。"
+        },
+        {
+          "id": "B",
+          "text": "Security Group で 80/443 を絞る",
+          "is_correct": false,
+          "explanation": "L4 制御のみで、HTTP ペイロードの解析はできない。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上に WAF アプライアンスを立てる",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大・スケール困難。マネージドの AWS WAF が望ましい。"
+        },
+        {
+          "id": "D",
+          "text": "AWS WAF を ALB に関連付け、AWS Managed Rule Group (Core Rule Set 等) を有効化する",
+          "is_correct": true,
+          "explanation": "正解。AWS Managed Rules は OWASP 系の脅威に対するルールを継続的にメンテしてくれる。運用負荷最小。"
+        }
+      ],
+      "explanation": "AWS WAF は ALB / CloudFront / API Gateway / AppSync / App Runner に関連付け可能。Managed Rule Group (Core/Bot/IP Reputation/Anonymous IP/SQLi 等) を有効化するだけで OWASP Top 10 系の防御を始められる。",
+      "references": [
+        {
+          "title": "AWS WAF Managed Rules",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups.html"
+        }
+      ],
+      "tags": [
+        "waf",
+        "alb",
+        "owasp",
+        "managed-rules"
+      ],
+      "common_mistakes": [
+        "Security Group で L7 を防げると誤解",
+        "EC2 上の WAF アプライアンスで運用を増やす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-018",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Shield",
+      "subtopic": "DDoS protection tier",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "公開 ALB に対する Layer 3/4 の一般的な DDoS 攻撃 (SYN flood, UDP reflection 等) に対する追加料金なしの保護を提供するのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Shield Standard (自動・追加料金なし)",
+          "is_correct": true,
+          "explanation": "正解。Shield Standard は全 AWS 顧客に自動適用される L3/L4 保護で追加料金なし。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Shield Advanced (月額 3,000 USD)",
+          "is_correct": false,
+          "explanation": "Advanced は L7 軽減、24/7 DRT サポート、コスト保護等。要件「追加料金なし」に合わない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAF (リクエスト課金)",
+          "is_correct": false,
+          "explanation": "WAF は L7。L3/L4 DDoS 自体の防御は Shield。"
+        },
+        {
+          "id": "D",
+          "text": "GuardDuty (検知のみ)",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検知サービス。DDoS の軽減はしない。"
+        }
+      ],
+      "explanation": "Shield Standard は L3/L4 DDoS への自動保護で全顧客対象・追加料金なし。L7 (HTTP flood 等) や、より高度な軽減・補償が必要なら Shield Advanced (月 3,000 USD + 各サービス利用) を検討。",
+      "references": [
+        {
+          "title": "AWS Shield Standard",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html"
+        }
+      ],
+      "tags": [
+        "shield",
+        "ddos",
+        "alb",
+        "free-tier"
+      ],
+      "common_mistakes": [
+        "Standard と Advanced の差を理解していない",
+        "DDoS 防御に WAF が必須と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-019",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "CloudFront",
+      "subtopic": "Origin Access Control",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "S3 を CloudFront のオリジンにし、S3 への直接アクセスは禁止して必ず CloudFront 経由のみにしたい。最新の推奨方式はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 を Static Website Hosting にし、Public 公開する",
+          "is_correct": false,
+          "explanation": "Public 公開は要件に反する (直接アクセスを禁止したい)。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFront に Origin Access Control (OAC) を設定し、S3 バケットポリシーで CloudFront からのみ許可する",
+          "is_correct": true,
+          "explanation": "正解。OAC は OAI の後継で、SigV4 対応・SSE-KMS 対応・全リージョン S3 対応の現在推奨方式。"
+        },
+        {
+          "id": "C",
+          "text": "CloudFront に Origin Access Identity (OAI) を設定する",
+          "is_correct": false,
+          "explanation": "OAI は旧方式で機能制限あり。新規構築は OAC が推奨。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFront から S3 へ HTTPS で接続する設定だけで十分",
+          "is_correct": false,
+          "explanation": "通信路の暗号化だけでは S3 への直接アクセスは塞げない。バケットポリシーで CloudFront 以外を Deny する必要がある。"
+        }
+      ],
+      "explanation": "CloudFront から S3 への閉域アクセスは現在 OAC が推奨。旧 OAI は SigV4 非対応・SSE-KMS 非対応など制約があり、AWS は新規構築で OAC を勧めている。S3 側ではバケットポリシーで AWS:SourceArn が CloudFront ディストリビューションであることを条件にする。",
+      "references": [
+        {
+          "title": "Restricting access to an Amazon S3 origin (OAC)",
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+        }
+      ],
+      "tags": [
+        "cloudfront",
+        "oac",
+        "s3",
+        "origin-access"
+      ],
+      "common_mistakes": [
+        "新規でも OAI を選んでしまう",
+        "HTTPS だけで直接アクセスを塞げると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-020",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "GuardDuty",
+      "subtopic": "Threat detection scope",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "GuardDuty がデフォルトで分析対象とするデータソースとして正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EBS スナップショットの中身",
+          "is_correct": false,
+          "explanation": "EBS スナップショットの中身は GuardDuty Malware Protection (オプション) で対応。デフォルトデータソースではない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 オブジェクトの内容スキャン",
+          "is_correct": false,
+          "explanation": "S3 オブジェクト内容のスキャンは Macie の役割。GuardDuty S3 Protection は API 呼び出しパターンの異常検知。"
+        },
+        {
+          "id": "C",
+          "text": "アプリケーションログ (CloudWatch Logs)",
+          "is_correct": false,
+          "explanation": "アプリログは GuardDuty の標準データソースではない。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Flow Logs、DNS ログ、CloudTrail 管理イベント",
+          "is_correct": true,
+          "explanation": "正解。GuardDuty はこの 3 つを基本データソースとして消費する (顧客が個別に有効化する必要なし)。"
+        }
+      ],
+      "explanation": "GuardDuty は基本データソースとして VPC Flow Logs / DNS ログ / CloudTrail を消費。追加機能として S3 Protection / EKS Protection / Malware Protection / RDS Protection / Lambda Protection 等がある。",
+      "references": [
+        {
+          "title": "Amazon GuardDuty data sources",
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html"
+        }
+      ],
+      "tags": [
+        "guardduty",
+        "vpc-flow-logs",
+        "cloudtrail",
+        "dns"
+      ],
+      "common_mistakes": [
+        "GuardDuty が S3 の中身をスキャンすると思い込む",
+        "アプリログまで分析対象だと考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-021",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Macie",
+      "subtopic": "Sensitive data discovery",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "S3 バケットに保管されたファイル群のなかから個人情報 (氏名・住所・クレジットカード番号など) を自動検出したい。最も適したサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amazon Macie",
+          "is_correct": true,
+          "explanation": "正解。Macie は機械学習で S3 内の PII / 機密データを発見・分類するサービス。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Inspector",
+          "is_correct": false,
+          "explanation": "Inspector は EC2/ECR/Lambda の脆弱性スキャン。データ内容の解析はしない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Config",
+          "is_correct": false,
+          "explanation": "Config はリソース設定の評価。データ内容は範疇外。"
+        },
+        {
+          "id": "D",
+          "text": "AWS CloudTrail",
+          "is_correct": false,
+          "explanation": "CloudTrail は API 呼び出し監査。データ中身は見ない。"
+        }
+      ],
+      "explanation": "Macie は S3 内のオブジェクトを機械学習で解析し、PII (個人情報)、PCI (クレジットカード)、PHI (健康情報) などの機密データを検出・分類するマネージドサービス。",
+      "references": [
+        {
+          "title": "Amazon Macie",
+          "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
+        }
+      ],
+      "tags": [
+        "macie",
+        "s3",
+        "pii",
+        "dlp"
+      ],
+      "common_mistakes": [
+        "Inspector で PII 検出できると誤解",
+        "GuardDuty を Macie と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-022",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "S3 Encryption",
+      "subtopic": "SSE options",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "コンプライアンス要件で「鍵を顧客が制御し、利用ログが残ること」「鍵素材自体は AWS が保持してよい」とされている。S3 オブジェクト暗号化として最も適した方式はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "SSE-S3 (Amazon S3 マネージドキー)",
+          "is_correct": false,
+          "explanation": "鍵が AWS 完全管理で顧客制御不可。要件 (顧客制御・利用ログ) を満たさない。"
+        },
+        {
+          "id": "B",
+          "text": "SSE-C (顧客提供鍵)",
+          "is_correct": false,
+          "explanation": "顧客が毎リクエスト鍵を渡す必要があり運用負荷大。利用ログという目的なら SSE-KMS が標準。"
+        },
+        {
+          "id": "C",
+          "text": "SSE-KMS (KMS Customer Managed Key)",
+          "is_correct": true,
+          "explanation": "正解。CMK で鍵ポリシー制御・CloudTrail に利用ログが残る。鍵素材は KMS が AWS 内で保持。"
+        },
+        {
+          "id": "D",
+          "text": "クライアントサイド暗号化 (CSE) のみ",
+          "is_correct": false,
+          "explanation": "CSE は強力だがアプリ側実装が必要。S3 機能の範囲では SSE-KMS が要件適合。"
+        }
+      ],
+      "explanation": "S3 の暗号化は SSE-S3 (AWS 全管理)/SSE-KMS (顧客制御 + 利用監査)/SSE-C (顧客鍵)/CSE (アプリ実装) の 4 方式。顧客制御 + 利用ログという典型要件には SSE-KMS が標準解。",
+      "references": [
+        {
+          "title": "Protecting data using server-side encryption",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "kms",
+        "encryption",
+        "sse-kms"
+      ],
+      "common_mistakes": [
+        "SSE-S3 で顧客制御が足りると誤解",
+        "SSE-C の運用コストを過小評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-023",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "S3 Public Access",
+      "subtopic": "Block Public Access",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "新規 S3 バケットを誤って Public 公開しないようアカウント全体でガードしたい。最も適切な設定はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Block Public Access をアカウントレベルで全て有効化する",
+          "is_correct": true,
+          "explanation": "正解。アカウント設定の Block Public Access はバケット・オブジェクトの ACL/ポリシー双方の公開設定を上書きで遮断する。"
+        },
+        {
+          "id": "B",
+          "text": "新規バケット作成時に毎回 ACL を確認する手順を作る",
+          "is_correct": false,
+          "explanation": "ヒューマンエラーが残る。技術的ガードを優先すべき。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail でバケット作成を監視し事後対応する",
+          "is_correct": false,
+          "explanation": "事後検知。予防的にブロックする方が良い。"
+        },
+        {
+          "id": "D",
+          "text": "全バケットを CloudFront 経由でのみアクセスさせる",
+          "is_correct": false,
+          "explanation": "CloudFront 経由は別の話。Block Public Access の代替にはならない。"
+        }
+      ],
+      "explanation": "S3 Block Public Access はアカウント or バケットレベルで設定でき、4 オプション (ACL public/PUT 拒否、ポリシー public/PUT 拒否) を一括 ON にできる。アカウントレベル ON が最も強い予防。",
+      "references": [
+        {
+          "title": "Blocking public access to your Amazon S3 storage",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "block-public-access",
+        "data-protection",
+        "preventive"
+      ],
+      "common_mistakes": [
+        "手順や監視に頼る (技術的ガード優先)",
+        "アカウントレベル設定の存在を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-024",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "ACM",
+      "subtopic": "Certificate provisioning",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "ALB に TLS 証明書を導入し、自動更新したい。最もシンプルな構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "自己署名証明書を ALB にアップロードする",
+          "is_correct": false,
+          "explanation": "自己署名はブラウザ警告が出る。公開サイトでは使えない。"
+        },
+        {
+          "id": "B",
+          "text": "Let's Encrypt の証明書を EC2 に置き、cron で更新する",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大。ALB と統合する ACM がシンプル。"
+        },
+        {
+          "id": "C",
+          "text": "商用 CA から購入し、ALB に手動アップロードする",
+          "is_correct": false,
+          "explanation": "更新が手動になる。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Certificate Manager (ACM) で公開ドメインの証明書を発行し、ALB にアタッチする",
+          "is_correct": true,
+          "explanation": "正解。ACM 公開証明書は無料・自動更新・主要 AWS サービス (ALB/CloudFront/API Gateway) に統合済み。"
+        }
+      ],
+      "explanation": "ACM 公開証明書は ALB / CloudFront / API Gateway / App Runner で無料利用でき、自動更新される (DNS 検証推奨)。EC2 のような ACM 非統合サービスには ACM Private CA かサードパーティ証明書を別途検討。",
+      "references": [
+        {
+          "title": "AWS Certificate Manager",
+          "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"
+        }
+      ],
+      "tags": [
+        "acm",
+        "alb",
+        "tls",
+        "certificate"
+      ],
+      "common_mistakes": [
+        "ACM が EC2 で直接使えると誤解",
+        "Let's Encrypt 自動更新の運用コストを過小評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-025",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "VPC Flow Logs",
+      "subtopic": "Traffic visibility",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "セキュリティチームから「VPC 内のネットワークトラフィック (送信元・宛先 IP・ポート・許可/拒否) を継続的に取得・保管したい」と依頼された。最も適切な機能はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudTrail で VPC イベントを記録する",
+          "is_correct": false,
+          "explanation": "CloudTrail は API 呼び出し記録。データプレーンの通信メタデータは取れない。"
+        },
+        {
+          "id": "B",
+          "text": "VPC Flow Logs を CloudWatch Logs または S3 に出力する",
+          "is_correct": true,
+          "explanation": "正解。Flow Logs は ENI/サブネット/VPC レベルで通信メタデータを記録する標準機能。"
+        },
+        {
+          "id": "C",
+          "text": "GuardDuty を有効化する",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検知 (アラート) で、生の Flow ログを継続保管する用途ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Inspector でネットワークスキャンする",
+          "is_correct": false,
+          "explanation": "Inspector は脆弱性スキャン。通信メタデータの記録ではない。"
+        }
+      ],
+      "explanation": "VPC Flow Logs は ENI 単位の通信記録 (送信元・宛先・ポート・プロトコル・パケット数・ACCEPT/REJECT) を出力する機能。トラブルシュート・コンプライアンス監査・GuardDuty/Security Lake のデータソースとして使う。",
+      "references": [
+        {
+          "title": "VPC Flow Logs",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"
+        }
+      ],
+      "tags": [
+        "vpc-flow-logs",
+        "monitoring",
+        "network",
+        "audit"
+      ],
+      "common_mistakes": [
+        "CloudTrail で通信ログまで取れると誤解",
+        "GuardDuty を生ログ保管に使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-026",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Inspector",
+      "subtopic": "Vulnerability scanning",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "EC2 と ECR イメージの OS / ライブラリの既知 CVE 脆弱性を継続スキャンしたい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Config",
+          "is_correct": false,
+          "explanation": "Config は設定評価。CVE 脆弱性スキャンは範囲外。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon GuardDuty",
+          "is_correct": false,
+          "explanation": "GuardDuty は脅威検知 (異常 API 等)。CVE スキャンではない。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Inspector",
+          "is_correct": true,
+          "explanation": "正解。Inspector v2 は EC2 / ECR / Lambda の脆弱性 (CVE/ネットワーク到達性) をエージェントレス/SSM Agent ベースで継続スキャンする。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Trusted Advisor",
+          "is_correct": false,
+          "explanation": "Trusted Advisor はベストプラクティスチェック (コスト/セキュリティ/性能等の高レベル指摘)。CVE スキャンではない。"
+        }
+      ],
+      "explanation": "Inspector v2 は EC2 / ECR / Lambda の脆弱性スキャンを行うマネージドサービス。CVE データベースに照合し findings として出力、Security Hub に統合可能。",
+      "references": [
+        {
+          "title": "Amazon Inspector",
+          "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"
+        }
+      ],
+      "tags": [
+        "inspector",
+        "cve",
+        "ec2",
+        "ecr"
+      ],
+      "common_mistakes": [
+        "GuardDuty で CVE スキャンできると誤解",
+        "Inspector の対象範囲 (EC2/ECR/Lambda) を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-027",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Parameter Store",
+      "subtopic": "SecureString vs Secrets Manager",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "アプリで使う 50 種類の単純な API トークンを安全に保管したい。自動ローテーションは不要、可能な限り低コストにしたい。最も適した選択はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Secrets Manager に 50 個のシークレットとして保管する",
+          "is_correct": false,
+          "explanation": "Secrets Manager はシークレット 1 個 $0.40/月 + API リクエスト課金。ローテーション不要要件には過剰コスト。"
+        },
+        {
+          "id": "B",
+          "text": "SSM Parameter Store の Standard SecureString に保管する",
+          "is_correct": true,
+          "explanation": "正解。Standard SecureString はパラメータ 1 個あたり無料 (Advanced は時間課金あり)。自動ローテーションが不要なら最安。"
+        },
+        {
+          "id": "C",
+          "text": "S3 バケットに JSON で平文保管する",
+          "is_correct": false,
+          "explanation": "平文保管はセキュリティ要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "DynamoDB に保管する",
+          "is_correct": false,
+          "explanation": "シークレット管理用途には Parameter Store / Secrets Manager が標準。DynamoDB は汎用 KV で運用設計が別途必要。"
+        }
+      ],
+      "explanation": "シークレット保管の選択指針: ローテーション必要 (DB クレデンシャル等) → Secrets Manager。単純保管・低コスト優先 → SSM Parameter Store SecureString (KMS 暗号化)。API トークン 50 種類のような単純保管なら Parameter Store の Standard で十分。",
+      "references": [
+        {
+          "title": "Choose Parameter Store or Secrets Manager",
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html"
+        }
+      ],
+      "tags": [
+        "parameter-store",
+        "secrets-manager",
+        "cost-optimization",
+        "secrets"
+      ],
+      "common_mistakes": [
+        "シークレット = Secrets Manager と短絡する",
+        "コスト比較を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-028",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "KMS",
+      "subtopic": "Automatic key rotation",
+      "cognitive_level": "L1-Remember",
+      "difficulty": "easy",
+      "stem": "KMS の Customer Managed Key (対称キー) で自動ローテーションを有効化したとき、デフォルトのローテーション間隔として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "365 日 (1 年)",
+          "is_correct": true,
+          "explanation": "正解。デフォルトは 1 年 (365 日)。2022 年以降はカスタム間隔 (90〜2,560 日) も指定可能。"
+        },
+        {
+          "id": "B",
+          "text": "90 日",
+          "is_correct": false,
+          "explanation": "90 日ではない。"
+        },
+        {
+          "id": "C",
+          "text": "30 日",
+          "is_correct": false,
+          "explanation": "30 日ではない。デフォルトは年次。"
+        },
+        {
+          "id": "D",
+          "text": "3 年",
+          "is_correct": false,
+          "explanation": "3 年ではない。"
+        }
+      ],
+      "explanation": "KMS 対称 CMK の自動ローテーション間隔は標準で 1 年。古いキー素材は復号用に保持され、新しい素材で暗号化される。非対称 CMK は自動ローテーション非対応。",
+      "references": [
+        {
+          "title": "Rotating AWS KMS keys",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "rotation",
+        "symmetric-key"
+      ],
+      "common_mistakes": [
+        "90 日や 30 日と覚えている",
+        "非対称 CMK でも自動ローテーション可能だと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-029",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM Policy",
+      "subtopic": "Resource-based vs identity-based",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）リソースベースポリシーとアイデンティティベースポリシーの違いとして正しいものを2つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "リソースベースは S3 バケット・KMS キー・SQS など、リソース側に直接添付する",
+          "is_correct": true,
+          "explanation": "正解。リソース側に添付するのが特徴。"
+        },
+        {
+          "id": "B",
+          "text": "リソースベースポリシーで他アカウントのプリンシパルを Principal として直接許可できる",
+          "is_correct": true,
+          "explanation": "正解。クロスアカウント許可をリソース側だけで完結できる代表ケース。"
+        },
+        {
+          "id": "C",
+          "text": "アイデンティティベースは AWS リソースに添付し、リソースベースは IAM ユーザに添付する",
+          "is_correct": false,
+          "explanation": "逆。アイデンティティベースはユーザ/グループ/ロールに添付。"
+        },
+        {
+          "id": "D",
+          "text": "リソースベースポリシーは存在せず、すべての権限はアイデンティティベースで設定する",
+          "is_correct": false,
+          "explanation": "存在する (S3 バケットポリシー等)。"
+        }
+      ],
+      "explanation": "リソースベース (バケットポリシー、KMS キーポリシー、SQS、Lambda、Secrets Manager 等) は Principal を直接書けるためクロスアカウント許可に向く。アイデンティティベースは IAM プリンシパル側に書く。両者の評価ロジック (AND/OR) はサービスとシナリオで決まる。",
+      "references": [
+        {
+          "title": "Identity-based and resource-based policies",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "policy",
+        "resource-based",
+        "cross-account"
+      ],
+      "common_mistakes": [
+        "どちらに Principal を書けるかを逆に覚える",
+        "リソースベースの存在自体を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-030",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "S3 Object Lock",
+      "subtopic": "WORM compliance",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "金融規制で監査ログを 7 年間「上書き・削除不能」(WORM) で保管する義務がある。S3 で実現する最適な機能はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Versioning だけで対応する",
+          "is_correct": false,
+          "explanation": "Versioning は履歴を残せるが、削除自体は可能。WORM 要件には不十分。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Object Lock を Compliance Mode + Retention 7 年で有効化する",
+          "is_correct": true,
+          "explanation": "正解。Compliance Mode は root ユーザでも削除・短縮不可。WORM 規制要件に対応。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Lifecycle で Glacier に移し、7 年後削除に設定する",
+          "is_correct": false,
+          "explanation": "保管階層の話で、削除不可性は提供しない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 バケットポリシーで Deny す:Delete を書く",
+          "is_correct": false,
+          "explanation": "ポリシーは変更可能。WORM 規制では仕組みとして削除不能であることが必要。"
+        }
+      ],
+      "explanation": "S3 Object Lock は WORM (Write Once Read Many) を実現する機能。Governance Mode (特定権限で解除可) と Compliance Mode (root でも解除不可) があり、SEC 17a-4(f) や FINRA など規制要件に対応する。",
+      "references": [
+        {
+          "title": "Using S3 Object Lock",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "object-lock",
+        "worm",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Versioning や Lifecycle で WORM 要件を満たせると誤解",
+        "Governance と Compliance Mode の差を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-031",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "WAF",
+      "subtopic": "Rate-based rule",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "API への HTTP リクエストで、同一 IP からの過剰リクエストを 5 分間で 2,000 件以上から自動ブロックしたい。最も適切な仕組みはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudWatch アラームから手動対応する",
+          "is_correct": false,
+          "explanation": "手動対応はリアルタイムブロックにならない。"
+        },
+        {
+          "id": "B",
+          "text": "Security Group で IP を順次手動 deny する",
+          "is_correct": false,
+          "explanation": "リアルタイム自動ブロックにならず運用負荷も大。"
+        },
+        {
+          "id": "C",
+          "text": "CloudFront のキャッシュで吸収する",
+          "is_correct": false,
+          "explanation": "キャッシュ可能なリソースなら緩和になるが、API 用途で過剰リクエストの遮断にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS WAF の rate-based ルールを設定する",
+          "is_correct": true,
+          "explanation": "正解。Rate-based ルールは IP/カスタムキー単位で 5 分単位の閾値を設定し自動ブロックする。"
+        }
+      ],
+      "explanation": "WAF rate-based ルールは IP / ヘッダ / Cookie 等のキー単位で 5 分間のリクエスト閾値を超えたものをブロックする。スクレイピング・ブルートフォース・簡易 L7 DDoS への第一防衛線。",
+      "references": [
+        {
+          "title": "AWS WAF rate-based rule statement",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html"
+        }
+      ],
+      "tags": [
+        "waf",
+        "rate-based",
+        "ddos",
+        "api"
+      ],
+      "common_mistakes": [
+        "Security Group で L7 レート制限できると誤解",
+        "CloudWatch アラームでリアルタイム遮断できると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-032",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Network Firewall",
+      "subtopic": "Egress filtering",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "VPC 全体のアウトバウンド通信を、許可ドメインリストに基づいてフィルタリングしたい (例: *.example.com のみ許可)。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Security Group の outbound で IP レンジを絞る",
+          "is_correct": false,
+          "explanation": "ドメイン単位の制御は IP では困難 (CDN や SaaS の IP は流動的)。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Network Firewall のステートフルルール (Suricata ルール) で SNI/ドメインフィルタする",
+          "is_correct": true,
+          "explanation": "正解。Network Firewall は VPC 単位の L3-L7 フィルタリング (ドメイン・SNI・URL) が可能。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAF を適用する",
+          "is_correct": false,
+          "explanation": "WAF は ALB/CloudFront/API GW の前段 (インバウンド)。VPC エグレスフィルタには使えない。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 上にプロキシを建てて全通信を経由させる",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大。マネージドの Network Firewall がよい。"
+        }
+      ],
+      "explanation": "AWS Network Firewall は VPC エグレス/イングレスの L3-L7 フィルタを提供するマネージドファイアウォール。Suricata 互換ルールで SNI ベースのドメインフィルタや IDS/IPS が可能。",
+      "references": [
+        {
+          "title": "AWS Network Firewall",
+          "url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+        }
+      ],
+      "tags": [
+        "network-firewall",
+        "egress",
+        "domain-filter",
+        "vpc"
+      ],
+      "common_mistakes": [
+        "WAF でエグレスフィルタできると誤解",
+        "Security Group でドメイン単位制御できると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-033",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "AWS Firewall Manager",
+      "subtopic": "Centralized policy",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AWS Organizations 配下 30 アカウントの全 ALB に同じ WAF ルールセットを一括適用・新規 ALB にも自動適用したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFormation StackSets だけで完結する",
+          "is_correct": false,
+          "explanation": "デプロイ自動化は可能だが、Firewall Manager の方が WAF/Shield 専用の集中管理として優れる。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントの管理者に WAF 設定手順書を送って手動適用させる",
+          "is_correct": false,
+          "explanation": "30 アカウント × 新規 ALB への自動適用はカバーできない。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Firewall Manager のポリシーで WAF ルールを組織全体に強制する",
+          "is_correct": true,
+          "explanation": "正解。Firewall Manager は組織配下に WAF/Shield Advanced/Security Group/Network Firewall ポリシーを集中適用するマネージドサービス。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で全アカウントを巡回し WAF を設定する",
+          "is_correct": false,
+          "explanation": "自作運用は負荷大。マネージドの Firewall Manager を使う。"
+        }
+      ],
+      "explanation": "AWS Firewall Manager は Organizations 配下の WAF/Shield Advanced/Security Group/Network Firewall/Route 53 Resolver DNS Firewall を集中管理し、新規リソースにも自動適用する。マルチアカウント環境の標準ガバナンス手段。",
+      "references": [
+        {
+          "title": "AWS Firewall Manager",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"
+        }
+      ],
+      "tags": [
+        "firewall-manager",
+        "organizations",
+        "waf",
+        "governance"
+      ],
+      "common_mistakes": [
+        "StackSets と Firewall Manager の役割を混同",
+        "手動運用で済むと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-034",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Security Hub",
+      "subtopic": "Centralized findings",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "GuardDuty、Inspector、Macie、IAM Access Analyzer、Config の findings を一画面に集約し、CIS/AWS FSBP/PCI-DSS などのベンチマーク準拠状況も継続評価したい。最も適したサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Trusted Advisor",
+          "is_correct": false,
+          "explanation": "Trusted Advisor はベストプラクティスチェックだが、複数セキュリティサービスの統合ハブではない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon CloudWatch Dashboard",
+          "is_correct": false,
+          "explanation": "CloudWatch はメトリクス/ログ。findings 集約とコンプライアンス評価は範囲外。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Security Hub",
+          "is_correct": true,
+          "explanation": "正解。Security Hub は他セキュリティサービスの findings を ASFF 形式で集約し、ベンチマーク準拠状況を継続評価する。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Detective",
+          "is_correct": false,
+          "explanation": "Detective は findings の根本原因調査用。集約と評価は Security Hub。"
+        }
+      ],
+      "explanation": "Security Hub は AWS Security Finding Format (ASFF) で他サービスや 3rd party (Palo Alto、CrowdStrike 等) の findings を集約。CIS AWS Foundations Benchmark、AWS Foundational Security Best Practices、PCI-DSS などのコントロールを継続評価する。",
+      "references": [
+        {
+          "title": "AWS Security Hub",
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+        }
+      ],
+      "tags": [
+        "security-hub",
+        "findings",
+        "compliance",
+        "cis"
+      ],
+      "common_mistakes": [
+        "Trusted Advisor と Security Hub の役割を混同",
+        "Detective を集約用途で考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-035",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM Policy",
+      "subtopic": "Wildcard risk",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "次の IAM ポリシーの問題点として最も重大なのはどれか: { \"Effect\":\"Allow\", \"Action\":\"*\", \"Resource\":\"*\" }",
+      "options": [
+        {
+          "id": "A",
+          "text": "リソースが * のため対象が広く特定アカウントに限定できない",
+          "is_correct": false,
+          "explanation": "ポリシーは添付したプリンシパルにのみ作用するため、別アカウントには波及しない。指摘として優先度は低い。"
+        },
+        {
+          "id": "B",
+          "text": "最小権限原則違反であり、添付されたプリンシパルが事実上の管理者権限を持つ",
+          "is_correct": true,
+          "explanation": "正解。Action=* + Resource=* は管理者相当。最小権限を完全に放棄しており最重大。"
+        },
+        {
+          "id": "C",
+          "text": "Effect が Allow なので冗長",
+          "is_correct": false,
+          "explanation": "Allow は明示的に必要 (デフォルト Deny)。冗長ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Condition がないため監査ログが出ない",
+          "is_correct": false,
+          "explanation": "監査ログ (CloudTrail) は Condition 有無と無関係。"
+        }
+      ],
+      "explanation": "Action=* + Resource=* は AdministratorAccess と同等。最小権限原則 (Principle of Least Privilege) に反し、漏洩・誤操作時の影響範囲を最大化する。IAM Access Analyzer Policy Generator で実際に使う API だけに絞る等の対応をする。",
+      "references": [
+        {
+          "title": "Security best practices in IAM",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "least-privilege",
+        "policy",
+        "best-practice"
+      ],
+      "common_mistakes": [
+        "影響範囲を Resource ワイルドカードのせいだと誤解",
+        "Condition 不在を主因と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-036",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "AWS Organizations",
+      "subtopic": "SCP vs RCP",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）SCP (Service Control Policy) と RCP (Resource Control Policy) の違いとして正しいものを2つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "SCP は IAM プリンシパル (アカウント内ユーザ・ロール) の実行可能アクションの上限を定義する",
+          "is_correct": true,
+          "explanation": "正解。SCP はプリンシパル側のガードレール。"
+        },
+        {
+          "id": "B",
+          "text": "RCP は組織内リソースへのアクセスを誰がしようとも上限を定義する (組織外プリンシパル含む)",
+          "is_correct": true,
+          "explanation": "正解。RCP はリソース側のガードレールで、外部アカウントからのアクセスにも適用される。"
+        },
+        {
+          "id": "C",
+          "text": "RCP は IAM ポリシーそのものを置き換える",
+          "is_correct": false,
+          "explanation": "RCP も SCP もガードレール (上限) であり、許可を付与するものではない。"
+        },
+        {
+          "id": "D",
+          "text": "SCP は組織外プリンシパル (別 AWS アカウント、匿名) の挙動も制御する",
+          "is_correct": false,
+          "explanation": "SCP は組織内プリンシパルが対象。組織外には作用しない。組織外まで含めて制御したい場合に RCP を使う。"
+        }
+      ],
+      "explanation": "SCP は組織内プリンシパルの API 実行上限 (主体側ガードレール)、RCP は組織内リソースへのアクセス上限 (リソース側ガードレール、外部プリンシパルも対象)。2024 年に追加された RCP は「リソースが外部から読まれないようにする」用途で SCP の補完的役割を果たす。",
+      "references": [
+        {
+          "title": "Resource control policies (RCPs)",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "scp",
+        "rcp",
+        "guardrail"
+      ],
+      "common_mistakes": [
+        "SCP と RCP の対象 (主体 vs リソース) を混同",
+        "RCP が許可を付与すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-037",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "KMS",
+      "subtopic": "Envelope encryption",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "KMS のエンベロープ暗号化の説明として正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "データ暗号化キー (DEK) でデータを暗号化し、その DEK をマスターキー (KEK) で暗号化する 2 段階暗号化",
+          "is_correct": true,
+          "explanation": "正解。DEK でデータ暗号化、KEK で DEK 暗号化することで大容量データを効率よく扱える。"
+        },
+        {
+          "id": "B",
+          "text": "データを KMS マスターキーで直接暗号化するため大容量データに最適",
+          "is_correct": false,
+          "explanation": "KMS で直接暗号化できるのは 4KB 以下。大容量はエンベロープ方式 (DEK + KEK) で処理。"
+        },
+        {
+          "id": "C",
+          "text": "KMS と CloudHSM 両方を使う冗長暗号化",
+          "is_correct": false,
+          "explanation": "冗長化の話ではない。"
+        },
+        {
+          "id": "D",
+          "text": "公開鍵と秘密鍵のペアでハイブリッド暗号化する",
+          "is_correct": false,
+          "explanation": "対称キーの 2 段階暗号化 (KMS デフォルト) を指す。非対称ハイブリッドの説明ではない。"
+        }
+      ],
+      "explanation": "エンベロープ暗号化: GenerateDataKey で DEK を取得 → DEK の平文版でデータ暗号化 → DEK の暗号文版 (KEK で暗号化済み) をデータと一緒に保管 → 復号時は KMS Decrypt で DEK 復元 → DEK でデータ復号。S3 SSE-KMS、EBS、Aurora 暗号化等の内部で使われる。",
+      "references": [
+        {
+          "title": "AWS KMS envelope encryption",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#enveloping"
+        }
+      ],
+      "tags": [
+        "kms",
+        "envelope-encryption",
+        "dek",
+        "kek"
+      ],
+      "common_mistakes": [
+        "KMS で大容量データを直接暗号化できると誤解",
+        "DEK と KEK の関係が曖昧"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-038",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM",
+      "subtopic": "Service-linked role",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "AWS サービス (例: Auto Scaling、Lex、Organizations 等) が他 AWS サービスを呼び出すためにアカウント内で自動作成・管理される IAM ロールはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Permission Boundary",
+          "is_correct": false,
+          "explanation": "権限の上限を定義するポリシーで、ロール種別ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Cross-account role",
+          "is_correct": false,
+          "explanation": "アカウント間 AssumeRole の話。サービス連携とは別。"
+        },
+        {
+          "id": "C",
+          "text": "Service-linked role",
+          "is_correct": true,
+          "explanation": "正解。Service-linked role は対象サービス側で定義済みの権限を持ち、削除はサービス側で利用が終わったときのみ可能。"
+        },
+        {
+          "id": "D",
+          "text": "Instance Profile",
+          "is_correct": false,
+          "explanation": "EC2 にロールをアタッチするためのラッパー。サービス側の自動ロールではない。"
+        }
+      ],
+      "explanation": "Service-linked role は AWS サービスが代理で他サービスを呼ぶための専用ロール。権限はサービス側で事前定義され、顧客はロールの作成・削除のみ。AWSServiceRoleFor* という命名規約。",
+      "references": [
+        {
+          "title": "Service-linked roles",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "service-linked-role",
+        "managed-permissions"
+      ],
+      "common_mistakes": [
+        "Service-linked role と Instance Profile を混同",
+        "サービス連携で都度ロールを自作する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-039",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "KMS",
+      "subtopic": "Key Policy vs Grant",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）KMS のキーポリシーと Grants の違いとして正しいものを2つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "キーポリシーは KMS キーに添付される唯一の必須ポリシー (デフォルトで作成される)",
+          "is_correct": true,
+          "explanation": "正解。KMS キーには必ずキーポリシーが存在する。"
+        },
+        {
+          "id": "B",
+          "text": "Grant はキーポリシーを編集せずに特定プリンシパルへ一時的な権限委譲を可能にする",
+          "is_correct": true,
+          "explanation": "正解。Grant は CreateGrant API で発行する小粒度・一時的な権限。AWS サービスが内部で広く使う。"
+        },
+        {
+          "id": "C",
+          "text": "Grant は永続的でキーが削除されない限り残る",
+          "is_correct": false,
+          "explanation": "Grant は明示的に取り消すか TTL で失効。永続性が前提ではない。"
+        },
+        {
+          "id": "D",
+          "text": "キーポリシーは IAM ポリシーと完全に同じ評価で扱われる",
+          "is_correct": false,
+          "explanation": "KMS は他リソースと違い「キーポリシーの委任」が必要 (キーポリシーで IAM 委任を Allow しないと IAM ポリシーで権限を付けても効かない)。"
+        }
+      ],
+      "explanation": "KMS の認可レイヤ: ①キーポリシー (キーごとの根本ポリシー、IAM 委任の許可も必要) ②IAM ポリシー (キーポリシーで委任有効時に作用) ③Grant (キーポリシー編集なしで小粒度委譲、AWS サービス間連携で多用)。3 層を理解しないと「IAM で許可したのに使えない」現象に遭遇する。",
+      "references": [
+        {
+          "title": "Authentication and access control for AWS KMS",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/control-access.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "key-policy",
+        "grant",
+        "authorization"
+      ],
+      "common_mistakes": [
+        "IAM ポリシーだけで KMS 権限を制御できると誤解",
+        "Grant を永続的なものと考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-040",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Cognito",
+      "subtopic": "Federation with social IdP",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "B2C モバイルアプリで、Google・Apple・自社メールアドレスのいずれかでサインアップできるようにしたい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "IAM ユーザを 1 ユーザにつき 1 つ発行する",
+          "is_correct": false,
+          "explanation": "B2C スケール (数万〜数百万) に IAM は不向き。"
+        },
+        {
+          "id": "B",
+          "text": "AWS IAM Identity Center を使う",
+          "is_correct": false,
+          "explanation": "Identity Center は社員 (workforce) SSO 向け。B2C には Cognito。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Cognito User Pool でソーシャル IdP フェデレーションと内蔵 ID 両方を有効化する",
+          "is_correct": true,
+          "explanation": "正解。User Pool は SAML/OIDC ソーシャル IdP と内蔵ユーザディレクトリの両方を統合提供する。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon SES でメール認証を実装する",
+          "is_correct": false,
+          "explanation": "SES はメール配信。サインアップ/認証基盤ではない。"
+        }
+      ],
+      "explanation": "Cognito User Pool はソーシャル IdP (Google/Facebook/Apple/Amazon) や OIDC/SAML IdP との連携、内蔵ユーザディレクトリ、MFA、検証コード送信 (SES/SNS) を統合して提供する B2C 標準。",
+      "references": [
+        {
+          "title": "Adding social identity providers to a user pool",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-social-idp.html"
+        }
+      ],
+      "tags": [
+        "cognito",
+        "user-pool",
+        "social-idp",
+        "b2c"
+      ],
+      "common_mistakes": [
+        "B2C に IAM Identity Center を使う",
+        "B2C に IAM ユーザを発行する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-041",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "AWS Config",
+      "subtopic": "Configuration compliance",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "「すべての EBS ボリュームは暗号化されていなければならない」というポリシーを継続的に評価し、違反を検出したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "毎日 Lambda で全 EBS を describe して自前評価する",
+          "is_correct": false,
+          "explanation": "Config のマネージドルールで既に提供されている処理を再実装するのは無駄。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch メトリクスで EBS の暗号化率を監視する",
+          "is_correct": false,
+          "explanation": "CloudWatch メトリクスとして暗号化率は存在しない。Config が適切。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail で CreateVolume イベントだけを監視する",
+          "is_correct": false,
+          "explanation": "API レベルは追えるが「現在の状態」評価は Config が向く。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config の マネージドルール (encrypted-volumes) を有効化する",
+          "is_correct": true,
+          "explanation": "正解。Config はリソース設定の継続的評価を提供し、暗号化チェック等のマネージドルールがすぐ使える。"
+        }
+      ],
+      "explanation": "AWS Config はリソース設定のスナップショット・変更履歴・コンプライアンス評価を提供。マネージドルール (encrypted-volumes、s3-bucket-public-read-prohibited、cloud-trail-enabled 等) と Custom ルール (Lambda) で評価する。Conformance Pack で CIS 等のセットを一括導入可能。",
+      "references": [
+        {
+          "title": "AWS Config managed rules",
+          "url": "https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html"
+        }
+      ],
+      "tags": [
+        "config",
+        "compliance",
+        "ebs",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "CloudTrail だけで設定評価できると誤解",
+        "自前 Lambda で再実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-042",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "VPC",
+      "subtopic": "NAT Gateway egress",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "プライベートサブネットの EC2 から OS パッケージ更新 (yum/apt) のためインターネットへアウトバウンドだけ通したい。インバウンドは受けない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Public Subnet に NAT Gateway を置き、プライベートサブネットのルートテーブルに 0.0.0.0/0 → NAT GW を設定する",
+          "is_correct": true,
+          "explanation": "正解。NAT Gateway はマネージド・高可用 (AZ 内)・スループット自動拡張。標準解。"
+        },
+        {
+          "id": "B",
+          "text": "プライベートサブネット内に NAT インスタンスを EC2 で自作する",
+          "is_correct": false,
+          "explanation": "可用性・スループット・運用負荷で NAT Gateway に劣る。"
+        },
+        {
+          "id": "C",
+          "text": "プライベートサブネットの EC2 にパブリック IP を割り当てる",
+          "is_correct": false,
+          "explanation": "プライベートサブネットには IGW へのルートがないため、パブリック IP を付けてもインターネットへ出られない。"
+        },
+        {
+          "id": "D",
+          "text": "Internet Gateway をプライベートサブネットへ直接ルートする",
+          "is_correct": false,
+          "explanation": "IGW へのルートを持つサブネットはパブリックサブネットになる。要件の「プライベート維持」に反する。"
+        }
+      ],
+      "explanation": "NAT Gateway は AZ ごとに配置するマネージド NAT。プライベートサブネットからのアウトバウンドだけを通す標準パターン。可用性のため 2 AZ にそれぞれ NAT Gateway を置き、それぞれの AZ のプライベートサブネットからルーティングする。",
+      "references": [
+        {
+          "title": "NAT gateways",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+        }
+      ],
+      "tags": [
+        "vpc",
+        "nat-gateway",
+        "egress",
+        "private-subnet"
+      ],
+      "common_mistakes": [
+        "プライベートサブネットに直接 IGW ルートを書く",
+        "NAT インスタンスを自作する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-043",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Route 53 Resolver",
+      "subtopic": "DNS Firewall",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "VPC 内 EC2 からの DNS クエリで、悪意あるドメイン (フィッシング・マルウェア C&C) への名前解決をブロックしたい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "VPC Flow Logs で事後検知する",
+          "is_correct": false,
+          "explanation": "検知のみで予防的ブロックではない。"
+        },
+        {
+          "id": "B",
+          "text": "Security Group でドメインを deny する",
+          "is_correct": false,
+          "explanation": "SG はドメイン単位制御不可。"
+        },
+        {
+          "id": "C",
+          "text": "AWS WAF で DNS をブロックする",
+          "is_correct": false,
+          "explanation": "WAF は HTTP/HTTPS 用。DNS には適用できない。"
+        },
+        {
+          "id": "D",
+          "text": "Route 53 Resolver DNS Firewall でドメインリストを Block ポリシーに設定する",
+          "is_correct": true,
+          "explanation": "正解。AWS Managed Domain List (Malware、Botnet 等) と顧客カスタムリストで VPC 単位の DNS フィルタが可能。"
+        }
+      ],
+      "explanation": "Route 53 Resolver DNS Firewall は VPC の DNS クエリに対するフィルタリング層。AWS Managed Domain List (Malware、AbusedTLDs、Bot 等) と顧客リストでドメイン単位の Allow/Block/Alert を設定する。",
+      "references": [
+        {
+          "title": "Route 53 Resolver DNS Firewall",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall.html"
+        }
+      ],
+      "tags": [
+        "route53-resolver",
+        "dns-firewall",
+        "malware",
+        "egress-control"
+      ],
+      "common_mistakes": [
+        "WAF で DNS フィルタできると誤解",
+        "Security Group でドメイン制御を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-044",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM",
+      "subtopic": "MFA enforcement",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "全 IAM ユーザに対し、コンソールログイン後 MFA 未設定の状態では一切の API 呼び出しを禁止したい。最も適切な実装はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cognito を使う",
+          "is_correct": false,
+          "explanation": "Cognito は B2C 向け。IAM ユーザの MFA 強制は IAM ポリシーで行う。"
+        },
+        {
+          "id": "B",
+          "text": "ログイン画面に MFA 必須の注意書きを出す",
+          "is_correct": false,
+          "explanation": "通知のみで強制力なし。"
+        },
+        {
+          "id": "C",
+          "text": "MFA 設定済みユーザだけを CloudTrail で監視する",
+          "is_correct": false,
+          "explanation": "検知のみで予防にならない。"
+        },
+        {
+          "id": "D",
+          "text": "IAM ポリシーで aws:MultiFactorAuthPresent が false の場合 Deny する条件を全権限に付与する",
+          "is_correct": true,
+          "explanation": "正解。Condition で MFA 未認証セッションを Deny する。"
+        }
+      ],
+      "explanation": "IAM ポリシーで Condition: aws:MultiFactorAuthPresent = false → Deny を全権限に付与すると、MFA で認証されていないセッションは API を呼べなくなる。MFA 必須化の標準パターン。",
+      "references": [
+        {
+          "title": "Configuring MFA-protected API access",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_configure-api-require.html"
+        }
+      ],
+      "tags": [
+        "iam",
+        "mfa",
+        "condition-key",
+        "preventive"
+      ],
+      "common_mistakes": [
+        "MFA 強制を文書/手順だけで実現しようとする",
+        "Cognito で IAM ユーザの MFA を制御しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-045",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "EBS",
+      "subtopic": "Encryption at rest",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "EC2 で使う EBS ボリュームを暗号化する方法として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EBS 暗号化を有効化し、KMS キー (デフォルト or 顧客指定 CMK) を選ぶ",
+          "is_correct": true,
+          "explanation": "正解。EBS 暗号化は KMS 統合で透過的に有効化できる。スナップショット・複製先 AMI も暗号化される。"
+        },
+        {
+          "id": "B",
+          "text": "OS 内で dm-crypt を手動構成する",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大。AWS ネイティブの EBS 暗号化が標準。"
+        },
+        {
+          "id": "C",
+          "text": "EBS は暗号化できないので S3 に置く",
+          "is_correct": false,
+          "explanation": "EBS は暗号化可能。事実誤認。"
+        },
+        {
+          "id": "D",
+          "text": "暗号化はインスタンスタイプを変更すれば自動で有効になる",
+          "is_correct": false,
+          "explanation": "暗号化は EBS の設定で、インスタンスタイプ依存ではない。"
+        }
+      ],
+      "explanation": "EBS 暗号化は KMS 統合で透過的に動作。スナップショット・スナップショット由来 AMI・コピー先もすべて暗号化が引き継がれる。アカウント・リージョン単位で「EBS 暗号化を常に有効」設定を ON にできる (Default Encryption)。",
+      "references": [
+        {
+          "title": "Amazon EBS encryption",
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/EBSEncryption.html"
+        }
+      ],
+      "tags": [
+        "ebs",
+        "encryption",
+        "kms",
+        "at-rest"
+      ],
+      "common_mistakes": [
+        "OS 内で自前暗号化する",
+        "EBS 暗号化の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 3,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.25
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-046",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "CloudTrail",
+      "subtopic": "Management vs Data events",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "S3 オブジェクトレベルの読み書き (GetObject、PutObject 等) を監査ログに残したい。CloudTrail の設定として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "デフォルトの管理イベントトレイルだけで自動的にオブジェクトレベルが記録される",
+          "is_correct": false,
+          "explanation": "デフォルトでは管理イベント (CreateBucket 等の API) のみ。オブジェクトレベルは Data Events を明示有効化する必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "Data Events を有効化し、対象 S3 バケットを指定する (追加料金)",
+          "is_correct": true,
+          "explanation": "正解。S3 / Lambda / DynamoDB 等の Data Events は明示有効化が必要で、データイベント数に応じた料金が発生する。"
+        },
+        {
+          "id": "C",
+          "text": "S3 サーバアクセスログだけで十分",
+          "is_correct": false,
+          "explanation": "サーバアクセスログは S3 内のログだけで、CloudTrail のエコシステム (CloudWatch/EventBridge 連携) と統合できない。要件次第。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Metrics を有効化する",
+          "is_correct": false,
+          "explanation": "メトリクスは集計値で個別の API ログではない。"
+        }
+      ],
+      "explanation": "CloudTrail は Management Events (デフォルト ON) と Data Events (デフォルト OFF、追加料金) に分かれる。Data Events は S3 オブジェクト操作、Lambda 実行、DynamoDB 項目操作などのデータプレーン API。コンプライアンス要件で必要なら明示的に有効化する。",
+      "references": [
+        {
+          "title": "Logging data events",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+        }
+      ],
+      "tags": [
+        "cloudtrail",
+        "data-events",
+        "s3",
+        "audit"
+      ],
+      "common_mistakes": [
+        "デフォルトでオブジェクトレベル監査できると誤解",
+        "Data Events の課金を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-047",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "VPC",
+      "subtopic": "Centralized egress",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）20 VPC の構成で、すべての VPC のインターネット向けトラフィックを単一の「中央 VPC」経由で出したい (NAT Gateway を集約してコスト削減・統制)。アーキテクチャ要素として正しいものを2つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Transit Gateway を中心に各 VPC を接続し、中央 VPC で NAT Gateway を集約する",
+          "is_correct": true,
+          "explanation": "正解。TGW + 中央 Egress VPC は集約 NAT の標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "中央 VPC のルートテーブルで 0.0.0.0/0 を NAT Gateway へ、各 VPC は TGW 経由で中央 VPC へルートする",
+          "is_correct": true,
+          "explanation": "正解。各 VPC は TGW 経由で中央 VPC へ、中央 VPC で NAT に流す構成。"
+        },
+        {
+          "id": "C",
+          "text": "各 VPC に NAT Gateway を個別配置して TGW で接続する",
+          "is_correct": false,
+          "explanation": "NAT を集約せず分散したまま。要件 (集約・コスト削減) に反する。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Peering の Full Mesh で接続する",
+          "is_correct": false,
+          "explanation": "Peering Full Mesh は管理困難 (20 × 19 / 2 = 190 ペア)。TGW がスケール解。"
+        }
+      ],
+      "explanation": "TGW + 中央 Egress VPC: 各 VPC → TGW → 中央 VPC の Private サブネット → 中央 VPC の Public サブネットの NAT Gateway → IGW。NAT 料金を 20 VPC 分から数本に集約できる。Inspection VPC (Network Firewall 経由) パターンの基礎。",
+      "references": [
+        {
+          "title": "Centralized egress to internet (TGW)",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html"
+        }
+      ],
+      "tags": [
+        "transit-gateway",
+        "centralized-egress",
+        "nat-gateway",
+        "multi-vpc"
+      ],
+      "common_mistakes": [
+        "VPC Peering で 20 VPC を捌こうとする",
+        "NAT を集約しないまま TGW だけ入れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-048",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Cognito",
+      "subtopic": "M2M with OAuth client credentials",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "B2B 顧客のシステム (サーバ間) から自社 API を OAuth Client Credentials Grant で呼ばせたい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "API Gateway で API Key を発行する",
+          "is_correct": false,
+          "explanation": "API Key は識別・スロットリング用で認可ではない。OAuth 標準フローに従うなら Cognito が適切。"
+        },
+        {
+          "id": "B",
+          "text": "IAM ユーザを顧客分発行しアクセスキーを渡す",
+          "is_correct": false,
+          "explanation": "IAM ユーザを大量発行するパターンはスケールしない。"
+        },
+        {
+          "id": "C",
+          "text": "Cognito User Pool の App Client を Client Credentials Grant で構成し OAuth トークン発行する",
+          "is_correct": true,
+          "explanation": "正解。User Pool はサーバ間 M2M 向けに Client Credentials も発行できる。"
+        },
+        {
+          "id": "D",
+          "text": "Cognito Identity Pool だけを使う",
+          "is_correct": false,
+          "explanation": "Identity Pool は AWS リソースアクセス用のクレデンシャル発行。OAuth トークン発行は User Pool。"
+        }
+      ],
+      "explanation": "Cognito User Pool は OAuth 2.0 / OIDC を提供し、Client Credentials Grant (M2M)、Authorization Code Grant (Web)、Implicit (非推奨) などをサポート。サーバ間 API 認可なら Client Credentials が標準。",
+      "references": [
+        {
+          "title": "Amazon Cognito user pool OAuth grants",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-idp-settings.html"
+        }
+      ],
+      "tags": [
+        "cognito",
+        "oauth",
+        "client-credentials",
+        "m2m"
+      ],
+      "common_mistakes": [
+        "API Key を OAuth の代替に使う",
+        "サーバ間に IAM ユーザを発行する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-049",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "KMS",
+      "subtopic": "Cross-account key usage",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アカウント A の KMS CMK で暗号化された S3 オブジェクトを、アカウント B の IAM ロールから復号したい。最低限必要な設定はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "アカウント A の KMS キーポリシーでアカウント B を許可し、アカウント B のロールにも kms:Decrypt と s3:GetObject を付与する",
+          "is_correct": true,
+          "explanation": "正解。KMS のクロスアカウントは「リソース側で許可 + 利用側で権限付与」の両方が必要。"
+        },
+        {
+          "id": "B",
+          "text": "アカウント A の KMS キーポリシーで、アカウント B のロールに Decrypt を許可する",
+          "is_correct": false,
+          "explanation": "キーポリシーだけでなく、アカウント B 側の IAM ロールにも kms:Decrypt 権限が必要 (両側必要)。"
+        },
+        {
+          "id": "C",
+          "text": "アカウント B のロールに kms:Decrypt を付与するだけ",
+          "is_correct": false,
+          "explanation": "アカウント A の KMS キーポリシーで委任が許可されていないと使えない。"
+        },
+        {
+          "id": "D",
+          "text": "アカウント A の S3 バケットポリシーだけを設定する",
+          "is_correct": false,
+          "explanation": "S3 の認可はできても KMS の認可は別途必要。"
+        }
+      ],
+      "explanation": "KMS クロスアカウント利用は 2 段階の許可が必須: ①リソースオーナーのキーポリシーで他アカウントへの委任を Allow、②利用側アカウントの IAM ポリシーで該当キーへの kms:Decrypt 等を付与。S3 SSE-KMS の場合は s3:GetObject と kms:Decrypt の両方が要る。",
+      "references": [
+        {
+          "title": "Allowing users in other accounts to use a KMS key",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "cross-account",
+        "s3",
+        "sse-kms"
+      ],
+      "common_mistakes": [
+        "片方の設定だけで動くと誤解",
+        "S3 バケットポリシーで KMS 認可までできると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-050",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Organizations",
+      "subtopic": "Delegated administrator",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "セキュリティ管理アカウント (ログアーカイブとは別の Security アカウント) から、組織配下の GuardDuty / Security Hub / Config / Macie 等を一元管理させたい。Organizations の標準的な仕組みはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各メンバアカウントに Security チームの IAM ユーザを作る",
+          "is_correct": false,
+          "explanation": "アカウント数 × 人数で管理破綻。Delegated Administrator が標準。"
+        },
+        {
+          "id": "B",
+          "text": "管理アカウント (Organizations root) の権限を Security チームに完全付与する",
+          "is_correct": false,
+          "explanation": "管理アカウントは最小限の利用が原則。Delegated Administrator で分離する。"
+        },
+        {
+          "id": "C",
+          "text": "Security アカウントを Delegated Administrator として各セキュリティサービスに登録する",
+          "is_correct": true,
+          "explanation": "正解。Delegated Administrator により、管理アカウント (root) を直接使わずに専用アカウントで集中管理できる。"
+        },
+        {
+          "id": "D",
+          "text": "Service Catalog で配布する",
+          "is_correct": false,
+          "explanation": "Service Catalog はテンプレート配布。サービス管理権限の委譲とは別。"
+        }
+      ],
+      "explanation": "Delegated Administrator は Organizations の標準パターン。管理アカウント (root) は最小限に留め、Security / Audit 等の専用アカウントに集中管理権限を委譲する。GuardDuty、Security Hub、Config、Macie、IAM Access Analyzer、Firewall Manager 等が対応。",
+      "references": [
+        {
+          "title": "Delegated administrator in AWS Organizations",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "delegated-administrator",
+        "security-account",
+        "governance"
+      ],
+      "common_mistakes": [
+        "管理アカウントから全てを操作する",
+        "Service Catalog で代用できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-051",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM Policy",
+      "subtopic": "PrincipalOrgID condition",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "S3 バケットへのアクセスを、AWS Organizations 配下の全アカウントからのみに限定したい (組織外アカウントは Deny)。最も適切な書き方はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "アカウント ID を 1 つずつ Principal に列挙する",
+          "is_correct": false,
+          "explanation": "アカウントが追加されるたびに更新が必要で運用負荷大。"
+        },
+        {
+          "id": "B",
+          "text": "GuardDuty で組織外アクセスを検出する",
+          "is_correct": false,
+          "explanation": "検知のみで予防にならない。"
+        },
+        {
+          "id": "C",
+          "text": "VPC Endpoint Policy だけで対応する",
+          "is_correct": false,
+          "explanation": "Endpoint Policy は VPC 内部からの呼び出しだけ。組織外の呼び出しを塞ぐには適さない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 バケットポリシーの Condition に aws:PrincipalOrgID = o-xxxxxxxxxx を指定する",
+          "is_correct": true,
+          "explanation": "正解。組織 ID を条件にすれば組織配下の全アカウントを自動的にカバー。"
+        }
+      ],
+      "explanation": "aws:PrincipalOrgID は Organizations の組織 ID を条件キーとして使える。S3 / KMS / Secrets Manager 等のリソースポリシーで「組織内からのみ許可」を簡潔に書ける。Sub-OU 限定なら aws:PrincipalOrgPaths も使える。",
+      "references": [
+        {
+          "title": "aws:PrincipalOrgID condition key",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalorgid"
+        }
+      ],
+      "tags": [
+        "iam",
+        "principal-org-id",
+        "s3",
+        "organizations"
+      ],
+      "common_mistakes": [
+        "アカウント ID を列挙する古典的やり方",
+        "VPC Endpoint Policy で外部アクセスを塞げると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-052",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "STS",
+      "subtopic": "AssumeRoleWithWebIdentity",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "EKS Pod に AWS リソースアクセス用の一時クレデンシャルを安全に渡したい。アクセスキー埋め込みは避け、Pod ごとに最小権限ロールを割り当てたい。最も適切な仕組みはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EKS の IAM Roles for Service Accounts (IRSA) を構成し、ServiceAccount に IAM ロールを紐付ける",
+          "is_correct": true,
+          "explanation": "正解。IRSA は OIDC + AssumeRoleWithWebIdentity を使って Pod 単位の IAM ロールを実現する EKS 標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "Node の Instance Profile を共有する",
+          "is_correct": false,
+          "explanation": "Node 上の全 Pod が同じ権限を持ち、Pod ごとの最小権限が実現できない。"
+        },
+        {
+          "id": "C",
+          "text": "Pod 内に IAM アクセスキーを Secret として保管する",
+          "is_correct": false,
+          "explanation": "アクセスキー直接埋め込みは要件で避けたい対象。"
+        },
+        {
+          "id": "D",
+          "text": "EKS には IAM 統合機能がないので CLI から手動で発行する",
+          "is_correct": false,
+          "explanation": "事実誤認。IRSA や EKS Pod Identity が用意されている。"
+        }
+      ],
+      "explanation": "IRSA (IAM Roles for Service Accounts) は EKS の OIDC プロバイダ + AssumeRoleWithWebIdentity を組み合わせ、ServiceAccount に IAM ロールをマッピングする仕組み。2023 年以降は EKS Pod Identity という後継機能もあるが、IRSA は引き続き主流。",
+      "references": [
+        {
+          "title": "IAM roles for service accounts (IRSA)",
+          "url": "https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html"
+        }
+      ],
+      "tags": [
+        "eks",
+        "irsa",
+        "service-account",
+        "iam"
+      ],
+      "common_mistakes": [
+        "Node Instance Profile を共有してしまう",
+        "Secret に IAM キーを置く"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-053",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "VPC NACL",
+      "subtopic": "Ephemeral ports",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Public Subnet の ALB から戻り通信が来ない問題を調査すると、NACL のアウトバウンドルールで HTTPS の宛先ポート 443 のみ許可されていた。原因として正しい説明はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "NACL はステートレスなので、戻り通信用にエフェメラルポート (1024-65535) のアウトバウンド許可が必要",
+          "is_correct": true,
+          "explanation": "正解。NACL は戻り通信を自動許可しないため、クライアントが使うエフェメラルポート範囲を別途許可する必要がある。"
+        },
+        {
+          "id": "B",
+          "text": "Security Group が原因 (NACL は関係ない)",
+          "is_correct": false,
+          "explanation": "問題文で NACL を疑っており、NACL のステートレス特性が直接の原因。"
+        },
+        {
+          "id": "C",
+          "text": "443 ポートが Reserved Port で使えない",
+          "is_correct": false,
+          "explanation": "443 は HTTPS で通常使われるポート。"
+        },
+        {
+          "id": "D",
+          "text": "Internet Gateway がエフェメラルポートを変換するため不要",
+          "is_correct": false,
+          "explanation": "IGW にポート変換機能はない。"
+        }
+      ],
+      "explanation": "NACL はステートレスなので、443 で受けて戻すときの送信元ポート (クライアントのエフェメラルポート 1024-65535) のアウトバウンドを明示許可する必要がある。逆方向も同じ罠がある (アウトバウンド 443 のみ許可だとインバウンドにエフェメラルポート許可が必要)。SG はステートフルなので自動許可される。",
+      "references": [
+        {
+          "title": "Network ACL ephemeral ports",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/nacl-ephemeral-ports.html"
+        }
+      ],
+      "tags": [
+        "nacl",
+        "ephemeral-port",
+        "stateless",
+        "troubleshooting"
+      ],
+      "common_mistakes": [
+        "NACL もステートフルだと誤解",
+        "問題を SG のせいにする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-054",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "S3 Pre-signed URL",
+      "subtopic": "Temporary access",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "S3 にあるプライベートファイルを、外部ユーザに 1 時間だけダウンロードさせたい。バケット公開や IAM ユーザ発行はしたくない。最も適した方法はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "バケット ACL を public にして URL を共有する",
+          "is_correct": false,
+          "explanation": "公開してしまうと誰でもアクセス可能になり要件に反する。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Pre-signed URL を生成して送る",
+          "is_correct": true,
+          "explanation": "正解。Pre-signed URL は時限付き署名 URL。発行者の権限を一時的に付与する標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "外部ユーザに IAM ユーザを発行する",
+          "is_correct": false,
+          "explanation": "要件 (発行したくない) に反する。"
+        },
+        {
+          "id": "D",
+          "text": "Email でファイル本体を添付して送る",
+          "is_correct": false,
+          "explanation": "メールサイズ・セキュリティ・追跡不能で不適切。"
+        }
+      ],
+      "explanation": "S3 Pre-signed URL は SDK / CLI で発行する時限付き署名 URL。発行者の IAM 権限が URL に紐付けられ、有効期限内はその URL でアクセス可能。一時的な公開・受け渡し用途の標準解。",
+      "references": [
+        {
+          "title": "Sharing objects with presigned URLs",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "presigned-url",
+        "temporary-access"
+      ],
+      "common_mistakes": [
+        "バケットを Public 化してしまう",
+        "IAM ユーザを発行する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 3,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.25
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-055",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "AWS Backup",
+      "subtopic": "Centralized backup compliance",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "EC2・EBS・RDS・DynamoDB・EFS を組織全体で「すべて日次バックアップ + 35 日保持」というポリシーで一元管理したい。最も適したサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各サービスの個別バックアップ機能を個別に設定する",
+          "is_correct": false,
+          "explanation": "運用負荷が大きく、一元的なポリシー強制ができない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Backup の Backup Plan と Backup Policy (Organizations 統合) を使う",
+          "is_correct": true,
+          "explanation": "正解。AWS Backup は複数 AWS サービスのバックアップを統一管理し、Organizations 経由で組織全体ポリシーを適用できる。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で各サービスのスナップショットスクリプトを書く",
+          "is_correct": false,
+          "explanation": "AWS Backup で標準提供されている処理を自作するのは無駄。"
+        },
+        {
+          "id": "D",
+          "text": "S3 にすべてのデータを定期コピーする",
+          "is_correct": false,
+          "explanation": "サービス特性 (RDS のスナップショット、EFS の整合性等) を考慮しない素朴な方法は適さない。"
+        }
+      ],
+      "explanation": "AWS Backup は EBS / EC2 (AMI) / RDS / DynamoDB / EFS / FSx / Storage Gateway / S3 / Aurora 等を一元的にバックアップ管理。Backup Policy と Organizations 統合で組織全体に強制可能。Backup Vault Lock で WORM 保管も対応。",
+      "references": [
+        {
+          "title": "AWS Backup",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"
+        }
+      ],
+      "tags": [
+        "aws-backup",
+        "backup",
+        "organizations",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "各サービスで個別設定する",
+        "Lambda で再実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-056",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "VPC",
+      "subtopic": "Egress-only IGW",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "medium",
+      "stem": "IPv6 のプライベートサブネットから IPv6 インターネットへアウトバウンドだけ通したい。インバウンドは受けない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "NAT Gateway を使う",
+          "is_correct": false,
+          "explanation": "NAT Gateway は IPv4 専用。IPv6 には適用できない。"
+        },
+        {
+          "id": "B",
+          "text": "Egress-only Internet Gateway (EIGW) を使う",
+          "is_correct": true,
+          "explanation": "正解。IPv6 専用の一方向 IGW で、内部からのみ開始する通信を許可する。"
+        },
+        {
+          "id": "C",
+          "text": "Internet Gateway を直接ルートする",
+          "is_correct": false,
+          "explanation": "IGW は双方向通信を許可するため、インバウンドも通る。要件に反する。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Endpoint を使う",
+          "is_correct": false,
+          "explanation": "VPC Endpoint は AWS サービス向けで、汎用 IPv6 インターネットアクセスではない。"
+        }
+      ],
+      "explanation": "IPv4 では NAT Gateway がアウトバウンド専用通路、IPv6 では Egress-only IGW がその役割を果たす。EIGW はステートフルで、内部発の通信のみ許可する。",
+      "references": [
+        {
+          "title": "Egress-only internet gateways",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html"
+        }
+      ],
+      "tags": [
+        "vpc",
+        "egress-only-igw",
+        "ipv6"
+      ],
+      "common_mistakes": [
+        "IPv6 にも NAT Gateway を使おうとする",
+        "IGW で一方向通信できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-057",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "IAM Identity Center",
+      "subtopic": "Attribute-based access control",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "社員 IdP (Entra ID) の「Department」属性に応じて、AWS リソースへのアクセス権限を変えたい (Department=Finance なら Finance タグ付きリソースのみ等)。最も適切な実装はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda で属性チェックを毎回行う",
+          "is_correct": false,
+          "explanation": "Lambda 認可は AWS のネイティブ ABAC を再実装することになり無駄。"
+        },
+        {
+          "id": "B",
+          "text": "Department 数 × ロール数だけ Permission Set を作成する",
+          "is_correct": false,
+          "explanation": "組み合わせ爆発で運用破綻。ABAC で集約すべき。"
+        },
+        {
+          "id": "C",
+          "text": "各社員に IAM ユーザを発行しタグで管理する",
+          "is_correct": false,
+          "explanation": "IAM ユーザ発行はワークフォース管理として非推奨。"
+        },
+        {
+          "id": "D",
+          "text": "IAM Identity Center の ABAC (Attribute-Based Access Control) を有効化し、IdP 属性を Session Tag として渡し、ポリシーで aws:PrincipalTag を Condition に使う",
+          "is_correct": true,
+          "explanation": "正解。ABAC により Permission Set 数を爆発させずに属性ベースで認可できる。"
+        }
+      ],
+      "explanation": "IAM Identity Center は IdP の属性 (Department、CostCenter 等) を Session Tag として STS セッションに含められる。IAM ポリシーで aws:PrincipalTag/X 条件を使えば、リソースタグと組み合わせて少数の Permission Set で多次元認可を実現できる。",
+      "references": [
+        {
+          "title": "Attribute-based access control in IAM Identity Center",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/abac.html"
+        }
+      ],
+      "tags": [
+        "iam-identity-center",
+        "abac",
+        "session-tag",
+        "principal-tag"
+      ],
+      "common_mistakes": [
+        "Permission Set を組み合わせ爆発させる",
+        "Lambda で認可を再実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-058",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "RDS",
+      "subtopic": "IAM database authentication",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS for MySQL のアプリ用ログインで、パスワード管理を不要にし IAM 認証で接続したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "RDS の IAM database authentication を有効化し、アプリ側で IAM クレデンシャルから一時トークンを生成して接続する",
+          "is_correct": true,
+          "explanation": "正解。IAM 認証はトークンを 15 分有効期限で動的生成し、パスワード管理を不要にする。"
+        },
+        {
+          "id": "B",
+          "text": "RDS の SSL 証明書だけで認証する",
+          "is_correct": false,
+          "explanation": "SSL は通信暗号化。認証 (誰か) の問題は別。"
+        },
+        {
+          "id": "C",
+          "text": "VPC Peering で接続すれば認証不要",
+          "is_correct": false,
+          "explanation": "ネットワーク到達性は認可ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Cognito を RDS に接続する",
+          "is_correct": false,
+          "explanation": "Cognito は RDS と直接統合されていない。"
+        }
+      ],
+      "explanation": "RDS IAM 認証は MySQL / PostgreSQL でサポート。アプリ側で IAM SDK で短期トークンを生成し、それをパスワードとして DB 接続する。パスワード保管・ローテーションを不要にする方式。コネクション数や接続レイテンシに制限あり、大量接続用途では Secrets Manager + 通常ユーザの方が良い場合も。",
+      "references": [
+        {
+          "title": "IAM database authentication for MariaDB, MySQL, and PostgreSQL",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "iam-auth",
+        "passwordless"
+      ],
+      "common_mistakes": [
+        "SSL を認証と混同",
+        "VPC Peering で認証も済むと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-059",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Glacier",
+      "subtopic": "Vault Lock",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Glacier に保管した監査ログを規制要件で「ロック後は変更不能」にしたい。最も適切な機能はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Glacier Vault Lock ポリシーをコミットする",
+          "is_correct": true,
+          "explanation": "正解。Vault Lock は In-Progress 状態でテスト後 Lock コミットすると不可逆に固定される。"
+        },
+        {
+          "id": "B",
+          "text": "Glacier に AWS Config を適用する",
+          "is_correct": false,
+          "explanation": "Config は設定評価で、Vault Lock の代替にはならない。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Versioning と Lifecycle で代替",
+          "is_correct": false,
+          "explanation": "Glacier Vault 専用の Vault Lock とは別物。"
+        },
+        {
+          "id": "D",
+          "text": "EBS Snapshot を別アカウントに複製する",
+          "is_correct": false,
+          "explanation": "Glacier の WORM 要件の文脈に合わない。"
+        }
+      ],
+      "explanation": "S3 Glacier Vault Lock は Vault レベルでポリシー (例: 7 年削除禁止) をコミットすると、以後変更不能で WORM 規制要件 (SEC 17a-4(f) 等) に対応する機能。Initiate → Test (24 時間) → Complete のフローで決定する。",
+      "references": [
+        {
+          "title": "S3 Glacier Vault Lock",
+          "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html"
+        }
+      ],
+      "tags": [
+        "glacier",
+        "vault-lock",
+        "worm",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "S3 Object Lock と Glacier Vault Lock を混同",
+        "Config で代替できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain1-060",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Secure Architectures",
+        "weight_percent": 30
+      },
+      "topic": "Detective",
+      "subtopic": "Investigation",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "GuardDuty で検出された不審なアクティビティについて、関連する IAM ロール・IP・通信先・期間などを横断して根本原因を可視化したい。最も適したサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Trusted Advisor",
+          "is_correct": false,
+          "explanation": "Trusted Advisor はベストプラクティスチェック。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Inspector",
+          "is_correct": false,
+          "explanation": "Inspector は脆弱性スキャン。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Detective",
+          "is_correct": true,
+          "explanation": "正解。Detective は GuardDuty findings の根本原因調査・可視化に特化したサービス。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Macie",
+          "is_correct": false,
+          "explanation": "Macie は機密データ検出。"
+        }
+      ],
+      "explanation": "Detective は CloudTrail / VPC Flow Logs / GuardDuty findings をグラフ DB に取り込み、リソース・IP・ユーザ間の関係を可視化する調査ツール。「いつから / 誰が / どこから / 何へ」を素早く追跡できる。",
+      "references": [
+        {
+          "title": "Amazon Detective",
+          "url": "https://docs.aws.amazon.com/detective/latest/userguide/detective-investigation-about.html"
+        }
+      ],
+      "tags": [
+        "detective",
+        "investigation",
+        "guardduty",
+        "root-cause"
+      ],
+      "common_mistakes": [
+        "Detective と Security Hub の役割を混同",
+        "Inspector を調査ツールと考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}
