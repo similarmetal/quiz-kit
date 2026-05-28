@@ -1,0 +1,3789 @@
+{
+  "exam_code": "SAA-C03",
+  "exam_name": "AWS Certified Solutions Architect – Associate",
+  "version": "2026.04",
+  "total_questions": 50,
+  "domains": [
+    {
+      "id": "domain-3",
+      "name": "Design High-Performing Architectures",
+      "weight_percent": 24,
+      "question_count": 50
+    }
+  ],
+  "questions": [
+    {
+      "id": "saa-c03-domain3-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "S3 Storage Classes",
+      "subtopic": "Class selection by access pattern",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "頻繁にアクセスされるオブジェクトと、3 ヶ月後にほぼ参照されなくなるアーカイブ用オブジェクトが混在する S3 バケットがある。アクセスパターンが予測しづらく、コスト最適化を運用負荷なしで実現したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "全オブジェクトを S3 Standard に置き続け、アクセス料金で吸収する",
+          "is_correct": false,
+          "explanation": "アクセス頻度が低くなるオブジェクトの保管料金が高止まりする。階層化が必要。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Intelligent-Tiering を使い、アクセス頻度に応じた自動階層化に任せる",
+          "is_correct": true,
+          "explanation": "正解。Intelligent-Tiering はアクセスを監視し自動でアクセス頻度層を移動する。運用なしでコスト最適化が実現。"
+        },
+        {
+          "id": "C",
+          "text": "Lifecycle ルールで 90 日後に Glacier Instant Retrieval へ移行する",
+          "is_correct": false,
+          "explanation": "アクセスパターンが予測できる場合は有効だが、設問は『予測しづらい』ため Intelligent-Tiering が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "オブジェクトをアプリ側で 2 つの S3 バケットに振り分けて保存する",
+          "is_correct": false,
+          "explanation": "アプリ実装が複雑化し、移動判断ロジックも自前。マネージドの Intelligent-Tiering が標準解。"
+        }
+      ],
+      "explanation": "S3 Intelligent-Tiering は アクセスパターンの監視 + 自動階層移動 をマネージドで提供する。Frequent/Infrequent/Archive Instant/Archive/Deep Archive の 5 層を自動移動。最小オブジェクトサイズや監視料金 ($0.0025/1,000 オブジェクト/月) があるため、極小オブジェクト大量では別検討。",
+      "references": [
+        {
+          "title": "Using S3 Intelligent-Tiering",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "intelligent-tiering",
+        "storage-class"
+      ],
+      "common_mistakes": [
+        "Lifecycle ルールで全てを賄おうとする",
+        "アクセスパターン未知で固定階層を選ぶ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "S3 Storage Classes",
+      "subtopic": "Glacier classes",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "コンプライアンス用に 7 年保管が必要なログがあり、年に 1-2 回しか参照されない。取り出し要求から数時間以内に取得できれば十分。最もコストが低い S3 クラスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Glacier Flexible Retrieval (旧 Glacier) で保管する",
+          "is_correct": false,
+          "explanation": "Flexible Retrieval は分〜時間の取り出しだが、Deep Archive より高い。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Glacier Deep Archive クラスで保管し、必要時に取り出す",
+          "is_correct": true,
+          "explanation": "正解。Deep Archive は最安の長期保管クラスで、12 時間以内の取り出し。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Glacier Instant Retrieval で保管する",
+          "is_correct": false,
+          "explanation": "Instant は ミリ秒取得用 で保管料金は高め。年 1-2 回参照には過剰。"
+        },
+        {
+          "id": "D",
+          "text": "S3 One Zone-IA で保管する",
+          "is_correct": false,
+          "explanation": "One Zone-IA はアクセス頻度低めの汎用クラス。長期保管には Deep Archive が圧倒的に安い。"
+        }
+      ],
+      "explanation": "Glacier 3 クラスの違い: Instant Retrieval (ミリ秒、保管料中)、Flexible Retrieval (分〜時間、3 オプション)、Deep Archive (12〜48 時間、最安)。コンプライアンスログの長期保管 7 年は Deep Archive が標準解。",
+      "references": [
+        {
+          "title": "S3 storage classes",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "glacier",
+        "deep-archive",
+        "long-term"
+      ],
+      "common_mistakes": [
+        "Glacier 3 クラスを混同",
+        "One Zone-IA を長期保管の最安と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "S3 Transfer Acceleration",
+      "subtopic": "Long-distance upload optimization",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "全世界の支社から東京リージョンの S3 バケットへ、1 ファイル数 GB の動画ファイルを高速にアップロードしたい。経路の最適化で転送時間を短縮したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 バケットのリージョンを支社ごとに変え、ローカル保存後にリージョン間同期を行う",
+          "is_correct": false,
+          "explanation": "支社ごとに別バケットになり、データ集約・整合性管理が複雑化する。"
+        },
+        {
+          "id": "B",
+          "text": "支社の EC2 を中継ゲートウェイとして経由させ、その EC2 から S3 へ転送する構成にする",
+          "is_correct": false,
+          "explanation": "EC2 経由は追加のホップでむしろ遅くなり、運用負荷も増える。"
+        },
+        {
+          "id": "C",
+          "text": "支社で動画ファイルを事前に ZIP 圧縮してからリージョン S3 へ転送し転送量を減らす",
+          "is_correct": false,
+          "explanation": "動画は既に圧縮済みで ZIP 効果は限定的。経路最適化の問題は別。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Transfer Acceleration を有効化し、最寄りエッジ経由で AWS バックボーンに乗せる",
+          "is_correct": true,
+          "explanation": "正解。Transfer Acceleration は CloudFront エッジ経由で AWS バックボーンへ乗せ、長距離転送を高速化する標準機能。"
+        }
+      ],
+      "explanation": "S3 Transfer Acceleration はクライアント → 最寄り CloudFront エッジ → AWS バックボーン → リージョン の経路を取ることで、長距離アップロードを高速化する。料金はリクエストごと加算。距離が遠いほど効果大、近距離では効果が出ない (テストツールあり)。",
+      "references": [
+        {
+          "title": "S3 Transfer Acceleration",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "transfer-acceleration",
+        "global"
+      ],
+      "common_mistakes": [
+        "バケットを支社ごとに分ける",
+        "圧縮で経路問題を解決できると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-004",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "S3 Multipart Upload",
+      "subtopic": "Large file upload",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "10GB の動画ファイルを S3 へアップロードしたいが、ネットワーク不安定で何度も失敗する。最も適切なアップロード戦略はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Multipart Upload で複数チャンクに分割し、並列アップロード + 失敗パートだけ再送する",
+          "is_correct": true,
+          "explanation": "正解。Multipart Upload はチャンク並列・失敗パート再送・5GB 超対応の標準機能。"
+        },
+        {
+          "id": "B",
+          "text": "PUT Object で 1 リクエストとしてアップロードし、失敗時は全体を再送する",
+          "is_correct": false,
+          "explanation": "PUT Object は 5GB 上限。10GB は Multipart 必須。"
+        },
+        {
+          "id": "C",
+          "text": "アップロード前にファイルを 2 個に分割し、別々の S3 オブジェクトとして保存する",
+          "is_correct": false,
+          "explanation": "アプリ側で結合再構築が必要になり運用が複雑化する。Multipart は透過的に同一オブジェクトとして扱える。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Snowball Edge を取り寄せて物理的にデータ輸送する",
+          "is_correct": false,
+          "explanation": "10GB レベルは Multipart で十分。Snow Family は TB〜PB スケール向け。"
+        }
+      ],
+      "explanation": "S3 PUT Object は 5GB 上限。それ以上 (最大 5TB) は Multipart Upload (5MB-5GB のチャンクに分割) が必須。並列転送・失敗パートのみ再送・進捗管理が組み込み。CLI/SDK では大ファイルは自動的に Multipart になる。",
+      "references": [
+        {
+          "title": "S3 Multipart Upload",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "multipart-upload",
+        "large-file"
+      ],
+      "common_mistakes": [
+        "PUT Object で 10GB アップロードを試みる",
+        "ファイル分割で別オブジェクト化する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-005",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "S3 Express One Zone",
+      "subtopic": "Single-digit ms performance",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "AI/ML 学習で大量小ファイル (数 KB) を 1 桁ミリ秒のレイテンシで読み書きしたい。可用性は 1 AZ で十分、コストは多少高くてもよい。最も適切な S3 クラスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Standard 標準クラスで保管し、多重 AZ 耐久性と Standard レベルのアクセス性能で運用する",
+          "is_correct": false,
+          "explanation": "S3 Standard のレイテンシは数十〜数百ミリ秒。1 桁ミリ秒は別クラスが必要。"
+        },
+        {
+          "id": "B",
+          "text": "S3 One Zone-IA で 1 AZ 保管にしてコスト圧縮し、IA レベルのアクセス料金で運用する",
+          "is_correct": false,
+          "explanation": "One Zone-IA はアクセス頻度低用クラスでレイテンシは Standard 並み。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Express One Zone (Directory Bucket) で 1 桁ミリ秒の超低レイテンシを活用する",
+          "is_correct": true,
+          "explanation": "正解。S3 Express One Zone は 1 AZ 保管 + ディレクトリバケット + 1 桁ミリ秒レイテンシで AI/ML や HPC 向け。"
+        },
+        {
+          "id": "D",
+          "text": "EFS Max I/O モードで NFS マウントしてアプリから 1 桁ミリ秒レイテンシを期待する",
+          "is_correct": false,
+          "explanation": "EFS は別ストレージ。設問は『S3 クラス』を聞いている。"
+        }
+      ],
+      "explanation": "S3 Express One Zone (2023 年新規) は AI/ML 学習データ・HPC・分析の超低レイテンシ用クラス。1 AZ 保管 (耐久性低め)、ディレクトリバケット型、リクエスト料金は安いが保管料金は標準より高い。大量小ファイル高頻度アクセスに最適。",
+      "references": [
+        {
+          "title": "S3 Express One Zone",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-one-zone.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "express-one-zone",
+        "low-latency",
+        "ml"
+      ],
+      "common_mistakes": [
+        "S3 Standard で 1 桁ミリ秒可能と誤解",
+        "Express One Zone の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-006",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "S3 Performance",
+      "subtopic": "Request rate scaling",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "S3 バケットへの GET リクエストが 1 秒あたり 10,000 件を超え、HTTP 503 SlowDown エラーが頻発するようになった。最も効果的な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "リクエストするオブジェクトキーのプレフィックスを分散させ、複数パーティションで処理させる",
+          "is_correct": true,
+          "explanation": "正解。S3 は プレフィックスごとに 3,500 PUT / 5,500 GET TPS を提供。プレフィックス分散でリクエスト能力を線形にスケール。"
+        },
+        {
+          "id": "B",
+          "text": "S3 のリージョンを別のリージョンへ変更し、新規バケットを使う",
+          "is_correct": false,
+          "explanation": "リージョン変更は移行コストが大きく、根本対策ではない。"
+        },
+        {
+          "id": "C",
+          "text": "オブジェクトのファイルサイズを小さくして、レスポンスを高速化する",
+          "is_correct": false,
+          "explanation": "TPS 上限はリクエスト数の問題で、ファイルサイズの問題ではない。"
+        },
+        {
+          "id": "D",
+          "text": "S3 を諦め、EFS にデータを移行する",
+          "is_correct": false,
+          "explanation": "EFS は別ストレージで設計変更が大。S3 のプレフィックス分散で対応可能。"
+        }
+      ],
+      "explanation": "S3 はキープレフィックス単位で 3,500 PUT / 5,500 GET TPS。連番のような偏ったプレフィックスでは 1 パーティションに集中して 503 SlowDown になりやすい。ハッシュやランダム化でキーを分散すれば、プレフィックス数 × 上限まで線形にスケール。",
+      "references": [
+        {
+          "title": "S3 request rate performance",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "performance",
+        "prefix",
+        "slowdown"
+      ],
+      "common_mistakes": [
+        "リージョン変更で TPS が改善すると誤解",
+        "ファイルサイズと TPS を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-007",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "EFS",
+      "subtopic": "Performance modes",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "数十台の Linux EC2 が同時マウントする共有ストレージで、メタデータ操作 (ファイル作成・削除) が大量発生する。最も適した EFS 設定はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "General Purpose パフォーマンスモードで運用する",
+          "is_correct": false,
+          "explanation": "General Purpose は低レイテンシ向けだが、メタデータ操作の同時並列度が高いと頭打ちする。"
+        },
+        {
+          "id": "B",
+          "text": "Provisioned Throughput モードで帯域を固定指定する",
+          "is_correct": false,
+          "explanation": "Provisioned Throughput はスループット課金の話で、メタデータ並列性の解決にはならない。"
+        },
+        {
+          "id": "C",
+          "text": "Max I/O パフォーマンスモードで運用し、並列処理に強い構成にする",
+          "is_correct": true,
+          "explanation": "正解。Max I/O モードは並列性に最適化され、数千クライアントの大量メタデータ操作に対応。"
+        },
+        {
+          "id": "D",
+          "text": "EFS One Zone を使い、コストと AZ 局所化を優先する",
+          "is_correct": false,
+          "explanation": "コスト最適化用クラスで、設問の並列メタデータ性能の解にならない。"
+        }
+      ],
+      "explanation": "EFS のパフォーマンスモード: General Purpose (デフォルト、最低レイテンシ、~7,000 ops/sec)、Max I/O (高並列性、レイテンシは少し高い)。Max I/O は数千クライアント・ビッグデータ分析向け。スループットモードは Bursting / Provisioned / Elastic の 3 種。",
+      "references": [
+        {
+          "title": "Amazon EFS performance",
+          "url": "https://docs.aws.amazon.com/efs/latest/ug/performance.html"
+        }
+      ],
+      "tags": [
+        "efs",
+        "max-io",
+        "performance-mode"
+      ],
+      "common_mistakes": [
+        "パフォーマンスモードとスループットモードを混同",
+        "General Purpose が常時優れていると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-008",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "FSx for Lustre",
+      "subtopic": "HPC workload",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "機械学習や HPC 計算で、数百ノードから 数百 GB/s の並列スループットが要求される共有ストレージが必要。S3 のデータを直接読み書きできると望ましい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amazon EBS Provisioned IOPS ボリュームを各ノードにアタッチする",
+          "is_correct": false,
+          "explanation": "EBS は単一インスタンス用ブロックで、数百ノード共有はできない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon EFS Max I/O モードで数百ノードからマウントする",
+          "is_correct": false,
+          "explanation": "EFS は POSIX NFS で HPC 級スループット (数百 GB/s) には不足。Lustre が標準解。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon FSx for Lustre を S3 リンク付きで構成し、サブミリ秒の HPC ストレージを提供する",
+          "is_correct": true,
+          "explanation": "正解。FSx for Lustre は HPC/ML 向けの並列ファイルシステムで、S3 バケット連携で透過的に読み書きできる。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon S3 を直接 NFS マウントするゲートウェイ構成にする",
+          "is_correct": false,
+          "explanation": "S3 はオブジェクトストレージで NFS マウントには別途ゲートウェイが必要、HPC 性能も出ない。"
+        }
+      ],
+      "explanation": "FSx for Lustre は HPC・ML・金融分析向けの並列ファイルシステム。サブミリ秒レイテンシ + 数百 GB/s スループット。S3 バケットとシームレス連携 (Lazy Loading) で、データレイク + 計算ストレージのパターンに最適。",
+      "references": [
+        {
+          "title": "FSx for Lustre",
+          "url": "https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html"
+        }
+      ],
+      "tags": [
+        "fsx-lustre",
+        "hpc",
+        "ml",
+        "s3-integration"
+      ],
+      "common_mistakes": [
+        "EFS で HPC 級性能が出ると誤解",
+        "EBS で数百ノード共有を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-009",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "FSx for Windows",
+      "subtopic": "Active Directory integration",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Windows ベースアプリで SMB 共有 + Active Directory 認証 + Windows ACL が要件。最も適切な AWS マネージドストレージはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amazon EFS で SMB プロトコルを有効化して Windows EC2 からマウントする",
+          "is_correct": false,
+          "explanation": "EFS は NFS 専用。SMB はサポートしない。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon FSx for Windows File Server を AWS Managed Microsoft AD と統合構成する",
+          "is_correct": true,
+          "explanation": "正解。FSx for Windows は SMB + AD + Windows ACL に完全対応するマネージドサービス。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 Windows Server にファイル共有役を構築し、AD 認証を独自運用する",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大・HA も自前確保。FSx for Windows が標準解。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon S3 を S3 Storage Gateway 経由で SMB として公開する",
+          "is_correct": false,
+          "explanation": "Storage Gateway File は技術的に可能だが、SMB + AD ファイル共有に最適化されたのは FSx for Windows。"
+        }
+      ],
+      "explanation": "FSx for Windows File Server は SMB プロトコル・Active Directory・Windows ACL・DFS Namespace を完全サポート。AWS Managed Microsoft AD またはセルフマネージド AD と連携可能。Windows ワークロード移行の標準解。",
+      "references": [
+        {
+          "title": "FSx for Windows File Server",
+          "url": "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html"
+        }
+      ],
+      "tags": [
+        "fsx-windows",
+        "smb",
+        "active-directory"
+      ],
+      "common_mistakes": [
+        "EFS で SMB が使えると誤解",
+        "EC2 自前構築の運用コストを過小評価"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-010",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "FSx NetApp ONTAP",
+      "subtopic": "Use case",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ NetApp ストレージから移行する際、NFS + SMB マルチプロトコル + スナップショット + SnapMirror 機能を維持したい。最も適切な AWS サービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "FSx for NetApp ONTAP を採用し、NFS/SMB/iSCSI 同時公開と NetApp 機能を維持する",
+          "is_correct": true,
+          "explanation": "正解。FSx for NetApp ONTAP は NetApp 機能 (Snapshot/SnapMirror/Dedup/Compress) をクラウドでマネージド提供する。"
+        },
+        {
+          "id": "B",
+          "text": "EFS と FSx for Windows を 2 つ立てて、NFS と SMB を分けて運用する",
+          "is_correct": false,
+          "explanation": "2 つに分割すると単一ストレージ前提のアプリが動かない。NetApp 機能も失われる。"
+        },
+        {
+          "id": "C",
+          "text": "FSx for Lustre に移行し、ストレージ機能を再実装する",
+          "is_correct": false,
+          "explanation": "Lustre は HPC 向けで NetApp 機能とは別物。マルチプロトコル + SnapMirror はない。"
+        },
+        {
+          "id": "D",
+          "text": "Storage Gateway File Gateway 経由で S3 にデータを置き、NetApp 機能はアプリで代替する",
+          "is_correct": false,
+          "explanation": "S3 + Storage Gateway では NetApp の細かい機能やプロトコル統合は実現できない。"
+        }
+      ],
+      "explanation": "FSx for NetApp ONTAP は NetApp ONTAP をマネージド提供し、NFS/SMB/iSCSI のマルチプロトコル、Snapshot/SnapMirror/FlexClone/Dedup/Compression 等の NetApp 機能をフル活用できる。オンプレ NetApp からの完全移行で第一候補。",
+      "references": [
+        {
+          "title": "FSx for NetApp ONTAP",
+          "url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html"
+        }
+      ],
+      "tags": [
+        "fsx-ontap",
+        "netapp",
+        "multiprotocol",
+        "migration"
+      ],
+      "common_mistakes": [
+        "FSx for Lustre を NetApp と混同",
+        "NFS と SMB を別ストレージに分けてしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-011",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Storage Selection",
+      "subtopic": "EBS vs EFS vs FSx vs S3",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）ストレージサービスの主な用途として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EBS は単一 EC2 にアタッチするブロックストレージ (Multi-Attach 設定時を除く)",
+          "is_correct": true,
+          "explanation": "正解。EBS は基本単一 EC2 用のブロックストレージで、io1/io2 で Multi-Attach も可能。"
+        },
+        {
+          "id": "B",
+          "text": "EFS は複数 Linux EC2 が同時マウント可能なリージョン共有 NFS ファイルシステム",
+          "is_correct": true,
+          "explanation": "正解。EFS はマルチ AZ・マルチ EC2 同時マウント可能な NFS で、Linux 標準。"
+        },
+        {
+          "id": "C",
+          "text": "EFS は Windows EC2 から SMB プロトコルでマウントできる",
+          "is_correct": false,
+          "explanation": "EFS は NFS 専用で SMB は非対応。Windows 共有は FSx for Windows。"
+        },
+        {
+          "id": "D",
+          "text": "S3 はブロックストレージで EC2 にデバイスとしてアタッチできる",
+          "is_correct": false,
+          "explanation": "S3 はオブジェクトストレージで HTTP API アクセス。EBS と混同しないこと。"
+        }
+      ],
+      "explanation": "AWS ストレージの軸: EBS (ブロック・単一 EC2)、EFS (NFS マルチ EC2)、FSx (Windows SMB / Lustre HPC / NetApp / OpenZFS)、S3 (HTTP オブジェクト)、Instance Store (一時、再起動で消える)。要件 → サービスの紐付けを覚える。",
+      "references": [
+        {
+          "title": "AWS storage services overview",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/storage-services.html"
+        }
+      ],
+      "tags": [
+        "storage",
+        "ebs",
+        "efs",
+        "s3",
+        "selection"
+      ],
+      "common_mistakes": [
+        "EFS で SMB が使えると思う",
+        "S3 をブロックストレージと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-012",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "EBS",
+      "subtopic": "gp3 vs io2",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "汎用 Web アプリの EC2 で、3,000 IOPS と 200 MB/s のスループットが必要。コストを最小化したい。最も適切な EBS タイプはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "io2 を選び、高 IOPS と高信頼性を確保する",
+          "is_correct": false,
+          "explanation": "io2 は 100K+ IOPS の高負荷用で高価。3,000 IOPS には過剰。"
+        },
+        {
+          "id": "B",
+          "text": "gp2 を選び、サイズを大きくして IOPS を稼ぐ",
+          "is_correct": false,
+          "explanation": "gp2 は 3 IOPS/GB のバースト方式で大容量化が必要。gp3 はサイズと IOPS が独立で安価。"
+        },
+        {
+          "id": "C",
+          "text": "gp3 を選び、ストレージサイズと独立して IOPS/Throughput を指定する",
+          "is_correct": true,
+          "explanation": "正解。gp3 は基本 3,000 IOPS + 125 MB/s 込み、追加 IOPS/Throughput を独立指定可能で gp2 より約 20% 安い。"
+        },
+        {
+          "id": "D",
+          "text": "st1 (スループット最適化 HDD) を選び、コストを最小化する",
+          "is_correct": false,
+          "explanation": "st1 は HDD ベースで IOPS 性能が低く、汎用 Web には不適。"
+        }
+      ],
+      "explanation": "EBS タイプ選定: gp3 (汎用 SSD、独立 IOPS/Throughput 指定可、gp2 より安価)、gp2 (旧汎用 SSD)、io2/io2 Block Express (高 IOPS・高耐久)、st1 (スループット最適化 HDD、ログ等)、sc1 (Cold HDD、最安)。新規構築では gp3 がデフォルト推奨。",
+      "references": [
+        {
+          "title": "EBS volume types",
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html"
+        }
+      ],
+      "tags": [
+        "ebs",
+        "gp3",
+        "performance",
+        "cost"
+      ],
+      "common_mistakes": [
+        "gp2 を新規でも選ぶ",
+        "io2 を全シナリオで第一候補にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-013",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "EBS",
+      "subtopic": "Volume types for cold data",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "アクセス頻度が低く、大容量 (10TB+) のログを EBS に保管しコスト最小化したい。シーケンシャルアクセス中心。最も適切な EBS タイプはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "sc1 (Cold HDD) で最安の大容量ストレージとして利用する",
+          "is_correct": true,
+          "explanation": "正解。sc1 は最安の EBS タイプで、低頻度・大容量・シーケンシャルアクセス向け。"
+        },
+        {
+          "id": "B",
+          "text": "gp3 で大容量を確保しつつ汎用性能で運用する",
+          "is_correct": false,
+          "explanation": "汎用 SSD でコスト最適ではない。低頻度アクセスのログには HDD ベースが安い。"
+        },
+        {
+          "id": "C",
+          "text": "io2 Block Express で高 IOPS と耐久性を確保する",
+          "is_correct": false,
+          "explanation": "io2 Block Express は最高性能で最も高い。低頻度ログには過剰。"
+        },
+        {
+          "id": "D",
+          "text": "Instance Store ボリュームを使い、コストを 0 にする",
+          "is_correct": false,
+          "explanation": "Instance Store は再起動で消失する一時ストレージ。ログ保管には不適。"
+        }
+      ],
+      "explanation": "EBS HDD タイプ: st1 (スループット最適化、ビッグデータ・ログ処理、頻繁にスキャン)、sc1 (Cold HDD、アクセス頻度低、最安)。SSD は gp3 (汎用)、io2/io2 Block Express (高 IOPS) の使い分け。Instance Store は EC2 ローカル一時ストレージ。",
+      "references": [
+        {
+          "title": "EBS HDD volume types",
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#hard-disk-drives-hdd"
+        }
+      ],
+      "tags": [
+        "ebs",
+        "sc1",
+        "cold-hdd",
+        "cost"
+      ],
+      "common_mistakes": [
+        "低頻度アクセスにも SSD を選ぶ",
+        "Instance Store の永続性を誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-014",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "EBS",
+      "subtopic": "Multi-Attach",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "クラスタリングソフトウェア (Oracle RAC 等) で複数 EC2 が同一ブロックストレージを共有アクセスする必要がある。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EBS gp3 ボリュームを 2 個の EC2 に同時アタッチする",
+          "is_correct": false,
+          "explanation": "gp3 は Multi-Attach 非対応。"
+        },
+        {
+          "id": "B",
+          "text": "EFS をマウントし、共有ファイルシステムとして利用する",
+          "is_correct": false,
+          "explanation": "EFS は NFS ファイルシステムで、Oracle RAC のような raw ブロック共有には不適。"
+        },
+        {
+          "id": "C",
+          "text": "S3 を block driver 経由でブロックデバイスとしてマウントする",
+          "is_correct": false,
+          "explanation": "S3 はオブジェクトストレージで標準的なブロックデバイス化はない。"
+        },
+        {
+          "id": "D",
+          "text": "io1/io2 ボリュームを Multi-Attach で最大 16 ノードに同時アタッチする",
+          "is_correct": true,
+          "explanation": "正解。io1/io2 は Multi-Attach 対応で、同一 AZ 内最大 16 EC2 (Nitro 世代) に同時マウント可能。"
+        }
+      ],
+      "explanation": "EBS Multi-Attach は io1/io2 タイプ・同一 AZ・Nitro 系インスタンスのみで利用可能 (最大 16 ノード)。Oracle RAC 等のクラスタリングで raw ブロック共有が必要なときに使う。アプリ側でクラスタ対応 FS / 排他制御が必須 (EBS は同時書き込みの調整をしない)。",
+      "references": [
+        {
+          "title": "EBS Multi-Attach",
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"
+        }
+      ],
+      "tags": [
+        "ebs",
+        "multi-attach",
+        "io2",
+        "cluster"
+      ],
+      "common_mistakes": [
+        "gp3 でも Multi-Attach 可能と誤解",
+        "EFS で raw ブロック共有を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-015",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "EC2 Placement Groups",
+      "subtopic": "Cluster vs Spread vs Partition",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "HPC ワークロードで、EC2 間の通信レイテンシを最小化したい (同一ラックレベルの近接配置)。最も適切な Placement Group はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Spread Placement Group で別ハードウェアに分散配置する",
+          "is_correct": false,
+          "explanation": "Spread は耐障害性目的で、最大 7 インスタンス/AZ。レイテンシ最小化とは逆方向。"
+        },
+        {
+          "id": "B",
+          "text": "Partition Placement Group で論理パーティションに分けて配置する",
+          "is_correct": false,
+          "explanation": "Partition は HDFS や Cassandra のような分散システム向けで、レイテンシ最小化目的ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Cluster Placement Group で同一 AZ 内の近接ハードウェアに配置する",
+          "is_correct": true,
+          "explanation": "正解。Cluster は同一 AZ・近接ラックに配置し、低レイテンシ・高帯域の EC2 間通信を提供。"
+        },
+        {
+          "id": "D",
+          "text": "複数 AZ にまたがる Multi-AZ Placement Group で配置する",
+          "is_correct": false,
+          "explanation": "Cluster Placement Group は単一 AZ のみ。Multi-AZ という Placement Group は存在しない。"
+        }
+      ],
+      "explanation": "Placement Group 3 種: Cluster (同 AZ・近接配置、HPC 用)、Spread (異なるハードウェア、耐障害)、Partition (パーティション分離、HDFS/Cassandra)。HPC の MPI 通信や金融取引のレイテンシ要件には Cluster が標準。",
+      "references": [
+        {
+          "title": "EC2 placement groups",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
+        }
+      ],
+      "tags": [
+        "ec2",
+        "placement-group",
+        "cluster",
+        "hpc"
+      ],
+      "common_mistakes": [
+        "Spread と Cluster を取り違える",
+        "Multi-AZ Placement Group があると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-016",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "EC2 Instance Types",
+      "subtopic": "Type selection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "メモリ内データベース (Redis/SAP HANA) を運用する EC2 で、メモリ容量 (1TB 超) が最優先要件。最も適した EC2 ファミリーはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "R 系または X 系 (Memory Optimized) で大容量メモリを確保する",
+          "is_correct": true,
+          "explanation": "正解。R 系 (汎用メモリ重視) や X 系 (超大容量メモリ) はインメモリ DB の標準。"
+        },
+        {
+          "id": "B",
+          "text": "C 系 (Compute Optimized) で CPU 性能を優先する",
+          "is_correct": false,
+          "explanation": "C 系は CPU 重視でメモリ容量は中程度。インメモリ DB には不適。"
+        },
+        {
+          "id": "C",
+          "text": "T 系 (Burstable) で CPU クレジットを活用する",
+          "is_correct": false,
+          "explanation": "T 系は小規模・バースト用途で、本番 DB には不適。"
+        },
+        {
+          "id": "D",
+          "text": "G 系または P 系 (GPU/Accelerated) で並列演算性能を確保する",
+          "is_correct": false,
+          "explanation": "GPU 系は ML/レンダリング用途。インメモリ DB には不要。"
+        }
+      ],
+      "explanation": "EC2 インスタンスファミリー: T (Burstable)、M (汎用)、C (Compute)、R (Memory)、X (超大容量 Memory)、I (Storage IOPS)、D (Storage 大容量 HDD)、G/P/Trn (GPU/Accelerator)。SAP HANA など大量メモリは X1/X2 系、汎用メモリ重視は R 系。",
+      "references": [
+        {
+          "title": "EC2 instance types",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
+        }
+      ],
+      "tags": [
+        "ec2",
+        "instance-type",
+        "memory-optimized"
+      ],
+      "common_mistakes": [
+        "インスタンスファミリーの記号を覚えていない",
+        "GPU 系をインメモリ DB に使う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-017",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "EC2 Enhanced Networking",
+      "subtopic": "ENA / EFA",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）EC2 の高速ネットワーク機能 ENA と EFA に関する説明として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ENA (Elastic Network Adapter) は最大 100 Gbps の高帯域ネットワークを提供する標準 NIC",
+          "is_correct": true,
+          "explanation": "正解。ENA は SR-IOV ベースの高速 NIC で最新世代 EC2 に標準搭載。"
+        },
+        {
+          "id": "B",
+          "text": "EFA (Elastic Fabric Adapter) は HPC・ML 向けの OS バイパス通信でレイテンシを大幅低減する",
+          "is_correct": true,
+          "explanation": "正解。EFA は MPI/NCCL 通信に最適化された OS バイパス NIC で HPC ジョブ向け。"
+        },
+        {
+          "id": "C",
+          "text": "ENA は HPC ジョブの MPI 通信を OS バイパスで高速化する",
+          "is_correct": false,
+          "explanation": "それは EFA の役割。ENA は汎用高速 NIC。"
+        },
+        {
+          "id": "D",
+          "text": "EFA は通常のインターネット通信 (HTTP/TCP) でも ENA より低レイテンシを提供する",
+          "is_correct": false,
+          "explanation": "EFA の OS バイパス機能は MPI 等の HPC 通信ライブラリ用。一般的な TCP/HTTP には ENA と同等。"
+        }
+      ],
+      "explanation": "ENA: 汎用高速 NIC、SR-IOV、最大 100 Gbps、最新 EC2 標準。EFA: HPC・ML 向け OS バイパス NIC、MPI/NCCL の集合通信を高速化。EFA は ENA の機能も内包しつつ追加で OS バイパス機能を持つ拡張版。",
+      "references": [
+        {
+          "title": "Elastic Fabric Adapter",
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"
+        }
+      ],
+      "tags": [
+        "ec2",
+        "ena",
+        "efa",
+        "hpc"
+      ],
+      "common_mistakes": [
+        "ENA と EFA を逆に覚える",
+        "EFA が一般 TCP 通信も高速化すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-018",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Nitro System",
+      "subtopic": "Architectural benefit",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "EC2 の Nitro System の主な利点として最も正確な説明はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EC2 を東京リージョン内で物理的に近接配置してネットワークレイテンシを削減する機能",
+          "is_correct": false,
+          "explanation": "それは Placement Group。Nitro とは別概念。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 のサイズを負荷に応じて自動的に変えるオートスケーリング機能を提供する",
+          "is_correct": false,
+          "explanation": "それは Auto Scaling Group の役割。Nitro はハイパーバイザ刷新の話。"
+        },
+        {
+          "id": "C",
+          "text": "ハイパーバイザ機能を専用ハードウェア (Nitro Card) に分離し、性能とセキュリティを向上させる",
+          "is_correct": true,
+          "explanation": "正解。Nitro はネットワーク・ストレージ・セキュリティ機能をハードウェアに移し、ベアメタル級性能を提供。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 のメモリ容量を EFS と連携して仮想的に拡張する機能で大規模インメモリ処理を支援する",
+          "is_correct": false,
+          "explanation": "そのような機能は存在しない。Nitro はインスタンスの基盤刷新。"
+        }
+      ],
+      "explanation": "AWS Nitro System は EC2 の次世代基盤。Nitro Hypervisor (軽量化)、Nitro Cards (ネット・EBS・セキュリティ処理を専用 HW に)、Nitro Security Chip (HW 信頼基盤)。仮想化オーバーヘッド削減で性能↑、SR-IOV/EFA/Multi-Attach 等の高度機能の前提となる。",
+      "references": [
+        {
+          "title": "AWS Nitro System",
+          "url": "https://aws.amazon.com/ec2/nitro/"
+        }
+      ],
+      "tags": [
+        "ec2",
+        "nitro",
+        "hypervisor"
+      ],
+      "common_mistakes": [
+        "Nitro と Auto Scaling を混同",
+        "Nitro を機能名と勘違い"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-019",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Lambda",
+      "subtopic": "Concurrency",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ピーク時に Lambda 関数の同時実行数が急上昇し、他の Lambda 関数が起動できない (TooManyRequestsException) 状況が発生している。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda を VPC 内に配置して隔離する",
+          "is_correct": false,
+          "explanation": "VPC 配置は ENI 管理の話で、同時実行制御とは無関係。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda のメモリを最大の 10,240 MB に設定して処理を高速化する",
+          "is_correct": false,
+          "explanation": "メモリ増は処理速度向上だが、同時実行数の制御にはならない。"
+        },
+        {
+          "id": "C",
+          "text": "Reserved Concurrency を該当関数に設定し、他関数の枠を守る",
+          "is_correct": true,
+          "explanation": "正解。Reserved Concurrency は関数ごとに同時実行上限を設定し、アカウント全体の枠 (1,000 default) を分け合う。"
+        },
+        {
+          "id": "D",
+          "text": "全 Lambda 関数を別 AWS アカウントに分割する",
+          "is_correct": false,
+          "explanation": "実装可能だがコストと管理が大きく増える。Reserved Concurrency で同一アカウント内制御が直接的解。"
+        }
+      ],
+      "explanation": "Lambda の同時実行制御: アカウント全体 (デフォルト 1,000、増枠申請可)、Reserved Concurrency (関数ごとの予約と上限)、Provisioned Concurrency (起動済み環境の事前確保で コールドスタート 排除)。混雑する関数を Reserved で囲うのが標準パターン。",
+      "references": [
+        {
+          "title": "Lambda function concurrency",
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html"
+        }
+      ],
+      "tags": [
+        "lambda",
+        "concurrency",
+        "reserved"
+      ],
+      "common_mistakes": [
+        "メモリ増で同時実行枠が広がると誤解",
+        "VPC 配置と同時実行を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-020",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Lambda",
+      "subtopic": "Provisioned Concurrency",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "API Gateway → Lambda のエンドポイントで、低頻度時のコールドスタート遅延 (3 秒) が SLA 違反になっている。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda のメモリを増やしてコールドスタート時間を短縮する",
+          "is_correct": false,
+          "explanation": "メモリ増で起動はやや速くなるが 3 秒の遅延を SLA 内に収めるには不十分なことが多い。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda をやめて EC2 + ALB に移行する",
+          "is_correct": false,
+          "explanation": "サーバレスの利点を捨てる。Provisioned Concurrency で同じ目的が達成できる。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge スケジューラで毎分 Warm-Up リクエストを送る",
+          "is_correct": false,
+          "explanation": "古典的回避策だが Provisioned Concurrency より不安定。マネージドの正攻法を使う。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda の Provisioned Concurrency を有効化し、事前に実行環境を起動済みにする",
+          "is_correct": true,
+          "explanation": "正解。Provisioned Concurrency は環境を起動済みに保つため、コールドスタートを排除する。"
+        }
+      ],
+      "explanation": "Provisioned Concurrency は事前に Lambda の実行環境を確保し、コールドスタートを排除する機能。同時実行数を指定して起動済み状態を維持する。Application Auto Scaling と組み合わせて時間帯ごとに調整も可能。コストは起動済み枠に対し時間課金。",
+      "references": [
+        {
+          "title": "Provisioned Concurrency for Lambda functions",
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html"
+        }
+      ],
+      "tags": [
+        "lambda",
+        "provisioned-concurrency",
+        "cold-start"
+      ],
+      "common_mistakes": [
+        "メモリ増だけでコールドスタートを解消できると誤解",
+        "Warm-Up ハックを推奨と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-021",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Fargate vs EC2",
+      "subtopic": "Launch type selection",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "コンテナアプリで OS パッチ管理・キャパシティ確保・スケーリングをすべてマネージドで運用したい。利用量が変動するためアイドル時のコストも抑えたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ECS で EC2 launch type を使い、スポット EC2 と組み合わせる",
+          "is_correct": false,
+          "explanation": "EC2 launch type は OS 管理が必要。設問の『すべてマネージド』要件に反する。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 Auto Scaling Group に Docker をインストールして手動運用する",
+          "is_correct": false,
+          "explanation": "OS 管理が必要で要件に反する。Fargate がマネージドコンテナの標準。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 にコンテナを Docker で直接立てて、CloudWatch でメトリクス監視する",
+          "is_correct": false,
+          "explanation": "OS 管理・スケーリング・HA を自前確保が必要で要件を満たさない。"
+        },
+        {
+          "id": "D",
+          "text": "ECS or EKS の Fargate launch type を使い、サーバレスコンテナで運用する",
+          "is_correct": true,
+          "explanation": "正解。Fargate は OS なし・キャパシティ自動・使った分課金で、サーバレスコンテナの標準。"
+        }
+      ],
+      "explanation": "ECS/EKS には EC2 launch type (自前 EC2、OS パッチ・キャパシティ管理あり、安価) と Fargate launch type (サーバレス、OS なし、使った vCPU・メモリで課金) がある。OS 管理不要・変動負荷・小〜中規模なら Fargate が定石。",
+      "references": [
+        {
+          "title": "AWS Fargate",
+          "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html"
+        }
+      ],
+      "tags": [
+        "fargate",
+        "ecs",
+        "eks",
+        "serverless"
+      ],
+      "common_mistakes": [
+        "EC2 launch type を『マネージド』と誤解",
+        "Fargate の使い分けを理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-022",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "ECS Service Discovery",
+      "subtopic": "Service-to-service routing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ECS で動く複数マイクロサービス間で、サービス名で相互通信させたい。動的な IP 変動にも対応したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各サービスの IP を環境変数で渡し、起動時にハードコードする",
+          "is_correct": false,
+          "explanation": "コンテナの IP は再デプロイで変わる。動的環境に対応できない。"
+        },
+        {
+          "id": "B",
+          "text": "ALB の path-routing で各サービスを公開し、サービス間も ALB 経由で通信する",
+          "is_correct": false,
+          "explanation": "実装可能だが内部通信に ALB 経由は冗長で、レイテンシ・料金面で不利。サービス検出が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "ECS Service Discovery (Cloud Map) で内部 DNS 名を自動登録し、名前で通信する",
+          "is_correct": true,
+          "explanation": "正解。ECS Service Discovery は AWS Cloud Map と統合し、サービス名 → 動的 IP の解決を自動化する。"
+        },
+        {
+          "id": "D",
+          "text": "各サービス間で SQS キューを介して通信し、サービス検出を不要にする",
+          "is_correct": false,
+          "explanation": "非同期化は別パターンで設計判断。同期通信が必要なら Service Discovery が標準解。"
+        }
+      ],
+      "explanation": "ECS Service Discovery は AWS Cloud Map を使い、サービス起動時に内部 DNS (例: api.local) へ自動登録、終了時に削除。コンテナ IP の動的変動に対応した名前ベース通信を実現。EKS なら CoreDNS で同等機能。",
+      "references": [
+        {
+          "title": "Service discovery for ECS services",
+          "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html"
+        }
+      ],
+      "tags": [
+        "ecs",
+        "service-discovery",
+        "cloud-map"
+      ],
+      "common_mistakes": [
+        "内部通信にも ALB を介す",
+        "IP をハードコードする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-023",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "RDS Read Replica",
+      "subtopic": "Read scaling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "RDS for MySQL で読み取りトラフィックが増加し、Primary インスタンスの CPU が常時 80% を超えている。書き込み負荷は問題なし。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Primary のインスタンスサイズを 1 段大きくする (垂直スケール)",
+          "is_correct": false,
+          "explanation": "短期的には有効だがコスト効率が悪く、限界もある。読み取り分散が根本対策。"
+        },
+        {
+          "id": "B",
+          "text": "Read Replica を追加し、アプリの読み取りを Replica エンドポイントへ振り分ける",
+          "is_correct": true,
+          "explanation": "正解。読み取り専用クエリを Replica へ分散することで、Primary の負荷を下げ水平スケールできる。"
+        },
+        {
+          "id": "C",
+          "text": "Multi-AZ 構成に変更してスタンバイを読み取り処理にも使う",
+          "is_correct": false,
+          "explanation": "従来 Multi-AZ のスタンバイは読み取り不可。新 Multi-AZ DB Cluster は可能だが、既存からは Read Replica が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "RDS の Performance Insights を有効化して負荷分析する",
+          "is_correct": false,
+          "explanation": "Performance Insights は分析ツールで負荷自体は減らさない。スケール対策とは別。"
+        }
+      ],
+      "explanation": "RDS の読み取りスケール戦略は Read Replica 追加が定石。アプリ側で読み取り用エンドポイントを別接続にする実装が必要。Aurora なら Reader Endpoint で自動ラウンドロビン。読み取りキャッシュ層 (ElastiCache) も有効な選択肢。",
+      "references": [
+        {
+          "title": "Working with RDS read replicas",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "read-replica",
+        "read-scaling"
+      ],
+      "common_mistakes": [
+        "垂直スケールだけで対応する",
+        "従来 Multi-AZ で読み取り分散できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-024",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Aurora",
+      "subtopic": "Cluster cache management",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL クラスターでフェイルオーバが発生すると、新 Writer のバッファプールが空でクエリが遅くなる現象がある。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora の Database Activity Streams を有効化し、フェイルオーバ時の状態を引き継ぐ",
+          "is_correct": false,
+          "explanation": "Activity Streams は監査ログ機能。キャッシュ問題には無関係。"
+        },
+        {
+          "id": "B",
+          "text": "Read Replica の数を増やし、フェイルオーバ後の負荷を分散する",
+          "is_correct": false,
+          "explanation": "Replica 数を増やすのは別目的。フェイルオーバ時のキャッシュ寒さの解決ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Cluster Cache Management (CCM) を有効化し、Writer と Reader でバッファプールを同期する",
+          "is_correct": true,
+          "explanation": "正解。CCM はフェイルオーバ後の Writer のバッファプールを事前に温めるための機能。"
+        },
+        {
+          "id": "D",
+          "text": "ElastiCache を前段に置き、フェイルオーバ時もキャッシュから応答する",
+          "is_correct": false,
+          "explanation": "アプリ層キャッシュは有効な別パターンだが、Aurora のバッファプール問題の直接的解は CCM。"
+        }
+      ],
+      "explanation": "Aurora Cluster Cache Management (CCM) は フェイルオーバ後の Cold Cache 問題を解決する機能。Reader インスタンスでフェイルオーバ Tier を高く設定し、Writer のバッファプールに同期しておくことで、昇格後すぐに高速応答できる。",
+      "references": [
+        {
+          "title": "Cluster Cache Management for Aurora PostgreSQL",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Replication.ClusterCacheManagement.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "ccm",
+        "buffer-pool",
+        "failover"
+      ],
+      "common_mistakes": [
+        "フェイルオーバ後の遅延を別の機能で解決しようとする",
+        "CCM の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-025",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "DynamoDB Auto Scaling",
+      "subtopic": "Capacity scaling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DynamoDB プロビジョン型キャパシティの WCU/RCU を、トラフィック変動に応じて自動的に増減させたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "On-Demand キャパシティモードに切り替え、プロビジョン枠を撤廃して使用量課金に統一する",
+          "is_correct": false,
+          "explanation": "On-Demand は別モードで料金体系も違う。プロビジョン型維持の場合は Auto Scaling が直接的解。"
+        },
+        {
+          "id": "B",
+          "text": "DynamoDB Auto Scaling (Application Auto Scaling) で WCU/RCU を Target Tracking 制御する",
+          "is_correct": true,
+          "explanation": "正解。Application Auto Scaling と統合された DynamoDB Auto Scaling で利用率に応じて自動増減する。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で 1 分ごとに使用率を確認し、UpdateTable API で WCU/RCU を変更する自前自動化を構築",
+          "is_correct": false,
+          "explanation": "Application Auto Scaling のマネージド機能を再実装する無駄。"
+        },
+        {
+          "id": "D",
+          "text": "Global Secondary Index を追加し、別 PartitionKey で書き込み負荷を内部的に分散させる",
+          "is_correct": false,
+          "explanation": "GSI 追加はクエリパターン拡張の話で、キャパシティスケーリングの解ではない。"
+        }
+      ],
+      "explanation": "DynamoDB Auto Scaling は Application Auto Scaling の一部で、Target Tracking ポリシーで RCU/WCU の利用率 (例: 70%) を保つよう自動増減する。スパイクには On-Demand モードや Reserved Capacity も選択肢。",
+      "references": [
+        {
+          "title": "DynamoDB Auto Scaling",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "auto-scaling",
+        "application-auto-scaling"
+      ],
+      "common_mistakes": [
+        "Lambda で自前実装する",
+        "GSI 追加でキャパシティ問題を解決できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-026",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "DAX",
+      "subtopic": "Read latency reduction",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DynamoDB の読み取りレイテンシをミリ秒未満 (マイクロ秒) に下げたい。アプリ側のクエリパターンは変えたくない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Read Replica を作成し、読み取りを Replica 経由にする",
+          "is_correct": false,
+          "explanation": "DynamoDB に Read Replica の概念はない (Global Tables は別目的)。"
+        },
+        {
+          "id": "B",
+          "text": "DynamoDB Accelerator (DAX) クラスターを構成し、アプリは DAX エンドポイントへ接続する",
+          "is_correct": true,
+          "explanation": "正解。DAX は DynamoDB 専用の API 互換キャッシュで、マイクロ秒レイテンシをアプリ改修なしで提供する。"
+        },
+        {
+          "id": "C",
+          "text": "ElastiCache for Redis を前段に置き、独自実装でキャッシュ機構を作る",
+          "is_correct": false,
+          "explanation": "ElastiCache は汎用キャッシュでアプリ側の write-through/cache-aside 実装が必要。DAX が DynamoDB ネイティブで簡単。"
+        },
+        {
+          "id": "D",
+          "text": "DynamoDB Streams を有効化し、変更イベントをキャッシュする",
+          "is_correct": false,
+          "explanation": "Streams は変更通知で、読み取りキャッシュの代替にはならない。"
+        }
+      ],
+      "explanation": "DynamoDB Accelerator (DAX) は DynamoDB 専用の Write-Through キャッシュクラスター。API 互換でアプリ側は接続先を DAX エンドポイントに変えるだけ。読み取りレイテンシをミリ秒 → マイクロ秒に低減。VPC 内専用 (パブリック非対応)。",
+      "references": [
+        {
+          "title": "DynamoDB Accelerator (DAX)",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "dax",
+        "cache",
+        "microsecond"
+      ],
+      "common_mistakes": [
+        "ElastiCache で同等の透過性が得られると誤解",
+        "DAX の VPC 限定を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-027",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "DynamoDB",
+      "subtopic": "Hot partition",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "DynamoDB の特定パーティションに書き込みが集中し ProvisionedThroughputExceededException が頻発する。テーブル全体の WCU は使い切っていない。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "On-Demand モードに切り替えれば、AWS が自動的に解決する",
+          "is_correct": false,
+          "explanation": "On-Demand でも単一パーティションの 1,000 WCU 上限は残る。キー設計の修正が必要。"
+        },
+        {
+          "id": "B",
+          "text": "テーブル全体の WCU を 10 倍にプロビジョニングし、余裕を持たせる",
+          "is_correct": false,
+          "explanation": "Hot Partition は単一パーティション上限の問題。テーブル全体 WCU を上げても解決しない。"
+        },
+        {
+          "id": "C",
+          "text": "パーティションキーをハッシュ + 接尾辞でカーディナリティを増やし、書き込みを分散する",
+          "is_correct": true,
+          "explanation": "正解。Hot Partition はキー設計が原因で、ランダム接尾辞や複合キーでカーディナリティを上げるのが定石。"
+        },
+        {
+          "id": "D",
+          "text": "DynamoDB Streams を有効化して書き込みを非同期化する",
+          "is_correct": false,
+          "explanation": "Streams は変更イベント通知で、書き込み性能の解決にはならない。"
+        }
+      ],
+      "explanation": "DynamoDB は内部的にパーティションに分割され、各パーティションには 1,000 WCU / 3,000 RCU の上限がある (Adaptive Capacity で一部緩和)。同じキーへの集中書き込みは Hot Partition となり制限に当たる。キー設計で分散させるのが根本対策。",
+      "references": [
+        {
+          "title": "DynamoDB partition key design",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "hot-partition",
+        "key-design"
+      ],
+      "common_mistakes": [
+        "WCU 増だけで解決すると誤解",
+        "On-Demand で全て解決するという過信"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-028",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "ElastiCache",
+      "subtopic": "Redis vs Memcached",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "永続化・Pub/Sub・データ型 (List/Set/Hash 等) のリッチさが必要なキャッシュを使いたい。最も適切な ElastiCache エンジンはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memcached エンジンを選び、シンプルな KV キャッシュとして使う",
+          "is_correct": false,
+          "explanation": "Memcached は単純 KV 専用で永続化や Pub/Sub は非対応。"
+        },
+        {
+          "id": "B",
+          "text": "Memcached でクラスター構成にし、Pub/Sub をマルチコアで実現する",
+          "is_correct": false,
+          "explanation": "Memcached は Pub/Sub 機能を持たない。エンジンの違いを理解する必要。"
+        },
+        {
+          "id": "C",
+          "text": "DAX を選び、永続化機能で利用する",
+          "is_correct": false,
+          "explanation": "DAX は DynamoDB 専用キャッシュで、永続化機能は持たない。"
+        },
+        {
+          "id": "D",
+          "text": "Redis エンジンを選び、永続化・Pub/Sub・リッチデータ型を活用する",
+          "is_correct": true,
+          "explanation": "正解。Redis は永続化・Pub/Sub・複雑データ型・スナップショット・レプリケーションを持つフルセットキャッシュ。"
+        }
+      ],
+      "explanation": "ElastiCache の 2 エンジン: Redis (永続化・Pub/Sub・リッチデータ型・レプリケーション・クラスター)、Memcached (シンプル KV・マルチスレッド・シャーディング・永続化なし)。機能要件で Redis、単純 KV・低コスト・マルチコアで Memcached。",
+      "references": [
+        {
+          "title": "ElastiCache Redis vs Memcached",
+          "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html"
+        }
+      ],
+      "tags": [
+        "elasticache",
+        "redis",
+        "memcached"
+      ],
+      "common_mistakes": [
+        "Memcached で Pub/Sub が使えると誤解",
+        "DAX を汎用キャッシュと混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-029",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "ElastiCache Redis",
+      "subtopic": "Cluster mode enabled",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ElastiCache for Redis で 100GB を超えるデータセットを保管し、書き込みもスケーリングしたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cluster Mode Enabled で複数シャードに分散し、書き込み負荷をシャード間で並列化する",
+          "is_correct": true,
+          "explanation": "正解。Cluster Mode Enabled は複数シャード構成で、書き込みと容量を水平にスケールできる。"
+        },
+        {
+          "id": "B",
+          "text": "Read Replica の数を 5 個に増やして、読み取りで負荷分散する",
+          "is_correct": false,
+          "explanation": "Read Replica は読み取りスケールで、書き込みスケールにはならない。"
+        },
+        {
+          "id": "C",
+          "text": "Cluster Mode Disabled で 1 Primary + Replica 構成にする",
+          "is_correct": false,
+          "explanation": "Cluster Mode Disabled は単一シャードで Primary 1 個のみ。書き込みスケールはできない。"
+        },
+        {
+          "id": "D",
+          "text": "Memcached エンジンに切り替え、マルチスレッドで書き込みを並列化する",
+          "is_correct": false,
+          "explanation": "Memcached はマルチスレッドだが、Redis の機能 (永続化等) を失う。設問の前提が違う。"
+        }
+      ],
+      "explanation": "Redis Cluster Mode Disabled: 単一シャード (Primary 1 + Replica 0-5)、書き込みは Primary 1 個に集中。Cluster Mode Enabled: 複数シャード (各シャードに Primary + Replica)、書き込みも水平スケール。大規模データ・高書き込みは Cluster Mode Enabled。",
+      "references": [
+        {
+          "title": "ElastiCache Redis cluster mode",
+          "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Replication.Redis.Groups.html"
+        }
+      ],
+      "tags": [
+        "elasticache",
+        "redis",
+        "cluster-mode"
+      ],
+      "common_mistakes": [
+        "Read Replica で書き込みもスケールできると誤解",
+        "Cluster Mode の意味を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-030",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "ElastiCache",
+      "subtopic": "Caching strategies",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）アプリのキャッシュ戦略に関する説明として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cache-Aside (Lazy Loading): アプリがミス時に DB から取得しキャッシュに書く、要求があるデータのみキャッシュされる",
+          "is_correct": true,
+          "explanation": "正解。Cache-Aside はミス時取得・書き込みパターンで、使われるデータのみキャッシュする標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "Write-Through: DB 書き込み時にキャッシュも同時更新、キャッシュが常に最新",
+          "is_correct": true,
+          "explanation": "正解。Write-Through は書き込み時にキャッシュも更新する戦略で、整合性が高い。"
+        },
+        {
+          "id": "C",
+          "text": "Cache-Aside ではキャッシュとデータの不整合が絶対に発生しない",
+          "is_correct": false,
+          "explanation": "Cache-Aside は TTL 切れまで古いデータを返す可能性があり、整合性は完全ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Write-Through は書き込みのスループットを高速化するパターン",
+          "is_correct": false,
+          "explanation": "Write-Through は書き込みコストが増す (DB + Cache の 2 書き込み)。スループット最適化ではなく整合性最適化。"
+        }
+      ],
+      "explanation": "キャッシュ戦略: Cache-Aside (Lazy Loading、ミス時に DB → Cache、使用データのみ、整合性弱)、Write-Through (DB と Cache 同時書き込み、整合性高、書き込みコスト増)、Write-Behind (Cache 書き込み後 非同期で DB、低レイテンシだが障害時データロス)。TTL も組み合わせて整合性を担保。",
+      "references": [
+        {
+          "title": "Caching strategies",
+          "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Strategies.html"
+        }
+      ],
+      "tags": [
+        "caching",
+        "cache-aside",
+        "write-through"
+      ],
+      "common_mistakes": [
+        "Cache-Aside が完全整合性だと誤解",
+        "Write-Through を高速化目的と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-031",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "CloudFront",
+      "subtopic": "Origin Shield",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "CloudFront の各エッジロケーションから同じオブジェクトを Origin にリクエストする回数が多く、Origin の負荷が高い。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFront のキャッシュ TTL を短くして、再リクエストを増やす",
+          "is_correct": false,
+          "explanation": "TTL 短縮は逆に Origin 負荷を増やす。"
+        },
+        {
+          "id": "B",
+          "text": "Origin Shield を有効化し、エッジと Origin の間に中間キャッシュ層を追加する",
+          "is_correct": true,
+          "explanation": "正解。Origin Shield はリージョナルキャッシュ層を挟み、Origin への重複リクエストを集約する。"
+        },
+        {
+          "id": "C",
+          "text": "Origin を ALB から S3 に変えて静的化する",
+          "is_correct": false,
+          "explanation": "コンテンツ性質と無関係。重複リクエスト集約は Origin Shield。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFront のディストリビューションを 2 つに分け、トラフィックを分散する",
+          "is_correct": false,
+          "explanation": "ディストリビューション分割は Origin 負荷を倍にするだけ。"
+        }
+      ],
+      "explanation": "Origin Shield は CloudFront のリージョナルエッジキャッシュ層をさらに集約する中間層。複数エッジから同じオブジェクトリクエストが来た場合、Origin Shield 1 個にまとめて Origin に問い合わせる。Origin への負荷削減・転送料金削減に効果。",
+      "references": [
+        {
+          "title": "Origin Shield",
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html"
+        }
+      ],
+      "tags": [
+        "cloudfront",
+        "origin-shield",
+        "cache"
+      ],
+      "common_mistakes": [
+        "TTL 短縮で負荷が減ると誤解",
+        "ディストリビューション分割を解決策と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-032",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "CloudFront",
+      "subtopic": "CloudFront Functions vs Lambda@Edge",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "CloudFront のリクエスト/レスポンスを書き換える軽量処理 (URL リライト・ヘッダ操作) を毎リクエスト超低レイテンシで行いたい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda@Edge を Viewer Request で実行し、Node.js で柔軟に処理する",
+          "is_correct": false,
+          "explanation": "Lambda@Edge は柔軟だが起動が重く、CloudFront Functions より高コスト・高レイテンシ。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFront Functions (JavaScript) で URL リライトをサブミリ秒で実行する",
+          "is_correct": true,
+          "explanation": "正解。CloudFront Functions はエッジでサブミリ秒・低コストで実行される軽量処理用。"
+        },
+        {
+          "id": "C",
+          "text": "Origin の ALB に Lambda Authorizer を付けて処理する",
+          "is_correct": false,
+          "explanation": "Origin 到達後の処理で、エッジで止められない。レイテンシも増える。"
+        },
+        {
+          "id": "D",
+          "text": "API Gateway を CloudFront の前段に置き、リクエストを変換する",
+          "is_correct": false,
+          "explanation": "API Gateway は前段にできるが、リクエスト書き換え目的では構成が冗長。CloudFront Functions が直接的。"
+        }
+      ],
+      "explanation": "CloudFront Functions: JavaScript ES5、サブミリ秒、$0.10/M リクエスト、URL リライト・ヘッダ操作・認証等の軽量処理。Lambda@Edge: Node.js/Python、ms 単位、より高機能 (DB 接続等可)、高コスト・高レイテンシ。軽量処理は Functions、複雑処理は Lambda@Edge。",
+      "references": [
+        {
+          "title": "CloudFront Functions vs Lambda@Edge",
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html"
+        }
+      ],
+      "tags": [
+        "cloudfront",
+        "functions",
+        "lambda-edge"
+      ],
+      "common_mistakes": [
+        "軽量処理にも Lambda@Edge を使う",
+        "両者の違いを理解しない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-033",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "CloudFront",
+      "subtopic": "Dynamic content caching",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "API レスポンス (動的コンテンツ) も CloudFront のエッジで配信し、世界中のユーザのレイテンシを下げたい。動的コンテンツはキャッシュしない場合でも有効か。",
+      "options": [
+        {
+          "id": "A",
+          "text": "動的コンテンツでは TTL を 0 にしてキャッシュさせる必要がある",
+          "is_correct": false,
+          "explanation": "TTL = 0 はキャッシュ無効化の指定だが、設問は『動的を配信する設定』を聞いている。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFront は静的コンテンツ専用なので動的コンテンツでは効果がない",
+          "is_correct": false,
+          "explanation": "事実誤認。動的コンテンツでも効果あり (キャッシュなしで経路最適化のみ)。"
+        },
+        {
+          "id": "C",
+          "text": "動的コンテンツでは Global Accelerator を使うべきで CloudFront は不適切",
+          "is_correct": false,
+          "explanation": "Global Accelerator も選択肢だが、CloudFront も動的コンテンツに有効。両者は用途が異なる (HTTP vs L4)。"
+        },
+        {
+          "id": "D",
+          "text": "動的コンテンツでも CloudFront を経由すれば AWS バックボーン + 永続接続でレイテンシが改善する",
+          "is_correct": true,
+          "explanation": "正解。CloudFront はキャッシュしない動的コンテンツでも AWS バックボーンと TLS 永続接続でレイテンシを改善する。"
+        }
+      ],
+      "explanation": "CloudFront はキャッシュしない動的コンテンツでも有効。クライアント → 最寄りエッジ間は短距離、エッジ → Origin は AWS バックボーンで高速化、TLS 永続接続でハンドシェイクコストを削減。Global Accelerator は L4 ネットワーク最適化で、CloudFront とは別レイヤ。",
+      "references": [
+        {
+          "title": "Optimizing high availability with CloudFront",
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html"
+        }
+      ],
+      "tags": [
+        "cloudfront",
+        "dynamic-content",
+        "backbone"
+      ],
+      "common_mistakes": [
+        "CloudFront が静的専用と誤解",
+        "TTL = 0 とキャッシュ無効を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-034",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Global Accelerator",
+      "subtopic": "Anycast IP use case",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "全世界のクライアントから単一の静的 IP で接続でき、複数リージョンの NLB へ自動的に最寄り経路でルーティングしたい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ALB を複数リージョンに展開し、HTTPS リスナーで直接公開する",
+          "is_correct": false,
+          "explanation": "ALB を直接公開すると静的 IP にならず、グローバル経路最適化もできない。"
+        },
+        {
+          "id": "B",
+          "text": "Route 53 Latency-based ルーティングで複数 NLB をレコード登録する",
+          "is_correct": false,
+          "explanation": "DNS ベースで静的 IP にはならず、TTL キャッシュの問題もある。Anycast IP 要件には Global Accelerator。"
+        },
+        {
+          "id": "C",
+          "text": "CloudFront ディストリビューションで NLB をオリジン指定する",
+          "is_correct": false,
+          "explanation": "CloudFront は L7 HTTP 用。L4 NLB の経路最適化には Global Accelerator が標準。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Global Accelerator を構成し、Anycast IP で複数リージョン NLB を統合する",
+          "is_correct": true,
+          "explanation": "正解。Global Accelerator は 2 個の Anycast IP + 最寄り経路ルーティング + AWS バックボーン最適化を提供。"
+        }
+      ],
+      "explanation": "Global Accelerator は L4 のグローバル経路最適化サービス。2 個の Anycast Static IP を提供し、AWS バックボーン経由で最寄りエンドポイント (ALB/NLB/EC2/EIP) へルート。L4 で動作するため UDP・TCP 両対応、リージョンフェイルオーバも数秒。",
+      "references": [
+        {
+          "title": "AWS Global Accelerator",
+          "url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+        }
+      ],
+      "tags": [
+        "global-accelerator",
+        "anycast-ip",
+        "multi-region"
+      ],
+      "common_mistakes": [
+        "Route 53 で静的 IP が出ると誤解",
+        "CloudFront を NLB の前段と考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-035",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Global Accelerator vs CloudFront",
+      "subtopic": "Selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）CloudFront と Global Accelerator の使い分けとして正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFront は HTTP/HTTPS 中心のキャッシュ + コンテンツ配信、静的・動的コンテンツに有効",
+          "is_correct": true,
+          "explanation": "正解。CloudFront は L7 HTTP の CDN + 配信最適化。"
+        },
+        {
+          "id": "B",
+          "text": "Global Accelerator は TCP/UDP/L4 で動作し、ゲームや IoT の低レイテンシ通信に最適",
+          "is_correct": true,
+          "explanation": "正解。Global Accelerator は L4 で動作し、HTTP 以外のプロトコルや超低レイテンシ要件向け。"
+        },
+        {
+          "id": "C",
+          "text": "両者は完全に同じ用途で、どちらを使ってもパフォーマンス的に同等の結果が得られる",
+          "is_correct": false,
+          "explanation": "目的が異なる。L7 vs L4、キャッシュ有無、HTTP 専用 vs プロトコル汎用。"
+        },
+        {
+          "id": "D",
+          "text": "Global Accelerator は静的コンテンツのエッジキャッシュ機能を CloudFront と同様に提供する",
+          "is_correct": false,
+          "explanation": "Global Accelerator はキャッシュしない。L4 経路最適化のみ。"
+        }
+      ],
+      "explanation": "CloudFront: L7、HTTP/HTTPS 専用、静的/動的キャッシュ、エッジロケーション数百、Web 配信向け。Global Accelerator: L4、TCP/UDP、キャッシュなし、AWS バックボーン経路最適化、Anycast IP、ゲーム・IoT・金融取引向け。両者の組み合わせもあり (CloudFront 前段に Accelerator)。",
+      "references": [
+        {
+          "title": "CloudFront vs Global Accelerator",
+          "url": "https://aws.amazon.com/global-accelerator/faqs/"
+        }
+      ],
+      "tags": [
+        "cloudfront",
+        "global-accelerator",
+        "comparison"
+      ],
+      "common_mistakes": [
+        "両者を同じ用途と思う",
+        "Global Accelerator にキャッシュ機能があると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-036",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "API Gateway",
+      "subtopic": "Throttling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "公開 API で、無認証クライアントは秒 10 リクエスト、有料プラン顧客は秒 1,000 リクエストに分けてスロットリングしたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "API Gateway の Stage レベル Throttling だけで全顧客同一の上限を適用する",
+          "is_correct": false,
+          "explanation": "Stage 全体への一律設定で、顧客単位の差別化はできない。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda Authorizer 内でカウンターを実装してスロットリングする",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大。Usage Plan で標準機能として提供される。"
+        },
+        {
+          "id": "C",
+          "text": "ALB の前段に WAF を置き、IP 単位のレート制限で全顧客を制御する",
+          "is_correct": false,
+          "explanation": "API 顧客 (有料/無料) の区別を IP ベースでは正確に行えない。Usage Plan が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "API Key + Usage Plan を顧客プラン別に設定し、それぞれの Rate / Burst / Quota を定義する",
+          "is_correct": true,
+          "explanation": "正解。API Gateway の Usage Plan は API Key 単位で Rate/Burst/Quota を制御する標準機能。"
+        }
+      ],
+      "explanation": "API Gateway スロットリング階層: アカウントレベル (10,000 req/s ハード上限)、Stage/Method レベル、Usage Plan (API Key 単位の Rate/Burst/Quota)、Client (API Key) 単位。顧客プラン別の制御は Usage Plan + API Key が標準。",
+      "references": [
+        {
+          "title": "API Gateway throttling",
+          "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html"
+        }
+      ],
+      "tags": [
+        "api-gateway",
+        "throttling",
+        "usage-plan",
+        "api-key"
+      ],
+      "common_mistakes": [
+        "Stage Throttling で顧客別制御できると誤解",
+        "Lambda Authorizer で再実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-037",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "API Gateway",
+      "subtopic": "HTTP API vs REST API",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "シンプルな OAuth/JWT 認証の REST 風 API をコスト最小・低レイテンシで提供したい。Mocking や Request Validation など高度な機能は不要。最も適切な API Gateway タイプはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "REST API を使い、すべての機能を活用しつつ標準的に構築する",
+          "is_correct": false,
+          "explanation": "機能はリッチだが HTTP API より高コスト・高レイテンシ。設問は高度機能不要。"
+        },
+        {
+          "id": "B",
+          "text": "Private REST API を使い、VPC 内のみで公開する",
+          "is_correct": false,
+          "explanation": "Private は外部公開不可。設問は公開 API の前提。"
+        },
+        {
+          "id": "C",
+          "text": "WebSocket API を使い、リアルタイム通信機能で構築する",
+          "is_correct": false,
+          "explanation": "WebSocket は双方向リアルタイム用で、REST 風要件には不適。"
+        },
+        {
+          "id": "D",
+          "text": "HTTP API を使い、コスト約 70% カット + 低レイテンシで構築する",
+          "is_correct": true,
+          "explanation": "正解。HTTP API は REST API より安価・高速で、JWT 認証も標準サポート。シンプル要件向け。"
+        }
+      ],
+      "explanation": "API Gateway 3 種: REST API (フル機能・高機能・高コスト)、HTTP API (シンプル・低コスト・低レイテンシ、2020 リリース)、WebSocket API (リアルタイム双方向)。OAuth/JWT 等のシンプルな API なら HTTP API が新規構築の標準。",
+      "references": [
+        {
+          "title": "Choose between REST API and HTTP API",
+          "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html"
+        }
+      ],
+      "tags": [
+        "api-gateway",
+        "http-api",
+        "rest-api"
+      ],
+      "common_mistakes": [
+        "REST API を全シナリオで第一候補にする",
+        "HTTP API の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-038",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Kinesis Data Streams",
+      "subtopic": "Shard scaling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Kinesis Data Streams で書き込みスループットが現在の 1MB/s シャード上限を超え始めた。書き込み能力を拡張したい。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "シャード数を増やし、Partition Key を分散させて書き込みを並列化する",
+          "is_correct": true,
+          "explanation": "正解。シャード追加 + パーティションキー分散で書き込みスループットを線形にスケールする。"
+        },
+        {
+          "id": "B",
+          "text": "Kinesis を Firehose に置き換え、自動スケーリングに任せる",
+          "is_correct": false,
+          "explanation": "Firehose と Streams は用途違い (配信 vs 取込)。要件次第だが直接的解はシャード拡張。"
+        },
+        {
+          "id": "C",
+          "text": "コンシューマ側の処理速度を上げて書き込み余地を確保する",
+          "is_correct": false,
+          "explanation": "書き込み上限はプロデューサ側の問題でコンシューマ速度は無関係。"
+        },
+        {
+          "id": "D",
+          "text": "Data Retention 期間を 24 時間から 7 日に伸ばす",
+          "is_correct": false,
+          "explanation": "Retention は保持期間で書き込みスループットには影響しない。"
+        }
+      ],
+      "explanation": "Kinesis Data Streams のシャード上限: 書き込み 1 MB/s or 1,000 records/s、読み取り 2 MB/s。スループット拡張は『シャード追加 + Partition Key の均等分散』が標準。On-Demand モードもあり、自動スケーリングしたいときに選択 (Provisioned より高コスト)。",
+      "references": [
+        {
+          "title": "Kinesis Data Streams capacity",
+          "url": "https://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html"
+        }
+      ],
+      "tags": [
+        "kinesis",
+        "data-streams",
+        "shard",
+        "scaling"
+      ],
+      "common_mistakes": [
+        "コンシューマ速度で書き込み上限が変わると誤解",
+        "Retention 設定と性能を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-039",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Kinesis Firehose",
+      "subtopic": "Delivery to S3",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アプリログを大量にリアルタイム受信し、バッファして S3 へ Parquet 形式で書き出したい。コードを書かずに実現したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kinesis Data Streams + Lambda コンシューマで Parquet 変換と S3 書き込みを自前実装する",
+          "is_correct": false,
+          "explanation": "実装可能だがコード必要・運用負荷大。Firehose で標準機能として提供される。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon MSK (Managed Kafka) でストリームを受け、コンシューマで Parquet 変換して S3 書き込み",
+          "is_correct": false,
+          "explanation": "MSK は強力だが Kafka 知識が必要。シンプルな取込配信なら Firehose。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon Data Firehose (旧 Kinesis Firehose) で S3 ターゲット + Parquet 変換 + バッファを設定",
+          "is_correct": true,
+          "explanation": "正解。Firehose はマネージドな取込 → 変換 → 配信パイプラインで Parquet 変換も組み込み。"
+        },
+        {
+          "id": "D",
+          "text": "EC2 で Logstash を立て、自前で取込・Parquet 変換・S3 配信のパイプラインを構築する",
+          "is_correct": false,
+          "explanation": "OSS で実装可能だが運用負荷が大きい。マネージドの Firehose が標準。"
+        }
+      ],
+      "explanation": "Amazon Data Firehose (元 Kinesis Data Firehose) は取込 → 変換 → 配信の完全マネージド ETL パイプライン。S3 / Redshift / OpenSearch / Splunk 等への配信、Lambda での変換、Parquet/ORC への形式変換、圧縮、暗号化が組み込み。コードレスでよい場面で第一選択。",
+      "references": [
+        {
+          "title": "Amazon Data Firehose",
+          "url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
+        }
+      ],
+      "tags": [
+        "kinesis",
+        "firehose",
+        "parquet",
+        "s3"
+      ],
+      "common_mistakes": [
+        "Lambda で自前変換実装",
+        "MSK と Firehose の用途を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-040",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Kinesis vs MSK",
+      "subtopic": "Selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "既存のオンプレ Kafka アプリ (Producer/Consumer ライブラリ) をできるだけ改修せずに AWS に移行したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amazon MSK (Managed Streaming for Apache Kafka) を採用し、既存 Kafka コードを流用する",
+          "is_correct": true,
+          "explanation": "正解。MSK は本物の Kafka をマネージド提供で、既存 Kafka Producer/Consumer コードがそのまま動く。"
+        },
+        {
+          "id": "B",
+          "text": "Kinesis Data Streams に移行し、Kafka Producer/Consumer を SDK で書き直す",
+          "is_correct": false,
+          "explanation": "Kafka コード書き直しが必要。改修最小化要件に反する。"
+        },
+        {
+          "id": "C",
+          "text": "Amazon SQS に移行し、Producer/Consumer を SQS API で書き直す",
+          "is_correct": false,
+          "explanation": "SQS は Kafka 互換ではなく、書き直しが必要。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon EventBridge に移行し、Kafka イベントスキーマを変換する",
+          "is_correct": false,
+          "explanation": "EventBridge と Kafka は別物。アプリ改修が大きい。"
+        }
+      ],
+      "explanation": "MSK と Kinesis Data Streams は両方ストリーミング処理だが、互換性が異なる。MSK = 本物の Kafka (既存 Kafka コード再利用可)、Kinesis = AWS 独自 (シャード概念・SDK)。Kafka 既存資産の移行なら MSK、新規 AWS ネイティブなら Kinesis。",
+      "references": [
+        {
+          "title": "Amazon MSK",
+          "url": "https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html"
+        }
+      ],
+      "tags": [
+        "msk",
+        "kafka",
+        "kinesis",
+        "migration"
+      ],
+      "common_mistakes": [
+        "Kinesis が Kafka 互換だと誤解",
+        "EventBridge を Kafka と混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-041",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Kinesis Enhanced Fan-out",
+      "subtopic": "Multiple consumers",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "Kinesis Data Streams で 5 つのコンシューマアプリが同じシャードを並列で読み取る。各コンシューマで読み取り遅延が発生している。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "シャード数を 5 倍にして、各コンシューマに専用シャードを割り当てる",
+          "is_correct": false,
+          "explanation": "シャード追加は書き込み側のスケール。複数コンシューマの読み取り競合の解決ではない。"
+        },
+        {
+          "id": "B",
+          "text": "コンシューマ間で読み取りスケジュールを時間帯で分け、競合を避ける",
+          "is_correct": false,
+          "explanation": "リアルタイム性が損なわれ、運用も複雑。Enhanced Fan-out が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "Kinesis Data Streams を Kinesis Firehose に置き換える",
+          "is_correct": false,
+          "explanation": "Firehose は配信パイプラインで複数並列コンシューマ用ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Enhanced Fan-out を各コンシューマに有効化し、コンシューマ毎に 2 MB/s の専用読み取り帯域を提供する",
+          "is_correct": true,
+          "explanation": "正解。Enhanced Fan-out (HTTP/2 Push) は各コンシューマに専用帯域 + Sub 200ms 配信を提供する標準解。"
+        }
+      ],
+      "explanation": "Kinesis Data Streams の標準読み取り (Polling): 全コンシューマでシャード読み取り帯域 (2 MB/s) を共有 → 競合発生。Enhanced Fan-out: 各コンシューマに 2 MB/s 専用帯域 + HTTP/2 Push で Sub-200ms 配信。コンシューマあたり追加料金。",
+      "references": [
+        {
+          "title": "Kinesis Enhanced Fan-out",
+          "url": "https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html"
+        }
+      ],
+      "tags": [
+        "kinesis",
+        "enhanced-fan-out",
+        "consumer"
+      ],
+      "common_mistakes": [
+        "シャード追加で読み取り競合が解決できると誤解",
+        "Firehose に置き換えようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-042",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "AWS Glue",
+      "subtopic": "ETL service",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "複数の S3 バケットにある CSV/JSON データを統合 ETL してデータレイクを構築したい。Spark クラスタの管理を避けたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Glue でサーバレス Spark ETL ジョブを定義し、Glue Data Catalog でスキーマ管理する",
+          "is_correct": true,
+          "explanation": "正解。Glue はサーバレス Spark ETL + Data Catalog + Crawler を提供する標準サービス。"
+        },
+        {
+          "id": "B",
+          "text": "EMR クラスタを Auto Scaling 付きで立て、Spark ETL ジョブを自前運用する構成にする",
+          "is_correct": false,
+          "explanation": "強力だが Spark クラスタ管理が必要。設問の『管理を避けたい』要件に反する。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で 15 分以内に処理しきれる範囲のチャンクに分割して並列 ETL を実装する",
+          "is_correct": false,
+          "explanation": "大規模 ETL に Lambda の 15 分制限は不適。Glue が向く。"
+        },
+        {
+          "id": "D",
+          "text": "Athena で SQL を毎回実行し CTAS 結果を別 S3 バケットに保存して ETL 代替とする",
+          "is_correct": false,
+          "explanation": "Athena はクエリ用で ETL パイプラインの完成度では Glue に劣る。CTAS は使えるが定常 ETL は Glue が標準。"
+        }
+      ],
+      "explanation": "AWS Glue はサーバレス ETL の中核サービス。Spark 互換のジョブ実行 (Python/Scala)、Glue Data Catalog (Hive メタストア互換)、Glue Crawler (スキーマ自動発見)、Glue Studio (ビジュアル ETL)。Athena/Redshift Spectrum/EMR からも Data Catalog を共有可能。",
+      "references": [
+        {
+          "title": "AWS Glue",
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+        }
+      ],
+      "tags": [
+        "glue",
+        "etl",
+        "data-catalog"
+      ],
+      "common_mistakes": [
+        "EMR を運用 ETL の第一選択にする",
+        "Lambda で大規模 ETL を実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-043",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Athena",
+      "subtopic": "Query performance",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "S3 に CSV で 10TB のログを保管し Athena でクエリしている。クエリが遅くスキャンコストも高い。最も効果的な改善策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "データを Parquet/ORC 形式に変換し、日付・テナント等でパーティション化する",
+          "is_correct": true,
+          "explanation": "正解。列指向 + パーティション化で スキャン量が劇的に減り、クエリも高速化、コストも低下する。"
+        },
+        {
+          "id": "B",
+          "text": "Athena ワークグループを分けて並列クエリを実行する",
+          "is_correct": false,
+          "explanation": "並列化はリソース分離だが個別クエリ自体は改善しない。形式とパーティション化が根本対策。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上に PrestoDB を構築し、Athena より高速にする",
+          "is_correct": false,
+          "explanation": "Athena は内部で Trino (旧 Presto) を使う。自前構築の意味は薄い。形式変換が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "Athena を使わず、S3 Select で全クエリを置き換える",
+          "is_correct": false,
+          "explanation": "S3 Select は単一オブジェクト内クエリ用で、複数オブジェクト集約クエリには不適。"
+        }
+      ],
+      "explanation": "Athena 高速化 + コスト最適化のセオリー: 列指向形式 (Parquet/ORC) で必要列のみスキャン、パーティション化 (日付・地域・テナント等) で必要範囲のみスキャン、圧縮 (gzip/snappy) でデータ量削減、ファイルサイズ最適化 (128MB〜1GB)、Glue Data Catalog 連携。",
+      "references": [
+        {
+          "title": "Athena performance tuning",
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/performance-tuning.html"
+        }
+      ],
+      "tags": [
+        "athena",
+        "parquet",
+        "partition",
+        "performance"
+      ],
+      "common_mistakes": [
+        "ワークグループ分離で個別クエリが速くなると誤解",
+        "S3 Select を Athena 代替と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-044",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "AWS DMS",
+      "subtopic": "Database migration",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレ Oracle DB から Aurora PostgreSQL へ、ダウンタイム最小で移行したい。スキーマ変換も同時に行う必要がある。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DataSync でデータコピー + 手動でスキーマ変換する",
+          "is_correct": false,
+          "explanation": "DataSync はファイル/オブジェクト用で DB 移行には使わない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS DMS + Schema Conversion Tool (SCT) で継続レプリ + スキーマ自動変換する",
+          "is_correct": true,
+          "explanation": "正解。SCT でスキーマ自動変換、DMS で初期コピー + CDC 継続レプリ → 切替時のダウンタイム最小化が DB 移行の標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "オンプレで dump → S3 へアップロード → pg_restore で Aurora へ復元する",
+          "is_correct": false,
+          "explanation": "可能だがダウンタイムが長く、スキーマ変換も自前。DMS + SCT が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora の Cross-Region Read Replica として Oracle DB を設定する",
+          "is_correct": false,
+          "explanation": "Aurora Read Replica はエンジン違いの DB を Source にできない。"
+        }
+      ],
+      "explanation": "AWS DMS (Database Migration Service) はオンプレ → AWS、AWS → AWS の DB 移行サービス。SCT (Schema Conversion Tool) でスキーマ自動変換、DMS で初期データコピー + CDC (Change Data Capture) で継続的レプリ。切替時にアプリ接続先を変更する数分のダウンタイムで完了。",
+      "references": [
+        {
+          "title": "AWS Database Migration Service",
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"
+        }
+      ],
+      "tags": [
+        "dms",
+        "sct",
+        "migration",
+        "oracle"
+      ],
+      "common_mistakes": [
+        "DataSync を DB 移行に使おうとする",
+        "dump/restore で長時間ダウンタイムを許容してしまう"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-045",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Application Auto Scaling",
+      "subtopic": "ECS service scaling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ECS サービスのタスク数を、CPU 使用率 50% を目標に自動増減させたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EC2 Auto Scaling Group の Target Tracking を ECS タスクに適用する",
+          "is_correct": false,
+          "explanation": "EC2 ASG は EC2 インスタンス用。ECS タスクには Application Auto Scaling。"
+        },
+        {
+          "id": "B",
+          "text": "Application Auto Scaling の Target Tracking ポリシーを ECS サービスに設定する",
+          "is_correct": true,
+          "explanation": "正解。Application Auto Scaling は ECS タスク数を含む各種 AWS リソースの自動スケーリングに使う標準サービス。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で 1 分ごとに ECS タスク数を変更するスクリプトを動かす",
+          "is_correct": false,
+          "explanation": "マネージドサービスの再実装で運用負荷大。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch アラームから ECS タスク作成 API を直接呼ぶ",
+          "is_correct": false,
+          "explanation": "可能だがアラームと Auto Scaling 連携の標準パターンを使う方が安全。"
+        }
+      ],
+      "explanation": "Application Auto Scaling は ECS Service / DynamoDB / Aurora Read Replica / Lambda Provisioned Concurrency / SageMaker Endpoint 等の AWS リソースを自動スケーリングするマネージドサービス。Target Tracking / Step Scaling / Scheduled をサポート。",
+      "references": [
+        {
+          "title": "ECS service auto scaling",
+          "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html"
+        }
+      ],
+      "tags": [
+        "ecs",
+        "application-auto-scaling",
+        "target-tracking"
+      ],
+      "common_mistakes": [
+        "EC2 ASG と Application Auto Scaling を混同",
+        "Lambda で自前実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-046",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Aurora Auto Scaling",
+      "subtopic": "Read replica scaling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora MySQL クラスターの Read 負荷が時間帯で大きく変動する。Reader インスタンス数を自動的に増減させ、コストを最適化したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Reader インスタンスを最大想定数で常時起動しておく",
+          "is_correct": false,
+          "explanation": "夜間の低負荷時にもコストがかかる。Auto Scaling が直接的解。"
+        },
+        {
+          "id": "B",
+          "text": "Application Auto Scaling for Aurora を CPU 使用率や接続数で Reader 数を自動増減する",
+          "is_correct": true,
+          "explanation": "正解。Aurora Auto Scaling (Application Auto Scaling 経由) で Reader 数を Target Tracking 制御する。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で 1 時間ごとに Reader を CreateDBInstance / DeleteDBInstance する",
+          "is_correct": false,
+          "explanation": "マネージドの Aurora Auto Scaling を再実装する無駄。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora Serverless v2 に切り替え、Reader 概念を不要にする",
+          "is_correct": false,
+          "explanation": "Serverless 化は別アーキ判断。Reader 数 Auto Scaling が要件への直接的解。"
+        }
+      ],
+      "explanation": "Aurora Auto Scaling (Application Auto Scaling の一部) は Reader インスタンスの数を自動増減する機能。Target Tracking ポリシーで CPU 使用率や DatabaseConnections を目標値にする。最大 15 Reader まで自動拡張可能。",
+      "references": [
+        {
+          "title": "Aurora Auto Scaling",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Integrating.AutoScaling.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "auto-scaling",
+        "reader"
+      ],
+      "common_mistakes": [
+        "最大想定数を常時起動する",
+        "Lambda で再実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-047",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "DynamoDB",
+      "subtopic": "On-demand vs Provisioned",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "DynamoDB のキャパシティモード選択として、On-Demand が Provisioned より明確に有利なシナリオはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "トラフィックが予測しづらく、スパイクが頻発するワークロード",
+          "is_correct": true,
+          "explanation": "正解。On-Demand はリクエスト単位の従量課金で、予測不能なスパイクに即応する。"
+        },
+        {
+          "id": "B",
+          "text": "1 日中ほぼ一定で高いトラフィックがあるワークロード",
+          "is_correct": false,
+          "explanation": "安定高負荷は Provisioned + Reserved で大幅に安くなる。On-Demand は割高になる。"
+        },
+        {
+          "id": "C",
+          "text": "Multi-AZ で高可用性が必要なワークロード",
+          "is_correct": false,
+          "explanation": "Multi-AZ は両モード共通機能。モード選択の決め手にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "Global Tables で複数リージョンに展開するワークロード",
+          "is_correct": false,
+          "explanation": "Global Tables もモードと無関係。モード選択の決め手にならない。"
+        }
+      ],
+      "explanation": "DynamoDB キャパシティモード: Provisioned (事前に WCU/RCU 指定、安定負荷向け、Auto Scaling と Reserved Capacity で更にコスト最適化)、On-Demand (リクエスト単位課金、予測不能スパイク・新規アプリ向け、安定高負荷では割高)。要件に応じて切替可能 (1 日 1 回上限)。",
+      "references": [
+        {
+          "title": "DynamoDB capacity modes",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "on-demand",
+        "provisioned"
+      ],
+      "common_mistakes": [
+        "On-Demand が常に有利だと誤解",
+        "モード選択の判断基準が曖昧"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-048",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Storage Gateway",
+      "subtopic": "File Gateway",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレシステムから S3 を NFS マウントとして利用したい。頻繁にアクセスされる最新ファイルはローカルキャッシュで高速に、古いものは S3 で保管したい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Storage Gateway File Gateway をオンプレに設置し、NFS マウント + ローカルキャッシュ運用",
+          "is_correct": true,
+          "explanation": "正解。File Gateway は S3 を NFS/SMB として公開し、頻繁アクセスはローカルキャッシュ、コールドは S3 へ格納する。"
+        },
+        {
+          "id": "B",
+          "text": "AWS DataSync エージェントをオンプレに配置し、1 日 1 回オンプレから S3 への差分同期スケジュール",
+          "is_correct": false,
+          "explanation": "DataSync は同期で、NFS マウント機能やキャッシュ層は提供しない。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上に NFS サーバを構築し、定期バッチで S3 と手動同期する仕組みを自前運用する",
+          "is_correct": false,
+          "explanation": "自前構築で運用負荷大。Storage Gateway がマネージドの標準解。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Snowcone を恒常設置し、データを毎日 AWS リージョンへ物理転送する運用にする",
+          "is_correct": false,
+          "explanation": "Snowcone は携帯型エッジデバイス。恒常 NFS マウント用ではない。"
+        }
+      ],
+      "explanation": "AWS Storage Gateway は 3 種類: S3 File Gateway (NFS/SMB → S3、キャッシュ層あり)、Volume Gateway (iSCSI ブロック、Cached or Stored)、Tape Gateway (仮想テープ、バックアップ移行)。オンプレ - クラウドのハイブリッドストレージ統合の標準。",
+      "references": [
+        {
+          "title": "AWS Storage Gateway",
+          "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html"
+        }
+      ],
+      "tags": [
+        "storage-gateway",
+        "file-gateway",
+        "hybrid"
+      ],
+      "common_mistakes": [
+        "DataSync で NFS マウント機能がもらえると誤解",
+        "Snowcone を恒常用と考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-049",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "S3 Lifecycle",
+      "subtopic": "Storage class transition",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アクセスパターンが明確で、新規オブジェクトは 30 日経過したら Standard-IA、90 日後 Glacier Flexible Retrieval へ移動したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "S3 Intelligent-Tiering を有効化し、AWS の自動階層化判定にすべて任せる運用にする",
+          "is_correct": false,
+          "explanation": "アクセスパターン未知の場合に有効。設問は『パターン明確』で Lifecycle が直接的。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridge ルールで日次にバッチを起動し、各 S3 オブジェクトの作成日を評価してクラス移動",
+          "is_correct": false,
+          "explanation": "同じく Lifecycle の再実装。マネージド機能を使うべき。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda を EventBridge スケジュールで定期起動し、CopyObject + DeleteObject でクラス移動を実装",
+          "is_correct": false,
+          "explanation": "Lifecycle 機能の再実装で運用負荷大。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Lifecycle ルールで Standard → Standard-IA (30 日) → Glacier Flexible (90 日) を定義する",
+          "is_correct": true,
+          "explanation": "正解。Lifecycle ルールは時系列で明確なルールが決まっているときの標準。"
+        }
+      ],
+      "explanation": "S3 Lifecycle はオブジェクトの年齢に基づくストレージクラス移行・削除を宣言的に定義。Intelligent-Tiering は『アクセスパターンが予測しづらい』ときに有効、明確な時系列なら Lifecycle のほうがコスト最適。両者は同じバケットで併用可能。",
+      "references": [
+        {
+          "title": "S3 Lifecycle",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "lifecycle",
+        "storage-class"
+      ],
+      "common_mistakes": [
+        "全シナリオで Intelligent-Tiering を選ぶ",
+        "Lambda で再実装する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain3-050",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-3",
+        "name": "Design High-Performing Architectures",
+        "weight_percent": 24
+      },
+      "topic": "Compute Selection",
+      "subtopic": "Lambda vs Fargate vs EC2",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）コンピュートサービスの使い分けとして正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda は実行時間 15 分以内・イベント駆動・サーバレス料金体系の小規模処理に最適",
+          "is_correct": true,
+          "explanation": "正解。Lambda は短時間イベント駆動の典型ユースケース。"
+        },
+        {
+          "id": "B",
+          "text": "Fargate は OS 管理なしで長時間動くコンテナワークロードに最適、ECS/EKS の両方で使える",
+          "is_correct": true,
+          "explanation": "正解。Fargate は OS なしのコンテナ実行で、ECS/EKS で両対応。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 を全シナリオで第一候補にすべき (Fargate/Lambda は機能制限が多い)",
+          "is_correct": false,
+          "explanation": "EC2 を第一候補にすると OS 管理・キャパシティ管理の負荷が高い。マネージドが第一候補。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda は GPU 処理や 24 時間稼働の Web アプリにも適している",
+          "is_correct": false,
+          "explanation": "Lambda は GPU 非対応・15 分上限。24/7 Web アプリには ECS/EKS/EC2 が適切。"
+        }
+      ],
+      "explanation": "AWS コンピュートの使い分け: Lambda (サーバレス・15 分以内・イベント駆動)、Fargate (サーバレスコンテナ・長時間 OK・OS なし)、EC2 (フル制御・OS パッチ必要・GPU/HPC 対応)、Batch (バッチ HPC ジョブ)、Lightsail (簡易 VPS)、Beanstalk (PaaS)。マネージド寄り → 自由度低・運用負荷低 という軸で選ぶ。",
+      "references": [
+        {
+          "title": "AWS compute services",
+          "url": "https://aws.amazon.com/products/compute/"
+        }
+      ],
+      "tags": [
+        "compute",
+        "lambda",
+        "fargate",
+        "ec2",
+        "selection"
+      ],
+      "common_mistakes": [
+        "EC2 を常に第一候補にする",
+        "Lambda の制約 (15 分・GPU 非対応) を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}
