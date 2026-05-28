@@ -33,7 +33,7 @@ python3 -m http.server 8000
 | カテゴリ | 試験 | 問題数 |
 |---------|------|--------|
 | クラウド・インフラ | AWS Solutions Architect Associate (SAA-C03) | 200 |
-| | AWS Solutions Architect Professional (SAP-C02) | 0 ★準備中 |
+| | AWS Solutions Architect Professional (SAP-C02) | 40 (Domain 1、他準備中) |
 | | AWS Security (SCS-C03) | 226 |
 | | AWS GenAI Developer Pro (AIP-C01) | 155 |
 | | AWS ML Engineer Associate (MLA-C01) | 110 |
@@ -46,7 +46,7 @@ python3 -m http.server 8000
 | 経営・法務 | 中小企業診断士 1次 | 380 |
 | | ビジネス実務法務検定2級 | 150 |
 | IT基礎・情報処理 | 応用情報技術者 | 140 |
-| **合計** | **14試験** | **2,283問** |
+| **合計** | **14試験** | **2,323問** |
 
 ## ディレクトリ構成
 

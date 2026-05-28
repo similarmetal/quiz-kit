@@ -1,0 +1,3017 @@
+{
+  "exam_code": "SAP-C02",
+  "exam_name": "AWS Certified Solutions Architect – Professional",
+  "version": "2026.04",
+  "total_questions": 40,
+  "domains": [
+    {
+      "id": "domain-1",
+      "name": "Design Solutions for Organizational Complexity",
+      "weight_percent": 26,
+      "question_count": 40
+    }
+  ],
+  "questions": [
+    {
+      "id": "sap-c02-domain1-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Transit Gateway",
+      "subtopic": "Multi-VPC hub-and-spoke",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "ある企業が AWS Organizations 配下に 40 個の VPC を運用しており、これまで VPC Peering で全 VPC 間をフルメッシュで接続していたが、ピア数が爆発し管理破綻している。新規 VPC 追加時の接続作業も大きな負担。最小の管理コストで全 VPC 間ルーティングを実現する構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "VPC Peering を維持し、新規 VPC 追加時のピア設定を CloudFormation テンプレートで自動化",
+          "is_correct": false,
+          "explanation": "ピア数 N×(N-1)/2 の爆発は本質的に解決せず、ルーティング管理も複雑なまま。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Transit Gateway をハブとして全 VPC を Attachment し、ルートテーブルで通信ポリシーを集中管理する",
+          "is_correct": true,
+          "explanation": "正解。TGW は 5,000 VPC まで対応するハブ&スポーク構成で、フルメッシュの管理コストを劇的に削減する標準解。"
+        },
+        {
+          "id": "C",
+          "text": "各 VPC に NAT Gateway を配置し、VPC 間通信を Internet 経由のオーバーレイで実現する",
+          "is_correct": false,
+          "explanation": "プライベート通信を Internet 経由にする設計は機密性・コスト・レイテンシいずれも悪化する。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Direct Connect Gateway を配置し、全 VPC を関連付けて VPC 間ルーティングを実現する",
+          "is_correct": false,
+          "explanation": "DX Gateway はオンプレ↔AWS 接続用で、AWS 内部 VPC 間ルーティングは対象外。"
+        }
+      ],
+      "explanation": "Transit Gateway は中央ハブとなり最大 5,000 VPC・VPN・DX をスター型で接続。Route Table で『どの Attachment 同士が通信できるか』を集中管理。Resource Access Manager (RAM) で他アカウントへ TGW 共有可能。VPC Peering 比でスケール性と運用負荷が圧倒的に改善する。",
+      "references": [
+        {
+          "title": "AWS Transit Gateway",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html"
+        }
+      ],
+      "tags": [
+        "transit-gateway",
+        "multi-vpc",
+        "organizations"
+      ],
+      "common_mistakes": [
+        "VPC Peering をスケール解と誤解",
+        "DX Gateway を VPC 間接続に使おうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Cloud WAN",
+      "subtopic": "Global network with policy",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "5 大陸 12 リージョンに展開するエンタープライズで、リージョン跨ぎ VPC 間ルーティング・SD-WAN 統合・部署単位のセグメント分離を、宣言的ポリシーで集中管理したい。各リージョンに TGW を立てて TGW Peering で接続する構成では運用が複雑すぎる。最も適した AWS サービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "全 12 リージョンに TGW を立て、全リージョン間 Inter-Region Peering を 66 接続張る運用",
+          "is_correct": false,
+          "explanation": "12 リージョン間の Peering = 66 接続、Route Table 管理も指数的に複雑化。Cloud WAN が解。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Cloud WAN でグローバルネットワークを定義し、Network Policy ドキュメントでセグメント・ルーティングを宣言的管理する",
+          "is_correct": true,
+          "explanation": "正解。Cloud WAN は複数リージョンの VPC・SD-WAN・VPN を統一管理するマネージドサービスで、ポリシー (JSON) で宣言的にセグメント定義する。"
+        },
+        {
+          "id": "C",
+          "text": "Direct Connect Gateway を全リージョン VPC 間ルーティングのハブとして使い TGW を撤廃",
+          "is_correct": false,
+          "explanation": "DX Gateway はオンプレ接続用。VPC 間集約管理ではない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Global Accelerator を全 VPC のエンドポイントに配置し、Anycast IP で VPC 間通信する",
+          "is_correct": false,
+          "explanation": "Global Accelerator は L4 経路最適化用で、VPC 間ルーティング集約管理ではない。"
+        }
+      ],
+      "explanation": "Cloud WAN は 2022 年 GA の Global Network Backbone for AWS。Core Network Policy (JSON) で全リージョンのセグメント・ルーティング・SD-WAN 統合を宣言的に管理。Network Manager で全体可視化。TGW Peering を超えるグローバル設計の標準解。",
+      "references": [
+        {
+          "title": "AWS Cloud WAN",
+          "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html"
+        }
+      ],
+      "tags": [
+        "cloud-wan",
+        "global-network",
+        "sd-wan"
+      ],
+      "common_mistakes": [
+        "TGW Peering の限界を理解していない",
+        "Cloud WAN の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Direct Connect",
+      "subtopic": "Resilient design",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "金融系企業がオンプレと AWS 間に 10Gbps の専用線接続を構築する。99.99% の可用性が要求され、単一回線・単一データセンター・単一機材の障害でも継続接続が必要。最も適切な Direct Connect 構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Maximum Resiliency: 2 つの異なる DX Location それぞれに 2 本ずつ、計 4 本の専用線を構築する",
+          "is_correct": true,
+          "explanation": "正解。AWS の『Maximum Resiliency』モデルで 99.99% SLA を達成する公式設計パターン。"
+        },
+        {
+          "id": "B",
+          "text": "High Resiliency 構成 (2 つの異なる DX Location それぞれに 1 本ずつ、計 2 本の専用線) で構築",
+          "is_correct": false,
+          "explanation": "High Resiliency は 99.9% SLA。99.99% 要件には Maximum Resiliency が必要。"
+        },
+        {
+          "id": "C",
+          "text": "単一 DX Location 内に 2 本の専用線を冗長構築 (Development and Test Resiliency 構成)",
+          "is_correct": false,
+          "explanation": "単一 Location 障害で全停止。可用性 99% 程度の開発用構成。"
+        },
+        {
+          "id": "D",
+          "text": "Site-to-Site VPN を 4 本張って冗長化し、Direct Connect は使用しない構成にする",
+          "is_correct": false,
+          "explanation": "VPN はインターネット経由で帯域・SLA が DX に劣る。10Gbps 専用線要件に合わない。"
+        }
+      ],
+      "explanation": "AWS DX Resiliency 3 段階: Development and Test (単一 Location、~99%)、High Resiliency (2 Location 各 1 本、99.9% SLA)、Maximum Resiliency (2 Location 各 2 本、99.99% SLA)。要件 99.99% は Maximum 一択。VPN バックアップを併用すると更に堅牢。",
+      "references": [
+        {
+          "title": "AWS Direct Connect Resiliency Recommendations",
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/maximum_resiliency.html"
+        }
+      ],
+      "tags": [
+        "direct-connect",
+        "resiliency",
+        "sla"
+      ],
+      "common_mistakes": [
+        "High と Maximum Resiliency の SLA 差を区別しない",
+        "VPN で DX を完全代替できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-004",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Hybrid Connectivity",
+      "subtopic": "DX + VPN failover",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "オンプレと AWS 間で Direct Connect が稼働中。回線障害時の自動フェイルオーバとして Site-to-Site VPN をバックアップに使いたい。アプリ側で接続切替を意識させずシームレスに切り替える構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "アプリケーション層で DX 失敗を検知し、VPN 接続経路に明示的に切替えるリトライ実装",
+          "is_correct": false,
+          "explanation": "アプリで意識せずに要件があり、ネットワーク層の BGP で吸収すべき。"
+        },
+        {
+          "id": "B",
+          "text": "Route 53 Weighted ルーティングで DX 経由 100% / VPN 経由 0% に設定し障害時に手動切替",
+          "is_correct": false,
+          "explanation": "DNS 切替は TTL 遅延 + 手動運用が問題。BGP 自動切替が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "DX 経由 VIF と VPN を同じ Virtual Private Gateway / Transit Gateway に接続し、BGP で経路広告 + ローカル設定で DX 優先・VPN バックアップにする",
+          "is_correct": true,
+          "explanation": "正解。BGP の AS-PATH や Local Preference 制御で DX を優先経路、障害時に VPN へ自動切替が標準。"
+        },
+        {
+          "id": "D",
+          "text": "DX と VPN をそれぞれ別 VPC に終端し、ALB の Cross-Zone Load Balancing で経路振り分け",
+          "is_correct": false,
+          "explanation": "ALB は L7 HTTP 用でハイブリッド接続のフェイルオーバには使わない。"
+        }
+      ],
+      "explanation": "DX + VPN ハイブリッド: 両方を同一 VGW or TGW に接続、BGP 経路広告で AS-PATH 長 (VPN を長くする) や Local Preference で DX 優先、DX 障害時に BGP が自動的に VPN 経路を採用 → アプリは透過的。これがハイブリッド接続の標準パターン。",
+      "references": [
+        {
+          "title": "AWS Direct Connect Failover with VPN",
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
+        }
+      ],
+      "tags": [
+        "direct-connect",
+        "vpn",
+        "bgp",
+        "failover"
+      ],
+      "common_mistakes": [
+        "DNS や アプリ層で切替を実装する",
+        "BGP の経路制御を活かさない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-005",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "PrivateLink",
+      "subtopic": "Multi-tenant SaaS",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "SaaS 提供企業が、100 社の顧客 VPC からの閉域接続で API を提供する。各顧客 VPC の CIDR は重複可能性があり、新規契約時の接続作業も最小化したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "顧客 100 社それぞれと VPC Peering を張り、CIDR 重複時は顧客に調整を依頼する運用",
+          "is_correct": false,
+          "explanation": "Peering は CIDR 重複不可・100 顧客に手動展開が必要・推移的非対応で要件を満たさない。"
+        },
+        {
+          "id": "B",
+          "text": "API Gateway を Public エンドポイントで公開し、ソース IP 制限 + API Key で顧客識別する",
+          "is_correct": false,
+          "explanation": "閉域接続要件 (インターネット経由不可) に反する。"
+        },
+        {
+          "id": "C",
+          "text": "顧客 100 社全員と Site-to-Site VPN を個別に張り、トンネル運用を中央チームで一括管理",
+          "is_correct": false,
+          "explanation": "100 トンネルの運用は破綻、新規契約も時間がかかる。PrivateLink が圧倒的に効率的。"
+        },
+        {
+          "id": "D",
+          "text": "NLB の前段に AWS PrivateLink Endpoint Service を作成し、顧客 VPC に Interface Endpoint を作ってもらう",
+          "is_correct": true,
+          "explanation": "正解。PrivateLink は CIDR 重複 OK・1 対多にスケール可・閉域提供 SaaS の業界標準パターン。"
+        }
+      ],
+      "explanation": "AWS PrivateLink Endpoint Service は SaaS の閉域提供標準。提供者側 NLB + Endpoint Service、消費者側 Interface Endpoint で、CIDR 重複可・スケール無限・トラフィックは AWS バックボーン。100+ 顧客の SaaS 接続では必須の選択肢。",
+      "references": [
+        {
+          "title": "Sharing services through AWS PrivateLink",
+          "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html"
+        }
+      ],
+      "tags": [
+        "privatelink",
+        "saas",
+        "endpoint-service"
+      ],
+      "common_mistakes": [
+        "VPC Peering で大規模 SaaS を提供しようとする",
+        "VPN で 100 顧客を捌こうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-006",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Transit Gateway",
+      "subtopic": "Route table segmentation",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）Transit Gateway で『本番 VPC』『開発 VPC』『共有サービス VPC (例: AD、Patch サーバ)』の 3 セグメントを設計する。本番と開発は隔離、両方が共有サービスにはアクセス可、共有サービスから本番・開発への能動接続は禁止。設計として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "本番 VPC の Attachment を本番 TGW Route Table に関連付け、共有サービス VPC の CIDR を伝播させる",
+          "is_correct": true,
+          "explanation": "正解。本番 TGW Route Table に共有サービスへの経路を入れて、開発 VPC への経路は入れない。"
+        },
+        {
+          "id": "B",
+          "text": "共有サービス VPC の TGW Route Table には本番・開発の経路を一切伝播させず、共有サービスからの能動接続を遮断する",
+          "is_correct": true,
+          "explanation": "正解。共有サービス側 Route Table で本番・開発への経路を持たないことで、起動側からのアクセスを防ぐ。"
+        },
+        {
+          "id": "C",
+          "text": "TGW Route Table は 1 つしか作成できないため、Security Group で本番・開発を分離する",
+          "is_correct": false,
+          "explanation": "TGW Route Table は複数作成可能。むしろ Route Table 分離がセグメント設計の標準。"
+        },
+        {
+          "id": "D",
+          "text": "本番と開発の隔離は VPC Peering でフラットに接続後、NACL ルールで通信制御する",
+          "is_correct": false,
+          "explanation": "TGW 設計の文脈で Peering に戻すのは非合理。Route Table 分離で実現する。"
+        }
+      ],
+      "explanation": "TGW の段差設計: Attachment ごとに Association できる Route Table を選び、Propagation で どの CIDR を伝播するか を制御する。これにより『本番から共有サービスは通る、共有サービスから本番は通らない』のような片方向アクセスを宣言的に実現できる。Inspection VPC を中央に置く設計の基礎。",
+      "references": [
+        {
+          "title": "Transit Gateway route tables",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html"
+        }
+      ],
+      "tags": [
+        "transit-gateway",
+        "route-table",
+        "segmentation"
+      ],
+      "common_mistakes": [
+        "TGW Route Table が 1 つだけと誤解",
+        "Security Group でセグメント全体を制御しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-007",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "AWS RAM",
+      "subtopic": "Cross-account resource sharing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "中央 Network アカウントで作成した Transit Gateway を、Organizations 配下 30 アカウントの VPC から Attachment 可能にしたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各メンバアカウントに IAM Cross-account ロールを発行し、中央 TGW を直接操作させる",
+          "is_correct": false,
+          "explanation": "IAM 権限委譲だけでは VPC ↔ TGW Attachment にならない。RAM が必要。"
+        },
+        {
+          "id": "B",
+          "text": "各メンバアカウントで個別に TGW を作成し、TGW Peering で相互接続する設計にする",
+          "is_correct": false,
+          "explanation": "アカウント数 × TGW 料金、Peering 管理コスト爆発。RAM で 1 つの TGW 共有が正解。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Resource Access Manager (RAM) で TGW リソースを Organizations 全体に共有する",
+          "is_correct": true,
+          "explanation": "正解。RAM は TGW / VPC Subnet / Route 53 Resolver Rules 等を組織内アカウントへ共有する標準サービス。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFormation StackSets で各アカウントに TGW を複製デプロイし、相互に Peering 接続",
+          "is_correct": false,
+          "explanation": "TGW を複製しても接続されない。共有が必要で RAM が直接的解。"
+        }
+      ],
+      "explanation": "AWS Resource Access Manager (RAM) はクロスアカウントリソース共有のマネージドサービス。共有可能なリソースは TGW, Subnet, License Manager, Route 53 Resolver, Aurora Cluster, License Configuration 等。Organizations 統合で組織全体・OU 単位の共有も可能。",
+      "references": [
+        {
+          "title": "AWS Resource Access Manager",
+          "url": "https://docs.aws.amazon.com/ram/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "ram",
+        "transit-gateway",
+        "cross-account"
+      ],
+      "common_mistakes": [
+        "IAM 権限委譲で TGW Attachment 可能と誤解",
+        "TGW を各アカウントで複製する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-008",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Route 53 Resolver",
+      "subtopic": "Hybrid DNS resolution",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "オンプレ AD ドメイン (corp.example.com) のホスト名を、AWS VPC 内 EC2 から名前解決したい。逆に AWS 内のプライベートドメイン (aws.example.com) をオンプレからも解決したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Route 53 Public Hosted Zone を両ドメインで作成し、グローバル DNS でプライベート名解決する",
+          "is_correct": false,
+          "explanation": "Public 公開は機密性に問題。プライベートな相互解決には Route 53 Resolver Endpoint が標準。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 上に BIND を構築し、両方向の DNS フォワーディング設定を自前運用する構成にする",
+          "is_correct": false,
+          "explanation": "Route 53 Resolver のマネージド機能を再実装する無駄。"
+        },
+        {
+          "id": "C",
+          "text": "Outbound Endpoint だけを設定し、AWS から オンプレ方向の DNS 解決のみ対応する",
+          "is_correct": false,
+          "explanation": "オンプレ → AWS の解決ができず、要件の半分を満たさない。"
+        },
+        {
+          "id": "D",
+          "text": "Route 53 Resolver の Outbound Endpoint で AWS → オンプレ DNS 転送、Inbound Endpoint でオンプレ → AWS DNS 解決を実現する",
+          "is_correct": true,
+          "explanation": "正解。Outbound + Inbound Endpoint の組み合わせは Hybrid DNS の標準アーキテクチャ。"
+        }
+      ],
+      "explanation": "Route 53 Resolver Endpoints: Outbound (VPC → 外部 DNS、Resolver Rule と組み合わせ)、Inbound (外部 → VPC 内プライベート Hosted Zone)。両方を設置して双方向 Hybrid DNS が完成。AD 統合・オンプレ DNS との共存設計で必須機能。",
+      "references": [
+        {
+          "title": "Route 53 Resolver Hybrid DNS",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html"
+        }
+      ],
+      "tags": [
+        "route53-resolver",
+        "hybrid-dns",
+        "outbound-inbound"
+      ],
+      "common_mistakes": [
+        "Outbound だけで双方向解決可能と誤解",
+        "自前 BIND を選ぶ"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-009",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "IAM Identity Center",
+      "subtopic": "SAML federation at scale",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "社員 5,000 名・AWS アカウント 80 個のエンタープライズで、Microsoft Entra ID (Azure AD) と SSO 連携し、Permission Set でアカウント × ロールを集中管理したい。各社員には所属部署に応じた最小権限を付与する。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各アカウント × 全社員数 = 40 万 IAM ユーザを発行し、配布・管理を中央 IT で運用",
+          "is_correct": false,
+          "explanation": "実装不可能。スケーラビリティの観点で論外。"
+        },
+        {
+          "id": "B",
+          "text": "AWS IAM Identity Center を有効化、Entra ID と SAML/SCIM 連携、Permission Set + ABAC (PrincipalTag) で部署 × アカウント × ロールを集約管理",
+          "is_correct": true,
+          "explanation": "正解。Identity Center の Workforce SSO 標準パターン。ABAC で Permission Set 数の爆発も防ぐ。"
+        },
+        {
+          "id": "C",
+          "text": "各アカウントで個別に SAML 2.0 フェデレーションを設定し、80 個の信頼関係を維持する",
+          "is_correct": false,
+          "explanation": "可能だが管理破綻、新規アカウント追加時の作業も大きい。Identity Center で集中化が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon Cognito User Pool で全社員 5,000 人を管理し Identity Pool で各アカウントへ連携",
+          "is_correct": false,
+          "explanation": "Cognito は B2C 向け。社員 (Workforce) SSO は Identity Center が標準。"
+        }
+      ],
+      "explanation": "IAM Identity Center は Workforce SSO の中核。Entra ID/Okta 等と SAML/SCIM 連携、Permission Set でアカウント × ロール集中管理、ABAC (Session Tag) で『部署 × ロール』組み合わせ爆発を回避。エンタープライズ規模の SSO 設計はここから始まる。",
+      "references": [
+        {
+          "title": "IAM Identity Center",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "iam-identity-center",
+        "saml",
+        "abac",
+        "enterprise"
+      ],
+      "common_mistakes": [
+        "B2C 用の Cognito を社員 SSO に使う",
+        "Permission Set を組み合わせ爆発させる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-010",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "ABAC",
+      "subtopic": "Permission Set explosion",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "Identity Center で部署 (12 個) × プロジェクト (50 個) × 環境 (Dev/Stage/Prod) × ロール (Admin/Developer/Viewer) の組み合わせで権限管理しようとしたら 12 × 50 × 3 × 3 = 5,400 個の Permission Set が必要になった。実装上現実的でない。最も適切な解決策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "5,400 個の Permission Set を CloudFormation StackSets で自動生成し、テンプレート更新で一括変更管理する",
+          "is_correct": false,
+          "explanation": "数を減らさず管理だけ自動化するのは本質的解ではない。ABAC で集約すべき。"
+        },
+        {
+          "id": "B",
+          "text": "部署ごとに AWS アカウントを 12 個に分け、各アカウントで個別 Permission Set を 450 個ずつ作成する",
+          "is_correct": false,
+          "explanation": "問題のスケール (50 プロジェクト × 3 環境 × 3 ロール = 450 PS/部署) が残る。"
+        },
+        {
+          "id": "C",
+          "text": "ABAC を採用し、Permission Set を Role レベル (Admin/Dev/Viewer の 3 個) に集約、属性 (Department/Project/Environment) を Session Tag で渡し、IAM Policy の Condition (aws:PrincipalTag) でリソースタグと一致判定する",
+          "is_correct": true,
+          "explanation": "正解。ABAC で Permission Set 数を組み合わせ爆発から本質的に解放する標準パターン。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda Authorizer で動的に権限判定するカスタムソリューションを構築し、認可ロジックをコード化する",
+          "is_correct": false,
+          "explanation": "AWS の ABAC ネイティブ機能を再実装する無駄。標準解 (ABAC) を使う。"
+        }
+      ],
+      "explanation": "ABAC (Attribute-Based Access Control): IdP の属性 (Department/Project/Environment) を Identity Center で Session Tag に変換 → IAM ポリシーで aws:PrincipalTag/X を Condition に使い、リソースタグと一致判定。N × M × K の組み合わせ爆発を加法に変換する。",
+      "references": [
+        {
+          "title": "ABAC in IAM Identity Center",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/abac.html"
+        }
+      ],
+      "tags": [
+        "abac",
+        "permission-set",
+        "scaling"
+      ],
+      "common_mistakes": [
+        "Permission Set 数を機械的に増やす",
+        "自動化で根本問題を解決できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-011",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "SCP",
+      "subtopic": "Preventive guardrails",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下の全アカウントで『ap-northeast-1 と us-east-1 以外のリージョンでの EC2/RDS 起動を禁止』を予防的に強制したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各アカウントの IAM ロールに個別 Deny ポリシーを付与し、組織横断統一管理を諦める",
+          "is_correct": false,
+          "explanation": "アカウント追加・ロール変更ごとに漏れリスク。組織レベル強制が直接的。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Config Rule で非許可リージョン起動を検知し、Lambda Auto-Remediation で自動停止する",
+          "is_correct": false,
+          "explanation": "事後対応でリージョン外起動の一時的成立を許す。予防的コントロールが要件。"
+        },
+        {
+          "id": "C",
+          "text": "Service Control Policy (SCP) で aws:RequestedRegion 条件を使い、許可リージョン以外を Deny する",
+          "is_correct": true,
+          "explanation": "正解。SCP は組織配下の全アカウントの API 上限を予防的に強制する標準ガードレール。"
+        },
+        {
+          "id": "D",
+          "text": "CloudTrail で非許可リージョン起動イベントを継続記録し、月次レビューで違反を是正する",
+          "is_correct": false,
+          "explanation": "監査ログのみで予防にならない。SCP で実際の起動を防ぐ必要。"
+        }
+      ],
+      "explanation": "SCP は AWS Organizations 配下の全 IAM プリンシパルが実行できる API の上限を定義するガードレール。aws:RequestedRegion 条件で許可リージョンを限定する。重要: SCP は権限を付与しない (許可は IAM Policy 側)。Root アカウントの権限制限にも有効。",
+      "references": [
+        {
+          "title": "SCPs for region restriction",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html"
+        }
+      ],
+      "tags": [
+        "scp",
+        "organizations",
+        "guardrail",
+        "region"
+      ],
+      "common_mistakes": [
+        "Config Rule の事後対応で十分と考える",
+        "個別アカウント設定で完全強制を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-012",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "RCP",
+      "subtopic": "Resource-side guardrails",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）2024 年新規追加された Resource Control Policy (RCP) に関する説明として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "RCP は組織内リソースへのアクセス上限を定義し、組織外プリンシパル (別 AWS アカウント・匿名) からのアクセスも制御できる",
+          "is_correct": true,
+          "explanation": "正解。RCP はリソース側ガードレールで、外部アカウントからの読み取りも防げる。"
+        },
+        {
+          "id": "B",
+          "text": "RCP は S3 / SQS / Secrets Manager 等の主要リソースに適用可能で、SCP と組み合わせて完全な統制を実現する",
+          "is_correct": true,
+          "explanation": "正解。RCP は主要サービスのリソースポリシーに作用する補完的ガードレール。"
+        },
+        {
+          "id": "C",
+          "text": "RCP は IAM ポリシーを完全に置き換えるため、IAM Policy を別途定義する必要がなくなる",
+          "is_correct": false,
+          "explanation": "RCP も SCP も上限定義のガードレールで、許可付与は IAM Policy / Resource Policy 側の役割。"
+        },
+        {
+          "id": "D",
+          "text": "RCP は組織内プリンシパルからの API 呼び出しのみを対象とし、組織外プリンシパルは制御不可",
+          "is_correct": false,
+          "explanation": "それは SCP の役割。RCP は組織外からの呼び出しも対象に含む点が SCP との大きな違い。"
+        }
+      ],
+      "explanation": "RCP は 2024 年新規。SCP (組織内主体側ガードレール) に対し、RCP は組織内リソース側ガードレールで、外部アカウントからのアクセスも制限できる (例: S3 バケットを組織外から絶対に読まれないように強制)。SCP + RCP で立体的なゼロトラスト的ガードレールが完成する。",
+      "references": [
+        {
+          "title": "Resource Control Policies",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html"
+        }
+      ],
+      "tags": [
+        "rcp",
+        "scp",
+        "organizations",
+        "guardrail"
+      ],
+      "common_mistakes": [
+        "RCP と SCP の対象 (主体 vs リソース) を取り違える",
+        "RCP が許可を付与すると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-013",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Control Tower",
+      "subtopic": "Landing Zone setup",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "新規 AWS 環境を立ち上げる企業が、ベストプラクティス準拠のマルチアカウント構成 (Log Archive / Audit / Security アカウント分離 + ガードレール設定済み) を最小の手動作業で構築したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudFormation StackSets で各 OU・アカウントごとの Landing Zone テンプレートを手動デプロイ",
+          "is_correct": false,
+          "explanation": "実装可能だがベースライン設計から自前実装が必要。Control Tower がマネージド提供する。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Control Tower で Landing Zone を有効化し、必要 OU・アカウント・ガードレールを自動セットアップする",
+          "is_correct": true,
+          "explanation": "正解。Control Tower はベストプラクティス Landing Zone をマネージドで提供する標準サービス。"
+        },
+        {
+          "id": "C",
+          "text": "Landing Zone Accelerator (LZA) のみを単独で使い、Control Tower は採用しない構成にする",
+          "is_correct": false,
+          "explanation": "LZA は Control Tower の拡張で、より高度な要件 (FedRAMP 等) 向け。基本は Control Tower が標準。"
+        },
+        {
+          "id": "D",
+          "text": "Service Catalog で Landing Zone Product を公開し、各アカウントで起動して構築する",
+          "is_correct": false,
+          "explanation": "Service Catalog は Account Factory 等で連携使用するが、ベースライン構築自体は Control Tower の役割。"
+        }
+      ],
+      "explanation": "Control Tower はマルチアカウント環境のベストプラクティス (Landing Zone) をワンクリック構築するマネージドサービス。Log Archive / Audit アカウント自動作成、Mandatory/Strongly Recommended/Elective Guardrails、Account Factory による新規アカウント発行を統合提供。FedRAMP 等の特殊要件には LZA を併用。",
+      "references": [
+        {
+          "title": "AWS Control Tower",
+          "url": "https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html"
+        }
+      ],
+      "tags": [
+        "control-tower",
+        "landing-zone",
+        "multi-account"
+      ],
+      "common_mistakes": [
+        "StackSets で Landing Zone を自前構築",
+        "LZA を第一候補にする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-014",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Account Factory",
+      "subtopic": "Provisioned account standardization",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "新規プロジェクトのたびに AWS アカウントを発行している。発行時に標準的なネットワーク (VPC + Subnet)、IAM ロール、ログ設定、タグを統一で適用したい。手動の漏れをなくしたい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Organizations CreateAccount API を Lambda で呼び、CloudFormation で初期設定する",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大・標準化漏れリスク。Account Factory が標準。"
+        },
+        {
+          "id": "B",
+          "text": "Account Factory for Terraform (AFT) または Control Tower Account Factory で標準テンプレート付きアカウント発行を自動化する",
+          "is_correct": true,
+          "explanation": "正解。Account Factory は新規アカウント発行時のベースライン適用を標準化するマネージドサービス。"
+        },
+        {
+          "id": "C",
+          "text": "Service Catalog で『アカウント発行』を製品化し、毎回手動で Product を起動する運用",
+          "is_correct": false,
+          "explanation": "毎回起動の手動工程があり完全自動化にならない。Account Factory の方が標準。"
+        },
+        {
+          "id": "D",
+          "text": "GitHub Actions ワークフローで aws CLI スクリプトを実行し、アカウント発行を自動化する",
+          "is_correct": false,
+          "explanation": "可能だが Control Tower の Account Factory が標準化のための専用機能。"
+        }
+      ],
+      "explanation": "Control Tower Account Factory (CTAF / AFT) は新規 AWS アカウント発行時に Landing Zone のベースライン (VPC, ガードレール, IAM, ログ転送) を自動適用する仕組み。AFT は Terraform で記述可能、よりカスタマイズ柔軟。新規プロジェクト = 即座にコンプライアンス済みアカウントが定石。",
+      "references": [
+        {
+          "title": "Control Tower Account Factory",
+          "url": "https://docs.aws.amazon.com/controltower/latest/userguide/account-factory.html"
+        }
+      ],
+      "tags": [
+        "account-factory",
+        "control-tower",
+        "aft"
+      ],
+      "common_mistakes": [
+        "手動でアカウント発行後に標準化",
+        "Lambda で自前自動化"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-015",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Service Catalog",
+      "subtopic": "Self-service IT",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "開発チームに AWS リソース (RDS / EC2 / Lambda) のセルフサービス起動を許可したいが、組織標準テンプレート (VPC 設定・暗号化・タグ) からの逸脱を防ぎたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "開発チームに AdministratorAccess を付与し、Slack で標準テンプレート参照を促す運用",
+          "is_correct": false,
+          "explanation": "強制力なしでヒューマンエラー必至。Service Catalog で技術的に強制すべき。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Service Catalog で標準テンプレートを Product 化、Launch Constraint で起動権限を制御",
+          "is_correct": true,
+          "explanation": "正解。Service Catalog はセルフサービスと標準化を両立する IT カタログ機能。"
+        },
+        {
+          "id": "C",
+          "text": "CloudFormation テンプレートを GitHub に置き、開発チームに自由に複製・改変させる",
+          "is_correct": false,
+          "explanation": "複製変更が容易で標準逸脱しやすい。Catalog で配布制御が必要。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Config Rule で起動後に違反検知し、Slack/メールで開発チームに通知 + 手動修正依頼",
+          "is_correct": false,
+          "explanation": "事後対応では既にリソースが起動済み。予防的に Catalog で起動を制限するのが正攻法。"
+        }
+      ],
+      "explanation": "AWS Service Catalog は組織標準の IaC テンプレートを Product として公開、各チームに Self-service で起動させつつ Launch Constraint で実行権限制御。標準化と自律性を両立する。Control Tower Account Factory もこの上に構築されている。",
+      "references": [
+        {
+          "title": "AWS Service Catalog",
+          "url": "https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html"
+        }
+      ],
+      "tags": [
+        "service-catalog",
+        "self-service",
+        "standardization"
+      ],
+      "common_mistakes": [
+        "AdministratorAccess を付与して標準化を運用ルールに任せる",
+        "事後検知で十分と考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-016",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Cross-account assume role",
+      "subtopic": "Delegation pattern",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "中央 Security アカウントから 50 個のメンバアカウントの CloudTrail / GuardDuty findings を一元監視したい。各アカウントに直接ログインせず、適切に権限委譲したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "CloudTrail の Multi-Region Trail を Security アカウントで作成すれば自動的に全アカウントを監視できる",
+          "is_correct": false,
+          "explanation": "Multi-Region Trail は単一アカウント内の話。マルチアカウント監視は Organizations Trail (別機能)。"
+        },
+        {
+          "id": "B",
+          "text": "各メンバアカウントに IAM ユーザを作成し、アクセスキーを Security アカウント側に保管する",
+          "is_correct": false,
+          "explanation": "アクセスキーの長期保管はセキュリティリスク。短期 AssumeRole が標準。"
+        },
+        {
+          "id": "C",
+          "text": "Security アカウントの IAM Role に AdministratorAccess を付与し、全アカウントを一括操作する",
+          "is_correct": false,
+          "explanation": "ロールから他アカウントへの直接アクセスは不可能 (各アカウント側で AssumeRole 受け入れが必要)。"
+        },
+        {
+          "id": "D",
+          "text": "各メンバアカウントに『SecurityAuditRole』を作成し、信頼ポリシーで Security アカウントを許可、Security アカウント側で AssumeRole 権限を付与する",
+          "is_correct": true,
+          "explanation": "正解。クロスアカウント Role + AssumeRole は標準パターン。CloudFormation StackSets で 50 アカウントへ一括展開可能。"
+        }
+      ],
+      "explanation": "クロスアカウント AssumeRole は監査・運用の標準パターン。各メンバアカウントに Role を CloudFormation StackSet で一括作成 (信頼: Security アカウント、許可: 必要 API)、Security アカウント側のユーザに sts:AssumeRole 権限。Audit/Security 専用アカウントは Control Tower の標準構成。",
+      "references": [
+        {
+          "title": "Cross-account IAM roles",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html"
+        }
+      ],
+      "tags": [
+        "cross-account",
+        "assume-role",
+        "delegation"
+      ],
+      "common_mistakes": [
+        "IAM ユーザのアクセスキーを共有する",
+        "ロールから他アカウントへ直接アクセス可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-017",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "AWS Verified Access",
+      "subtopic": "Zero Trust application access",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "リモートワーカが社内 Web アプリにアクセスする際、VPN を使わずに ID プロバイダ認証 + デバイス信頼 + 認可ポリシーで Zero Trust アクセスを実現したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Verified Access を設定し、IdP + デバイスポリシー + Cedar 言語のアクセスポリシーで認可判定する",
+          "is_correct": true,
+          "explanation": "正解。Verified Access は VPN レスの Zero Trust アプリアクセスを提供するマネージドサービス。"
+        },
+        {
+          "id": "B",
+          "text": "Client VPN Endpoint を全リモートワーカに展開し、社内アプリへ接続させる",
+          "is_correct": false,
+          "explanation": "VPN ベースで Zero Trust ではない。要件で VPN を使わずと明示。"
+        },
+        {
+          "id": "C",
+          "text": "ALB の前段に Cognito 認証を入れ、社員ログインで保護する",
+          "is_correct": false,
+          "explanation": "認証だけでデバイス信頼やリッチな認可ポリシーは持たない。Verified Access が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "AWS WAF で IP 制限を強化し、社員自宅 IP を都度登録する",
+          "is_correct": false,
+          "explanation": "リモートワーカの IP は動的で管理破綻。Zero Trust 思想に反する。"
+        }
+      ],
+      "explanation": "AWS Verified Access は Zero Trust アプリアクセス。IdP (Identity Center / OIDC) + Trust Provider (デバイス信頼: CrowdStrike/Jamf 等) + Cedar 言語のアクセスポリシーで毎リクエスト認可判定。VPN レス・常時検証・最小権限の Zero Trust 原則を実現。",
+      "references": [
+        {
+          "title": "AWS Verified Access",
+          "url": "https://docs.aws.amazon.com/verified-access/latest/ug/what-is-verified-access.html"
+        }
+      ],
+      "tags": [
+        "verified-access",
+        "zero-trust",
+        "vpn-less"
+      ],
+      "common_mistakes": [
+        "VPN を Zero Trust と混同",
+        "認証だけで Zero Trust 達成と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-018",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Network Firewall",
+      "subtopic": "Centralized inspection VPC",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）Transit Gateway 環境で『全 VPC のインバウンド・エグレストラフィックを中央 Inspection VPC でフィルタリング』するアーキテクチャを設計する。要素として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "中央 Inspection VPC に AWS Network Firewall を配置し、TGW Route Table で全 VPC のトラフィックを Inspection VPC へ誘導する",
+          "is_correct": true,
+          "explanation": "正解。Network Firewall を中央配置することで全 VPC のセキュリティポリシーを統一強制する標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "TGW Appliance Mode を有効化し、対称的なトラフィックフローを保証する",
+          "is_correct": true,
+          "explanation": "正解。Appliance Mode はステートフル検査の対称ルーティングを保証する重要な設定。"
+        },
+        {
+          "id": "C",
+          "text": "各 VPC に個別 Network Firewall を配置し、中央集約は不要",
+          "is_correct": false,
+          "explanation": "中央集約による統一管理の利点を捨てる。設計の趣旨と逆。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Peering で全 VPC を Inspection VPC に Peering 接続する",
+          "is_correct": false,
+          "explanation": "TGW 環境で Peering を持ち込むと管理複雑化。TGW Route Table で誘導が正解。"
+        }
+      ],
+      "explanation": "Centralized Inspection VPC: TGW + Network Firewall を中央配置、各 VPC は TGW 経由 → Inspection VPC → ターゲットへルーティング。Appliance Mode で帰路も同じ Firewall を通すことでステートフル検査が破綻しないようにする。エンタープライズの北南 + 東西トラフィック検査の標準。",
+      "references": [
+        {
+          "title": "Centralized inspection architecture",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-inspection-architecture.html"
+        }
+      ],
+      "tags": [
+        "network-firewall",
+        "inspection-vpc",
+        "appliance-mode"
+      ],
+      "common_mistakes": [
+        "Appliance Mode の重要性を理解しない",
+        "各 VPC 個別配置を選んで管理コスト爆発"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-019",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "AWS Firewall Manager",
+      "subtopic": "Organization-wide WAF policy",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下 80 アカウントの全 ALB / CloudFront に統一 WAF ルール (AWS Managed Rules) を強制し、新規作成にも自動適用したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda で 80 アカウントを巡回し WAF を自動付与する自前スクリプトを構築する",
+          "is_correct": false,
+          "explanation": "マネージドサービスの再実装で運用負荷。Firewall Manager を使うべき。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFormation StackSets で WAF WebACL テンプレートを各アカウントにデプロイする",
+          "is_correct": false,
+          "explanation": "新規 ALB/CloudFront への自動適用機能がない。Firewall Manager の方が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Firewall Manager のポリシーで WAF ルールセットを組織全体に強制し、Auto Remediation で違反リソースに自動適用する",
+          "is_correct": true,
+          "explanation": "正解。Firewall Manager は WAF/Shield Advanced/Security Group/Network Firewall/DNS Firewall を組織全体集中管理する。"
+        },
+        {
+          "id": "D",
+          "text": "各アカウント管理者に WAF 設定手順書を配布し、手動で適用させる",
+          "is_correct": false,
+          "explanation": "アカウント数 × 新規作成数 × 人手で漏れ必至。技術的強制が必要。"
+        }
+      ],
+      "explanation": "AWS Firewall Manager は Organizations 配下に WAF / Shield Advanced / Security Group / Network Firewall / DNS Firewall を集中ポリシー適用する管理サービス。新規リソースにも自動適用 + Auto Remediation で違反検出時に強制適用。マルチアカウントのセキュリティ統制の標準。",
+      "references": [
+        {
+          "title": "AWS Firewall Manager",
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"
+        }
+      ],
+      "tags": [
+        "firewall-manager",
+        "waf",
+        "organizations"
+      ],
+      "common_mistakes": [
+        "StackSets で全部解決と思う",
+        "手動運用に頼る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-020",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "CloudFormation StackSets",
+      "subtopic": "Multi-account deployment",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "全 OU 配下のアカウントに統一の IAM ロール・ログ転送設定をデプロイし、新規アカウント追加時にも自動適用したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Config Conformance Pack で IAM ロール定義のコンプライアンスチェック + 自動修復",
+          "is_correct": false,
+          "explanation": "Conformance Pack はコンプライアンス評価ルールセットで、リソースデプロイ用ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Self-Managed StackSets を作成し、新規アカウント追加時に手動でターゲット追加 + デプロイ",
+          "is_correct": false,
+          "explanation": "手動工程が残り自動化要件に反する。Service-Managed が正解。"
+        },
+        {
+          "id": "C",
+          "text": "CodePipeline で各アカウントへ Sequential デプロイし、順次パイプラインを構築する",
+          "is_correct": false,
+          "explanation": "順次デプロイで規模拡大に弱い。並列処理ができる StackSets が標準。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFormation StackSets を Service-Managed Permission で作成し、Auto-deployment を有効化して新規アカウントに自動展開する",
+          "is_correct": true,
+          "explanation": "正解。Service-Managed StackSets は Organizations 統合 + Auto-deployment で新規アカウント自動展開を提供。"
+        }
+      ],
+      "explanation": "CloudFormation StackSets には Self-Managed (各アカウント側で実行ロール準備) と Service-Managed (Organizations 統合) の 2 モードがある。Service-Managed + Auto-deployment で新規アカウント自動展開を実現。Organizations 全体のベースライン展開の標準。",
+      "references": [
+        {
+          "title": "CloudFormation StackSets",
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"
+        }
+      ],
+      "tags": [
+        "stacksets",
+        "auto-deployment",
+        "organizations"
+      ],
+      "common_mistakes": [
+        "Self-Managed で大規模運用しようとする",
+        "Config Conformance Pack を誤用"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-021",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "AWS Identity Center",
+      "subtopic": "External AD integration",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "オンプレ Active Directory の社員 ID を AWS Identity Center に同期し、AWS Managed Microsoft AD は使いたくない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Identity Center の Identity Source として『External Identity Provider』を選択し、AD Connect / SAML 2.0 で接続する",
+          "is_correct": true,
+          "explanation": "正解。External IdP モードで オンプレ AD を Identity Source として直接利用できる。"
+        },
+        {
+          "id": "B",
+          "text": "オンプレ AD を完全に AWS Managed Microsoft AD に移行し、Identity Center と統合する",
+          "is_correct": false,
+          "explanation": "AWS Managed Microsoft AD を使いたくない要件に反する。"
+        },
+        {
+          "id": "C",
+          "text": "Identity Center の Identity Store にユーザを 1 件ずつ手動作成し、初期パスワードを配布",
+          "is_correct": false,
+          "explanation": "数千人を手動作成は非現実的。AD 同期 (SCIM) が標準。"
+        },
+        {
+          "id": "D",
+          "text": "AD Connector を経由する場合は別途 AWS Managed Microsoft AD ライセンスが追加必要",
+          "is_correct": false,
+          "explanation": "AD Connector は AWS Managed AD に依存せず動作する独立サービス。"
+        }
+      ],
+      "explanation": "AWS Identity Center は 3 種の Identity Source を選べる: Identity Store (自前)、AWS Managed AD、External IdP (SAML 2.0 で Entra ID/Okta、または AD Connector でオンプレ AD)。オンプレ AD ユーザを直接利用したい場合 External IdP モードが標準。",
+      "references": [
+        {
+          "title": "Identity Center identity sources",
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/identity-source.html"
+        }
+      ],
+      "tags": [
+        "identity-center",
+        "external-idp",
+        "active-directory"
+      ],
+      "common_mistakes": [
+        "AWS Managed AD への移行が必須と誤解",
+        "手動同期で運用しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-022",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Hybrid AD",
+      "subtopic": "AWS Managed AD vs AD Connector",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "オンプレ AD で管理された社員が AWS リソース (RDS for SQL Server / FSx for Windows / EC2 Windows) に AD 認証でアクセスする必要がある。AWS 側で新たな AD ユーザ管理は不要。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Simple AD を立てて、オンプレ AD のユーザを手動同期する",
+          "is_correct": false,
+          "explanation": "Simple AD は Samba ベースで AD 完全互換ではなく、AD 認証用には適さない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Managed Microsoft AD を立て、オンプレ AD と双方向信頼を設定する",
+          "is_correct": false,
+          "explanation": "可能だが AD ユーザ管理が二重化する。AD Connector のほうがシンプル。"
+        },
+        {
+          "id": "C",
+          "text": "AD Connector をオンプレ AD に接続し、AWS リソースの認証要求をオンプレ AD にプロキシする",
+          "is_correct": true,
+          "explanation": "正解。AD Connector は AWS リソース ↔ オンプレ AD のプロキシで、AWS 側にディレクトリを持たないシンプル構成。"
+        },
+        {
+          "id": "D",
+          "text": "Identity Center で AWS リソースの認証を肩代わりさせる",
+          "is_correct": false,
+          "explanation": "Identity Center は AWS API/コンソールアクセス用。RDS/FSx/EC2 ログオンの AD 認証とは別。"
+        }
+      ],
+      "explanation": "AWS Directory Service: AD Connector (オンプレ AD プロキシ、AWS 側にディレクトリ持たない、最小コスト)、AWS Managed Microsoft AD (AWS マネージドの本物の AD、双方向信頼可)、Simple AD (Samba ベース、AD 機能限定)。シンプルなプロキシ用途は AD Connector が定石。",
+      "references": [
+        {
+          "title": "AWS AD Connector",
+          "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_ad_connector.html"
+        }
+      ],
+      "tags": [
+        "ad-connector",
+        "active-directory",
+        "hybrid"
+      ],
+      "common_mistakes": [
+        "Simple AD と AD Connector を混同",
+        "Identity Center で AD 認証可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-023",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Cross-region TGW",
+      "subtopic": "Inter-Region Peering",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "東京と大阪の各リージョンに TGW を構築済み。両 TGW 間で VPC 間ルーティングを実現したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Transit Gateway Inter-Region Peering を設定し、両 TGW Route Table に相手の CIDR を伝播させる",
+          "is_correct": true,
+          "explanation": "正解。TGW Inter-Region Peering はリージョン跨ぎ TGW 接続の標準機能。"
+        },
+        {
+          "id": "B",
+          "text": "両 TGW を廃止し、新規に AWS Cloud WAN グローバルネットワークに統合する再構築を行う",
+          "is_correct": false,
+          "explanation": "Cloud WAN への切替は大規模再設計。既存 TGW を活かす Peering が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "東京と大阪の VPC 間に VPC Peering を全 VPC ペアで個別に張る構成にする",
+          "is_correct": false,
+          "explanation": "VPC 数が増えると管理破綻。TGW を活かすなら Inter-Region Peering が正解。"
+        },
+        {
+          "id": "D",
+          "text": "Site-to-Site VPN を東京 TGW ↔ 大阪 TGW 間に張り、インターネット経由で接続する",
+          "is_correct": false,
+          "explanation": "VPN はインターネット経由で AWS バックボーン経由の Peering より遅延・SLA が劣る。"
+        }
+      ],
+      "explanation": "TGW Inter-Region Peering は両リージョンの TGW を AWS バックボーンで接続する機能。両 TGW Route Table に相手リージョンの CIDR を Static Route で追加 or Propagation 設定。Cloud WAN は新規構築向け、既存 TGW なら Peering が標準。",
+      "references": [
+        {
+          "title": "TGW Inter-Region Peering",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html"
+        }
+      ],
+      "tags": [
+        "transit-gateway",
+        "inter-region",
+        "peering"
+      ],
+      "common_mistakes": [
+        "既存 TGW を捨てて Cloud WAN に移行する",
+        "VPN で TGW 間接続を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-024",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Cross-account KMS",
+      "subtopic": "Multi-account encryption",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）複数アカウントで暗号化された S3 バケット間でクロスアカウント読み書きする際、KMS キーポリシー + IAM ポリシーの設計として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "リソース所有アカウントの KMS キーポリシーで、利用側アカウントへ kms:Decrypt と kms:GenerateDataKey の委任を Allow する",
+          "is_correct": true,
+          "explanation": "正解。KMS クロスアカウントは『リソース側で委任 + 利用側で API 権限』の両方が必要。"
+        },
+        {
+          "id": "B",
+          "text": "利用側アカウントの IAM ロールに kms:Decrypt + s3:GetObject 等を付与する",
+          "is_correct": true,
+          "explanation": "正解。委任を受けた側にも実際の API 呼び出し権限が必要。"
+        },
+        {
+          "id": "C",
+          "text": "KMS Multi-Region Key を使えば自動的にクロスアカウントアクセスが解決する",
+          "is_correct": false,
+          "explanation": "Multi-Region Key はリージョン跨ぎの機能で、クロスアカウント問題は別。"
+        },
+        {
+          "id": "D",
+          "text": "IAM ポリシーだけで kms:Decrypt を許可すれば KMS キーポリシーは不要",
+          "is_correct": false,
+          "explanation": "KMS は IAM ポリシーが効くにはキーポリシー側で委任を許可する必要 (他リソースと異なる挙動)。"
+        }
+      ],
+      "explanation": "KMS クロスアカウント 2 層認可: ①リソース所有アカウントのキーポリシーで利用側アカウントを Principal として委任 (Allow)、②利用側アカウントの IAM ポリシーで該当キーへの kms:Decrypt 等を付与。両方揃ってアクセス成立。S3 SSE-KMS 経由なら s3:GetObject も別途必要。",
+      "references": [
+        {
+          "title": "Cross-account KMS access",
+          "url": "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html"
+        }
+      ],
+      "tags": [
+        "kms",
+        "cross-account",
+        "key-policy"
+      ],
+      "common_mistakes": [
+        "IAM ポリシーだけで KMS 権限制御できると誤解",
+        "Multi-Region Key で全部解決と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-025",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "VPC Sharing",
+      "subtopic": "Shared services VPC",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "中央 Network アカウントで VPC とサブネットを管理し、各アプリケーションアカウントは VPC リソースを構築する際に既存サブネットを共有利用したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "中央アカウントの VPC でアプリも全部立て、IAM Cross-account Role でアプリチームに操作させる",
+          "is_correct": false,
+          "explanation": "リソース所有が中央に集中し、アプリチームのアカウント分離が失われる。"
+        },
+        {
+          "id": "B",
+          "text": "アプリアカウントごとに別 VPC を作成し、VPC Peering で中央 VPC と接続する",
+          "is_correct": false,
+          "explanation": "VPC が分散して中央管理ができない。共有 Subnet 設計と思想が異なる。"
+        },
+        {
+          "id": "C",
+          "text": "アプリアカウントごとに別 VPC を作成し、TGW で中央 VPC に接続する",
+          "is_correct": false,
+          "explanation": "ネットワーク分離設計でリソースは集中管理されない。共有 Subnet が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "AWS RAM で Subnet を Organizations 配下のアプリアカウントに共有し、各アプリアカウントは共有 Subnet 上に EC2/Lambda/ALB を構築する",
+          "is_correct": true,
+          "explanation": "正解。Subnet 共有 (Shared VPC) は中央ネットワーク管理と分散開発を両立する標準パターン。"
+        }
+      ],
+      "explanation": "VPC Sharing (Shared VPC) は AWS RAM で Subnet 単位で他アカウントに共有する機能。中央アカウントが ネットワーク・セキュリティ・接続性 を集中管理しつつ、アプリアカウントが Subnet 上に独自リソースを構築できる。エンタープライズの ネットワーク統制と開発自由度 の両立解。",
+      "references": [
+        {
+          "title": "VPC Sharing",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html"
+        }
+      ],
+      "tags": [
+        "vpc-sharing",
+        "ram",
+        "shared-vpc"
+      ],
+      "common_mistakes": [
+        "VPC Peering / TGW で同等の効果と思う",
+        "中央アカウントに全てを集約する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-026",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Direct Connect MACsec",
+      "subtopic": "Link encryption",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "金融顧客が Direct Connect の専用線通信を物理レイヤで暗号化したい (オンプレ ↔ AWS 間の全パケット)。VPN は使いたくない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Direct Connect 上で IPsec VPN を別途構築し、暗号化トンネルを通す",
+          "is_correct": false,
+          "explanation": "実装可能だが VPN を使わない要件に反する。MACsec が直接的解。"
+        },
+        {
+          "id": "B",
+          "text": "Direct Connect MACsec (10/100 Gbps 専用) を有効化し、L2 暗号化で全パケットを保護する",
+          "is_correct": true,
+          "explanation": "正解。MACsec は L2 暗号化で VPN なしで DX 通信を保護する標準解。"
+        },
+        {
+          "id": "C",
+          "text": "アプリ層で TLS を必須化し、ネットワーク層は暗号化しない",
+          "is_correct": false,
+          "explanation": "アプリ層 TLS は要件 (物理レイヤ全パケット暗号化) を満たさない。"
+        },
+        {
+          "id": "D",
+          "text": "Direct Connect ではなく Site-to-Site VPN だけで運用する",
+          "is_correct": false,
+          "explanation": "DX 専用線を捨てる。要件 (DX 維持 + 暗号化) を満たさない。"
+        }
+      ],
+      "explanation": "AWS Direct Connect MACsec は L2 (IEEE 802.1AE) でリンクレイヤ暗号化を提供する機能。10 Gbps / 100 Gbps 専用接続でサポートされ、VPN レスで全パケット暗号化を実現。コンプライアンス・金融規制での DX 利用要件で重要。",
+      "references": [
+        {
+          "title": "Direct Connect MACsec",
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/MACsec.html"
+        }
+      ],
+      "tags": [
+        "direct-connect",
+        "macsec",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "MACsec の存在を知らない",
+        "DX 上で常に IPsec VPN が必要と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-027",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "TGW Connect",
+      "subtopic": "SD-WAN integration",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "オンプレ SD-WAN デバイス (Cisco / VMware Velocloud 等) と AWS の TGW を BGP で動的接続したい。VPN トンネルは使わずに高帯域 (5 Gbps+) を実現したい。最も適切な機能はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Direct Connect だけを使い、SD-WAN は別経路にする",
+          "is_correct": false,
+          "explanation": "DX は SD-WAN との直接 BGP 統合機能を持たない。TGW Connect が SD-WAN ネイティブ統合。"
+        },
+        {
+          "id": "B",
+          "text": "Site-to-Site VPN を冗長化し、ECMP で帯域を稼ぐ",
+          "is_correct": false,
+          "explanation": "VPN は 1 トンネル 1.25 Gbps 上限で、5 Gbps+ には不適。VPN を使わない要件にも反する。"
+        },
+        {
+          "id": "C",
+          "text": "Transit Gateway Connect Attachment で GRE トンネル + BGP 経由で SD-WAN を接続する",
+          "is_correct": true,
+          "explanation": "正解。TGW Connect は SD-WAN/サードパーティ仮想アプライアンス統合のための GRE + BGP 標準機能。"
+        },
+        {
+          "id": "D",
+          "text": "VPC Peering で SD-WAN 接続アカウントの VPC と直接接続する",
+          "is_correct": false,
+          "explanation": "Peering は L2/L3 ルーティング機能のみで SD-WAN BGP 統合とは別。"
+        }
+      ],
+      "explanation": "Transit Gateway Connect Attachment は GRE トンネル + BGP で SD-WAN や仮想アプライアンスを高帯域接続するための専用機能。Site-to-Site VPN より高スループット (アプライアンス次第で 5-20 Gbps)、BGP 動的経路。VeloCloud, Aviatrix, Silver Peak 等の SD-WAN 統合の標準。",
+      "references": [
+        {
+          "title": "Transit Gateway Connect",
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html"
+        }
+      ],
+      "tags": [
+        "tgw-connect",
+        "sd-wan",
+        "bgp"
+      ],
+      "common_mistakes": [
+        "VPN で高帯域を実現できると誤解",
+        "TGW Connect の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-028",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Organizations Move Account",
+      "subtopic": "OU restructuring",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下で『開発 OU』にある複数アカウントを『本番 OU』に移動したい。SCP が両 OU で異なる場合の挙動として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "アカウント移動と同時に新 OU の SCP が即座に適用され、旧 OU の SCP は外れる",
+          "is_correct": true,
+          "explanation": "正解。OU 移動で SCP は即時切替。実行中の API は影響を受けないが、新規 API は新 SCP に従う。"
+        },
+        {
+          "id": "B",
+          "text": "アカウント移動の完了には 24 時間以上かかり、その間 SCP が両方適用される",
+          "is_correct": false,
+          "explanation": "OU 移動は即時。両 SCP 適用も発生しない。"
+        },
+        {
+          "id": "C",
+          "text": "アカウント移動には Organizations 管理者の手動承認が必要で、Email 承認後に SCP が切替わる",
+          "is_correct": false,
+          "explanation": "管理アカウントの操作だけで完結。Email 承認フローはない。"
+        },
+        {
+          "id": "D",
+          "text": "SCP は OU 移動後も旧 OU のものが効き続け、明示的に削除する必要がある",
+          "is_correct": false,
+          "explanation": "SCP は適用先 OU に紐付くため、移動時に自動切替される。"
+        }
+      ],
+      "explanation": "Organizations の OU 階層は SCP の適用範囲を決める。アカウントを別 OU に移すと SCP は即時切替 (実行中 API には影響しない、新規 API から)。階層的な SCP 評価で、アカウント側から見ると ルート OU → 親 OU → 自 OU の全 SCP が AND で適用される。",
+      "references": [
+        {
+          "title": "Organizations move account",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_move.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "ou",
+        "scp"
+      ],
+      "common_mistakes": [
+        "OU 移動に承認や遅延があると誤解",
+        "SCP が削除しないと残ると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-029",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "AWS Network Manager",
+      "subtopic": "Global network visibility",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "TGW・VPN・DX・Cloud WAN が混在する複雑なネットワーク全体を可視化・監視・トラブルシュートしたい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "VPC Flow Logs を CloudWatch Logs Insights で分析する",
+          "is_correct": false,
+          "explanation": "Flow Logs は通信ログで全体トポロジ可視化機能はない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudWatch メトリクスを TGW・VPN・DX 個別に確認する",
+          "is_correct": false,
+          "explanation": "個別確認では全体トポロジが見えない。Network Manager の統合ビューが標準。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上に Zabbix を立て SNMP で各機器を監視する",
+          "is_correct": false,
+          "explanation": "オンプレ流アプローチ。AWS マネージドの Network Manager が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Network Manager で Global Network を定義し、トポロジ可視化・経路解析・イベント監視を統合する",
+          "is_correct": true,
+          "explanation": "正解。Network Manager は TGW/VPN/DX/Cloud WAN/SD-WAN を統合可視化するマネージドサービス。"
+        }
+      ],
+      "explanation": "AWS Network Manager は Global Network という概念で TGW/VPN/DX/Cloud WAN/SD-WAN を統合管理。トポロジ図、リアルタイムイベント、Reachability Analyzer 連携で経路解析。複雑なネットワーク運用の中央管理コンソール。",
+      "references": [
+        {
+          "title": "AWS Network Manager",
+          "url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-network-manager.html"
+        }
+      ],
+      "tags": [
+        "network-manager",
+        "global-network",
+        "visibility"
+      ],
+      "common_mistakes": [
+        "個別ツールで全体把握しようとする",
+        "オンプレ流監視ツールに頼る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-030",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "AWS Audit Manager",
+      "subtopic": "Compliance automation",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "PCI-DSS / HIPAA / SOC 2 の準拠監査のため、AWS 環境の証跡を自動収集・レポート化したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Artifact から PCI-DSS 監査レポートを直接ダウンロードして組織監査の根拠とする",
+          "is_correct": false,
+          "explanation": "Artifact は AWS 側のコンプライアンス報告 (AWS の SOC レポート等) で、顧客環境の監査ではない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Config Conformance Pack だけで PCI-DSS/HIPAA/SOC 2 監査要件を完全に満たす",
+          "is_correct": false,
+          "explanation": "Config は設定評価で、監査レポート生成・基準マッピングは Audit Manager の役割。"
+        },
+        {
+          "id": "C",
+          "text": "CloudTrail ログを毎月手動エクスポートし Excel で集計、監査レポートを手作成する",
+          "is_correct": false,
+          "explanation": "手作業で運用負荷大・漏れリスク。マネージドの Audit Manager が標準。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Audit Manager の事前定義 Framework (PCI-DSS / HIPAA 等) を有効化し、証跡自動収集 + レポート生成する",
+          "is_correct": true,
+          "explanation": "正解。Audit Manager は 監査基準ごとの Framework + 証跡自動収集 + レポート生成を提供する標準サービス。"
+        }
+      ],
+      "explanation": "AWS Audit Manager は監査証跡の自動収集と監査基準フレームワーク (PCI-DSS, HIPAA, SOC 2, GDPR 等) へのマッピング + レポート生成を提供。Config/CloudTrail/Security Hub のデータを集約。AWS Artifact は AWS のコンプライアンスレポート閲覧、Audit Manager は顧客環境の監査用と役割分担。",
+      "references": [
+        {
+          "title": "AWS Audit Manager",
+          "url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html"
+        }
+      ],
+      "tags": [
+        "audit-manager",
+        "compliance",
+        "pci-dss"
+      ],
+      "common_mistakes": [
+        "Audit Manager と Artifact を混同",
+        "手作業証跡収集に頼る"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-031",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "AWS Service Quotas",
+      "subtopic": "Quota request automation",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "新規リージョン展開時に EC2 vCPU 上限を 500 から 5,000 に引き上げる必要が頻繁にある。手動申請を自動化したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Trusted Advisor で見つけた上限を 1 つずつメールで申請する",
+          "is_correct": false,
+          "explanation": "Trusted Advisor の指摘から手動申請は自動化にならない。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Support に毎回チャットで申請を依頼する",
+          "is_correct": false,
+          "explanation": "自動化要件に反する手作業。Service Quotas API で標準化。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Service Quotas API でクォータ引き上げを programmatic に申請、CloudFormation テンプレートに含めて自動化する",
+          "is_correct": true,
+          "explanation": "正解。Service Quotas は API でクォータ確認・引き上げ申請を programmatic に実行できる。"
+        },
+        {
+          "id": "D",
+          "text": "Service Quotas は上限引き上げ申請をサポートしておらず、Account Manager に依頼するしかない",
+          "is_correct": false,
+          "explanation": "事実誤認。Service Quotas は API でセルフサービス申請を提供する。"
+        }
+      ],
+      "explanation": "AWS Service Quotas は サービスごとのクォータ (上限) を一元管理・programmatic 申請するサービス。引き上げ可能項目は AWS Support 経由で自動審査、許可後即時反映。Organizations 統合で組織横断管理も可能。",
+      "references": [
+        {
+          "title": "AWS Service Quotas",
+          "url": "https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html"
+        }
+      ],
+      "tags": [
+        "service-quotas",
+        "automation"
+      ],
+      "common_mistakes": [
+        "手動申請を続ける",
+        "Trusted Advisor で全部解決と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-032",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Cross-account replication",
+      "subtopic": "Multi-account log aggregation",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "Organizations 配下 60 アカウントの CloudTrail / VPC Flow Logs / Config を中央 Log Archive アカウントに集約保管したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Organizations の Trail (CloudTrail) / Config Aggregator / Centralized Logging Solution を組み合わせ、ログを中央 S3 に集約する",
+          "is_correct": true,
+          "explanation": "正解。Organizations 統合機能 (Org Trail / Config Aggregator / Centralized Logging) でログ集約を実現する標準。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントから Lambda で個別に S3 へログコピーする自前パイプラインを 60 アカウント分構築",
+          "is_correct": false,
+          "explanation": "自前実装で運用負荷大。マネージドの Organizations 統合機能を使う。"
+        },
+        {
+          "id": "C",
+          "text": "CloudWatch Logs を中央アカウントに Subscription Filter で転送するだけで CloudTrail/Config もカバー",
+          "is_correct": false,
+          "explanation": "CloudWatch Logs と CloudTrail/Config は別の機能。それぞれ別の集約方法が必要。"
+        },
+        {
+          "id": "D",
+          "text": "各アカウント管理者に CloudTrail/VPC Flow Logs/Config ログを毎月メール添付で送らせ統合する",
+          "is_correct": false,
+          "explanation": "完全な手作業で論外。"
+        }
+      ],
+      "explanation": "Org Trail は CloudTrail で Organizations 全アカウントの管理イベントを Log Archive アカウント S3 に集約。Config Aggregator は Config 設定変更を組織横断集約。VPC Flow Logs は各アカウントから直接中央 S3 への配信を設定 (S3 Bucket Policy で他アカウント書込許可)。",
+      "references": [
+        {
+          "title": "Organizations CloudTrail",
+          "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-trail-organization.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "centralized-logging",
+        "audit"
+      ],
+      "common_mistakes": [
+        "Lambda で自前ログ集約",
+        "CloudWatch Logs で CloudTrail も含まれると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-033",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "AWS Verified Permissions",
+      "subtopic": "Cedar policy management",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "SaaS アプリで、エンドユーザの細粒度認可 (リソース × 操作 × 属性) を一元管理したい。アプリ側で if 文を増やしたくない。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cognito User Pool Groups でリソース別の機能フラグを管理し、ユーザ属性で粗粒度認可する",
+          "is_correct": false,
+          "explanation": "Cognito Groups は粗粒度。細粒度認可 (リソース属性ベース) には Verified Permissions が適切。"
+        },
+        {
+          "id": "B",
+          "text": "IAM ポリシーをエンドユーザごとに作成して動的認可を IAM レベルで管理する構成にする",
+          "is_correct": false,
+          "explanation": "IAM は AWS API 認可用で、アプリ内のユーザ別認可には不適。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Verified Permissions に Cedar 言語のポリシーを登録し、アプリから IsAuthorized API で認可判定する",
+          "is_correct": true,
+          "explanation": "正解。Verified Permissions は Cedar 認可言語をマネージドで提供し、アプリの認可ロジック外出しに最適。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda Authorizer 内で if 文ベースの認可ロジックを量産し、追加要件ごとに改修する",
+          "is_correct": false,
+          "explanation": "認可ロジックがコード化され、変更困難でテストも難しい。Cedar で宣言的管理が標準。"
+        }
+      ],
+      "explanation": "AWS Verified Permissions は Cedar (オープンソース認可言語) をマネージドで提供し、SaaS アプリの細粒度認可を外出しする。リソース・アクション・属性に基づく宣言的ポリシー、Schema 定義、IsAuthorized API で判定。アプリのコード変更なしにポリシー変更可能。",
+      "references": [
+        {
+          "title": "AWS Verified Permissions",
+          "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-avp.html"
+        }
+      ],
+      "tags": [
+        "verified-permissions",
+        "cedar",
+        "authorization"
+      ],
+      "common_mistakes": [
+        "IAM や Cognito Groups で細粒度認可を試みる",
+        "認可をアプリコードに埋め込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-034",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Multi-account billing",
+      "subtopic": "Consolidated billing benefits",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）AWS Organizations の統合請求 (Consolidated Billing) の正しい挙動を 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "全アカウントの利用量が合算され、ボリュームディスカウント (S3, データ転送等) の階層に到達しやすくなる",
+          "is_correct": true,
+          "explanation": "正解。S3 ストレージ、データ転送料金などのボリューム課金が組織で合算される。"
+        },
+        {
+          "id": "B",
+          "text": "あるアカウントで余った Reserved Instance / Savings Plans が他アカウントの請求にも自動適用される",
+          "is_correct": true,
+          "explanation": "正解。RI/SP の余剰枠は組織内の他アカウントに共有適用される (Sharing 設定が有効な場合)。"
+        },
+        {
+          "id": "C",
+          "text": "アカウント間のデータ転送が自動的に無料になる",
+          "is_correct": false,
+          "explanation": "請求統合とデータ転送料金は別。AZ 跨ぎ・リージョン跨ぎ料金は同じ。"
+        },
+        {
+          "id": "D",
+          "text": "統合請求により IAM 権限も全アカウントで自動的に統一される",
+          "is_correct": false,
+          "explanation": "IAM は各アカウントで独立。統合請求は支払いだけの話。"
+        }
+      ],
+      "explanation": "Consolidated Billing 利点: ①ボリュームディスカウント合算 (S3/データ転送/CloudFront)、②RI/SP 共有 (組織内アカウントで余剰枠融通)、③単一支払いで運用負荷削減。注意: アカウント間データ転送料金は変わらず、IAM も独立。",
+      "references": [
+        {
+          "title": "Consolidated billing",
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "consolidated-billing"
+      ],
+      "common_mistakes": [
+        "IAM 統合と請求統合を混同",
+        "アカウント間データ転送が無料になると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-035",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "CloudHSM",
+      "subtopic": "Cross-account HSM cluster",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "金融機関で FIPS 140-2 Level 3 認証のシングルテナント HSM が必要で、複数アカウントから同じ鍵にアクセスさせたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "中央アカウントに CloudHSM クラスターを構築し、ENI 経由で他アカウント VPC からアクセスを許可する (VPC Peering or TGW 経由)",
+          "is_correct": true,
+          "explanation": "正解。CloudHSM クラスターは ENI で他 VPC からアクセス可能。マルチアカウントは VPC Peering / TGW で接続。"
+        },
+        {
+          "id": "B",
+          "text": "各アカウントで独立した CloudHSM クラスターを構築し、鍵共有は別途実装する",
+          "is_correct": false,
+          "explanation": "コスト爆発 + 鍵共有不可。要件 (同じ鍵にアクセス) を満たさない。"
+        },
+        {
+          "id": "C",
+          "text": "KMS Customer Managed Key を Multi-Region Key で展開し、CloudHSM を回避する",
+          "is_correct": false,
+          "explanation": "FIPS 140-2 Level 3 シングルテナント要件は KMS では満たせない。CloudHSM が必須。"
+        },
+        {
+          "id": "D",
+          "text": "CloudHSM は単一アカウントからのみアクセス可能で、マルチアカウント共有は不可能",
+          "is_correct": false,
+          "explanation": "事実誤認。ENI 経由でマルチ VPC・マルチアカウントアクセスを構成できる。"
+        }
+      ],
+      "explanation": "AWS CloudHSM は VPC 内に展開される FIPS 140-2 Level 3 認定のシングルテナント HSM。クラスターは ENI で公開され、別 VPC からも VPC Peering / TGW 経由でアクセス可能。マルチアカウント鍵共有は中央クラスター + ネットワーク接続で実現。",
+      "references": [
+        {
+          "title": "CloudHSM cross-account",
+          "url": "https://docs.aws.amazon.com/cloudhsm/latest/userguide/cross-account.html"
+        }
+      ],
+      "tags": [
+        "cloudhsm",
+        "fips-140-2",
+        "cross-account"
+      ],
+      "common_mistakes": [
+        "KMS で Level 3 シングルテナント要件を満たせると誤解",
+        "CloudHSM をアカウントごとに別建てする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-036",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Identity Federation",
+      "subtopic": "SAML vs OIDC",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "CI/CD パイプライン (GitHub Actions) から AWS リソースをデプロイする際、長期 IAM アクセスキーを GitHub Secrets に置きたくない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda Authorizer で GitHub Actions のリクエストを認可する",
+          "is_correct": false,
+          "explanation": "Lambda Authorizer は API Gateway 用。CI/CD の AWS API 呼び出しには使えない。"
+        },
+        {
+          "id": "B",
+          "text": "IAM ユーザを作成しアクセスキーを GitHub Secrets に保管、定期ローテーションを cron で行う",
+          "is_correct": false,
+          "explanation": "長期キー保管リスクが残る。OIDC で完全排除すべき。"
+        },
+        {
+          "id": "C",
+          "text": "SAML 2.0 で GitHub Actions と IdP 連携する",
+          "is_correct": false,
+          "explanation": "GitHub Actions は OIDC ネイティブ対応で、SAML より OIDC が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "OIDC Federation で GitHub Actions の OIDC トークンを IAM で信頼し、AssumeRoleWithWebIdentity で短期クレデンシャル取得する",
+          "is_correct": true,
+          "explanation": "正解。OIDC + AssumeRoleWithWebIdentity は CI/CD 認証の現代標準。長期キー不要。"
+        }
+      ],
+      "explanation": "OIDC Federation は GitHub Actions / GitLab CI / CircleCI 等の CI/CD と AWS の認証連携の現代標準。IAM OIDC Provider に GitHub OIDC を信頼登録、Role の信頼ポリシーで リポジトリ・ブランチ条件付き AssumeRole 許可。長期キーレス・短期クレデンシャルで安全。",
+      "references": [
+        {
+          "title": "GitHub OIDC with AWS",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html"
+        }
+      ],
+      "tags": [
+        "oidc-federation",
+        "github-actions",
+        "iam"
+      ],
+      "common_mistakes": [
+        "長期アクセスキーをローテーションだけで凌ぐ",
+        "SAML を CI/CD に使おうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-037",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Landing Zone Accelerator",
+      "subtopic": "Beyond Control Tower",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "Control Tower のベースラインを超えて、FedRAMP High や C2S 等の特殊コンプライアンス要件・マルチリージョン高度設計を必要とするケースで、より高度なマルチアカウント基盤を IaC で構築したい。最も適切な選択はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Control Tower のみで FedRAMP High 要件を完全に満たし、追加拡張は不要な構成",
+          "is_correct": false,
+          "explanation": "Control Tower は基本ベースラインで、FedRAMP/C2S 等の規制特化は LZA で拡張する。"
+        },
+        {
+          "id": "B",
+          "text": "Landing Zone Accelerator on AWS (LZA) を採用、CDK ベースの拡張可能テンプレートで FedRAMP/C2S 等の特殊要件にも対応する",
+          "is_correct": true,
+          "explanation": "正解。LZA は Control Tower 上の AWS Solutions で、規制業界・政府向けの高度な Landing Zone 構築に最適。"
+        },
+        {
+          "id": "C",
+          "text": "CloudFormation を全部自前で書いて Landing Zone を一から構築し、規制要件を満たす",
+          "is_correct": false,
+          "explanation": "実装可能だが車輪の再発明。LZA を活用すべき。"
+        },
+        {
+          "id": "D",
+          "text": "Service Catalog Marketplace で FedRAMP 対応テンプレートを購入し、組織に展開する",
+          "is_correct": false,
+          "explanation": "Service Catalog 自体は配布の仕組みで、規制適合 Landing Zone を提供しない。"
+        }
+      ],
+      "explanation": "Landing Zone Accelerator (LZA) は AWS Solutions チームが提供する Control Tower の拡張で、FedRAMP, C2S, NIST 800-53, CCCS Medium 等の高度規制要件に対応した CDK ベース Landing Zone を構築可能。規制業界・政府機関向け。新規構築なら Control Tower → 必要に応じて LZA 拡張が定石。",
+      "references": [
+        {
+          "title": "Landing Zone Accelerator on AWS",
+          "url": "https://aws.amazon.com/solutions/implementations/landing-zone-accelerator-on-aws/"
+        }
+      ],
+      "tags": [
+        "lza",
+        "control-tower",
+        "fedramp"
+      ],
+      "common_mistakes": [
+        "Control Tower で全規制要件を満たせると誤解",
+        "自前 CloudFormation で再発明する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-038",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Tag Policy",
+      "subtopic": "Standardized tagging",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Organizations 配下全アカウントで CostCenter / Project / Environment タグの命名規則とキー名を統一強制したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Config Rule で全リソースのタグ命名規則をチェックし、違反リソースを自動削除する",
+          "is_correct": false,
+          "explanation": "事後検知で予防的でなく、削除は過剰反応。Tag Policy が予防的。"
+        },
+        {
+          "id": "B",
+          "text": "AWS Organizations の Tag Policy を作成し、許可タグキー・値パターンを OU レベルで強制する",
+          "is_correct": true,
+          "explanation": "正解。Tag Policy は Organizations 統合の標準機能で、リソース作成時のタグ規則を組織横断で強制する。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で毎日全リソースを scan し、タグ命名規則違反を検出して Slack 通知する",
+          "is_correct": false,
+          "explanation": "自前実装で運用負荷大。マネージドの Tag Policy を使う。"
+        },
+        {
+          "id": "D",
+          "text": "各アカウント管理者にタグ命名ガイドラインを文書配布し、月次レビューで違反を是正",
+          "is_correct": false,
+          "explanation": "強制力なしで規則違反必至。技術的強制が必要。"
+        }
+      ],
+      "explanation": "AWS Organizations Tag Policy は組織配下のリソースに対するタグキー・値・大文字小文字の規則を強制する機能。リソース作成時 / タグ追加時に評価され、違反はブロックまたは違反登録。命名統一によるコスト集計・自動化品質が向上する。",
+      "references": [
+        {
+          "title": "AWS Organizations Tag Policies",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+        }
+      ],
+      "tags": [
+        "tag-policy",
+        "organizations",
+        "standardization"
+      ],
+      "common_mistakes": [
+        "Config Rule で事後検知だけ",
+        "文書配布で強制を試みる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-039",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Reachability Analyzer",
+      "subtopic": "Network troubleshooting",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "VPC 内 EC2 ↔ オンプレ間で通信が通らない。Security Group / NACL / ルートテーブル / TGW 設定のどこに問題があるか効率的に特定したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "VPC Reachability Analyzer で 2 つのエンドポイント間の到達可能性を解析する",
+          "is_correct": true,
+          "explanation": "正解。Reachability Analyzer は SG/NACL/ルートテーブル/TGW を統合解析し、到達可能性と障害箇所を出力する標準ツール。"
+        },
+        {
+          "id": "B",
+          "text": "VPC Flow Logs を Athena で全パケット分析する",
+          "is_correct": false,
+          "explanation": "通信が通らない場合 Flow Logs にもログが残らないことが多い。Reachability Analyzer が直接的。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 上から ping / traceroute を実行して経路を辿る",
+          "is_correct": false,
+          "explanation": "実機テストで設定問題の根本特定はできない。Reachability Analyzer の静的解析が効率的。"
+        },
+        {
+          "id": "D",
+          "text": "CloudWatch Logs で全 VPC イベントをフィルタする",
+          "is_correct": false,
+          "explanation": "ネットワーク設定の到達性解析機能はない。"
+        }
+      ],
+      "explanation": "VPC Reachability Analyzer は『始点 → 終点』の到達可能性を SG/NACL/ルートテーブル/TGW/IGW/NAT/Peering 等を解析して評価する静的解析ツール。実トラフィックを送らず判定可能。Network Manager と統合され、TGW を含む複雑ネットワークも解析できる。",
+      "references": [
+        {
+          "title": "VPC Reachability Analyzer",
+          "url": "https://docs.aws.amazon.com/vpc/latest/reachability/what-is-reachability-analyzer.html"
+        }
+      ],
+      "tags": [
+        "reachability-analyzer",
+        "troubleshooting"
+      ],
+      "common_mistakes": [
+        "Flow Logs で通らない通信を分析しようとする",
+        "ping/traceroute で根本原因を特定する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "sap-c02-domain1-040",
+      "version": "1.0",
+      "exam": {
+        "code": "SAP-C02",
+        "name": "AWS Certified Solutions Architect – Professional",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-1",
+        "name": "Design Solutions for Organizational Complexity",
+        "weight_percent": 26
+      },
+      "topic": "Multi-account migration",
+      "subtopic": "Account move",
+      "cognitive_level": "L5-Evaluate",
+      "difficulty": "hard",
+      "stem": "他社買収で吸収したスタンドアロン AWS アカウントを自社 Organizations に統合したい。リソース停止なしで実施したい。手順として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Organizations の招待 (Invite) で買収アカウントを参加させ、Accept してから Move で適切な OU に配置する",
+          "is_correct": true,
+          "explanation": "正解。Invite + Accept パターンで既存アカウントを統合する標準手順。リソース無停止。"
+        },
+        {
+          "id": "B",
+          "text": "新規アカウントを Organizations 配下に作成し、買収アカウントの全リソースを移行する",
+          "is_correct": false,
+          "explanation": "全リソース移行は膨大な手間 + ダウンタイム発生。Invite 統合で済む。"
+        },
+        {
+          "id": "C",
+          "text": "買収アカウントを Organizations 管理アカウントに置き換える",
+          "is_correct": false,
+          "explanation": "管理アカウントへの置き換えは大改造。標準パターンではない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Organizations は他社既存アカウントの統合に対応していない",
+          "is_correct": false,
+          "explanation": "事実誤認。Invite + Accept で統合可能。"
+        }
+      ],
+      "explanation": "AWS Organizations の既存アカウント統合: Org 管理アカウントから Invite 送信 → 対象アカウントで Accept → 統合完了 → 必要に応じて OU に Move。買収アカウントを停止せず統合できる標準パターン。SCP 適用は OU 配置時点から有効化。",
+      "references": [
+        {
+          "title": "Inviting an account to your organization",
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html"
+        }
+      ],
+      "tags": [
+        "organizations",
+        "invite",
+        "m-and-a"
+      ],
+      "common_mistakes": [
+        "全リソース移行を試みる",
+        "Organizations 統合が困難と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}
