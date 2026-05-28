@@ -1,0 +1,3786 @@
+{
+  "exam_code": "SAA-C03",
+  "exam_name": "AWS Certified Solutions Architect – Associate",
+  "version": "2026.04",
+  "total_questions": 50,
+  "domains": [
+    {
+      "id": "domain-2",
+      "name": "Design Resilient Architectures",
+      "weight_percent": 26,
+      "question_count": 50
+    }
+  ],
+  "questions": [
+    {
+      "id": "saa-c03-domain2-001",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Target Tracking vs Step",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "EC2 Auto Scaling Group の CPU 使用率を 60% 前後に維持したい。ピーク時もしきい値を細かく刻まず、できるだけシンプルに運用したい。最も適切なスケーリングポリシーはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Target Tracking スケーリングポリシーで CPU 使用率の目標値を 60% に設定する",
+          "is_correct": true,
+          "explanation": "正解。目標値を 1 つ指定するだけで、AWS が増減を自動算出する最もシンプルな方式。"
+        },
+        {
+          "id": "B",
+          "text": "Step スケーリングポリシーで CPU 区分ごとに段階的増減量を細かく定義する",
+          "is_correct": false,
+          "explanation": "細かい制御は可能だが、しきい値の刻みやアラーム設計が必要で運用が複雑化する。"
+        },
+        {
+          "id": "C",
+          "text": "Simple スケーリングポリシーで CPU > 60% のとき固定台数を追加する",
+          "is_correct": false,
+          "explanation": "Simple は冷却期間中に追加スケーリングできず、近年は Step/Target Tracking が推奨。"
+        },
+        {
+          "id": "D",
+          "text": "Scheduled スケーリングで時間帯ごとの台数を固定し CPU 連動は使わない",
+          "is_correct": false,
+          "explanation": "予測可能な時間負荷には有効だが、CPU 連動の自動応答という要件を満たさない。"
+        }
+      ],
+      "explanation": "Target Tracking は「指標 = 目標値」を維持するように AWS が自動で増減量を計算する方式で、最もシンプル。Step は段階的な細かい制御が必要なとき、Predictive は学習済み周期負荷向け、Scheduled は時刻ベースに使う。",
+      "references": [
+        {
+          "title": "Target tracking scaling policies",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "target-tracking",
+        "ec2"
+      ],
+      "common_mistakes": [
+        "Step スケーリングが常に高度で優れていると思う",
+        "Simple スケーリングを今でも推奨と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-002",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Mixed instances policy",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Web 層の Auto Scaling Group でコストを最小化したい。一定数は常時稼働を保証し、残りはコスト最小のスポットインスタンスで賄いたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mixed Instances Policy で On-Demand ベース台数 + Spot を組み合わせ、複数インスタンスタイプを許可する",
+          "is_correct": true,
+          "explanation": "正解。ベース台数を On-Demand で固定し、超過分を複数タイプの Spot で確保するのが標準。"
+        },
+        {
+          "id": "B",
+          "text": "ASG を 2 個に分け、片方を On-Demand、もう片方を Spot で運用し ALB で束ねる",
+          "is_correct": false,
+          "explanation": "実装可能だが ASG が分散し、容量配分・ヘルスチェック・スケーリングの一括管理が難しい。"
+        },
+        {
+          "id": "C",
+          "text": "全インスタンスを Spot Instance で構成し、AZ 障害時のみ On-Demand に切替える",
+          "is_correct": false,
+          "explanation": "Spot は中断リスクがあるため、最低稼働保証 (ベース) を必ず On-Demand で確保すべき。"
+        },
+        {
+          "id": "D",
+          "text": "Reserved Instance を購入して固定し、Auto Scaling を無効化する",
+          "is_correct": false,
+          "explanation": "RI 購入は値引き対象だが、Auto Scaling を止めると負荷追従できなくなる。"
+        }
+      ],
+      "explanation": "Mixed Instances Policy は 1 つの ASG 内で On-Demand と Spot を混ぜ、複数インスタンスタイプを許可することで Spot 中断耐性とコスト効率を両立する。ベース台数 (BaseCapacity) は必ず On-Demand で確保する設計が定石。",
+      "references": [
+        {
+          "title": "Auto Scaling groups with multiple instance types",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "spot",
+        "mixed-instances",
+        "cost"
+      ],
+      "common_mistakes": [
+        "100% Spot で構成して最低稼働が落ちる",
+        "ASG を分けてしまい運用負荷増"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-003",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Predictive scaling",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "EC コマースの ASG で、毎朝 9 時の急峻なトラフィック増に対し、Target Tracking では立ち上げが間に合わず接続エラーが発生する。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Predictive Scaling を有効化し、過去パターンから事前に容量を増やす",
+          "is_correct": true,
+          "explanation": "正解。Predictive Scaling は機械学習で日次/週次パターンを学習し、急増前にスケールアウトする。"
+        },
+        {
+          "id": "B",
+          "text": "Target Tracking の目標 CPU 使用率を 30% まで下げて常時余裕を確保する",
+          "is_correct": false,
+          "explanation": "常時過剰プロビジョニングとなりコストが大きく増える。前倒し起動で解決すべき。"
+        },
+        {
+          "id": "C",
+          "text": "EC2 起動テンプレートのインスタンスタイプを最大にし、台数を 1 台で耐える",
+          "is_correct": false,
+          "explanation": "垂直スケールは限界があり、単一インスタンス障害で全停止する設計上のリスクが大きい。"
+        },
+        {
+          "id": "D",
+          "text": "Lambda で毎朝 8 時に desired capacity を手動増加するスクリプトを動かす",
+          "is_correct": false,
+          "explanation": "Scheduled スケーリングで宣言的に書ける処理を Lambda で再実装するのは無駄。"
+        }
+      ],
+      "explanation": "急峻な周期負荷には Predictive Scaling か Scheduled Scaling を Target Tracking と組み合わせる。Predictive は過去 14 日間の CloudWatch メトリクスから学習し、最大 48 時間先までの容量計画を生成する。",
+      "references": [
+        {
+          "title": "Predictive scaling for Amazon EC2 Auto Scaling",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "predictive-scaling",
+        "warm-up"
+      ],
+      "common_mistakes": [
+        "Target Tracking だけで急峻負荷を捌こうとする",
+        "Lambda で Scheduled の再実装"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-004",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Lifecycle hooks",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "EC2 のスケールイン時、終了前にログを S3 へ転送する処理を確実に実行したい。Auto Scaling 側で最も適切に実現する仕組みはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "起動テンプレートの UserData にシャットダウン時の終了処理スクリプトを記述しておく",
+          "is_correct": false,
+          "explanation": "UserData は起動時のみ実行で、終了時には呼ばれない。"
+        },
+        {
+          "id": "B",
+          "text": "EC2 シャットダウン時に OS の systemd ユニットでログ転送するだけで運用上十分とする",
+          "is_correct": false,
+          "explanation": "OS 側の処理だけでは、AWS 側の終了タイミング保証や失敗時の再試行が難しい。"
+        },
+        {
+          "id": "C",
+          "text": "ALB のターゲット登録解除遅延 (Deregistration Delay) を 300 秒に設定して退避を試みる",
+          "is_correct": false,
+          "explanation": "登録解除遅延は接続ドレインの話で、ログ転送の保証にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "Lifecycle Hook の Terminating 状態を構成し、ログ転送完了後に CompleteLifecycleAction を発行する",
+          "is_correct": true,
+          "explanation": "正解。Terminating:Wait 状態で待機させ、転送完了を待ってから終了させられる。"
+        }
+      ],
+      "explanation": "Auto Scaling Lifecycle Hook は『Pending:Wait』『Terminating:Wait』の 2 状態で処理を差し込める。終了前のログ退避、起動前のヘルスチェック、構成同期などに使う。EventBridge と組み合わせ Lambda で処理することが多い。",
+      "references": [
+        {
+          "title": "Lifecycle hooks for Amazon EC2 Auto Scaling",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "lifecycle-hook",
+        "termination"
+      ],
+      "common_mistakes": [
+        "UserData で終了処理ができると誤解",
+        "OS シャットダウンだけで保証可能と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-005",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Warm pool",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "AMI の起動完了までに 5 分以上かかる重いアプリで、スケールアウト時の応答遅延を最小化したい。最も適した Auto Scaling 機能はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Instance Refresh で常時全インスタンスを更新し続け、起動を分散させる",
+          "is_correct": false,
+          "explanation": "Instance Refresh は AMI 更新時のローリング置換で、起動高速化機能ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Target Tracking のクールダウン時間を 0 秒に設定して即時応答にする",
+          "is_correct": false,
+          "explanation": "クールダウンを 0 にしても AMI 起動自体の所要時間は変わらない。"
+        },
+        {
+          "id": "C",
+          "text": "AMI を AWS Backup で保護し、復元速度を上げる構成にする",
+          "is_correct": false,
+          "explanation": "AMI バックアップは別の用途で、起動高速化の手段ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Warm Pool で停止状態の EC2 を事前準備し、スケールアウト時に即時起動して使う",
+          "is_correct": true,
+          "explanation": "正解。Warm Pool は停止または Hibernated 状態でインスタンスを保持し、起動時間を短縮する機能。"
+        }
+      ],
+      "explanation": "Warm Pool は重い起動処理を持つアプリの応答性改善に有効。停止 (Stopped) 状態で待機させると EBS 料金のみで保持でき、Hibernated 状態ならメモリも保存される。スケールアウト時は『起動 → InService』への遷移が高速化される。",
+      "references": [
+        {
+          "title": "Warm pools for Amazon EC2 Auto Scaling",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "warm-pool",
+        "startup-time"
+      ],
+      "common_mistakes": [
+        "クールダウン調整で起動時間を解決できると誤解",
+        "Instance Refresh の用途を取違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-006",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Auto Scaling",
+      "subtopic": "Termination policy",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Auto Scaling Group が縮小するとき、デフォルトで最も古い起動設定/テンプレートのインスタンスから優先して終了する目的として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "コストを最小化するため、最も値段の高いインスタンスから順に終了する",
+          "is_correct": false,
+          "explanation": "値段ではなく構成の鮮度がデフォルト基準。料金順は対象外。"
+        },
+        {
+          "id": "B",
+          "text": "AZ ごとのバランスを保ち、構成が古いインスタンスを優先終了して常に最新化する",
+          "is_correct": true,
+          "explanation": "正解。デフォルトは『AZ 均等化 → 最古起動設定 → 直近請求時間に近いもの → ランダム』の順で終了対象を選ぶ。"
+        },
+        {
+          "id": "C",
+          "text": "起動が最も新しいインスタンスを終了して、安定性を保つ",
+          "is_correct": false,
+          "explanation": "デフォルトは最新ではなく最古起動設定を優先する。新しいものは新構成で残したい。"
+        },
+        {
+          "id": "D",
+          "text": "現在 CPU 使用率が最も低いインスタンスを終了する",
+          "is_correct": false,
+          "explanation": "CPU 利用率はデフォルト終了基準には含まれない。"
+        }
+      ],
+      "explanation": "デフォルトの Termination Policy は『AZ Balance → Oldest Launch Configuration → Closest to Next Billing Hour → Random』。AZ バランスを優先しつつ、構成が古いものから順に置き換えるのが思想。Custom Termination Policy で変更可能。",
+      "references": [
+        {
+          "title": "Control which Auto Scaling instances terminate during scale in",
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html"
+        }
+      ],
+      "tags": [
+        "auto-scaling",
+        "termination-policy"
+      ],
+      "common_mistakes": [
+        "コスト最小化が基準と誤解",
+        "CPU 使用率が基準だと思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-007",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "ELB",
+      "subtopic": "ALB vs NLB",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "ゲーム会社が UDP プロトコルで毎秒数百万パケットを処理する超低レイテンシの通信を捌きたい。クライアントには静的な接続先 IP を提供したい。最も適切な ELB はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Application Load Balancer (ALB) で UDP リスナーを構成する",
+          "is_correct": false,
+          "explanation": "ALB は L7 (HTTP/HTTPS/gRPC) 専用で UDP に対応しない。"
+        },
+        {
+          "id": "B",
+          "text": "Gateway Load Balancer (GWLB) でアプリトラフィックを分散する",
+          "is_correct": false,
+          "explanation": "GWLB はサードパーティ仮想アプライアンス挿入用で、アプリ LB ではない。"
+        },
+        {
+          "id": "C",
+          "text": "Network Load Balancer (NLB) を TCP/UDP リスナーで構成し、静的 IP/Elastic IP を割り当てる",
+          "is_correct": true,
+          "explanation": "正解。NLB は L4 で TCP/UDP/TLS をサポートし、AZ ごとに静的 IP を持つ超低レイテンシ LB。"
+        },
+        {
+          "id": "D",
+          "text": "Classic Load Balancer (CLB) で UDP リスナーを構成する",
+          "is_correct": false,
+          "explanation": "CLB は非推奨で UDP もサポートしない。新規構築では使わない。"
+        }
+      ],
+      "explanation": "ALB = L7 HTTP/HTTPS/gRPC、NLB = L4 TCP/UDP/TLS + 静的 IP + 超低レイテンシ、GWLB = L3 でセキュリティアプライアンス挿入、CLB = 旧式。UDP やゲーム/IoT 等の低レイテンシは NLB が標準解。",
+      "references": [
+        {
+          "title": "Network Load Balancer features",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+        }
+      ],
+      "tags": [
+        "nlb",
+        "udp",
+        "low-latency",
+        "elb"
+      ],
+      "common_mistakes": [
+        "ALB が万能だと思う",
+        "GWLB をアプリ LB と勘違いする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-008",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "ELB",
+      "subtopic": "Sticky session",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ALB 配下の Web アプリで、ユーザのセッション情報をローカルメモリに保持している。負荷分散時に同一ユーザを同じターゲットへ振り続けたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "セッション情報を ElastiCache for Redis に外出しし、ターゲットは固定しない",
+          "is_correct": false,
+          "explanation": "別の有効解だがアプリ改修が必要。設問は『ローカル保持を維持しつつ』を含意する。"
+        },
+        {
+          "id": "B",
+          "text": "NLB に切り替えて TCP 接続単位で同一ターゲットへ固定する",
+          "is_correct": false,
+          "explanation": "NLB はクライアント IP ベースのフローハッシュで分散するが、Cookie ベースのスティッキーは非対応。"
+        },
+        {
+          "id": "C",
+          "text": "ALB のターゲットグループでスティッキーセッション (期間ベース Cookie) を有効化する",
+          "is_correct": true,
+          "explanation": "正解。AWSALB Cookie でユーザと特定ターゲットを紐付け、同一ターゲットへルーティングする。"
+        },
+        {
+          "id": "D",
+          "text": "CloudFront のキャッシュキーにユーザ ID を含めて同一オリジンに振る",
+          "is_correct": false,
+          "explanation": "CloudFront のキャッシュ制御は、ALB のターゲット選択には影響しない。"
+        }
+      ],
+      "explanation": "ALB のスティッキーセッションには『期間ベース (ALB 発行 AWSALB Cookie)』と『アプリベース (アプリ発行 Cookie)』の 2 種類。ローカルメモリ保持を続けるならスティッキーが手早い。スケール耐性を求めるなら C のセッション外出しが本質的解だが、設問の前提は維持。",
+      "references": [
+        {
+          "title": "Sticky sessions for Application Load Balancers",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/sticky-sessions.html"
+        }
+      ],
+      "tags": [
+        "alb",
+        "sticky-session",
+        "cookie"
+      ],
+      "common_mistakes": [
+        "NLB で Cookie スティッキー可能と誤解",
+        "CloudFront でターゲット選択を制御できると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-009",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "ELB",
+      "subtopic": "Cross-zone load balancing",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）ELB のクロスゾーン負荷分散 (Cross-Zone Load Balancing) に関する説明として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ALB は Cross-Zone がデフォルトで有効、AZ 跨ぎの転送料金は発生しない",
+          "is_correct": true,
+          "explanation": "正解。ALB は Cross-Zone が常時有効で、ALB → ターゲット間の AZ 跨ぎ通信に追加料金がかからない。"
+        },
+        {
+          "id": "B",
+          "text": "NLB は Cross-Zone がデフォルトで無効、有効化すると AZ 跨ぎデータ転送料金が発生する",
+          "is_correct": true,
+          "explanation": "正解。NLB は既定 OFF。ON にすると AZ 跨ぎ通信に EC2 リージョン内データ転送料が課金される。"
+        },
+        {
+          "id": "C",
+          "text": "ALB も NLB も Cross-Zone はデフォルトで無効で、ターゲット間の負荷は AZ ごとに偏る",
+          "is_correct": false,
+          "explanation": "ALB はデフォルト ON。NLB のみデフォルト OFF。"
+        },
+        {
+          "id": "D",
+          "text": "Cross-Zone を有効にしても AZ 障害時のフェイルオーバ動作には一切影響しない",
+          "is_correct": false,
+          "explanation": "AZ 障害時の挙動に大きく影響する。Cross-Zone ON だと残存 AZ のターゲットへ均等に流せる。"
+        }
+      ],
+      "explanation": "Cross-Zone Load Balancing は ELB が全 AZ のターゲットへ均等分散するか、AZ ごとに分散するかの設定。ALB は常時 ON で料金もなし、NLB はデフォルト OFF で ON にすると AZ 跨ぎ転送料金が発生。各 AZ のターゲット台数が偏るときに ON が有効。",
+      "references": [
+        {
+          "title": "Cross-zone load balancing",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#cross-zone-load-balancing"
+        }
+      ],
+      "tags": [
+        "elb",
+        "cross-zone",
+        "alb",
+        "nlb"
+      ],
+      "common_mistakes": [
+        "ALB も NLB も同じデフォルト値だと思う",
+        "Cross-Zone を有効化しても料金が変わらないと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-010",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "ELB",
+      "subtopic": "Gateway Load Balancer",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "サードパーティ製の仮想ファイアウォールを VPC のトラフィック経路に透過挿入し、IPS/IDS 機能を提供したい。最も適した AWS サービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gateway Load Balancer (GWLB) と GENEVE プロトコルで仮想アプライアンスを挿入する",
+          "is_correct": true,
+          "explanation": "正解。GWLB は L3 で透過的にトラフィックを仮想アプライアンスに通す専用 LB。"
+        },
+        {
+          "id": "B",
+          "text": "Application Load Balancer (ALB) の listener rule にセキュリティアプライアンスを挿入する",
+          "is_correct": false,
+          "explanation": "ALB はアプリ LB で、L3 透過挿入の役割を持たない。"
+        },
+        {
+          "id": "C",
+          "text": "NLB の前段にファイアウォール EC2 を置き、ルートテーブルで経路を曲げる",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大で AZ 障害耐性も自前確保。GWLB が標準解。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Network Firewall を使い、サードパーティ製ファイアウォールを置換する",
+          "is_correct": false,
+          "explanation": "Network Firewall は AWS 製で、設問の『サードパーティ製を挿入したい』に合わない。"
+        }
+      ],
+      "explanation": "GWLB は 3rd party 仮想ファイアウォール/IPS/DLP/可視化アプライアンスを VPC に挿入するための専用 LB。GENEVE トンネルでトラフィックを透過挿入し、AZ 障害時のフェイルオーバも担う。AWS Marketplace 連携の標準パターン。",
+      "references": [
+        {
+          "title": "Gateway Load Balancers",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html"
+        }
+      ],
+      "tags": [
+        "gwlb",
+        "geneve",
+        "appliance",
+        "firewall"
+      ],
+      "common_mistakes": [
+        "GWLB と ALB/NLB を混同",
+        "AWS Network Firewall でサードパーティ製を置換できると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-011",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "ELB",
+      "subtopic": "Path-based routing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "1 つのドメイン配下で /api/* は API ターゲットへ、/static/* は別ターゲットへ振り分けたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Route 53 のルーティングポリシーでパスごとに別のレコードを返す",
+          "is_correct": false,
+          "explanation": "Route 53 は DNS レベルでパス情報を見られない。L7 のパス制御は ALB の役割。"
+        },
+        {
+          "id": "B",
+          "text": "NLB で TCP リスナーを 2 つ作り、ポート番号でターゲットを分ける",
+          "is_correct": false,
+          "explanation": "NLB は L4 でパス情報を見られない。同一ポート同一プロトコルで振り分けは不可能。"
+        },
+        {
+          "id": "C",
+          "text": "CloudFront のビヘイビアでパスごとにオリジンを切替え、ALB を 2 個用意する",
+          "is_correct": false,
+          "explanation": "実装可能だが ALB は 1 個でリスナールールで十分。構成が冗長になる。"
+        },
+        {
+          "id": "D",
+          "text": "ALB のリスナールールでパスパターンに基づいて異なるターゲットグループへ転送する",
+          "is_correct": true,
+          "explanation": "正解。ALB のパスベースルーティングは複数ターゲットグループへの宣言的振り分けに最適。"
+        }
+      ],
+      "explanation": "ALB のリスナールールはパス・ホスト・HTTP ヘッダ・ソース IP・クエリ・HTTP メソッドで条件分岐できる。マイクロサービス間のルーティング、A/B テスト、メンテナンス画面差し替え等に多用する基本機能。",
+      "references": [
+        {
+          "title": "Application Load Balancer listener rules",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-rules.html"
+        }
+      ],
+      "tags": [
+        "alb",
+        "path-routing",
+        "listener-rule"
+      ],
+      "common_mistakes": [
+        "NLB でパスベース制御できると誤解",
+        "Route 53 がパスを見られると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-012",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "ELB",
+      "subtopic": "SSL termination",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "クライアント証明書を使った mTLS で、ELB がアプリへ TLS を終端せず、そのまま通過させる必要がある。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "ALB を HTTPS リスナーで構成し、ALB で TLS 終端後にバックエンドへ HTTP で渡す",
+          "is_correct": false,
+          "explanation": "ALB は TLS を終端するため、クライアント証明書がアプリに到達しない。"
+        },
+        {
+          "id": "B",
+          "text": "CloudFront 経由でアクセスし、Field-level Encryption で証明書情報を渡す",
+          "is_correct": false,
+          "explanation": "Field-level Encryption は別目的の機能。mTLS パススルーには対応しない。"
+        },
+        {
+          "id": "C",
+          "text": "NLB の TLS パススルー (TCP リスナー) を使い、アプリ側で TLS 終端する",
+          "is_correct": true,
+          "explanation": "正解。NLB の TCP リスナーは暗号文をそのまま通すため、アプリで mTLS を完了できる。"
+        },
+        {
+          "id": "D",
+          "text": "API Gateway の HTTP API で mTLS 機能を有効化し、ALB の代わりに使う",
+          "is_correct": false,
+          "explanation": "API Gateway も選択肢になり得るが、ALB との直接置換は構成変更が大きい。NLB の TLS パススルーが要件に合う最小変更。"
+        }
+      ],
+      "explanation": "ELB での TLS 取扱: ALB は L7 で必ず TLS 終端 (アプリへ復号後通信)、NLB の TLS リスナーは終端可能だが TCP リスナーで暗号文をそのままパススルーも可能。mTLS でアプリ側に証明書を渡したいなら NLB の TCP パススルーが標準解。",
+      "references": [
+        {
+          "title": "Network Load Balancer TLS listeners",
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html"
+        }
+      ],
+      "tags": [
+        "nlb",
+        "mtls",
+        "tls-passthrough"
+      ],
+      "common_mistakes": [
+        "ALB で mTLS パススルー可能と誤解",
+        "NLB が必ず TLS 終端すると思い込む"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-013",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Route 53",
+      "subtopic": "Weighted routing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "新バージョンのアプリを 10% のユーザに限定して段階的にリリースし、問題なければ徐々に比率を上げたい。最も適切な Route 53 ルーティングポリシーはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Failover ルーティングで Primary を新版、Secondary を旧版に設定する",
+          "is_correct": false,
+          "explanation": "Failover は DR/障害切替用で、割合制御には使えない。"
+        },
+        {
+          "id": "B",
+          "text": "Weighted ルーティングで新旧 ALB のレコードに 10:90 の重みを設定する",
+          "is_correct": true,
+          "explanation": "正解。Weighted は割合トラフィック振り分けの標準で、A/B テストや段階リリースに最適。"
+        },
+        {
+          "id": "C",
+          "text": "Latency-based ルーティングで新版を別リージョンに置き自然分散させる",
+          "is_correct": false,
+          "explanation": "Latency は最寄りリージョン優先で、明示的な割合制御にはならない。"
+        },
+        {
+          "id": "D",
+          "text": "Geolocation ルーティングで地域ごとに新版・旧版を分ける",
+          "is_correct": false,
+          "explanation": "Geolocation は地域別配信用で、割合制御の手段ではない。"
+        }
+      ],
+      "explanation": "Route 53 のルーティングポリシー: Simple (単一値)、Weighted (割合分散)、Latency (最寄り優先)、Failover (DR 切替)、Geolocation (地域別)、Geoproximity (近接性 + バイアス)、Multivalue (最大 8 IP のヘルスチェック付き返却)。段階リリース・A/B テストは Weighted。",
+      "references": [
+        {
+          "title": "Weighted routing",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "weighted",
+        "canary",
+        "ab-test"
+      ],
+      "common_mistakes": [
+        "Failover を段階リリースに使おうとする",
+        "Latency で割合制御できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-014",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Route 53",
+      "subtopic": "Latency-based routing",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "グローバルに展開した API を東京・ダブリン・北バージニアの 3 リージョンに置き、ユーザを最もレイテンシの低いリージョンへ自動的に誘導したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Geolocation ルーティングで国・地域ごとに固定リージョンへ振る",
+          "is_correct": false,
+          "explanation": "Geolocation は地域単位だが、ネットワーク経路上の実レイテンシではない。"
+        },
+        {
+          "id": "B",
+          "text": "Weighted ルーティングでリージョンごとに 33% ずつ均等分散する",
+          "is_correct": false,
+          "explanation": "均等分散はレイテンシ最適化にはならない。"
+        },
+        {
+          "id": "C",
+          "text": "Latency-based ルーティングで各リージョン ALB のレコードを登録する",
+          "is_correct": true,
+          "explanation": "正解。Latency-based は AWS が実測した RTT に基づき最寄りリージョンへ振る標準解。"
+        },
+        {
+          "id": "D",
+          "text": "Failover ルーティングで Primary を東京、Secondary を他の 2 つに設定する",
+          "is_correct": false,
+          "explanation": "Failover は障害切替用で、地理分散の最適化はできない。"
+        }
+      ],
+      "explanation": "Latency-based ルーティングは AWS が継続的に測定するクライアント-リージョン間 RTT に基づき、最も低レイテンシのリージョンへ DNS 応答する。Geolocation は地理ベース、Geoproximity は地理座標とバイアス、Latency は実測ベースという違いを理解する。",
+      "references": [
+        {
+          "title": "Latency-based routing",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "latency-based",
+        "multi-region"
+      ],
+      "common_mistakes": [
+        "Geolocation = Latency と混同",
+        "Failover で地理分散できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-015",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Route 53",
+      "subtopic": "Geolocation",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "コンプライアンス要件で『日本からのアクセスは日本リージョンのみで処理』を強制したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Latency-based ルーティングで日本ユーザを東京に振り、他は別の最寄りリージョンへ",
+          "is_correct": false,
+          "explanation": "Latency は低レイテンシ優先で、地理境界で強制ルーティングはできない。"
+        },
+        {
+          "id": "B",
+          "text": "Geolocation ルーティングで日本 → 東京リージョン、それ以外 → デフォルトとして指定する",
+          "is_correct": true,
+          "explanation": "正解。Geolocation は国・地域単位で明示的に振り先を固定するルーティング。"
+        },
+        {
+          "id": "C",
+          "text": "Weighted ルーティングで日本宛は東京 100%、他は他リージョン 100% にする",
+          "is_correct": false,
+          "explanation": "Weighted は割合分散用。地理判定は持たない。"
+        },
+        {
+          "id": "D",
+          "text": "Multivalue Answer で複数 IP を返し、クライアントに最寄りを選ばせる",
+          "is_correct": false,
+          "explanation": "Multivalue は最大 8 IP の単純返却で、地理強制制御はない。"
+        }
+      ],
+      "explanation": "Geolocation ルーティングはユーザ位置 (国/大陸/サブディビジョン) に基づきレコードを返す。コンプライアンスや地域限定コンテンツに使う。一致しない場合に備えて Default レコードを必ず設定するのがベストプラクティス。",
+      "references": [
+        {
+          "title": "Geolocation routing",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geo.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "geolocation",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "Latency と Geolocation を区別できない",
+        "Geolocation のデフォルト設定を忘れる"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-016",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Route 53",
+      "subtopic": "Failover",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東京リージョンが障害になった場合に、自動的に大阪リージョンの待機環境へトラフィックを切り替えたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Latency-based ルーティングで東京と大阪を登録し、AWS の RTT 測定に任せる",
+          "is_correct": false,
+          "explanation": "Latency は障害判定をせず、ターゲットが落ちても応答を返す可能性がある。"
+        },
+        {
+          "id": "B",
+          "text": "Failover ルーティングで Primary を東京、Secondary を大阪、Primary にヘルスチェックを設定する",
+          "is_correct": true,
+          "explanation": "正解。Primary 失敗時に自動で Secondary へ切替える DR の標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "Weighted ルーティングで東京 100%、大阪 0% に設定し、障害時に手動で 0/100 に変更する",
+          "is_correct": false,
+          "explanation": "手動切替は対応に時間がかかる。Route 53 ヘルスチェック + Failover で自動化すべき。"
+        },
+        {
+          "id": "D",
+          "text": "Multivalue Answer で東京・大阪を両方返し、クライアントに選ばせる",
+          "is_correct": false,
+          "explanation": "Multivalue はヘルスチェック付きだが、Primary/Secondary 優先順位は表現しない。"
+        }
+      ],
+      "explanation": "Failover ルーティングは Primary/Secondary の 2 レコードを登録し、Primary のヘルスチェックが失敗したとき Secondary を返す DNS フェイルオーバ。リージョン障害時の DR シナリオで使う。RTO は DNS TTL に依存する点に注意。",
+      "references": [
+        {
+          "title": "Failover routing",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-failover.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "failover",
+        "dr",
+        "health-check"
+      ],
+      "common_mistakes": [
+        "Latency が障害検知すると誤解",
+        "手動切替で十分と考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-017",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Route 53",
+      "subtopic": "Multi-value answer",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "シンプルなクライアントから複数の Web サーバへ均等にアクセスさせたい。サーバ単位のヘルスチェックを行い、応答しないものを除外したいが、ALB を導入したくない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Simple ルーティングで複数 IP を返却し、ヘルスチェックは別途自前監視で運用する",
+          "is_correct": false,
+          "explanation": "Simple ルーティングはヘルスチェックと連動しない。"
+        },
+        {
+          "id": "B",
+          "text": "Weighted ルーティングで全 IP を同じ重みに設定し、Route 53 ヘルスチェックを別途連携する",
+          "is_correct": false,
+          "explanation": "Weighted は均等分散できるが、ヘルスチェック連動は別途設定が必要で挙動も異なる。"
+        },
+        {
+          "id": "C",
+          "text": "Multivalue Answer ルーティングで複数 IP を登録し、Route 53 ヘルスチェックで応答しないものを除外する",
+          "is_correct": true,
+          "explanation": "正解。Multivalue Answer は最大 8 IP を返却し、Route 53 ヘルスチェックで NG なものを除外する DNS 多重化。"
+        },
+        {
+          "id": "D",
+          "text": "Latency-based ルーティングで各サーバを別 AZ に置き、最寄り AZ への振り分けを期待する",
+          "is_correct": false,
+          "explanation": "Latency は最寄り優先で均等分散にはならない。"
+        }
+      ],
+      "explanation": "Multivalue Answer は ALB なしで簡易的な負荷分散・冗長化を行う DNS パターン。Route 53 ヘルスチェック付き最大 8 IP を返し、クライアント側でラウンドロビン的にアクセスする。本格的な LB が要らない用途で有用。",
+      "references": [
+        {
+          "title": "Multivalue answer routing",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-multivalue.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "multivalue",
+        "health-check"
+      ],
+      "common_mistakes": [
+        "Simple ルーティングでヘルスチェック可能と誤解",
+        "Multivalue を ALB の完全代替と考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-018",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Route 53",
+      "subtopic": "Geoproximity vs Latency",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "新リージョン (大阪) を立ち上げたが当面はトラフィックを意図的に少なくし、東京に比べ 60% 程度に抑えたい。地理位置情報を活かしつつバイアスをかけたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Weighted ルーティングで東京 6:大阪 4 の比率を設定する",
+          "is_correct": false,
+          "explanation": "地理位置情報を活かさない。地理 + バイアスは Geoproximity の役割。"
+        },
+        {
+          "id": "B",
+          "text": "Latency-based ルーティングに切り替え、AWS の測定に任せる",
+          "is_correct": false,
+          "explanation": "Latency にはバイアス機能がない。"
+        },
+        {
+          "id": "C",
+          "text": "Geolocation ルーティングで日本西部のみ大阪、それ以外は全部東京に振る",
+          "is_correct": false,
+          "explanation": "明示的境界の制御で実装可能だが、要件『地理 + バイアス』には Geoproximity が直接的解。"
+        },
+        {
+          "id": "D",
+          "text": "Geoproximity ルーティングで大阪に負のバイアス値を設定し、有効領域を縮小する",
+          "is_correct": true,
+          "explanation": "正解。Geoproximity は地理近接性 + バイアス値 (-99〜+99) で配信領域を伸縮できる。"
+        }
+      ],
+      "explanation": "Geoproximity ルーティングはユーザとリソースの地理座標距離に基づき、バイアス値で配信領域を拡大・縮小できる。Route 53 Application Recovery Controller (ARC) と並んで上級ルーティングの代表機能。Geolocation との違いは『地理境界の明示 vs 距離 + バイアス』。",
+      "references": [
+        {
+          "title": "Geoproximity routing",
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html"
+        }
+      ],
+      "tags": [
+        "route53",
+        "geoproximity",
+        "bias"
+      ],
+      "common_mistakes": [
+        "Geolocation と Geoproximity を混同",
+        "Weighted で地理制御もできると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-019",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "SQS",
+      "subtopic": "Standard vs FIFO",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "決済処理のメッセージキューで、重複処理が許されず・送信順序が厳密に保たれる必要がある。最も適切な SQS タイプはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Standard キューを使い、コンシューマ側で重複排除テーブル・順序キー管理を自前実装する",
+          "is_correct": false,
+          "explanation": "実装可能だが Standard は『少なくとも 1 回配信』『順序保証なし』で、自前実装は負荷大。"
+        },
+        {
+          "id": "B",
+          "text": "EventBridge Pipes でソース → エンリッチ → ターゲットの順次変換を行いながら配信する",
+          "is_correct": false,
+          "explanation": "EventBridge は順序制御の標準的な仕組みを持たない。SQS FIFO が要件に直接合致。"
+        },
+        {
+          "id": "C",
+          "text": "SNS Topic を使い、ファンアウトで複数 SQS にメッセージを同時配信する構成にする",
+          "is_correct": false,
+          "explanation": "SNS はキューではなくプッシュ通知。順序・重複制御の目的とは別。"
+        },
+        {
+          "id": "D",
+          "text": "FIFO キューを使い、MessageGroupId と MessageDeduplicationId で順序と重複排除を担保する",
+          "is_correct": true,
+          "explanation": "正解。FIFO は『厳密 1 回処理 + 順序保証』を提供する標準解。"
+        }
+      ],
+      "explanation": "SQS Standard: 高スループット・順序保証なし・少なくとも 1 回配信。FIFO: 順序保証・厳密 1 回処理 (重複排除 5 分)・スループット制限あり (3,000 msg/s with batching)。決済・在庫・取引等の順序重要処理には FIFO。",
+      "references": [
+        {
+          "title": "FIFO queues",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html"
+        }
+      ],
+      "tags": [
+        "sqs",
+        "fifo",
+        "ordering"
+      ],
+      "common_mistakes": [
+        "Standard で順序を担保しようとする",
+        "SNS でキューの代用ができると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-020",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "SQS",
+      "subtopic": "Dead Letter Queue",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "SQS のコンシューマで処理が継続的に失敗するメッセージがあり、キューが詰まっている。失敗メッセージを別キューに退避して後で調査したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Visibility Timeout を長くして、失敗メッセージが再表示されないようにする",
+          "is_correct": false,
+          "explanation": "再表示を遅らせるだけで、最終的にはまた処理される。退避にはならない。"
+        },
+        {
+          "id": "B",
+          "text": "コンシューマ側で例外発生時にメッセージを削除する処理を入れる",
+          "is_correct": false,
+          "explanation": "失敗メッセージの内容を失う。デバッグや再処理ができなくなる。"
+        },
+        {
+          "id": "C",
+          "text": "Dead Letter Queue (DLQ) を構成し、maxReceiveCount を超えた失敗メッセージを退避する",
+          "is_correct": true,
+          "explanation": "正解。DLQ は処理回数超過メッセージを別キューに退避する SQS の標準機能。"
+        },
+        {
+          "id": "D",
+          "text": "メッセージ保持期間を最大の 14 日にして失敗メッセージを蓄積する",
+          "is_correct": false,
+          "explanation": "保持期間は失敗対応の解ではない。DLQ で分離するのが標準。"
+        }
+      ],
+      "explanation": "DLQ は処理失敗が一定回数 (maxReceiveCount) を超えたメッセージを別 SQS キューに自動退避する仕組み。本キューを詰まらせず、退避メッセージを CloudWatch アラームで通知 → 別 Lambda で調査 → 必要なら再注入の運用パターンが定番。",
+      "references": [
+        {
+          "title": "Amazon SQS dead-letter queues",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+        }
+      ],
+      "tags": [
+        "sqs",
+        "dlq",
+        "error-handling"
+      ],
+      "common_mistakes": [
+        "Visibility Timeout で失敗対応できると誤解",
+        "失敗メッセージを削除して証跡を失う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-021",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "SQS",
+      "subtopic": "Visibility timeout",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）SQS のメッセージが同一コンシューマグループで複数回処理される事象が起きている。原因として考えられるものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Visibility Timeout がメッセージ処理時間より短く、処理完了前に再表示されている",
+          "is_correct": true,
+          "explanation": "正解。処理に時間がかかると Visibility Timeout 切れで別コンシューマが受信する。"
+        },
+        {
+          "id": "B",
+          "text": "Standard キューを使っているため『少なくとも 1 回配信』で重複が稀に発生する",
+          "is_correct": true,
+          "explanation": "正解。Standard キューは仕様上、重複配信があり得る。"
+        },
+        {
+          "id": "C",
+          "text": "DLQ が無効なため失敗メッセージが本キューに残って何度も処理される",
+          "is_correct": false,
+          "explanation": "DLQ 無効は退避先がないだけで、複数回処理の根本原因ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Long Polling 有効化により同一メッセージが複数回返される",
+          "is_correct": false,
+          "explanation": "Long Polling は空ポーリング削減で重複の原因ではない。"
+        }
+      ],
+      "explanation": "SQS で重複が起きる主因は『Visibility Timeout 不足』と『Standard の少なくとも 1 回保証』。前者は処理時間に応じた Timeout 設定 (or ChangeMessageVisibility で動的延長) で、後者は冪等処理を実装するか FIFO に切り替える。",
+      "references": [
+        {
+          "title": "Amazon SQS visibility timeout",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+        }
+      ],
+      "tags": [
+        "sqs",
+        "visibility-timeout",
+        "duplicates"
+      ],
+      "common_mistakes": [
+        "Standard が厳密 1 回保証だと誤解",
+        "Long Polling を重複の原因と考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-022",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "SQS",
+      "subtopic": "Long polling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "SQS コンシューマが空ポーリングを大量に行い、API リクエスト料金とコンシューマ CPU を浪費している。最も適切な対策はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Visibility Timeout を 0 秒にしてメッセージ即時可視化でポーリング応答性を上げる",
+          "is_correct": false,
+          "explanation": "Visibility Timeout 変更は処理保証の話で、空ポーリング削減にならない。"
+        },
+        {
+          "id": "B",
+          "text": "ReceiveMessage の WaitTimeSeconds を 20 秒に設定して Long Polling を有効化する",
+          "is_correct": true,
+          "explanation": "正解。Long Polling はメッセージ到着まで最大 20 秒待機し、空応答を抑制する標準対策。"
+        },
+        {
+          "id": "C",
+          "text": "メッセージ保持期間を短縮し、古いメッセージを早めに削除して空応答を減らす",
+          "is_correct": false,
+          "explanation": "保持期間と空ポーリングは無関係。"
+        },
+        {
+          "id": "D",
+          "text": "DLQ を有効化し、空ポーリングの応答を退避先のキューへ送ることで本キューの負荷を下げる",
+          "is_correct": false,
+          "explanation": "DLQ は失敗メッセージ用で空ポーリングとは無関係。"
+        }
+      ],
+      "explanation": "Long Polling (WaitTimeSeconds 1〜20) はメッセージ到着までキュー側で待機し、空応答を抑制する。Short Polling は即座に応答 (空でも) で API 呼び出しが増える。本番運用ではほぼ常時 Long Polling 推奨。",
+      "references": [
+        {
+          "title": "Amazon SQS short and long polling",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-short-and-long-polling.html"
+        }
+      ],
+      "tags": [
+        "sqs",
+        "long-polling",
+        "cost"
+      ],
+      "common_mistakes": [
+        "Visibility Timeout で空ポーリングを解決できると誤解",
+        "Short Polling が常時有効と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-023",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "SQS",
+      "subtopic": "Large message handling",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "アプリ間で 5MB の画像メッセージを SQS 経由で受け渡したい。SQS の 256KB 上限を超える場合の最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "メッセージを 256KB ごとに分割し、コンシューマ側で再構築する",
+          "is_correct": false,
+          "explanation": "アプリ実装が複雑になり、順序・欠落の管理も自前。Extended Client Library が標準。"
+        },
+        {
+          "id": "B",
+          "text": "SQS の代わりに SNS を使い、メッセージサイズ上限を回避する",
+          "is_correct": false,
+          "explanation": "SNS も上限 256KB (Extended の概念は同様)。サイズ問題の解にはならない。"
+        },
+        {
+          "id": "C",
+          "text": "SQS Extended Client Library を使い、本体を S3 に保存・参照を SQS に乗せる",
+          "is_correct": true,
+          "explanation": "正解。Extended Client Library は S3 連携で最大 2GB までのメッセージを透過的に扱う。"
+        },
+        {
+          "id": "D",
+          "text": "メッセージサイズを Base64 圧縮して 256KB 以内に収める",
+          "is_correct": false,
+          "explanation": "Base64 は圧縮ではなくエンコードで、データサイズはむしろ 1.33 倍に増える。"
+        }
+      ],
+      "explanation": "SQS の単体メッセージ上限は 256KB。大容量データは SQS Extended Client Library (Java/Python) を使い、本体を S3 に置いて参照だけを SQS に流す方式が標準。Step Functions や EventBridge と組み合わせると Distributed Map / Pipes でも参照渡し可能。",
+      "references": [
+        {
+          "title": "Managing large Amazon SQS messages using Amazon S3",
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-s3-messages.html"
+        }
+      ],
+      "tags": [
+        "sqs",
+        "extended-client",
+        "s3",
+        "large-message"
+      ],
+      "common_mistakes": [
+        "分割再構築を自前実装",
+        "Base64 がデータ圧縮だと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-024",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "SNS",
+      "subtopic": "Fan-out to SQS",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ある注文イベントを複数のサブシステム (在庫・配送・通知・分析) に同時配信したい。各サブシステムは独立に処理し、再試行も独立にしたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 個の SQS キューを作り、4 つのサブシステムが同じキューから競合読みする構成にする",
+          "is_correct": false,
+          "explanation": "競合読みでは各サブシステムが独立に処理できず、再試行も干渉する。"
+        },
+        {
+          "id": "B",
+          "text": "SNS Topic に発行し、サブシステムごとに SQS キューを Subscribe するファンアウトを組む",
+          "is_correct": true,
+          "explanation": "正解。SNS → SQS ファンアウトは独立処理・独立再試行・DLQ 個別設定の標準解。"
+        },
+        {
+          "id": "C",
+          "text": "EventBridge のスケジュールルールで毎秒注文テーブルをポーリングし変更を検知する",
+          "is_correct": false,
+          "explanation": "スケジュールは定期実行用。イベント駆動のファンアウトではない。"
+        },
+        {
+          "id": "D",
+          "text": "Step Functions のステートマシンで在庫・配送・通知・分析の 4 処理を順次直列実行する",
+          "is_correct": false,
+          "explanation": "順次実行だと各処理が独立せず、1 つの失敗が後段を止める。"
+        }
+      ],
+      "explanation": "SNS → SQS ファンアウトはイベント駆動の独立処理パターン。各サブシステムは自分の SQS キューだけ責任を持ち、再試行や DLQ も独立。SNS のメッセージフィルタリングを使えば、サブシステムごとに受け取るイベント条件も絞れる。",
+      "references": [
+        {
+          "title": "Amazon SNS fanout to SQS",
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html"
+        }
+      ],
+      "tags": [
+        "sns",
+        "sqs",
+        "fanout",
+        "decoupling"
+      ],
+      "common_mistakes": [
+        "単一 SQS で多数コンシューマを捌こうとする",
+        "Step Functions で疎結合を実現しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-025",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "SNS",
+      "subtopic": "Message filtering",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "SNS Topic にすべての注文イベントを発行している。あるサブシステムは『金額 10,000 円以上の注文』だけ処理したい。サブシステム側でフィルタ処理を増やしたくない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "SNS Topic を金額帯ごとに複数作成し、発行側で振り分ける",
+          "is_correct": false,
+          "explanation": "発行側のロジック分岐が増え、運用が複雑化する。"
+        },
+        {
+          "id": "B",
+          "text": "サブシステム側で全メッセージを受け取り、コンシューマで金額チェックして破棄する",
+          "is_correct": false,
+          "explanation": "受信コストと処理負荷が増える。Filter Policy で配信前に絞るべき。"
+        },
+        {
+          "id": "C",
+          "text": "SNS Subscription Filter Policy で属性条件を設定し、該当メッセージのみ配信する",
+          "is_correct": true,
+          "explanation": "正解。Subscription Filter Policy は属性ベースで配信を絞る標準機能。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge Rule に切り替え、ルールでパターンマッチして配信する",
+          "is_correct": false,
+          "explanation": "EventBridge も選択肢だが、既存 SNS 構成で要件が満たせる SNS Filter が最小変更。"
+        }
+      ],
+      "explanation": "SNS Subscription Filter Policy は MessageAttributes に基づき配信を絞る (発行されたイベント自体は変わらない)。サブシステム側の負荷を減らし、不要メッセージのトラフィックも抑制する。Body 内容でフィルタしたい場合は Payload-based filtering も対応。",
+      "references": [
+        {
+          "title": "Amazon SNS subscription filter policies",
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/sns-subscription-filter-policies.html"
+        }
+      ],
+      "tags": [
+        "sns",
+        "filter-policy",
+        "message-attributes"
+      ],
+      "common_mistakes": [
+        "コンシューマ側でフィルタする旧パターンを使う",
+        "Topic を細かく分割する"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-026",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "EventBridge",
+      "subtopic": "Cross-account event bus",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "本番アカウントで発生する CloudTrail イベントを、別の監査アカウントの EventBridge にリアルタイム連携したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "監査アカウントのデフォルトイベントバスに本番アカウントから直接イベント発行する",
+          "is_correct": false,
+          "explanation": "デフォルトバスはアカウント自身用。クロスアカウントはカスタムバス + ポリシー設定が必要。"
+        },
+        {
+          "id": "B",
+          "text": "本番アカウントから Lambda を実行し、定期的に CloudTrail ログをコピーする",
+          "is_correct": false,
+          "explanation": "ポーリング + コピー実装で運用負荷大。EventBridge のクロスアカウント連携が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "監査アカウントの EventBridge カスタムイベントバスに、本番アカウントの送信権限をリソースポリシーで許可する",
+          "is_correct": true,
+          "explanation": "正解。EventBridge のクロスアカウント連携はカスタムバス + リソースポリシーで実現する標準パターン。"
+        },
+        {
+          "id": "D",
+          "text": "本番アカウントの S3 へ CloudTrail ログを置き、監査アカウントから定期的に取得する",
+          "is_correct": false,
+          "explanation": "S3 経由はバッチ処理になり、リアルタイム性が失われる。"
+        }
+      ],
+      "explanation": "EventBridge クロスアカウント: 受信側 (監査) でカスタムイベントバスを作成し、Resource-based Policy で送信側 (本番) のアカウントに events:PutEvents 権限を付与。送信側のルールで該当バスを Target にすると、別アカウントへリアルタイム転送される。",
+      "references": [
+        {
+          "title": "Cross-account events in EventBridge",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html"
+        }
+      ],
+      "tags": [
+        "eventbridge",
+        "cross-account",
+        "audit"
+      ],
+      "common_mistakes": [
+        "デフォルトバスでクロスアカウント可能と誤解",
+        "ポーリング/S3 中継でリアルタイム性が出ると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-027",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "EventBridge",
+      "subtopic": "EventBridge vs SNS",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "数十のサードパーティ SaaS や AWS サービスからイベントを集約し、ルールベースで多数のターゲットに振り分けたい。可能な限り宣言的に管理したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amazon SNS のサブスクリプションフィルタで全 SaaS イベントをルーティングする",
+          "is_correct": false,
+          "explanation": "SNS は属性フィルタは可能だがイベントスキーマ管理や SaaS 統合は限定的。"
+        },
+        {
+          "id": "B",
+          "text": "Amazon Kinesis Data Streams で全イベントを受け、コンシューマで振り分け実装する",
+          "is_correct": false,
+          "explanation": "Kinesis はストリーミング処理基盤。ルールベースのイベントルーティングは EventBridge が直接的解。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Step Functions ですべてのイベントを順次処理する",
+          "is_correct": false,
+          "explanation": "Step Functions はワークフロー実行で、汎用イベントルータの役割ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Amazon EventBridge でルールベースのイベントパターン + Schema Registry + SaaS Partner 連携を使う",
+          "is_correct": true,
+          "explanation": "正解。EventBridge は AWS / SaaS / カスタムイベントを統合し、Schema Registry も持つ宣言的イベントバス。"
+        }
+      ],
+      "explanation": "EventBridge は SaaS Partner 連携 (Datadog/Zendesk/PagerDuty 等)、AWS サービスイベント、カスタムイベントの統合イベントバス。Rule + Pattern で宣言的に振り分け、Schema Registry でイベント型を管理。SNS よりリッチなパターンマッチが特徴。",
+      "references": [
+        {
+          "title": "Amazon EventBridge",
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
+        }
+      ],
+      "tags": [
+        "eventbridge",
+        "sns",
+        "saas-integration"
+      ],
+      "common_mistakes": [
+        "SNS と EventBridge の用途差を理解していない",
+        "Kinesis でルールベース配信できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-028",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Step Functions",
+      "subtopic": "Standard vs Express",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "高頻度 (毎秒数千回) で短時間 (数秒以内) のワークフローを Step Functions で実装したい。コストを最小化しつつ高スループットを保ちたい。最も適切な選択はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Express ワークフローを使い、5 分以内・高頻度実行の特性を活かす",
+          "is_correct": true,
+          "explanation": "正解。Express は実行時間 + メモリ課金で、高頻度・短時間処理に最適。"
+        },
+        {
+          "id": "B",
+          "text": "Standard ワークフローを使い、最大実行時間 1 年の特性を活かす",
+          "is_correct": false,
+          "explanation": "Standard は遷移課金で高頻度実行ではコスト高。長時間・低頻度向け。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda の単独実行に置き換え、Step Functions は使わない",
+          "is_correct": false,
+          "explanation": "Step Functions の状態管理・並列・リトライ機能を捨てることになる。要件と合致しない可能性が高い。"
+        },
+        {
+          "id": "D",
+          "text": "EventBridge Scheduler で 1 秒ごとにワークフローを起動する",
+          "is_correct": false,
+          "explanation": "Scheduler は時間トリガで、ワークフロー実装の代替ではない。"
+        }
+      ],
+      "explanation": "Step Functions Standard は最大 1 年実行、状態遷移ごとに課金で長時間・低頻度ワークフロー向け (オーケストレーション・人手承認 etc)。Express は最大 5 分、実行時間 + メモリ課金で高頻度・短時間処理 (IoT・データ加工・API) 向け。",
+      "references": [
+        {
+          "title": "Step Functions Standard vs Express workflows",
+          "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html"
+        }
+      ],
+      "tags": [
+        "step-functions",
+        "express",
+        "workflow"
+      ],
+      "common_mistakes": [
+        "Standard が常時優れていると思う",
+        "Express の 5 分上限を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-029",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "S3 Replication",
+      "subtopic": "Cross-Region Replication",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "東京リージョンの S3 バケットの新規オブジェクトを、大阪リージョンへ自動コピーして DR 用に保管したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lambda を S3 PUT トリガで起動し、copy_object で大阪バケットへ書く処理を作る",
+          "is_correct": false,
+          "explanation": "実装可能だが運用負荷大・失敗再試行も自前。CRR が標準解。"
+        },
+        {
+          "id": "B",
+          "text": "Cross-Region Replication (CRR) を有効化し、対象バケットとレプリケーションロールを設定する",
+          "is_correct": true,
+          "explanation": "正解。CRR は新規 PUT を自動レプリケーションする標準解。既存オブジェクトも S3 Batch Replication で対応可。"
+        },
+        {
+          "id": "C",
+          "text": "DataSync を S3 → S3 で 1 日 1 回スケジュール実行する",
+          "is_correct": false,
+          "explanation": "DataSync はバッチ転送で、リアルタイムレプリケーションには CRR が直接的。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Lifecycle で大阪リージョンへ Tier 移行する",
+          "is_correct": false,
+          "explanation": "Lifecycle はストレージクラス移行用で、リージョン跨ぎコピーはできない。"
+        }
+      ],
+      "explanation": "S3 Replication は CRR (Cross-Region) と SRR (Same-Region) があり、Versioning 有効が前提。新規 PUT を自動コピー、KMS 暗号化対応、双方向レプリ可。既存オブジェクトの一括レプリは S3 Batch Replication が別途必要。",
+      "references": [
+        {
+          "title": "Replicating objects with S3 Replication",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "crr",
+        "replication",
+        "dr"
+      ],
+      "common_mistakes": [
+        "Lambda で自前コピーを書く",
+        "Lifecycle でリージョン跨ぎが可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-030",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "S3 Replication",
+      "subtopic": "SRR use case",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Same-Region Replication (SRR) の代表的なユースケースとして正しいものはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "東京から大阪への DR 用バックアップとして同期する",
+          "is_correct": false,
+          "explanation": "DR 用途は CRR (リージョン跨ぎ)。SRR は同一リージョン内。"
+        },
+        {
+          "id": "B",
+          "text": "別アカウントの S3 バケットへログを集約しレプリケーションする",
+          "is_correct": true,
+          "explanation": "正解。SRR は同一リージョン別アカウントへのログ集約・分離保管の標準パターン。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で生成された一時ファイルを別バケットに退避する",
+          "is_correct": false,
+          "explanation": "PUT 後の自動レプリケーション機能だが、一時ファイル退避は別パターン (Lifecycle / 移動)。"
+        },
+        {
+          "id": "D",
+          "text": "S3 ストレージクラスを Glacier に階層化する",
+          "is_correct": false,
+          "explanation": "ストレージクラス変更は Lifecycle の役割。レプリケーションではない。"
+        }
+      ],
+      "explanation": "SRR (Same-Region Replication) は同一リージョン内別バケットへの自動コピー。代表用途は『複数アカウントへのログ集約』『コンプライアンス分離 (本番と監査の分離)』『ストレージクラス変換』。CRR は別リージョン用 (DR・低レイテンシ配信・コンプライアンス)。",
+      "references": [
+        {
+          "title": "S3 Same-Region Replication",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "srr",
+        "log-aggregation"
+      ],
+      "common_mistakes": [
+        "SRR と CRR の用途を混同",
+        "DR を SRR で実現できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 4,
+        "overall": 4.5
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-031",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "S3 Replication",
+      "subtopic": "Replication Time Control",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "金融規制で『S3 レプリケーションは 99.99% のオブジェクトを 15 分以内に複製する』ことを SLA として求められた。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "標準 CRR で対応する。AWS が自動的に複製するため明示的 SLA も自然に満たされる",
+          "is_correct": false,
+          "explanation": "標準 CRR は明示的 SLA を持たない。SLA 保証には RTC が必要。"
+        },
+        {
+          "id": "B",
+          "text": "DataSync を 15 分スケジュールで起動し、増分のみを別リージョンに転送する",
+          "is_correct": false,
+          "explanation": "バッチ転送で各オブジェクト個別の SLA は保証されない。"
+        },
+        {
+          "id": "C",
+          "text": "Lambda で 15 分ごとに新規オブジェクトを別リージョンへコピーする同期スクリプトを実行する",
+          "is_correct": false,
+          "explanation": "自前実装で SLA 保証は困難。RTC で AWS の SLA を活用すべき。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Replication Time Control (RTC) を有効化し 15 分 SLA を活用する",
+          "is_correct": true,
+          "explanation": "正解。RTC は 15 分以内・99.99% の SLA とメトリクス・通知を提供する有償オプション。"
+        }
+      ],
+      "explanation": "S3 Replication Time Control (RTC) は『99.99% のオブジェクトを 15 分以内、ほぼ全てを数秒以内に複製』を SLA とする有償オプション。コンプライアンスや DR の RPO 要件があるとき選択。CloudWatch メトリクスとイベント通知も付属。",
+      "references": [
+        {
+          "title": "Replicating objects using S3 Replication Time Control",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-time-control.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "rtc",
+        "sla",
+        "compliance"
+      ],
+      "common_mistakes": [
+        "標準 CRR にも明示 SLA があると誤解",
+        "DataSync で個別オブジェクト SLA が出ると考える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-032",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "S3 Versioning",
+      "subtopic": "MFA Delete",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "重要オブジェクトを保管する S3 バケットで、誤削除・悪意ある削除に備えて『削除には MFA を必須』としたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "バケットポリシーで s3:DeleteObject を Deny する",
+          "is_correct": false,
+          "explanation": "完全削除禁止になり要件 (MFA で削除可能) を満たさない。"
+        },
+        {
+          "id": "B",
+          "text": "S3 Block Public Access を全項目 ON にする",
+          "is_correct": false,
+          "explanation": "Block Public Access は公開設定の防止で、削除制御ではない。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Object Lock の Governance Mode を全オブジェクトに適用する",
+          "is_correct": false,
+          "explanation": "Object Lock は更新・削除禁止 (WORM) で要件に近いが、設問は『MFA 付きで削除可能にしたい』。"
+        },
+        {
+          "id": "D",
+          "text": "S3 Versioning と MFA Delete を有効化し、ルートユーザの MFA で削除制御する",
+          "is_correct": true,
+          "explanation": "正解。MFA Delete はバージョン削除と Versioning 設定変更に MFA を必須化する。ルートアカウントのみ有効化可能。"
+        }
+      ],
+      "explanation": "MFA Delete は S3 Versioning と組み合わせ、バージョン削除と Versioning 設定変更に MFA トークンを必須化。ルートユーザのみ有効化可能。安全性は高いが運用負荷もあるため、本当に重要なバケットに限定して適用するのが定石。",
+      "references": [
+        {
+          "title": "Configuring MFA delete",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiFactorAuthenticationDelete.html"
+        }
+      ],
+      "tags": [
+        "s3",
+        "mfa-delete",
+        "versioning"
+      ],
+      "common_mistakes": [
+        "Object Lock と MFA Delete を混同",
+        "Block Public Access で削除制御できると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-033",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "AWS Backup",
+      "subtopic": "Centralized backup vs native",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "EC2・EBS・RDS・DynamoDB のバックアップを統一ポリシーで管理し、リージョン跨ぎコピーと WORM ロックも一元的に運用したい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "各サービスのネイティブバックアップ機能をそれぞれ設定し、リージョン跨ぎは個別に組む",
+          "is_correct": false,
+          "explanation": "サービスごとに UI と設定が分散し、一元管理ができない。"
+        },
+        {
+          "id": "B",
+          "text": "Lambda で各サービスの CreateSnapshot 等を呼ぶスクリプトを作り、cron で運用する",
+          "is_correct": false,
+          "explanation": "実装可能だがマネージドサービスの再実装で運用負荷が大きい。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Backup の Backup Plan + Cross-Region Copy + Vault Lock を組み合わせて運用する",
+          "is_correct": true,
+          "explanation": "正解。AWS Backup は複数サービスを一元バックアップ、コピー、WORM 保管する標準サービス。"
+        },
+        {
+          "id": "D",
+          "text": "EBS スナップショットだけを使い、RDS や DynamoDB は対象外とする",
+          "is_correct": false,
+          "explanation": "要件 (全 4 サービス対象) を満たさない。"
+        }
+      ],
+      "explanation": "AWS Backup は EBS / EC2 (AMI) / RDS / Aurora / DynamoDB / EFS / FSx / S3 / Storage Gateway 等を一元バックアップ管理。Backup Plan で頻度・保持・コピー先・暗号化を宣言、Vault Lock で WORM (改ざん不可) 保管、Organizations 連携で組織全体強制。",
+      "references": [
+        {
+          "title": "AWS Backup",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"
+        }
+      ],
+      "tags": [
+        "aws-backup",
+        "centralized",
+        "cross-region",
+        "vault-lock"
+      ],
+      "common_mistakes": [
+        "ネイティブバックアップで一元管理しようとする",
+        "AWS Backup の対応範囲を限定的に捉える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-034",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "AWS Backup",
+      "subtopic": "Backup Vault Lock",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "ランサムウェア対策として、バックアップが攻撃者によって早期削除されないよう WORM ロックをかけたい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "EBS スナップショットのライフサイクルを 30 日に設定する",
+          "is_correct": false,
+          "explanation": "ライフサイクルは保管期間の話で、改ざん不可性は提供しない。"
+        },
+        {
+          "id": "B",
+          "text": "Backup Vault の IAM ポリシーで Delete を Deny する",
+          "is_correct": false,
+          "explanation": "IAM ポリシーは管理者なら変更可能。ロック性は仕組み (Vault Lock) で担保すべき。"
+        },
+        {
+          "id": "C",
+          "text": "S3 Cross-Region Replication でバックアップをコピーする",
+          "is_correct": false,
+          "explanation": "コピーはあるが両側を削除すれば失われる。不可逆ロックが必要。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Backup Vault Lock を Compliance Mode で設定し、ルートユーザでも削除不可にする",
+          "is_correct": true,
+          "explanation": "正解。Compliance Mode は root でも変更・削除不可で、ランサムウェア対策の最後の砦。"
+        }
+      ],
+      "explanation": "AWS Backup Vault Lock は Governance Mode (特定権限で解除可) と Compliance Mode (root でも解除不可) があり、後者はランサムウェア対策の最終防衛線。Compliance Mode 設定は 3 日のクーリング期間後に不可逆になる。",
+      "references": [
+        {
+          "title": "AWS Backup Vault Lock",
+          "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html"
+        }
+      ],
+      "tags": [
+        "aws-backup",
+        "vault-lock",
+        "ransomware",
+        "worm"
+      ],
+      "common_mistakes": [
+        "IAM ポリシーで完全な改ざん防止ができると誤解",
+        "S3 レプリケーションでランサムウェア対策可能と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-035",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "RDS",
+      "subtopic": "Multi-AZ purpose",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "RDS Multi-AZ デプロイの主な目的として最も正確な説明はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AZ 障害時の自動フェイルオーバで可用性を高める (同期レプリケーション)",
+          "is_correct": true,
+          "explanation": "正解。Multi-AZ は同期スタンバイ + 自動フェイルオーバで高可用性を提供する DR/HA 機能。"
+        },
+        {
+          "id": "B",
+          "text": "読み取り性能を倍にするため、スタンバイをアクティブ読み取りエンドポイントとして使う",
+          "is_correct": false,
+          "explanation": "従来 Multi-AZ のスタンバイは読み取り不可。読み取り分散は Read Replica の役割。"
+        },
+        {
+          "id": "C",
+          "text": "リージョン障害に備えるため、別リージョンへ非同期コピーする",
+          "is_correct": false,
+          "explanation": "Multi-AZ は同一リージョン内別 AZ。リージョン跨ぎは Read Replica か Aurora Global Database。"
+        },
+        {
+          "id": "D",
+          "text": "バックアップ取得時のパフォーマンス低下を回避するため",
+          "is_correct": false,
+          "explanation": "Multi-AZ の副次効果として確かにバックアップ時の負荷分散はあるが、主目的ではない。"
+        }
+      ],
+      "explanation": "RDS Multi-AZ は同期スタンバイを別 AZ に維持し、AZ 障害・メンテ時に自動フェイルオーバで可用性を高める。従来 Multi-AZ のスタンバイは読み取り不可。新方式『Multi-AZ DB Cluster (3 AZ)』ではスタンバイ 2 つを読み取り可能。",
+      "references": [
+        {
+          "title": "Multi-AZ deployments for high availability",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "multi-az",
+        "ha"
+      ],
+      "common_mistakes": [
+        "Multi-AZ で読み取り分散できると誤解 (旧方式)",
+        "Multi-AZ がリージョン跨ぎ DR 機能と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-036",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "RDS",
+      "subtopic": "Multi-AZ vs Read Replica",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）RDS の Multi-AZ デプロイ (旧方式) と Read Replica の違いとして正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Multi-AZ は同期レプリケーションで RPO ≒ 0、Read Replica は非同期レプリケーション",
+          "is_correct": true,
+          "explanation": "正解。レプリケーション方式が同期 vs 非同期で根本的に違う。"
+        },
+        {
+          "id": "B",
+          "text": "Multi-AZ のスタンバイは通常時アクセス不可、Read Replica は読み取り処理を受けられる",
+          "is_correct": true,
+          "explanation": "正解。Multi-AZ スタンバイは待機専用、Read Replica は読み取り分散用。"
+        },
+        {
+          "id": "C",
+          "text": "Multi-AZ も Read Replica もリージョン跨ぎ配置がデフォルトで自動化されている",
+          "is_correct": false,
+          "explanation": "Multi-AZ は同一リージョン内別 AZ。Read Replica はリージョン跨ぎ可能 (オプション)。"
+        },
+        {
+          "id": "D",
+          "text": "Multi-AZ は読み取り性能スケーリング、Read Replica は障害時の自動フェイルオーバ用",
+          "is_correct": false,
+          "explanation": "用途が逆。Multi-AZ = HA、Read Replica = 読み取りスケール。"
+        }
+      ],
+      "explanation": "Multi-AZ (旧方式) は同期スタンバイ・読み取り不可・自動フェイルオーバ → HA。Read Replica は非同期スレーブ・読み取り可能・手動昇格 → 読み取りスケール + DR (リージョン跨ぎ可)。Aurora は両者を統合した設計でリーダーが読み取りも兼ねる。",
+      "references": [
+        {
+          "title": "RDS Read Replicas",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "multi-az",
+        "read-replica"
+      ],
+      "common_mistakes": [
+        "Multi-AZ と Read Replica の役割を取り違える",
+        "両者がリージョン跨ぎだと誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-037",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "RDS",
+      "subtopic": "Read Replica promotion",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Primary DB がリージョン障害で利用不能になった。リージョン跨ぎ Read Replica を本番昇格させたい。手順として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "別リージョンの S3 バックアップから新 RDS を立ち上げ直す",
+          "is_correct": false,
+          "explanation": "復元時間が長く RTO が悪い。Read Replica Promote が速い。"
+        },
+        {
+          "id": "B",
+          "text": "Read Replica を Multi-AZ に変換するだけで自動的に Primary になる",
+          "is_correct": false,
+          "explanation": "Multi-AZ 化は HA 設定で、Promote (独立化) とは別操作。"
+        },
+        {
+          "id": "C",
+          "text": "別リージョンの Read Replica を Promote して独立した DB インスタンス化し、アプリの接続先を切り替える",
+          "is_correct": true,
+          "explanation": "正解。Promote により Read Replica が独立 Primary になり、書き込み可能になる。"
+        },
+        {
+          "id": "D",
+          "text": "DNS の CNAME を変えれば Read Replica が自動的に書き込み受付になる",
+          "is_correct": false,
+          "explanation": "DNS 変更だけでは Read Replica は読み取り専用のまま。Promote が必要。"
+        }
+      ],
+      "explanation": "Read Replica Promote は数分で完了し、独立した Primary に昇格する。リージョン跨ぎ Read Replica + Promote は古典的な DR 構成。新規構築なら Aurora Global Database (1 分以内の RPO/RTO) も検討。",
+      "references": [
+        {
+          "title": "Promoting a read replica to be a standalone DB instance",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.Promote.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "read-replica",
+        "promote",
+        "dr"
+      ],
+      "common_mistakes": [
+        "DNS 変更だけで Promote されると誤解",
+        "Multi-AZ 化と Promote を混同"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-038",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "RDS",
+      "subtopic": "Cross-region read replica with KMS",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "東京の暗号化 RDS から大阪へ Read Replica を作る際、暗号化されたまま転送・保管したい。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "大阪リージョンの KMS キー (CMK or Multi-Region Key) を指定して暗号化 Read Replica を作成する",
+          "is_correct": true,
+          "explanation": "正解。Read Replica 作成時に対象リージョンの KMS キーを指定する標準パターン。"
+        },
+        {
+          "id": "B",
+          "text": "東京で使用する KMS キーを大阪リージョンでも同じ ID で参照すれば暗号化が引き継がれる",
+          "is_correct": false,
+          "explanation": "KMS キーはリージョン固有。リージョン跨ぎ複製には大阪側 KMS キーを別途指定する必要がある。"
+        },
+        {
+          "id": "C",
+          "text": "Read Replica は暗号化が引き継がれないため、復号後に大阪 KMS で再暗号化して保管する",
+          "is_correct": false,
+          "explanation": "Read Replica は暗号化を引き継ぐ。再暗号化は不要かつ非推奨。"
+        },
+        {
+          "id": "D",
+          "text": "DataSync で大阪リージョンの S3 へコピーし、そこから新規 Read Replica を手動構築する",
+          "is_correct": false,
+          "explanation": "DataSync は RDS インスタンス間複製機能ではない。Read Replica 機能を直接使うべき。"
+        }
+      ],
+      "explanation": "暗号化 RDS のクロスリージョン Read Replica は、対象リージョンの KMS キー (CMK か Multi-Region Key) を指定して作成する。Multi-Region Key を使えばキー管理が一本化されシンプル。SSE は引き継がれるので別途の処理は不要。",
+      "references": [
+        {
+          "title": "Creating an encrypted Amazon RDS read replica",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "kms",
+        "cross-region",
+        "encryption"
+      ],
+      "common_mistakes": [
+        "KMS キーがグローバルだと誤解",
+        "復号 → 再暗号化の手順を踏もうとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-039",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "RDS",
+      "subtopic": "Multi-AZ DB Cluster",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "新規 RDS (MySQL/PostgreSQL) を構築する際、HA + 読み取り分散の両方を 1 つの構成で実現したい。Aurora は採用したくない。最も適切な構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "従来の Multi-AZ デプロイ (1 スタンバイ) + Read Replica を 2 個追加する",
+          "is_correct": false,
+          "explanation": "実装可能だが管理対象が増え、構成が複雑。新方式 Multi-AZ DB Cluster で一本化できる。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora ではないが Aurora と同等のクラスターエンドポイントを RDS で構成する",
+          "is_correct": false,
+          "explanation": "RDS 通常版ではクラスターエンドポイント概念はない。Multi-AZ DB Cluster で類似挙動を提供。"
+        },
+        {
+          "id": "C",
+          "text": "Single-AZ にして可用性を諦め、Read Replica を 4 個追加する",
+          "is_correct": false,
+          "explanation": "可用性要件を諦めるのは設計判断として不適。"
+        },
+        {
+          "id": "D",
+          "text": "Multi-AZ DB Cluster (3 AZ・スタンバイ 2 個・読み取り可能) を採用する",
+          "is_correct": true,
+          "explanation": "正解。新方式の Multi-AZ DB Cluster はスタンバイ 2 つが読み取り可能で HA + 読み取り分散を 1 構成で提供。"
+        }
+      ],
+      "explanation": "Multi-AZ DB Cluster は MySQL/PostgreSQL 向けの新方式で、3 AZ にプライマリ + 2 スタンバイを配置し、スタンバイは読み取り可能。HA + 読み取りスケールを 1 構成で提供する。RDS Custom や Oracle は対応外。",
+      "references": [
+        {
+          "title": "Multi-AZ DB cluster deployments",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"
+        }
+      ],
+      "tags": [
+        "rds",
+        "multi-az-cluster",
+        "ha",
+        "read-scale"
+      ],
+      "common_mistakes": [
+        "旧 Multi-AZ で読み取り分散できると誤解",
+        "Multi-AZ DB Cluster の存在を知らない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-040",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Aurora",
+      "subtopic": "Multi-AZ availability",
+      "cognitive_level": "L2-Understand",
+      "difficulty": "easy",
+      "stem": "Aurora クラスターの可用性に関する説明として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora はストレージ層を 3 AZ × 2 = 6 個に複製し、AZ 1 個 + 1 ディスク障害でも継続可能",
+          "is_correct": true,
+          "explanation": "正解。Aurora のストレージは 3 AZ で 6 重化されており、設計上 AZ 1 個 + 1 個損失で 4/6 で読み書き継続。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora は単一 AZ 構成しか取れないため Multi-AZ には別途レプリケーションが必要",
+          "is_correct": false,
+          "explanation": "Aurora は仕組み上必ず Multi-AZ。AZ 単位での選択ではなくクラスター構成。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora の可用性はストレージ複製数に依存せず、リーダーインスタンスの台数で決まる",
+          "is_correct": false,
+          "explanation": "ストレージ複製数も可用性の根幹要素。リーダー台数は読み取りスケールの軸。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora のスタンバイは RDS Multi-AZ と同じく読み取り不可",
+          "is_correct": false,
+          "explanation": "Aurora の Reader Instance は読み取り受付可能 (常時)。"
+        }
+      ],
+      "explanation": "Aurora は『分散ストレージ層 (3 AZ × 2 = 6 複製)』『コンピュート層 (Writer 1 + Reader 0〜15)』に分離。AZ 1 個 + 1 個損失で読み書き継続、Reader はそのまま読み取り受付。RDS とは可用性アーキテクチャが根本的に違う。",
+      "references": [
+        {
+          "title": "Amazon Aurora storage and reliability",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "storage",
+        "multi-az",
+        "ha"
+      ],
+      "common_mistakes": [
+        "Aurora を RDS Multi-AZ と同じ構造だと誤解",
+        "Aurora が Single AZ 構成可能と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 4,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 4.75
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-041",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Aurora",
+      "subtopic": "Global Database",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "（複数選択：2つ選びなさい）Aurora Global Database に関する説明として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 つのプライマリリージョンと最大 5 つのセカンダリリージョンで構成し、各セカンダリは読み取り専用",
+          "is_correct": true,
+          "explanation": "正解。プライマリで書き込み、セカンダリは読み取り専用 (1 リージョンに 16 Reader まで)。"
+        },
+        {
+          "id": "B",
+          "text": "通常 1 秒未満のレプリケーション遅延と RTO 1 分未満のリージョンフェイルオーバを提供",
+          "is_correct": true,
+          "explanation": "正解。専用ストレージ層レプリケーションで秒未満遅延と高速フェイルオーバを実現。"
+        },
+        {
+          "id": "C",
+          "text": "セカンダリリージョンでも自由に書き込みができるアクティブ・アクティブ構成",
+          "is_correct": false,
+          "explanation": "Aurora Global は基本シングルマスター。アクティブ・アクティブが必要なら DynamoDB Global Tables を使う。"
+        },
+        {
+          "id": "D",
+          "text": "Aurora Global はストレージ層のみ複製し、データ転送はリージョン跨ぎ追加料金がかからない",
+          "is_correct": false,
+          "explanation": "ストレージ層レプリケーションでデータ転送料金は発生する。コスト要素として認識すべき。"
+        }
+      ],
+      "explanation": "Aurora Global Database はプライマリ + 最大 5 セカンダリリージョン構成、通常 1 秒未満の遅延、RTO 1 分未満の手動 (or 自動) フェイルオーバ。書き込みはプライマリのみ。アクティブ・アクティブ書き込みが要件なら DynamoDB Global Tables へ。",
+      "references": [
+        {
+          "title": "Aurora Global Database",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "global-database",
+        "dr"
+      ],
+      "common_mistakes": [
+        "Aurora Global がアクティブ・アクティブだと誤解",
+        "リージョン跨ぎデータ転送料金を見落とす"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-042",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Aurora",
+      "subtopic": "Aurora Serverless v2",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "突発的なトラフィック増減があり、夜間はほぼ 0 トラフィックの社内 SaaS アプリの DB に Aurora を採用したい。コストを最小化したい。最も適切な選択はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora Serverless v2 で ACU の自動スケーリング (最小 0.5 ACU から) を活用する",
+          "is_correct": true,
+          "explanation": "正解。Serverless v2 は ACU 単位で自動スケーリング、トラフィック変動と非アクティブ時の節約に最適。"
+        },
+        {
+          "id": "B",
+          "text": "プロビジョン型 Aurora の最大インスタンスを常時起動する",
+          "is_correct": false,
+          "explanation": "夜間 0 トラフィックでも常時課金され、コスト最小化に反する。"
+        },
+        {
+          "id": "C",
+          "text": "Aurora を 1 日 1 回 cron で停止・起動するスケジューラを組む",
+          "is_correct": false,
+          "explanation": "停止中はメトリクス取得もできず、起動時間の遅延もある。Serverless が標準解。"
+        },
+        {
+          "id": "D",
+          "text": "RDS の Burstable インスタンス (t3) を使い、CPU クレジットで対応する",
+          "is_correct": false,
+          "explanation": "t3 でも空時間は最低課金が発生。Aurora Serverless の方が変動負荷に最適。"
+        }
+      ],
+      "explanation": "Aurora Serverless v2 は ACU (Aurora Capacity Unit) 単位で 0.5 ACU から最大 128 ACU まで連続スケーリング。プロビジョン型と同等の機能 (Multi-AZ・Global Database 等) を持ちつつ変動負荷を効率的に処理。突発負荷・開発用 DB・SaaS マルチテナント DB 等に最適。",
+      "references": [
+        {
+          "title": "Aurora Serverless v2",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "serverless-v2",
+        "cost",
+        "auto-scaling"
+      ],
+      "common_mistakes": [
+        "Burstable インスタンスで Serverless 並みの節約ができると誤解",
+        "Aurora 停止運用でコスト最適化しようとする"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-043",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Aurora",
+      "subtopic": "Failover behavior",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "Aurora クラスターの Writer インスタンスが障害になったときの動作として正しいのはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "クラスター全体が停止状態になり、手動でスナップショットから新クラスターを復元する必要がある",
+          "is_correct": false,
+          "explanation": "Aurora は HA 設計で自動フェイルオーバする。手動復元は障害設計として誤り。"
+        },
+        {
+          "id": "B",
+          "text": "Reader インスタンスのいずれかが自動的に Writer に昇格し、クラスターエンドポイントが新 Writer を指す",
+          "is_correct": true,
+          "explanation": "正解。Aurora は Reader を昇格させ、クラスターエンドポイントの DNS を自動切替する。通常 30 秒程度。"
+        },
+        {
+          "id": "C",
+          "text": "Reader インスタンスは読み取り処理を継続し、Writer 障害は次回スケジュールメンテで対応される",
+          "is_correct": false,
+          "explanation": "Writer 障害時は新 Writer 選出が必要で、書き込み停止を放置しない。"
+        },
+        {
+          "id": "D",
+          "text": "ストレージ層が破損するため、リージョン跨ぎコピーからクラスター全体を再構築する必要がある",
+          "is_correct": false,
+          "explanation": "ストレージは別層で 6 重化されている。Writer インスタンス障害ではストレージは影響を受けない。"
+        }
+      ],
+      "explanation": "Aurora は Writer 障害時、最高 Promotion Tier の Reader を自動昇格 → クラスターエンドポイントの DNS を更新 (通常 30 秒)。ストレージは Writer インスタンスとは独立しているため、Writer の置換だけで継続できる。Reader インスタンスを 1 個以上残すのが標準。",
+      "references": [
+        {
+          "title": "Aurora failover",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html"
+        }
+      ],
+      "tags": [
+        "aurora",
+        "failover",
+        "cluster-endpoint"
+      ],
+      "common_mistakes": [
+        "Aurora が手動復元と思う",
+        "ストレージとコンピュートの分離を理解していない"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-044",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "DynamoDB",
+      "subtopic": "Global Tables",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）DynamoDB Global Tables に関する説明として正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "複数リージョンでアクティブ・アクティブ書き込みが可能で、最終的に Last Writer Wins で収束する",
+          "is_correct": true,
+          "explanation": "正解。Global Tables はマルチリージョン書き込み可能で、衝突は Last Writer Wins で解決される。"
+        },
+        {
+          "id": "B",
+          "text": "リージョン跨ぎレプリケーション遅延は通常 1 秒以下",
+          "is_correct": true,
+          "explanation": "正解。設計上、通常は秒未満で全リージョンへ伝播される。"
+        },
+        {
+          "id": "C",
+          "text": "アクティブ・アクティブだが衝突解決は強整合性で行われる",
+          "is_correct": false,
+          "explanation": "Global Tables は結果整合性 + Last Writer Wins。強整合性のリージョン跨ぎ衝突解決ではない。"
+        },
+        {
+          "id": "D",
+          "text": "Global Tables 化には Streams を無効にしておく必要がある",
+          "is_correct": false,
+          "explanation": "逆。DynamoDB Streams は Global Tables の前提機能で、有効化が必要。"
+        }
+      ],
+      "explanation": "DynamoDB Global Tables はマルチリージョン・アクティブ・アクティブ書き込み + 通常 1 秒未満のレプリケーション + Last Writer Wins 衝突解決。Streams 有効化が前提。Aurora Global がシングルマスターなのに対し、DynamoDB Global Tables はマルチマスター。",
+      "references": [
+        {
+          "title": "DynamoDB Global Tables",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "global-tables",
+        "multi-region",
+        "active-active"
+      ],
+      "common_mistakes": [
+        "Global Tables が強整合性だと誤解",
+        "Streams が無効でも Global Tables 化できると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-045",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "DynamoDB",
+      "subtopic": "Point-in-Time Recovery",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DynamoDB テーブルを誤って大量削除してしまった。直近 30 分前の状態に戻したい。最も適切な機能はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "DynamoDB Streams で直前のイベントを再生する",
+          "is_correct": false,
+          "explanation": "Streams は変更通知用で、テーブル復元機能ではない。"
+        },
+        {
+          "id": "B",
+          "text": "Point-in-Time Recovery (PITR) で任意の時点に復元する",
+          "is_correct": true,
+          "explanation": "正解。PITR は過去 35 日以内の任意時点 (秒単位) のテーブル復元を提供する。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Backup の最新スナップショットから復元する",
+          "is_correct": false,
+          "explanation": "可能だが直近 30 分の粒度には対応できないことが多い。PITR が秒単位で適切。"
+        },
+        {
+          "id": "D",
+          "text": "TTL を 0 に設定して削除を取り消す",
+          "is_correct": false,
+          "explanation": "TTL は将来の自動削除設定で、既存削除を取り消す機能ではない。"
+        }
+      ],
+      "explanation": "DynamoDB PITR は過去 35 日以内の任意秒単位の時点に新テーブルを復元する機能。On-Demand Backup は明示的スナップショット (任意保持期間)。Streams は変更イベント取得用で復元機能ではない。誤操作対策は PITR が標準。",
+      "references": [
+        {
+          "title": "DynamoDB Point-in-time recovery",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "pitr",
+        "recovery"
+      ],
+      "common_mistakes": [
+        "Streams で復元できると誤解",
+        "TTL の意味を取り違える"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-046",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "DynamoDB",
+      "subtopic": "On-demand backup vs PITR",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "DynamoDB のスキーマ変更前に明示的なバックアップを取り、無期限に保管しておきたい。最も適切な機能はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Point-in-Time Recovery (PITR) を 35 日設定し、その期間内に復元準備する",
+          "is_correct": false,
+          "explanation": "PITR は最大 35 日。無期限保管には不向き。"
+        },
+        {
+          "id": "B",
+          "text": "On-Demand Backup を取得し、AWS Backup Vault に長期保管する",
+          "is_correct": true,
+          "explanation": "正解。On-Demand Backup は明示的スナップショットで、保持期間も自由。AWS Backup Vault 連携で WORM 化も可能。"
+        },
+        {
+          "id": "C",
+          "text": "DynamoDB のテーブル全体を JSON エクスポートし、S3 に保管する",
+          "is_correct": false,
+          "explanation": "S3 Export 機能は別用途 (Athena 等で分析) で、復元には別途インポート手順が必要。"
+        },
+        {
+          "id": "D",
+          "text": "Streams を S3 に書き出し、変更履歴を保管する",
+          "is_correct": false,
+          "explanation": "Streams は変更イベントの記録で、完全なテーブル状態の保管ではない。"
+        }
+      ],
+      "explanation": "DynamoDB の保管・復元: PITR (35 日・秒単位)、On-Demand Backup (明示・無期限可)、S3 Export (分析用)、Streams (変更通知)。明示的時点での長期保管は On-Demand Backup + AWS Backup Vault が標準。",
+      "references": [
+        {
+          "title": "DynamoDB On-Demand Backup and Restore",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BackupRestore.html"
+        }
+      ],
+      "tags": [
+        "dynamodb",
+        "on-demand-backup",
+        "long-retention"
+      ],
+      "common_mistakes": [
+        "PITR で無期限保管できると誤解",
+        "S3 Export を復元用と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-047",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "DR Patterns",
+      "subtopic": "Pilot Light vs Warm Standby",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "medium",
+      "stem": "（複数選択：2つ選びなさい）DR パターンの Pilot Light と Warm Standby の違いとして正しいものを 2 つ選びなさい。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pilot Light は最小限のリソース (DB レプリカ等) のみ稼働、Warm Standby は縮小版のフル機能環境を稼働",
+          "is_correct": true,
+          "explanation": "正解。Pilot Light は『種火』のみ、Warm Standby は『常時待機の縮小版』。"
+        },
+        {
+          "id": "B",
+          "text": "Warm Standby の方が Pilot Light より RTO が短いがコストも高い",
+          "is_correct": true,
+          "explanation": "正解。Warm Standby は復旧時間が短く、その分常時コストが高い。"
+        },
+        {
+          "id": "C",
+          "text": "Pilot Light も Warm Standby も RTO は数秒以内",
+          "is_correct": false,
+          "explanation": "数秒は Multi-Site Active/Active 級。Pilot Light は分〜時間オーダー。"
+        },
+        {
+          "id": "D",
+          "text": "Pilot Light は Backup & Restore より RTO が長い",
+          "is_correct": false,
+          "explanation": "逆。Pilot Light は DB レプリカ等が稼働済みなので、Backup & Restore より RTO が短い。"
+        }
+      ],
+      "explanation": "AWS DR パターン (RTO/RPO の短い順): Backup & Restore (時間〜日) → Pilot Light (分〜時間: DB のみ稼働) → Warm Standby (分: 縮小版稼働) → Multi-Site Active/Active (秒未満)。要件と予算で選ぶ。Aurora Global / DynamoDB Global は Warm Standby〜Multi-Site の道具。",
+      "references": [
+        {
+          "title": "Disaster recovery options in the cloud",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"
+        }
+      ],
+      "tags": [
+        "dr",
+        "pilot-light",
+        "warm-standby",
+        "rto"
+      ],
+      "common_mistakes": [
+        "DR パターン間の RTO/コスト関係を取り違える",
+        "Pilot Light を Backup & Restore と同等と思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-048",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "DR Patterns",
+      "subtopic": "RTO/RPO selection",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "ある業務系アプリで RTO 1 時間・RPO 15 分が要件。DR コストは最小化したいが、要件を満たしつつ自動フェイルオーバを実現したい。最も適切な DR パターンはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pilot Light: DB の Read Replica を別リージョンで稼働、アプリ層は障害時に起動する",
+          "is_correct": true,
+          "explanation": "正解。Read Replica で RPO 15 分未満を達成、アプリ層立ち上げで RTO 1 時間以内を達成、コストも Warm Standby より低い。"
+        },
+        {
+          "id": "B",
+          "text": "Backup & Restore: 日次バックアップを別リージョンへコピーし、障害時に手動復元する",
+          "is_correct": false,
+          "explanation": "RPO 15 分・RTO 1 時間の要件を満たせない。RTO が日〜時間オーダーで超過。"
+        },
+        {
+          "id": "C",
+          "text": "Multi-Site Active/Active: 両リージョンで常時稼働し、即時フェイルオーバ",
+          "is_correct": false,
+          "explanation": "RTO/RPO 要件を大幅にオーバースペックし、コスト最小化に反する。"
+        },
+        {
+          "id": "D",
+          "text": "単一リージョンの Multi-AZ のみで、DR は実施しない",
+          "is_correct": false,
+          "explanation": "リージョン障害時の DR が実施されず要件を満たさない。"
+        }
+      ],
+      "explanation": "DR パターン選択は RTO・RPO・コストの 3 軸で最適化。RTO 1 時間 / RPO 15 分は Pilot Light が経済合理的。Warm Standby は RTO 数分・RPO 数秒、Multi-Site は RTO/RPO 秒以下。Aurora Global / DynamoDB Global などのマネージド機能を組み合わせると Warm Standby 級が現実的になる。",
+      "references": [
+        {
+          "title": "Pilot Light disaster recovery",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html#pilot-light"
+        }
+      ],
+      "tags": [
+        "dr",
+        "rto",
+        "rpo",
+        "pilot-light"
+      ],
+      "common_mistakes": [
+        "要件に対しオーバースペックを選んでコスト最適化を逃す",
+        "Multi-AZ だけで DR 要件を満たせると誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-049",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Elastic DR",
+      "subtopic": "DRS use case",
+      "cognitive_level": "L3-Apply",
+      "difficulty": "medium",
+      "stem": "オンプレや別クラウドの Windows/Linux サーバを AWS に DR 待機させたい。継続的にブロックレベル複製し、リージョン障害時には数分で起動可能にしたい。最も適切なサービスはどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "AWS Elastic Disaster Recovery (DRS) で継続レプリケーション + ジャストインタイム起動",
+          "is_correct": true,
+          "explanation": "正解。DRS は CloudEndure 後継で、オンプレ/別クラウドからの継続レプリケーション DR の標準解。"
+        },
+        {
+          "id": "B",
+          "text": "AWS DataSync で 1 時間ごとにファイル/オブジェクトの差分を AWS へコピーし続ける",
+          "is_correct": false,
+          "explanation": "DataSync はファイル/オブジェクト同期で、サーバの起動可能イメージ DR には不適。"
+        },
+        {
+          "id": "C",
+          "text": "AWS Snowball Edge を定期的に物理輸送し、オフライン同期で AWS 側待機環境を更新する",
+          "is_correct": false,
+          "explanation": "物理輸送は初期移行向け。継続 DR 用途ではない。"
+        },
+        {
+          "id": "D",
+          "text": "AWS Backup でオンプレ Hyper-V/VMware を定期スナップショットし、AWS 側へコピーする",
+          "is_correct": false,
+          "explanation": "AWS Backup の対象は主に AWS リソース。オンプレサーバの継続レプリ DR は DRS。"
+        }
+      ],
+      "explanation": "AWS Elastic Disaster Recovery (DRS) は元 CloudEndure Disaster Recovery。オンプレ・別クラウド・AWS リージョン間サーバの継続ブロックレベル複製 + ジャストインタイムでターゲットインスタンス起動。RPO 秒〜分、RTO 数分という DR パターンを提供。",
+      "references": [
+        {
+          "title": "AWS Elastic Disaster Recovery",
+          "url": "https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html"
+        }
+      ],
+      "tags": [
+        "drs",
+        "elastic-dr",
+        "on-premises",
+        "replication"
+      ],
+      "common_mistakes": [
+        "DataSync で DR が成立すると考える",
+        "AWS Backup でオンプレサーバを継続レプリ可能と誤解"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    },
+    {
+      "id": "saa-c03-domain2-050",
+      "version": "1.0",
+      "exam": {
+        "code": "SAA-C03",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "vendor": "AWS",
+        "year": 2026
+      },
+      "domain": {
+        "id": "domain-2",
+        "name": "Design Resilient Architectures",
+        "weight_percent": 26
+      },
+      "topic": "Multi-Region",
+      "subtopic": "Active-Active design",
+      "cognitive_level": "L4-Analyze",
+      "difficulty": "hard",
+      "stem": "グローバル B2C アプリで、複数リージョン同時書き込み・低レイテンシ・リージョン障害時のシームレス継続を求められた。最も適切なデータ層構成はどれか。",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aurora Global Database のセカンダリリージョンで書き込み可能にする",
+          "is_correct": false,
+          "explanation": "Aurora Global は基本シングルマスター。複数リージョン書き込みには不向き。"
+        },
+        {
+          "id": "B",
+          "text": "Aurora Multi-AZ クラスターを 1 リージョンに集約し、低レイテンシは CloudFront で吸収",
+          "is_correct": false,
+          "explanation": "書き込みリージョンが 1 つに集中し、地理的低レイテンシ書き込みが実現できない。"
+        },
+        {
+          "id": "C",
+          "text": "RDS Multi-AZ をリージョンごとに立て、独立した DB として運用する",
+          "is_correct": false,
+          "explanation": "独立運用ではデータ整合性が取れず、グローバル B2C アプリ要件を満たさない。"
+        },
+        {
+          "id": "D",
+          "text": "DynamoDB Global Tables を採用し、各リージョンでローカル書き込みを受け付ける",
+          "is_correct": true,
+          "explanation": "正解。DynamoDB Global Tables はマルチマスターで複数リージョン同時書き込みに対応する標準解。"
+        }
+      ],
+      "explanation": "マルチリージョン書き込み: DynamoDB Global Tables (マルチマスター、Last Writer Wins) が標準解。Aurora Global は基本シングルマスター (書き込みは Primary リージョンのみ)。アクティブ・アクティブの DB 層では DynamoDB が現実的な選択。",
+      "references": [
+        {
+          "title": "DynamoDB Global Tables for active-active multi-region",
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html"
+        }
+      ],
+      "tags": [
+        "multi-region",
+        "active-active",
+        "dynamodb-global-tables"
+      ],
+      "common_mistakes": [
+        "Aurora Global がアクティブ・アクティブだと誤解",
+        "CloudFront で書き込みレイテンシも改善できると思う"
+      ],
+      "quality_score": {
+        "stem_clarity": 5,
+        "distractor_plausibility": 5,
+        "cognitive_level_match": 5,
+        "explanation_completeness": 5,
+        "overall": 5.0
+      },
+      "metadata": {
+        "created_at": "2026-05-28T00:00:00Z",
+        "created_by": "claude-opus-4-7",
+        "reviewed": false,
+        "language": "ja"
+      }
+    }
+  ]
+}
