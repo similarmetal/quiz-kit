@@ -183,6 +183,28 @@ const QuizApp = (() => {
     return null; // nothing due
   }
 
+  // 誤答のみ復習モード: total_attempts > correct_attempts のもの (= 一度でも誤答した問題)
+  // をランダム抽出する。SRS の due_date は無視 (集中復習)。
+  function selectNextWrongQuestion(allQuestions, examProgress) {
+    const history = examProgress.history || {};
+    const wrongPool = allQuestions.filter(q => {
+      const h = history[q.id];
+      return h && (h.total_attempts || 0) > (h.correct_attempts || 0);
+    });
+    if (wrongPool.length === 0) return null;
+    return pickRandom(wrongPool);
+  }
+
+  // 履歴から「誤答した経験のある問題」の ID 数を数える。Home で表示。
+  function countWrongQuestions(history) {
+    let n = 0;
+    for (const id in history) {
+      const h = history[id];
+      if (h && (h.total_attempts || 0) > (h.correct_attempts || 0)) n += 1;
+    }
+    return n;
+  }
+
   function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
@@ -283,21 +305,28 @@ const QuizApp = (() => {
           if (h && h.due_date && h.due_date <= today) due += 1;
           if (h && (h.repetition || 0) >= 4) mastered += 1;
         }
+        const wrong = countWrongQuestions(history);
         totalDue += due;
 
-        const card = document.createElement('a');
-        card.className = 'exam-card';
-        card.href = `quiz.html?exam=${encodeURIComponent(exam.exam_code)}`;
-        card.innerHTML = `
-          <div class="exam-card-code">${escapeHtml(exam.exam_code.toUpperCase())}</div>
-          <div class="exam-card-name">${escapeHtml(exam.exam_name)}</div>
-          <div class="exam-card-meta">
-            <span>${exam.total_questions || 0}問</span>
-            <span>復習: ${due}問</span>
-            <span>習熟: ${mastered}問</span>
-          </div>
+        // カードラッパ (メインカードと「誤答のみ」リンクを併置するため div でラップ)
+        const wrap = document.createElement('div');
+        wrap.className = 'exam-card-wrap';
+        const wrongLinkHtml = wrong > 0
+          ? `<a class="exam-card-wrong" href="quiz.html?exam=${encodeURIComponent(exam.exam_code)}&mode=wrong" title="誤答した問題のみ集中復習">⚡ 誤答 ${wrong}問のみ復習</a>`
+          : '';
+        wrap.innerHTML = `
+          <a class="exam-card" href="quiz.html?exam=${encodeURIComponent(exam.exam_code)}">
+            <div class="exam-card-code">${escapeHtml(exam.exam_code.toUpperCase())}</div>
+            <div class="exam-card-name">${escapeHtml(exam.exam_name)}</div>
+            <div class="exam-card-meta">
+              <span>${exam.total_questions || 0}問</span>
+              <span>復習: ${due}問</span>
+              <span>習熟: ${mastered}問</span>
+            </div>
+          </a>
+          ${wrongLinkHtml}
         `;
-        grid.appendChild(card);
+        grid.appendChild(wrap);
       }
 
       examList.appendChild(section);
@@ -312,6 +341,7 @@ const QuizApp = (() => {
   async function renderQuiz() {
     const params = new URLSearchParams(window.location.search);
     const examCode = params.get('exam');
+    const mode = params.get('mode'); // 'wrong' = 誤答のみ復習モード
     const quizContainer = document.getElementById('quiz-container');
 
     if (!examCode) {
@@ -344,7 +374,9 @@ const QuizApp = (() => {
       return;
     }
 
-    document.getElementById('quiz-exam-name').textContent = exam.exam_name;
+    // 誤答モードは見出しでバッジ表示し、空のときも誘導文を変える
+    document.getElementById('quiz-exam-name').textContent =
+      exam.exam_name + (mode === 'wrong' ? '  ⚡ 誤答のみ復習モード' : '');
 
     const allQuestions = await loadQuestionsForExam(examCode);
     if (allQuestions.length === 0) {
@@ -360,6 +392,7 @@ const QuizApp = (() => {
     currentSession = {
       examCode,
       examName: exam.exam_name,
+      mode,                        // 'wrong' なら selectNextWrongQuestion を使う
       allQuestions,
       correct: 0,
       incorrect: 0,
@@ -375,8 +408,23 @@ const QuizApp = (() => {
     const progress = loadProgress();
     const examProgress = progress.exams[currentSession.examCode] || { history: {} };
 
-    const q = selectNextQuestion(currentSession.allQuestions, examProgress);
+    const q = currentSession.mode === 'wrong'
+      ? selectNextWrongQuestion(currentSession.allQuestions, examProgress)
+      : selectNextQuestion(currentSession.allQuestions, examProgress);
     if (!q) {
+      // 誤答モードで誤答がゼロのときは「誤答なし」専用画面、通常は完了画面
+      if (currentSession.mode === 'wrong' && currentSession.answered === 0) {
+        document.getElementById('quiz-container').innerHTML = `
+          <div class="quiz-card" style="text-align:center;padding:64px 36px;">
+            <div style="font-size:48px;margin-bottom:8px;">✨</div>
+            <h2 style="margin:8px 0 0 0;color:var(--text);font-size:13px;">NO WRONG ANSWERS</h2>
+            <div style="font-size:24px;font-weight:800;color:var(--text);margin:8px 0 24px;letter-spacing:-0.02em;">この試験では誤答がありません</div>
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:24px;">通常モードで学習を進めて誤答を蓄積したら、ここで集中復習できます。</p>
+            <a href="quiz.html?exam=${encodeURIComponent(currentSession.examCode)}" class="btn">通常モードで学習する</a>
+            <a href="index.html" class="btn secondary" style="margin-left:8px;">Home</a>
+          </div>`;
+        return;
+      }
       showSessionComplete();
       return;
     }

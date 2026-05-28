@@ -537,6 +537,27 @@ code {
 .exam-card-meta span:nth-child(2) { color: var(--energy); }
 .exam-card-meta span:nth-child(3) { color: var(--green); }
 
+/* 誤答のみ復習リンク (exam-card の真下にバッジ風に表示) */
+.exam-card-wrap { display: flex; flex-direction: column; gap: 6px; }
+.exam-card-wrong {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  padding: 8px 12px;
+  border: 1px dashed var(--red, #d4624a);
+  border-radius: 6px;
+  color: var(--red, #d4624a);
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.15s ease, color 0.15s ease;
+  letter-spacing: 0.04em;
+}
+.exam-card-wrong:hover {
+  background: var(--red, #d4624a);
+  color: #fff;
+}
+
 /* ==========================================================================
    Quiz Page
    ========================================================================== */
